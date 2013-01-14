@@ -1,0 +1,102 @@
+html, body {
+   cursor: default;
+}
+a {
+   cursor: pointer;
+}
+/*
+html, body, input, select {
+   font: 12px/15px 'Segoe UI', sans-serif;
+   font-size-adjust: 0.499;
+}
+h1 {
+   font-size: 27px;
+   line-height: 17px;
+}
+*/
+input {
+   width: 3em;
+}
+label {
+   display: block;
+   float: left;
+   width: 60px;
+}
+form {
+   margin: 0;
+   padding: 0;
+}
+fieldset {
+   margin: 0;
+   padding: 5px 10px;
+   float: left;
+}
+legend {
+   font-weight: bold;
+}
+form ul {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+.honkalculator li {
+   clear: both;
+}
+table {
+   border-collapse: collapse;
+}
+table,th,td {
+   border: 1px solid black;
+}
+th,td {
+   text-align: center;
+   padding: 3px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+textarea {
+   font-size: 11px;
+   width: 900px;
+   height: 400px;
+}
+span {
+   position: relative;
+   left: 40px;
+}
+#item, #ability, #nature, #status, #weather {
+   width: 9em;
+}
+#atevs, #ativs, #saevs, #saivs, #hpevs, #hpivs, #dfevs, #dfivs, #sdevs, #sdivs, #uspevs, #uspivs, #spevs, #spivs {
+   width: 2em;
+}
+#switching, #sr, #reflect, #light, #gravity, #foresight, #doubles, #helping, #crit {
+   width: 2em;
+}
+#strict, #astext {
+   width: 2em;
+}
+#result1, #result2, #result3, #result4 {
+   width: 15em;
+}
+#damageresult {
+   overflow: auto;
+   height: 400px;
+}
+#mainresult {
+	font-size: 24px;
+	line-height: 30px;
+   margin-top: 0;
+   padding-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+#detaileddamage {
+	margin-top: 0;
+	padding-top: 0;
+}
+#xhko {
+   font-size: 20px;
+   line-height: 22px;
+   margin-top: 0;
+   padding-top: 0;
+}

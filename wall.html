@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8" />
+<!-- Toad was here, Bowser is a loser -->
+<title>Honkalculator 3000</title>
+<link rel="stylesheet" type="text/css" href="calcstyle_mass.css" />
+<script type="text/javascript" src="damage.js"></script>
+<script type="text/javascript" src="sets.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<script type="text/javascript">
+var allSets = getAllSets();
+var tweight = 50;
+
+function setUser() {
+   var index = $('user').selectedIndex;
+   if(index == 0) return;
+   $('type1').selectedIndex = 0;
+   $('type2').selectedIndex = 0;
+   $('item').selectedIndex = 0;
+   $('ability').selectedIndex = 0;
+   var set = allSets[index-1];
+   $('type1').value = set.type1;
+   $('type2').value = set.type2;
+   $('level').value = set.level;
+   $('basehp').value = set.hpbase;
+   $('hpevs').value = set.hpevs;
+   $('hpivs').value = set.hpivs;
+   $('basedf').value = set.dfbase;
+   $('dfevs').value = set.dfevs;
+   $('dfivs').value = set.dfivs;
+   $('basesd').value = set.sdbase;
+   $('sdevs').value = set.sdevs;
+   $('sdivs').value = set.sdivs;
+   $('basesp').value = set.spbase;
+   $('spevs').value = set.spevs;
+   $('spivs').value = set.spivs;
+   $('dfstage').value = 0;
+   $('sdstage').value = 0;
+   $('spstage').value = 0;
+   $('item').value = set.items[0];
+   $('ability').value = set.abilities[0];
+   $('nature').value = set.nature;
+   setHP();
+   setDF();
+   setSD();
+   setSP();
+   tweight = set.w;
+}
+
+function setHP() {
+    setStatHP('hp', 'basehp', 'hpivs', 'hpevs', 'level');
+}
+function setDF() {
+    setStat('df', 'basedf', 'dfivs', 'dfevs', 'level', 'nature', 1);
+}
+function setSD() {
+    setStat('sd', 'basesd', 'sdivs', 'sdevs', 'level', 'nature', 3);
+}
+function setSP() {
+    setStat('sp', 'basesp', 'spivs', 'spevs', 'level', 'nature', 4);
+}
+
+function validateAll() {
+    $('level').value = validate($('level').value, 1, 100);
+    $('hp').value = validate($('hp').value, 1, 999);
+    $('df').value = validate($('df').value, 1, 999);
+    $('sd').value = validate($('sd').value, 1, 999);
+    $('sp').value = validate($('sp').value, 1, 999);
+}
+
+function calcAll() {
+    validateAll();
+    var highestTier = $('hightier').selectedIndex;
+    var lowestTier = $('lowtier').selectedIndex;
+    var isStrict = $('strict').checked;
+    var results = [];
+    
+    for (var i in allSets) {
+        // filter results
+        if ($('style').value === 'VGC' || $('style').value === 'LC' ||
+                (getTier(allSets[i].meta) >= highestTier && getTier(allSets[i].meta) <= lowestTier &&
+                (!isStrict || (getTier(allSets[i].tier) >= highestTier && getTier(allSets[i].tier) <= lowestTier)))) {
+            var sets = getUniqueSets(allSets[i]);
+            for (var j in sets) {
+                var result = calc(sets[j]);
+                // ignore mons that do 0 damage
+                if (result[0].max > 0.01) {
+                    results.push({
+                        'set' : sets[j],
+                        'damage' : result
+                    });
+                }
+            }
+        }
+    }
+    
+    results.sort(sortResultsDown);
+    removeDuplicates(results, 2); // TODO set numMoves
+    $('damageresult').innerHTML = $('astext').checked ? resultsToText(results, 1) : resultsToTable(results, 2);
+}
+
+function isOffensiveItem(item) {
+    if (item.indexOf('Plate') !== -1 || item.indexOf('Gem') !== -1) {
+        return true;
+    }
+    return ['Adamant Orb', 'Choice Band', 'Choice Specs', 'DeepSeaTooth', 'Expert Belt', 'Griseous Orb',
+            'Life Orb', 'Light Ball', 'Lustrous Orb', 'Muscle Band', 'Soul Dew', 'Thick Club', 'Wise Glasses',
+            'Silk Scarf', 'Rose Incense', 'Miracle Seed', 'Charcoal', 'Sea Incense', 'Wave Incense', 'Mystic Water',
+            'Magnet', 'NeverMeltIce', 'Sharp Beak', 'Black Belt', 'SilverPowder', 'Poison Barb', 'Soft Sand', 
+            'Rock Incense', 'Hard Stone', 'Odd Incense', 'TwistedSpoon', 'Spell Tag', 'Dragon Fang', 'BlackGlasses', 'Metal Coat',
+            'Choice Scarf', 'Iron Ball', 'Macho Brace'].indexOf(item) !== -1;
+}
+
+function isOffensiveAbility(ability) {
+    return ['Adaptability', 'Analytic', 'Air Lock', 'Blaze', 'Cloud Nine', 'Defeatist', 'Drizzle', 'Drought', 'Flare Boost', 'Flash Fire', 'Flower Gift',
+            'Guts', 'Huge Power', 'Hustle', 'Hyper Cutter', 'Iron Fist', 'Mold Breaker', 'Overgrow', 'Pure Power', 'Reckless', 'Rivalry (+)', 'Rivalry (-)',
+            'Sand Force', 'Sand Stream', 'Scrappy', 'Snow Warning', 'Sheer Force', 'Skill Link', 'Slow Start', 'Solar Power', 'Swarm', 'Technician',
+            'Teravolt', 'Tinted Lens', 'Torrent', 'Toxic Boost', 'Turboblaze', 'Unaware', 'Unnerve'].indexOf(ability) !== -1;
+}
+
+// TODO clean this up
+function getUniqueSets(set) {
+    var sets = [];
+    var hasClearItem = false;
+    for (var i = 0; i < set.items.length; i++) {
+        if (set.items.length > 1 && isOffensiveItem(set.items[i])) {
+            var hasClearAbility = false;
+            for (var j = 0; j < set.abilities.length; j++) {
+                if (set.abilities.length > 1 && isOffensiveAbility(set.abilities[j])) {
+                    var tmp = cloneObj(set);
+                    tmp.items[0] = set.items[i];
+                    tmp.abilities[0] = set.abilities[j];
+                    tmp.set = set.set + " [" + set.items[i] + "] [" + set.abilities[j] + "]";
+                    sets.push(tmp);
+                } else if (!hasClearAbility) {
+                    hasClearAbility = true;
+                    var tmp = cloneObj(set);
+                    tmp.items[0] = set.items[i];
+                    tmp.abilities[0] = set.abilities[j];
+                    tmp.set = set.set + " [" + set.items[i] + "]";
+                    sets.push(tmp);
+                }
+            }
+        } else if (!hasClearItem) {
+            hasClearItem = true;
+            var hasClearAbility = false;
+            for (var k = 0; k < set.abilities.length; k++) {
+                if (set.abilities.length > 1 && isOffensiveAbility(set.abilities[k])) {
+                    var tmp = cloneObj(set);
+                    tmp.items[0] = set.items[i];
+                    tmp.abilities[0] = set.abilities[k];
+                    tmp.set = set.set + " [" + set.abilities[k] + "]";
+                    sets.push(tmp);
+                } else if (!hasClearAbility) {
+                    hasClearAbility = true;
+                    var tmp = cloneObj(set);
+                    tmp.items[0] = set.items[i];
+                    tmp.abilities[0] = set.abilities[k];
+                    tmp.set = set.set;
+                    sets.push(tmp);
+                }
+            }
+        }
+    }
+    return sets;
+}
+
+function removeDuplicates(results, moves) {
+    for (var i = 0; i < results.length-1; i++) {
+        if (results[i].set.pokemon === results[i+1].set.pokemon) {
+            var dupe = true;
+            for (var j = 0; j < moves; j++) {
+                if (results[i+1].damage[j].max - results[i].damage[j].max >= 0.1) {
+                    dupe = false;
+                    break;
+                }
+            }
+            if (dupe) {
+                if (results[i].set.set.length > results[i+1].set.set.length) {
+                    results.splice(i, 1);
+                } else {
+                    results.splice(i+1, 1);
+                }
+                i--;
+            }
+        }
+    }
+}
+
+function resultsToTable(results, moves) {
+    var out = '<table>\n<tr><th width="350">Attacker</th><th width="90">Best Move</th><th width="100">Damage</th>';
+        for (var i = 1; i < moves; i++) {
+        out += '<th width="90">Next Best</th><th width="100">Damage</th>';
+    }
+    out += '</tr>';
+    
+    for (i = 0; i < results.length; i++) {
+        out += '<tr><td>' + getFullSetName(results[i].set) + '</td>';
+        for (var j = 0; j < moves; j++) {
+            out += '<td>' + getCleanMoveName(results[i].damage[j].move) + '</td><td>' + results[i].damage[j].min + ' - ' + results[i].damage[j].max + '%</td>';
+        }
+        out += '</tr>';
+    }
+    out += '</table>';
+    return out;
+}
+
+function resultsToText(results, moves) {
+    var out = '<textarea>';
+    for (var i = 0; i < results.length; i++) {
+        for (var j = 0; j < moves; j++) {
+            if (results[i].damage[j].desc && results[i].damage[j].max > 0) {
+                out += results[i].damage[j].desc + ': ' + results[i].damage[j].min + ' - ' + results[i].damage[j].max + '%\n';
+            }
+        }
+    }
+    if (out.length <= 10) {
+        out += 'Nothing interesting to show.';
+    }
+    out += '</textarea>';
+    return out;
+}
+   
+function calc(hitter) {
+    var attacker = {
+        'name' : hitter.pokemon,
+        'level' : hitter.level,
+        'type1' : hitter.type1,
+        'type2' : hitter.type2,
+        'at' : calcStat(hitter.atbase, hitter.ativs, hitter.atevs, hitter.level, calcNature(getNatureVals(hitter.nature)[0])),
+        'atm' : 0,
+        'ati' : hitter.atevs + getSignForNature(hitter.nature, 0) + ' Atk',
+        'sa' : calcStat(hitter.sabase, hitter.saivs, hitter.saevs, hitter.level, calcNature(getNatureVals(hitter.nature)[2])),
+        'sam' : 0,
+        'sai' : hitter.saevs + getSignForNature(hitter.nature, 2) + ' SpA',
+        'sp' : calcStat(hitter.spbase, hitter.spivs, hitter.spevs, hitter.level, calcNature(getNatureVals(hitter.nature)[4])),
+        'spm' : 0,
+        'item' : hitter.items[0],
+        'ability' : hitter.abilities[0],
+        'status' : 'Healthy',
+        'weight' : hitter.w
+    };
+    var defender = {
+        'name' : $('user').value.split(' ')[0],
+        'type1' : $('type1').value,
+        'type2' : $('type2').value,
+		'hp' : parseInt($('hp').value),
+        'hpi' : parseInt($('hpevs').value) + ' HP',
+		'df' : parseInt($('df').value),
+		'dfm' : parseInt($('dfstage').value),
+        'dfi' : parseInt($('dfevs').value) + getSignForNature($('nature').value, 1) + ' Def',
+		'sd' : parseInt($('sd').value),
+		'sdm' : parseInt($('sdstage').value),
+        'sdi' : parseInt($('sdevs').value) + getSignForNature($('nature').value, 3) + ' SpD',
+		'sp' : parseInt($('sp').value),
+		'spm' : parseInt($('spstage').value),
+		'item' : $('item').value,
+		'ability' : $('ability').value,
+		'status' : $('status').value,
+		'weight' : tweight
+    };
+    var m1d = getMoveDetails(hitter.move1);
+    var m2d = getMoveDetails(hitter.move2);
+    var m3d = getMoveDetails(hitter.move3);
+    var m4d = getMoveDetails(hitter.move4);
+    var moves = [
+        {
+            'name' : hitter.move1,
+            'bp' : m1d[0],
+            'type' : m1d[1],
+            'physical' : m1d[2] === 'Physical'
+        },
+        {
+            'name' : hitter.move2,
+            'bp' : m2d[0],
+            'type' : m2d[1],
+            'physical' : m2d[2] === 'Physical'
+        },
+        {
+            'name' : hitter.move3,
+            'bp' : m3d[0],
+            'type' : m3d[1],
+            'physical' : m3d[2] === 'Physical'
+        },
+        {
+            'name' : hitter.move4,
+            'bp' : m4d[0],
+            'type' : m4d[1],
+            'physical' : m4d[2] === 'Physical'
+        }
+    ];
+    var weather = $('weather').value;
+    var isDoubles = $('doubles').checked;
+    var isReflect = false;
+    var isLightScreen = false;
+    var isForesight = $('foresight').checked;
+    var isGravity = $('gravity').checked;
+    var isHelpingHand = $('helping').checked;
+    var isSwitchin = $('switching').checked;
+    var isCriticalHit = false;
+    
+    var damage = getAllDamage(attacker, defender, moves, weather, isDoubles, isReflect, isLightScreen, isForesight, isGravity, isHelpingHand, isSwitchin, isCriticalHit);
+    
+    var results = [];
+    for (var i = 0; i < 4; i++) {
+        results.push({
+            'move' : moves[i],
+            'min' : Math.floor(damage[i].damage[0] * 10000 / defender.hp) / 100,
+            'max' : Math.floor(damage[i].damage[15] * 10000 / defender.hp) / 100,
+            'desc' : damage[i].desc
+        });
+    }
+    
+    results.sort(
+        function(a, b) {
+            return b.max - a.max;
+        }
+    );
+    return results;
+}
+</script>
+</head>
+<body onload="resize()" onresize="resize()">
+<h1>"All vs One" Pokemon Defensive Coverage Calculator</h1>
+<p>Created by Honko. Based on <a href="http://pokedex-br.info/damage.html">AMF's damage calculator</a>. 
+Thanks to <a href="http://www.smogon.com/bw/articles/bw_complete_damage_formula">Xfr, Bond697, Kaphotics, and V4Victini</a> for the formula.</p>
+<p id="help"><b>HOW TO PLAY:</b> Select a defender, adjust its stats/item/ability/weatherfulness as necessary, pick your tiers, and hit GO! 
+Mouse over the fields for further explanation.</p>
+<p>To see how a Pokemon fares offensively instead, check out the "<a href="coverage">One vs All</a>" calculator. 
+If you want to tweak both the attacker and the target, try the <a href="./">1v1 damage calculator</a>.
+<select id="style" style="float:right">
+<option>Singles</option>
+<option>VGC</option>
+<option>LC</option>
+</select></p>
+<hr />
+<form>
+<fieldset>
+<legend>Defender info</legend>
+<ul>
+<li>
+<select id="user"></select>
+</li><br /><li>
+<label title="Select the defender's type." for="type1">Type</label>
+<select title="Select the defender's PRIMARY type." id="type1"></select>
+<select title="Select the defender's SECONDARY type." id="type2"></select>
+</li><li>
+<label title="Input the defender's level here. Minimum 1, maximum 100." for="level">Level</label>
+<input title="Input the defender's level here. Minimum 1, maximum 100." id="level" value="100" />
+</li><li>
+<label title="Input the defender's base HP here. Minimum 1, maximum 255." for="hp">HP</label>
+<input title="Input the defender's base HP here. Minimum 1, maximum 255." id="basehp" value="100" />&nbsp;
+<input title="Input the defender's HP EVs here. Minimum 0, maximum 255." id="hpevs" value="0" />&nbsp;EVs&nbsp;&nbsp;
+<input title="Input the defender's HP IVs here. Minimum 0, maximum 31." id="hpivs" value="31" />&nbsp;IVs&nbsp;&nbsp;
+<input title="Input the defender's max HP here. Minimum 1." id="hp" value="341" />
+</li><li>
+<label title="Input the defender's base Defense here. Minimum 1, maximum 255." for="df">Defense</label>
+<input title="Input the defender's base Defense here. Minimum 1, maximum 255." id="basedf" value="100" />&nbsp;
+<input title="Input the defender's Defense EVs here. Minimum 0, maximum 255." id="dfevs" value="0" />&nbsp;EVs&nbsp;&nbsp;
+<input title="Input the defender's Defense IVs here. Minimum 0, maximum 31." id="dfivs" value="31" />&nbsp;IVs&nbsp;&nbsp;
+<input title="Input the defender's Defense here. Minimum 1." id="df" value="236" />
+<select title="Select the defender's Defense modifier here." id="dfstage">
+<option value="6">+6</option>
+<option value="5">+5</option>
+<option value="4">+4</option>
+<option value="3">+3</option>
+<option value="2">+2</option>
+<option value="1">+1</option>
+<option value="0" selected="selected">+0</option>
+<option>-1</option>
+<option>-2</option>
+<option>-3</option>
+<option>-4</option>
+<option>-5</option>
+<option>-6</option>
+</select>
+</li><li>
+<label title="Input the defender's base Special Defense here. Minimum 1, maximum 255." for="sd">Sp.Defense</label>
+<input title="Input the defender's base Special Defense here. Minimum 1, maximum 255." id="basesd" value="100" />&nbsp;
+<input title="Input the defender's Special Defense EVs here. Minimum 0, maximum 255." id="sdevs" value="0" />&nbsp;EVs&nbsp;&nbsp;
+<input title="Input the defender's Special Defense IVs here. Minimum 0, maximum 31." id="sdivs" value="31" />&nbsp;IVs&nbsp;&nbsp;
+<input title="Input the defender's Special Defense here. Minimum 1." id="sd" value="236" />
+<select title="Select the defender's Special Defense modifier here." id="sdstage">
+<option value="6">+6</option>
+<option value="5">+5</option>
+<option value="4">+4</option>
+<option value="3">+3</option>
+<option value="2">+2</option>
+<option value="1">+1</option>
+<option value="0" selected="selected">+0</option>
+<option>-1</option>
+<option>-2</option>
+<option>-3</option>
+<option>-4</option>
+<option>-5</option>
+<option>-6</option>
+</select>
+</li><li>
+<label title="Input the attacker's base Speed here. Minimum 1." for="sp">Speed</label>
+<input title="Input the attacker's base Speed here. Minimum 1." id="basesp" value="100" />&nbsp;
+<input title="Input the attacker's Speed EVs here. Minimum 0, maximum 255." id="spevs" value="0" />&nbsp;EVs&nbsp;&nbsp;
+<input title="Input the attacker's Speed IVs here. Minimum 0, maximum 31." id="spivs" value="31" />&nbsp;IVs&nbsp;&nbsp;
+<input title="Input the attacker's Speed here. Minimum 1." id="sp" value="236" />
+<select title="Input the attacker's Speed modifier here." id="spstage">
+<option value="6">+6</option>
+<option value="5">+5</option>
+<option value="4">+4</option>
+<option value="3">+3</option>
+<option value="2">+2</option>
+<option value="1">+1</option>
+<option value="0" selected="selected">+0</option>
+<option>-1</option>
+<option>-2</option>
+<option>-3</option>
+<option>-4</option>
+<option>-5</option>
+<option>-6</option>
+</select>
+</li><li>
+<label title="Select the defender's item, ONLY if it's in effect." for="item">Item</label>
+<select title="Select the defender's item, ONLY if it's in effect." id="item"></select>
+<span title="Is the defender switching in on this turn?" for="switching">
+<input title="Is the defender switching in on this turn?" id="switching" type="checkbox" />Switching In</span>
+</li><li>
+<label title="Select the defender's ability, ONLY if it's in effect. (For example, only select Multiscale if the defender is at full HP.)" for="ability">Ability</label>
+<select title="Select the defender's ability, ONLY if it's in effect. (For example, only select Multiscale if the defender is at full HP.)" id="ability"></select>
+<span title="Is this a 2v2 or 3v3 battle?" for="doubles">
+<input title="Is this a 2v2 or 3v3 battle?" id="doubles" type="checkbox" />Doubles/Triples</span>
+</li><li>
+<label title="Select the defender's nature." for="nature">Nature</label>
+<select title="Select the defender's nature." id="nature"></select>
+<span title="Has the attacker's power been boosted by Helping Hand this turn?" for="helping">
+<input title="Has the attacker's power been boosted by Helping Hand this turn?" id="helping" type="checkbox" />Helping Hand</span>
+</li><li>
+<label title="Select the defender's status." for="status">Status</label>
+<select title="Select the defender's status." id="status">
+<option>Healthy</option>
+<option>Poisoned</option>
+<option>Paralyzed</option>
+<option>Burned</option>
+<option>Asleep</option>
+</select>
+<span title="Has the defender been revealed by Foresight or Odor Sleuth?" for="foresight">
+<input title="Has the defender been revealed by Foresight or Odor Sleuth?" id="foresight" type="checkbox" />Foresight</span>
+</li><li>
+<label title="Are any weather conditions in effect?" for="weather">Weather</label>
+<select title="Are any weather conditions in effect?" id="weather">
+<option>(none)</option>
+<option>Sunny Day</option>
+<option>Rain Dance</option>
+<option>Sandstorm</option>
+<option>Hail</option>
+</select>
+<span title="Is Gravity in effect?" for="gravity">
+<input title="Is Gravity in effect?" id="gravity" type="checkbox" />Gravity</span>
+</li><br /><li>
+<label title="What tiers do you want to check?" for="hightier">Tiers</label>
+<select title="What is the highest tier you want to check?" id="hightier">
+<option>Uber</option>
+<option selected="selected">OU</option>
+<option>UU</option>
+<option>RU</option>
+<option>NU</option>
+<option>VGC</option>
+<option>LC</option>
+</select>
+ to 
+<select title="What is the lowest tier you want to check?" id="lowtier">
+<option>Uber</option>
+<option selected="selected">OU</option>
+<option>UU</option>
+<option>RU</option>
+<option>NU</option>
+<option>VGC</option>
+<option>LC</option>
+</select> 
+<input title="Do you want to ignore Pokemon that lack enough usage to qualify for these tiers? (for example, ignore Carracosta in OU even though it has an OU analysis)" id="strict" type="checkbox" />Strict
+<input title="Output the results as copypasta-friendly text instead of a table?" id="astext" type="checkbox" />Copypasta
+</li><li>
+<input type="button" value="Go!" onclick="calcAll()" />
+</li>
+</ul>
+</fieldset>
+<fieldset>
+<legend>Damage calculations</legend>
+<div id="damageresult"></div>
+</fieldset>
+</form>
+</body>
+<script type="text/javascript">
+if(navigator.appName == 'Microsoft Internet Explorer') {
+   $('help').innerHTML = '<br /><br /><b>NOTE: This calculator does not work properly in Internet Explorer.</b> Try switching to Chrome, Firefox, or pretty much anything that isn\'t IE.';
+}
+
+if (document.URL.indexOf('?style=vgc') !== -1) {
+    $('style').value = 'VGC';
+    setStyle();
+} else if (document.URL.indexOf('?style=lc') !== -1) {
+    $('style').value = 'LC';
+    setStyle();
+}
+
+$('user').innerHTML = getUserOptions();
+var typeOptions = getTypeOptions();
+$('type1').innerHTML = typeOptions;
+$('type2').innerHTML = typeOptions.replace('Normal','(none)');
+$('item').innerHTML = getItemOptions();
+$('ability').innerHTML = getAbilityOptions();
+$('nature').innerHTML = getNatureOptions();
+
+function getUserOptions() {
+   var out = "<option>(custom)</option>";
+   for(var i in allSets) {
+      out += "<option>" + allSets[i].pokemon + " (" + allSets[i].meta + " " + allSets[i].set + ")</option>";
+   }
+   return out;
+}
+
+function setStyle() {
+    var style = $('style').value;
+    if (style === 'Singles') {
+        allSets = getAllSets();
+        $('doubles').checked = false;
+        $('hightier').value = $('lowtier').value = 'OU';
+    } else if (style === 'VGC') {
+        allSets = getVgcSets();
+        $('doubles').checked = true;
+        $('hightier').value = $('lowtier').value = 'VGC';
+    } else if (style === 'LC') {
+        allSets = getLcSets();
+        $('doubles').checked = false;
+        $('hightier').value = $('lowtier').value = 'LC';
+    }
+    $('user').innerHTML = getUserOptions();
+}
+
+function resize() {
+   var dh = window.innerHeight ? (window.innerHeight - $('damageresult').offsetTop - 10) : 400;
+   $('damageresult').style.height = dh + 'px';
+}
+
+function attach(widgets) {
+   for (var i = 0, j = widgets.length; i < j; i++) {
+      var wid = widgets[i].id;
+      var f = (wid == 'user') ? setUser : 
+            (wid == 'basehp' || wid == 'hpevs' || wid == 'hpivs') ? setHP : 
+            (wid == 'basedf' || wid == 'dfevs' || wid == 'dfivs') ? setDF : 
+            (wid == 'basesd' || wid == 'sdevs' || wid == 'sdivs') ? setSD : 
+            (wid == 'basesp' || wid == 'spevs' || wid == 'spivs') ? setSP : 
+            (wid == 'level' || wid == 'nature') ? function(){setHP();setDF();setSD();setSP();} : 
+            wid == 'style' ? setStyle : validate;
+      if (window.ActiveXObject) {
+         widgets[i].attachEvent('onchange', f);
+         widgets[i].attachEvent('onkeyup', f);
+      }
+      else {
+         widgets[i].addEventListener('change', f, false);
+         widgets[i].addEventListener('keyup', f, false);
+      }
+   }
+}
+
+attach(document.getElementsByTagName('input'));
+attach(document.getElementsByTagName('select'));
+</script>
+</html>
