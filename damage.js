@@ -1,7 +1,7 @@
 function getAllDamage(attacker, defender, moves, weather, isDoubles, isReflect, isLightScreen, isForesight, isGravity, isHelpingHand, isSwitchin, isCriticalHit) {
     
     // standardize item names
-	var trueAttackerItem = attacker.item; // for fling and natural gift
+    var trueAttackerItem = attacker.item; // for fling and natural gift
     var trueDefenderItem = defender.item; // for damage description of berries
     attacker.item = getSimpleItem(attacker.item);
     defender.item = getSimpleItem(defender.item);
@@ -89,14 +89,14 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
         var typeDesc = move.type;
         descWeather = true;
     }
-	else if (move.name === 'Natural Gift') {
-		var gift = getNaturalGift(trueAttackerItem);
-		move.type = gift.t;
-		move.bp = gift.p;
+    else if (move.name === 'Natural Gift') {
+        var gift = getNaturalGift(trueAttackerItem);
+        move.type = gift.t;
+        move.bp = gift.p;
         var typeDesc = move.type;
         var bpDesc = move.bp;
         descAtItem = true;
-	}
+    }
     
     // get type effectiveness (with scrappy/foresight and gravity)
     var type1 = getTypeMatch(move.type, defender.type1);
@@ -152,12 +152,10 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
             var BP = (R >= 4) ? 150 : (R >= 3) ? 120 : (R >= 2) ? 80 : 60;
             var bpDesc = BP;
             break;
-        // Avalanche
         case 'Gyro Ball':
             var BP = Math.min(150, Math.floor(25 * defender.sp / attacker.sp));
             var bpDesc = BP;
             break;
-        // Eruption, Water Spout
         case 'Punishment':
             var BP = Math.min(200, 60 + 20 * countBoosts(defender));
             var bpDesc = BP;
@@ -165,15 +163,13 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
         case 'Low Kick':
         case 'Grass Knot':
             var W = defender.weight;
-            var BP = (W > 200) ? 120 : (W > 100) ? 100 : (W > 50) ? 80 : (W > 25) ? 60 : (W > 10) ? 40 : 20;
+            var BP = (W >= 200) ? 120 : (W >= 100) ? 100 : (W >= 50) ? 80 : (W >= 25) ? 60 : (W >= 10) ? 40 : 20;
             var bpDesc = BP;
             break;
         case 'Hex':
             var BP = (defender.status !== 'Healthy') ? 100 : 50;
             var bpDesc = BP;
             break;
-        // Wring Out, Crush Claw
-        // Assurance
         case 'Heavy Slam':
         case 'Heat Crash':
             var W = attacker.weight / defender.weight;
@@ -188,7 +184,6 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
             var BP = (attacker.item === 'Flying Gem') ? 110 : 55;
             var bpDesc = BP;
             break;
-        // Flail, Reversal
         case 'Wake-Up Slap':
             var BP = (defender.status === 'Asleep') ? 120 : 60;
             var bpDesc = BP;
@@ -197,12 +192,17 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
             var BP = (weather !== '(none)') ? 100 : 50;
             var bpDesc = BP;
             break;
-        // Pursuit
-		case 'Fling':
-			var BP = getFlingPower(trueAttackerItem);
+        case 'Fling':
+            var BP = getFlingPower(trueAttackerItem);
             var bpDesc = BP;
             descAtItem = true;
-			break;
+            break;
+        // Avalanche
+        // Eruption, Water Spout
+        // Wring Out, Crush Claw
+        // Assurance
+        // Flail, Reversal
+        // Pursuit
         default: 
             var BP = move.bp;
             break;
@@ -277,22 +277,31 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
     
     var TF = (defender.ability === 'Thick Fat' && (move.type === 'Fire' || move.type === 'Ice')) ? 0x800 : 0x1000;
     
+    var attackerAt = attacker.at;
+    var attackerAbility = attacker.ability;
+    var attackerStatus = attacker.status;
+    if (move.name === 'Foul Play') {
+        attackerAt = defender.at;
+        attackerAbility = defender.ability;
+        attackerStatus = defender.status;
+    }
+    
     var AA = 0x1000;
-    if ((attacker.ability === 'Guts' && attacker.status !== 'Healthy' && move.physical) ||
-            (attacker.ability === 'Torrent' && move.type === 'Water') ||
-            (attacker.ability === 'Swarm' && move.type === 'Bug') ||
-            (attacker.ability === 'Overgrow' && move.type === 'Grass') ||
-            (attacker.ability === 'Blaze' && move.type === 'Fire') ||
+    if ((attackerAbility === 'Guts' && attackerStatus !== 'Healthy' && move.physical) ||
+            (attackerAbility === 'Torrent' && move.type === 'Water') ||
+            (attackerAbility === 'Swarm' && move.type === 'Bug') ||
+            (attackerAbility === 'Overgrow' && move.type === 'Grass') ||
+            (attackerAbility === 'Blaze' && move.type === 'Fire') ||
             // Plus & Minus
-            (attacker.ability === 'Flash Fire' && move.type === 'Fire')) {
+            (attackerAbility === 'Flash Fire' && move.type === 'Fire')) {
         AA = 0x1800;
-    } else if (move.physical && (attacker.ability === 'Huge Power' || attacker.ability === 'Pure Power')) {
+    } else if (move.physical && (attackerAbility === 'Huge Power' || attackerAbility === 'Pure Power')) {
         AA = 0x2000;
-    } else if (attacker.ability === 'Defeatist' || (move.physical && attacker.ability === 'Slow Start')) {
+    } else if (attackerAbility === 'Defeatist' || (move.physical && attackerAbility === 'Slow Start')) {
         AA = 0x800;
     } else if (weather === 'Sunny Day' && 
-            (attacker.ability === 'Solar Power' && !move.physical) ||
-            (attacker.ability === 'Flower Gift' && move.physical)) {
+            (attackerAbility === 'Solar Power' && !move.physical) ||
+            (attackerAbility === 'Flower Gift' && move.physical)) {
         AA = 0x1800;
         descWeather = true;
     }
@@ -308,7 +317,7 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
     }
     
     //chain the modifiers together and apply
-    var AT = Math.max(1, round((move.physical ? attacker.at : attacker.sa) * chainMods([TF, AA, AI]) / 0x1000));
+    var AT = Math.max(1, round((move.physical ? attackerAt : attacker.sa) * chainMods([TF, AA, AI]) / 0x1000));
     
     
     /////////////////////////////////
@@ -472,7 +481,10 @@ function chainMods(mods) {
 }
 
 function countBoosts(pkmn) {
-    return (Math.max(0, pkmn.atm) + Math.max(0, pkmn.dfm) + Math.max(0, pkmn.sam) + Math.max(0, pkmn.sdm) + Math.max(0, pkmn.spm));
+    var getBoosts = function(mod) {
+        return mod ? Math.max(0, mod) : 0;
+    }
+    return getBoosts(pkmn.atm) + getBoosts(pkmn.dfm) + getBoosts(pkmn.sam) + getBoosts(pkmn.sdm) + getBoosts(pkmn.spm);
 }
 
 function getModifiedStat(stat, mod) {
@@ -513,8 +525,8 @@ function isSpreadMove(move) {
     return [
                 'Blizzard', 'Bulldoze', 'Discharge', 'Earthquake', 'Eruption',
                 'Explosion', 'Glaciate', 'Heat Wave', 'Hyper Voice', 'Icy Wind',
-                'Lava Plume', 'Rock Slide', 'Searing Shot', 'Selfdestruct',
-                'Sludge Wave', 'Surf', 'Water Spout'
+                'Lava Plume', 'Muddy Water', 'Nature Power', 'Rock Slide', 
+                'Searing Shot', 'Selfdestruct', 'Sludge Wave', 'Surf', 'Water Spout'
             ].indexOf(move) !== -1;
 }
 
@@ -556,61 +568,61 @@ function isMultiHitMove(move) {
 }
 
 function getFlingPower(item) {
-	return item === 'Iron Ball' ? 130 :
-		item.indexOf('Fossil') !== -1 || ['Hard Stone','Old Amber','Rare Bone'].indexOf(item) !== -1 ? 100 :
-		item.indexOf('Plate') !== -1 || ['DeepSeaTooth','Thick Club'].indexOf(item) !== -1 ? 90 :
-		['Poison Barb','Dragon Fang'].indexOf(item) !== -1 ? 70 :
-		['Adamant Orb','Lustrous Orb','Macho Brace'].indexOf(item) !== -1 ? 60 :
-		item === 'Sharp Beak' ? 50 : 
-		item === 'Eviolite' ? 40 :
-		['Black Belt','Black Sludge','BlackGlasses','Charcoal','DeepSeaScale','Flame Orb',"King's Rock",'Life Orb','Light Ball','Magnet',
-		'Metal Coat','Miracle Seed','Mystic Water','NeverMeltIce','Razor Fang','Soul Dew','Spell Tag','Toxic Orb','TwistedSpoon'].indexOf(item) !== -1 ? 30 : 
-		10;
+    return item === 'Iron Ball' ? 130 :
+        item.indexOf('Fossil') !== -1 || ['Hard Stone','Old Amber','Rare Bone'].indexOf(item) !== -1 ? 100 :
+        item.indexOf('Plate') !== -1 || ['DeepSeaTooth','Thick Club'].indexOf(item) !== -1 ? 90 :
+        ['Poison Barb','Dragon Fang'].indexOf(item) !== -1 ? 70 :
+        ['Adamant Orb','Lustrous Orb','Macho Brace'].indexOf(item) !== -1 ? 60 :
+        item === 'Sharp Beak' ? 50 : 
+        item === 'Eviolite' ? 40 :
+        ['Black Belt','Black Sludge','BlackGlasses','Charcoal','DeepSeaScale','Flame Orb',"King's Rock",'Life Orb','Light Ball','Magnet',
+        'Metal Coat','Miracle Seed','Mystic Water','NeverMeltIce','Razor Fang','Soul Dew','Spell Tag','Toxic Orb','TwistedSpoon'].indexOf(item) !== -1 ? 30 : 
+        10;
 }
 
 function getNaturalGift(item) {
-	var gift = {
-	    'Apicot Berry' : {'t':'Ground','p':80},
-		'Babiri Berry' : {'t':'Steel','p':60},
-		'Belue Berry' : {'t':'Electric','p':80},
-		'Charti Berry' : {'t':'Rock','p':60},
-		'Chesto Berry' : {'t':'Water','p':60},
-		'Chilan Berry' : {'t':'Normal','p':60},
-		'Chople Berry' : {'t':'Fighting','p':60},
-		'Coba Berry' : {'t':'Flying','p':60},
-		'Colbur Berry' : {'t':'Dark','p':60},
-		'Custap Berry' : {'t':'Ghost','p':80},
-		'Durin Berry' : {'t':'Water','p':80},
-		'Enigma Berry' : {'t':'Bug','p':80},
-		'Ganlon Berry' : {'t':'Ice','p':80},
-		'Haban Berry' : {'t':'Dragon','p':60},
-		'Jaboca Berry' : {'t':'Dragon','p':80},
-		'Kasib Berry' : {'t':'Ghost','p':60},
-		'Kebia Berry' : {'t':'Poison','p':60},
-		'Lansat Berry' : {'t':'Flying','p':80},
-		'Leppa Berry' : {'t':'Fighting','p':60},
-		'Liechi Berry' : {'t':'Grass','p':80},
-		'Lum Berry' : {'t':'Flying','p':60},
-		'Micle Berry' : {'t':'Rock','p':80},
-		'Occa Berry' : {'t':'Fire','p':60},
-		'Oran Berry' : {'t':'Poison','p':60},
-		'Pamtre Berry' : {'t':'Steel','p':70},
-		'Passho Berry' : {'t':'Water','p':60},
-		'Payapa Berry' : {'t':'Psychic','p':60},
-		'Petaya Berry' : {'t':'Poison','p':80},
-		'Rawst Berry' : {'t':'Grass','p':60},
-		'Rindo Berry' : {'t':'Grass','p':60},
-		'Rowap Berry' : {'t':'Dark','p':80},
-		'Salac Berry' : {'t':'Fighting','p':80},
-		'Shuca Berry' : {'t':'Ground','p':60},
-		'Sitrus Berry' : {'t':'Psychic','p':60},
-		'Starf Berry' : {'t':'Psychic','p':80},
-		'Tanga Berry' : {'t':'Bug','p':60},
-		'Wacan Berry' : {'t':'Electric','p':60},
-		'Watmel Berry' : {'t':'Fire','p':80},
-		'Yache Berry' : {'t':'Ice','p':60}
-	}[item];
-	return gift ? gift : {'t':'Normal','p':1};
+    var gift = {
+        'Apicot Berry' : {'t':'Ground','p':80},
+        'Babiri Berry' : {'t':'Steel','p':60},
+        'Belue Berry' : {'t':'Electric','p':80},
+        'Charti Berry' : {'t':'Rock','p':60},
+        'Chesto Berry' : {'t':'Water','p':60},
+        'Chilan Berry' : {'t':'Normal','p':60},
+        'Chople Berry' : {'t':'Fighting','p':60},
+        'Coba Berry' : {'t':'Flying','p':60},
+        'Colbur Berry' : {'t':'Dark','p':60},
+        'Custap Berry' : {'t':'Ghost','p':80},
+        'Durin Berry' : {'t':'Water','p':80},
+        'Enigma Berry' : {'t':'Bug','p':80},
+        'Ganlon Berry' : {'t':'Ice','p':80},
+        'Haban Berry' : {'t':'Dragon','p':60},
+        'Jaboca Berry' : {'t':'Dragon','p':80},
+        'Kasib Berry' : {'t':'Ghost','p':60},
+        'Kebia Berry' : {'t':'Poison','p':60},
+        'Lansat Berry' : {'t':'Flying','p':80},
+        'Leppa Berry' : {'t':'Fighting','p':60},
+        'Liechi Berry' : {'t':'Grass','p':80},
+        'Lum Berry' : {'t':'Flying','p':60},
+        'Micle Berry' : {'t':'Rock','p':80},
+        'Occa Berry' : {'t':'Fire','p':60},
+        'Oran Berry' : {'t':'Poison','p':60},
+        'Pamtre Berry' : {'t':'Steel','p':70},
+        'Passho Berry' : {'t':'Water','p':60},
+        'Payapa Berry' : {'t':'Psychic','p':60},
+        'Petaya Berry' : {'t':'Poison','p':80},
+        'Rawst Berry' : {'t':'Grass','p':60},
+        'Rindo Berry' : {'t':'Grass','p':60},
+        'Rowap Berry' : {'t':'Dark','p':80},
+        'Salac Berry' : {'t':'Fighting','p':80},
+        'Shuca Berry' : {'t':'Ground','p':60},
+        'Sitrus Berry' : {'t':'Psychic','p':60},
+        'Starf Berry' : {'t':'Psychic','p':80},
+        'Tanga Berry' : {'t':'Bug','p':60},
+        'Wacan Berry' : {'t':'Electric','p':60},
+        'Watmel Berry' : {'t':'Fire','p':80},
+        'Yache Berry' : {'t':'Ice','p':60}
+    }[item];
+    return gift ? gift : {'t':'Normal','p':1};
 }
 
 function getSimpleItem(item) {

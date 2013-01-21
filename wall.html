@@ -9,6 +9,7 @@
 <script type="text/javascript">
 var allSets = getAllSets();
 var tweight = 50;
+var tat;
 
 function setUser() {
    var index = $('user').selectedIndex;
@@ -44,6 +45,7 @@ function setUser() {
    setSD();
    setSP();
    tweight = set.w;
+   tat = calcStat(set.atbase, set.ativs, set.atevs, set.level, calcNature(getNatureVals(set.nature)[0]));
 }
 
 function setHP() {
@@ -245,6 +247,7 @@ function calc(hitter) {
         'type2' : $('type2').value,
 		'hp' : parseInt($('hp').value),
         'hpi' : parseInt($('hpevs').value) + ' HP',
+        'at' : tat,
 		'df' : parseInt($('df').value),
 		'dfm' : parseInt($('dfstage').value),
         'dfi' : parseInt($('dfevs').value) + getSignForNature($('nature').value, 1) + ' Def',
