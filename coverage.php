@@ -252,6 +252,7 @@ function calc(target) {
         'type2' : target.type2,
         'hp' : calcHP(target.hpbase, target.hpivs, target.hpevs, target.level),
         'hpi' : target.hpevs + ' HP',
+        'at' : calcStat(target.atbase, target.ativs, target.atevs, target.level, calcNature(getNatureVals(target.nature)[0])),
         'df' : calcStat(target.dfbase, target.dfivs, target.dfevs, target.level, calcNature(getNatureVals(target.nature)[1])),
         'dfm' : 0,
         'dfi' : target.dfevs + getSignForNature(target.nature, 1) + ' Def',

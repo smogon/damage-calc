@@ -294,6 +294,7 @@ function calc() {
         'type2' : $('type2').value,
         'hp' : parseInt($('hp').value),
         'hpi' : parseInt($('hpevs').value) + ' HP',
+        'at' : calcStat(right.baseat, right.ativs, right.atevs, $('level').value, calcNature(getNatureVals($('nature').value)[0])),
         'df' : parseInt($('df').value),
         'dfm' : parseInt($('dfstage').value),
         'dfi' : parseInt($('dfevs').value) + getSignForNature($('nature').value, 1) + ' Def',
