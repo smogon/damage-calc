@@ -83,16 +83,16 @@ span {
    height: 400px;
 }
 #mainresult {
-	font-size: 24px;
-	line-height: 30px;
+    font-size: 24px;
+    line-height: 30px;
    margin-top: 0;
    padding-top: 0;
-	margin-bottom: 0;
-	padding-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 #detaileddamage {
-	margin-top: 0;
-	padding-top: 0;
+    margin-top: 0;
+    padding-top: 0;
 }
 #xhko {
    font-size: 20px;
