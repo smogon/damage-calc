@@ -832,7 +832,7 @@ function setStyle(newStyle) {
 function getUserOptions() {
    var out = "<option>(custom)</option>";
    for(var i in allSets) {
-      out += "<option>" + allSets[i].pokemon + " (" + allSets[i].meta + " " + allSets[i].set + ")</option>";
+       out += "<option>" + allSets[i].pokemon + " (" + allSets[i].meta + " " + allSets[i].set + ")</option>";
    }
    return out;
 }
@@ -865,12 +865,12 @@ function attach(widgets) {
             wid == 'style' ? function(){setStyle();} :
             calc;
       if (window.ActiveXObject) {
-         widgets[i].attachEvent('onchange', f);
-         widgets[i].attachEvent('onkeyup', f);
+          widgets[i].attachEvent('onchange', f);
+          widgets[i].attachEvent('onkeyup', f);
       }
       else {
-         widgets[i].addEventListener('change', f, false);
-         widgets[i].addEventListener('keyup', f, false);
+          widgets[i].addEventListener('change', f, false);
+          widgets[i].addEventListener('keyup', f, false);
       }
    }
 }

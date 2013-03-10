@@ -1,13 +1,13 @@
 function $(id) {
-   return document.getElementById(id);
+    return document.getElementById(id);
 }
 
 function setMove(i) {
-   var move = $('move'+i).value;
-   var dets = getMoveDetails(move);
-   $('move'+i+'pwr').value = dets[0];
-   $('move'+i+'type').value = dets[1];
-   $('move'+i+'cat').value = dets[2];
+    var move = $('move'+i).value;
+    var dets = getMoveDetails(move);
+    $('move'+i+'pwr').value = dets[0];
+    $('move'+i+'type').value = dets[1];
+    $('move'+i+'cat').value = dets[2];
 }
 
 function setStat(stat, base, ivs, evs, level, nature, index) {
@@ -19,20 +19,20 @@ function setStat(stat, base, ivs, evs, level, nature, index) {
 }
 
 function setStatHP(stat, base, ivs, evs, level) {
-	$(base).value = validate($(base).value, 1, 255);
-	$(ivs).value = validate($(ivs).value, 0, 31);
-	$(evs).value = validate($(evs).value, 0, 255);
-	$(level).value = validate($(level).value, 1, 100);
-	$(stat).value = calcHP($(base).value, $(ivs).value, $(evs).value, $(level).value);
+    $(base).value = validate($(base).value, 1, 255);
+    $(ivs).value = validate($(ivs).value, 0, 31);
+    $(evs).value = validate($(evs).value, 0, 255);
+    $(level).value = validate($(level).value, 1, 100);
+    $(stat).value = calcHP($(base).value, $(ivs).value, $(evs).value, $(level).value);
 }
 
 function calcStat(base, ivs, evs, level, nature) {
-   return Math.floor(Math.floor(Math.floor(2*base + 1*ivs + evs/4) * level/100 + 5) * nature);
+    return Math.floor(Math.floor(Math.floor(2*base + 1*ivs + evs/4) * level/100 + 5) * nature);
 }
 
 function calcHP(base, ivs, evs, level) {
-   if(base == 1) return 1; //shedinja
-   else return Math.floor(Math.floor(2*base + 1*ivs + evs/4) * level/100 + 1*level + 10);
+    if(base == 1) return 1; //shedinja
+    else return Math.floor(Math.floor(2*base + 1*ivs + evs/4) * level/100 + 1*level + 10);
 }
 
 function validate(value, min, max) {
@@ -40,16 +40,16 @@ function validate(value, min, max) {
 }
 
 function getTier(tier) {
-   return (tier == 'Uber') ? 0 : (tier == 'OU') ? 1 : (tier == 'UU' || tier == 'BL') ? 2 : 
+    return (tier == 'Uber') ? 0 : (tier == 'OU') ? 1 : (tier == 'UU' || tier == 'BL') ? 2 : 
           (tier == 'RU' || tier == 'BL2') ? 3 : (tier == 'NU' || tier == 'BL3') ? 4 : (tier == 'CAP' || tier == 'DW') ? 5 : 1;
 }
 
 function sortResultsUp(a, b) {
-	return a.damage[0].max - b.damage[0].max;
+    return a.damage[0].max - b.damage[0].max;
 }
 
 function sortResultsDown(a, b) {
-	return b.damage[0].max - a.damage[0].max;
+    return b.damage[0].max - a.damage[0].max;
 }
 
 function getFullSetName(set) {
@@ -112,7 +112,7 @@ function getAbilityOptions() {
 }
 
 function calcNature(index) {
-   return 1.1 - (0.1 * index);
+    return 1.1 - (0.1 * index);
 }
 
 function getNatureOptions() {
@@ -132,12 +132,12 @@ function getSignForNature(nature, index) {
 function cloneObj(obj) {
    var clone = {};
    for(var i in obj) {
-      if(typeof(obj[i]) == 'object') {
-         clone[i] = cloneObj(obj[i]);
-      }
-      else {
-         clone[i] = obj[i];
-      }
+       if(typeof(obj[i]) == 'object') {
+           clone[i] = cloneObj(obj[i]);
+       }
+       else {
+           clone[i] = obj[i];
+       }
    }
    return clone;
 }
@@ -361,32 +361,32 @@ var ALL_ATTACKS = {
 };
 
 var ALL_ITEMS = [
-	'Adamant Orb', 'Air Balloon', 'Apicot Berry', 'Armor Fossil', 'Babiri Berry',
-	'Belue Berry', 'Black Belt', 'Black Sludge', 'BlackGlasses', 'Bug Gem', 
-	'Charcoal', 'Charti Berry', 'Chesto Berry', 'Chilan Berry', 'Choice Band', 
-	'Choice Scarf', 'Choice Specs', 'Chople Berry', 'Claw Fossil', 'Coba Berry', 
-	'Colbur Berry', 'Cover Fossil', 'Custap Berry', 'Dark Gem', 'DeepSeaScale', 
-	'DeepSeaTooth', 'Dome Fossil', 'Draco Plate', 'Dragon Fang', 'Dragon Gem', 
-	'Dread Plate', 'Durin Berry', 'Earth Plate', 'Electric Gem', 'Enigma Berry', 
-	'Eviolite', 'Expert Belt', 'Fighting Gem', 'Fire Gem', 'Fist Plate', 'Flame Orb', 
-	'Flame Plate', 'Flying Gem', 'Ganlon Berry', 'Ghost Gem', 'Griseous Orb', 
-	'Grass Gem', 'Ground Gem', 'Haban Berry', 'Hard Stone', 'Helix Fossil', 'Ice Gem', 
-	'Icicle Plate', 'Insect Plate', 'Iron Ball', 'Iron Plate', 'Jaboca Berry', 
-	'Kasib Berry', 'Kebia Berry', "King's Rock", 'Lagging Tail', 'Lansat Berry', 
-	'Leftovers', 'Leppa Berry', 'Liechi Berry', 'Life Orb', 'Light Ball', 
-	'Lum Berry', 'Lustrous Orb', 'Macho Brace', 'Magnet', 'Meadow Plate', 
-	'Metal Coat', 'Metal Powder', 'Micle Berry', 'Mind Plate', 'Miracle Seed', 
-	'Muscle Band', 'Mystic Water', 'NeverMeltIce', 'Normal Gem', 'Occa Berry', 
-	'Odd Incense', 'Old Amber', 'Oran Berry', 'Pamtre Berry', 'Passho Berry', 
-	'Payapa Berry', 'Petaya Berry', 'Plume Fossil', 'Poison Barb', 'Poison Gem', 
-	'Psychic Gem', 'Rare Bone', 'Rawst Berry', 'Razor Fang', 'Rindo Berry', 
-	'Rock Gem', 'Rock Incense', 'Root Fossil', 'Rose Incense', 'Rowap Berry', 
-	'Salac Berry', 'Sea Incense', 'Sharp Beak', 'Shuca Berry', 'Silk Scarf', 
-	'SilverPowder', 'Sitrus Berry', 'Skull Fossil', 'Sky Plate', 'Soft Sand', 
-	'Soul Dew', 'Spell Tag', 'Splash Plate', 'Spooky Plate', 'Starf Berry', 
-	'Steel Gem', 'Stone Plate', 'Tanga Berry', 'Thick Club', 'Toxic Orb', 
-	'Toxic Plate', 'TwistedSpoon', 'Wacan Berry', 'Water Gem', 'Watmel Berry', 
-	'Wave Incense', 'Wise Glasses', 'Yache Berry', 'Zap Plate'
+    'Adamant Orb', 'Air Balloon', 'Apicot Berry', 'Armor Fossil', 'Babiri Berry',
+    'Belue Berry', 'Black Belt', 'Black Sludge', 'BlackGlasses', 'Bug Gem', 
+    'Charcoal', 'Charti Berry', 'Chesto Berry', 'Chilan Berry', 'Choice Band', 
+    'Choice Scarf', 'Choice Specs', 'Chople Berry', 'Claw Fossil', 'Coba Berry', 
+    'Colbur Berry', 'Cover Fossil', 'Custap Berry', 'Dark Gem', 'DeepSeaScale', 
+    'DeepSeaTooth', 'Dome Fossil', 'Draco Plate', 'Dragon Fang', 'Dragon Gem', 
+    'Dread Plate', 'Durin Berry', 'Earth Plate', 'Electric Gem', 'Enigma Berry', 
+    'Eviolite', 'Expert Belt', 'Fighting Gem', 'Fire Gem', 'Fist Plate', 'Flame Orb', 
+    'Flame Plate', 'Flying Gem', 'Ganlon Berry', 'Ghost Gem', 'Griseous Orb', 
+    'Grass Gem', 'Ground Gem', 'Haban Berry', 'Hard Stone', 'Helix Fossil', 'Ice Gem', 
+    'Icicle Plate', 'Insect Plate', 'Iron Ball', 'Iron Plate', 'Jaboca Berry', 
+    'Kasib Berry', 'Kebia Berry', "King's Rock", 'Lagging Tail', 'Lansat Berry', 
+    'Leftovers', 'Leppa Berry', 'Liechi Berry', 'Life Orb', 'Light Ball', 
+    'Lum Berry', 'Lustrous Orb', 'Macho Brace', 'Magnet', 'Meadow Plate', 
+    'Metal Coat', 'Metal Powder', 'Micle Berry', 'Mind Plate', 'Miracle Seed', 
+    'Muscle Band', 'Mystic Water', 'NeverMeltIce', 'Normal Gem', 'Occa Berry', 
+    'Odd Incense', 'Old Amber', 'Oran Berry', 'Pamtre Berry', 'Passho Berry', 
+    'Payapa Berry', 'Petaya Berry', 'Plume Fossil', 'Poison Barb', 'Poison Gem', 
+    'Psychic Gem', 'Rare Bone', 'Rawst Berry', 'Razor Fang', 'Rindo Berry', 
+    'Rock Gem', 'Rock Incense', 'Root Fossil', 'Rose Incense', 'Rowap Berry', 
+    'Salac Berry', 'Sea Incense', 'Sharp Beak', 'Shuca Berry', 'Silk Scarf', 
+    'SilverPowder', 'Sitrus Berry', 'Skull Fossil', 'Sky Plate', 'Soft Sand', 
+    'Soul Dew', 'Spell Tag', 'Splash Plate', 'Spooky Plate', 'Starf Berry', 
+    'Steel Gem', 'Stone Plate', 'Tanga Berry', 'Thick Club', 'Toxic Orb', 
+    'Toxic Plate', 'TwistedSpoon', 'Wacan Berry', 'Water Gem', 'Watmel Berry', 
+    'Wave Incense', 'Wise Glasses', 'Yache Berry', 'Zap Plate'
 ];
 
 var ALL_ABILITIES = [
@@ -431,7 +431,7 @@ var ALL_NATURES = {
     'Sassy':[1,1,1,0,2],
     'Serious':[1,1,1,1,1],
     'Timid':[2,1,1,1,0]
-}
+};
 
 var ALL_TYPES = {
     'Normal':{
@@ -508,4 +508,4 @@ var ALL_TYPES = {
         'nve':['Fire','Water','Electric','Steel'],
         'se':['Ice','Rock']
     }
-}
+};

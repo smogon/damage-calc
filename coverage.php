@@ -564,7 +564,7 @@ function setStyle() {
 function getUserOptions() {
    var out = "<option>(custom)</option>";
    for(var i in allSets) {
-      out += "<option>" + allSets[i].pokemon + " (" + allSets[i].meta + " " + allSets[i].set + ")</option>";
+       out += "<option>" + allSets[i].pokemon + " (" + allSets[i].meta + " " + allSets[i].set + ")</option>";
    }
    return out;
 }
