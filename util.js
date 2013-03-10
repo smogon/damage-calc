@@ -321,6 +321,7 @@ var ALL_ATTACKS = {
     'Shadow Punch':[60,'Ghost','Physical'],
     'Shadow Sneak':[40,'Ghost','Physical'],
     'Shock Wave':[60,'Electric','Special'],
+    'Sky Uppercut':[85,'Fighting','Physical'],
     'Signal Beam':[75,'Bug','Special'],
     'Sludge Bomb':[90,'Poison','Special'],
     'Sludge Wave':[95,'Poison','Special'],
