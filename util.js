@@ -19,11 +19,11 @@ function setStat(stat, base, ivs, evs, level, nature, index) {
 }
 
 function setStatHP(stat, base, ivs, evs, level) {
-	$(base).value = validate($(base).value, 1, 255);
-	$(ivs).value = validate($(ivs).value, 0, 31);
-	$(evs).value = validate($(evs).value, 0, 255);
-	$(level).value = validate($(level).value, 1, 100);
-	$(stat).value = calcHP($(base).value, $(ivs).value, $(evs).value, $(level).value);
+    $(base).value = validate($(base).value, 1, 255);
+    $(ivs).value = validate($(ivs).value, 0, 31);
+    $(evs).value = validate($(evs).value, 0, 255);
+    $(level).value = validate($(level).value, 1, 100);
+    $(stat).value = calcHP($(base).value, $(ivs).value, $(evs).value, $(level).value);
 }
 
 function calcStat(base, ivs, evs, level, nature) {
@@ -45,11 +45,11 @@ function getTier(tier) {
 }
 
 function sortResultsUp(a, b) {
-	return a.damage[0].max - b.damage[0].max;
+    return a.damage[0].max - b.damage[0].max;
 }
 
 function sortResultsDown(a, b) {
-	return b.damage[0].max - a.damage[0].max;
+    return b.damage[0].max - a.damage[0].max;
 }
 
 function getFullSetName(set) {
@@ -322,6 +322,7 @@ var ALL_ATTACKS = {
     'Shadow Sneak':[40,'Ghost','Physical'],
     'Shock Wave':[60,'Electric','Special'],
     'Signal Beam':[75,'Bug','Special'],
+    'Sky Uppercut':[85,'Fighting','Physical'],
     'Sludge Bomb':[90,'Poison','Special'],
     'Sludge Wave':[95,'Poison','Special'],
     'Smack Down':[50,'Rock','Physical'],
@@ -360,32 +361,32 @@ var ALL_ATTACKS = {
 };
 
 var ALL_ITEMS = [
-	'Adamant Orb', 'Air Balloon', 'Apicot Berry', 'Armor Fossil', 'Babiri Berry',
-	'Belue Berry', 'Black Belt', 'Black Sludge', 'BlackGlasses', 'Bug Gem', 
-	'Charcoal', 'Charti Berry', 'Chesto Berry', 'Chilan Berry', 'Choice Band', 
-	'Choice Scarf', 'Choice Specs', 'Chople Berry', 'Claw Fossil', 'Coba Berry', 
-	'Colbur Berry', 'Cover Fossil', 'Custap Berry', 'Dark Gem', 'DeepSeaScale', 
-	'DeepSeaTooth', 'Dome Fossil', 'Draco Plate', 'Dragon Fang', 'Dragon Gem', 
-	'Dread Plate', 'Durin Berry', 'Earth Plate', 'Electric Gem', 'Enigma Berry', 
-	'Eviolite', 'Expert Belt', 'Fighting Gem', 'Fire Gem', 'Fist Plate', 'Flame Orb', 
-	'Flame Plate', 'Flying Gem', 'Ganlon Berry', 'Ghost Gem', 'Griseous Orb', 
-	'Grass Gem', 'Ground Gem', 'Haban Berry', 'Hard Stone', 'Helix Fossil', 'Ice Gem', 
-	'Icicle Plate', 'Insect Plate', 'Iron Ball', 'Iron Plate', 'Jaboca Berry', 
-	'Kasib Berry', 'Kebia Berry', "King's Rock", 'Lagging Tail', 'Lansat Berry', 
-	'Leftovers', 'Leppa Berry', 'Liechi Berry', 'Life Orb', 'Light Ball', 
-	'Lum Berry', 'Lustrous Orb', 'Macho Brace', 'Magnet', 'Meadow Plate', 
-	'Metal Coat', 'Metal Powder', 'Micle Berry', 'Mind Plate', 'Miracle Seed', 
-	'Muscle Band', 'Mystic Water', 'NeverMeltIce', 'Normal Gem', 'Occa Berry', 
-	'Odd Incense', 'Old Amber', 'Oran Berry', 'Pamtre Berry', 'Passho Berry', 
-	'Payapa Berry', 'Petaya Berry', 'Plume Fossil', 'Poison Barb', 'Poison Gem', 
-	'Psychic Gem', 'Rare Bone', 'Rawst Berry', 'Razor Fang', 'Rindo Berry', 
-	'Rock Gem', 'Rock Incense', 'Root Fossil', 'Rose Incense', 'Rowap Berry', 
-	'Salac Berry', 'Sea Incense', 'Sharp Beak', 'Shuca Berry', 'Silk Scarf', 
-	'SilverPowder', 'Sitrus Berry', 'Skull Fossil', 'Sky Plate', 'Soft Sand', 
-	'Soul Dew', 'Spell Tag', 'Splash Plate', 'Spooky Plate', 'Starf Berry', 
-	'Steel Gem', 'Stone Plate', 'Tanga Berry', 'Thick Club', 'Toxic Orb', 
-	'Toxic Plate', 'TwistedSpoon', 'Wacan Berry', 'Water Gem', 'Watmel Berry', 
-	'Wave Incense', 'Wise Glasses', 'Yache Berry', 'Zap Plate'
+    'Adamant Orb', 'Air Balloon', 'Apicot Berry', 'Armor Fossil', 'Babiri Berry',
+    'Belue Berry', 'Black Belt', 'Black Sludge', 'BlackGlasses', 'Bug Gem', 
+    'Charcoal', 'Charti Berry', 'Chesto Berry', 'Chilan Berry', 'Choice Band', 
+    'Choice Scarf', 'Choice Specs', 'Chople Berry', 'Claw Fossil', 'Coba Berry', 
+    'Colbur Berry', 'Cover Fossil', 'Custap Berry', 'Dark Gem', 'DeepSeaScale', 
+    'DeepSeaTooth', 'Dome Fossil', 'Draco Plate', 'Dragon Fang', 'Dragon Gem', 
+    'Dread Plate', 'Durin Berry', 'Earth Plate', 'Electric Gem', 'Enigma Berry', 
+    'Eviolite', 'Expert Belt', 'Fighting Gem', 'Fire Gem', 'Fist Plate', 'Flame Orb', 
+    'Flame Plate', 'Flying Gem', 'Ganlon Berry', 'Ghost Gem', 'Griseous Orb', 
+    'Grass Gem', 'Ground Gem', 'Haban Berry', 'Hard Stone', 'Helix Fossil', 'Ice Gem', 
+    'Icicle Plate', 'Insect Plate', 'Iron Ball', 'Iron Plate', 'Jaboca Berry', 
+    'Kasib Berry', 'Kebia Berry', "King's Rock", 'Lagging Tail', 'Lansat Berry', 
+    'Leftovers', 'Leppa Berry', 'Liechi Berry', 'Life Orb', 'Light Ball', 
+    'Lum Berry', 'Lustrous Orb', 'Macho Brace', 'Magnet', 'Meadow Plate', 
+    'Metal Coat', 'Metal Powder', 'Micle Berry', 'Mind Plate', 'Miracle Seed', 
+    'Muscle Band', 'Mystic Water', 'NeverMeltIce', 'Normal Gem', 'Occa Berry', 
+    'Odd Incense', 'Old Amber', 'Oran Berry', 'Pamtre Berry', 'Passho Berry', 
+    'Payapa Berry', 'Petaya Berry', 'Plume Fossil', 'Poison Barb', 'Poison Gem', 
+    'Psychic Gem', 'Rare Bone', 'Rawst Berry', 'Razor Fang', 'Rindo Berry', 
+    'Rock Gem', 'Rock Incense', 'Root Fossil', 'Rose Incense', 'Rowap Berry', 
+    'Salac Berry', 'Sea Incense', 'Sharp Beak', 'Shuca Berry', 'Silk Scarf', 
+    'SilverPowder', 'Sitrus Berry', 'Skull Fossil', 'Sky Plate', 'Soft Sand', 
+    'Soul Dew', 'Spell Tag', 'Splash Plate', 'Spooky Plate', 'Starf Berry', 
+    'Steel Gem', 'Stone Plate', 'Tanga Berry', 'Thick Club', 'Toxic Orb', 
+    'Toxic Plate', 'TwistedSpoon', 'Wacan Berry', 'Water Gem', 'Watmel Berry', 
+    'Wave Incense', 'Wise Glasses', 'Yache Berry', 'Zap Plate'
 ];
 
 var ALL_ABILITIES = [
