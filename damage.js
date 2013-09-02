@@ -415,8 +415,8 @@ function getDamage(attacker, defender, move, weather, isDoubles, isReflect, isLi
     for(var i = 0; i < 16; i++) {
         damage[i] = Math.floor((BaseDamage * (85 + i)) / 100);
         damage[i] = round(damage[i] * STAB / 0x1000);
-        damage[i] = damage[i] * TYPE;
-        if(BURN) damage[i] = damage[i] / 2;
+        damage[i] = Math.floor(damage[i] * TYPE);
+        if(BURN) damage[i] = Math.floor(damage[i] / 2);
         damage[i] = Math.max(1, damage[i]);
         damage[i] = round(damage[i] * FMOD / 0x1000);
         
