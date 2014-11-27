@@ -21,6 +21,26 @@
     return results;
 }
 
+function CALCULATE_MOVES_OF_ATTACKER_DPP(attacker, defender, field) {
+    checkAirLock(attacker, field);
+    checkAirLock(defender, field);
+    checkForecast(attacker, field.getWeather());
+    checkForecast(defender, field.getWeather());
+    checkKlutz(attacker);
+    checkKlutz(defender);
+    checkIntimidate(attacker, defender);
+    checkIntimidate(defender, attacker);
+    checkDownload(attacker, defender);
+    attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+    defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
+    var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
+    var results = [];
+    for (var i = 0; i < 4; i++) {
+        results[i] = CALCULATE_DAMAGE_DPP(attacker, defender, attacker.moves[i], defenderSide);
+    }
+    return results;
+}
+
 function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     var description = {
         "attackerName": attacker.name,

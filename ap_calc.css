@@ -2,8 +2,8 @@
 body {
     font: 10pt Verdana, sans-serif;
     background-color: #bbeedd;
-    padding: 0 1em;
-    min-width: 100em;
+    margin: 0.6em 1.13em;
+    min-width: 10em;
 }
 fieldset {
     float: left;
@@ -11,6 +11,7 @@ fieldset {
 }
 legend {
     font-weight: bold;
+    text-align: center;
 }
 th, td {
     padding: 0;
@@ -40,6 +41,13 @@ th {
 }
 .field-info {
     width: 28em;
+}
+.holder-0 {
+    position: absolute;
+    top: 79.3125px;
+}
+#holder-2 tr {
+    white-space: nowrap;
 }
 
 /* general button styling */
@@ -212,4 +220,14 @@ select.toxic-counter {
 }
 .small-select.select2-dropdown-open .select2-choice .select2-arrow b {
     background-position: -18px -4px;
+}
+
+/* Bootstrap */
+.panel-group > .panel {
+    clear: left;
+}
+
+/* ColVis */
+.clear {
+  clear: right;
 }
