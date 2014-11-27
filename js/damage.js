@@ -31,6 +31,32 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
     return results;
 }
 
+function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
+    checkAirLock(attacker, field);
+    checkAirLock(defender, field);
+    checkForecast(attacker, field.getWeather());
+    checkForecast(defender, field.getWeather());
+    checkKlutz(attacker);
+    checkKlutz(defender);
+    attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+    defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
+    defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
+    defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
+    checkIntimidate(attacker, defender);
+    checkIntimidate(defender, attacker);
+    checkDownload(attacker, defender);
+    attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
+    attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
+    defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
+    var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
+    checkInfiltrator(attacker, defenderSide);
+    var results = [];
+    for (var i = 0; i < 4; i++) {
+        results[i] = getDamageResult(attacker, defender, attacker.moves[i], defenderSide);
+    }
+    return results;
+}
+
 function getDamageResult(attacker, defender, move, field) {
     var description = {
         "attackerName": attacker.name,

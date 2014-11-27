@@ -15,6 +15,19 @@
     return results;
 }
 
+function CALCULATE_MOVES_OF_ATTACKER_RBY(attacker, defender, field) {
+    attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
+    attacker.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL])));
+    defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
+    defender.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SL], defender.boosts[SL])));
+    var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
+    var results = [];
+    for (var i = 0; i < 4; i++) {
+        results[i] = CALCULATE_DAMAGE_RBY(attacker, defender, attacker.moves[i], defenderSide);
+    }
+    return results;
+}
+
 function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
     var description = {
         "attackerName": attacker.name,

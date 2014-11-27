@@ -15,6 +15,21 @@
     return results;
 }
 
+function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
+    checkAirLock(attacker, field);
+    checkAirLock(defender, field);
+    checkForecast(attacker, field.getWeather());
+    checkForecast(defender, field.getWeather());
+    checkIntimidate(attacker, defender);
+    checkIntimidate(defender, attacker);
+    var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
+    var results = [];
+    for (var i = 0; i < 4; i++) {
+        results[i] = CALCULATE_DAMAGE_ADV(attacker, defender, attacker.moves[i], defenderSide);
+    }
+    return results;
+}
+
 function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     var description = {
         "attackerName": attacker.name,

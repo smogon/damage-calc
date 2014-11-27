@@ -17,6 +17,19 @@
     return results;
 }
 
+function CALCULATE_MOVES_OF_ATTACKER_GSC(attacker, defender, field) {
+    attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
+    attacker.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA])));
+    defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
+    defender.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SD], defender.boosts[SD])));
+    var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
+    var results = [];
+    for (var i = 0; i < 4; i++) {
+        results[i] = CALCULATE_DAMAGE_GSC(attacker, defender, attacker.moves[i], defenderSide);
+    }
+    return results;
+}
+
 function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
     var description = {
         "attackerName": attacker.name,

@@ -2282,7 +2282,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 75,
       "sp": 100
     },
-    "w": 198.0
+    "w": 198.0,
+    "ab": "Pressure"
   },
   "Espeon": {
     "t1": "Psychic",
@@ -2861,7 +2862,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 100,
       "sp": 115
     },
-    "w": 178.0
+    "w": 178.0,
+    "ab": "Pressure"
   },
   "Remoraid": {
     "t1": "Water",
@@ -3074,7 +3076,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 115,
       "sp": 85
     },
-    "w": 187.0
+    "w": 187.0,
+    "ab": "Pressure"
   },
   "Sunflora": {
     "t1": "Grass",

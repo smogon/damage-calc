@@ -125,9 +125,6 @@ $(".ability").bind("keyup change", function() {
 $("#p1 .ability").bind("keyup change", function() {
     autosetWeather($(this).val(), 0);
 });
-$("#p2 .ability").bind("keyup change", function() {
-    autosetWeather($(this).val(), 1);
-});
 
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
@@ -159,12 +156,9 @@ function autosetWeather(ability, i) {
 $("#p1 .item").bind("keyup change", function() {
     autosetStatus("#p1", $(this).val());
 });
-$("#p2 .item").bind("keyup change", function() {
-    autosetStatus("#p2", $(this).val());
-});
 
-var lastManualStatus = {"#p1":"Healthy", "#p2":"Healthy"};
-var lastAutoStatus = {"#p1":"Healthy", "#p2":"Healthy"};
+var lastManualStatus = {"#p1":"Healthy"};
+var lastAutoStatus = {"#p1":"Healthy"};
 function autosetStatus(p, item) {
     var currentStatus = $(p + " .status").val();
     if (currentStatus !== lastAutoStatus[p]) {
@@ -285,119 +279,99 @@ function setSelectValueIfValid(select, value, fallback) {
     select.val(select.children("option[value='" + value + "']").length !== 0 ? value : fallback);
 }
 
-var resultLocations = [[],[]];
-for (var i = 0; i < 4; i++) {
-    resultLocations[0].push({
-        "move":"#resultMoveL" + (i+1),
-        "damage":"#resultDamageL" + (i+1)
-    });
-    resultLocations[1].push({
-        "move":"#resultMoveR" + (i+1),
-        "damage":"#resultDamageR" + (i+1)
-    });
-}
-
-var damageResults;
-function calculate() {
-    var p1 = new Pokemon($("#p1"));
-    var p2 = new Pokemon($("#p2"));
-    var field = new Field();
-    damageResults = calculateAllMoves(p1, p2, field);
-    var result, minDamage, maxDamage, minPercent, maxPercent, percentText;
-    var highestMaxPercent = -1;
-    var bestResult;
-    for (var i = 0; i < 4; i++) {
-        result = damageResults[0][i];
-        minDamage = result.damage[0] * p1.moves[i].hits;
-        maxDamage = result.damage[result.damage.length-1] * p1.moves[i].hits;
-        minPercent = Math.floor(minDamage * 1000 / p2.maxHP) / 10;
-        maxPercent = Math.floor(maxDamage * 1000 / p2.maxHP) / 10;
-        result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-        result.koChanceText = p1.moves[i].bp === 0 ? 'nice move'
-                : getKOChanceText(result.damage, p2, field.getSide(1), p1.moves[i].hits, p1.ability === 'Bad Dreams');
-        $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
-        $(resultLocations[0][i].damage).text(minPercent + " - " + maxPercent + "%");
-        if (maxPercent > highestMaxPercent) {
-            highestMaxPercent = maxPercent;
-            bestResult = $(resultLocations[0][i].move);
-        }
+function Pokemon(pokeInfo) {
+    if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
+        this.name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
+        var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
+        var pokemon = pokedex[this.name];
+        this.type1 = pokemon.t1;
+        this.type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
+        this.rawStats = [];
+        this.boosts = [];
+        this.stats = [];
+        this.evs = [];
         
-        result = damageResults[1][i];
-        minDamage = result.damage[0] * p2.moves[i].hits;
-        maxDamage = result.damage[result.damage.length-1] * p2.moves[i].hits;
-        minPercent = Math.floor(minDamage * 1000 / p1.maxHP) / 10;
-        maxPercent = Math.floor(maxDamage * 1000 / p1.maxHP) / 10;
-        result.damageText = minDamage + "-" + maxDamage + " (" + minPercent + " - " + maxPercent + "%)";
-        result.koChanceText = p2.moves[i].bp === 0 ? 'nice move'
-                : getKOChanceText(result.damage, p1, field.getSide(0), p2.moves[i].hits, p2.ability === 'Bad Dreams');
-        $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
-        $(resultLocations[1][i].damage).text(minPercent + " - " + maxPercent + "%");
-        if (maxPercent > highestMaxPercent) {
-            highestMaxPercent = maxPercent;
-            bestResult = $(resultLocations[1][i].move);
+        var set = setdex[this.name][setName];
+        this.level = set.level;
+        this.HPEVs = (set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0;
+        if (gen < 3) {
+            var HPDVs = 15;
+            this.maxHP = ~~(((pokemon.bs.hp + HPDVs) * 2 + 63) * this.level / 100) + this.level + 10;
+        } else if (pokemon.bs.hp === 1) {
+            this.maxHP = 1;
+        } else {
+            var HPIVs = 31;
+            this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
         }
-    }
-    bestResult.prop("checked", true);
-    bestResult.change();
-    $("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
-    $("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
-}
-
-$(".result-move").change(function() {
-    if (damageResults) {
-        var result = findDamageResult($(this));
-        if (result) {
-            $("#mainResult").text(result.description + ": " + result.damageText + " -- " + result.koChanceText);
-            $("#damageValues").text("(" + result.damage.join(", ") + ")");
-        }
-    }
-});
-
-function findDamageResult(resultMoveObj) {
-    var selector = "#" + resultMoveObj.attr("id");
-    for (var i = 0; i < resultLocations.length; i++) {
-        for (var j = 0; j < resultLocations[i].length; j++) {
-            if (resultLocations[i][j].move === selector) {
-                return damageResults[i][j];
+        this.curHP = this.maxHP;
+        this.nature = set.nature;
+        for (var i = 0; i < STATS.length; i++) {
+            var stat = STATS[i];
+            this.boosts[stat] = 0;
+            this.evs[stat] = (set.evs && typeof set.evs[stat] !== "undefined") ? set.evs[stat] : 0;
+            if (gen < 3) {
+                var dvs = 15;
+                this.rawStats[stat] = ~~(((pokemon.bs[stat] + dvs) * 2 + 63) * this.level / 100) + 5;
+            } else {
+                var ivs = (set.ivs && typeof set.ivs[stat] !== "undefined") ? set.ivs[stat] : 31;
+                var natureMods = NATURES[this.nature];
+                var nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
+                this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);
             }
         }
-    }
-}
-
-function Pokemon(pokeInfo) {
-    var setName = pokeInfo.find("input.set-selector").val();
-    if (setName.indexOf("(") === -1) {
-        this.name = setName;
+        this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability : pokemon.ab;
+        this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
+        this.status = "Healthy";
+        this.toxicCounter = 0;
+        this.moves = [];
+        for (var i = 0; i < 4; i++) {
+            var moveName = set.moves[i];
+            var defaultDetails = moves[moveName] || moves['(No Move)'];
+            this.moves.push($.extend({}, defaultDetails, {
+                name: (defaultDetails.bp === 0) ? "(No Move)" : moveName,
+                bp: defaultDetails.bp,
+                type: defaultDetails.type,
+                category: defaultDetails.category,
+                isCrit: defaultDetails.alwaysCrit ? true : false,
+                hits: defaultDetails.isMultiHit ? (this.ability === "Skill Link" ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
+            }) );
+        }
+        this.weight = pokemon.w;
     } else {
-        this.name = setName.substring(0, setName.indexOf(" ("));
+        var setName = pokeInfo.find("input.set-selector").val();
+        if (setName.indexOf("(") === -1) {
+            this.name = setName;
+        } else {
+            this.name = setName.substring(0, setName.indexOf(" ("));
+        }
+        this.type1 = pokeInfo.find(".type1").val();
+        this.type2 = pokeInfo.find(".type2").val();
+        this.level = ~~pokeInfo.find(".level").val();
+        this.maxHP = ~~pokeInfo.find(".hp .total").text();
+        this.curHP = ~~pokeInfo.find(".current-hp").val();
+        this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
+        this.rawStats = [];
+        this.boosts = [];
+        this.stats = [];
+        this.evs = [];
+        for (var i = 0; i < STATS.length; i++) {
+            this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
+            this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
+            this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
+        }
+        this.nature = pokeInfo.find(".nature").val();
+        this.ability = pokeInfo.find(".ability").val();
+        this.item = pokeInfo.find(".item").val();
+        this.status = pokeInfo.find(".status").val();
+        this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
+        this.moves = [
+            getMoveDetails(pokeInfo.find(".move1")),
+            getMoveDetails(pokeInfo.find(".move2")),
+            getMoveDetails(pokeInfo.find(".move3")),
+            getMoveDetails(pokeInfo.find(".move4"))
+        ];
+        this.weight = +pokeInfo.find(".weight").val();
     }
-    this.type1 = pokeInfo.find(".type1").val();
-    this.type2 = pokeInfo.find(".type2").val();
-    this.level = ~~pokeInfo.find(".level").val();
-    this.maxHP = ~~pokeInfo.find(".hp .total").text();
-    this.curHP = ~~pokeInfo.find(".current-hp").val();
-    this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
-    this.rawStats = [];
-    this.boosts = [];
-    this.stats = [];
-    this.evs = [];
-    for (var i = 0; i < STATS.length; i++) {
-        this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
-        this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
-        this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
-    }
-    this.nature = pokeInfo.find(".nature").val();
-    this.ability = pokeInfo.find(".ability").val();
-    this.item = pokeInfo.find(".item").val();
-    this.status = pokeInfo.find(".status").val();
-    this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
-    this.moves = [
-        getMoveDetails(pokeInfo.find(".move1")),
-        getMoveDetails(pokeInfo.find(".move2")),
-        getMoveDetails(pokeInfo.find(".move3")),
-        getMoveDetails(pokeInfo.find(".move4"))
-    ];
-    this.weight = +pokeInfo.find(".weight").val();
 }
 
 function getMoveDetails(moveInfo) {
@@ -454,7 +428,7 @@ function Side(format, weather, isGravity, isSR, spikes, isReflect, isLightScreen
     this.isHelpingHand = isHelpingHand;
 }
 
-var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calculateAllMoves, calcHP, calcStat;
+var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
 
 $(".gen").change(function () {
     gen = ~~$(this).val();
@@ -467,7 +441,6 @@ $(".gen").change(function () {
             items = [];
             abilities = [];
             STATS = STATS_RBY;
-            calculateAllMoves = CALCULATE_ALL_MOVES_RBY;
             calcHP = CALC_HP_RBY;
             calcStat = CALC_STAT_RBY;
             break;
@@ -479,7 +452,6 @@ $(".gen").change(function () {
             items = ITEMS_GSC;
             abilities = [];
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_GSC;
             calcHP = CALC_HP_RBY;
             calcStat = CALC_STAT_RBY;
             break;
@@ -491,7 +463,6 @@ $(".gen").change(function () {
             items = ITEMS_ADV;
             abilities = ABILITIES_ADV;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
@@ -503,7 +474,6 @@ $(".gen").change(function () {
             items = ITEMS_DPP;
             abilities = ABILITIES_DPP;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_DPP;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
@@ -515,7 +485,6 @@ $(".gen").change(function () {
             items = ITEMS_BW;
             abilities = ABILITIES_BW;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_BW;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
             break;
@@ -527,7 +496,6 @@ $(".gen").change(function () {
             items = ITEMS_XY;
             abilities = ABILITIES_XY;
             STATS = STATS_GSC;
-            calculateAllMoves = CALCULATE_ALL_MOVES_BW;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
     }
@@ -549,7 +517,7 @@ $(".gen").change(function () {
 });
 
 function clearField() {
-    $("#singles").prop("checked", true);
+    $("#singles-format").prop("checked", true);
     $("#clear").prop("checked", true);
     $("#gscClear").prop("checked", true);
     $("#gravity").prop("checked", false);
@@ -616,7 +584,6 @@ function getSelectOptions(arr, sort) {
 $(document).ready(function() {
     $("#gen6").prop("checked", true);
     $("#gen6").change();
-    $(".calc-trigger").bind("change keyup", calculate);
     $(".set-selector").select2({
         formatResult: function(object) {
             return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
