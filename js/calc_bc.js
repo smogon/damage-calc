@@ -132,6 +132,18 @@ $(".gen").change(function () {
     if ( $.fn.DataTable.isDataTable("#holder-2")  ) {
         table.clear();
         constructDataTable();
+        
+        var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
+        $("#holder-2_wrapper").prepend(honkalculator);
+        
+        var dtHeadTop = $(".sorting").offset().top;
+        var dtWrapperToHead = dtHeadTop - $("#holder-2_wrapper").offset().top;
+        var fieldsetToDTHead = dtHeadTop - ( $(".holder-0").offset().top + $(".holder-0 .panel-title").outerHeight()/2 );
+        var buttonOffset = (dtWrapperToHead - fieldsetToDTHead / 2) - $(".bs-btn").outerHeight()/2;
+        $(".bs-btn").css({ "top": buttonOffset });
+        $(".bs-btn").click(function() { 
+            calculate();
+        });
     }
 });
 
