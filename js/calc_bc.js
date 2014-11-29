@@ -48,6 +48,8 @@ $.fn.DataTable.ColVis.prototype._fnDomColumnButton = function(i) {
         })[0];
 };
 
+$.fn.dataTableExt.oSort['damage-pre'] = parseFloat;
+
 function calculate() {
     var attacker, defender, setName, setTier;
     var selectedTiers = getSelectedTiers();
@@ -267,6 +269,10 @@ function constructDataTable() {
                 targets: (gen > 2) ? [] : (gen === 2) ? [3] : [3, 4],
                 visible: false,
                 searchable: false
+            },
+            {
+                targets: [6],
+                type: 'damage'
             }
         ],
         dom: 'C<"clear">frtiS',
