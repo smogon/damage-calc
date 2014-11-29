@@ -214,6 +214,7 @@ $(".tiers input").change(function() {
     
     if (id === "LC" && $('.level').val() !== "5") {
         $('.level').val("5");
+        $('.level').keyup();
         $('.level').popover({
             content: "Level has been set to 5",
             placement: "right"
@@ -223,6 +224,7 @@ $(".tiers input").change(function() {
     
     if (id === "VGC14" && $('.level').val() !== "50") {
         $('.level').val("50");
+        $('.level').keyup();
         $('.level').popover({
             content: "Level has been set to 50",
             placement: "right"
@@ -235,6 +237,7 @@ $(".set-selector").change(function() {
     var selectedTier = getSelectedTiers()[0];
     if (selectedTier === "LC" && $('.level').val() !== "5") {
         $('.level').val("5");
+        $('.level').keyup();
         $('.level').popover({
             content: "Level has been set to 5",
             placement: "right"
@@ -244,6 +247,7 @@ $(".set-selector").change(function() {
     
     if (selectedTier === "VGC14" && $('.level').val() !== "50") {
         $('.level').val("50");
+        $('.level').keyup();
         $('.level').popover({
             content: "Level has been set to 50",
             placement: "right"
