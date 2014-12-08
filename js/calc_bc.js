@@ -67,13 +67,7 @@ function calculate() {
                 var result, minDamage, maxDamage, minPercent, maxPercent; 
                 var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
                 var highestMaxPercent = -1;
-                var data = [
-                    setOptions[i].id,
-                    (mode === "one-vs-all") ? defender.type1 : attacker.type1,
-                    (mode === "one-vs-all") ? defender.type2 : attacker.type2,
-                    (mode === "one-vs-all") ? defender.ability : attacker.ability,
-                    (mode === "one-vs-all") ? defender.item : attacker.item
-                ];
+                var data = [setOptions[i].id];
                 for (var n = 0; n < 4; n++) {
                     result = damageResults[n];
                     minDamage = result.damage[0] * attacker.moves[n].hits;
@@ -84,20 +78,22 @@ function calculate() {
                             : getKOChanceText(result.damage, defender, defenderSide, attacker.moves[n].hits, attacker.ability === 'Bad Dreams');
                     if (maxPercent > highestMaxPercent) {
                         highestMaxPercent = maxPercent;
-                        while (data.length > 5) { data.pop(); }
+                        while (data.length > 1) { 
+                            data.pop();
+                        }
                         data.push( attacker.moves[n].name.replace("Hidden Power", "HP") );
                         data.push( minPercent + " - " + maxPercent + "%" );
                         data.push( result.koChanceText );
-                    } else if (maxPercent === highestMaxPercent) {
-                        data[5] += (attacker.moves[n].name === "(No Move)") ? "" : " & " + attacker.moves[n].name.replace("Hidden Power", "HP");
                     }
                 }
+                data.push( (mode === "one-vs-all") ? defender.type1 : attacker.type1 );
+                data.push( (mode === "one-vs-all") ? defender.type2 : attacker.type2 );
+                data.push( (mode === "one-vs-all") ? defender.ability : attacker.ability );
+                data.push( (mode === "one-vs-all") ? defender.item : attacker.item );
                 dataSet.push(data);
             }
         }
     }
-    
-    table.clear();
     table.rows.add(dataSet).draw();
 }
 
@@ -134,18 +130,7 @@ $(".gen").change(function () {
     if ( $.fn.DataTable.isDataTable("#holder-2")  ) {
         table.clear();
         constructDataTable();
-        
-        var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
-        $("#holder-2_wrapper").prepend(honkalculator);
-        
-        var dtHeadTop = $(".sorting").offset().top;
-        var dtWrapperToHead = dtHeadTop - $("#holder-2_wrapper").offset().top;
-        var fieldsetToDTHead = dtHeadTop - ( $(".holder-0").offset().top + $(".holder-0 .panel-title").outerHeight()/2 );
-        var buttonOffset = (dtWrapperToHead - fieldsetToDTHead / 2) - $(".bs-btn").outerHeight()/2;
-        $(".bs-btn").css({ "top": buttonOffset });
-        $(".bs-btn").click(function() { 
-            calculate();
-        });
+        placeBsBtn();
     }
 });
 
@@ -174,6 +159,52 @@ function adjustTierBorderRadius() {
     }
 }
 
+var table;
+function constructDataTable() {
+    table = $("#holder-2").DataTable( {
+        destroy: true,
+        columnDefs: [
+            {
+                targets: [4, 5, 6, 7],
+                visible: false,
+                searchable: false
+            },
+            {
+                targets: [2],
+                type: 'damage'
+            },
+            {   targets: [3],
+                iDataSort: 2
+            }
+        ],
+        dom: 'C<"clear">fti',
+        colVis: {
+            exclude: (gen > 2) ? [0, 1, 2] : (gen === 2) ? [0, 1, 2, 6] : [0, 1, 2, 6, 7],
+            stateChange: function(iColumn, bVisible) {
+                var column = table.settings()[0].aoColumns[iColumn];
+                if (column.bSearchable !== bVisible) {
+                    column.bSearchable = bVisible;
+                    table.rows().invalidate();
+                }
+            }
+        },
+        paging: false,
+        scrollX: Math.floor(dtWidth/100)*100, // round down to nearest hundred
+        scrollY: dtHeight,
+        scrollCollapse: true
+    } );
+    $(".dataTables_wrapper").css({ "max-width": dtWidth });
+}
+
+function placeBsBtn() {
+    var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
+    $("#holder-2_wrapper").prepend(honkalculator);
+    $(".bs-btn").click(function() {
+        table.clear();
+        calculate();
+    });
+}
+
 $(".mode").change(function() {
     if ( $("#one-vs-one").prop("checked") ) {
         window.location.replace( "index.html" );
@@ -190,13 +221,7 @@ $(".tiers label").mouseup(function() {
         $("#singles-format").prop("checked", true);
     }
     if ((oldID === "VGC14" || oldID === "LC") && (newID !== "VGC14" && newID !== "LC")) {
-        $('.level').val("100");
-        $('.level').keyup();
-        $('.level').popover({
-            content: "Level has been reset to 100",
-            placement: "right"
-        }).popover('show');
-        setTimeout(function(){ $('.level').popover('destroy') }, 3000);
+        setLevel("100");
     }
 });
 
@@ -205,99 +230,45 @@ $(".tiers input").change(function() {
     var id = $(this).attr("id");
     $(".tiers input").not(":" + type).prop("checked", false); // deselect all radios if a checkbox is checked, and vice-versa
     
-    if (gen === 1 && $("#OU").prop("checked")) {
-        $("#UU").prop("checked", true);
-    }
-    
     if (id === "Doubles" || id === "VGC14") {
         $("#doubles-format").prop("checked", true);
         $("#singles-format").attr("disabled", true);
     }
     
     if (id === "LC" && $('.level').val() !== "5") {
-        $('.level').val("5");
-        $('.level').keyup();
-        $('.level').popover({
-            content: "Level has been set to 5",
-            placement: "right"
-        }).popover('show');
-        setTimeout(function(){ $('.level').popover('destroy') }, 1350);
+        setLevel("5");
     }
     
     if (id === "VGC14" && $('.level').val() !== "50") {
-        $('.level').val("50");
-        $('.level').keyup();
-        $('.level').popover({
-            content: "Level has been set to 50",
-            placement: "right"
-        }).popover('show');
-        setTimeout(function(){ $('.level').popover('destroy') }, 1350);
+        setLevel("50");
     }
 });
 
-$(".set-selector").change(function() {
-    var selectedTier = getSelectedTiers()[0];
-    if (selectedTier === "LC" && $('.level').val() !== "5") {
-        $('.level').val("5");
-        $('.level').keyup();
-        $('.level').popover({
-            content: "Level has been set to 5",
-            placement: "right"
-        }).popover('show');
-        setTimeout(function(){ $('.level').popover('destroy') }, 1350);
-    }
-    
-    if (selectedTier === "VGC14" && $('.level').val() !== "50") {
-        $('.level').val("50");
-        $('.level').keyup();
-        $('.level').popover({
-            content: "Level has been set to 50",
-            placement: "right"
-        }).popover('show');
-        setTimeout(function(){ $('.level').popover('destroy') }, 1350);
+function setLevel(lvl) {
+    $('.level').val(lvl);
+    $('.level').keyup();
+    $('.level').popover({
+        content: "Level has been set to " + lvl,
+        placement: "right"
+    }).popover('show');
+    setTimeout(function(){ $('.level').popover('destroy') }, 1350);
+}
+
+$(".set-selector").change(function(e) {
+    var format = getSelectedTiers()[0];
+    lastEventTarget = window.event.target.className;
+    if (lastEventTarget && typeof lastEventTarget !== "undefined") {
+        if (lastEventTarget.indexOf("gen") !== -1) {
+            // no-op
+        } else if (format === "VGC14" && $('.level').val() !== "50") {
+            setLevel("50");
+        } else if (format === "LC" && $('.level').val() !== "5") {
+            setLevel("5");
+        }
     }
 });
 
-var table;
-function constructDataTable() {
-    var dtWidth = $(window).width() - $("#holder-2").offset().left;
-    dtWidth -= 2 * parseFloat($(".holder-0").css("padding-right"));
-    table = $("#holder-2").DataTable( {
-        destroy: true,
-        columnDefs: [
-            {
-                targets: (gen > 2) ? [] : (gen === 2) ? [3] : [3, 4],
-                visible: false,
-                searchable: false
-            },
-            {
-                targets: [6],
-                type: 'damage'
-            }
-        ],
-        dom: 'C<"clear">frtiS',
-        colVis: {
-            exclude: (gen > 2) ? [0, 5, 6] : (gen === 2) ? [0, 3, 5, 6] : [0, 3, 4, 5, 6],
-            stateChange: function(iColumn, bVisible) {
-                var column = table.settings()[0].aoColumns[iColumn];
-                if (column.bSearchable !== bVisible) {
-                    column.bSearchable = bVisible;
-                    table.rows().invalidate();
-                }
-            }
-        },
-        scrollX: dtWidth,
-        scrollY: dtHeight,
-        scrollCollapse: true
-    } );
-    $(".dataTables_wrapper").width(dtWidth);
-}
-
-function getBottomOffset(obj) {
-    return obj.offset().top + obj.outerHeight();
-}
-
-var mode, dtHeight;
+var mode, dtHeight, dtWidth;
 $(document).ready(function() {
     var url = window.location.href;
     mode = url.substring(url.indexOf('=') + 1, url.length);
@@ -305,23 +276,12 @@ $(document).ready(function() {
     $("#holder-2 th:first").text( (mode === "one-vs-all") ? "Defender" : "Attacker" );
     $("#holder-2").show();
     
-    setDTHeight();
+    calcDTDimensions();
     constructDataTable();
-    
-    var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
-    $("#holder-2_wrapper").prepend(honkalculator);
-    
-    var dtHeadTop = $(".sorting").offset().top;
-    var dtWrapperToHead = dtHeadTop - $("#holder-2_wrapper").offset().top;
-    var fieldsetToDTHead = dtHeadTop - ( $(".holder-0").offset().top + $(".holder-0 .panel-title").outerHeight()/2 );
-    var buttonOffset = (dtWrapperToHead - fieldsetToDTHead / 2) - $(".bs-btn").outerHeight()/2;
-    $(".bs-btn").css({ "top": buttonOffset });
-    $(".bs-btn").click(function() { 
-        calculate();
-    });
+    placeBsBtn();
 });
 
-function setDTHeight() {
+function calcDTDimensions() {
     $("#holder-2").DataTable( {
         dom: 'C<"clear">frti'
     });
@@ -329,4 +289,10 @@ function setDTHeight() {
     var theadBottomOffset = getBottomOffset($(".sorting"));
     var heightUnderDT = getBottomOffset($(".holder-0")) - getBottomOffset($("#holder-2 tbody"));
     dtHeight = $(document).height() - theadBottomOffset - heightUnderDT;
+    dtWidth = $(window).width() - $("#holder-2").offset().left;
+    dtWidth -= 2 * parseFloat($(".holder-0").css("padding-right"));
+}
+
+function getBottomOffset(obj) {
+    return obj.offset().top + obj.outerHeight();
 }

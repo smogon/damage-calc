@@ -134,22 +134,40 @@ function autosetWeather(ability, i) {
         lastManualWeather = currentWeather;
         lastAutoWeather[1-i] = "";
     }
-    if (ability === "Drought") {
-        lastAutoWeather[i] = "Sun";
-        $("#sun").prop("checked", true);
-    } else if (ability === "Drizzle") {
-        lastAutoWeather[i] = "Rain";
-        $("#rain").prop("checked", true);
-    } else if (ability === "Sand Stream") {
-        lastAutoWeather[i] = "Sand";
-        $("#sand").prop("checked", true);
-    } else if (ability === "Snow Warning") {
-        lastAutoWeather[i] = "Hail";
-        $("#hail").prop("checked", true);
-    } else {
-        lastAutoWeather[i] = "";
-        var newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : lastManualWeather;
-        $("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+    switch (ability) {
+        case "Drought":
+            lastAutoWeather[i] = "Sun";
+            $("#sun").prop("checked", true);
+            break;
+        case "Drizzle":
+            lastAutoWeather[i] = "Rain";
+            $("#rain").prop("checked", true);
+            break;
+        case "Sand Stream":
+            lastAutoWeather[i] = "Sand";
+            $("#sand").prop("checked", true);
+            break;
+        case "Snow Warning":
+            lastAutoWeather[i] = "Hail";
+            $("#hail").prop("checked", true);
+            break;
+        case "Desolate Land":
+            lastAutoWeather[i] = "Harsh Sunshine";
+            $("#harsh-sunshine").prop("checked", true);
+            break;
+        case "Primordial Sea":
+            lastAutoWeather[i] = "Heavy Rain";
+            $("#heavy-rain").prop("checked", true);
+            break;
+        case "Delta Stream":
+            lastAutoWeather[i] = "Strong Winds";
+            $("#strong-winds").prop("checked", true);
+            break;
+        default:
+            lastAutoWeather[i] = "";
+            var newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : lastManualWeather;
+            $("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+            break;
     }
 }
 
@@ -319,7 +337,8 @@ function Pokemon(pokeInfo) {
                 this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);
             }
         }
-        this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability : pokemon.ab;
+        this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
+                       (pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
         this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
         this.status = "Healthy";
         this.toxicCounter = 0;

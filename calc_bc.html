@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <title>A Pokemon Calculator</title>
-    <link type="text/css" rel="stylesheet" href="./bootstrap.css" /> <!-- to be replaced -->
+    <link type="text/css" rel="stylesheet" href="./bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css" />
     <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/colvis/1.1.1/css/dataTables.colVis.css" />
-    <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/scroller/1.2.2/css/dataTables.scroller.css" />
     <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css" />
     <link type="text/css" rel="stylesheet" href="./ap_calc.css" />
 </head>
@@ -478,6 +477,14 @@
                         <input class="btn-input" type="radio" name="weather" value="Hail" id="hail" />
                         <label class="btn btn-small btn-right" for="hail">Hail</label>
                     </div>
+                    <div class="gen-specific g6" title="Select the current weather condition.">
+                        <input class="btn-input" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
+                        <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
+                        <input class="btn-input" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
+                        <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
+                        <input class="btn-input" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
+                        <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
+                    </div>
                     <div class="gen-specific g2 hide" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
                         <input class="btn-input" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
                         <label class="btn btn-small btn-left" for="gscClear">None</label>
@@ -580,24 +587,23 @@
                 <thead>
                     <tr>
                         <th></th>
+                        <th>Best Move</th>
+                        <th>Damage</th>
+                        <th>KO Chance</th>
                         <th>Type 1</th>
                         <th>Type 2</th>
                         <th>Ability</th>
                         <th>Item</th>
-                        <th>Most Damaging Move(s)</th>
-                        <th>Damage</th>
-                        <th>KO Chance</th>
                     </tr>
                 </thead>
             </table>
         </fieldset>
     </div>
     <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> <!-- to be replaced -->
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> <!-- to be replaced (probably) -->
     <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/colvis/1.1.1/js/dataTables.colVis.min.js"></script>
-    <script type="text/javascript" src="//cdn.datatables.net/scroller/1.2.2/js/dataTables.scroller.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script> <!-- to be replaced -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.min.js"></script>
     <script type="text/javascript" src="./js/data/pokedex.js"></script>
     <script type="text/javascript" src="./js/data/setdex_xy.js"></script>

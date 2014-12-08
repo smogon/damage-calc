@@ -1612,6 +1612,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         hasSecondaryEffect: true
     },
     'Draco Meteor': { bp: 130 },
+    'Dragon Ascent': {
+        bp: 120,
+        type: 'Flying',
+        category: 'Physical',
+        makesContact: true
+    },
     'Dragon Pulse': { bp: 85 },
     'Energy Ball': { bp: 90 },
     'Facade': { ignoresBurn: true },
@@ -1687,6 +1693,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Flying',
         category: 'Special'
     },
+    'Origin Pulse': {
+        bp: 110,
+        type: 'Water',
+        category: 'Special',
+        isSpread: true
+    },
     'Overheat': { bp: 130 },
     'Phantom Force': {
         bp: 90,
@@ -1710,6 +1722,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         makesContact: true,
         hasSecondaryEffect: true,
         isPunch: true
+    },
+    'Precipice Blades': {
+        bp: 120,
+        type: 'Ground',
+        category: 'Physical',
+        isSpread: 'true'
     },
     'Rock Tomb': { bp: 60 },
     'Storm Throw': { bp: 60 },
