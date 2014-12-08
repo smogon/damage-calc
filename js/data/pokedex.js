@@ -5852,7 +5852,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 106,
       "sp": 77
     },
-    "w": 430.0
+    "w": 430.0,
+    "ab": "Flash Fire"
   },
   "Hippopotas": {
     "t1": "Ground",
@@ -9562,6 +9563,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 48.0,
     "ab": "Trace"
   },
+  "Mega Altaria": {
+    "t1": "Dragon",
+    "t2": "Fairy",
+    "bs": {
+      "hp": 75,
+      "at": 110,
+      "df": 110,
+      "sa": 110,
+      "sd": 105,
+      "sp": 80
+    },
+    "w": 20.6,
+    "ab": "Pixilate"
+  },
   "Mega Ampharos": {
     "t1": "Electric",
     "t2": "Dragon",
@@ -9576,6 +9591,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 61.5,
     "ab": "Mold Breaker"
   },
+  "Mega Audino": {
+    "t1": "Normal",
+    "t2": "Fairy",
+    "bs": {
+      "hp": 103,
+      "at": 60,
+      "df": 126,
+      "sa": 80,
+      "sd": 126,
+      "sp": 50
+    },
+    "w": 32.0,
+    "ab": "Healer"
+  },
   "Mega Banette": {
     "t1": "Ghost",
     "bs": {
@@ -9588,6 +9617,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 13.0,
     "ab": "Prankster"
+  },
+  "Mega Beedrill": {
+    "t1": "Bug",
+    "t2": "Poison",
+    "bs": {
+      "hp": 65,
+      "at": 150,
+      "df": 40,
+      "sa": 15,
+      "sd": 80,
+      "sp": 145,
+    },
+    "w": 40.5,
+    "ab": "Adaptability"
   },
   "Mega Blastoise": {
     "t1": "Water",
@@ -9616,6 +9659,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 52.0,
     "ab": "Speed Boost"
   },
+  "Mega Camerupt": {
+    "t1": "Fire",
+    "t2": "Ground",
+    "bs": {
+      "hp": 70,
+      "at": 120,
+      "df": 100,
+      "sa": 145,
+      "sd": 105,
+      "sp": 20
+    },
+    "w": 320.5,
+    "ab": "Sheer Force"
+  },
   "Mega Charizard X": {
     "t1": "Fire",
     "t2": "Dragon",
@@ -9643,6 +9700,34 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 100.5,
     "ab": "Drought"
+  },
+  "Mega Diancie": {
+    "t1": "Rock",
+    "t2": "Fairy",
+    "bs": {
+      "hp": 50,
+      "at": 160,
+      "df": 110,
+      "sa": 160,
+      "sd": 110,
+      "sp": 110
+    },
+    "w": 27.8,
+    "ab": "Magic Bounce"
+  },
+  "Mega Gallade": {
+    "t1": "Psychic",
+    "t2": "Fighting",
+    "bs": {
+      "hp": 68,
+      "at": 165,
+      "df": 95,
+      "sa": 65,
+      "sd": 115,
+      "sp": 110
+    },
+    "w": 56.4,
+    "ab": "Inner Focus"
   },
   "Mega Garchomp": {
     "t1": "Dragon",
@@ -9685,6 +9770,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 40.5,
     "ab": "Shadow Tag"
+  },
+  "Mega Glalie": {
+    "t1": "Ice",
+    "bs": {
+      "hp": 80,
+      "at": 120,
+      "df": 80,
+      "sa": 120,
+      "sd": 80,
+      "sp": 100
+    },
+    "w": 350.2,
+    "ab": "Refrigerate"
   },
   "Mega Gyarados": {
     "t1": "Water",
@@ -9769,6 +9867,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 70.0,
     "ab": "Levitate"
   },
+  "Mega Lopunny": {
+    "t1": "Normal",
+    "t2": "Fighting",
+    "bs": {
+      "hp": 65,
+      "at": 136,
+      "df": 94,
+      "sa": 54,
+      "sd": 96,
+      "sp": 135
+    },
+    "w": 28.3,
+    "ab": "Scrappy"
+  },
   "Mega Lucario": {
     "t1": "Fighting",
     "t2": "Steel",
@@ -9824,6 +9936,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 31.5,
     "ab": "Pure Power"
   },
+  "Mega Metagross": {
+    "t1": "Steel",
+    "t2": "Psychic",
+    "bs": {
+      "hp": 80,
+      "at": 145,
+      "df": 150,
+      "sa": 105,
+      "sd": 110,
+      "sp": 110
+    },
+    "w": 942.9,
+    "ab": "Tough Claws"
+  },
   "Mega Mewtwo X": {
     "t1": "Psychic",
     "t2": "Fighting",
@@ -9851,6 +9977,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 33.0,
     "ab": "Insomnia"
   },
+  "Mega Pidgeot": {
+    "t1": "Normal",
+    "t2": "Flying",
+    "bs": {
+      "hp": 83,
+      "at": 80,
+      "df": 80,
+      "sa": 135,
+      "sd": 80,
+      "sp": 121
+    },
+    "w": 50.5,
+    "ab": "No Guard"
+  },
   "Mega Pinsir": {
     "t1": "Bug",
     "t2": "Flying",
@@ -9865,6 +10005,62 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 59.0,
     "ab": "Aerilate"
   },
+  "Mega Rayquaza": {
+    "t1": "Dragon",
+    "t2": "Flying",
+    "bs": {
+      "hp": 105,
+      "at": 180,
+      "df": 100,
+      "sa": 180,
+      "sd": 100,
+      "sp": 115
+    },
+    "w": 392.0,
+    "ab": "Delta Stream"
+  },
+  "Mega Sableye": {
+    "t1": "Dark",
+    "t2": "Ghost",
+    "bs": {
+      "hp": 50,
+      "at": 85,
+      "df": 125,
+      "sa": 85,
+      "sd": 115,
+      "sp": 20
+    },
+    "w": 161.0,
+    "ab": "Magic Bounce"
+  },
+  "Mega Salamence": {
+    "t1": "Dragon",
+    "t2": "Flying",
+    "bs": {
+      "hp": 95,
+      "at": 145,
+      "df": 130,
+      "sa": 120,
+      "sd": 90,
+      "sp": 120
+    },
+    "w": 112.6,
+    "ab": "Aerilate"
+  },
+  "Mega Sceptile": {
+    "t1": "Grass",
+    "t2": "Dragon",
+    "bs": {
+      "hp": 70,
+      "at": 110,
+      "df": 75,
+      "sa": 145,
+      "sd": 85,
+      "sp": 145
+    },
+    "w": 55.2,
+    "ab": "Lightningrod"
+  },
   "Mega Scizor": {
     "t1": "Bug",
     "t2": "Steel",
@@ -9878,6 +10074,62 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 125.0,
     "ab": "Technician"
+  },
+  "Mega Sharpedo": {
+    "t1": "Water",
+    "t2": "Dark",
+    "bs": {
+      "hp": 70,
+      "at": 140,
+      "df": 70,
+      "sa": 110,
+      "sd": 65,
+      "sp": 105
+    },
+    "w": 130.3,
+    "ab": "Strong Jaw"
+  },
+  "Mega Slowbro": {
+    "t1": "Water",
+    "t2": "Psychic",
+    "bs": {
+      "hp": 95,
+      "at": 75,
+      "df": 180,
+      "sa": 130,
+      "sd": 80,
+      "sp": 30
+    },
+    "w": 120.0,
+    "ab": "Shell Armor"
+  },
+  "Mega Steelix": {
+    "t1": "Steel",
+    "t2": "Ground",
+    "bs": {
+      "hp": 75,
+      "at": 125,
+      "df": 230,
+      "sa": 55,
+      "sd": 95,
+      "sp": 30
+    },
+    "w": 740.0,
+    "ab": "Sand Force"
+  },
+  "Mega Swampert": {
+    "t1": "Water",
+    "t2": "Ground",
+    "bs": {
+      "hp": 100,
+      "at": 150,
+      "df": 110,
+      "sa": 95,
+      "sd": 110,
+      "sp": 70
+    },
+    "w": 102.0,
+    "ab": "Swift Swim"
   },
   "Mega Tyranitar": {
     "t1": "Rock",
@@ -9982,6 +10234,33 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sp": 38
     },
     "w": 7.0
+  },
+  "Primal Groudon": {
+    "t1": "Ground",
+    "t2": "Fire",
+    "bs": {
+      "hp": 100,
+      "at": 180,
+      "df": 160,
+      "sa": 150,
+      "sd": 90,
+      "sp": 90
+    },
+    "w": 999.7,
+    "ab": "Desolate Land"
+  },
+  "Primal Kyogre": {
+    "t1": "Water",
+    "bs": {
+      "hp": 100,
+      "at": 150,
+      "df": 90,
+      "sa": 180,
+      "sd": 160,
+      "sp": 90
+    },
+    "w": 430.0,
+    "ab": "Primordial Sea"
   },
   "Pumpkaboo-Average": {
     "t1": "Ghost",
