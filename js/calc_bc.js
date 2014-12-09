@@ -104,9 +104,8 @@ function getSelectedTiers() {
     return selectedTiers;
 }
 
-var genWasChanged, calculateMovesOfAttacker;
+var calculateMovesOfAttacker;
 $(".gen").change(function () {
-    genWasChanged = true;
     $(".tiers input").prop("checked", false);
     $("#singles-format").attr("disabled", false);
     switch(gen) {
@@ -270,7 +269,6 @@ var mode, dtHeight, dtWidth;
 $(document).ready(function() {
     var url = window.location.href;
     mode = url.substring(url.indexOf('=') + 1, url.length);
-    $("#gen6").change();
     $("#" + mode).prop("checked", true);
     $("#holder-2 th:first").text( (mode === "one-vs-all") ? "Defender" : "Attacker" );
     $("#holder-2").show();

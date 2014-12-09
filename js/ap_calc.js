@@ -447,10 +447,11 @@ function Side(format, weather, isGravity, isSR, spikes, isReflect, isLightScreen
     this.isHelpingHand = isHelpingHand;
 }
 
-var gen, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
+var gen, genWasChanged, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
 
 $(".gen").change(function () {
     gen = ~~$(this).val();
+    genWasChanged = true;
     switch (gen) {
         case 1:
             pokedex = POKEDEX_RBY;
