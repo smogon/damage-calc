@@ -1609,7 +1609,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 100,
         type: 'Rock',
         category: 'Physical',
-        hasSecondaryEffect: true
+        hasSecondaryEffect: true,
+        isSpread: true
     },
     'Draco Meteor': { bp: 130 },
     'Dragon Ascent': {
