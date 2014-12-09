@@ -104,8 +104,9 @@ function getSelectedTiers() {
     return selectedTiers;
 }
 
-var calculateMovesOfAttacker;
+var genWasChanged, calculateMovesOfAttacker;
 $(".gen").change(function () {
+    genWasChanged = true;
     $(".tiers input").prop("checked", false);
     $("#singles-format").attr("disabled", false);
     switch(gen) {
@@ -256,15 +257,12 @@ function setLevel(lvl) {
 
 $(".set-selector").change(function(e) {
     var format = getSelectedTiers()[0];
-    lastEventTarget = window.event.target.className;
-    if (lastEventTarget && typeof lastEventTarget !== "undefined") {
-        if (lastEventTarget.indexOf("gen") !== -1) {
-            // no-op
-        } else if (format === "VGC14" && $('.level').val() !== "50") {
-            setLevel("50");
-        } else if (format === "LC" && $('.level').val() !== "5") {
-            setLevel("5");
-        }
+    if (genWasChanged) {
+        genWasChanged = false;
+    } else if (format === "VGC14" && $('.level').val() !== "50") {
+        setLevel("50");
+    } else if (format === "LC" && $('.level').val() !== "5") {
+        setLevel("5");
     }
 });
 
@@ -272,6 +270,7 @@ var mode, dtHeight, dtWidth;
 $(document).ready(function() {
     var url = window.location.href;
     mode = url.substring(url.indexOf('=') + 1, url.length);
+    $("#gen6").change();
     $("#" + mode).prop("checked", true);
     $("#holder-2 th:first").text( (mode === "one-vs-all") ? "Defender" : "Attacker" );
     $("#holder-2").show();
