@@ -419,6 +419,7 @@ function Field() {
         weather = $("input:radio[name='weather']:checked").val();
         spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
     }
+    var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
     var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
     var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
     var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
@@ -431,12 +432,13 @@ function Field() {
         weather = "";
     };
     this.getSide = function(i) {
-        return new Side(format, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i]);
     };
 }
 
-function Side(format, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand) {
     this.format = format;
+    this.terrain = terrain;
     this.weather = weather;
     this.isGravity = isGravity;
     this.isSR = isSR;

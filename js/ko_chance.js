@@ -83,6 +83,13 @@
             eotText.push('Black Sludge damage');
         }
     }
+    if (field.terrain === "Grassy") {
+        if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
+                defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
+            eot += Math.floor(defender.maxHP / 16);
+            eotText.push('Grassy Terrain recovery');
+        }
+    }
     var toxicCounter = 0;
     if (defender.status === 'Poisoned') {
         if (defender.ability === 'Poison Heal') {
