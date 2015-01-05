@@ -459,7 +459,7 @@ function getDamageResult(attacker, defender, move, field) {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
     } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") || 
-                  (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeEffectiveness > 1)) {
+                  (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1)) {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     } else if ((field.weather === "Harsh Sunshine" && move.type === "Water") || (field.weather === "Heavy Rain" && move.type === "Fire")) {
