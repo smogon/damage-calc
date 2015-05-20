@@ -368,3 +368,9 @@ select.toxic-counter {
 .clear {
   clear: right;
 }
+
+.import-team-text {
+	min-width: 23em;
+	min-height: 35em;
+	resize: none;
+}

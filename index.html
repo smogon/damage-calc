@@ -6,6 +6,7 @@
     <title>A Pokemon Calculator</title>
     <link type="text/css" rel="stylesheet" href="./select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./ap_calc.css?v2" />
+    <link type="text/css" rel="stylesheet" href="./bootstrap.css" />
 </head>
 
 <body>
@@ -1040,6 +1041,18 @@
             </div>
         </fieldset>
     </div>
+    <div class="panel">
+        <fieldset class="poke-import">
+		<legend align="center">Import Team</legend>
+			<div id="import-1_wrapper" class="dataTables_wrapper no-footer" style="max-width: 638.609375px;">
+				
+				<form class="import-team">
+					<textarea class="import-team-text"></textarea>
+					<!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
+			</div>
+			</form>
+        </fieldset>
+    </div>
     <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/js/lodash.min.js"></script>
     <script type="text/javascript" src="./select2/select2.min.js"></script>
@@ -1064,7 +1077,7 @@
     <script type="text/javascript" src="./js/damage_gsc.js"></script>
     <script type="text/javascript" src="./js/damage_rby.js"></script>
     <script type="text/javascript" src="./js/ko_chance.js"></script>
-
+    <script type="text/javascript" src="./js/moveset_import.js"></script>
 </div>
 
 </body>
