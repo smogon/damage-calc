@@ -2,6 +2,7 @@ CACHE MANIFEST
 
 select2/select2.css
 ap_calc.css?v2
+bootstrap.css
 /images/pokemonshowdownbeta.png
 /js/jquery-1.9.1.min.js
 /js/lodash.min.js
@@ -31,3 +32,4 @@ js/damage_rse.js
 js/damage_gsc.js
 js/damage_rby.js
 js/ko_chance.js
+js/moveset_import.js
