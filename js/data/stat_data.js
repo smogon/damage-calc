@@ -1,4 +1,4 @@
-﻿var AT = "at", DF = "df", SA = "sa", SD = "sd", SP = "sp", SL = "sl";
+var AT = "at", DF = "df", SA = "sa", SD = "sd", SP = "sp", SL = "sl";
 var STATS_RBY = [AT, DF, SL, SP];
 var STATS_GSC = [AT, DF, SA, SD, SP];
 
@@ -12,6 +12,7 @@ function CALC_HP_RBY(poke) {
     hp.find(".total").text(total);
     poke.find(".max-hp").text(total);
     calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+	stat.find(".total").css("color","black");
 }
 
 function CALC_STAT_RBY(poke, statName) {
@@ -21,6 +22,7 @@ function CALC_STAT_RBY(poke, statName) {
     var dvs = ~~stat.find(".dvs").val();
     var total = Math.floor(((base + dvs) * 2 + 63) * level / 100) + 5;
     stat.find(".total").text(total);
+	stat.find(".total").css("color","black");
 }
 
 function CALC_HP_ADV(poke) {
@@ -38,6 +40,7 @@ function CALC_HP_ADV(poke) {
     hp.find(".total").text(total);
     poke.find(".max-hp").text(total);
     calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+	hp.find(".total").css("color","black");
 }
 
 function CALC_STAT_ADV(poke, statName) {
@@ -50,4 +53,21 @@ function CALC_STAT_ADV(poke, statName) {
     var nature = natureMods[0] === statName ? 1.1 : natureMods[1] === statName ? 0.9 : 1;
     var total = Math.floor((Math.floor((base * 2 + ivs + Math.floor(evs / 4)) * level / 100) + 5) * nature);
     stat.find(".total").text(total);
+	stat.find(".total").css("color","black");
+}
+
+function CALC_STAT_SP_ADV(poke){
+	CALC_STAT_ADV(poke, "sp");
+	var stat = poke.find(".sp");
+	var spanTotal = stat.find(".total");
+	var total = parseInt(spanTotal.text());
+	var item = poke.find("." + "item").val();
+	if (item == "Choice Scarf")
+	{
+		//bonus
+		total = Math.floor(1.5*total);
+		spanTotal.css("color", "blue");
+		spanTotal.css("bold", true);
+	}
+	spanTotal.text(total);
 }
