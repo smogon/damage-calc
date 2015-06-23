@@ -46,7 +46,7 @@ $(".sd .base, .sd .evs, .sd .ivs").bind("keyup change", function() {
     calcStat($(this).closest(".poke-info"), 'sd');
 });
 $(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function() {
-    calcStat($(this).closest(".poke-info"), 'sp');
+	calcSP($(this).closest(".poke-info"));
 });
 $(".sl .base").keyup(function() {
     calcStat($(this).closest(".poke-info"), 'sl');
@@ -93,7 +93,14 @@ function getHPDVs(poke) {
 
 function calcStats(poke) {
     for (var i = 0; i < STATS.length; i++) {
-        calcStat(poke, STATS[i]);
+		if ( STATS[i] == "sp" )
+		{
+			calcSP(poke);
+		}
+		else
+		{
+			calcStat(poke, STATS[i]);
+		}
     }
 }
 
@@ -170,6 +177,10 @@ function autosetWeather(ability, i) {
             break;
     }
 }
+
+$(".item").bind("keyup change", function() {
+   calcSP($(this).closest(".poke-info"));
+});
 
 $("#p1 .item").bind("keyup change", function() {
     autosetStatus("#p1", $(this).val());
@@ -520,6 +531,7 @@ $(".gen").change(function () {
             STATS = STATS_GSC;
             calcHP = CALC_HP_ADV;
             calcStat = CALC_STAT_ADV;
+			calcSP = CALC_STAT_SP_ADV
     }
     clearField();
     $(".gen-specific.g" + gen).show();
