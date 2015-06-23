@@ -3,10 +3,16 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>A Pokemon Calculator</title>
+    <title>A Pok&eacute;mon Calculator</title>
     <link type="text/css" rel="stylesheet" href="./select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./ap_calc.css?v2" />
     <link type="text/css" rel="stylesheet" href="./bootstrap.css" />
+	
+	<style type="text/css">
+		.total{
+			color:black;	
+		}
+	</style>
 </head>
 
 <body>
@@ -27,7 +33,7 @@
 <div class="wrapper">
 
     <div>
-        <span class="title-text">Pokemon Damage Calculator</span>
+        <span class="title-text">Pok&eacute;mon Damage Calculator</span>
         <span title="Select the generation.">
             <input class="gen btn-input" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
             <input class="gen btn-input" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
@@ -45,7 +51,7 @@
     <hr />
     <div class="move-result-group" title="Select a move to show detailed results.">
         <div class="move-result-subgroup">
-            <div class="result-move-header"><span id="resultHeaderL">Pokemon 1's Moves (select one to show detailed results)</span>
+            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
             </div>
             <div>
                 <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL1" checked="checked" />
@@ -69,7 +75,7 @@
             </div>
         </div>
         <div class="move-result-subgroup">
-            <div class="result-move-header"><span id="resultHeaderR">Pokemon 2's Moves (select one to show detailed results)</span>
+            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2's Moves (select one to show detailed results)</span>
             </div>
             <div>
                 <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR1" />
@@ -102,7 +108,7 @@
     
     <div class="panel">
         <fieldset class="poke-info" id="p1">
-            <legend align="center">Pokemon 1</legend>
+            <legend align="center">Pok&eacute;mon 1</legend>
             <input type="text" class="set-selector calc-trigger" />
             <div class="info-group">
                 <div>
@@ -600,13 +606,13 @@
                 </div>
             </div>
             <div class="btn-group">
-                <div class="left" title="Is this Pokemon protected by Reflect and/or Light Screen?">
+                <div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
                     <input class="btn-input calc-trigger" type="checkbox" id="reflectL" />
                     <label class="btn btn-left" for="reflectL">Reflect</label>
                     <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" />
                     <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
                 </div>
-                <div class="right" title="Is this Pokemon protected by Reflect and/or Light Screen?">
+                <div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
                     <input class="btn-input calc-trigger" type="checkbox" id="reflectR" />
                     <label class="btn btn-left" for="reflectR">Reflect</label>
                     <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" />
@@ -614,21 +620,21 @@
                 </div>
             </div>
             <div class="btn-group gen-specific g2 g3 g4 g5 g6">
-                <div class="left" title="Has this Pokemon been revealed with Foresight or Odor Sleuth?">
+                <div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                     <input class="btn-input calc-trigger" type="checkbox" id="foresightL" />
                     <label class="btn btn-wide" for="foresightL">Foresight</label>
                 </div>
-                <div class="right" title="Has this Pokemon been revealed with Foresight or Odor Sleuth?">
+                <div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                     <input class="btn-input calc-trigger" type="checkbox" id="foresightR" />
                     <label class="btn btn-wide" for="foresightR">Foresight</label>
                 </div>
             </div>
             <div class="btn-group gen-specific g3 g4 g5 g6">
-                <div class="left" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
+                <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                     <input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" />
                     <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
                 </div>
-                <div class="right" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
+                <div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                     <input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" />
                     <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                 </div>
@@ -637,7 +643,7 @@
     </div>
     <div class="panel">
         <fieldset class="poke-info" id="p2">
-            <legend align="center">Pokemon 2</legend>
+            <legend align="center">Pok&eacute;mon 2</legend>
             <input type="text" class="set-selector calc-trigger" />
             <div class="info-group">
                 <div>
@@ -1053,8 +1059,8 @@
 			</form>
         </fieldset>
     </div>
-    <script type="text/javascript" src="/js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/js/lodash.min.js"></script>
+    <script type="text/javascript" src="https://pokemonshowdown.com/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://pokemonshowdown.com/js/lodash.min.js"></script>
     <script type="text/javascript" src="./select2/select2.min.js"></script>
     <script type="text/javascript" src="./js/data/pokedex.js"></script>
     <script type="text/javascript" src="./js/data/setdex_xy.js"></script>
