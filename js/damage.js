@@ -1,753 +1,1091 @@
-function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
-    checkAirLock(p1, field);
-    checkAirLock(p2, field);
-    checkForecast(p1, field.getWeather());
-    checkForecast(p2, field.getWeather());
-    checkKlutz(p1);
-    checkKlutz(p2);
-    p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
-    p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-    p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
-    p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
-    p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-    p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
-    checkIntimidate(p1, p2);
-    checkIntimidate(p2, p1);
-    checkDownload(p1, p2);
-    checkDownload(p2, p1);
-    p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
-    p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
-    p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
-    p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
-    var side1 = field.getSide(1);
-    var side2 = field.getSide(0);
-    checkInfiltrator(p1, side1);
-    checkInfiltrator(p2, side2);
-    var results = [[],[]];
-    for (var i = 0; i < 4; i++) {
-        results[0][i] = getDamageResult(p1, p2, p1.moves[i], side1);
-        results[1][i] = getDamageResult(p2, p1, p2.moves[i], side2);
-    }
-    return results;
-}
+<!DOCTYPE html>
+<html lang="us" manifest="cache.appcache">
 
-function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
-    checkAirLock(attacker, field);
-    checkAirLock(defender, field);
-    checkForecast(attacker, field.getWeather());
-    checkForecast(defender, field.getWeather());
-    checkKlutz(attacker);
-    checkKlutz(defender);
-    attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
-    defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
-    defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-    defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
-    checkIntimidate(attacker, defender);
-    checkIntimidate(defender, attacker);
-    checkDownload(attacker, defender);
-    attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
-    attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
-    defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
-    var defenderSide = field.getSide( ~~(mode === "one-vs-all") );
-    checkInfiltrator(attacker, defenderSide);
-    var results = [];
-    for (var i = 0; i < 4; i++) {
-        results[i] = getDamageResult(attacker, defender, attacker.moves[i], defenderSide);
-    }
-    return results;
-}
+<head>
+    <meta charset="UTF-8" />
+    <title>A Pok&eacute;mon Calculator</title>
+    <link type="text/css" rel="stylesheet" href="./select2/select2.css" />
+    <link type="text/css" rel="stylesheet" href="./ap_calc.css?v2" />
+    <link type="text/css" rel="stylesheet" href="./bootstrap.css" />
+	
+	<style type="text/css">
+		.total{
+			color:black;	
+		}
+	</style>
+</head>
 
-function getDamageResult(attacker, defender, move, field) {
-    var description = {
-        "attackerName": attacker.name,
-        "moveName": move.name,
-        "defenderName": defender.name
-    };
-    
-    if (move.bp === 0) {
-        return {"damage":[0], "description":buildDescription(description)};
-    }
-    
-    var defAbility = defender.ability;
-    if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
-        defAbility = "";
-        description.attackerAbility = attacker.ability;
-    }
-    
-    var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
-    
-    if (move.name === "Weather Ball") {
-        move.type = field.weather.indexOf("Sun") !== -1 ? "Fire"
-                : field.weather.indexOf("Rain") !== -1 ? "Water"
-                : field.weather === "Sand" ? "Rock"
-                : field.weather === "Hail" ? "Ice"
-                : "Normal";
-        description.weather = field.weather;
-        description.moveType = move.type;
-    } else if (move.name === "Judgment" && attacker.item.indexOf("Plate") !== -1) {
-        move.type = getItemBoostType(attacker.item);
-    } else if (move.name === "Natural Gift" && attacker.item.indexOf("Berry") !== -1) {
-        var gift = getNaturalGift(attacker.item);
-        move.type = gift.t;
-        move.bp = gift.p;
-        description.attackerItem = attacker.item;
-        description.moveBP = move.bp;
-        description.moveType = move.type;
-    } else if (move.name === "Nature Power") {
-        move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : "Normal";
-    }
-    
-    var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal";
-    var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal";
-    var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal";
-    if (isAerilate) {
-        move.type = "Flying";
-    } else if (isPixilate) {
-        move.type = "Fairy";
-    } else if (isRefrigerate) {
-        move.type = "Ice";
-    } else if (attacker.ability === "Normalize") {
-        move.type = "Normal";
-        description.attackerAbility = attacker.ability;
-    }
-    
-    var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-    var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
-    var typeEffectiveness = typeEffect1 * typeEffect2;
-    
-    if (typeEffectiveness === 0) {
-        return {"damage":[0], "description":buildDescription(description)};
-    }
-    if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
-            (move.type === "Grass" && defAbility === "Sap Sipper") ||
-            (move.type === "Fire" && defAbility.indexOf("Flash Fire") !== -1) ||
-            (move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1) ||
-            (move.type === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) ||
-            (move.type === "Ground" && !field.isGravity && defAbility === "Levitate") ||
-            (move.isBullet && defAbility === "Bulletproof") ||
-            (move.isSound && defAbility === "Soundproof")) {
-        description.defenderAbility = defAbility;
-        return {"damage":[0], "description":buildDescription(description)};
-    }
-    if (move.type === "Ground" && !field.isGravity && defender.item === "Air Balloon") {
-        description.defenderItem = defender.item;
-        return {"damage":[0], "description":buildDescription(description)};
-    }
-    
-    description.HPEVs = defender.HPEVs + " HP";
-    
-    if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-        var lv = attacker.level;
-        if (attacker.ability === "Parental Bond") {
-            lv *= 2;
-        }
-        return {"damage":[lv], "description":buildDescription(description)};
-    }
-    
-    if (move.hits > 1) {
-        description.hits = move.hits;
-    }
-    var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
-    
-    ////////////////////////////////
-    ////////// BASE POWER //////////
-    ////////////////////////////////
-    var basePower;
-    switch (move.name) {
-        case "Payback":
-            basePower = turnOrder === "LAST" ? 100 : 50;
-            description.moveBP = basePower;
-            break;
-        case "Electro Ball":
-            var r = Math.floor(attacker.stats[SP] / defender.stats[SP]);
-            basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : 60;
-            description.moveBP = basePower;
-            break;
-        case "Gyro Ball":
-            basePower = Math.min(150, Math.floor(25 * defender.stats[SP] / attacker.stats[SP]));
-            description.moveBP = basePower;
-            break;
-        case "Punishment":
-            basePower = Math.min(200, 60 + 20 * countBoosts(defender.boosts));
-            description.moveBP = basePower;
-            break;
-        case "Low Kick":
-        case "Grass Knot":
-            var w = defender.weight;
-            basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
-            description.moveBP = basePower;
-            break;
-        case "Hex":
-            basePower = move.bp * (defender.status !== "Healthy" ? 2 : 1);
-            description.moveBP = basePower;
-            break;
-        case "Heavy Slam":
-        case "Heat Crash":
-            var wr = attacker.weight / defender.weight;
-            basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
-            description.moveBP = basePower;
-            break;
-        case "Stored Power":
-            basePower = 20 + 20 * countBoosts(attacker.boosts);
-            description.moveBP = basePower;
-            break;
-        case "Acrobatics":
-            basePower = attacker.item === "Flying Gem" || attacker.item === "" ? 110 : 55;
-            description.moveBP = basePower;
-            break;
-        case "Wake-Up Slap":
-            basePower = move.bp * (defender.status === "Asleep" ? 2 : 1);
-            description.moveBP = basePower;
-            break;
-        case "Weather Ball":
-            basePower = field.weather !== "" ? 100 : 50;
-            description.moveBP = basePower;
-            break;
-        case "Fling":
-            basePower = getFlingPower(attacker.item);
-            description.moveBP = basePower;
-            description.attackerItem = attacker.item;
-            break;
-        case "Eruption":
-        case "Water Spout":
-            basePower = Math.max(1, Math.floor(150 * attacker.curHP / attacker.maxHP));
-            description.moveBP = basePower;
-            break;
-        case "Flail":
-        case "Reversal":
-            var p = Math.floor(48 * attacker.curHP / attacker.maxHP);
-            basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-            description.moveBP = basePower;
-            break;
-        case "Earthquake":
-            basePower = (field.terrain === "Grassy") ? move.bp / 2 : move.bp;
-            description.terrain = field.terrain;
-            break;
-        case "Nature Power":
-            basePower = (field.terrain === "Electric" || field.terrain === "Grassy") ? 90 : (field.terrain === "Misty") ? 95 : 80;
-            break;
-        default:
-            basePower = move.bp;
-    }
-    
-    var bpMods = [];
-    if ((attacker.ability === "Technician" && basePower <= 60) ||
-            (attacker.ability === "Flare Boost" && attacker.status === "Burned" && move.category === "Special") ||
-            (attacker.ability === "Toxic Boost" && (attacker.status === "Poisoned" || attacker.status === "Badly Poisoned") &&
-                    move.category === "Physical")) {
-        bpMods.push(0x1800);
-        description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Analytic" && turnOrder !== "FIRST") {
-        bpMods.push(0x14CD);
-        description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Sand Force" && field.weather === "Sand" && ["Rock","Ground","Steel"].indexOf(move.type) !== -1) {
-        bpMods.push(0x14CD);
-        description.attackerAbility = attacker.ability;
-        description.weather = field.weather;
-    } else if ((attacker.ability === "Reckless" && move.hasRecoil) ||
-            (attacker.ability === "Iron Fist" && move.isPunch)) {
-        bpMods.push(0x1333);
-        description.attackerAbility = attacker.ability;
-    }
-    
-    if (defAbility === "Heatproof" && move.type === "Fire") {
-        bpMods.push(0x800);
-        description.defenderAbility = defAbility;
-    } else if (defAbility === "Dry Skin" && move.type === "Fire") {
-        bpMods.push(0x1400);
-        description.defenderAbility = defAbility;
-    }
-    
-    if (attacker.ability === "Sheer Force" && move.hasSecondaryEffect) {
-        bpMods.push(0x14CD);
-        description.attackerAbility = attacker.ability;
-    }
-    
-    if (getItemBoostType(attacker.item) === move.type) {
-        bpMods.push(0x1333);
-        description.attackerItem = attacker.item;
-    } else if ((attacker.item === "Muscle Band" && move.category === "Physical") ||
-            (attacker.item === "Wise Glasses" && move.category === "Special")) {
-        bpMods.push(0x1199);
-        description.attackerItem = attacker.item;
-    } else if (((attacker.item === "Adamant Orb" && attacker.name === "Dialga") ||
-            (attacker.item === "Lustrous Orb" && attacker.name === "Palkia") ||
-            (attacker.item === "Griseous Orb" && attacker.name === "Giratina-O")) &&
-            (move.type === attacker.type1 || move.type === attacker.type2)) {
-        bpMods.push(0x1333);
-        description.attackerItem = attacker.item;
-    } else if (attacker.item === move.type + " Gem") {
-        bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
-        description.attackerItem = attacker.item;
-    }
-    
-    if ((move.name === "Facade" && ["Burned","Paralyzed","Poisoned","Badly Poisoned"].indexOf(attacker.status) !== -1) ||
-            (move.name === "Brine" && defender.curHP <= defender.maxHP / 2) ||
-            (move.name === "Venoshock" && (defender.status === "Poisoned" || defender.status === "Badly Poisoned"))) {
-        bpMods.push(0x2000);
-        description.moveBP = move.bp * 2;
-    } else if ((move.name === "Solar Beam" || move.name == "SolarBeam") && ["Rain","Heavy Rain","Sand","Hail"].indexOf(field.weather) !== -1) {
-        bpMods.push(0x800);
-        description.moveBP = move.bp / 2;
-        description.weather = field.weather;
-    } else if (gen >= 6 && move.name === "Knock Off" && !(defender.item === "" ||
-            (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
-            (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1))) {
-        bpMods.push(0x1800);
-        description.moveBP = move.bp * 1.5;
-    }
-    
-    if (field.isHelpingHand) {
-        bpMods.push(0x1800);
-        description.isHelpingHand = true;
-    }
-    
-    if (isAerilate || isPixilate || isRefrigerate) {
-        bpMods.push(0x14CD);
-        description.attackerAbility = attacker.ability;
-    } else if ((attacker.ability === "Mega Launcher" && move.isPulse) ||
-            (attacker.ability === "Strong Jaw" && move.isBite)) {
-        bpMods.push(0x1800);
-        description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Tough Claws" && move.makesContact) {
-        bpMods.push(0x1547);
-        description.attackerAbility = attacker.ability;
-    }
-    
-    var isAttackerAura = attacker.ability === (move.type + " Aura");
-    var isDefenderAura = defAbility === (move.type + " Aura");
-    if (isAttackerAura || isDefenderAura) {
-        if (attacker.ability === "Aura Break" || defAbility === "Aura Break") {
-            bpMods.push(0xAAA);
-            description.attackerAbility = attacker.ability;
-            description.defenderAbility = defAbility;
-        } else {
-            bpMods.push(0x1555);
-            if (isAttackerAura) {
-                description.attackerAbility = attacker.ability;
-            }
-            if (isDefenderAura) {
-                description.defenderAbility = defAbility;
-            }
-        }
-    }
-    
-    basePower = Math.max(1, pokeRound(basePower * chainMods(bpMods) / 0x1000));
-    
-    ////////////////////////////////
-    ////////// (SP)ATTACK //////////
-    ////////////////////////////////
-    var attack;
-    var attackSource = move.name === "Foul Play" ? defender : attacker;
-    var attackStat = move.category === "Physical" ? AT : SA;
-    description.attackEVs = attacker.evs[attackStat] +
-            (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
-            toSmogonStat(attackStat);
-    if (attackSource.boosts[attackStat] === 0 || (isCritical && attackSource.boosts[attackStat] < 0)) {
-        attack = attackSource.rawStats[attackStat];
-    } else if (defAbility === "Unaware") {
-        attack = attackSource.rawStats[attackStat];
-        description.defenderAbility = defAbility;
-    } else {
-        attack = attackSource.stats[attackStat];
-        description.attackBoost = attackSource.boosts[attackStat];
-    }
-    
-    // unlike all other attack modifiers, Hustle gets applied directly
-    if (attacker.ability === "Hustle" && move.category === "Physical") {
-        attack = pokeRound(attack * 3/2);
-        description.attackerAbility = attacker.ability;
-    }
-    
-    var atMods = [];
-    if (defAbility === "Thick Fat" && (move.type === "Fire" || move.type === "Ice")) {
-        atMods.push(0x800);
-        description.defenderAbility = defAbility;
-    }
-    
-    if ((attacker.ability === "Guts" && attacker.status !== "Healthy" && move.category === "Physical") ||
-            (attacker.ability === "Overgrow" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Grass") ||
-            (attacker.ability === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Fire") ||
-            (attacker.ability === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Water") ||
-            (attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Bug")) {
-        atMods.push(0x1800);
-        description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
-        atMods.push(0x1800);
-        description.attackerAbility = "Flash Fire";
-    } else if ((attacker.ability === "Solar Power" && field.weather.indexOf("Sun") !== -1 && move.category === "Special") ||
-            (attacker.ability === "Flower Gift" && field.weather.indexOf("Sun") !== -1 && move.category === "Physical")) {
-        atMods.push(0x1800);
-        description.attackerAbility = attacker.ability;
-        description.weather = field.weather;
-    } else if ((attacker.ability === "Defeatist" && attacker.curHP <= attacker.maxHP / 2) ||
-            (attacker.ability === "Slow Start" && move.category === "Physical")) {
-        atMods.push(0x800);
-        description.attackerAbility = attacker.ability;
-    } else if ((attacker.ability === "Huge Power" || attacker.ability === "Pure Power") && move.category === "Physical") {
-        atMods.push(0x2000);
-        description.attackerAbility = attacker.ability;
-    }
-    
-    if ((attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak") && move.category === "Physical") ||
-            (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special") ||
-            (attacker.item === "Light Ball" && attacker.name === "Pikachu")) {
-        atMods.push(0x2000);
-        description.attackerItem = attacker.item;
-    } else if ((attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special") ||
-            (attacker.item === "Choice Band" && move.category === "Physical") ||
-            (attacker.item === "Choice Specs" && move.category === "Special")) {
-        atMods.push(0x1800);
-        description.attackerItem = attacker.item;
-    }
-    
-    attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
-    
-    ////////////////////////////////
-    ///////// (SP)DEFENSE //////////
-    ////////////////////////////////
-    var defense;
-    var hitsPhysical = move.category === "Physical" || move.dealsPhysicalDamage;
-    var defenseStat = hitsPhysical ? DF : SD;
-    description.defenseEVs = defender.evs[defenseStat] +
-            (NATURES[defender.nature][0] === defenseStat ? "+" : NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
-            toSmogonStat(defenseStat);
-    if (defender.boosts[defenseStat] === 0 || (isCritical && defender.boosts[defenseStat] > 0) || move.ignoresDefenseBoosts) {
-        defense = defender.rawStats[defenseStat];
-    } else if (attacker.ability === "Unaware") {
-        defense = defender.rawStats[defenseStat];
-        description.attackerAbility = attacker.ability;
-    } else {
-        defense = defender.stats[defenseStat];
-        description.defenseBoost = defender.boosts[defenseStat];
-    }
-    
-    // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-    if (field.weather === "Sand" && (defender.type1 === "Rock" || defender.type2 === "Rock") && !hitsPhysical) {
-        defense = pokeRound(defense * 3/2);
-        description.weather = field.weather;
-    }
-    
-    var dfMods = [];
-    if (defAbility === "Marvel Scale" && defender.status !== "Healthy" && hitsPhysical) {
-        dfMods.push(0x1800);
-        description.defenderAbility = defAbility;
-    } else if (defAbility === "Flower Gift" && field.weather.indexOf("Sun") !== -1 && !hitsPhysical) {
-        dfMods.push(0x1800);
-        description.defenderAbility = defAbility;
-        description.weather = field.weather;
-    }
-    
-    if ((defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical) ||
-            (defender.item === "Metal Powder" && defender.name === "Ditto") ||
-            (defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical) ||
-            (defender.item === "Assault Vest" && !hitsPhysical) || defender.item === "Eviolite") {
-        dfMods.push(0x1800);
-        description.defenderItem = defender.item;
-    }
-    
-    defense = Math.max(1, pokeRound(defense * chainMods(dfMods) / 0x1000));
-    
-    ////////////////////////////////
-    //////////// DAMAGE ////////////
-    ////////////////////////////////
-    var baseDamage = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / defense) / 50 + 2);
-    if (field.format !== "Singles" && move.isSpread) {
-        baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
-    }
-    if ((field.weather.indexOf("Sun") !== -1 && move.type === "Fire") || (field.weather.indexOf("Rain") !== -1 && move.type === "Water")) {
-        baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
-        description.weather = field.weather;
-    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") || 
-                  (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1)) {
-        baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
-        description.weather = field.weather;
-    } else if ((field.weather === "Harsh Sunshine" && move.type === "Water") || (field.weather === "Heavy Rain" && move.type === "Fire")) {
-        return {"damage":[0], "description":buildDescription(description)};
-    }
-    if (field.isGravity || (attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
-                attacker.item !== "Air Balloon" && attacker.ability !== "Levitate")) {
-        if (field.terrain === "Electric" && move.type === "Electric") {
-            baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
-            description.terrain = field.terrain;
-        } else if (field.terrain === "Grassy" && move.type == "Grass") {
-            baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
-            description.terrain = field.terrain;
-        }
-    }
-    if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
-            defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
-        if (field.terrain === "Misty" && move.type === "Dragon") {
-            baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
-            description.terrain = field.terrain;
-        }
-    }
-    if (isCritical) {
-        baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
-        description.isCritical = isCritical;
-    }
-    // the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
-    var stabMod = 0x1000;
-    if (move.type === attacker.type1 || move.type === attacker.type2) {
-        if (attacker.ability === "Adaptability") {
-            stabMod = 0x2000;
-            description.attackerAbility = attacker.ability;
-        } else {
-            stabMod = 0x1800;
-        }
-    } else if (attacker.ability === "Protean") {
-        stabMod = 0x1800;
-        description.attackerAbility = attacker.ability;
-    }
-    var applyBurn = (attacker.status === "Burned" && move.category === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn);
-    description.isBurned = applyBurn;
-    var finalMods = [];
-    if (field.isReflect && move.category === "Physical" && !isCritical) {
-        finalMods.push(field.format !== "Singles" ? 0xA8F : 0x800);
-        description.isReflect = true;
-    } else if (field.isLightScreen && move.category === "Special" && !isCritical) {
-        finalMods.push(field.format !== "Singles" ? 0xA8F : 0x800);
-        description.isLightScreen = true;
-    }
-    if (defAbility === "Multiscale" && defender.curHP === defender.maxHP) {
-        finalMods.push(0x800);
-        description.defenderAbility = defAbility;
-    }
-    if (attacker.ability === "Tinted Lens" && typeEffectiveness < 1) {
-        finalMods.push(0x2000);
-        description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Sniper" && isCritical) {
-        finalMods.push(0x1800);
-        description.attackerAbility = attacker.ability;
-    }
-    if ((defAbility === "Solid Rock" || defAbility === "Filter") && typeEffectiveness > 1) {
-        finalMods.push(0xC00);
-        description.defenderAbility = defAbility;
-    }
-    if (attacker.item === "Expert Belt" && typeEffectiveness > 1) {
-        finalMods.push(0x1333);
-        description.attackerItem = attacker.item;
-    } else if (attacker.item === "Life Orb") {
-        finalMods.push(0x14CC);
-        description.attackerItem = attacker.item;
-    }
-    if (getBerryResistType(defender.item) === move.type && (typeEffectiveness > 1 || move.type === "Normal") &&
-            attacker.ability !== "Unnerve") {
-        finalMods.push(0x800);
-        description.defenderItem = defender.item;
-    }
-    if (defAbility === "Fur Coat" && hitsPhysical) {
-        finalMods.push(0x800);
-        description.defenderAbility = defAbility;
-    }
-    var finalMod = chainMods(finalMods);
-    
-    var damage = [];
-    for (var i = 0; i < 16; i++) {
-        damage[i] = Math.floor(baseDamage * (85 + i) / 100);
-        damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
-        damage[i] = Math.floor(damage[i] * typeEffectiveness);
-        if (applyBurn) {
-            damage[i] = Math.floor(damage[i] / 2);
-        }
-        damage[i] = Math.max(1, damage[i]);
-        damage[i] = pokeRound(damage[i] * finalMod / 0x1000);
+<body>
 
-        // is 2nd hit half BP? half attack? half damage range? keeping it as a flat 1.5x until I know the specifics
-        if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
-            damage[i] = Math.floor(damage[i] * 3/2);
-            description.attackerAbility = attacker.ability;
-        }
-    }
-    return {"damage":damage, "description":buildDescription(description)};
-}
+<div class="header"><div class="header-inner">
+    <ul class="nav">
+        <li><a class="button nav-first" href="/"><img src="/images/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
+        <li><a class="button" href="/dex/">Pok&eacute;dex</a></li>
+        <li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>
+        <li><a class="button" href="/ladder/">Ladder</a></li>
+        <li><a class="button nav-last" href="/forums/">Forum</a></li>
+    </ul>
+    <ul class="nav nav-play">
+        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+    </ul>
+    <div style="clear:both"></div>
+</div></div>
+<div class="wrapper">
 
-function buildDescription(description) {
-    var output = "";
-    if (description.attackBoost) {
-        if (description.attackBoost > 0) {
-            output += "+";
-        }
-        output += description.attackBoost + " ";
-    }
-    output = appendIfSet(output, description.attackEVs);
-    output = appendIfSet(output, description.attackerItem);
-    output = appendIfSet(output, description.attackerAbility);
-    if (description.isBurned) {
-        output += "burned ";
-    }
-    output += description.attackerName + " ";
-    if (description.isHelpingHand) {
-        output += "Helping Hand ";
-    }
-    output += description.moveName + " ";
-    if (description.moveBP && description.moveType) {
-        output += "(" + description.moveBP + " BP " + description.moveType + ") ";
-    } else if (description.moveBP) {
-        output += "(" + description.moveBP + " BP) ";
-    } else if (description.moveType) {
-        output += "(" + description.moveType + ") ";
-    }
-    if (description.hits) {
-        output += "(" + description.hits + " hits) ";
-    }
-    output += "vs. ";
-    if (description.defenseBoost) {
-        if (description.defenseBoost > 0) {
-            output += "+";
-        }
-        output += description.defenseBoost + " ";
-    }
-    output = appendIfSet(output, description.HPEVs);
-    if (description.defenseEVs) {
-        output += " / " + description.defenseEVs + " ";
-    }
-    output = appendIfSet(output, description.defenderItem);
-    output = appendIfSet(output, description.defenderAbility);
-    output += description.defenderName;
-    if (description.weather && description.terrain) {
-        
-    } else if (description.weather) {
-        output += " in " + description.weather;
-    } else if (description.terrain) {
-        output += " in " + description.terrain + " Terrain";
-    }
-    if (description.isReflect) {
-        output += " through Reflect";
-    } else if (description.isLightScreen) {
-        output += " through Light Screen";
-    }
-    if (description.isCritical) {
-        output += " on a critical hit";
-    }
-    return output;
-}
+    <div>
+        <span class="title-text">Pok&eacute;mon Damage Calculator</span>
+        <span title="Select the generation.">
+            <input class="gen btn-input" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
+            <input class="gen btn-input" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
+            <input class="gen btn-input" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
+            <input class="gen btn-input" type="radio" name="gen" value="4" id="gen4" /><label class="btn btn-small btn-mid" for="gen4">DPP</label>
+            <input class="gen btn-input" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-mid" for="gen5">B/W</label>
+            <input class="gen btn-input" type="radio" name="gen" value="6" id="gen6" checked="checked" /><label class="btn btn-small btn-right" for="gen6">X/Y</label>
+        </span>
+        <span title="Select the calculator's mode of function.">
+            <input class="mode btn-input" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-wide btn-right right" for="all-vs-one">All vs One</label>
+            <input class="mode btn-input" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-wide btn-mid right" for="one-vs-all">One vs All</label>
+            <input class="mode btn-input" type="radio" name="mode" id="one-vs-one" checked="checked" /><label class="btn btn-wide btn-left right" for="one-vs-one">One vs One</label>
+        </span>
+    </div>
+    <hr />
+    <div class="move-result-group" title="Select a move to show detailed results.">
+        <div class="move-result-subgroup">
+            <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL1" checked="checked" />
+                <label class="btn btn-xxxwide btn-top" for="resultMoveL1">Hi Jump Kick</label>
+                <span id="resultDamageL1">??? - ???%</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL2" />
+                <label class="btn btn-xxxwide btn-mid" for="resultMoveL2">Falcon Punch</label>
+                <span id="resultDamageL2">??? - ???%</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL3" />
+                <label class="btn btn-xxxwide btn-mid" for="resultMoveL3">Suspicious Odor</label>
+                <span id="resultDamageL3">??? - ???%</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveL4" />
+                <label class="btn btn-xxxwide btn-bottom" for="resultMoveL4">Tombstoner</label>
+                <span id="resultDamageL4">??? - ???%</span>
+            </div>
+        </div>
+        <div class="move-result-subgroup">
+            <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2's Moves (select one to show detailed results)</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR1" />
+                <label class="btn btn-xxxwide btn-top" for="resultMoveR1">Hi Jump Kick</label>
+                <span id="resultDamageR1">??? - ???%</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR2" />
+                <label class="btn btn-xxxwide btn-mid" for="resultMoveR2">Falcon Punch</label>
+                <span id="resultDamageR2">??? - ???%</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR3" />
+                <label class="btn btn-xxxwide btn-mid" for="resultMoveR3">Suspicious Odor</label>
+                <span id="resultDamageR3">??? - ???%</span>
+            </div>
+            <div>
+                <input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR4" />
+                <label class="btn btn-xxxwide btn-bottom" for="resultMoveR4">Tombstoner</label>
+                <span id="resultDamageR4">??? - ???%</span>
+            </div>
+        </div>
+    </div>
+    <div class="main-result-group">
+        <div class="big-text"><span id="mainResult">Loading...</span>
+        </div>
+        <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript.)</span>
+        </div>
+    </div>
+    
+    <div class="panel">
+        <fieldset class="poke-info" id="p1">
+            <legend align="center">Pok&eacute;mon 1</legend>
+            <input type="text" class="set-selector calc-trigger" />
+            <div class="info-group">
+                <div>
+                    <label>Type</label>
+                    <select class="type1 terrain-trigger calc-trigger"></select>
+                    <select class="type2 terrain-trigger calc-trigger"></select>
+                </div>
+                <div>
+                    <label>Level</label>
+                    <input class="level calc-trigger" value="100" />
+                </div>
+                <div class="hide">
+                    <label>Weight (kg)</label>
+                    <input class="weight calc-trigger" value="10.0" />
+                </div>
+            </div>
+            <div class="info-group">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Base</th>
+                        <th class="gen-specific g3 g4 g5 g6">IVs</th>
+                        <th class="gen-specific g3 g4 g5 g6">EVs</th>
+                        <th class="gen-specific g1 g2 hide">DVs</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr class="hp">
+                        <td>
+                            <label>HP</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                        </td>
+                        <td><span class="total">341</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="at">
+                        <td>
+                            <label>Attack</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="df">
+                        <td>
+                            <label>Defense</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sa gen-specific g2 g3 g4 g5 g6">
+                        <td>
+                            <label>Sp. Atk</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sd gen-specific g2 g3 g4 g5 g6">
+                        <td>
+                            <label>Sp. Def</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sl gen-specific g1 hide">
+                        <td>
+                            <label>Special</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td>
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sp">
+                        <td>
+                            <label>Speed</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="info-group info-selectors">
+                <div class="gen-specific g3 g4 g5 g6">
+                    <label>Nature</label>
+                    <select class="nature calc-trigger">
+                        <option value="Adamant">Adamant</option>
+                        <option value="Bashful">Bashful</option>
+                        <option value="Bold">Bold</option>
+                        <option value="Brave">Brave</option>
+                        <option value="Calm">Calm</option>
+                        <option value="Careful">Careful</option>
+                        <option value="Docile">Docile</option>
+                        <option value="Gentle">Gentle</option>
+                        <option value="Hardy" selected="selected">Hardy</option>
+                        <option value="Hasty">Hasty</option>
+                        <option value="Impish">Impish</option>
+                        <option value="Jolly">Jolly</option>
+                        <option value="Lax">Lax</option>
+                        <option value="Lonely">Lonely</option>
+                        <option value="Mild">Mild</option>
+                        <option value="Modest">Modest</option>
+                        <option value="Naive">Naive</option>
+                        <option value="Naughty">Naughty</option>
+                        <option value="Quiet">Quiet</option>
+                        <option value="Quirky">Quirky</option>
+                        <option value="Rash">Rash</option>
+                        <option value="Relaxed">Relaxed</option>
+                        <option value="Sassy">Sassy</option>
+                        <option value="Serious">Serious</option>
+                        <option value="Timid">Timid</option>
+                    </select>
+                </div>
+                <div class="gen-specific g3 g4 g5 g6">
+                    <label>Ability</label>
+                    <select class="ability terrain-trigger calc-trigger"></select>
+                </div>
+                <div class="gen-specific g2 g3 g4 g5 g6">
+                    <label>Item</label>
+                    <select class="item terrain-trigger calc-trigger"></select>
+                </div>
+                <div>
+                    <label>Status</label>
+                    <select class="status calc-trigger">
+                        <option value="Healthy">Healthy</option>
+                        <option value="Poisoned">Poisoned</option>
+                        <option value="Badly Poisoned">Badly Poisoned</option>
+                        <option value="Burned">Burned</option>
+                        <option value="Paralyzed">Paralyzed</option>
+                        <option value="Asleep">Asleep</option>
+                        <option value="Frozen">Frozen</option>
+                    </select>
+                    <select class="toxic-counter calc-trigger hide">
+                        <option value="1">1/16</option>
+                        <option value="2">2/16</option>
+                        <option value="3">3/16</option>
+                        <option value="4">4/16</option>
+                        <option value="5">5/16</option>
+                        <option value="6">6/16</option>
+                        <option value="7">7/16</option>
+                        <option value="8">8/16</option>
+                        <option value="9">9/16</option>
+                        <option value="10">10/16</option>
+                        <option value="11">11/16</option>
+                        <option value="12">12/16</option>
+                        <option value="13">13/16</option>
+                        <option value="14">14/16</option>
+                        <option value="15">15/16</option>
+                    </select>
+                </div>
+            </div>
+            <div class="info-group">
+                <label>Current HP</label>
+                <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (
+                <input class="percent-hp calc-trigger" value="100" />%)
+            </div>
+            <div class="move1">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="50" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL1" />
+                <label class="btn crit-btn" for="critL1" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+            <div class="move2">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="0" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL2" />
+                <label class="btn crit-btn" for="critL2" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+            <div class="move3">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="0" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL3" />
+                <label class="btn crit-btn" for="critL3" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+            <div class="move4">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="0" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critL4" />
+                <label class="btn crit-btn" for="critL4" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+        </fieldset>
+    </div>
+    
+    <div class="panel">
+        <fieldset class="field-info">
+            <legend align="center">Field</legend>
+            <div class="gen-specific g3 g4 g5 g6" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                <input class="btn-input calc-trigger" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
+                <label class="btn btn-left" for="singles-format">Singles</label>
+                <input class="btn-input calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" />
+                <label class="btn btn-right" for="doubles-format">Doubles</label>
+            </div>
+            <div class="gen-specific g6" style="width: 24.2em; margin: 5px auto;" title="Select the current terrain.">
+                <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-xxwide btn-left" for="electric">Electric Terrain</label>
+                <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxwide btn-mid" for="grassy">Grassy Terrain</label>
+                <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xwide btn-right" for="misty">Misty Terrain</label>
+            </div>
+            <hr class="gen-specific g6" />
+            <div class="gen-specific g3 g4 g5 g6" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
+                <label class="btn btn-small btn-left" for="clear">None</label>
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
+                <label class="btn btn-small btn-mid" for="sun">Sun</label>
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
+                <label class="btn btn-small btn-mid" for="rain">Rain</label>
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
+                <label class="btn btn-small btn-mid" for="sand">Sand</label>
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
+                <label class="btn btn-small btn-right" for="hail">Hail</label>
+            </div>
+            <div class="gen-specific g6" title="Select the current weather condition.">
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
+                <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
+                <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
+                <input class="btn-input calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
+                <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
+            </div>
+            <div class="gen-specific g2 hide" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
+                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
+                <label class="btn btn-small btn-left" for="gscClear">None</label>
+                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" />
+                <label class="btn btn-small btn-mid" for="gscSun">Sun</label>
+                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" />
+                <label class="btn btn-small btn-mid" for="gscRain">Rain</label>
+                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
+                <label class="btn btn-small btn-right" for="gscSand">Sand</label>
+            </div>
+            <div class="gen-specific g4 g5 g6" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                <input class="btn-input calc-trigger" type="checkbox" id="gravity" />
+                <label class="btn" for="gravity">Gravity</label>
+            </div>
+            <hr class="gen-specific g2 g3 g4 g5 g6" />
+            <div class="btn-group gen-specific g4 g5 g6">
+                <div class="left" title="Is Stealth Rock affecting this side of the field?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="srL" />
+                    <label class="btn btn-xwide" for="srL">Stealth Rock</label>
+                </div>
+                <div class="right" title="Is Stealth Rock affecting this side of the field?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="srR" />
+                    <label class="btn btn-xwide" for="srR">Stealth Rock</label>
+                </div>
+            </div>
+            <div class="btn-group gen-specific g3 g4 g5 g6">
+                <div class="left" title="Are there Spikes on this side of the field?">
+                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
+                    <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
+                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" />
+                    <label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
+                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" />
+                    <label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
+                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" />
+                    <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
+                </div>
+                <div class="right" title="Are there Spikes on this side of the field?">
+                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
+                    <label class="btn btn-xsmall btn-left" for="spikesR0">0</label>
+                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
+                    <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
+                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
+                    <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
+                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
+                    <label class="btn btn-wide btn-right" for="spikesR3">3 Spikes</label>
+                </div>
+            </div>
+            <div class="btn-group gen-specific g2">
+                <div class="left" title="Are there Spikes on this side of the field?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesL" />
+                    <label class="btn" for="gscSpikesL">Spikes</label>
+                </div>
+                <div class="right" title="Are there Spikes on this side of the field?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesR" />
+                    <label class="btn" for="gscSpikesR">Spikes</label>
+                </div>
+            </div>
+            <div class="btn-group">
+                <div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="reflectL" />
+                    <label class="btn btn-left" for="reflectL">Reflect</label>
+                    <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" />
+                    <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
+                </div>
+                <div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="reflectR" />
+                    <label class="btn btn-left" for="reflectR">Reflect</label>
+                    <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" />
+                    <label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
+                </div>
+            </div>
+            <div class="btn-group gen-specific g2 g3 g4 g5 g6">
+                <div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="foresightL" />
+                    <label class="btn btn-wide" for="foresightL">Foresight</label>
+                </div>
+                <div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="foresightR" />
+                    <label class="btn btn-wide" for="foresightR">Foresight</label>
+                </div>
+            </div>
+            <div class="btn-group gen-specific g3 g4 g5 g6">
+                <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" />
+                    <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
+                </div>
+                <div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" />
+                    <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="panel">
+        <fieldset class="poke-info" id="p2">
+            <legend align="center">Pok&eacute;mon 2</legend>
+            <input type="text" class="set-selector calc-trigger" />
+            <div class="info-group">
+                <div>
+                    <label>Type</label>
+                    <select class="type1 terrain-trigger calc-trigger"></select>
+                    <select class="type2 terrain-trigger calc-trigger"></select>
+                </div>
+                <div>
+                    <label>Level</label>
+                    <input class="level calc-trigger" value="100" />
+                </div>
+                <div class="hide">
+                    <label>Weight (kg)</label>
+                    <input class="weight calc-trigger" value="10.0" />
+                </div>
+            </div>
+            <div class="info-group">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Base</th>
+                        <th class="gen-specific g3 g4 g5 g6">IVs</th>
+                        <th class="gen-specific g3 g4 g5 g6">EVs</th>
+                        <th class="gen-specific g1 g2 hide">DVs</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr class="hp">
+                        <td>
+                            <label>HP</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                        </td>
+                        <td><span class="total">341</span>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="at">
+                        <td>
+                            <label>Attack</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="df">
+                        <td>
+                            <label>Defense</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sa gen-specific g2 g3 g4 g5 g6">
+                        <td>
+                            <label>Sp. Atk</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sd gen-specific g2 g3 g4 g5 g6">
+                        <td>
+                            <label>Sp. Def</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sl gen-specific g1 hide">
+                        <td>
+                            <label>Special</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td>
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="sp">
+                        <td>
+                            <label>Speed</label>
+                        </td>
+                        <td>
+                            <input class="base calc-trigger" value="100" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="ivs calc-trigger" value="31" />
+                        </td>
+                        <td class="gen-specific g3 g4 g5 g6">
+                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                        </td>
+                        <td class="gen-specific g1 g2 hide">
+                            <input class="dvs calc-trigger" value="15" />
+                        </td>
+                        <td><span class="total">236</span>
+                        </td>
+                        <td>
+                            <select class="boost calc-trigger">
+                                <option value="6">+6</option>
+                                <option value="5">+5</option>
+                                <option value="4">+4</option>
+                                <option value="3">+3</option>
+                                <option value="2">+2</option>
+                                <option value="1">+1</option>
+                                <option value="0" selected="selected">--</option>
+                                <option value="-1">-1</option>
+                                <option value="-2">-2</option>
+                                <option value="-3">-3</option>
+                                <option value="-4">-4</option>
+                                <option value="-5">-5</option>
+                                <option value="-6">-6</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="info-group info-selectors">
+                <div class="gen-specific g3 g4 g5 g6">
+                    <label>Nature</label>
+                    <select class="nature calc-trigger">
+                        <option value="Adamant">Adamant</option>
+                        <option value="Bashful">Bashful</option>
+                        <option value="Bold">Bold</option>
+                        <option value="Brave">Brave</option>
+                        <option value="Calm">Calm</option>
+                        <option value="Careful">Careful</option>
+                        <option value="Docile">Docile</option>
+                        <option value="Gentle">Gentle</option>
+                        <option value="Hardy" selected="selected">Hardy</option>
+                        <option value="Hasty">Hasty</option>
+                        <option value="Impish">Impish</option>
+                        <option value="Jolly">Jolly</option>
+                        <option value="Lax">Lax</option>
+                        <option value="Lonely">Lonely</option>
+                        <option value="Mild">Mild</option>
+                        <option value="Modest">Modest</option>
+                        <option value="Naive">Naive</option>
+                        <option value="Naughty">Naughty</option>
+                        <option value="Quiet">Quiet</option>
+                        <option value="Quirky">Quirky</option>
+                        <option value="Rash">Rash</option>
+                        <option value="Relaxed">Relaxed</option>
+                        <option value="Sassy">Sassy</option>
+                        <option value="Serious">Serious</option>
+                        <option value="Timid">Timid</option>
+                    </select>
+                </div>
+                <div class="gen-specific g3 g4 g5 g6">
+                    <label>Ability</label>
+                    <select class="ability terrain-trigger calc-trigger"></select>
+                </div>
+                <div class="gen-specific g2 g3 g4 g5 g6">
+                    <label>Item</label>
+                    <select class="item terrain-trigger calc-trigger"></select>
+                </div>
+                <div>
+                    <label>Status</label>
+                    <select class="status calc-trigger">
+                        <option value="Healthy">Healthy</option>
+                        <option value="Poisoned">Poisoned</option>
+                        <option value="Badly Poisoned">Badly Poisoned</option>
+                        <option value="Burned">Burned</option>
+                        <option value="Paralyzed">Paralyzed</option>
+                        <option value="Asleep">Asleep</option>
+                        <option value="Frozen">Frozen</option>
+                    </select>
+                    <select class="toxic-counter calc-trigger hide">
+                        <option value="1">1/16</option>
+                        <option value="2">2/16</option>
+                        <option value="3">3/16</option>
+                        <option value="4">4/16</option>
+                        <option value="5">5/16</option>
+                        <option value="6">6/16</option>
+                        <option value="7">7/16</option>
+                        <option value="8">8/16</option>
+                        <option value="9">9/16</option>
+                        <option value="10">10/16</option>
+                        <option value="11">11/16</option>
+                        <option value="12">12/16</option>
+                        <option value="13">13/16</option>
+                        <option value="14">14/16</option>
+                        <option value="15">15/16</option>
+                    </select>
+                </div>
+            </div>
+            <div class="info-group">
+                <label>Current HP</label>
+                <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (
+                <input class="percent-hp calc-trigger" value="100" />%)
+            </div>
+            <div class="move1">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="50" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR1" />
+                <label class="btn crit-btn" for="critR1" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+            <div class="move2">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="0" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR2" />
+                <label class="btn crit-btn" for="critR2" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+            <div class="move3">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="0" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR3" />
+                <label class="btn crit-btn" for="critR3" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+            <div class="move4">
+                <select class="move-selector calc-trigger small-select"></select>
+                <input class="move-bp calc-trigger" value="0" />
+                <select class="move-type calc-trigger"></select>
+                <select class="move-cat calc-trigger gen-specific g4 g5 g6">
+                    <option value="Physical">Physical</option>
+                    <option value="Special">Special</option>
+                </select>
+                <input class="move-crit calc-trigger btn-input" type="checkbox" id="critR4" />
+                <label class="btn crit-btn" for="critR4" title="Force this attack to be a critical hit?">Crit</label>
+                <select class="move-hits calc-trigger hide">
+                    <option value="2">2 hits</option>
+                    <option value="3">3 hits</option>
+                    <option value="4">4 hits</option>
+                    <option value="5">5 hits</option>
+                </select>
+            </div>
+        </fieldset>
+    </div>
+    <div class="panel">
+        <fieldset class="poke-import">
+		<legend align="center">Import Team</legend>
+			<div id="import-1_wrapper" class="dataTables_wrapper no-footer" style="max-width: 638.609375px;">
+				
+				<form class="import-team">
+					<textarea class="import-team-text"></textarea>
+					<!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
+			</div>
+			</form>
+        </fieldset>
+    </div>
+    <script type="text/javascript" src="https://pokemonshowdown.com/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://pokemonshowdown.com/js/lodash.min.js"></script>
+    <script type="text/javascript" src="./select2/select2.min.js"></script>
+    <script type="text/javascript" src="./js/data/pokedex.js"></script>
+    <script type="text/javascript" src="./js/data/setdex_xy.js"></script>
+    <script type="text/javascript" src="./js/data/setdex_bw.js"></script>
+    <script type="text/javascript" src="./js/data/setdex_dpp.js"></script>
+    <script type="text/javascript" src="./js/data/setdex_rse.js"></script>
+    <script type="text/javascript" src="./js/data/setdex_gsc.js"></script>
+    <script type="text/javascript" src="./js/data/setdex_rby.js"></script>
+    <script type="text/javascript" src="./js/data/stat_data.js"></script>
+    <script type="text/javascript" src="./js/data/type_data.js"></script>
+    <script type="text/javascript" src="./js/data/nature_data.js"></script>
+    <script type="text/javascript" src="./js/data/ability_data.js"></script>
+    <script type="text/javascript" src="./js/data/item_data.js"></script>
+    <script type="text/javascript" src="./js/data/move_data.js"></script>
+    <script type="text/javascript" src="./js/ap_calc.js"></script>
+    <script type="text/javascript" src="./js/calc_ab.js"></script>
+    <script type="text/javascript" src="./js/damage.js"></script>
+    <script type="text/javascript" src="./js/damage_dpp.js"></script>
+    <script type="text/javascript" src="./js/damage_rse.js"></script>
+    <script type="text/javascript" src="./js/damage_gsc.js"></script>
+    <script type="text/javascript" src="./js/damage_rby.js"></script>
+    <script type="text/javascript" src="./js/ko_chance.js"></script>
+    <script type="text/javascript" src="./js/moveset_import.js"></script>
+</div>
 
-function appendIfSet(str, toAppend) {
-    if (toAppend) {
-        return str + toAppend + " ";
-    }
-    return str;
-}
+</body>
 
-function toSmogonStat(stat) {
-    return stat === AT ? "Atk"
-            : stat === DF ? "Def"
-            : stat === SA ? "SpA"
-            : stat === SD ? "SpD"
-            : stat === SP ? "Spe"
-            : "wtf";
-}
-
-function chainMods(mods) {
-    var M = 0x1000;
-    for(var i = 0; i < mods.length; i++) {
-        if(mods[i] !== 0x1000) {
-            M = ((M * mods[i]) + 0x800) >> 12;
-        }
-    }
-    return M;
-}
-
-function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
-    if (isGhostRevealed && type === "Ghost" && (move.type === "Normal" || move.type === "Fighting")) {
-        return 1;
-    } else if (isGravity && type === "Flying" && move.type === "Ground") {
-        return 1;
-    } else if (move.name === "Freeze-Dry" && type === "Water") {
-        return 2;
-    } else if (move.name === "Flying Press") {
-        return typeChart["Fighting"][type] * typeChart["Flying"][type];
-    } else {
-        return typeChart[move.type][type];
-    }
-}
-
-function getModifiedStat(stat, mod) {
-    return mod > 0 ? Math.floor(stat * (2 + mod) / 2)
-            : mod < 0 ? Math.floor(stat * 2 / (2 - mod))
-            : stat;
-}
-
-function getFinalSpeed(pokemon, weather) {
-    var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
-    if (pokemon.item === "Choice Scarf") {
-        speed = Math.floor(speed * 1.5);
-    } else if (pokemon.item === "Macho Brace" || pokemon.item === "Iron Ball") {
-        speed = Math.floor(speed / 2);
-    }
-    if ((pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") !== -1) ||
-            (pokemon.ability === "Sand Rush" && weather === "Sand") ||
-            (pokemon.ability === "Swift Swim" && weather.indexOf("Rain") !== -1)) {
-        speed *= 2;
-    }
-    return speed;
-}
-
-function checkAirLock(pokemon, field) {
-    if (pokemon.ability === "Air Lock" || pokemon.ability === "Cloud Nine") {
-        field.clearWeather();
-    }
-}
-function checkForecast(pokemon, weather) {
-    if (pokemon.ability === "Forecast" && pokemon.name === "Castform") {
-        if (weather.indexOf("Sun") !== -1) {
-            pokemon.type1 = "Fire";
-        } else if (weather.indexOf("Rain") !== -1) {
-            pokemon.type1 = "Water";
-        } else if (weather === "Hail") {
-            pokemon.type1 = "Ice";
-        } else {
-            pokemon.type1 = "Normal";
-        }
-        pokemon.type2 = "";
-    }
-}
-function checkKlutz(pokemon) {
-    if (pokemon.ability === "Klutz") {
-        pokemon.item = "";
-    }
-}
-function checkIntimidate(source, target) {
-    if (source.ability === "Intimidate") {
-        if (target.ability === "Contrary" || target.ability === "Defiant") {
-            target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-        } else if (["Clear Body", "White Smoke", "Hyper Cutter"].indexOf(target.ability) !== -1) {
-            // no effect
-        } else if (target.ability === "Simple") {
-            target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
-        } else {
-            target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
-        }
-    }
-}
-function checkDownload(source, target) {
-    if (source.ability === "Download") {
-        if (target.stats[SD] <= target.stats[DF]) {
-            source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
-        } else {
-            source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
-        }
-    }
-}
-function checkInfiltrator(attacker, affectedSide) {
-    if (attacker.ability === "Infiltrator") {
-        affectedSide.isReflect = false;
-        affectedSide.isLightScreen = false;
-    }
-}
-
-function countBoosts(boosts) {
-    var sum = 0;
-    for (var i = 0; i < STATS.length; i++) {
-        if (boosts[STATS[i]] > 0) {
-            sum += boosts[STATS[i]];
-        }
-    }
-    return sum;
-}
-
-// GameFreak rounds DOWN on .5
-function pokeRound(num) {
-    return (num % 1 > 0.5) ? Math.ceil(num) : Math.floor(num);
-}
+</html>
