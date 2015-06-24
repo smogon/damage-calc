@@ -148,6 +148,7 @@ function getDamageResult(attacker, defender, move, field) {
         description.hits = move.hits;
     }
     var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
+	description.turnOrder = turnOrder;
     
     ////////////////////////////////
     ////////// BASE POWER //////////
@@ -564,6 +565,9 @@ function getDamageResult(attacker, defender, move, field) {
 
 function buildDescription(description) {
     var output = "";
+	if (description.turnOrder) {
+		output =  " " + description.turnOrder + " ";
+	}	
     if (description.attackBoost) {
         if (description.attackBoost > 0) {
             output += "+";
