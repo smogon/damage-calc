@@ -318,11 +318,11 @@ function getDamageResult(attacker, defender, move, field) {
     var isDefenderAura = defAbility === (move.type + " Aura");
     if (isAttackerAura || isDefenderAura) {
         if (attacker.ability === "Aura Break" || defAbility === "Aura Break") {
-            bpMods.push(0xAAA);
+            bpMods.push(0x0C00);
             description.attackerAbility = attacker.ability;
             description.defenderAbility = defAbility;
         } else {
-            bpMods.push(0x1555);
+            bpMods.push(0x1547);
             if (isAttackerAura) {
                 description.attackerAbility = attacker.ability;
             }
