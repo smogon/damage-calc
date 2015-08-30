@@ -129,6 +129,10 @@ function getDamageResult(attacker, defender, move, field) {
         description.defenderAbility = defAbility;
         return {"damage":[0], "description":buildDescription(description)};
     }
+    if (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1) {
+        typeEffectiveness /= 2;
+        description.weather = field.weather;
+    }
     if (move.type === "Ground" && !field.isGravity && defender.item === "Air Balloon") {
         description.defenderItem = defender.item;
         return {"damage":[0], "description":buildDescription(description)};
@@ -318,11 +322,11 @@ function getDamageResult(attacker, defender, move, field) {
     var isDefenderAura = defAbility === (move.type + " Aura");
     if (isAttackerAura || isDefenderAura) {
         if (attacker.ability === "Aura Break" || defAbility === "Aura Break") {
-            bpMods.push(0xAAA);
+            bpMods.push(0x0C00);
             description.attackerAbility = attacker.ability;
             description.defenderAbility = defAbility;
         } else {
-            bpMods.push(0x1555);
+            bpMods.push(0x1547);
             if (isAttackerAura) {
                 description.attackerAbility = attacker.ability;
             }
@@ -446,6 +450,11 @@ function getDamageResult(attacker, defender, move, field) {
         description.defenderItem = defender.item;
     }
     
+    if (defAbility === "Fur Coat" && hitsPhysical) {
+        dfMods.push(0x2000);
+        description.defenderAbility = defAbility;
+    }
+
     defense = Math.max(1, pokeRound(defense * chainMods(dfMods) / 0x1000));
     
     ////////////////////////////////
@@ -458,8 +467,7 @@ function getDamageResult(attacker, defender, move, field) {
     if ((field.weather.indexOf("Sun") !== -1 && move.type === "Fire") || (field.weather.indexOf("Rain") !== -1 && move.type === "Water")) {
         baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
         description.weather = field.weather;
-    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") || 
-                  (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1)) {
+    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire")) {
         baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
         description.weather = field.weather;
     } else if ((field.weather === "Harsh Sunshine" && move.type === "Water") || (field.weather === "Heavy Rain" && move.type === "Fire")) {
@@ -535,10 +543,6 @@ function getDamageResult(attacker, defender, move, field) {
             attacker.ability !== "Unnerve") {
         finalMods.push(0x800);
         description.defenderItem = defender.item;
-    }
-    if (defAbility === "Fur Coat" && hitsPhysical) {
-        finalMods.push(0x800);
-        description.defenderAbility = defAbility;
     }
     var finalMod = chainMods(finalMods);
     
