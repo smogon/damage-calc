@@ -1575,6 +1575,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true,
         hasRecoil: true
+    },
+    'Venoshock': {
+        bp: 65,
+        type: 'Poison',
+        category: 'Special'
     }
 });
 
