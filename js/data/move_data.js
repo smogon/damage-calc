@@ -1662,6 +1662,16 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Hidden Power Water': { bp: 60 },
     'Hurricane': { bp: 110 },
     'Hydro Pump': { bp: 110 },
+    'Hyperspace Fury': {
+        bp: 100,
+        type: 'Dark',
+        category: 'Physical'
+    },
+    'Hyperspace Hole': {
+        bp: 80,
+        type: 'Psychic',
+        category: 'Special'
+    },
     'Ice Beam': { bp: 90 },
     'Incinerate': { bp: 60 },
     'Knock Off': { bp: 65 },
