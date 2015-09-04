@@ -16397,7 +16397,7 @@ var SETDEX_BW = {
 			"moves": ["Substitute", "Thunder Wave", "Roost", "Dragon Tail"]
 		}
 	},
-	"Mr": {
+	"Mr. Mime": {
 		"OU Baton Pass": {
 			"level": 100,
 			"evs": {

@@ -287,12 +287,6 @@ var SETDEX_RBY = {
 			"moves": ["Hypnosis", "Explosion", "Thunderbolt", "Mega Drain"]
 		}
 	},
-	"Mr": {
-		"UU Offensive": {
-			"level": 100,
-			"moves": ["Psychic", "Thunder Wave", "Thunderbolt", "Seismic Toss"]
-		}
-	},
 	"Vileplume": {
 		"UU Swords Dance": {
 			"level": 100,

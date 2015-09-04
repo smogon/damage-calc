@@ -3446,7 +3446,7 @@ var SETDEX_ADV = {
 			"moves": ["Thunderbolt", "Hidden Power Grass", "Substitute", "Baton Pass"]
 		}
 	},
-	"Mr": {
+	"Mr. Mime": {
 		"OU Calm Mind + Baton Pass": {
 			"level": 100,
 			"evs": {

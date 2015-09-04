@@ -561,7 +561,7 @@ var SETDEX_GSC = {
 			"moves": ["Thunderbolt", "Hidden Power Water", "Agility", "Baton Pass"]
 		}
 	},
-	"Mr": {
+	"Mr. Mime": {
 		"OU Encore Support": {
 			"level": 100,
 			"item": "Leftovers",

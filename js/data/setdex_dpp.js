@@ -12453,7 +12453,7 @@ var SETDEX_DPP = {
 			"moves": ["Dragon Dance", "Heal Bell", "Roost", "Dragon Claw"]
 		}
 	},
-	"Mr": {
+	"Mr. Mime": {
 		"UU Baton Pass": {
 			"level": 100,
 			"evs": {
