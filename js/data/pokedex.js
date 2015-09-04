@@ -9436,13 +9436,26 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "t2": "Ghost",
     "bs": {
       "hp": 80,
-      "at": 105,
-      "df": 59,
-      "sa": 151,
+      "at": 110,
+      "df": 60,
+      "sa": 150,
       "sd": 130,
-      "sp": 75
+      "sp": 70
     },
     "w": 9.0
+  },
+   "Hoopa Unbound": {
+    "t1": "Psychic",
+    "t2": "Dark",
+    "bs": {
+      "hp": 80,
+      "at": 160,
+      "df": 60,
+      "sa": 170,
+      "sd": 130,
+      "sp": 80
+    },
+    "w": 490.0
   },
   "Inkay": {
     "t1": "Dark",
