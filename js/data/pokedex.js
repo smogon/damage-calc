@@ -10530,11 +10530,11 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "t1": "Fire",
     "t2": "Water",
     "bs": {
-      "hp": 70,
-      "at": 109,
+      "hp": 80,
+      "at": 110,
       "df": 120,
-      "sa": 121,
-      "sd": 110,
+      "sa": 130,
+      "sd": 90,
       "sp": 70
     },
     "w": 195.0
