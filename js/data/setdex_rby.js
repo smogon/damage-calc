@@ -24,7 +24,7 @@ var SETDEX_RBY = {
 		"UU Double Powder": {"level":100,"moves":["Psychic","Mega Drain","Sleep Powder","Stun Spore"]}
 	},
 	"Chansey": {
-		"OU Special Wall": {"level":100,"moves":["Ice Beam","Soft-Boiled","Thunder Wave","Thunderbolt"]}
+		"OU Special Wall": {"level":100,"moves":["Ice Beam","Softboiled","Thunder Wave","Thunderbolt"]}
 	},
 	"Clefable": {
 		"OU Offensive": {"level":100,"moves":["Body Slam","Blizzard","Thunderbolt","Hyper Beam"]}
@@ -54,7 +54,7 @@ var SETDEX_RBY = {
 		"OU Standard": {"level":100,"moves":["Sleep Powder","Psychic","Explosion","Stun Spore"]}
 	},
 	"Farfetch'd": {
-		"UU Staller?": {"level":100,"moves":["Sand Attack","Substitute","Slash","Toxic"]}
+		"UU Staller?": {"level":100,"moves":["Sand-Attack","Substitute","Slash","Toxic"]}
 	},
 	"Fearow": {
 		"UU Physical Attacker": {"level":100,"moves":["Drill Peck","Double-Edge","Hyper Beam","Mirror Move"]}
@@ -84,7 +84,7 @@ var SETDEX_RBY = {
 		"UU Physical Sweeper": {"level":100,"moves":["Body Slam","Submission","Seismic Toss","Counter"]}
 	},
 	"Hitmonlee": {
-		"UU Physical Attacker": {"level":100,"moves":["Body Slam","Counter","High Jump Kick","Seismic Toss"]}
+		"UU Physical Attacker": {"level":100,"moves":["Body Slam","Counter","Hi Jump Kick","Seismic Toss"]}
 	},
 	"Hypno": {
 		"OU Lead": {"level":100,"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]}
@@ -123,9 +123,9 @@ var SETDEX_RBY = {
 		"UU All-Out Attacker": {"level":100,"moves":["Earthquake","Blizzard","Body Slam","Seismic Toss"]}
 	},
 	"Mew": {
-		"Uber Swords Dance": {"level":100,"moves":["Swords Dance","Earthquake","Hyper Beam","Soft-Boiled"]},
-		"Uber OHKO Abuse": {"level":100,"moves":["Thunder Wave","Horn Drill","Fissure","Soft-Boiled"]},
-		"Uber Special Sweeper": {"level":100,"moves":["Thunderbolt","Blizzard","Soft-Boiled","Psychic"]}
+		"Uber Swords Dance": {"level":100,"moves":["Swords Dance","Earthquake","Hyper Beam","Softboiled"]},
+		"Uber OHKO Abuse": {"level":100,"moves":["Thunder Wave","Horn Drill","Fissure","Softboiled"]},
+		"Uber Special Sweeper": {"level":100,"moves":["Thunderbolt","Blizzard","Softboiled","Psychic"]}
 	},
 	"Mewtwo": {
 		"Uber Amnesia": {"level":100,"moves":["Amnesia","Psychic","Blizzard","Recover"]},
@@ -161,7 +161,7 @@ var SETDEX_RBY = {
 		"UU Spore": {"level":100,"moves":["Spore","Stun Spore","Slash","Mega Drain"]}
 	},
 	"Persian": {
-		"OU Slash": {"level":100,"moves":["Slash","Bubble Beam","Hyper Beam","Thunderbolt"]}
+		"OU Slash": {"level":100,"moves":["Slash","BubbleBeam","Hyper Beam","Thunderbolt"]}
 	},
 	"Pidgeot": {
 		"UU Agility Sweeper": {"level":100,"moves":["Body Slam","Hyper Beam","Agility","Mirror Move"]}
@@ -200,7 +200,7 @@ var SETDEX_RBY = {
 		"UU Swords Dance + Agility": {"level":100,"moves":["Slash","Swords Dance","Agility","Hyper Beam"]}
 	},
 	"Seadra": {
-		"UU Special Attacker": {"level":100,"moves":["Hydro Pump","Blizzard","Smokescreen","Mimic"]}
+		"UU Special Attacker": {"level":100,"moves":["Hydro Pump","Blizzard","SmokeScreen","Mimic"]}
 	},
 	"Seaking": {
 		"UU Mixed Attacker": {"level":100,"moves":["Surf","Blizzard","Hyper Beam","Double-Edge"]}

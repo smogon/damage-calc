@@ -11,7 +11,7 @@ var SETDEX_GSC = {
 		"OU Offensive": {"level":100,"item":"Leftovers","moves":["Recover","Thunder Wave","Fire Punch","Psychic"]}
 	},
 	"Ampharos": {
-		"OU Lead / Cleaner": {"level":100,"item":"Leftovers","moves":["Thunderbolt","Fire Punch","Thunder Wave","Dynamic Punch"]},
+		"OU Lead / Cleaner": {"level":100,"item":"Leftovers","moves":["Thunderbolt","Fire Punch","Thunder Wave","DynamicPunch"]},
 		"OU RestTalk": {"level":100,"item":"Leftovers","moves":["Thunderbolt","Fire Punch","Rest","Sleep Talk"]}
 	},
 	"Arbok": {
@@ -45,7 +45,7 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level":100,"item":"Leftovers","moves":["Rest","Sleep Talk","Surf","Ice Beam"]}
 	},
 	"Blissey": {
-		"OU Special Wall": {"level":100,"item":"Leftovers","moves":["Soft-Boiled","Heal Bell","Light Screen","Sing"]}
+		"OU Special Wall": {"level":100,"item":"Leftovers","moves":["Softboiled","Heal Bell","Light Screen","Sing"]}
 	},
 	"Butterfree": {
 		"OU Double Powder": {"level":100,"item":"Leftovers","moves":["Sleep Powder","Stun Spore","Psychic","Giga Drain"]}
@@ -65,7 +65,7 @@ var SETDEX_GSC = {
 		"OU Defensive": {"level":100,"item":"Leftovers","moves":["Rapid Spin","Spikes","Surf","Toxic"]}
 	},
 	"Corsola": {
-		"OU Curse": {"level":100,"item":"Leftovers","moves":["Mirror Coat","Curse","Ancient Power","Recover"]},
+		"OU Curse": {"level":100,"item":"Leftovers","moves":["Mirror Coat","Curse","AncientPower","Recover"]},
 		"OU Support": {"level":100,"item":"Leftovers","moves":["Surf","Recover","Toxic","Mirror Coat"]}
 	},
 	"Crobat": {
@@ -87,7 +87,7 @@ var SETDEX_GSC = {
 		"OU Utility": {"level":100,"item":"Leftovers","moves":["Earthquake","Roar","Rapid Spin","Rest"]}
 	},
 	"Dragonite": {
-		"OU All-Out Attacker": {"level":100,"item":"Leftovers","moves":["Ice Beam","Thunder","Dynamic Punch","Body Slam"]},
+		"OU All-Out Attacker": {"level":100,"item":"Leftovers","moves":["Ice Beam","Thunder","DynamicPunch","Body Slam"]},
 		"OU Haze Support": {"level":100,"item":"Leftovers","moves":["Rest","Haze","Double-Edge","Reflect"]}
 	},
 	"Dugtrio": {
@@ -95,7 +95,7 @@ var SETDEX_GSC = {
 	},
 	"Dunsparce": {
 		"OU Swagger + Psych Up": {"level":100,"item":"Leftovers","moves":["Glare","Swagger","Psych Up","Headbutt"]},
-		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Sunny Day","Solar Beam","Flamethrower","Return"]},
+		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Sunny Day","SolarBeam","Flamethrower","Return"]},
 		"OU Curse": {"level":100,"item":"Leftovers","moves":["Curse","Return","Rest","Sleep Talk"]}
 	},
 	"Electabuzz": {
@@ -106,7 +106,7 @@ var SETDEX_GSC = {
 		"OU Support": {"level":100,"item":"Leftovers","moves":["Thunderbolt","Light Screen","Rest","Thunder Wave"]}
 	},
 	"Entei": {
-		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Fire Blast","Solar Beam","Sunny Day","Return"]}
+		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Fire Blast","SolarBeam","Sunny Day","Return"]}
 	},
 	"Espeon": {
 		"OU EspyJump": {"level":100,"item":"Leftovers","moves":["Psychic","Growth","Baton Pass","Substitute"]},
@@ -163,13 +163,13 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level":100,"item":"Leftovers","moves":["Megahorn","Rest","Sleep Talk","Earthquake"]}
 	},
 	"Hitmonchan": {
-		"OU Standard": {"level":100,"item":"Leftovers","moves":["High Jump Kick","Return","Counter","Hidden Power Ghost"]}
+		"OU Standard": {"level":100,"item":"Leftovers","moves":["Hi Jump Kick","Return","Counter","Hidden Power Ghost"]}
 	},
 	"Hitmonlee": {
-		"OU Meditate": {"level":100,"item":"Leftovers","moves":["High Jump Kick","Meditate","Hidden Power Rock","Return"]}
+		"OU Meditate": {"level":100,"item":"Leftovers","moves":["Hi Jump Kick","Meditate","Hidden Power Rock","Return"]}
 	},
 	"Hitmontop": {
-		"OU Standard": {"level":100,"item":"Leftovers","moves":["High Jump Kick","Curse","Counter","Hidden Power Ghost"]}
+		"OU Standard": {"level":100,"item":"Leftovers","moves":["Hi Jump Kick","Curse","Counter","Hidden Power Ghost"]}
 	},
 	"Ho-Oh": {
 		"Uber Standard Sweeper": {"level":100,"item":"Leftovers","moves":["Recover","Thunderbolt","Sacred Fire","Earthquake"]},
@@ -178,11 +178,11 @@ var SETDEX_GSC = {
 	"Houndoom": {
 		"OU Pursuit": {"level":100,"item":"Leftovers","moves":["Crunch","Fire Blast","Pursuit","Counter"]},
 		"OU RestTalk": {"level":100,"item":"Leftovers","moves":["Fire Blast","Crunch","Rest","Sleep Talk"]},
-		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Fire Blast","Crunch","Sunny Day","Solar Beam"]}
+		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Fire Blast","Crunch","Sunny Day","SolarBeam"]}
 	},
 	"Hypno": {
 		"OU Support": {"level":100,"item":"Leftovers","moves":["Thunder Wave","Psychic","Light Screen","Reflect"]},
-		"OU Offensive": {"level":100,"item":"Leftovers","moves":["Psychic","Thunder Punch","Ice Punch","Reflect"]}
+		"OU Offensive": {"level":100,"item":"Leftovers","moves":["Psychic","ThunderPunch","Ice Punch","Reflect"]}
 	},
 	"Jolteon": {
 		"OU Baton Pass": {"level":100,"item":"Leftovers","moves":["Thunderbolt","Hidden Power Water","Agility","Baton Pass"]}
@@ -196,7 +196,7 @@ var SETDEX_GSC = {
 		"OU Sleep Trapper": {"level":100,"item":"Leftovers","moves":["Ice Beam","Lovely Kiss","Mean Look","Nightmare"]}
 	},
 	"Kabutops": {
-		"OU Swords Dance": {"level":100,"item":"Leftovers","moves":["Swords Dance","Ancient Power","Hydro Pump","Hidden Power Ground"]}
+		"OU Swords Dance": {"level":100,"item":"Leftovers","moves":["Swords Dance","AncientPower","Hydro Pump","Hidden Power Ground"]}
 	},
 	"Kangaskhan": {
 		"OU Curse": {"level":100,"item":"Leftovers","moves":["Curse","Rest","Return","Roar"]},
@@ -236,7 +236,7 @@ var SETDEX_GSC = {
 		"OU Curse": {"level":100,"item":"Leftovers","moves":["Curse","Rock Slide","Earthquake","Fire Blast"]}
 	},
 	"Magmar": {
-		"OU Mixed Attacker": {"level":100,"item":"Leftovers","moves":["Fire Blast","Cross Chop","Thunder Punch","Hidden Power Water"]}
+		"OU Mixed Attacker": {"level":100,"item":"Leftovers","moves":["Fire Blast","Cross Chop","ThunderPunch","Hidden Power Water"]}
 	},
 	"Magneton": {
 		"OU Standard": {"level":100,"item":"Leftovers","moves":["Thunderbolt","Thunder Wave","Hidden Power Water","Substitute"]}
@@ -252,7 +252,7 @@ var SETDEX_GSC = {
 		"OU Swords Dance": {"level":100,"item":"Leftovers","moves":["Body Slam","Swords Dance","Synthesis","Earthquake"]}
 	},
 	"Mew": {
-		"Uber Swords Dance": {"level":100,"item":"Leftovers","moves":["Swords Dance","Submission","Soft-Boiled","Shadow Ball"]}
+		"Uber Swords Dance": {"level":100,"item":"Leftovers","moves":["Swords Dance","Submission","Softboiled","Shadow Ball"]}
 	},
 	"Mewtwo": {
 		"Uber Curse": {"level":100,"item":"Leftovers","moves":["Curse","Recover","Submission","Thunderbolt"]}
@@ -274,7 +274,7 @@ var SETDEX_GSC = {
 		"OU Mixed Attacker": {"level":100,"item":"Leftovers","moves":["Fire Blast","Explosion","Sludge Bomb","Curse"]}
 	},
 	"Murkrow": {
-		"OU All-Out Attacker": {"level":100,"item":"Leftovers","moves":["Drill Peck","Feint Attack","Pursuit","Night Shade"]}
+		"OU All-Out Attacker": {"level":100,"item":"Leftovers","moves":["Drill Peck","Faint Attack","Pursuit","Night Shade"]}
 	},
 	"Nidoking": {
 		"OU Mixed Sweeper": {"level":100,"item":"Leftovers","moves":["Earthquake","Lovely Kiss","Ice Beam","Thunder"]}
@@ -388,12 +388,12 @@ var SETDEX_GSC = {
 		"OU Spikes": {"level":100,"item":"Leftovers","moves":["Spikes","Encore","Destiny Bond","Mirror Coat"]}
 	},
 	"Sneasel": {
-		"OU Physical Attacker": {"level":100,"item":"Leftovers","moves":["Dynamic Punch","Shadow Ball","Return","Reflect"]}
+		"OU Physical Attacker": {"level":100,"item":"Leftovers","moves":["DynamicPunch","Shadow Ball","Return","Reflect"]}
 	},
 	"Snorlax": {
 		"OU CurseLax": {"level":100,"item":"Leftovers","moves":["Double-Edge","Curse","Rest","Sleep Talk"]},
 		"OU DrumLax": {"level":100,"item":"Leftovers","moves":["Belly Drum","Body Slam","Earthquake","Rest"]},
-		"OU MixLax": {"level":100,"item":"Leftovers","moves":["Double-Edge","Earthquake","Fire Blast","Self-Destruct"]}
+		"OU MixLax": {"level":100,"item":"Leftovers","moves":["Double-Edge","Earthquake","Fire Blast","Selfdestruct"]}
 	},
 	"Stantler": {
 		"OU Screen Support": {"level":100,"item":"Leftovers","moves":["Confuse Ray","Return","Reflect","Earthquake"]}
@@ -405,8 +405,8 @@ var SETDEX_GSC = {
 		"OU Curse + Roar": {"level":100,"item":"Leftovers","moves":["Earthquake","Curse","Roar","Explosion"]}
 	},
 	"Sudowoodo": {
-		"OU Physical Attacker": {"level":100,"item":"Leftovers","moves":["Curse","Rock Slide","Earthquake","Self-Destruct"]},
-		"OU Mixed Attacker": {"level":100,"item":"Leftovers","moves":["Self-Destruct","Rock Slide","Thunder Punch","Fire Punch"]}
+		"OU Physical Attacker": {"level":100,"item":"Leftovers","moves":["Curse","Rock Slide","Earthquake","Selfdestruct"]},
+		"OU Mixed Attacker": {"level":100,"item":"Leftovers","moves":["Selfdestruct","Rock Slide","ThunderPunch","Fire Punch"]}
 	},
 	"Suicune": {
 		"OU Phazer": {"level":100,"item":"Leftovers","moves":["Surf","Toxic","Roar","Rest"]},
@@ -415,7 +415,7 @@ var SETDEX_GSC = {
 	"Sunflora": {
 		"OU Growth": {"level":100,"item":"Leftovers","moves":["Growth","Razor Leaf","Hidden Power Water","Synthesis"]},
 		"OU Curse": {"level":100,"item":"Leftovers","moves":["Curse","Sludge Bomb","Return","Hidden Power Ghost"]},
-		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Growth","Sunny Day","Solar Beam","Hidden Power Fire"]}
+		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Growth","Sunny Day","SolarBeam","Hidden Power Fire"]}
 	},
 	"Tangela": {
 		"OU Double Powder": {"level":100,"item":"Leftovers","moves":["Stun Spore","Sleep Powder","Giga Drain","Reflect"]}
@@ -428,16 +428,16 @@ var SETDEX_GSC = {
 	},
 	"Togetic": {
 		"OU Special Attacker": {"level":100,"item":"Leftovers","moves":["Charm","Fire Blast","Safeguard","Psychic"]},
-		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Sunny Day","Solar Beam","Fire Blast","Encore"]},
+		"OU SunnyBeam": {"level":100,"item":"Leftovers","moves":["Sunny Day","SolarBeam","Fire Blast","Encore"]},
 		"OU Curse": {"level":100,"item":"Leftovers","moves":["Curse","Hidden Power Flying","Return","Rest"]}
 	},
 	"Typhlosion": {
-		"OU Mixed Sweeper": {"level":100,"item":"Leftovers","moves":["Fire Blast","Thunder Punch","Earthquake","Hidden Power Ice"]},
-		"OU RestTalk": {"level":100,"item":"Leftovers","moves":["Fire Blast","Thunder Punch","Rest","Sleep Talk"]}
+		"OU Mixed Sweeper": {"level":100,"item":"Leftovers","moves":["Fire Blast","ThunderPunch","Earthquake","Hidden Power Ice"]},
+		"OU RestTalk": {"level":100,"item":"Leftovers","moves":["Fire Blast","ThunderPunch","Rest","Sleep Talk"]}
 	},
 	"Tyranitar": {
 		"OU Defensive": {"level":100,"item":"Leftovers","moves":["Rock Slide","Roar","Curse","Rest"]},
-		"OU Offensive": {"level":100,"item":"Leftovers","moves":["Dynamic Punch","Rock Slide","Fire Blast","Pursuit"]}
+		"OU Offensive": {"level":100,"item":"Leftovers","moves":["DynamicPunch","Rock Slide","Fire Blast","Pursuit"]}
 	},
 	"Umbreon": {
 		"OU Utility": {"level":100,"item":"Leftovers","moves":["Charm","Pursuit","Rest","Toxic"]},
