@@ -431,7 +431,7 @@ var SETDEX_XY = {
 		"UU Revenge Killer": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Skill Link","item":"Choice Scarf","moves":["Tail Slap","Bullet Seed","Rock Blast","U-turn"]}
 	},
 	"Clamperl": {
-		"LC Shell Smash": {"level":5,"evs":{"sa":248,"sp":180,"sd":80},"nature":"Modest","ability":"Shell Armor","item":"DeepSeaTooth","moves":["Shell Smash","Surf","Ice Beam","Substitute"]}
+		"LC Shell Smash": {"level":5,"evs":{"sa":248,"sp":180,"sd":80},"nature":"Modest","ability":"Shell Armor","item":"Deep Sea Tooth","moves":["Shell Smash","Surf","Ice Beam","Substitute"]}
 	},
 	"Clauncher": {
 		"LC Pivot": {"level":5,"evs":{"df":180,"sa":132,"at":92,"sd":92},"nature":"Relaxed","ability":"Mega Launcher","item":"Eviolite","moves":["Scald","Aqua Jet","Ice Beam","U-turn"]}
@@ -2087,7 +2087,7 @@ var SETDEX_XY = {
 		"NU Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Technician","item":"Choice Scarf","moves":["U-turn","Aerial Ace","Knock Off","Brick Break"]}
 	},
 	"Seaking": {
-		"PU Choice Band": {"level":100,"evs":{"sd":4,"sp":252,"at":252},"nature":"Adamant","ability":"Lightningrod","item":"Choice Band","moves":["Waterfall","Knock Off","Megahorn","Drill Run"]}
+		"PU Choice Band": {"level":100,"evs":{"sd":4,"sp":252,"at":252},"nature":"Adamant","ability":"Lightning Rod","item":"Choice Band","moves":["Waterfall","Knock Off","Megahorn","Drill Run"]}
 	},
 	"Seel": {
 		"LC Perish Trapper": {"level":5,"evs":{"df":236,"hp":76,"sd":196},"nature":"Bold","ability":"Hydration","item":"Eviolite","moves":["Whirlpool","Perish Song","Rain Dance","Rest"]},
