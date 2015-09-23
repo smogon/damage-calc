@@ -1685,7 +1685,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Light of Ruin': {
         bp: 140,
         type: 'Fairy',
-        category: 'Special'
+        category: 'Special',
+        hasRecoil: true
     },
     'Low Sweep': { bp: 65 },
     'Magma Storm': { bp: 100 },
