@@ -545,6 +545,9 @@ var SETDEX_XY = {
 	"Darumaka": {
 		"LC Choice": {"level":5,"evs":{"hp":116,"sp":196,"at":196},"nature":"Jolly","ability":"Hustle","item":"Choice Scarf","moves":["Flare Blitz","U-turn","Rock Slide","Superpower"]}
 	},
+	"Dedenne": {
+		"PU SubRecycle": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cheek Pouch","item":"Petaya Berry","moves":["Substitute","Recycle","Thunderbolt","Grass Knot"]}
+	},
 	"Deerling": {
 		"LC Chlorophyll Sweeper": {"level":5,"evs":{"df":36,"hp":36,"sp":236,"at":196},"nature":"Adamant","ability":"Chlorophyll","item":"Life Orb","moves":["Return","Seed Bomb","Jump Kick","Wild Charge"]},
 		"LC Choice Scarf": {"level":5,"evs":{"df":36,"hp":36,"sp":236,"at":196},"nature":"Adamant","ability":"Sap Sipper","item":"Choice Scarf","moves":["Double-Edge","Seed Bomb","Jump Kick","Wild Charge"]}
@@ -963,7 +966,7 @@ var SETDEX_XY = {
 		"LC Stallbreaker": {"level":5,"evs":{"df":196,"hp":236,"sd":76},"nature":"Modest","ability":"Shadow Tag","item":"Eviolite","moves":["Psyshock","Rest","Sleep Talk","Calm Mind"]}
 	},
 	"Gothitelle": {
-		"Uber Literally Satan": {"level":100,"evs":{"df":8,"hp":248,"sd":252},"ivs":{"sp":0},"nature":"Sassy","ability":"Shadow Tag","item":"Leftovers","moves":["Psychic","Calm Mind","Rest","Trick Room"]},
+		"Uber Literally Satan... Again (Calm Mind)": {"level":100,"evs":{"sp":4,"hp":252,"sd":252},"nature":"Sassy","ability":"Shadow Tag","item":"Leftovers","moves":["Psyshock","Calm Mind","Rest","Tickle"]},
 		"OU Literally Satan": {"level":100,"evs":{"hp":80,"sp":252,"sa":176},"nature":"Timid","ability":"Shadow Tag","item":"Choice Scarf","moves":["Calm Mind","Trick","Rest","Psychic"]},
 		"OU Choice Specs": {"level":100,"evs":{"hp":168,"sp":88,"sa":252},"nature":"Modest","ability":"Shadow Tag","item":"Choice Specs","moves":["Psychic","Trick","Thunderbolt","Hidden Power Fire"]}
 	},
@@ -1477,8 +1480,8 @@ var SETDEX_XY = {
 		"PU Support": {"level":100,"evs":{"df":8,"hp":248,"sd":252},"nature":"Calm","ability":"Flame Body","item":"Leftovers","moves":["Stealth Rock","Recover","Lava Plume","Toxic"]}
 	},
 	"Magmortar": {
-		"NU Assault Vest": {"level":100,"evs":{"hp":104,"sp":152,"sa":252},"nature":"Modest","ability":"Vital Spirit","item":"Assault Vest","moves":["Fire Blast","Thunderbolt","Hidden Power Grass","Psychic"]},
-		"NU Mixed Attacker": {"level":100,"evs":{"sa":252,"sp":252,"at":4},"nature":"Mild","ability":"Vital Spirit","item":"Life Orb","moves":["Fire Blast","Thunderbolt","Earthquake","Hidden Power Grass"]}
+		"NU Assault Vest Tank": {"level":100,"evs":{"hp":104,"sp":152,"sa":252},"nature":"Modest","ability":"Vital Spirit","item":"Assault Vest","moves":["Fire Blast","Thunderbolt","Hidden Power Grass","Earthquake"]},
+		"NU Wallbreaker": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Mild","ability":"Vital Spirit","item":"Expert Belt","moves":["Fire Blast","Thunderbolt","Earthquake","Hidden Power Grass"]}
 	},
 	"Magnemite": {
 		"LC Sturdy + Berry Juice": {"level":5,"evs":{"df":36,"sa":236,"sp":236},"nature":"Modest","ability":"Sturdy","item":"Berry Juice","moves":["Volt Switch","Flash Cannon","Recycle","Endure"]},
@@ -2387,7 +2390,7 @@ var SETDEX_XY = {
 		"LC Rapid Spinner": {"level":5,"evs":{"df":76,"hp":196,"sp":36,"sd":196},"nature":"Calm","ability":"Liquid Ooze","item":"Berry Juice","moves":["Rapid Spin","Sludge Bomb","Scald","Knock Off"]}
 	},
 	"Tentacruel": {
-		"Uber Support": {"level":100,"evs":{"df":4,"hp":252,"sd":252},"nature":"Calm","ability":"Rain Dish","item":"Black Sludge","moves":["Rapid Spin","Toxic Spikes","Scald","Protect"]},
+		"Uber Spin Spikes": {"level":100,"evs":{"sp":8,"hp":248,"sd":252},"nature":"Calm","ability":"Liquid Ooze","item":"Black Sludge","moves":["Rapid Spin","Toxic Spikes","Scald","Knock Off"]},
 		"OU Physically Defensive": {"level":100,"evs":{"df":252,"hp":224,"sp":32},"nature":"Bold","ability":"Liquid Ooze","item":"Black Sludge","moves":["Scald","Rapid Spin","Acid Spray","Sludge Bomb"]},
 		"UU Utility": {"level":100,"evs":{"df":244,"hp":240,"sp":24},"nature":"Bold","ability":"Liquid Ooze","item":"Black Sludge","moves":["Rapid Spin","Toxic Spikes","Scald","Knock Off"]}
 	},
@@ -2478,6 +2481,10 @@ var SETDEX_XY = {
 	"Toxicroak": {
 		"OU Offensive": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Dry Skin","item":"Life Orb","moves":["Gunk Shot","Drain Punch","Sucker Punch","Swords Dance"]},
 		"UU Swords Dance": {"level":100,"evs":{"sp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Dry Skin","item":"Life Orb","moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"]}
+	},
+	"Trapinch": {
+		"LC Trick Room Trapper": {"level":5,"evs":{"def":236,"sd":76,"at":196},"nature":"Brave","ability":"Arena Trap","item":"Eviolite","moves":["Earthquake","Rock Slide","Crunch","Quick Attack"]},
+		"PU Arena Trap": {"level":100,"evs":{"hp":252,"sd":252,"at":4},"nature":"Adamant","ability":"Arena Trap","item":"Eviolite","moves":["Earthquake","Toxic","Crunch","Quick Attack"]}
 	},
 	"Treecko": {
 		"Swords Dance": {"level":5,"evs":{"df":156,"hp":116,"at":236},"nature":"Adamant","ability":"Unburden","item":"Berry Juice","moves":["Bullet Seed","Drain Punch","Acrobatics","Swords Dance"]}
@@ -2584,7 +2591,7 @@ var SETDEX_XY = {
 		"Doubles Support": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Timid","ability":"Compound Eyes","item":"Focus Sash","moves":["Sleep Powder","Hurricane","Tailwind","Protect"]}
 	},
 	"Volbeat": {
-		"PU Weather Support": {"level":100,"evs":{"df":252,"hp":248,"sd":8},"nature":"Relaxed","ability":"Prankster","item":"Damp Rock","moves":["Rain Dance","U-turn","Encore","Thunder Wave"]},
+		"PU Weather Support": {"level":100,"evs":{"df":252,"hp":252,"at":4},"nature":"Relaxed","ability":"Prankster","item":"Damp Rock","moves":["Rain Dance","U-turn","Encore","Thunder Wave"]},
 		"NU Weather Supporter": {"level":100,"evs":{"df":252,"hp":248,"sd":8},"ivs":{"sp":0},"nature":"Relaxed","ability":"Prankster","item":"Damp Rock","moves":["Rain Dance","U-turn","Encore","Thunder Wave"]}
 	},
 	"Volcarona": {
