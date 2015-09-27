@@ -1334,6 +1334,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Final Gambit': {
+        bp: 1,
+        type: 'Fighting',
+        category: 'Special'
+    },
     'Flame Charge': {
         bp: 50,
         type: 'Fire',
