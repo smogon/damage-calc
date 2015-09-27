@@ -26,6 +26,12 @@ var MOVES_RBY = {
         makesContact: true,
         hasSecondaryEffect: true
     },
+    'Bone Club': {
+        bp: 65,
+        type: 'Ground',
+        category: 'Physical',
+        hasSecondaryEffect: true
+    },
     'BubbleBeam': {
         bp: 65,
         type: 'Water'
@@ -695,6 +701,12 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     },
     'Signal Beam': {
         bp: 75,
+        type: 'Bug',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
+    'Silver Wind': {
+        bp: 60,
         type: 'Bug',
         category: 'Special',
         hasSecondaryEffect: true
