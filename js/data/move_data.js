@@ -472,6 +472,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         makesContact: true
     },
+    'Rollout': {
+        bp: 30,
+        type: 'Rock',
+        category: 'Physical',
+        makesContact: true,
+        isMultiHit: true
+    },
     'Sacred Fire': {
         bp: 100,
         type: 'Fire',
@@ -617,6 +624,13 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Special',
         hasSecondaryEffect: true,
         isSpread: true
+    },
+    'Ice Ball': {
+        bp: 30,
+        type: 'Ice',
+        category: 'Physical',
+        makesContact: true,
+        isMultiHit: true
     },
     'Knock Off': {
         bp: 20,

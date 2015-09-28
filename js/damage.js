@@ -315,6 +315,11 @@ function getDamageResult(attacker, defender, move, field) {
         description.isHelpingHand = true;
     }
     
+    if (field.isDefenseCurl && (move.name === 'Ice Ball' || move.name === 'Rollout')) {
+        bpMods.push(0x2000);
+        description.isDefenseCurl = true;
+    }   
+    
     if (isAerilate || isPixilate || isRefrigerate) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
@@ -592,6 +597,9 @@ function buildDescription(description) {
     output += description.attackerName + " ";
     if (description.isHelpingHand) {
         output += "Helping Hand ";
+    }
+    if (description.isDefenseCurl) {
+        output += " Defense Curl ";
     }
     output += description.moveName + " ";
     if (description.moveBP && description.moveType) {

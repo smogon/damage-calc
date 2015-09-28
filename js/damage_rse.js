@@ -226,6 +226,11 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         description.isHelpingHand = true;
     }
     
+    if (field.isDefenseCurl && (move.name === 'Ice Ball' || move.name === 'Rollout')) {
+        basePower *= 2;
+        description.isDefenseCurl = true;
+    }    
+    
     if (move.type === attacker.type1 || move.type === attacker.type2) {
         baseDamage = Math.floor(baseDamage * 1.5);
     }

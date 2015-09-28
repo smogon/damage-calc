@@ -423,7 +423,8 @@ function Field() {
     var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
     var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
     var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
-    var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
+    var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")];
+    var isDefenseCurl = [$("#defenseCurlR").prop("checked"), $("#defenseCurlL").prop("checked")];// affects attacks against opposite side
     
     this.getWeather = function() {
         return weather;
@@ -432,11 +433,11 @@ function Field() {
         weather = "";
     };
     this.getSide = function(i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isDefenseCurl[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isDefenseCurl) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -447,6 +448,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isLightScreen = isLightScreen;
     this.isForesight = isForesight;
     this.isHelpingHand = isHelpingHand;
+    this.isDefenseCurl = isDefenseCurl;
 }
 
 var gen, genWasChanged, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
@@ -557,6 +559,8 @@ function clearField() {
     $("#foresightR").prop("checked", false);
     $("#helpingHandL").prop("checked", false);
     $("#helpingHandR").prop("checked", false);
+    $("#defenseCurlL").prop("checked", false);
+    $("#defenseCurlR").prop("checked", false);
 }
 
 function getSetOptions() {

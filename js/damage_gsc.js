@@ -65,6 +65,10 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
         move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
         description.moveBP = move.bp;
     }
+    if (field.isDefenseCurl && move.name === 'Rollout') {
+        move.bp *= 2;
+        description.isDefenseCurl = true;
+    }
     
     var isPhysical = typeChart[move.type].category === "Physical";
     var attackStat = isPhysical ? AT : SA;

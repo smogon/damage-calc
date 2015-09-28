@@ -193,6 +193,11 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
         description.isHelpingHand = true;
     }
     
+    if (field.isDefenseCurl && (move.name === 'Ice Ball' || move.name === 'Rollout')) {
+        basePower *= 2;
+        description.isDefenseCurl = true;
+    }    
+    
     var isPhysical = move.category === "Physical";
     if ((attacker.item === "Muscle Band" && isPhysical) || (attacker.item === "Wise Glasses" && !isPhysical)) {
         basePower = Math.floor(basePower * 1.1);
