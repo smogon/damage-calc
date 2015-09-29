@@ -174,10 +174,11 @@ th {
     display: inline-block;
 }
 .poke-info {
-    width: 28em;
+    width: 30em;
 }
-.field-info {
-    width: 28em;
+.field-info, .poke-import {
+    text-align: center;
+    width: 27.5em;
 }
 .holder-0 {
     position: absolute;
@@ -324,8 +325,11 @@ select.toxic-counter {
 .poke-info input.move-bp {
     width: 2em;
 }
-.move-cat, .move-hits {
-    width: 4em;
+.move-cat {
+    width: 5.7em;
+}
+.move-hits {
+    width: 5em;
 }
 .poke-info .crit-btn {
     font-size: 0.8em;
@@ -370,7 +374,7 @@ select.toxic-counter {
 }
 
 .import-team-text {
-	min-width: 23em;
-	min-height: 35em;
-	resize: none;
+	min-width: 27em;
+	min-height: 10em;
+	resize: vertical;
 }

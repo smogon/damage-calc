@@ -508,132 +508,145 @@
     </div>
     
     <div class="panel">
-        <fieldset class="field-info">
-            <legend align="center">Field</legend>
-            <div class="gen-specific g3 g4 g5 g6" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
-                <input class="btn-input calc-trigger" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
-                <label class="btn btn-left" for="singles-format">Singles</label>
-                <input class="btn-input calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" />
-                <label class="btn btn-right" for="doubles-format">Doubles</label>
-            </div>
-            <div class="gen-specific g6" title="Select the current terrain.">
-                <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-xxxwide btn-left" for="electric">Electric Terrain</label>
-                <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">Grassy Terrain</label>
-                <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">Misty Terrain</label>
-            </div>
-            <hr class="gen-specific g6" />
-            <div class="gen-specific g3 g4 g5 g6" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
-                <label class="btn btn-small btn-left" for="clear">None</label>
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
-                <label class="btn btn-small btn-mid" for="sun">Sun</label>
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
-                <label class="btn btn-small btn-mid" for="rain">Rain</label>
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
-                <label class="btn btn-small btn-mid" for="sand">Sand</label>
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                <label class="btn btn-small btn-right" for="hail">Hail</label>
-            </div>
-            <div class="gen-specific g6" title="Select the current weather condition.">
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
-                <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
-                <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
-                <input class="btn-input calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
-                <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
-            </div>
-            <div class="gen-specific g2 hide" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
-                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
-                <label class="btn btn-small btn-left" for="gscClear">None</label>
-                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" />
-                <label class="btn btn-small btn-mid" for="gscSun">Sun</label>
-                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" />
-                <label class="btn btn-small btn-mid" for="gscRain">Rain</label>
-                <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
-                <label class="btn btn-small btn-right" for="gscSand">Sand</label>
-            </div>
-            <div class="gen-specific g4 g5 g6" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
-                <input class="btn-input calc-trigger" type="checkbox" id="gravity" />
-                <label class="btn" for="gravity">Gravity</label>
-            </div>
-            <hr class="gen-specific g2 g3 g4 g5 g6" />
-            <div class="btn-group gen-specific g4 g5 g6">
-                <div class="left" title="Is Stealth Rock affecting this side of the field?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="srL" />
-                    <label class="btn btn-xwide" for="srL">Stealth Rock</label>
+        <div>
+            <fieldset class="field-info">
+                <legend align="center">Field</legend>
+                <div class="gen-specific g3 g4 g5 g6" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                    <input class="btn-input calc-trigger" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
+                    <label class="btn btn-left" for="singles-format">Singles</label>
+                    <input class="btn-input calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" />
+                    <label class="btn btn-right" for="doubles-format">Doubles</label>
                 </div>
-                <div class="right" title="Is Stealth Rock affecting this side of the field?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="srR" />
-                    <label class="btn btn-xwide" for="srR">Stealth Rock</label>
+                <div class="gen-specific g6" title="Select the current terrain.">
+                    <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-xxxwide btn-left" for="electric">Electric Terrain</label>
+                    <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">Grassy Terrain</label>
+                    <input class="btn-input terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">Misty Terrain</label>
                 </div>
-            </div>
-            <div class="btn-group gen-specific g3 g4 g5 g6">
-                <div class="left" title="Are there Spikes on this side of the field?">
-                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
-                    <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
-                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" />
-                    <label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
-                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" />
-                    <label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
-                    <input class="btn-input calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" />
-                    <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
+                <hr class="gen-specific g6" />
+                <div class="gen-specific g3 g4 g5 g6" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
+                    <label class="btn btn-small btn-left" for="clear">None</label>
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
+                    <label class="btn btn-small btn-mid" for="sun">Sun</label>
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
+                    <label class="btn btn-small btn-mid" for="rain">Rain</label>
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
+                    <label class="btn btn-small btn-mid" for="sand">Sand</label>
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
+                    <label class="btn btn-small btn-right" for="hail">Hail</label>
                 </div>
-                <div class="right" title="Are there Spikes on this side of the field?">
-                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
-                    <label class="btn btn-xsmall btn-left" for="spikesR0">0</label>
-                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
-                    <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
-                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
-                    <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
-                    <input class="btn-input calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
-                    <label class="btn btn-wide btn-right" for="spikesR3">3 Spikes</label>
+                <div class="gen-specific g6" title="Select the current weather condition.">
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
+                    <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
+                    <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
+                    <input class="btn-input calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
+                    <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
                 </div>
-            </div>
-            <div class="btn-group gen-specific g2">
-                <div class="left" title="Are there Spikes on this side of the field?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesL" />
-                    <label class="btn" for="gscSpikesL">Spikes</label>
+                <div class="gen-specific g2 hide" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
+                    <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
+                    <label class="btn btn-small btn-left" for="gscClear">None</label>
+                    <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" />
+                    <label class="btn btn-small btn-mid" for="gscSun">Sun</label>
+                    <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Rain" id="gscRain" />
+                    <label class="btn btn-small btn-mid" for="gscRain">Rain</label>
+                    <input class="btn-input calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
+                    <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                 </div>
-                <div class="right" title="Are there Spikes on this side of the field?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesR" />
-                    <label class="btn" for="gscSpikesR">Spikes</label>
+                <div class="gen-specific g4 g5 g6" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                    <input class="btn-input calc-trigger" type="checkbox" id="gravity" />
+                    <label class="btn" for="gravity">Gravity</label>
                 </div>
-            </div>
-            <div class="btn-group">
-                <div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="reflectL" />
-                    <label class="btn btn-left" for="reflectL">Reflect</label>
-                    <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" />
-                    <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
+                <hr class="gen-specific g2 g3 g4 g5 g6" />
+                <div class="btn-group gen-specific g4 g5 g6">
+                    <div class="left" title="Is Stealth Rock affecting this side of the field?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="srL" />
+                        <label class="btn btn-xwide" for="srL">Stealth Rock</label>
+                    </div>
+                    <div class="right" title="Is Stealth Rock affecting this side of the field?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="srR" />
+                        <label class="btn btn-xwide" for="srR">Stealth Rock</label>
+                    </div>
                 </div>
-                <div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="reflectR" />
-                    <label class="btn btn-left" for="reflectR">Reflect</label>
-                    <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" />
-                    <label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
+                <div class="btn-group gen-specific g3 g4 g5 g6">
+                    <div class="left" title="Are there Spikes on this side of the field?">
+                        <input class="btn-input calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
+                        <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
+                        <input class="btn-input calc-trigger" type="radio" name="spikesL" value="1" id="spikesL1" />
+                        <label class="btn btn-xsmall btn-mid" for="spikesL1">1</label>
+                        <input class="btn-input calc-trigger" type="radio" name="spikesL" value="2" id="spikesL2" />
+                        <label class="btn btn-xsmall btn-mid" for="spikesL2">2</label>
+                        <input class="btn-input calc-trigger" type="radio" name="spikesL" value="3" id="spikesL3" />
+                        <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
+                    </div>
+                    <div class="right" title="Are there Spikes on this side of the field?">
+                        <input class="btn-input calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
+                        <label class="btn btn-xsmall btn-left" for="spikesR0">0</label>
+                        <input class="btn-input calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
+                        <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
+                        <input class="btn-input calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
+                        <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
+                        <input class="btn-input calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
+                        <label class="btn btn-wide btn-right" for="spikesR3">3 Spikes</label>
+                    </div>
                 </div>
-            </div>
-            <div class="btn-group gen-specific g2 g3 g4 g5 g6">
-                <div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="foresightL" />
-                    <label class="btn btn-wide" for="foresightL">Foresight</label>
+                <div class="btn-group gen-specific g2">
+                    <div class="left" title="Are there Spikes on this side of the field?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesL" />
+                        <label class="btn" for="gscSpikesL">Spikes</label>
+                    </div>
+                    <div class="right" title="Are there Spikes on this side of the field?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="gscSpikesR" />
+                        <label class="btn" for="gscSpikesR">Spikes</label>
+                    </div>
                 </div>
-                <div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="foresightR" />
-                    <label class="btn btn-wide" for="foresightR">Foresight</label>
+                <div class="btn-group">
+                    <div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="reflectL" />
+                        <label class="btn btn-left" for="reflectL">Reflect</label>
+                        <input class="btn-input calc-trigger" type="checkbox" id="lightScreenL" />
+                        <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
+                    </div>
+                    <div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="reflectR" />
+                        <label class="btn btn-left" for="reflectR">Reflect</label>
+                        <input class="btn-input calc-trigger" type="checkbox" id="lightScreenR" />
+                        <label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
+                    </div>
                 </div>
-            </div>
-            <div class="btn-group gen-specific g3 g4 g5 g6">
-                <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" />
-                    <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
+                <div class="btn-group gen-specific g2 g3 g4 g5 g6">
+                    <div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="foresightL" />
+                        <label class="btn btn-wide" for="foresightL">Foresight</label>
+                    </div>
+                    <div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="foresightR" />
+                        <label class="btn btn-wide" for="foresightR">Foresight</label>
+                    </div>
                 </div>
-                <div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
-                    <input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" />
-                    <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
+                <div class="btn-group gen-specific g3 g4 g5 g6">
+                    <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="helpingHandL" />
+                        <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
+                    </div>
+                    <div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
+                        <input class="btn-input calc-trigger" type="checkbox" id="helpingHandR" />
+                        <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset class="poke-import">
+                <legend align="center">Import Team</legend>
+                <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
+                    <form class="import-team">
+                        <textarea class="import-team-text"></textarea>
+                        <!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
+                    </form>
+                </div>
+            </fieldset>
+        </div>
     </div>
     <div class="panel">
         <fieldset class="poke-info" id="p2">
@@ -1039,18 +1052,6 @@
                     <option value="5">5 hits</option>
                 </select>
             </div>
-        </fieldset>
-    </div>
-    <div class="panel">
-        <fieldset class="poke-import">
-		<legend align="center">Import Team</legend>
-			<div id="import-1_wrapper" class="dataTables_wrapper no-footer" style="max-width: 638.609375px;">
-				
-				<form class="import-team">
-					<textarea class="import-team-text"></textarea>
-					<!--<button style='position:absolute' class='bs-btn bs-btn-default'>Import</button>-->
-			</div>
-			</form>
         </fieldset>
     </div>
     <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
