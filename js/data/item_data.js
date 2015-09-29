@@ -122,8 +122,11 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 var ITEMS_BW = ITEMS_DPP.concat([
     'Air Balloon',
     'Bug Gem',
+    'Burn Drive',
+    'Chill Drive',
     'Dark Gem',
     'Dragon Gem',
+    'Douse Drive',
     'Electric Gem',
     'Eviolite',
     'Fighting Gem',
@@ -137,6 +140,7 @@ var ITEMS_BW = ITEMS_DPP.concat([
     'Poison Gem',
     'Psychic Gem',
     'Rock Gem',
+    'Shock Drive',
     'Steel Gem',
     'Water Gem'
 ]);
@@ -353,4 +357,19 @@ function getNaturalGift(item) {
         return gift;
     }
     return {'t':'Normal','p':1};
+}
+
+function getTechnoBlast(item) {
+    switch (item) {
+        case 'Burn Drive':
+            return 'Fire';
+        case 'Chill Drive':
+            return 'Ice';
+        case 'Douse Drive':
+            return 'Water';
+        case 'Shock Drive':
+            return 'Electric';
+        default:
+            return '';    
+    }
 }

@@ -2944,10 +2944,10 @@ var SETDEX_XY = {
 		"OU Defensive": {"level":100,"evs":{"df":240,"hp":252,"sp":16},"nature":"Bold","moves":["Giga Drain","Sludge Bomb","Synthesis","Leech Seed"]}
 	},
 	"Primal Groudon": {
-		"[ORAS] Offensive Primal Groudon": {"level":100,"evs":{"hp":128,"sp":128,"at":252},"nature":"Adamant","moves":["Rock Polish","Precipice Blades","Stone Edge","Overheat"]},
-		"[ORAS] SpDef Primal Groudon": {"level":100,"evs":{"hp":252,"at":4,"sd":252},"nature":"Careful","moves":["Stealth Rock","Precipice Blades","Rock Slide","Thunder Wave"]}
+		"[ORAS] Offensive Primal Groudon": {"level":100,"evs":{"hp":128,"sp":128,"at":252},"nature":"Adamant","item":"Red Orb","moves":["Rock Polish","Precipice Blades","Stone Edge","Overheat"]},
+		"[ORAS] SpDef Primal Groudon": {"level":100,"evs":{"hp":252,"at":4,"sd":252},"nature":"Careful","item":"Red Orb","moves":["Stealth Rock","Precipice Blades","Rock Slide","Thunder Wave"]}
 	},
 	"Primal Kyogre": {
-		"[ORAS] Primal Kyogre": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","moves":["Origin Pulse","Thunder","Ice Beam","Water Spout"]}
+		"[ORAS] Primal Kyogre": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","item":"Blue Orb","moves":["Origin Pulse","Thunder","Ice Beam","Water Spout"]}
 	}
 };
