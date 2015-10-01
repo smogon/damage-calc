@@ -196,6 +196,12 @@ var MOVES_RBY = {
         category: 'Physical',
         hasSecondaryEffect: true
     },
+    'Skull Bash': {
+        bp: 100,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true
+    },
     'Slash': {
         bp: 70,
         type: 'Normal',
@@ -272,6 +278,12 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         hasSecondaryEffect: true,
         isBite: true
     },
+    'Bone Rush': {
+        bp: 25,
+        type: 'Ground',
+        category: 'Physical',
+        isMultiHit: true
+    },  
     'Crabhammer': { alwaysCrit: false },
     'Cross Chop': {
         bp: 100,
@@ -1074,6 +1086,12 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
+    'Ominous Wind': {
+        bp: 60,
+        type: 'Ghost',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Outrage': {
         bp: 120,
         type: 'Dragon',
@@ -1576,6 +1594,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         makesContact: true,
         isMultiHit: true
     },
+    'Techno Blast': {
+        bp: 85,
+        type: 'Normal',
+        category: 'Special'
+    },
     'Thrash': {
         bp: 120,
         type: 'Normal',
@@ -1729,6 +1752,13 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         hasSecondaryEffect: true,
         isSpread: false
     },
+    'Nuzzle': {
+        bp: 20,
+        type: 'Electric',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
+    },
     'Oblivion Wing': {
         bp: 80,
         type: 'Flying',
@@ -1771,8 +1801,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         isSpread: 'true'
     },
     'Rock Tomb': { bp: 60 },
+    'Skull Bash': { bp: 130 },
     'Storm Throw': { bp: 60 },
     'Surf': { bp: 90 },
+    'Techno Blast': { bp: 120 },
     'Thief': { bp: 60 },
     'Thunder': { bp: 110 },
     'Thunderbolt': { bp: 90 },
