@@ -185,7 +185,7 @@ var SETDEX_XY = {
 	"Articuno": {
 		"PU SubRoost": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Substitute","Roost","Hurricane","Ice Beam"]},
 		"PU Agility": {"level":100,"evs":{"hp":36,"sp":220,"sa":252},"nature":"Modest","ability":"Pressure","item":"Life Orb","moves":["Agility","Ice Beam","Hurricane","Hidden Power Fighting"]},
-		"NU SubRoost": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Substitute","Roost","Hurricane","Freeze-Dry"]}
+		"NU Burd (Offensive)": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Pressure","item":"Life Orb","moves":["Ice Beam","Roost","Hurricane","Freeze-Dry"]}
 	},
 	"Audino": {
 		"RU Defensive": {"level":100,"evs":{"df":4,"hp":252,"sd":252},"nature":"Careful","ability":"Regenerator","item":"Leftovers","moves":["Wish","Heal Bell","Protect","Knock Off"]},
@@ -893,6 +893,9 @@ var SETDEX_XY = {
 	"Geodude": {
 		"LC Stealth Rock Lead": {"level":5,"evs":{"df":196,"hp":36,"sp":36,"at":196,"sd":36},"nature":"Adamant","ability":"Sturdy","item":"Berry Juice","moves":["Stealth Rock","Sucker Punch","Earthquake","Rock Blast"]}
 	},
+	"Gible": {
+		"LC Bulky Offensive": {"level":5,"evs":{"df":156,"sp":20,"at":196,"hp":132},"nature":"Adamant","ability":"Rough Skin","item":"Eviolite","moves":["Dragon Claw","Earthquake","Stealth Rock","Rock Tomb"]}
+	},
 	"Giratina": {
 		"Uber The Great Wall": {"level":100,"evs":{"df":252,"hp":248,"sd":8},"nature":"Impish","ability":"Pressure","item":"Leftovers","moves":["Rest","Sleep Talk","Will-O-Wisp","Dragon Tail"]},
 		"Uber Specially Defensive": {"level":100,"evs":{"df":8,"hp":248,"sd":252},"nature":"Careful","ability":"Pressure","item":"Leftovers","moves":["Rest","Sleep Talk","Will-O-Wisp","Dragon Tail"]}
@@ -975,7 +978,8 @@ var SETDEX_XY = {
 		"OU Defensive": {"level":100,"evs":{"df":160,"hp":252,"sd":96},"nature":"Impish","ability":"Frisk","item":"Leftovers","moves":["Will-O-Wisp","Leech Seed","Synthesis","Seed Bomb"]},
 		"RU Physically Defensive": {"level":100,"evs":{"df":252,"hp":252,"sd":4},"nature":"Impish","ability":"Frisk","item":"Leftovers","moves":["Protect","Leech Seed","Will-O-Wisp","Seed Bomb"]},
 		"NU Physically Defensive": {"level":100,"evs":{"df":200,"hp":248,"sd":60},"nature":"Bold","ability":"Frisk","item":"Leftovers","moves":["Will-O-Wisp","Leech Seed","Synthesis","Foul Play"]},
-		"UU Happy Halloween": {"level":100,"evs":{"df":252,"hp":252,"at":4},"nature":"Impish","ability":"Frisk","item":"Leftovers","moves":["Will-O-Wisp","Leech Seed","Synthesis","Seed Bomb"]}
+		"UU Happy Halloween": {"level":100,"evs":{"df":252,"hp":252,"at":4},"nature":"Impish","ability":"Frisk","item":"Leftovers","moves":["Will-O-Wisp","Leech Seed","Synthesis","Seed Bomb"]},
+		"Doubles Trick Room Setter": {"level":100,"evs":{"df":88,"hp":248,"sd":172},"nature":"Relaxed","ability":"Frisk","item":"Leftovers","moves":["Will-O-Wisp","Leech Seed","Trick Room","Phantom Force"]}
 	},
 	"Granbull": {
 		"RU Defensive": {"level":100,"evs":{"df":232,"hp":248,"sp":28},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Play Rough","Rest","Sleep Talk","Heal Bell"]},
@@ -1209,7 +1213,7 @@ var SETDEX_XY = {
 		"LC Substitute + 3 Attacks": {"level":5,"evs":{"hp":36,"sp":236,"sa":220},"nature":"Timid","ability":"Swarm","item":"Life Orb","moves":["Substitute","Thunderbolt","Bug Buzz","Giga Drain"]}
 	},
 	"Jumpluff": {
-		"PU Offensive Utility": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Infiltrator","moves":["Sleep Powder","Swords Dance","Acrobatics","Seed Bomb"]},
+		"PU Offensive Utility": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Infiltrator","moves":["Sleep Powder","U-turn","Acrobatics","Seed Bomb"]},
 		"NU Power Puff": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Infiltrator","moves":["Sleep Powder","Swords Dance","Acrobatics","Seed Bomb"]}
 	},
 	"Jynx": {
@@ -1330,10 +1334,8 @@ var SETDEX_XY = {
 		"OU Calm Mind": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Timid","ability":"Sheer Force","item":"Life Orb","moves":["Calm Mind","Earth Power","Focus Blast","Psychic"]}
 	},
 	"Landorus-T": {
-		"Uber Physically Defensive": {"level":100,"evs":{"df":252,"hp":252,"at":4},"nature":"Impish","item":"Leftovers","moves":["Earthquake","Stealth Rock","Stone Edge","Toxic"]},
-		"Uber Offensive Earth Plate": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","item":"Earth Plate","moves":["Stealth Rock","Earthquake","Stone Edge","Toxic"]},
-		"Uber Setup Sweeper": {"level":100,"evs":{"hp":140,"sp":116,"at":252},"nature":"Adamant","item":"Life Orb","moves":["Earthquake","Stone Edge","Rock Polish","Swords Dance"]},
-		"Uber Choice Band": {"level":100,"evs":{"df":52,"hp":200,"at":252},"nature":"Adamant","item":"Choice Band","moves":["Earthquake","Stone Edge","U-turn","Superpower"]},
+		"Uber Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","item":"Choice Scarf","moves":["Earthquake","Stone Edge","U-turn","Explosion"]},
+		"OU Sub SD Salac": {"level":100,"evs":{"sp":252,"hp":4,"at":252},"nature":"Jolly","item":"Salac Berry","moves":["Earthquake","Stone Edge","Substitute","Swords Dance"]},
 		"OU Choice Scarf": {"level":100,"evs":{"df":24,"sp":232,"at":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","U-turn","Superpower","Stone Edge"]},
 		"OU Defensive": {"level":100,"evs":{"df":240,"hp":252,"sp":8,"sd":8},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Stealth Rock","Earthquake","U-turn","Stone Edge"]},
 		"OU Double Dance": {"level":100,"evs":{"hp":56,"sp":232,"at":220},"nature":"Adamant","ability":"Intimidate","item":"Leftovers","moves":["Swords Dance","Rock Polish","Earthquake","Stone Edge"]},
@@ -2459,7 +2461,9 @@ var SETDEX_XY = {
 	},
 	"Toxicroak": {
 		"OU Offensive": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Dry Skin","item":"Life Orb","moves":["Gunk Shot","Drain Punch","Sucker Punch","Swords Dance"]},
-		"UU Swords Dance": {"level":100,"evs":{"sp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Dry Skin","item":"Life Orb","moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"]}
+		"UU Swords Dance": {"level":100,"evs":{"sp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Dry Skin","item":"Life Orb","moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"]},
+		"UU Nasty Plot": {"level":100,"evs":{"sp":252,"sa":252,"sd":4},"nature":"Timid","ability":"Dry Skin","item":"Life Orb","moves":["Nasty Plot","Sludge Bomb","Focus Blast","Dark Pulse"]},
+		"UU Bulky Croak": {"level":100,"evs":{"hp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Dry Skin","item":"Black Sludge","moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"]}
 	},
 	"Trapinch": {
 		"LC Trick Room Trapper": {"level":5,"evs":{"def":236,"sd":76,"at":196},"nature":"Brave","ability":"Arena Trap","item":"Eviolite","moves":["Earthquake","Rock Slide","Crunch","Quick Attack"]},
@@ -2503,7 +2507,7 @@ var SETDEX_XY = {
 		"NU Tailwind Support": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","ability":"Super Luck","item":"Leftovers","moves":["Tailwind","Hypnosis","U-turn","Return"]}
 	},
 	"Ursaring": {
-		"PU Quick Feet": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Quick Feet","item":"Toxic Orb","moves":["Facade","Close Combat","Crunch","Swords Dance"]},
+		"PU Quick Feet": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Quick Feet","item":"Toxic Orb","moves":["Facade","Close Combat","Crunch","Swords Dance"]},
 		"PU Guts": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","ability":"Guts","item":"Toxic Orb","moves":["Facade","Close Combat","Crunch","Protect"]},
 		"NU Quick Feet": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Quick Feet","item":"Toxic Orb","moves":["Facade","Crunch","Close Combat","Protect"]}
 	},
