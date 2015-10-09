@@ -726,8 +726,9 @@ var SETDEX_XY = {
 	},
 	"Excadrill": {
 		"Uber Sand Rush": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Earthquake","Rock Slide","Iron Head","Swords Dance"]},
-		"OU Sand Rush Sweeper": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Earthquake","Iron Head","Rock Slide","Swords Dance"]},
+		"OU Sand Rush Sweeper": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Earthquake","Iron Head","Rock Slide","Rapid Spin"]},
 		"OU Bulky Spinner": {"level":100,"evs":{"hp":252,"at":4,"sd":252},"nature":"Careful","ability":"Mold Breaker","item":"Leftovers","moves":["Earthquake","Iron Head","Rapid Spin","Toxic"]},
+		"OU Choice Scarf": {"level":100,"evs":{"at":252,"sp":4,"sd":252},"nature":"Jolly","ability":"Mold Breaker","item":"Choice Scarf","moves":["Earthquake","Iron Head","Rapid Spin","Rock Slide"]},
 		"VGC15 Mold Breaker": {"level":50,"evs":{"sp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Mold Breaker","item":"Life Orb","moves":["Earthquake","Rock Slide","Protect","Iron Head"]},
 		"VGC15 Sand Rush": {"level":50,"evs":{"sp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Earthquake","Rock Slide","Iron Head","Protect"]},
 		"Doubles Mold Breaker": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","ability":"Mold Breaker","item":"Choice Scarf","moves":["Earthquake","Rock Slide","Iron Head","Drill Run"]},
@@ -1350,7 +1351,7 @@ var SETDEX_XY = {
 		"NU Choice Specs": {"level":100,"evs":{"hp":196,"sp":60,"sa":252},"nature":"Modest","ability":"Volt Absorb","item":"Choice Specs","moves":["Scald","Volt Switch","Ice Beam","Hidden Power Grass"]}
 	},
 	"Lapras": {
-		"NU Assault Vest": {"level":100,"evs":{"hp":4,"sa":252,"sd":252},"nature":"Modest","ability":"Water Absorb","item":"Assault Vest","moves":["Hydro Pump","Freeze-Dry","Thunderbolt","Surf"]}
+		"NU Choice Specs": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Modest","ability":"Water Absorb","item":"Choice Specs","moves":["Hydro Pump","Freeze-Dry","Ice Beam","Surf"]}
 	},
 	"Larvesta": {
 		"LC Offensive Pivot": {"level":5,"evs":{"df":156,"hp":76,"sp":36,"at":236},"nature":"Adamant","ability":"Flame Body","item":"Eviolite","moves":["U-turn","Flare Blitz","Morning Sun","Will-O-Wisp"]},
@@ -1380,7 +1381,7 @@ var SETDEX_XY = {
 	"Leavanny": {
 		"NU Sticky Web": {"level":100,"evs":{"sa":252,"sp":252,"hp":4},"nature":"Timid","ability":"Swarm","item":"Focus Sash","moves":["Sticky Web","Leaf Storm","Electroweb","Bug Buzz"]},
 		"RU Sticky Web": {"level":100,"evs":{"sa":252,"sp":252,"at":4},"nature":"Naive","ability":"Swarm","item":"Focus Sash","moves":["Sticky Web","Magic Coat","Leaf Storm","Knock Off"]},
-		"PU Suicide Lead": {"level":100,"evs":{"sa":252,"sp":252,"at":4},"nature":"Naive","ability":"Overcoat","item":"Focus Sash","moves":["Sticky Web","Leaf Storm","Electroweb","Bug Buzz"]}
+		"PU Sticky Web": {"level":100,"evs":{"sa":252,"sp":252,"at":4},"nature":"Naive","ability":"Chlorophyll","item":"Focus Sash","moves":["Sticky Web","Leaf Storm","Electroweb","Knock Off"]}
 	},
 	"Ledian": {
 		"NU Dual Screens": {"level":100,"evs":{"hp":152,"sp":252,"sd":104},"nature":"Timid","ability":"Early Bird","item":"Light Clay","moves":["Reflect","Light Screen","Encore","Roost"]}
@@ -1582,13 +1583,7 @@ var SETDEX_XY = {
 		"NU Special Scarf": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Psychic","Ice Beam","U-turn","Healing Wish"]}
 	},
 	"Metagross": {
-		"Uber X-Wing": {"level":100,"evs":{"hp":136,"sp":176,"at":196},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Meteor Mash","Bullet Punch","Earthquake","Pursuit"]},
-		"OU All-Out Attacker": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Meteor Mash","Zen Headbutt","Bullet Punch","Hammer Arm"]},
-		"OU Rock Polish": {"level":100,"evs":{"hp":80,"sp":176,"at":252},"nature":"Adamant","ability":"Clear Body","item":"Metagrossite","moves":["Rock Polish","Meteor Mash","Zen Headbutt","Hammer Arm"]},
-		"UU Agility": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Clear Body","item":"Life Orb","moves":["Agility","Meteor Mash","Earthquake","Zen Headbutt"]},
-		"UU Wallbreaker Mixgross": {"level":100,"evs":{"sa":160,"sp":124,"at":224},"nature":"Naughty","ability":"Clear Body","item":"Life Orb","moves":["Meteor Mash","Earthquake","Grass Knot","Hidden Power Fire"]},
-		"UU Stealth Rock": {"level":100,"evs":{"hp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Clear Body","item":"Leftovers","moves":["Meteor Mash","Earthquake","Stealth Rock","Bullet Punch"]},
-		"UU Choice Band": {"level":100,"evs":{"df":4,"hp":252,"at":252},"nature":"Adamant","ability":"Clear Body","item":"Choice Band","moves":["Meteor Mash","Zen Headbutt","Earthquake","Bullet Punch"]}
+		"OU Assault Vest": {"level":100,"evs":{"hp":252,"sd":96,"at":160},"nature":"Adamant","ability":"Clear Body","item":"Assault Vest","moves":["Meteor Mash","Bullet Punch","Earthquake","Pursuit"]}
 	},
 	"Mew": {
 		"OU Stallbreaker": {"level":100,"evs":{"hp":252,"sp":32,"sd":224},"nature":"Careful","ability":"Synchronize","item":"Leftovers","moves":["Taunt","Soft-Boiled","Will-O-Wisp","Knock Off"]},
@@ -1900,7 +1895,8 @@ var SETDEX_XY = {
 	},
 	"Registeel": {
 		"RU Curse": {"level":100,"evs":{"df":4,"hp":252,"sd":252},"nature":"Careful","ability":"Clear Body","item":"Leftovers","moves":["Curse","Rest","Sleep Talk","Iron Head"]},
-		"RU Specially Defensive": {"level":100,"evs":{"df":4,"hp":252,"sd":252},"nature":"Calm","ability":"Clear Body","item":"Leftovers","moves":["Stealth Rock","Toxic","Seismic Toss","Protect"]}
+		"RU Specially Defensive": {"level":100,"evs":{"df":4,"hp":252,"sd":252},"nature":"Calm","ability":"Clear Body","item":"Leftovers","moves":["Stealth Rock","Toxic","Seismic Toss","Protect"]},
+		"UU Specially Defensive": {"level":100,"evs":{"df":4,"hp":252,"sd":252},"nature":"Careful","ability":"Clear Body","item":"Leftovers","moves":["Stealth Rock","Toxic","Seismic Toss","Iron Head"]}
 	},
 	"Relicanth": {
 		"NU Choice Band": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","ability":"Rock Head","item":"Choice Band","moves":["Head Smash","Waterfall","Earthquake","Double-Edge"]}
@@ -2440,8 +2436,8 @@ var SETDEX_XY = {
 		"Doubles Defiant": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Defiant","moves":["Acrobatics","Superpower","Knock Off","Protect"]}
 	},
 	"Tornadus-T": {
-		"OU Life Orb": {"level":100,"evs":{"sa":216,"sp":216,"at":76},"nature":"Naive","ability":"Regenerator","item":"Life Orb","moves":["Hurricane","Superpower","U-turn","Taunt"]},
-		"OU Assault Vest": {"level":100,"evs":{"hp":132,"sp":216,"sa":160},"nature":"Timid","item":"Assault Vest","moves":["Hurricane","Focus Blast","Knock Off","U-turn"]}
+		"OU Assault Vest Pivot": {"level":100,"evs":{"sa":160,"sp":252,"hp":96},"nature":"Hasty","ability":"Regenerator","item":"Assault Vest","moves":["Hurricane","Superpower","U-turn","Knock Off"]},
+		"OU Life Orb Attacker": {"level":100,"evs":{"at":76,"sp":252,"sa":180},"nature":"Naive","item":"Life Orb","moves":["Hurricane","Focus Blast","Knock Off","U-turn"]}
 	},
 	"Torterra": {
 		"PU Offensive Stealth Rock": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Overgrow","item":"Leftovers","moves":["Stealth Rock","Bullet Seed","Earthquake","Synthesis"]},
@@ -2525,7 +2521,8 @@ var SETDEX_XY = {
 		"UU Wish": {"level":100,"evs":{"df":248,"hp":204,"sd":56},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Wish","Scald","Protect","Heal Bell"]}
 	},
 	"Venipede": {
-		"LC Entry Hazard Setter": {"level":5,"evs":{"df":44,"sp":220,"at":236},"nature":"Jolly","ability":"Speed Boost","item":"Eviolite","moves":["Spikes","Toxic Spikes","Protect","Endeavor"]}
+		"LC Entry Hazard Setter": {"level":5,"evs":{"df":44,"sp":220,"at":236},"nature":"Jolly","ability":"Speed Boost","item":"Eviolite","moves":["Spikes","Toxic Spikes","Protect","Endeavor"]},
+		"PU Suicide Lead": {"level":100,"evs":{"sp":252},"nature":"Jolly","ability":"Speed Boost","item":"Focus Sash","moves":["Spikes","Toxic Spikes","Protect","Endeavor"]}
 	},
 	"Venomoth": {
 		"Mono Attacker": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Timid","ability":"Tinted Lens","item":"Black Sludge","moves":["Quiver Dance","Roost","Substitute","Bug Buzz"]},
@@ -2875,7 +2872,11 @@ var SETDEX_XY = {
 		"OU Wallbreaker": {"level":100,"evs":{"hp":16,"sp":252,"at":240},"nature":"Adamant","moves":["High Jump Kick","Zen Headbutt","Ice Punch","Substitute"]}
 	},
 	"Mega Metagross": {
-		"[ORAS] Mega Metagross": {"level":100,"evs":{"sp":252,"at":252,"sd":4},"nature":"Hasty","moves":["Meteor Mash","Earthquake","Zen Headbutt","Grass Knot"]}
+		"Uber X-Wing": {"level":100,"evs":{"hp":136,"sp":176,"at":196},"nature":"Jolly","moves":["Meteor Mash","Bullet Punch","Earthquake","Pursuit"]},
+		"OU All-Out Attacker": {"level":100,"evs":{"sp":252,"at":252,"df":4},"nature":"Jolly","moves":["Meteor Mash","Hammer Arm","Zen Headbutt","Grass Knot"]},
+		"OU Rock Polish": {"level":100,"evs":{"sp":252,"at":252,"df":4},"nature":"Jolly","moves":["Meteor Mash","Rock Polish","Zen Headbutt","Ice Punch"]},
+		"Doubles Mega Physical Attacker": {"level":100,"evs":{"sp":252,"at":252,"hp":4},"nature":"Jolly","moves":["Meteor Mash","Hammer Arm","Zen Headbutt","Bullet Punch"]},
+		"VGC 15 Mega Attacker": {"level":50,"evs":{"sp":252,"at":252,"df":4},"nature":"Jolly","moves":["Meteor Mash","Rock Polish","Zen Headbutt","Ice Punch"]} 
 	},
 	"Mega Mewtwo X": {
 		"Uber Physical Attacker": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Naive","moves":["Low Kick","Taunt","Zen Headbutt","Ice Beam"]},
