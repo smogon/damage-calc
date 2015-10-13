@@ -105,4 +105,16 @@ var ABILITIES_XY = ABILITIES_BW.concat([
     'Tough Claws'
 ]);
 
-ABILITIES_XY.splice(ABILITIES_XY.indexOf('Lightningrod'), 1, 'Lightning Rod');
+var ABILITIES_SM = ABILITIES_XY.concat([
+    'Full Metal Body',
+    'Shadow Shield',
+    'Comatose',
+    'Power Construct',
+    'Soul Heart',
+    'Stakeout',
+    'Electric Surge',
+    'Dazzling',
+    'Berzerk',
+    'Battery',
+    'Corrosion'
+]);

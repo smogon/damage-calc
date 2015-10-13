@@ -10579,5 +10579,220 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 305.0,
     "ab": "Aura Break"
+  },
+  "Zygarde-Cell": {
+    "t1": "Dragon",
+    "t2": "Ground",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": ,
+    "ab": ""
+  },
+  "Zygarde-Core": {
+    "t1": "Dragon",
+    "t2": "Ground",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": ,
+    "ab": ""
+  },
+  "Zygarde-Complete": {
+    "t1": "Dragon",
+    "t2": "Ground",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": ,
+    "ab": ""
+  },
+  "Zygarde-10%": {
+    "t1": "Dragon",
+    "t2": "Ground",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": ,
+    "ab": ""
+  },
+  "Zygarde-50%": {
+    "t1": "Dragon",
+    "t2": "Ground",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": ,
+    "ab": ""
   }
+}
+var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
+  "Litten": {
+    "t1": "Fire",
+    "t2": "",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 
+  },
+  "Popplio": {
+    "t1": "Water",
+    "t2": "",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 
+  },
+  "Rowlet": {
+    "t1": "Grass",
+    "t2": "",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 
+  },
+  "Cutiefly": {
+    "t1": "Bug",
+    "t2": "Fairy",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 0.4 
+  },
+  "Togedemaru": {
+    "t1": "Electric",
+    "t2": "Steel",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 7.3 
+  },
+  "Salandit": {
+    "t1": "Poison",
+    "t2": "Fire",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 
+  },
+  "Bruxish": {
+    "t1": "Water",
+    "t2": "Psychic",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 41.9
+  },
+  "Drampa": {
+    "t1": "Normal",
+    "t2": "Dragon",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 407.9
+  },
+  "Vikavolt": {
+    "t1": "Bug",
+    "t2": "Electric",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 99.2
+  },
+  "Charjabug": {
+    "t1": "Bug",
+    "t2": "Electic",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 23.1
+  },
+  "Tapu Koko": {
+    "t1": "Electic",
+    "t2": "Fairy",
+    "bs": {
+      "hp": ,
+      "at": ,
+      "df": ,
+      "sa": ,
+      "sd": ,
+      "sp": 
+    },
+    "w": 45.2
+  },
 });
