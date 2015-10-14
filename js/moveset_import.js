@@ -108,7 +108,7 @@ function getMoves(currentPoke,rows,i){
 			if(rows[x][0] == "-"){
 				movesFound = true;
 				
-				var move = rows[x].substr(2,rows[x].length-2).replace("[","").replace("]","");	
+				var move = rows[x].substr(2,rows[x].length-2).replace("[","").replace("]","").replace("  ","");
 				moves.push(move);
 	
 			}else {
