@@ -160,23 +160,6 @@ ITEMS_XY.splice(ITEMS_XY.indexOf('DeepSeaTooth'), 1, 'Deep Sea Tooth');
 ITEMS_XY.splice(ITEMS_XY.indexOf('NeverMeltIce'), 1, 'Never-Melt Ice');
 ITEMS_XY.splice(ITEMS_XY.indexOf('SilverPowder'), 1, 'Silver Powder');
 ITEMS_XY.splice(ITEMS_XY.indexOf('TwistedSpoon'), 1, 'Twisted Spoon');
-ITEMS_XY.splice(ITEMS_XY.indexOf('Bug Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Dark Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Dragon Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Electric Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Fighting Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Fire Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Flying Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Ghost Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Grass Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Ground Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Ice Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Poison Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Psychic Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Rock Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Steel Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Water Gem'), 1);
-ITEMS_XY.splice(ITEMS_XY.indexOf('Soul Dew'), 1);
 
 function getItemBoostType(item) {
     switch (item) {
