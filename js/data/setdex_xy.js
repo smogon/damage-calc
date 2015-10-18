@@ -87,7 +87,7 @@ var SETDEX_XY = {
 		"LC Life Orb Swords Dance": {"level":5,"evs":{"df":36,"sp":236,"at":236},"nature":"Jolly","ability":"Battle Armor","item":"Life Orb","moves":["Swords Dance","X-Scissor","Rock Blast","Aerial Ace"]}
 	},
 	"Arbok": {
-		"NU Coil + Rest": {"level":100,"evs":{"hp":252,"sp":64,"sd":192},"nature":"Careful","ability":"Shed Skin","item":"Black Sludge","moves":["Coil","Rest","Gunk Shot","Earthquake"]}
+		"NU Offensive Coil": {"level":100,"evs":{"at":252,"sp":252,"sd":4},"nature":"Adamant","ability":"Intemidate","item":"Life Orb","moves":["Coil","Sucker Punch","Gunk Shot","Earthquake"]}
 	},
 	"Arcanine": {
 		"UU Defensive": {"level":100,"evs":{"df":252,"hp":248,"at":8},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Morning Sun","Will-O-Wisp","Flare Blitz","Extreme Speed"]},
@@ -449,6 +449,7 @@ var SETDEX_XY = {
 	},
 	"Clefairy": {
 		"PU Calm Mind": {"level":100,"evs":{"df":252,"hp":252,"sd":4},"nature":"Bold","ability":"Magic Guard","item":"Eviolite","moves":["Calm Mind","Soft-Boiled","Moonblast","Stored Power"]},
+		"Doubles Friend Guard Support": {"level":100,"evs":{"df":192,"hp":252,"sd":64},"nature":"Bold","ability":"Friend Guard","item":"Eviolite","moves":["Follow Me","Heal Pulse","Icy Wind","Protect"]},
 		"VGC15 Follow Me": {"level":50,"evs":{"df":172,"hp":252,"sp":4,"sa":20,"sd":60},"nature":"Bold","ability":"Friend Guard","item":"Eviolite","moves":["Follow Me","Helping Hand","Moonblast","Protect"]}
 	},
 	"Cloyster": {
@@ -707,7 +708,9 @@ var SETDEX_XY = {
 	},
 	"Empoleon": {
 		"OU Specially Defensive": {"level":100,"evs":{"df":8,"hp":248,"sd":252},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Scald","Roar","Toxic","Defog"]},
-		"UU Specially Defensive": {"level":100,"evs":{"df":8,"hp":248,"sd":252},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Stealth Rock","Defog","Scald","Roar"]}
+		"UU Specially Defensive Support": {"level":100,"evs":{"sa":4,"hp":252,"sd":252},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Stealth Rock","Defog","Scald","Roar"]},
+		"UU Offensive Defog": {"level":100,"evs":{"sa":252,"hp":212,"sp":44},"nature":"Modest","ability":"Torrent","item":"Shuca Berry","moves":["Hydro Pump","Defog","Ice Beam","Flash Cannon"]},
+		"UU Agility": {"level":100,"evs":{"sa":252,"hp":64,"sp":192},"nature":"Timid","ability":"Torrent","item":"Petaya Berry","moves":["Agility","Hydro Pump","Ice Beam","Grass Knot"]}
 	},
 	"Entei": {
 		"OU All-Out Attacker": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","item":"Choice Band","moves":["Sacred Fire","Extreme Speed","Stone Edge","Bulldoze"]},
@@ -1237,13 +1240,8 @@ var SETDEX_XY = {
 		"NU Special Attacker": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magic Guard","item":"Focus Sash","moves":["Psychic","Hidden Power Fighting","Dazzling Gleam","Encore"]}
 	},
 	"Kangaskhan": {
-		"Uber Into Darkness": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Parental Bond","item":"Kangaskhanite","moves":["Fake Out","Earthquake","Sucker Punch","Return"]},
-		"VGC15 All-Out Attacker": {"level":50,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Power-Up Punch","Sucker Punch","Fake Out"]},
-		"VGC15 Bulky Offensive": {"level":50,"evs":{"df":44,"hp":92,"sp":68,"at":252,"sd":52},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Low Kick","Sucker Punch","Protect"]},
-		"VGC14 Standard Mega": {"level":50,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Fake Out","Sucker Punch","Power-Up Punch"]},
-		"NU Physical Attacker": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","ability":"Scrappy","item":"Silk Scarf","moves":["Fake Out","Double-Edge","Sucker Punch","Earthquake"]},
-		"NU Assault Vest": {"level":100,"evs":{"hp":160,"sp":96,"at":252},"nature":"Adamant","ability":"Scrappy","item":"Assault Vest","moves":["Return","Drain Punch","Power-Up Punch","Sucker Punch"]},
-		"Doubles All-Out Attacker": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Fake Out","Return","Sucker Punch","Power-Up Punch"]}
+		"NU Offensive": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Adamant","ability":"Scrappy","item":"Silk Scarf","moves":["Fake Out","Double-Edge","Sucker Punch","Earthquake"]},
+		"NU Assault Vest": {"level":100,"evs":{"hp":64,"sp":96,"sd":96,"at":252},"nature":"Adamant","ability":"Scrappy","item":"Assault Vest","moves":["Return","Drain Punch","Power-Up Punch","Sucker Punch"]},
 	},
 	"Karrablast": {
 		"LC Choice Scarf": {"level":5,"evs":{"df":76,"sp":196,"at":236},"nature":"Jolly","ability":"No Guard","item":"Choice Scarf","moves":["Megahorn","Knock Off","Drill Run","Poison Jab"]}
@@ -2561,7 +2559,8 @@ var SETDEX_XY = {
 		"RU Swords Dance": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Justified","item":"Lum Berry","moves":["Swords Dance","Leaf Blade","Close Combat","Zen Headbutt"]},
 		"RU Calm Mind": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Life Orb","moves":["Calm Mind","Giga Drain","Focus Blast","Hidden Power Fire"]},
 		"UU Swords Dance": {"level":100,"evs":{"sp":252,"at":252,"sd":4},"nature":"Jolly","ability":"Justified","item":"Lum Berry","moves":["Swords Dance","Leaf Blade","Close Combat","Stone Edge"]},
-		"UU Calm Mind": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Justified","item":"Leftovers","moves":["Calm Mind","Giga Drain","Focus Blast","Hidden Power Rock"]}
+		"UU Calm Mind": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Justified","item":"Leftovers","moves":["Calm Mind","Giga Drain","Focus Blast","Hidden Power Rock"]},
+		"Doubles Physical Attacker": {"level":100,"evs":{"at":252,"sp":252,"hp":4},"nature":"Jolly","ability":"Justified","item":"Life Orb","moves":["Leaf Blade","Close Combat","Stone Edge","Protect"]}
 	},
 	"Vivillon": {
 		"RU Sleep 'n Sweep": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","ability":"Compound Eyes","item":"Leftovers","moves":["Substitute","Quiver Dance","Hurricane","Sleep Powder"]},
@@ -2843,8 +2842,11 @@ var SETDEX_XY = {
 	},
 	"Mega Kangaskhan": {
 		"Uber Wrath Of Khan": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","moves":["Return","Fake Out","Sucker Punch","Earthquake"]},
-		"VGC14 Standard Mega": {"level":50,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","moves":["Return","Fake Out","Sucker Punch","Power-Up Punch"]},
-		"Doubles All-Out Attacker": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","moves":["Fake Out","Return","Sucker Punch","Power-Up Punch"]}
+		"Uber Into Darkness": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Parental Bond","item":"Kangaskhanite","moves":["Fake Out","Earthquake","Sucker Punch","Return"]},
+		"VGC15 All-Out Attacker": {"level":50,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Power-Up Punch","Sucker Punch","Fake Out"]},
+		"VGC15 Bulky Offensive": {"level":50,"evs":{"df":44,"hp":92,"sp":68,"at":252,"sd":52},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Low Kick","Sucker Punch","Protect"]},
+		"VGC14 Standard Mega": {"level":50,"evs":{"hp":4,"sp":252,"at":252},"nature":"Jolly","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Fake Out","Sucker Punch","Power-Up Punch"]},
+		"Doubles All-Out Attacker": {"level":100,"evs":{"hp":4,"sp":252,"at":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Fake Out","Return","Sucker Punch","Power-Up Punch"]}
 	},
 	"Mega Latias": {
 		"OU Mega Calm Mind": {"level":100,"evs":{"df":84,"hp":248,"sp":176},"nature":"Bold","ability":"Levitate","item":"Latiasite","moves":["Calm Mind","Roost","Substitute","Stored Power"]},
