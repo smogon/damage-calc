@@ -326,7 +326,7 @@ function getDamageResult(attacker, defender, move, field) {
         bpMods.push(0x1800);
         description.attackerAbility = attacker.ability;
     } else if (attacker.ability === "Tough Claws" && move.makesContact) {
-        bpMods.push(0x1547);
+        bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
     
