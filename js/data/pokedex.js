@@ -10072,7 +10072,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sp": 145
     },
     "w": 55.2,
-    "ab": "Lightningrod"
+    "ab": "Lightning Rod"
   },
   "Mega Scizor": {
     "t1": "Bug",
