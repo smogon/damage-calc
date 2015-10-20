@@ -138,6 +138,13 @@ var MOVES_RBY = {
         hasSecondaryEffect: true,
         isPunch: true
     },
+    'Jump Kick': {
+        bp: 70,
+        type: 'Fighting',
+        category: 'Physical',
+        makesContact: true,
+        hasRecoil: true
+    },
     'Mega Drain': {
         bp: 40,
         type: 'Grass'
@@ -221,6 +228,12 @@ var MOVES_RBY = {
         category: 'Special',
         isSpread: true
     },
+    'Swift': {
+        bp: 60,
+        type: 'Normal',
+        category: 'Special',
+        isSpread: true
+    },
     'Tackle': {
         bp: 35,
         type: 'Normal',
@@ -233,6 +246,12 @@ var MOVES_RBY = {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Thunderbolt': {
+        bp: 95,
+        type: 'Electric',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'ThunderPunch': {
         bp: 75,
         type: 'Electric',
@@ -241,16 +260,21 @@ var MOVES_RBY = {
         hasSecondaryEffect: true,
         isPunch: true
     },
-    'Thunderbolt': {
-        bp: 95,
-        type: 'Electric',
-        category: 'Special',
-        hasSecondaryEffect: true
+    'Tri Attack': {
+        bp: 80,
+        type: 'Normal',
+        category: 'Special'
     },
     'Twineedle': {
         bp: 25,
         type: 'Bug',
         isTwoHit: true
+    },
+    'Waterfall': {
+        bp: 80,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true
     },
     'Wrap': {
         bp: 15,
@@ -484,6 +508,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         makesContact: true
     },
+    'Rock Smash': {
+        bp: 20,
+        type: 'Fighting',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
+    },
     'Sacred Fire': {
         bp: 100,
         type: 'Fire',
@@ -510,6 +541,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Grass',
         category: 'Special'
     },
+    'Spark': {
+        bp: 65,
+        type: 'Electric',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
+    },
     'Steel Wing': {
         bp: 70,
         type: 'Steel',
@@ -523,6 +561,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         makesContact: true
     },
+    'Tri Attack': { hasSecondaryEffect: true },
     'Zap Cannon': {
         bp: 100,
         type: 'Electric',
@@ -554,6 +593,18 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Special',
         isSpread: true
     },
+    'Astonish': {
+        bp: 30,
+        type: 'Ghost',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
+    },
+    'Blast Burn': {
+        bp: 150,
+        type: 'Fire',
+        category: 'Special'
+    },
     'Blaze Kick': {
         bp: 85,
         type: 'Fire',
@@ -577,6 +628,32 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     'Brick Break': {
         bp: 75,
         type: 'Fighting',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Bullet Seed': {
+        bp: 10,
+        type: 'Grass',
+        category: 'Physical',
+        isMultiHit: true,
+        isBullet: true
+    },
+    'Covet': {
+        bp: 40,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Crush Claw': {
+        bp: 75,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
+    },
+    'Dive': {
+        bp: 60,
+        type: 'Water',
         category: 'Physical',
         makesContact: true
     },
@@ -623,12 +700,35 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         makesContact: true,
         isPunch: true
     },
+    'Frenzy Plant': {
+        bp: 150,
+        type: 'Grass',
+        category: 'Special'
+    },
     'Heat Wave': {
         bp: 100,
         type: 'Fire',
         category: 'Special',
         hasSecondaryEffect: true,
         isSpread: true
+    },
+    'Hydro Cannon': {
+        bp: 150,
+        type: 'Water',
+        category: 'Special'
+    },
+    'Hyper Voice': {
+        bp: 90,
+        type: 'Normal',
+        category: 'Special',
+        isSound: true,
+        isSpread: true
+    },
+    'Icicle Spear': {
+        bp: 10,
+        type: 'Ice',
+        category: 'Physical',
+        isMultiHit: true
     },
     'Knock Off': {
         bp: 20,
@@ -642,11 +742,22 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Physical',
         makesContact: true
     },
+    'Luster Purge': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Low Kick': {
         bp: 1,
         type: 'Fighting',
         category: 'Physical',
         makesContact: true
+    },
+    'Magical Leaf': {
+        bp: 60,
+        type: 'Grass',
+        category: 'Special'
     },
     'Meteor Mash': {
         bp: 100,
@@ -656,12 +767,32 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         hasSecondaryEffect: true,
         isPunch: true
     },
+    'Mist Ball': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isBullet: true
+    },
+    'Mud Shot': {
+        bp: 55,
+        type: 'Ground',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Muddy Water': {
         bp: 95,
         type: 'Water',
         category: 'Special',
         hasSecondaryEffect: true,
         isSpread: true
+    },
+    'Needle Arm': {
+        bp: 60,
+        type: 'Grass',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
     },
     'Overheat': {
         bp: 140,
@@ -675,6 +806,13 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         makesContact: true,
         hasSecondaryEffect: true,
         isBite: true
+    },
+    'Poison Tail': {
+        bp: 50,
+        type: 'Poison',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
     },
     'Psycho Boost': {
         bp: 140,
@@ -696,6 +834,12 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     'Rock Tomb': {
         bp: 50,
         type: 'Rock',
+        category: 'Physical',
+        hasSecondaryEffect: true
+    },
+    'Secret Power': {
+        bp: 70,
+        type: 'Normal',
         category: 'Physical',
         hasSecondaryEffect: true
     },
@@ -730,18 +874,16 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         makesContact: true,
         isPunch: true
     },
-    'Spark': {
-        bp: 65,
-        type: 'Electric',
-        category: 'Physical',
-        makesContact: true,
-        hasSecondaryEffect: true
-    },
     'Superpower': {
         bp: 120,
         type: 'Fighting',
         category: 'Physical',
         makesContact: true
+    },
+    'Uproar': {
+        bp: 50,
+        type: 'Normal',
+        category: 'Special'
     },
     'Volt Tackle': {
         bp: 120,
@@ -800,6 +942,11 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
+    'Attack Order': {
+        bp: 90,
+        type: 'Bug',
+        category: 'Physical'
+    },
     'Aura Sphere': {
         bp: 90,
         type: 'Fighting',
@@ -819,6 +966,11 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true,
         hasRecoil: true
+    },
+    'Brine': {
+        bp: 65,
+        type: 'Water',
+        category: 'Special'
     },
     'Bug Bite': {
         bp: 60,
@@ -859,6 +1011,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
+    'Covet': { bp: 60 },
     'Cross Poison': {
         bp: 70,
         type: 'Poison',
@@ -880,6 +1033,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         hasSecondaryEffect: true,
         isSpread: true
     },
+    'Dive': { bp: 80 },
     'Double Hit': {
         bp: 35,
         type: 'Normal',
@@ -1006,13 +1160,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         hasRecoil: true
     },
     'Hi Jump Kick': { bp: 100 },
-    'Hyper Voice': {
-        bp: 90,
-        type: 'Normal',
-        category: 'Special',
-        isSound: true,
-        isSpread: true
-    },
     'Ice Fang': {
         bp: 65,
         type: 'Ice',
@@ -1038,13 +1185,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Normal',
         category: 'Special'
     },
-    'Jump Kick': {
-        bp: 85,
-        type: 'Fighting',
-        category: 'Physical',
-        makesContact: true,
-        hasRecoil: true
-    },
+    'Jump Kick': { bp: 85 },
     'Last Resort': {
         bp: 130,
         type: 'Normal',
@@ -1068,6 +1209,25 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 120,
         type: 'Fire',
         category: 'Special'
+    },
+    'Magnet Bomb': {
+        bp: 60,
+        type: 'Steel',
+        category: 'Physical',
+        isBullet: true
+    },
+    'Mirror Shot': {
+        bp: 65,
+        type: 'Steel',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
+    'Mud Bomb': {
+        bp: 65,
+        type: 'Ground',
+        category: 'Special',
+        isBullet: true,
+        hasSecondaryEffect: true
     },
     'Natural Gift': {
         bp: 1,
@@ -1139,6 +1299,11 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
+    'Roar of Time': {
+        bp: 150,
+        type: 'Dragon',
+        category: 'Special'
+    },
     'Rock Climb': {
         bp: 90,
         type: 'Normal',
@@ -1146,12 +1311,12 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         makesContact: true,
         hasSecondaryEffect: true
     },
-    'Rock Smash': {
-        bp: 40,
-        type: 'Fighting',
+    'Rock Smash': { bp: 40 },
+    'Rock Wrecker': {
+        bp: 150,
+        type: 'Rock',
         category: 'Physical',
-        makesContact: true,
-        hasSecondaryEffect: true
+        isBullet: true
     },
     'Seed Bomb': {
         bp: 80,
@@ -1199,12 +1364,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
-    'Swift': {
-        bp: 60,
-        type: 'Normal',
-        category: 'Special',
-        isSpread: true
-    },
     'Thunder Fang': {
         bp: 65,
         type: 'Electric',
@@ -1212,12 +1371,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         makesContact: true,
         hasSecondaryEffect: true,
         isBite: true
-    },
-    'Tri Attack': {
-        bp: 80,
-        type: 'Normal',
-        category: 'Special',
-        hasSecondaryEffect: true
     },
     'U-turn': {
         bp: 70,
@@ -1236,13 +1389,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
-    'Waterfall': {
-        bp: 80,
-        type: 'Water',
-        category: 'Physical',
-        makesContact: true,
-        hasSecondaryEffect: true
-    },
+    'Waterfall': { hasSecondaryEffect: true },
     'Wood Hammer': {
         bp: 120,
         type: 'Grass',
@@ -1308,13 +1455,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         hasSecondaryEffect: true,
         isSpread: true
     },
-    'Bullet Seed': {
-        bp: 25,
-        type: 'Grass',
-        category: 'Physical',
-        isMultiHit: true,
-        isBullet: true
-    },
+    'Bullet Seed': { bp: 25 },
     'Circle Throw': {
         bp: 60,
         type: 'Fighting',
@@ -1455,12 +1596,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         hasSecondaryEffect: true
     },
-    'Icicle Spear': {
-        bp: 25,
-        type: 'Ice',
-        category: 'Physical',
-        isMultiHit: true
-    },
+    'Icicle Spear': { bp: 25 },
     'Incinerate': {
         bp: 30,
         type: 'Fire',
@@ -1605,6 +1741,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true
     },
+    'Uproar': { bp: 90 },
     'V-create': {
         bp: 180,
         type: 'Fire',
