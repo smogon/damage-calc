@@ -387,6 +387,9 @@ function checkExeptions(poke){
 		case 'Giratina-Origin':
 			poke = "Giratina-O";
 			break;
+		case 'Hoopa-Unbound':
+			poke = "Hoopa Unbound";
+			break;
 		case 'Gourgeist':
 			poke = "Gourgeist-Average";
 			break;	
