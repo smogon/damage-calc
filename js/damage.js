@@ -120,6 +120,9 @@ function getDamageResult(attacker, defender, move, field) {
     if (typeEffectiveness === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
+    if (move.name === "Sky Drop" && (defender.type1 === "Flying" || defender.type2 === "Flying" || (gen >= 6 && defender.weight >= 200))) {
+        return {"damage":[0], "description":buildDescription(description)};
+    }
     if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
             (move.type === "Grass" && defAbility === "Sap Sipper") ||
             (move.type === "Fire" && defAbility.indexOf("Flash Fire") !== -1) ||
