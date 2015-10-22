@@ -240,6 +240,12 @@ var MOVES_RBY = {
         category: 'Physical',
         makesContact: true
     },
+    'Thrash': {
+        bp: 90,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true
+    },
     'Thunder': {
         bp: 120,
         type: 'Electric',
@@ -1430,11 +1436,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true
     },
-    'Attack Order': {
-        bp: 90,
-        type: 'Bug',
-        category: 'Physical'
-    },
     'Blue Flare': {
         bp: 130,
         type: 'Fire',
@@ -1456,6 +1457,13 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         isSpread: true
     },
     'Bullet Seed': { bp: 25 },
+    'Chip Away': {
+        bp: 70,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+        ignoresDefenseBoosts: true
+    },
     'Circle Throw': {
         bp: 60,
         type: 'Fighting',
@@ -1494,6 +1502,13 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         isBullet: true
     },
+    'Electroweb': {
+        bp: 55,
+        type: 'Electric',
+        category: 'Special',
+        hasSecondaryEffect: true,
+        isSpread: true
+    },
     'Feint': {
         bp: 30,
         type: 'Normal',
@@ -1508,6 +1523,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     'Final Gambit': {
         bp: 1,
         type: 'Fighting',
+        category: 'Special'
+    },
+    'Flame Burst': {
+        bp: 70,
+        type: 'Fire',
         category: 'Special'
     },
     'Flame Charge': {
@@ -1590,6 +1610,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Ice Burn': {
+        bp: 140,
+        type: 'Ice',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Icicle Crash': {
         bp: 85,
         type: 'Ice',
@@ -1605,6 +1631,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     },
     'Jump Kick': { bp: 100 },
     'Last Resort': { bp: 140 },
+    'Leaf Tornado': {
+        bp: 65,
+        type: 'Grass',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Low Sweep': {
         bp: 60,
         type: 'Fighting',
@@ -1664,6 +1696,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true
     },
+    'Round': {
+        bp: 60,
+        type: 'Normal',
+        category: 'Special'
+    },
     'Sacred Sword': {
         bp: 90,
         type: 'Fighting',
@@ -1690,6 +1727,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         dealsPhysicalDamage: true
     },
+    'Sky Drop': {
+        bp: 60,
+        type: 'Flying',
+        category: 'Physical',
+        makesContact: true
+    },
     'Sludge Wave': {
         bp: 95,
         type: 'Poison',
@@ -1710,6 +1753,13 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         isSound: true,
         isSpread: true
     },
+    'Steamroller': {
+        bp: 65,
+        type: 'Bug',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true
+    },
     'Stored Power': {
         bp: 20,
         type: 'Psychic',
@@ -1721,6 +1771,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true,
         alwaysCrit: true
+    },
+    'Struggle Bug': {
+        bp: 30,
+        type: 'Bug',
+        category: 'Special',
+        isSpread: true
     },
     'Tackle': { bp: 50 },
     'Tail Slap': {
@@ -1735,18 +1791,18 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Normal',
         category: 'Special'
     },
-    'Thrash': {
-        bp: 120,
-        type: 'Normal',
-        category: 'Physical',
-        makesContact: true
-    },
+    'Thrash': { bp: 120 },
     'Uproar': { bp: 90 },
     'V-create': {
         bp: 180,
         type: 'Fire',
         category: 'Physical',
         makesContact: true
+    },
+    'Venoshock': {
+        bp: 65,
+        type: 'Poison',
+        category: 'Special'
     },
     'Volt Switch': {
         bp: 70,
@@ -1760,11 +1816,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         makesContact: true,
         hasRecoil: true
     },
-    'Venoshock': {
-        bp: 65,
-        type: 'Poison',
-        category: 'Special'
-    }
 });
 
 var MOVES_XY = $.extend(true, {}, MOVES_BW, {
@@ -1940,6 +1991,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Rock Tomb': { bp: 60 },
     'Skull Bash': { bp: 130 },
     'Storm Throw': { bp: 60 },
+    'Struggle Bug': { bp: 50 },
     'Surf': { bp: 90 },
     'Techno Blast': { bp: 120 },
     'Thief': { bp: 60 },
