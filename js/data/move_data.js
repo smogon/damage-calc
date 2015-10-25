@@ -1264,6 +1264,12 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
+    'Paleo Wave': {
+        bp: 85,
+        type: 'Rock',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Payback': {
         bp: 50,
         type: 'Dark',
@@ -1352,6 +1358,13 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 40,
         type: 'Ghost',
         category: 'Physical',
+        makesContact: true
+    },
+    'Shadow Strike': {
+        bp: 80,
+        type: 'Ghost',
+        category: 'Physical',
+        hasSecondaryEffect: true,
         makesContact: true
     },
     'Spacial Rend': {
