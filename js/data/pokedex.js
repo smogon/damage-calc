@@ -6660,7 +6660,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     "w": 2.0
   },
   "Stratagem": {
-    "t1": "Rock"
+    "t1": "Rock",
     "bs": {
       "hp": 90,
       "at": 60,
