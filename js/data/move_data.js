@@ -1791,6 +1791,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         isSpread: true
     },
+    'Synchronoise': {
+        bp: 70,
+        type: 'Psychic',
+        category: 'Special'
+    },
     'Tackle': { bp: 50 },
     'Tail Slap': {
         bp: 25,
@@ -2006,6 +2011,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Storm Throw': { bp: 60 },
     'Struggle Bug': { bp: 50 },
     'Surf': { bp: 90 },
+    'Synchronoise': { bp: 120 },
     'Techno Blast': { bp: 120 },
     'Thief': { bp: 60 },
     'Thunder': { bp: 110 },
