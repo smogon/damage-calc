@@ -123,8 +123,8 @@ function getDamageResult(attacker, defender, move, field) {
     if (move.name === "Sky Drop" && (defender.type1 === "Flying" || defender.type2 === "Flying" || (gen >= 6 && defender.weight >= 200) || field.isGravity)) {
         return {"damage":[0], "description":buildDescription(description)};
     }
-    if (move.name === "Synchronoise" &&
-            [defender.type1, defender.type2].indexOf(attacker.type1) === -1 && [defender.type1, defender.type2].indexOf(attacker.type2) === -1) {
+    if (move.name === "Synchronoise" && [defender.type1, defender.type2].indexOf(attacker.type1) === -1 &&
+            (!attacker.type2 || [defender.type1, defender.type2].indexOf(attacker.type2) === -1)) {
         return {"damage": [0], "description": buildDescription(description)};
     }
     if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
