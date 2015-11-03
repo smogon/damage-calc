@@ -51,6 +51,7 @@
             <input class="btn-input" type="radio" name="tier" id="VGC14" /><label class="btn btn-left gen-specific g6" for="VGC14">VGC14</label>
             <input class="btn-input" type="radio" name="tier" id="Doubles" /><label class="btn btn-mid gen-specific g5 g6" for="Doubles">Doubles</label>
             <input class="btn-input" type="radio" name="tier" id="LC" /><label class="btn btn-mid gen-specific g4 g5 g6" for="LC">LC</label>
+            <input class="btn-input" type="checkbox" name="tier" id="PU" /><label class="btn btn-mid gen-specific g6" for="PU">PU</label>
             <input class="btn-input" type="checkbox" name="tier" id="NU" /><label class="btn btn-mid gen-specific g3 g4 g5 g6" for="NU">NU</label>
             <input class="btn-input" type="checkbox" name="tier" id="RU" /><label class="btn btn-mid gen-specific g5 g6" for="RU">RU</label>
             <input class="btn-input" type="checkbox" name="tier" id="UU" /><label class="btn btn-mid" for="UU">UU</label>
@@ -562,13 +563,13 @@
                         </div>
                     </div>
                     <div class="btn-group">
-                        <div class="left" title="Is this Pokemon protected by Reflect and/or Light Screen?">
+                        <div class="left" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
                             <input class="btn-input" type="checkbox" id="reflectL" />
                             <label class="btn btn-left" for="reflectL">Reflect</label>
                             <input class="btn-input" type="checkbox" id="lightScreenL" />
                             <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
                         </div>
-                        <div class="right" title="Is this Pokemon protected by Reflect and/or Light Screen?">
+                        <div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
                             <input class="btn-input" type="checkbox" id="reflectR" />
                             <label class="btn btn-left" for="reflectR">Reflect</label>
                             <input class="btn-input" type="checkbox" id="lightScreenR" />
@@ -576,23 +577,33 @@
                         </div>
                     </div>
                     <div class="btn-group gen-specific g2 g3 g4 g5 g6">
-                        <div class="left" title="Has this Pokemon been revealed with Foresight or Odor Sleuth?">
+                        <div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                             <input class="btn-input" type="checkbox" id="foresightL" />
                             <label class="btn btn-wide" for="foresightL">Foresight</label>
                         </div>
-                        <div class="right" title="Has this Pokemon been revealed with Foresight or Odor Sleuth?">
+                        <div class="right" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                             <input class="btn-input" type="checkbox" id="foresightR" />
                             <label class="btn btn-wide" for="foresightR">Foresight</label>
                         </div>
                     </div>
                     <div class="btn-group gen-specific g3 g4 g5 g6">
-                        <div class="left" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
+                        <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                             <input class="btn-input" type="checkbox" id="helpingHandL" />
                             <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
                         </div>
-                        <div class="right" title="Has this Pokemon's power been boosted by an ally's Helping Hand?">
+                        <div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                             <input class="btn-input" type="checkbox" id="helpingHandR" />
                             <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
+                        </div>
+                    </div>    
+                    <div class="btn-group gen-specific g5 g6">
+                        <div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
+                            <input class="btn-input" type="checkbox" id="friendGuardL" />
+                            <label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
+                        </div>
+                        <div class="right" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
+                            <input class="btn-input" type="checkbox" id="friendGuardR" />
+                            <label class="btn btn-xxwide" for="friendGuardR">Helping Hand</label>
                         </div>
                     </div>
                 </div>
