@@ -107,6 +107,13 @@ var MOVES_RBY = {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Fury Swipes': {
+        bp: 18,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+        isMultiHit: true
+    },
     'Hi Jump Kick': {
         bp: 85,
         type: 'Fighting',
