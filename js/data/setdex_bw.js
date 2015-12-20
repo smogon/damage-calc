@@ -2482,7 +2482,7 @@ var SETDEX_BW = {
 		"Uber Substitute + Leech Seed": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","item":"Leftovers","moves":["Substitute","Leech Seed","Seed Flare","Air Slash"]},
 		"Uber Choice Scarf": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Modest","item":"Choice Scarf","moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},
 		"Uber Special Sweeper": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"ivs":{"hp":29},"nature":"Timid","item":"Life Orb","moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Fire"]},
-		"Uber Choice Specs": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timi","item":"Choice Specs","moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},
+		"Uber Choice Specs": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","item":"Choice Specs","moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},
 		"Doubles Offensive": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Timid","item":"Life Orb","moves":["Air Slash","Seed Flare","Earth Power","Protect"]}
 	},
 	"Shedinja": {

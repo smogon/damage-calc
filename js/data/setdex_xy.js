@@ -1807,7 +1807,7 @@ var SETDEX_XY = {
 		"LC Attacker": {"level":5,"evs":{"df":132,"hp":12,"sp":52,"at":196,"sd":116},"nature":"Adamant","ability":"Natural Cure","item":"Eviolite","moves":["Horn Leech","Shadow Claw","Rock Slide","Substitute"]}
 	},
 	"Pidgeot": {
-		"PU Offensive Defog": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jollu","ability":"Keen Eye","item":"Leftovers","moves":["Brave Bird","Return","Defog","U-turn"]}
+		"PU Offensive Defog": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Keen Eye","item":"Leftovers","moves":["Brave Bird","Return","Defog","U-turn"]}
 	},
 	"Piloswine": {
 		"PU Standard": {"level":100,"evs":{"hp":252,"at":252,"sd":4},"nature":"Adamant","ability":"Thick Fat","item":"Eviolite","moves":["Stealth Rock","Earthquake","Ice Shard","Icicle Spear"]},
