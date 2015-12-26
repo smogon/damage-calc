@@ -90,8 +90,8 @@ var MOVES_RBY = {
         hasRecoil: true
     },
     'Double Team': {
-        bp: 100,
-        type: 'Ground'
+        bp: 0,
+        type: 'Normal'
     }, 
     'Drill Peck': {
         bp: 80,
@@ -311,11 +311,11 @@ var MOVES_RBY = {
     },
     'Substitute': {
         bp: 0,
-        type: 'Grass'
+        type: 'Normal'
     },
     'Super Fang': {
         bp: 0,
-        type: 'Grass'
+        type: 'Normal'
     },
     'Surf': {
         bp: 95,
@@ -328,6 +328,10 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Special',
         isSpread: true
+    },
+    'Swords Dance': {
+        bp: 0,
+        type: 'Normal'
     },
     'Tackle': {
         bp: 35,
@@ -361,13 +365,13 @@ var MOVES_RBY = {
         hasSecondaryEffect: true,
         isPunch: true
     },
-    'Thunderwave': {
+    'Thunder Wave': {
         bp: 0,
         type: 'Electric'
     },
     'Toxic': {
         bp: 0,
-        type: 'Posion'
+        type: 'Poison'
     },
     'Tri Attack': {
         bp: 80,
@@ -392,7 +396,7 @@ var MOVES_RBY = {
     'Whirlwind': {
         bp: 0,
         type: 'Normal'
-    },
+    }
 };
 
 var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
@@ -632,6 +636,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 0,
         type: 'Normal'
     },
+    'Protect': {
+        bp: 0,
+        type: 'Normal'
+    },
     'Pursuit': {
         bp: 40,
         type: 'Dark',
@@ -677,6 +685,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Special',
         hasSecondaryEffect: true,
         isBullet: true
+    },
+    'Sleep Talk': {
+        bp: 0,
+        type: 'Normal'
     },
     'Sludge Bomb': {
         bp: 90,
@@ -1081,7 +1093,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     },
     'Stockpile': {
         bp: 0,
-        type: 'Grass'
+        type: 'Normal'
     },
     'Superpower': {
         bp: 120,
@@ -1133,14 +1145,18 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Special',
         isBullet: true
     },
+    'Will-O-Wisp': {
+        bp: 0,
+        type: 'Fire'
+    },
     'Wish': {
         bp: 0,
         type: 'Normal'
     },
-    'Yawm': {
+    'Yawn': {
         bp: 0,
         type: 'Normal'
-    },
+    }
 });
 
 delete MOVES_ADV['BubbleBeam'];
@@ -1167,7 +1183,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Aqua Ring': {
         bp: 0,
-        type: 'Grass'
+        type: 'Water'
     },
     'Assurance': {
         bp: 50,
@@ -1475,11 +1491,11 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Magnet Rise': {
         bp: 0,
-        type: 'Grass'
+        type: 'Electric'
     },
-    'Me first': {
+    'Me First': {
         bp: 0,
-        type: 'Grass'
+        type: 'Normal'
     },
     'Mirror Shot': {
         bp: 65,
@@ -1649,7 +1665,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     },
     'Stealth Rock': {
         bp: 0,
-        type: 'Ground'
+        type: 'Rock'
     },
     'Stone Edge': {
         bp: 100,
@@ -1744,11 +1760,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true
     },
-    'Attack Order': {
-        bp: 90,
-        type: 'Bug',
-        category: 'Physical'
-    },
     'Autotomize': {
         bp: 0,
         type: 'Steel'
@@ -1794,7 +1805,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     },
     'Coil': {
         bp: 0,
-        type: 'Posion'
+        type: 'Poison'
     },
     'Cotton Guard': {
         bp: 0,
@@ -2078,7 +2089,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     },
     'Shift Gear': {
         bp: 0,
-        type: 'Steal'
+        type: 'Steel'
     },
     'Sky Drop': {
         bp: 60,
@@ -2177,11 +2188,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true,
         hasRecoil: true
-    },
-    'Venoshock': {
-        bp: 65,
-        type: 'Poison',
-        category: 'Special'
     }
 });
 
@@ -2280,9 +2286,9 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     },
     'Ice Beam': { bp: 90 },
     'Incinerate': { bp: 60 },
-    'Kings Shield': {
+    'King\'s Shield': {
         bp: 0,
-        type: 'Steal'
+        type: 'Steel'
     },
     'Knock Off': { bp: 65 },
     'Land\'s Wrath': {
@@ -2307,6 +2313,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Moonlight': { type: 'Fairy' },
     'Muddy Water': { bp: 90 },
     'Nature Power': {
         bp: 80,
@@ -2365,7 +2372,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     },
     'Rock Tomb': { bp: 60 },
     'Skull Bash': { bp: 130 },
-    'Spikey Shield': {
+    'Spiky Shield': {
         bp: 0,
         type: 'Grass'
     },
@@ -2388,12 +2395,14 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Thousand Arrows': {
         bp: 90,
         type: 'Ground',
-        category: "Physical",
+        category: 'Physical',
+        isSpread: 'true'
     },
     'Thousand Waves': {
         bp: 90,
         type: 'Ground',
-        category: "Physical",
+        category: 'Physical',
+        isSpread: 'true'
     },
     'Thunder': { bp: 110 },
     'Thunderbolt': { bp: 90 },
@@ -2412,6 +2421,7 @@ MOVES_XY['Extreme Speed'] = MOVES_XY['ExtremeSpeed'];
 MOVES_XY['Feint Attack'] = MOVES_XY['Faint Attack'];
 MOVES_XY['High Jump Kick'] = MOVES_XY['Hi Jump Kick'];
 MOVES_XY['Self-Destruct'] = MOVES_XY['Selfdestruct'];
+MOVES_XY['Soft-Boiled'] = MOVES_XY['Softboiled'];
 MOVES_XY['Solar Beam'] = MOVES_XY['SolarBeam'];
 MOVES_XY['Thunder Punch'] = MOVES_XY['ThunderPunch'];
 delete MOVES_XY['AncientPower'];
@@ -2420,5 +2430,6 @@ delete MOVES_XY['ExtremeSpeed'];
 delete MOVES_XY['Faint Attack'];
 delete MOVES_XY['Hi Jump Kick'];
 delete MOVES_XY['Selfdestruct'];
+delete MOVES_XY['Softboiled'];
 delete MOVES_XY['SolarBeam'];
 delete MOVES_XY['ThunderPunch'];
