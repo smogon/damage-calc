@@ -3,7 +3,7 @@ CACHE MANIFEST
 select2/select2.css
 ap_calc.css?v2
 bootstrap.css
-/images/pokemonshowdownbeta.png
+pokemonshowdownbeta.png
 js/jquery-1.9.1.min.js
 js/lodash.min.js
 select2/select2.min.js
