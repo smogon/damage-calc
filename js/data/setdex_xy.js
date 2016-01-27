@@ -1254,7 +1254,7 @@ var SETDEX_XY = {
 	},
 	"Jumpluff": {
 		"PU Offensive Utility": {"level":100,"evs":{"df":4,"sp":252,"at":252},"nature":"Jolly","ability":"Infiltrator","moves":["Sleep Powder","U-turn","Acrobatics","Seed Bomb"]},
-		"NU Support Puff": {"level":100,"evs":{"sd":4,"sp":252,"at":252},"nature":"Jolly","ability":"Infiltrator","moves":["Sleep Powder","Momento","Acrobatics","Seed Bomb"]}
+		"NU Support Puff": {"level":100,"evs":{"sd":4,"sp":252,"at":252},"nature":"Jolly","ability":"Infiltrator","moves":["Sleep Powder","Memento","Acrobatics","Seed Bomb"]}
 	},
 	"Jynx": {
 		"RU Lovely Kiss + 3 Attacks": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Timid","ability":"Dry Skin","item":"Life Orb","moves":["Lovely Kiss","Ice Beam","Psyshock","Focus Blast"]},
@@ -2674,7 +2674,7 @@ var SETDEX_XY = {
 	},
 	"Volkraken": {
 		"CAP Choice Scarf": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Scarf","moves":["Fire Blast","Surf","Flash Cannon","U-turn"]},
-		"CAP All Out Attacker": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Specs","moves":["Fire Blast","Hydro Pump","Power Gem","Momento"]}
+		"CAP All Out Attacker": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Specs","moves":["Fire Blast","Hydro Pump","Power Gem","Memento"]}
 	},
 	"Voltorb": {
 		"LC Lead": {"level":5,"evs":{"df":36,"hp":36,"sp":196,"sa":236},"nature":"Timid","ability":"Static","item":"Damp Rock","moves":["Rain Dance","Thunder","Volt Switch","Taunt"]},
