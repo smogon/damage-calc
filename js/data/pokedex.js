@@ -9281,6 +9281,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     "w": 35.3,
     "ab": "Mega Launcher"
   },
+  "Crucibelle": {
+    "t1": "Rock",
+    "t2": "Poison",
+    "bs": {
+      "hp": 106,
+      "at": 105,
+      "df": 65,
+      "sa": 75,
+      "sd": 85,
+      "sp": 104
+    },
+    "w": 23.6
+  },
   "Diancie": {
     "t1": "Rock",
     "t2": "Fairy",
@@ -9933,6 +9946,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 100.5,
     "ab": "Drought"
+  },
+  "Mega Crucibelle": {
+    "t1": "Rock",
+    "t2": "Poison",
+    "bs": {
+      "hp": 106,
+      "at": 135,
+      "df": 75,
+      "sa": 85,
+      "sd": 125,
+      "sp": 114
+    },
+    "w": 22.5,
+    "ab": "Magic Guard"
   },
   "Mega Diancie": {
     "t1": "Rock",
