@@ -309,11 +309,11 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
         description.weather = field.weather;
     }
     
-    if ((defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !isPhysical) ||
-            (defender.item === "Metal Powder" && defender.name === "Ditto")) {
+    if (defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !isPhysical) {
         defense = Math.floor(defense * 1.5);
         description.defenderItem = defender.item;
-    } else if (defender.item === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) {
+    } else if ((defender.item === "DeepSeaScale" && defender.name === "Clamperl" && !isPhysical) ||
+            (defender.item === "Metal Powder" && defender.name === "Ditto" && isPhysical)) {
         defense *= 2;
         description.defenderItem = defender.item;
     }

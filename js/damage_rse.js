@@ -126,11 +126,11 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         description.attackerItem = attacker.item;
     }
     
-    if ((!isPhysical && defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias")) ||
-            (isPhysical && defender.item === "Metal Powder" && defender.name === "Ditto")) {
+    if (!isPhysical && defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias")) {
         df = Math.floor(df * 1.5);
         description.defenderItem = defender.item;
-    } else if (!isPhysical && defender.item === "DeepSeaScale" && defender.name === "Clamperl") {
+    } else if ((!isPhysical && defender.item === "DeepSeaScale" && defender.name === "Clamperl") ||
+            (isPhysical && defender.item === "Metal Powder" && defender.name === "Ditto")) {
         df *= 2;
         description.defenderItem = defender.item;
     }

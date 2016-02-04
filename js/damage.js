@@ -457,11 +457,15 @@ function getDamageResult(attacker, defender, move, field) {
         description.weather = field.weather;
     }
     
-    if ((defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical) ||
-            (defender.item === "Metal Powder" && defender.name === "Ditto") ||
-            (defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical) ||
+    if ((defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical) ||
             (defender.item === "Assault Vest" && !hitsPhysical) || defender.item === "Eviolite") {
         dfMods.push(0x1800);
+        description.defenderItem = defender.item;
+    }
+
+    if ((defender.item === "Metal Powder" && defender.name === "Ditto" && hitsPhysical) ||
+            (defender.item === "Deep Sea Scale" && defender.name === "Clamperl" && !hitsPhysical)) {
+        dfMods.push(0x2000);
         description.defenderItem = defender.item;
     }
     
