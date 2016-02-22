@@ -107,6 +107,14 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     var at = attacker.rawStats[attackStat];
     var df = defender.rawStats[defenseStat];
     
+    description.attackEVs = attacker.evs[attackStat] +
+            (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
+            toSmogonStat(attackStat);
+    description.HPEVs = defender.HPEVs + " HP";
+    description.defenseEVs = defender.evs[defenseStat] +
+            (NATURES[defender.nature][0] === defenseStat ? "+" : NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
+            toSmogonStat(defenseStat);
+
     if (isPhysical && (attacker.ability === "Huge Power" || attacker.ability === "Pure Power")) {
         at *= 2;
         description.attackerAbility = attacker.ability;
