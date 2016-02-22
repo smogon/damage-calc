@@ -70,6 +70,8 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         return {"damage":[0], "description":buildDescription(description)};
     }
     
+    description.HPEVs = defender.HPEVs + " HP";
+    
     var lv = attacker.level;
     if (move.name === "Seismic Toss" || move.name === "Night Shade") {
         return {"damage":[lv], "description":buildDescription(description)};
@@ -103,7 +105,13 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     
     var isPhysical = typeChart[move.type].category === "Physical";
     var attackStat = isPhysical ? AT : SA;
+    description.attackEVs = attacker.evs[attackStat] +
+            (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
+            toSmogonStat(attackStat);
     var defenseStat = isPhysical ? DF : SD;
+    description.defenseEVs = defender.evs[defenseStat] +
+            (NATURES[defender.nature][0] === defenseStat ? "+" : NATURES[defender.nature][1] === defenseStat ? "-" : "") + " " +
+            toSmogonStat(defenseStat);
     var at = attacker.rawStats[attackStat];
     var df = defender.rawStats[defenseStat];
     
