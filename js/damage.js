@@ -413,7 +413,8 @@ function getDamageResult(attacker, defender, move, field) {
             (attacker.item === "Light Ball" && attacker.name === "Pikachu")) {
         atMods.push(0x2000);
         description.attackerItem = attacker.item;
-    } else if ((attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special") ||
+        //  Mega Latios and Mega Latias can only hold Soul Dew in OMs
+    } else if ((attacker.item === "Soul Dew" && (attackmeer.name === "Latios" || attacker.name === "Mega Latios" || attacker.name === "Mega Latias" || attacker.name === "Latias") && move.category === "Special") ||
             (attacker.item === "Choice Band" && move.category === "Physical") ||
             (attacker.item === "Choice Specs" && move.category === "Special")) {
         atMods.push(0x1800);
@@ -457,7 +458,8 @@ function getDamageResult(attacker, defender, move, field) {
         description.weather = field.weather;
     }
     
-    if ((defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical) ||
+    //  Mega Latios and Mega Latias can only hold Soul Dew in OMs
+    if ((defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Mega Latios" || defender.name === "Mega Latias" || defender.name === "Latias") && !hitsPhysical) ||
             (defender.item === "Assault Vest" && !hitsPhysical) || defender.item === "Eviolite") {
         dfMods.push(0x1800);
         description.defenderItem = defender.item;
