@@ -39,12 +39,12 @@
 
     var eot = 0;
     var eotText = [];
-    if (field.weather === 'Sun') {
+    if (field.weather === 'Sun' || field.weather === "Harsh Sunshine") {
         if (defender.ability === 'Dry Skin' || defender.ability === 'Solar Power') {
             eot -= Math.floor(defender.maxHP / 8);
             eotText.push(defender.ability + ' damage');
         }
-    } else if (field.weather === 'Rain') {
+    } else if (field.weather === 'Rain' || field.weather === "Heavy Rain") {
         if (defender.ability === 'Dry Skin') {
             eot += Math.floor(defender.maxHP / 8);
             eotText.push('Dry Skin recovery');
