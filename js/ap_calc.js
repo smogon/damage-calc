@@ -451,7 +451,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isFriendGuard = isFriendGuard;
 }
 
-var gen, genWasChanged, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
+var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
 
 $(".gen").change(function () {
     gen = ~~$(this).val();
@@ -540,6 +540,10 @@ $(".gen").change(function () {
     $(".set-selector").change();
 });
 
+$(".notation").change(function () {
+    notation = $(this).val();
+});
+
 function clearField() {
     $("#singles-format").prop("checked", true);
     $("#clear").prop("checked", true);
@@ -610,6 +614,9 @@ function getSelectOptions(arr, sort) {
 $(document).ready(function() {
     $("#gen6").prop("checked", true);
     $("#gen6").change();
+    $("#percentage").prop("checked", true);
+    $("#percentage").change();
+
     $(".set-selector").select2({
         formatResult: function(object) {
             return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
