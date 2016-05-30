@@ -141,6 +141,9 @@ html, body {
     max-width: 1247px;
     margin: 0 auto;
 }
+div.wrapper > div > span {
+    padding-right: 5px;
+}
 fieldset {
     float: left;
     background-color: #F1F4F9;
@@ -374,7 +377,7 @@ select.toxic-counter {
 }
 
 .import-team-text {
-	min-width: 27em;
-	min-height: 10em;
-	resize: vertical;
+    min-width: 27em;
+    min-height: 10em;
+    resize: vertical;
 }
