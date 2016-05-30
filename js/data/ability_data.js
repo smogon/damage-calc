@@ -72,7 +72,7 @@ var ABILITIES_BW = ABILITIES_DPP.concat([
     'Defiant',
     'Flare Boost',
     'Infiltrator',
-    'Lightningrod',
+    'Lightning Rod',
     'Multiscale',
     'Overcoat',
     'Sand Force',
@@ -104,5 +104,3 @@ var ABILITIES_XY = ABILITIES_BW.concat([
     'Strong Jaw',
     'Tough Claws'
 ]);
-
-ABILITIES_XY.splice(ABILITIES_XY.indexOf('Lightningrod'), 1, 'Lightning Rod');

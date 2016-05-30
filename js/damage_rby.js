@@ -80,7 +80,7 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
         }
     }
     
-    if (move.name === "Explosion" || move.name === "Selfdestruct") {
+    if (move.name === "Explosion" || move.name === "Self-Destruct") {
         df = Math.floor(df / 2);
     }
     

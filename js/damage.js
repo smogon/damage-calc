@@ -131,7 +131,7 @@ function getDamageResult(attacker, defender, move, field) {
             (move.type === "Grass" && defAbility === "Sap Sipper") ||
             (move.type === "Fire" && defAbility.indexOf("Flash Fire") !== -1) ||
             (move.type === "Water" && ["Dry Skin", "Storm Drain", "Water Absorb"].indexOf(defAbility) !== -1) ||
-            (move.type === "Electric" && ["Lightning Rod", "Lightningrod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) ||
+            (move.type === "Electric" && ["Lightning Rod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) ||
             (move.type === "Ground" && !field.isGravity && defAbility === "Levitate") ||
             (move.isBullet && defAbility === "Bulletproof") ||
             (move.isSound && defAbility === "Soundproof")) {
@@ -304,7 +304,7 @@ function getDamageResult(attacker, defender, move, field) {
             (move.name === "Venoshock" && (defender.status === "Poisoned" || defender.status === "Badly Poisoned"))) {
         bpMods.push(0x2000);
         description.moveBP = move.bp * 2;
-    } else if ((move.name === "Solar Beam" || move.name == "SolarBeam") && ["Rain","Heavy Rain","Sand","Hail"].indexOf(field.weather) !== -1) {
+    } else if (move.name === "Solar Beam" && ["Rain","Heavy Rain","Sand","Hail"].indexOf(field.weather) !== -1) {
         bpMods.push(0x800);
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
