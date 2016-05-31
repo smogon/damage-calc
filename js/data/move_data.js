@@ -44,7 +44,7 @@ var MOVES_RBY = {
         category: 'Physical',
         hasSecondaryEffect: true
     },
-    'BubbleBeam': {
+    'Bubble Beam': {
         bp: 65,
         type: 'Water'
     },
@@ -150,7 +150,7 @@ var MOVES_RBY = {
         bp: 0,
         type: 'Ice'
     },
-    'Hi Jump Kick': {
+    'High Jump Kick': {
         bp: 85,
         type: 'Fighting',
         category: 'Physical',
@@ -266,7 +266,7 @@ var MOVES_RBY = {
         category: 'Physical',
         makesContact: true
     },
-    'Selfdestruct': {
+    'Self-Destruct': {
         bp: 130,
         type: 'Normal',
         category: 'Physical',
@@ -297,7 +297,7 @@ var MOVES_RBY = {
         bp: 65,
         type: 'Poison'
     },
-    'Softboiled': {
+    'Soft-Boiled': {
         bp: 0,
         type: 'Normal'
     },
@@ -357,7 +357,7 @@ var MOVES_RBY = {
         category: 'Special',
         hasSecondaryEffect: true
     },
-    'ThunderPunch': {
+    'Thunder Punch': {
         bp: 75,
         type: 'Electric',
         category: 'Physical',
@@ -405,7 +405,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Flying',
         category: 'Special'
     },
-    'AncientPower': {
+    'Ancient Power': {
         bp: 60,
         type: 'Rock',
         category: 'Special',
@@ -456,8 +456,9 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 0,
         type: 'Ghost'
     },
+    'Dig': { bp: 60 },
     'Double-Edge': { bp: 120 },
-    'DynamicPunch': {
+    'Dynamic Punch': {
         bp: 100,
         type: 'Fighting',
         category: 'Physical',
@@ -474,13 +475,13 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Normal'
     },
     'Explosion': { bp: 250 },
-    'ExtremeSpeed': {
+    'Extreme Speed': {
         bp: 80,
         type: 'Normal',
         category: 'Physical',
         makesContact: true
     },
-    'Faint Attack': {
+    'Feint Attack': {
         bp: 60,
         type: 'Dark',
         category: 'Physical',
@@ -678,7 +679,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         hasSecondaryEffect: true
     },
-    'Selfdestruct': { bp: 200 },
+    'Self-Destruct': { bp: 200 },
     'Shadow Ball': {
         bp: 80,
         type: 'Ghost',
@@ -686,6 +687,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         hasSecondaryEffect: true,
         isBullet: true
     },
+    'Slash': { alwaysCrit: false },
     'Sleep Talk': {
         bp: 0,
         type: 'Normal'
@@ -697,7 +699,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         hasSecondaryEffect: true,
         isBullet: true
     },
-    'SolarBeam': {
+    'Solar Beam': {
         bp: 120,
         type: 'Grass',
         category: 'Special'
@@ -750,11 +752,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 delete MOVES_GSC['Acid'];
 delete MOVES_GSC['Bind'];
 delete MOVES_GSC['Clamp'];
-delete MOVES_GSC['Dig'];
 delete MOVES_GSC['Fire Spin'];
 delete MOVES_GSC['Mega Drain'];
-delete MOVES_GSC['Slash'];
-delete MOVES_GSC['Sludge'];
 delete MOVES_GSC['Wrap'];
 
 var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
@@ -1159,9 +1158,6 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     }
 });
 
-delete MOVES_ADV['BubbleBeam'];
-delete MOVES_ADV['Submission'];
-
 var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Air Slash': {
         bp: 75,
@@ -1287,6 +1283,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 0,
         type: 'Flying'
     },
+    'Dig': { bp: 80 },
     'Discharge': {
         bp: 80,
         type: 'Electric',
@@ -1428,7 +1425,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 0,
         type: 'Psychic'
     },
-    'Hi Jump Kick': { bp: 100 },
+    'High Jump Kick': { bp: 100 },
     'Ice Fang': {
         bp: 65,
         type: 'Ice',
@@ -1733,6 +1730,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true
     },
+    'Zap Cannon': { bp: 120 },
     'Zen Headbutt': {
         bp: 80,
         type: 'Psychic',
@@ -1741,10 +1739,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         hasSecondaryEffect: true
     }
 });
-
-delete MOVES_DPP['Razor Leaf'];
-delete MOVES_DPP['Twineedle'];
-delete MOVES_DPP['Zap Cannon'];
 
 var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     'Acid Spray': {
@@ -1937,7 +1931,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Ghost',
         category: 'Special'
     },
-    'Hi Jump Kick': { bp: 130 },
+    'High Jump Kick': { bp: 130 },
     'Hone Claws': {
         bp: 0,
         type: 'Dark'
@@ -2414,22 +2408,3 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         isMultiHit: true
     }
 });
-
-MOVES_XY['Ancient Power'] = MOVES_XY['AncientPower'];
-MOVES_XY['Dynamic Punch'] = MOVES_XY['DynamicPunch'];
-MOVES_XY['Extreme Speed'] = MOVES_XY['ExtremeSpeed'];
-MOVES_XY['Feint Attack'] = MOVES_XY['Faint Attack'];
-MOVES_XY['High Jump Kick'] = MOVES_XY['Hi Jump Kick'];
-MOVES_XY['Self-Destruct'] = MOVES_XY['Selfdestruct'];
-MOVES_XY['Soft-Boiled'] = MOVES_XY['Softboiled'];
-MOVES_XY['Solar Beam'] = MOVES_XY['SolarBeam'];
-MOVES_XY['Thunder Punch'] = MOVES_XY['ThunderPunch'];
-delete MOVES_XY['AncientPower'];
-delete MOVES_XY['DynamicPunch'];
-delete MOVES_XY['ExtremeSpeed'];
-delete MOVES_XY['Faint Attack'];
-delete MOVES_XY['Hi Jump Kick'];
-delete MOVES_XY['Selfdestruct'];
-delete MOVES_XY['Softboiled'];
-delete MOVES_XY['SolarBeam'];
-delete MOVES_XY['ThunderPunch'];

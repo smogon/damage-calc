@@ -91,7 +91,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
         }
     }
     
-    if (move.name === "Explosion" || move.name === "Selfdestruct") {
+    if (move.name === "Explosion" || move.name === "Self-Destruct") {
         df = Math.floor(df / 2);
     }
     
@@ -138,7 +138,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
     if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
         baseDamage = Math.floor(baseDamage * 1.5);
         description.weather = field.weather;
-    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && (move.type === "Fire" || move.name === "SolarBeam"))) {
+    } else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && (move.type === "Fire" || move.name === "Solar Beam"))) {
         baseDamage = Math.floor(baseDamage / 2);
         description.weather = field.weather;
     }
