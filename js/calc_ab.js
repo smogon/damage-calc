@@ -154,6 +154,8 @@ $(".notation").change(function () {
 
 $(document).ready(function() {
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
-    $(".calc-trigger").bind("change keyup", calculate);
+    $(".calc-trigger").bind("change keyup", function() {
+        setTimeout(calculate, 0);
+    });
     calculate();
 });
