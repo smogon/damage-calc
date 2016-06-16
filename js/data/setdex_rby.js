@@ -234,7 +234,7 @@ var SETDEX_RBY = {
 	},
 	"Tauros": {
 		"OU Standard": {"level":100,"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]},
-		"Anti-Cloyster": {"level":100,"moves":["Body Slam","Hyper Beam","Thunder","Blizzard"]},
+		"OU Anti-Cloyster": {"level":100,"moves":["Body Slam","Hyper Beam","Thunder","Blizzard"]},
 	},
 	"Tentacruel": {
 		"OU Wrap + Swords Dance": {"level":100,"moves":["Swords Dance","Wrap","Hyper Beam","Surf"]},
