@@ -1967,6 +1967,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         isSpread: true
     },
+    'Inferno': {
+        bp: 100,
+        type: 'Fire',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Jump Kick': { bp: 100 },
     'Last Resort': { bp: 140 },
     'Leaf Tornado': {
