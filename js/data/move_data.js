@@ -506,6 +506,11 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         makesContact: true
     },
+    'Future Sight': {
+        bp: 120,
+        type: 'Psychic',
+        category: 'Special',
+    },
     'Giga Drain': {
         bp: 60,
         type: 'Grass',
