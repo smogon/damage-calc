@@ -507,7 +507,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         makesContact: true
     },
     'Future Sight': {
-        bp: 120,
+        bp: 80,
         type: 'Psychic',
         category: 'Special'
     },
@@ -1900,6 +1900,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Fire',
         category: 'Special'
     },
+    'Future Sight': { bp: 100 },
     'Gear Grind': {
         bp: 50,
         type: 'Steel',
@@ -2255,6 +2256,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         hasSecondaryEffect: true
     },
     'Frost Breath': { bp: 60 },
+    'Future Sight': { bp: 120 },
     'Geomancy': {
         bp: 0,
         type: 'Fairy'
