@@ -135,6 +135,11 @@ var MOVES_RBY = {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Fly': {
+        bp: 70
+        type: 'Flying',
+        category: 'Physical',
+    },
     'Fury Swipes': {
         bp: 18,
         type: 'Normal',
@@ -1369,6 +1374,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Dark',
         category: 'Physical'
     },
+    'Fly': { bp: 90 },
     'Focus Blast': {
         bp: 120,
         type: 'Fighting',
