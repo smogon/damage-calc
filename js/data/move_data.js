@@ -138,7 +138,7 @@ var MOVES_RBY = {
     'Fly': {
         bp: 70
         type: 'Flying',
-        category: 'Physical',
+        category: 'Physical'
     },
     'Fury Swipes': {
         bp: 18,
