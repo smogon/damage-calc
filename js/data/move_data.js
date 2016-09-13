@@ -136,7 +136,7 @@ var MOVES_RBY = {
         hasSecondaryEffect: true
     },
     'Fly': {
-        bp: 70
+        bp: 70,
         type: 'Flying',
         category: 'Physical'
     },
