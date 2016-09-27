@@ -9703,6 +9703,20 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 3.5
   },
+  "Kerfluffle": {
+    "t1": "Fairy",
+    "t2": "Fighting",
+    "bs": {
+      "hp": 84,
+      "at": 78,
+      "df": 86,
+      "sa": 115,
+      "sd": 88,
+      "sp": 119
+    },
+    "w": 24.2,
+    "ab": "Natural Cure"
+  },
   "Klefki": {
     "t1": "Steel",
     "t2": "Fairy",
