@@ -204,19 +204,19 @@ var SETDEX_ADV = {
 		"Uber Special Sweeper": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Mild","item":"Petaya Berry","moves":["Superpower","Thunderbolt","Ice Beam","Substitute"]},
 		"Uber Choice Band": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Lonely","item":"Choice Band","moves":["Superpower","Shadow Ball","Fire Punch","Extreme Speed"]},
 	},
-	"Deoxys-A": {
+	"Deoxys-Attack": {
 		"Uber Choice Band": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Lonely","item":"Choice Band","moves":["Shadow Ball","Superpower","Extreme Speed","Fire Punch"]},
 		"Uber Special Sweeper": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Mild","item":"Petaya Berry","moves":["Thunderbolt","Ice Beam","Substitute","Superpower"]},
 		"Uber Sunny Day": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naughty","item":"Lum Berry","moves":["Fire Punch","Solar Beam","Shadow Ball","Superpower"]},
 	},
-	"Deoxys-D": {
+	"Deoxys-Defense": {
 		"Uber Spiker": {"level":100,"evs":{"sd":96,"df":160,"hp":252},"nature":"Calm","item":"Leftovers","moves":["Spikes","Night Shade","Toxic","Recover"]},
 		"Uber Agility": {"level":100,"evs":{"sd":96,"df":160,"hp":252},"nature":"Calm","item":"Leftovers","moves":["Agility","Recover","Toxic","Taunt"]},
 		"Uber Cosmic Power": {"level":100,"evs":{"sd":96,"df":160,"hp":252},"nature":"Calm","item":"Leftovers","moves":["Cosmic Power","Night Shade","Toxic","Rest"]},
 		"Uber Calm Mind": {"level":100,"evs":{"sd":96,"df":160,"hp":252},"nature":"Calm","item":"Leftovers","moves":["Calm Mind","Ice Beam","Thunderbolt","Rest"]},
 		"Uber CounterCoat": {"level":100,"evs":{"sd":96,"df":152,"hp":252,"sp":8},"nature":"Calm","item":"Leftovers","moves":["Counter","Mirror Coat","Taunt","Recover"]},
 	},
-	"Deoxys-S": {
+	"Deoxys-Speed": {
 		"Uber Staller": {"level":100,"evs":{"sd":120,"df":120,"hp":252,"sp":16},"nature":"Timid","item":"Leftovers","moves":["Taunt","Toxic","Knock Off","Recover"]},
 		"Uber Mixed Sweeper": {"level":100,"evs":{"at":240,"sp":16,"sa":252},"nature":"Hasty","item":"Leftovers","moves":["Calm Mind","Thunder","Ice Beam","Superpower"]},
 		"Uber Choice Band": {"level":100,"evs":{"at":252,"sp":16,"sa":240},"nature":"Hasty","item":"Choice Band","moves":["Superpower","Shadow Ball","Extreme Speed","Fire Punch"]},

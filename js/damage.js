@@ -290,7 +290,7 @@ function getDamageResult(attacker, defender, move, field) {
         description.attackerItem = attacker.item;
     } else if (((attacker.item === "Adamant Orb" && attacker.name === "Dialga") ||
             (attacker.item === "Lustrous Orb" && attacker.name === "Palkia") ||
-            (attacker.item === "Griseous Orb" && attacker.name === "Giratina-O")) &&
+            (attacker.item === "Griseous Orb" && attacker.name === "Giratina-Origin")) &&
             (move.type === attacker.type1 || move.type === attacker.type2)) {
         bpMods.push(0x1333);
         description.attackerItem = attacker.item;
@@ -309,7 +309,7 @@ function getDamageResult(attacker, defender, move, field) {
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
     } else if (gen >= 6 && move.name === "Knock Off" && !(defender.item === "" ||
-            (defender.name === "Giratina-O" && defender.item === "Griseous Orb") ||
+            (defender.name === "Giratina-Origin" && defender.item === "Griseous Orb") ||
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1))) {
         bpMods.push(0x1800);
