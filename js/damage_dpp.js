@@ -200,7 +200,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     } else if (getItemBoostType(attacker.item) === move.type ||
             (((attacker.item === "Adamant Orb" && attacker.name === "Dialga") ||
             (attacker.item === "Lustrous Orb" && attacker.name === "Palkia") ||
-            (attacker.item === "Griseous Orb" && attacker.name === "Giratina-O")) &&
+            (attacker.item === "Griseous Orb" && attacker.name === "Giratina-Origin")) &&
             (move.type === attacker.type1 || move.type === attacker.type2))) {
         basePower = Math.floor(basePower * 1.2);
         description.attackerItem = attacker.item;
