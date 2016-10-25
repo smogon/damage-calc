@@ -222,6 +222,12 @@ function checkExeptions(poke){
 		case 'Aegislash':
 			poke = "Aegislash-Blade";
 			break;
+		case 'Basculin-Blue-Striped':
+			poke = "Basculin";
+			break;
+		case 'Keldeo-Resolute':
+			poke = "Keldeo";
+			break;
 		case 'Pikachu-Belle':	
 		case 'Pikachu-Cosplay':	
 		case 'Pikachu-Libre':
@@ -229,6 +235,10 @@ function checkExeptions(poke){
 		case 'Pikachu-Pop-Star':	
 		case 'Pikachu-Rock-Star':
 			poke = "Pikachu";
+			break;
+		case 'Vivillon-Fancy':
+		case 'Vivillon-Pokeball':
+			poke = "Vivillon";
 			break;
 	}
 	return poke;
