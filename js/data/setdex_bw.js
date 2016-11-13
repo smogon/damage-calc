@@ -648,8 +648,8 @@ var SETDEX_BW = {
 		"NU KACAW (Choice Band)": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Early Bird","item":"Choice Band","moves":["Brave Bird","Return","Pursuit","Quick Attack"]},
 	},
 	"Doduo": {
-		"LC Choice Scarf": {"level":5,"evs":{"at":236,"sp":236},"nature":"Jolly","ability":"Early Bird","item":"Choice Scarf","moves":["Brave Bird","Return","Pursuit","Toxic"]},
-		"LC Work Up": {"level":5,"evs":{"at":236,"sp":236},"nature":"Naive","ability":"Early Bird","item":"Life Orb","moves":["Work Up","Brave Bird","Return","Hidden Power Ground"]},
+		"LC Choice Scarf": {"level":5,"evs":{"at":240,"sp":240},"nature":"Jolly","ability":"Early Bird","item":"Choice Scarf","moves":["Brave Bird","Return","Pursuit","Hidden Power Fighting"]},
+		"LC Life Orb Attacker": {"level":5,"evs":{"at":240,"sp":240},"nature":"Naive","ability":"Early Bird","item":"Life Orb","moves":["Brave Bird","Return","Quick Attack","Hidden Power Fighting"]},
 	},
 	"Donphan": {
 		"OU Rapid Spin": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"nature":"Impish","item":"Leftovers","moves":["Rapid Spin","Earthquake","Stealth Rock","Ice Shard"]},
@@ -1645,7 +1645,7 @@ var SETDEX_BW = {
 		"UU Substitute": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Dynamic Punch","Substitute","Payback","Toxic"]},
 	},
 	"Machop": {
-		"LC Choice Scarf": {"level":5,"evs":{"df":36,"at":196,"hp":36,"sp":236},"nature":"Jolly","ability":"No Guard","item":"Choice Scarf","moves":["Dynamic Punch","Payback","Ice Punch","Thunder Punch"]},
+		"LC Choice Scarf": {"level":5,"evs":{"df":36,"at":196,"hp":36,"sp":236},"nature":"Jolly","ability":"No Guard","item":"Choice Scarf","moves":["Dynamic Punch","Payback","Ice Punch","Rock Slide"]},
 	},
 	"Magby": {
 		"LC Mixed Priority Sweeper": {"level":5,"evs":{"at":236,"sp":252},"ivs":{"hp":0},"nature":"Hasty","ability":"Flame Body","item":"Life Orb","moves":["Flare Blitz","Mach Punch","Thunder Punch","Overheat"]},
@@ -2016,6 +2016,7 @@ var SETDEX_BW = {
 	"Pawniard": {
 		"LC Eviolite Swords Dance": {"level":5,"evs":{"sd":116,"df":36,"at":156,"sp":196},"nature":"Jolly","ability":"Defiant","item":"Eviolite","moves":["Swords Dance","Sucker Punch","Brick Break","Iron Head"]},
 		"LC Life Orb Swords Dance": {"level":5,"evs":{"sd":36,"df":36,"at":236,"sp":196},"ivs":{"hp":0},"nature":"Jolly","ability":"Defiant","item":"Life Orb","moves":["Swords Dance","Sucker Punch","Brick Break","Iron Head"]},
+		"LC Choice Scarf": {"level":5,"evs":{"sd":36,"df":36,"at":236,"sp":196},"nature":"Jolly","ability":"Defiant","item":"Choice Scarf","moves":["Pursuit","Iron Head","Night Slash","Brick Break"]},
 	},
 	"Pelipper": {
 		"NU Specially Defensive": {"level":100,"evs":{"sd":216,"df":44,"hp":248},"nature":"Calm","ability":"Rain Dish","item":"Leftovers","moves":["Scald","Roost","Toxic","Hurricane"]},
