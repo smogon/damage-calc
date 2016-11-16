@@ -12,6 +12,7 @@ select2/select2.png
 select2/select2-spinner.gif
 select2/select2x2.png
 js/data/pokedex.js
+jd/data/setdex_sm.js
 js/data/setdex_xy.js
 js/data/setdex_bw.js
 js/data/setdex_dpp.js

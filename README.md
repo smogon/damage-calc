@@ -1,7 +1,7 @@
 Honko Damage Calculator
 =======================
 
-Damage Calculator for Pokemon cartridge battles, Gen 1-6.
+Damage Calculator for Pokemon cartridge battles, Gen 1-7.
 
 If you are currently looking at Zarel/honko-damagecalc and not a fork, this
 is the official repository for the Pokemon Showdown damage calculator:
@@ -21,6 +21,6 @@ Credits and license
 
 MIT License.
 
-Written by Honko. ORAS update by gamut-was-taken. PS theme by Zarel. Other
+Written by Honko. ORAS update by gamut-was-taken. SuMo update by Austin. PS theme by Zarel. Other
 contributions by other people; see the repo's commit history and contributor
 list for the full list.

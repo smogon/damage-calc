@@ -207,7 +207,8 @@ var MOVES_RBY = {
     },
     'Mega Drain': {
         bp: 40,
-        type: 'Grass'
+        type: 'Grass',
+        givesHealth: true
     },
     'Mirror Move': {
         bp: 0,
@@ -234,7 +235,8 @@ var MOVES_RBY = {
         bp: 40,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        hasPriority: true
     },
     'Razor Leaf': {
         bp: 55,
@@ -484,7 +486,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 80,
         type: 'Normal',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        hasPriority: true
     },
     'Feint Attack': {
         bp: 60,
@@ -519,7 +522,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
     'Giga Drain': {
         bp: 60,
         type: 'Grass',
-        category: 'Special'
+        category: 'Special',
+        givesHealth: true
     },
     'Headbutt': {
         bp: 70,
@@ -631,7 +635,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        isPunch: true
+        isPunch: true,
+        hasPriority: true
     },
     'Megahorn': {
         bp: 120,
@@ -889,7 +894,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Normal',
         category: 'Physical',
         makesContact: true,
-        hasSecondaryEffect: true
+        hasSecondaryEffect: true,
+        hasPriority: true
     },
     'Focus Punch': {
         bp: 150,
@@ -1179,7 +1185,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 40,
         type: 'Water',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        hasPriority: true
     },
     'Aqua Tail': {
         bp: 90,
@@ -1245,7 +1252,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Steel',
         category: 'Physical',
         makesContact: true,
-        isPunch: true
+        isPunch: true,
+        hasPriority: true
     },
     'Charge Beam': {
         bp: 50,
@@ -1332,7 +1340,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         type: 'Fighting',
         category: 'Physical',
         makesContact: true,
-        isPunch: true
+        isPunch: true,
+        givesHealth: true
     },
     'Earth Power': {
         bp: 90,
@@ -1448,7 +1457,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Ice Shard': {
         bp: 40,
         type: 'Ice',
-        category: 'Physical'
+        category: 'Physical',
+        hasPriority: true
     },
     'Iron Head': {
         bp: 80,
@@ -1657,7 +1667,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 40,
         type: 'Ghost',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        hasPriority: true
     },
     'Shadow Strike': {
         bp: 80,
@@ -1684,7 +1695,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 80,
         type: 'Dark',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        hasPriority: true
     },
     'Switcheroo': {
         bp: 0,
@@ -1719,7 +1731,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
     'Vacuum Wave': {
         bp: 40,
         type: 'Fighting',
-        category: 'Special'
+        category: 'Special',
+        hasPriority: true
     },
     'Wake-Up Slap': {
         bp: 60,
@@ -1952,7 +1965,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 75,
         type: 'Grass',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        givesHealth: true
     },
     'Hurricane': {
         bp: 120,
@@ -2345,7 +2359,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Oblivion Wing': {
         bp: 80,
         type: 'Flying',
-        category: 'Special'
+        category: 'Special',
+        givesHealth: true
     },
     'Origin Pulse': {
         bp: 110,
@@ -2425,5 +2440,106 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Water',
         category: 'Physical',
         isMultiHit: true
+    }
+});
+
+var MOVES_SM = $.extend(true, {}, MOVES_XY, {
+    'Sucker Punch': { bp: 70 },
+    'Accelerock': {
+        bp: 40,
+        type: 'Rock',
+        category: 'Physical',
+        makesContact: true,
+        hasPriority: true
+    },
+    'Anchor Shot': {
+        bp: 80,
+        type: 'Rock',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Beak Blast': {
+        bp: 100,
+        type: 'Flying',
+        category: 'Physical'
+    },
+    'Brutal Swing': {
+        bp: 60,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Burn Up': {
+        bp: 130,
+        type: 'Fire',
+        category: 'Special',
+        makesContact: true
+    },
+    'Clanging Scales': {
+        bp: 110,
+        type: 'Dragon',
+        category: 'Special',
+        isSound: true
+    },
+    'Core Enforcer': {
+        bp: 100,
+        type: 'Dragon',
+        category: 'Special'
+    },
+    'Darkest Lariat': {
+        bp: 85,
+        type: 'Dark',
+        category: 'Physical'
+    },
+    'Dragon Hammer': {
+        bp: 90,
+        type: 'Dragon',
+        category: 'Physical'
+    },
+    'Fleur Cannon': {
+        bp: 130,
+        type: 'Fairy',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
+    'Highhorse Power': {
+        bp: 95,
+        type: 'Ground',
+        category: 'Physical'
+    },
+    'Leafage': {
+        bp: 40,
+        type: 'Grass',
+        category: 'Physical'
+    },
+    'Moongeist Beam': {
+        bp: 100,
+        type: 'Ghost',
+        category: 'Special'
+    },
+    'Multi-Attack': {
+        bp: 90,
+        type: 'Normal',
+        category: 'Physical'
+    },
+    'Shell Trap': {
+        bp: 150,
+        type: 'Fire',
+        category: 'Special'
+    },
+    'Solar Blade': {
+        bp: 125,
+        type: 'Grass',
+        category: 'Physical'
+    },
+    'Sunsteel Strike': {
+        bp: 100,
+        type: 'Steel',
+        category: 'Physical'
+    },
+    'Trop Kick': {
+        bp: 70,
+        type: 'Grass',
+        category: 'Physical'
     }
 });
