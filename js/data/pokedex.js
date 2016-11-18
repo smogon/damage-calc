@@ -10895,6 +10895,32 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 });
 
 var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
+  "Alakazam-Mega": { "bs": { "sd": 105 } },
+  "Arbok": { "bs": { "at": 95 } },
+  "Ariados": { "bs": { "sd": 70 } },
+  "Beartic": { "bs": { "at": 130 } },
+  "Chimecho": { "bs": { "hp": 75, "df": 80, "sd": 90 } },
+  "Corsola": { "bs": { "hp": 65, "df": 95, "sd": 95 } },
+  "Crustle": { "bs": { "at": 105 } },
+  "Cryogonal": { "bs": { "hp": 80, "df": 50 } },
+  "Delcatty": { "bs": { "sp": 90 } },
+  "Dodrio": { "bs": { "sp": 110 } },
+  "Dugtrio": { "bs": { "at": 100 } },
+  "Electrode": { "bs": { "sp": 150 } },
+  "Exeggutor": { "bs": { "sd": 75 } },
+  "Farfetch'd": { "bs": { "at": 90 } },
+  "Illumise": { "bs": { "df": 75, "sd": 85 } },
+  "Lunatone": { "bs": { "hp": 90 } },
+  "Magcargo": { "bs": { "hp": 60, "sa": 90 } },
+  "Mantine": { "bs": { "hp": 85 } },
+  "Masquerain": { "bs": { "sa": 100, "sp": 80 } },
+  "Noctowl": { "bs": { "sa": 86 } },
+  "Pelipper": { "bs": { "sa": 95 } },
+  "Qwilfish": { "bs": { "df": 85 } },
+  "Solrock": { "bs": { "hp": 90 } },
+  "Swellow": { "bs": { "sa": 75 } },
+  "Volbeat": { "bs": { "df": 75, "sd": 85 } },
+  "Woobat": { "bs": { "hp": 65 } },
   "Araquanid": {
     "t1": "Water",
     "t2": "Bug",
@@ -11138,6 +11164,45 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 185.0,
   },
+  "Diglett-Alola": {
+    "t1": "Ground",
+    "t2": "Steel",
+    "bs": {
+      "hp": 10,
+      "at": 55,
+      "df": 30,
+      "sa": 35,
+      "sd": 45,
+      "sp": 90
+    },
+    "w": 1.0
+  },
+  "Dugtrio-Alola": {
+    "t1": "Ground",
+    "t2": "Steel",
+    "bs": {
+      "hp": 35,
+      "at": 100,
+      "df": 60,
+      "sa": 50,
+      "sd": 70,
+      "sp": 110
+    },
+    "w": 66.6
+  },
+  "Exeggutor-Alola": {
+    "t1": "Grass",
+    "t2": "Dragon",
+    "bs": {
+      "hp": 95,
+      "at": 105,
+      "df": 85,
+      "sa": 125,
+      "sd": 75,
+      "sp": 45
+    },
+    "w": 415.6
+  },
   "Fomantis": {
     "t1": "Grass",
     "bs": {
@@ -11149,6 +11214,33 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 35
     },
     "w": 1.5,
+  },
+  "Geodude-Alola": {
+    "t1": "Rock",
+    "t2": "Electric",
+    "bs": {
+      "hp": 40,
+      "at": 80,
+      "df": 100,
+      "sa": 30,
+      "sd": 30,
+      "sp": 20
+    },
+    "w": 20.3
+  },
+  "Golem-Alola": {
+    "t1": "Rock",
+    "t2": "Electric",
+    "bs": {
+      "hp": 80,
+      "at": 120,
+      "df": 130,
+      "sa": 55,
+      "sd": 65,
+      "sp": 45
+    },
+    "w": 316.0,
+    "ab": "Galvanize",
   },
   "Golisopod": {
     "t1": "Bug",
@@ -11162,6 +11254,32 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 40
     },
     "w": 108.0,
+  },
+  "Graveler-Alola": {
+    "t1": "Rock",
+    "t2": "Electric",
+    "bs": {
+      "hp": 55,
+      "at": 95,
+      "df": 115,
+      "sa": 45,
+      "sd": 45,
+      "sp": 35
+    },
+    "w": 110.0
+  },
+  "Grimer-Alola": {
+    "t1": "Poison",
+    "t2": "Dark",
+    "bs": {
+      "hp": 80,
+      "at": 80,
+      "df": 50,
+      "sa": 40,
+      "sd": 50,
+      "sp": 25
+    },
+    "w": 42.0
   },
   "Grubbin": {
     "t1": "Bug",
@@ -11377,6 +11495,19 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 8.0,
   },
+  "Marowak-Alola": {
+    "t1": "Fire",
+    "t2": "Ghost",
+    "bs": {
+      "hp": 60,
+      "at": 80,
+      "df": 110,
+      "sa": 50,
+      "sd": 80,
+      "sp": 45
+    },
+    "w": 34.0
+  },
   "Marshadow": {
     "t1": "Fighting",
     "t2": "Ghost",
@@ -11389,6 +11520,18 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 125
     },
     "w": 22.2,
+  },
+  "Meowth-Alola": {
+    "t1": "Dark",
+    "bs": {
+      "hp": 40,
+      "at": 35,
+      "df": 35,
+      "sa": 50,
+      "sd": 40,
+      "sp": 90
+    },
+    "w": 4.2
   },
   "Mimikyu": {
     "t1": "Ghost",
@@ -11491,6 +11634,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 55.5,
   },
+  "Ninetales-Alola": {
+    "t1": "Ice",
+    "t2": "Fairy",
+    "bs": {
+      "hp": 73,
+      "at": 67,
+      "df": 75,
+      "sa": 81,
+      "sd": 100,
+      "sp": 109
+    },
+    "w": 19.9,
+    "ab": "Snow Warning"
+  },
   "Oranguru": {
     "t1": "Normal",
     "t2": "Psychic",
@@ -11581,6 +11738,18 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 82.8,
   },
+  "Persian-Alola": {
+    "t1": "Dark",
+    "bs": {
+      "hp": 65,
+      "at": 60,
+      "df": 60,
+      "sa": 75,
+      "sd": 65,
+      "sp": 115
+    },
+    "w": 33.0
+  },
   "Pheromosa": {
     "t1": "Bug",
     "t2": "Fighting",
@@ -11643,6 +11812,45 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 5
     },
     "w": 1.2,
+  },
+  "Raichu-Alola": {
+    "t1": "Electric",
+    "t2": "Psychic",
+    "bs": {
+      "hp": 60,
+      "at": 85,
+      "df": 50,
+      "sa": 95,
+      "sd": 85,
+      "sp": 110
+    },
+    "w": 21.0
+  },
+  "Raticate-Alola": {
+    "t1": "Dark",
+    "t2": "Normal",
+    "bs": {
+      "hp": 75,
+      "at": 71,
+      "df": 70,
+      "sa": 40,
+      "sd": 80,
+      "sp": 77
+    },
+    "w": 25.5
+  },
+  "Rattata-Alola": {
+    "t1": "Dark",
+    "t2": "Normal",
+    "bs": {
+      "hp": 30,
+      "at": 56,
+      "df": 35,
+      "sa": 25,
+      "sd": 35,
+      "sp": 72
+    },
+    "w": 3.8
   },
   "Ribombee": {
     "t1": "Bug",
@@ -11707,6 +11915,32 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 117
     },
     "w": 22.2,
+  },
+  "Sandshrew-Alola": {
+    "t1": "Ice",
+    "t2": "Steel",
+    "bs": {
+      "hp": 50,
+      "at": 75,
+      "df": 90,
+      "sa": 10,
+      "sd": 35,
+      "sp": 40
+    },
+    "w": 40.0
+  },
+  "Sandslash-Alola": {
+    "t1": "Ice",
+    "t2": "Steel",
+    "bs": {
+      "hp": 75,
+      "at": 100,
+      "df": 120,
+      "sa": 25,
+      "sd": 65,
+      "sp": 65
+    },
+    "w": 55.0
   },
   "Sandygast": {
     "t1": "Ghost",
@@ -11931,7 +12165,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 85,
       "sp": 36
     },
-    "w": 467.4,
+    "w": 212.0,
     "ab": "Shell Armor"
   },
   "Type: Null": {
@@ -11944,7 +12178,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 95,
       "sp": 59
     },
-    "w": 265.7,
+    "w": 120.5,
     "ab": "Battle Armor"
   },
   "Vikavolt": {
@@ -11958,8 +12192,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 75,
       "sp": 43
     },
-    "w": 99.2,
+    "w": 45.0,
     "ab": "Levitate"
+  },
+  "Vulpix-Alola": {
+    "t1": "Ice",
+    "bs": {
+      "hp": 38,
+      "at": 41,
+      "df": 40,
+      "sa": 50,
+      "sd": 65,
+      "sp": 65
+    },
+    "w": 9.9
   },
   "Wimpod": {
     "t1": "Bug",
@@ -11972,21 +12218,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 30,
       "sp": 80
     },
-    "w": 26.5,
+    "w": 12.0,
     "ab": "Wimp Out"
-  },
-  "Wishiwashi": {
-    "t1": "Water",
-    "bs": {
-      "hp": 45,
-      "at": 20,
-      "df": 20,
-      "sa": 25,
-      "sd": 25,
-      "sp": 40
-    },
-    "w": 0.3,
-    "ab": "Schooling"
   },
   "Wishiwashi": {
     "t1": "Water",
@@ -11998,7 +12231,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 135,
       "sp": 30
     },
-    "w": 78.6
+    "w": 0.3
   },
   "Wishiwashi-School": {
     "t1": "Water",
@@ -12011,18 +12244,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 30
     },
     "w": 78.6
-  },
-  "Wishiwashi-Solo": {
-    "t1": "Water",
-    "bs": {
-      "hp": 45,
-      "at": 20,
-      "df": 20,
-      "sa": 25,
-      "sd": 25,
-      "sp": 40
-    },
-    "w": 0.3
   },
   "Xurkitree": {
     "t1": "Electric",

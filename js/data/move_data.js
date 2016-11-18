@@ -2444,7 +2444,16 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 });
 
 var MOVES_SM = $.extend(true, {}, MOVES_XY, {
-    'Sucker Punch': { bp: 70 },
+    '10,000,000 Volt Thunderbolt': {
+        bp: 195,
+        type: 'Electric',
+        category: 'Special'
+    },
+    'Acid Downpour': {
+        bp: 1,
+        type: 'Rock',
+        category: 'Physical'
+    },
     'Accelerock': {
         bp: 40,
         type: 'Rock',
@@ -2452,15 +2461,35 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         hasPriority: true
     },
+    'All-Out Pummeling': {
+        bp: 1,
+        type: 'Fighting',
+        category: 'Physical'
+    },
     'Anchor Shot': {
         bp: 80,
         type: 'Rock',
         category: 'Physical',
         makesContact: true
     },
+    'Black Hole Eclipse': {
+        bp: 1,
+        type: 'Dark',
+        category: 'Physical'
+    },
+    'Bloom Doom': {
+        bp: 1,
+        type: 'Grass',
+        category: 'Physical'
+    },
     'Beak Blast': {
         bp: 100,
         type: 'Flying',
+        category: 'Physical'
+    },
+    'Breakneck Blitz': {
+        bp: 1,
+        type: 'Normal',
         category: 'Physical'
     },
     'Brutal Swing': {
@@ -2472,8 +2501,12 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Burn Up': {
         bp: 130,
         type: 'Fire',
-        category: 'Special',
-        makesContact: true
+        category: 'Special'
+    },
+    'Catastropika': {
+        bp: 210,
+        type: 'Electric',
+        category: 'Physical'
     },
     'Clanging Scales': {
         bp: 110,
@@ -2481,20 +2514,44 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Special',
         isSound: true
     },
+    'Continental Crush': {
+        bp: 1,
+        type: 'Rock',
+        category: 'Physical'
+    },
     'Core Enforcer': {
         bp: 100,
         type: 'Dragon',
         category: 'Special'
     },
+    'Corkscrew Crash': {
+        bp: 1,
+        type: 'Steel',
+        category: 'Physical'
+    },
     'Darkest Lariat': {
         bp: 85,
         type: 'Dark',
-        category: 'Physical'
+        category: 'Physical',
+        makesContact: true
     },
     'Dragon Hammer': {
         bp: 90,
         type: 'Dragon',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Devastating Drake': {
+        bp: 1,
+        type: 'Ghost',
         category: 'Physical'
+    },
+    'Fire Lash': {
+        bp: 80,
+        type: 'Fire',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
     },
     'Fleur Cannon': {
         bp: 130,
@@ -2502,15 +2559,64 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Special',
         hasSecondaryEffect: true
     },
+    'Flying Press': { bp: 100 },
+    'Genesis Supernova': {
+        bp: 185,
+        type: 'Psychic',
+        category: 'Special'
+    },
+    'Gigavolt Havoc': {
+        bp: 1,
+        type: 'Electric',
+        category: 'Physical'
+    },
     'Highhorse Power': {
         bp: 95,
         type: 'Ground',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Hydro Vortex': {
+        bp: 1,
+        type: 'Water',
+        category: 'Physical'
+    },
+    'Ice Hammer': {
+        bp: 100,
+        type: 'Ice',
+        category: 'Physical',
+        makesContact: true,
+        isPunch: true
+    },
+    'Inferno Overdrive': {
+        bp: 1,
+        type: 'Fire',
         category: 'Physical'
     },
     'Leafage': {
         bp: 40,
         type: 'Grass',
         category: 'Physical'
+    },
+    'Liquidation': {
+        bp: 85,
+        type: 'Water',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
+    },
+    'Lunge': {
+        bp: 80,
+        type: 'Bug',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
+    },
+    'Malicious Moonsault': {
+        bp: 180,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true
     },
     'Moongeist Beam': {
         bp: 100,
@@ -2520,26 +2626,170 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Multi-Attack': {
         bp: 90,
         type: 'Normal',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Never-Ending Nightmare': {
+        bp: 1,
+        type: 'Ghost',
         category: 'Physical'
+    },
+    'Oceanic Operetta': {
+        bp: 195,
+        type: 'Water',
+        category: 'Special'
+    },
+    'Pollen Puff': {
+        bp: 90,
+        type: 'Bug',
+        category: 'Special'
+    },
+    'Power Trip': {
+        bp: 20,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Prismatic Laser': {
+        bp: 160,
+        type: 'Psychic',
+        category: 'Special'
+    },
+    'Psychic Fangs': {
+        bp: 85,
+        type: 'Psychic',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Pulverizing Pancake': {
+        bp: 210,
+        type: 'Normal',
+        category: 'Physical'
+    },
+    'Revelation Dancer': {
+        bp: 90,
+        type: 'Normal',
+        category: 'Special'
+    },
+    'Savage Spin-Out': {
+        bp: 1,
+        type: 'Bug',
+        category: 'Physical'
+    },
+    'Shattered Psyche': {
+        bp: 1,
+        type: 'Psychic',
+        category: 'Physical'
+    },
+    'Shadow Bone': {
+        bp: 85,
+        type: 'Ghost',
+        category: 'Physical',
+        hasSecondaryEffect: true
     },
     'Shell Trap': {
         bp: 150,
         type: 'Fire',
-        category: 'Special'
+        category: 'Special',
+        isSpread: true
+    },
+    'Sinister Arrow Raid': {
+        bp: 180,
+        type: 'Ghost',
+        category: 'Physical'
+    },
+    'Smart Strike': {
+        bp: 70,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true
     },
     'Solar Blade': {
         bp: 125,
         type: 'Grass',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Soul-Stealing 7-Star Strike': {
+        bp: 195,
+        type: 'Ghost',
         category: 'Physical'
     },
+    'Sparkling Aria': {
+        bp: 90,
+        type: 'Water',
+        category: 'Special',
+        isSound: true
+    },
+    'Spectral Thief': {
+        bp: 90,
+        type: 'Water',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Spirit Shackle': {
+        bp: 80,
+        type: 'Ghost',
+        category: 'Physical'
+    },
+    'Stoked Sparksurfer': {
+        bp: 175,
+        type: 'Electric',
+        category: 'Special'
+    },
+    'Stomping Tantrum': {
+        bp: 75,
+        type: 'Ground',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Subzero Slammer': {
+        bp: 1,
+        type: 'Ice',
+        category: 'Physical'
+    },
+    'Sucker Punch': { bp: 70 },
     'Sunsteel Strike': {
         bp: 100,
         type: 'Steel',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Supersonic Skystrike': {
+        bp: 1,
+        type: 'Flying',
         category: 'Physical'
+    },
+    'Tackle': { bp: 40 },
+    'Tectonic Rage': {
+        bp: 1,
+        type: 'Ground',
+        category: 'Physical'
+    },
+    'Throat Chop': {
+        bp: 80,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact: true
     },
     'Trop Kick': {
         bp: 70,
         type: 'Grass',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
+    },
+    'Twinkle Tackle': {
+        bp: 1,
+        type: 'Fairy',
         category: 'Physical'
+    },
+    'Water Shuriken': { category: 'Special' },
+    'Zing Zap': {
+        bp: 80,
+        type: 'Electric',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
     }
 });

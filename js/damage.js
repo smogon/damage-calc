@@ -560,6 +560,7 @@ function getDamageResult(attacker, defender, move, field) {
     if (attacker.ability === "Steelworker" && move.type === "Steel") {
         finalMods.push(0x1800);
         description.attackerAbility = attacker.ability;
+    }
     if (field.isFriendGuard) {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
@@ -708,7 +709,7 @@ function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
     } else if (move.name === "Freeze-Dry" && type === "Water") {
         return 2;
     } else if (move.name === "Flying Press") {
-        return typeChart["Fighting"][type] * typeChart["Flying"][type]; 
+        return typeChart["Fighting"][type] * typeChart["Flying"][type];
     } else {
         return typeChart[move.type][type];
     }
