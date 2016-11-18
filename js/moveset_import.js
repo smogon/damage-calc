@@ -10,7 +10,7 @@ function placeBsBtn(){
 }
 function getAbility(row){
 	ability = row[1] ? row[1].trim() : '';
-	if (ABILITIES_XY.indexOf(ability) != -1){
+	if (ABILITIES_SM.indexOf(ability) != -1){
 		return(ability);
 
 	}else{
@@ -90,7 +90,7 @@ function getStats(currentPoke,rows,i){
 function getItem(currentRow,j){
 	for(;j<currentRow.length;j++){
 		var item = currentRow[j].trim();
-		if(ITEMS_XY.indexOf(item) != -1){
+		if(ITEMS_SM.indexOf(item) != -1){
 			return item;
 
 		}
@@ -129,6 +129,7 @@ function getMoves(currentPoke,rows,i){
 
 function addToDex(poke){
 	var dexObject = new Object();
+	if(SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = new Object();
 	if(SETDEX_XY[poke.name] == undefined) SETDEX_XY[poke.name] = new Object();
 	if(SETDEX_BW[poke.name] == undefined) SETDEX_BW[poke.name] = new Object();
 	if(SETDEX_DPP[poke.name] == undefined) SETDEX_DPP[poke.name] = new Object();
@@ -168,6 +169,8 @@ function addToDex(poke){
 function updateDex(customsets){
 	for(pokemon in customsets){
 		for(moveset in customsets[pokemon]){
+			if(!SETDEX_SM[pokemon]) SETDEX_SM[pokemon] = {};
+			SETDEX_SM[pokemon][moveset] = customsets[pokemon][moveset];
 			if(!SETDEX_XY[pokemon]) SETDEX_XY[pokemon] = {};
 			SETDEX_XY[pokemon][moveset] = customsets[pokemon][moveset];
 			if(!SETDEX_BW[pokemon]) SETDEX_BW[pokemon] = {};
@@ -194,8 +197,8 @@ function addSets(pokes){
 		currentRow = rows[i].split(/[\(\)@]/);
 		for (j = 0; j<currentRow.length;j++){
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			if(POKEDEX_XY[currentRow[j].trim()] !== undefined){
-				currentPoke = POKEDEX_XY[currentRow[j].trim()];
+			if(POKEDEX_SM[currentRow[j].trim()] !== undefined){
+				currentPoke = POKEDEX_SM[currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow,j+1);
 				if(j===1){
