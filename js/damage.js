@@ -244,6 +244,7 @@ function getDamageResult(attacker, defender, move, field) {
             basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
             description.moveBP = basePower;
             break;
+        case "Bulldoze":
         case "Earthquake":
             basePower = (field.terrain === "Grassy") ? move.bp / 2 : move.bp;
             description.terrain = field.terrain;
@@ -392,7 +393,7 @@ function getDamageResult(attacker, defender, move, field) {
     }
     
     var atMods = [];
-    if (defAbility === "Thick Fat" && (move.type === "Fire" || move.type === "Ice")) {
+    if (defAbility === "Thick Fat" && (move.type === "Fire" || move.type === "Ice") || (defAbility === "Water Bubble" && move.type === "Fire")) {
         atMods.push(0x800);
         description.defenderAbility = defAbility;
     }
@@ -421,7 +422,7 @@ function getDamageResult(attacker, defender, move, field) {
         description.attackerAbility = attacker.ability;
     }
     
-    if ((attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak") && move.category === "Physical") ||
+    if ((attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak" || attacker.name === "Marowak-Alola") && move.category === "Physical") ||
             (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special") ||
             (attacker.item === "Light Ball" && attacker.name === "Pikachu")) {
         atMods.push(0x2000);
@@ -513,6 +514,9 @@ function getDamageResult(attacker, defender, move, field) {
         } else if (field.terrain === "Grassy" && move.type == "Grass") {
             baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
             description.terrain = field.terrain;
+        } else if (field.terrain === "Psychic" && move.type === "Psychic") {
+            baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
+            description.terrain - field.terrain;
         }
     }
     if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
