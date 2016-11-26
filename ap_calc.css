@@ -165,6 +165,7 @@ th {
     margin: 0.5em 1em 0.5em 0;
 }
 .big-text {
+    text-align: left;
     font-weight: bold;
     font-size: 1.1em;
     margin: 0.5em 0;
@@ -195,7 +196,7 @@ th {
 .btn {
     text-align: center;
     border: solid 1px #aaaaaa;
-    padding: 4px 8px;
+    padding: 4px 4px;
     position: relative;
     cursor: pointer;
     color: #555555;
