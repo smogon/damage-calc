@@ -342,7 +342,7 @@ function getDamageResult(attacker, defender, move, field) {
             (attacker.ability === "Strong Jaw" && move.isBite)) {
         bpMods.push(0x1800);
         description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Tough Claws" && (move.makesContact && attacker.ability !== "Long Reach")) {
+    } else if (attacker.ability === "Tough Claws" && move.makesContact) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
