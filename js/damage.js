@@ -285,7 +285,7 @@ function getDamageResult(attacker, defender, move, field) {
     } else if (defAbility === "Fluffy" && move.makesContact && move.type === "Fire") {
         bpMods.push(0x2000); 
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Fluffy" && (move.makesContact && !attacker.Ability === "Long Reach")) {
+    } else if (defAbility === "Fluffy" && move.makesContact && !attacker.ability === "Long Reach") {
         bpMods.push(0x800);
         description.defenderAbility = defAbility;
     }
@@ -342,7 +342,7 @@ function getDamageResult(attacker, defender, move, field) {
             (attacker.ability === "Strong Jaw" && move.isBite)) {
         bpMods.push(0x1800);
         description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Tough Claws" && (move.makesContact && attacker.Ability !== "Long Reach")) {
+    } else if (attacker.ability === "Tough Claws" && (move.makesContact && attacker.ability !== "Long Reach")) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
     }
@@ -602,13 +602,10 @@ function getDamageResult(attacker, defender, move, field) {
         damage[i] = Math.max(1, damage[i]);
         damage[i] = pokeRound(damage[i] * finalMod / 0x1000);
 
-        // is 2nd hit half BP? half attack? half damage range? keeping it as a flat 1.5x until I know the specifics
-        var ParentalBond = attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread);
-        if (gen < 7 && ParentalBond) {
-            damage[i] = Math.floor(damage[i] * 3/2);
-            description.attackerAbility = attacker.ability;
-        } else if (gen > 6 && ParentalBond)  { // in gen 7 2nd Hit is 25% 
-            damage[i] = Math.floor(damage[i] * 5/4);
+        // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
+        if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
+            var bondFactor = gen < 7 ? 3/2 : 5/4; // in gen 7, 2nd hit was reduced from 50% to 25% 
+            damage[i] = Math.floor(damage[i] * bondFactor);
             description.attackerAbility = attacker.ability;
         }
     }
