@@ -115,7 +115,7 @@
             eot -= Math.floor(defender.maxHP / 8);
             eotText.push('burn damage');
         }
-    } else if (defender.status === 'Asleep' && isBadDreams && defender.ability !== 'Magic Guard') {
+    } else if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
         eot -= Math.floor(defender.maxHP / 8);
         eotText.push('Bad Dreams');
     }
