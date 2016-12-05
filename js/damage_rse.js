@@ -151,7 +151,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
         description.defenderAbility = defender.ability;
     }
     
-    if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy"))) {
+    if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
         at = Math.floor(at * 1.5);
         description.attackerAbility = attacker.ability;
     } else if (attacker.curHP <= attacker.maxHP / 3 &&
