@@ -124,6 +124,9 @@ function getDamageResult(attacker, defender, move, field) {
     var typeEffectiveness = typeEffect1 * typeEffect2;
     var PriorityDamageCheck = move.hasPriority && (defAbility === "Queenly Majesty" || defAbility === "Dazzling") && (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) || (move.givesHealth && attacker.ability === "triage");
     
+    if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
+        typeEffectiveness = 1;
+    }
     if (typeEffectiveness === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
@@ -149,7 +152,7 @@ function getDamageResult(attacker, defender, move, field) {
         typeEffectiveness /= 2;
         description.weather = field.weather;
     }
-    if (move.type === "Ground" && !field.isGravity && defender.item === "Air Balloon") {
+    if (move.type === "Ground" && move.name !== "Thousand Arrows" && !field.isGravity && defender.item === "Air Balloon") {
         description.defenderItem = defender.item;
         return {"damage":[0], "description":buildDescription(description)};
     }
