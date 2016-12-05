@@ -402,7 +402,7 @@ function getDamageResult(attacker, defender, move, field) {
             (attacker.ability === "Overgrow" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Grass") ||
             (attacker.ability === "Blaze" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Fire") ||
             (attacker.ability === "Torrent" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Water") ||
-            (attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Bug")) {
+            (attacker.ability === "Swarm" && attacker.curHP <= attacker.maxHP / 3 && move.type === "Bug") || (move.category === "Special" && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
         atMods.push(0x1800);
         description.attackerAbility = attacker.ability;
     } else if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
