@@ -255,6 +255,10 @@ function getDamageResult(attacker, defender, move, field) {
         case "Nature Power":
             basePower = (field.terrain === "Electric" || field.terrain === "Grassy") ? 90 : (field.terrain === "Misty") ? 95 : 80;
             break;
+        case "Water Shuriken":
+            basePower = (attacker.name === "Greninja-Ash") ? 20 : 15;
+            description.moveBP = basePower;
+            break;
         default:
             basePower = move.bp;
     }

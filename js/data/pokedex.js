@@ -11281,6 +11281,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 42.0
   },
+  "Greninja-Ash": {
+    "t1": "Water",
+    "t2": "Dark",
+    "bs": {
+      "hp": 72,
+      "at": 145,
+      "df": 67,
+      "sa": 153,
+      "sd": 71,
+      "sp": 132
+    },
+    "w": 40.0,
+    "ab": "Battle Bond"
+  },
   "Grubbin": {
     "t1": "Bug",
     "bs": {
