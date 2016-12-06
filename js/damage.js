@@ -568,6 +568,10 @@ function getDamageResult(attacker, defender, move, field) {
         finalMods.push(0x2000);
         description.attackerAbility = attacker.ability;
     }
+    if (attacker.ability === "Water Bubble" && move.type === "Water") { 
+        finalMods.push(0x2000); 
+        description.attackerAbility = attacker.ability; 
+    } 
     if (attacker.ability === "Steelworker" && move.type === "Steel") {
         finalMods.push(0x1800);
         description.attackerAbility = attacker.ability;
