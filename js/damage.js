@@ -343,7 +343,7 @@ function getDamageResult(attacker, defender, move, field) {
     }
     
     if (isAerilate || isPixilate || isRefrigerate || isGalvanize) {
-        bpMods.push(0x14CD);
+        bpMods.push(gen >= 7 ? 0x1333 : 0x14CD);
         description.attackerAbility = attacker.ability;
     } else if ((attacker.ability === "Mega Launcher" && move.isPulse) ||
             (attacker.ability === "Strong Jaw" && move.isBite)) {
