@@ -9677,6 +9677,21 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 9.0
   },
+   "Hoopa-Unbound-Blastoise": {
+    "t1": "Psychic",
+    "t2": "Dark",
+    "bs": {
+      "hp": 80,
+      "at": 160,
+      "df": 60,
+      "sa": 170,
+      "sd": 130,
+      "sp": 80
+    },
+    "w": 490.0
+    "ab": "Mega Launcher"
+  },
+
    "Hoopa-Unbound": {
     "t1": "Psychic",
     "t2": "Dark",
@@ -10891,6 +10906,22 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 305.0,
     "ab": "Aura Break"
+  }
+});
+
+  "Zygarde-Pinsir": {
+    "t1": "Dragon",
+    "t2": "Flying",
+    "bs": {
+      "hp": 108,
+      "at": 130,
+      "df": 141,
+      "sa": 101,
+      "sd": 105,
+      "sp": 115
+    },
+    "w": 305.0,
+    "ab": "Aerilate"
   }
 });
 
