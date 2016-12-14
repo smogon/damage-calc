@@ -64,7 +64,7 @@ var POKEDEX_RBY = {
       "sp": 115,
       "sl": 80
     },
-    "w": 155.0
+    "w": 159.0,
     "ab": "Aerilate"
   },
   "Articuno": {
@@ -362,7 +362,7 @@ var POKEDEX_RBY = {
       "sp": 100,
       "sl": 100
     },
-    "w": 210.0
+    "w": 220.0,
     "ab": "Aerilate"
   },
   "Dratini": {
@@ -2019,8 +2019,8 @@ var POKEDEX_RBY = {
       "sp": 100,
       "sl": 125
     },
-    "w": 52.6
-    “ab”: “Thick Fat”
+    "w": 163.6,
+    "ab": "Thick Fat"
   },
   "Zubat": {
     "t1": "Poison",
@@ -2124,7 +2124,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 135,
       "sp": 55
     },
-    "w": 46.8
+    "w": 82.3
 
   },
   "Blissey-Sableye": {
@@ -2137,7 +2137,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 185,
       "sp": 25
     },
-    "w": 46.8
+    "w": 196.8,
+    "ab": "Magic Bounce"
   },
 
   "Celebi": {
@@ -2301,7 +2302,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 95,
       "sp": 120
     },
-    "w": 198.0,
+    "w": 202.0,
     "ab": "Aerilate"
   },
   "Espeon": {
@@ -2882,7 +2883,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 100,
       "sp": 115
     },
-    "w": 178.0,
+    "w": 227.9,
     "ab": "Desolate Land"
   },
   "Remoraid": {
@@ -2946,7 +2947,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 90,
       "sp": 70
     },
-    "w": 50.5
+    "w": 128.5,
     "ab": "Primordial Sea"
   },
   "Skiploom": {
@@ -3097,7 +3098,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 165,
       "sp": 55
     },
-    "w": 187.0,
+    "w": 337.0,
+    "ab": "Magic Bounce"
   },
   "Sunflora": {
     "t1": "Grass",
@@ -5579,7 +5581,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 180,
       "sp": 105
     },
-    "w": 85.6,
+    "w": 235.6,
     "ab": "Magic Bounce"
   },
   "Croagunk": {
@@ -6160,7 +6162,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 100,
       "sp": 140
     },
-    "w": 1.4,
+    "w": 3.4,
     "ab": "Magic Bounce"
   },
   "Mantyke": {
@@ -6830,8 +6832,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sd": 85,
       "sp": 145
     },
-    "w": 34.0
-    "ab": "Refrigerate”
+    "w": 127.7,
+    "ab": "Refrigerate"
   },
   "Wormadam": {
     "t1": "Bug",
@@ -6955,7 +6957,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 75,
       "sp": 130
     },
-    "w": 32.0,
+    "w": 42.0,
     "ab": "Aerilate"
   },
   "Audino": {
@@ -7155,8 +7157,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 92,
       "sp": 128
     },
-    "w": 250.0,
-    "ab": "Justified"
+    "w": 254.0,
+    "ab": "Aerilate"
   },
   "Cofagrigus": {
     "t1": "Ghost",
@@ -7498,7 +7500,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 136,
       "sp": 20
     },
-    "w": 110.0
+    "w": 188.0,
      "ab": "Primordial Sea"
   },
   "Foongus": {
@@ -7763,7 +7765,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 90,
       "sp": 130
     },
-    "w": 48.5,
+    "w": 52.0,
     "ab": "Adaptability"
   },
   "Klang": {
@@ -7842,7 +7844,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     "w": 325.0,
     "ab": "Pressure"
   },
-  "Kyurem-Black": {
+  "Kyurem-Black-Glalie": {
     "t1": "Dragon",
     "t2": "Ice",
     "bs": {
@@ -7853,7 +7855,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 90,
       "sp": 115
     },
-    "w": 325.0,
+    "w": 418.7,
     "ab": "Refrigerate"
   },
   "Kyurem-White": {
@@ -8635,7 +8637,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 90,
       "sp": 130
     },
-    "w": 260.0,
+    "w": 263.5,
     "ab": "Adaptability"
   },
   "Throh": {
@@ -8661,7 +8663,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 80,
       "sp": 151
     },
-    "w": 61.0
+    "w": 63.0,
+    "ab": "Magic Bounce"
   },
   "Thundurus-Therian": {
     "t1": "Electric",
@@ -8863,7 +8866,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sd": 100,
       "sp": 100
     },
-    "w": 4.0,
+    "w": 53.9,
     "ab": "Desolate Land"
   },
   "Virizion": {
@@ -9710,7 +9713,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sd": 130,
       "sp": 80
     },
-    "w": 490.0
+    "w": 490.0,
     "ab": "Mega Launcher"
   },
 
@@ -9725,7 +9728,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sd": 130,
       "sp": 120
     },
-    "w": 490.0
+    "w": 492.0,
+     "ab": "Magic Bounce"
   },
   "Inkay": {
     "t1": "Dark",
@@ -10942,7 +10946,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sd": 105,
       "sp": 115
     },
-    "w": 305.0,
+    "w": 309.0,
     "ab": "Aerilate"
   }
 });
@@ -11306,7 +11310,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 110,
       "sp": 40
     },
-    "w": 108.0,
+    "w": 186.0,
     "ab": "Primordial Sea"
   },
   "Graveler-Alola": {
@@ -11549,8 +11553,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 135,
       "sp": 65
     },
-    "w": 80.5,
-    "ab": "Thick Fat "
+    "w": 136.0,
+    "ab": "Thick Fat"
   },
   "Mareanie": {
     "t1": "Poison",
@@ -11832,7 +11836,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 37,
       "sp": 173
     },
-    "w": 25.0,
+    "w": 28.5,
     "ab": "Adaptability"
 
   },
@@ -12132,7 +12136,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 75,
       "sp": 152
     },
-    "w": 20.5,
+    "w": 24.0,
     "ab": "Adaptability"
   },
   "Tapu Lele": {
