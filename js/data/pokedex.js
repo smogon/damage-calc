@@ -11623,6 +11623,19 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 920.0,
   },
+  "Muk-Alola": {
+    "t1": "Poison",
+    "t2": "Dark",
+    "bs": {
+      "hp": 105,
+      "at": 105,
+      "df": 75,
+      "sa": 65,
+      "sd": 100,
+      "sp": 50
+    },
+    "w": 52.0,
+  },
   "Necrozma": {
     "t1": "Psychic",
     "bs": {
