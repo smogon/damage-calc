@@ -122,6 +122,7 @@ var ABILITIES_SM = ABILITIES_XY.concat([
     'Fluffy',
     'Full Metal Body',
     'Galvanize',
+    'Grass Pelt',
     'Grassy Surge',
     'Innards Out',
     'Liquid Voice',

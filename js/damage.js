@@ -478,6 +478,11 @@ function getDamageResult(attacker, defender, move, field) {
         description.weather = field.weather;
     }
     
+    if (field.terrain === "Grassy" && defAbility === "Grass Pelt" && hitsPhysical) {
+        dfMods.push(0x1800);
+        description.defenderAbility = defAbility;
+    }
+    
     if ((gen < 7 && defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical) ||
             (defender.item === "Assault Vest" && !hitsPhysical) || defender.item === "Eviolite") {
         dfMods.push(0x1800);
