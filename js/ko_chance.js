@@ -109,10 +109,10 @@
         }
     } else if (defender.status === 'Burned') {
         if (defender.ability === 'Heatproof') {
-            eot -= Math.floor(defender.maxHP / 16);
+            eot -= gen > 6 ? Math.floor(defender.maxHP / 32) : Math.floor(defender.maxHP / 16);
             eotText.push('reduced burn damage');
         } else if (defender.ability !== 'Magic Guard') {
-            eot -= Math.floor(defender.maxHP / 8);
+            eot -= gen > 6 ? Math.floor(defender.maxHP / 16) : Math.floor(defender.maxHP / 8);
             eotText.push('burn damage');
         }
     } else if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
