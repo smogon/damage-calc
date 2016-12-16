@@ -43,6 +43,15 @@ function getTerrainEffects() {
     }
 }
 
+function isGrounded(pokeInfo) {
+    return $("#gravity").prop("checked") || (
+        pokeInfo.find(".type1").val() !== "Flying"
+        && pokeInfo.find(".type2").val() !== "Flying"
+        && pokeInfo.find(".ability").val() !== "Levitate"
+        && pokeInfo.find(".item").val() !== "Air Balloon"
+    );
+}
+
 var resultLocations = [[],[]];
 for (var i = 0; i < 4; i++) {
     resultLocations[0].push({
