@@ -1,5 +1,6 @@
 $("#p2 .ability").bind("keyup change", function() {
     autosetWeather($(this).val(), 1);
+    autosetTerrain($(this).val(), 1);
 });
 
 $("#p2 .item").bind("keyup change", function() {
@@ -15,7 +16,6 @@ function getTerrainEffects() {
     switch (className) {
         case "type1":
         case "type2":
-        case "ability":
         case "item":
             var id = $(this).closest(".poke-info").prop("id");
             var terrainValue = $("input:checkbox[name='terrain']:checked").val();
@@ -25,9 +25,30 @@ function getTerrainEffects() {
                 $("#" + id).find(".status").prop("disabled", isGrounded($("#" + id)));
             }
             break;
+        case "ability":
+            // with autoset, ability change may cause terrain change, need to consider both sides
+            var terrainValue = $("input:checkbox[name='terrain']:checked").val();
+            if (terrainValue === "Electric") {
+                $("#p1").find(".status").prop("disabled", false);
+                $("#p2").find(".status").prop("disabled", false);
+                $("#p1").find("[value='Asleep']").prop("disabled", isGrounded($("#p1")));
+                $("#p2").find("[value='Asleep']").prop("disabled", isGrounded($("#p2")));
+            } else if (terrainValue === "Misty") {
+                $("#p1").find(".status").prop("disabled", isGrounded($("#p1")));
+                $("#p2").find(".status").prop("disabled", isGrounded($("#p2")));
+            } else {
+                $("#p1").find("[value='Asleep']").prop("disabled", false);
+                $("#p1").find(".status").prop("disabled", false);
+                $("#p2").find("[value='Asleep']").prop("disabled", false);
+                $("#p2").find(".status").prop("disabled", false);
+            }
+            break;
         default:
             $("input:checkbox[name='terrain']").not(this).prop("checked", false);
             if ($(this).prop("checked") && $(this).val() === "Electric") {
+                // need to enable status because it may be disabled by Misty Terrain before.
+                $("#p1").find(".status").prop("disabled", false);
+                $("#p2").find(".status").prop("disabled", false);
                 $("#p1").find("[value='Asleep']").prop("disabled", isGrounded($("#p1")));
                 $("#p2").find("[value='Asleep']").prop("disabled", isGrounded($("#p2")));
             } else if ($(this).prop("checked") && $(this).val() === "Misty") {

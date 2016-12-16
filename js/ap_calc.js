@@ -124,6 +124,7 @@ $(".ability").bind("keyup change", function() {
 
 $("#p1 .ability").bind("keyup change", function() {
     autosetWeather($(this).val(), 0);
+    autosetTerrain($(this).val(), 0);
 });
 
 var lastManualWeather = "";
@@ -167,6 +168,43 @@ function autosetWeather(ability, i) {
             lastAutoWeather[i] = "";
             var newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : lastManualWeather;
             $("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+            break;
+    }
+}
+
+var lastManualTerrain = "";
+var lastAutoTerrain = ["", ""];
+function autosetTerrain(ability, i) {
+    var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
+    if (lastAutoTerrain.indexOf(currentTerrain) === -1) {
+        lastManualTerrain = currentTerrain;
+        lastAutoTerrain[1-i] = "";
+    }
+    // terrain input uses checkbox instead of radio, need to uncheck all first
+    $("input:checkbox[name='terrain']:checked").prop("checked", false);
+    switch (ability) {
+        case "Electric Surge":
+            lastAutoTerrain[i] = "Electric";
+            $("#electric").prop("checked", true);
+            break;
+        case "Grassy Surge":
+            lastAutoTerrain[i] = "Grassy";
+            $("#grassy").prop("checked", true);
+            break;
+        case "Misty Surge":
+            lastAutoTerrain[i] = "Misty";
+            $("#misty").prop("checked", true);
+            break;
+        case "Psychic Surge":
+            lastAutoTerrain[i] = "Psychic";
+            $("#psychic").prop("checked", true);
+            break;
+        default:
+            lastAutoTerrain[i] = "";
+            var newTerrain = lastAutoTerrain[1-i] !== "" ? lastAutoTerrain[1-i] : lastManualTerrain;
+            if ("No terrain" !== newTerrain) {
+                $("input:checkbox[name='terrain'][value='" + newTerrain + "']").prop("checked", true);
+            }
             break;
     }
 }
