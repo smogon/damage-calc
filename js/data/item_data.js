@@ -33,6 +33,7 @@ var ITEMS_ADV = ITEMS_GSC.concat([
     'Deep Sea Scale',
     'Deep Sea Tooth',
     'Oran Berry',
+    'Sea Incense',
     'Silk Scarf',
     'Sitrus Berry',
     'Soul Dew'
@@ -101,7 +102,6 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Rose Incense',
     'Rowap Berry',
     'Salac Berry',
-    'Sea Incense',
     'Shuca Berry',
     'Sky Plate',
     'Splash Plate',
