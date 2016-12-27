@@ -614,6 +614,7 @@ function clearField() {
     $("#helpingHandR").prop("checked", false);
     $("#friendGuardL").prop("checked", false);
     $("#friendGuardR").prop("checked", false);
+    $("input:checkbox[name='terrain']").prop("checked", false);
 }
 
 function getSetOptions() {
