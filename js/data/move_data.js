@@ -2468,7 +2468,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Anchor Shot': {
         bp: 80,
-        type: 'Rock',
+        type: 'Steel',
         category: 'Physical',
         makesContact: true
     },
@@ -2723,7 +2723,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Spectral Thief': {
         bp: 90,
-        type: 'Water',
+        type: 'Ghost',
         category: 'Physical',
         makesContact: true
     },
