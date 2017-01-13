@@ -49,7 +49,7 @@ var SETDEX_RBY = {
 		"OU AgiliWrap": {"level":100,"moves":["Agility","Wrap","Hyper Beam","Surf"]},
 	},
 	"Dugtrio": {
-		"OU Physical Attacker": {"level":100,"moves":["Earthquake","Slash","Sand Attack","Substitute"]},
+		"UU Physical Attacker": {"level":100,"moves":["Earthquake","Slash","Rock Slide","Substitute"]},
 	},
 	"Electabuzz": {
 		"UU Special Attacker": {"level":100,"moves":["Thunderbolt","Thunder Wave","Psychic","Seismic Toss"]},
@@ -81,8 +81,14 @@ var SETDEX_RBY = {
 	"Golem": {
 		"OU Standard": {"level":100,"moves":["Body Slam","Earthquake","Rock Slide","Explosion"]},
 	},
+	"Graveler": {
+		"UU Standard": {"level":100,"moves":["Body Slam","Earthquake","Rock Slide","Explosion"]},
+	},
 	"Gyarados": {
 		"OU Mixed Attacker": {"level":100,"moves":["Blizzard","Thunderbolt","Body Slam","Hyper Beam"]},
+	},
+	"Haunter": {
+		"UU Standard": {"level":100,"moves":["Hypnosis","Explosion","Thunderbolt","Night Shade"]},
 	},
 	"Hitmonchan": {
 		"UU Physical Sweeper": {"level":100,"moves":["Body Slam","Submission","Seismic Toss","Counter"]},
@@ -101,6 +107,9 @@ var SETDEX_RBY = {
 	},
 	"Kabutops": {
 		"OU Swords Dance": {"level":100,"moves":["Swords Dance","Body Slam","Surf","Hyper Beam"]},
+	},
+	"Kadabra": {
+		"UU Standard": {"level":100,"moves":["Psychic","Recover","Thunder Wave","Seismic Toss"]},
 	},
 	"Kangaskhan": {
 		"OU Physical Attacker": {"level":100,"moves":["Body Slam","Hyper Beam","Earthquake","Surf"]},
@@ -225,6 +234,7 @@ var SETDEX_RBY = {
 	},
 	"Tauros": {
 		"OU Standard": {"level":100,"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]},
+		"OU Anti-Cloyster": {"level":100,"moves":["Body Slam","Hyper Beam","Thunder","Blizzard"]},
 	},
 	"Tentacruel": {
 		"OU Wrap + Swords Dance": {"level":100,"moves":["Swords Dance","Wrap","Hyper Beam","Surf"]},
