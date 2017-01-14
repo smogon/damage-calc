@@ -335,6 +335,11 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1))) {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
+    } else if (["Breakneck Blitz","Bloom Doom","Inferno Overdrive","Hydro Vortex","Gigavolt Havoc","Subzero Slammer","Supersonic Skystrike",
+            "Savage Spin-Out","Acid Downpour","Tectonic Rage","Continental Crush","All-Out Pummeling","Shattered Psyche","Never-Ending Nightmare",
+            "Devastating Drake","Black Hole Eclipse","Corkscrew Crash","Twinkle Tackle"].indexOf(move.name) !== -1) {
+        // show z-move power in description
+        description.moveBP = move.bp;
     }
     
     if (field.isHelpingHand) {

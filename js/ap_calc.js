@@ -260,6 +260,7 @@ $(".move-selector").change(function() {
     } else {
         moveGroupObj.children(".move-hits").hide();
     }
+    moveGroupObj.children(".move-z").prop("checked", false);
 });
 
 // auto-update set details on select
@@ -422,26 +423,54 @@ function Pokemon(pokeInfo) {
         this.status = pokeInfo.find(".status").val();
         this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
         this.moves = [
-            getMoveDetails(pokeInfo.find(".move1")),
-            getMoveDetails(pokeInfo.find(".move2")),
-            getMoveDetails(pokeInfo.find(".move3")),
-            getMoveDetails(pokeInfo.find(".move4"))
+            getMoveDetails(pokeInfo.find(".move1"), this.item),
+            getMoveDetails(pokeInfo.find(".move2"), this.item),
+            getMoveDetails(pokeInfo.find(".move3"), this.item),
+            getMoveDetails(pokeInfo.find(".move4"), this.item)
         ];
         this.weight = +pokeInfo.find(".weight").val();
     }
 }
 
-function getMoveDetails(moveInfo) {
+function getMoveDetails(moveInfo, item) {
     var moveName = moveInfo.find("select.move-selector").val();
     var defaultDetails = moves[moveName];
-    return $.extend({}, defaultDetails, {
-        name: moveName,
-        bp: ~~moveInfo.find(".move-bp").val(),
-        type: moveInfo.find(".move-type").val(),
-        category: moveInfo.find(".move-cat").val(),
-        isCrit: moveInfo.find(".move-crit").prop("checked"),
-        hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1
-    });
+    var isZMove = gen >= 7 && moveInfo.find("input.move-z").prop("checked");
+
+    // If z-move is checked but there isn't a corresponding z-move, use the original move
+    if (isZMove && defaultDetails.hasOwnProperty("zp")) {
+        var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
+        return $.extend({}, moves[zMoveName], {
+            name: zMoveName,
+            bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
+            category: defaultDetails.category,
+            isCrit: moveInfo.find(".move-crit").prop("checked"),
+            hits: 1
+        });
+    } else {
+        return $.extend({}, defaultDetails, {
+            name: moveName,
+            bp: ~~moveInfo.find(".move-bp").val(),
+            type: moveInfo.find(".move-type").val(),
+            category: moveInfo.find(".move-cat").val(),
+            isCrit: moveInfo.find(".move-crit").prop("checked"),
+            hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1
+        });
+    }
+}
+
+function getZMoveName(moveName, moveType, item) {
+    return moveName.indexOf("Hidden Power") !== -1 ? "Breakneck Blitz" // Hidden Power will become Breakneck Blitz
+            : moveName === "Giga Impact" && item === "Snorlium Z" ? "Pulverizing Pancake"
+            : moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer"
+            : moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika"
+            : moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt"
+            : moveName === "Psychic" && item === "Mewnium Z" ? "Genesis Supernova"
+            : moveName === "Spirit Shackle" && item === "Decidium Z" ? "Sinister Arrow Raid"
+            : moveName === "Darkest Lariat" && item === "Incinium Z" ? "Malicious Moonsault"
+            : moveName === "Sparkling Aria" && item === "Primarium Z" ? "Oceanic Operetta"
+            : moveName === "Spectral Thief" && item === "Marshadium Z" ? "Soul-Stealing 7-Star Strike"
+            : ZMOVES_TYPING[moveType];
 }
 
 function Field() {
