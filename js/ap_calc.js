@@ -445,6 +445,7 @@ function getMoveDetails(moveInfo, item) {
             bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
             category: defaultDetails.category,
             isCrit: moveInfo.find(".move-crit").prop("checked"),
+            isZ: true,
             hits: 1
         });
     } else {

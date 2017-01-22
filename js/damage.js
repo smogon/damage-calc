@@ -98,27 +98,35 @@ function getDamageResult(attacker, defender, move, field) {
     } else if (move.name === "Nature Power") {
         move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
     }
-    
-    var isAerilate = attacker.ability === "Aerilate" && move.type === "Normal";
-    var isPixilate = attacker.ability === "Pixilate" && move.type === "Normal";
-    var isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal";
-    var isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal";
-    var isLiquidVoice = attacker.ability === "Liquid Voice" && move.isSound;
-    if (isAerilate) {
-        move.type = "Flying";
-    } else if (isGalvanize) {
-        move.type = "Electric";
-    } else if (isLiquidVoice) {
-        move.type = "Water";
-    } else if (isPixilate) {
-        move.type = "Fairy";
-    } else if (isRefrigerate) {
-        move.type = "Ice";
-    } else if (attacker.ability === "Normalize") {
-        move.type = "Normal";
-        description.attackerAbility = attacker.ability;
+
+    var isAerilate = false;
+    var isPixilate = false;
+    var isRefrigerate = false;
+    var isGalvanize = false;
+    var isLiquidVoice = false;
+
+    if (!move.isZ) {
+        isAerilate = attacker.ability === "Aerilate" && move.type === "Normal";
+        isPixilate = attacker.ability === "Pixilate" && move.type === "Normal";
+        isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal";
+        isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal";
+        isLiquidVoice = attacker.ability === "Liquid Voice" && move.isSound;
+        if (isAerilate) {
+            move.type = "Flying";
+        } else if (isGalvanize) {
+            move.type = "Electric";
+        } else if (isLiquidVoice) {
+            move.type = "Water";
+        } else if (isPixilate) {
+            move.type = "Fairy";
+        } else if (isRefrigerate) {
+            move.type = "Ice";
+        } else if (attacker.ability === "Normalize") {
+            move.type = "Normal";
+            description.attackerAbility = attacker.ability;
+        }
     }
-    
+
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
     var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
