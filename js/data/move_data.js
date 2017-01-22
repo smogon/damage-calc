@@ -2487,6 +2487,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Rock',
         category: 'Physical'
     },
+    'Acid Spray': { zp: 100 },
     'Accelerock': {
         bp: 40,
         type: 'Rock',
@@ -2495,9 +2496,11 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         hasPriority: true,
         zp: 100
     },
+    'Acrobatics': { zp: 100 },
     'Aerial Ace': { zp: 120 },
     'Aeroblast': { zp: 180 },
     'Air Cutter': { zp: 120 },
+    'Air Slash': { zp: 140 },
     'All-Out Pummeling': {
         bp: 1,
         type: 'Fighting',
@@ -2511,8 +2514,15 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         zp: 160
     },
     'Ancient Power': { zp: 120 },
+    'Aqua Jet': { zp: 100 },
+    'Aqua Tail': { zp: 175 },
     'Arm Thrust': { zp: 100 },
+    'Assurance': { zp: 120 },
+    'Astonish': { zp: 100 },
+    'Attack Order': { zp: 175 },
+    'Aura Sphere': { zp: 160 },
     'Aurora Beam': { zp: 120 },
+    'Avalanche': { zp: 120 },
     'Beak Blast': {
         bp: 100,
         type: 'Flying',
@@ -2525,6 +2535,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Dark',
         category: 'Physical'
     },
+    'Blast Burn': { zp: 200 },
     'Blaze Kick': { zp: 160 },
     'Blizzard': { zp: 185 },
     'Bloom Doom': {
@@ -2532,13 +2543,21 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Grass',
         category: 'Physical'
     },
+    'Blue Flare': { zp: 195 },
+    'Brave Bird': { zp: 190 },
     'Breakneck Blitz': {
         bp: 1,
         type: 'Normal',
         category: 'Physical'
     },
+    'Brine': { zp: 120 },
     'Body Slam': { zp: 160 },
+    'Bolt Strike': { zp: 195 },
+    'Bone Club': { zp: 120 },
+    'Bone Rush': { zp: 140 },
     'Bonemerang': { zp: 100 },
+    'Boomburst': { zp: 200 },
+    'Bounce': { zp: 160 },
     'Brick Break': { zp: 140 },
     'Brutal Swing': {
         bp: 60,
@@ -2548,6 +2567,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isSpread: true,
         zp: 120
     },
+    'Bug Bite': { zp: 120 },
+    'Bug Buzz': { zp: 175 },
+    'Bulldoze': { zp: 120 },
+    'Bullet Punch': { zp: 100 },
     'Bullet Seed': { zp: 140 },
     'Burn Up': {
         bp: 130,
@@ -2560,6 +2583,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Electric',
         category: 'Physical'
     },
+    'Charge Beam': { zp: 100 },
+    'Chatter': { zp: 120 },
+    'Chip Away': { zp: 140 },
+    'Circle Throw': { zp: 120 },
     'Clanging Scales': {
         bp: 110,
         type: 'Dragon',
@@ -2568,6 +2595,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isSpread: true,
         zp: 185
     },
+    'Clear Smog': { zp: 100 },
+    'Close Combat': { zp: 190 },
     'Continental Crush': {
         bp: 1,
         type: 'Rock',
@@ -2585,9 +2614,13 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Steel',
         category: 'Physical'
     },
+    'Covet': { zp: 120 },
     'Crabhammer': { zp: 180 },
     'Cross Chop': { zp: 180 },
+    'Cross Poison': { zp: 140 },
     'Crunch': { zp: 160 },
+    'Crush Claw': { zp: 140 },
+    'Dark Pulse': { zp: 160 },
     'Darkest Lariat': {
         bp: 85,
         type: 'Dark',
@@ -2595,6 +2628,10 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 160
     },
+    'Dazzling Gleam': { zp: 160 },
+    'Diamond Storm': { zp: 180 },
+    'Discharge': { zp: 160 },
+    'Dive': { zp: 160 },
     'Dragon Hammer': {
         bp: 90,
         type: 'Dragon',
@@ -2608,19 +2645,38 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Ghost',
         category: 'Physical'
     },
+    'Doom Desire': { zp: 200 },
     'Double-Edge': { zp: 190 },
+    'Double Hit': { zp: 140 },
     'Double Kick': { zp: 100 },
+    'Draco Meteor': { zp: 195 },
+    'Dragon Ascent': { zp: 190 },
+    'Dragon Claw': { zp: 160 },
+    'Dragon Pulse': { zp: 160 },
+    'Dragon Rush': { zp: 180 },
+    'Dragon Tail': { zp: 120 },
+    'Drain Punch': { zp: 140 },
+    'Drill Run': { zp: 160 },
+    'Dual Chop': { zp: 100 },
     'Dynamic Punch': { zp: 180 },
+    'Earth Power': { zp: 175 },
     'Earthquake': { zp: 180 },
+    'Electro Ball': { zp: 160 },
+    'Electroweb': { zp: 100 },
     'Endeavor': { zp: 160 },
+    'Energy Ball': { zp: 175 },
     'Eruption': { zp: 200 },
     'Explosion': { zp: 200 },
     'Extrasensory': { zp: 160 },
     'Extreme Speed': { zp: 160 },
     'Fake Out': { zp: 100 },
     'Facade': { zp: 140 },
+    'Feint': { zp: 100 },
     'Feint Attack': { zp: 120 },
+    'Fiery Dance': { zp: 160 },
+    'Final Gambit': { zp: 180 },
     'Fire Blast': { zp: 185 },
+    'Fire Fang': { zp: 120 },
     'Fire Lash': {
         bp: 80,
         type: 'Fire',
@@ -2640,7 +2696,11 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Flail': { zp: 160 },
     'Flamethrower': { zp: 175 },
+    'Flame Burst': { zp: 140 },
+    'Flame Charge': { zp: 100 },
     'Flame Wheel': { zp: 120 },
+    'Flare Blitz': { zp: 190 },
+    'Flash Cannon': { zp: 160 },
     'Fleur Cannon': {
         bp: 130,
         type: 'Fairy',
@@ -2648,22 +2708,62 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         hasSecondaryEffect: true,
         zp: 195
     },
-    'Flying Press': { bp: 100 },
+    'Fling': { zp: 100 },
+    'Fly': { zp: 175 },
+    'Flying Press': { bp: 100, zp: 170 },
+    'Focus Blast': { zp: 190 },
     'Focus Punch': { zp: 200 },
+    'Force Palm': { zp: 120 },
+    'Foul Play': { zp: 175 },
+    'Freeze Shock': { zp: 200 },
+    'Freeze-Dry': { zp: 140 },
+    'Frenzy Plant': { zp: 200 },
+    'Frost Breath': { zp: 120 },
     'Frustration': { zp: 160 },
+    'Fury Swipes': { zp: 100 },
+    'Fusion Bolt': { zp: 180 },
+    'Fusion Flare': { zp: 180 },
+    'Future Sight': { zp: 190 },
+    'Gear Grind': { zp: 180 },
     'Genesis Supernova': {
         bp: 185,
         type: 'Psychic',
         category: 'Special'
     },
     'Giga Drain': { zp: 140 },
+    'Giga Impact': { zp: 200 },
     'Gigavolt Havoc': {
         bp: 1,
         type: 'Electric',
         category: 'Physical'
     },
+    'Glaciate': { zp: 120 },
+    'Grass Knot': { zp: 160 },
+    'Gunk Shot': { zp: 190 },
+    'Gyro Ball': { zp: 160 },
+    'Hammer Arm': { zp: 180 },
     'Headbutt': { zp: 140 },
+    'Head Charge': { zp: 190 },
+    'Head Smash': { zp: 200 },
     'Heat Wave': { zp: 175 },
+    'Heavy Slam': { zp: 160 },
+    'Hex': { zp: 160 },
+    'Hidden Power Bug': { zp: 120 },
+    'Hidden Power Dark': { zp: 120 },
+    'Hidden Power Dragon': { zp: 120 },
+    'Hidden Power Electric': { zp: 120 },
+    'Hidden Power Fighting': { zp: 120 },
+    'Hidden Power Fire': { zp: 120 },
+    'Hidden Power Flying': { zp: 120 },
+    'Hidden Power Ghost': { zp: 120 },
+    'Hidden Power Grass': { zp: 120 },
+    'Hidden Power Ground': { zp: 120 },
+    'Hidden Power Ice': { zp: 120 },
+    'Hidden Power Poison': { zp: 120 },
+    'Hidden Power Psychic': { zp: 120 },
+    'Hidden Power Rock': { zp: 120 },
+    'Hidden Power Steel': { zp: 120 },
+    'Hidden Power Water': { zp: 120 },
     'High Horsepower': {
         bp: 95,
         type: 'Ground',
@@ -2672,6 +2772,9 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         zp: 175
     },
     'High Jump Kick': { zp: 195 },
+    'Horn Leech': { zp: 140 },
+    'Hurricane': { zp: 185 },
+    'Hydro Cannon': { zp: 200 },
     'Hydro Pump': { zp: 185 },
     'Hydro Vortex': {
         bp: 1,
@@ -2680,7 +2783,11 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Hyper Beam': { zp: 200 },
     'Hyper Voice': { zp: 175 },
+    'Hyperspace Fury': { zp: 180 },
+    'Hyperspace Hole': { zp: 160 },
     'Ice Beam': { zp: 175 },
+    'Ice Burn': { zp: 200 },
+    'Ice Fang': { zp: 120 },
     'Ice Hammer': {
         bp: 100,
         type: 'Ice',
@@ -2690,21 +2797,36 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         zp: 180
     },
     'Ice Punch': { zp: 140 },
+    'Ice Shard': { zp: 100 },
+    'Icicle Crash': { zp: 160 },
+    'Icicle Spear': { zp: 140 },
     'Icy Wind': { zp: 100 },
+    'Incinerate': { zp: 120 },
+    'Inferno': { zp: 180 },
     'Inferno Overdrive': {
         bp: 1,
         type: 'Fire',
         category: 'Physical'
     },
+    'Iron Head': { zp: 160 },
     'Iron Tail': { zp: 180 },
+    'Judgment': { zp: 180 },
     'Jump Kick': { zp: 180 },
     'Knock Off': { zp: 120 },
+    'Land\'s Wrath': { zp: 185 },
+    'Last Resort': { zp: 200 },
+    'Lava Plume': { zp: 160 },
     'Leafage': {
         bp: 40,
         type: 'Grass',
-        category: 'Physical'
+        category: 'Physical',
+        zp: 100
     },
+    'Leaf Blade': { zp: 175 },
+    'Leaf Storm': { zp: 195 },
+    'Leaf Tornado': { zp: 120 },
     'Leech Life': { bp: 80, zp: 160 },
+    'Light of Ruin': { zp: 200 },
     'Liquidation': {
         bp: 85,
         type: 'Water',
@@ -2714,6 +2836,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         zp: 160
     },
     'Low Kick': { zp: 160 },
+    'Low Sweep': { zp: 120 },
     'Lunge': {
         bp: 80,
         type: 'Bug',
@@ -2724,6 +2847,9 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Luster Purge': { zp: 140 },
     'Mach Punch': { zp: 100 },
+    'Magical Leaf': { zp: 120 },
+    'Magma Storm': { zp: 180 },
+    'Magnet Bomb': { zp: 120 },
     'Malicious Moonsault': {
         bp: 180,
         type: 'Dark',
@@ -2732,6 +2858,9 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Megahorn': { zp: 190 },
     'Meteor Mash': { zp: 175 },
+    'Mirror Shot': { zp: 120 },
+    'Mist Ball': { zp: 140 },
+    'Moonblast': { zp: 175 },
     'Moongeist Beam': {
         bp: 100,
         type: 'Ghost',
@@ -2739,6 +2868,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         zp: 180
     },
     'Muddy Water': { zp: 175 },
+    'Mud Bomb': { zp: 120 },
+    'Mud Shot': { zp: 100 },
     'Multi-Attack': {
         bp: 90,
         type: 'Normal',
@@ -2746,22 +2877,36 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 185
     },
+    'Natural Gift': { zp: 160 },
+    'Needle Arm': { zp: 120 },
     'Never-Ending Nightmare': {
         bp: 1,
         type: 'Ghost',
         category: 'Physical'
     },
+    'Night Daze': { zp: 160 },
     'Night Shade': { zp: 100 },
+    'Night Slash': { zp: 140 },
+    'Nuzzle': { zp: 100 },
+    'Oblivion Wing': { zp: 160 },
     'Oceanic Operetta': {
         bp: 195,
         type: 'Water',
         category: 'Special'
     },
+    'Ominous Wind': { zp: 120 },
+    'Origin Pulse': { zp: 185 },
     'Outrage': { zp: 190 },
     'Overheat': { zp: 195 },
+    'Payback': { zp: 100 },
     'Petal Dance': { zp: 190 },
+    'Phantom Force': { zp: 175 },
     'Pin Missile': { zp: 140 },
+    'Play Rough': { zp: 175 },
+    'Pluck': { zp: 120 },
     'Poison Fang': { zp: 100 },
+    'Poison Jab': { zp: 160 },
+    'Poison Tail': { zp: 100 },
     'Pollen Puff': {
         bp: 90,
         type: 'Bug',
@@ -2769,6 +2914,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isBullet: true,
         zp: 175
     },
+    'Power Gem': { zp: 160 },
     'Power Trip': {
         bp: 20,
         type: 'Dark',
@@ -2776,12 +2922,15 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 160
     },
+    'Power Whip': { zp: 190 },
+    'Power-Up Punch': { zp: 100 },
     'Prismatic Laser': {
         bp: 160,
         type: 'Psychic',
         category: 'Special',
         zp: 200
     },
+    'Precipice Blades': { zp: 190 },
     'Psychic': { zp: 175 },
     'Psychic Fangs': {
         bp: 85,
@@ -2791,14 +2940,23 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isBite: true,
         zp: 160
     },
+    'Psycho Boost': { zp: 200 },
+    'Psycho Cut': { zp: 140 },
+    'Psyshock': { zp: 160 },
+    'Psystrike': { zp: 180 },
     'Pulverizing Pancake': {
         bp: 210,
         type: 'Normal',
         category: 'Physical'
     },
+    'Punishment': { zp: 160 },
     'Pursuit': { zp: 100 },
     'Quick Attack': { zp: 100 },
     'Rapid Spin': { zp: 100 },
+    'Razor Leaf': { zp: 120 },
+    'Razor Shell': { zp: 140 },
+    'Relic Song': { zp: 140 },
+    'Retaliate': { zp: 140 },
     'Return': { zp: 160 },
     'Revelation Dancer': {
         bp: 90,
@@ -2808,17 +2966,32 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Revenge': { zp: 120 },
     'Reversal': { zp: 160 },
+    'Roar of Time': { zp: 200 },
+    'Rock Blast': { zp: 140 },
+    'Rock Climb': { zp: 175 },
     'Rock Slide': { zp: 140 },
     'Rock Smash': { zp: 100 },
     'Rock Tomb': { zp: 140 },
+    'Rock Wrecker': { zp: 200 },
+    'Round': { zp: 120 },
     'Sacred Fire': { zp: 180 },
+    'Sacred Sword': { zp: 175 },
     'Savage Spin-Out': {
         bp: 1,
         type: 'Bug',
         category: 'Physical'
     },
+    'Scald': { zp: 160 },
+    'Searing Shot': { zp: 180 },
+    'Secret Power': { zp: 140 },
+    'Secret Sword': { zp: 160 },
+    'Seed Bomb': { zp: 160 },
+    'Seed Flare': { zp: 190 },
     'Seismic Toss': { zp: 100 },
     'Self-Destruct': { zp: 200 },
+    'Shadow Claw': { zp: 140 },
+    'Shadow Force': { zp: 190 },
+    'Shadow Sneak': { zp: 100 },
     'Shattered Psyche': {
         bp: 1,
         type: 'Psychic',
@@ -2841,15 +3014,21 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isSpread: true,
         zp: 200
     },
+    'Shock Wave': { zp: 120 },
     'Signal Beam': { zp: 140 },
+    "Silver Wind": { zp: 120 },
     'Sinister Arrow Raid': {
         bp: 180,
         type: 'Ghost',
         category: 'Physical'
     },
+    'Skull Bash': { zp: 195 },
     'Sky Attack': { zp: 200 },
+    'Sky Drop': { zp: 120 },
     'Sky Uppercut': { zp: 160 },
     'Sludge Bomb': { zp: 175 },
+    'Sludge Wave': { zp: 175 },
+    'Smack Down': { zp: 100 },
     'Smart Strike': {
         bp: 70,
         type: 'Steel',
@@ -2857,6 +3036,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 140
     },
+    'Snarl': { zp: 100 },
     'Solar Beam': { zp: 190 },
     'Solar Blade': {
         bp: 125,
@@ -2870,6 +3050,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Ghost',
         category: 'Physical'
     },
+    'Spacial Rend': { zp: 180 },
     'Spark': { zp: 120 },
     'Sparkling Aria': {
         bp: 90,
@@ -2892,6 +3073,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Physical',
         zp: 160
     },
+    'Steam Eruption': { zp: 185 },
+    'Steamroller': { zp: 120 },
     'Steel Wing': { zp: 140 },
     'Stoked Sparksurfer': {
         bp: 175,
@@ -2905,12 +3088,16 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 140
     },
+    'Stone Edge': { zp: 180 },
+    'Stored Power': { zp: 160 },
+    'Storm Throw': { zp: 120 },
+    'Struggle Bug': { zp: 100 },
     'Subzero Slammer': {
         bp: 1,
         type: 'Ice',
         category: 'Physical'
     },
-    'Sucker Punch': { bp: 70 },
+    'Sucker Punch': { bp: 70, zp: 140 },
     'Sunsteel Strike': {
         bp: 100,
         type: 'Steel',
@@ -2927,13 +3114,18 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Surf': { zp: 175 },
     'Swift': { zp: 120 },
+    'Synchronoise': { zp: 190 },
     'Tackle': { bp: 40, zp: 100 },
+    'Tail Slap': { zp: 140 },
+    'Techno Blast': { zp: 190 },
     'Tectonic Rage': {
         bp: 1,
         type: 'Ground',
         category: 'Physical'
     },
     'Thief': { zp: 120 },
+    'Thousand Arrows': { zp: 180 },
+    'Thousand Waves': { zp: 175 },
     'Thrash': { zp: 190 },
     'Throat Chop': {
         bp: 80,
@@ -2944,6 +3136,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Thunder': { zp: 185 },
     'Thunderbolt': { zp: 175 },
+    'Thunder Fang': { zp: 120 },
     'Thunder Punch': { zp: 140 },
     'Tri Attack': { zp: 160 },
     'Trop Kick': {
@@ -2959,10 +3152,24 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Fairy',
         category: 'Physical'
     },
+    "U-turn": { zp: 140 },
+    'Uproar': { zp: 175 },
+    'V-create': { zp: 220 },
+    'Vacuum Wave': { zp: 100 },
+    'Venoshock': { zp: 120 },
+    'Volt Switch': { zp: 140 },
+    'Volt Tackle': { zp: 190 },
+    'Wake-Up Slap': { zp: 140 },
     'Waterfall': { zp: 160 },
+    'Water Pulse': { zp: 120 },
     'Water Shuriken': { category: 'Special', zp: 100 },
     'Water Spout': { zp: 200 },
     'Weather Ball': { zp: 160 },
+    'Wild Charge': { zp: 175 },
+    'Wood Hammer': { zp: 190 },
+    'X-Scissor': { zp: 160 },
+    'Zap Cannon': { zp: 190 },
+    'Zen Headbutt': { zp: 160 },
     'Zing Zap': {
         bp: 80,
         type: 'Electric',
