@@ -136,7 +136,7 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) || 
             (defender.ability.indexOf("RKS System") !== -1 && defender.item.indexOf("Memory") !== -1) || 
-            (defender.item.indexOf("Z") !== -1));
+            (defender.item.indexOf(" Z") !== -1));
     
     if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
         typeEffectiveness = 1;
