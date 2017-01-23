@@ -403,3 +403,47 @@ function getTechnoBlast(item) {
             return '';    
     }
 }
+
+function getMultiAttack(item) {
+    switch (item) {
+        case 'Bug Memory':
+            return 'Bug';
+        case 'Dark Memory':
+            return 'Dark';
+        case 'Dragon Memory':
+            return 'Dragon';
+        case 'Electric Memory':
+            return 'Electric';
+        case 'Fairy Memory':
+            return 'Fairy';
+        case 'Fighting Memory':
+            return 'Fighting';
+        case 'Fire Memory':
+            return 'Fire';
+        case 'Flying Memory':
+            return 'Flying';
+        case 'Electric Memory':
+            return 'Electric';
+        case 'Ghost Memory':
+            return 'Ghost';
+        case 'Grass Memory':
+            return 'Grass';
+        case 'Ground Memory':
+            return 'Ground';
+        case 'Ice Memory':
+            return 'Ice';
+        case 'Poison Memory':
+            return 'Poison';
+        case 'Psychic Memory':
+            return 'Psychic';
+        case 'Rock Memory':
+            return 'Rock';
+        case 'Steel Memory':
+            return 'Steel';
+        case 'Water Memory':
+            return 'Water';
+        default:
+            return '';    
+    }
+}
+
