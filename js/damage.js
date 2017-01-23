@@ -145,6 +145,8 @@ function getDamageResult(attacker, defender, move, field) {
             (!attacker.type2 || [defender.type1, defender.type2].indexOf(attacker.type2) === -1)) {
         return {"damage": [0], "description": buildDescription(description)};
     }
+    if (move.name === "Dream Eater" && (defender.status !== 'Asleep' || defender.ability !== 'Comatose') {
+        return {"damage": [0], "description": buildDescription(description)};
     if ((defAbility === "Wonder Guard" && typeEffectiveness <= 1) ||
             (move.type === "Grass" && defAbility === "Sap Sipper") ||
             (move.type === "Fire" && defAbility.indexOf("Flash Fire") !== -1) ||
@@ -300,7 +302,7 @@ function getDamageResult(attacker, defender, move, field) {
     } else if (defAbility === "Fluffy" && move.makesContact && move.type === "Fire") {
         bpMods.push(0x2000); 
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Fluffy" && move.makesContact && !attacker.ability === "Long Reach") {
+    } else if (defAbility === "Fluffy" && move.makesContact && attacker.ability !== "Long Reach") {
         bpMods.push(0x800);
         description.defenderAbility = defAbility;
     }
