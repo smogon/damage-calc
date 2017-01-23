@@ -97,7 +97,13 @@ var MOVES_RBY = {
     'Double Team': {
         bp: 0,
         type: 'Normal'
-    }, 
+    },
+    'Dream Eater': {
+        bp: 100,
+        type: 'Psychic',
+        category: 'Special',
+        givesHealth: true
+    },
     'Drill Peck': {
         bp: 80,
         type: 'Flying',
@@ -2661,6 +2667,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Dragon Rush': { zp: 180 },
     'Dragon Tail': { zp: 120 },
     'Drain Punch': { zp: 140 },
+    'Dream Eater': { zp: 180 },
     'Drill Run': { zp: 160 },
     'Dual Chop': { zp: 100 },
     'Dynamic Punch': { zp: 180 },
