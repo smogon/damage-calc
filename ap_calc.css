@@ -324,20 +324,29 @@ select.toxic-counter {
     font-size: 0.9em;
 }
 .move-selector {
-    width: 9.5em;
+    width: 8.5em;
 }
 .poke-info input.move-bp {
     width: 2em;
+}
+.move-type {
+    width: 5.5em;
 }
 .move-cat {
     width: 5.7em;
 }
 .move-hits {
-    width: 5em;
+    width: 4.5em;
 }
 .poke-info .crit-btn {
     font-size: 0.8em;
     width: 2.5em;
+    height: 1em;
+    padding: 3px 3px;
+}
+.poke-info .z-btn {
+    font-size: 0.8em;
+    width: 1.5em;
     height: 1em;
     padding: 3px 3px;
 }
