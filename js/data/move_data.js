@@ -156,6 +156,10 @@ var MOVES_RBY = {
         bp: 0,
         type: 'Normal'
     }, 
+    'Gust': {
+        bp: 40,
+        type: 'Normal'
+    },
     'Haze': {
         bp: 0,
         type: 'Ice'
@@ -537,6 +541,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Special',
         givesHealth: true
     },
+    'Gust': { type: 'Flying' },
     'Headbutt': {
         bp: 70,
         type: 'Normal',
