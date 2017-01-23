@@ -131,6 +131,12 @@ function getDamageResult(attacker, defender, move, field) {
     var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
     var PriorityDamageCheck = move.hasPriority && (defAbility === "Queenly Majesty" || defAbility === "Dazzling") && (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) || (move.givesHealth && attacker.ability === "triage");
+    var resistedKnockOffDamage = (defender.item === "" ||
+            (defender.name === "Giratina-Origin" && defender.item === "Griseous Orb") ||
+            (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
+            (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) || 
+            (defender.ability.indexOf("RKS System") !== -1 && defender.item.indexOf("Memory") !== -1) || 
+            (defender.item.indexOf("Z") !== -1));
     
     if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
         typeEffectiveness = 1;
@@ -340,10 +346,7 @@ function getDamageResult(attacker, defender, move, field) {
         bpMods.push(0x800);
         description.moveBP = move.bp / 2;
         description.weather = field.weather;
-    } else if (gen >= 6 && move.name === "Knock Off" && !(defender.item === "" ||
-            (defender.name === "Giratina-Origin" && defender.item === "Griseous Orb") ||
-            (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
-            (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1))) {
+    } else if (gen >= 6 && move.name === "Knock Off" && !resistedKnockOffDamage) {
         bpMods.push(0x1800);
         description.moveBP = move.bp * 1.5;
     } else if (["Breakneck Blitz","Bloom Doom","Inferno Overdrive","Hydro Vortex","Gigavolt Havoc","Subzero Slammer","Supersonic Skystrike",
