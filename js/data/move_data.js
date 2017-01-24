@@ -2653,7 +2653,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Drill Peck': { zp: 160 },
     'Devastating Drake': {
         bp: 1,
-        type: 'Ghost',
+        type: 'Dragon',
         category: 'Physical'
     },
     'Doom Desire': { zp: 200 },
