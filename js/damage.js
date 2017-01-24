@@ -88,6 +88,8 @@ function getDamageResult(attacker, defender, move, field) {
         move.type = getItemBoostType(attacker.item);
     } else if (move.name === "Techno Blast" && attacker.item.indexOf("Drive") !== -1) {
         move.type = getTechnoBlast(attacker.item);
+    } else if (move.name === "Multi-Attack" && attacker.item.indexOf("Memory") !== -1) {
+        move.type = getMultiAttack(attacker.item);
     } else if (move.name === "Natural Gift" && attacker.item.indexOf("Berry") !== -1) {
         var gift = getNaturalGift(attacker.item);
         move.type = gift.t;
