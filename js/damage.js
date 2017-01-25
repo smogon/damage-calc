@@ -235,6 +235,7 @@ function getDamageResult(attacker, defender, move, field) {
             description.moveBP = basePower;
             break;
         case "Stored Power":
+        case "Power Trip":
             basePower = 20 + 20 * countBoosts(attacker.boosts);
             description.moveBP = basePower;
             break;
