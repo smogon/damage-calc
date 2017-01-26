@@ -607,6 +607,10 @@ function getDamageResult(attacker, defender, move, field) {
         finalMods.push(0xC00);
         description.isFriendGuard = true;
     }
+    if (field.isAuroraVeil && !isCritical) { //doesn't protect from critical hits
+        finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800); // 0.5x damage from physical and special attacks in singles, 0.66x damage in Doubles
+        description.isAuroraVeil = true;
+    }
     if (attacker.ability === "Sniper" && isCritical) {
         finalMods.push(0x1800);
         description.attackerAbility = attacker.ability;

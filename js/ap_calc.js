@@ -493,6 +493,7 @@ function Field() {
     var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
     var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
     var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
+    var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
     
     this.getWeather = function() {
         return weather;
@@ -501,11 +502,11 @@ function Field() {
         weather = "";
     };
     this.getSide = function(i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -517,6 +518,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.isForesight = isForesight;
     this.isHelpingHand = isHelpingHand;
     this.isFriendGuard = isFriendGuard;
+    this.isAuroraVeil = isAuroraVeil;
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
@@ -644,6 +646,8 @@ function clearField() {
     $("#helpingHandR").prop("checked", false);
     $("#friendGuardL").prop("checked", false);
     $("#friendGuardR").prop("checked", false);
+    $("#auroraVeilL").prop("checked", false);
+    $("#auroraVeilR").prop("checked", false);
     $("input:checkbox[name='terrain']").prop("checked", false);
 }
 

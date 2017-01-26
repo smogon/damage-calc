@@ -170,6 +170,9 @@ function buildDescription(description) {
     if (description.isFriendGuard) {
         output += " with an ally's Friend Guard";
     }
+    if (description.isAuroraVeil) {
+        output += " with an ally's Aurora Veil";
+    }
     if (description.isCritical) {
         output += " on a critical hit";
     }
