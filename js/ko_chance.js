@@ -83,6 +83,12 @@
             eotText.push('Black Sludge damage');
         }
     }
+    if (field.isSeeded) {
+        if (defender.ability !== 'Magic Guard') {
+            eot -= gen >= 2 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16); // 1/16 in gen 1, 1/8 in gen 2 onwards
+            eotText.push('Leech Seed damage');
+        }
+    }
     if (field.terrain === "Grassy") {
         if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
                 defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
