@@ -289,6 +289,11 @@ var MOVES_RBY = {
         hasSecondaryEffect: true,
         isSpread: true
     },
+    'Rock Throw': {
+        bp: 50,
+        type: 'Rock',
+        category: 'Physical'
+    },
     'Seismic Toss': {
         bp: 100,
         type: 'Fighting',
@@ -2983,6 +2988,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Rock Climb': { zp: 175 },
     'Rock Slide': { zp: 140 },
     'Rock Smash': { zp: 100 },
+    'Rock Throw': { zp: 100 },
     'Rock Tomb': { zp: 140 },
     'Rock Wrecker': { zp: 200 },
     'Round': { zp: 120 },
