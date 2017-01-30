@@ -139,6 +139,7 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) || 
             (defender.ability.indexOf("RKS System") !== -1 && defender.item.indexOf("Memory") !== -1) || 
             (defender.item.indexOf(" Z") !== -1));
+    var defenderTyping = defender.type1 || defender.type2;
     
     if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
         typeEffectiveness = 1;
@@ -146,7 +147,7 @@ function getDamageResult(attacker, defender, move, field) {
     if (typeEffectiveness === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
-    if (move.name === "Sky Drop" && (defender.type1 === "Flying" || defender.type2 === "Flying" || (gen >= 6 && defender.weight >= 200) || field.isGravity)) {
+    if (move.name === "Sky Drop" && (defenderTyping === "Flying" || (gen >= 6 && defender.weight >= 200) || field.isGravity)) {
         return {"damage":[0], "description":buildDescription(description)};
     }
     if (move.name === "Synchronoise" && [defender.type1, defender.type2].indexOf(attacker.type1) === -1 &&
@@ -167,7 +168,7 @@ function getDamageResult(attacker, defender, move, field) {
         description.defenderAbility = defAbility;
         return {"damage":[0], "description":buildDescription(description)};
     }
-    if (field.weather === "Strong Winds" && (defender.type1 === "Flying" || defender.type2 === "Flying") && typeChart[move.type]["Flying"] > 1) {
+    if (field.weather === "Strong Winds" && (defenderTyping === "Flying") && typeChart[move.type]["Flying"] > 1) {
         typeEffectiveness /= 2;
         description.weather = field.weather;
     }
@@ -485,7 +486,7 @@ function getDamageResult(attacker, defender, move, field) {
     }
     
     // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
-    if (field.weather === "Sand" && (defender.type1 === "Rock" || defender.type2 === "Rock") && !hitsPhysical) {
+    if (field.weather === "Sand" && (defenderTyping === "Rock") && !hitsPhysical) {
         defense = pokeRound(defense * 3/2);
         description.weather = field.weather;
     }
@@ -553,7 +554,7 @@ function getDamageResult(attacker, defender, move, field) {
             description.terrain - field.terrain;
         }
     }
-    if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
+    if (field.isGravity || (defenderTyping !== "Flying" &&
             defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
         if (field.terrain === "Misty" && move.type === "Dragon") {
             baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
@@ -587,7 +588,7 @@ function getDamageResult(attacker, defender, move, field) {
         finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
         description.isLightScreen = true;
     }
-    if ((defAbility === "Multiscale" || defAbility === "Shadow Shield") && defender.curHP === defender.maxHP && !field.isSR && !field.spikes) {
+    if ((defAbility === "Multiscale" || defAbility === "Shadow Shield") && defender.curHP === defender.maxHP && !field.isSR && (field.spikes && defenderTyping !== "Flying")) {
         finalMods.push(0x800);
         description.defenderAbility = defAbility;
     }
