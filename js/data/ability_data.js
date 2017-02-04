@@ -97,6 +97,7 @@ var ABILITIES_XY = ABILITIES_BW.concat([
     'Desolate Land',
     'Fairy Aura',
     'Fur Coat',
+    'Gale Wings',
     'Mega Launcher',
     'Parental Bond',
     'Pixilate',

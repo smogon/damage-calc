@@ -129,10 +129,15 @@ function getDamageResult(attacker, defender, move, field) {
         }
     }
 
+    if ((attacker.ability === "Gale Wings" && move.type === "Flying" && (gen >= 7 ? attacker.curHP === attacker.maxHP : true)) ||
+            (attacker.ability === "Triage" && move.givesHealth)) {
+        move.hasPriority = true;
+        description.attackerAbility = attacker.ability;
+    }
+
     var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
     var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.ability === "Scrappy" || field.isForesight, field.isGravity) : 1;
     var typeEffectiveness = typeEffect1 * typeEffect2;
-    var PriorityDamageCheck = move.hasPriority && (defAbility === "Queenly Majesty" || defAbility === "Dazzling") && (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) || (move.givesHealth && attacker.ability === "triage");
     var resistedKnockOffDamage = (defender.item === "" ||
             (defender.name === "Giratina-Origin" && defender.item === "Griseous Orb") ||
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
@@ -163,7 +168,8 @@ function getDamageResult(attacker, defender, move, field) {
             (move.type === "Electric" && ["Lightning Rod", "Motor Drive", "Volt Absorb"].indexOf(defAbility) !== -1) ||
             (move.type === "Ground" && !field.isGravity && defAbility === "Levitate") ||
             (move.isBullet && defAbility === "Bulletproof") ||
-            (move.isSound && defAbility === "Soundproof") || PriorityDamageCheck) {
+            (move.isSound && defAbility === "Soundproof") ||
+            (move.hasPriority && ["Queenly Majesty", "Dazzling"].indexOf(defAbility) !== -1)) {
         description.defenderAbility = defAbility;
         return {"damage":[0], "description":buildDescription(description)};
     }
@@ -173,6 +179,10 @@ function getDamageResult(attacker, defender, move, field) {
     }
     if (move.type === "Ground" && move.name !== "Thousand Arrows" && !field.isGravity && defender.item === "Air Balloon") {
         description.defenderItem = defender.item;
+        return {"damage":[0], "description":buildDescription(description)};
+    }
+    if (move.hasPriority && field.terrain === "Psychic" && isGroundedForCalc(defender, field)) {
+        description.terrain = field.terrain;
         return {"damage":[0], "description":buildDescription(description)};
     }
     
@@ -770,6 +780,15 @@ function countBoosts(boosts) {
         }
     }
     return sum;
+}
+
+function isGroundedForCalc(pokemon, field) {
+    return field.isGravity || (
+        pokemon.type1 !== "Flying" &&
+        pokemon.type2 !== "Flying" &&
+        pokemon.ability !== "Levitate" &&
+        pokemon.item !== "Air Balloon"
+    );
 }
 
 // GameFreak rounds DOWN on .5
