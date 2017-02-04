@@ -899,6 +899,12 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         category: 'Physical',
         makesContact: true
     },
+    'Endeavor': {
+        bp: 1,
+        type: "Normal",
+        category: "Physical",
+        makesContact: true
+    },
     'Eruption': {
         bp: 150,
         type: 'Fire',
