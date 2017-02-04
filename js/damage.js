@@ -69,7 +69,7 @@ function getDamageResult(attacker, defender, move, field) {
     }
     
     var defAbility = defender.ability;
-    if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
+    if ((["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) || move.name === "Moongeist Beam" || move.name === "Sunsteel Strike") {
         defAbility = "";
         description.attackerAbility = attacker.ability;
     }
