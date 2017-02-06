@@ -332,8 +332,8 @@ var SETDEX_ADV = {
 		"OU Perish Trapper": {"level":100,"evs":{"sd":80,"df":96,"hp":252,"sp":80},"nature":"Timid","item":"Leftovers","moves":["Mean Look","Perish Song","Substitute","Destiny Bond"]},
 	},
 	"Girafarig": {
-		"NU Calm Mind + Baton Pass": {"level":100,"evs":{"sd":160,"df":96,"hp":252},"nature":"Bold","ability":"Early Bird","item":"Leftovers","moves":["Psychic","Thunderbolt","Calm Mind","Baton Pass"]},
-		"NU WishPasser": {"level":100,"evs":{"sd":160,"df":96,"hp":252},"nature":"Bold","ability":"Early Bird","item":"Leftovers","moves":["Calm Mind","Wish","Substitute","Baton Pass"]},
+		"UU Calm Mind + Baton Pass": {"level":100,"evs":{"sd":160,"df":96,"hp":252},"nature":"Bold","ability":"Early Bird","item":"Leftovers","moves":["Psychic","Thunderbolt","Calm Mind","Baton Pass"]},
+		"UU WishPasser": {"level":100,"evs":{"sd":160,"df":96,"hp":252},"nature":"Bold","ability":"Early Bird","item":"Leftovers","moves":["Calm Mind","Wish","Substitute","Baton Pass"]},
 	},
 	"Glalie": {
 		"NU Spiker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Hasty","item":"Leftovers","moves":["Ice Beam","Explosion","Spikes","Crunch"]},
@@ -467,8 +467,6 @@ var SETDEX_ADV = {
 		"UU Reversal": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","item":"Salac Berry","moves":["Endure","Reversal","Return","Shadow Ball"]},
 	},
 	"Kecleon": {
-		"NU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","item":"Choice Band","moves":["Return","Shadow Ball","Focus Punch","Trick"]},
-		"NU RestTalk": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Careful","item":"Leftovers","moves":["Rest","Sleep Talk","Return","Brick Break"]},
 		"UU RestTalk": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Careful","item":"Leftovers","moves":["Rest","Sleep Talk","Return","Brick Break"]},
 		"OU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","item":"Choice Band","moves":["Return","Shadow Ball","Focus Punch","Trick"]},
 	},
@@ -543,7 +541,7 @@ var SETDEX_ADV = {
 		"UU Special Attacker": {"level":100,"evs":{"df":240,"hp":252,"sp":16},"nature":"Modest","item":"Leftovers","moves":["Hypnosis","Psychic","Ice Beam","Calm Mind"]},
 	},
 	"Luvdisc": {
-		"NU Rain Dance \"Sweeper\"": {"level":100,"evs":{"df":228,"hp":28,"sa":252},"nature":"Modest","item":"Lum Berry","moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]},
+		"NU Rain Dance &quot;Sweeper&quot;": {"level":100,"evs":{"df":228,"hp":28,"sa":252},"nature":"Modest","item":"Lum Berry","moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]},
 	},
 	"Machamp": {
 		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":252,"sp":4},"nature":"Adamant","item":"Choice Band","moves":["Cross Chop","Sleep Talk","Hidden Power Ghost","Rock Slide"]},
@@ -1097,7 +1095,7 @@ var SETDEX_ADV = {
 		"NU Special Sweeper": {"level":100,"evs":{"sd":208,"df":48,"sa":252},"nature":"Modest","item":"Leftovers","moves":["Fake Tears","Thunderbolt","Ice Beam","Wish"]},
 	},
 	"Wobbuffet": {
-		"Uber Oh, no! It's Wobbuffet! (Standard)": {"level":100,"evs":{"sd":252,"df":252,"hp":4},"nature":"Careful","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
+		"Uber Oh, no! It&#39;s Wobbuffet! (Standard)": {"level":100,"evs":{"sd":252,"df":252,"hp":4},"nature":"Careful","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
 	},
 	"Xatu": {
 		"UU Baton Pass": {"level":100,"evs":{"df":184,"hp":252,"sa":74},"nature":"Quiet","ability":"Synchronize","item":"Leftovers","moves":["Baton Pass","Calm Mind","Wish","Psychic"]},
