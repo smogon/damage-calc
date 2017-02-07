@@ -1,5 +1,6 @@
 var SETDEX_RBY = {
 	"Aerodactyl": {
+		"UU Showdown Usage": {"level":100,"moves":["Hyper Beam","Fire Blast","Double-Edge","Sky Attack"]},
 		"OU Physical Attacker": {"level":100,"moves":["Sky Attack","Reflect","Double-Edge","Hyper Beam"]},
 	},
 	"Alakazam": {
@@ -9,15 +10,18 @@ var SETDEX_RBY = {
 		"UU Wrapper": {"level":100,"moves":["Earthquake","Wrap","Glare","Hyper Beam"]},
 	},
 	"Arcanine": {
+		"UU Showdown Usage": {"level":100,"moves":["Fire Blast","Body Slam","Flamethrower","Hyper Beam"]},
 		"OU Anti-Lead": {"level":100,"moves":["Fire Blast","Body Slam","Hyper Beam","Reflect"]},
 	},
 	"Articuno": {
+		"UU Showdown Usage": {"level":100,"moves":["Blizzard","Ice Beam","Hyper Beam","Agility"]},
 		"OU Standard": {"level":100,"moves":["Blizzard","Agility","Double-Edge","Hyper Beam"]},
 	},
 	"Beedrill": {
 		"UU Agility + Swords Dance": {"level":100,"moves":["Twineedle","Hyper Beam","Swords Dance","Agility"]},
 	},
 	"Blastoise": {
+		"UU Showdown Usage": {"level":100,"moves":["Hydro Pump","Blizzard","Ice Beam","Earthquake"]},
 		"OU All-Out Attacker": {"level":100,"moves":["Surf","Blizzard","Body Slam","Mimic"]},
 	},
 	"Butterfree": {
@@ -27,9 +31,11 @@ var SETDEX_RBY = {
 		"OU Special Wall": {"level":100,"moves":["Ice Beam","Soft-Boiled","Thunder Wave","Thunderbolt"]},
 	},
 	"Charizard": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Fire Blast","Flamethrower","Hyper Beam"]},
 		"OU Swords Dance": {"level":100,"moves":["Fire Blast","Earthquake","Swords Dance","Body Slam"]},
 	},
 	"Clefable": {
+		"UU Showdown Usage": {"level":100,"moves":["Thunder Wave","Thunderbolt","Blizzard","Body Slam"]},
 		"OU Offensive": {"level":100,"moves":["Blizzard","Body Slam","Hyper Beam","Thunderbolt"]},
 		"OU Status Platform": {"level":100,"moves":["Blizzard","Thunder Wave","Sing","Thunder"]},
 	},
@@ -43,12 +49,15 @@ var SETDEX_RBY = {
 		"UU Transformer": {"level":100,"moves":["Transform"]},
 	},
 	"Dodrio": {
+		"UU Showdown Usage": {"level":100,"moves":["Drill Peck","Body Slam","Hyper Beam","Agility"]},
 		"OU Physical Sweeper": {"level":100,"moves":["Drill Peck","Body Slam","Hyper Beam","Mimic"]},
 	},
 	"Dragonite": {
+		"UU Showdown Usage": {"level":100,"moves":["Hyper Beam","Blizzard","Surf","Wrap"]},
 		"OU AgiliWrap": {"level":100,"moves":["Agility","Wrap","Hyper Beam","Surf"]},
 	},
 	"Dugtrio": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Rock Slide","Slash","Substitute"]},
 		"OU Physical Attacker": {"level":100,"moves":["Earthquake","Slash","Sand Attack","Substitute"]},
 	},
 	"Electabuzz": {
@@ -81,8 +90,15 @@ var SETDEX_RBY = {
 	"Golem": {
 		"OU Standard": {"level":100,"moves":["Body Slam","Earthquake","Rock Slide","Explosion"]},
 	},
+	"Graveler": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]},
+	},
 	"Gyarados": {
+		"UU Showdown Usage": {"level":100,"moves":["Blizzard","Hydro Pump","Thunderbolt","Surf"]},
 		"OU Mixed Attacker": {"level":100,"moves":["Blizzard","Thunderbolt","Body Slam","Hyper Beam"]},
+	},
+	"Haunter": {
+		"UU Showdown Usage": {"level":100,"moves":["Psychic","Hypnosis","Thunderbolt","Explosion"]},
 	},
 	"Hitmonchan": {
 		"UU Physical Sweeper": {"level":100,"moves":["Body Slam","Submission","Seismic Toss","Counter"]},
@@ -91,6 +107,7 @@ var SETDEX_RBY = {
 		"UU Physical Attacker": {"level":100,"moves":["Body Slam","Counter","High Jump Kick","Seismic Toss"]},
 	},
 	"Hypno": {
+		"UU Showdown Usage": {"level":100,"moves":["Psychic","Hypnosis","Thunder Wave","Rest"]},
 		"OU Support": {"level":100,"moves":["Psychic","Thunder Wave","Hypnosis","Rest"]},
 	},
 	"Jolteon": {
@@ -100,9 +117,14 @@ var SETDEX_RBY = {
 		"OU Lovely Kiss": {"level":100,"moves":["Lovely Kiss","Blizzard","Psychic","Mimic"]},
 	},
 	"Kabutops": {
+		"UU Showdown Usage": {"level":100,"moves":["Hydro Pump","Swords Dance","Blizzard","Hyper Beam"]},
 		"OU Swords Dance": {"level":100,"moves":["Swords Dance","Body Slam","Surf","Hyper Beam"]},
 	},
+	"Kadabra": {
+		"UU Showdown Usage": {"level":100,"moves":["Psychic","Recover","Thunder Wave","Reflect"]},
+	},
 	"Kangaskhan": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Body Slam","Hyper Beam","Blizzard"]},
 		"OU Physical Attacker": {"level":100,"moves":["Body Slam","Hyper Beam","Earthquake","Surf"]},
 	},
 	"Kingler": {
@@ -115,6 +137,7 @@ var SETDEX_RBY = {
 		"UU Swords Dance": {"level":100,"moves":["Swords Dance","Earthquake","Hyper Beam","Body Slam"]},
 	},
 	"Machamp": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Rock Slide","Body Slam","Hyper Beam"]},
 		"OU All-Out Attacker": {"level":100,"moves":["Body Slam","Earthquake","Hyper Beam","Submission"]},
 	},
 	"Magmar": {
@@ -137,21 +160,26 @@ var SETDEX_RBY = {
 		"Uber Defensive": {"level":100,"moves":["Psychic","Barrier","Thunder Wave","Recover"]},
 	},
 	"Moltres": {
+		"UU Showdown Usage": {"level":100,"moves":["Fire Blast","Hyper Beam","Fire Spin","Agility"]},
 		"OU Agility + Fire Spin": {"level":100,"moves":["Agility","Fire Blast","Fire Spin","Hyper Beam"]},
 	},
 	"Mr. Mime": {
+		"UU Showdown Usage": {"level":100,"moves":["Psychic","Thunderbolt","Thunder Wave","Seismic Toss"]},
 		"OU Offensive": {"level":100,"moves":["Psychic","Thunder Wave","Thunderbolt","Seismic Toss"]},
 	},
 	"Muk": {
 		"UU Physical Attacker": {"level":100,"moves":["Sludge","Body Slam","Screech","Explosion"]},
 	},
 	"Nidoking": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Thunderbolt","Rock Slide","Body Slam"]},
 		"OU Mixed Attacker": {"level":100,"moves":["Earthquake","Blizzard","Thunder","Body Slam"]},
 	},
 	"Nidoqueen": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Thunder","Fire Blast","Ice Beam"]},
 		"OU Mixed Attacker": {"level":100,"moves":["Earthquake","Blizzard","Thunderbolt","Body Slam"]},
 	},
 	"Ninetales": {
+		"UU Showdown Usage": {"level":100,"moves":["Fire Blast","Confuse Ray","Body Slam","Hyper Beam"]},
 		"OU Anti-Sleep Lead": {"level":100,"moves":["Fire Blast","Body Slam","Confuse Ray","Fire Spin"]},
 	},
 	"Omastar": {
@@ -164,10 +192,15 @@ var SETDEX_RBY = {
 		"UU Spore": {"level":100,"moves":["Spore","Stun Spore","Slash","Mega Drain"]},
 	},
 	"Persian": {
+		"UU Showdown Usage": {"level":100,"moves":["Slash","Hyper Beam","Bubble Beam","Thunderbolt"]},
 		"OU Slash": {"level":100,"moves":["Slash","Bubble Beam","Hyper Beam","Thunderbolt"]},
 	},
 	"Pidgeot": {
+		"UU Showdown Usage": {"level":100,"moves":["Quick Attack","Double-Edge","Hyper Beam","Sky Attack"]},
 		"OU Standard": {"level":100,"moves":["Double-Edge","Hyper Beam","Mimic","Mirror Move"]},
+	},
+	"Pikachu": {
+		"UU Showdown Usage": {"level":100,"moves":["Thunderbolt","Thunder","Quick Attack","Surf"]},
 	},
 	"Pinsir": {
 		"UU Swords Dance": {"level":100,"moves":["Swords Dance","Hyper Beam","Body Slam","Submission"]},
@@ -185,6 +218,7 @@ var SETDEX_RBY = {
 		"UU Physical Sweeper": {"level":100,"moves":["Submission","Rock Slide","Body Slam","Focus Energy"]},
 	},
 	"Raichu": {
+		"UU Showdown Usage": {"level":100,"moves":["Thunder Wave","Thunderbolt","Surf","Thunder"]},
 		"OU Standard": {"level":100,"moves":["Thunderbolt","Thunder Wave","Surf","Body Slam"]},
 	},
 	"Rapidash": {
@@ -197,6 +231,7 @@ var SETDEX_RBY = {
 		"OU Physical Sweeper": {"level":100,"moves":["Earthquake","Rock Slide","Substitute","Body Slam"]},
 	},
 	"Sandslash": {
+		"UU Showdown Usage": {"level":100,"moves":["Earthquake","Rock Slide","Swords Dance","Hyper Beam"]},
 		"OU Swords Dance": {"level":100,"moves":["Earthquake","Swords Dance","Hyper Beam","Substitute"]},
 	},
 	"Scyther": {
@@ -227,6 +262,7 @@ var SETDEX_RBY = {
 		"OU Standard": {"level":100,"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]},
 	},
 	"Tentacruel": {
+		"UU Showdown Usage": {"level":100,"moves":["Blizzard","Wrap","Surf","Hyper Beam"]},
 		"OU Wrap + Swords Dance": {"level":100,"moves":["Swords Dance","Wrap","Hyper Beam","Surf"]},
 	},
 	"Vaporeon": {
@@ -236,9 +272,11 @@ var SETDEX_RBY = {
 		"UU Double Powder": {"level":100,"moves":["Psychic","Mega Drain","Sleep Powder","Stun Spore"]},
 	},
 	"Venusaur": {
+		"UU Showdown Usage": {"level":100,"moves":["Sleep Powder","Razor Leaf","Leech Seed","Body Slam"]},
 		"OU Sleep Powder": {"level":100,"moves":["Razor Leaf","Sleep Powder","Swords Dance","Body Slam"]},
 	},
 	"Victreebel": {
+		"UU Showdown Usage": {"level":100,"moves":["Sleep Powder","Razor Leaf","Stun Spore","Wrap"]},
 		"OU Swords Dance": {"level":100,"moves":["Razor Leaf","Swords Dance","Sleep Powder","Hyper Beam"]},
 		"OU Wrapper": {"level":100,"moves":["Razor Leaf","Stun Spore","Wrap","Hyper Beam"]},
 	},
