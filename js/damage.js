@@ -769,6 +769,7 @@ function checkInfiltrator(attacker, affectedSide) {
     if (attacker.ability === "Infiltrator") {
         affectedSide.isReflect = false;
         affectedSide.isLightScreen = false;
+        affectedSide.isAuroraVeil = false;
     }
 }
 
