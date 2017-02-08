@@ -77,7 +77,7 @@ function calculate() {
                     minPixels = Math.floor(minDamage * 48 / defender.maxHP);
                     maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
                     result.koChanceText = attacker.moves[n].bp === 0 ? 'nice move'
-                            : getKOChanceText(result.damage, defender, defenderSide, attacker.moves[n].hits, attacker.ability === 'Bad Dreams');
+                            : getKOChanceText(result.damage, attacker, defender, defenderSide, attacker.moves[n].hits, attacker.ability === 'Bad Dreams');
                     if (maxDamage > highestDamage) {
                         highestDamage = maxDamage;
                         while (data.length > 1) { 

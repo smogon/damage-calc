@@ -16,6 +16,7 @@ var ABILITIES_ADV = [
     'Hyper Cutter',
     'Intimidate',
     'Levitate',
+    'Liquid Ooze',
     'Marvel Scale',
     'Minus',
     'Overgrow',
