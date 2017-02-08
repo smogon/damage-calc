@@ -2506,7 +2506,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Acid Downpour': {
         bp: 1,
-        type: 'Rock',
+        type: 'Poison',
         category: 'Physical'
     },
     'Acid Spray': { zp: 100 },
