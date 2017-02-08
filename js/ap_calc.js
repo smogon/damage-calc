@@ -503,11 +503,11 @@ function Field() {
         weather = "";
     };
     this.getSide = function(i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[1-i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -516,7 +516,8 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.spikes = spikes;
     this.isReflect = isReflect;
     this.isLightScreen = isLightScreen;
-    this.isSeeded = isSeeded;
+    this.isAttackerSeeded = isAttackerSeeded;
+    this.isDefenderSeeded = isDefenderSeeded;
     this.isForesight = isForesight;
     this.isHelpingHand = isHelpingHand;
     this.isFriendGuard = isFriendGuard;
