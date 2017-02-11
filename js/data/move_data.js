@@ -1695,7 +1695,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         bp: 120,
         type: 'Ghost',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        bypassesProtect: true
     },
     'Shadow Sneak': {
         bp: 40,
@@ -1900,7 +1901,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
     'Feint': {
         bp: 30,
         type: 'Normal',
-        category: 'Physical'
+        category: 'Physical',
+        bypassesProtect: true
     },
     'Fiery Dance': {
         bp: 80,
@@ -2338,12 +2340,14 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Hyperspace Fury': {
         bp: 100,
         type: 'Dark',
-        category: 'Physical'
+        category: 'Physical',
+        bypassesProtect: true
     },
     'Hyperspace Hole': {
         bp: 80,
         type: 'Psychic',
-        category: 'Special'
+        category: 'Special',
+        bypassesProtect: true
     },
     'Ice Beam': { bp: 90 },
     'Incinerate': { bp: 60 },
@@ -2407,7 +2411,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 90,
         type: 'Ghost',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        bypassesProtect: true
     },
     'Pin Missile': { bp: 25 },
     'Play Rough': {
