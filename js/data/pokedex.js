@@ -11449,19 +11449,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
   "Lycanroc": {
     "t1": "Rock",
     "bs": {
-      "hp": 0,
-      "at": 0,
-      "df": 0,
-      "sa": 0,
-      "sd": 0,
-      "sp": 0
-    },
-    "w": 55.1,
-    "ab": "Sand Rush"
-  },
-  "Lycanroc-Midday": {
-    "t1": "Rock",
-    "bs": {
       "hp": 75,
       "at": 115,
       "df": 65,
