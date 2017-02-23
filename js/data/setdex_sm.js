@@ -3498,35 +3498,39 @@ var SETDEX_SM = {
 		"Uber Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Power Construct","item":"Leftovers","moves":["Rest","Thousand Arrows","Dragon Tail","Sleep Talk"]},
 	},
 	"Arghonaut": {
-		"CAP Tank": {"level":100,"evs":{"at":220,"hp":200,"sd":88},"nature":"Adamant","ability":"Unaware","item":"Leftovers","moves":["Recover","Drain Punch","Gunk Shot","Aqua Jet"]},
-		"CAP Bulk Up": {"level":100,"evs":{"sd":4,"hp":252,"at":252},"nature":"Adamant","ability":"Unaware","item":"Leftovers","moves":["Bulk Up","Drain Punch","Aqua Jet","Earthquake"]},
+		"CAP Tank": {"level":100,"evs":{"at":220,"hp":200,"sd":88},"nature":"Adamant","ability":"Unaware","item":"Leftovers","moves":["Recover","Drain Punch","Aqua Jet","Gunk Shot"]},
+		"CAP Bulk Up": {"level":100,"evs":{"sd":4,"hp":252,"at":252},"nature":"Adamant","ability":"Unaware","item":"Leftovers","moves":["Bulk Up","Drain Punch","Aqua Jet","Gunk Shot"]},
 	},
 	"Aurumoth": {
-		"CAP Illusion Quiver Dance": {"level":100,"evs":{"hp":24,"sa":252,"sp":232},"nature":"Timid","ability":"Illusion","item":"Life Orb","moves":["Quiver Dance","Psychic","Bug Buzz","Ice Beam"]},
-		"CAP No Guard Quiver Dance": {"level":100,"evs":{"hp":24,"sa":252,"sp":232},"nature":"Timid","ability":"No Guard","item":"Life Orb","moves":["Quiver Dance","Psychic","Bug Buzz","Blizzard"]},
-		"CAP Dragon Dance": {"level":100,"evs":{"hp":24,"at":252,"sp":232},"nature":"Jolly","ability":"No Guard","item":"Life Orb","moves":["Dragon Dance","Megahorn","Close Combat","Zen Headbutt"]},
-		"CAP Tail Glow": {"level":100,"evs":{"hp":248,"sa":252,"df":8},"nature":"Modest","ability":"Illusion","item":"Life Orb","moves":["Tail Glow","Psychic","Bug Buzz","Overheat"]},
-		"CAP Choice Scarf": {"level":100,"evs":{"hp":252,"at":24,"sp":232},"nature":"Jolly","ability":"Illusion","item":"Choice Scarf","moves":["Final Gambit","Megahorn","Close Combat","Zen Headbutt"]},
+		"CAP Illusion Quiver Dance": {"level":100,"evs":{"hp":24,"sa":252,"sp":232},"nature":"Timid","ability":"Illusion","item":"Life Orb","moves":["Quiver Dance","Bug Buzz","Psyshock","Overheat"]},
+		"CAP Illusion Tail Glow": {"level":100,"evs":{"hp":72,"sa":252,"sp":184},"nature":"Modest","ability":"Illusion","item":"Life Orb","moves":["Tail Glow","Bug Buzz","Psyshock","Overheat"]},
+		"CAP No Guard Quiver Dance": {"level":100,"evs":{"hp":24,"sa":252,"sp":232},"nature":"Timid","ability":"No Guard","item":"Life Orb","moves":["Quiver Dance","Psychic","Focus Blast","Shadow Ball"]},
+		"CAP All-Out Attacker": {"level":100,"evs":{"hp":24,"at":82,"sa":168,"sp":232},"nature":"Naive","ability":"Illusion","item":"Life Orb","moves":["Megahorn","Psychic","Overheat","Ice Beam"]},
+		"CAP Dragon Dance": {"level":100,"evs":{"hp":24,"at":252,"sp":232},"nature":"Jolly","ability":"Illusion","item":"Life Orb","moves":["Dragon Dance","Megahorn","Zen Headbutt","Close Combat"]},
 	},
 	"Cawmodore": {
 		"CAP Belly Drum": {"level":100,"evs":{"at":252,"sp":252,"hp":4},"nature":"Jolly","ability":"Volt Absorb","item":"Sitrus Berry","moves":["Belly Drum","Acrobatics","Drain Punch","Bullet Punch"]},
 	},
 	"Colossoil": {
-		"CAP Assault Vest": {"level":100,"evs":{"at":252,"df":80,"sd":176},"nature":"Adamant","ability":"Guts","item":"Assault Vest","moves":["Earthquake","Knock Off","Rapid Spin","Sucker Punch"]},
-		"CAP Offensive": {"level":100,"evs":{"sp":252,"at":252,"df":4},"nature":"Adamant","ability":"Guts","item":"Life Orb","moves":["Earthquake","Knock Off","U-turn","Sucker Punch"]},
+		"CAP Assault Vest": {"level":100,"evs":{"at":252,"df":36,"sd":220},"nature":"Adamant","ability":"Guts","item":"Assault Vest","moves":["Earthquake","Knock Off","Rapid Spin","Sucker Punch"]},
+		"CAP Flame Orb": {"level":100,"evs":{"sp":252,"at":252,"df":4},"nature":"Adamant","ability":"Guts","item":"Flame Orb","moves":["Earthquake","Knock Off","U-turn","Sucker Punch"]},
 	},
 	"Crucibelle": {
-		"CAP All-Out Attacker": {"level":100,"evs":{"hp":4,"at":252,"sp":252},"nature":"Jolly","ability":"Infiltrator","item":"Life Orb","moves":["Head Smash","Gunk Shot","Wood Hammer","Low Kick"]},
+		"CAP All-Out Attacker": {"level":100,"evs":{"hp":4,"at":252,"sp":252},"nature":"Jolly","ability":"Regenerator","item":"Crucibellite","moves":["Head Smash","Gunk Shot","Wood Hammer","U-turn"]},
+		"CAP Choice Scarf": {"level":100,"evs":{"hp":4,"at":252,"sp":252},"nature":"Jolly","ability":"Regenerator","item":"Choice Scarf","moves":["Head Smash","Gunk Shot","Wood Hammer","U-turn"]},
 	},
 	"Crucibelle-Mega": {
-		"CAP All-Out Attacker": {"level":100,"evs":{"hp":4,"at":252,"sp":252},"nature":"Jolly","moves":["Head Smash","Gunk Shot","Low Kick","Wood Hammer"]},
+		"CAP All-Out Attacker": {"level":100,"evs":{"hp":4,"at":252,"sp":252},"nature":"Jolly","ability":"Magic Guard","moves":["Head Smash","Gunk Shot","Wood Hammer","U-turn"]},
 	},
 	"Cyclohm": {
-		"CAP Physically Defensive": {"level":100,"evs":{"sa":4,"hp":252,"df":252},"nature":"Bold","ability":"Shield Dust","item":"Leftovers","moves":["Slack Off","Thunderbolt","Fireblast","Toxic"]},
-		"CAP Offensive": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Timid","ability":"Shield Dust","item":"Choice Specs","moves":["Draco Meteor","Thunderbolt","Fireblast","Hydro Pump"]},
+		"CAP Physically Defensive": {"level":100,"evs":{"sa":4,"hp":252,"df":252},"nature":"Bold","ability":"Shield Dust","item":"Leftovers","moves":["Slack Off","Thunderbolt","Fire Blast","Ice Beam"]},
+		"CAP Offensive": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Timid","ability":"Shield Dust","item":"Choice Specs","moves":["Draco Meteor","Thunderbolt","Fire Blast","Hydro Pump"]},
 	},
 	"Fidgit": {
-		"CAP Support": {"level":100,"evs":{"df":4,"hp":252,"sp":252},"nature":"Timid","ability":"Persistent","item":"Black Sludge","moves":["Spikes","U-Turn","Toxic Spikes","Earth Power"]},
+		"CAP Persistent": {"level":100,"evs":{"df":4,"hp":252,"sp":252},"nature":"Timid","ability":"Persistent","item":"Black Sludge","moves":["Trick Room","Stealth Rock","Earth Power","U-turn"]},
+	},
+	"Kerfluffle": {
+		"CAP Life Orb": {"level":100,"evs":{"sp":252,"sa":252,"sd":4},"nature":"Timid","ability":"Natural Cure","item":"Life Orb","moves":["Moonblast","Focus Blast","Hidden Power Ground","Parting Shot"]},
 	},
 	"Kitsunoh": {
 		"CAP Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Limber","item":"Choice Scarf","moves":["Trick","U-turn","Shadow Strike","Meteor Mash"]},
@@ -3535,34 +3539,30 @@ var SETDEX_SM = {
 	},
 	"Krilowatt": {
 		"CAP Special Attacker": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Timid","ability":"Magic Guard","item":"Life Orb","moves":["Surf","Thunderbolt","Ice Beam","Earth Power"]},
-		"CAP Physical Attacker": {"level":100,"evs":{"sp":252,"at":252,"hp":4},"nature":"Jolly","ability":"Magic Guard","item":"Life Orb","moves":["Waterfall","Thunder Punch","Ice Punch","Earthquake"]},
-		"CAP Heart Swap": {"level":100,"evs":{"at":20,"df":44,"sa":194,"sp":252},"nature":"Naive","ability":"Magic Guard","item":"Leftovers","moves":["Heart Swap","Waterfall","Thunderbolt","Ice Beam"]},
 	},
 	"Malaconda": {
-		"CAP Special Wall": {"level":100,"evs":{"hp":252,"sp":12,"sd":244},"nature":"Careful","ability":"Contrary","item":"Leftovers","moves":["Superpower","Knock Off","Rest","Sleep Talk"]},
+		"CAP Special Wall": {"level":100,"evs":{"hp":252,"at":4,"sd":252},"nature":"Careful","ability":"Harvest","item":"Sitrus Berry","moves":["Knock Off","Power Whip","Glare","U-turn"]},
 	},
 	"Mollux": {
-		"CAP Choice Scarf": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Modest","ability":"Dry Skin","item":"Choice Scarf","moves":["Fire Blast","Sludge Wave","Thunderbolt","Trick"]},
-		"CAP Tank": {"level":100,"evs":{"sa":252,"sp":48,"hp":208},"nature":"Modest","ability":"Dry Skin","item":"Life Orb","moves":["Fire Blast","Sludge Wave","Thunderbolt","Recover"]},
-		"CAP Utility": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Calm","ability":"Dry Skin","item":"Black Sludge","moves":["Lava Plume","Sludge Wave","Recover","Rapid Spin"]},
+		"CAP Specially Defensive": {"level":100,"evs":{"sa":252,"sp":4,"sd":252},"nature":"Calm","ability":"Dry Skin","item":"Black Sludge","moves":["Lava Plume","Sludge Bomb","Recover","Rapid Spin"]},
+		"CAP Choice Scarf": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Modest","ability":"Dry Skin","item":"Choice Scarf","moves":["Fire Blast","Sludge Wave","Hidden Power Ground","Trick"]},
 	},
 	"Naviathan": {
 		"CAP Dragon Dance + 3 Attacks": {"level":100,"evs":{"hp":48,"at":252,"sp":208},"nature":"Jolly","ability":"Water Veil","item":"Life Orb","moves":["Dragon Dance","Waterfall","Iron Head","Wild Charge"]},
-		"CAP Calm Mind": {"level":100,"evs":{"hp":252,"df":252,"sa":4},"nature":"Bold","ability":"Heatproof","item":"Leftovers","moves":["Calm Mind","Scald","Recover","Flash Cannon"]},
+		"CAP Calm Mind": {"level":100,"evs":{"hp":252,"df":252,"sa":4},"nature":"Bold","ability":"Heatproof","item":"Leftovers","moves":["Calm Mind","Scald","Recover","Hidden Power Ground"]},
 	},
 	"Necturna": {
-		"CAP Defensive Sticky Web": {"level":100,"evs":{"hp":252,"df":252,"at":4},"nature":"Impish","ability":"Forewarn","item":"Colbur Berry","moves":["Sticky Web","Will-O-Wisp","Shadow Sneak","Horn Leech"]},
-		"CAP Bulky Attacker": {"level":100,"evs":{"at":252,"hp":140,"sp":116},"nature":"Adamant","ability":"Forewarn","item":"Life Orb","moves":["V-create","Shadow Claw","Shadow Sneak","Horn Leech"]},
-		"CAP Physical Sweeper": {"level":100,"evs":{"at":252,"hp":88,"sp":168},"nature":"Jolly","ability":"Forewarn","item":"White Herb","moves":["Shell Smash","Shadow Sneak","Shadow Claw","Power Whip"]},
-		"CAP Double Status": {"level":100,"evs":{"sa":252,"hp":68,"sp":188},"nature":"Modest","ability":"Forewarn","item":"Leftovers","moves":["Spore","Will-O-Wisp","Horn Leech","Shadow Claw"]},
+		"CAP Physical Sweeper": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Forewarn","item":"Leftovers","moves":["Shift Gear","Shadow Sneak","Shadow Claw","Power Whip"]},
+		"CAP Sticky Web": {"level":100,"evs":{"hp":4,"at":252,"sp":252},"nature":"Jolly","ability":"Forewarn","item":"Colbur Berry","moves":["Sticky Web","Will-O-Wisp","Shadow Sneak","Power Whip"]},
+		"CAP All-Out Attacker": {"level":100,"evs":{"at":252,"hp":140,"sp":116},"nature":"Adamant","ability":"Forewarn","item":"Life Orb","moves":["V-create","Shadow Claw","Shadow Sneak","Horn Leech"]},
+		"CAP Double Status": {"level":100,"evs":{"at":252,"hp":88,"sp":168},"nature":"Modest","ability":"Forewarn","item":"Leftovers","moves":["Spore","Will-O-Wisp","Horn Leech","Shadow Claw"]},
 	},
 	"Plasmanta": {
-		"CAP Defensive": {"level":100,"evs":{"hp":252,"sp":100,"df":154},"nature":"Bold","ability":"Storm Drain","item":"Black Sludge","moves":["Sludge Bomb","Hidden Power Fire","Haze","Taunt"]},
-		"Cap Offensive": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Storm Drain","item":"Life Orb","moves":["Sludge Wave","Thunderbolt","Hidden Power Fire","Encore"]},
+		"CAP Special Attacker": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Storm Drain","item":"Life Orb","moves":["Sludge Wave","Thunderbolt","Dazzling Gleam","Hidden Power Ice"]},
 	},
 	"Pyroak": {
-		"CAP Leach Seed": {"level":100,"evs":{"hp":248,"sd":8,"df":252},"nature":"Bold","ability":"Rock Head","item":"Leftovers","moves":["Leech Seed","Lava Plume","Giga Drain","Earth Power"]},
-		"CAP Cbrevan": {"level":100,"evs":{"at":252,"hp":248,"sd":8},"nature":"Adamant","ability":"Rock Head","item":"Life Orb","moves":["Sword Dance","Flare Blitz","Wood Hammer","Earthquake"]},
+		"CAP Physically Defensive": {"level":100,"evs":{"hp":248,"sd":8,"df":252},"nature":"Bold","ability":"Battle Armor","item":"Leftovers","moves":["Synthesis","Lava Plume","Giga Drain","Stealth Rock"]},
+		"CAP cbrevan": {"level":100,"evs":{"at":252,"hp":248,"sd":8},"nature":"Adamant","ability":"Rock Head","item":"Life Orb","moves":["Sword Dance","Flare Blitz","Wood Hammer","Earthquake"]},
 	},
 	"Revenankh": {
 		"CAP Bulk Up": {"level":100,"evs":{"at":4,"hp":252,"sd":252},"nature":"Careful","ability":"Shed Skin","item":"Leftovers","moves":["Bulk Up","Drain Punch","Shadow Sneak","Earthquake"]},
@@ -3570,16 +3570,19 @@ var SETDEX_SM = {
 	"Stratagem": {
 		"CAP Technician": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Timid","ability":"Technician","item":"Life Orb","moves":["Ancient Power","Earth Power","Vacuum Wave","Energy Ball"]},
 		"CAP Levitate Attacker": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Paleo Wave","Earth Power"," Fire Blast","Energy Ball"]},
-		"CAP Calm Mind": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Paleo Wave","Earth Power"," Fire Blast","Calm Mind"]},
 	},
 	"Syclant": {
-		"CAP Life Orb": {"level":100,"evs":{"sa":244,"at":12,"sp":252},"nature":"Naive","ability":"Compound Eyes","item":"Life Orb","moves":["Ice Beam","Bug Buzz","Earthquake","Superpower"]},
-		"CAP Mixed Sash": {"level":100,"evs":{"at":4,"sa":252,"sp":252},"nature":"Naive","ability":"Compound Eyes","item":"Focus Sash","moves":["Ice Beam","U-turn","Ice Shard","Earth Power"]},
-		"CAP Tail Glow": {"level":100,"evs":{"hp":4,"sa":252,"sp":252},"nature":"Timid","ability":"Compound Eyes","item":"Focus Sash","moves":["Tail Glow","Ice Beam","Bug Buzz","Earth Power"]},
+		"CAP Life Orb": {"level":100,"evs":{"sa":252,"at":4,"sp":252},"nature":"Hasty","ability":"Compound Eyes","item":"Life Orb","moves":["Ice Beam","Earth Power","U-turn","Ice Shard"]},
+		"CAP Tail Glow": {"level":100,"evs":{"hp":4,"sa":252,"sp":252},"nature":"Timid","ability":"Compound Eyes","item":"Life Orb","moves":["Tail Glow","Ice Beam","Bug Buzz","Earth Power"]},
+	},
+	"Tomohawk": {
+		"CAP Physically Defensive": {"level":100,"evs":{"hp":252,"df":252,"sd":4},"nature":"Bold","ability":"Prankster","item":"Leftovers","moves":["Haze","Air Slash","Earth Power","Roost"]},
+		"CAP Offensive": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Modest","ability":"Prankster","item":"Life Orb","moves":["Hurricane","Earth Power","Nature Power","Roost"]},
+		"CAP Stallbreaker": {"level":100,"evs":{"df":4,"sa":252,"sp":252},"nature":"Modest","ability":"Prankster","item":"Life Orb","moves":["Taunt","Hurricane","Focus Blast","Roost"]},
 	},
 	"Volkraken": {
-		"CAP Choice Scarf": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Scarf","moves":["Fire Blast","Surf","Flash Cannon","U-turn"]},
-		"CAP All Out Attacker": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Specs","moves":["Fire Blast","Hydro Pump","Power Gem","Memento"]},
+		"CAP Choice Scarf": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Timid","ability":"Analytic","item":"Choice Scarf","moves":["Fire Blast","Surf","Hidden Power Ground","U-turn"]},
+		"CAP Choice Specs": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Specs","moves":["Fire Blast","Hydro Pump","Power Gem","U-turn"]},
 	},
 	"Voodoom": {
 		"CAP Mixed Attacker": {"level":100,"evs":{"sp":252,"sa":252,"at":4},"nature":"Hasty","ability":"Lightning Rod","item":"Life Orb","moves":["Dark Pulse","Close Combat","Psychic","Vacuum Wave"]},
