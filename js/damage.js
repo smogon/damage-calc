@@ -69,9 +69,12 @@ function getDamageResult(attacker, defender, move, field) {
     }
     
     var defAbility = defender.ability;
-    if ((["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) || move.name === "Moongeist Beam" || move.name === "Sunsteel Strike") {
+    if ((["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1)) {
         defAbility = "";
         description.attackerAbility = attacker.ability;
+    }
+    if (move.name === "Moongeist Beam" || move.name === "Sunsteel Strike") {
+        defAbility = "";
     }
     
     var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
