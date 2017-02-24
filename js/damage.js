@@ -73,6 +73,9 @@ function getDamageResult(attacker, defender, move, field) {
         defAbility = "";
         description.attackerAbility = attacker.ability;
     }
+    if (move.name === "Moongeist Beam" || move.name === "Sunsteel Strike") {
+        defAbility = "";
+    }
     
     var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1;
     
