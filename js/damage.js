@@ -563,7 +563,7 @@ function getDamageResult(attacker, defender, move, field) {
             description.terrain = field.terrain;
         } else if (field.terrain === "Psychic" && move.type === "Psychic") {
             baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
-            description.terrain - field.terrain;
+            description.terrain = field.terrain;
         }
     }
     if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
