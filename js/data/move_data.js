@@ -164,7 +164,8 @@ var MOVES_RBY = {
     }, 
     'Gust': {
         bp: 40,
-        type: 'Normal'
+        type: 'Normal',
+        category: 'Special'
     },
     'Haze': {
         bp: 0,
