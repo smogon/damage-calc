@@ -40,7 +40,12 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
     if (move.bp === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
-    
+
+    if (field.isProtected) {
+        description.isProtected = true;
+        return {"damage":[0], "description":buildDescription(description)};
+    }
+
     if (move.name === "Weather Ball") {
         move.type = field.weather === "Sun" ? "Fire"
                 : field.weather === "Rain" ? "Water"

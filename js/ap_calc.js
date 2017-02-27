@@ -445,7 +445,6 @@ function getMoveDetails(moveInfo, item) {
             bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
             category: defaultDetails.category,
             isCrit: moveInfo.find(".move-crit").prop("checked"),
-            isZ: true,
             hits: 1
         });
     } else {
@@ -490,6 +489,7 @@ function Field() {
     var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
     var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
     var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
+    var isProtected = [$("#protectL").prop("checked"), $("#protectR").prop("checked")];
     var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
     var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
     var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
@@ -503,11 +503,11 @@ function Field() {
         weather = "";
     };
     this.getSide = function(i) {
-        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isSeeded[1-i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
+        return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1-i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
     };
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
     this.format = format;
     this.terrain = terrain;
     this.weather = weather;
@@ -516,6 +516,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
     this.spikes = spikes;
     this.isReflect = isReflect;
     this.isLightScreen = isLightScreen;
+    this.isProtected = isProtected;
     this.isAttackerSeeded = isAttackerSeeded;
     this.isDefenderSeeded = isDefenderSeeded;
     this.isForesight = isForesight;
@@ -643,6 +644,8 @@ function clearField() {
     $("#reflectR").prop("checked", false);
     $("#lightScreenL").prop("checked", false);
     $("#lightScreenR").prop("checked", false);
+    $("#protectL").prop("checked", false);
+    $("#protectR").prop("checked", false);
     $("#leechSeedL").prop("checked", false);
     $("#leechSeedR").prop("checked", false);
     $("#foresightL").prop("checked", false);

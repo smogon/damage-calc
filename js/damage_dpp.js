@@ -51,6 +51,11 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
     if (move.bp === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
+
+    if (field.isProtected && !move.bypassesProtect) {
+        description.isProtected = true;
+        return {"damage":[0], "description":buildDescription(description)};
+    }
     
     var defAbility = defender.ability;
     if (attacker.ability === "Mold Breaker") {

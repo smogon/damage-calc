@@ -154,6 +154,9 @@ function buildDescription(description) {
     }
     output = appendIfSet(output, description.defenderItem);
     output = appendIfSet(output, description.defenderAbility);
+    if (description.isProtected) {
+        output += "protected ";
+    }
     output += description.defenderName;
     if (description.weather && description.terrain) {
         
