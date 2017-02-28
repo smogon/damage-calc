@@ -67,7 +67,12 @@ function getDamageResult(attacker, defender, move, field) {
     if (move.bp === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
-    
+
+    if (field.isProtected && !move.bypassesProtect && !move.isZ) {
+        description.isProtected = true;
+        return {"damage":[0], "description":buildDescription(description)};
+    }
+
     var defAbility = defender.ability;
     if (["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1) {
         defAbility = "";
@@ -643,6 +648,10 @@ function getDamageResult(attacker, defender, move, field) {
             attacker.ability !== "Unnerve") {
         finalMods.push(0x800);
         description.defenderItem = defender.item;
+    }
+    if (field.isProtected && move.isZ) {
+        finalMods.push(0x400);
+        description.isProtected = true;
     }
     var finalMod = chainMods(finalMods);
     

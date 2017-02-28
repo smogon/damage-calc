@@ -1391,6 +1391,12 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         hasSecondaryEffect: true,
         isBullet: true
     },
+    'Feint': {
+        bp: 50,
+        type: 'Normal',
+        category: 'Physical',
+        bypassesProtect: true
+    },
     'Fire Fang': {
         bp: 65,
         type: 'Fire',
@@ -1899,12 +1905,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         hasSecondaryEffect: true,
         isSpread: true
     },
-    'Feint': {
-        bp: 30,
-        type: 'Normal',
-        category: 'Physical',
-        bypassesProtect: true
-    },
+    'Feint': { bp: 30 },
     'Fiery Dance': {
         bp: 80,
         type: 'Fire',
@@ -2508,12 +2509,14 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     '10,000,000 Volt Thunderbolt': {
         bp: 195,
         type: 'Electric',
-        category: 'Special'
+        category: 'Special',
+        isZ: true
     },
     'Acid Downpour': {
         bp: 1,
         type: 'Poison',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Acid Spray': { zp: 100 },
     'Accelerock': {
@@ -2532,7 +2535,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'All-Out Pummeling': {
         bp: 1,
         type: 'Fighting',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Anchor Shot': {
         bp: 80,
@@ -2561,7 +2565,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Black Hole Eclipse': {
         bp: 1,
         type: 'Dark',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Blast Burn': { zp: 200 },
     'Blaze Kick': { zp: 160 },
@@ -2569,14 +2574,16 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Bloom Doom': {
         bp: 1,
         type: 'Grass',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Blue Flare': { zp: 195 },
     'Brave Bird': { zp: 190 },
     'Breakneck Blitz': {
         bp: 1,
         type: 'Normal',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Brine': { zp: 120 },
     'Body Slam': { zp: 160 },
@@ -2609,7 +2616,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Catastropika': {
         bp: 210,
         type: 'Electric',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Charge Beam': { zp: 100 },
     'Chatter': { zp: 120 },
@@ -2628,7 +2636,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Continental Crush': {
         bp: 1,
         type: 'Rock',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Core Enforcer': {
         bp: 100,
@@ -2640,7 +2649,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Corkscrew Crash': {
         bp: 1,
         type: 'Steel',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Covet': { zp: 120 },
     'Crabhammer': { zp: 180 },
@@ -2671,7 +2681,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Devastating Drake': {
         bp: 1,
         type: 'Dragon',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Doom Desire': { zp: 200 },
     'Double-Edge': { zp: 190 },
@@ -2757,14 +2768,16 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Genesis Supernova': {
         bp: 185,
         type: 'Psychic',
-        category: 'Special'
+        category: 'Special',
+        isZ: true
     },
     'Giga Drain': { zp: 140 },
     'Giga Impact': { zp: 200 },
     'Gigavolt Havoc': {
         bp: 1,
         type: 'Electric',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Glaciate': { zp: 120 },
     'Grass Knot': { zp: 160 },
@@ -2808,7 +2821,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Hydro Vortex': {
         bp: 1,
         type: 'Water',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Hyper Beam': { zp: 200 },
     'Hyper Voice': { zp: 175 },
@@ -2835,7 +2849,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Inferno Overdrive': {
         bp: 1,
         type: 'Fire',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Iron Head': { zp: 160 },
     'Iron Tail': { zp: 180 },
@@ -2883,7 +2898,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 180,
         type: 'Dark',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        isZ: true
     },
     'Megahorn': { zp: 190 },
     'Meteor Mash': { zp: 175 },
@@ -2911,7 +2927,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Never-Ending Nightmare': {
         bp: 1,
         type: 'Ghost',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Night Daze': { zp: 160 },
     'Night Shade': { zp: 100 },
@@ -2921,7 +2938,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Oceanic Operetta': {
         bp: 195,
         type: 'Water',
-        category: 'Special'
+        category: 'Special',
+        isZ: true
     },
     'Ominous Wind': { zp: 120 },
     'Origin Pulse': { zp: 185 },
@@ -2976,7 +2994,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Pulverizing Pancake': {
         bp: 210,
         type: 'Normal',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Punishment': { zp: 160 },
     'Pursuit': { zp: 100 },
@@ -3009,7 +3028,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Savage Spin-Out': {
         bp: 1,
         type: 'Bug',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Scald': { zp: 160 },
     'Searing Shot': { zp: 180 },
@@ -3025,7 +3045,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Shattered Psyche': {
         bp: 1,
         type: 'Psychic',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Shadow Ball': { zp: 160 },
     'Shadow Bone': {
@@ -3050,7 +3071,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Sinister Arrow Raid': {
         bp: 180,
         type: 'Ghost',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Skull Bash': { zp: 195 },
     'Sky Attack': { zp: 200 },
@@ -3078,7 +3100,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Soul-Stealing 7-Star Strike': {
         bp: 195,
         type: 'Ghost',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Spacial Rend': { zp: 180 },
     'Spark': { zp: 120 },
@@ -3109,7 +3132,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Stoked Sparksurfer': {
         bp: 175,
         type: 'Electric',
-        category: 'Special'
+        category: 'Special',
+        isZ: true
     },
     'Stomping Tantrum': {
         bp: 75,
@@ -3125,7 +3149,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Subzero Slammer': {
         bp: 1,
         type: 'Ice',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Sucker Punch': { bp: 70, zp: 140 },
     'Sunsteel Strike': {
@@ -3140,7 +3165,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Supersonic Skystrike': {
         bp: 1,
         type: 'Flying',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Surf': { zp: 175 },
     'Swift': { zp: 120 },
@@ -3151,7 +3177,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Tectonic Rage': {
         bp: 1,
         type: 'Ground',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     'Thief': { zp: 120 },
     'Thousand Arrows': { zp: 180 },
@@ -3180,7 +3207,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Twinkle Tackle': {
         bp: 1,
         type: 'Fairy',
-        category: 'Physical'
+        category: 'Physical',
+        isZ: true
     },
     "U-turn": { zp: 140 },
     'Uproar': { zp: 175 },
