@@ -19,6 +19,7 @@ var MOVES_RBY = {
     'Aurora Beam': {
         bp: 65,
         type: 'Ice',
+        category: 'Special',
         hasSecondaryEffect: true
     },
     'Barrier': {
