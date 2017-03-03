@@ -10909,6 +10909,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
   "Electrode": { "bs": { "sp": 150 } },
   "Exeggutor": { "bs": { "sd": 75 } },
   "Farfetch'd": { "bs": { "at": 90 } },
+  "Gengar": { "ab": "" },
   "Illumise": { "bs": { "df": 75, "sd": 85 } },
   "Lunatone": { "bs": { "hp": 90 } },
   "Magcargo": { "bs": { "hp": 60, "sa": 90 } },
