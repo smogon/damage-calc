@@ -3792,9 +3792,9 @@ var SETDEX_XY = {
 		"CAP Calm Mind": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Paleo Wave","Earth Power"," Fire Blast","Calm Mind"]},
 	},
 	"Syclant": {
-		"CAP Life Orb": {"level":100,"evs":{"sa":244,"at":12,"sp":252},"nature":"Naive","ability":"Compound Eyes","item":"Life Orb","moves":["Ice Beam","Bug Buzz","Earthquake","Superpower"]},
-		"CAP Mixed Sash": {"level":100,"evs":{"at":4,"sa":252,"sp":252},"nature":"Naive","ability":"Compound Eyes","item":"Focus Sash","moves":["Ice Beam","U-turn","Ice Shard","Earth Power"]},
-		"CAP Tail Glow": {"level":100,"evs":{"hp":4,"sa":252,"sp":252},"nature":"Timid","ability":"Compound Eyes","item":"Focus Sash","moves":["Tail Glow","Ice Beam","Bug Buzz","Earth Power"]},
+		"CAP Life Orb": {"level":100,"evs":{"sa":244,"at":12,"sp":252},"nature":"Naive","ability":"Mountaineer","item":"Life Orb","moves":["Ice Beam","Bug Buzz","Earthquake","Superpower"]},
+		"CAP Mixed Sash": {"level":100,"evs":{"at":4,"sa":252,"sp":252},"nature":"Naive","ability":"Mountaineer","item":"Focus Sash","moves":["Ice Beam","U-turn","Ice Shard","Earth Power"]},
+		"CAP Tail Glow": {"level":100,"evs":{"hp":4,"sa":252,"sp":252},"nature":"Timid","ability":"Mountaineer","item":"Focus Sash","moves":["Tail Glow","Ice Beam","Bug Buzz","Earth Power"]},
 	},
 	"Volkraken": {
 		"CAP Choice Scarf": {"level":100,"evs":{"sp":252,"sa":252,"hp":4},"nature":"Modest","ability":"Analytic","item":"Choice Scarf","moves":["Fire Blast","Surf","Flash Cannon","U-turn"]},
