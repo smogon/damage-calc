@@ -51,6 +51,7 @@ var ABILITIES_DPP = ABILITIES_ADV.concat([
     'Magic Guard',
     'Mold Breaker',
     'Motor Drive',
+    'Mountaineer',
     'Normalize',
     'Poison Heal',
     'Reckless',

@@ -3572,8 +3572,8 @@ var SETDEX_SM = {
 		"CAP Levitate Attacker": {"level":100,"evs":{"sd":4,"sa":252,"sp":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Paleo Wave","Earth Power"," Fire Blast","Energy Ball"]},
 	},
 	"Syclant": {
-		"CAP Life Orb": {"level":100,"evs":{"sa":252,"at":4,"sp":252},"nature":"Hasty","ability":"Compound Eyes","item":"Life Orb","moves":["Ice Beam","Earth Power","U-turn","Ice Shard"]},
-		"CAP Tail Glow": {"level":100,"evs":{"hp":4,"sa":252,"sp":252},"nature":"Timid","ability":"Compound Eyes","item":"Life Orb","moves":["Tail Glow","Ice Beam","Bug Buzz","Earth Power"]},
+		"CAP Life Orb": {"level":100,"evs":{"sa":252,"at":4,"sp":252},"nature":"Hasty","ability":"Mountaineer","item":"Life Orb","moves":["Ice Beam","Earth Power","U-turn","Ice Shard"]},
+		"CAP Tail Glow": {"level":100,"evs":{"hp":4,"sa":252,"sp":252},"nature":"Timid","ability":"Mountaineer","item":"Life Orb","moves":["Tail Glow","Ice Beam","Bug Buzz","Earth Power"]},
 	},
 	"Tomohawk": {
 		"CAP Physically Defensive": {"level":100,"evs":{"hp":252,"df":252,"sd":4},"nature":"Bold","ability":"Prankster","item":"Leftovers","moves":["Haze","Air Slash","Earth Power","Roost"]},

@@ -11,7 +11,7 @@
 
     var hazards = 0;
     var hazardText = [];
-    if (field.isSR && defender.ability !== 'Magic Guard') {
+    if (field.isSR && ['Magic Guard', 'Mountaineer'].indexOf(defender.ability) === -1) {
         var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
         hazards += Math.floor(effectiveness * defender.maxHP / 8);
         hazardText.push('Stealth Rock');
