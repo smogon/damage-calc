@@ -48,7 +48,19 @@ $.fn.DataTable.ColVis.prototype._fnDomColumnButton = function(i) {
         })[0];
 };
 
-$.fn.dataTableExt.oSort['damage-pre'] = parseFloat;
+$.fn.dataTableExt.oSort['damage100-asc'] = function (a, b) {
+    return parseFloat(a) - parseFloat(b);
+}
+$.fn.dataTableExt.oSort['damage100-desc'] = function (a, b) {
+    return parseFloat(b) - parseFloat(a);
+}
+
+$.fn.dataTableExt.oSort['damage48-asc'] = function (a, b) {
+    return parseInt(a) - parseInt(b);
+}
+$.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
+    return parseInt(b) - parseInt(a);
+}
 
 function calculate() {
     var attacker, defender, setName, setTier;
