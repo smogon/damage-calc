@@ -181,6 +181,7 @@ var ITEMS_SM = ITEMS_XY.concat([
     'Ghostium Z',
     'Grass Memory',
     'Grassium Z',
+    'Ground Memory',
     'Groundium Z',
     'Ice Memory',
     'Icium Z',
