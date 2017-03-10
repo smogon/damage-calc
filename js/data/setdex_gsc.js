@@ -540,7 +540,7 @@ var SETDEX_GSC = {
 		"OU Mixed Attacker": {"level":100,"item":"Leftovers","moves":["Double-Edge","Ice Beam","Thunderbolt","Thunder Wave"]},
 	},
 	"Wobbuffet": {
-		"OU Oh, no! It&#39;s Wobbuffet! (Counter + Mirror Coat)": {"level":100,"item":"Leftovers","moves":["Counter","Mirror Coat","Destiny Bond","Safeguard"]},
+		"OU Oh, no! It's Wobbuffet! (Counter + Mirror Coat)": {"level":100,"item":"Leftovers","moves":["Counter","Mirror Coat","Destiny Bond","Safeguard"]},
 	},
 	"Xatu": {
 		"UU Showdown Usage": {"level":100,"item":"","moves":["Psychic","Drill Peck","Giga Drain","Thief"]},

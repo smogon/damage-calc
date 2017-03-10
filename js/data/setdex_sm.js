@@ -23,7 +23,7 @@ var SETDEX_SM = {
 		"ORAS UU All-out Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Absolite","moves":["Knock Off","Sucker Punch","Pursuit","Superpower"]},
 	},
 	"Absol-Mega": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Magic Bounce","item":"Absolite","moves":["Knock Off","Sucker Punch","Superpower","Swords Dance"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Magic Bounce","item":"Absolite","moves":["Knock Off","Sucker Punch","Swords Dance","Superpower"]},
 		"ORAS UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Absolite","moves":["Swords Dance","Knock Off","Sucker Punch","Superpower"]},
 		"ORAS UU All-out Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Absolite","moves":["Knock Off","Sucker Punch","Pursuit","Superpower"]},
 	},
@@ -33,44 +33,28 @@ var SETDEX_SM = {
 		"ORAS UU Spikes Lead": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Unburden","item":"Focus Sash","moves":["Spikes","Encore","Final Gambit","Bug Buzz"]},
 	},
 	"Aegislash-Blade": {
-		"ORAS Uber Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"ivs":{"sp":0},"nature":"Sassy","ability":"Stance Change","item":"Leftovers","moves":["King\u0027s Shield","Gyro Ball","Toxic","Pursuit"]},
-		"ORAS Doubles Wide Guard Tank": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"ivs":{"at":0,"sp":0},"nature":"Quiet","ability":"Stance Change","item":"Weakness Policy","moves":["Shadow Ball","Flash Cannon","Wide Guard","King\u0027s Shield"]},
-		"ORAS Doubles Substitute Leftovers": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"ivs":{"at":0,"sp":0},"nature":"Quiet","ability":"Stance Change","item":"Leftovers","moves":["Shadow Ball","Flash Cannon","Substitute","King\u0027s Shield"]},
+		"Doubles Wide Guard Attacker": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Ghostium Z","moves":["Shadow Ball","Flash Cannon","Wide Guard","King\u0027s Shield"]},
+		"Doubles Substitute Tank": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Leftovers","moves":["Shadow Ball","Flash Cannon","Substitute","King\u0027s Shield"]},
 		"Battle Spot Singles RETURN OF THE CRUMBLER (Special Attacker)": {"level":50,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Weakness Policy","moves":["Shadow Ball","Shadow Sneak","King\u0027s Shield","Sacred Sword"]},
 		"Battle Spot Singles Toxic Staller": {"level":50,"evs":{"hp":204,"sp":140,"sa":164},"nature":"Modest","ability":"Stance Change","item":"Leftovers","moves":["Substitute","Toxic","Shadow Ball","King\u0027s Shield"]},
 		"Battle Spot Singles Swords Dance": {"level":50,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Stance Change","item":"Weakness Policy","moves":["Swords Dance","Shadow Sneak","Iron Head","Sacred Sword"]},
 	},
 	"Aegislash-Shield": {
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Sassy","ability":"Stance Change","item":"Leftovers","moves":["King\u0027s Shield","Shadow Sneak","Gyro Ball","Toxic"]},
-		"ORAS Uber Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"ivs":{"sp":0},"nature":"Sassy","ability":"Stance Change","item":"Leftovers","moves":["King\u0027s Shield","Gyro Ball","Toxic","Pursuit"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Leftovers","moves":["King\u0027s Shield","Shadow Ball","Wide Guard","Flash Cannon"]},
-		"ORAS Doubles Wide Guard Tank": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"ivs":{"at":0,"sp":0},"nature":"Quiet","ability":"Stance Change","item":"Weakness Policy","moves":["Shadow Ball","Flash Cannon","Wide Guard","King\u0027s Shield"]},
-		"ORAS Doubles Substitute Leftovers": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"ivs":{"at":0,"sp":0},"nature":"Quiet","ability":"Stance Change","item":"Leftovers","moves":["Shadow Ball","Flash Cannon","Substitute","King\u0027s Shield"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Stance Change","item":"Leftovers","moves":["King\u0027s Shield","Shadow Sneak","Gyro Ball","Toxic"]},
+		"Doubles Wide Guard Attacker": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Ghostium Z","moves":["Shadow Ball","Flash Cannon","Wide Guard","King\u0027s Shield"]},
+		"Doubles Substitute Tank": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Leftovers","moves":["Shadow Ball","Flash Cannon","Substitute","King\u0027s Shield"]},
 		"Battle Spot Singles RETURN OF THE CRUMBLER (Special Attacker)": {"level":50,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Stance Change","item":"Weakness Policy","moves":["Shadow Ball","Shadow Sneak","King\u0027s Shield","Sacred Sword"]},
 		"Battle Spot Singles Toxic Staller": {"level":50,"evs":{"hp":204,"sp":140,"sa":164},"nature":"Modest","ability":"Stance Change","item":"Leftovers","moves":["Substitute","Toxic","Shadow Ball","King\u0027s Shield"]},
 		"Battle Spot Singles Swords Dance": {"level":50,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Stance Change","item":"Weakness Policy","moves":["Swords Dance","Shadow Sneak","Iron Head","Sacred Sword"]},
 	},
 	"Aerodactyl": {
-		"ORAS RU Life Orb": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Life Orb","moves":["Stone Edge","Earthquake","Pursuit","Aerial Ace"]},
-		"UU Showdown Usage": {"level":100,"evs":{"at":8,"hp":168,"sp":252,"sa":80},"nature":"Hasty","ability":"Unnerve","item":"Focus Sash","moves":["Stealth Rock","Taunt","Stone Edge","Fire Blast"]},
-		"ORAS UU All-out Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Stone Edge","Wing Attack","Earthquake","Roost"]},
-		"ORAS UU Hone Claws": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Hone Claws","Stone Edge","Wing Attack","Earthquake"]},
-		"ORAS UU Bulky Aerodactyl": {"level":100,"evs":{"df":156,"hp":248,"sp":104},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Taunt","Roost","Toxic","Stone Edge"]},
-		"ORAS UU Suicide Lead": {"level":100,"evs":{"at":184,"sp":252,"sa":72},"nature":"Hasty","ability":"Pressure","item":"Focus Sash","moves":["Stealth Rock","Taunt","Double-Edge","Fire Blast"]},
-		"ORAS OU Offensive": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Stone Edge","Aerial Ace","Aqua Tail","Fire Fang"]},
-		"ORAS OU Pursuit Trapper": {"level":100,"evs":{"at":124,"hp":168,"sp":216},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Pursuit","Aerial Ace","Aqua Tail","Roost"]},
-		"ORAS Uber Prehistoric Beast (Offensive)": {"level":100,"evs":{"at":252,"hp":40,"sp":216},"nature":"Jolly","ability":"Pressure","item":"Aerodactylite","moves":["Stealth Rock","Taunt","Stone Edge","Earthquake"]},
-		"ORAS Doubles Mega Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Rock Slide","Aerial Ace","Aqua Tail","Wide Guard"]},
+		"UU Offensive": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Stone Edge","Wing Attack","Earthquake","Pursuit"]},
+		"UU Hone Claws": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Hone Claws","Stone Edge","Wing Attack","Aqua Tail"]},
+		"UU Suicide Lead": {"level":100,"evs":{"at":176,"sp":252,"sa":80},"nature":"Hasty","ability":"Pressure","item":"Focus Sash","moves":["Stealth Rock","Taunt","Double-Edge","Fire Blast"]},
 	},
 	"Aerodactyl-Mega": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Tough Claws","item":"Aerodactylite","moves":["Stone Edge","Earthquake","Pursuit","Aerial Ace"]},
-		"ORAS UU All-out Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Stone Edge","Wing Attack","Earthquake","Roost"]},
-		"ORAS UU Hone Claws": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Hone Claws","Stone Edge","Wing Attack","Earthquake"]},
-		"ORAS UU Bulky Aerodactyl": {"level":100,"evs":{"df":156,"hp":248,"sp":104},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Taunt","Roost","Toxic","Stone Edge"]},
-		"ORAS OU Offensive": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Stone Edge","Aerial Ace","Aqua Tail","Fire Fang"]},
-		"ORAS OU Pursuit Trapper": {"level":100,"evs":{"at":124,"hp":168,"sp":216},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Pursuit","Aerial Ace","Aqua Tail","Roost"]},
-		"ORAS Uber Prehistoric Beast (Offensive)": {"level":100,"evs":{"at":252,"hp":40,"sp":216},"nature":"Jolly","ability":"Pressure","item":"Aerodactylite","moves":["Stealth Rock","Taunt","Stone Edge","Earthquake"]},
-		"ORAS Doubles Mega Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Rock Slide","Aerial Ace","Aqua Tail","Wide Guard"]},
+		"UU Offensive": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Stone Edge","Wing Attack","Earthquake","Pursuit"]},
+		"UU Hone Claws": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Unnerve","item":"Aerodactylite","moves":["Hone Claws","Stone Edge","Wing Attack","Aqua Tail"]},
 	},
 	"Aggron": {
 		"ORAS NU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Rock Head","item":"Choice Band","moves":["Head Smash","Heavy Slam","Superpower","Ice Punch"]},
@@ -88,14 +72,15 @@ var SETDEX_SM = {
 		"LC Physical Attacker": {"level":5,"evs":{"df":76,"at":116,"hp":76,"sp":236},"nature":"Jolly","ability":"Skill Link","item":"Life Orb","moves":["Fury Swipes","Knock Off","Brick Break","Fake Out"]},
 	},
 	"Alakazam": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magic Guard","item":"Life Orb","moves":["Shadow Ball","Focus Blast","Psychic","Dazzling Gleam"]},
+		"UU Focus Sash": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magic Guard","item":"Focus Sash","moves":["Psychic","Focus Blast","Hidden Power Fire","Thunder Wave"]},
+		"UU Life Orb": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magic Guard","item":"Life Orb","moves":["Psychic","Focus Blast","Shadow Ball","Calm Mind"]},
 		"OU Special Sweeper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magic Guard","item":"Alakazite","moves":["Psychic","Shadow Ball","Focus Blast","Substitute"]},
 	},
 	"Alakazam-Mega": {
 		"OU Special Sweeper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magic Guard","item":"Alakazite","moves":["Psychic","Shadow Ball","Focus Blast","Substitute"]},
 	},
 	"Alomomola": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":216,"df":252,"hp":40},"nature":"Bold","ability":"Regenerator","item":"Rocky Helmet","moves":["Wish","Protect","Scald","Toxic"]},
+		"UU Wish Support": {"level":100,"evs":{"sd":216,"df":252,"hp":40},"nature":"Bold","ability":"Regenerator","item":"Leftovers","moves":["Wish","Protect","Scald","Toxic"]},
 		"OU Defensive Utility": {"level":100,"evs":{"sd":252,"df":220,"hp":36},"nature":"Calm","ability":"Regenerator","item":"Leftovers","moves":["Scald","Wish","Protect","Toxic"]},
 	},
 	"Altaria": {
@@ -121,12 +106,12 @@ var SETDEX_SM = {
 		"ORAS LC Berry Juice": {"level":5,"evs":{"hp":60,"sp":228,"sa":220},"nature":"Modest","ability":"Refrigerate","item":"Berry Juice","moves":["Rock Polish","Hyper Voice","Earth Power","Substitute"]},
 	},
 	"Ambipom": {
-		"ORAS RU DON&#39;T USE AMBIPOM": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Technician","item":"Life Orb","moves":["Fake Out","Return","Low Kick","Knock Off"]},
+		"ORAS RU DON'T USE AMBIPOM": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Technician","item":"Life Orb","moves":["Fake Out","Return","Low Kick","Knock Off"]},
 	},
 	"Amoonguss": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":92,"df":168,"hp":248},"nature":"Bold","ability":"Regenerator","item":"Black Sludge","moves":["Giga Drain","Spore","Clear Smog","Hidden Power Fire"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":92,"df":168,"hp":248},"nature":"Bold","ability":"Regenerator","item":"Black Sludge","moves":["Spore","Giga Drain","Clear Smog","Hidden Power Fire"]},
 		"OU Defensive Pivot": {"level":100,"evs":{"sd":216,"df":44,"hp":248},"nature":"Calm","ability":"Regenerator","item":"Black Sludge","moves":["Spore","Giga Drain","Clear Smog","Hidden Power Fire"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Regenerator","item":"Sitrus Berry","moves":["Spore","Rage Powder","Protect","Sludge Bomb"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":252,"hp":248,"sa":8},"nature":"Sassy","ability":"Regenerator","item":"Sitrus Berry","moves":["Spore","Rage Powder","Protect","Giga Drain"]},
 	},
 	"Ampharos": {
 		"ORAS PU Cleric": {"level":100,"evs":{"sd":8,"hp":248,"sa":252},"nature":"Modest","ability":"Static","item":"Leftovers","moves":["Heal Bell","Volt Switch","Hidden Power Ice","Focus Blast"]},
@@ -145,18 +130,18 @@ var SETDEX_SM = {
 		"LC Utility": {"level":5,"evs":{"df":36,"at":236,"sp":236},"nature":"Jolly","ability":"Battle Armor","item":"Berry Juice","moves":["Stealth Rock","Rapid Spin","Knock Off","Rock Blast"]},
 	},
 	"Araquanid": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Water Bubble","item":"Choice Band","moves":["Liquidation","Leech Life","Poison Jab","Crunch"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Brave","ability":"Water Bubble","item":"Waterium Z","moves":["Liquidation","Protect","Wide Guard","Leech Life"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Water Bubble","item":"Choice Band","moves":["Liquidation","Leech Life","Poison Jab","Sleep Talk"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Water Bubble","item":"Waterium Z","moves":["Liquidation","Protect","Leech Life","Wide Guard"]},
+		"VGC17 Attacking Arachnid": {"level":50,"evs":{"df":4,"at":252,"hp":252},"ivs":{"sp":0},"nature":"Brave","ability":"Water Bubble","item":"Waterium Z","moves":["Liquidation","Lunge","Wide Guard","Protect"]},
 	},
 	"Arbok": {
 		"ORAS PU Offensive Coil": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Black Sludge","moves":["Coil","Gunk Shot","Earthquake","Sucker Punch"]},
 		"ORAS NU Offensive Coil": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Life Orb","moves":["Coil","Gunk Shot","Earthquake","Sucker Punch"]},
 	},
 	"Arcanine": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Intimidate","item":"Leftovers","moves":["Flare Blitz","Extreme Speed","Morning Sun","Will-O-Wisp"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":8,"hp":248},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Flare Blitz","Extreme Speed","Morning Sun","Will-O-Wisp"]},
 		"ORAS UU Defensive": {"level":100,"evs":{"df":252,"at":8,"hp":248},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Morning Sun","Will-O-Wisp","Flare Blitz","Extreme Speed"]},
 		"ORAS UU Offensive": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Flash Fire","item":"Life Orb","moves":["Flare Blitz","Extreme Speed","Wild Charge","Close Combat"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":32,"hp":252,"sp":224},"nature":"Timid","ability":"Intimidate","item":"Leftovers","moves":["Snarl","Will-O-Wisp","Morning Sun","Flamethrower"]},
 		"VGC17 Helpful Pupper (Bulky Support)": {"level":50,"evs":{"sd":76,"df":188,"hp":244},"nature":"Calm","ability":"Intimidate","item":"Aguav Berry","moves":["Flamethrower","Snarl","Will-O-Wisp","Protect"]},
 		"VGC17 Attack Doggo (Physically Offensive)": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Firium Z","moves":["Flare Blitz","Wild Charge","Extreme Speed","Protect"]},
 	},
@@ -169,9 +154,8 @@ var SETDEX_SM = {
 		"ORAS Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","item":"Insect Plate","moves":["Swords Dance","X-Scissor","Earthquake","Stone Edge"]},
 	},
 	"Arceus-Dark": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":64,"hp":252,"sp":192},"nature":"Timid","ability":"Multitype","item":"Dread Plate","moves":["Judgment","Recover","Defog","Will-O-Wisp"]},
-		"ORAS Uber Calm Mind": {"level":100,"evs":{"df":80,"hp":252,"sp":176},"nature":"Timid","ability":"Multitype","item":"Dread Plate","moves":["Calm Mind","Judgment","Recover","Refresh"]},
-		"ORAS Uber Perish Trap": {"level":100,"evs":{"df":84,"hp":248,"sp":176},"nature":"Timid","ability":"Multitype","item":"Dread Plate","moves":["Perish Song","Whirlpool","Judgment","Recover"]},
+		"Uber Calm Mind": {"level":100,"evs":{"hp":248,"sp":252,"sa":8},"nature":"Timid","ability":"Multitype","item":"Dread Plate","moves":["Calm Mind","Judgment","Recover","Refresh"]},
+		"Uber Support": {"level":100,"evs":{"df":56,"hp":248,"sp":204},"nature":"Bold","ability":"Multitype","item":"Dread Plate","moves":["Judgment","Toxic","Defog","Recover"]},
 	},
 	"Arceus-Dragon": {
 		"ORAS Uber Support": {"level":100,"evs":{"df":200,"hp":252,"sp":56},"nature":"Bold","item":"Draco Plate","moves":["Judgment","Toxic","Recover","Defog"]},
@@ -181,7 +165,7 @@ var SETDEX_SM = {
 		"ORAS Uber Dual Status": {"level":100,"evs":{"df":84,"hp":248,"sp":176},"nature":"Timid","ability":"Multitype","item":"Zap Plate","moves":["Judgment","Recover","Will-O-Wisp","Toxic"]},
 	},
 	"Arceus-Fairy": {
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":186,"df":68,"hp":252},"nature":"Calm","ability":"Multitype","item":"Pixie Plate","moves":["Judgment","Recover","Toxic","Earth Power"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Multitype","item":"Pixie Plate","moves":["Judgment","Recover","Earth Power","Toxic"]},
 		"ORAS Uber Offensive Utility": {"level":100,"evs":{"df":4,"hp":252,"sp":252},"nature":"Timid","ability":"Multitype","item":"Pixie Plate","moves":["Recover","Stone Edge","Earth Power","Judgment"]},
 		"ORAS Uber Stealth Rock": {"level":100,"evs":{"df":200,"hp":252,"sp":56},"nature":"Bold","ability":"Multitype","item":"Pixie Plate","moves":["Stealth Rock","Recover","Judgment","Toxic"]},
 	},
@@ -195,34 +179,29 @@ var SETDEX_SM = {
 		"ORAS Uber Stallbreaker": {"level":100,"evs":{"hp":132,"sp":176,"sa":200},"nature":"Modest","ability":"Multitype","item":"Sky Plate","moves":["Calm Mind","Judgment","Recover","Refresh"]},
 	},
 	"Arceus-Ghost": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Ghostium Z","moves":["Swords Dance","Shadow Force","Extreme Speed","Brick Break"]},
-		"ORAS Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Spooky Plate","moves":["Swords Dance","Shadow Force","Brick Break","Extreme Speed"]},
-		"ORAS Uber Calm Mind": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Multitype","item":"Spooky Plate","moves":["Calm Mind","Judgment","Focus Blast","Substitute"]},
+		"Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Ghostium Z","moves":["Swords Dance","Shadow Force","Brick Break","Extreme Speed"]},
 	},
 	"Arceus-Grass": {
 		"ORAS Uber Offensive Utility": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Multitype","item":"Meadow Plate","moves":["Grass Knot","Stone Edge","Ice Beam","Recover"]},
 	},
 	"Arceus-Ground": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Earth Plate","moves":["Recover","Judgment","Ice Beam","Defog"]},
-		"ORAS Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Earth Plate","moves":["Swords Dance","Earthquake","Stone Edge","Recover"]},
-		"ORAS Uber Special Attacker": {"level":100,"evs":{"df":88,"hp":252,"sp":168},"nature":"Bold","ability":"Multitype","item":"Earth Plate","moves":["Judgment","Ice Beam","Recover","Toxic"]},
+		"Uber EdgeQuake Dancer": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Groundium Z","moves":["Swords Dance","Earthquake","Stone Edge","Recover"]},
+		"Uber Special Attacker": {"level":100,"evs":{"df":132,"hp":252,"sp":124},"nature":"Bold","ability":"Multitype","item":"Earth Plate","moves":["Judgment","Ice Beam","Toxic","Recover"]},
 	},
 	"Arceus-Ice": {
-		"ORAS Uber Calm Mind": {"level":100,"evs":{"hp":248,"sp":252,"sa":8},"nature":"Timid","item":"Icicle Plate","moves":["Calm Mind","Judgment","Recover","Thunder"]},
+		"Uber Calm Mind": {"level":100,"evs":{"hp":248,"sp":252,"sa":8},"nature":"Timid","ability":"Multitype","item":"Icicle Plate","moves":["Calm Mind","Judgment","Recover","Refresh"]},
 	},
 	"Arceus-Poison": {
 		"ORAS Uber Swords Dance": {"level":100,"evs":{"at":252,"hp":80,"sp":176},"nature":"Adamant","ability":"Multitype","item":"Toxic Plate","moves":["Swords Dance","Poison Jab","Earthquake","Recover"]},
 	},
 	"Arceus-Psychic": {
-		"ORAS Uber General Wall": {"level":100,"evs":{"df":200,"hp":252,"sp":56},"nature":"Bold","ability":"Multitype","item":"Mind Plate","moves":["Fire Blast","Ice Beam","Toxic","Recover"]},
+		"Uber Defensive": {"level":100,"evs":{"sd":64,"hp":252,"sp":192},"nature":"Calm","ability":"Multitype","item":"Mind Plate","moves":["Fire Blast","Dark Pulse","Recover","Toxic"]},
 	},
 	"Arceus-Rock": {
 		"Uber Calm Mind Attacker": {"level":100,"evs":{"hp":252,"sp":252,"sa":4},"nature":"Timid","ability":"Multitype","item":"Stone Plate","moves":["Calm Mind","Will-O-Wisp","Recover","Judgment"]},
 	},
 	"Arceus-Steel": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Multitype","item":"Iron Plate","moves":["Recover","Judgment","Calm Mind","Earth Power"]},
-		"ORAS Uber Calm Mind": {"level":100,"evs":{"df":80,"hp":252,"sp":176},"nature":"Timid","ability":"Multitype","item":"Iron Plate","moves":["Calm Mind","Judgment","Recover","Earth Power"]},
-		"ORAS Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Iron Plate","moves":["Swords Dance","Iron Head","Earthquake","Stone Edge"]},
+		"Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multitype","item":"Steelium Z","moves":["Swords Dance","Iron Head","Earthquake","Extreme Speed"]},
 	},
 	"Arceus-Water": {
 		"Uber Support": {"level":100,"evs":{"df":132,"hp":252,"sp":124},"nature":"Bold","ability":"Multitype","item":"Splash Plate","moves":["Judgment","Ice Beam","Toxic","Recover"]},
@@ -291,14 +270,17 @@ var SETDEX_SM = {
 		"LC Dragon Dance Sweeper": {"level":5,"evs":{"at":220,"hp":68,"sp":220},"nature":"Jolly","ability":"Mold Breaker","item":"Eviolite","moves":["Dragon Dance","Outrage","Superpower","Iron Tail"]},
 	},
 	"Azelf": {
-		"UU Showdown Usage": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Hasty","ability":"Levitate","item":"Focus Sash","moves":["Stealth Rock","Explosion","Taunt","Flamethrower"]},
+		"UU Showdown Usage": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naive","ability":"Levitate","item":"Focus Sash","moves":["Stealth Rock","Explosion","Taunt","Fire Blast"]},
 		"OU Suicide Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Focus Sash","moves":["Stealth Rock","Taunt","Explosion","Skill Swap"]},
 	},
 	"Azumarill": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Huge Power","item":"Normalium Z","moves":["Aqua Jet","Play Rough","Belly Drum","Knock Off"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Huge Power","item":"Choice Band","moves":["Aqua Jet","Play Rough","Knock Off","Waterfall"]},
 		"OU Belly Drum": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Huge Power","item":"Normalium Z","moves":["Belly Drum","Aqua Jet","Play Rough","Knock Off"]},
 		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":92,"sp":164},"nature":"Adamant","ability":"Huge Power","item":"Choice Band","moves":["Play Rough","Aqua Jet","Waterfall","Superpower"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":2,"at":252,"hp":236,"sp":20},"nature":"Adamant","ability":"Huge Power","item":"Sitrus Berry","moves":["Aqua Jet","Protect","Belly Drum","Knock Off"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Huge Power","item":"Sitrus Berry","moves":["Aqua Jet","Belly Drum","Protect","Knock Off"]},
+		"Monotype Choice Band": {"level":100,"evs":{"sd":4,"at":252,"hp":88,"sp":164},"nature":"Adamant","ability":"Huge Power","item":"Choice Band","moves":["Play Rough","Waterfall","Aqua Jet","Superpower"]},
+		"Monotype Belly Drum": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Huge Power","item":"Normalium Z","moves":["Belly Drum","Aqua Jet","Play Rough","Knock Off"]},
+		"Monotype Defensive Sap Sipper": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Sap Sipper","item":"Leftovers","moves":["Scald","Toxic","Protect","Perish Song"]},
 	},
 	"Azurill": {
 		"ORAS LC Trick Room Sweeper": {"level":5,"evs":{"sd":36,"df":116,"at":196,"hp":116},"ivs":{"sp":0},"nature":"Brave","ability":"Huge Power","item":"Life Orb","moves":["Return","Knock Off","Waterfall","Iron Tail"]},
@@ -340,11 +322,11 @@ var SETDEX_SM = {
 	},
 	"Beedrill": {
 		"ORAS PU Suicide Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Focus Sash","moves":["Toxic Spikes","Endeavor","X-Scissor","Tailwind"]},
-		"ORAS UU Don&#39;t Stand So Close to Me": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Beedrillite","moves":["U-turn","Protect","Poison Jab","Knock Off"]},
+		"ORAS UU Don't Stand So Close to Me": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Beedrillite","moves":["U-turn","Protect","Poison Jab","Knock Off"]},
 		"ORAS OU U-turn": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Beedrillite","moves":["Protect","U-turn","Poison Jab","Knock Off"]},
 	},
 	"Beedrill-Mega": {
-		"ORAS UU Don&#39;t Stand So Close to Me": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Beedrillite","moves":["U-turn","Protect","Poison Jab","Knock Off"]},
+		"ORAS UU Don't Stand So Close to Me": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Beedrillite","moves":["U-turn","Protect","Poison Jab","Knock Off"]},
 		"ORAS OU U-turn": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swarm","item":"Beedrillite","moves":["Protect","U-turn","Poison Jab","Knock Off"]},
 	},
 	"Beheeyem": {
@@ -353,7 +335,7 @@ var SETDEX_SM = {
 		"ORAS NU Choice Specs": {"level":100,"evs":{"hp":132,"sp":124,"sa":252},"nature":"Modest","ability":"Analytic","item":"Choice Specs","moves":["Psychic","Signal Beam","Hidden Power Ground","Trick"]},
 	},
 	"Bellossom": {
-		"ORAS PU Sun &quot;Sweeper&quot;": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Chlorophyll","item":"Life Orb","moves":["Solar Beam","Hidden Power Fire","Moonblast","Sleep Powder"]},
+		"ORAS PU Sun 'Sweeper'": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Chlorophyll","item":"Life Orb","moves":["Solar Beam","Hidden Power Fire","Moonblast","Sleep Powder"]},
 	},
 	"Bellsprout": {
 		"LC Praise The Sun (Sun Sweeper)": {"level":5,"evs":{"sd":36,"df":76,"sp":196,"sa":196},"nature":"Modest","ability":"Chlorophyll","item":"Poisonium Z","moves":["Solar Beam","Sludge Bomb","Weather Ball","Sleep Powder"]},
@@ -362,7 +344,7 @@ var SETDEX_SM = {
 		"ORAS LC Rapid Spin Support": {"level":5,"evs":{"sd":156,"df":236,"at":44,"sp":52},"nature":"Impish","ability":"Sturdy","item":"Eviolite","moves":["Avalanche","Rapid Spin","Recover","Rock Tomb"]},
 	},
 	"Bewear": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Fluffy","item":"Choice Band","moves":["Return","Ice Punch","Hammer Arm","Shadow Claw"]},
+		"UU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Fluffy","item":"Choice Band","moves":["Return","Hammer Arm","Ice Punch","Earthquake"]},
 	},
 	"Bibarel": {
 		"ORAS PU Curse": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Careful","ability":"Simple","item":"Chesto Berry","moves":["Curse","Waterfall","Quick Attack","Rest"]},
@@ -375,9 +357,11 @@ var SETDEX_SM = {
 		"ORAS LC Switcheroo": {"level":5,"evs":{"at":180,"hp":100,"sp":196},"nature":"Adamant","ability":"Tough Claws","item":"Choice Band","moves":["Switcheroo","Razor Shell","Stone Edge","Earthquake"]},
 	},
 	"Bisharp": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Defiant","item":"Life Orb","moves":["Knock Off","Sucker Punch","Iron Head","Swords Dance"]},
+		"UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Defiant","item":"Life Orb","moves":["Knock Off","Iron Head","Sucker Punch","Swords Dance"]},
+		"UU Pursuit": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Defiant","item":"Life Orb","moves":["Knock Off","Iron Head","Sucker Punch","Pursuit"]},
 		"OU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Defiant","item":"Life Orb","moves":["Knock Off","Iron Head","Sucker Punch","Swords Dance"]},
-		"Monotype Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Defiant","item":"Life Orb","moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"]},
+		"Monotype Offensive (Dark)": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Defiant","item":"Life Orb","moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"]},
+		"Monotype Swords Dance (Steel)": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Defiant","item":"Life Orb","moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"]},
 	},
 	"Blastoise": {
 		"ORAS RU Bulky Spinner": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Torrent","item":"Leftovers","moves":["Scald","Rapid Spin","Toxic","Refresh"]},
@@ -387,7 +371,7 @@ var SETDEX_SM = {
 		"ORAS OU Rapid Spin": {"level":100,"evs":{"hp":184,"sp":72,"sa":252},"nature":"Modest","ability":"Rain Dish","item":"Blastoisinite","moves":["Rapid Spin","Scald","Dark Pulse","Aura Sphere"]},
 	},
 	"Blastoise-Mega": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Mega Launcher","item":"Blastoisinite","moves":["Dark Pulse","Rapid Spin","Scald","Ice Beam"]},
+		"UU Showdown Usage": {"level":100,"evs":{"hp":184,"sp":72,"sa":252},"nature":"Modest","ability":"Mega Launcher","item":"Blastoisinite","moves":["Rapid Spin","Dark Pulse","Scald","Aura Sphere"]},
 		"ORAS UU Offensive Spinner": {"level":100,"evs":{"hp":184,"sp":72,"sa":252},"nature":"Modest","ability":"Rain Dish","item":"Blastoisinite","moves":["Rapid Spin","Scald","Dark Pulse","Ice Beam"]},
 		"ORAS UU All-out Attacker": {"level":100,"evs":{"hp":56,"sp":200,"sa":252},"nature":"Modest","ability":"Rain Dish","item":"Blastoisinite","moves":["Scald","Dark Pulse","Aura Sphere","Ice Beam"]},
 		"ORAS OU Rapid Spin": {"level":100,"evs":{"hp":184,"sp":72,"sa":252},"nature":"Modest","ability":"Rain Dish","item":"Blastoisinite","moves":["Rapid Spin","Scald","Dark Pulse","Aura Sphere"]},
@@ -422,16 +406,9 @@ var SETDEX_SM = {
 		"OU Technician Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Technician","item":"Rockium Z","moves":["Swords Dance","Mach Punch","Bullet Seed","Stone Edge"]},
 	},
 	"Bronzong": {
-		"ORAS RU Defensive": {"level":100,"evs":{"sd":184,"df":72,"hp":252},"nature":"Sassy","ability":"Levitate","item":"Leftovers","moves":["Stealth Rock","Gyro Ball","Toxic","Earthquake"]},
-		"ORAS RU Offensive Trick Room": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Brave","ability":"Levitate","item":"Macho Brace","moves":["Trick Room","Gyro Ball","Earthquake","Explosion"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Levitate","item":"Leftovers","moves":["Stealth Rock","Gyro Ball","Explosion","Trick Room"]},
-		"ORAS UU Tank": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"ivs":{"sp":0},"nature":"Sassy","ability":"Levitate","item":"Leftovers","moves":["Stealth Rock","Gyro Ball","Toxic","Earthquake"]},
-		"ORAS UU Trick Room Support": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"ivs":{"sp":0},"nature":"Brave","ability":"Levitate","item":"Macho Brace","moves":["Gyro Ball","Trick Room","Earthquake","Explosion"]},
-		"OU Showdown Usage": {"level":100,"evs":{"sd":124,"df":132,"hp":252},"nature":"Relaxed","ability":"Levitate","item":"Leftovers","moves":["Earthquake","Gyro Ball","Stealth Rock","Trick Room"]},
-		"ORAS OU Special Tank": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"ivs":{"sp":0},"nature":"Sassy","ability":"Levitate","item":"Leftovers","moves":["Gyro Ball","Earthquake","Stealth Rock","Hidden Power Ice"]},
-		"ORAS OU Trick Room Support": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"ivs":{"sp":0},"nature":"Sassy","ability":"Levitate","item":"Mental Herb","moves":["Trick Room","Stealth Rock","Gyro Ball","Explosion"]},
-		"ORAS Uber Special Tank": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Sassy","ability":"Levitate","item":"Leftovers","moves":["Stealth Rock","Gyro Ball","Toxic","Protect"]},
-		"ORAS Doubles Trick Room": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Levitate","item":"Safety Goggles","moves":["Gyro Ball","Zen Headbutt","Trick Room","Protect"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Sassy","ability":"Levitate","item":"Leftovers","moves":["Stealth Rock","Toxic","Gyro Ball","Earthquake"]},
+		"OU Defensive Pivot": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Levitate","item":"Leftovers","moves":["Stealth Rock","Gyro Ball","Earthquake","Hidden Power Ice"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":56,"df":200,"hp":252},"nature":"Relaxed","ability":"Levitate","item":"Psychium Z","moves":["Trick Room","Gyro Ball","Hypnosis","Protect"]},
 	},
 	"Bronzor": {
 		"LC Stealth Rock Setter": {"level":5,"evs":{"sd":148,"df":228,"at":4,"hp":64,"sp":12,"sa":4},"nature":"Relaxed","ability":"Levitate","item":"Berry Juice","moves":["Stealth Rock","Recycle","Psychic","Heavy Slam"]},
@@ -443,7 +420,7 @@ var SETDEX_SM = {
 		"ORAS LC Life Orb Attacker": {"level":5,"evs":{"sd":36,"at":236,"sp":236},"nature":"Jolly","ability":"Water Veil","item":"Life Orb","moves":["Aqua Tail","Ice Punch","Brick Break","Aqua Jet"]},
 	},
 	"Bulbasaur": {
-		"LC Showdown Usage": {"level":5,"evs":{"sp":240,"sa":236},"nature":"Timid","ability":"Chlorophyll","item":"Eviolite","moves":["Sludge Bomb","Giga Drain","Hidden Power Fire","Growth"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sp":240,"sa":240},"nature":"Modest","ability":"Chlorophyll","item":"Eviolite","moves":["Sludge Bomb","Hidden Power Fire","Giga Drain","Growth"]},
 		"ORAS LC Life Orb Sun Sweeper": {"level":5,"evs":{"sp":240,"sa":240},"ivs":{"hp":0},"nature":"Modest","ability":"Chlorophyll","item":"Life Orb","moves":["Sludge Bomb","Solar Beam","Sleep Powder","Hidden Power Fire"]},
 		"ORAS LC Eviolite Growth": {"level":5,"evs":{"sp":240,"sa":240},"nature":"Timid","ability":"Chlorophyll","item":"Eviolite","moves":["Growth","Sleep Powder","Giga Drain","Hidden Power Fire"]},
 	},
@@ -459,7 +436,9 @@ var SETDEX_SM = {
 		"ORAS PU Quiver Dance": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Tinted Lens","item":"Life Orb","moves":["Sleep Powder","Quiver Dance","Bug Buzz","Energy Ball"]},
 	},
 	"Buzzwole": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Beast Boost","item":"Leftovers","moves":["Leech Life","Earthquake","Substitute","Focus Punch"]},
+		"OU Offensive Roost": {"level":100,"evs":{"sd":152,"at":244,"hp":52,"sp":60},"nature":"Adamant","ability":"Beast Boost","item":"Leftovers","moves":["Roost","Hammer Arm","Poison Jab","Ice Punch"]},
+		"OU Substitute + Focus Punch": {"level":100,"evs":{"sd":12,"at":192,"hp":204,"sp":100},"nature":"Adamant","ability":"Beast Boost","item":"Leftovers","moves":["Substitute","Focus Punch","Leech Life","Poison Jab"]},
+		"OU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Beast Boost","item":"Choice Band","moves":["Superpower","Leech Life","Poison Jab","Ice Punch"]},
 		"Uber Physical Tank": {"level":100,"evs":{"sd":76,"df":184,"hp":248},"nature":"Impish","ability":"Beast Boost","item":"Leftovers","moves":["Hammer Arm","Toxic","Roost","Earthquake"]},
 	},
 	"Cacnea": {
@@ -503,23 +482,20 @@ var SETDEX_SM = {
 		"ORAS PU Chasing Rainbows": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Forecast","item":"Damp Rock","moves":["Rain Dance","Sunny Day","Hail","Weather Ball"]},
 	},
 	"Celebi": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Leftovers","moves":["Giga Drain","Psychic","Nasty Plot","Hidden Power Fire"]},
-		"ORAS UU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Leftovers","moves":["Nasty Plot","Giga Drain","Psychic","Dazzling Gleam"]},
-		"ORAS UU Utility": {"level":100,"evs":{"df":244,"hp":240,"sp":24},"nature":"Bold","ability":"Natural Cure","item":"Leftovers","moves":["Giga Drain","Recover","Thunder Wave","U-turn"]},
-		"ORAS UU Offensive Stealth Rock": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Life Orb","moves":["Stealth Rock","Leaf Storm","Psychic","Earth Power"]},
-		"ORAS OU Baton Pass": {"level":100,"evs":{"df":148,"hp":252,"sp":108},"nature":"Bold","ability":"Natural Cure","item":"Leftovers","moves":["Recover","Baton Pass","Giga Drain","Nasty Plot"]},
-		"ORAS OU Support": {"level":100,"evs":{"sd":84,"df":156,"hp":252,"sp":16},"nature":"Bold","ability":"Natural Cure","item":"Leftovers","moves":["Giga Drain","Recover","Baton Pass","Stealth Rock"]},
-		"ORAS OU Nasty Plot + 2 Attacks": {"level":100,"evs":{"df":148,"hp":252,"sp":108},"nature":"Bold","ability":"Natural Cure","item":"Leftovers","moves":["Nasty Plot","Giga Drain","Recover","Earth Power"]},
+		"UU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Leftovers","moves":["Nasty Plot","Giga Drain","Psychic","Hidden Power Fire"]},
+		"UU Offensive Stealth Rock": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Meadow Plate","moves":["Stealth Rock","Leaf Storm","Psychic","U-turn"]},
+		"UU Bulky Support": {"level":100,"evs":{"sd":148,"df":88,"hp":252,"sp":20},"nature":"Bold","ability":"Natural Cure","item":"Leftovers","moves":["Stealth Rock","Recover","U-turn","Giga Drain"]},
 	},
 	"Celesteela": {
 		"OU Specially Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Sassy","ability":"Beast Boost","item":"Leftovers","moves":["Leech Seed","Protect","Heavy Slam","Flamethrower"]},
 		"OU Autotomize Sweeper": {"level":100,"evs":{"hp":84,"sp":172,"sa":252},"nature":"Modest","ability":"Beast Boost","item":"Flyinium Z","moves":["Autotomize","Air Slash","Fire Blast","Giga Drain"]},
 		"Uber Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Beast Boost","item":"Leftovers","moves":["Leech Seed","Toxic","Heavy Slam","Protect"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":176,"at":84,"hp":248},"nature":"Adamant","ability":"Beast Boost","item":"Leftovers","moves":["Leech Seed","Protect","Heavy Slam","Substitute"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":188,"df":68,"hp":252},"nature":"Impish","ability":"Beast Boost","item":"Leftovers","moves":["Protect","Leech Seed","Heavy Slam","Substitute"]},
 		"VGC17 Defensive": {"level":50,"evs":{"sd":116,"df":116,"at":44,"hp":228,"sp":4},"nature":"Adamant","ability":"Beast Boost","item":"Leftovers","moves":["Heavy Slam","Leech Seed","Substitute","Protect"]},
+		"Monotype Bulky Attacker (Steel)": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Beast Boost","item":"Leftovers","moves":["Leech Seed","Heavy Slam","Earthquake","Protect"]},
 	},
 	"Chandelure": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Choice Scarf","moves":["Shadow Ball","Energy Ball","Fire Blast","Flamethrower"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Choice Scarf","moves":["Shadow Ball","Fire Blast","Trick","Energy Ball"]},
 		"ORAS UU Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Choice Scarf","moves":["Fire Blast","Shadow Ball","Energy Ball","Trick"]},
 		"ORAS UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Choice Specs","moves":["Fire Blast","Shadow Ball","Energy Ball","Trick"]},
 		"ORAS UU Substitute + Calm Mind": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Leftovers","moves":["Substitute","Calm Mind","Flamethrower","Shadow Ball"]},
@@ -527,42 +503,37 @@ var SETDEX_SM = {
 	},
 	"Chansey": {
 		"OU Utility": {"level":100,"evs":{"sd":252,"df":252,"hp":4},"nature":"Bold","ability":"Natural Cure","item":"Eviolite","moves":["Soft-Boiled","Seismic Toss","Stealth Rock","Aromatherapy"]},
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Natural Cure","item":"Eviolite","moves":["Soft-Boiled","Toxic","Heal Bell","Seismic Toss"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Natural Cure","item":"Eviolite","moves":["Soft-Boiled","Toxic","Seismic Toss","Heal Bell"]},
 	},
 	"Charizard": {
-		"ORAS NU Life Orb": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Life Orb","moves":["Fire Blast","Air Slash","Hidden Power Grass","Roost"]},
-		"ORAS NU Swords Dance": {"level":100,"evs":{"at":8,"hp":248,"sp":252},"nature":"Jolly","ability":"Blaze","moves":["Swords Dance","Acrobatics","Will-O-Wisp","Roost"]},
-		"ORAS OU Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Flare Blitz","Dragon Claw","Roost"]},
-		"ORAS OU Wallbreaker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
-		"ORAS OU Bulky Will-O-Wisp": {"level":100,"evs":{"df":100,"hp":248,"sp":160},"nature":"Impish","ability":"Blaze","item":"Charizardite X","moves":["Will-O-Wisp","Flare Blitz","Roost","Earthquake"]},
-		"ORAS OU Swords Dance": {"level":100,"evs":{"at":252,"hp":40,"sp":216},"nature":"Adamant","ability":"Blaze","item":"Charizardite X","moves":["Swords Dance","Roost","Flare Blitz","Dragon Claw"]},
-		"ORAS Doubles Sun Attacker": {"level":100,"evs":{"df":64,"hp":248,"sp":108,"sa":88},"nature":"Modest","ability":"Blaze","item":"Charizardite Y","moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
-		"ORAS Doubles Dragon Dance": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Blaze","item":"Charizardite X","moves":["Flare Blitz","Dragon Claw","Dragon Dance","Protect"]},
+		"OU Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Dragon Claw","Flare Blitz","Roost"]},
+		"OU Drought Wallbreaker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
+		"OU Bulky Will-O-Wisp": {"level":100,"evs":{"sd":72,"df":16,"hp":248,"sp":172},"nature":"Impish","ability":"Blaze","item":"Charizardite X","moves":["Will-O-Wisp","Roost","Flare Blitz","Earthquake"]},
+		"Doubles Sun Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Heat Wave","Solar Beam","Tailwind","Protect"]},
 		"Battle Spot Singles Dragon Dance": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Flare Blitz","Outrage","Earthquake"]},
 		"Battle Spot Singles Versatile Sweeper": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Blaze","item":"Charizardite X","moves":["Swords Dance","Flame Charge","Outrage","Flare Blitz"]},
 		"Battle Spot Singles Drought Attacker": {"level":50,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Flamethrower","Solar Beam","Focus Blast","Overheat"]},
 		"Battle Spot Singles Defensive": {"level":50,"evs":{"df":116,"hp":164,"sp":228},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Will-O-Wisp","Roost","Dragon Claw","Earthquake"]},
 		"Battle Spot Doubles Drought Attacker": {"level":50,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Blaze","item":"Charizardite Y","moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
-		"Monotype Wallbreaker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Focus Blast","Solar Beam","Roost"]},
+		"Monotype Dragon Dance (Fire)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Outrage","Flare Blitz","Roost"]},
+		"Monotype Wallbreaker (Fire)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
+		"Monotype Wallbreaker (Flying)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Focus Blast","Solar Beam","Roost"]},
 	},
 	"Charizard-Mega-X": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Tough Claws","item":"Charizardite X","moves":["Dragon Dance","Flare Blitz","Dragon Claw","Roost"]},
-		"ORAS OU Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Flare Blitz","Dragon Claw","Roost"]},
-		"ORAS OU Bulky Will-O-Wisp": {"level":100,"evs":{"df":100,"hp":248,"sp":160},"nature":"Impish","ability":"Blaze","item":"Charizardite X","moves":["Will-O-Wisp","Flare Blitz","Roost","Earthquake"]},
-		"ORAS OU Swords Dance": {"level":100,"evs":{"at":252,"hp":40,"sp":216},"nature":"Adamant","ability":"Blaze","item":"Charizardite X","moves":["Swords Dance","Roost","Flare Blitz","Dragon Claw"]},
-		"ORAS Doubles Dragon Dance": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Blaze","item":"Charizardite X","moves":["Flare Blitz","Dragon Claw","Dragon Dance","Protect"]},
+		"OU Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Dragon Claw","Flare Blitz","Roost"]},
+		"OU Bulky Will-O-Wisp": {"level":100,"evs":{"sd":72,"df":16,"hp":248,"sp":172},"nature":"Impish","ability":"Blaze","item":"Charizardite X","moves":["Will-O-Wisp","Roost","Flare Blitz","Earthquake"]},
 		"Battle Spot Singles Dragon Dance": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Flare Blitz","Outrage","Earthquake"]},
 		"Battle Spot Singles Versatile Sweeper": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Blaze","item":"Charizardite X","moves":["Swords Dance","Flame Charge","Outrage","Flare Blitz"]},
 		"Battle Spot Singles Defensive": {"level":50,"evs":{"df":116,"hp":164,"sp":228},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Will-O-Wisp","Roost","Dragon Claw","Earthquake"]},
+		"Monotype Dragon Dance (Fire)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Charizardite X","moves":["Dragon Dance","Outrage","Flare Blitz","Roost"]},
 	},
 	"Charizard-Mega-Y": {
-		"OU Showdown Usage": {"level":100,"evs":{"df":4,"hp":32,"sp":220,"sa":252},"nature":"Timid","ability":"Drought","item":"Charizardite Y","moves":["Solar Beam","Roost","Focus Blast","Fire Blast"]},
-		"ORAS OU Wallbreaker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Drought","item":"Charizardite Y","moves":["Protect","Heat Wave","Solar Beam","Overheat"]},
-		"ORAS Doubles Sun Attacker": {"level":100,"evs":{"df":64,"hp":248,"sp":108,"sa":88},"nature":"Modest","ability":"Blaze","item":"Charizardite Y","moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
+		"OU Drought Wallbreaker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
+		"Doubles Sun Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Heat Wave","Solar Beam","Tailwind","Protect"]},
 		"Battle Spot Singles Drought Attacker": {"level":50,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Flamethrower","Solar Beam","Focus Blast","Overheat"]},
 		"Battle Spot Doubles Drought Attacker": {"level":50,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Blaze","item":"Charizardite Y","moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
-		"Monotype Wallbreaker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Focus Blast","Solar Beam","Roost"]},
+		"Monotype Wallbreaker (Fire)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
+		"Monotype Wallbreaker (Flying)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Charizardite Y","moves":["Fire Blast","Focus Blast","Solar Beam","Roost"]},
 	},
 	"Charmander": {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":12,"hp":44,"sp":236,"sa":200},"nature":"Modest","ability":"Solar Power","item":"Choice Scarf","moves":["Fire Blast","Hidden Power Grass","Ancient Power","Dragon Pulse"]},
@@ -580,7 +551,7 @@ var SETDEX_SM = {
 		"ORAS LC Chlorophyll Sweeper": {"level":5,"evs":{"df":76,"sp":236,"sa":180},"ivs":{"hp":9},"nature":"Modest","ability":"Chlorophyll","item":"Life Orb","moves":["Solar Beam","Weather Ball","Dazzling Gleam","Healing Wish"]},
 	},
 	"Chesnaught": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","ability":"Bulletproof","item":"Leftovers","moves":["Drain Punch","Spiky Shield","Spikes","Leech Seed"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","ability":"Bulletproof","item":"Leftovers","moves":["Drain Punch","Spikes","Spiky Shield","Leech Seed"]},
 		"ORAS UU Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Bulletproof","item":"Leftovers","moves":["Spikes","Leech Seed","Spiky Shield","Drain Punch"]},
 		"ORAS UU Specially Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Bulletproof","item":"Leftovers","moves":["Spikes","Leech Seed","Spiky Shield","Drain Punch"]},
 		"ORAS UU Fast Taunt": {"level":100,"evs":{"df":84,"hp":252,"sp":172},"nature":"Impish","ability":"Bulletproof","item":"Leftovers","moves":["Spikes","Taunt","Leech Seed","Drain Punch"]},
@@ -600,11 +571,8 @@ var SETDEX_SM = {
 		"ORAS PU Defensive Healing Wish": {"level":100,"evs":{"sd":252,"hp":252,"sa":4},"nature":"Calm","ability":"Levitate","item":"Leftovers","moves":["Healing Wish","Recover","Psychic","Heal Bell"]},
 	},
 	"Chinchou": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":212,"hp":236,"sp":60},"nature":"Bold","ability":"Volt Absorb","item":"Choice Scarf","moves":["Volt Switch","Scald","Ice Beam","Hidden Power Ground"]},
-		"ORAS LC Choice Scarf Pivot": {"level":5,"evs":{"df":52,"sp":224,"sa":232},"nature":"Timid","ability":"Volt Absorb","item":"Choice Scarf","moves":["Volt Switch","Scald","Ice Beam","Hidden Power Ground"]},
-		"ORAS LC Bulky Attacker": {"level":5,"evs":{"df":212,"hp":76,"sp":60,"sa":152},"nature":"Bold","ability":"Volt Absorb","item":"Berry Juice","moves":["Scald","Volt Switch","Ice Beam","Heal Bell"]},
-		"ORAS LC RestTalk": {"level":5,"evs":{"sd":148,"df":212,"hp":76,"sp":60},"nature":"Bold","ability":"Volt Absorb","item":"Eviolite","moves":["Rest","Sleep Talk","Scald","Volt Switch"]},
-		"ORAS PU Specially Defensive Pivot": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Volt Absorb","item":"Eviolite","moves":["Scald","Volt Switch","Rest","Sleep Talk"]},
+		"LC Bulky Pivot": {"level":5,"evs":{"df":212,"hp":76,"sp":60,"sa":152},"nature":"Bold","ability":"Volt Absorb","item":"Berry Juice","moves":["Scald","Volt Switch","Ice Beam","Heal Bell"]},
+		"LC Choice Scarf Pivot": {"level":5,"evs":{"df":52,"sp":224,"sa":232},"nature":"Timid","ability":"Volt Absorb","item":"Choice Scarf","moves":["Hydro Pump","Volt Switch","Ice Beam","Scald"]},
 	},
 	"Cinccino": {
 		"ORAS RU Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Skill Link","item":"Choice Band","moves":["Tail Slap","Bullet Seed","Rock Blast","Knock Off"]},
@@ -622,6 +590,9 @@ var SETDEX_SM = {
 		"ORAS NU Offensive Spinner": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Levitate","item":"Colbur Berry","moves":["Rapid Spin","Earth Power","Shadow Ball","Psyshock"]},
 	},
 	"Clefable": {
+		"UU Calm Mind": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Magic Guard","item":"Leftovers","moves":["Calm Mind","Moonblast","Soft-Boiled","Thunder Wave"]},
+		"UU Stealth Rock": {"level":100,"evs":{"sd":84,"df":172,"hp":252},"nature":"Calm","ability":"Magic Guard","item":"Leftovers","moves":["Stealth Rock","Moonblast","Soft-Boiled","Fire Blast"]},
+		"UU Unaware": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Unaware","item":"Leftovers","moves":["Wish","Protect","Moonblast","Heal Bell"]},
 		"OU Unaware Wall": {"level":100,"evs":{"sd":192,"df":64,"hp":252},"nature":"Calm","ability":"Unaware","item":"Leftovers","moves":["Moonblast","Heal Bell","Wish","Protect"]},
 		"OU Utility": {"level":100,"evs":{"sd":72,"df":184,"hp":252},"nature":"Calm","ability":"Magic Guard","item":"Leftovers","moves":["Stealth Rock","Moonblast","Soft-Boiled","Knock Off"]},
 		"OU Unaware + Calm Mind": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Unaware","item":"Leftovers","moves":["Calm Mind","Moonblast","Wish","Protect"]},
@@ -639,29 +610,28 @@ var SETDEX_SM = {
 		"ORAS LC Counter": {"level":5,"evs":{"hp":196,"sp":236,"sa":76},"ivs":{"sd":9,"df":3},"nature":"Hasty","ability":"Magic Guard","item":"Focus Sash","moves":["Counter","Endeavor","Thunder Wave","Encore"]},
 	},
 	"Cloyster": {
+		"UU Showdown Usage": {"level":100,"evs":{"at":248,"sp":252,"sa":8},"nature":"Naive","ability":"Skill Link","item":"Normalium Z","moves":["Icicle Spear","Shell Smash","Hydro Pump","Explosion"]},
 		"Uber Hazard Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Skill Link","item":"Focus Sash","moves":["Spikes","Shell Smash","Icicle Spear","Rapid Spin"]},
-		"Battle Spot Singles Smash &#39;n&#39; Sweep": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Skill Link","item":"Focus Sash","moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
+		"Battle Spot Singles Smash 'n' Sweep": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Skill Link","item":"Focus Sash","moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
 	},
 	"Cobalion": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Fightinium Z","moves":["Close Combat","Iron Head","Swords Dance","Stealth Rock"]},
-		"ORAS UU Offensive Pivot": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Justified","item":"Leftovers","moves":["Stealth Rock","Close Combat","Volt Switch","Iron Head"]},
-		"ORAS UU Swords Dance": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Justified","item":"Leftovers","moves":["Close Combat","Iron Head","Swords Dance","Stone Edge"]},
-		"ORAS UU Calm Mind": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Leftovers","moves":["Calm Mind","Focus Blast","Flash Cannon","Hidden Power Ghost"]},
-		"ORAS OU Offensive Pivot": {"level":100,"evs":{"at":112,"hp":144,"sp":252},"nature":"Jolly","ability":"Justified","item":"Leftovers","moves":["Close Combat","Volt Switch","Iron Head","Taunt"]},
+		"UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Fightinium Z","moves":["Swords Dance","Close Combat","Iron Head","Rock Polish"]},
+		"UU Offensive Pivot": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Fightinium Z","moves":["Stealth Rock","Close Combat","Iron Head","Swords Dance"]},
 	},
 	"Cofagrigus": {
-		"ORAS RU Offensive Trick Room": {"level":100,"evs":{"df":4,"hp":252,"sa":252},"ivs":{"sp":0},"nature":"Quiet","ability":"Mummy","item":"Leftovers","moves":["Trick Room","Nasty Plot","Shadow Ball","Hidden Power Fighting"]},
-		"ORAS RU Defensive": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Mummy","item":"Leftovers","moves":["Will-O-Wisp","Shadow Ball","Pain Split","Haze"]},
+		"ORAS RU Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Mummy","item":"Leftovers","moves":["Will-O-Wisp","Hex","Pain Split","Toxic Spikes"]},
 		"ORAS UU Trick Room": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"ivs":{"sp":0},"nature":"Quiet","ability":"Mummy","item":"Leftovers","moves":["Trick Room","Shadow Ball","Nasty Plot","Hidden Power Fighting"]},
 		"ORAS OU Physical Wall": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Mummy","item":"Leftovers","moves":["Toxic Spikes","Pain Split","Hex","Will-O-Wisp"]},
 		"ORAS OU Offensive": {"level":100,"evs":{"df":4,"hp":252,"sa":252},"ivs":{"sp":0},"nature":"Quiet","ability":"Mummy","item":"Leftovers","moves":["Trick Room","Nasty Plot","Shadow Ball","Will-O-Wisp"]},
 	},
 	"Combusken": {
+		"ORAS PU Life Orb Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Speed Boost","item":"Life Orb","moves":["Fire Blast","Focus Blast","Hidden Power Ice","Protect"]},
+		"ORAS PU Speed Pass": {"level":100,"evs":{"sd":8,"hp":248,"sp":252},"nature":"Timid","ability":"Speed Boost","item":"Eviolite","moves":["Will-O-Wisp","Substitute","Baton Pass","Protect"]},
 		"ORAS NU Life Orb": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Speed Boost","item":"Life Orb","moves":["Fire Blast","Focus Blast","Protect","Hidden Power Electric"]},
 		"ORAS NU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Speed Boost","item":"Eviolite","moves":["Swords Dance","Flare Blitz","Low Kick","Protect"]},
 	},
 	"Conkeldurr": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Guts","item":"Assault Vest","moves":["Mach Punch","Knock Off","Drain Punch","Ice Punch"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Guts","item":"Assault Vest","moves":["Mach Punch","Drain Punch","Knock Off","Ice Punch"]},
 		"ORAS UU Assault Vest": {"level":100,"evs":{"sd":252,"df":4,"at":252},"nature":"Adamant","ability":"Guts","item":"Assault Vest","moves":["Drain Punch","Knock Off","Thunder Punch","Mach Punch"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Iron Fist","item":"Choice Band","moves":["Hammer Arm","Mach Punch","Knock Off","Poison Jab"]},
 		"ORAS UU Bulk Up": {"level":100,"evs":{"sd":252,"at":16,"hp":240},"nature":"Adamant","ability":"Guts","item":"Leftovers","moves":["Bulk Up","Drain Punch","Knock Off","Mach Punch"]},
@@ -671,7 +641,7 @@ var SETDEX_SM = {
 		"ORAS Doubles Offensive Support": {"level":100,"evs":{"df":16,"at":240,"hp":252},"nature":"Brave","ability":"Guts","item":"Sitrus Berry","moves":["Drain Punch","Mach Punch","Ice Punch","Knock Off"]},
 	},
 	"Corphish": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":76,"at":196,"sp":236},"nature":"Adamant","ability":"Adaptability","item":"Eviolite","moves":["Aqua Jet","Knock Off","Crabhammer","Swords Dance"]},
+		"LC Showdown Usage": {"level":5,"evs":{"df":76,"at":196,"sp":236},"nature":"Adamant","ability":"Adaptability","item":"Eviolite","moves":["Aqua Jet","Crabhammer","Knock Off","Swords Dance"]},
 		"ORAS LC Wallbreaker": {"level":5,"evs":{"df":76,"at":196,"sp":236},"nature":"Adamant","ability":"Adaptability","item":"Eviolite","moves":["Crabhammer","Knock Off","Aqua Jet","Swords Dance"]},
 		"ORAS LC Dragon Dance": {"level":5,"evs":{"df":76,"at":196,"sp":236},"nature":"Jolly","ability":"Adaptability","item":"Eviolite","moves":["Dragon Dance","Crabhammer","Knock Off","Aqua Jet"]},
 		"ORAS LC Choice Band": {"level":5,"evs":{"df":76,"at":196,"sp":236},"nature":"Adamant","ability":"Adaptability","item":"Choice Band","moves":["Aqua Jet","Crabhammer","Knock Off","Switcheroo"]},
@@ -680,7 +650,7 @@ var SETDEX_SM = {
 		"ORAS PU Specially Defensive": {"level":100,"evs":{"sd":252,"hp":252,"sa":4},"nature":"Calm","ability":"Regenerator","item":"Leftovers","moves":["Stealth Rock","Recover","Scald","Toxic"]},
 	},
 	"Cottonee": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":40,"df":36,"hp":36,"sp":232,"sa":144},"nature":"Timid","ability":"Prankster","item":"Eviolite","moves":["Encore","Dazzling Gleam","Memento","Giga Drain"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":40,"df":36,"hp":36,"sp":232,"sa":144},"nature":"Timid","ability":"Prankster","item":"Eviolite","moves":["Dazzling Gleam","Giga Drain","Encore","Memento"]},
 		"ORAS LC Offensive": {"level":5,"evs":{"sd":40,"df":40,"hp":36,"sp":232,"sa":144},"nature":"Timid","ability":"Prankster","item":"Eviolite","moves":["Dazzling Gleam","Hidden Power Fighting","Encore","Knock Off"]},
 		"ORAS LC Utility": {"level":5,"evs":{"sd":196,"df":196,"hp":116},"nature":"Bold","ability":"Prankster","item":"Eviolite","moves":["Encore","Knock Off","Giga Drain","Memento"]},
 	},
@@ -691,13 +661,12 @@ var SETDEX_SM = {
 		"ORAS NU Specially Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Sassy","ability":"Storm Drain","item":"Leftovers","moves":["Stealth Rock","Recover","Giga Drain","Rock Slide"]},
 	},
 	"Cranidos": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":36,"at":236,"sp":212},"nature":"Adamant","ability":"Sheer Force","item":"Life Orb","moves":["Zen Headbutt","Rock Slide","Earthquake","Superpower"]},
 		"ORAS LC Life Orb Attacker": {"level":5,"evs":{"df":36,"at":236,"sp":212},"nature":"Jolly","ability":"Sheer Force","item":"Life Orb","moves":["Rock Slide","Superpower","Zen Headbutt","Crunch"]},
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":36,"at":236,"sp":212},"nature":"Adamant","ability":"Mold Breaker","item":"Choice Scarf","moves":["Stone Edge","Earthquake","Superpower","Zen Headbutt"]},
 		"ORAS LC Support": {"level":5,"evs":{"df":116,"at":156,"sp":212},"nature":"Jolly","ability":"Sheer Force","item":"Berry Juice","moves":["Pursuit","Rock Slide","Zen Headbutt","Stealth Rock"]},
 	},
 	"Crawdaunt": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Adaptability","item":"Life Orb","moves":["Knock Off","Aqua Jet","Crabhammer","Swords Dance"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Adaptability","item":"Life Orb","moves":["Aqua Jet","Knock Off","Crabhammer","Swords Dance"]},
 		"OU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Adaptability","item":"Choice Band","moves":["Knock Off","Crabhammer","Aqua Jet","Crunch"]},
 		"OU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Adaptability","item":"Life Orb","moves":["Swords Dance","Knock Off","Crabhammer","Aqua Jet"]},
 	},
@@ -712,15 +681,17 @@ var SETDEX_SM = {
 		"ORAS Doubles Calm Mind": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Levitate","item":"Safety Goggles","moves":["Calm Mind","Psyshock","Moonlight","Trick Room"]},
 		"ORAS Doubles Support": {"level":100,"evs":{"sd":112,"df":100,"hp":252,"sa":44},"nature":"Calm","ability":"Levitate","item":"Sitrus Berry","moves":["Icy Wind","Helping Hand","Psyshock","Light Screen"]},
 		"Battle Spot Singles Defensive Support": {"level":50,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Levitate","item":"Rocky Helmet","moves":["Ice Beam","Moonlight","Psychic","Lunar Dance"]},
+		"Battle Spot Doubles Trick Room": {"level":50,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","item":"Mental Herb","moves":["Psychic","Trick Room","Ice Beam","Helping Hand"]},
+		"Battle Spot Doubles Calm Mind": {"level":50,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Levitate","item":"Kee Berry","moves":["Calm Mind","Psychic","Icy Wind","Moonlight"]},
 	},
 	"Croagunk": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":116,"df":116,"hp":52,"sp":36,"sa":188},"nature":"Modest","ability":"Dry Skin","item":"Eviolite","moves":["Vacuum Wave","Sludge Bomb","Knock Off","Drain Punch"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":116,"df":116,"hp":52,"sp":36,"sa":188},"nature":"Modest","ability":"Dry Skin","item":"Eviolite","moves":["Vacuum Wave","Nasty Plot","Sludge Bomb","Focus Blast"]},
 		"ORAS LC Mixed Utility": {"level":5,"evs":{"sd":116,"df":116,"at":28,"hp":132,"sa":108},"nature":"Quiet","ability":"Dry Skin","item":"Eviolite","moves":["Knock Off","Sludge Bomb","Vacuum Wave","Drain Punch"]},
 		"ORAS LC Physical Attacker": {"level":5,"evs":{"sd":116,"df":116,"at":188,"hp":52,"sp":36},"nature":"Adamant","ability":"Dry Skin","item":"Eviolite","moves":["Drain Punch","Gunk Shot","Sucker Punch","Bulk Up"]},
 		"ORAS LC Nasty Plot Wallbreaker": {"level":5,"evs":{"sd":116,"df":116,"hp":52,"sp":36,"sa":188},"nature":"Modest","ability":"Dry Skin","item":"Eviolite","moves":["Nasty Plot","Sludge Bomb","Vacuum Wave","Shadow Ball"]},
 	},
 	"Crobat": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Infiltrator","item":"Black Sludge","moves":["Brave Bird","U-turn","Roost","Defog"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Infiltrator","item":"Black Sludge","moves":["Brave Bird","Roost","U-turn","Defog"]},
 		"ORAS UU Support": {"level":100,"evs":{"df":48,"hp":248,"sp":212},"nature":"Jolly","ability":"Infiltrator","item":"Black Sludge","moves":["Brave Bird","U-turn","Defog","Roost"]},
 		"ORAS UU BRAVE BAT (Choice Band)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Infiltrator","item":"Choice Band","moves":["Brave Bird","U-turn","Cross Poison","Defog"]},
 	},
@@ -740,6 +711,7 @@ var SETDEX_SM = {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":12,"hp":44,"sp":236,"sa":200},"nature":"Timid","ability":"Blaze","item":"Choice Scarf","moves":["Eruption","Extrasensory","Hidden Power Ground","Fire Blast"]},
 	},
 	"Darkrai": {
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Bad Dreams","item":"Life Orb","moves":["Dark Pulse","Nasty Plot","Sludge Bomb","Dark Void"]},
 		"ORAS Uber Special Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Bad Dreams","item":"Life Orb","moves":["Dark Void","Dark Pulse","Nasty Plot","Thunder"]},
 		"ORAS Doubles Special Attacker": {"level":100,"evs":{"hp":72,"sp":184,"sa":252},"nature":"Timid","ability":"Bad Dreams","item":"Life Orb","moves":["Dark Pulse","Ice Beam","Will-O-Wisp","Protect"]},
 	},
@@ -754,7 +726,7 @@ var SETDEX_SM = {
 		"ORAS LC Choice": {"level":5,"evs":{"at":196,"hp":116,"sp":196},"nature":"Jolly","ability":"Hustle","item":"Choice Scarf","moves":["Flare Blitz","U-turn","Rock Slide","Superpower"]},
 	},
 	"Decidueye": {
-		"UU Showdown Usage": {"level":100,"evs":{"at":248,"hp":8,"sp":252},"nature":"Jolly","ability":"Overgrow","item":"Decidium Z","moves":["Spirit Shackle","Leaf Blade","Swords Dance","Sucker Punch"]},
+		"UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Overgrow","item":"Decidium Z","moves":["Swords Dance","Spirit Shackle","Leaf Blade","Sucker Punch"]},
 	},
 	"Dedenne": {
 		"ORAS PU SubRecycle": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cheek Pouch","item":"Petaya Berry","moves":["Substitute","Recycle","Thunderbolt","Grass Knot"]},
@@ -777,11 +749,11 @@ var SETDEX_SM = {
 		"ORAS RU Speedy Roaster (Choice Scarf)": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Choice Scarf","moves":["Fire Blast","Psychic","Dazzling Gleam","Trick"]},
 	},
 	"Deoxys": {
-		"ORAS Uber Extremekiller Check?": {"level":100,"evs":{"df":200,"hp":252,"sp":56},"nature":"Timid","ability":"Pressure","item":"Chilan Berry","moves":["Psycho Boost","Spikes","Taunt","Counter"]},
+		"Uber Do Not Use This Pokemon (Utility)": {"level":100,"evs":{"df":252,"hp":136,"sp":120},"nature":"Naive","ability":"Pressure","item":"Chilan Berry","moves":["Psycho Boost","Spikes","Taunt","Low Kick"]},
 	},
 	"Deoxys-Attack": {
 		"Uber All-out Attacker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Rash","ability":"Pressure","item":"Life Orb","moves":["Psycho Boost","Ice Beam","Superpower","Extreme Speed"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Pressure","item":"Focus Sash","moves":["Psycho Boost","Superpower","Knock Off","Protect"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Pressure","item":"Focus Sash","moves":["Psycho Boost","Superpower","Knock Off","Detect"]},
 	},
 	"Deoxys-Defense": {
 		"ORAS Uber Spikes": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Spikes","Recover","Skill Swap","Toxic"]},
@@ -793,7 +765,7 @@ var SETDEX_SM = {
 		"ORAS PU Specially Defensive": {"level":100,"evs":{"sd":252,"hp":248,"sa":8},"nature":"Calm","ability":"Thick Fat","item":"Leftovers","moves":["Toxic","Protect","Surf","Perish Song"]},
 	},
 	"Dewpider": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":100,"df":20,"at":196,"hp":52,"sp":140},"nature":"Adamant","ability":"Water Bubble","item":"Choice Specs","moves":["Liquidation","Leech Life","Poison Jab","Surf"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":20,"hp":52,"sp":224,"sa":200},"nature":"Timid","ability":"Water Bubble","item":"Choice Scarf","moves":["Leech Life","Liquidation","Sleep Talk","Surf"]},
 	},
 	"Dhelmise": {
 		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Steelworker","item":"Assault Vest","moves":["Power Whip","Anchor Shot","Rapid Spin","Shadow Claw"]},
@@ -814,6 +786,7 @@ var SETDEX_SM = {
 		"ORAS Uber Offensive": {"level":100,"evs":{"at":80,"sp":176,"sa":252},"nature":"Timid","ability":"Clear Body","item":"Diancite","moves":["Moonblast","Diamond Storm","Earth Power","Protect"]},
 		"ORAS Uber Mega Utility": {"level":100,"evs":{"df":124,"hp":248,"sp":136},"nature":"Bold","ability":"Clear Body","item":"Diancite","moves":["Protect","Diamond Storm","Moonblast","Heal Bell"]},
 		"ORAS Uber Trick Room": {"level":100,"evs":{"df":8,"at":252,"hp":248},"ivs":{"sp":0},"nature":"Brave","ability":"Clear Body","item":"Life Orb","moves":["Stealth Rock","Trick Room","Diamond Storm","Explosion"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Clear Body","item":"Stone Plate","moves":["Diamond Storm","Protect","Moonblast","Trick Room"]},
 		"ORAS Doubles Mega Mixed Attacker": {"level":100,"evs":{"at":208,"sp":252,"sa":48},"nature":"Hasty","ability":"Clear Body","item":"Diancite","moves":["Diamond Storm","Moonblast","Earth Power","Protect"]},
 		"ORAS Doubles Offensive Trick Room": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Clear Body","item":"Stone Plate","moves":["Diamond Storm","Moonblast","Trick Room","Protect"]},
 	},
@@ -829,20 +802,15 @@ var SETDEX_SM = {
 		"ORAS OU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Huge Power","item":"Choice Scarf","moves":["Earthquake","Return","Knock Off","U-turn"]},
 	},
 	"Diglett": {
-		"LC Showdown Usage": {"level":5,"evs":{"at":236,"hp":36,"sp":236},"nature":"Jolly","ability":"Arena Trap","item":"Life Orb","moves":["Earthquake","Rock Slide","Sucker Punch","Memento"]},
+		"LC Showdown Usage": {"level":5,"evs":{"at":236,"hp":36,"sp":236},"nature":"Jolly","ability":"Arena Trap","item":"Life Orb","moves":["Earthquake","Rock Slide","Sucker Punch","Substitute"]},
 		"ORAS LC Trapper": {"level":5,"evs":{"at":236,"hp":36,"sp":236},"nature":"Jolly","ability":"Arena Trap","item":"Life Orb","moves":["Earthquake","Rock Slide","Sucker Punch","Substitute"]},
 	},
 	"Diglett-Alola": {
 		"LC Sand Sweeper": {"level":5,"evs":{"df":36,"at":236,"hp":36,"sp":196},"nature":"Jolly","ability":"Sand Force","item":"Life Orb","moves":["Iron Head","Earthquake","Rock Slide","Substitute"]},
 	},
 	"Ditto": {
-		"ORAS PU Revenge Killer": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"ivs":{"sd":30,"sp":1,"sa":30},"nature":"Relaxed","ability":"Imposter","item":"Choice Scarf","moves":["Transform"]},
-		"ORAS NU Imposter": {"level":100,"evs":{"df":252,"hp":248},"ivs":{"df":30,"at":0,"sp":1},"nature":"Relaxed","ability":"Imposter","item":"Choice Scarf","moves":["Transform"]},
-		"ORAS RU Imposter": {"level":100,"evs":{"df":252,"at":8,"hp":248},"nature":"Relaxed","ability":"Imposter","item":"Choice Scarf","moves":["Transform"]},
 		"OU Showdown Usage": {"level":100,"evs":{"df":4,"hp":252,"sp":252},"nature":"Timid","ability":"Imposter","item":"Choice Scarf","moves":["","Transform"]},
-		"ORAS OU Imposter": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"ivs":{"sp":0},"nature":"Relaxed","ability":"Imposter","item":"Choice Scarf","moves":["Transform"]},
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Imposter","item":"Choice Scarf","moves":["","Transform"]},
-		"ORAS Uber Revenge Killer": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"ivs":{"sp":0},"nature":"Relaxed","ability":"Imposter","item":"Choice Scarf","moves":["Transform"]},
+		"Uber Revenge Killer": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Imposter","item":"Choice Scarf","moves":["Transform"]},
 	},
 	"Dodrio": {
 		"ORAS PU Wallbreaker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Early Bird","item":"Choice Band","moves":["Brave Bird","Return","Knock Off","Quick Attack"]},
@@ -854,13 +822,13 @@ var SETDEX_SM = {
 		"LC Choice Scarf": {"level":5,"evs":{"at":236,"sp":236},"nature":"Jolly","ability":"Early Bird","item":"Choice Scarf","moves":["Brave Bird","Knock Off","Jump Kick","Return"]},
 	},
 	"Donphan": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"df":212,"at":40,"hp":248},"nature":"Impish","ability":"Sturdy","item":"Leftovers","moves":["Earthquake","Rapid Spin","Ice Shard","Stealth Rock"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","ability":"Sturdy","item":"Leftovers","moves":["Earthquake","Rapid Spin","Stealth Rock","Ice Shard"]},
 		"ORAS UU Defensive Spinner": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","ability":"Sturdy","item":"Leftovers","moves":["Earthquake","Rapid Spin","Stealth Rock","Knock Off"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"at":252,"hp":52,"sp":204},"nature":"Adamant","ability":"Sturdy","item":"Choice Band","moves":["Earthquake","Ice Shard","Knock Off","Gunk Shot"]},
 		"ORAS UU Offensive Spinner": {"level":100,"evs":{"at":252,"hp":172,"sp":84},"nature":"Adamant","ability":"Sturdy","item":"Assault Vest","moves":["Rapid Spin","Earthquake","Knock Off","Ice Shard"]},
 	},
 	"Doublade": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":192,"at":48,"hp":252,"sp":16},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Shadow Sneak","Swords Dance","Iron Head","Sacred Sword"]},
+		"UU Showdown Usage": {"level":100,"evs":{"at":216,"hp":248,"sp":44},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Shadow Sneak","Swords Dance","Iron Head","Sacred Sword"]},
 		"ORAS UU Swords Dance": {"level":100,"evs":{"sd":16,"at":252,"hp":240},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Swords Dance","Shadow Sneak","Iron Head","Sacred Sword"]},
 		"ORAS OU Mixed Wall": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"ivs":{"sp":0},"nature":"Sassy","ability":"No Guard","item":"Eviolite","moves":["Gyro Ball","Toxic","Sleep Talk","Rest"]},
 	},
@@ -874,12 +842,12 @@ var SETDEX_SM = {
 		"ORAS PU Rest Talk Sweeper": {"level":100,"evs":{"sd":188,"at":44,"hp":252,"sp":24},"nature":"Careful","ability":"Marvel Scale","item":"Eviolite","moves":["Outrage","Dragon Dance","Rest","Sleep Talk"]},
 	},
 	"Dragonite": {
-		"OU Flyinium Z": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Multiscale","item":"Flyinium Z","moves":["Fly","Fire Punch","Extreme Speed","Dragon Dance"]},
 		"OU Electrium Z": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Multiscale","item":"Electrium Z","moves":["Dragon Claw","Fire Punch","Thunder Punch","Dragon Dance"]},
+		"OU Flyinium Z": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Multiscale","item":"Flyinium Z","moves":["Fly","Fire Punch","Extreme Speed","Dragon Dance"]},
 	},
 	"Drapion": {
-		"ORAS RU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Battle Armor","item":"Lum Berry","moves":["Swords Dance","Knock Off","Aqua Tail","Poison Jab"]},
-		"ORAS RU Specially Defensive": {"level":100,"evs":{"sd":216,"hp":248,"sp":44},"nature":"Careful","ability":"Battle Armor","item":"Black Sludge","moves":["Knock Off","Taunt","Toxic Spikes","Whirlwind"]},
+		"ORAS RU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Battle Armor","item":"Lum Berry","moves":["Swords Dance","Knock Off","Poison Jab","Aqua Tail"]},
+		"ORAS RU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sniper","item":"Choice Scarf","moves":["Knock Off","Poison Jab","Pursuit","Earthquake"]},
 	},
 	"Dratini": {
 		"ORAS LC Mixed Attacker": {"level":5,"evs":{"at":164,"sp":116,"sa":196},"ivs":{"hp":0},"nature":"Rash","ability":"Shed Skin","item":"Life Orb","moves":["Draco Meteor","Extreme Speed","Fire Blast","Iron Tail"]},
@@ -907,6 +875,8 @@ var SETDEX_SM = {
 		"OU Focus Sash Trapper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"ivs":{"hp":21},"nature":"Jolly","ability":"Arena Trap","item":"Focus Sash","moves":["Earthquake","Reversal","Screech","Memento"]},
 		"OU Offensive Trapper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Choice Band","moves":["Earthquake","Stone Edge","Sucker Punch","Aerial Ace"]},
 		"Uber Z-move Trapper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Arena Trap","item":"Groundium Z","moves":["Earthquake","Memento","Toxic","Stealth Rock"]},
+		"Monotype Focus Sash": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"ivs":{"df":2,"hp":28},"nature":"Jolly","ability":"Arena Trap","item":"Focus Sash","moves":["Earthquake","Reversal","Sucker Punch","Memento"]},
+		"Monotype Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Choice Band","moves":["Earthquake","Sucker Punch","Stone Edge","Memento"]},
 	},
 	"Dunsparce": {
 		"ORAS PU Stealth Rock": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Careful","ability":"Serene Grace","item":"Leftovers","moves":["Stealth Rock","Body Slam","Magic Coat","Roost"]},
@@ -964,7 +934,7 @@ var SETDEX_SM = {
 		"ORAS NU All-Out Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Soundproof","item":"Life Orb","moves":["Thunderbolt","Volt Switch","Hidden Power Grass","Signal Beam"]},
 	},
 	"Elekid": {
-		"LC Showdown Usage": {"level":5,"evs":{"sp":236,"sa":240},"nature":"Timid","ability":"Vital Spirit","item":"Eviolite","moves":["Volt Switch","Thunderbolt","Hidden Power Grass","Psychic"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sp":236,"sa":240},"nature":"Timid","ability":"Static","item":"Life Orb","moves":["Volt Switch","Psychic","Thunderbolt","Hidden Power Grass"]},
 		"ORAS LC Special Attacker": {"level":5,"evs":{"sp":236,"sa":240},"ivs":{"hp":0},"nature":"Timid","ability":"Static","item":"Life Orb","moves":["Thunderbolt","Volt Switch","Psychic","Hidden Power Ground"]},
 		"ORAS LC Physical Attacker": {"level":5,"evs":{"at":252,"sp":236},"ivs":{"hp":0},"nature":"Hasty","ability":"Static","item":"Life Orb","moves":["Wild Charge","Cross Chop","Fire Punch","Volt Switch"]},
 	},
@@ -983,11 +953,12 @@ var SETDEX_SM = {
 		"ORAS PU Support": {"level":100,"evs":{"df":8,"hp":248,"sp":252},"nature":"Jolly","ability":"Motor Drive","item":"Leftovers","moves":["Taunt","U-turn","Roost","Encore"]},
 	},
 	"Empoleon": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":252,"hp":248,"sp":8},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Scald","Defog","Roar","Stealth Rock"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":252,"hp":248,"sp":8},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Scald","Defog","Roar","Toxic"]},
 		"OU Specially Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Scald","Defog","Toxic","Roar"]},
+		"Monotype Specially Defensive (Water)": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Torrent","item":"Leftovers","moves":["Stealth Rock","Defog","Scald","Roar"]},
 	},
 	"Entei": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Pressure","item":"Choice Band","moves":["Extreme Speed","Stone Edge","Sacred Fire","Flare Blitz"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Pressure","item":"Choice Band","moves":["Sacred Fire","Extreme Speed","Stone Edge","Flare Blitz"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Pressure","item":"Choice Band","moves":["Sacred Fire","Flare Blitz","Extreme Speed","Stone Edge"]},
 		"ORAS OU All-Out Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Pressure","item":"Choice Band","moves":["Sacred Fire","Extreme Speed","Stone Edge","Bulldoze"]},
 		"ORAS Doubles Attacker": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Pressure","item":"Safety Goggles","moves":["Sacred Fire","Stone Edge","Extreme Speed","Protect"]},
@@ -1012,10 +983,11 @@ var SETDEX_SM = {
 		"OU Bulky Spinner": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Careful","ability":"Mold Breaker","item":"Leftovers","moves":["Rapid Spin","Earthquake","Iron Head","Toxic"]},
 		"Uber Suicide Lead": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Mold Breaker","item":"Focus Sash","moves":["Earthquake","Stealth Rock","Toxic","Rapid Spin"]},
 		"Uber Sand Rush Drill": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Sand Rush","item":"Life Orb","moves":["Earthquake","Iron Head","Rock Slide","Swords Dance"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Iron Head","Rock Slide","Protect","Drill Run"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Iron Head","Rock Slide","Protect","Earthquake"]},
 		"Battle Spot Singles Choice Scarf": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Mold Breaker","item":"Choice Scarf","moves":["Earthquake","Iron Head","Rock Slide","Horn Drill"]},
 		"Battle Spot Singles Sand Sweeper": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Groundium Z","moves":["Earthquake","Iron Head","Rock Slide","Swords Dance"]},
 		"Battle Spot Singles Versatile Attacker": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Mold Breaker","item":"Focus Sash","moves":["Earthquake","Iron Head","Rock Slide","Swords Dance"]},
+		"Monotype Choice Scarf (Steel)": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Mold Breaker","item":"Choice Scarf","moves":["Earthquake","Iron Head","Rock Slide","Rapid Spin"]},
 	},
 	"Exeggcute": {
 		"ORAS LC Harvest Abuser": {"level":5,"evs":{"sd":80,"df":196,"sp":36,"sa":196},"nature":"Modest","ability":"Harvest","item":"Oran Berry","moves":["Substitute","Sleep Powder","Giga Drain","Psychic"]},
@@ -1047,7 +1019,8 @@ var SETDEX_SM = {
 	"Ferrothorn": {
 		"OU Utility": {"level":100,"evs":{"sd":168,"df":88,"hp":252},"nature":"Relaxed","ability":"Iron Barbs","item":"Leftovers","moves":["Spikes","Leech Seed","Gyro Ball","Power Whip"]},
 		"Uber Support": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Sassy","ability":"Iron Barbs","item":"Leftovers","moves":["Spikes","Leech Seed","Gyro Ball","Power Whip"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Iron Barbs","item":"Leftovers","moves":["Gyro Ball","Power Whip","Leech Seed","Protect"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":96,"df":160,"hp":252},"nature":"Sassy","ability":"Iron Barbs","item":"Rocky Helmet","moves":["Gyro Ball","Leech Seed","Protect","Power Whip"]},
+		"Monotype Utility Support (Steel)": {"level":100,"evs":{"sd":184,"df":72,"hp":252},"nature":"Careful","ability":"Iron Barbs","item":"Leftovers","moves":["Power Whip","Leech Seed","Protect","Spikes"]},
 	},
 	"Finneon": {
 		"ORAS LC Defog": {"level":5,"evs":{"sd":232,"df":152,"hp":44,"sa":48},"nature":"Timid","ability":"Storm Drain","item":"Berry Juice","moves":["Defog","Scald","U-turn","Hidden Power Fighting"]},
@@ -1083,7 +1056,7 @@ var SETDEX_SM = {
 		"ORAS RU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Choice Band","moves":["Earthquake","Outrage","U-turn","Dragon Claw"]},
 		"ORAS RU Defog Support": {"level":100,"evs":{"at":144,"hp":112,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Leftovers","moves":["Defog","Roost","Earthquake","U-turn"]},
 		"ORAS RU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Choice Scarf","moves":["Earthquake","U-turn","Outrage","Aerial Ace"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Dragonium Z","moves":["Earthquake","Dragon Dance","Outrage","Fire Punch"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Choice Scarf","moves":["Earthquake","Dragon Dance","Outrage","Dragon Claw"]},
 		"ORAS UU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Levitate","item":"Choice Scarf","moves":["Outrage","Earthquake","U-turn","Defog"]},
 		"ORAS Uber Defog": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Levitate","item":"Leftovers","moves":["Defog","Roost","Toxic","Earth Power"]},
 	},
@@ -1094,7 +1067,7 @@ var SETDEX_SM = {
 		"LC Defensive": {"level":5,"evs":{"sd":160,"df":160,"hp":124},"nature":"Bold","ability":"Regenerator","item":"Eviolite","moves":["Spore","Sludge Bomb","Giga Drain","Clear Smog"]},
 	},
 	"Forretress": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Relaxed","ability":"Sturdy","item":"Leftovers","moves":["Rapid Spin","Volt Switch","Gyro Ball","Spikes"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Relaxed","ability":"Sturdy","item":"Leftovers","moves":["Rapid Spin","Gyro Ball","Volt Switch","Spikes"]},
 		"ORAS UU Defensive Rapid Spin": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Sturdy","item":"Leftovers","moves":["Rapid Spin","Stealth Rock","Volt Switch","Gyro Ball"]},
 		"ORAS UU Custap": {"level":100,"evs":{"at":252,"sp":252},"ivs":{"sd":0,"df":0,"hp":0},"nature":"Hasty","ability":"Sturdy","item":"Custap Berry","moves":["Stealth Rock","Explosion","Spikes","Rapid Spin"]},
 	},
@@ -1105,10 +1078,8 @@ var SETDEX_SM = {
 		"ORAS NU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Mold Breaker","item":"Choice Band","moves":["Outrage","Superpower","Iron Tail","Dragon Claw"]},
 	},
 	"Frillish": {
-		"LC Showdown Usage": {"level":5,"evs":{"hp":76,"sp":196,"sa":236},"nature":"Timid","ability":"Water Absorb","item":"Choice Scarf","moves":["Water Spout","Shadow Ball","Hydro Pump","Energy Ball"]},
-		"ORAS LC Choice Scarf": {"level":5,"evs":{"hp":76,"sp":196,"sa":236},"nature":"Timid","ability":"Water Absorb","item":"Choice Scarf","moves":["Water Spout","Shadow Ball","Ice Beam","Trick"]},
-		"ORAS LC Defensive": {"level":5,"evs":{"sd":76,"df":116,"hp":236,"sa":76},"nature":"Bold","ability":"Cursed Body","item":"Eviolite","moves":["Scald","Shadow Ball","Recover","Will-O-Wisp"]},
-		"ORAS NU Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Water Absorb","item":"Eviolite","moves":["Will-O-Wisp","Night Shade","Recover","Taunt"]},
+		"LC Tank": {"level":5,"evs":{"sd":76,"df":116,"hp":236,"sa":76},"nature":"Bold","ability":"Water Absorb","item":"Eviolite","moves":["Scald","Shadow Ball","Recover","Will-O-Wisp"]},
+		"LC Choice Scarf + Water Spout": {"level":5,"evs":{"hp":76,"sp":196,"sa":236},"nature":"Timid","ability":"Water Absorb","item":"Choice Scarf","moves":["Water Spout","Shadow Ball","Ice Beam","Trick"]},
 	},
 	"Froakie": {
 		"ORAS LC Life Orb": {"level":5,"evs":{"df":36,"at":72,"sp":188,"sa":184},"ivs":{"sd":30,"hp":0,"sa":30},"nature":"Naive","ability":"Protean","item":"Life Orb","moves":["Hydro Pump","Ice Beam","U-turn","Hidden Power Grass"]},
@@ -1119,9 +1090,7 @@ var SETDEX_SM = {
 		"ORAS NU All-out Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Naive","ability":"Protean","item":"Life Orb","moves":["Hydro Pump","Ice Beam","Gunk Shot","Toxic Spikes"]},
 	},
 	"Froslass": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":8,"hp":248,"sp":252},"nature":"Timid","ability":"Cursed Body","item":"Focus Sash","moves":["Spikes","Taunt","Will-O-Wisp","Icy Wind"]},
-		"ORAS UU Spikes Lead": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Cursed Body","item":"Focus Sash","moves":["Taunt","Destiny Bond","Spikes","Icy Wind"]},
-		"ORAS OU Suicide Spiker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Focus Sash","moves":["Taunt","Spikes","Destiny Bond","Ice Beam"]},
+		"UU Spikes Lead": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Focus Sash","moves":["Spikes","Taunt","Icy Wind","Will-O-Wisp"]},
 	},
 	"Furfrou": {
 		"ORAS PU Offensive Pivot": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Fur Coat","item":"Leftovers","moves":["U-turn","Thunder Wave","Return","Sucker Punch"]},
@@ -1130,7 +1099,8 @@ var SETDEX_SM = {
 		"ORAS PU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Frisk","item":"Choice Scarf","moves":["U-turn","Double-Edge","Knock Off","Trick"]},
 	},
 	"Gabite": {
-		"ORAS PU Stealth Rock": {"level":100,"evs":{"df":104,"at":76,"hp":248,"sp":80},"nature":"Adamant","ability":"Rough Skin","item":"Eviolite","moves":["Stealth Rock","Earthquake","Dragon Claw","Toxic"]},
+		"ORAS PU Offensive Stealth Rock": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Rough Skin","item":"Eviolite","moves":["Stealth Rock","Earthquake","Dragon Claw","Toxic"]},
+		"ORAS PU Defensive Stealth Rock": {"level":100,"evs":{"df":252,"hp":176,"sp":80},"nature":"Impish","ability":"Rough Skin","item":"Eviolite","moves":["Stealth Rock","Earthquake","Dragon Claw","Toxic"]},
 	},
 	"Gallade": {
 		"ORAS RU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Life Orb","moves":["Swords Dance","Close Combat","Zen Headbutt","Knock Off"]},
@@ -1158,17 +1128,19 @@ var SETDEX_SM = {
 		"VGC17 Groundium Z": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Rough Skin","item":"Groundium Z","moves":["Earthquake","Dragon Claw","Poison Jab","Protect"]},
 		"VGC17 Choice Scarf": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Rough Skin","item":"Choice Scarf","moves":["Earthquake","Dragon Claw","Poison Jab","Rock Slide"]},
 		"VGC17 Assault Vest": {"level":50,"evs":{"sd":52,"df":4,"at":172,"hp":28,"sp":252},"nature":"Jolly","ability":"Rough Skin","item":"Assault Vest","moves":["Earthquake","Dragon Claw","Poison Jab","Fire Fang"]},
+		"Battle Spot Singles Physical Attacker": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Rough Skin","item":"Focus Sash","moves":["Earthquake","Outrage","Swords Dance","Rock Tomb"]},
+		"Battle Spot Singles Choice Attacker": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Rough Skin","item":"Choice Scarf","moves":["Earthquake","Outrage","Rock Slide","Poison Jab"]},
 	},
 	"Garchomp-Mega": {
 	},
 	"Gardevoir": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Trace","item":"Choice Scarf","moves":["Moonblast","Psyshock","Trick","Calm Mind"]},
 		"ORAS UU Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Trace","item":"Choice Scarf","moves":["Moonblast","Psychic","Healing Wish","Trick"]},
 		"ORAS UU Calm Mind": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Trace","item":"Leftovers","moves":["Calm Mind","Moonblast","Psyshock","Substitute"]},
 		"ORAS UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Trace","item":"Choice Specs","moves":["Moonblast","Psyshock","Focus Blast","Trick"]},
 		"ORAS OU Wallbreaker": {"level":100,"evs":{"df":8,"hp":16,"sp":252,"sa":232},"nature":"Timid","ability":"Trace","item":"Gardevoirite","moves":["Hyper Voice","Psyshock","Focus Blast","Will-O-Wisp"]},
 		"ORAS Doubles Trick Room Sweeper": {"level":100,"evs":{"df":136,"hp":228,"sa":144},"nature":"Quiet","ability":"Trace","item":"Gardevoirite","moves":["Hyper Voice","Psychic","Trick Room","Protect"]},
 		"ORAS Doubles Special Sweeper": {"level":100,"evs":{"hp":8,"sp":252,"sa":248},"nature":"Timid","ability":"Trace","item":"Gardevoirite","moves":["Hyper Voice","Psychic","Focus Blast","Protect"]},
+		"Monotype Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Trace","item":"Choice Scarf","moves":["Moonblast","Psychic","Focus Blast","Healing Wish"]},
 	},
 	"Gardevoir-Mega": {
 		"ORAS OU Wallbreaker": {"level":100,"evs":{"df":8,"hp":16,"sp":252,"sa":232},"nature":"Timid","ability":"Trace","item":"Gardevoirite","moves":["Hyper Voice","Psyshock","Focus Blast","Will-O-Wisp"]},
@@ -1183,30 +1155,31 @@ var SETDEX_SM = {
 	"Gastrodon": {
 		"ORAS NU Physically Defensive": {"level":100,"evs":{"df":244,"hp":252,"sp":12},"nature":"Bold","ability":"Storm Drain","item":"Leftovers","moves":["Scald","Earth Power","Recover","Toxic"]},
 		"ORAS RU Defensive": {"level":100,"evs":{"df":244,"hp":252,"sp":12},"nature":"Bold","ability":"Storm Drain","item":"Leftovers","moves":["Scald","Recover","Toxic","Earth Power"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":108,"df":152,"hp":248},"nature":"Sassy","ability":"Storm Drain","item":"Leftovers","moves":["Recover","Scald","Toxic","Earthquake"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":108,"df":152,"hp":248},"nature":"Sassy","ability":"Storm Drain","item":"Leftovers","moves":["Recover","Scald","Earthquake","Toxic"]},
 		"ORAS UU Curse": {"level":100,"evs":{"sd":108,"df":148,"hp":252},"nature":"Sassy","ability":"Storm Drain","item":"Leftovers","moves":["Curse","Recover","Earthquake","Scald"]},
 		"ORAS OU Curse": {"level":100,"evs":{"sd":144,"df":112,"hp":252},"nature":"Sassy","ability":"Storm Drain","item":"Leftovers","moves":["Curse","Scald","Earthquake","Recover"]},
 		"ORAS OU Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Storm Drain","item":"Leftovers","moves":["Scald","Earthquake","Toxic","Recover"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":88,"df":48,"hp":252,"sa":120},"nature":"Quiet","ability":"Storm Drain","item":"Sitrus Berry","moves":["Earth Power","Ice Beam","Recover","Protect"]},
 		"ORAS Doubles Recover + 3 Attacks": {"level":100,"evs":{"sd":52,"df":176,"hp":232,"sa":48},"ivs":{"sp":0},"nature":"Quiet","ability":"Storm Drain","item":"Sitrus Berry","moves":["Scald","Earth Power","Ice Beam","Recover"]},
 	},
 	"Genesect": {
+		"Uber Showdown Usage": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naive","ability":"Download","item":"Choice Scarf","moves":["U-turn","Iron Head","Ice Beam","Flamethrower"]},
 		"ORAS Uber Choice Scarf": {"level":100,"evs":{"at":248,"sp":252,"sa":8},"nature":"Naive","ability":"Download","item":"Choice Scarf","moves":["U-turn","Iron Head","Ice Beam","Explosion"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"at":100,"sp":252,"sa":156},"nature":"Naive","ability":"Download","item":"Choice Scarf","moves":["U-turn","Iron Head","Ice Beam","Thunderbolt"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"at":252,"sp":192,"sa":64},"nature":"Naive","ability":"Download","item":"Choice Scarf","moves":["Ice Beam","U-turn","Iron Head","Explosion"]},
 		"ORAS Doubles Choice Scarf": {"level":100,"evs":{"at":252,"sp":192,"sa":64},"nature":"Naive","ability":"Download","item":"Choice Scarf","moves":["U-turn","Iron Head","Ice Beam","Explosion"]},
 	},
 	"Gengar": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Life Orb","moves":["Shadow Ball","Sludge Wave","Focus Blast","Taunt"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Choice Scarf","moves":["Shadow Ball","Sludge Wave","Focus Blast","Destiny Bond"]},
 		"OU Life Orb Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Life Orb","moves":["Shadow Ball","Sludge Wave","Focus Blast","Taunt"]},
 		"Uber Utility Trapper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Gengarite","moves":["Taunt","Destiny Bond","Focus Blast","Shadow Ball"]},
 		"Uber Substitute + 3 Attacks": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Gengarite","moves":["Focus Blast","Shadow Ball","Sludge Wave","Substitute"]},
 		"Uber Hex Trapper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Gengarite","moves":["Will-O-Wisp","Focus Blast","Hex","Sludge Wave"]},
+		"VGC17 Standard Attacker": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Focus Sash","moves":["Sludge Bomb","Shadow Ball","Taunt","Protect"]},
 	},
 	"Gengar-Mega": {
 		"Uber Utility Trapper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Gengarite","moves":["Taunt","Destiny Bond","Focus Blast","Shadow Ball"]},
 		"Uber Substitute + 3 Attacks": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Gengarite","moves":["Focus Blast","Shadow Ball","Sludge Wave","Substitute"]},
 		"Uber Hex Trapper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Cursed Body","item":"Gengarite","moves":["Will-O-Wisp","Focus Blast","Hex","Sludge Wave"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Shadow Tag","item":"Gengarite","moves":["Protect","Shadow Ball","Sludge Bomb","Icy Wind"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Shadow Tag","item":"Gengarite","moves":["Shadow Ball","Protect","Sludge Bomb","Taunt"]},
 	},
 	"Geodude": {
 		"ORAS LC Stealth Rock Lead": {"level":5,"evs":{"sd":36,"df":196,"at":196,"hp":36,"sp":36},"nature":"Adamant","ability":"Sturdy","item":"Berry Juice","moves":["Stealth Rock","Sucker Punch","Earthquake","Rock Blast"]},
@@ -1216,17 +1189,16 @@ var SETDEX_SM = {
 	},
 	"Gigalith": {
 		"ORAS PU Tank": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Sturdy","item":"Leftovers","moves":["Stealth Rock","Stone Edge","Superpower","Toxic"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Careful","ability":"Sand Stream","item":"Leftovers","moves":["Stealth Rock","Toxic","Earthquake","Stone Edge"]},
 	},
 	"Girafarig": {
 		"ORAS PU Baton Pass": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Sap Sipper","item":"Life Orb","moves":["Nasty Plot","Baton Pass","Psychic","Hyper Voice"]},
 	},
 	"Giratina": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Defog","Will-O-Wisp","Roar","Hex"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Defog","Rest","Toxic","Will-O-Wisp"]},
 		"ORAS Uber The Great Wall (Physically Defensive)": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Will-O-Wisp","Roar","Rest","Sleep Talk"]},
 	},
 	"Giratina-Origin": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":252,"sp":12,"sa":244},"nature":"Modest","ability":"Levitate","item":"Griseous Orb","moves":["Defog","Draco Meteor","Hex","Shadow Sneak"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"df":252,"sp":12,"sa":244},"nature":"Modest","ability":"Levitate","item":"Griseous Orb","moves":["Defog","Draco Meteor","Shadow Sneak","Hex"]},
 		"ORAS Uber ParaHex": {"level":100,"evs":{"df":252,"sp":12,"sa":244},"nature":"Modest","ability":"Levitate","item":"Griseous Orb","moves":["Hex","Draco Meteor","Thunder Wave","Defog"]},
 		"ORAS Uber Physical Defog": {"level":100,"evs":{"df":248,"at":248,"sp":12},"nature":"Adamant","ability":"Levitate","item":"Griseous Orb","moves":["Defog","Shadow Sneak","Dragon Tail","Shadow Force"]},
 	},
@@ -1249,9 +1221,8 @@ var SETDEX_SM = {
 		"ORAS UU Standard": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Impish","ability":"Hyper Cutter","item":"Eviolite","moves":["Roost","Earthquake","Defog","U-turn"]},
 	},
 	"Gliscor": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":184,"hp":252,"sp":72},"nature":"Impish","ability":"Poison Heal","item":"Toxic Orb","moves":["Earthquake","Roost","Stealth Rock","Toxic"]},
-		"ORAS OU Swords Dance Stallbreaker": {"level":100,"evs":{"sd":200,"df":8,"hp":244,"sp":56},"nature":"Careful","ability":"Poison Heal","item":"Toxic Orb","moves":["Swords Dance","Earthquake","Knock Off","Roost"]},
-		"ORAS OU Taunt Stallbreaker": {"level":100,"evs":{"sd":200,"df":8,"hp":244,"sp":56},"nature":"Careful","ability":"Poison Heal","item":"Toxic Orb","moves":["Taunt","Toxic","Roost","Earthquake"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":200,"df":8,"hp":244,"sp":56},"nature":"Careful","ability":"Poison Heal","item":"Toxic Orb","moves":["Earthquake","Roost","Stealth Rock","Swords Dance"]},
+		"OU Swords Dance": {"level":100,"evs":{"sd":168,"hp":244,"sp":96},"nature":"Careful","ability":"Poison Heal","item":"Toxic Orb","moves":["Swords Dance","Earthquake","Knock Off","Roost"]},
 	},
 	"Gogoat": {
 		"ORAS PU Bulk Up": {"level":100,"evs":{"sd":232,"at":48,"hp":228},"nature":"Careful","ability":"Sap Sipper","item":"Leftovers","moves":["Bulk Up","Horn Leech","Earthquake","Milk Drink"]},
@@ -1278,21 +1249,17 @@ var SETDEX_SM = {
 	"Golett": {
 		"ORAS LC Tank": {"level":5,"evs":{"df":196,"at":164,"hp":44,"sp":76},"nature":"Adamant","ability":"Iron Fist","item":"Eviolite","moves":["Drain Punch","Earthquake","Stealth Rock","Ice Punch"]},
 	},
-	"Golisopod": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Emergency Exit","item":"Lum Berry","moves":["Leech Life","First Impression","Aqua Jet","Liquidation"]},
-	},
 	"Golurk": {
 		"ORAS NU Stealth Rock": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"No Guard","item":"Colbur Berry","moves":["Stealth Rock","Earthquake","Ice Punch","Dynamic Punch"]},
 		"ORAS NU Wallbreaker": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Iron Fist","item":"Choice Band","moves":["Earthquake","Shadow Punch","Ice Punch","Zen Headbutt"]},
 	},
 	"Goodra": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"hp":248,"sa":252},"nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Thunderbolt","Fire Blast","Earthquake"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"at":252,"hp":212,"sp":44},"nature":"Adamant","ability":"Sap Sipper","item":"Choice Band","moves":["Outrage","Earthquake","Power Whip","Iron Tail"]},
 		"ORAS UU Choice Specs": {"level":100,"evs":{"hp":212,"sp":44,"sa":252},"nature":"Modest","ability":"Sap Sipper","item":"Choice Specs","moves":["Draco Meteor","Fire Blast","Sludge Bomb","Thunderbolt"]},
 		"ORAS UU Assault Vest": {"level":100,"evs":{"sd":8,"hp":248,"sa":252},"nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Fire Blast","Sludge Bomb","Dragon Tail"]},
 		"ORAS OU Assault Vest": {"level":100,"evs":{"hp":240,"sp":16,"sa":252},"nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Draco Meteor","Fire Blast","Sludge Bomb","Earthquake"]},
 		"ORAS Doubles Special Garbage (Special Attacker)": {"level":100,"evs":{"df":8,"hp":72,"sp":176,"sa":252},"nature":"Modest","ability":"Sap Sipper","item":"Life Orb","moves":["Draco Meteor","Fire Blast","Thunderbolt","Protect"]},
-		"VGC17 Special Tank": {"level":50,"evs":{"df":164,"hp":188,"sa":156},"nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Dragon Pulse","Sludge Bomb","Thunderbolt","Flamethrower"]},
+		"VGC17 Special Tank": {"level":50,"evs":{"sd":36,"df":164,"hp":252,"sp":4,"sa":52},"nature":"Modest","ability":"Sap Sipper","item":"Assault Vest","moves":["Dragon Pulse","Sludge Bomb","Thunderbolt","Flamethrower"]},
 	},
 	"Goomy": {
 		"ORAS LC Gooey Pivot": {"level":5,"evs":{"sd":156,"df":236,"hp":76,"sp":36},"nature":"Bold","ability":"Gooey","item":"Eviolite","moves":["Draco Meteor","Sludge Wave","Rest","Sleep Talk"]},
@@ -1335,7 +1302,8 @@ var SETDEX_SM = {
 		"ORAS UU Bulky Attacker": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Intimidate","item":"Leftovers","moves":["Play Rough","Heal Bell","Earthquake","Thunder Wave"]},
 	},
 	"Greninja": {
-		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Battle Bond","item":"Choice Specs","moves":["Water Shuriken","Dark Pulse","Hydro Pump","U-turn"]},
+		"OU All-out Attacker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Protean","item":"Life Orb","moves":["Ice Beam","Gunk Shot","Extrasensory","Hidden Power Fire"]},
+		"OU Spikes": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Naive","ability":"Protean","item":"Life Orb","moves":["Spikes","Ice Beam","Gunk Shot","Hydro Pump"]},
 	},
 	"Greninja-Ash": {
 		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Battle Bond","item":"Choice Specs","moves":["Water Shuriken","Dark Pulse","Hydro Pump","U-turn"]},
@@ -1344,18 +1312,20 @@ var SETDEX_SM = {
 		"ORAS LC Bulky Attacker": {"level":5,"evs":{"sd":36,"df":196,"at":196,"hp":36},"nature":"Adamant","ability":"Sticky Hold","item":"Berry Juice","moves":["Gunk Shot","Fire Punch","Shadow Sneak","Thief"]},
 	},
 	"Grimer-Alola": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":196,"at":116,"hp":196},"nature":"Relaxed","ability":"Poison Touch","item":"Eviolite","moves":["Knock Off","Shadow Sneak","Pursuit","Gunk Shot"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":36,"df":196,"at":196,"hp":36},"nature":"Adamant","ability":"Poison Touch","item":"Eviolite","moves":["Knock Off","Pursuit","Shadow Sneak","Gunk Shot"]},
 	},
 	"Groudon": {
 		"Uber Defensive Stealth Rock": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Careful","ability":"Drought","item":"Red Orb","moves":["Stealth Rock","Precipice Blades","Roar","Lava Plume"]},
 		"Uber Rock Polish": {"level":100,"evs":{"sd":36,"at":240,"hp":168,"sp":64},"nature":"Adamant","ability":"Drought","item":"Red Orb","moves":["Rock Polish","Precipice Blades","Swords Dance","Stone Edge"]},
 		"Uber Offensive Stealth Rock": {"level":100,"evs":{"sd":44,"at":236,"hp":152,"sp":76},"nature":"Adamant","ability":"Drought","item":"Red Orb","moves":["Stealth Rock","Precipice Blades","Dragon Tail","Stone Edge"]},
+		"Uber Mixed Rock Polish": {"level":100,"evs":{"sd":144,"at":48,"sp":64,"sa":252},"nature":"Mild","ability":"Drought","item":"Red Orb","moves":["Rock Polish","Fire Blast","Precipice Blades","Hidden Power Ice"]},
 		"Uber Stealth Rock + Swords Dance": {"level":100,"evs":{"sd":152,"at":160,"sp":196},"nature":"Jolly","ability":"Drought","item":"Red Orb","moves":["Stealth Rock","Swords Dance","Precipice Blades","Stone Edge"]},
 	},
 	"Groudon-Primal": {
 		"Uber Defensive Stealth Rock": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Careful","ability":"Drought","item":"Red Orb","moves":["Stealth Rock","Precipice Blades","Roar","Lava Plume"]},
 		"Uber Rock Polish": {"level":100,"evs":{"sd":36,"at":240,"hp":168,"sp":64},"nature":"Adamant","ability":"Drought","item":"Red Orb","moves":["Rock Polish","Precipice Blades","Swords Dance","Stone Edge"]},
 		"Uber Offensive Stealth Rock": {"level":100,"evs":{"sd":44,"at":236,"hp":152,"sp":76},"nature":"Adamant","ability":"Drought","item":"Red Orb","moves":["Stealth Rock","Precipice Blades","Dragon Tail","Stone Edge"]},
+		"Uber Mixed Rock Polish": {"level":100,"evs":{"sd":144,"at":48,"sp":64,"sa":252},"nature":"Mild","ability":"Drought","item":"Red Orb","moves":["Rock Polish","Fire Blast","Precipice Blades","Hidden Power Ice"]},
 		"Uber Stealth Rock + Swords Dance": {"level":100,"evs":{"sd":152,"at":160,"sp":196},"nature":"Jolly","ability":"Drought","item":"Red Orb","moves":["Stealth Rock","Swords Dance","Precipice Blades","Stone Edge"]},
 	},
 	"Growlithe": {
@@ -1374,12 +1344,15 @@ var SETDEX_SM = {
 		"ORAS RU Bulk Up": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Guts","item":"Eviolite","moves":["Drain Punch","Mach Punch","Knock Off","Bulk Up"]},
 	},
 	"Gyarados": {
+		"OU Flyinium Z": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Moxie","item":"Flyinium Z","moves":["Dragon Dance","Bounce","Waterfall","Taunt"]},
 		"OU Mega Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Gyaradosite","moves":["Dragon Dance","Crunch","Waterfall","Substitute"]},
 		"OU Substitute + Dragon Dance": {"level":100,"evs":{"df":4,"at":164,"hp":88,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Leftovers","moves":["Substitute","Dragon Dance","Waterfall","Bounce"]},
-		"OU Flyinium Z": {"level":100,"evs":{"df":24,"at":220,"hp":88,"sp":176},"nature":"Jolly","ability":"Intimidate","item":"Flyinium Z","moves":["Dragon Dance","Bounce","Waterfall","Taunt"]},
+		"Battle Spot Singles Dragon Dance": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Gyaradosite","moves":["Dragon Dance","Waterfall","Crunch","Substitute"]},
+		"Battle Spot Singles Defensive": {"level":50,"evs":{"df":244,"hp":220,"sp":44},"nature":"Impish","ability":"Intimidate","item":"Rocky Helmet","moves":["Waterfall","Ice Fang","Thunder Wave","Taunt"]},
 	},
 	"Gyarados-Mega": {
 		"OU Mega Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Gyaradosite","moves":["Dragon Dance","Crunch","Waterfall","Substitute"]},
+		"Battle Spot Singles Dragon Dance": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Gyaradosite","moves":["Dragon Dance","Waterfall","Crunch","Substitute"]},
 	},
 	"Hariyama": {
 		"ORAS NU Assault Vest": {"level":100,"evs":{"sd":252,"df":4,"at":252},"nature":"Adamant","ability":"Thick Fat","item":"Assault Vest","moves":["Close Combat","Knock Off","Bullet Punch","Fake Out"]},
@@ -1393,10 +1366,11 @@ var SETDEX_SM = {
 		"ORAS NU Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Sludge Bomb","Shadow Ball","Trick","Destiny Bond"]},
 	},
 	"Hawlucha": {
-		"UU Showdown Usage": {"level":100,"evs":{"at":252,"hp":40,"sp":216},"nature":"Jolly","ability":"Unburden","item":"Sitrus Berry","moves":["Acrobatics","High Jump Kick","Swords Dance","Substitute"]},
+		"UU Showdown Usage": {"level":100,"evs":{"at":244,"hp":12,"sp":252},"nature":"Jolly","ability":"Unburden","item":"Sitrus Berry","moves":["Acrobatics","Swords Dance","High Jump Kick","Substitute"]},
 		"OU SubSD": {"level":100,"evs":{"at":244,"hp":12,"sp":252},"nature":"Jolly","ability":"Unburden","item":"Sitrus Berry","moves":["Substitute","Swords Dance","Acrobatics","High Jump Kick"]},
 	},
 	"Haxorus": {
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Mold Breaker","item":"Dragonium Z","moves":["Earthquake","Poison Jab","Dragon Dance","Outrage"]},
 		"ORAS UU Dragon Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Mold Breaker","item":"Life Orb","moves":["Dragon Dance","Outrage","Earthquake","Poison Jab"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Mold Breaker","item":"Choice Band","moves":["Outrage","Earthquake","Iron Tail","Dragon Claw"]},
 		"ORAS UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Mold Breaker","item":"Lum Berry","moves":["Swords Dance","Outrage","Earthquake","Poison Jab"]},
@@ -1410,7 +1384,7 @@ var SETDEX_SM = {
 	"Heatran": {
 		"OU Offensive": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Grassium Z","moves":["Magma Storm","Earth Power","Solar Beam","Taunt"]},
 		"OU Bulky": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Flash Fire","item":"Leftovers","moves":["Taunt","Toxic","Lava Plume","Stealth Rock"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Flash Fire","item":"Shuca Berry","moves":["Protect","Earth Power","Heat Wave","Substitute"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":20,"df":72,"hp":252,"sp":4,"sa":160},"nature":"Modest","ability":"Flash Fire","item":"Shuca Berry","moves":["Protect","Earth Power","Heat Wave","Eruption"]},
 		"Monotype Offensive (Steel)": {"level":100,"evs":{"at":24,"sp":252,"sa":232},"nature":"Timid","ability":"Flash Fire","item":"Grassium Z","moves":["Lava Plume","Earth Power","Stone Edge","Solar Beam"]},
 		"Monotype Defensive (Steel)": {"level":100,"evs":{"sd":136,"hp":248,"sp":124},"nature":"Calm","ability":"Flash Fire","item":"Leftovers","moves":["Lava Plume","Earth Power","Toxic","Stealth Rock"]},
 	},
@@ -1421,6 +1395,7 @@ var SETDEX_SM = {
 		"ORAS LC Paralysis Pivot": {"level":5,"evs":{"sd":96,"df":172,"hp":4,"sp":196,"sa":32},"nature":"Timid","ability":"Dry Skin","item":"Eviolite","moves":["Glare","U-turn","Thunderbolt","Surf"]},
 	},
 	"Heracross": {
+		"UU Showdown Usage": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Moxie","item":"Choice Scarf","moves":["Close Combat","Megahorn","Knock Off","Stone Edge"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Guts","item":"Choice Band","moves":["Close Combat","Megahorn","Knock Off","Stone Edge"]},
 		"ORAS UU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Guts","item":"Leftovers","moves":["Swords Dance","Close Combat","Knock Off","Megahorn"]},
 		"ORAS UU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Moxie","item":"Choice Scarf","moves":["Close Combat","Megahorn","Knock Off","Stone Edge"]},
@@ -1435,9 +1410,8 @@ var SETDEX_SM = {
 		"LC Physical Wall": {"level":5,"evs":{"sd":180,"df":132,"at":20,"hp":132,"sp":20},"nature":"Careful","ability":"Sand Stream","item":"Eviolite","moves":["Slack Off","Stealth Rock","Earthquake","Whirlwind"]},
 	},
 	"Hippowdon": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":176,"df":84,"hp":248},"nature":"Impish","ability":"Sand Stream","item":"Leftovers","moves":["Earthquake","Slack Off","Stealth Rock","Whirlwind"]},
-		"OU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","ability":"Sand Stream","item":"Leftovers","moves":["Slack Off","Stealth Rock","Earthquake","Whirlwind"]},
-		"ORAS OU Mixed Wall": {"level":100,"evs":{"sd":112,"df":144,"hp":252},"nature":"Impish","ability":"Sand Stream","item":"Leftovers","moves":["Earthquake","Stealth Rock","Slack Off","Stone Edge"]},
+		"UU Mixed Wall": {"level":100,"evs":{"sd":176,"df":80,"hp":252},"nature":"Impish","ability":"Sand Stream","item":"Leftovers","moves":["Stealth Rock","Earthquake","Slack Off","Toxic"]},
+		"OU Physical Wall": {"level":100,"evs":{"sd":16,"df":240,"hp":252},"nature":"Impish","ability":"Sand Stream","item":"Leftovers","moves":["Stealth Rock","Earthquake","Slack Off","Whirlwind"]},
 	},
 	"Hitmonchan": {
 		"ORAS NU Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Iron Fist","item":"Life Orb","moves":["Drain Punch","Mach Punch","Ice Punch","Rapid Spin"]},
@@ -1459,11 +1433,11 @@ var SETDEX_SM = {
 		"Uber Choice Band": {"level":100,"evs":{"sd":52,"at":208,"hp":248},"nature":"Adamant","ability":"Regenerator","item":"Choice Band","moves":["Brave Bird","Sacred Fire","Earthquake","Sleep Talk"]},
 	},
 	"Honchkrow": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Moxie","item":"Flyinium Z","moves":["Brave Bird","Sucker Punch","Superpower","Night Slash"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Moxie","item":"Flyinium Z","moves":["Brave Bird","Sucker Punch","Superpower","Pursuit"]},
 		"ORAS UU Murderkrow": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Moxie","item":"Life Orb","moves":["Brave Bird","Sucker Punch","Pursuit","Superpower"]},
 	},
 	"Honedge": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":140,"df":116,"at":196,"sp":52},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Shadow Sneak","Iron Head","Sacred Sword","Pursuit"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":220,"df":36,"at":196,"sp":52},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Shadow Sneak","Iron Head","Swords Dance","Sacred Sword"]},
 		"ORAS LC Specially Defensive": {"level":5,"evs":{"sd":220,"df":36,"at":116,"hp":76,"sp":52},"nature":"Careful","ability":"No Guard","item":"Berry Juice","moves":["Iron Head","Shadow Sneak","Pursuit","Sacred Sword"]},
 	},
 	"Hoopa": {
@@ -1476,7 +1450,7 @@ var SETDEX_SM = {
 		"OU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magician","item":"Choice Specs","moves":["Dark Pulse","Psyshock","Focus Blast","Thunderbolt"]},
 		"OU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Magician","item":"Choice Band","moves":["Hyperspace Fury","Drain Punch","Gunk Shot","Zen Headbutt"]},
 		"OU Choice Scarf": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Hasty","ability":"Magician","item":"Choice Scarf","moves":["Hyperspace Fury","Psychic","Gunk Shot","Drain Punch"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"df":48,"at":60,"hp":188,"sa":212},"nature":"Quiet","ability":"Magician","item":"Sitrus Berry","moves":["Hyperspace Fury","Hyperspace Hole","Protect","Trick Room"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"df":68,"at":252,"hp":68,"sa":116},"nature":"Brave","ability":"Magician","item":"Sitrus Berry","moves":["Hyperspace Fury","Protect","Hyperspace Hole","Trick Room"]},
 	},
 	"Hoppip": {
 		"ORAS LC Offensive Support": {"level":5,"evs":{"at":236,"hp":76,"sp":196},"nature":"Jolly","ability":"Infiltrator","item":"Berry Juice","moves":["Sleep Powder","Acrobatics","Substitute","Swords Dance"]},
@@ -1496,7 +1470,6 @@ var SETDEX_SM = {
 		"ORAS OU Utility Attacker": {"level":100,"evs":{"df":8,"hp":40,"sp":252,"sa":208},"nature":"Timid","ability":"Flash Fire","item":"Houndoominite","moves":["Nasty Plot","Fire Blast","Dark Pulse","Will-O-Wisp"]},
 	},
 	"Houndour": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":36,"at":36,"sp":236,"sa":196},"nature":"Hasty","ability":"Flash Fire","item":"Life Orb","moves":["Dark Pulse","Fire Blast","Sucker Punch","Destiny Bond"]},
 		"ORAS LC Mixed Attacker": {"level":5,"evs":{"sd":36,"at":36,"sp":236,"sa":196},"ivs":{"hp":0},"nature":"Hasty","ability":"Early Bird","item":"Life Orb","moves":["Fire Blast","Dark Pulse","Sucker Punch","Destiny Bond"]},
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"sd":36,"at":36,"sp":236,"sa":196},"nature":"Hasty","ability":"Flash Fire","item":"Choice Scarf","moves":["Fire Blast","Dark Pulse","Destiny Bond","Pursuit"]},
 	},
@@ -1504,7 +1477,9 @@ var SETDEX_SM = {
 		"ORAS PU Shell Smash": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naughty","ability":"Water Veil","item":"White Herb","moves":["Shell Smash","Waterfall","Sucker Punch","Ice Beam"]},
 	},
 	"Hydreigon": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Dark Pulse","Draco Meteor","Fire Blast","U-turn"]},
+		"UU Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Dark Pulse","Draco Meteor","Fire Blast","U-turn"]},
+		"UU Life Orb Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Draco Meteor","Dark Pulse","Fire Blast","Roost"]},
+		"UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Specs","moves":["Draco Meteor","Dark Pulse","Flash Cannon","Fire Blast"]},
 		"OU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Specs","moves":["Dark Pulse","Draco Meteor","Flash Cannon","Fire Blast"]},
 		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Dark Pulse","Draco Meteor","Protect","Tailwind"]},
 	},
@@ -1515,7 +1490,7 @@ var SETDEX_SM = {
 		"ORAS PU Substitute + Baton Pass": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Prankster","item":"Leftovers","moves":["Substitute","Baton Pass","Encore","Bug Buzz"]},
 	},
 	"Infernape": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Choice Scarf","moves":["Close Combat","Flare Blitz","U-turn","Mach Punch"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Life Orb","moves":["Close Combat","Flare Blitz","U-turn","Mach Punch"]},
 		"ORAS UU Nasty Plot": {"level":100,"evs":{"at":136,"sp":252,"sa":120},"nature":"Naive","ability":"Blaze","item":"Life Orb","moves":["Nasty Plot","Fire Blast","Close Combat","Grass Knot"]},
 		"ORAS UU All-Out Attacker": {"level":100,"evs":{"at":168,"sp":252,"sa":88},"nature":"Naive","ability":"Blaze","item":"Life Orb","moves":["Fire Blast","Close Combat","Grass Knot","Earthquake"]},
 		"ORAS UU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Iron Fist","item":"Choice Band","moves":["Close Combat","Flare Blitz","Mach Punch","U-turn"]},
@@ -1532,7 +1507,7 @@ var SETDEX_SM = {
 	},
 	"Jellicent": {
 		"ORAS RU Utility": {"level":100,"evs":{"df":216,"hp":248,"sp":44},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Taunt","Will-O-Wisp","Recover","Scald"]},
-		"UU Showdown Usage": {"level":100,"evs":{"df":224,"hp":240,"sp":44},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Recover","Will-O-Wisp","Hex","Taunt"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":212,"hp":248,"sp":48},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Recover","Taunt","Will-O-Wisp","Hex"]},
 		"ORAS UU Physically Defensive": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Recover","Scald","Will-O-Wisp","Taunt"]},
 		"ORAS Doubles Bulky Trick Room Setter": {"level":100,"evs":{"sd":52,"df":204,"hp":252},"ivs":{"sp":0},"nature":"Relaxed","ability":"Water Absorb","item":"Safety Goggles","moves":["Trick Room","Hydro Pump","Will-O-Wisp","Protect"]},
 	},
@@ -1567,14 +1542,13 @@ var SETDEX_SM = {
 		"ORAS RU Seduction Smasher": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Dry Skin","item":"Leftovers","moves":["Lovely Kiss","Nasty Plot","Ice Beam","Substitute"]},
 	},
 	"Kabuto": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":76,"df":36,"at":116,"hp":116,"sp":156},"nature":"Adamant","ability":"Weak Armor","item":"Eviolite","moves":["Rapid Spin","Stealth Rock","Rock Slide","Waterfall"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":76,"df":36,"at":116,"hp":116,"sp":156},"nature":"Adamant","ability":"Weak Armor","item":"Eviolite","moves":["Rapid Spin","Stealth Rock","Rock Slide","Knock Off"]},
 		"ORAS LC Support": {"level":5,"evs":{"df":196,"at":196,"hp":116},"nature":"Adamant","ability":"Battle Armor","item":"Eviolite","moves":["Rapid Spin","Rock Slide","Aqua Jet","Waterfall"]},
 	},
 	"Kabutops": {
 		"ORAS NU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Swift Swim","item":"Life Orb","moves":["Swords Dance","Stone Edge","Aqua Jet","Waterfall"]},
 		"ORAS NU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Swift Swim","item":"Choice Scarf","moves":["Waterfall","Stone Edge","Rapid Spin","Superpower"]},
 		"ORAS RU Offensive Rapid Spin": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Weak Armor","item":"Life Orb","moves":["Rapid Spin","Stone Edge","Waterfall","Superpower"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Swift Swim","item":"Life Orb","moves":["Stone Edge","Waterfall","Aqua Jet","Swords Dance"]},
 		"ORAS OU Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Swift Swim","item":"Life Orb","moves":["Waterfall","Stone Edge","Swords Dance","Aqua Jet"]},
 	},
 	"Kadabra": {
@@ -1587,19 +1561,22 @@ var SETDEX_SM = {
 		"ORAS Uber Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Fake Out","Return","Crunch","Power-Up Punch"]},
 		"ORAS Doubles Power-Up Punch": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Power-Up Punch","Sucker Punch","Fake Out"]},
 		"ORAS Doubles All-out Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Double-Edge","Low Kick","Sucker Punch","Fake Out"]},
+		"Battle Spot Singles Sweeper": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Power-Up Punch","Double-Edge","Earthquake","Sucker Punch"]},
 	},
 	"Kangaskhan-Mega": {
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Parental Bond","item":"Kangaskhanite","moves":["Fake Out","Sucker Punch","Power-Up Punch","Earthquake"]},
 		"ORAS Uber Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Fake Out","Return","Crunch","Power-Up Punch"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Parental Bond","item":"Kangaskhanite","moves":["Fake Out","Sucker Punch","Seismic Toss","Power-Up Punch"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":100,"df":56,"at":100,"hp":252},"nature":"Adamant","ability":"Parental Bond","item":"Kangaskhanite","moves":["Fake Out","Seismic Toss","Double-Edge","Protect"]},
 		"ORAS Doubles Power-Up Punch": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Return","Power-Up Punch","Sucker Punch","Fake Out"]},
 		"ORAS Doubles All-out Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Double-Edge","Low Kick","Sucker Punch","Fake Out"]},
+		"Battle Spot Singles Sweeper": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Kangaskhanite","moves":["Power-Up Punch","Double-Edge","Earthquake","Sucker Punch"]},
 	},
 	"Karrablast": {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":76,"at":236,"sp":196},"nature":"Jolly","ability":"No Guard","item":"Choice Scarf","moves":["Megahorn","Knock Off","Drill Run","Poison Jab"]},
 		"ORAS LC Swords Dance": {"level":5,"evs":{"sd":76,"df":76,"at":236,"sp":116},"nature":"Adamant","ability":"No Guard","item":"Eviolite","moves":["Swords Dance","Megahorn","Drill Run","Knock Off"]},
 	},
 	"Kartana": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Beast Boost","item":"Choice Scarf","moves":["Leaf Blade","Sacred Sword","Smart Strike","Swords Dance"]},
+		"OU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Beast Boost","item":"Fightinium Z","moves":["Swords Dance","Leaf Blade","Smart Strike","Sacred Sword"]},
 		"VGC17 Sash Attacker": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Beast Boost","item":"Focus Sash","moves":["Leaf Blade","Smart Strike","Sacred Sword","Detect"]},
 		"VGC17 Assault Vest": {"level":50,"evs":{"sd":164,"hp":92,"sp":252},"nature":"Jolly","ability":"Beast Boost","item":"Assault Vest","moves":["Leaf Blade","Smart Strike","Sacred Sword","Night Slash"]},
 	},
@@ -1607,13 +1584,15 @@ var SETDEX_SM = {
 		"ORAS NU Mixed Wallbreaker": {"level":100,"evs":{"at":192,"sp":116,"sa":200},"nature":"Mild","ability":"Protean","item":"Life Orb","moves":["Sucker Punch","Fire Blast","Grass Knot","Knock Off"]},
 	},
 	"Keldeo": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Choice Scarf","moves":["Secret Sword","Scald","Hydro Pump","Icy Wind"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Choice Specs","moves":["Secret Sword","Scald","Hydro Pump","Hidden Power Electric"]},
 		"OU Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Choice Scarf","moves":["Scald","Secret Sword","Hydro Pump","Hidden Power Electric"]},
 		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Choice Specs","moves":["Scald","Hydro Pump","Secret Sword","Hidden Power Electric"]},
+		"Monotype Choice Specs (Fighting)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Choice Specs","moves":["Scald","Secret Sword","Hidden Power Electric","Icy Wind"]},
 	},
 	"Kingdra": {
 		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Choice Specs","moves":["Surf","Draco Meteor","Hydro Pump","Ice Beam"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Protect","Muddy Water","Draco Meteor","Hydro Pump"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Protect","Muddy Water","Hydro Pump","Draco Meteor"]},
+		"Monotype Rain Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Choice Specs","moves":["Hydro Pump","Draco Meteor","Ice Beam","Surf"]},
 	},
 	"Kingler": {
 		"ORAS PU Agility Sweeper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Hyper Cutter","item":"Splash Plate","moves":["Agility","Crabhammer","Knock Off","Superpower"]},
@@ -1622,9 +1601,12 @@ var SETDEX_SM = {
 		"ORAS PU RestTalk": {"level":100,"evs":{"sd":100,"df":156,"hp":252},"nature":"Impish","ability":"Clear Body","item":"Eviolite","moves":["Shift Gear","Gear Grind","Rest","Sleep Talk"]},
 	},
 	"Klefki": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":200,"df":48,"hp":248,"sp":12},"nature":"Careful","ability":"Prankster","item":"Leftovers","moves":["Spikes","Thunder Wave","Play Rough","Toxic"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Calm","ability":"Prankster","item":"Leftovers","moves":["Spikes","Thunder Wave","Dazzling Gleam","Magnet Rise"]},
 		"OU Spikes": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Prankster","item":"Leftovers","moves":["Spikes","Thunder Wave","Play Rough","Foul Play"]},
 		"Uber Support": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Careful","ability":"Prankster","item":"Leftovers","moves":["Spikes","Thunder Wave","Toxic","Play Rough"]},
+	},
+	"Klink": {
+		"LC Shift Gear": {"level":5,"evs":{"sd":116,"df":36,"at":236,"sp":116},"nature":"Adamant","ability":"Clear Body","item":"Eviolite","moves":["Shift Gear","Gear Grind","Wild Charge","Return"]},
 	},
 	"Klinklang": {
 		"ORAS NU Shift Gear": {"level":100,"evs":{"at":252,"hp":80,"sp":176},"nature":"Adamant","ability":"Clear Body","item":"Leftovers","moves":["Shift Gear","Gear Grind","Return","Substitute"]},
@@ -1633,7 +1615,8 @@ var SETDEX_SM = {
 		"ORAS LC Defensive": {"level":5,"evs":{"sd":236,"df":236,"hp":36},"nature":"Bold","ability":"Levitate","item":"Eviolite","moves":["Will-O-Wisp","Pain Split","Sludge Bomb","Fire Blast"]},
 	},
 	"Kommo-o": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Bulletproof","item":"Choice Specs","moves":["Clanging Scales","Flamethrower","Focus Blast","Flash Cannon"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Bulletproof","item":"Choice Specs","moves":["Poison Jab","Clanging Scales","Dragon Dance","Focus Blast"]},
+		"OU Autotomize": {"level":100,"evs":{"at":28,"sp":228,"sa":252},"nature":"Rash","ability":"Bulletproof","item":"Life Orb","moves":["Autotomize","Clanging Scales","Focus Blast","Poison Jab"]},
 		"VGC17 Fightinium Z": {"level":50,"evs":{"hp":244,"sp":12,"sa":252},"nature":"Modest","ability":"Bulletproof","item":"Fightinium Z","moves":["Focus Blast","Clanging Scales","Flamethrower","Protect"]},
 	},
 	"Krabby": {
@@ -1647,10 +1630,9 @@ var SETDEX_SM = {
 		"ORAS PU Choice Band": {"level":100,"evs":{"at":252,"hp":24,"sp":232},"nature":"Adamant","ability":"Intimidate","item":"Choice Band","moves":["Earthquake","Knock Off","Pursuit","Stone Edge"]},
 	},
 	"Krookodile": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","Knock Off","Pursuit","Stealth Rock"]},
-		"ORAS UU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Band","moves":["Earthquake","Knock Off","Stone Edge","Pursuit"]},
-		"ORAS UU Non-Choice Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Dread Plate","moves":["Knock Off","Earthquake","Taunt","Pursuit"]},
-		"ORAS UU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Moxie","item":"Choice Scarf","moves":["Earthquake","Knock Off","Stone Edge","Pursuit"]},
+		"UU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Knock Off","Earthquake","Pursuit","Stone Edge"]},
+		"UU Stealth Rock": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Rocky Helmet","moves":["Stealth Rock","Knock Off","Earthquake","Taunt"]},
+		"UU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Band","moves":["Knock Off","Earthquake","Stone Edge","Superpower"]},
 		"VGC17 Tectonic Rage": {"level":50,"evs":{"sd":4,"df":44,"at":156,"hp":52,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Groundium Z","moves":["Earthquake","Crunch","Taunt","Protect"]},
 		"VGC17 Assault Vest": {"level":50,"evs":{"sd":116,"at":140,"hp":252},"nature":"Adamant","ability":"Intimidate","item":"Assault Vest","moves":["Earthquake","Crunch","Snarl","Dragon Tail"]},
 	},
@@ -1663,40 +1645,43 @@ var SETDEX_SM = {
 		"Uber Calm Mind": {"level":100,"evs":{"hp":180,"sp":76,"sa":252},"nature":"Modest","ability":"Primordial Sea","item":"Blue Orb","moves":["Origin Pulse","Calm Mind","Ice Beam","Thunder"]},
 	},
 	"Kyurem": {
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Choice Specs","moves":["Ice Beam","Earth Power","Draco Meteor","Dragon Pulse"]},
 		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Choice Specs","moves":["Draco Meteor","Ice Beam","Earth Power","Hidden Power Fire"]},
 	},
 	"Kyurem-Black": {
-		"OU Showdown Usage": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Lonely","ability":"Teravolt","item":"Icium Z","moves":["Ice Beam","Fusion Bolt","Freeze Shock","Dragon Claw"]},
-		"ORAS OU Mixed Wallbreaker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Mild","ability":"Teravolt","item":"Life Orb","moves":["Ice Beam","Earth Power","Fusion Bolt","Roost"]},
-		"ORAS OU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Teravolt","item":"Choice Band","moves":["Outrage","Fusion Bolt","Iron Head","Dragon Claw"]},
-		"ORAS OU Substitute Attacker": {"level":100,"evs":{"hp":56,"sp":252,"sa":200},"nature":"Mild","ability":"Teravolt","item":"Leftovers","moves":["Substitute","Ice Beam","Fusion Bolt","Earth Power"]},
-		"ORAS OU Choice Scarf": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naive","ability":"Teravolt","item":"Choice Scarf","moves":["Ice Beam","Outrage","Fusion Bolt","Dragon Claw"]},
-		"ORAS Doubles Substitute": {"level":100,"evs":{"hp":108,"sp":148,"sa":252},"nature":"Modest","ability":"Teravolt","item":"Leftovers","moves":["Substitute","Ice Beam","Earth Power","Protect"]},
-		"ORAS Doubles Choice Scarf": {"level":100,"evs":{"at":176,"sp":224,"sa":108},"nature":"Naive","ability":"Teravolt","item":"Choice Scarf","moves":["Ice Beam","Fusion Bolt","Dragon Claw","Iron Head"]},
+		"OU Icium Z Wallbreaker": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naughty","ability":"Teravolt","item":"Icium Z","moves":["Freeze Shock","Fusion Bolt","Ice Beam","Roost"]},
+		"OU Mixed Wallbreaker": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naughty","ability":"Teravolt","item":"Life Orb","moves":["Ice Beam","Fusion Bolt","Earth Power","Outrage"]},
+		"OU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Teravolt","item":"Choice Band","moves":["Outrage","Fusion Bolt","Dragon Claw","Iron Head"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Teravolt","item":"Life Orb","moves":["Earth Power","Ice Beam","Protect","Fusion Bolt"]},
 	},
 	"Kyurem-White": {
-		"Uber Showdown Usage": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Turboblaze","item":"Choice Specs","moves":["Ice Beam","Draco Meteor","Fusion Flare","Earth Power"]},
-		"ORAS Uber Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Turboblaze","item":"Choice Specs","moves":["Ice Beam","Draco Meteor","Fusion Flare","Focus Blast"]},
-		"ORAS Uber Life Orb Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Turboblaze","item":"Life Orb","moves":["Ice Beam","Draco Meteor","Fusion Flare","Roost"]},
-		"ORAS Uber Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Turboblaze","item":"Choice Scarf","moves":["Ice Beam","Draco Meteor","Earth Power","Fusion Flare"]},
+		"Uber Life Orb": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Turboblaze","item":"Life Orb","moves":["Ice Beam","Draco Meteor","Fusion Flare","Roost"]},
+		"Uber Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Turboblaze","item":"Choice Scarf","moves":["Ice Beam","Draco Meteor","Fusion Flare","Earth Power"]},
 	},
 	"Landorus": {
 		"ORAS Uber All-out Attacker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Rash","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Knock Off","Rock Slide","Hidden Power Ice"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Protect","Sludge Bomb","Hidden Power Ice"]},
 		"ORAS Doubles Life Orb Attacker": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Sludge Bomb","Rock Slide","Protect"]},
+		"Monotype Offensive Wallbreaker (Ground)": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Sludge Wave","Focus Blast","Rock Slide"]},
 	},
 	"Landorus-Therian": {
 		"OU Offensive": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Rockium Z","moves":["Earthquake","Swords Dance","Stone Edge","Stealth Rock"]},
 		"OU Physically Defensive": {"level":100,"evs":{"sd":24,"df":216,"hp":252,"sp":16},"nature":"Impish","ability":"Intimidate","item":"Rocky Helmet","moves":["Earthquake","Stealth Rock","Hidden Power Ice","U-turn"]},
 		"OU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","U-turn","Stone Edge","Knock Off"]},
 		"OU Double Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Rockium Z","moves":["Swords Dance","Rock Polish","Earthquake","Stone Edge"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","U-turn","Rock Slide","Superpower"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","Rock Slide","U-turn","Superpower"]},
+		"Battle Spot Doubles Choice Attacker": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","Rock Slide","U-turn","Superpower"]},
+		"Battle Spot Doubles Versatile Attacker": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Assault Vest","moves":["Earthquake","Rock Slide","U-turn","Knock Off"]},
+		"Battle Spot Doubles Special Attacker": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Intimidate","item":"Life Orb","moves":["Earth Power","Hidden Power Ice","Sludge Bomb","Protect"]},
+		"Monotype Double Dance (Flying)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Rockium Z","moves":["Earthquake","Stone Edge","Swords Dance","Rock Polish"]},
+		"Monotype Defensive Pivot (Flying)": {"level":100,"evs":{"sd":28,"df":228,"hp":252},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Stealth Rock","Earthquake","U-turn","Knock Off"]},
+		"Monotype Choice Scarf (Flying)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Intimidate","item":"Choice Scarf","moves":["Earthquake","Stone Edge","U-turn","Knock Off"]},
 	},
 	"Lanturn": {
 		"ORAS NU Assault Vest": {"level":100,"evs":{"sd":132,"sp":124,"sa":252},"nature":"Modest","ability":"Volt Absorb","item":"Assault Vest","moves":["Scald","Volt Switch","Ice Beam","Hidden Power Fire"]},
 		"ORAS NU Supportive Pivot": {"level":100,"evs":{"sd":208,"df":140,"hp":40,"sp":120},"nature":"Calm","ability":"Volt Absorb","item":"Leftovers","moves":["Scald","Volt Switch","Heal Bell","Toxic"]},
 		"ORAS NU Choice Specs": {"level":100,"evs":{"sd":72,"sp":184,"sa":252},"nature":"Modest","ability":"Volt Absorb","item":"Choice Specs","moves":["Hydro Pump","Volt Switch","Ice Beam","Hidden Power Grass"]},
 		"ORAS RU Pivot": {"level":100,"evs":{"sd":212,"df":192,"hp":104},"nature":"Calm","ability":"Volt Absorb","item":"Leftovers","moves":["Volt Switch","Scald","Protect","Heal Bell"]},
+		"Monotype Support / Pivot (Water)": {"level":100,"evs":{"sd":252,"df":128,"hp":128},"nature":"Calm","ability":"Volt Absorb","item":"Leftovers","moves":["Volt Switch","Toxic","Heal Bell","Scald"]},
 	},
 	"Lapras": {
 		"ORAS PU Choice Specs": {"level":100,"evs":{"hp":120,"sp":136,"sa":252},"nature":"Modest","ability":"Water Absorb","item":"Choice Specs","moves":["Freeze-Dry","Ice Beam","Hydro Pump","Surf"]},
@@ -1710,16 +1695,17 @@ var SETDEX_SM = {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":36,"at":244,"hp":36,"sp":188},"nature":"Jolly","ability":"Guts","item":"Choice Scarf","moves":["Rock Slide","Earthquake","Superpower","Crunch"]},
 	},
 	"Latias": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Draco Meteor","Psyshock","Defog","Roost"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Soul Dew","moves":["Draco Meteor","Psyshock","Roost","Defog"]},
 		"OU Offensive Support": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"ivs":{"at":0},"nature":"Timid","ability":"Levitate","item":"Soul Dew","moves":["Draco Meteor","Psyshock","Healing Wish","Defog"]},
 	},
 	"Latias-Mega": {
 	},
 	"Latios": {
-		"OU Life Orb Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"hp":29},"nature":"Timid","item":"Life Orb","moves":["Draco Meteor","Psyshock","Recover","Hidden Power Fire"]},
+		"OU Life Orb Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"hp":29},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Draco Meteor","Psyshock","Recover","Hidden Power Fire"]},
 		"OU Choice Specs Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Specs","moves":["Draco Meteor","Psychic","Hidden Power Fire","Trick"]},
 		"OU Choice Scarf Revenge Killer": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"at":0},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Draco Meteor","Psychic","Trick","Recover"]},
 		"Doubles Fast Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Soul Dew","moves":["Draco Meteor","Psychic","Tailwind","Protect"]},
+		"Monotype Offensive (Psychic)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Soul Dew","moves":["Draco Meteor","Psyshock","Defog","Roost"]},
 	},
 	"Latios-Mega": {
 	},
@@ -1740,7 +1726,7 @@ var SETDEX_SM = {
 		"ORAS PU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"hp":168,"sp":84},"nature":"Adamant","ability":"Oblivious","item":"Lum Berry","moves":["Swords Dance","Return","Knock Off","Earthquake"]},
 	},
 	"Lickitung": {
-		"ORAS LC Wish Support": {"level":5,"evs":{"sd":236,"df":76,"hp":196},"nature":"Impish","ability":"Oblivious","item":"Eviolite","moves":["Wish","Protect","Body Slam","Knock Off"]},
+		"LC Wish Support": {"level":5,"evs":{"sd":236,"df":76,"hp":196},"nature":"Impish","ability":"Oblivious","item":"Eviolite","moves":["Wish","Protect","Body Slam","Knock Off"]},
 	},
 	"Liepard": {
 		"ORAS NU Offensive Pivot": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Prankster","item":"Black Glasses","moves":["Knock Off","Encore","Thunder Wave","U-turn"]},
@@ -1750,7 +1736,7 @@ var SETDEX_SM = {
 		"ORAS RU Offensive Support": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Prankster","item":"Black Glasses","moves":["Encore","Knock Off","U-turn","Sucker Punch"]},
 	},
 	"Lileep": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":140,"df":140,"hp":228},"nature":"Calm","ability":"Storm Drain","item":"Eviolite","moves":["Recover","Giga Drain","Stealth Rock","Ancient Power"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":220,"df":220,"sa":68},"nature":"Bold","ability":"Storm Drain","item":"Eviolite","moves":["Giga Drain","Stealth Rock","Recover","Ancient Power"]},
 		"ORAS LC Tank": {"level":5,"evs":{"sd":140,"df":140,"hp":228},"nature":"Calm","ability":"Storm Drain","item":"Eviolite","moves":["Stealth Rock","Giga Drain","Recover","Ancient Power"]},
 	},
 	"Lilligant": {
@@ -1786,7 +1772,7 @@ var SETDEX_SM = {
 		"ORAS LC Life Orb": {"level":5,"evs":{"df":116,"sp":196,"sa":196},"ivs":{"hp":19},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Surf","Rain Dance","Giga Drain","Ice Beam"]},
 	},
 	"Lucario": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Justified","item":"Life Orb","moves":["Close Combat","Swords Dance","Extreme Speed","Bullet Punch"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Justified","item":"Life Orb","moves":["Flash Cannon","Nasty Plot","Vacuum Wave","Aura Sphere"]},
 		"Uber Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Lucarionite","moves":["Swords Dance","Close Combat","Bullet Punch","Iron Tail"]},
 		"Battle Spot Singles Physical Attacker": {"level":50,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Inner Focus","item":"Lucarionite","moves":["Close Combat","Iron Tail","Extreme Speed","Swords Dance"]},
 		"Battle Spot Singles Special Attacker": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Inner Focus","item":"Lucarionite","moves":["Nasty Plot","Aura Sphere","Flash Cannon","Vacuum Wave"]},
@@ -1799,23 +1785,24 @@ var SETDEX_SM = {
 	"Ludicolo": {
 		"ORAS NU Rain Dance": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Giga Drain","Ice Beam","Rain Dance"]},
 		"ORAS RU Swift Swim Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Giga Drain","Ice Beam","Rain Dance"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Giga Drain","Ice Beam","Hydro Pump","Rain Dance"]},
 		"ORAS UU Rain Dance Sweeper": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Giga Drain","Ice Beam","Rain Dance"]},
 		"ORAS UU Swords Dance": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Swift Swim","item":"Life Orb","moves":["Swords Dance","Waterfall","Seed Bomb","Ice Punch"]},
 		"ORAS OU Rain Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Giga Drain","Ice Beam","Focus Blast"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":28,"sp":228,"sa":224},"nature":"Modest","ability":"Swift Swim","item":"Assault Vest","moves":["Giga Drain","Hydro Pump","Fake Out","Ice Beam"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"hp":104,"sp":152,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Assault Vest","moves":["Fake Out","Giga Drain","Ice Beam","Hydro Pump"]},
 		"ORAS Doubles Special Attacker": {"level":100,"evs":{"hp":104,"sp":152,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Assault Vest","moves":["Fake Out","Hydro Pump","Giga Drain","Ice Beam"]},
 		"ORAS Doubles Life Orb Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Giga Drain","Ice Beam","Protect"]},
 	},
 	"Lugia": {
-		"Uber Showdown Usage": {"level":100,"evs":{"df":120,"hp":252,"sp":136},"nature":"Bold","ability":"Multiscale","item":"Leftovers","moves":["Roost","Toxic","Whirlwind","Ice Beam"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Multiscale","item":"Leftovers","moves":["Roost","Toxic","Whirlwind","Ice Beam"]},
 		"ORAS Uber Physically Defensive": {"level":100,"evs":{"df":120,"hp":252,"sp":136},"nature":"Bold","ability":"Multiscale","item":"Leftovers","moves":["Roost","Whirlwind","Toxic","Ice Beam"]},
 	},
 	"Lumineon": {
 		"ORAS PU Defog": {"level":100,"evs":{"df":248,"hp":252,"sp":8},"nature":"Bold","ability":"Storm Drain","item":"Leftovers","moves":["Defog","Scald","U-turn","Toxic"]},
 	},
 	"Lunala": {
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Shadow Shield","item":"Choice Scarf","moves":["Moongeist Beam","Psyshock","Focus Blast","Ice Beam"]},
+		"Uber Choice Scarf": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Shadow Shield","item":"Choice Scarf","moves":["Moongeist Beam","Psyshock","Focus Blast","Ice Beam"]},
+		"Uber Z-Hypnosis Sweeper": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Shadow Shield","item":"Psychium Z","moves":["Hypnosis","Moongeist Beam","Focus Blast","Calm Mind"]},
+		"Uber Choice Specs": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Shadow Shield","item":"Choice Specs","moves":["Moongeist Beam","Psyshock","Focus Blast","Ice Beam"]},
 	},
 	"Lunatone": {
 		"ORAS PU Rock Polish": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Levitate","item":"Life Orb","moves":["Rock Polish","Psychic","Ancient Power","Earth Power"]},
@@ -1825,9 +1812,6 @@ var SETDEX_SM = {
 	},
 	"Luxray": {
 		"ORAS PU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Intimidate","item":"Choice Band","moves":["Wild Charge","Ice Fang","Superpower","Volt Switch"]},
-	},
-	"Lycanroc": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Sand Rush","item":"Focus Sash","moves":["Stone Edge","Accelerock","Stealth Rock","Taunt"]},
 	},
 	"Machamp": {
 		"ORAS UU Assault Vest": {"level":100,"evs":{"at":252,"hp":172,"sp":84},"nature":"Adamant","ability":"No Guard","item":"Assault Vest","moves":["Dynamic Punch","Knock Off","Heavy Slam","Stone Edge"]},
@@ -1840,7 +1824,7 @@ var SETDEX_SM = {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":36,"at":196,"hp":36,"sp":236},"nature":"Jolly","ability":"No Guard","item":"Choice Scarf","moves":["Dynamic Punch","Knock Off","Rock Slide","Poison Jab"]},
 	},
 	"Magby": {
-		"LC Showdown Usage": {"level":5,"evs":{"at":236,"sp":252},"nature":"Jolly","ability":"Flame Body","item":"Berry Juice","moves":["Mach Punch","Belly Drum","Thunder Punch","Fire Punch"]},
+		"LC Showdown Usage": {"level":5,"evs":{"at":236,"sp":252},"nature":"Jolly","ability":"Flame Body","item":"Berry Juice","moves":["Mach Punch","Fire Punch","Belly Drum","Thunder Punch"]},
 		"ORAS LC Belly Drum": {"level":5,"evs":{"at":236,"sp":252},"ivs":{"hp":29},"nature":"Jolly","ability":"Vital Spirit","item":"Berry Juice","moves":["Belly Drum","Fire Punch","Mach Punch","Return"]},
 		"ORAS LC Life Orb": {"level":5,"evs":{"at":236,"sp":252},"ivs":{"hp":0},"nature":"Jolly","ability":"Vital Spirit","item":"Life Orb","moves":["Flare Blitz","Cross Chop","Mach Punch","Return"]},
 	},
@@ -1850,6 +1834,7 @@ var SETDEX_SM = {
 	"Magearna": {
 		"OU Shift Gear": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Soul-Heart","item":"Steelium Z","moves":["Flash Cannon","Aura Sphere","Thunderbolt","Shift Gear"]},
 		"OU Assault Vest": {"level":100,"evs":{"sd":8,"hp":248,"sa":252},"nature":"Modest","ability":"Soul-Heart","item":"Assault Vest","moves":["Fleur Cannon","Flash Cannon","Volt Switch","Aura Sphere"]},
+		"OU Offensive Trick Room": {"level":100,"evs":{"df":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Soul-Heart","item":"Fairium Z","moves":["Trick Room","Fleur Cannon","Flash Cannon","Focus Blast"]},
 		"OU Choice Specs": {"level":100,"evs":{"hp":212,"sp":44,"sa":252},"nature":"Modest","ability":"Soul-Heart","item":"Choice Specs","moves":["Fleur Cannon","Flash Cannon","Volt Switch","Aura Sphere"]},
 		"Uber Showdown Usage": {"level":100,"evs":{"sd":252,"hp":252,"sa":4},"nature":"Calm","ability":"Soul-Heart","item":"Leftovers","moves":["Heart Swap","Fleur Cannon","Flash Cannon","Pain Split"]},
 	},
@@ -1862,15 +1847,14 @@ var SETDEX_SM = {
 		"LC Choice Scarf": {"level":5,"evs":{"sp":236,"sa":240},"nature":"Modest","ability":"Analytic","item":"Choice Scarf","moves":["Volt Switch","Flash Cannon","Thunderbolt","Hidden Power Ground"]},
 	},
 	"Magneton": {
-		"ORAS RU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Analytic","item":"Choice Specs","moves":["Volt Switch","Thunderbolt","Flash Cannon","Hidden Power Water"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Specs","moves":["Flash Cannon","Volt Switch","Thunderbolt","Hidden Power Fire"]},
-		"ORAS UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Specs","moves":["Thunderbolt","Flash Cannon","Volt Switch","Hidden Power Ice"]},
-		"ORAS OU Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Scarf","moves":["Volt Switch","Thunderbolt","Flash Cannon","Hidden Power Fire"]},
+		"UU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Specs","moves":["Thunderbolt","Volt Switch","Flash Cannon","Hidden Power Fire"]},
+		"UU Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Scarf","moves":["Thunderbolt","Volt Switch","Flash Cannon","Hidden Power Fire"]},
 	},
 	"Magnezone": {
 		"OU Choice Specs": {"level":100,"evs":{"hp":128,"sp":128,"sa":252},"nature":"Modest","ability":"Magnet Pull","item":"Choice Specs","moves":["Volt Switch","Hidden Power Fire","Flash Cannon","Thunderbolt"]},
 		"OU Lure": {"level":100,"evs":{"hp":128,"sp":128,"sa":252},"nature":"Modest","ability":"Magnet Pull","item":"Chople Berry","moves":["Thunderbolt","Hidden Power Fire","Thunder Wave","Flash Cannon"]},
 		"OU Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Scarf","moves":["Volt Switch","Hidden Power Fire","Flash Cannon","Thunderbolt"]},
+		"Monotype Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Magnet Pull","item":"Choice Scarf","moves":["Volt Switch","Thunderbolt","Flash Cannon","Hidden Power Fire"]},
 	},
 	"Malamar": {
 		"ORAS NU RestTalk": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Contrary","item":"Leftovers","moves":["Knock Off","Superpower","Rest","Sleep Talk"]},
@@ -1882,17 +1866,13 @@ var SETDEX_SM = {
 		"Battle Spot Singles Assault Vest": {"level":50,"evs":{"sd":252,"at":212,"hp":44},"nature":"Adamant","ability":"Snow Cloak","item":"Assault Vest","moves":["Earthquake","Ice Shard","Icicle Spear","Fissure"]},
 	},
 	"Manaphy": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Hydration","item":"Waterium Z","moves":["Tail Glow","Surf","Energy Ball","Ice Beam"]},
-		"ORAS OU Tail Glow + 3 Attacks": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Hydration","item":"Leftovers","moves":["Tail Glow","Scald","Ice Beam","Energy Ball"]},
-		"ORAS OU Tail Glow + Rain Dance": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Hydration","item":"Leftovers","moves":["Tail Glow","Rain Dance","Scald","Psychic"]},
-		"ORAS OU Calm Mind": {"level":100,"evs":{"df":240,"hp":252,"sp":16},"nature":"Bold","ability":"Hydration","item":"Leftovers","moves":["Calm Mind","Scald","Rain Dance","Rest"]},
-		"ORAS Doubles Tail Glow": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Hydration","item":"Safety Goggles","moves":["Scald","Ice Beam","Tail Glow","Protect"]},
+		"OU Z Manaphy": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Hydration","item":"Waterium Z","moves":["Tail Glow","Rain Dance","Surf","Psychic"]},
+		"OU Tail Glow + 3 Attacks": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Hydration","item":"Leftovers","moves":["Tail Glow","Surf","Ice Beam","Energy Ball"]},
 	},
 	"Mandibuzz": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Overcoat","item":"Leftovers","moves":["Roost","Defog","Foul Play","Toxic"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":204,"hp":248,"sp":56},"nature":"Careful","ability":"Overcoat","item":"Leftovers","moves":["Roost","Defog","Foul Play","Knock Off"]},
 		"ORAS UU Specially Defensive": {"level":100,"evs":{"sd":216,"hp":240,"sp":52},"nature":"Careful","ability":"Overcoat","item":"Leftovers","moves":["Roost","Knock Off","Taunt","Defog"]},
 		"ORAS UU Physically Defensive": {"level":100,"evs":{"df":216,"hp":240,"sp":52},"nature":"Impish","ability":"Overcoat","item":"Leftovers","moves":["Roost","Foul Play","Taunt","Defog"]},
-		"OU Showdown Usage": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Overcoat","item":"Leftovers","moves":["Roost","Defog","Foul Play","Whirlwind"]},
 		"ORAS OU Utility Buzzard": {"level":100,"evs":{"sd":108,"df":136,"hp":248,"sp":16},"nature":"Bold","ability":"Overcoat","item":"Leftovers","moves":["Foul Play","Roost","Taunt","Defog"]},
 		"Monotype Physically Defensive Defogger (Dark)": {"level":100,"evs":{"df":244,"hp":248,"sp":16},"nature":"Impish","ability":"Overcoat","item":"Rocky Helmet","moves":["Roost","Foul Play","Defog","U-turn"]},
 	},
@@ -1910,10 +1890,8 @@ var SETDEX_SM = {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":76,"at":196,"hp":36,"sp":196},"nature":"Jolly","ability":"Defiant","item":"Choice Scarf","moves":["Close Combat","U-turn","Earthquake","Gunk Shot"]},
 	},
 	"Mantine": {
-		"ORAS NU SubToxic": {"level":100,"evs":{"hp":8,"sp":252,"sa":248},"nature":"Modest","ability":"Water Absorb","item":"Leftovers","moves":["Substitute","Toxic","Scald","Air Slash"]},
-		"ORAS NU Mixed Defensive Defog": {"level":100,"evs":{"sd":16,"df":240,"hp":252},"nature":"Calm","ability":"Water Absorb","item":"Leftovers","moves":["Defog","Scald","Air Slash","Toxic"]},
-		"ORAS NU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Water Absorb","item":"Choice Specs","moves":["Hydro Pump","Scald","Air Slash","Signal Beam"]},
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Scald","Roost","Defog","Toxic"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":240,"sp":16},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Roost","Scald","Defog","Haze"]},
+		"OU Bulky Support": {"level":100,"evs":{"sd":16,"df":240,"hp":252},"nature":"Calm","ability":"Water Absorb","item":"Leftovers","moves":["Scald","Roost","Defog","Toxic"]},
 	},
 	"Mantyke": {
 		"ORAS LC Rain Dance": {"level":5,"evs":{"df":36,"hp":76,"sp":196,"sa":200},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Rain Dance","Air Slash","Hidden Power Ground"]},
@@ -1923,7 +1901,7 @@ var SETDEX_SM = {
 		"ORAS PU Spikes Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Water Absorb","item":"Focus Sash","moves":["Spikes","Bullet Seed","Endeavor","Sucker Punch"]},
 	},
 	"Mareanie": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":180,"df":180,"hp":36,"sp":76,"sa":12},"nature":"Bold","ability":"Regenerator","item":"Eviolite","moves":["Recover","Scald","Toxic Spikes","Sludge Bomb"]},
+		"LC Defensive Pivot": {"level":5,"evs":{"sd":100,"df":100,"hp":196,"sp":76,"sa":12},"nature":"Calm","ability":"Regenerator","item":"Eviolite","moves":["Scald","Sludge Bomb","Recover","Toxic Spikes"]},
 	},
 	"Mareep": {
 		"ORAS LC Dual Screens": {"level":5,"evs":{"sd":76,"df":196,"hp":236},"nature":"Bold","ability":"Static","item":"Eviolite","moves":["Light Screen","Reflect","Thunder Wave","Thunderbolt"]},
@@ -1934,7 +1912,7 @@ var SETDEX_SM = {
 	},
 	"Marowak-Alola": {
 		"OU Utility Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Lightning Rod","item":"Thick Club","moves":["Shadow Bone","Fire Punch","Bonemerang","Will-O-Wisp"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Lightning Rod","item":"Thick Club","moves":["Flare Blitz","Bonemerang","Protect","Shadow Bone"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Brave","ability":"Lightning Rod","item":"Thick Club","moves":["Shadow Bone","Flare Blitz","Bonemerang","Protect"]},
 		"VGC17 Offensive": {"level":50,"evs":{"sd":68,"df":4,"at":180,"hp":252,"sp":4},"nature":"Adamant","ability":"Lightning Rod","item":"Thick Club","moves":["Flare Blitz","Shadow Bone","Bonemerang","Detect"]},
 	},
 	"Masquerain": {
@@ -1955,8 +1933,8 @@ var SETDEX_SM = {
 		"ORAS Doubles Physical Attacker": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Intimidate","item":"Mawilite","moves":["Play Rough","Iron Head","Sucker Punch","Protect"]},
 	},
 	"Medicham": {
-		"ORAS RU Wallbreaker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Life Orb","moves":["High Jump Kick","Zen Headbutt","Thunder Punch","Drain Punch"]},
-		"ORAS RU Choice Scarf": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Choice Scarf","moves":["High Jump Kick","Zen Headbutt","Thunder Punch","Trick"]},
+		"ORAS RU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Choice Scarf","moves":["High Jump Kick","Zen Headbutt","Thunder Punch","Trick"]},
+		"ORAS RU Life Orb": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Life Orb","moves":["High Jump Kick","Zen Headbutt","Bullet Punch","Thunder Punch"]},
 		"ORAS OU All-out Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Pure Power","item":"Medichamite","moves":["High Jump Kick","Ice Punch","Fake Out","Thunder Punch"]},
 	},
 	"Medicham-Mega": {
@@ -1986,7 +1964,7 @@ var SETDEX_SM = {
 		"ORAS RU Dual Screens": {"level":100,"evs":{"df":236,"hp":248,"sp":24},"nature":"Timid","ability":"Prankster","item":"Light Clay","moves":["Reflect","Light Screen","Thunder Wave","Psyshock"]},
 	},
 	"Meowth": {
-		"LC Showdown Usage": {"level":5,"evs":{"at":236,"sp":196,"sa":36},"nature":"Hasty","ability":"Technician","item":"Life Orb","moves":["Fake Out","Water Pulse","Feint","Double-Edge"]},
+		"LC Showdown Usage": {"level":5,"evs":{"at":236,"sp":196,"sa":36},"nature":"Lonely","ability":"Technician","item":"Life Orb","moves":["Fake Out","Feint","Water Pulse","Double-Edge"]},
 		"ORAS LC Mixed Attacker": {"level":5,"evs":{"sd":36,"at":236,"sp":196,"sa":36},"ivs":{"hp":19},"nature":"Hasty","ability":"Technician","item":"Life Orb","moves":["Fake Out","Feint","Water Pulse","Aerial Ace"]},
 		"ORAS LC Nasty Plot": {"level":5,"evs":{"df":76,"sp":200,"sa":200},"ivs":{"hp":19},"nature":"Modest","ability":"Technician","item":"Life Orb","moves":["Nasty Plot","Round","Water Pulse","Hidden Power Fire"]},
 	},
@@ -2001,42 +1979,44 @@ var SETDEX_SM = {
 		"ORAS RU Offensive Stealth Rock": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Colbur Berry","moves":["Stealth Rock","Healing Wish","Psyshock","Dazzling Gleam"]},
 	},
 	"Metagross": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Clear Body","item":"Shuca Berry","moves":["Meteor Mash","Earthquake","Stealth Rock","Bullet Punch"]},
-		"OU All Out Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Meteor Mash","Zen Headbutt","Earthquake","Thunder Punch"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Clear Body","item":"Assault Vest","moves":["Meteor Mash","Earthquake","Bullet Punch","Zen Headbutt"]},
+		"OU All-out Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Meteor Mash","Zen Headbutt","Earthquake","Thunder Punch"]},
 		"VGC17 Bulky Attacker": {"level":50,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Clear Body","item":"Assault Vest","moves":["Meteor Mash","Bullet Punch","Zen Headbutt","Hammer Arm"]},
 		"VGC17 Psychium Z": {"level":50,"evs":{"at":252,"hp":132,"sp":124},"nature":"Jolly","ability":"Clear Body","item":"Psychium Z","moves":["Zen Headbutt","Meteor Mash","Bullet Punch","Protect"]},
+		"Battle Spot Singles AoA (All Out Attacker)": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Zen Headbutt","Bullet Punch","Earthquake","Ice Punch"]},
+		"Battle Spot Singles Substitute Hone Claws": {"level":50,"evs":{"df":4,"hp":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Substitute","Hone Claws","Earthquake","Zen Headbutt"]},
 	},
 	"Metagross-Mega": {
-		"OU All Out Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Meteor Mash","Zen Headbutt","Earthquake","Thunder Punch"]},
+		"OU All-out Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Meteor Mash","Zen Headbutt","Earthquake","Thunder Punch"]},
 		"DOU Showdown Usage": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Tough Claws","item":"Metagrossite","moves":["Zen Headbutt","Protect","Iron Head","Ice Punch"]},
+		"Battle Spot Singles AoA (All Out Attacker)": {"level":50,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Zen Headbutt","Bullet Punch","Earthquake","Ice Punch"]},
+		"Battle Spot Singles Substitute Hone Claws": {"level":50,"evs":{"df":4,"hp":252,"sp":252},"nature":"Jolly","ability":"Clear Body","item":"Metagrossite","moves":["Substitute","Hone Claws","Earthquake","Zen Headbutt"]},
 	},
 	"Metang": {
 		"ORAS PU Offensive Stealth Rock": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Clear Body","item":"Eviolite","moves":["Stealth Rock","Meteor Mash","Earthquake","Bullet Punch"]},
 	},
 	"Mew": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":228,"hp":252,"sp":28},"nature":"Careful","ability":"Synchronize","item":"Leftovers","moves":["Stealth Rock","Soft-Boiled","Taunt","Psychic"]},
+		"UU Utility": {"level":100,"evs":{"sd":148,"hp":252,"sp":108},"nature":"Careful","ability":"Synchronize","item":"Leftovers","moves":["Stealth Rock","Knock Off","Will-O-Wisp","Soft-Boiled"]},
+		"UU Stallbreaker": {"level":100,"evs":{"sd":120,"hp":240,"sp":148},"nature":"Jolly","ability":"Synchronize","item":"Leftovers","moves":["Taunt","Knock Off","Will-O-Wisp","Soft-Boiled"]},
+		"UU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Synchronize","item":"Leftovers","moves":["Nasty Plot","Psyshock","Flamethrower","Dazzling Gleam"]},
 		"OU Utility": {"level":100,"evs":{"sd":200,"hp":252,"sp":56},"nature":"Careful","ability":"Synchronize","item":"Leftovers","moves":["Taunt","Soft-Boiled","Will-O-Wisp","Knock Off"]},
 	},
 	"Mewtwo": {
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Life Orb","moves":["Psystrike","Ice Beam","Taunt","Fire Blast"]},
-		"ORAS Uber Special Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Life Orb","moves":["Psystrike","Focus Blast","Ice Beam","Fire Blast"]},
-		"ORAS Uber Physical Attacker": {"level":100,"evs":{"df":144,"at":112,"sp":252},"nature":"Jolly","ability":"Pressure","item":"Mewtwonite X","moves":["Low Kick","Taunt","Earthquake","Ice Punch"]},
+		"Uber Special Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Life Orb","moves":["Psystrike","Focus Blast","Ice Beam","Fire Blast"]},
 	},
 	"Mewtwo-Mega-X": {
-		"ORAS Uber Physical Attacker": {"level":100,"evs":{"df":144,"at":112,"sp":252},"nature":"Jolly","ability":"Pressure","item":"Mewtwonite X","moves":["Low Kick","Taunt","Earthquake","Ice Punch"]},
 	},
 	"Mewtwo-Mega-Y": {
-		"ORAS Uber Special Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Life Orb","moves":["Psystrike","Focus Blast","Ice Beam","Fire Blast"]},
 	},
 	"Mienfoo": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":36,"at":236,"sp":236},"nature":"Jolly","ability":"Regenerator","item":"Eviolite","moves":["Knock Off","U-turn","Drain Punch","High Jump Kick"]},
+		"LC Showdown Usage": {"level":5,"evs":{"df":36,"at":236,"sp":236},"nature":"Jolly","ability":"Regenerator","item":"Eviolite","moves":["Knock Off","U-turn","High Jump Kick","Drain Punch"]},
 		"ORAS LC Bulky Attacker": {"level":5,"evs":{"sd":36,"df":196,"sp":236},"nature":"Jolly","ability":"Regenerator","item":"Eviolite","moves":["Drain Punch","Knock Off","U-turn","Taunt"]},
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"sd":36,"at":236,"sp":236},"nature":"Adamant","ability":"Regenerator","item":"Choice Scarf","moves":["High Jump Kick","Knock Off","U-turn","Drain Punch"]},
 		"ORAS LC Life Orb": {"level":5,"evs":{"df":36,"at":236,"sp":236},"nature":"Jolly","ability":"Regenerator","item":"Life Orb","moves":["High Jump Kick","Knock Off","U-turn","Fake Out"]},
 		"ORAS LC Baton Pass": {"level":5,"evs":{"sd":196,"df":116,"at":76,"hp":76},"nature":"Impish","ability":"Regenerator","item":"Eviolite","moves":["Baton Pass","Swords Dance","Drain Punch","Knock Off"]},
 	},
 	"Mienshao": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Reckless","item":"Choice Scarf","moves":["U-turn","High Jump Kick","Knock Off","Stone Edge"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Reckless","item":"Choice Scarf","moves":["High Jump Kick","U-turn","Knock Off","Stone Edge"]},
 		"ORAS UU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Reckless","item":"Choice Scarf","moves":["High Jump Kick","U-turn","Knock Off","Stone Edge"]},
 		"ORAS UU Life Orb": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Regenerator","item":"Life Orb","moves":["High Jump Kick","Knock Off","U-turn","Poison Jab"]},
 		"ORAS UU SubPass": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Regenerator","item":"Life Orb","moves":["Substitute","Baton Pass","High Jump Kick","Stone Edge"]},
@@ -2045,8 +2025,9 @@ var SETDEX_SM = {
 		"ORAS PU Life Orb Cleaner": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Moxie","item":"Life Orb","moves":["Crunch","Sucker Punch","Play Rough","Iron Tail"]},
 	},
 	"Milotic": {
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Marvel Scale","item":"Leftovers","moves":["Scald","Recover","Ice Beam","Haze"]},
 		"ORAS UU Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Marvel Scale","item":"Leftovers","moves":["Scald","Ice Beam","Haze","Recover"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Competitive","item":"Maranga Berry","moves":["Scald","Recover","Protect","Icy Wind"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Competitive","item":"Psychic Seed","moves":["Recover","Protect","Scald","Icy Wind"]},
 		"ORAS Doubles Defensive": {"level":100,"evs":{"df":188,"hp":252,"sp":44,"sa":24},"nature":"Bold","ability":"Competitive","item":"Sitrus Berry","moves":["Scald","Icy Wind","Recover","Protect"]},
 		"ORAS Doubles Offensive": {"level":100,"evs":{"df":80,"hp":72,"sp":168,"sa":188},"nature":"Modest","ability":"Competitive","item":"Life Orb","moves":["Hydro Pump","Ice Beam","Recover","Protect"]},
 		"VGC17 Anti-Intimidate Tank": {"level":50,"evs":{"sd":4,"df":76,"hp":252,"sp":4,"sa":172},"nature":"Calm","ability":"Competitive","item":"Sitrus Berry","moves":["Scald","Ice Beam","Recover","Protect"]},
@@ -2059,7 +2040,7 @@ var SETDEX_SM = {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"df":80,"sp":200,"sa":200},"nature":"Timid","ability":"Technician","item":"Choice Scarf","moves":["Psychic","Hidden Power Fighting","Healing Wish","Baton Pass"]},
 	},
 	"Mimikyu": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Disguise","item":"Life Orb","moves":["Play Rough","Shadow Claw","Swords Dance","Shadow Sneak"]},
+		"OU Swords Dance Cleaner": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Disguise","item":"Life Orb","moves":["Swords Dance","Shadow Sneak","Play Rough","Shadow Claw"]},
 		"Battle Spot Singles Swords Dance": {"level":50,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Disguise","item":"Life Orb","moves":["Swords Dance","Play Rough","Shadow Sneak","Shadow Claw"]},
 		"Monotype Swords Dance (Ghost)": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Disguise","item":"Ghostium Z","moves":["Swords Dance","Shadow Sneak","Play Rough","Shadow Claw"]},
 	},
@@ -2118,9 +2099,9 @@ var SETDEX_SM = {
 	"Muk-Alola": {
 		"OU Assault Vest": {"level":100,"evs":{"sd":16,"at":240,"hp":252},"nature":"Adamant","ability":"Poison Touch","item":"Assault Vest","moves":["Knock Off","Pursuit","Poison Jab","Shadow Sneak"]},
 		"Uber Pursuit Trapper": {"level":100,"evs":{"sd":176,"at":80,"hp":252},"nature":"Adamant","ability":"Poison Touch","item":"Assault Vest","moves":["Pursuit","Knock Off","Poison Jab","Shadow Sneak"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":184,"df":4,"at":68,"hp":252},"nature":"Brave","ability":"Gluttony","item":"Figy Berry","moves":["Knock Off","Protect","Poison Jab","Shadow Sneak"]},
 		"VGC17 Tanky Trash (Bulky Attacker)": {"level":50,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Gluttony","item":"Figy Berry","moves":["Knock Off","Poison Jab","Imprison","Protect"]},
 		"VGC17 Setup Sludge (Setup Attacker)": {"level":50,"evs":{"sd":40,"df":172,"at":44,"hp":252},"nature":"Brave","ability":"Gluttony","item":"Figy Berry","moves":["Knock Off","Poison Jab","Curse","Protect"]},
+		"Monotype Assault Vest (Poison)": {"level":100,"evs":{"sd":248,"df":12,"hp":248},"nature":"Careful","ability":"Poison Touch","item":"Assault Vest","moves":["Knock Off","Pursuit","Poison Jab","Shadow Sneak"]},
 	},
 	"Munchlax": {
 		"LC Recycle + Berry Juice Tank": {"level":5,"evs":{"sd":236,"df":36,"at":236},"nature":"Adamant","ability":"Thick Fat","item":"Berry Juice","moves":["Return","Earthquake","Pursuit","Recycle"]},
@@ -2145,15 +2126,15 @@ var SETDEX_SM = {
 		"ORAS PU Entry Hazards; Natu-day": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Magic Bounce","item":"Eviolite","moves":["Psychic","U-turn","Thunder Wave","Roost"]},
 	},
 	"Necrozma": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Prism Armor","item":"Leftovers","moves":["Stealth Rock","Moonlight","Psychic","Calm Mind"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Prism Armor","item":"Leftovers","moves":["Psychic","Stealth Rock","Moonlight","Thunder Wave"]},
 		"OU Stored Power": {"level":100,"evs":{"df":144,"hp":252,"sp":112},"nature":"Bold","ability":"Prism Armor","item":"Leftovers","moves":["Calm Mind","Morning Sun","Stored Power","Iron Defense"]},
 	},
 	"Nidoking": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Sludge Wave","Ice Beam","Thunderbolt"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Sludge Wave","Ice Beam","Stealth Rock"]},
 		"OU Life Orb Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Sludge Wave","Ice Beam","Flamethrower"]},
 	},
 	"Nidoqueen": {
-		"UU Showdown Usage": {"level":100,"evs":{"hp":180,"sp":76,"sa":252},"nature":"Modest","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Stealth Rock","Ice Beam","Sludge Wave"]},
+		"UU Showdown Usage": {"level":100,"evs":{"hp":40,"sp":216,"sa":252},"nature":"Modest","ability":"Sheer Force","item":"Life Orb","moves":["Sludge Wave","Earth Power","Ice Beam","Stealth Rock"]},
 		"ORAS UU Offensive Entry Hazard Setter": {"level":100,"evs":{"hp":180,"sp":76,"sa":252},"nature":"Modest","ability":"Sheer Force","item":"Life Orb","moves":["Earth Power","Ice Beam","Stealth Rock","Sludge Wave"]},
 		"ORAS UU Defensive Entry Hazard Setter": {"level":100,"evs":{"df":240,"hp":248,"sa":20},"nature":"Bold","ability":"Sheer Force","item":"Black Sludge","moves":["Stealth Rock","Roar","Ice Beam","Earth Power"]},
 	},
@@ -2165,15 +2146,15 @@ var SETDEX_SM = {
 		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Choice Specs","moves":["Power Gem","Sludge Bomb","Hidden Power Ice","Thunderbolt"]},
 		"OU Offensive Entry Hazard Setter": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Focus Sash","moves":["Stealth Rock","Power Gem","Sludge Wave","Hidden Power Ice"]},
 		"VGC17 Fast Offensive Lego": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Focus Sash","moves":["Sludge Bomb","Power Gem","Hidden Power Ice","Protect"]},
+		"Monotype Choice Scarf (Poison)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Choice Scarf","moves":["Power Gem","Sludge Wave","Hidden Power Ice","Thunderbolt"]},
 	},
 	"Ninetales": {
 		"ORAS PU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Leftovers","moves":["Nasty Plot","Fire Blast","Energy Ball","Substitute"]},
 		"ORAS NU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flash Fire","item":"Life Orb","moves":["Nasty Plot","Fire Blast","Psyshock","Energy Ball"]},
 	},
 	"Ninetales-Alola": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Snow Warning","item":"Light Clay","moves":["Moonblast","Aurora Veil","Freeze-Dry","Blizzard"]},
+		"UU Aurora Veil Support": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Snow Warning","item":"Light Clay","moves":["Aurora Veil","Freeze-Dry","Hidden Power Fire","Encore"]},
 		"OU Utility": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"at":0},"nature":"Timid","ability":"Snow Warning","item":"Light Clay","moves":["Aurora Veil","Freeze-Dry","Moonblast","Encore"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Snow Warning","item":"Light Clay","moves":["Blizzard","Aurora Veil","Moonblast","Freeze-Dry"]},
 		"VGC17 Hail Setter": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Snow Warning","item":"Focus Sash","moves":["Blizzard","Freeze-Dry","Aurora Veil","Protect"]},
 	},
 	"Ninjask": {
@@ -2187,7 +2168,6 @@ var SETDEX_SM = {
 		"ORAS LC Tailwind + 3 Attacks": {"level":5,"evs":{"sd":36,"sp":236,"sa":236},"ivs":{"hp":9},"nature":"Timid","ability":"Infiltrator","item":"Life Orb","moves":["Draco Meteor","Hurricane","Heat Wave","Tailwind"]},
 	},
 	"Noivern": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Infiltrator","item":"Choice Specs","moves":["Draco Meteor","Hurricane","U-turn","Flamethrower"]},
 		"ORAS UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Infiltrator","item":"Choice Specs","moves":["Draco Meteor","Hurricane","Flamethrower","Switcheroo"]},
 		"ORAS UU Taunt + Roost": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Infiltrator","item":"Leftovers","moves":["Draco Meteor","Flamethrower","Taunt","Roost"]},
 	},
@@ -2210,19 +2190,12 @@ var SETDEX_SM = {
 		"LC Support": {"level":5,"evs":{"df":36,"hp":76,"sp":156,"sa":196},"nature":"Modest","ability":"Weak Armor","item":"Eviolite","moves":["Spikes","Hydro Pump","Knock Off","Stealth Rock"]},
 	},
 	"Omastar": {
-		"ORAS NU Defensive Entry Hazards": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Shell Armor","item":"Leftovers","moves":["Stealth Rock","Spikes","Scald","Hidden Power Electric"]},
-		"ORAS NU Shell Smash": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Shuca Berry","moves":["Shell Smash","Surf","Ice Beam","Hidden Power Grass"]},
-		"ORAS NU Offensive Entry Hazards": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Weak Armor","item":"Focus Sash","moves":["Stealth Rock","Spikes","Scald","Ice Beam"]},
-		"ORAS RU Shell Smash": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Weak Armor","item":"Shuca Berry","moves":["Shell Smash","Hydro Pump","Ice Beam","Hidden Power Grass"]},
-		"ORAS RU Lead": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Weak Armor","item":"Focus Sash","moves":["Stealth Rock","Spikes","Scald","Ice Beam"]},
-		"ORAS UU Shell Smash": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Weak Armor","item":"Focus Sash","moves":["Shell Smash","Hydro Pump","Ice Beam","Hidden Power Electric"]},
-		"ORAS OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Choice Specs","moves":["Hydro Pump","Ice Beam","Scald","Knock Off"]},
+		"OU Shell Smash": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Waterium Z","moves":["Shell Smash","Hydro Pump","Substitute","Ancient Power"]},
 	},
 	"Onix": {
 		"LC Stealth Rock": {"level":5,"evs":{"at":236,"hp":76,"sp":196},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Stealth Rock","Rock Blast","Earthquake","Taunt"]},
 	},
 	"Oranguru": {
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":92,"df":164,"hp":252},"nature":"Calm","ability":"Inner Focus","item":"Sitrus Berry","moves":["Instruct","Trick Room","Psychic","Protect"]},
 		"VGC17 Trick Room": {"level":50,"evs":{"sd":92,"df":140,"hp":252,"sa":20},"ivs":{"sp":0},"nature":"Sassy","ability":"Inner Focus","item":"Mental Herb","moves":["Trick Room","Psychic","Instruct","Protect"]},
 	},
 	"Oshawott": {
@@ -2266,18 +2239,22 @@ var SETDEX_SM = {
 	},
 	"Pelipper": {
 		"OU Physically Defensive": {"level":100,"evs":{"sd":64,"df":196,"hp":248},"nature":"Bold","ability":"Drizzle","item":"Damp Rock","moves":["Scald","Hurricane","U-turn","Roost"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Drizzle","item":"Damp Rock","moves":["Hurricane","Tailwind","Scald","U-turn"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":252,"hp":120,"sp":136},"nature":"Timid","ability":"Drizzle","item":"Damp Rock","moves":["Hurricane","Scald","Tailwind","U-turn"]},
 		"VGC17 Offensive Rain Setter": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Drizzle","item":"Focus Sash","moves":["Scald","Hurricane","Tailwind","Protect"]},
 		"Battle Spot Doubles Offensive Rain Support": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Drizzle","item":"Focus Sash","moves":["Hurricane","Scald","Tailwind","Protect"]},
+		"Monotype Rain Setter (Water)": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Bold","ability":"Drizzle","item":"Leftovers","moves":["Scald","Roost","Hurricane","U-turn"]},
 	},
 	"Persian": {
 		"ORAS PU Nasty Plot": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Technician","item":"Life Orb","moves":["Nasty Plot","Hyper Voice","Hidden Power Ghost","Water Pulse"]},
+	},
+	"Persian-Alola": {
+		"VGC17 Parting Shot": {"level":50,"evs":{"sd":100,"hp":156,"sp":252},"nature":"Timid","ability":"Fur Coat","item":"Darkinium Z","moves":["Parting Shot","Fake Out","Foul Play","Snarl"]},
+		"VGC17 Assault Vest": {"level":50,"evs":{"sd":36,"hp":220,"sp":252},"nature":"Timid","ability":"Fur Coat","item":"Assault Vest","moves":["Fake Out","Snarl","Foul Play","Feint"]},
 	},
 	"Petilil": {
 		"ORAS LC Sun Support": {"level":5,"evs":{"sd":36,"df":120,"sp":200,"sa":120},"nature":"Timid","ability":"Chlorophyll","item":"Eviolite","moves":["Giga Drain","Sleep Powder","Healing Wish","Hidden Power Fire"]},
 	},
 	"Phanpy": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":196,"at":116,"hp":196},"nature":"Impish","ability":"Pickup","item":"Eviolite","moves":["Earthquake","Knock Off","Ice Shard","Play Rough"]},
 		"ORAS LC Utility": {"level":5,"evs":{"sd":36,"df":196,"at":116,"hp":116,"sp":36},"nature":"Impish","ability":"Pickup","item":"Eviolite","moves":["Stealth Rock","Knock Off","Earthquake","Roar"]},
 	},
 	"Phantump": {
@@ -2285,8 +2262,8 @@ var SETDEX_SM = {
 		"ORAS LC Attacker": {"level":5,"evs":{"sd":116,"df":132,"at":196,"hp":12,"sp":52},"nature":"Adamant","ability":"Natural Cure","item":"Eviolite","moves":["Horn Leech","Shadow Claw","Rock Slide","Substitute"]},
 	},
 	"Pheromosa": {
-		"OU All-out Attacker": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naive","ability":"Beast Boost","item":"Life Orb","moves":["High Jump Kick","U-turn","Ice Beam","Poison Jab"]},
 		"OU Quiver Dance": {"level":100,"evs":{"sd":32,"sp":252,"sa":224},"nature":"Modest","ability":"Beast Boost","item":"Fightinium Z","moves":["Quiver Dance","Bug Buzz","Focus Blast","Ice Beam"]},
+		"OU All-out Attacker": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naive","ability":"Beast Boost","item":"Life Orb","moves":["High Jump Kick","U-turn","Ice Beam","Poison Jab"]},
 		"OU Choice Scarf": {"level":100,"evs":{"at":252,"sp":152,"sa":104},"nature":"Naughty","ability":"Beast Boost","item":"Choice Scarf","moves":["High Jump Kick","U-turn","Ice Beam","Bug Buzz"]},
 		"Uber All-out Attacker": {"level":100,"evs":{"at":252,"sp":252,"sa":4},"nature":"Naughty","ability":"Beast Boost","item":"Life Orb","moves":["Low Kick","U-turn","Ice Beam","Rapid Spin"]},
 	},
@@ -2315,21 +2292,22 @@ var SETDEX_SM = {
 	},
 	"Pinsir": {
 		"OU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Hyper Cutter","item":"Pinsirite","moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
+		"Monotype Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Moxie","item":"Pinsirite","moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
 	},
 	"Pinsir-Mega": {
 		"OU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Hyper Cutter","item":"Pinsirite","moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
+		"Monotype Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Moxie","item":"Pinsirite","moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
 	},
 	"Piplup": {
 		"ORAS LC Stealth Rock + Defog": {"level":5,"evs":{"sd":148,"df":252,"hp":92},"nature":"Bold","ability":"Torrent","item":"Eviolite","moves":["Stealth Rock","Defog","Scald","Ice Beam"]},
 	},
 	"Plusle": {
-		"ORAS PU &quot;Support&quot;": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Plus","item":"Focus Sash","moves":["Nasty Plot","Baton Pass","Thunderbolt","Hidden Power Ice"]},
+		"ORAS PU 'Support'": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Plus","item":"Focus Sash","moves":["Nasty Plot","Baton Pass","Thunderbolt","Hidden Power Ice"]},
 	},
 	"Politoed": {
 		"ORAS PU Tank": {"level":100,"evs":{"df":8,"hp":248,"sa":252},"nature":"Modest","ability":"Water Absorb","item":"Leftovers","moves":["Scald","Ice Beam","Hidden Power Electric","Encore"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":164,"hp":248,"sp":96},"nature":"Calm","ability":"Drizzle","item":"Damp Rock","moves":["Encore","Toxic","Scald","Ice Beam"]},
 		"ORAS OU Support": {"level":100,"evs":{"sd":164,"hp":248,"sp":96},"nature":"Calm","ability":"Drizzle","item":"Damp Rock","moves":["Scald","Toxic","Encore","Rest"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":16,"hp":4,"sp":56,"sa":124},"nature":"Calm","ability":"Drizzle","item":"Sitrus Berry","moves":["Scald","Icy Wind","Helping Hand","Rain Dance"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Drizzle","item":"Sitrus Berry","moves":["Protect","Scald","Helping Hand","Icy Wind"]},
 		"ORAS Doubles Rain Setter": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Drizzle","item":"Sitrus Berry","moves":["Scald","Icy Wind","Helping Hand","Protect"]},
 	},
 	"Poliwag": {
@@ -2341,7 +2319,7 @@ var SETDEX_SM = {
 		"ORAS UU RestTalk": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"nature":"Relaxed","ability":"Water Absorb","item":"Leftovers","moves":["Rest","Sleep Talk","Scald","Circle Throw"]},
 	},
 	"Ponyta": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":76,"df":156,"at":76,"sp":196},"nature":"Jolly","ability":"Flame Body","item":"Eviolite","moves":["Morning Sun","Flare Blitz","Will-O-Wisp","Wild Charge"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":76,"df":156,"at":76,"sp":196},"nature":"Jolly","ability":"Flame Body","item":"Eviolite","moves":["Morning Sun","Flare Blitz","Will-O-Wisp","Flame Charge"]},
 		"ORAS LC Utility": {"level":5,"evs":{"sd":76,"df":156,"at":76,"sp":196},"nature":"Jolly","ability":"Flame Body","item":"Eviolite","moves":["Flare Blitz","Morning Sun","Will-O-Wisp","Flame Charge"]},
 	},
 	"Poochyena": {
@@ -2355,18 +2333,18 @@ var SETDEX_SM = {
 	"Porygon-Z": {
 		"OU Z-Conversion": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Adaptability","item":"Normalium Z","moves":["Shadow Ball","Signal Beam","Nasty Plot","Conversion"]},
 		"OU Z-Conversion": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Adaptability","item":"Normalium Z","moves":["Thunderbolt","Ice Beam","Hidden Power Ground","Conversion"]},
+		"Monotype Z-Conversion": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Adaptability","item":"Normalium Z","moves":["Shadow Ball","Conversion","Thunderbolt","Ice Beam"]},
 	},
 	"Porygon2": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Download","item":"Eviolite","moves":["Recover","Ice Beam","Tri Attack","Thunderbolt"]},
+		"UU Showdown Usage": {"level":100,"evs":{"hp":120,"sp":228,"sa":160},"nature":"Timid","ability":"Trace","item":"Eviolite","moves":["Recover","Ice Beam","Thunderbolt","Tri Attack"]},
 		"ORAS UU Defensive": {"level":100,"evs":{"sd":136,"df":120,"hp":252},"nature":"Calm","ability":"Trace","item":"Eviolite","moves":["Recover","Tri Attack","Ice Beam","Thunder Wave"]},
 		"ORAS UU Offensive": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"ivs":{"sp":0},"nature":"Quiet","ability":"Download","item":"Eviolite","moves":["Trick Room","Recover","Thunderbolt","Ice Beam"]},
 		"ORAS OU Defensive": {"level":100,"evs":{"sd":56,"df":200,"hp":252},"nature":"Calm","ability":"Trace","item":"Eviolite","moves":["Ice Beam","Thunderbolt","Recover","Toxic"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":252,"hp":252,"sa":4},"nature":"Sassy","ability":"Download","item":"Eviolite","moves":["Recover","Ice Beam","Trick Room","Thunderbolt"]},
 		"ORAS Doubles Trick Room": {"level":100,"evs":{"sd":76,"df":160,"hp":252,"sa":20},"nature":"Sassy","ability":"Download","item":"Eviolite","moves":["Trick Room","Recover","Ice Beam","Foul Play"]},
 		"VGC17 Standard": {"level":50,"evs":{"sd":188,"df":76,"hp":244},"ivs":{"sp":0},"nature":"Sassy","ability":"Download","item":"Eviolite","moves":["Trick Room","Ice Beam","Thunderbolt","Recover"]},
 	},
 	"Primarina": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Modest","ability":"Torrent","item":"Choice Specs","moves":["Moonblast","Hydro Pump","Energy Ball","Psychic"]},
+		"UU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Torrent","item":"Choice Specs","moves":["Hydro Pump","Moonblast","Psychic","Scald"]},
 		"OU Choice Specs": {"level":100,"evs":{"hp":172,"sp":84,"sa":252},"nature":"Modest","ability":"Torrent","item":"Choice Specs","moves":["Hydro Pump","Moonblast","Psychic","Hidden Power Fire"]},
 	},
 	"Primeape": {
@@ -2383,8 +2361,7 @@ var SETDEX_SM = {
 		"ORAS NU Steel Trapper": {"level":100,"evs":{"hp":172,"sp":84,"sa":252},"nature":"Modest","ability":"Magnet Pull","item":"Air Balloon","moves":["Stealth Rock","Earth Power","Magnet Rise","Taunt"]},
 	},
 	"Pumpkaboo-Small": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":76,"df":36,"hp":4,"sp":148,"sa":244},"nature":"Modest","ability":"Frisk","item":"Ghostium Z","moves":["Trick-or-Treat","Shadow Ball","Fire Blast","Giga Drain"]},
-		"ORAS LC Mixed Attacker": {"level":5,"evs":{"df":36,"at":228,"sp":228,"sa":4},"ivs":{"hp":0},"nature":"Naughty","ability":"Frisk","item":"Life Orb","moves":["Bullet Seed","Fire Blast","Shadow Sneak","Rock Slide"]},
+		"LC Z-Trick-or-Treat": {"level":5,"evs":{"sd":156,"df":36,"hp":4,"sp":148,"sa":164},"nature":"Modest","ability":"Frisk","item":"Ghostium Z","moves":["Trick-or-Treat","Shadow Ball","Fire Blast","Giga Drain"]},
 	},
 	"Pumpkaboo-Super": {
 		"LC Special Spinblocker": {"level":5,"evs":{"sd":236,"df":36,"hp":204,"sp":28,"sa":4},"nature":"Calm","ability":"Frisk","item":"Eviolite","moves":["Giga Drain","Synthesis","Will-O-Wisp","Fire Blast"]},
@@ -2401,10 +2378,10 @@ var SETDEX_SM = {
 		"ORAS NU Special Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Unnerve","item":"Life Orb","moves":["Fire Blast","Hyper Voice","Hidden Power Grass","Will-O-Wisp"]},
 	},
 	"Pyukumuku": {
-		"OU Showdown Usage": {"level":100,"evs":{"hp":252},"nature":"Hasty","ability":"Innards Out","item":"Rocky Helmet","moves":["Recover","Toxic","Counter","Soak"]},
+		"OU Unaware Pivot": {"level":100,"evs":{"sd":28,"df":228,"hp":252},"nature":"Bold","ability":"Unaware","item":"Leftovers","moves":["Recover","Toxic","Curse","Baton Pass"]},
 	},
 	"Quagsire": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Unaware","item":"Leftovers","moves":["Recover","Earthquake","Scald","Curse"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Relaxed","ability":"Unaware","item":"Leftovers","moves":["Recover","Earthquake","Scald","Curse"]},
 		"OU Physical Wall": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Unaware","item":"Leftovers","moves":["Scald","Earthquake","Recover","Toxic"]},
 	},
 	"Quilladin": {
@@ -2425,9 +2402,10 @@ var SETDEX_SM = {
 	},
 	"Raichu-Alola": {
 		"VGC17 Offensive Support": {"level":50,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Surge Surfer","item":"Psychium Z","moves":["Fake Out","Thunderbolt","Psychic","Protect"]},
+		"Monotype All-out Attacker (Electric)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"hp":29},"nature":"Modest","ability":"Surge Surfer","item":"Life Orb","moves":["Thunderbolt","Psychic","Focus Blast","Grass Knot"]},
 	},
 	"Raikou": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Choice Specs","moves":["Thunderbolt","Volt Switch","Hidden Power Ice","Shadow Ball"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Thunderbolt","Hidden Power Ice","Calm Mind","Volt Switch"]},
 		"ORAS OU Calm Mind": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Calm Mind","Thunderbolt","Hidden Power Ice","Volt Switch"]},
 		"ORAS OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Choice Specs","moves":["Thunderbolt","Volt Switch","Hidden Power Ice","Shadow Ball"]},
 		"ORAS OU Assault Vest": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Assault Vest","moves":["Thunderbolt","Volt Switch","Hidden Power Ice","Shadow Ball"]},
@@ -2457,7 +2435,7 @@ var SETDEX_SM = {
 		"Uber Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Air Lock","item":"Choice Band","moves":["Dragon Ascent","V-create","Extreme Speed","Earthquake"]},
 	},
 	"Rayquaza-Mega": {
-		"AG Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Delta Stream","item":"Life Orb","moves":["Dragon Ascent","Extreme Speed","V-create","Earthquake"]},
+		"AG Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Delta Stream","item":"Life Orb","moves":["Dragon Ascent","Extreme Speed","Dragon Dance","Earthquake"]},
 	},
 	"Regice": {
 		"ORAS PU Rock Polish": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Clear Body","item":"Life Orb","moves":["Rock Polish","Ice Beam","Thunderbolt","Focus Blast"]},
@@ -2489,11 +2467,8 @@ var SETDEX_SM = {
 		"Uber Z-Move Wallbreaker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Modest","ability":"Turboblaze","item":"Grassium Z","moves":["Blue Flare","Draco Meteor","Solar Beam","Stone Edge"]},
 	},
 	"Reuniclus": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Magic Guard","item":"Poisonium Z","moves":["Psyshock","Recover","Calm Mind","Toxic"]},
-		"ORAS UU Calm Mind": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Magic Guard","item":"Leftovers","moves":["Calm Mind","Psyshock","Focus Blast","Recover"]},
-		"ORAS UU Trick Room": {"level":100,"evs":{"df":4,"hp":252,"sa":252},"nature":"Quiet","ability":"Magic Guard","item":"Life Orb","moves":["Trick Room","Psyshock","Focus Blast","Shadow Ball"]},
-		"ORAS OU Calm Mind": {"level":100,"evs":{"sd":56,"df":200,"hp":252},"nature":"Bold","ability":"Magic Guard","item":"Leftovers","moves":["Calm Mind","Psyshock","Focus Blast","Recover"]},
-		"ORAS Doubles Offensive Trick Room": {"level":100,"evs":{"sd":68,"df":36,"hp":152,"sa":252},"ivs":{"sp":0},"nature":"Quiet","ability":"Overcoat","item":"Life Orb","moves":["Psychic","Focus Blast","Trick Room","Protect"]},
+		"UU Showdown Usage": {"level":100,"evs":{"hp":208,"sp":48,"sa":252},"nature":"Modest","ability":"Regenerator","item":"Assault Vest","moves":["Psyshock","Focus Blast","Shadow Ball","Future Sight"]},
+		"OU Calm Mind": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"ivs":{"at":0},"nature":"Bold","ability":"Magic Guard","item":"Leftovers","moves":["Calm Mind","Psyshock","Focus Blast","Recover"]},
 	},
 	"Rhydon": {
 		"ORAS NU Dancing Dino": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Lightning Rod","item":"Eviolite","moves":["Rock Polish","Earthquake","Stone Edge","Swords Dance"]},
@@ -2511,6 +2486,9 @@ var SETDEX_SM = {
 		"ORAS OU Defensive": {"level":100,"evs":{"df":252,"at":44,"hp":212},"nature":"Adamant","ability":"Solid Rock","item":"Leftovers","moves":["Stealth Rock","Earthquake","Stone Edge","Ice Punch"]},
 		"ORAS Doubles All-Out Attacker": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"ivs":{"sp":0},"nature":"Brave","ability":"Lightning Rod","item":"Life Orb","moves":["Earthquake","Stone Edge","Ice Punch","Protect"]},
 	},
+	"Ribombee": {
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Shield Dust","item":"Choice Specs","moves":["Moonblast","Bug Buzz","U-turn","Psychic"]},
+	},
 	"Riolu": {
 		"ORAS LC Offensive Swords Dance Sweeper": {"level":5,"evs":{"df":116,"at":196,"sp":196},"ivs":{"hp":0},"nature":"Jolly","ability":"Prankster","item":"Life Orb","moves":["Swords Dance","High Jump Kick","Copycat","Zen Headbutt"]},
 		"ORAS LC Bulky Swords Dance Sweeper": {"level":5,"evs":{"sd":36,"at":196,"hp":116,"sp":116},"nature":"Adamant","ability":"Prankster","item":"Eviolite","moves":["Swords Dance","High Jump Kick","Copycat","Protect"]},
@@ -2524,7 +2502,7 @@ var SETDEX_SM = {
 		"ORAS RU Bulky Spiker": {"level":100,"evs":{"sd":88,"df":172,"hp":248},"nature":"Calm","ability":"Natural Cure","item":"Eviolite","moves":["Spikes","Synthesis","Giga Drain","Sludge Bomb"]},
 	},
 	"Roserade": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Black Sludge","moves":["Sludge Bomb","Spikes","Sleep Powder","Giga Drain"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Black Sludge","moves":["Sludge Bomb","Giga Drain","Spikes","Sleep Powder"]},
 		"ORAS UU Offensive Hazards": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"hp":29},"nature":"Timid","ability":"Natural Cure","item":"Black Sludge","moves":["Spikes","Sludge Bomb","Leaf Storm","Sleep Powder"]},
 		"ORAS UU Specially Defensive": {"level":100,"evs":{"sd":252,"hp":240,"sp":16},"nature":"Calm","ability":"Natural Cure","item":"Black Sludge","moves":["Synthesis","Spikes","Giga Drain","Sleep Powder"]},
 	},
@@ -2552,7 +2530,7 @@ var SETDEX_SM = {
 		"ORAS RU SubSplit": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Thunderbolt","Blizzard","Pain Split","Substitute"]},
 	},
 	"Rotom-Heat": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Overheat","Volt Switch","Will-O-Wisp","Trick"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Overheat","Volt Switch","Trick","Will-O-Wisp"]},
 		"ORAS UU Defensive": {"level":100,"evs":{"df":52,"hp":248,"sp":208},"nature":"Timid","ability":"Levitate","item":"Leftovers","moves":["Overheat","Volt Switch","Will-O-Wisp","Pain Split"]},
 		"ORAS UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Specs","moves":["Volt Switch","Overheat","Thunderbolt","Trick"]},
 		"ORAS UU Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Volt Switch","Overheat","Hidden Power Ice","Trick"]},
@@ -2570,10 +2548,16 @@ var SETDEX_SM = {
 	},
 	"Rotom-Wash": {
 		"OU Defensive Pivot": {"level":100,"evs":{"sd":20,"df":240,"hp":248},"nature":"Bold","ability":"Levitate","item":"Leftovers","moves":["Volt Switch","Hydro Pump","Will-O-Wisp","Pain Split"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":86,"sp":170,"sa":252},"nature":"Modest","ability":"Levitate","item":"Sitrus Berry","moves":["Hydro Pump","Protect","Thunderbolt","Volt Switch"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":92,"hp":248,"sp":168},"nature":"Calm","ability":"Levitate","item":"Sitrus Berry","moves":["Hydro Pump","Protect","Will-O-Wisp","Thunderbolt"]},
 		"Battle Spot Singles Bulky": {"level":50,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Levitate","item":"Sitrus Berry","moves":["Hydro Pump","Volt Switch","Will-O-Wisp","Thunderbolt"]},
 		"Battle Spot Singles Choice Specs": {"level":50,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Levitate","item":"Choice Specs","moves":["Hydro Pump","Volt Switch","Trick","Hidden Power Ice"]},
 		"Battle Spot Singles Choice Scarf": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Choice Scarf","moves":["Volt Switch","Hydro Pump","Trick","Hidden Power Ice"]},
+		"Monotype Physically Defensive (Electric)": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Levitate","item":"Leftovers","moves":["Hydro Pump","Volt Switch","Will-O-Wisp","Pain Split"]},
+	},
+	"Rowlet": {
+		"LC Baton Pass": {"level":5,"evs":{"sd":196,"df":156,"hp":132},"nature":"Sassy","ability":"Overgrow","item":"Eviolite","moves":["Baton Pass","Swords Dance","Roost","Leaf Blade"]},
+		"LC Defensive Defog": {"level":5,"evs":{"sd":196,"df":156,"hp":132,"sp":20},"nature":"Careful","ability":"Overgrow","item":"Eviolite","moves":["Defog","Roost","Brave Bird","Leaf Blade"]},
+		"LC Swords Dance": {"level":5,"evs":{"sd":36,"at":236,"sp":180},"nature":"Jolly","ability":"Overgrow","item":"Life Orb","moves":["Swords Dance","Brave Bird","Leaf Blade","Sucker Punch"]},
 	},
 	"Rufflet": {
 		"LC Choice Scarf": {"level":5,"evs":{"df":36,"at":252,"sp":196},"nature":"Jolly","ability":"Hustle","item":"Choice Scarf","moves":["Brave Bird","Superpower","U-turn","Return"]},
@@ -2585,7 +2569,7 @@ var SETDEX_SM = {
 		"ORAS Doubles Prankster": {"level":100,"evs":{"sd":184,"df":72,"hp":252},"nature":"Impish","ability":"Prankster","item":"Sitrus Berry","moves":["Will-O-Wisp","Quash","Feint","Protect"]},
 	},
 	"Sableye-Mega": {
-		"OU Showdown Usage": {"level":100,"evs":{"df":252,"hp":248,"sp":8},"nature":"Impish","ability":"Magic Bounce","item":"Sablenite","moves":["Recover","Will-O-Wisp","Protect","Knock Off"]},
+		"OU Showdown Usage": {"level":100,"evs":{"sd":144,"df":112,"hp":252},"nature":"Careful","ability":"Magic Bounce","item":"Sablenite","moves":["Recover","Will-O-Wisp","Knock Off","Protect"]},
 		"ORAS Uber Utility": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Impish","ability":"Prankster","item":"Sablenite","moves":["Foul Play","Will-O-Wisp","Recover","Fake Out"]},
 	},
 	"Salamence": {
@@ -2594,13 +2578,13 @@ var SETDEX_SM = {
 	},
 	"Salamence-Mega": {
 		"Uber Dragon Dance": {"level":100,"evs":{"at":252,"hp":44,"sp":212},"nature":"Adamant","ability":"Intimidate","item":"Salamencite","moves":["Dragon Dance","Double-Edge","Roost","Facade"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Naive","ability":"Aerilate","item":"Salamencite","moves":["Protect","Hyper Voice","Double-Edge","Tailwind"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Aerilate","item":"Salamencite","moves":["Protect","Hyper Voice","Double-Edge","Tailwind"]},
 	},
 	"Salandit": {
 		"LC Life Orb": {"level":5,"evs":{"sd":40,"df":36,"sp":220,"sa":192},"ivs":{"hp":3},"nature":"Timid","ability":"Oblivious","item":"Life Orb","moves":["Nasty Plot","Sludge Bomb","Fire Blast","Hidden Power Ground"]},
 	},
 	"Salazzle": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Corrosion","item":"Life Orb","moves":["Sludge Wave","Flamethrower","Nasty Plot","Fire Blast"]},
+		"Monotype Nasty Plot Sweeper (Poison)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Corrosion","item":"Life Orb","moves":["Nasty Plot","Fire Blast","Sludge Wave","Hidden Power Ground"]},
 	},
 	"Samurott": {
 		"ORAS NU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Torrent","item":"Lum Berry","moves":["Swords Dance","Aqua Jet","Waterfall","Megahorn"]},
@@ -2620,6 +2604,9 @@ var SETDEX_SM = {
 	},
 	"Sandslash": {
 		"ORAS NU Sand Rush": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Sand Rush","item":"Life Orb","moves":["Earthquake","Stone Edge","Knock Off","Swords Dance"]},
+	},
+	"Sandygast": {
+		"LC Rock Polish": {"level":5,"evs":{"sd":76,"hp":76,"sp":236,"sa":116},"nature":"Modest","ability":"Water Compaction","item":"Berry Juice","moves":["Rock Polish","Earth Power","Shadow Ball","Destiny Bond"]},
 	},
 	"Sawk": {
 		"ORAS RU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Sturdy","item":"Choice Band","moves":["Close Combat","Knock Off","Poison Jab","Zen Headbutt"]},
@@ -2647,20 +2634,20 @@ var SETDEX_SM = {
 		"ORAS Doubles Fast Special Attacker (aka Sucktile)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Overgrow","item":"Sceptilite","moves":["Leaf Storm","Dragon Pulse","Focus Blast","Protect"]},
 	},
 	"Scizor": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Technician","item":"Choice Band","moves":["Bullet Punch","U-turn","Superpower","Swords Dance"]},
-		"ORAS OU Bulky Swords Dance": {"level":100,"evs":{"sd":124,"df":60,"at":16,"hp":248,"sp":60},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Swords Dance","Roost","Bullet Punch","Bug Bite"]},
-		"ORAS OU Offensive Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Technician","item":"Scizorite","moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
-		"ORAS OU Pursuit": {"level":100,"evs":{"sd":176,"at":84,"hp":248},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Pursuit","Bullet Punch","U-turn","Roost"]},
-		"ORAS Uber Red Menace": {"level":100,"evs":{"sd":200,"at":60,"hp":248},"nature":"Adamant","ability":"Technician","item":"Scizorite","moves":["Bullet Punch","Roost","Pursuit","Toxic"]},
-		"ORAS Doubles Swords Dance": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Bullet Punch","Knock Off","Swords Dance","Protect"]},
+		"UU Bulky Swords Dance": {"level":100,"evs":{"sd":136,"df":124,"hp":248},"nature":"Impish","ability":"Technician","item":"Leftovers","moves":["Swords Dance","Bullet Punch","U-turn","Roost"]},
+		"UU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Technician","item":"Choice Band","moves":["Bullet Punch","U-turn","Superpower","Pursuit"]},
+		"UU Offensive Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Technician","item":"Life Orb","moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
+		"UU Defog": {"level":100,"evs":{"sd":136,"df":124,"hp":248},"nature":"Impish","ability":"Technician","item":"Leftovers","moves":["Defog","Roost","U-turn","Bullet Punch"]},
+		"OU Bulky Swords Dance": {"level":100,"evs":{"sd":128,"df":116,"hp":248,"sp":16},"nature":"Impish","ability":"Light Metal","item":"Scizorite","moves":["Swords Dance","Roost","Bullet Punch","U-turn"]},
+		"OU Pursuit": {"level":100,"evs":{"sd":144,"at":100,"hp":248,"sp":16},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Pursuit","Bullet Punch","U-turn","Roost"]},
+		"OU Offensive Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
+		"Uber Bulky Pivot": {"level":100,"evs":{"sd":128,"at":128,"hp":252},"ivs":{"sp":0},"nature":"Brave","ability":"Light Metal","item":"Scizorite","moves":["Bullet Punch","U-turn","Roost","Toxic"]},
 	},
 	"Scizor-Mega": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":200,"df":16,"at":44,"hp":248},"nature":"Impish","ability":"Technician","item":"Scizorite","moves":["Bullet Punch","Roost","Swords Dance","U-turn"]},
-		"ORAS OU Bulky Swords Dance": {"level":100,"evs":{"sd":124,"df":60,"at":16,"hp":248,"sp":60},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Swords Dance","Roost","Bullet Punch","Bug Bite"]},
-		"ORAS OU Offensive Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Technician","item":"Scizorite","moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
-		"ORAS OU Pursuit": {"level":100,"evs":{"sd":176,"at":84,"hp":248},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Pursuit","Bullet Punch","U-turn","Roost"]},
-		"ORAS Uber Red Menace": {"level":100,"evs":{"sd":200,"at":60,"hp":248},"nature":"Adamant","ability":"Technician","item":"Scizorite","moves":["Bullet Punch","Roost","Pursuit","Toxic"]},
-		"ORAS Doubles Swords Dance": {"level":100,"evs":{"df":4,"at":252,"hp":252},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Bullet Punch","Knock Off","Swords Dance","Protect"]},
+		"OU Bulky Swords Dance": {"level":100,"evs":{"sd":128,"df":116,"hp":248,"sp":16},"nature":"Impish","ability":"Light Metal","item":"Scizorite","moves":["Swords Dance","Roost","Bullet Punch","U-turn"]},
+		"OU Pursuit": {"level":100,"evs":{"sd":144,"at":100,"hp":248,"sp":16},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Pursuit","Bullet Punch","U-turn","Roost"]},
+		"OU Offensive Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Light Metal","item":"Scizorite","moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
+		"Uber Bulky Pivot": {"level":100,"evs":{"sd":128,"at":128,"hp":252},"ivs":{"sp":0},"nature":"Brave","ability":"Light Metal","item":"Scizorite","moves":["Bullet Punch","U-turn","Roost","Toxic"]},
 	},
 	"Scolipede": {
 		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Speed Boost","item":"Leftovers","moves":["Baton Pass","Protect","Substitute","Poison Jab"]},
@@ -2670,7 +2657,7 @@ var SETDEX_SM = {
 	},
 	"Scrafty": {
 		"ORAS RU Dragon Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Shed Skin","item":"Life Orb","moves":["Dragon Dance","High Jump Kick","Knock Off","Iron Head"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Intimidate","item":"Assault Vest","moves":["Fake Out","Knock Off","Drain Punch","Ice Punch"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Brave","ability":"Intimidate","item":"Assault Vest","moves":["Knock Off","Fake Out","Drain Punch","Stone Edge"]},
 		"ORAS Doubles Utility": {"level":100,"evs":{"df":44,"at":212,"hp":252},"nature":"Relaxed","ability":"Intimidate","item":"Sitrus Berry","moves":["Fake Out","Drain Punch","Knock Off","Quick Guard"]},
 	},
 	"Scraggy": {
@@ -2694,20 +2681,16 @@ var SETDEX_SM = {
 	"Seismitoad": {
 		"ORAS RU Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Water Absorb","item":"Leftovers","moves":["Stealth Rock","Scald","Earthquake","Knock Off"]},
 		"ORAS RU Offensive Substitute": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Water Absorb","item":"Leftovers","moves":["Scald","Earth Power","Substitute","Toxic"]},
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Stealth Rock","Earth Power","Scald","Knock Off"]},
 		"ORAS UU Support": {"level":100,"evs":{"sd":56,"df":252,"hp":200},"nature":"Relaxed","ability":"Water Absorb","item":"Leftovers","moves":["Stealth Rock","Earthquake","Scald","Knock Off"]},
-		"OU Showdown Usage": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Sassy","ability":"Water Absorb","item":"Leftovers","moves":["Stealth Rock","Scald","Knock Off","Rest"]},
 		"ORAS OU Defensive": {"level":100,"evs":{"df":244,"hp":252,"sp":12},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Stealth Rock","Scald","Earthquake","Knock Off"]},
 		"ORAS OU Rain Sweeper": {"level":100,"evs":{"df":4,"hp":60,"sp":192,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Life Orb","moves":["Hydro Pump","Earth Power","Sludge Wave","Focus Blast"]},
 	},
 	"Serperior": {
-		"OU Showdown Usage": {"level":100,"evs":{"hp":200,"sp":252,"sa":56},"nature":"Timid","ability":"Contrary","item":"Leftovers","moves":["Leaf Storm","Hidden Power Fire","Substitute","Leech Seed"]},
-		"ORAS OU SubSeed": {"level":100,"evs":{"hp":56,"sp":252,"sa":200},"nature":"Timid","ability":"Contrary","item":"Leftovers","moves":["Leaf Storm","Hidden Power Fire","Substitute","Leech Seed"]},
-		"ORAS OU Special Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Contrary","item":"Leftovers","moves":["Leaf Storm","Dragon Pulse","Hidden Power Fire","Glare"]},
-		"ORAS Doubles Offensive": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Contrary","item":"Life Orb","moves":["Leaf Storm","Dragon Pulse","Hidden Power Ground","Protect"]},
+		"OU SubSeed": {"level":100,"evs":{"hp":56,"sp":252,"sa":200},"nature":"Timid","ability":"Contrary","item":"Leftovers","moves":["Substitute","Leech Seed","Leaf Storm","Hidden Power Fire"]},
+		"OU Offensive": {"level":100,"evs":{"hp":8,"sp":252,"sa":248},"nature":"Timid","ability":"Contrary","item":"Leftovers","moves":["Leaf Storm","Hidden Power Fire","Glare","Glare"]},
 	},
 	"Servine": {
-		"ORAS PU Contrary Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Contrary","item":"Eviolite","moves":["Leaf Storm","Hidden Power Ice","Glare","Synthesis"]},
+		"ORAS PU Substitute + Synthesis": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Contrary","item":"Eviolite","moves":["Leaf Storm","Hidden Power Fire","Substitute","Synthesis"]},
 	},
 	"Seviper": {
 		"ORAS PU Mixed Attacker": {"level":100,"evs":{"at":40,"sp":216,"sa":252},"nature":"Rash","ability":"Shed Skin","item":"Life Orb","moves":["Sludge Wave","Giga Drain","Flamethrower","Sucker Punch"]},
@@ -2716,10 +2699,11 @@ var SETDEX_SM = {
 		"ORAS LC Sticky Web Setter": {"level":5,"evs":{"sd":116,"df":196,"hp":156,"sa":40},"nature":"Bold","ability":"Chlorophyll","item":"Eviolite","moves":["Sticky Web","Energy Ball","Hidden Power Fire","Air Slash"]},
 	},
 	"Sharpedo": {
+		"UU Mega Sharpedo": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Speed Boost","item":"Sharpedonite","moves":["Protect","Crunch","Waterfall","Psychic Fangs"]},
 		"OU Cleaner": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Speed Boost","item":"Sharpedonite","moves":["Protect","Crunch","Psychic Fangs","Waterfall"]},
 	},
 	"Sharpedo-Mega": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Strong Jaw","item":"Sharpedonite","moves":["Crunch","Protect","Psychic Fangs","Waterfall"]},
+		"UU Mega Sharpedo": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Speed Boost","item":"Sharpedonite","moves":["Protect","Crunch","Waterfall","Psychic Fangs"]},
 		"OU Cleaner": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Speed Boost","item":"Sharpedonite","moves":["Protect","Crunch","Psychic Fangs","Waterfall"]},
 	},
 	"Shaymin": {
@@ -2728,11 +2712,9 @@ var SETDEX_SM = {
 		"ORAS UU Leech Seed": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Natural Cure","item":"Leftovers","moves":["Leech Seed","Seed Flare","Psychic","Substitute"]},
 	},
 	"Shaymin-Sky": {
-		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Serene Grace","item":"Choice Scarf","moves":["Air Slash","Seed Flare","Earth Power","Healing Wish"]},
-		"ORAS Uber Life Orb": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Serene Grace","item":"Life Orb","moves":["Air Slash","Seed Flare","Hidden Power Rock","Healing Wish"]},
-		"ORAS Uber Choice Scarf": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Serene Grace","item":"Choice Scarf","moves":["Air Slash","Seed Flare","Hidden Power Ice","Healing Wish"]},
-		"ORAS Uber SubSeed": {"level":100,"evs":{"hp":44,"sp":252,"sa":212},"nature":"Timid","ability":"Serene Grace","item":"Leftovers","moves":["Substitute","Leech Seed","Air Slash","Seed Flare"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Serene Grace","item":"Focus Sash","moves":["Air Slash","Seed Flare","Protect","Earth Power"]},
+		"Uber Life Orb Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Serene Grace","item":"Life Orb","moves":["Seed Flare","Air Slash","Earth Power","Healing Wish"]},
+		"Uber Choice Scarf Attacker": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Serene Grace","item":"Choice Scarf","moves":["Seed Flare","Air Slash","Hidden Power Ice","Healing Wish"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Serene Grace","item":"Focus Sash","moves":["Air Slash","Protect","Seed Flare","Earth Power"]},
 	},
 	"Shedinja": {
 		"OU Wonderwall": {"level":100,"evs":{"at":252,"sp":156},"ivs":{"sd":0,"df":0},"nature":"Lonely","ability":"Wonder Guard","item":"Focus Sash","moves":["Baton Pass","Protect","Shadow Sneak","Will-O-Wisp"]},
@@ -2765,6 +2747,7 @@ var SETDEX_SM = {
 	},
 	"Shuckle": {
 		"OU Sticky Web": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Sturdy","item":"Mental Herb","moves":["Sticky Web","Stealth Rock","Encore","Knock Off"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":252,"hp":252,"sp":4},"nature":"Careful","ability":"Sturdy","item":"Mental Herb","moves":["Sticky Web","Encore","Stealth Rock","Toxic"]},
 	},
 	"Shuppet": {
 		"ORAS LC Offensive Trick Room": {"level":5,"evs":{"sd":92,"df":168,"at":236,"hp":4},"ivs":{"sp":0},"nature":"Brave","ability":"Frisk","item":"Focus Sash","moves":["Trick Room","Knock Off","Shadow Sneak","Destiny Bond"]},
@@ -2791,6 +2774,8 @@ var SETDEX_SM = {
 	"Skarmory": {
 		"OU Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Sturdy","item":"Leftovers","moves":["Roost","Whirlwind","Spikes","Brave Bird"]},
 		"OU Specially Defensive": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Sturdy","item":"Leftovers","moves":["Spikes","Roost","Iron Head","Whirlwind"]},
+		"Monotype Defensive Wall": {"level":100,"evs":{"sd":32,"df":252,"hp":224},"nature":"Impish","ability":"Sturdy","item":"Leftovers","moves":["Roost","Spikes","Whirlwind","Brave Bird"]},
+		"Monotype Suicide Lead": {"level":100,"evs":{"at":252,"sp":252},"ivs":{"sd":0,"df":0,"hp":0},"nature":"Hasty","ability":"Sturdy","item":"Salac Berry","moves":["Stealth Rock","Spikes","Taunt","Brave Bird"]},
 	},
 	"Skiddo": {
 		"ORAS LC Bulk Up": {"level":5,"evs":{"sd":140,"df":52,"at":76,"sp":180},"nature":"Adamant","ability":"Sap Sipper","item":"Eviolite","moves":["Bulk Up","Horn Leech","Rock Slide","Brick Break"]},
@@ -2816,7 +2801,7 @@ var SETDEX_SM = {
 		"ORAS NU Offensive": {"level":100,"evs":{"hp":92,"sp":164,"sa":252},"nature":"Modest","ability":"Sap Sipper","item":"Eviolite","moves":["Draco Meteor","Sludge Bomb","Muddy Water","Thunderbolt"]},
 	},
 	"Slowbro": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Regenerator","item":"Leftovers","moves":["Scald","Slack Off","Psyshock","Calm Mind"]},
+		"UU Defensive": {"level":100,"evs":{"sd":24,"df":232,"hp":252},"nature":"Bold","ability":"Regenerator","item":"Leftovers","moves":["Calm Mind","Scald","Psyshock","Slack Off"]},
 		"OU Defensive": {"level":100,"evs":{"sd":28,"df":232,"hp":248},"nature":"Bold","ability":"Regenerator","item":"Leftovers","moves":["Scald","Psyshock","Slack Off","Calm Mind"]},
 	},
 	"Slowbro-Mega": {
@@ -2835,8 +2820,7 @@ var SETDEX_SM = {
 		"ORAS OU Defensive": {"level":100,"evs":{"sd":76,"df":180,"hp":252},"nature":"Calm","ability":"Regenerator","item":"Leftovers","moves":["Scald","Psyshock","Thunder Wave","Slack Off"]},
 	},
 	"Slowpoke": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":116,"df":156,"hp":196,"sa":36},"nature":"Bold","ability":"Regenerator","item":"Eviolite","moves":["Scald","Slack Off","Thunder Wave","Fire Blast"]},
-		"ORAS LC Tank": {"level":5,"evs":{"sd":116,"df":156,"hp":116,"sa":116},"nature":"Bold","ability":"Regenerator","item":"Eviolite","moves":["Scald","Slack Off","Thunder Wave","Psychic"]},
+		"LC Tank": {"level":5,"evs":{"sd":116,"df":156,"hp":116,"sa":116},"nature":"Bold","ability":"Regenerator","item":"Eviolite","moves":["Slack Off","Scald","Psychic","Thunder Wave"]},
 	},
 	"Slugma": {
 		"ORAS LC Status Spreader": {"level":5,"evs":{"sd":116,"df":196,"hp":196},"nature":"Bold","ability":"Flame Body","item":"Eviolite","moves":["Recover","Fire Blast","Earth Power","Will-O-Wisp"]},
@@ -2850,6 +2834,7 @@ var SETDEX_SM = {
 		"ORAS NU Lead": {"level":100,"evs":{"sd":80,"df":96,"hp":80,"sp":252},"nature":"Timid","ability":"Own Tempo","item":"Focus Sash","moves":["Sticky Web","Stealth Rock","Spore","Skill Swap"]},
 		"ORAS RU Suicide Lead": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Own Tempo","item":"Focus Sash","moves":["Spore","Stealth Rock","Sticky Web","Explosion"]},
 		"ORAS UU Suicide Lead": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Own Tempo","item":"Focus Sash","moves":["Spore","Stealth Rock","Sticky Web","Taunt"]},
+		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Own Tempo","item":"Focus Sash","moves":["Stealth Rock","Sticky Web","Spore","Taunt"]},
 		"Uber Showdown Usage": {"level":100,"evs":{"sd":8,"hp":248,"sp":252},"nature":"Timid","ability":"Own Tempo","item":"Focus Sash","moves":["Sticky Web","Spore","Stealth Rock","Magic Coat"]},
 		"ORAS Uber Smash Pass": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Technician","item":"Focus Sash","moves":["Shell Smash","Baton Pass","Spore","Hidden Power Steel"]},
 	},
@@ -2872,11 +2857,12 @@ var SETDEX_SM = {
 		"ORAS LC Spikes": {"level":5,"evs":{"sd":40,"df":36,"at":36,"sp":196,"sa":200},"nature":"Naive","ability":"Inner Focus","item":"Focus Sash","moves":["Spikes","Ice Beam","Hidden Power Ground","Ice Shard"]},
 	},
 	"Snover": {
+		"LC Showdown Usage": {"level":5,"evs":{"at":100,"sp":196,"sa":184},"nature":"Naive","ability":"Snow Warning","item":"Choice Scarf","moves":["Blizzard","Giga Drain","Hidden Power Ground","Ice Shard"]},
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"at":104,"sp":200,"sa":184},"nature":"Naive","ability":"Snow Warning","item":"Choice Scarf","moves":["Blizzard","Giga Drain","Ice Shard","Hidden Power Rock"]},
 		"ORAS LC Eviolite": {"level":5,"evs":{"sd":120,"df":40,"at":104,"hp":36,"sa":184},"nature":"Quiet","ability":"Snow Warning","item":"Eviolite","moves":["Blizzard","Giga Drain","Ice Shard","Hidden Power Rock"]},
 	},
 	"Snubbull": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":116,"df":196,"at":36,"hp":36,"sp":116},"nature":"Adamant","ability":"Intimidate","item":"Berry Juice","moves":["Play Rough","Thief","Earthquake","Heal Bell"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":116,"df":196,"at":36,"hp":36,"sp":116},"nature":"Adamant","ability":"Intimidate","item":"Berry Juice","moves":["Play Rough","Thief","Thunder Wave","Earthquake"]},
 		"ORAS LC Berry Juice": {"level":5,"evs":{"sd":116,"df":196,"at":36,"hp":36,"sp":116},"nature":"Adamant","ability":"Intimidate","item":"Berry Juice","moves":["Thief","Play Rough","Earthquake","Thunder Wave"]},
 		"ORAS LC Eviolite": {"level":5,"evs":{"sd":116,"df":36,"at":196,"hp":36,"sp":116},"nature":"Adamant","ability":"Intimidate","item":"Eviolite","moves":["Play Rough","Earthquake","Thunder Wave","Heal Bell"]},
 		"ORAS LC Rest + Sleep Talk": {"level":5,"evs":{"sd":196,"df":196,"at":36,"hp":36,"sp":36},"nature":"Careful","ability":"Intimidate","item":"Eviolite","moves":["Rest","Sleep Talk","Play Rough","Earthquake"]},
@@ -2925,9 +2911,8 @@ var SETDEX_SM = {
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"at":236,"hp":36,"sp":196,"sa":36},"nature":"Naive","ability":"Reckless","item":"Choice Scarf","moves":["Brave Bird","Double-Edge","U-turn","Hidden Power Grass"]},
 	},
 	"Starmie": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Analytic","item":"Life Orb","moves":["Hydro Pump","Rapid Spin","Ice Beam","Psyshock"]},
-		"ORAS OU Utility": {"level":100,"evs":{"hp":252,"sp":252,"sa":4},"nature":"Timid","ability":"Natural Cure","item":"Leftovers","moves":["Scald","Rapid Spin","Recover","Psyshock"]},
-		"ORAS OU Offensive": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"ivs":{"hp":29},"nature":"Timid","ability":"Analytic","item":"Life Orb","moves":["Rapid Spin","Hydro Pump","Psychic","Ice Beam"]},
+		"UU Offensive": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Analytic","item":"Life Orb","moves":["Hydro Pump","Ice Beam","Thunderbolt","Rapid Spin"]},
+		"UU Utility": {"level":100,"evs":{"df":4,"hp":252,"sp":252},"nature":"Timid","ability":"Natural Cure","item":"Leftovers","moves":["Scald","Rapid Spin","Recover","Reflect Type"]},
 	},
 	"Staryu": {
 		"LC Offensive Rapid Spin": {"level":5,"evs":{"df":156,"sp":236,"sa":116},"nature":"Timid","ability":"Analytic","item":"Eviolite","moves":["Rapid Spin","Hydro Pump","Ice Beam","Recover"]},
@@ -2946,23 +2931,22 @@ var SETDEX_SM = {
 		"ORAS PU Wallbreaker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Scrappy","item":"Choice Band","moves":["Return","Facade","Superpower","Crunch"]},
 		"ORAS PU Sand Rush": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Life Orb","moves":["Return","Superpower","Crunch","Facade"]},
 		"ORAS NU Sand Wallbreaker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Choice Band","moves":["Return","Crunch","Superpower","Pursuit"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Choice Band","moves":["Superpower","Crunch","Fire Fang","Return"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Sand Rush","item":"Choice Band","moves":["Superpower","Crunch","Facade","Return"]},
 	},
 	"Stunfisk": {
 		"ORAS PU Support": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Static","item":"Leftovers","moves":["Stealth Rock","Discharge","Earth Power","Toxic"]},
 	},
 	"Stunky": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":188,"df":60,"at":92,"hp":12,"sp":4,"sa":108},"nature":"Brave","ability":"Aftermath","item":"Eviolite","moves":["Sucker Punch","Pursuit","Fire Blast","Sludge Bomb"]},
-		"ORAS LC Bulky Pursuit": {"level":5,"evs":{"sd":188,"df":60,"at":92,"hp":12,"sp":4,"sa":108},"nature":"Brave","ability":"Aftermath","item":"Eviolite","moves":["Pursuit","Sucker Punch","Fire Blast","Defog"]},
-		"ORAS LC Fast Utility": {"level":5,"evs":{"df":60,"at":12,"hp":172,"sp":244},"nature":"Jolly","ability":"Aftermath","item":"Eviolite","moves":["Pursuit","Sucker Punch","Defog","Taunt"]},
+		"LC Offensive Utility": {"level":5,"evs":{"sd":188,"df":60,"at":252,"sp":4},"nature":"Careful","ability":"Aftermath","item":"Eviolite","moves":["Pursuit","Sucker Punch","Defog","Sludge Bomb"]},
 	},
 	"Sudowoodo": {
 		"ORAS PU Suicide Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Sturdy","item":"Custap Berry","moves":["Stealth Rock","Stone Edge","Wood Hammer","Sucker Punch"]},
 	},
 	"Suicune": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Scald","Calm Mind","Rest","Sleep Talk"]},
+		"UU RoarCune": {"level":100,"evs":{"df":200,"hp":252,"sp":56},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Roar","Scald","Rest","Calm Mind"]},
+		"UU Calm Mind + Protect": {"level":100,"evs":{"sd":40,"hp":252,"sp":216},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Calm Mind","Protect","Substitute","Scald"]},
+		"UU Offensive Calm Mind": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Calm Mind","Hydro Pump","Ice Beam","Hidden Power Electric"]},
 		"OU Substitute + Calm Mind": {"level":100,"evs":{"sd":40,"hp":252,"sp":216},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Substitute","Calm Mind","Scald","Protect"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":40,"df":16,"hp":252,"sp":56,"sa":144},"nature":"Bold","ability":"Pressure","item":"Sitrus Berry","moves":["Tailwind","Ice Beam","Scald","Snarl"]},
 	},
 	"Sunflora": {
 		"ORAS PU Synthesis + 3 Attacks": {"level":100,"evs":{"hp":92,"sp":164,"sa":252},"nature":"Modest","ability":"Solar Power","item":"Life Orb","moves":["Leaf Storm","Earth Power","Hidden Power Ice","Synthesis"]},
@@ -2977,30 +2961,15 @@ var SETDEX_SM = {
 		"ORAS PU Tank": {"level":100,"evs":{"sd":60,"hp":248,"sa":200},"nature":"Quiet","ability":"Sticky Hold","item":"Assault Vest","moves":["Sludge Bomb","Giga Drain","Ice Beam","Earthquake"]},
 	},
 	"Swampert": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":12,"df":248,"hp":240,"sp":8},"nature":"Relaxed","ability":"Torrent","item":"Leftovers","moves":["Stealth Rock","Earthquake","Scald","Roar"]},
-		"ORAS UU Defensive": {"level":100,"evs":{"df":252,"at":16,"hp":240},"nature":"Relaxed","ability":"Torrent","item":"Leftovers","moves":["Stealth Rock","Earthquake","Scald","Roar"]},
-		"ORAS UU Rain Sweeper": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Rain Dance","Waterfall","Earthquake","Ice Punch"]},
-		"ORAS UU Offensive Stealth Rock": {"level":100,"evs":{"at":252,"hp":212,"sp":44},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Stealth Rock","Waterfall","Earthquake","Ice Punch"]},
-		"ORAS UU Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Damp","item":"Swampertite","moves":["Scald","Earthquake","Rest","Sleep Talk"]},
-		"ORAS UU Curse": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Damp","item":"Swampertite","moves":["Curse","Earthquake","Rest","Ice Punch"]},
-		"ORAS OU Rain Sweeper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Waterfall","Earthquake","Ice Punch","Power-Up Punch"]},
-		"ORAS Doubles Swift Swim Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Waterfall","Earthquake","Ice Punch","Protect"]},
-		"ORAS Doubles Non-Mega Support": {"level":100,"evs":{"sd":56,"df":44,"hp":252,"sa":156},"nature":"Quiet","ability":"Damp","item":"Sitrus Berry","moves":["Scald","Earth Power","Ice Beam","Wide Guard"]},
+		"UU Defensive": {"level":100,"evs":{"sd":16,"df":252,"hp":240},"nature":"Relaxed","ability":"Torrent","item":"Leftovers","moves":["Stealth Rock","Earthquake","Scald","Roar"]},
 	},
 	"Swampert-Mega": {
-		"ORAS UU Rain Sweeper": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Rain Dance","Waterfall","Earthquake","Ice Punch"]},
-		"ORAS UU Offensive Stealth Rock": {"level":100,"evs":{"at":252,"hp":212,"sp":44},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Stealth Rock","Waterfall","Earthquake","Ice Punch"]},
-		"ORAS UU Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Relaxed","ability":"Damp","item":"Swampertite","moves":["Scald","Earthquake","Rest","Sleep Talk"]},
-		"ORAS UU Curse": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Damp","item":"Swampertite","moves":["Curse","Earthquake","Rest","Ice Punch"]},
-		"ORAS OU Rain Sweeper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Waterfall","Earthquake","Ice Punch","Power-Up Punch"]},
-		"ORAS Doubles Swift Swim Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Damp","item":"Swampertite","moves":["Waterfall","Earthquake","Ice Punch","Protect"]},
 	},
 	"Swanna": {
 		"ORAS PU Offensive Defog": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Hydration","item":"Life Orb","moves":["Hurricane","Scald","Defog","Roost"]},
 	},
 	"Swellow": {
-		"ORAS NU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Scrappy","item":"Choice Specs","moves":["Boomburst","Heat Wave","U-turn","Sleep Talk"]},
-		"ORAS NU Guts Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Guts","item":"Toxic Orb","moves":["Facade","Brave Bird","U-turn","Quick Attack"]},
+		"UU Boomburst (Choice Specs)": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Scrappy","item":"Choice Specs","moves":["Boomburst","Heat Wave","U-turn","Sleep Talk"]},
 	},
 	"Swinub": {
 		"ORAS LC Stealth Rock": {"level":5,"evs":{"at":196,"hp":116,"sp":196},"nature":"Jolly","ability":"Oblivious","item":"Focus Sash","moves":["Stealth Rock","Ice Shard","Earthquake","Endeavor"]},
@@ -3009,11 +2978,10 @@ var SETDEX_SM = {
 		"ORAS PU Calm Mind": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Simple","item":"Salac Berry","moves":["Calm Mind","Stored Power","Signal Beam","Substitute"]},
 	},
 	"Sylveon": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":16,"df":236,"hp":248,"sp":8},"nature":"Calm","ability":"Pixilate","item":"Leftovers","moves":["Hyper Voice","Wish","Protect","Heal Bell"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Pixilate","item":"Leftovers","moves":["Hyper Voice","Wish","Heal Bell","Protect"]},
 		"ORAS UU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Pixilate","item":"Choice Specs","moves":["Hyper Voice","Psyshock","Hidden Power Fire","Shadow Ball"]},
 		"ORAS UU Cleric": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Pixilate","item":"Leftovers","moves":["Hyper Voice","Heal Bell","Wish","Protect"]},
 		"ORAS OU Choice Specs": {"level":100,"evs":{"hp":240,"sp":16,"sa":252},"nature":"Modest","ability":"Pixilate","item":"Choice Specs","moves":["Hyper Voice","Psyshock","Hidden Power Fire","Baton Pass"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":38,"sp":220,"sa":252},"nature":"Modest","ability":"Pixilate","item":"Choice Specs","moves":["Hyper Voice","Shadow Ball","Psyshock","Hidden Power Ground"]},
 		"ORAS Doubles Choice Specs": {"level":100,"evs":{"df":200,"hp":56,"sa":252},"nature":"Modest","ability":"Pixilate","item":"Choice Specs","moves":["Hyper Voice","Psyshock","Hidden Power Ground","Hyper Beam"]},
 		"ORAS Doubles Calm Mind": {"level":100,"evs":{"sd":8,"df":164,"hp":248,"sa":88},"nature":"Modest","ability":"Pixilate","item":"Leftovers","moves":["Hyper Voice","Calm Mind","Substitute","Protect"]},
 	},
@@ -3022,7 +2990,7 @@ var SETDEX_SM = {
 		"LC Guts Physical Sweeper": {"level":5,"evs":{"at":236,"hp":36,"sp":236},"nature":"Jolly","ability":"Guts","item":"Flame Orb","moves":["Facade","Brave Bird","Quick Attack","U-turn"]},
 	},
 	"Talonflame": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":240,"hp":240,"sp":28},"nature":"Careful","ability":"Gale Wings","item":"Leftovers","moves":["Brave Bird","Roost","Will-O-Wisp","Taunt"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Gale Wings","item":"Flyinium Z","moves":["Brave Bird","Swords Dance","Flare Blitz","Taunt"]},
 		"ORAS OU Specially Defensive": {"level":100,"evs":{"sd":252,"hp":248,"sp":8},"nature":"Careful","ability":"Gale Wings","moves":["Acrobatics","Roost","Bulk Up","Will-O-Wisp"]},
 		"ORAS OU Bulky Swords Dance": {"level":100,"evs":{"at":252,"hp":248,"sp":8},"nature":"Adamant","ability":"Gale Wings","moves":["Acrobatics","Roost","Swords Dance","Will-O-Wisp"]},
 		"ORAS OU Offensive Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Gale Wings","item":"Sharp Beak","moves":["Brave Bird","Flare Blitz","Swords Dance","Roost"]},
@@ -3042,25 +3010,26 @@ var SETDEX_SM = {
 		"OU Defensive": {"level":100,"evs":{"sd":48,"df":212,"hp":248},"nature":"Relaxed","ability":"Regenerator","item":"Rocky Helmet","moves":["Sleep Powder","Giga Drain","Knock Off","Hidden Power Ice"]},
 	},
 	"Tapu Bulu": {
+		"OU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Grassy Surge","item":"Fightinium Z","moves":["Swords Dance","Horn Leech","Superpower","Zen Headbutt"]},
 		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Grassy Surge","item":"Choice Band","moves":["Wood Hammer","Horn Leech","Superpower","Stone Edge"]},
 		"OU Leech Seed": {"level":100,"evs":{"at":252,"hp":160,"sp":96},"nature":"Adamant","ability":"Grassy Surge","item":"Leftovers","moves":["Leech Seed","Bulk Up","Horn Leech","Brick Break"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"at":252,"hp":40,"sp":216},"nature":"Adamant","ability":"Grassy Surge","item":"Life Orb","moves":["Wood Hammer","Protect","Stone Edge","Horn Leech"]},
-		"Battle Spot Singles Choice Band All Out Attacker": {"level":50,"evs":{"at":252,"hp":116,"sp":140},"nature":"Adamant","ability":"Grassy Surge","item":"Choice Band","moves":["Wood Hammer","Superpower","Zen Headbutt","Horn Leech"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":8,"at":252,"hp":248},"nature":"Adamant","ability":"Grassy Surge","item":"Assault Vest","moves":["Wood Hammer","Stone Edge","Superpower","Nature\u0027s Madness"]},
+		"Battle Spot Singles Choice Band All-out Attacker": {"level":50,"evs":{"at":252,"hp":116,"sp":140},"nature":"Adamant","ability":"Grassy Surge","item":"Choice Band","moves":["Wood Hammer","Superpower","Zen Headbutt","Horn Leech"]},
 		"Battle Spot Singles Assault Vest Special Sponge": {"level":50,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Grassy Surge","item":"Assault Vest","moves":["Horn Leech","Zen Headbutt","Stone Edge","Superpower"]},
-		"Battle Spot Singles Subseed": {"level":50,"evs":{"df":4,"hp":252,"sp":252},"nature":"Jolly","ability":"Grassy Surge","item":"Leftovers","moves":["Substitute","Leech Seed","Disable","Horn Leech"]},
+		"Battle Spot Singles SubSeed": {"level":50,"evs":{"df":4,"hp":252,"sp":252},"nature":"Jolly","ability":"Grassy Surge","item":"Leftovers","moves":["Substitute","Leech Seed","Disable","Horn Leech"]},
 	},
 	"Tapu Fini": {
 		"OU Defensive": {"level":100,"evs":{"sd":16,"df":192,"hp":248,"sp":52},"nature":"Calm","ability":"Misty Surge","item":"Leftovers","moves":["Taunt","Nature\u0027s Madness","Moonblast","Defog"]},
 		"OU Calm Mind": {"level":100,"evs":{"df":248,"hp":248,"sp":12},"nature":"Bold","ability":"Misty Surge","item":"Leftovers","moves":["Calm Mind","Scald","Moonblast","Taunt"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":8,"hp":248,"sa":252},"nature":"Modest","ability":"Misty Surge","item":"Leftovers","moves":["Protect","Muddy Water","Moonblast","Calm Mind"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Modest","ability":"Misty Surge","item":"Leftovers","moves":["Muddy Water","Protect","Moonblast","Calm Mind"]},
 		"Battle Spot Singles Calm Mind": {"level":50,"evs":{"df":252,"hp":244,"sp":12},"nature":"Bold","ability":"Misty Surge","item":"Icium Z","moves":["Calm Mind","Surf","Moonblast","Mist"]},
 		"Battle Spot Singles Offensive": {"level":50,"evs":{"hp":244,"sp":12,"sa":252},"nature":"Modest","ability":"Misty Surge","item":"Waterium Z","moves":["Nature\u0027s Madness","Hydro Pump","Moonblast","Hidden Power Fire"]},
 	},
 	"Tapu Koko": {
-		"OU Offensive Pivot": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Life Orb","moves":["Thunderbolt","Hidden Power Ice","Volt Switch","U-turn"]},
+		"OU Offensive Pivot": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Magnet","moves":["Thunderbolt","Hidden Power Ice","Volt Switch","U-turn"]},
 		"OU Calm Mind": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Life Orb","moves":["Calm Mind","Thunderbolt","Hidden Power Ice","Roost"]},
 		"Uber Gigavolt Havoc": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Electrium Z","moves":["Thunder","Nature\u0027s Madness","Taunt","U-turn"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Life Orb","moves":["Dazzling Gleam","Protect","Thunderbolt","Volt Switch"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Life Orb","moves":["Dazzling Gleam","Thunderbolt","Protect","Hidden Power Ice"]},
 		"Monotype Terrain Setter (Electric)": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Electric Surge","item":"Magnet","moves":["Volt Switch","Thunderbolt","Dazzling Gleam","Hidden Power Ice"]},
 		"Monotype Physical Attacker (Electric)": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Naive","ability":"Electric Surge","item":"Choice Band","moves":["Wild Charge","Brave Bird","U-turn","Volt Switch"]},
 	},
@@ -3069,7 +3038,10 @@ var SETDEX_SM = {
 		"OU Stallbreaker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Psychic Surge","item":"Twisted Spoon","moves":["Psyshock","Moonblast","Hidden Power Fire","Taunt"]},
 		"OU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Modest","ability":"Psychic Surge","item":"Choice Specs","moves":["Psychic","Moonblast","Focus Blast","Hidden Power Fire"]},
 		"Uber Offensive Support": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Psychic Surge","item":"Terrain Extender","moves":["Psychic","Moonblast","Taunt","Nature\u0027s Madness"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Psychic Surge","item":"Choice Scarf","moves":["Psychic","Moonblast","Protect","Taunt"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Psychic Surge","item":"Life Orb","moves":["Psychic","Moonblast","Protect","Taunt"]},
+		"VGC17 Choice Scarf": {"level":50,"evs":{"sd":4,"df":60,"hp":28,"sp":164,"sa":252},"nature":"Modest","ability":"Psychic Surge","item":"Choice Scarf","moves":["Psychic","Moonblast","Dazzling Gleam","Hidden Power Fire"]},
+		"VGC17 Psychium Z": {"level":50,"evs":{"df":92,"hp":164,"sa":252},"nature":"Modest","ability":"Psychic Surge","item":"Psychium Z","moves":["Psychic","Moonblast","Taunt","Protect"]},
+		"VGC17 Life Orb": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Psychic Surge","item":"Life Orb","moves":["Psychic","Moonblast","Thunderbolt","Protect"]},
 		"Battle Spot Doubles Offensive": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Psychic Surge","item":"Psychium Z","moves":["Psychic","Moonblast","Thunderbolt","Protect"]},
 		"Battle Spot Doubles Choice Scarf": {"level":50,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Psychic Surge","item":"Choice Scarf","moves":["Psychic","Moonblast","Dazzling Gleam","Hidden Power Ground"]},
 	},
@@ -3088,42 +3060,43 @@ var SETDEX_SM = {
 		"UU Showdown Usage": {"level":100,"evs":{"df":240,"hp":252,"sp":16},"nature":"Bold","ability":"Liquid Ooze","item":"Black Sludge","moves":["Rapid Spin","Scald","Toxic Spikes","Haze"]},
 		"ORAS UU Utility": {"level":100,"evs":{"df":244,"hp":240,"sp":24},"nature":"Bold","ability":"Liquid Ooze","item":"Black Sludge","moves":["Rapid Spin","Scald","Toxic Spikes","Haze"]},
 		"ORAS UU Offensive": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Clear Body","item":"Black Sludge","moves":["Hydro Pump","Sludge Bomb","Ice Beam","Rapid Spin"]},
+		"OU Showdown Usage": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Liquid Ooze","item":"Black Sludge","moves":["Scald","Rapid Spin","Toxic Spikes","Knock Off"]},
 		"ORAS OU Support": {"level":100,"evs":{"sd":28,"df":216,"hp":248,"sp":16},"nature":"Timid","ability":"Liquid Ooze","item":"Black Sludge","moves":["Scald","Rapid Spin","Acid Spray","Toxic Spikes"]},
 	},
 	"Tepig": {
 		"ORAS LC Life Orb": {"level":5,"evs":{"at":252,"sp":236},"nature":"Jolly","ability":"Blaze","item":"Life Orb","moves":["Flare Blitz","Head Smash","Sucker Punch","Wild Charge"]},
 	},
 	"Terrakion": {
-		"ORAS OU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Choice Band","moves":["Close Combat","Stone Edge","Rock Slide","Quick Attack"]},
-		"ORAS OU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Life Orb","moves":["Swords Dance","Close Combat","Stone Edge","Substitute"]},
-		"ORAS OU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Choice Scarf","moves":["Close Combat","Stone Edge","Rock Slide","Iron Head"]},
-		"ORAS Doubles Physical Attacker": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Justified","item":"Life Orb","moves":["Rock Slide","Close Combat","Quick Guard","Protect"]},
+		"OU Choice Scarf": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Justified","item":"Choice Scarf","moves":["Close Combat","Stone Edge","Rock Slide","Earthquake"]},
+		"OU Stealth Rock": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Justified","item":"Focus Sash","moves":["Stone Edge","Close Combat","Stealth Rock","Taunt"]},
 	},
 	"Throh": {
 		"ORAS NU Phazer": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Careful","ability":"Guts","item":"Leftovers","moves":["Circle Throw","Rest","Sleep Talk","Bulk Up"]},
 	},
 	"Thundurus": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Life Orb","moves":["Thunderbolt","Hidden Power Ice","Thunder Wave","Nasty Plot"]},
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Fightinium Z","moves":["Thunderbolt","Nasty Plot","Hidden Power Ice","Focus Blast"]},
 		"OU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Life Orb","moves":["Nasty Plot","Thunderbolt","Hidden Power Ice","Focus Blast"]},
 		"OU Mixed Attacker": {"level":100,"evs":{"at":68,"sp":252,"sa":188},"nature":"Naive","ability":"Defiant","item":"Life Orb","moves":["Thunderbolt","Hidden Power Ice","Superpower","Knock Off"]},
 		"OU Thunder Wave + 3 Attacks": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Life Orb","moves":["Thunder Wave","Thunderbolt","Hidden Power Ice","Focus Blast"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Electrium Z","moves":["Protect","Rain Dance","Focus Blast","Thunder"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Life Orb","moves":["Thunderbolt","Thunder Wave","Hidden Power Ice","Protect"]},
 	},
 	"Thundurus-Therian": {
 		"OU Setup Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Volt Absorb","item":"Electrium Z","moves":["Agility","Thunderbolt","Hidden Power Ice","Nasty Plot"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Volt Absorb","item":"Choice Specs","moves":["Hidden Power Ice","Thunderbolt","Sludge Bomb","Volt Switch"]},
 	},
 	"Timburr": {
 		"LC Showdown Usage": {"level":5,"evs":{"sd":236,"df":156,"at":116},"nature":"Careful","ability":"Guts","item":"Eviolite","moves":["Drain Punch","Knock Off","Mach Punch","Bulk Up"]},
 		"ORAS LC Bulky Attacker": {"level":5,"evs":{"sd":236,"df":156,"at":116},"nature":"Careful","ability":"Guts","item":"Eviolite","moves":["Drain Punch","Mach Punch","Knock Off","Bulk Up"]},
 	},
 	"Tirtouga": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":92,"at":212,"sp":180},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Shell Smash","Aqua Jet","Stone Edge","Waterfall"]},
+		"LC Showdown Usage": {"level":5,"evs":{"df":92,"at":212,"sp":180},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Shell Smash","Stone Edge","Waterfall","Aqua Jet"]},
 		"ORAS LC Sturdy Shell Smash": {"level":5,"evs":{"df":92,"at":212,"sp":180},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Shell Smash","Waterfall","Stone Edge","Zen Headbutt"]},
 		"ORAS LC Solid Rock Shell Smash": {"level":5,"evs":{"sd":76,"df":92,"at":132,"hp":4,"sp":180},"nature":"Adamant","ability":"Solid Rock","item":"Eviolite","moves":["Shell Smash","Waterfall","Stone Edge","Zen Headbutt"]},
 		"ORAS LC Defensive": {"level":5,"evs":{"sd":156,"df":252,"hp":84,"sa":12},"nature":"Sassy","ability":"Solid Rock","item":"Eviolite","moves":["Stealth Rock","Scald","Stone Edge","Knock Off"]},
 	},
 	"Togekiss": {
-		"UU Showdown Usage": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"nature":"Bold","ability":"Serene Grace","item":"Leftovers","moves":["Air Slash","Roost","Defog","Nasty Plot"]},
+		"UU Nasty Plot": {"level":100,"evs":{"hp":252,"sp":252,"sa":4},"nature":"Timid","ability":"Serene Grace","item":"Leftovers","moves":["Air Slash","Nasty Plot","Heal Bell","Roost"]},
+		"UU Support": {"level":100,"evs":{"df":160,"hp":252,"sp":96},"nature":"Bold","ability":"Serene Grace","item":"Leftovers","moves":["Air Slash","Heal Bell","Roost","Defog"]},
 		"OU Stallbreaker": {"level":100,"evs":{"hp":252,"sp":252,"sa":4},"nature":"Timid","ability":"Serene Grace","item":"Leftovers","moves":["Air Slash","Roost","Nasty Plot","Heal Bell"]},
 	},
 	"Togepi": {
@@ -3136,7 +3109,7 @@ var SETDEX_SM = {
 		"ORAS UU Nasty Pass": {"level":100,"evs":{"sd":252,"hp":248,"sa":8},"ivs":{"sp":0},"nature":"Sassy","ability":"Super Luck","item":"Eviolite","moves":["Nasty Plot","Baton Pass","Roost","Dazzling Gleam"]},
 	},
 	"Torchic": {
-		"LC Showdown Usage": {"level":5,"evs":{"sd":36,"df":36,"sp":236,"sa":200},"nature":"Modest","ability":"Speed Boost","item":"Eviolite","moves":["Baton Pass","Protect","Swords Dance","Fire Blast"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":36,"df":36,"sp":236,"sa":200},"nature":"Modest","ability":"Speed Boost","item":"Eviolite","moves":["Protect","Baton Pass","Substitute","Fire Blast"]},
 		"ORAS LC Baton Pass": {"level":5,"evs":{"sd":36,"df":196,"at":36,"sp":236},"nature":"Impish","ability":"Speed Boost","item":"Eviolite","moves":["Protect","Curse","Substitute","Baton Pass"]},
 		"ORAS LC Life Orb": {"level":5,"evs":{"sd":36,"df":36,"sp":236,"sa":200},"ivs":{"hp":0},"nature":"Modest","ability":"Speed Boost","item":"Life Orb","moves":["Protect","Fire Blast","Hidden Power Grass","Baton Pass"]},
 	},
@@ -3146,7 +3119,6 @@ var SETDEX_SM = {
 		"VGC17 Eruption": {"level":50,"evs":{"df":4,"hp":252,"sa":252},"ivs":{"at":0,"sp":0},"nature":"Quiet","ability":"Drought","item":"Charcoal","moves":["Eruption","Heat Wave","Solar Beam","Protect"]},
 	},
 	"Tornadus": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Choice Specs","moves":["U-turn","Hurricane","Focus Blast","Tailwind"]},
 		"ORAS UU Special Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Life Orb","moves":["Hurricane","Focus Blast","Grass Knot","Tailwind"]},
 		"ORAS UU Bulk Up": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Prankster","item":"Chesto Berry","moves":["Bulk Up","Acrobatics","Rest","Knock Off"]},
 		"ORAS UU Defiant Attacker": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Defiant","moves":["Acrobatics","Knock Off","Superpower","U-turn"]},
@@ -3169,17 +3141,15 @@ var SETDEX_SM = {
 	},
 	"Toxapex": {
 		"OU Physically Defensive": {"level":100,"evs":{"sd":24,"df":232,"hp":252},"nature":"Bold","ability":"Regenerator","item":"Black Sludge","moves":["Scald","Recover","Toxic","Haze"]},
+		"Monotype Physically Defensive (Water)": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Regenerator","item":"Black Sludge","moves":["Scald","Recover","Haze","Toxic Spikes"]},
 	},
 	"Toxicroak": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Dry Skin","item":"Life Orb","moves":["Drain Punch","Swords Dance","Gunk Shot","Sucker Punch"]},
-		"ORAS UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Dry Skin","item":"Life Orb","moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"]},
-		"ORAS UU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Dry Skin","item":"Life Orb","moves":["Nasty Plot","Sludge Bomb","Vacuum Wave","Dark Pulse"]},
-		"ORAS UU Bulky Croak": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Dry Skin","item":"Black Sludge","moves":["Swords Dance","Drain Punch","Gunk Shot","Sucker Punch"]},
-		"ORAS OU Offensive": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Dry Skin","item":"Life Orb","moves":["Gunk Shot","Drain Punch","Sucker Punch","Swords Dance"]},
+		"UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Dry Skin","item":"Life Orb","moves":["Swords Dance","Gunk Shot","Drain Punch","Sucker Punch"]},
+		"UU Nasty Plot": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Dry Skin","item":"Life Orb","moves":["Nasty Plot","Sludge Bomb","Vacuum Wave","Dark Pulse"]},
 	},
 	"Trapinch": {
 		"ORAS LC Trapper": {"level":5,"evs":{"sd":76,"df":236,"at":36,"hp":156},"nature":"Adamant","ability":"Arena Trap","item":"Berry Juice","moves":["Earthquake","Feint","Rock Slide","Toxic"]},
-		"ORAS PU Arena Trap": {"level":100,"evs":{"sd":252,"at":4,"hp":252},"nature":"Careful","ability":"Arena Trap","item":"Eviolite","moves":["Earthquake","Crunch","Quick Attack","Toxic"]},
+		"ORAS PU RestTalk": {"level":100,"evs":{"sd":232,"df":28,"hp":248},"nature":"Careful","ability":"Arena Trap","item":"Eviolite","moves":["Earthquake","Toxic","Sleep Talk","Rest"]},
 	},
 	"Treecko": {
 		"ORAS LC Swords Dance": {"level":5,"evs":{"df":156,"at":236,"hp":116},"nature":"Jolly","ability":"Unburden","item":"Berry Juice","moves":["Swords Dance","Bullet Seed","Acrobatics","Drain Punch"]},
@@ -3194,7 +3164,7 @@ var SETDEX_SM = {
 		"ORAS LC Spikes": {"level":5,"evs":{"sd":20,"df":100,"at":36,"hp":116,"sp":236},"nature":"Jolly","ability":"Sticky Hold","item":"Berry Juice","moves":["Spikes","Recycle","Gunk Shot","Drain Punch"]},
 	},
 	"Tsareena": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Queenly Majesty","item":"Leftovers","moves":["Trop Kick","Rapid Spin","U-turn","Synthesis"]},
+		"UU Rapid Spin": {"level":100,"evs":{"df":96,"hp":252,"sp":160},"nature":"Impish","ability":"Queenly Majesty","item":"Leftovers","moves":["Rapid Spin","Trop Kick","Synthesis","U-turn"]},
 	},
 	"Turtwig": {
 		"ORAS LC Stealth Rock": {"level":5,"evs":{"sd":236,"df":244,"sp":28},"nature":"Careful","ability":"Overgrow","item":"Eviolite","moves":["Stealth Rock","Synthesis","Bullet Seed","Superpower"]},
@@ -3210,7 +3180,7 @@ var SETDEX_SM = {
 		"OU Choice Scarf": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Sand Stream","item":"Choice Scarf","moves":["Stone Edge","Pursuit","Crunch","Superpower"]},
 		"Uber Entry Hazard Support": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Careful","ability":"Sand Stream","item":"Chople Berry","moves":["Stealth Rock","Pursuit","Rock Slide","Toxic"]},
 		"Uber Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Sand Stream","item":"Choice Band","moves":["Pursuit","Stone Edge","Crunch","Low Kick"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Sand Stream","item":"Assault Vest","moves":["Rock Slide","Crunch","Protect","Ice Punch"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Sand Stream","item":"Choice Scarf","moves":["Crunch","Rock Slide","Protect","Ice Punch"]},
 	},
 	"Tyranitar-Mega": {
 	},
@@ -3222,11 +3192,11 @@ var SETDEX_SM = {
 		"ORAS OU Wallbreaker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Rock Head","item":"Choice Band","moves":["Head Smash","Outrage","Earthquake","Superpower"]},
 	},
 	"Tyrunt": {
+		"LC Showdown Usage": {"level":5,"evs":{"sd":92,"at":204,"sp":212},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Dragon Dance","Stone Edge","Earthquake","Outrage"]},
 		"ORAS LC Dragon Dance Sweeper": {"level":5,"evs":{"sd":76,"at":204,"sp":212},"ivs":{"hp":23},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Dragon Dance","Stone Edge","Outrage","Earthquake"]},
 		"ORAS LC Stealth Rock Phazer": {"level":5,"evs":{"sd":76,"df":140,"at":204,"hp":52},"ivs":{"hp":23},"nature":"Jolly","ability":"Sturdy","item":"Berry Juice","moves":["Stealth Rock","Dragon Tail","Stone Edge","Earthquake"]},
 	},
 	"Umbreon": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Synchronize","item":"Leftovers","moves":["Foul Play","Wish","Protect","Heal Bell"]},
 		"ORAS UU Cleric / Wish Pass": {"level":100,"evs":{"sd":252,"df":4,"hp":252},"nature":"Calm","ability":"Synchronize","item":"Leftovers","moves":["Wish","Protect","Heal Bell","Foul Play"]},
 	},
 	"Unfezant": {
@@ -3264,17 +3234,19 @@ var SETDEX_SM = {
 		"ORAS LC Toxic Spikes Setter": {"level":5,"evs":{"sd":76,"df":116,"hp":36,"sp":236,"sa":36},"nature":"Timid","ability":"Compound Eyes","item":"Eviolite","moves":["Toxic Spikes","Sleep Powder","Signal Beam","Morning Sun"]},
 	},
 	"Venusaur": {
+		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Chlorophyll","item":"Life Orb","moves":["Sludge Bomb","Hidden Power Fire","Giga Drain","Growth"]},
 		"OU Defensive Tank": {"level":100,"evs":{"sd":80,"df":180,"hp":232,"sp":16},"nature":"Bold","ability":"Chlorophyll","item":"Venusaurite","moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
 		"OU Offensive Tank": {"level":100,"evs":{"sd":80,"hp":232,"sp":16,"sa":180},"nature":"Modest","ability":"Chlorophyll","item":"Venusaurite","moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":60,"sp":196,"sa":252},"nature":"Modest","ability":"Chlorophyll","item":"Life Orb","moves":["Sludge Bomb","Protect","Sleep Powder","Giga Drain"]},
 		"Battle Spot Singles Bulky Offense": {"level":50,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Chlorophyll","item":"Venusaurite","moves":["Sludge Bomb","Synthesis","Giga Drain","Hidden Power Fire"]},
 		"Battle Spot Singles Defensive": {"level":50,"evs":{"df":252,"hp":252,"sp":4},"nature":"Bold","ability":"Chlorophyll","item":"Venusaurite","moves":["Sludge Bomb","Synthesis","Leech Seed","Giga Drain"]},
+		"Monotype Physical Tank (Poison)": {"level":100,"evs":{"sd":28,"df":212,"hp":252,"sp":16},"nature":"Bold","ability":"Chlorophyll","item":"Venusaurite","moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
 	},
 	"Venusaur-Mega": {
 		"OU Defensive Tank": {"level":100,"evs":{"sd":80,"df":180,"hp":232,"sp":16},"nature":"Bold","ability":"Chlorophyll","item":"Venusaurite","moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
 		"OU Offensive Tank": {"level":100,"evs":{"sd":80,"hp":232,"sp":16,"sa":180},"nature":"Modest","ability":"Chlorophyll","item":"Venusaurite","moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
 		"Battle Spot Singles Bulky Offense": {"level":50,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Chlorophyll","item":"Venusaurite","moves":["Sludge Bomb","Synthesis","Giga Drain","Hidden Power Fire"]},
 		"Battle Spot Singles Defensive": {"level":50,"evs":{"df":252,"hp":252,"sp":4},"nature":"Bold","ability":"Chlorophyll","item":"Venusaurite","moves":["Sludge Bomb","Synthesis","Leech Seed","Giga Drain"]},
+		"Monotype Physical Tank (Poison)": {"level":100,"evs":{"sd":28,"df":212,"hp":252,"sp":16},"nature":"Bold","ability":"Chlorophyll","item":"Venusaurite","moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
 	},
 	"Vespiquen": {
 		"ORAS PU Offensive Utility": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Pressure","item":"Life Orb","moves":["Tailwind","Bug Buzz","Air Slash","Destiny Bond"]},
@@ -3283,7 +3255,6 @@ var SETDEX_SM = {
 		"ORAS PU Defog": {"level":100,"evs":{"sd":8,"df":252,"hp":248},"nature":"Impish","ability":"Levitate","item":"Eviolite","moves":["Defog","U-turn","Roost","Earthquake"]},
 	},
 	"Victini": {
-		"OU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Victory Star","item":"Choice Scarf","moves":["V-create","Bolt Strike","U-turn","Trick"]},
 		"ORAS OU MixTini": {"level":100,"evs":{"at":96,"sp":252,"sa":160},"nature":"Naive","ability":"Victory Star","item":"Life Orb","moves":["V-create","Bolt Strike","Glaciate","Energy Ball"]},
 		"ORAS OU Choice Band": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Victory Star","item":"Choice Band","moves":["V-create","Bolt Strike","U-turn","Trick"]},
 		"ORAS Doubles Choice Scarf": {"level":100,"evs":{"at":252,"hp":36,"sp":220},"nature":"Jolly","ability":"Victory Star","item":"Choice Scarf","moves":["V-create","Bolt Strike","U-turn","Final Gambit"]},
@@ -3301,7 +3272,6 @@ var SETDEX_SM = {
 	"Virizion": {
 		"ORAS RU Swords Dance": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Lum Berry","moves":["Swords Dance","Close Combat","Leaf Blade","Stone Edge"]},
 		"ORAS RU Calm Mind": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Justified","item":"Life Orb","moves":["Calm Mind","Giga Drain","Focus Blast","Hidden Power Ice"]},
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Fightinium Z","moves":["Leaf Blade","Close Combat","Swords Dance","Substitute"]},
 		"ORAS UU Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Justified","item":"Lum Berry","moves":["Swords Dance","Leaf Blade","Close Combat","Stone Edge"]},
 		"ORAS Doubles Physical Attacker": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Justified","item":"Life Orb","moves":["Leaf Blade","Close Combat","Stone Edge","Protect"]},
 	},
@@ -3315,13 +3285,15 @@ var SETDEX_SM = {
 		"ORAS PU Weather Supporter": {"level":100,"evs":{"df":252,"at":4,"hp":252},"ivs":{"sp":0},"nature":"Relaxed","ability":"Prankster","item":"Heat Rock","moves":["Sunny Day","U-turn","Encore","Thunder Wave"]},
 	},
 	"Volcanion": {
-		"UU Showdown Usage": {"level":100,"evs":{"at":36,"sp":220,"sa":252},"nature":"Rash","ability":"Water Absorb","item":"Shuca Berry","moves":["Steam Eruption","Fire Blast","Hidden Power Electric","Superpower"]},
+		"UU Showdown Usage": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Water Absorb","item":"Choice Specs","moves":["Steam Eruption","Fire Blast","Earth Power","Sludge Bomb"]},
 		"OU All-out Attacker": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Water Absorb","item":"Choice Specs","moves":["Steam Eruption","Fire Blast","Sludge Bomb","Hidden Power Electric"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Water Absorb","item":"Leftovers","moves":["Steam Eruption","Heat Wave","Protect","Substitute"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Water Absorb","item":"Assault Vest","moves":["Steam Eruption","Heat Wave","Protect","Sludge Bomb"]},
 	},
 	"Volcarona": {
 		"OU Quiver Dance Sweeper": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flame Body","item":"Firium Z","moves":["Quiver Dance","Fire Blast","Giga Drain","Hidden Power Ground"]},
 		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flame Body","item":"Firium Z","moves":["Quiver Dance","Protect","Heat Wave","Giga Drain"]},
+		"Battle Spot Singles Special Sweeper": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flame Body","item":"Focus Sash","moves":["Quiver Dance","Fire Blast","Bug Buzz","Giga Drain"]},
+		"Battle Spot Singles Choiced Attacker": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Flame Body","item":"Choice Scarf","moves":["Fire Blast","Bug Buzz","Fiery Dance","Hidden Power Ice"]},
 	},
 	"Voltorb": {
 		"ORAS LC Lead": {"level":5,"evs":{"df":36,"hp":36,"sp":196,"sa":236},"nature":"Timid","ability":"Static","item":"Damp Rock","moves":["Rain Dance","Thunder","Volt Switch","Taunt"]},
@@ -3335,7 +3307,7 @@ var SETDEX_SM = {
 		"LC Defensive": {"level":5,"evs":{"sd":76,"df":236,"at":76,"hp":116},"nature":"Impish","ability":"Overcoat","item":"Eviolite","moves":["Roost","Knock Off","Brave Bird","Defog"]},
 	},
 	"Vulpix": {
-		"LC Showdown Usage": {"level":5,"evs":{"df":36,"sp":236,"sa":196},"nature":"Timid","ability":"Drought","item":"Heat Rock","moves":["Energy Ball","Fire Blast","Will-O-Wisp","Quick Attack"]},
+		"LC Showdown Usage": {"level":5,"evs":{"hp":52,"sp":236,"sa":196},"nature":"Timid","ability":"Drought","item":"Heat Rock","moves":["Energy Ball","Fire Blast","Will-O-Wisp","Flame Charge"]},
 		"ORAS LC Sun Support": {"level":5,"evs":{"hp":52,"sp":240,"sa":196},"nature":"Timid","ability":"Drought","item":"Heat Rock","moves":["Fire Blast","Energy Ball","Will-O-Wisp","Quick Attack"]},
 		"ORAS LC Life Orb": {"level":5,"evs":{"df":40,"sp":240,"sa":196},"ivs":{"sd":30,"df":30,"hp":23,"sp":30},"nature":"Timid","ability":"Drought","item":"Life Orb","moves":["Fire Blast","Energy Ball","Hidden Power Rock","Overheat"]},
 		"ORAS LC Choice Scarf": {"level":5,"evs":{"hp":52,"sp":240,"sa":196},"nature":"Modest","ability":"Drought","item":"Choice Scarf","moves":["Fire Blast","Energy Ball","Hidden Power Rock","Overheat"]},
@@ -3371,12 +3343,8 @@ var SETDEX_SM = {
 		"ORAS UU Physically Defensive": {"level":100,"evs":{"df":252,"hp":252,"sa":4},"nature":"Bold","ability":"Levitate","item":"Black Sludge","moves":["Toxic Spikes","Sludge Bomb","Will-O-Wisp","Pain Split"]},
 	},
 	"Whimsicott": {
-		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Pixie Plate","moves":["Moonblast","Encore","U-turn","Energy Ball"]},
-		"ORAS UU Applaud &amp; Attack (Offensive)": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Leftovers","moves":["Moonblast","Giga Drain","Encore","U-turn"]},
-		"ORAS UU Support": {"level":100,"evs":{"df":252,"hp":248,"sp":8},"nature":"Bold","ability":"Prankster","item":"Leftovers","moves":["Encore","Stun Spore","Moonblast","U-turn"]},
-		"ORAS UU Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Infiltrator","item":"Choice Specs","moves":["Moonblast","Energy Ball","Switcheroo","U-turn"]},
-		"ORAS OU Pivot": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Bold","ability":"Prankster","item":"Leftovers","moves":["U-turn","Encore","Moonblast","Stun Spore"]},
-		"ORAS Doubles Prankster": {"level":100,"evs":{"hp":196,"sp":216,"sa":96},"nature":"Timid","ability":"Prankster","item":"Focus Sash","moves":["Moonblast","Encore","Tailwind","Protect"]},
+		"OU Baton Pass Support": {"level":100,"evs":{"sd":4,"hp":252,"sp":252},"nature":"Timid","ability":"Prankster","item":"Focus Sash","moves":["Memento","Tailwind","Taunt","Encore"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Prankster","item":"Focus Sash","moves":["Tailwind","Encore","Fake Tears","Moonblast"]},
 		"VGC17 Tailwind Support": {"level":50,"evs":{"df":4,"hp":252,"sp":252},"nature":"Timid","ability":"Prankster","item":"Focus Sash","moves":["Moonblast","Tailwind","Encore","Taunt"]},
 	},
 	"Whirlipede": {
@@ -3392,8 +3360,7 @@ var SETDEX_SM = {
 		"ORAS LC Life Orb": {"level":5,"evs":{"df":36,"sp":236,"sa":236},"ivs":{"sd":30,"hp":18},"nature":"Timid","ability":"Rain Dish","item":"Life Orb","moves":["Scald","Hurricane","Knock Off","U-turn"]},
 	},
 	"Wobbuffet": {
-		"ORAS PU Bulky Death Fodder": {"level":100,"evs":{"sd":252,"df":252,"hp":4},"nature":"Bold","ability":"Telepathy","item":"Leftovers","moves":["Encore","Destiny Bond","Counter","Mirror Coat"]},
-		"ORAS Uber Utility Trapper": {"level":100,"evs":{"sd":252,"df":176,"hp":80},"nature":"Calm","ability":"Shadow Tag","item":"Custap Berry","moves":["Encore","Mirror Coat","Counter","Destiny Bond"]},
+		"Uber Wobbuffet": {"level":100,"evs":{"sd":252,"df":32,"hp":204},"ivs":{"at":0},"nature":"Calm","ability":"Shadow Tag","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
 	},
 	"Woobat": {
 		"ORAS LC Baton Pass Recipient": {"level":5,"evs":{"sd":252,"df":172,"hp":76},"nature":"Bold","ability":"Unaware","item":"Eviolite","moves":["Stored Power","Calm Mind","Roost","Heat Wave"]},
@@ -3412,7 +3379,7 @@ var SETDEX_SM = {
 		"ORAS PU Utility": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Overcoat","item":"Leftovers","moves":["Stealth Rock","Toxic","Protect","Iron Head"]},
 	},
 	"Wynaut": {
-		"LC Showdown Usage": {"level":5,"evs":{"hp":236,"sp":252},"nature":"Timid","ability":"Shadow Tag","item":"Berry Juice","moves":["Counter","Encore","Mirror Coat","Destiny Bond"]},
+		"LC Showdown Usage": {"level":5,"evs":{"sd":132,"df":132,"hp":236},"nature":"Bold","ability":"Shadow Tag","item":"Berry Juice","moves":["Mirror Coat","Encore","Counter","Safeguard"]},
 		"ORAS LC Standard": {"level":5,"evs":{"sd":132,"df":132,"hp":236},"nature":"Bold","ability":"Shadow Tag","item":"Berry Juice","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
 	},
 	"Xatu": {
@@ -3432,6 +3399,7 @@ var SETDEX_SM = {
 	"Xurkitree": {
 		"OU Tail Glow": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Electrium Z","moves":["Thunderbolt","Tail Glow","Energy Ball","Hidden Power Ice"]},
 		"OU Z-move Sweeper": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Electrium Z","moves":["Electric Terrain","Thunderbolt","Energy Ball","Hidden Power Ice"]},
+		"Uber Z-Hypnosis Sweeper": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Psychium Z","moves":["Hypnosis","Tail Glow","Thunderbolt","Grass Knot"]},
 		"VGC17 Choice Attacker": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Beast Boost","item":"Choice Scarf","moves":["Thunderbolt","Hidden Power Ice","Energy Ball","Volt Switch"]},
 		"VGC17 Special Attacker": {"level":50,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Beast Boost","item":"Electrium Z","moves":["Thunderbolt","Hidden Power Ice","Energy Ball","Protect"]},
 		"Monotype Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Beast Boost","item":"Choice Scarf","moves":["Thunderbolt","Energy Ball","Hidden Power Ice","Volt Switch"]},
@@ -3444,6 +3412,9 @@ var SETDEX_SM = {
 		"ORAS UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Tinted Lens","item":"Choice Specs","moves":["Bug Buzz","Air Slash","Giga Drain","U-turn"]},
 		"ORAS UU Speed Boost": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Modest","ability":"Speed Boost","item":"Life Orb","moves":["Protect","Bug Buzz","Air Slash","Giga Drain"]},
 	},
+	"Yungoos": {
+		"LC Pseudo-trapper": {"level":5,"evs":{"sd":36,"df":116,"at":196,"sp":156},"nature":"Adamant","ability":"Stakeout","item":"Berry Juice","moves":["Yawn","Pursuit","Return","Earthquake"]},
+	},
 	"Yveltal": {
 		"Uber Life Orb Attacker": {"level":100,"evs":{"at":4,"sp":252,"sa":252},"nature":"Rash","ability":"Dark Aura","item":"Life Orb","moves":["Dark Pulse","Oblivion Wing","Sucker Punch","Taunt"]},
 		"Uber Choice Specs": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Dark Aura","item":"Choice Specs","moves":["Dark Pulse","Oblivion Wing","Heat Wave","U-turn"]},
@@ -3455,7 +3426,7 @@ var SETDEX_SM = {
 	},
 	"Zapdos": {
 		"OU Defensive": {"level":100,"evs":{"df":244,"hp":248,"sp":16},"nature":"Bold","ability":"Pressure","item":"Leftovers","moves":["Discharge","Roost","Heat Wave","Defog"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"hp":84,"sp":172,"sa":252},"nature":"Modest","ability":"Static","item":"Sitrus Berry","moves":["Tailwind","Hidden Power Ice","Thunderbolt","Roost"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"hp":84,"sp":172,"sa":252},"nature":"Modest","ability":"Static","item":"Psychic Seed","moves":["Thunderbolt","Tailwind","Hidden Power Ice","Roost"]},
 		"Monotype SubToxic (Flying)": {"level":100,"evs":{"sd":180,"hp":252,"sp":76},"nature":"Timid","ability":"Pressure","item":"Leftovers","moves":["Discharge","Roost","Toxic","Substitute"]},
 		"Monotype Defog (Flying)": {"level":100,"evs":{"sd":192,"hp":252,"sp":64},"nature":"Calm","ability":"Pressure","item":"Leftovers","moves":["Volt Switch","Roost","Defog","Heat Wave"]},
 	},
@@ -3485,14 +3456,14 @@ var SETDEX_SM = {
 		"ORAS PU Specially Defensive": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Careful","ability":"Hustle","item":"Eviolite","moves":["Crunch","Dragon Tail","Rest","Sleep Talk"]},
 	},
 	"Zygarde": {
-		"OU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Aura Break","item":"Choice Band","moves":["Thousand Arrows","Outrage","Extreme Speed","Toxic"]},
-		"Uber Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Power Construct","item":"Leftovers","moves":["Rest","Thousand Arrows","Dragon Tail","Sleep Talk"]},
-		"DOU Showdown Usage": {"level":100,"evs":{"at":252,"hp":104,"sp":152},"nature":"Adamant","ability":"Aura Break","item":"Leftovers","moves":["Thousand Arrows","Protect","Dragon Dance","Substitute"]},
+		"OU SubCoil": {"level":100,"evs":{"sd":212,"hp":240,"sp":56},"nature":"Careful","ability":"Aura Break","item":"Leftovers","moves":["Substitute","Coil","Thousand Arrows","Toxic"]},
+		"OU Dragon Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Aura Break","item":"Life Orb","moves":["Dragon Dance","Thousand Arrows","Outrage","Extreme Speed"]},
+		"Uber Showdown Usage": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Power Construct","item":"Leftovers","moves":["Thousand Arrows","Rest","Sleep Talk","Coil"]},
+		"DOU Showdown Usage": {"level":100,"evs":{"at":252,"hp":104,"sp":152},"nature":"Adamant","ability":"Aura Break","item":"Groundium Z","moves":["Thousand Arrows","Protect","Dragon Dance","Glare"]},
 	},
 	"Zygarde-10%": {
 		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Aura Break","item":"Choice Band","moves":["Thousand Arrows","Extreme Speed","Outrage","Sleep Talk"]},
 		"OU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Aura Break","item":"Choice Band","moves":["Thousand Arrows","Outrage","Extreme Speed","Toxic"]},
-		"Uber Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Power Construct","item":"Leftovers","moves":["Rest","Thousand Arrows","Dragon Tail","Sleep Talk"]},
 	},
 	"Zygarde-Complete": {
 		"Uber Physically Defensive": {"level":100,"evs":{"sd":4,"df":252,"hp":252},"nature":"Impish","ability":"Power Construct","item":"Leftovers","moves":["Rest","Thousand Arrows","Dragon Tail","Sleep Talk"]},

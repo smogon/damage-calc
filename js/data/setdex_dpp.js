@@ -60,7 +60,7 @@ var SETDEX_DPP = {
 	},
 	"Ampharos": {
 		"NU Showdown Usage": {"level":100,"evs":{"sd":24,"hp":232,"sa":252},"nature":"Quiet","ability":"Static","item":"Life Orb","moves":["Thunderbolt","Focus Blast","Hidden Power Ice","Discharge"]},
-		"UU Why Ampharos Don&#39;t Have Wool (Life Orb)": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Static","item":"Life Orb","moves":["Thunderbolt","Hidden Power Ice","Focus Blast","Substitute"]},
+		"UU Why Ampharos Don't Have Wool (Life Orb)": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Static","item":"Life Orb","moves":["Thunderbolt","Hidden Power Ice","Focus Blast","Substitute"]},
 		"UU Specially Defensive": {"level":100,"evs":{"sd":176,"hp":252,"sa":80},"nature":"Modest","ability":"Static","item":"Leftovers","moves":["Discharge","Hidden Power Ice","Heal Bell","Reflect"]},
 		"UU Choice Specs": {"level":100,"evs":{"hp":208,"sp":48,"sa":252},"nature":"Modest","ability":"Static","item":"Choice Specs","moves":["Thunderbolt","Focus Blast","Hidden Power Ice","Signal Beam"]},
 		"UU Rain Dance Support": {"level":100,"evs":{"sd":180,"hp":252,"sa":76},"nature":"Modest","ability":"Static","item":"Damp Rock","moves":["Rain Dance","Thunder","Hidden Power Water","Safeguard"]},
@@ -693,7 +693,7 @@ var SETDEX_DPP = {
 	},
 	"Farfetch'd": {
 		"UU Violation!": {"level":100,"evs":{"at":252,"hp":252,"sp":4},"nature":"Adamant","item":"Stick","moves":["Knock Off","Toxic","U-turn","Return"]},
-		"UU CH&#39;Ding": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Stick","moves":["Slash","Night Slash","Air Cutter","Steel Wing"]},
+		"UU CH'Ding": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Stick","moves":["Slash","Night Slash","Air Cutter","Steel Wing"]},
 		"UU Choice Bandux": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Choice Band","moves":["Return","Aerial Ace","Quick Attack","Night Slash"]},
 		"UU Flail": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","item":"Salac Berry","moves":["Endure","Flail","Swords Dance","Substitute"]},
 	},
@@ -1262,7 +1262,7 @@ var SETDEX_DPP = {
 		"UU Trick Room": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"ivs":{"sp":0},"nature":"Brave","ability":"Levitate","item":"Leftovers","moves":["Trick Room","Explosion","Stealth Rock","Psychic"]},
 	},
 	"Luvdisc": {
-		"UU Rain Dance &quot;Special&quot; Attacker": {"level":100,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Damp Rock","moves":["Rain Dance","Surf","Ice Beam","Toxic"]},
+		"UU Rain Dance 'Special' Attacker": {"level":100,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Swift Swim","item":"Damp Rock","moves":["Rain Dance","Surf","Ice Beam","Toxic"]},
 		"UU Enoyer": {"level":100,"evs":{"sd":252,"hp":252,"sp":4},"nature":"Calm","ability":"Swift Swim","item":"Leftovers","moves":["Toxic","Sweet Kiss","Attract","Protect"]},
 		"UU F(l)ail": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Swift Swim","item":"Liechi Berry","moves":["Substitute","Flail","Agility","Safeguard"]},
 	},
@@ -2483,7 +2483,7 @@ var SETDEX_DPP = {
 		"LC Choice Scarf": {"level":5,"evs":{"sp":236,"sa":240},"nature":"Naive","item":"Choice Scarf","moves":["Air Slash","U-turn","Ice Beam","Hidden Power Ground"]},
 	},
 	"Wobbuffet": {
-		"Uber Oh, no! It&#39;s Wobbuffet! (Standard)": {"level":100,"evs":{"sd":252,"df":228,"hp":28},"nature":"Calm","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
+		"Uber Oh, no! It's Wobbuffet! (Standard)": {"level":100,"evs":{"sd":252,"df":228,"hp":28},"nature":"Calm","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
 	},
 	"Wooper": {
 		"LC Trick Room Sweeper": {"level":5,"evs":{"sd":76,"df":76,"at":236,"hp":76},"nature":"Brave","ability":"Water Absorb","item":"Life Orb","moves":["Earthquake","Waterfall","Return","Ice Punch"]},
