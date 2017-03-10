@@ -584,7 +584,7 @@ var SETDEX_ADV = {
 		"UU Special Attacker": {"level":100,"evs":{"df":240,"hp":252,"sp":16},"nature":"Modest","item":"Leftovers","moves":["Hypnosis","Psychic","Ice Beam","Calm Mind"]},
 	},
 	"Luvdisc": {
-		"NU Rain Dance &quot;Sweeper&quot;": {"level":100,"evs":{"df":228,"hp":28,"sa":252},"nature":"Modest","item":"Lum Berry","moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]},
+		"NU Rain Dance 'Sweeper'": {"level":100,"evs":{"df":228,"hp":28,"sa":252},"nature":"Modest","item":"Lum Berry","moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]},
 	},
 	"Machamp": {
 		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":252,"sp":4},"nature":"Adamant","item":"Choice Band","moves":["Cross Chop","Sleep Talk","Hidden Power Ghost","Rock Slide"]},
@@ -1175,7 +1175,7 @@ var SETDEX_ADV = {
 		"NU Special Sweeper": {"level":100,"evs":{"sd":208,"df":48,"sa":252},"nature":"Modest","item":"Leftovers","moves":["Fake Tears","Thunderbolt","Ice Beam","Wish"]},
 	},
 	"Wobbuffet": {
-		"Uber Oh, no! It&#39;s Wobbuffet! (Standard)": {"level":100,"evs":{"sd":252,"df":252,"hp":4},"nature":"Careful","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
+		"Uber Oh, no! It's Wobbuffet! (Standard)": {"level":100,"evs":{"sd":252,"df":252,"hp":4},"nature":"Careful","item":"Leftovers","moves":["Encore","Counter","Mirror Coat","Safeguard"]},
 	},
 	"Xatu": {
 		"UU Baton Pass": {"level":100,"evs":{"df":184,"hp":252,"sa":74},"nature":"Quiet","ability":"Synchronize","item":"Leftovers","moves":["Baton Pass","Calm Mind","Wish","Psychic"]},
