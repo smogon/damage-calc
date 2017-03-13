@@ -235,11 +235,11 @@ $(".mode").change(function() {
 $(".tiers label").mouseup(function() {
     var oldID = $('.tiers input:checked').attr("id");
     var newID = $(this).attr("for");
-    if ((oldID === "Doubles" || oldID === "VGC14") && (newID !== oldID)) { 
+    if ((oldID === "Doubles" || _.startsWith(oldID, "VGC")) && (newID !== oldID)) {
         $("#singles-format").attr("disabled", false);
         $("#singles-format").prop("checked", true);
     }
-    if ((oldID === "VGC14" || oldID === "LC") && (newID !== "VGC14" && newID !== "LC")) {
+    if ((_.startsWith(oldID, "VGC") || oldID === "LC") && (!_.startsWith(newID, "VGC") && newID !== "LC")) {
         setLevel("100");
     }
 });
@@ -249,7 +249,7 @@ $(".tiers input").change(function() {
     var id = $(this).attr("id");
     $(".tiers input").not(":" + type).prop("checked", false); // deselect all radios if a checkbox is checked, and vice-versa
     
-    if (id === "Doubles" || id === "VGC14") {
+    if (id === "Doubles" || _.startsWith(id, "VGC")) {
         $("#doubles-format").prop("checked", true);
         $("#singles-format").attr("disabled", true);
     }
@@ -258,7 +258,7 @@ $(".tiers input").change(function() {
         setLevel("5");
     }
     
-    if (id === "VGC14" && $('.level').val() !== "50") {
+    if (_.startsWith(id, "VGC") && $('.level').val() !== "50") {
         setLevel("50");
     }
 });
@@ -277,7 +277,7 @@ $(".set-selector").change(function(e) {
     var format = getSelectedTiers()[0];
     if (genWasChanged) {
         genWasChanged = false;
-    } else if (format === "VGC14" && $('.level').val() !== "50") {
+    } else if (_.startsWith(format, "VGC") && $('.level').val() !== "50") {
         setLevel("50");
     } else if (format === "LC" && $('.level').val() !== "5") {
         setLevel("5");
