@@ -325,9 +325,11 @@ $(".set-selector").change(function() {
                 moveObj.change();
             }
         }
-        var format = getSelectedTiers()[0];
-        if (format === "LC") pokeObj.find(".level").val(5);
-        if (_.startsWith(format, "VGC")) pokeObj.find(".level").val(50);
+        if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
+            var format = getSelectedTiers()[0];
+            if (format === "LC") pokeObj.find(".level").val(5);
+            if (_.startsWith(format, "VGC")) pokeObj.find(".level").val(50);
+        }
         calcHP(pokeObj);
         calcStats(pokeObj);
         abilityObj.change();
