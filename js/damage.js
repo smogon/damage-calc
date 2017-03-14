@@ -356,6 +356,13 @@ function getDamageResult(attacker, defender, move, field) {
     } else if (attacker.item === move.type + " Gem") {
         bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
         description.attackerItem = attacker.item;
+    } else if (((attacker.item === "Soul Dew" && attacker.name === "Latios") ||
+        (attacker.item === "Soul Dew" && attacker.name === "Latios-Mega") ||
+        (attacker.item === "Soul Dew" && attacker.name === "Latias") ||
+        (attacker.item === "Soul Dew" && attacker.name === "Latias-Mega")) &&
+        (move.type === attacker.type1 || move.type === attacker.type2)) {
+      bpMods.push( gen >= 7 ? 0x1333 : 0x1000);
+      description.attackerItem = attacker.item;
     }
     
     if ((move.name === "Facade" && ["Burned","Paralyzed","Poisoned","Badly Poisoned"].indexOf(attacker.status) !== -1) ||
