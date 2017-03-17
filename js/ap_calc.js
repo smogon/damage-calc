@@ -626,7 +626,7 @@ $(".gen").change(function () {
     var itemOptions = getSelectOptions(items, true);
     $("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
     
-    $(".set-selector").val(getSetOptions()[gen < 4 ? 3 : 1].id);
+    $(".set-selector").val(getSetOptions()[gen < 3 ? 3 : 1].id);
     $(".set-selector").change();
 });
 
@@ -794,7 +794,7 @@ $(document).ready(function() {
             });
         },
         initSelection: function(element, callback) {
-            var data = getSetOptions()[gen < 4 ? 3 : 1];
+            var data = getSetOptions()[gen < 3 ? 3 : 1];
             callback(data);
         }
     });
@@ -805,7 +805,7 @@ $(document).ready(function() {
             return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
         }
     });
-    $(".set-selector").val(getSetOptions()[gen < 4 ? 3 : 1].id);
+    $(".set-selector").val(getSetOptions()[gen < 3 ? 3 : 1].id);
     $(".set-selector").change();
 
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
