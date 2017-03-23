@@ -3013,7 +3013,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Relic Song': { zp: 140 },
     'Retaliate': { zp: 140 },
     'Return': { zp: 160 },
-    'Revelation Dancer': {
+    'Revelation Dance': {
         bp: 90,
         type: 'Normal',
         category: 'Special',
