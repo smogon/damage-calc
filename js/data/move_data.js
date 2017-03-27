@@ -2952,6 +2952,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Origin Pulse': { zp: 185 },
     'Outrage': { zp: 190 },
     'Overheat': { zp: 195 },
+    'Paleo Wave': { zp: 160 },
     'Payback': { zp: 100 },
     'Petal Dance': { zp: 190 },
     'Phantom Force': { zp: 175 },
@@ -3049,6 +3050,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Shadow Claw': { zp: 140 },
     'Shadow Force': { zp: 190 },
     'Shadow Sneak': { zp: 100 },
+    'Shadow Strike': { zp: 160 },
     'Shattered Psyche': {
         bp: 1,
         type: 'Psychic',
