@@ -5359,6 +5359,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     },
     "w": 15.0
   },
+  "Breezi": {
+    "t1": "Poison",
+    "t2": "Flying",
+    "bs": {
+      "hp": 50,
+      "at": 46,
+      "df": 69,
+      "sa": 60,
+      "sd": 50,
+      "sp": 75
+    },
+    "w": 0.6
+  },
   "Bronzong": {
     "t1": "Steel",
     "t2": "Psychic",
@@ -5677,6 +5690,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     },
     "w": 138.6
   },
+  "Embirch": {
+    "t1": "Fire",
+    "t2": "Grass",
+    "bs": {
+      "hp": 60,
+      "at": 40,
+      "df": 55,
+      "sa": 65,
+      "sd": 40,
+      "sp": 60
+    },
+    "w": 15.0
+  },
   "Empoleon": {
     "t1": "Water",
     "t2": "Steel",
@@ -5714,6 +5740,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
       "sp": 66
     },
     "w": 7.0
+  },
+  "Flarelm": {
+    "t1": "Fire",
+    "t2": "Grass",
+    "bs": {
+      "hp": 90,
+      "at": 50,
+      "df": 95,
+      "sa": 75,
+      "sd": 70,
+      "sp": 40
+    },
+    "w": 73.0
   },
   "Floatzel": {
     "t1": "Water",
@@ -6697,6 +6736,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
     },
     "w": 52.0
   },
+  "Syclar": {
+    "t1": "Ice",
+    "t2": "Bug",
+    "bs": {
+      "hp": 40,
+      "at": 76,
+      "df": 45,
+      "sa": 74,
+      "sd": 39,
+      "sp": 91
+    },
+    "w": 4.0
+  },
   "Tangrowth": {
     "t1": "Grass",
     "bs": {
@@ -6937,6 +6989,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     "w": 32.0,
     "ab": "Defeatist"
   },
+  "Argalis": {
+    "t1": "Bug",
+    "t2": "Psychic",
+    "bs": {
+      "hp": 60,
+      "at": 90,
+      "df": 89,
+      "sa": 87,
+      "sd": 40,
+      "sp": 54
+    },
+    "w": 341.4
+  },
   "Audino": {
     "t1": "Normal",
     "bs": {
@@ -7059,6 +7124,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     },
     "w": 94.6
   },
+  "Brattler": {
+    "t1": "Dark",
+    "t2": "Grass",
+    "bs": {
+      "hp": 80,
+      "at": 70,
+      "df": 40,
+      "sa": 20,
+      "sd": 90,
+      "sp": 30
+    },
+    "w": 11.5
+  },
   "Braviary": {
     "t1": "Normal",
     "t2": "Flying",
@@ -7084,6 +7162,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sp": 32
     },
     "w": 81.0
+  },
+  "Cawdet": {
+    "t1": "Steel",
+    "t2": "Flying",
+    "bs": {
+      "hp": 35,
+      "at": 72,
+      "df": 85,
+      "sa": 40,
+      "sd": 55,
+      "sp": 88
+    },
+    "w": 25.0
   },
   "Cawmodore": {
     "t1": "Steel",
@@ -7211,6 +7302,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sp": 40
     },
     "w": 8.5
+  },
+  "Cupra": {
+    "t1": "Bug",
+    "t2": "Psychic",
+    "bs": {
+      "hp": 50,
+      "at": 60,
+      "df": 49,
+      "sa": 67,
+      "sd": 30,
+      "sp": 44
+    },
+    "w": 4.8
   },
   "Darmanitan": {
     "t1": "Fire",
@@ -8102,6 +8206,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
     },
     "w": 60.5
   },
+  "Necturine": {
+    "t1": "Grass",
+    "t2": "Ghost",
+    "bs": {
+      "hp": 49,
+      "at": 55,
+      "df": 60,
+      "sa": 50,
+      "sd": 75,
+      "sp": 51
+    },
+    "w": 1.8
+  },
   "Necturna": {
     "t1": "Grass",
     "t2": "Ghost",
@@ -8390,6 +8507,19 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sp": 48
     },
     "w": 11.8
+  },
+  "Scratchet": {
+    "t1": "Normal",
+    "t2": "Fighting",
+    "bs": {
+      "hp": 55,
+      "at": 85,
+      "df": 80,
+      "sa": 20,
+      "sd": 70,
+      "sp": 40
+    },
+    "w": 20.0
   },
   "Seismitoad": {
     "t1": "Water",
@@ -9217,6 +9347,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 5.0
   },
+  "Caimanoe": {
+    "t1": "Water",
+    "t2": "Steel",
+    "bs": {
+      "hp": 73,
+      "at": 85,
+      "df": 65,
+      "sa": 80,
+      "sd": 40,
+      "sp": 87
+    },
+    "w": 72.5
+  },
   "Carbink": {
     "t1": "Rock",
     "t2": "Fairy",
@@ -9435,6 +9578,18 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sp": 62
     },
     "w": 1.7
+  },
+  "Floatoy": {
+    "t1": "Water",
+    "bs": {
+      "hp": 48,
+      "at": 70,
+      "df": 40,
+      "sa": 70,
+      "sd": 30,
+      "sp": 77
+    },
+    "w": 1.9
   },
   "Floette": {
     "t1": "Fairy",
@@ -10547,6 +10702,18 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 460.0
   },
+  "Pluffle": {
+    "t1": "Fairy",
+    "bs": {
+      "hp": 74,
+      "at": 38,
+      "df": 51,
+      "sa": 65,
+      "sd": 78,
+      "sp": 49
+    },
+    "w": 1.8,
+  },
   "Groudon-Primal": {
     "t1": "Ground",
     "t2": "Fire",
@@ -10712,6 +10879,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
     },
     "w": 5.0
   },
+  "Snugglow": {
+    "t1": "Electric",
+    "t2": "Poison",
+    "bs": {
+      "hp": 40,
+      "at": 37,
+      "df": 79,
+      "sa": 91,
+      "sd": 68,
+      "sp": 70
+    },
+    "w": 6.0
+  },
   "Spewpa": {
     "t1": "Bug",
     "bs": {
@@ -10850,6 +11030,19 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sp": 95
     },
     "w": 44.5
+  },
+  "Volkritter": {
+    "t1": "Water",
+    "t2": "Fire",
+    "bs": {
+      "hp": 60,
+      "at": 30,
+      "df": 50,
+      "sa": 80,
+      "sd": 60,
+      "sp": 70
+    },
+    "w": 15.0
   },
   "Xerneas": {
     "t1": "Fairy",
