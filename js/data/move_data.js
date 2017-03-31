@@ -75,7 +75,8 @@ var MOVES_RBY = {
     },
     'Dig': {
         bp: 100,
-        type: 'Ground'
+        type: 'Ground',
+        makesContact: true
     },
     'Disable': {
         bp: 0,
@@ -150,7 +151,8 @@ var MOVES_RBY = {
     'Fly': {
         bp: 70,
         type: 'Flying',
-        category: 'Physical'
+        category: 'Physical',
+        makesContact: true
     },
     'Fury Swipes': {
         bp: 18,
@@ -327,7 +329,8 @@ var MOVES_RBY = {
     'Slash': {
         bp: 70,
         type: 'Normal',
-        alwaysCrit: true
+        alwaysCrit: true,
+        makesContact: true
     },
     'Sludge': {
         bp: 65,
@@ -343,7 +346,8 @@ var MOVES_RBY = {
     },
     'Submission': {
         bp: 80,
-        type: 'Fighting'
+        type: 'Fighting',
+        makesContact: true
     },
     'Substitute': {
         bp: 0,
@@ -351,7 +355,8 @@ var MOVES_RBY = {
     },
     'Super Fang': {
         bp: 0,
-        type: 'Normal'
+        type: 'Normal',
+        makesContact: true
     },
     'Surf': {
         bp: 95,
@@ -903,8 +908,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     },
     'Endeavor': {
         bp: 1,
-        type: "Normal",
-        category: "Physical",
+        type: 'Normal',
+        category: 'Physical',
         makesContact: true
     },
     'Eruption': {
@@ -1963,7 +1968,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 50,
         type: 'Steel',
         category: 'Physical',
-        isTwoHit: true
+        isTwoHit: true,
+        makesContact: true
     },
     'Giga Drain': { bp: 75 },
     'Glaciate': {
@@ -2609,6 +2615,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isSpread: true,
         zp: 120
     },
+    'Bubble Beam': { zp: 120 },
     'Bug Bite': { zp: 120 },
     'Bug Buzz': { zp: 175 },
     'Bulldoze': { zp: 120 },
@@ -2624,7 +2631,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 210,
         type: 'Electric',
         category: 'Physical',
-        isZ: true
+        isZ: true,
+        makesContact: true
     },
     'Charge Beam': { zp: 100 },
     'Chatter': { zp: 120 },
@@ -2675,6 +2683,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Dazzling Gleam': { zp: 160 },
     'Diamond Storm': { zp: 180 },
+    'Dig': { zp: 160 },
     'Discharge': { zp: 160 },
     'Dive': { zp: 160 },
     'Dragon Hammer': {
@@ -2789,6 +2798,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Glaciate': { zp: 120 },
     'Grass Knot': { zp: 160 },
     'Gunk Shot': { zp: 190 },
+    'Gust': { zp: 100 },
     'Gyro Ball': { zp: 160 },
     'Hammer Arm': { zp: 180 },
     'Headbutt': { zp: 140 },
@@ -3003,7 +3013,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 210,
         type: 'Normal',
         category: 'Physical',
-        isZ: true
+        isZ: true,
+        makesContact: true
     },
     'Punishment': { zp: 160 },
     'Pursuit': { zp: 100 },
@@ -3076,7 +3087,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Shock Wave': { zp: 120 },
     'Signal Beam': { zp: 140 },
-    "Silver Wind": { zp: 120 },
+    'Silver Wind': { zp: 120 },
     'Sinister Arrow Raid': {
         bp: 180,
         type: 'Ghost',
@@ -3087,6 +3098,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Sky Attack': { zp: 200 },
     'Sky Drop': { zp: 120 },
     'Sky Uppercut': { zp: 160 },
+    'Slash': { zp: 140 },
+    'Sludge': { zp: 120 },
     'Sludge Bomb': { zp: 175 },
     'Sludge Wave': { zp: 175 },
     'Smack Down': { zp: 100 },
@@ -3155,6 +3168,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Stored Power': { zp: 160 },
     'Storm Throw': { zp: 120 },
     'Struggle Bug': { zp: 100 },
+    'Submission': { zp: 160 },
     'Subzero Slammer': {
         bp: 1,
         type: 'Ice',
@@ -3213,13 +3227,14 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 140
     },
+    'Twineedle': { zp: 100 },
     'Twinkle Tackle': {
         bp: 1,
         type: 'Fairy',
         category: 'Physical',
         isZ: true
     },
-    "U-turn": { zp: 140 },
+    'U-turn': { zp: 140 },
     'Uproar': { zp: 175 },
     'V-create': { zp: 220 },
     'Vacuum Wave': { zp: 100 },
