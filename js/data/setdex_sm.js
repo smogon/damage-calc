@@ -3515,7 +3515,7 @@ var SETDEX_SM = {
 		"CAP Special Wall": {"level":100,"evs":{"hp":252,"at":4,"sd":252},"nature":"Careful","ability":"Harvest","item":"Sitrus Berry","moves":["Knock Off","Power Whip","Glare","U-turn"]},
 	},
 	"Mollux": {
-		"CAP Specially Defensive": {"level":100,"evs":{"sa":252,"sp":4,"sd":252},"nature":"Calm","ability":"Dry Skin","item":"Black Sludge","moves":["Lava Plume","Sludge Bomb","Recover","Rapid Spin"]},
+		"CAP Specially Defensive": {"level":100,"evs":{"hp":252,"df":4,"sd":252},"nature":"Calm","ability":"Dry Skin","item":"Black Sludge","moves":["Lava Plume","Sludge Bomb","Recover","Rapid Spin"]},
 		"CAP Choice Scarf": {"level":100,"evs":{"sa":252,"sp":252,"sd":4},"nature":"Modest","ability":"Dry Skin","item":"Choice Scarf","moves":["Fire Blast","Sludge Wave","Hidden Power Ground","Trick"]},
 	},
 	"Naviathan": {
