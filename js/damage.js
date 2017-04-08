@@ -285,11 +285,6 @@ function getDamageResult(attacker, defender, move, field) {
             basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
             description.moveBP = basePower;
             break;
-        case "Bulldoze":
-        case "Earthquake":
-            basePower = (field.terrain === "Grassy") ? move.bp / 2 : move.bp;
-            description.terrain = field.terrain;
-            break;
         case "Nature Power":
             basePower = (field.terrain === "Electric" || field.terrain === "Grassy") ? 90 : (field.terrain === "Misty") ? 95 : 80;
             break;
@@ -581,6 +576,9 @@ function getDamageResult(attacker, defender, move, field) {
     if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
             defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
         if (field.terrain === "Misty" && move.type === "Dragon") {
+            baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
+            description.terrain = field.terrain;
+        } else if (field.terrain === "Grassy" && (move.name === "Bulldoze" || move.name === "Earthquake")) {
             baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
             description.terrain = field.terrain;
         }
