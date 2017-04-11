@@ -322,10 +322,10 @@ function getDamageResult(attacker, defender, move, field) {
     } else if (defAbility === "Dry Skin" && move.type === "Fire") {
         bpMods.push(0x1400);
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Fluffy" && move.makesContact && move.type === "Fire") {
+    } else if (defAbility === "Fluffy" && (!move.makesContact || attacker.ability === "Long Reach") && move.type === "Fire") {
         bpMods.push(0x2000); 
         description.defenderAbility = defAbility;
-    } else if (defAbility === "Fluffy" && move.makesContact && attacker.ability !== "Long Reach") {
+    } else if (defAbility === "Fluffy" && move.makesContact && attacker.ability !== "Long Reach" && move.type !== "Fire") {
         bpMods.push(0x800);
         description.defenderAbility = defAbility;
     }
