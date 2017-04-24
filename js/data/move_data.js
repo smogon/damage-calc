@@ -2311,6 +2311,11 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Dragon Pulse': { bp: 85 },
     'Energy Ball': { bp: 90 },
     'Facade': { ignoresBurn: true },
+    'Fell Stinger': {
+        bp: 30,
+        type: 'Bug',
+        makesContact: true
+    },
     'Fire Blast': { bp: 110 },
     'Flamethrower': { bp: 90 },
     'Flying Press': {
@@ -2729,6 +2734,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Facade': { zp: 140 },
     'Feint': { zp: 100 },
     'Feint Attack': { zp: 120 },
+    'Fell Stinger': { bp: '50', zp: 100 },
     'Fiery Dance': { zp: 160 },
     'Final Gambit': { zp: 180 },
     'Fire Blast': { zp: 185 },
