@@ -348,6 +348,7 @@ function Pokemon(pokeInfo) {
         var pokemon = pokedex[this.name];
         this.type1 = pokemon.t1;
         this.type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
+        this.typing = this.type1 || this.type2;
         this.rawStats = [];
         this.boosts = [];
         this.stats = [];
@@ -409,6 +410,7 @@ function Pokemon(pokeInfo) {
         }
         this.type1 = pokeInfo.find(".type1").val();
         this.type2 = pokeInfo.find(".type2").val();
+        this.typing = this.type1 || this.type2;
         this.level = ~~pokeInfo.find(".level").val();
         this.maxHP = ~~pokeInfo.find(".hp .total").text();
         this.curHP = ~~pokeInfo.find(".current-hp").val();
