@@ -189,6 +189,10 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
                 description.moveBP = move.bp;
             }
             break;
+        case "Wring Out":
+            move.bp = Math.floor(target.hp * 120 / target.maxhp) + 1;
+            description.moveBP = move.bp;
+            break;
     }
     
     var basePower = move.bp;

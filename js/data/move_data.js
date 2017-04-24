@@ -1796,6 +1796,12 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         makesContact: true,
         hasRecoil: true
     },
+    'Wring Out': {
+        bp: 1,
+        type: 'Normal',
+        category: 'Special',
+        makesContact: true
+    },
     'X-Scissor': {
         bp: 80,
         type: 'Bug',
@@ -2314,6 +2320,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Fell Stinger': {
         bp: 30,
         type: 'Bug',
+        category: 'Physical',
         makesContact: true
     },
     'Fire Blast': { bp: 110 },
@@ -3255,6 +3262,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Weather Ball': { zp: 160 },
     'Wild Charge': { zp: 175 },
     'Wood Hammer': { zp: 190 },
+    'Wring Stinger': { zp: 190 },
     'X-Scissor': { zp: 160 },
     'Zap Cannon': { zp: 190 },
     'Zen Headbutt': { zp: 160 },
