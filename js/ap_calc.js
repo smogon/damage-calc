@@ -777,7 +777,7 @@ $(document).ready(function() {
     $("#percentage").prop("checked", true);
     $("#percentage").change();
 
-    window.set_selector = $(".set-selector").select2({
+    $(".set-selector").select2({
         formatResult: function(object) {
             return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
         },
