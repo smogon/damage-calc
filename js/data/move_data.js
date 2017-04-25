@@ -3262,7 +3262,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Weather Ball': { zp: 160 },
     'Wild Charge': { zp: 175 },
     'Wood Hammer': { zp: 190 },
-    'Wring Stinger': { zp: 190 },
+    'Wring Out': { zp: 190 },
     'X-Scissor': { zp: 160 },
     'Zap Cannon': { zp: 190 },
     'Zen Headbutt': { zp: 160 },
