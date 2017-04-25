@@ -347,7 +347,8 @@ var MOVES_RBY = {
     'Submission': {
         bp: 80,
         type: 'Fighting',
-        makesContact: true
+        makesContact: true,
+        hasRecoil: true
     },
     'Substitute': {
         bp: 0,
