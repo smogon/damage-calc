@@ -292,6 +292,10 @@ function getDamageResult(attacker, defender, move, field) {
             basePower = (attacker.name === "Greninja-Ash") ? 20 : 15;
             description.moveBP = basePower;
             break;
+        case "Wring Out":
+            basePower = Math.max(1, Math.ceil(target.hp * 120 / target.maxhp - 0.5));
+            description.moveBP = basePower;
+            break;
         default:
             basePower = move.bp;
     }
