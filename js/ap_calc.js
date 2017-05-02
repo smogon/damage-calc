@@ -166,7 +166,7 @@ function autosetWeather(ability, i) {
             break;
         default:
             lastAutoWeather[i] = "";
-            var newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : lastManualWeather;
+            var newWeather = lastAutoWeather[1-i] !== "" ? lastAutoWeather[1-i] : "";
             $("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
             break;
     }
