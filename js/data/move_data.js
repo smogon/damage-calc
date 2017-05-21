@@ -2316,6 +2316,13 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         makesContact: true
     },
     'Dragon Pulse': { bp: 85 },
+    'Draining Kiss': {
+        bp: 50,
+        type: 'Fairy',
+        category: 'Special',
+        makesContact: true,
+        givesHealth: true
+    },
     'Energy Ball': { bp: 90 },
     'Facade': { ignoresBurn: true },
     'Fell Stinger': {
@@ -2706,6 +2713,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 175
     },
+    'Draining Kiss': { zp: 100 },
     'Drill Peck': { zp: 160 },
     'Devastating Drake': {
         bp: 1,
