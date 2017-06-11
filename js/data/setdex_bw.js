@@ -562,10 +562,10 @@ var SETDEX_BW = {
 		"OU Shell Smash": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Sturdy","item":"Life Orb","moves":["Shell Smash","X-Scissor","Stone Edge","Earthquake"]},
 	},
 	"Cryogonal": {
-		"RU Rapid Spin": {"level":100,"evs":{"sd":92,"df":168,"hp":248},"ivs":{"at":0},"nature":"Calm","item":"Leftovers","moves":["Rapid Spin","Ice Beam","Recover","Haze"]},
-		"RU Offensive": {"level":100,"evs":{"hp":64,"sp":192,"sa":252},"nature":"Timid","item":"Icicle Plate","moves":["Ice Beam","Rapid Spin","Hidden Power Fire","Recover"]},
-		"UU Defensive Rapid Spin": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Calm","item":"Leftovers","moves":["Rapid Spin","Recover","Ice Beam","Haze"]},
-		"UU Offensive Rapid Spin": {"level":100,"evs":{"hp":40,"sp":216,"sa":252},"nature":"Timid","item":"Life Orb","moves":["Rapid Spin","Ice Beam","Hidden Power Ground","Recover"]},
+		"RU Rapid Spin": {"level":100,"evs":{"sd":92,"df":168,"hp":248},"ivs":{"at":0},"nature":"Calm","ability":"Levitate","item":"Leftovers","moves":["Rapid Spin","Ice Beam","Recover","Haze"]},
+		"RU Offensive": {"level":100,"evs":{"hp":64,"sp":192,"sa":252},"nature":"Timid","ability":"Levitate","item":"Icicle Plate","moves":["Ice Beam","Rapid Spin","Hidden Power Fire","Recover"]},
+		"UU Defensive Rapid Spin": {"level":100,"evs":{"sd":252,"df":8,"hp":248},"nature":"Calm","ability":"Levitate","item":"Leftovers","moves":["Rapid Spin","Recover","Ice Beam","Haze"]},
+		"UU Offensive Rapid Spin": {"level":100,"evs":{"hp":40,"sp":216,"sa":252},"nature":"Timid","ability":"Levitate","item":"Life Orb","moves":["Rapid Spin","Ice Beam","Hidden Power Ground","Recover"]},
 	},
 	"Cubchoo": {
 		"LC Hail Sweeper": {"level":5,"evs":{"hp":76,"sp":196,"sa":200},"nature":"Timid","ability":"Snow Cloak","item":"Choice Scarf","moves":["Blizzard","Surf","Hidden Power Grass","Toxic"]},
@@ -802,10 +802,10 @@ var SETDEX_BW = {
 		"LC Bulky Attacker": {"level":5,"evs":{"hp":76,"sp":120,"sa":240},"nature":"Modest","ability":"Analytic","item":"Eviolite","moves":["Psychic","Thunderbolt","Hidden Power Fighting","Recover"]},
 	},
 	"Emboar": {
-		"RU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","item":"Choice Scarf","moves":["Flare Blitz","Superpower","Wild Charge","Sleep Talk"]},
-		"RU Choice Band": {"level":100,"evs":{"at":252,"hp":236,"sp":20},"nature":"Adamant","item":"Choice Band","moves":["Flare Blitz","Superpower","Wild Charge","Sleep Talk"]},
-		"RU Mixed Attacker": {"level":100,"evs":{"at":72,"sp":184,"sa":252},"nature":"Rash","item":"Expert Belt","moves":["Fire Blast","Superpower","Grass Knot","Wild Charge"]},
-		"RU Defensive": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","item":"Leftovers","moves":["Flare Blitz","Superpower","Will-O-Wisp","Protect"]},
+		"RU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Blaze","item":"Choice Scarf","moves":["Flare Blitz","Superpower","Wild Charge","Sleep Talk"]},
+		"RU Choice Band": {"level":100,"evs":{"at":252,"hp":236,"sp":20},"nature":"Adamant","ability":"Blaze","item":"Choice Band","moves":["Flare Blitz","Superpower","Wild Charge","Sleep Talk"]},
+		"RU Mixed Attacker": {"level":100,"evs":{"at":72,"sp":184,"sa":252},"nature":"Rash","ability":"Blaze","item":"Expert Belt","moves":["Fire Blast","Superpower","Grass Knot","Wild Charge"]},
+		"RU Defensive": {"level":100,"evs":{"df":252,"at":4,"hp":252},"nature":"Impish","ability":"Blaze","item":"Leftovers","moves":["Flare Blitz","Superpower","Will-O-Wisp","Protect"]},
 	},
 	"Emolga": {
 		"NU Tailwind Support": {"level":100,"evs":{"df":4,"sp":252,"sa":252},"nature":"Timid","ability":"Motor Drive","item":"Leftovers","moves":["Tailwind","Encore","U-turn","Air Slash"]},

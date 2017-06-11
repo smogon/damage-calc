@@ -1337,8 +1337,8 @@ var SETDEX_DPP = {
 		"LC Trick Room Sweeper": {"level":5,"evs":{"sd":36,"df":36,"at":196,"hp":180},"ivs":{"sp":0},"nature":"Brave","ability":"Guts","item":"Oran Berry","moves":["Belly Drum","Close Combat","Bullet Punch","Ice Punch"]},
 	},
 	"Mamoswine": {
-		"OU Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Snow Cloak","item":"Choice Band","moves":["Earthquake","Ice Shard","Stone Edge","Superpower"]},
-		"OU Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Snow Cloak","item":"Focus Sash","moves":["Stealth Rock","Earthquake","Ice Shard","Endeavor"]},
+		"OU Physical Attacker": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Oblivious","item":"Choice Band","moves":["Earthquake","Ice Shard","Stone Edge","Superpower"]},
+		"OU Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Oblivious","item":"Focus Sash","moves":["Stealth Rock","Earthquake","Ice Shard","Endeavor"]},
 		"Uber Lead": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Snow Cloak","item":"Focus Sash","moves":["Stealth Rock","Earthquake","Ice Shard","Endeavor"]},
 	},
 	"Manaphy": {
@@ -1380,7 +1380,8 @@ var SETDEX_DPP = {
 		"UU Baton Pass": {"level":100,"evs":{"df":28,"hp":252,"sp":228},"nature":"Jolly","ability":"Intimidate","item":"Leftovers","moves":["Swords Dance","Baton Pass","Taunt","Substitute"]},
 	},
 	"Medicham": {
-		"NU Showdown Usage": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Choice Scarf","moves":["High Jump Kick","Psycho Cut","Ice Punch","Thunder Punch"]},
+		"NU Life Orb": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Life Orb","moves":["High Jump Kick","Zen Headbutt","Thunder Punch","Fake Out"]},
+		"NU Choice Scarf": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Adamant","ability":"Pure Power","item":"Choice Scarf","moves":["High Jump Kick","Psycho Cut","Thunder Punch","Trick"]},
 		"UU Choice Scarf": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Choice Scarf","moves":["High Jump Kick","Psycho Cut","Ice Punch","Trick"]},
 		"UU Life Orb": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Life Orb","moves":["High Jump Kick","Zen Headbutt","Fake Out","Bullet Punch"]},
 		"UU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Choice Band","moves":["High Jump Kick","Psycho Cut","Thunder Punch","Ice Punch"]},
@@ -2339,13 +2340,14 @@ var SETDEX_DPP = {
 		"LC Mixed Attacker": {"level":5,"evs":{"df":4,"at":216,"sa":240},"ivs":{"at":30,"sp":2,"sa":30},"nature":"Quiet","item":"Life Orb","moves":["Seed Bomb","Earth Power","Hidden Power Fire","Crunch"]},
 	},
 	"Typhlosion": {
-		"NU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Choice Scarf","moves":["Focus Blast","Eruption","Fire Blast","Hidden Power Grass"]},
+		"NU Choice Scarf": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","item":"Choice Scarf","moves":["Eruption","Flamethrower","Focus Blast","Hidden Power Grass"]},
+		"NU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","item":"Choice Specs","moves":["Eruption","Fire Blast","Focus Blast","Hidden Power Grass"]},
 		"UU Sunny Day Special Attacker": {"level":100,"evs":{"sd":36,"sp":220,"sa":252},"nature":"Timid","item":"Life Orb","moves":["Sunny Day","Fire Blast","Solar Beam","Hidden Power Rock"]},
 		"UU Choice Scarf": {"level":100,"evs":{"hp":32,"sp":224,"sa":252},"nature":"Modest","item":"Choice Scarf","moves":["Eruption","Focus Blast","Hidden Power Rock","Fire Blast"]},
 		"UU Choice Specs": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","item":"Choice Specs","moves":["Overheat","Focus Blast","Hidden Power Grass","Fire Blast"]},
 	},
 	"Tyranitar": {
-		"OU Choice Scarf": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Choice Scarf","moves":["Stone Edge","Crunch","Pursuit","Earthquake"]},
+		"OU Choice Scarf": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Choice Scarf","moves":["Stone Edge","Crunch","Pursuit","Superpower"]},
 		"OU Dragon Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","item":"Shuca Berry","moves":["Dragon Dance","Stone Edge","Earthquake","Ice Punch"]},
 		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":180,"sp":76},"nature":"Adamant","item":"Choice Band","moves":["Stone Edge","Crunch","Pursuit","Aqua Tail"]},
 		"OU Lure": {"level":100,"evs":{"at":252,"sp":240,"sa":16},"nature":"Hasty","item":"Babiri Berry","moves":["Stone Edge","Pursuit","Superpower","Flamethrower"]},
