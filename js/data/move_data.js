@@ -2414,6 +2414,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     },
     'Moonlight': { type: 'Fairy' },
     'Muddy Water': { bp: 90 },
+    'Mystical Fire': {
+        bp: 65,
+        type: 'Fire',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
     'Nature Power': {
         bp: 80,
         type: 'Normal',
@@ -2961,6 +2967,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 185
     },
+    'Mystical Fire': { bp: 75, zp: 140 },
     'Natural Gift': { zp: 160 },
     'Needle Arm': { zp: 120 },
     'Never-Ending Nightmare': {
