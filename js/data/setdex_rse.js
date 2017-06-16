@@ -631,10 +631,10 @@ var SETDEX_ADV = {
 		"NU Baton Pass": {"level":100,"evs":{"sd":56,"df":200,"hp":252},"nature":"Impish","ability":"Intimidate","item":"Leftovers","moves":["Swords Dance","Baton Pass","Taunt","Brick Break"]},
 	},
 	"Medicham": {
-		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","item":"Choice Band","moves":["Brick Break","Shadow Ball","Rock Slide","Fake Out"]},
-		"OU Bulk Up": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","item":"Leftovers","moves":["Bulk Up","Brick Break","Shadow Ball","Recover"]},
-		"OU All-Out Attacker": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Leftovers","moves":["Brick Break","Focus Punch","Substitute","Shadow Ball"]},
-		"OU Reversal": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","item":"Salac Berry","moves":["Substitute","Reversal","Focus Punch","Shadow Ball"]},
+		"OU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Pure Power","item":"Choice Band","moves":["Brick Break","Shadow Ball","Rock Slide","Fake Out"]},
+		"OU Bulk Up": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Pure Power","item":"Leftovers","moves":["Bulk Up","Brick Break","Shadow Ball","Recover"]},
+		"OU All-Out Attacker": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Pure Power","item":"Leftovers","moves":["Brick Break","Focus Punch","Substitute","Shadow Ball"]},
+		"OU Reversal": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","ability":"Pure Power","item":"Salac Berry","moves":["Substitute","Reversal","Focus Punch","Shadow Ball"]},
 	},
 	"Meganium": {
 		"UU Standard": {"level":100,"evs":{"sd":52,"df":132,"hp":252,"sa":72},"nature":"Bold","item":"Leftovers","moves":["Leech Seed","Synthesis","Counter","Light Screen"]},
