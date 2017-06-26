@@ -796,7 +796,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 100,
         type: 'Electric',
         category: 'Special',
-        hasSecondaryEffect: true
+        hasSecondaryEffect: true,
+        isBullet: true
     }
 });
 
@@ -1099,7 +1100,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 25,
         type: 'Rock',
         category: 'Physical',
-        isMultiHit: true
+        isMultiHit: true,
+        isBullet: true
     },
     'Rock Tomb': {
         bp: 50,
@@ -2160,7 +2162,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Fire',
         category: 'Special',
         hasSecondaryEffect: true,
-        isSpread: true
+        isSpread: true,
+        isBullet: true
     },
     'Secret Sword': {
         bp: 85,
@@ -2604,7 +2607,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 100,
         type: 'Flying',
         category: 'Physical',
-        zp: 180
+        zp: 180,
+        isBullet: true
     },
     'Belch': { zp: 190 },
     'Bite': { zp: 120 },
