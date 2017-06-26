@@ -256,8 +256,15 @@ th {
 .btn-input[type="radio"]:checked + .btn {
     cursor: default;
 }
+
+/* Hide element visually, but not from screen readers. See http://webaim.org/techniques/css/invisiblecontent/ */
 .btn-input {
-    display: none;
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
 }
 .btn-input:disabled + .btn {
     color: #999999;
