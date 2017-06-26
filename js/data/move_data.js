@@ -1990,6 +1990,13 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 0,
         type: 'Psychic'
     },
+    'Heart Stamp': {
+        bp: 60,
+        type: 'Psychic',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
+    },
     'Head Charge': {
         bp: 120,
         type: 'Normal',
@@ -2832,6 +2839,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Headbutt': { zp: 140 },
     'Head Charge': { zp: 190 },
     'Head Smash': { zp: 200 },
+    'Heart Stamp': { zp: 120 },
     'Heat Wave': { zp: 175 },
     'Heavy Slam': { zp: 160 },
     'Hex': { zp: 160 },
