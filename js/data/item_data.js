@@ -3,6 +3,7 @@ var ITEMS_GSC = [
     'Berry Juice',
     'Black Belt',
     'Black Glasses',
+    'Bright Powder',
     'Charcoal',
     'Dragon Fang',
     'Gold Berry',
@@ -22,6 +23,7 @@ var ITEMS_GSC = [
     'Sharp Beak',
     'Silver Powder',
     'Soft Sand',
+    'Soothe Bell',
     'Spell Tag',
     'Stick',
     'Thick Club',
@@ -53,6 +55,7 @@ var ITEMS_ADV = ITEMS_GSC.concat([
     'Liechi Berry',
     'Mago Berry',
     'Magost Berry',
+    'Mental Herb',
     'Nanab Berry',
     'Nomel Berry',
     'Oran Berry',
@@ -76,6 +79,7 @@ var ITEMS_ADV = ITEMS_GSC.concat([
     'Tamato Berry',
     'Watmel Berry',
     'Wepear Berry',
+    'White Herb',
     'Wiki Berry'
 ]);
 
@@ -88,6 +92,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Adamant Orb',
     'Babiri Berry',
     'Black Sludge',
+    'Big Root',
     'Charti Berry',
     'Chilan Berry',
     'Choice Scarf',
@@ -96,6 +101,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Coba Berry',
     'Colbur Berry',
     'Custap Berry',
+    'Destiny Knot',
     'Draco Plate',
     'Dread Plate',
     'Earth Plate',
@@ -124,13 +130,17 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Odd Incense',
     'Passho Berry',
     'Payapa Berry',
+    'Quick Powder',
     'Razor Fang',
+    'Reaper Cloth',
     'Rindo Berry',
     'Rock Incense',
     'Rose Incense',
     'Rowap Berry',
+    'Shed Shell',
     'Shuca Berry',
     'Sky Plate',
+    'Smooth Rock',
     'Splash Plate',
     'Spooky Plate',
     'Stone Plate',
@@ -139,9 +149,11 @@ var ITEMS_DPP = ITEMS_ADV.concat([
     'Toxic Plate',
     'Wacan Berry',
     'Wave Incense',
+    'Wide Lens',
     'Wise Glasses',
     'Yache Berry',
-    'Zap Plate'
+    'Zap Plate',
+    'Zoom Lens'
 ]);
 
 var ITEMS_BW = ITEMS_DPP.concat([
@@ -164,6 +176,8 @@ var ITEMS_BW = ITEMS_DPP.concat([
     'Normal Gem',
     'Poison Gem',
     'Psychic Gem',
+    'Red Card',
+    'Ring Target',
     'Rock Gem',
     'Shock Drive',
     'Steel Gem',
@@ -175,6 +189,7 @@ var ITEMS_XY = ITEMS_BW.concat([
     'Kee Berry',
     'Maranga Berry',
     'Pixie Plate',
+    'Power Herb',
     'Roseli Berry',
     'Safety Goggles'
 ]);
@@ -206,6 +221,7 @@ var ITEMS_SM = ITEMS_XY.concat([
     'Ghostium Z',
     'Grass Memory',
     'Grassium Z',
+    'Grassy Seed',
     'Ground Memory',
     'Groundium Z',
     'Ice Memory',
@@ -359,7 +375,13 @@ function getFlingPower(item) {
         : ['Black Belt','Black Sludge','Black Glasses','Charcoal','Deep Sea Scale','Flame Orb',"King's Rock",
             'Life Orb','Light Ball','Magnet','Metal Coat','Miracle Seed','Mystic Water','Never-Melt Ice',
             'Razor Fang','Soul Dew','Spell Tag','Toxic Orb','Twisted Spoon'].indexOf(item) !== -1 ? 30
-        : 10;
+        : item.indexOf('Berry') !== -1 ||
+        ['Air Baloon','Choice Band','Choice Scarf','Choice Specs','Destiny Knot','Electric Seed','Expert Belt','Focus Band',
+           'Focus Sash','Grassy Seed','Lagging tail','leftovers','Mental Herb','Metal Powder','Misty Seed',
+           'Muscle Band','Power Herb','Psychic Seed','Quick Powder','Reaper Cloth','Red Card','Ring Target',
+           'Shed Shell','Silk Scarf','Silver Powder','Smooth Rock','Soft Sand','Soothe Bell','White Herb',
+           'Wide Lens','Wise Glasses','Zoom Lens'].indexOf(item) !== -1 ? 10
+        : 0;
 }
 
 function getNaturalGift(item) {
