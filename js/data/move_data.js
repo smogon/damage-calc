@@ -1100,8 +1100,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         bp: 25,
         type: 'Rock',
         category: 'Physical',
-        isMultiHit: true,
-        isBullet: true
+        isMultiHit: true
     },
     'Rock Tomb': {
         bp: 50,
@@ -3075,7 +3074,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Revenge': { zp: 120 },
     'Reversal': { zp: 160 },
     'Roar of Time': { zp: 200 },
-    'Rock Blast': { zp: 140 },
+    'Rock Blast': { isBullet: true, zp: 140 },
     'Rock Climb': { zp: 175 },
     'Rock Slide': { zp: 140 },
     'Rock Smash': { zp: 100 },
