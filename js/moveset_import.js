@@ -217,7 +217,9 @@ function addSets(pokes){
 			}
 		}		
 	}
-	alert("Successfully imported "+addedpokes+" sets");
+	if (addedpokes > 0) {
+		alert("Successfully imported "+addedpokes+" sets");
+	}
 }
 
 function checkExeptions(poke){
@@ -230,6 +232,9 @@ function checkExeptions(poke){
 			break;
 		case 'Keldeo-Resolute':
 			poke = "Keldeo";
+			break;
+		case 'Mimikyu-Busted':
+			poke = "Mimikyu";
 			break;
 		case 'Pikachu-Alola':
 		case 'Pikachu-Belle':	
