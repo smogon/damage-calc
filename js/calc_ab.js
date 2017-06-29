@@ -73,7 +73,7 @@ $(".result-move").change(function() {
         var result = findDamageResult($(this));
         if (result) {
             $("#mainResult").text(result.description + ": " + result.damageText + " -- " + result.koChanceText);
-            $("#damageValues").text("(" + result.damage.join(", ") + ")");
+            $("#damageValues").text("Possible damage amounts: (" + result.damage.join(", ") + ")");
         }
     }
 });
