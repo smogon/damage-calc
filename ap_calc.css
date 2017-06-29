@@ -257,15 +257,16 @@ th {
     cursor: default;
 }
 
-/* Hide element visually, but not from screen readers. See http://webaim.org/techniques/css/invisiblecontent/ */
+/* Hide element visually, but not from screen readers. See http://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html */
 .btn-input {
-    position:absolute;
-    left:-10000px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    white-space: nowrap; /* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
 }
+
 .btn-input:disabled + .btn {
     color: #999999;
 }
