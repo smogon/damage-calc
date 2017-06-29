@@ -796,7 +796,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 100,
         type: 'Electric',
         category: 'Special',
-        hasSecondaryEffect: true
+        hasSecondaryEffect: true,
+        isBullet: true
     }
 });
 
@@ -1990,6 +1991,13 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         bp: 0,
         type: 'Psychic'
     },
+    'Heart Stamp': {
+        bp: 60,
+        type: 'Psychic',
+        category: 'Physical',
+        hasSecondaryEffect: true,
+        makesContact: true
+    },
     'Head Charge': {
         bp: 120,
         type: 'Normal',
@@ -2153,7 +2161,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Fire',
         category: 'Special',
         hasSecondaryEffect: true,
-        isSpread: true
+        isSpread: true,
+        isBullet: true
     },
     'Secret Sword': {
         bp: 85,
@@ -2597,7 +2606,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 100,
         type: 'Flying',
         category: 'Physical',
-        zp: 180
+        zp: 180,
+        isBullet: true
     },
     'Belch': { zp: 190 },
     'Bite': { zp: 120 },
@@ -2832,6 +2842,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Headbutt': { zp: 140 },
     'Head Charge': { zp: 190 },
     'Head Smash': { zp: 200 },
+    'Heart Stamp': { zp: 120 },
     'Heat Wave': { zp: 175 },
     'Heavy Slam': { zp: 160 },
     'Hex': { zp: 160 },
@@ -3063,7 +3074,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Revenge': { zp: 120 },
     'Reversal': { zp: 160 },
     'Roar of Time': { zp: 200 },
-    'Rock Blast': { zp: 140 },
+    'Rock Blast': { isBullet: true, zp: 140 },
     'Rock Climb': { zp: 175 },
     'Rock Slide': { zp: 140 },
     'Rock Smash': { zp: 100 },

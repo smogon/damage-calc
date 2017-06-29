@@ -217,7 +217,9 @@ function addSets(pokes){
 			}
 		}		
 	}
-	alert("Successfully imported "+addedpokes+" sets");
+	if (addedpokes > 0) {
+		alert("Successfully imported "+addedpokes+" sets");
+	}
 }
 
 function checkExeptions(poke){
@@ -231,12 +233,21 @@ function checkExeptions(poke){
 		case 'Keldeo-Resolute':
 			poke = "Keldeo";
 			break;
+		case 'Mimikyu-Busted':
+			poke = "Mimikyu";
+			break;
+		case 'Pikachu-Alola':
 		case 'Pikachu-Belle':	
 		case 'Pikachu-Cosplay':	
+		case 'Pikachu-Hoenn':
+		case 'Pikachu-Kalos':
 		case 'Pikachu-Libre':
+		case 'Pikachu-Original':
 		case 'Pikachu-PhD':	
 		case 'Pikachu-Pop-Star':	
 		case 'Pikachu-Rock-Star':
+		case 'Pikachu-Sinnoh':
+		case 'Pikachu-Unova':
 			poke = "Pikachu";
 			break;
 		case 'Vivillon-Fancy':
