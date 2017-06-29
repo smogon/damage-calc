@@ -243,6 +243,7 @@ th {
 .btn-mid {
     border-radius: 0;
 }
+.btn-input:focus + .btn, /* Add visual indication when focusing on visually hidden elements */
 .btn:hover {
     z-index: 10;
     border-color: #777777;
