@@ -129,245 +129,249 @@
             </div>
             <div class="info-group">
                 <table>
-                    <tr>
-                        <th></th>
-                        <th>Base</th>
-                        <th class="gen-specific g3 g4 g5 g6 g7">IVs</th>
-                        <th class="gen-specific g3 g4 g5 g6 g7">EVs</th>
-                        <th class="gen-specific g1 g2 hide">DVs</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr class="hp">
-                        <td>
-                            <label>HP</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
-                        </td>
-                        <td><span class="total">341</span>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr class="at">
-                        <td>
-                            <label>Attack</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="df">
-                        <td>
-                            <label>Defense</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sa gen-specific g2 g3 g4 g5 g6 g7">
-                        <td>
-                            <label>Sp. Atk</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sd gen-specific g2 g3 g4 g5 g6 g7">
-                        <td>
-                            <label>Sp. Def</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sl gen-specific g1 hide">
-                        <td>
-                            <label>Special</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td>
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sp">
-                        <td>
-                            <label>Speed</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col">Base</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7" scope="col">IVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7" scope="col">EVs</th>
+                            <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hp">
+                            <th scope="row">
+                                <label>HP</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                            </td>
+                            <td><span class="total">341</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="at">
+                            <th scope="row">
+                                <label>Attack</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="df">
+                            <th scope="row">
+                                <label>Defense</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sa gen-specific g2 g3 g4 g5 g6 g7">
+                            <th scope="row">
+                                <label>Sp. Atk</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sd gen-specific g2 g3 g4 g5 g6 g7">
+                            <th scope="row">
+                                <label>Sp. Def</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sl gen-specific g1 hide">
+                            <th scope="row">
+                                <label>Special</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td>
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sp">
+                            <th scope="row">
+                                <label>Speed</label>
+                            </td>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="info-group info-selectors">
@@ -735,245 +739,249 @@
             </div>
             <div class="info-group">
                 <table>
-                    <tr>
-                        <th></th>
-                        <th>Base</th>
-                        <th class="gen-specific g3 g4 g5 g6 g7">IVs</th>
-                        <th class="gen-specific g3 g4 g5 g6 g7">EVs</th>
-                        <th class="gen-specific g1 g2 hide">DVs</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                    <tr class="hp">
-                        <td>
-                            <label>HP</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
-                        </td>
-                        <td><span class="total">341</span>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr class="at">
-                        <td>
-                            <label>Attack</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="df">
-                        <td>
-                            <label>Defense</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sa gen-specific g2 g3 g4 g5 g6 g7">
-                        <td>
-                            <label>Sp. Atk</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sd gen-specific g2 g3 g4 g5 g6 g7">
-                        <td>
-                            <label>Sp. Def</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" disabled="disabled" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sl gen-specific g1 hide">
-                        <td>
-                            <label>Special</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td>
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="sp">
-                        <td>
-                            <label>Speed</label>
-                        </td>
-                        <td>
-                            <input class="base calc-trigger" value="100" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="ivs calc-trigger" value="31" />
-                        </td>
-                        <td class="gen-specific g3 g4 g5 g6 g7">
-                            <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
-                        </td>
-                        <td class="gen-specific g1 g2 hide">
-                            <input class="dvs calc-trigger" value="15" />
-                        </td>
-                        <td><span class="total">236</span>
-                        </td>
-                        <td>
-                            <select class="boost calc-trigger">
-                                <option value="6">+6</option>
-                                <option value="5">+5</option>
-                                <option value="4">+4</option>
-                                <option value="3">+3</option>
-                                <option value="2">+2</option>
-                                <option value="1">+1</option>
-                                <option value="0" selected="selected">--</option>
-                                <option value="-1">-1</option>
-                                <option value="-2">-2</option>
-                                <option value="-3">-3</option>
-                                <option value="-4">-4</option>
-                                <option value="-5">-5</option>
-                                <option value="-6">-6</option>
-                            </select>
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th scope="col">Base</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7" scope="col">IVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7" scope="col">EVs</th>
+                            <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="hp">
+                            <th scope="row">
+                                <label>HP</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                            </td>
+                            <td><span class="total">341</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="at">
+                            <th scope="row">
+                                <label>Attack</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="df">
+                            <th scope="row">
+                                <label>Defense</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sa gen-specific g2 g3 g4 g5 g6 g7">
+                            <th scope="row">
+                                <label>Sp. Atk</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sd gen-specific g2 g3 g4 g5 g6 g7">
+                            <th scope="row">
+                                <label>Sp. Def</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sl gen-specific g1 hide">
+                            <th scope="row">
+                                <label>Special</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td>
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="sp">
+                            <th scope="row">
+                                <label>Speed</label>
+                            </th>
+                            <td>
+                                <input class="base calc-trigger" value="100" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="ivs calc-trigger" value="31" />
+                            </td>
+                            <td class="gen-specific g3 g4 g5 g6 g7">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                            </td>
+                            <td class="gen-specific g1 g2 hide">
+                                <input class="dvs calc-trigger" value="15" />
+                            </td>
+                            <td><span class="total">236</span>
+                            </td>
+                            <td>
+                                <select class="boost calc-trigger">
+                                    <option value="6">+6</option>
+                                    <option value="5">+5</option>
+                                    <option value="4">+4</option>
+                                    <option value="3">+3</option>
+                                    <option value="2">+2</option>
+                                    <option value="1">+1</option>
+                                    <option value="0" selected="selected">--</option>
+                                    <option value="-1">-1</option>
+                                    <option value="-2">-2</option>
+                                    <option value="-3">-3</option>
+                                    <option value="-4">-4</option>
+                                    <option value="-5">-5</option>
+                                    <option value="-6">-6</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="info-group info-selectors">
