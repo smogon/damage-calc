@@ -11,7 +11,7 @@
 
 <body>
 
-<div class="header"><div class="header-inner">
+<nav><div class="header"><div class="header-inner">
     <ul class="nav">
         <li><a class="button nav-first" href="/"><img src="./pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
         <li><a class="button" href="/dex/">Pok&eacute;dex</a></li>
@@ -23,10 +23,10 @@
         <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
     </ul>
     <div style="clear:both"></div>
-</div></div>
+</div></div></nav>
 <div class="wrapper">
 
-    <div>
+    <div aria-label="Settings" role="region">
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
         <span aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
             <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
@@ -51,7 +51,7 @@
         </span>
     </div>
     <hr />
-    <div class="move-result-group" title="Select a move to show detailed results.">
+    <div aria-label="Move selection" class="move-result-group" role="region" title="Select a move to show detailed results.">
         <div  aria-labelledby="resultHeaderL" class="move-result-subgroup" role="radiogroup">
             <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
             </div>
@@ -101,14 +101,14 @@
             </div>
         </div>
     </div>
-    <div class="main-result-group">
+    <div aria-label="Calculation results" class="main-result-group" role="region">
         <div class="big-text"><span id="mainResult">Loading...</span>
         </div>
         <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript.)</span>
         </div>
     </div>
     
-    <div class="panel">
+    <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
             <legend align="center">Pok&eacute;mon 1</legend>
             <input type="text" class="set-selector calc-trigger" />
@@ -526,7 +526,7 @@
     </div>
     
     <div class="panel">
-        <div>
+        <div aria-label="Field information" role="region">
             <fieldset class="field-info">
                 <legend align="center">Field</legend>
                 <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
@@ -702,7 +702,7 @@
                 </div>
             </fieldset>
         </div>
-        <div>
+        <div aria-label="Import team" role="region">
             <fieldset class="poke-import">
                 <legend align="center">Import Team</legend>
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
@@ -714,7 +714,7 @@
             </fieldset>
         </div>
     </div>
-    <div class="panel">
+    <div aria-label="Pok&eacute;mon 2" role="region" class="panel">
         <fieldset class="poke-info" id="p2">
             <legend align="center">Pok&eacute;mon 2</legend>
             <input type="text" class="set-selector calc-trigger" />
