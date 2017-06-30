@@ -365,7 +365,7 @@ select.toxic-counter {
     font-size: 0.8em;
 }
 
-.hide {
+[hidden], .hide {
     display: none;
 }
 
