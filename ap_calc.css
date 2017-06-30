@@ -243,6 +243,7 @@ th {
 .btn-mid {
     border-radius: 0;
 }
+.btn-input:focus + .btn, /* Add visual indication when focusing on visually hidden elements */
 .btn:hover {
     z-index: 10;
     border-color: #777777;
@@ -256,9 +257,17 @@ th {
 .btn-input[type="radio"]:checked + .btn {
     cursor: default;
 }
+
+/* Hide element visually, but not from screen readers. See http://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html */
 .btn-input {
-    display: none;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    top: auto;
+    white-space: nowrap; /* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
 }
+
 .btn-input:disabled + .btn {
     color: #999999;
 }
