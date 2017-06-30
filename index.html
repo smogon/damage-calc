@@ -28,7 +28,8 @@
 
     <div>
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
-        <span title="Select the generation.">
+        <span aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
+            <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
             <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
@@ -37,11 +38,13 @@
             <input class="gen visually-hidden" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">X/Y</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" checked="checked" /><label class="btn btn-small btn-right" for="gen7">S/M</label>
         </span>
-        <span title="Select the output notation.">
+        <span aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation.">
+            <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
             <input class="notation visually-hidden" type="radio" name="notation" id="pixels" value="px" /><label class="btn btn-small btn-left" for="pixels">48th</label>
             <input class="notation visually-hidden" type="radio" name="notation" id="percentage" value="%" /><label class="btn btn-small btn-right" for="percentage">100%</label>
         </span>
-        <span title="Select the calculator's mode of function.">
+        <span aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
+            <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of function.</span>
             <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-wide btn-right right" for="all-vs-one">All vs One</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-wide btn-mid right" for="one-vs-all">One vs All</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" checked="checked" /><label class="btn btn-wide btn-left right" for="one-vs-one">One vs One</label>
@@ -49,7 +52,7 @@
     </div>
     <hr />
     <div class="move-result-group" title="Select a move to show detailed results.">
-        <div class="move-result-subgroup">
+        <div  aria-labelledby="resultHeaderL" class="move-result-subgroup" role="radiogroup">
             <div class="result-move-header"><span id="resultHeaderL">Pok&eacute;mon 1's Moves (select one to show detailed results)</span>
             </div>
             <div>
@@ -73,7 +76,7 @@
                 <span id="resultDamageL4">??? - ???%</span>
             </div>
         </div>
-        <div class="move-result-subgroup">
+        <div aria-labelledby="resultHeaderR" class="move-result-subgroup" role="radiogroup">
             <div class="result-move-header"><span id="resultHeaderR">Pok&eacute;mon 2's Moves (select one to show detailed results)</span>
             </div>
             <div>
@@ -441,6 +444,8 @@
                 <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (
                 <input class="percent-hp calc-trigger" value="100" />%)
             </div>
+            <div hidden id="criticalHitInstruction">Force this attack to be a critical hit?</div>
+            <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
                 <input class="move-bp calc-trigger" value="50" />
@@ -449,9 +454,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL1" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL1" />
                 <label class="btn crit-btn" for="critL1" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zL1"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL1"/>
                 <label class="btn z-btn gen-specific g7" for="zL1" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -468,9 +473,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL2" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL2" />
                 <label class="btn crit-btn" for="critL2" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zL2"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL2"/>
                 <label class="btn z-btn gen-specific g7" for="zL2" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -487,9 +492,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL3" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL3" />
                 <label class="btn crit-btn" for="critL3" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zL3"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL3"/>
                 <label class="btn z-btn gen-specific g7" for="zL3" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -506,9 +511,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL4" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critL4" />
                 <label class="btn crit-btn" for="critL4" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zL4"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zL4"/>
                 <label class="btn z-btn gen-specific g7" for="zL4" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -524,42 +529,46 @@
         <div>
             <fieldset class="field-info">
                 <legend align="center">Field</legend>
-                <div class="gen-specific g3 g4 g5 g6 g7" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                    <span class="visually-hidden" id="selectBattleFormatInstruction">Select the battle format.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
                     <label class="btn btn-left" for="singles-format">Singles</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" />
                     <label class="btn btn-right" for="doubles-format">Doubles</label>
                 </div>
-                <div class="gen-specific g6 g7" title="Select the current terrain.">
+                <div aria-labelledby="selectTerrainInstruction" class="gen-specific g6 g7" role="group" title="Select the current terrain.">
+                    <span class="visually-hidden" id="selectTerrainInstruction">Select the current terrain.</span>
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-xxxwide btn-left" for="electric">Electric Terrain</label>
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">Grassy Terrain</label>
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">Misty Terrain</label>
-                </div>
-                <div class="gen-specific g7" title="Select the current terrain.">
                     <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-xxxwide btn-mid" for="psychic">Psychic Terrain</label>
                 </div>
                 <hr class="gen-specific g6 g7" />
-                <div class="gen-specific g3 g4 g5 g6 g7" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
-                    <label class="btn btn-small btn-left" for="clear">None</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
-                    <label class="btn btn-small btn-mid" for="sun">Sun</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
-                    <label class="btn btn-small btn-mid" for="rain">Rain</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
-                    <label class="btn btn-small btn-mid" for="sand">Sand</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                    <label class="btn btn-small btn-right" for="hail">Hail</label>
-                </div>
-                <div class="gen-specific g6 g7" title="Select the current weather condition.">
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
-                    <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
-                    <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
-                    <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
-                    <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
-                </div>
-                <div class="gen-specific g2 hide" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
+                <div aria-labelledby="selectWeatherInstruction" role="radiogroup">
+                    <span class="visually-hidden" id="selectWeatherInstruction">Select the current weather condition.</span>
+                    <div  class="gen-specific g3 g4 g5 g6 g7" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
+                        <label class="btn btn-small btn-left" for="clear">None</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
+                        <label class="btn btn-small btn-mid" for="sun">Sun</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Rain" id="rain" />
+                        <label class="btn btn-small btn-mid" for="rain">Rain</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
+                        <label class="btn btn-small btn-mid" for="sand">Sand</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
+                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                    </div>
+                    <div class="gen-specific g6 g7" title="Select the current weather condition.">
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
+                        <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
+                        <label class="btn btn-xxxwide btn-mid" for="heavy-rain">Heavy Rain</label>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Strong Winds" id="strong-winds" />
+                        <label class="btn btn-xxxwide btn-right" for="strong-winds">Strong Winds</label>
+                    </div>
+                  </div>
+                <div aria-labelledby="selectGscWeatherInstruction" class="gen-specific g2 hide" role="radiogroup" style="width: 17.8em; margin: 0 auto 5px;" title="Select the current weather condition.">
+                    <span class="visually-hidden" id="selectGscWeatherInstruction">Select the current weather condition.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="" id="gscClear" checked="checked" />
                     <label class="btn btn-small btn-left" for="gscClear">None</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sun" id="gscSun" />
@@ -570,7 +579,8 @@
                     <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                 </div>
                 <div class="gen-specific g4 g5 g6 g7" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
-                    <input class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
+                    <span hidden id="gravityInstruction">Is gravity in effect?</span>
+                    <input aria-describedby="gravityInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
                     <label class="btn" for="gravity">Gravity</label>
                 </div>
                 <hr class="gen-specific g2 g3 g4 g5 g6 g7" />
@@ -1048,9 +1058,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR1" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR1" />
                 <label class="btn crit-btn" for="critR1" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zR1"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR1"/>
                 <label class="btn z-btn gen-specific g7" for="zR1" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -1067,9 +1077,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR2" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR2" />
                 <label class="btn crit-btn" for="critR2" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zR2"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR2"/>
                 <label class="btn z-btn gen-specific g7" for="zR2" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -1086,9 +1096,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR3" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR3" />
                 <label class="btn crit-btn" for="critR3" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zR3"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR3"/>
                 <label class="btn z-btn gen-specific g7" for="zR3" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
@@ -1105,9 +1115,9 @@
                     <option value="Physical">Physical</option>
                     <option value="Special">Special</option>
                 </select>
-                <input class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR4" />
+                <input aria-describedby="criticalHitInstruction" class="move-crit calc-trigger visually-hidden" type="checkbox" id="critR4" />
                 <label class="btn crit-btn" for="critR4" title="Force this attack to be a critical hit?">Crit</label>
-                <input class="move-z calc-trigger visually-hidden" type="checkbox" id="zR4"/>
+                <input aria-describedby="zMoveInstruction" class="move-z calc-trigger visually-hidden" type="checkbox" id="zR4"/>
                 <label class="btn z-btn gen-specific g7" for="zR4" title="Make this attack a Z-move?">Z</label>
                 <select class="move-hits calc-trigger hide">
                     <option value="2">2 hits</option>
