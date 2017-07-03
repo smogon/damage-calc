@@ -243,23 +243,23 @@ th {
 .btn-mid {
     border-radius: 0;
 }
-.btn-input:focus + .btn, /* Add visual indication when focusing on visually hidden elements */
+.visually-hidden:focus + .btn, /* Add visual indication when focusing on visually hidden elements */
 .btn:hover {
     z-index: 10;
     border-color: #777777;
     background: #e3e3e3;
 }
-.btn-input:checked + .btn {
+.visually-hidden:checked + .btn {
     font-weight: bold;
     color: #111111;
     background: #f5f5f5;
 }
-.btn-input[type="radio"]:checked + .btn {
+.visually-hidden[type="radio"]:checked + .btn {
     cursor: default;
 }
 
 /* Hide element visually, but not from screen readers. See http://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html */
-.btn-input {
+.visually-hidden {
     clip: rect(1px, 1px, 1px, 1px);
     height: 1px;
     overflow: hidden;
@@ -268,7 +268,7 @@ th {
     white-space: nowrap; /* https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe */
 }
 
-.btn-input:disabled + .btn {
+.visually-hidden:disabled + .btn {
     color: #999999;
 }
 .btn-group {
@@ -365,7 +365,7 @@ select.toxic-counter {
     font-size: 0.8em;
 }
 
-.hide {
+[hidden], .hide {
     display: none;
 }
 
