@@ -236,7 +236,7 @@ $(".mode").change(function() {
     if ( $("#one-vs-one").prop("checked") ) {
         window.location.replace( "index.html" );
   } else {
-        window.location.replace( "calc_bc.html?mode=" + $(this).attr("id") );
+        window.location.replace( "honkalculate.html?mode=" + $(this).attr("id") );
   }
 });
 
