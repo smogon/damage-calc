@@ -431,6 +431,12 @@ var MOVES_RBY = {
         category: 'Physical',
         makesContact: true
     },
+    'Wing Attack': {
+        bp: 35,
+        type: 'Flying',
+        category: 'Physical',
+        makesContact: true
+    },
     'Wrap': {
         bp: 15,
         type: 'Normal'
@@ -792,6 +798,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         makesContact: true
     },
     'Tri Attack': { hasSecondaryEffect: true },
+    'Wing Attack': { bp: 60 },
     'Zap Cannon': {
         bp: 100,
         type: 'Electric',
@@ -3288,6 +3295,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Water Spout': { zp: 200 },
     'Weather Ball': { zp: 160 },
     'Wild Charge': { zp: 175 },
+    'Wing Attack': { zp: 120 },
     'Wood Hammer': { zp: 190 },
     'Wring Out': { zp: 190 },
     'X-Scissor': { zp: 160 },
