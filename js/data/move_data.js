@@ -1128,6 +1128,11 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         makesContact: true,
         isPunch: true
     },
+    'Sheer Cold': {
+        bp: 1,
+        type: 'Ice',
+        category: 'Special'
+    },
     'Shock Wave': {
         bp: 60,
         type: 'Electric',
