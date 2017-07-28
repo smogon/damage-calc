@@ -330,6 +330,13 @@ $(".set-selector").change(function() {
             if (format === "LC") pokeObj.find(".level").val(5);
             if (_.startsWith(format, "VGC")) pokeObj.find(".level").val(50);
         }
+        var formeObj = $(this).siblings().find(".forme").parent();
+        itemObj.prop("disabled", false);
+        if (pokemon.formes) {
+            showFormes(formeObj, setName, pokemonName, pokemon);
+        } else {
+            formeObj.hide();
+        }
         calcHP(pokeObj);
         calcStats(pokeObj);
         abilityObj.change();
@@ -337,14 +344,74 @@ $(".set-selector").change(function() {
     }
 });
 
+function showFormes(formeObj, setName, pokemonName, pokemon) {
+    var defaultForme = 0;
+
+    if (setName !== 'Blank Set') {
+        var set = setdex[pokemonName][setName];
+
+        // Repurpose the previous filtering code to provide the "different default" logic
+        if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
+            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
+            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
+            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
+            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
+            defaultForme = 1;
+        } else if (set.item.indexOf('ite Y') !== -1) {
+            defaultForme = 2;
+        }
+    }
+
+    var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
+    formeObj.children("select").find("option").remove().end().append(formeOptions).change();
+    formeObj.show();
+}
+
 function setSelectValueIfValid(select, value, fallback) {
     select.val(select.children("option[value='" + value + "']").length !== 0 ? value : fallback);
 }
 
+$(".forme").change(function() {
+    var altForme = pokedex[$(this).val()],
+        container = $(this).closest(".info-group").siblings(),
+        fullSetName = container.find(".select2-chosen").first().text(),
+        pokemonName = fullSetName.substring(0, fullSetName.indexOf(" (")),
+        setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+
+    $(this).parent().siblings().find(".type1").val(altForme.t1);
+    $(this).parent().siblings().find(".type2").val(typeof altForme.t2 != "undefined" ? altForme.t2 : "");
+    $(this).parent().siblings().find(".weight").val(altForme.w);
+
+    for (var i = 0; i < STATS.length; i++) {
+        var baseStat = container.find("." + STATS[i]).find(".base");
+        baseStat.val(altForme.bs[STATS[i]]);
+        baseStat.keyup();
+    }
+
+    if (abilities.indexOf(altForme.ab) > -1) {
+        container.find(".ability").val(altForme.ab);
+    } else {
+        container.find(".ability").val("");
+    }
+    container.find(".ability").keyup();
+
+    if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Rayquaza-Mega") {
+        container.find(".item").val("").keyup();
+    } else {
+        container.find(".item").prop("disabled", false);
+    }
+});
+
+
 function Pokemon(pokeInfo) {
     if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
-        this.name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
-        var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
+        var setName = pokeInfo.find("input.set-selector").val();
+        if (setName.indexOf("(") === -1) {
+            this.name = setName;
+        } else {
+            var pokemonName = setName.substring(0, setName.indexOf(" ("));
+            this.name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
+        }
         var pokemon = pokedex[this.name];
         this.type1 = pokemon.t1;
         this.type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
