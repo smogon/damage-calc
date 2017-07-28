@@ -11867,20 +11867,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     "t2": "Flying",
     "bs": {
       "hp": 60,
-      "at": 60,
-      "df": 100,
-      "sa": 60,
-      "sd": 100,
-      "sp": 60
-    },
-    "w": 40.0,
-    "formes": ["Minior", "Minior-Down"]
-  },
-  "Minior-Down": {
-    "t1": "Rock",
-    "t2": "Flying",
-    "bs": {
-      "hp": 60,
       "at": 100,
       "df": 60,
       "sa": 100,
@@ -11888,6 +11874,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 120
     },
     "w": 0.3,
+    "formes": ["Minior", "Minior-Meteor"]
+  },
+  "Minior-Meteor": {
+    "t1": "Rock",
+    "t2": "Flying",
+    "bs": {
+      "hp": 60,
+      "at": 60,
+      "df": 100,
+      "sa": 60,
+      "sd": 100,
+      "sp": 60
+    },
+    "w": 40.0,
     isAlternateForme: true
   },
   "Morelull": {
