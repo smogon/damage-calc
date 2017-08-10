@@ -7327,6 +7327,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
       "sp": 95
     },
     "w": 92.9,
+    "ab": "Sheer Force",
     "formes": [
       "Darmanitan",
       "Darmanitan-Z"
