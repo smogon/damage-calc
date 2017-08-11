@@ -191,6 +191,14 @@ var MOVES_RBY = {
         type: 'Normal',
         category: 'Special'
     },
+    'Hyper Fang': {
+        bp: 80,
+        type: 'Normal',
+        category: 'Physical',
+        makesContact: true,
+        hasSecondaryEffect: true,
+        isBite: true
+    },
     'Ice Beam': {
         bp: 95,
         type: 'Ice',
