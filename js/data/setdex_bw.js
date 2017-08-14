@@ -1,7 +1,7 @@
 var SETDEX_BW = {
 	"Abomasnow": {
-		"UU SubSeed": {"level":100,"evs":{"sd":252,"hp":248,"sp":8},"nature":"Sassy","ability":"Soundproof","item":"Leftovers","moves":["Substitute","Leech Seed","Blizzard","Wood Hammer"]},
-		"UU Mixed Attacker": {"level":100,"evs":{"at":252,"sp":148,"sa":108},"nature":"Lonely","ability":"Soundproof","item":"Expert Belt","moves":["Blizzard","Wood Hammer","Earthquake","Ice Shard"]},
+		"UU SubSeed": {"level":100,"evs":{"sd":252,"hp":248,"sp":8},"nature":"Sassy","ability":"Snow Warning","item":"Leftovers","moves":["Substitute","Leech Seed","Blizzard","Wood Hammer"]},
+		"UU Mixed Attacker": {"level":100,"evs":{"at":252,"sp":148,"sa":108},"nature":"Lonely","ability":"Snow Warning","item":"Expert Belt","moves":["Blizzard","Wood Hammer","Earthquake","Ice Shard"]},
 		"OU Mixed": {"level":100,"evs":{"at":252,"sp":84,"sa":172},"nature":"Lonely","ability":"Snow Warning","item":"Expert Belt","moves":["Wood Hammer","Ice Shard","Hidden Power Fire","Protect"]},
 		"OU Physical Attacker": {"level":100,"evs":{"at":252,"hp":172,"sp":84},"nature":"Adamant","ability":"Snow Warning","item":"Leftovers","moves":["Ice Shard","Wood Hammer","Protect","Leech Seed"]},
 		"Uber Leech Seed": {"level":100,"evs":{"sd":252,"hp":248,"sa":8},"nature":"Calm","ability":"Snow Warning","item":"Leftovers","moves":["Protect","Leech Seed","Grass Knot","Blizzard"]},
@@ -2491,8 +2491,8 @@ var SETDEX_BW = {
 		"Doubles Offensive": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","item":"Life Orb","moves":["Air Slash","Seed Flare","Earth Power","Protect"]},
 	},
 	"Shedinja": {
-		"NU Pivot": {"level":100,"evs":{"at":252},"ivs":{"sp":0},"nature":"Brave","item":"Focus Sash","moves":["Baton Pass","Will-O-Wisp","Protect","Shadow Sneak"]},
-		"NU Swords Dance": {"level":100,"evs":{"at":252,"sp":252},"nature":"Adamant","item":"Focus Sash","moves":["Swords Dance","Shadow Sneak","X-Scissor","Protect"]},
+		"NU Pivot": {"level":100,"evs":{"at":252},"ivs":{"sd":0,"df":0,"sp":0},"nature":"Brave","item":"Focus Sash","moves":["Baton Pass","Will-O-Wisp","Protect","Shadow Sneak"]},
+		"NU Swords Dance": {"level":100,"evs":{"at":252,"sp":252},"ivs":{"sd":0,"df":0},"nature":"Adamant","item":"Focus Sash","moves":["Swords Dance","Shadow Sneak","X-Scissor","Protect"]},
 		"Uber Wall": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"ivs":{"df":0},"nature":"Lonely","item":"Focus Sash","moves":["X-Scissor","Shadow Sneak","Will-O-Wisp","Protect"]},
 		"Uber Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"ivs":{"df":0},"nature":"Lonely","item":"Focus Sash","moves":["Swords Dance","X-Scissor","Shadow Sneak","Shadow Claw"]},
 	},
