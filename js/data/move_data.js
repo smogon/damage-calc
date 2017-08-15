@@ -275,7 +275,7 @@ var MOVES_RBY = {
     'Razor Leaf': {
         bp: 55,
         type: 'Grass',
-        category: 'Special',
+        category: 'Physical',
         alwaysCrit: true
     },
     'Recover': {
