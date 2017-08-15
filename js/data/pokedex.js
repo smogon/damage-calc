@@ -2888,7 +2888,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
       "sd": 80,
       "sp": 65
     },
-    "w": 118.0
+    "w": 118.0,
+    "ab": "Technician"
   },
   "Sentret": {
     "t1": "Normal",
