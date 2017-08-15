@@ -828,6 +828,7 @@ var SETDEX_SM = {
 		"OU Groundium Z Trapper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Groundium Z","moves":["Earthquake","Screech","Substitute","Toxic"]},
 		"OU Focus Sash": {"level":100,"evs":{"df":4,"at":252,"sp":252},"ivs":{"hp":21},"nature":"Jolly","ability":"Arena Trap","item":"Focus Sash","moves":["Earthquake","Reversal","Screech","Pursuit"]},
 		"OU Choice Scarf": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Choice Scarf","moves":["Earthquake","Stone Edge","Memento","Pursuit"]},
+		"OU Choice Band": {"level":100,"evs":{"d":4,"at":252,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Choice Band","moves":["Earthquake","Stone Edge","Pursuit","Aerial Ace"]},
 		"Uber Z-move Trapper": {"level":100,"evs":{"df":4,"at":252,"sp":252},"nature":"Adamant","ability":"Arena Trap","item":"Groundium Z","moves":["Earthquake","Memento","Toxic","Stealth Rock"]},
 		"Monotype Focus Sash": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"ivs":{"df":2,"hp":28},"nature":"Jolly","ability":"Arena Trap","item":"Focus Sash","moves":["Earthquake","Reversal","Sucker Punch","Memento"]},
 		"Monotype Choice Band": {"level":100,"evs":{"sd":4,"at":252,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Choice Band","moves":["Earthquake","Sucker Punch","Stone Edge","Memento"]},
