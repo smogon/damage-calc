@@ -398,7 +398,7 @@ $(".forme").change(function() {
     }
     container.find(".ability").keyup();
 
-    if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Rayquaza-Mega") {
+    if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Mega Rayquaza") {
         container.find(".item").val("").keyup();
     } else {
         container.find(".item").prop("disabled", false);
