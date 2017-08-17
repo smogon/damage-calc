@@ -272,6 +272,9 @@ $(".set-selector").change(function() {
     var pokemon = pokedex[pokemonName];
     if (pokemon) {
         var pokeObj = $(this).closest(".poke-info");
+        if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
+            stickyMoves.clearStickyMove();
+        }
         pokeObj.find(".type1").val(pokemon.t1);
         pokeObj.find(".type2").val(pokemon.t2);
         pokeObj.find(".hp .base").val(pokemon.bs.hp);
@@ -774,6 +777,37 @@ function getSelectOptions(arr, sort) {
     }
     return r;
 }
+var stickyMoves = (function () {
+    var lastClicked = 'resultMoveL1';
+    $(".result-move").click(function () {
+        if (this.id === lastClicked) {
+            $(this).toggleClass("locked-move");
+        } else {
+            $('.locked-move').removeClass('locked-move');
+        }
+        lastClicked = this.id;
+    });
+
+    return {
+        clearStickyMove: function () {
+            lastClicked = null;
+            $('.locked-move').removeClass('locked-move');
+        },
+        setSelectedMove: function (slot) {
+            lastClicked = slot;
+        },
+        getSelectedSide: function () {
+            if (lastClicked) {
+                if (lastClicked.indexOf('resultMoveL') !== -1) {
+                    return 'p1';
+                } else if (lastClicked.indexOf('resultMoveR') !== -1) {
+                    return 'p2';
+                }
+            }
+            return null;
+        }
+    };
+})();
 
 function isGrounded(pokeInfo) {
     return $("#gravity").prop("checked") || (

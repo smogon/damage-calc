@@ -62,6 +62,11 @@ function calculate() {
             bestResult = $(resultLocations[1][i].move);
         }
     }
+    if ($('.locked-move').length) {
+        bestResult = $('.locked-move');
+    } else {
+        stickyMoves.setSelectedMove(bestResult.prop("id"));
+    }
     bestResult.prop("checked", true);
     bestResult.change();
     $("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");

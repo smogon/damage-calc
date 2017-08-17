@@ -281,6 +281,9 @@ th {
 .right {
     float: right;
 }
+.locked-move:checked + .btn {
+    background: #ffff99;
+}
 
 /* header */
 .move-result-group {
