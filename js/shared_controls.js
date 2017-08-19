@@ -405,13 +405,8 @@ $(".forme").change(function() {
 
 function Pokemon(pokeInfo) {
     if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
-        var setName = pokeInfo.find("input.set-selector").val();
-        if (setName.indexOf("(") === -1) {
-            this.name = setName;
-        } else {
-            var pokemonName = setName.substring(0, setName.indexOf(" ("));
-            this.name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
-        }
+        this.name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
+        var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
         var pokemon = pokedex[this.name];
         this.type1 = pokemon.t1;
         this.type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
@@ -472,7 +467,8 @@ function Pokemon(pokeInfo) {
         if (setName.indexOf("(") === -1) {
             this.name = setName;
         } else {
-            this.name = setName.substring(0, setName.indexOf(" ("));
+            var pokemonName = setName.substring(0, setName.indexOf(" ("));
+            this.name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
         }
         this.type1 = pokeInfo.find(".type1").val();
         this.type2 = pokeInfo.find(".type2").val();
