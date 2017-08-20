@@ -224,17 +224,125 @@ function addSets(pokes){
 
 function checkExeptions(poke){
 	switch(poke){
+		case 'Abomasnow-Mega':
+			poke = "Mega Abomasnow";
+			break;
+		case 'Absol-Mega':
+			poke = "Mega Absol";
+			break;
 		case 'Aegislash':
 			poke = "Aegislash-Blade";
+			break;
+		case 'Aggron-Mega':
+			poke = "Mega Aggron";
+			break;
+		case 'Alakazam-Mega':
+			poke = "Mega Alakazam";
+			break;
+		case 'Altaria-Mega':
+			poke = "Mega Altaria";
+			break;
+		case 'Ampharos-Mega':
+			poke = "Mega Ampharos";
+			break;
+		case 'Audino-Mega':
+			poke = "Mega Audino";
+			break;
+		case 'Banette-Mega':
+			poke = "Mega Banette";
 			break;
 		case 'Basculin-Blue-Striped':
 			poke = "Basculin";
 			break;
+		case 'Beedrill-Mega':
+			poke = "Mega Beedrill";
+			break;
+		case 'Blaziken-Mega':
+			poke = "Mega Blaziken";
+			break;
+		case 'Blastoise-Mega':
+			poke = "Mega Blastoise";
+			break;
+		case 'Camerupt-Mega':
+			poke = "Mega Venusaur";
+			break;
+		case 'Charizard-Mega-X':
+			poke = "Mega Charizard X";
+			break;
+		case 'Charizard-Mega-Y':
+			poke = "Mega Charizard Y";
+			break;
+		case 'Crucibelle-Mega':
+			poke = "Mega Crucibelle";
+			break;
+		case 'Diancie-Mega':
+			poke = "Mega Diancie";
+			break;
+		case 'Gallade-Mega':
+			poke = "Mega Gallade";
+			break;
+		case 'Garchomp-Mega':
+			poke = "Mega Garchomp";
+			break;
+		case 'Gardevoir-Mega':
+			poke = "Mega Gardevoir";
+			break;
+		case 'Gengar-Mega':
+			poke = "Mega Gengar";
+			break;
+		case 'Glalie-Mega':
+			poke = "Mega Glalie";
+			break;
+		case 'Gyarados-Mega':
+			poke = "Mega Gyarados";
+			break;
+		case 'Heracross-Mega':
+			poke = "Mega Heracross";
+			break;
+		case 'Houndoom-Mega':
+			poke = "Mega Houndoom";
+			break;
+		case 'Kangaskhan-Mega':
+			poke = "Mega Kangaskhan";
+			break;
 		case 'Keldeo-Resolute':
 			poke = "Keldeo";
 			break;
+		case 'Latias-Mega':
+			poke = "Mega Latias";
+			break;
+		case 'Latios-Mega':
+			poke = "Mega Latios";
+			break;
+		case 'Lopunny-Mega':
+			poke = "Mega Lopunny";
+			break;
+		case 'Lucario-Mega':
+			poke = "Mega Lucario";
+			break;
+		case 'Manectric-Mega':
+			poke = "Mega Manectric";
+			break;
+		case 'Mawile-Mega':
+			poke = "Mega Mawile";
+			break;
+		case 'Medicham-Mega':
+			poke = "Mega Medicham";
+			break;
+		case 'Metagross-Mega':
+			poke = "Mega Metagross";
+			break;
+		case 'Mewtwo-Mega-X':
+			poke = "Mega Mewtwo X";
+			break;
+		case 'Mewtwo-Mega-Y':
+			poke = "Mega Mewtwo Y";
+			break;
 		case 'Mimikyu-Busted':
 			poke = "Mimikyu";
+			break;
+		case 'Pidgeot-Mega':
+			poke = "Mega Pidgeot";
 			break;
 		case 'Pikachu-Alola':
 		case 'Pikachu-Belle':	
@@ -249,6 +357,42 @@ function checkExeptions(poke){
 		case 'Pikachu-Sinnoh':
 		case 'Pikachu-Unova':
 			poke = "Pikachu";
+			break;
+		case 'Pinsir-Mega':
+			poke = "Mega Pinsir";
+			break;
+		case 'Rayquaza-Mega':
+			poke = "Mega Rayquaza";
+			break;
+		case 'Sableye-Mega':
+			poke = "Mega Sableye";
+			break;
+		case 'Salamence-Mega':
+			poke = "Mega Salamence";
+			break;
+		case 'Sceptile-Mega':
+			poke = "Mega Sceptile";
+			break;
+		case 'Scizor-Mega':
+			poke = "Mega Scizor";
+			break;
+		case 'Sharpedo-Mega':
+			poke = "Mega Sharpedo";
+			break;
+		case 'Slowbro-Mega':
+			poke = "Mega Slowbro";
+			break;
+		case 'Steelix-Mega':
+			poke = "Mega Steelix";
+			break;
+		case 'Swampert-Mega':
+			poke = "Mega Swampert";
+			break;
+		case 'Tyranitar-Mega':
+			poke = "Mega Tyranitar";
+			break;
+		case 'Venusaur-Mega':
+			poke = "Mega Venusaur";
 			break;
 		case 'Vivillon-Fancy':
 		case 'Vivillon-Pokeball':
