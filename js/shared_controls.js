@@ -882,8 +882,9 @@ $(document).ready(function() {
             var pageSize = 30;
             var results = _.filter(getSetOptions(), function(option) {
                 var pokeName = option.pokemon.toUpperCase();
-                // 2nd condition is for Megas; remove when Megas are merged
-                return !query.term || pokeName.indexOf(query.term.toUpperCase()) === 0 || pokeName.indexOf(" " + query.term.toUpperCase()) >= 0;
+                return !query.term || query.term.toUpperCase().split(" ").every(function(term) {
+                    return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0;
+                });
             });
             query.callback({
                 results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
