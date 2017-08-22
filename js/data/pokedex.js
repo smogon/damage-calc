@@ -11227,7 +11227,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
   "Volbeat": { "bs": { "df": 75, "sd": 85 } },
   "Vulpix": { "formes": ["Vulpix", "Vulpix-Alola"] },
   "Woobat": { "bs": { "hp": 65 } },
-  "Zygrade": { "formes": ["Zygarde", "Zygarde-10%", "Zygarde-Complete"] },
+  "Zygarde": { "formes": ["Zygarde", "Zygarde-10%", "Zygarde-Complete"] },
   "Araquanid": {
     "t1": "Water",
     "t2": "Bug",
