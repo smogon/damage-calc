@@ -219,6 +219,8 @@ function addSets(pokes){
 	}
 	if (addedpokes > 0) {
 		alert("Successfully imported "+addedpokes+" sets");
+	} else {
+		alert("No sets imported, please check your syntax and try again");
 	}
 }
 
