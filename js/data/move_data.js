@@ -1951,6 +1951,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Fighting',
         category: 'Special'
     },
+    'Fire Pledge': {
+        bp: 50,
+        type: 'Fire',
+        category: 'Special'
+    },
     'Flame Burst': {
         bp: 70,
         type: 'Fire',
@@ -2006,6 +2011,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         hasSecondaryEffect: true,
         isSpread: true
+    },
+    'Grass Pledge': {
+        bp: 50,
+        type: 'Grass',
+        category: 'Special'
     },
     'Heal Pulse': {
         bp: 0,
@@ -2285,6 +2295,11 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Electric',
         category: 'Special'
     },
+    'Water Pledge': {
+        bp: 50,
+        type: 'Water',
+        category: 'Special'
+    },
     'Wide Guard': {
         bp: 0,
         type: 'Rock'
@@ -2361,6 +2376,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         makesContact: true
     },
     'Fire Blast': { bp: 110 },
+    'Fire Pledge': { bp: 80 },
     'Flamethrower': { bp: 90 },
     'Flying Press': {
         bp: 80,
@@ -2380,6 +2396,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 0,
         type: 'Fairy'
     },
+    'Grass Pledge': { bp: 80 },
     'Heat Wave': { bp: 95 },
     'Hex': { bp: 65 },
     'Hidden Power Bug': { bp: 60 },
@@ -2543,6 +2560,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Thunder': { bp: 110 },
     'Thunderbolt': { bp: 90 },
     'Wake-Up Slap': { bp: 70 },
+    'Water Pledge': { bp: 80 },
     'Water Shuriken': {
         bp: 15,
         type: 'Water',
@@ -2799,6 +2817,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 160
     },
+    'Fire Pledge': { zp: 160 },
     'Fire Punch': { zp: 140 },
     'First Impression': {
         bp: 90,
@@ -2855,6 +2874,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Glaciate': { zp: 120 },
     'Grass Knot': { zp: 160 },
+    'Grass Pledge': { zp: 160 },
     'Gunk Shot': { zp: 190 },
     'Gust': { zp: 100 },
     'Gyro Ball': { zp: 160 },
@@ -3303,6 +3323,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Volt Tackle': { zp: 190 },
     'Wake-Up Slap': { zp: 140 },
     'Waterfall': { zp: 160 },
+    'Water Pledge': { zp: 160 },
     'Water Pulse': { zp: 120 },
     'Water Shuriken': { category: 'Special', zp: 100 },
     'Water Spout': { zp: 200 },

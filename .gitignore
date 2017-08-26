@@ -1,0 +1,7 @@
+/honkalculate.html
+/index.html
+node_modules/
+eslint-cache/
+.DS_Store
+Thumbs.db
+npm-debug.log

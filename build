@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+'use strict';
+
+const path = require('path');
+const fs = require('fs');
+const crypto = require('crypto');
+const exec = require('child_process').exec;
+
+const thisFile = __filename;
+const thisDir = __dirname;
+const rootDir = '.';
+
+// update version
+function makeCachebuster(template, output) {
+	let indexContents = fs.readFileSync(path.resolve(rootDir, template), {encoding: 'utf8'});
+
+	// add hashes to js and css files
+	process.stdout.write("Updating hashes... ");
+	indexContents = indexContents.replace(/(src|href)="\.\/(.*?)\?[a-z0-9]*?"/g, function (a, b, c) {
+		let hash = Math.random(); // just in case creating the hash fails
+		try {
+			const filename = c.replace('//play.pokemonshowdown.com/', '../../play.pokemonshowdown.com/');
+			const fstr = fs.readFileSync(path.resolve(rootDir, filename), {encoding: 'utf8'});
+			hash = crypto.createHash('md5').update(fstr).digest('hex').substr(0, 8);
+		} catch (e) {}
+
+		return b + '="./' + c + '?' + hash + '"';
+	});
+	process.stdout.write("Writing new `" + output + "` file... ");
+	fs.writeFileSync(path.resolve(rootDir, output), indexContents);
+	console.log("DONE");
+}
+
+makeCachebuster('honkalculate.template.html', 'honkalculate.html');
+makeCachebuster('index.template.html', 'index.html');
