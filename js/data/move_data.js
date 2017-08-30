@@ -2473,7 +2473,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 110,
         type: 'Water',
         category: 'Special',
-        isSpread: true
+        isSpread: true,
+        isPulse: true
     },
     'Overheat': { bp: 130 },
     'Phantom Force': {
