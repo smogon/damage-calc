@@ -883,7 +883,7 @@ $(document).ready(function() {
             var results = _.filter(getSetOptions(), function(option) {
                 var pokeName = option.pokemon.toUpperCase();
                 return !query.term || query.term.toUpperCase().split(" ").every(function(term) {
-                    return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0;
+                    return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
                 });
             });
             query.callback({
