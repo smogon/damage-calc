@@ -267,6 +267,18 @@ function getDamageResult(attacker, defender, move, field) {
             basePower = move.bp * (defender.status === "Asleep" ? 2 : 1);
             description.moveBP = basePower;
             break;
+        case "Fire Pledge":
+            basePower = gen > 5 && (field.isWPBoosted || field.isGPBoosted) ? 150 : (gen < 6 && (!field.isFPBoosted && !field.isGPBoosted)) ? 50 : 80;
+            description.moveBP = basePower;
+            break;
+        case "Grass Pledge":
+            basePower = gen > 5 && (field.isFPBoosted || field.isWPBoosted) ? 150 : (gen < 6 && (!field.isFPBoosted || !field.isGPBoosted)) ? 50 : 80;
+            description.moveBP = basePower;
+            break;
+        case "Water Pledge":
+            basePower = gen > 5 && (field.isFPBoosted || field.isGPBoosted) ? 150 : (gen < 6 && (!field.isFPBoosted || !field.isGPBoosted)) ? 50 : 80;
+            description.moveBP = basePower;
+            break;
         case "Weather Ball":
             basePower = field.weather !== "" ? 100 : 50;
             description.moveBP = basePower;
