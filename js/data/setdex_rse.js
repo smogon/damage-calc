@@ -147,7 +147,7 @@ var SETDEX_ADV = {
 		"OU Physical Attacker": {"level":100,"evs":{"at":252,"hp":140,"sp":116},"nature":"Lonely","item":"Leftovers","moves":["Dragon Dance","Aerial Ace","Hidden Power Grass","Fire Blast"]},
 	},
 	"Charmeleon": {
-		"NU Showdown Usage": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Blaze","item":"Leftovers","moves":["Fire Blast","Rock Slide","Dragon Dance","Dragon Claw"]},
+		"NU Special Attacker": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Modest","ability":"Blaze","item":"Leftovers","moves":["Fire Blast","Overheat","Hidden Power Grass","Dragon Claw"]},
 	},
 	"Chimecho": {
 		"NU Calm Mind": {"level":100,"evs":{"sd":60,"df":116,"hp":252,"sa":80},"nature":"Modest","item":"Leftovers","moves":["Calm Mind","Heal Bell","Hidden Power Electric","Psychic"]},
@@ -237,7 +237,8 @@ var SETDEX_ADV = {
 		"Uber Taunt + Calm Mind": {"level":100,"evs":{"hp":252,"sp":16,"sa":240},"nature":"Timid","item":"Leftovers","moves":["Psychic","Calm Mind","Taunt","Recover"]},
 	},
 	"Dewgong": {
-		"NU Defensive": {"level":100,"evs":{"sd":16,"df":144,"hp":252,"sa":96},"nature":"Calm","item":"Leftovers","moves":["Ice Beam","Surf","Encore","Rest"]},
+		"NU Specially Defensive": {"level":100,"evs":{"sd":252,"hp":252,"sp":4},"nature":"Calm","ability":"Thick Fat","item":"Leftovers","moves":["Ice Beam","Surf","Rest","Sleep Talk"]},
+		"NU Special Attacker": {"level":100,"evs":{"hp":252,"sp":4,"sa":252},"nature":"Modest","ability":"Thick Fat","item":"Leftovers","moves":["Ice Beam","Surf","Hidden Power Electric","Encore"]},
 	},
 	"Diglett": {
 		"NU Showdown Usage": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Arena Trap","item":"Choice Band","moves":["Rock Slide","Earthquake","Sludge Bomb","Double-Edge"]},
@@ -391,7 +392,7 @@ var SETDEX_ADV = {
 		"OU SubPunch": {"level":100,"evs":{"sd":24,"df":36,"at":252,"hp":196},"nature":"Adamant","item":"Leftovers","moves":["Focus Punch","Substitute","Return","Shadow Ball"]},
 	},
 	"Graveler": {
-		"NU Showdown Usage": {"level":100,"evs":{"at":252,"hp":252,"sp":4},"nature":"Adamant","ability":"Rock Head","item":"Leftovers","moves":["Earthquake","Explosion","Rock Slide","Double-Edge"]},
+		"NU Choice Band": {"level":100,"evs":{"at":252,"hp":212,"sp":44},"nature":"Adamant","ability":"Rock Head","item":"Choice Band","moves":["Rock Slide","Earthquake","Double-Edge","Hidden Power Bug"]},
 	},
 	"Groudon": {
 		"Uber Swords Dance": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","item":"Leftovers","moves":["Swords Dance","Earthquake","Hidden Power Ghost","Overheat"]},
@@ -418,7 +419,8 @@ var SETDEX_ADV = {
 		"OU Focus Punch": {"level":100,"evs":{"sd":192,"df":192,"at":96,"sp":28},"nature":"Adamant","ability":"Guts","item":"Leftovers","moves":["Focus Punch","Counter","Rock Slide","Hidden Power Ghost"]},
 	},
 	"Haunter": {
-		"NU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Leftovers","moves":["Thunderbolt","Psychic","Substitute","Giga Drain"]},
+		"NU Substitute + 3 Attacks": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Leftovers","moves":["Substitute","Thunderbolt","Hidden Power Fire","Psychic"]},
+		"NU Substitute + Status": {"level":100,"evs":{"hp":56,"sp":252,"sa":200},"nature":"Timid","ability":"Levitate","item":"Leftovers","moves":["Substitute","Will-O-Wisp","Thunderbolt","Hidden Power Ice"]},
 		"UU Showdown Usage": {"level":100,"evs":{"sd":4,"sp":252,"sa":252},"nature":"Timid","ability":"Levitate","item":"Leftovers","moves":["Thunderbolt","Giga Drain","Destiny Bond","Psychic"]},
 	},
 	"Heracross": {
@@ -456,9 +458,8 @@ var SETDEX_ADV = {
 		"OU Pursuit": {"level":100,"evs":{"sd":12,"hp":56,"sp":188,"sa":252},"nature":"Timid","ability":"Early Bird","item":"Leftovers","moves":["Pursuit","Fire Blast","Crunch","Will-O-Wisp"]},
 	},
 	"Huntail": {
-		"NU Rain Dance Sweeper": {"level":100,"evs":{"hp":92,"sp":164,"sa":252},"nature":"Modest","item":"Leftovers","moves":["Rain Dance","Surf","Ice Beam","Hidden Power Electric"]},
-		"NU Baton Pass": {"level":100,"evs":{"df":74,"hp":252,"sa":184},"nature":"Bold","item":"Leftovers","moves":["Barrier","Surf","Baton Pass","Ice Beam"]},
-		"NU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Naughty","item":"Choice Band","moves":["Rock Tomb","Hydro Pump","Hidden Power Ground","Body Slam"]},
+		"NU Swift Swim Sweeper": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Swift Swim","item":"Leftovers","moves":["Rain Dance","Hydro Pump","Ice Beam","Hidden Power Grass"]},
+		"NU Baton Pass": {"level":100,"evs":{"hp":252,"sp":252,"sa":4},"nature":"Timid","ability":"Swift Swim","item":"Leftovers","moves":["Baton Pass","Substitute","Barrier","Hydro Pump"]},
 	},
 	"Hypno": {
 		"UU Support": {"level":100,"evs":{"df":192,"hp":252,"sp":64},"nature":"Bold","item":"Leftovers","moves":["Seismic Toss","Thunder Wave","Wish","Reflect"]},
@@ -684,8 +685,7 @@ var SETDEX_ADV = {
 		"OU Psych Up": {"level":100,"evs":{"df":96,"at":192,"hp":220},"nature":"Impish","item":"Leftovers","moves":["Psych Up","Body Slam","Earthquake","Milk Drink"]},
 	},
 	"Minun": {
-		"NU Special Sweeper": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","item":"Leftovers","moves":["Thunderbolt","Hidden Power Grass","Substitute","Baton Pass"]},
-		"NU Pseudo-passer": {"level":100,"evs":{"hp":252,"sp":176,"sa":80},"nature":"Timid","item":"Leftovers","moves":["Thunderbolt","Hidden Power Grass","Light Screen","Wish"]},
+		"NU Support": {"level":100,"evs":{"hp":252,"sp":252,"sa":4},"nature":"Timid","ability":"Minus","item":"Leftovers","moves":["Wish","Encore","Baton Pass","Thunderbolt"]},
 	},
 	"Misdreavus": {
 		"UU Perish Trapper": {"level":100,"evs":{"sd":16,"df":176,"hp":252,"sp":64},"nature":"Calm","item":"Leftovers","moves":["Mean Look","Perish Song","Taunt","Protect"]},
@@ -721,8 +721,7 @@ var SETDEX_ADV = {
 		"Uber Curse": {"level":100,"evs":{"sd":152,"at":104,"hp":252},"nature":"Careful","ability":"Sticky Hold","item":"Leftovers","moves":["Curse","Sludge Bomb","Hidden Power Ground","Toxic"]},
 	},
 	"Murkrow": {
-		"NU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","item":"Choice Band","moves":["Shadow Ball","Drill Peck","Hidden Power Fighting","Double-Edge"]},
-		"NU Perish Trapper": {"level":100,"evs":{"df":4,"hp":252,"sp":252},"nature":"Jolly","item":"Leftovers","moves":["Mean Look","Perish Song","Protect","Substitute"]},
+		"NU Choice Band": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Insomnia","item":"Choice Band","moves":["Drill Peck","Hidden Power Ground","Shadow Ball","Double-Edge"]},
 	},
 	"Nidoking": {
 		"UU Standard": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Hasty","item":"Leftovers","moves":["Earthquake","Megahorn","Shadow Ball","Ice Beam"]},
@@ -795,8 +794,7 @@ var SETDEX_ADV = {
 		"UU Swords Dance + Flail": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Adamant","item":"Salac Berry","moves":["Swords Dance","Endure","Flail","Earthquake"]},
 	},
 	"Plusle": {
-		"NU Baton Pass": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","item":"Petaya Berry","moves":["Thunderbolt","Hidden Power Grass","Substitute","Baton Pass"]},
-		"NU Special Sweeper": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","item":"Petaya Berry","moves":["Thunderbolt","Hidden Power Grass","Substitute","Encore"]},
+		"NU Special Attacker": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Plus","item":"Leftovers","moves":["Thunderbolt","Hidden Power Ice","Substitute","Baton Pass"]},
 	},
 	"Politoed": {
 		"UU Special Attacker + Hypnosis": {"level":100,"evs":{"hp":252,"sp":100,"sa":156},"nature":"Bold","ability":"Water Absorb","item":"Leftovers","moves":["Surf","Hypnosis","Ice Beam","Hidden Power Grass"]},
@@ -820,7 +818,7 @@ var SETDEX_ADV = {
 		"UU Reversal": {"level":100,"evs":{"at":252,"hp":80,"sp":176},"nature":"Adamant","item":"Salac Berry","moves":["Substitute","Reversal","Focus Punch","Hidden Power Ghost"]},
 	},
 	"Pupitar": {
-		"NU Showdown Usage": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Shed Skin","item":"Leftovers","moves":["Earthquake","Rock Slide","Dragon Dance","Hidden Power Flying"]},
+		"NU Dragon Dance": {"level":100,"evs":{"at":252,"hp":4,"sp":252},"nature":"Jolly","ability":"Shed Skin","item":"Leftovers","moves":["Dragon Dance","Earthquake","Rock Slide","Hidden Power Bug"]},
 	},
 	"Quagsire": {
 		"UU Curse": {"level":100,"evs":{"sd":192,"at":64,"hp":252},"nature":"Brave","ability":"Water Absorb","item":"Leftovers","moves":["Curse","Earthquake","Ice Beam","Rest"]},
@@ -928,7 +926,7 @@ var SETDEX_ADV = {
 		"UU Reversal": {"level":100,"evs":{"at":252,"hp":128,"sp":128},"nature":"Adamant","item":"Salac Berry","moves":["Hidden Power Bug","Endure","Swords Dance","Reversal"]},
 	},
 	"Seadra": {
-		"NU Showdown Usage": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Poison Point","item":"Leftovers","moves":["Ice Beam","Hydro Pump","Hidden Power Grass","Endure"]},
+		"NU Special Attacker": {"level":100,"evs":{"hp":4,"sp":252,"sa":252},"nature":"Timid","ability":"Poison Point","item":"Leftovers","moves":["Hydro Pump","Ice Beam","Hidden Power Grass","Substitute"]},
 	},
 	"Seaking": {
 		"NU Rain Dance Sweeper": {"level":100,"evs":{"at":184,"sp":72,"sa":252},"nature":"Mild","ability":"Swift Swim","item":"Leftovers","moves":["Rain Dance","Surf","Megahorn","Hidden Power Grass"]},
@@ -1028,9 +1026,8 @@ var SETDEX_ADV = {
 		"OU Choice Band": {"level":100,"evs":{"sd":136,"at":228,"hp":144},"nature":"Adamant","ability":"Rock Head","item":"Choice Band","moves":["Earthquake","Iron Tail","Double-Edge","Explosion"]},
 	},
 	"Sudowoodo": {
-		"NU Choice Band": {"level":100,"evs":{"sd":4,"at":252,"hp":252},"nature":"Adamant","ability":"Rock Head","item":"Choice Band","moves":["Hidden Power Rock","Earthquake","Focus Punch","Explosion"]},
-		"NU RestTalk": {"level":100,"evs":{"df":104,"at":152,"hp":252},"nature":"Adamant","ability":"Sturdy","item":"Leftovers","moves":["Rest","Sleep Talk","Hidden Power Rock","Earthquake"]},
-		"NU Calm Mind": {"level":100,"evs":{"sd":4,"hp":252,"sa":252},"nature":"Modest","ability":"Sturdy","item":"Leftovers","moves":["Calm Mind","Fire Punch","Hidden Power Grass","Thunder Punch"]},
+		"NU Choice Band": {"level":100,"evs":{"at":252,"hp":252,"sp":4},"nature":"Adamant","ability":"Rock Head","item":"Choice Band","moves":["Rock Slide","Earthquake","Focus Punch","Explosion"]},
+		"NU SubPunch": {"level":100,"evs":{"at":252,"hp":252,"sp":4},"nature":"Adamant","ability":"Rock Head","item":"Leftovers","moves":["Substitute","Focus Punch","Rock Slide","Explosion"]},
 	},
 	"Suicune": {
 		"OU Defensive Calm Mind": {"level":100,"evs":{"df":252,"hp":252,"sp":4},"nature":"Bold","item":"Leftovers","moves":["Calm Mind","Surf","Rest","Sleep Talk"]},
