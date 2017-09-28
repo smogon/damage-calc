@@ -158,15 +158,14 @@ function getDamageResult(attacker, defender, move, field) {
     if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
         typeEffectiveness = 1;
     }
-    if (defender.item === "Ring Target"){
-		switch(0){
-			case typeChart[move.type][defender.type1] : typeEffectiveness = typeEffect2; // 1 x typeEffect2
-			break;
-			case typeChart[move.type][defender.type2] : typeEffectiveness = typeEffect1; // same, but for typeEffect1
-			break;
-			default : typeEffectiveness = typeEffect1 * typeEffect2; //just to deny any crash
-		}
+    if (defender.item === "Ring Target" && typeEffectiveness === 0){
+	if(typeChart[move.type][defender.type1] === 0){
+		typeEffectiveness = typeEffect2;
 	}
+	else if(typeChart[move.type][defender.type2] === 0){
+		typeEffectiveness = typeEffect1;
+	}
+    }
     if (typeEffectiveness === 0) {
         return {"damage":[0], "description":buildDescription(description)};
     }
