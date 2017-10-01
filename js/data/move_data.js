@@ -694,6 +694,12 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         category: 'Physical',
         makesContact: true
     },
+    'Metal Claw': {
+        bp: 50,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true
+    },
     'Milk Drink': {
         bp: 0,
         type: 'Normal'
@@ -2979,6 +2985,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isZ: true
     },
     'Megahorn': { zp: 190 },
+    'Metal Claw': { zp: 100 },
     'Meteor Mash': { zp: 175 },
     'Mirror Shot': { zp: 120 },
     'Mist Ball': { zp: 140 },
