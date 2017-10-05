@@ -2617,6 +2617,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         type: 'Steel',
         category: 'Physical',
         makesContact: true,
+        hasSecondaryEffect: true,
         zp: 160
     },
     'Ancient Power': { zp: 120 },
@@ -3214,6 +3215,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 80,
         type: 'Ghost',
         category: 'Physical',
+        hasSecondaryEffect: true,
         zp: 160
     },
     'Steam Eruption': { zp: 185 },
