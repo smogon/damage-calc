@@ -295,7 +295,7 @@ function getDamageResult(attacker, defender, move, field) {
             description.moveBP = basePower;
             break;
         case "Wring Out":
-            basePower = Math.max(1, Math.ceil(target.hp * 120 / target.maxhp - 0.5));
+            basePower = Math.max(1, Math.ceil(defender.curHP * 120 / defender.maxHP - 0.5));
             description.moveBP = basePower;
             break;
         default:

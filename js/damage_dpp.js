@@ -190,7 +190,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
             }
             break;
         case "Wring Out":
-            move.bp = Math.floor(target.hp * 120 / target.maxhp) + 1;
+            move.bp = Math.floor(defender.curHP * 120 / defender.maxHP) + 1;
             description.moveBP = move.bp;
             break;
     }
