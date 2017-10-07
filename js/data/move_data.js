@@ -2483,6 +2483,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         isPulse: true
     },
     'Overheat': { bp: 130 },
+    'Parabolic Charge' : { 
+        bp: 50,
+        type : 'Electric',
+        category: 'Special',
+        givesHealth : true
+     },
     'Phantom Force': {
         bp: 90,
         type: 'Ghost',
@@ -3032,6 +3038,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Outrage': { zp: 190 },
     'Overheat': { zp: 195 },
     'Paleo Wave': { zp: 160 },
+    'Parabolic Charge' : { bp: 65, zp:120 },
     'Payback': { zp: 100 },
     'Petal Dance': { zp: 190 },
     'Phantom Force': { zp: 175 },
