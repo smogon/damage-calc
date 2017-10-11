@@ -64,7 +64,7 @@ function calculate() {
             var minHealthRecovered = notation === '%' ? Math.floor(minDamage * p2.moves[i].percentHealed * 1000 / p1.maxHP) / 10 : Math.floor(minDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
             var maxHealthRecovered = notation === '%' ? Math.floor(maxDamage * p2.moves[i].percentHealed * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
             recoveryText = ' (recovers between ' + minHealthRecovered + notation + ' and ' + maxHealthRecovered + notation + ')';
-	}
+	 }
         result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
         result.koChanceText = p2.moves[i].bp === 0 ? 'nice move'
                 : getKOChanceText(result.damage, p2, p1, field.getSide(0), p2.moves[i].hits, p2.ability === 'Bad Dreams');
