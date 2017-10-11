@@ -55,12 +55,12 @@ function calculate() {
         }
         
         result = damageResults[1][i];
-	recoveryText = '';
+	 recoveryText = '';
         minDamage = result.damage[0] * p2.moves[i].hits;
         maxDamage = result.damage[result.damage.length-1] * p2.moves[i].hits;
         minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p1.maxHP) / 10 : Math.floor(minDamage * 48 / p1.maxHP);
         maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * 48 / p1.maxHP);
-	if (p2.moves[i].givesHealth) {
+	 if (p2.moves[i].givesHealth) {
             var minHealthRecovered = notation === '%' ? Math.floor(minDamage * p2.moves[i].percentHealed * 1000 / p1.maxHP) / 10 : Math.floor(minDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
             var maxHealthRecovered = notation === '%' ? Math.floor(maxDamage * p2.moves[i].percentHealed * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
             recoveryText = ' (recovers between ' + minHealthRecovered + notation + ' and ' + maxHealthRecovered + notation + ')';
