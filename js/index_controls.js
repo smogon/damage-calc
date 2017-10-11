@@ -55,7 +55,7 @@ function calculate() {
         }
         
         result = damageResults[1][i];
-		recoveryText = '';
+	recoveryText = '';
         minDamage = result.damage[0] * p2.moves[i].hits;
         maxDamage = result.damage[result.damage.length-1] * p2.moves[i].hits;
         minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p1.maxHP) / 10 : Math.floor(minDamage * 48 / p1.maxHP);
