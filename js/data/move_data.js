@@ -104,7 +104,8 @@ var MOVES_RBY = {
         bp: 100,
         type: 'Psychic',
         category: 'Special',
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Drill Peck': {
         bp: 80,
@@ -225,7 +226,8 @@ var MOVES_RBY = {
         type: 'Bug',
         category: 'Physical',
         makesContact: true,
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Leech Seed': {
         bp: 0,
@@ -242,7 +244,8 @@ var MOVES_RBY = {
     'Mega Drain': {
         bp: 40,
         type: 'Grass',
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Mirror Move': {
         bp: 0,
@@ -572,7 +575,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 60,
         type: 'Grass',
         category: 'Special',
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Gust': { type: 'Flying' },
     'Headbutt': {
@@ -1410,7 +1414,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         category: 'Physical',
         makesContact: true,
         isPunch: true,
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Earth Power': {
         bp: 90,
@@ -2052,7 +2057,8 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Grass',
         category: 'Physical',
         makesContact: true,
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Hurricane': {
         bp: 120,
@@ -2356,7 +2362,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Fairy',
         category: 'Special',
         makesContact: true,
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.5
     },
     'Energy Ball': { bp: 90 },
     'Facade': { ignoresBurn: true },
@@ -2473,7 +2480,8 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 80,
         type: 'Flying',
         category: 'Special',
-        givesHealth: true
+        givesHealth: true,
+		percentHealed : 0.75
     },
     'Origin Pulse': {
         bp: 110,
@@ -2483,11 +2491,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         isPulse: true
     },
     'Overheat': { bp: 130 },
-    'Parabolic Charge': { 
+    'Parabolic Charge' : { 
         bp: 50,
         type : 'Electric',
         category: 'Special',
-        givesHealth : true
+        givesHealth : true,
+		percentHealed : 0.5
      },
     'Phantom Force': {
         bp: 90,
@@ -3038,7 +3047,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Outrage': { zp: 190 },
     'Overheat': { zp: 195 },
     'Paleo Wave': { zp: 160 },
-    'Parabolic Charge': { bp: 65, zp:120 },
+    'Parabolic Charge' : { bp: 65, zp:120 },
     'Payback': { zp: 100 },
     'Petal Dance': { zp: 190 },
     'Phantom Force': { zp: 175 },
