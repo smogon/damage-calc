@@ -2491,7 +2491,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         isPulse: true
     },
     'Overheat': { bp: 130 },
-    'Parabolic Charge' : { 
+    'Parabolic Charge': { 
         bp: 50,
         type: 'Electric',
         category: 'Special',
