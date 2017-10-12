@@ -105,7 +105,7 @@ var MOVES_RBY = {
         type: 'Psychic',
         category: 'Special',
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
     },
     'Drill Peck': {
         bp: 80,
@@ -227,7 +227,7 @@ var MOVES_RBY = {
         category: 'Physical',
         makesContact: true,
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
     },
     'Leech Seed': {
         bp: 0,
@@ -245,7 +245,7 @@ var MOVES_RBY = {
         bp: 40,
         type: 'Grass',
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
     },
     'Mirror Move': {
         bp: 0,
@@ -576,7 +576,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         type: 'Grass',
         category: 'Special',
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
     },
     'Gust': { type: 'Flying' },
     'Headbutt': {
@@ -1415,7 +1415,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
         makesContact: true,
         isPunch: true,
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
     },
     'Earth Power': {
         bp: 90,
@@ -2058,7 +2058,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Physical',
         makesContact: true,
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
     },
     'Hurricane': {
         bp: 120,
@@ -2363,7 +2363,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         category: 'Special',
         makesContact: true,
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.75
     },
     'Energy Ball': { bp: 90 },
     'Facade': { ignoresBurn: true },
@@ -2481,7 +2481,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Flying',
         category: 'Special',
         givesHealth: true,
-	 percentHealed: 0.75
+		percentHealed: 0.75
     },
     'Origin Pulse': {
         bp: 110,
@@ -2496,7 +2496,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         type: 'Electric',
         category: 'Special',
         givesHealth: true,
-	 percentHealed: 0.5
+		percentHealed: 0.5
      },
     'Phantom Force': {
         bp: 90,
