@@ -46,6 +46,7 @@ function calculate() {
                 10 : Math.floor(minDamage * p1.moves[i].percentHealed * 48 / p1.maxHP);
             var maxHealthRecovered = notation === '%' ? Math.floor(maxDamage * p1.moves[i].percentHealed * 1000 / p1.maxHP) / 
                 10 : Math.floor(maxDamage * p1.moves[i].percentHealed * 48 / p1.maxHP);
+            recoveryText = ' (recovers between ' + minHealthRecovered + notation + ' and ' + maxHealthRecovered + notation + ')';
         }
         $(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
         $(resultLocations[0][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText);
@@ -68,6 +69,7 @@ function calculate() {
                 10 : Math.floor(minDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
             var maxHealthRecovered = notation === '%' ? Math.floor(maxDamage * p2.moves[i].percentHealed * 1000 / p2.maxHP) / 
                 10 : Math.floor(maxDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
+            recoveryText = ' (recovers between ' + minHealthRecovered + notation + ' and ' + maxHealthRecovered + notation + ')';
         }
         $(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
         $(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText);
