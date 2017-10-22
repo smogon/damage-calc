@@ -9820,7 +9820,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
       "sd": 71,
       "sp": 122
     },
-    "w": 40.0
+    "w": 40.0,
+    "ab": "Protean"
   },
   "Hawlucha": {
     "t1": "Fighting",
