@@ -1,4 +1,4 @@
-﻿function getKOChanceText(damage, attacker, defender, field, hits, isBadDreams) {
+﻿function getKOChanceText(damage, attacker, defender, field, move, hits, isBadDreams) {
     if (isNaN(damage[0])) {
         return 'something broke; please tell Austin or Marty';
     }
@@ -136,7 +136,14 @@
         eot -= Math.floor(defender.maxHP / 8);
         eotText.push('Bad Dreams');
     }
-
+    if (move.name === 'Bind' || move.name === 'Clamp' || move.name === 'Fire Spin' || move.name === 'Infestation' || move.name === 'Magma Storm' || move.name === 'Sand Tomb' || move.name === 'Whirlpool' || move.name === 'Wrap') {
+        eot -= gen > 5 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16);
+        eotText.push('trapping damage');
+    }
+    if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && (defender.type1 !== "Fire" && defender.type2 !== "Fire")) {
+        eot -= Math.floor(defender.maxHP / 8);
+        eotText.push('Sea of Fire damage');
+    }
     // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
     var qualifier = '';
     if (hits > 1) {
