@@ -702,7 +702,8 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         bp: 50,
         type: 'Steel',
         category: 'Physical',
-        makesContact: true
+        makesContact: true,
+        hasSecondaryEffect: true
     },
     'Milk Drink': {
         bp: 0,
@@ -816,6 +817,11 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
         makesContact: true
     },
     'Tri Attack': { hasSecondaryEffect: true },
+    'Whirlpool': {
+        bp: 15,
+        type: 'Water',
+        category: 'Special'
+    },
     'Wing Attack': { bp: 60 },
     'Zap Cannon': {
         bp: 100,
@@ -827,11 +833,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 });
 
 delete MOVES_GSC['Acid'];
-delete MOVES_GSC['Bind'];
-delete MOVES_GSC['Clamp'];
-delete MOVES_GSC['Fire Spin'];
 delete MOVES_GSC['Mega Drain'];
-delete MOVES_GSC['Wrap'];
 
 var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
     'Aerial Ace': {
@@ -1132,6 +1134,11 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
         type: 'Rock',
         category: 'Physical',
         hasSecondaryEffect: true
+    },
+    'Sand Tomb': {
+        bp: 15,
+        type: 'Ground',
+        category: 'Physical'
     },
     'Secret Power': {
         bp: 70,
@@ -1962,6 +1969,21 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Fighting',
         category: 'Special'
     },
+    'Fire Pledge': {
+        bp: 50,
+        type: 'Fire',
+        category: 'Special'
+    },
+    'Fire Pledge (Grass Pledge Boosted)': {
+        bp: 150,
+        type: 'Fire',
+        category: 'Special'
+    },
+    'Fire Pledge (Water Pledge Boosted)': {
+        bp: 150,
+        type: 'Fire',
+        category: 'Special'
+    },
     'Flame Burst': {
         bp: 70,
         type: 'Fire',
@@ -2017,6 +2039,21 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         category: 'Special',
         hasSecondaryEffect: true,
         isSpread: true
+    },
+    'Grass Pledge': {
+        bp: 50,
+        type: 'Grass',
+        category: 'Special'
+    },
+    'Grass Pledge (Fire Pledge Boosted)': {
+        bp: 150,
+        type: 'Grass',
+        category: 'Special'
+    },
+    'Grass Pledge (Water Pledge Boosted)': {
+        bp: 150,
+        type: 'Grass',
+        category: 'Special'
     },
     'Heal Pulse': {
         bp: 0,
@@ -2182,6 +2219,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         makesContact: true,
         ignoresDefenseBoosts: true
     },
+    'Sand Tomb': { bp: 35 },
     'Scald': {
         bp: 80,
         type: 'Water',
@@ -2297,6 +2335,22 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
         type: 'Electric',
         category: 'Special'
     },
+    'Water Pledge': {
+        bp: 50,
+        type: 'Water',
+        category: 'Special'
+    },
+    'Water Pledge (Fire Pledge Boosted)': {
+        bp: 150,
+        type: 'Water',
+        category: 'Special'
+    },
+    'Water Pledge (Grass Pledge Boosted)': {
+        bp: 150,
+        type: 'Water',
+        category: 'Special'
+    },
+    'Whirlpool': { bp: 35 },
     'Wide Guard': {
         bp: 0,
         type: 'Rock'
@@ -2374,6 +2428,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         makesContact: true
     },
     'Fire Blast': { bp: 110 },
+    'Fire Pledge': { bp: 80 },
     'Flamethrower': { bp: 90 },
     'Flying Press': {
         bp: 80,
@@ -2393,6 +2448,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         bp: 0,
         type: 'Fairy'
     },
+    'Grass Pledge': { bp: 80 },
     'Heat Wave': { bp: 95 },
     'Hex': { bp: 65 },
     'Hidden Power Bug': { bp: 60 },
@@ -2427,6 +2483,12 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     },
     'Ice Beam': { bp: 90 },
     'Incinerate': { bp: 60 },
+    'Infestation': {
+        bp: 20,
+        type: 'Bug',
+        category: 'Special',
+        makesContact: true
+    },
     'King\'s Shield': {
         bp: 0,
         type: 'Steel'
@@ -2491,13 +2553,13 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
         isPulse: true
     },
     'Overheat': { bp: 130 },
-    'Parabolic Charge': { 
+    'Parabolic Charge': {
         bp: 50,
         type: 'Electric',
         category: 'Special',
         givesHealth : true,
         percentHealed: 0.5
-     },
+    },
     'Phantom Force': {
         bp: 90,
         type: 'Ghost',
@@ -2565,6 +2627,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
     'Thunder': { bp: 110 },
     'Thunderbolt': { bp: 90 },
     'Wake-Up Slap': { bp: 70 },
+    'Water Pledge': { bp: 80 },
     'Water Shuriken': {
         bp: 15,
         type: 'Water',
@@ -2822,6 +2885,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         makesContact: true,
         zp: 160
     },
+    'Fire Pledge': { zp: 160 },
     'Fire Punch': { zp: 140 },
     'First Impression': {
         bp: 90,
@@ -2878,6 +2942,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Glaciate': { zp: 120 },
     'Grass Knot': { zp: 160 },
+    'Grass Pledge': { zp: 160 },
     'Gunk Shot': { zp: 190 },
     'Gust': { zp: 100 },
     'Gyro Ball': { zp: 160 },
@@ -2951,6 +3016,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Physical',
         isZ: true
     },
+    'Infestation': { zp: 100 },
     'Iron Head': { zp: 160 },
     'Iron Tail': { zp: 180 },
     'Judgment': { zp: 180 },
@@ -3129,6 +3195,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Round': { zp: 120 },
     'Sacred Fire': { zp: 180 },
     'Sacred Sword': { zp: 175 },
+    'Sand Tomb': { zp: 100 },
     'Savage Spin-Out': {
         bp: 1,
         type: 'Bug',
@@ -3329,10 +3396,12 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Volt Tackle': { zp: 190 },
     'Wake-Up Slap': { zp: 140 },
     'Waterfall': { zp: 160 },
+    'Water Pledge': { zp: 160 },
     'Water Pulse': { zp: 120 },
     'Water Shuriken': { category: 'Special', zp: 100 },
     'Water Spout': { zp: 200 },
     'Weather Ball': { zp: 160 },
+    'Whirlpool': { zp: 100 },
     'Wild Charge': { zp: 175 },
     'Wing Attack': { zp: 120 },
     'Wood Hammer': { zp: 190 },
