@@ -11997,20 +11997,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
     },
     "w": 76.0,
   },
-  "Oricorio-Electric": {
-    "t1": "Electric",
-    "t2": "Flying",
-    "bs": {
-      "hp": 75,
-      "at": 70,
-      "df": 70,
-      "sa": 98,
-      "sd": 70,
-      "sp": 93
-    },
-    "w": 3.4
-  },
-  "Oricorio-Fire": {
+  "Oricorio": {
     "t1": "Fire",
     "t2": "Flying",
     "bs": {
@@ -12021,22 +12008,10 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 70,
       "sp": 93
     },
-    "w": 3.4
+    "w": 3.4,
+    "ab": "Dancer"
   },
-  "Oricorio-Ghost": {
-    "t1": "Ghost",
-    "t2": "Flying",
-    "bs": {
-      "hp": 75,
-      "at": 70,
-      "df": 70,
-      "sa": 98,
-      "sd": 70,
-      "sp": 93
-    },
-    "w": 3.4
-  },
-  "Oricorio-Psychic": {
+  "Oricorio-Pa'u": {
     "t1": "Psychic",
     "t2": "Flying",
     "bs": {
@@ -12047,7 +12022,36 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sd": 70,
       "sp": 93
     },
-    "w": 3.4
+    "w": 3.4,
+    "ab": "Dancer"
+  },
+  "Oricorio-Pom-Pom": {
+    "t1": "Electric",
+    "t2": "Flying",
+    "bs": {
+      "hp": 75,
+      "at": 70,
+      "df": 70,
+      "sa": 98,
+      "sd": 70,
+      "sp": 93
+    },
+    "w": 3.4,
+    "ab": "Dancer"
+  },
+  "Oricorio-Sensu": {
+    "t1": "Ghost",
+    "t2": "Flying",
+    "bs": {
+      "hp": 75,
+      "at": 70,
+      "df": 70,
+      "sa": 98,
+      "sd": 70,
+      "sp": 93
+    },
+    "w": 3.4,
+    "ab": "Dancer"
   },
   "Palossand": {
     "t1": "Ghost",
@@ -12555,7 +12559,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 97
     },
     "w": 230.0,
-    "ab": "Full Metal Body",
+    "ab": "Full Metal Body"
   },
   "Steenee": {
     "t1": "Grass",
