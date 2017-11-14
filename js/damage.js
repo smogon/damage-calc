@@ -492,7 +492,7 @@ function getDamageResult(attacker, defender, move, field) {
         description.attackerItem = attacker.item;
     } else if ((gen < 7 && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special") ||
             (attacker.item === "Choice Band" && move.category === "Physical" && !move.isZ) ||
-            (attacker.item === "Choice Specs" && move.category === "Special" && !move.isZ) {
+            (attacker.item === "Choice Specs" && move.category === "Special" && !move.isZ)) {
         atMods.push(0x1800);
         description.attackerItem = attacker.item;
     }
