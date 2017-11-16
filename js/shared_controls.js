@@ -532,15 +532,21 @@ function getMoveDetails(moveInfo, item) {
 
 function getZMoveName(moveName, moveType, item) {
     return moveName.indexOf("Hidden Power") !== -1 ? "Breakneck Blitz" // Hidden Power will become Breakneck Blitz
-            : moveName === "Giga Impact" && item === "Snorlium Z" ? "Pulverizing Pancake"
-            : moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer"
-            : moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika"
-            : moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt"
-            : moveName === "Psychic" && item === "Mewnium Z" ? "Genesis Supernova"
-            : moveName === "Spirit Shackle" && item === "Decidium Z" ? "Sinister Arrow Raid"
+            : moveName === "Clanging Scales" && item === "Kommonium Z" ? "Clangorous Soulblaze"
             : moveName === "Darkest Lariat" && item === "Incinium Z" ? "Malicious Moonsault"
+            : moveName === "Giga Impact" && item === "Snorlium Z" ? "Pulverizing Pancake"
+            : moveName === "Moongeist Beam" && item === "Lunalium Z" ? "Menacing Moonraze Maelstrom"
+            : moveName === "Photon Geyser" && item === "Ultranecrozium Z" ? "Light That Burns the Sky"
+            : moveName === "Play Rough" && item === "Mimikium Z" ? "Let\'s Snuggle Forever"
+            : moveName === "Psychic" && item === "Mewnium Z" ? "Genesis Supernova"
             : moveName === "Sparkling Aria" && item === "Primarium Z" ? "Oceanic Operetta"
             : moveName === "Spectral Thief" && item === "Marshadium Z" ? "Soul-Stealing 7-Star Strike"
+            : moveName === "Spirit Shackle" && item === "Decidium Z" ? "Sinister Arrow Raid"
+            : moveName === "Stone Edge" && item === "Lycanium Z" ? "Splintered Stormshards"
+            : moveName === "Sunsteel Strike" && item === "Solganium Z" ? "Searing Sunraze Smash"
+            : moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer"
+            : moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt"
+            : moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika"
             : ZMOVES_TYPING[moveType];
 }
 
