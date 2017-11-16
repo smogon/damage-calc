@@ -82,6 +82,9 @@
             eot -= Math.floor(defender.maxHP / 8);
             eotText.push('Black Sludge damage');
         }
+    } else if (defender.item === 'Sticky Barb') {
+        eot -= Math.floor(defender.maxHP / 8);
+        eotText.push('Sticky Barb damage');
     }
     if (field.isDefenderSeeded) {
         if (defender.ability !== 'Magic Guard') {
@@ -137,8 +140,13 @@
         eotText.push('Bad Dreams');
     }
     if (move.name === 'Bind' || move.name === 'Clamp' || move.name === 'Fire Spin' || move.name === 'Infestation' || move.name === 'Magma Storm' || move.name === 'Sand Tomb' || move.name === 'Whirlpool' || move.name === 'Wrap') {
-        eot -= gen > 5 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16);
-        eotText.push('trapping damage');
+        if (attacker.item === "Binding Band") {
+            eot -= gen > 5 ? Math.floor(defender.maxHP / 6) : Math.floor(defender.maxHP / 8);
+            eotText.push('trapping damage');
+        } else {
+            eot -= gen > 5 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16);
+            eotText.push('trapping damage');
+        }
     }
     if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && (defender.type1 !== "Fire" && defender.type2 !== "Fire")) {
         eot -= Math.floor(defender.maxHP / 8);
