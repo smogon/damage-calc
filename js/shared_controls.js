@@ -257,6 +257,7 @@ $(".move-selector").change(function() {
     if (move.isMultiHit) {
         moveGroupObj.children(".move-hits").show();
         moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
+        moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".item").val() === 'Grip Claw' ? 5 : 3);
     } else {
         moveGroupObj.children(".move-hits").hide();
     }
@@ -461,7 +462,7 @@ function Pokemon(pokeInfo) {
                 type: defaultDetails.type,
                 category: defaultDetails.category,
                 isCrit: defaultDetails.alwaysCrit ? true : false,
-                hits: defaultDetails.isMultiHit ? (this.ability === "Skill Link" ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
+                hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Binding Band") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
             }) );
         }
         this.weight = pokemon.w;
