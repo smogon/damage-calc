@@ -133,6 +133,7 @@ var ABILITIES_SM = ABILITIES_XY.concat([
     'Long Reach',
     'Merciless',
     'Misty Surge',
+    'Neuroforce',
     'Power Construct',
     'Power of Alchemy',
     'Prism Armor',

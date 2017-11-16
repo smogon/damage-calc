@@ -2788,6 +2788,14 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isSpread: true,
         zp: 185
     },
+    'Clangorous Soulblaze': {
+        bp: 185,
+        type: 'Dragon',
+        category: 'Special',
+        isSound: true,
+        isSpread: true,
+        isZ: true
+    },
     'Clear Smog': { zp: 100 },
     'Close Combat': { zp: 190 },
     'Continental Crush': {
@@ -3035,7 +3043,20 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Leaf Storm': { zp: 195 },
     'Leaf Tornado': { zp: 120 },
     'Leech Life': { bp: 80, zp: 160 },
+    'Let\'s Snuggle Forever': {
+        bp: 190,
+        type: 'Fairy',
+        category: 'Physical',
+        makesContact: true,
+        isZ: true
+    },
     'Light of Ruin': { zp: 200 },
+    'Light That Burns the Sky': {
+        bp: 200,
+        type: 'Psychic',
+        category: 'Special',
+        isZ: true
+    },
     'Liquidation': {
         bp: 85,
         type: 'Water',
@@ -3067,8 +3088,21 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         isZ: true
     },
     'Megahorn': { zp: 190 },
+    'Menacing Moonraze Maelstrom': {
+        bp: 200,
+        type: 'Ghost',
+        category: 'Special',
+        isZ: true
+    },
     'Metal Claw': { zp: 100 },
     'Meteor Mash': { zp: 175 },
+    'Mind Blown': {
+        bp: 150,
+        type: 'Fire',
+        category: 'Special',
+        isSpread: true,
+        zp: 200
+    },
     'Mirror Shot': { zp: 120 },
     'Mist Ball': { zp: 140 },
     'Moonblast': { zp: 175 },
@@ -3117,7 +3151,21 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Payback': { zp: 100 },
     'Petal Dance': { zp: 190 },
     'Phantom Force': { zp: 175 },
+    'Photon Geyser': {
+        bp: 100,
+        type: 'Psychic',
+        category: 'Physical',
+        zp: 180
+    },
     'Pin Missile': { zp: 140 },
+    'Plasma Fists': {
+        bp: 100,
+        type: 'Electric',
+        category: 'Physical',
+        makesContact: true,
+        isPunch: true,
+        zp: 180
+    },
     'Play Rough': { zp: 175 },
     'Pluck': { zp: 120 },
     'Poison Fang': { zp: 100 },
@@ -3164,8 +3212,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 210,
         type: 'Normal',
         category: 'Physical',
-        isZ: true,
-        makesContact: true
+        makesContact: true,
+        isZ: true
     },
     'Punishment': { zp: 160 },
     'Pursuit': { zp: 100 },
@@ -3204,6 +3252,13 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     },
     'Scald': { zp: 160 },
     'Searing Shot': { zp: 180 },
+    'Searing Sunraze Smash': {
+        bp: 200,
+        type: 'Steel',
+        category: 'Physical',
+        makesContact: true,
+        isZ: true
+    },
     'Secret Power': { zp: 140 },
     'Secret Sword': { zp: 160 },
     'Seed Bomb': { zp: 160 },
@@ -3300,6 +3355,12 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         category: 'Physical',
         hasSecondaryEffect: true,
         zp: 160
+    },
+    'Splintered Stormshards': {
+        bp: 190,
+        type: 'Rock',
+        category: 'Physical',
+        isZ: true
     },
     'Steam Eruption': { zp: 185 },
     'Steamroller': { zp: 120 },
