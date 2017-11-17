@@ -462,7 +462,7 @@ function Pokemon(pokeInfo) {
                 type: defaultDetails.type,
                 category: defaultDetails.category,
                 isCrit: defaultDetails.alwaysCrit ? true : false,
-                hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Binding Band") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
+                hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
             }) );
         }
         this.weight = pokemon.w;
