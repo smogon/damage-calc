@@ -408,7 +408,7 @@ function getDamageResult(attacker, defender, move, field) {
     } else if (attacker.ability === "Tough Claws" && move.makesContact) {
         bpMods.push(0x14CD);
         description.attackerAbility = attacker.ability;
-    } else if (attacker.ability === "Neuroforce" && (move.type === defender.type1 || move.type === defender.type2)) {
+    } else if (attacker.ability === "Neuroforce" && typeEffectiveness > 1) {
 	bpMods.push(0x1333);
 	description.attackerAbility = attacker.ability;
     }
