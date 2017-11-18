@@ -11997,6 +11997,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 79
     },
     "w": 230.0,
+    "ab": "Prism Armor"
   },
   "Necrozma-Dawn-Wings": {
     "t1": "Psychic",
@@ -12038,7 +12039,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
       "sp": 129
     },
     "w": 230.0,
-    "ab": "Prism Armor"
+    "ab": "Neuroforce"
   },
   "Nihilego": {
     "t1": "Rock",
