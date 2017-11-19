@@ -439,6 +439,9 @@ function getDamageResult(attacker, defender, move, field) {
     var attack;
     var attackSource = move.name === "Foul Play" ? defender : attacker;
     var attackStat = move.category === "Physical" ? AT : SA;
+    if (move.usesHighestAttackStat) {
+        attackStat = attackSource.stats[AT] >= attackSource.stats[SA] ? AT : SA;
+    }
     description.attackEVs = attacker.evs[attackStat] +
             (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +
             toSmogonStat(attackStat);

@@ -3055,6 +3055,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
         bp: 200,
         type: 'Psychic',
         category: 'Special',
+        usesHighestAttackStat: true,
         isZ: true
     },
     'Liquidation': {
@@ -3154,7 +3155,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
     'Photon Geyser': {
         bp: 100,
         type: 'Psychic',
-        category: 'Physical',
+        category: 'Special',
+        usesHighestAttackStat: true,
         zp: 180
     },
     'Pin Missile': { zp: 140 },
