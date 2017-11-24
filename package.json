@@ -1,0 +1,39 @@
+{
+  "name": "pokemon-showdown-damage-calc",
+  "private": true,
+  "description": "The official damage calculator for the Pokémon Showdown battle simulator",
+  "version": "0.3.0",
+  "scripts": {
+    "test": "eslint --cache ."
+  },
+  "homepage": "http://pokemonshowdown.com/calc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zarel/honko-damagecalc.git"
+  },
+  "author": {
+    "name": "Guangcong Luo",
+    "email": "zarel@zarel.com",
+    "url": "http://guangcongluo.com"
+  },
+  "contributors": [
+    {
+      "name": "Mathieu Dias-Martins",
+      "email": "marty@hisemail.com"
+    },
+    {
+      "name": "Austin Couturier",
+      "email": "austincouturier@icloud.com"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-html": "^4.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-promise": "^3.6.0"
+  }
+}
