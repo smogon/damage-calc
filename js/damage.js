@@ -1,4 +1,5 @@
 function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
+	var AT, SA, DF, SD, SP;
 	checkAirLock(p1, field);
 	checkAirLock(p2, field);
 	checkForecast(p1, field.getWeather());
@@ -32,6 +33,7 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 }
 
 function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
+	var DF, SD, SP, AT, SA;
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -58,6 +60,7 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 }
 
 function getDamageResult(attacker, defender, move, field) {
+	var DF, SD, SP, AT, SA;
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,
@@ -701,6 +704,7 @@ function getDamageResult(attacker, defender, move, field) {
 }
 
 function toSmogonStat(stat) {
+	var AT, DF, SA, SD, SP;
 	return stat === AT ? "Atk" :
 		stat === DF ? "Def" :
 			stat === SA ? "SpA" :
@@ -740,6 +744,7 @@ function getModifiedStat(stat, mod) {
 }
 
 function getFinalSpeed(pokemon, weather) {
+	var SP;
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
 	if (pokemon.item === "Choice Scarf") {
 		speed = Math.floor(speed * 1.5);
@@ -780,6 +785,7 @@ function checkKlutz(pokemon) {
 	}
 }
 function checkIntimidate(source, target) {
+	var AT;
 	if (source.ability === "Intimidate") {
 		if (target.ability === "Contrary" || target.ability === "Defiant") {
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
@@ -793,6 +799,7 @@ function checkIntimidate(source, target) {
 	}
 }
 function checkDownload(source, target) {
+	var SD, DF, SA, AT;
 	if (source.ability === "Download") {
 		if (target.stats[SD] <= target.stats[DF]) {
 			source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
@@ -810,6 +817,7 @@ function checkInfiltrator(attacker, affectedSide) {
 }
 
 function countBoosts(boosts) {
+	var STATS;
 	var sum = 0;
 	for (var i = 0; i < STATS.length; i++) {
 		if (boosts[STATS[i]] > 0) {

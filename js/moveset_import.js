@@ -9,7 +9,7 @@ function placeBsBtn() {
 
 }
 function getAbility(row) {
-	ability = row[1] ? row[1].trim() : '';
+	var ability = row[1] ? row[1].trim() : '';
 	if (ABILITIES_SM.indexOf(ability) != -1) {
 		return (ability);
 
@@ -45,6 +45,7 @@ function getStats(currentPoke, rows, offset) {
 	var currentEV;
 	var currentIV;
 	var currentNature;
+	var j;
 	currentPoke.level = 100;
 	for (var x = offset; x < offset + 7; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
@@ -146,6 +147,7 @@ function addToDex(poke) {
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;
+	var customsets = {};
 	if (localStorage.customsets) {
 		customsets = JSON.parse(localStorage.customsets);
 	} else {
@@ -165,6 +167,7 @@ function addToDex(poke) {
 }
 
 function updateDex(customsets) {
+	var pokemon, moveset;
 	for (pokemon in customsets) {
 		for (moveset in customsets[pokemon]) {
 			if (!SETDEX_SM[pokemon]) SETDEX_SM[pokemon] = {};
@@ -191,6 +194,7 @@ function addSets(pokes) {
 	var currentRow;
 	var currentPoke;
 	var addedpokes = 0;
+	var i, j;
 	for (i = 0; i < rows.length; i++) {
 		currentRow = rows[i].split(/[\(\)@]/);
 		for (j = 0; j < currentRow.length; j++) {

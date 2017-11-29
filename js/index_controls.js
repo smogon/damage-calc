@@ -27,6 +27,7 @@ function calculate() {
 	var p1 = new Pokemon($("#p1"));
 	var p2 = new Pokemon($("#p2"));
 	var field = new Field();
+	var notation;
 	damageResults = calculateAllMoves(p1, p2, field);
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;
 	var highestDamage = -1;

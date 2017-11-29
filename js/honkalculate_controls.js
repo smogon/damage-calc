@@ -282,6 +282,7 @@ function setLevel(lvl) {
 }
 
 $(".set-selector").change(function (e) {
+	var genWasChanged;
 	var format = getSelectedTiers()[0];
 	if (genWasChanged) {
 		genWasChanged = false;

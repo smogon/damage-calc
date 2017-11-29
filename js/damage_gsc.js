@@ -1,4 +1,5 @@
 ﻿function CALCULATE_ALL_MOVES_GSC(p1, p2, field) {
+	var AT, DF, SA, SD;
 	p1.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[AT], p1.boosts[AT])));
 	p1.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[DF], p1.boosts[DF])));
 	p1.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SA], p1.boosts[SA])));
@@ -18,6 +19,7 @@
 }
 
 function CALCULATE_MOVES_OF_ATTACKER_GSC(attacker, defender, field) {
+	var AT, SA, DF, SD;
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
@@ -31,6 +33,7 @@ function CALCULATE_MOVES_OF_ATTACKER_GSC(attacker, defender, field) {
 }
 
 function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
+	var AT, SA, DF, SD;
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,
