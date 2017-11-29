@@ -4,8 +4,6 @@
   "description": "The official damage calculator for the Pokémon Showdown battle simulator",
   "version": "0.3.0",
   "scripts": {
-    "start": "node pokemon-showdown",
-    "test": "eslint --rulesdir=dev-tools/eslint --cache"
   },
   "homepage": "http://pokemonshowdown.com/calc",
   "repository": {

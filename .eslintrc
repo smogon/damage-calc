@@ -1,6 +1,7 @@
 {
 	"root": true,
 	"parserOptions": {
+
 		"ecmaVersion": 8,
 		"sourceType": "script",
 		"ecmaFeatures": {
@@ -12,6 +13,16 @@
 		"node": true
 	},
 	"globals": {},
+		"ecmaVersion": 3,
+		"sourceType": "script"
+	},
+	"env": {
+		"jquery": true,
+		"browser": true
+	},
+	"globals": {
+		"_": false
+	},
 	"extends": "eslint:recommended",
 	"rules": {
 		"no-cond-assign": ["error", "except-parens"],
@@ -32,6 +43,23 @@
 		"dot-location": ["error", "property"],
 		"dot-notation": "off",
 		"eqeqeq": "error",
+		"no-constant-condition": "off",
+		"no-control-regex": "off",
+		"no-empty": ["error", {"allowEmptyCatch": true}],
+		"no-inner-declarations": ["error", "functions"],
+		"no-redeclare": "off",
+		"valid-jsdoc": "off",
+
+		// TODO: actually fix useless escapes
+		"no-useless-escape": "off",
+
+		"array-callback-return": "error",
+		"complexity": "off",
+		"consistent-return": "off",
+		"default-case": "off",
+		"dot-location": ["error", "property"],
+		"dot-notation": "off",
+		"eqeqeq": "off",
 		"guard-for-in": "off",
 		"no-caller": "error",
 		"no-case-declarations": "off",
@@ -59,6 +87,10 @@
 		"no-octal-escape": "error",
 		"no-param-reassign": "off",
 		"no-proto": "error",
+		"no-octal-escape": "error",
+		"no-param-reassign": "off",
+		"no-proto": "error",
+		"no-prototype-builtins": "error",
 		"no-return-assign": ["error", "except-parens"],
 		"no-self-compare": "error",
 		"no-sequences": "error",
@@ -76,6 +108,10 @@
 		"yoda": ["error", "never", { "exceptRange": true }],
 
 		"strict": ["error", "global"],
+		"radix": ["error", "as-needed"],
+		"vars-on-top": "off",
+		"wrap-iife": ["error", "inside"],
+		"yoda": "off",
 
 		"init-declarations": "off",
 		"no-catch-shadow": "off",
@@ -90,6 +126,11 @@
 		"no-use-before-define": ["error", {"functions": false, "classes": false, "variables": false}],
 
 		"callback-return": [2, ["callback", "cb", "done"]],
+		"no-undef-init": "off",
+		"no-undef": "error",
+		"no-undefined": "off",
+		"no-unused-vars": "off",
+
 		"no-mixed-requires": "error",
 		"no-new-require": "error",
 		"no-path-concat": "off",
@@ -100,6 +141,7 @@
 
 		"array-bracket-spacing": ["error", "never"],
 		"block-spacing": ["error", "always"],
+		"block-spacing": "off",
 		"brace-style": ["error", "1tbs", {"allowSingleLine": true}],
 		"camelcase": "off",
 		"comma-spacing": ["error", {"before": false, "after": true}],
@@ -116,6 +158,10 @@
 		"max-nested-callbacks": "off",
 		"max-statements-per-line": "off",
 		"new-cap": ["error", {"newIsCap": true, "capIsNew": false}],
+		"key-spacing": ["error", {"beforeColon": false, "afterColon": true, "mode": "strict"}],
+		"lines-around-comment": "off",
+		"max-nested-callbacks": "off",
+		"max-statements-per-line": "off",
 		"new-parens": "error",
 		"newline-after-var": "off",
 		"newline-before-return": "off",
@@ -164,5 +210,11 @@
 		"no-restricted-syntax": ["error", "WithStatement"],
 
 		"validate-conditionals": "error",
+	}
+}
+		"prefer-arrow-callback": "off",
+		"rest-spread-spacing": ["error", "never"],
+		"template-curly-spacing": ["error", "never"],
+		"no-restricted-syntax": ["error", "TaggedTemplateExpression", "ObjectPattern", "ArrayPattern"]
 	}
 }
