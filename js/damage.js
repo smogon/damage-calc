@@ -629,7 +629,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isLightScreen = true;
 	}
-	if ((defAbility === "Multiscale" || defAbility === "Shadow Shield") && defender.curHP === defender.maxHP && !field.isSR && !field.spikes) {
+	if ((defAbility === "Multiscale" || defAbility === "Shadow Shield") && defender.curHP === defender.maxHP && !field.isSR && (!field.spikes || (field.spikes && defAbility === "Multiscale"))) {
 		finalMods.push(0x800);
 		description.defenderAbility = defAbility;
 	}
