@@ -260,9 +260,16 @@ function checkExeptions(poke) {
 
 }
 
+$("#clearSets").click(function(){
+	localStorage.removeItem("customsets");
+	alert("Custom Sets successfully cleared.");
+	$("#clearSets").css("display","none");
+});
+
 $(document).ready(function () {
 	placeBsBtn();
 	if (localStorage.customsets) {
 		updateDex(JSON.parse(localStorage.customsets));
+		$("#clearSets").css("display","inline");
 	}
 });
