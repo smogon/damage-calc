@@ -291,7 +291,7 @@ function checkExeptions(poke) {
 
 $("#clearSets").click(function(){
 	localStorage.removeItem("customsets");
-	alert("Custom Sets successfully cleared.");
+	alert("Custom Sets successfully cleared. Please refresh the page.");
 	$("#clearSets").css("display","none");
 });
 
