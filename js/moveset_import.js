@@ -159,7 +159,7 @@ function addToDex(poke) {
 		if (!customsets["Aegislash-Shield"]) {
 			customsets["Aegislash-Shield"] = {};
 		}
-		customsets["Aegislash-Shield"][poke.nameProp] = 	dexObject;
+		customsets["Aegislash-Shield"][poke.nameProp] = dexObject;
 	}
 	updateDex(customsets);
 }
@@ -216,7 +216,8 @@ function addSets(pokes) {
 		}
 	}
 	if (addedpokes > 0) {
-		alert("Successfully imported " + addedpokes + " sets");
+		alert("Successfully imported " + addedpokes + " set(s)");
+		$("#clearSets").css("display","inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
