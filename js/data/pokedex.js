@@ -12138,6 +12138,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		"w": 3.4,
 		"ab": "Dancer"
 	},
+	"Pajantom": {
+		"t1": "Dragon",
+		"t2": "Ghost",
+		"bs": {
+			"hp": 84,
+			"at": 133,
+			"df": 71,
+			"sa": 51,
+			"sd": 111,
+			"sp": 101
+		},
+		"w": 3.1,
+		"ab": "Comatose"
+	},
 	"Palossand": {
 		"t1": "Ghost",
 		"t2": "Ground",
