@@ -2143,13 +2143,6 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		makesContact: true,
 		hasSecondaryEffect: true
 	},
-	'Nature Power': {
-		bp: 100,
-		type: 'Ground',
-		category: 'Physical',
-		hasSecondaryEffect: false,
-		isSpread: true
-	},
 	'Night Daze': {
 		bp: 85,
 		type: 'Dark',
@@ -2523,13 +2516,6 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		type: 'Fire',
 		category: 'Special',
 		hasSecondaryEffect: true
-	},
-	'Nature Power': {
-		bp: 80,
-		type: 'Normal',
-		category: 'Special',
-		hasSecondaryEffect: true,
-		isSpread: false
 	},
 	'Nuzzle': {
 		bp: 20,
