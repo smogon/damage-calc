@@ -295,7 +295,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Nature Power":
-		basePower = (field.terrain === "Electric" || field.terrain === "Grassy") ? 90 : (field.terrain === "Misty") ? 95 : 80;
+		basePower = (field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic") ? 90 : (field.terrain === "Misty") ? 95 : 80;
+		//console.log("A " + field.terrain + " terrain " + move.type + move.name + " with " + move.bp + " base power " + " agaisnt a(n) " + defender.name + " that has " + defender.type1 + " " + defender.type2 + " typing");
 		break;
 	case "Water Shuriken":
 		basePower = (attacker.name === "Greninja-Ash") ? 20 : 15;
