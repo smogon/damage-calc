@@ -109,6 +109,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveType = move.type;
 	} else if (move.name === "Nature Power") {
 		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : field.terrain === "Psychic" ? "Psychic" : "Normal";
+	} else if (move.name == "Revelation Dance") {
+		move.type = attacker.type1;
 	}
 
 	var isAerilate = false;
