@@ -88,7 +88,8 @@ var ABILITIES_BW = ABILITIES_DPP.concat([
 	'Teravolt',
 	'Toxic Boost',
 	'Turboblaze',
-	'Unnerve'
+	'Unnerve',
+	'Weak Armor'
 ]);
 
 var ABILITIES_XY = ABILITIES_BW.concat([
