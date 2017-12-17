@@ -26,8 +26,12 @@ var damageResults;
 function calculate() {
 	var p1 = new Pokemon($("#p1"));
 	var p2 = new Pokemon($("#p2"));
+	var battling = [p1, p2];
+	p1.maxDamages = [];
+	p2.maxDamages = [];
 	var field = new Field();
 	damageResults = calculateAllMoves(p1, p2, field);
+	var fastestSide = p1.stats[SP] > p2.stats[SP] ? 0 : p1.stats[SP] === p2.stats[SP] ? "tie" : 1;
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;
 	var highestDamage = -1;
 	var bestResult;
@@ -35,6 +39,13 @@ function calculate() {
 		result = damageResults[0][i];
 		minDamage = result.damage[0] * p1.moves[i].hits;
 		maxDamage = result.damage[result.damage.length - 1] * p1.moves[i].hits;
+		p1.maxDamages.push({
+			moveOrder : i,
+			maxDamage : maxDamage
+		});
+		p1.maxDamages.sort(function(firstMove, secondMove){
+			return firstMove.maxDamage < secondMove.maxDamage;
+		});
 		minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p2.maxHP) / 10 : Math.floor(minDamage * 48 / p2.maxHP);
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p2.maxHP) / 10 : Math.floor(maxDamage * 48 / p2.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
@@ -57,15 +68,18 @@ function calculate() {
 		}
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[0][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText);
-		if (maxDamage > highestDamage) {
-			highestDamage = maxDamage;
-			bestResult = $(resultLocations[0][i].move);
-		}
-
+		
 		result = damageResults[1][i];
 		var recoveryText = '';
 		minDamage = result.damage[0] * p2.moves[i].hits;
 		maxDamage = result.damage[result.damage.length - 1] * p2.moves[i].hits;
+		p2.maxDamages.push({
+			moveOrder : i,
+			maxDamage : maxDamage
+		});
+		p2.maxDamages.sort(function(firstMove, secondMove){
+			return firstMove.maxDamage < secondMove.maxDamage;
+		});
 		minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p1.maxHP) / 10 : Math.floor(minDamage * 48 / p1.maxHP);
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * 48 / p1.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
@@ -87,9 +101,15 @@ function calculate() {
 		}
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText);
-		if (maxDamage > highestDamage) {
-			highestDamage = maxDamage;
-			bestResult = $(resultLocations[1][i].move);
+		if (fastestSide === "tie") {
+			if (maxDamage > highestDamage) {
+				highestDamage = maxDamage;
+				bestResult = $(resultLocations[0][i].move);
+			}
+		}
+		else {
+			var bestMove = battling[fastestSide].maxDamages[0].moveOrder;
+			bestResult = $(resultLocations[fastestSide][bestMove].move);
 		}
 	}
 	if ($('.locked-move').length) {
