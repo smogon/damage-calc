@@ -300,8 +300,7 @@ $("#importedSets").click(function () {
 	var showCustomSets = $(this).prop("checked");
 	if (showCustomSets) {
 		loadCustomList();
-	}
-	else {
+	} else {
 		loadDefaultList();
 	}
 });
@@ -314,8 +313,7 @@ $(document).ready(function () {
 		customSets = JSON.parse(localStorage.customsets);
 		updateDex(customSets);		
 		$("#importedSetsOptions").css("display","inline");
-	}
-	else {
+	} else {
 		loadDefaultList();
 	}
 });
