@@ -66,8 +66,33 @@ function calculate() {
 				}
 			recoveryText = ' (' + minHealthRecovered + ' - ' + maxHealthRecovered + notation + ' recovered)';
 		}
+		var recoilText = '';
+		var hasAThirdRecoil = ['Brave Bird', 'Double Edge', 'Flare Blitz', 'Wood Hammer', 'Volt Tackle'].indexOf(p1.moves[i]);
+		var hasAFourthRecoil = ['Head Charge', 'Shadow Rush', 'Struggle', 'Submission', 'Take Down', 'Wild Charge'].indexOf(p1.moves[i]);
+		var hasHalfRecoil = ['Head Smash', 'Light of Ruin', 'Shadow End'].indexOf(p1.moves[i]);
+		if (p1.moves[i].hasRecoil && hasAThirdRecoil) {
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/3) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/3) * 48 / p1.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/3) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/3) * 48 / p1.maxHP);
+			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		}
+		if (p1.moves[i].hasRecoil && hasAFourthRecoil) {
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/4) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/4) * 48 / p1.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/4) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/4) * 48 / p1.maxHP);
+			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		}
+		if (p1.moves[i].hasRecoil && hasHalfRecoil) {
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/4) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/4) * 48 / p1.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/4) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/4) * 48 / p1.maxHP);
+			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		}
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
-		$(resultLocations[0][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText);
+		$(resultLocations[0][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
 		
 		result = damageResults[1][i];
 		var recoveryText = '';
@@ -99,8 +124,30 @@ function calculate() {
 				}
 			recoveryText = ' (' + minHealthRecovered + ' - ' + maxHealthRecovered + notation + ' recovered)';
 		}
+		var recoilText = '';
+		if (p2.moves[i].hasRecoil && hasAThirdRecoil) {
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/3) * 1000 / p2.maxHP) / 10 :
+				Math.floor(minDamage * (1/3) * 48 / p2.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/3) * 1000 / p2.maxHP) / 10 :
+				Math.floor(minDamage * (1/3) * 48 / p2.maxHP);
+			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		}
+		if (p2.moves[i].hasRecoil && hasAFourthRecoil) {
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/4) * 1000 / p2.maxHP) / 10 :
+				Math.floor(minDamage * (1/4) * 48 / p2.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/4) * 1000 / p2.maxHP) / 10 :
+				Math.floor(minDamage * (1/4) * 48 / p2.maxHP);
+			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		}
+		if (p2.moves[i].hasRecoil && hasHalfRecoil) {
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/2) * 1000 / p2.maxHP) / 10 :
+				Math.floor(minDamage * (1/2) * 48 / p2.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/2) * 1000 / p2.maxHP) / 10 :
+				Math.floor(minDamage * (1/2) * 48 / p2.maxHP);
+			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		}
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
-		$(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText);
+		$(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
 		if (fastestSide === "tie") {
 			if (maxDamage > highestDamage) {
 				highestDamage = maxDamage;
