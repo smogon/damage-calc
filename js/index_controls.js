@@ -85,10 +85,10 @@ function calculate() {
 			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
 		}
 		if (p1.moves[i].hasRecoil && hasHalfRecoil) {
-			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/4) * 1000 / p1.maxHP) / 10 :
-				Math.floor(minDamage * (1/4) * 48 / p1.maxHP);
-			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/4) * 1000 / p1.maxHP) / 10 :
-				Math.floor(minDamage * (1/4) * 48 / p1.maxHP);
+			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * (1/2) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/2) * 48 / p1.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * (1/2) * 1000 / p1.maxHP) / 10 :
+				Math.floor(minDamage * (1/2) * 48 / p1.maxHP);
 			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
 		}
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
