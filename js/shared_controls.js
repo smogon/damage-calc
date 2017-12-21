@@ -84,9 +84,9 @@ $(".sl .dvs").keyup(function () {
 
 function getHPDVs(poke) {
 	return (~~poke.find(".at .dvs").val() % 2) * 8 +
-	(~~poke.find(".df .dvs").val() % 2) * 4 +
-	(~~poke.find(".sp .dvs").val() % 2) * 2 +
-	(~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2);
+(~~poke.find(".df .dvs").val() % 2) * 4 +
+(~~poke.find(".sp .dvs").val() % 2) * 2 +
+(~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2);
 }
 
 function calcStats(poke) {
