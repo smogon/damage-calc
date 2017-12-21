@@ -685,6 +685,8 @@ $(".gen").change(function () {
 		calcStat = CALC_STAT_ADV;
 	}
 	clearField();
+	$("#importedSets").prop("checked", false);
+	loadDefaultList();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));
@@ -735,8 +737,8 @@ function clearField() {
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 
-function getSetOptions() {
-	var pokeNames = Object.keys(pokedex);
+function getSetOptions(sets = pokedex) {
+	var pokeNames = Object.keys(sets);
 	pokeNames.sort();
 	var setOptions = [];
 	var idNum = 0;
@@ -873,12 +875,7 @@ function getTerrainEffects() {
 	}
 }
 
-$(document).ready(function () {
-	$("#gen7").prop("checked", true);
-	$("#gen7").change();
-	$("#percentage").prop("checked", true);
-	$("#percentage").change();
-
+function loadDefaultList() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
 			return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
@@ -901,6 +898,39 @@ $(document).ready(function () {
 			callback(data);
 		}
 	});
+}
+
+function loadCustomList() {
+	var customSetsOptions = getSetOptions(customSets);
+	$("#p1 .set-selector").select2({
+			formatResult: function(set){
+				return set.pokemon;
+			},
+			query: function(query){
+				var pageSize = 20;
+				var results = _.filter(getSetOptions(), function(option){
+					if (option.set === "Custom Set") {
+						return option.pokemon;
+					}
+				});
+				query.callback({
+					results: results,
+					more: results.length >= query.page * pageSize
+				});
+			},
+			initSelection: function(element, callback){
+				var data = "";
+				callback(data);
+			}
+		});
+}
+
+$(document).ready(function () {
+	$("#gen7").prop("checked", true);
+	$("#gen7").change();
+	$("#percentage").prop("checked", true);
+	$("#percentage").change();
+	loadDefaultList();
 	$(".move-selector").select2({
 		dropdownAutoWidth: true,
 		matcher: function (term, text) {
