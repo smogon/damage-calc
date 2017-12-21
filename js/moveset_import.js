@@ -289,16 +289,31 @@ function checkExeptions(poke) {
 
 }
 
-$("#clearSets").click(function(){
+$("#clearSets").click(function () {
 	localStorage.removeItem("customsets");
 	alert("Custom Sets successfully cleared. Please refresh the page.");
-	$("#clearSets").css("display","none");
+	$("#importedSetsOptions").css("display","none");
+	loadDefaultList();
 });
+
+$("#importedSets").click(function () {
+	var showCustomSets = $(this).prop("checked");
+	if (showCustomSets) {
+		loadCustomList();
+	} else {
+		loadDefaultList();
+	}
+});
+
+var customSets;
 
 $(document).ready(function () {
 	placeBsBtn();
 	if (localStorage.customsets) {
-		updateDex(JSON.parse(localStorage.customsets));
-		$("#clearSets").css("display","inline");
+		customSets = JSON.parse(localStorage.customsets);
+		updateDex(customSets);		
+		$("#importedSetsOptions").css("display","inline");
+	} else {
+		loadDefaultList();
 	}
 });
