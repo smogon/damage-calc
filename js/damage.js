@@ -493,9 +493,9 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if ((attacker.item === "Thick Club" && (["Cubone", "Marowak", "Marowak-Alola"].indexOf(attacker.name) !== -1 && move.category === "Physical) ||
+	if (attacker.item === "Thick Club" && (["Cubone", "Marowak", "Marowak-Alola"].indexOf(attacker.name) !== -1 && move.category === "Physical") ||
             (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special") ||
-            (attacker.item === "Light Ball" && attacker.name === "Pikachu") && !move.isZ)) {
+            (attacker.item === "Light Ball" && attacker.name === "Pikachu") && !move.isZ) {
 		atMods.push(0x2000);
 		description.attackerItem = attacker.item;
 	} else if ((gen < 7 && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special") ||
@@ -581,8 +581,7 @@ function getDamageResult(attacker, defender, move, field) {
 	} else if ((field.weather === "Harsh Sunshine" && move.type === "Water") || (field.weather === "Heavy Rain" && move.type === "Fire")) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (field.isGravity || (attacker.type1 !== "Flying" && attacker.type2 !== "Flying" &&
-                attacker.item !== "Air Balloon" && attacker.ability !== "Levitate")) {
+	if (isGroundedForCalc(attacker, field)) {
 		if (field.terrain === "Electric" && move.type === "Electric") {
 			baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
 			description.terrain = field.terrain;
