@@ -493,7 +493,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if ((attacker.item === "Thick Club" && (["Cubone", "Marowak", "Marowak-Alola"].indexOf(attacker.name) !== -1) ||
+	if ((attacker.item === "Thick Club" && (["Cubone", "Marowak", "Marowak-Alola"].indexOf(attacker.name) !== -1 && move.category === "Physical) ||
             (attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl" && move.category === "Special") ||
             (attacker.item === "Light Ball" && attacker.name === "Pikachu") && !move.isZ)) {
 		atMods.push(0x2000);
