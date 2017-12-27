@@ -368,8 +368,7 @@ function getDamageResult(attacker, defender, move, field) {
 	} else if (attacker.item === move.type + " Gem") {
 		bpMods.push(gen >= 6 ? 0x14CD : 0x1800);
 		description.attackerItem = attacker.item;
-	} else if (attacker.item === "Soul Dew" && ["Latios", "Latias", "Latios-Mega", "Latias-Mega"].indexOf(attacker.name) !== -1 &&
-		isSTAB) {
+	} else if (attacker.item === "Soul Dew" && ["Latios", "Latias", "Latios-Mega", "Latias-Mega"].indexOf(attacker.name) !== -1 && isSTAB) {
 		bpMods.push(gen >= 7 ? 0x1333 : 0x1000);
 		description.attackerItem = attacker.item;
 	}
