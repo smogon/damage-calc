@@ -737,8 +737,12 @@ function clearField() {
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 
-function getSetOptions(sets = pokedex) {
-	var pokeNames = Object.keys(sets);
+function getSetOptions(sets) {
+	var setsHolder = sets;
+	if (setsHolder === undefined) {
+		setsHolder = pokedex;
+	}
+	var pokeNames = Object.keys(setsHolder);
 	pokeNames.sort();
 	var setOptions = [];
 	var idNum = 0;
