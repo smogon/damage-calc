@@ -839,7 +839,7 @@ function getTerrainEffects() {
 		} else if (terrainValue === "Misty") {
 			$("#" + id).find(".status").prop("disabled", isGrounded($("#" + id)));
 		}
-	break;
+		break;
 	case "ability":
 		// with autoset, ability change may cause terrain change, need to consider both sides
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
@@ -857,7 +857,7 @@ function getTerrainEffects() {
 			$("#p2").find("[value='Asleep']").prop("disabled", false);
 			$("#p2").find(".status").prop("disabled", false);
 		}
-	break;
+		break;
 	default:
 		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
 		if ($(this).prop("checked") && $(this).val() === "Electric") {
@@ -875,7 +875,7 @@ function getTerrainEffects() {
 			$("#p2").find("[value='Asleep']").prop("disabled", false);
 			$("#p2").find(".status").prop("disabled", false);
 		}
-	break;
+		break;
 	}
 }
 
