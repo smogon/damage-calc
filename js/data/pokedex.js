@@ -11676,7 +11676,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 60,
 			"sp": 45
 		},
-		"w": 60,
+		"w": 60.0,
 		"isAlternateForme": true
 	},
 	"Guzzlord": {
@@ -11833,7 +11833,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 90,
 			"sp": 45
 		},
-		"w": 58,
+		"w": 58.0,
 		"ab": "Leaf Guard",
 		"isAlternateForme": true
 	},
@@ -11927,7 +11927,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 80,
 			"sp": 45
 		},
-		"w": 98,
+		"w": 98.0,
 		"ab": "Rock Head",
 		"isAlternateForme": true
 	},
@@ -12405,7 +12405,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 80,
 			"sp": 77
 		},
-		"w": 105,
+		"w": 105.0,
 		"ab": "Thick Fat",
 		"isAlternateForme": true
 	},
@@ -12448,7 +12448,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 70,
 			"sp": 124
 		},
-		"w": 2,
+		"w": 2.0,
 		"ab": "Sweet Veil",
 		"isAlternateForme": true
 	},
@@ -12515,7 +12515,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 60,
 			"sp": 117
 		},
-		"w": 81,
+		"w": 81.0,
 		"ab": "Corrosion",
 		"isAlternateForme": true
 	},
@@ -12942,7 +12942,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 73,
 			"sp": 96
 		},
-		"w": 13,
+		"w": 13.0,
 		"ab": "Sturdy",
 		"isAlternateForme": true
 	},
@@ -13130,7 +13130,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 71,
 			"sp": 83
 		},
-		"w": 100.0,
+		"w": 100.0
 	},
 	"Yungoos": {
 		"t1": "Normal",
