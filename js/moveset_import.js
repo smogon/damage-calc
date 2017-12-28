@@ -228,28 +228,15 @@ function checkExeptions(poke) {
 	case 'Aegislash':
 		poke = "Aegislash-Blade";
 		break;
-	case 'Araquanid-Totem':
-		poke = "Araquanid";
-		break;
 	case 'Basculin-Blue-Striped':
 		poke = "Basculin";
-		break;
-	case 'Gumshoos-Totem':
-		poke = "Gumshoos";
 		break;
 	case 'Keldeo-Resolute':
 		poke = "Keldeo";
 		break;
-	case 'Kommo-o-Totem':
-		poke = "Kommo-o";
+	case 'Mimikyu-Busted-Totem':
+		poke = "Mimikyu-Totem";
 		break;
-	case 'Lurantis-Totem':
-		poke = "Lurantis";
-		break;
-	case 'Marowak-Alola-Totem':
-		poke = "Marowak-Alola";
-		break;
-	case 'Mimikyu-Totem':
 	case 'Mimikyu-Busted':
 		poke = "Mimikyu";
 		break;
@@ -267,18 +254,6 @@ function checkExeptions(poke) {
 	case 'Pikachu-Sinnoh':
 	case 'Pikachu-Unova':
 		poke = "Pikachu";
-		break;
-	case 'Raticate-Alola-Totem':
-		poke = "Raticate-Alola";
-		break;
-	case 'Ribombee-Totem':
-		poke = "Ribombee";
-		break;
-	case 'Salazzle-Totem':
-		poke = "Salazzle";
-		break;
-	case 'Vikavolt-Totem':
-		poke = "Vikavolt";
 		break;
 	case 'Vivillon-Fancy':
 	case 'Vivillon-Pokeball':
