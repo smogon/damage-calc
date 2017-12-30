@@ -697,9 +697,9 @@ function getDamageResult(attacker, defender, move, field) {
 			description.moveTurns = 'over ' + move.usedTimes + ' turns';
 		}
 		var droppedStats = move.dropsStats;
-		var boostDrop = Math.max(-6, attacker.boosts[attackStat] - (droppedStats * (move.usedTimes-1)));
+		var boostDrop = Math.max(-6, attacker.boosts[attackStat] - (droppedStats * move.usedTimes));
 		if (attacker.ability === "Contrary") {
-			boostDrop = Math.min(6, attacker.boosts[attackStat] + (droppedStats * (move.usedTimes-1)));
+			boostDrop = Math.min(6, attacker.boosts[attackStat] + (droppedStats * move.usedTimes));
 		}
 		var hasWhiteHerb = attacker.item === "White Herb";
 		var usedWhiteHerb = false;
@@ -714,7 +714,8 @@ function getDamageResult(attacker, defender, move, field) {
 			});
 			attacker.boosts[attackStat] = boostDrop;
 			if (hasWhiteHerb && boostDrop < 0 && !usedWhiteHerb) {
-				attacker.boosts[attackStat] -= boostDrop;
+				boostDrop += move.dropsStats;
+				attacker.boosts[attackStat] = boostDrop;
 				usedWhiteHerb = true;
 				description.attackerItem = attacker.item;
 			}
