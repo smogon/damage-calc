@@ -388,7 +388,7 @@ function getFlingPower(item) {
 										'Life Orb', 'Light Ball', 'Magnet', 'Metal Coat', 'Miracle Seed', 'Mystic Water', 'Never-Melt Ice',
 										'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 'Twisted Spoon'].indexOf(item) !== -1 ? 30 :
 										item.indexOf('Berry') !== -1 ||
-										['Air Baloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
+										['Air Balloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
 											'Focus Sash', 'Grassy Seed', 'Lagging tail', 'leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
 											'Muscle Band', 'Power Herb', 'Psychic Seed', 'Quick Powder', 'Reaper Cloth', 'Red Card', 'Ring Target',
 											'Shed Shell', 'Silk Scarf', 'Silver Powder', 'Smooth Rock', 'Soft Sand', 'Soothe Bell', 'White Herb',
@@ -465,43 +465,8 @@ function getTechnoBlast(item) {
 }
 
 function getMultiAttack(item) {
-	switch (item) {
-	case 'Bug Memory':
-		return 'Bug';
-	case 'Dark Memory':
-		return 'Dark';
-	case 'Dragon Memory':
-		return 'Dragon';
-	case 'Electric Memory':
-		return 'Electric';
-	case 'Fairy Memory':
-		return 'Fairy';
-	case 'Fighting Memory':
-		return 'Fighting';
-	case 'Fire Memory':
-		return 'Fire';
-	case 'Flying Memory':
-		return 'Flying';
-	case 'Ghost Memory':
-		return 'Ghost';
-	case 'Grass Memory':
-		return 'Grass';
-	case 'Ground Memory':
-		return 'Ground';
-	case 'Ice Memory':
-		return 'Ice';
-	case 'Poison Memory':
-		return 'Poison';
-	case 'Psychic Memory':
-		return 'Psychic';
-	case 'Rock Memory':
-		return 'Rock';
-	case 'Steel Memory':
-		return 'Steel';
-	case 'Water Memory':
-		return 'Water';
-	default:
-		return '';
+	if (item.indexOf("Memory") !== -1) {
+		return item.substring(0, item.indexOf(" ")); 
 	}
+	return '';
 }
-

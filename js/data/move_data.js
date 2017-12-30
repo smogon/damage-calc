@@ -1087,7 +1087,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	'Overheat': {
 		bp: 140,
 		type: 'Fire',
-		category: 'Special'
+		category: 'Special',
+		dropsStats: 2
 	},
 	'Poison Fang': {
 		bp: 50,
@@ -1107,7 +1108,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	'Psycho Boost': {
 		bp: 140,
 		type: 'Psychic',
-		category: 'Special'
+		category: 'Special',
+		dropsStats: 2
 	},
 	'Recycle': {
 		bp: 0,
@@ -1194,7 +1196,8 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		bp: 120,
 		type: 'Fighting',
 		category: 'Physical',
-		makesContact: true
+		makesContact: true,
+		dropsStats: 1
 	},
 	'Tail Glow': {
 		bp: 0,
@@ -1400,7 +1403,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 	'Draco Meteor': {
 		bp: 140,
 		type: 'Dragon',
-		category: 'Special'
+		category: 'Special',
+		dropsStats: 2
 	},
 	'Dragon Pulse': {
 		bp: 90,
@@ -1577,7 +1581,8 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 	'Leaf Storm': {
 		bp: 140,
 		type: 'Grass',
-		category: 'Special'
+		category: 'Special',
+		dropsStats : 2
 	},
 	'Lunar Dance': {
 		bp: 0,
@@ -2901,7 +2906,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		type: 'Fairy',
 		category: 'Special',
 		hasSecondaryEffect: true,
-		zp: 195
+		zp: 195,
+		dropsStats: 2
 	},
 	'Fling': {zp: 100},
 	'Fly': {zp: 175},

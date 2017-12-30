@@ -118,6 +118,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var isRefrigerate = false;
 	var isGalvanize = false;
 	var isLiquidVoice = false;
+	var isNormalize = false;
 
 	if (!move.isZ) {
 		isAerilate = attacker.ability === "Aerilate" && move.type === "Normal";
@@ -125,6 +126,7 @@ function getDamageResult(attacker, defender, move, field) {
 		isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal";
 		isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal";
 		isLiquidVoice = attacker.ability === "Liquid Voice" && move.isSound;
+		isNormalize = attacker.ability === "Normalize" && move.type !== "Normal";
 		if (isAerilate) {
 			move.type = "Flying";
 		} else if (isGalvanize) {
@@ -135,8 +137,10 @@ function getDamageResult(attacker, defender, move, field) {
 			move.type = "Fairy";
 		} else if (isRefrigerate) {
 			move.type = "Ice";
-		} else if (attacker.ability === "Normalize") {
+		} else if (isNormalize) {
 			move.type = "Normal";
+		}
+		if (isGalvanize || isLiquidVoice || isPixilate || isRefrigerate || isAerilate || isNormalize) {
 			description.attackerAbility = attacker.ability;
 		}
 	}
@@ -154,7 +158,7 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name === "Giratina-Origin" && defender.item === "Griseous Orb") ||
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
-            (defender.ability.indexOf("RKS System") !== -1 && defender.item.indexOf("Memory") !== -1) ||
+            (defender.ability === "RKS System" && defender.item.indexOf("Memory") !== -1) ||
             (defender.item.indexOf(" Z") !== -1));
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
@@ -298,7 +302,6 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Nature Power":
 		basePower = (field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic") ? 90 : (field.terrain === "Misty") ? 95 : 80;
-		//console.log("A " + field.terrain + " terrain " + move.type + move.name + " with " + move.bp + " base power " + " agaisnt a(n) " + defender.name + " that has " + defender.type1 + " " + defender.type2 + " typing");
 		break;
 	case "Water Shuriken":
 		basePower = (attacker.name === "Greninja-Ash") ? 20 : 15;
@@ -545,8 +548,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if ((gen < 7 && defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias") && !hitsPhysical) ||
-            (defender.item === "Assault Vest" && !hitsPhysical) || defender.item === "Eviolite") {
+	if (gen < 7 && (!hitsPhysical && ["Latios","Latias"].indexOf(defender.name) !== -1) || defender.item === "Eviolite") {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
 	}
@@ -607,7 +609,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	// the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
 	var stabMod = 0x1000;
-	if (move.type === attacker.type1 || move.type === attacker.type2) {
+	if (isSTAB) {
 		if (attacker.ability === "Adaptability") {
 			stabMod = 0x2000;
 			description.attackerAbility = attacker.ability;
@@ -628,7 +630,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isLightScreen = true;
 	}
-	if ((defAbility === "Multiscale" || defAbility === "Shadow Shield") && defender.curHP === defender.maxHP && !field.isSR && (!field.spikes || defender.type1 === "Flying" || defender.type2 === "Flying")) {
+	if (["Multiscale", "Shadow Shield"].indexOf(defAbility) !== -1 && defender.curHP === defender.maxHP && !field.isSR && (!field.spikes || defender.type1 === "Flying" || defender.type2 === "Flying")) {
 		finalMods.push(0x800);
 		description.defenderAbility = defAbility;
 	}
@@ -656,7 +658,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	}
-	if ((defAbility === "Solid Rock" || defAbility === "Filter" || defAbility === "Prism Armor") && typeEffectiveness > 1) {
+	if (["Solid Rock", "Filter", "Prism Armor"].indexOf(defAbility) !== -1 && typeEffectiveness > 1) {
 		finalMods.push(0xC00);
 		description.defenderAbility = defAbility;
 	}
@@ -680,14 +682,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	var damage = [];
 	for (var i = 0; i < 16; i++) {
-		damage[i] = Math.floor(baseDamage * (85 + i) / 100);
-		damage[i] = pokeRound(damage[i] * stabMod / 0x1000);
-		damage[i] = Math.floor(damage[i] * typeEffectiveness);
-		if (applyBurn) {
-			damage[i] = Math.floor(damage[i] / 2);
-		}
-		damage[i] = Math.max(1, damage[i]);
-		damage[i] = pokeRound(damage[i] * finalMod / 0x1000);
+		damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
 
 		// is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
 		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
@@ -695,6 +690,38 @@ function getDamageResult(attacker, defender, move, field) {
 			damage[i] = Math.floor(damage[i] * bondFactor);
 			description.attackerAbility = attacker.ability;
 		}
+	}
+	if (move.dropsStats) {
+		if (move.usedTimes > 1) {
+			description.moveTurns = 'over ' + move.usedTimes + ' turns';
+		}
+		var droppedStats = move.dropsStats;
+		var boostDrop = Math.max(-6, attacker.boosts[attackStat] - (droppedStats * (move.usedTimes-1)));
+		if (attacker.ability === "Contrary") {
+			boostDrop = Math.min(6, attacker.boosts[attackStat] + (droppedStats * (move.usedTimes-1)));
+		}
+		var hasWhiteHerb = attacker.item === "White Herb";
+		var usedWhiteHerb = false;
+		for (var times = 0; times < move.usedTimes; times++){
+			var oldAttack = attack;
+			var newAttack = getModifiedStat(attacker.rawStats[attackStat], attacker.boosts[attackStat]);
+			damage = damage.map(function(affectedAmount) {
+				if (times || oldAttack !== newAttack) {
+					return affectedAmount + Math.floor(affectedAmount * newAttack / oldAttack);
+				}
+				return affectedAmount;
+			});
+			attacker.boosts[attackStat] += boostDrop;
+			if (hasWhiteHerb && boostDrop < 0 && !usedWhiteHerb) {
+				attacker.boosts[attackStat] -= boostDrop;
+				usedWhiteHerb = true;
+				description.attackerItem = attacker.item;
+			}
+		}
+		description.attackBoost = attacker.boosts[attackStat];
+	} else {
+		delete description.attackBoost;
+		attacker.boosts[attackStat] += -move.dropsStats;
 	}
 	return {"damage": damage, "description": buildDescription(description)};
 }
@@ -830,4 +857,14 @@ function isGroundedForCalc(pokemon, field) {
 // GameFreak rounds DOWN on .5
 function pokeRound(num) {
 	return (num % 1 > 0.5) ? Math.ceil(num) : Math.floor(num);
+}
+
+function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMod) {
+	var damageAmount = Math.floor(
+		pokeRound(Math.floor(baseAmount * (85 + i) / 100) * stabMod / 0x1000) * effectiveness
+	);
+	if (isBurned) {
+		damageAmount = Math.floor(damageAmount / 2);
+	}
+	return pokeRound(Math.max(1, damageAmount * finalMod / 0x1000));
 }
