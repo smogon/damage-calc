@@ -904,7 +904,7 @@ function loadDefaultList() {
 			});
 		},
 		initSelection: function (element, callback) {
-			var data = "";
+			var data = getSetOptions()[gen < 3 ? 3 : 1];
 			callback(data);
 		}
 	});
