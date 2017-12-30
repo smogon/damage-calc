@@ -253,11 +253,16 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
 	if (move.isMultiHit) {
+		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
 		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".item").val() === 'Grip Claw' ? 5 : 3);
+	} else if (move.dropsStats) {
+		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".stat-drops").show();
 	} else {
 		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".stat-drops").hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
 });
@@ -292,13 +297,13 @@ $(".set-selector").change(function () {
 		if (pokemonName in setdex && setName in setdex[pokemonName]) {
 			var set = setdex[pokemonName][setName];
 			pokeObj.find(".level").val(set.level);
-			pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
-			pokeObj.find(".hp .ivs").val((set.ivs && typeof set.ivs.hp !== "undefined") ? set.ivs.hp : 31);
-			pokeObj.find(".hp .dvs").val((set.dvs && typeof set.dvs.hp !== "undefined") ? set.dvs.hp : 15);
+			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
+			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
+			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);
 			for (i = 0; i < STATS.length; i++) {
-				pokeObj.find("." + STATS[i] + " .evs").val((set.evs && typeof set.evs[STATS[i]] !== "undefined") ? set.evs[STATS[i]] : 0);
-				pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && typeof set.ivs[STATS[i]] !== "undefined") ? set.ivs[STATS[i]] : 31);
-				pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && typeof set.dvs[STATS[i]] !== "undefined") ? set.dvs[STATS[i]] : 15);
+				pokeObj.find("." + STATS[i] + " .evs").val((set.evs && set.evs[STATS[i]] !== undefined) ? set.evs[STATS[i]] : 0);
+				pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && set.ivs[STATS[i]] !== undefined) ? set.ivs[STATS[i]] : 31);
+				pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && set.dvs[STATS[i]] !== undefined) ? set.dvs[STATS[i]] : 15);
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab ? pokemon.ab : set.ability, "");
@@ -370,7 +375,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 }
 
 function setSelectValueIfValid(select, value, fallback) {
-	select.val(select.children("option[value='" + value + "']").length !== 0 ? value : fallback);
+	select.val(select.children("option[value='" + value + "']").length ? value : fallback);
 }
 
 $(".forme").change(function () {
@@ -381,7 +386,7 @@ $(".forme").change(function () {
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
 	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(typeof altForme.t2 != "undefined" ? altForme.t2 : "");
+	$(this).parent().siblings().find(".type2").val(altForme.t2 === undefined ? "" : altForme.t2);
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 
 	for (var i = 0; i < STATS.length; i++) {
@@ -390,14 +395,14 @@ $(".forme").change(function () {
 		baseStat.keyup();
 	}
 
-	if (abilities.indexOf(altForme.ab) > -1) {
+	if (abilities.indexOf(altForme.ab) !== -1) {
 		container.find(".ability").val(altForme.ab);
 	} else {
 		container.find(".ability").val("");
 	}
 	container.find(".ability").keyup();
 
-	if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Rayquaza-Mega") {
+	if ($(this).val().indexOf("-Mega") !== -1 && $(this).val() !== "Rayquaza-Mega") {
 		container.find(".item").val("").keyup();
 	} else {
 		container.find(".item").prop("disabled", false);
@@ -524,7 +529,8 @@ function getMoveDetails(moveInfo, item) {
 			type: moveInfo.find(".move-type").val(),
 			category: moveInfo.find(".move-cat").val(),
 			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1
+			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
+			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
 		});
 	}
 }
