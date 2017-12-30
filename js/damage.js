@@ -712,7 +712,7 @@ function getDamageResult(attacker, defender, move, field) {
 				}
 				return affectedAmount;
 			});
-			attacker.boosts[attackStat] += boostDrop;
+			attacker.boosts[attackStat] = boostDrop;
 			if (hasWhiteHerb && boostDrop < 0 && !usedWhiteHerb) {
 				attacker.boosts[attackStat] -= boostDrop;
 				usedWhiteHerb = true;
