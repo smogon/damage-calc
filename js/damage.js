@@ -302,6 +302,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Nature Power":
 		basePower = (field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic") ? 90 : (field.terrain === "Misty") ? 95 : 80;
+		//console.log("A " + field.terrain + " terrain " + move.type + move.name + " with " + move.bp + " base power " + " agaisnt a(n) " + defender.name + " that has " + defender.type1 + " " + defender.type2 + " typing");
 		break;
 	case "Water Shuriken":
 		basePower = (attacker.name === "Greninja-Ash") ? 20 : 15;
@@ -548,7 +549,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if (gen < 7 && (!hitsPhysical && ["Latios","Latias"].indexOf(defender.name) !== -1) || defender.item === "Eviolite" || (!hitsPhysical && defender.item === "Assault Vest")) {
+	if (gen < 7 && (!hitsPhysical && ["Latios","Latias"].indexOf(defender.name) !== -1 && defender.item === "Soul Dew") || defender.item === "Eviolite" || (!hitsPhysical && defender.item === "Assault Vest")) {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
 	}
@@ -702,7 +703,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 		var hasWhiteHerb = attacker.item === "White Herb";
 		var usedWhiteHerb = false;
-		for (var times = 0; times < move.usedTimes; times++){
+		for (var times = 0; times < move.usedTimes; times++) {
 			var oldAttack = attack;
 			var newAttack = getModifiedStat(attacker.rawStats[attackStat], attacker.boosts[attackStat]);
 			damage = damage.map(function(affectedAmount) {
