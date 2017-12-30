@@ -693,11 +693,15 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 	if (move.dropsStats) {
+		var simpleMultiplier = 1;
+		if (attacker.ability === "Simple") {
+			simpleMultiplier = 2;
+		}
 		if (move.usedTimes > 1) {
 			description.moveTurns = 'over ' + move.usedTimes + ' turns';
 		}
 		var droppedStats = move.dropsStats;
-		var boostDrop = Math.max(-6, attacker.boosts[attackStat] - (droppedStats * move.usedTimes));
+		var boostDrop = Math.max(-6, attacker.boosts[attackStat] - (droppedStats * move.usedTimes * simpleMultiplier));
 		if (attacker.ability === "Contrary") {
 			boostDrop = Math.min(6, attacker.boosts[attackStat] + (droppedStats * move.usedTimes));
 		}
