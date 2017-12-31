@@ -682,9 +682,9 @@ function getDamageResult(attacker, defender, move, field) {
 	var finalMod = chainMods(finalMods);
 
 	var damage = [];
+	var cumulatedStatDrops = 0;
 	for (var i = 0; i < 16; i++) {
 		damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
-
 		// is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
 		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
 			var bondFactor = gen < 7 ? 3 / 2 : 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
@@ -692,19 +692,12 @@ function getDamageResult(attacker, defender, move, field) {
 			description.attackerAbility = attacker.ability;
 		}
 	}
-	if (move.dropsStats) {
+	if (move.dropsStats && move.usedTimes > 1) {
 		var simpleMultiplier = 1;
 		if (attacker.ability === "Simple") {
 			simpleMultiplier = 2;
 		}
-		if (move.usedTimes > 1) {
-			description.moveTurns = 'over ' + move.usedTimes + ' turns';
-		}
-		var droppedStats = move.dropsStats;
-		var boostDrop = Math.max(-6, attacker.boosts[attackStat] - (droppedStats * move.usedTimes * simpleMultiplier));
-		if (attacker.ability === "Contrary") {
-			boostDrop = Math.min(6, attacker.boosts[attackStat] + (droppedStats * move.usedTimes));
-		}
+		description.moveTurns = 'over ' + move.usedTimes + ' turns';
 		var hasWhiteHerb = attacker.item === "White Herb";
 		var usedWhiteHerb = false;
 		for (var times = 0; times < move.usedTimes; times++) {
@@ -716,18 +709,26 @@ function getDamageResult(attacker, defender, move, field) {
 				}
 				return affectedAmount;
 			});
-			attacker.boosts[attackStat] = boostDrop;
-			if (hasWhiteHerb && boostDrop < 0 && !usedWhiteHerb) {
-				boostDrop += move.dropsStats;
-				attacker.boosts[attackStat] = boostDrop;
+			if (attacker.ability === "Contrary") {
+				attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + move.dropsStats);
+				description.attackerAbility = attacker.ability;
+			} else {
+				attacker.boosts[attackStat] = Math.max(-6, attacker.boosts[attackStat] - (move.dropsStats * simpleMultiplier));
+				if (attacker.ability === "Simple") {
+					description.attackerAbility = attacker.ability;
+				}
+			}
+			// the Pokémon hits THEN the stat rises / lowers
+			description.attackBoost = attacker.boosts[attackStat];
+			if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
+				attacker.boosts[attackStat] += move.dropsStats * simpleMultiplier;
 				usedWhiteHerb = true;
 				description.attackerItem = attacker.item;
 			}
+			cumulatedStatDrops = attacker.boosts[attackStat];
 		}
-		description.attackBoost = attacker.boosts[attackStat];
 	} else {
-		delete description.attackBoost;
-		attacker.boosts[attackStat] += -move.dropsStats;
+		attacker.boosts[attackStat] += cumulatedStatDrops;
 	}
 	return {"damage": damage, "description": buildDescription(description)};
 }
@@ -775,13 +776,13 @@ function getFinalSpeed(pokemon, weather) {
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
 	if (pokemon.item === "Choice Scarf") {
 		speed = Math.floor(speed * 1.5);
-	} else if (pokemon.item === "Macho Brace" || pokemon.item === "Iron Ball") {
+	} else if (["Macho Brace", "Iron Ball"].indexOf(pokemon.item) !== -1) {
 		speed = Math.floor(speed / 2);
 	}
 	if ((pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") !== -1) ||
             (pokemon.ability === "Sand Rush" && weather === "Sand") ||
             (pokemon.ability === "Swift Swim" && weather.indexOf("Rain") !== -1) ||
-            (pokemon.ability === "Slush Rush" && weather.indexOf("Hail") !== -1)) {
+            (pokemon.ability === "Slush Rush" && weather === "Hail")) {
 		speed *= 2;
 	}
 	return speed;
@@ -812,11 +813,9 @@ function checkKlutz(pokemon) {
 	}
 }
 function checkIntimidate(source, target) {
-	if (source.ability === "Intimidate") {
-		if (target.ability === "Contrary" || target.ability === "Defiant") {
+	if (source.ability === "Intimidate" && ["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].indexOf(target.ability) === -1) {
+		if (["Contrary", "Defiant"].indexOf(target.ability) !== -1) {
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
-		} else if (["Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body"].indexOf(target.ability) !== -1) {
-			// no effect
 		} else if (target.ability === "Simple") {
 			target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
 		} else {
