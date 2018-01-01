@@ -157,7 +157,7 @@
 	}
 	var c;
 	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
-	if (move.usedTimes === 1) {
+	if (move.usedTimes === 1 || move.isZ) {
 		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, defender.maxHP, toxicCounter);
 		afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
 		if (c === 1) {
