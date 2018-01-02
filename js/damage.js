@@ -501,8 +501,9 @@ function getDamageResult(attacker, defender, move, field) {
             (attacker.item === "Light Ball" && attacker.name === "Pikachu") && !move.isZ) {
 		atMods.push(0x2000);
 		description.attackerItem = attacker.item;
-	} else if ((gen < 7 && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special") ||
-            (!move.isZ && (attacker.item === "Choice Band" && move.category === "Physical" || attacker.item === "Choice Specs" && move.category === "Special"))) {
+	} else if (!move.isZ &&
+			((gen < 7 && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias") && move.category === "Special") ||
+			(attacker.item === "Choice Band" && move.category === "Physical" || attacker.item === "Choice Specs" && move.category === "Special"))) {
 		atMods.push(0x1800);
 		description.attackerItem = attacker.item;
 	}
