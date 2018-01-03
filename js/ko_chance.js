@@ -159,7 +159,6 @@
 	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
 	if (move.usedTimes === 1 || move.isZ) {
 		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, defender.maxHP, toxicCounter);
-		afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
 		if (c === 1) {
 			return 'guaranteed OHKO' + afterText;
 		} else if (c > 0) {
@@ -185,13 +184,11 @@
 		}
 
 	} else {
-		qualifier = 'nearly ';
-		// until someone comes up with a better damage recalculation formula, we'll tell the user it's an estimate
 		c = getKOChance(damage, defender.maxHP - hazards, eot, move.usedTimes, move.usedTimes, defender.maxHP, toxicCounter);
 		if (c === 1) {
-			return 'guaranteed KO in ' + (move.usedTimes === 1 ? " a single turn" : move.usedTimes + " turns") + afterText;
+			return 'guaranteed KO in ' + move.usedTimes + ' turns' + afterText;
 		} else if (c > 0) {
-			return qualifier + Math.round(c * 1000) / 10 + '% chance to ' + (move.usedTimes === 1 ? 'O' : move.usedTimes) + 'HKO' + afterText;
+			return qualifier + Math.round(c * 1000) / 10 + '% chance to ' + move.usedTimes + 'HKO' + afterText;
 		}
 		if (predictTotal(damage[0], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
 			return 'guaranteed KO in ' + move.usedTimes + ' turns' + afterText;
