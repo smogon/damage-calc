@@ -702,12 +702,12 @@ function getDamageResult(attacker, defender, move, field) {
 		var usedWhiteHerb = false;
 		for (var times = 0; times < move.usedTimes; times++) {
 			var newAttack = getModifiedStat(attacker.rawStats[attackStat], attacker.boosts[attackStat]);
-			var damageMultiplier = 0.85;
+			var damageMultiplier = 0;
 			damage = damage.map(function(affectedAmount) {
 				if (times) {
 					var newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
 					var newFinalDamage = getFinalDamage(newBaseDamage, damageMultiplier, typeEffectiveness, applyBurn, stabMod, finalMod);
-					damageMultiplier += 0.01;
+					damageMultiplier++;
 					return affectedAmount + newFinalDamage;
 				}
 				return affectedAmount;
