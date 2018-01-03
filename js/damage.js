@@ -84,7 +84,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 
-	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1 || attacker.ability === "Merciless" && defender.status.indexOf("Poisoned") !== -1;
+	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1 || attacker.ability === "Merciless" && defender.status.indexOf("Poisoned") !== -1) && move.usedTimes === 1);
 
 	if (move.name === "Weather Ball") {
 		move.type = field.weather.indexOf("Sun") !== -1 ? "Fire" :
@@ -700,9 +700,11 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveTurns = 'over ' + move.usedTimes + ' turns';
 		var hasWhiteHerb = attacker.item === "White Herb";
 		var usedWhiteHerb = false;
+		var dropCount = attacker.boosts[attackStat];
 		for (var times = 0; times < move.usedTimes; times++) {
-			var newAttack = getModifiedStat(attacker.rawStats[attackStat], attacker.boosts[attackStat]);
+			var newAttack = getModifiedStat(attacker.rawStats[attackStat], dropCount);
 			var damageMultiplier = 0;
+			description.attackBoost = dropCount;
 			damage = damage.map(function(affectedAmount) {
 				if (times) {
 					var newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
@@ -712,26 +714,24 @@ function getDamageResult(attacker, defender, move, field) {
 				}
 				return affectedAmount;
 			});
-			description.attackBoost = attacker.boosts[attackStat];
 			if (attacker.ability === "Contrary") {
-				attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + move.dropsStats);
+				dropCount = Math.min(6, dropCount + move.dropsStats);
 				description.attackerAbility = attacker.ability;
 			} else {
-				attacker.boosts[attackStat] = Math.max(-6, attacker.boosts[attackStat] - (move.dropsStats * simpleMultiplier));
+				dropCount = Math.max(-6, dropCount - (move.dropsStats * simpleMultiplier));
 				if (attacker.ability === "Simple") {
 					description.attackerAbility = attacker.ability;
 				}
 			}
 			// the Pokémon hits THEN the stat rises / lowers
 			if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
-				attacker.boosts[attackStat] += move.dropsStats * simpleMultiplier;
+				dropCount += move.dropsStats * simpleMultiplier;
 				usedWhiteHerb = true;
 				description.attackerItem = attacker.item;
 			}
-			cumulatedStatDrops = attacker.boosts[attackStat];
 		}
 	} else {
-		attacker.boosts[attackStat] += cumulatedStatDrops;
+		description.attackBoost = attacker.boosts[attackStat];
 	}
 	return {"damage": damage, "description": buildDescription(description)};
 }
