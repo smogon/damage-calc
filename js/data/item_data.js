@@ -192,6 +192,7 @@ var ITEMS_BW = ITEMS_DPP.concat([
 
 var ITEMS_XY = ITEMS_BW.concat([
 	'Assault Vest',
+	'Fairy Gem',
 	'Kee Berry',
 	'Maranga Berry',
 	'Pixie Plate',
