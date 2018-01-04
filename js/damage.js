@@ -84,7 +84,7 @@ function getDamageResult(attacker, defender, move, field) {
 		}
 	}
 
-	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1 || attacker.ability === "Merciless" && defender.status.indexOf("Poisoned") !== -1;
+	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1 || attacker.ability === "Merciless" && defender.status.indexOf("Poisoned") !== -1) && move.usedTimes === 1);
 
 	if (move.name === "Weather Ball") {
 		move.type = field.weather.indexOf("Sun") !== -1 ? "Fire" :
@@ -570,7 +570,7 @@ function getDamageResult(attacker, defender, move, field) {
 	////////////////////////////////
 	//////////// DAMAGE ////////////
 	////////////////////////////////
-	var baseDamage = Math.floor(Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / defense) / 50 + 2);
+	var baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
 	if (field.format !== "Singles" && move.isSpread) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 	}
@@ -700,35 +700,38 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveTurns = 'over ' + move.usedTimes + ' turns';
 		var hasWhiteHerb = attacker.item === "White Herb";
 		var usedWhiteHerb = false;
+		var dropCount = attacker.boosts[attackStat];
 		for (var times = 0; times < move.usedTimes; times++) {
-			var oldAttack = attack;
-			var newAttack = getModifiedStat(attacker.rawStats[attackStat], attacker.boosts[attackStat]);
+			var newAttack = getModifiedStat(attacker.rawStats[attackStat], dropCount);
+			var damageMultiplier = 0;
+			description.attackBoost = dropCount;
 			damage = damage.map(function(affectedAmount) {
-				if (times || oldAttack !== newAttack) {
-					return affectedAmount + Math.floor(affectedAmount * newAttack / oldAttack);
+				if (times) {
+					var newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
+					var newFinalDamage = getFinalDamage(newBaseDamage, damageMultiplier, typeEffectiveness, applyBurn, stabMod, finalMod);
+					damageMultiplier++;
+					return affectedAmount + newFinalDamage;
 				}
 				return affectedAmount;
 			});
 			if (attacker.ability === "Contrary") {
-				attacker.boosts[attackStat] = Math.min(6, attacker.boosts[attackStat] + move.dropsStats);
+				dropCount = Math.min(6, dropCount + move.dropsStats);
 				description.attackerAbility = attacker.ability;
 			} else {
-				attacker.boosts[attackStat] = Math.max(-6, attacker.boosts[attackStat] - (move.dropsStats * simpleMultiplier));
+				dropCount = Math.max(-6, dropCount - (move.dropsStats * simpleMultiplier));
 				if (attacker.ability === "Simple") {
 					description.attackerAbility = attacker.ability;
 				}
 			}
 			// the Pokémon hits THEN the stat rises / lowers
-			description.attackBoost = attacker.boosts[attackStat];
 			if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
-				attacker.boosts[attackStat] += move.dropsStats * simpleMultiplier;
+				dropCount += move.dropsStats * simpleMultiplier;
 				usedWhiteHerb = true;
 				description.attackerItem = attacker.item;
 			}
-			cumulatedStatDrops = attacker.boosts[attackStat];
 		}
 	} else {
-		attacker.boosts[attackStat] += cumulatedStatDrops;
+		description.attackBoost = attacker.boosts[attackStat];
 	}
 	return {"damage": damage, "description": buildDescription(description)};
 }
@@ -862,6 +865,10 @@ function isGroundedForCalc(pokemon, field) {
 // GameFreak rounds DOWN on .5
 function pokeRound(num) {
 	return (num % 1 > 0.5) ? Math.ceil(num) : Math.floor(num);
+}
+
+function getBaseDamage(level, basePower, attack, defense) {
+	return Math.floor(Math.floor((Math.floor((2 * level) / 5 + 2) * basePower * attack) / defense) / 50 + 2);
 }
 
 function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMod) {
