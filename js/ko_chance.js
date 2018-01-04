@@ -158,7 +158,7 @@
 	var c;
 	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
 	if (move.usedTimes === 1 || move.isZ) {
-		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, defender.maxHP, toxicCounter);
+		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, 1, defender.maxHP, toxicCounter);
 		afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
 		if (c === 1) {
 			return 'guaranteed OHKO' + afterText;
@@ -187,7 +187,7 @@
 	} else {
 		qualifier = 'nearly ';
 		// until someone comes up with a better damage recalculation formula, we'll tell the user it's an estimate
-		c = getKOChance(damage, defender.maxHP - hazards, eot, move.usedTimes, move.usedTimes, defender.maxHP, toxicCounter);
+		c = getKOChance(damage, defender.maxHP - hazards, eot, move.usedTimes || 1, move.usedTimes || 1, defender.maxHP, toxicCounter);
 		if (c === 1) {
 			return 'guaranteed KO in ' + (move.usedTimes === 1 ? " a single turn" : move.usedTimes + " turns") + afterText;
 		} else if (c > 0) {
@@ -234,7 +234,7 @@ function getKOChance(damage, hp, eot, hits, moveHits, maxHP, toxicCounter) {
 	}
 	var sum = 0;
 	for (i = 0; i < n; i++) {
-		var c = getKOChance(damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, maxHP, toxicCounter);
+		var c = getKOChance(damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, moveHits, maxHP, toxicCounter);
 		if (c === 1) {
 			sum += (n - i);
 			break;
