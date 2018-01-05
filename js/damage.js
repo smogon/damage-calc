@@ -5,6 +5,7 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
+	checkStatBoost(p1, p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
 	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
