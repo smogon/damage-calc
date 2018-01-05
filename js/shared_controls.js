@@ -465,7 +465,8 @@ function Pokemon(pokeInfo) {
 				type: defaultDetails.type,
 				category: defaultDetails.category,
 				isCrit: !!defaultDetails.alwaysCrit,
-				hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
+				hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1,
+				usedTimes: 1
 			}));
 		}
 		this.weight = pokemon.w;
