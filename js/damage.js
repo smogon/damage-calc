@@ -841,6 +841,7 @@ function checkStatBoost(p1, p2){
         p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 1);
         p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 1);
     }
+}
 function checkDownload(source, target) {
 	if (source.ability === "Download") {
 		if (target.stats[SD] <= target.stats[DF]) {
