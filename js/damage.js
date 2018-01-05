@@ -826,6 +826,22 @@ function checkIntimidate(source, target) {
 		}
 	}
 }
+function checkStatBoost(p1, p2){
+	if($('#StatBoostL').prop("checked")){
+        p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 1);
+        p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 1);
+        p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 1);
+        p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 1);
+        p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 1);
+    }
+    if($('#StatBoostR').prop("checked")){
+        p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 1);
+        p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 1);
+        p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 1);
+        p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 1);
+        p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 1);
+    }
+}
 function checkDownload(source, target) {
 	if (source.ability === "Download") {
 		if (target.stats[SD] <= target.stats[DF]) {
