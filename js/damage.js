@@ -211,7 +211,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	description.HPEVs = defender.HPEVs + " HP";
 
-	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
+	if (["Seismic Toss","Night Shade"].indexOf(move.name) !== -1) {
 		var lv = attacker.level;
 		if (attacker.ability === "Parental Bond") {
 			lv *= 2;
@@ -222,6 +222,16 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Final Gambit") {
 		var hp = attacker.curHP;
 		return {"damage": [hp], "description": buildDescription(description)};
+	}
+
+	if (move.name === "Guardian of Alola") {
+		var zLostHP = defender.isProtected ? Math.floor(defender.curHP / 4) : Math.floor(defender.curHP * 3 / 4);
+		 return {"damage": [zLostHP], "description": buildDescription(description)};
+	}
+
+	if (move.name === "Nature's Madness") {
+		var lostHP = defender.isProtected ? 0 : Math.floor(defender.curHP / 2);
+		return {"damage": [lostHP], "description": buildDescription(description)};
 	}
 
 	if (move.hits > 1) {
@@ -682,7 +692,6 @@ function getDamageResult(attacker, defender, move, field) {
 	var finalMod = chainMods(finalMods);
 
 	var damage = [];
-	var cumulatedStatDrops = 0;
 	for (var i = 0; i < 16; i++) {
 		damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
 		// is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
@@ -704,7 +713,6 @@ function getDamageResult(attacker, defender, move, field) {
 		for (var times = 0; times < move.usedTimes; times++) {
 			var newAttack = getModifiedStat(attacker.rawStats[attackStat], dropCount);
 			var damageMultiplier = 0;
-			description.attackBoost = dropCount;
 			damage = damage.map(function(affectedAmount) {
 				if (times) {
 					var newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
@@ -730,9 +738,8 @@ function getDamageResult(attacker, defender, move, field) {
 				description.attackerItem = attacker.item;
 			}
 		}
-	} else {
-		description.attackBoost = attacker.boosts[attackStat];
 	}
+	description.attackBoost = attacker.boosts[attackStat];
 	return {"damage": damage, "description": buildDescription(description)};
 }
 
