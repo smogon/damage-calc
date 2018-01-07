@@ -67,19 +67,20 @@ function calculate() {
 			recoveryText = ' (' + minHealthRecovered + ' - ' + maxHealthRecovered + notation + ' recovered)';
 		}
 		var recoilText = '';
-		if (p1.moves[i].hasRecoil) {
-			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * p1.moves[i].recoilPercentage * 1000 / p1.maxHP) / 10 :
-				Math.floor(minDamage * p1.moves[i].recoilPercentage * 48 / p1.maxHP);
-			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * p1.moves[i].recoilPercentage * 1000 / p1.maxHP) / 10 :
-				Math.floor(minDamage * p1.moves[i].recoilPercentage * 48 / p1.maxHP);
-			if (minRecoilDamage > 100  && notation === '%') {
-				minRecoilDamage = Math.floor(p2.maxHP * p1.moves[i].recoilPercentage * 1000 / p1.maxHP) / 10;
-				maxRecoilDamage = Math.floor(p2.maxHP * p1.moves[i].recoilPercentage * 1000 / p1.maxHP) / 10;
-			} else if (notation !== '%' && minRecoilDamage > 48) {
-				minRecoilDamage = Math.floor(p2.maxHP * p1.moves[i].recoilPercentage * 48 / p1.maxHP);
-				maxRecoilDamage = Math.floor(p2.maxHP * p1.moves[i].recoilPercentage * 48 / p1.maxHP);
+		if (typeof p1.moves[i].hasRecoil === 'number') {
+			var minRecoilDamage = notation === '%' ? Math.floor(Math.min(minDamage, p2.maxHP) * p1.moves[i].hasRecoil * 10 / p1.curHP) / 10 :
+				Math.floor(Math.min(minDamage, p2.maxHP) * p1.moves[i].hasRecoil * 0.48 / p1.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(Math.min(maxDamage, p2.maxHP) * p1.moves[i].hasRecoil * 10 / p1.maxHP) / 10 :
+				Math.floor(Math.min(maxDamage, p2.maxHP) * p1.moves[i].hasRecoil * 0.48 / p1.maxHP);
+			if (minDamage > p2.curHP) {
+				minRecoilDamage = notation === '%' ? Math.floor(p2.maxHP * p1.moves[i].hasRecoil * 10 / p1.maxHP) / 10
+				: Math.floor(p2.maxHP * p1.moves[i].hasRecoil * 0.48 / p1.maxHP);
+				maxRecoilDamage = notation === '%' ? Math.floor(p2.maxHP * p1.moves[i].hasRecoil * 10 / p1.maxHP) / 10
+				: Math.floor(p2.maxHP * p1.moves[i].hasRecoil * 0.48 / p1.maxHP);
 			}
 			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		} else if (p1.moves[i].hasRecoil && typeof p1.moves[i].hasRecoil !== 'number') {
+			recoilText = ' (50% recoil damage on miss)';
 		}
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[0][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
@@ -115,19 +116,20 @@ function calculate() {
 			recoveryText = ' (' + minHealthRecovered + ' - ' + maxHealthRecovered + notation + ' recovered)';
 		}
 		var recoilText = '';
-		if (p2.moves[i].hasRecoil) {
-			var minRecoilDamage = notation === '%' ? Math.floor(minDamage * p2.moves[i].recoilPercentage * 1000 / p2.maxHP) / 10 :
-				Math.floor(minDamage * p2.moves[i].recoilPercentage * 48 / p2.maxHP);
-			var maxRecoilDamage = notation === '%' ? Math.floor(maxDamage * p2.moves[i].recoilPercentage * 1000 / p2.maxHP) / 10 :
-				Math.floor(minDamage * p2.moves[i].recoilPercentage * 48 / p2.maxHP);
-			if (minRecoilDamage > 100 && notation === '%') {
-				minRecoilDamage = Math.floor(p1.maxHP * p2.moves[i].recoilPercentage * 1000 / p2.maxHP) / 10;
-				maxRecoilDamage = Math.floor(p1.maxHP * p2.moves[i].recoilPercentage * 1000 / p2.maxHP) / 10;
-			} else if (notation !== '%' && minRecoilDamage > 48) {
-				minRecoilDamge = Math.floor(p1.maxHP * p2.moves[i].recoilPercentage * 48 / p1.maxHP);
-				maxRecoilDamage = Math.floor(p1.maxHP * p2.moves[i].recoilPercentage * 48 / p1.maxHP);
+		if (typeof p2.moves[i].hasRecoil === 'number') {
+			var minRecoilDamage = notation === '%' ? Math.floor(Math.min(minDamage, p1.maxHP) * p2.moves[i].hasRecoil * 10 / p2.curHP) / 10 :
+				Math.floor(Math.min(minDamage, p1.maxHP) * p2.moves[i].hasRecoil * 0.48 / p2.maxHP);
+			var maxRecoilDamage = notation === '%' ? Math.floor(Math.min(maxDamage, p1.maxHP) * p2.moves[i].hasRecoil * 10 / p2.maxHP) / 10 :
+				Math.floor(Math.min(maxDamage, p1.maxHP) * p2.moves[i].hasRecoil * 0.48 / p2.maxHP);
+			if (minDamage > p1.curHP) {
+				minRecoilDamage = notation === '%' ? Math.floor(Math.min(p1.maxHP * p2.moves[i].hasRecoil) * 10 / p2.maxHP) / 10
+				: Math.floor(p1.maxHP * p2.moves[i].recoilPercentage * 48 / p1.maxHP);
+				maxRecoilDamage = notation === '%' ? Math.floor(Math.min(p1.maxHP, p2.moves[i].hasRecoil) * 10 / p2.maxHP) / 10
+				: Math.floor(Math.min(p1.maxHP, p2.moves[i].hasRecoil) * 0.48 / p2.maxHP);
 			}
 			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+		} else if (p2.moves[i].hasRecoil && typeof p2.moves[i].hasRecoil !== 'number') {
+			recoilText = ' (50% recoil damage on miss)';
 		}
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
