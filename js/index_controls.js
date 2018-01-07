@@ -79,8 +79,8 @@ function calculate() {
 				: Math.floor(p2.maxHP * p1.moves[i].hasRecoil * 0.48 / p1.maxHP);
 			}
 			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
-		} else if (p1.moves[i].hasRecoil && typeof p1.moves[i].hasRecoil !== 'number') {
-			recoilText = ' (50% recoil damage on miss)';
+		} else if (p1.moves[i].hasRecoil) {
+			recoilText = p1.moves[i].name === 'Mind Blown' ? ' (50% recoil damage)' : ' (50% recoil damage on miss)';
 		}
 		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[0][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
@@ -128,8 +128,8 @@ function calculate() {
 				: Math.floor(Math.min(p1.maxHP, p2.moves[i].hasRecoil) * 0.48 / p2.maxHP);
 			}
 			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
-		} else if (p2.moves[i].hasRecoil && typeof p2.moves[i].hasRecoil !== 'number') {
-			recoilText = ' (50% recoil damage on miss)';
+		} else if (p2.moves[i].hasRecoil) {
+			recoilText = p2.moves[i].name === 'Mind Blown' ? ' (50% recoil damage)' : ' (50% recoil damage on miss)';
 		}
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
