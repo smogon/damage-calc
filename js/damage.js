@@ -559,7 +559,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if (gen < 7 && (!hitsPhysical && ["Latios","Latias"].indexOf(defender.name) !== -1 && defender.item === "Soul Dew") || defender.item === "Eviolite" || (!hitsPhysical && defender.item === "Assault Vest")) {
+	if (gen < 7 && (!hitsPhysical && ["Latios","Latias"].indexOf(defender.name) !== -1 && defender.item === "Soul Dew") || (defender.item === "Eviolite" && pokedex[defender.name].canEvolve) || (!hitsPhysical && defender.item === "Assault Vest")) {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
 	}
