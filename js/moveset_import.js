@@ -35,13 +35,10 @@ function ExportPokemon(pokeInfo) {
 	for (i = 0; i < 4; i++) {
 		var moveName = pokemon.moves[i].name;
 		if (moveName !== "(No Move)") {
-			movesArray.push(moveName);
+			finalText += "- " + moveName + "\n";
 		}
 	}
-	var movesLength = movesArray.length;
-	for (j = 0; j < movesLength; j++) {
-		finalText += "- " + movesArray[j] + "\n";
-	}
+	finalText = finalText.trim();
 	$("textarea.import-team-text").text(finalText);
 }
 
