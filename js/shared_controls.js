@@ -693,7 +693,7 @@ $(".gen").change(function () {
 	}
 	clearField();
 	$("#importedSets").prop("checked", false);
-	loadDefaultList();
+	loadDefaultLists();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));
@@ -886,7 +886,7 @@ function getTerrainEffects() {
 	}
 }
 
-function loadDefaultList() {
+function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
 			return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
@@ -911,9 +911,13 @@ function loadDefaultList() {
 	});
 }
 
-function loadCustomList() {
+function bothPokemon(selector) {
+	return "#p1 " + selector + ", #p2 " + selector; 
+}
+
+function loadCustomList(id) {
 	var customSetsOptions = getSetOptions(customSets);
-	$("#p1 .set-selector").select2({
+	$("#" + id + " .set-selector").select2({
 			formatResult: function(set){
 				return set.pokemon;
 			},
@@ -941,7 +945,7 @@ $(document).ready(function () {
 	$("#gen7").change();
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
-	loadDefaultList();
+	loadDefaultLists();
 	$(".move-selector").select2({
 		dropdownAutoWidth: true,
 		matcher: function (term, text) {
