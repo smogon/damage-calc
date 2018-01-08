@@ -1,13 +1,70 @@
 function placeBsBtn() {
-	var importBtn = "<button class='bs-btn bs-btn-default'>Import</button>";
+	var importBtn = "<button id='import' class='bs-btn bs-btn-default'>Import</button>";
 	$("#import-1_wrapper").append(importBtn);
-	$(".bs-btn").click(function () {
+
+	$("#import.bs-btn").click(function () {
 		var pokes = document.getElementsByClassName("import-team-text")[0].value;
 		addSets(pokes);
 	});
 
 
 }
+
+function ExportPokemon(pokeInfo) {
+	var pokemon = new Pokemon(pokeInfo);
+	var EV_counter = 0;
+	var finalText = "";
+	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
+	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
+	if (gen > 2) {
+		finalText += "EVs: ";
+		var EVs_Array = [];
+		for (stat in pokemon.evs) {
+			EV_counter += pokemon.evs[stat];
+			if (EV_counter > 510) {
+				break;
+			} else if (pokemon.evs[stat]) {
+				EVs_Array.push(pokemon.evs[stat] + " " + toSmogonStat(stat));
+			}
+		}
+		finalText += serialize(EVs_Array, " / ");
+		finalText += "\n";
+	}
+	var movesArray = [];
+	for (i = 0; i < 4; i++) {
+		var moveName = pokemon.moves[i].name;
+		if (moveName !== "(No Move)") {
+			movesArray.push(moveName);
+		}
+	}
+	var movesLength = movesArray.length;
+	for (j = 0; j < movesLength; j++) {
+		finalText += "- " + movesArray[j] + "\n";
+	}
+	$("textarea.import-team-text").text(finalText);
+}
+
+$("#exportL").click(function() {
+	ExportPokemon($("#p1"));
+});
+
+$("#exportR").click(function() {
+	ExportPokemon($("#p2"));
+});
+
+function serialize(array, separator) {
+	var text = "";
+	for (i = 0; i < array.length; i++) {
+		if (i < array.length - 1) {
+			text += array[i] + separator;
+		} else {
+			text += array[i];
+		}
+	}
+	return text;
+}
+
 function getAbility(row) {
 	ability = row[1] ? row[1].trim() : '';
 	if (ABILITIES_SM.indexOf(ability) != -1) {
