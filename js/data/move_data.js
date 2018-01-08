@@ -180,7 +180,7 @@ var MOVES_RBY = {
 		type: 'Fighting',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 'crash'
 	},
 	'Hydro Pump': {
 		bp: 120,
@@ -219,7 +219,7 @@ var MOVES_RBY = {
 		type: 'Fighting',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 'crash'
 	},
 	'Leech Life': {
 		bp: 20,
@@ -354,6 +354,11 @@ var MOVES_RBY = {
 	'Spore': {
 		bp: 0,
 		type: 'Grass'
+	},
+	'Struggle': {
+		bp: 50,
+		type: 'Normal',
+		hasRecoil: 50
 	},
 	'Submission': {
 		bp: 80,
@@ -805,6 +810,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		makesContact: true,
 		hasSecondaryEffect: true
 	},
+	'Struggle': {type: 'None', hasRecoil: 25},
 	'Sunny Day': {
 		bp: 0,
 		type: 'Fire'
@@ -1792,6 +1798,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		type: 'Rock',
 		category: 'Physical'
 	},
+	'Struggle': {hasRecoil: 'Struggle'},
 	'Sucker Punch': {
 		bp: 80,
 		type: 'Dark',
