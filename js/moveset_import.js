@@ -1,13 +1,67 @@
 function placeBsBtn() {
-	var importBtn = "<button class='bs-btn bs-btn-default'>Import</button>";
+	var importBtn = "<button id='import' class='bs-btn bs-btn-default'>Import</button>";
 	$("#import-1_wrapper").append(importBtn);
-	$(".bs-btn").click(function () {
+
+	$("#import.bs-btn").click(function () {
 		var pokes = document.getElementsByClassName("import-team-text")[0].value;
 		addSets(pokes);
 	});
 
 
 }
+
+function ExportPokemon(pokeInfo) {
+	var pokemon = new Pokemon(pokeInfo);
+	var EV_counter = 0;
+	var finalText = "";
+	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
+	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
+	if (gen > 2) {
+		finalText += "EVs: ";
+		var EVs_Array = [];
+		for (stat in pokemon.evs) {
+			EV_counter += pokemon.evs[stat];
+			if (EV_counter > 510) {
+				break;
+			} else if (pokemon.evs[stat]) {
+				EVs_Array.push(pokemon.evs[stat] + " " + toSmogonStat(stat));
+			}
+		}
+		finalText += serialize(EVs_Array, " / ");
+		finalText += "\n";
+	}
+	var movesArray = [];
+	for (i = 0; i < 4; i++) {
+		var moveName = pokemon.moves[i].name;
+		if (moveName !== "(No Move)") {
+			finalText += "- " + moveName + "\n";
+		}
+	}
+	finalText = finalText.trim();
+	$("textarea.import-team-text").text(finalText);
+}
+
+$("#exportL").click(function() {
+	ExportPokemon($("#p1"));
+});
+
+$("#exportR").click(function() {
+	ExportPokemon($("#p2"));
+});
+
+function serialize(array, separator) {
+	var text = "";
+	for (i = 0; i < array.length; i++) {
+		if (i < array.length - 1) {
+			text += array[i] + separator;
+		} else {
+			text += array[i];
+		}
+	}
+	return text;
+}
+
 function getAbility(row) {
 	ability = row[1] ? row[1].trim() : '';
 	if (ABILITIES_SM.indexOf(ability) != -1) {
@@ -217,7 +271,7 @@ function addSets(pokes) {
 	}
 	if (addedpokes > 0) {
 		alert("Successfully imported " + addedpokes + " set(s)");
-		$("#importedSetsOptions").css("display","inline");
+		$(bothPokemon("#importedSetsOptions")).css("display","inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
@@ -264,19 +318,20 @@ function checkExeptions(poke) {
 
 }
 
-$("#clearSets").click(function () {
+$(bothPokemon("#clearSets")).click(function () {
 	localStorage.removeItem("customsets");
 	alert("Custom Sets successfully cleared. Please refresh the page.");
-	$("#importedSetsOptions").css("display","none");
-	loadDefaultList();
+	$(bothPokemon("#importedSetsOptions")).css("display","none");
+	loadDefaultLists();
 });
 
-$("#importedSets").click(function () {
+$(bothPokemon("#importedSets")).click(function () {
+	var pokeID = $(this).parent().parent().prop("id");
 	var showCustomSets = $(this).prop("checked");
 	if (showCustomSets) {
-		loadCustomList();
+		loadCustomList(pokeID);
 	} else {
-		loadDefaultList();
+		loadDefaultLists();
 	}
 });
 
@@ -287,8 +342,8 @@ $(document).ready(function () {
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
 		updateDex(customSets);		
-		$("#importedSetsOptions").css("display","inline");
+		$(bothPokemon("#importedSetsOptions")).css("display","inline");
 	} else {
-		loadDefaultList();
+		loadDefaultLists();
 	}
 });

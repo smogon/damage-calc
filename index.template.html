@@ -757,13 +757,32 @@
                                 <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                             </div></td>
                         </tr>
+								<tr class="gen-specific g7">
+                            <td><div class="left" title="Has the Pok&eacute;mon boosted all its stats one stage?">
+										  <div hidden id="selectStatBoostInstruction">Has the Pok&eacute;mon boosted all its stats one stage?</div>
+                                <input aria-describedby="selectStatBoostInstruction" class="visually-hidden calc-trigger" type="checkbox" id="StatBoostL" />
+                                <label class="btn btn-xxwide" for="StatBoostL">+1 All Stats</label>
+									 </div></td>
+                            <td><div class="right" title="Has the Pok&eacute;mon boosted all its stats one stage?">
+                                <input aria-describedby="selectStatBoostInstruction" class="visually-hidden calc-trigger" type="checkbox" id="StatBoostR" />
+                                <label class="btn btn-xxwide" for="StatBoostR">+1 All Stats</label>
+						 		  </div></td>
+                  		</tr>
+                        <tr>
+                            <td><div class="left" title="Export the leftmost Pok&eacute;mon set">
+                                <button id="exportL">Export</button>
+                            </div></td>
+                            <td><div class="right" title="Export the rightmost Pok&eacute;mon set">
+                                <button id="exportR">Export</button>
+                            </div></td>
+                        </tr>
                     </tbody>
                 </table>
             </fieldset>
         </div>
         <div aria-label="Import team" role="region">
             <fieldset class="poke-import">
-                <legend align="center">Import Team</legend>
+                <legend align="center">Import / Export</legend>
                 <div id="import-1_wrapper" class="dataTables_wrapper no-footer">
                     <form class="import-team">
                         <textarea class="import-team-text"></textarea>
@@ -777,6 +796,10 @@
         <fieldset class="poke-info" id="p2">
             <legend align="center">Pok&eacute;mon 2</legend>
             <input type="text" class="set-selector calc-trigger" />
+            <span id="importedSetsOptions" style="width:auto; display:none">
+                <input type="checkbox" id="importedSets" /> Only show imported sets <br />
+                <button id="clearSets">Clear Custom Sets</button>
+            </span>
             <div class="info-group">
                 <div>
                     <label>Type</label>

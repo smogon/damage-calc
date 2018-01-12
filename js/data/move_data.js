@@ -94,7 +94,7 @@ var MOVES_RBY = {
 		type: 'Normal',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 25
 	},
 	'Double Team': {
 		bp: 0,
@@ -359,7 +359,7 @@ var MOVES_RBY = {
 		bp: 80,
 		type: 'Fighting',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 25
 	},
 	'Substitute': {
 		bp: 0,
@@ -391,6 +391,13 @@ var MOVES_RBY = {
 		type: 'Normal',
 		category: 'Physical',
 		makesContact: true
+	},
+	'Take Down': {
+		bp: 90,
+		type: 'Normal',
+		category: 'Physical',
+		makesContact: true,
+		hasRecoil: 25
 	},
 	'Thrash': {
 		bp: 90,
@@ -935,6 +942,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		category: 'Physical',
 		makesContact: true
 	},
+	'Double-Edge': {hasRecoil: 33},
 	'Endeavor': {
 		bp: 1,
 		type: 'Normal',
@@ -1222,7 +1230,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		category: 'Physical',
 		makesContact: true,
 		hasSecondaryEffect: true,
-		hasRecoil: true
+		hasRecoil: 33
 	},
 	'Water Pulse': {
 		bp: 60,
@@ -1310,7 +1318,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		type: 'Flying',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 33
 	},
 	'Brine': {
 		bp: 65,
@@ -1461,7 +1469,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		category: 'Physical',
 		makesContact: true,
 		hasSecondaryEffect: true,
-		hasRecoil: true
+		hasRecoil: 33
 	},
 	'Flash Cannon': {
 		bp: 80,
@@ -1526,7 +1534,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		type: 'Rock',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 50
 	},
 	'Heal Order': {
 		bp: 0,
@@ -1839,7 +1847,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		type: 'Grass',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 33
 	},
 	'Wring Out': {
 		bp: 1,
@@ -2076,7 +2084,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		type: 'Normal',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 25
 	},
 	'Heavy Slam': {
 		bp: 1,
@@ -2358,7 +2366,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		type: 'Electric',
 		category: 'Physical',
 		makesContact: true,
-		hasRecoil: true
+		hasRecoil: 25
 	}
 });
 
@@ -2503,7 +2511,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		bp: 140,
 		type: 'Fairy',
 		category: 'Special',
-		hasRecoil: true
+		hasRecoil: 50
 	},
 	'Low Sweep': {bp: 65},
 	'Magma Storm': {bp: 100},
@@ -3100,6 +3108,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		type: 'Fire',
 		category: 'Special',
 		isSpread: true,
+		hasRecoil: true,
 		zp: 200
 	},
 	'Mirror Shot': {zp: 120},
@@ -3415,6 +3424,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	'Swift': {zp: 120},
 	'Synchronoise': {zp: 190},
 	'Tackle': {bp: 40, zp: 100},
+	'Take Down': {zp: 160},
 	'Tail Slap': {zp: 140},
 	'Techno Blast': {zp: 190},
 	'Tectonic Rage': {
