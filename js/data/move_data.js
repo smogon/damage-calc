@@ -3127,7 +3127,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		bp: 1,
 		type: 'Fairy',
 		category: 'Special',
-		zp: 1
+		zp: 100
 	},
 	'Needle Arm': {zp: 120},
 	'Never-Ending Nightmare': {

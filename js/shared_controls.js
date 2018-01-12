@@ -590,9 +590,7 @@ function getZMoveName(moveName, moveType, item) {
 															moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt" :
 																moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika" :
 																	moveName === "Nature\'s Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
-																		moveName === "Nature\'s Madness" && item !== "Tapunium Z" ? "Nature\'s Madness" :
-																			ZMOVES_TYPING[moveType];
-																			// What if we had Nature's Madness and the user checked the Z move option? The calc will be tricked into Twinkle Tackle.
+																		ZMOVES_TYPING[moveType];
 }
 
 function Field() {

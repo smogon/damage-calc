@@ -225,12 +225,12 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if (move.name === "Guardian of Alola") {
-		var zLostHP = defender.isProtected ? Math.floor(defender.curHP / 4) : Math.floor(defender.curHP * 3 / 4);
+		var zLostHP = field.isProtected ? Math.floor(defender.curHP / 4) : Math.floor(defender.curHP * 3 / 4);
 		 return {"damage": [zLostHP], "description": buildDescription(description)};
 	}
 
 	if (move.name === "Nature's Madness") {
-		var lostHP = defender.isProtected ? 0 : Math.floor(defender.curHP / 2);
+		var lostHP = field.isProtected ? 0 : Math.floor(defender.curHP / 2);
 		return {"damage": [lostHP], "description": buildDescription(description)};
 	}
 
@@ -243,6 +243,7 @@ function getDamageResult(attacker, defender, move, field) {
 	////////// BASE POWER //////////
 	////////////////////////////////
 	var basePower;
+
 	switch (move.name) {
 	case "Payback":
 		basePower = turnOrder === "LAST" ? 100 : 50;
