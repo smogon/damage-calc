@@ -386,7 +386,7 @@ $(".forme").change(function () {
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
 	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(altForme.t2 === undefined ? "" : altForme.t2);
+	$(this).parent().siblings().find(".type2").val(altForme.t2 ? altForme.t2 : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 
 	for (var i = 0; i < STATS.length; i++) {
@@ -394,11 +394,11 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[STATS[i]]);
 		baseStat.keyup();
 	}
-
+	var chosenSet = setdex[pokemonName][setName];
 	if (abilities.indexOf(altForme.ab) !== -1) {
 		container.find(".ability").val(altForme.ab);
 	} else {
-		container.find(".ability").val("");
+		container.find(".ability").val(chosenSet.ability);
 	}
 	container.find(".ability").keyup();
 
