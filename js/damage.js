@@ -676,9 +676,11 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
-	if (field.isProtected && move.isZ) {
+	if (field.isProtected && move.isZ && attacker.item.indexOf(" Z") !== -1) {
 		finalMods.push(0x400);
 		description.isProtected = true;
+	} else if (field.isProtected && move.isZ && attacker.item.indexOf(" Z") === -1) {
+		alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal')
 	}
 	var finalMod = chainMods(finalMods);
 
