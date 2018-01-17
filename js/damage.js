@@ -5,6 +5,8 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
+	checkSeedBoost(p1, field);
+	checkSeedBoost(p2, field);
 	checkStatBoost(p1, p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
@@ -854,6 +856,22 @@ function checkDownload(source, target) {
 		}
 	}
 }
+
+function checkSeedBoost(holder, field) {
+	var mappedField = field.getSide();
+	if (mappedField.terrain && holder.item.indexOf("Seed") !== -1) {
+		var terrainSeed = holder.item.substring(0, holder.item.indexOf(" "));
+		console.log(terrainSeed);
+		if (terrainSeed === mappedField.terrain) {
+			if (terrainSeed === "Grassy" || terrainSeed === "Electric") {
+				holder.boosts[DF] = holder.ability === "Contrary" ? Math.max(-6, holder.boosts[DF] - 1) : Math.min(6, holder.boosts[DF] + 1);
+			} else {
+				holder.boosts[SD] = holder.ability === "Contrary" ? Math.max(-6, holder.boosts[SD] - 1) : Math.min(6, holder.boosts[SD] + 1);
+			}
+		}
+	}
+}
+
 function checkInfiltrator(attacker, affectedSide) {
 	if (attacker.ability === "Infiltrator") {
 		affectedSide.isReflect = false;
