@@ -861,7 +861,6 @@ function checkSeedBoost(holder, field) {
 	var mappedField = field.getSide();
 	if (mappedField.terrain && holder.item.indexOf("Seed") !== -1) {
 		var terrainSeed = holder.item.substring(0, holder.item.indexOf(" "));
-		console.log(terrainSeed);
 		if (terrainSeed === mappedField.terrain) {
 			if (terrainSeed === "Grassy" || terrainSeed === "Electric") {
 				holder.boosts[DF] = holder.ability === "Contrary" ? Math.max(-6, holder.boosts[DF] - 1) : Math.min(6, holder.boosts[DF] + 1);
