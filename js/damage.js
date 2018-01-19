@@ -331,7 +331,7 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
 		description.weather = field.weather;
-	} else if ((attacker.ability === "Reckless" && move.hasRecoil) ||
+	} else if ((attacker.ability === "Reckless" && (typeof move.hasRecoil === 'number' || move.hasRecoil === 'crash')) ||
             (attacker.ability === "Iron Fist" && move.isPunch)) {
 		bpMods.push(0x1333);
 		description.attackerAbility = attacker.ability;
