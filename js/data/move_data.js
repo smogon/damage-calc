@@ -2960,6 +2960,12 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	'Grass Pledge': {zp: 160},
 	'Gunk Shot': {zp: 190},
 	'Gust': {zp: 100},
+	'Guardian of Alola' : {
+		bp: 1,
+		type: 'Fairy',
+		category: 'Special',
+		isZ: true
+	},
 	'Gyro Ball': {zp: 160},
 	'Hammer Arm': {zp: 180},
 	'Headbutt': {zp: 140},
@@ -3133,6 +3139,12 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	'Mystical Fire': {bp: 75, zp: 140},
 	'Natural Gift': {zp: 160},
+	'Nature\'s Madness' : {
+		bp: 1,
+		type: 'Fairy',
+		category: 'Special',
+		zp: 100
+	},
 	'Needle Arm': {zp: 120},
 	'Never-Ending Nightmare': {
 		bp: 1,
