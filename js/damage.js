@@ -5,6 +5,8 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkForecast(p2, field.getWeather());
 	checkKlutz(p1);
 	checkKlutz(p2);
+	checkSeedBoost(p1, field);
+	checkSeedBoost(p2, field);
 	checkStatBoost(p1, p2);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
@@ -615,6 +617,9 @@ function getDamageResult(attacker, defender, move, field) {
 			baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 			description.terrain = field.terrain;
 		}
+	}if (hasTerrainSeed(defender) && field.terrain === defender.item.substring(0, defender.item.indexOf(" ")) && seedBoostedStat[defender.item] === defenseStat) {
+		// Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome (like Grassy Seed when being hit by a special move)
+		description.defenderItem = defender.item;
 	}
 	if (isCritical) {
 		baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
@@ -862,6 +867,25 @@ function checkDownload(source, target) {
 		}
 	}
 }
+
+function checkSeedBoost(holder, field) {
+	var mappedField = field.getSide();
+	if (mappedField.terrain && holder.item.indexOf("Seed") !== -1) {
+		var terrainSeed = holder.item.substring(0, holder.item.indexOf(" "));
+		if (terrainSeed === mappedField.terrain) {
+			if (terrainSeed === "Grassy" || terrainSeed === "Electric") {
+				holder.boosts[DF] = holder.ability === "Contrary" ? Math.max(-6, holder.boosts[DF] - 1) : Math.min(6, holder.boosts[DF] + 1);
+			} else {
+				holder.boosts[SD] = holder.ability === "Contrary" ? Math.max(-6, holder.boosts[SD] - 1) : Math.min(6, holder.boosts[SD] + 1);
+			}
+		}
+	}
+}
+
+function hasTerrainSeed(pokemon) {
+	return ["Electric Seed", "Misty Seed", "Grassy Seed", "Psychic Seed"].indexOf(pokemon.item) !== -1;
+}
+
 function checkInfiltrator(attacker, affectedSide) {
 	if (attacker.ability === "Infiltrator") {
 		affectedSide.isReflect = false;
