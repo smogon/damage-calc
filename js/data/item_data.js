@@ -190,15 +190,13 @@ var ITEMS_BW = ITEMS_DPP.concat([
 	'Water Gem'
 ]);
 
-var ITEMS_XY = ITEMS_BW.concat([
-	'Absolite',
+var megaGems = ['Absolite',
 	'Abomasite',
 	'Aerodactylite',
 	'Aggronite',
 	'Alakazite',
 	'Altarite',
 	'Ampharosite',
-	'Assault Vest',
 	'Audinite',
 	'Banettite',
 	'Beedrillite',
@@ -208,7 +206,6 @@ var ITEMS_XY = ITEMS_BW.concat([
 	'Charizardite X',
 	'Charizardite Y',
 	'Diancite',
-	'Fairy Gem',
 	'Galladite',
 	'Garchompite',
 	'Gardevoirite',
@@ -218,13 +215,11 @@ var ITEMS_XY = ITEMS_BW.concat([
 	'Heracrossite',
 	'Houndoomite',
 	'Kangaskhanite',
-	'Kee Berry',
 	'Latiasite',
 	'Latiosite',
 	'Lopunnite',
 	'Lucarionite',
 	'Manectite',
-	'Maranga Berry',
 	'Mawilite',
 	'Medichamite',
 	'Metagrossite',
@@ -232,11 +227,7 @@ var ITEMS_XY = ITEMS_BW.concat([
 	'Mewtwonite Y',
 	'Pidgeotite',
 	'Pinsirite',
-	'Pixie Plate',
-	'Power Herb',
-	'Roseli Berry',
 	'Sablenite',
-	'Safety Goggles',
 	'Salamencite',
 	'Sceptilite',
 	'Scizorite',
@@ -245,8 +236,19 @@ var ITEMS_XY = ITEMS_BW.concat([
 	'Steelixite',
 	'Swampertite',
 	'Tyranitarite',
-	'Venusaurite'
-]);
+	'Venusaurite'];
+
+var XY_items = megaStones.concat(['Assault Vest',
+	'Safety Googles',
+	'Fairy Gem',
+	'Kee Berry',
+	'Maranga Berry',
+	'Pixie Plate',
+	'Power Herb',
+	'Roseli Berry',
+	'Safety Googles']).sort();
+
+var ITEMS_XY = ITEMS_BW.concat(XY_items);
 
 var ITEMS_SM = ITEMS_XY.concat([
 	'Adrenaline Orb',

@@ -160,7 +160,7 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
             (defender.ability === "RKS System" && defender.item.indexOf("Memory") !== -1) ||
-            (defender.item.indexOf(" Z") !== -1));
+            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && defender.name.indexOf("-Mega") !== -1 && defender.name !== "Rayquaza-Mega"));
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
 		typeEffectiveness = 1;
@@ -685,7 +685,6 @@ function getDamageResult(attacker, defender, move, field) {
 	var finalMod = chainMods(finalMods);
 
 	var damage = [];
-	var cumulatedStatDrops = 0;
 	for (var i = 0; i < 16; i++) {
 		damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
 		// is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
@@ -879,6 +878,10 @@ function isGroundedForCalc(pokemon, field) {
         pokemon.ability !== "Levitate" &&
         pokemon.item !== "Air Balloon"
 	);
+}
+
+function hasMegaStone(pokemon) {
+	return megaStones.indexOf(pokemon.item) !== -1;
 }
 
 // GameFreak rounds DOWN on .5
