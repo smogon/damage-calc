@@ -606,6 +606,9 @@ function getDamageResult(attacker, defender, move, field) {
 			baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 			description.terrain = field.terrain;
 		}
+	}if (hasTerrainSeed(defender) && field.terrain === defender.item.substring(0, defender.item.indexOf(" ")) && seedBoostedStat[defender.item] === defenseStat) {
+		// Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome (like Grassy Seed when being hit by a special move)
+		description.defenderItem = defender.item;
 	}
 	if (isCritical) {
 		baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
@@ -869,6 +872,10 @@ function checkSeedBoost(holder, field) {
 			}
 		}
 	}
+}
+
+function hasTerrainSeed(pokemon) {
+	return ["Electric Seed", "Misty Seed", "Grassy Seed", "Psychic Seed"].indexOf(pokemon.item) !== -1;
 }
 
 function checkInfiltrator(attacker, affectedSide) {

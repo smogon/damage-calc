@@ -471,3 +471,10 @@ function getMultiAttack(item) {
 	}
 	return '';
 }
+
+var seedBoostedStat = {
+	'Electric Seed': DF,
+	'Grassy Seed': DF,
+	'Misty Seed': SD,
+	'Psychic Seed': SD
+};
