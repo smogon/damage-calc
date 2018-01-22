@@ -190,7 +190,7 @@ var ITEMS_BW = ITEMS_DPP.concat([
 	'Water Gem'
 ]);
 
-var megaGems = ['Absolite',
+var megaStones = ['Absolite',
 	'Abomasite',
 	'Aerodactylite',
 	'Aggronite',
