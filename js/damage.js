@@ -162,8 +162,8 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
             (defender.ability === "RKS System" && defender.item.indexOf("Memory") !== -1) ||
-            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && defender.name.indexOf(defender.item.substring(0, defender.item.indexOf("ite"))) !== -1));
-            // The last case only applies when holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
+            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && megaStones[defender.item].indexOf(defender.name) !== -1));
+            // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
 		typeEffectiveness = 1;
@@ -915,7 +915,7 @@ function isGroundedForCalc(pokemon, field) {
 }
 
 function hasMegaStone(pokemon) {
-	return megaStones.indexOf(pokemon.item) !== -1;
+	return mega_Stones.indexOf(pokemon.item) !== -1;
 }
 
 // GameFreak rounds DOWN on .5
