@@ -52,7 +52,8 @@ var MOVES_RBY = {
 	},
 	'Bubble Beam': {
 		bp: 65,
-		type: 'Water'
+		type: 'Water',
+		category: 'Special'
 	},
 	'Clamp': {
 		bp: 35,
@@ -453,6 +454,11 @@ var MOVES_RBY = {
 		type: 'Water',
 		category: 'Physical',
 		makesContact: true
+	},
+	'Water Gun': {
+		bp: 40,
+		type: 'Water',
+		category: 'Special'
 	},
 	'Wing Attack': {
 		bp: 35,
@@ -2415,6 +2421,11 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		category: 'Physical',
 		hasSecondaryEffect: true,
 		isSpread: true
+	},
+	'Disarming Voice': {
+		bp: 40,
+		type: 'Fairy',
+		isSound: true
 	},
 	'Draco Meteor': {bp: 130},
 	'Dragon Ascent': {

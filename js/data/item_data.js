@@ -190,16 +190,65 @@ var ITEMS_BW = ITEMS_DPP.concat([
 	'Water Gem'
 ]);
 
-var ITEMS_XY = ITEMS_BW.concat([
-	'Assault Vest',
+var megaStones = ['Absolite',
+	'Abomasite',
+	'Aerodactylite',
+	'Aggronite',
+	'Alakazite',
+	'Altarite',
+	'Ampharosite',
+	'Audinite',
+	'Banettite',
+	'Beedrillite',
+	'Blastoisinite',
+	'Blazikenite',
+	'Cameruptite',
+	'Charizardite X',
+	'Charizardite Y',
+	'Diancite',
+	'Galladite',
+	'Garchompite',
+	'Gardevoirite',
+	'Gengarite',
+	'Glalitite',
+	'Gyaradosite',
+	'Heracrossite',
+	'Houndoomite',
+	'Kangaskhanite',
+	'Latiasite',
+	'Latiosite',
+	'Lopunnite',
+	'Lucarionite',
+	'Manectite',
+	'Mawilite',
+	'Medichamite',
+	'Metagrossite',
+	'Mewtwonite X',
+	'Mewtwonite Y',
+	'Pidgeotite',
+	'Pinsirite',
+	'Sablenite',
+	'Salamencite',
+	'Sceptilite',
+	'Scizorite',
+	'Sharpedonite',
+	'Slowbronite',
+	'Steelixite',
+	'Swampertite',
+	'Tyranitarite',
+	'Venusaurite'];
+
+var XY_items = megaStones.concat(['Assault Vest',
+	'Safety Googles',
 	'Fairy Gem',
 	'Kee Berry',
 	'Maranga Berry',
 	'Pixie Plate',
 	'Power Herb',
 	'Roseli Berry',
-	'Safety Goggles'
-]);
+	'Safety Googles']).sort();
+
+var ITEMS_XY = ITEMS_BW.concat(XY_items);
 
 var ITEMS_SM = ITEMS_XY.concat([
 	'Adrenaline Orb',
