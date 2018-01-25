@@ -162,8 +162,8 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
             (defender.ability === "RKS System" && defender.item.indexOf("Memory") !== -1) ||
-            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && defender.name.indexOf(defender.item.substring(0, defender.item.indexOf("ite"))) !== -1));
-            // The last case only applies when holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
+            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && megaStones[defender.item].indexOf(defender.name) !== -1));
+            // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
 		typeEffectiveness = 1;
@@ -236,6 +236,15 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Nature's Madness") {
 		var lostHP = field.isProtected ? 0 : Math.floor(defender.curHP / 2);
 		return {"damage": [lostHP], "description": buildDescription(description)};
+	}
+
+	if (move.name === "Spectral Thief") {
+		for (stat in defender.boosts) {
+			if (defender.boosts[stat] > 0) {
+				attacker.boosts[stat] += attacker.ability === "Contrary" ? - defender.boosts[stat] : defender.boosts[stat];
+				attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat], attacker.boosts[stat]);
+			}
+		}
 	}
 
 	if (move.hits > 1) {
@@ -618,7 +627,8 @@ function getDamageResult(attacker, defender, move, field) {
 			baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 			description.terrain = field.terrain;
 		}
-	}if (hasTerrainSeed(defender) && field.terrain === defender.item.substring(0, defender.item.indexOf(" ")) && seedBoostedStat[defender.item] === defenseStat) {
+	}
+	if (hasTerrainSeed(defender) && field.terrain === defender.item.substring(0, defender.item.indexOf(" ")) && seedBoostedStat[defender.item] === defenseStat) {
 		// Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome (like Grassy Seed when being hit by a special move)
 		description.defenderItem = defender.item;
 	}
@@ -697,7 +707,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0x400);
 		description.isProtected = true;
 	} else if (field.isProtected && move.isZ && attacker.item.indexOf(" Z") === -1) {
-		alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal')
+		alert('Although only possible while hacking, Z-Moves fully damage through Protect without a Z-Crystal')
 	}
 	var finalMod = chainMods(finalMods);
 
@@ -845,18 +855,14 @@ function checkIntimidate(source, target) {
 }
 function checkStatBoost(p1, p2){
 	if($('#StatBoostL').prop("checked")){
-        p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 1);
-        p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 1);
-        p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 1);
-        p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 1);
-        p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 1);
+		for (stat in p1.boosts) {
+			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
+		}
     }
     if($('#StatBoostR').prop("checked")){
-        p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 1);
-        p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 1);
-        p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 1);
-        p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 1);
-        p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 1);
+        for (stat in p2.boosts) {
+			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
+		}
     }
 }
 function checkDownload(source, target) {
@@ -915,7 +921,7 @@ function isGroundedForCalc(pokemon, field) {
 }
 
 function hasMegaStone(pokemon) {
-	return megaStones.indexOf(pokemon.item) !== -1;
+	return mega_Stones.indexOf(pokemon.item) !== -1;
 }
 
 // GameFreak rounds DOWN on .5
