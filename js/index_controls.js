@@ -58,12 +58,12 @@ function calculate() {
 			var maxHealthRecovered = notation === '%' ? Math.floor(maxDamage * p1.moves[i].percentHealed * 1000 / p1.maxHP) /
                 10 : Math.floor(maxDamage * p1.moves[i].percentHealed * 48 / p1.maxHP);
 			if (minHealthRecovered > 100 && notation === '%') {
-					minHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 1000 / p1.maxHP) / 10;
-					maxHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 1000 / p1.maxHP) / 10;
-				} else if (notation !== '%' && minHealthRecovered > 48) {
-					minHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 48 / p1.maxHP);
-					maxHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 48 / p1.maxHP);
-				}
+				minHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 1000 / p1.maxHP) / 10;
+				maxHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 1000 / p1.maxHP) / 10;
+			} else if (notation !== '%' && minHealthRecovered > 48) {
+				minHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 48 / p1.maxHP);
+				maxHealthRecovered = Math.floor(p2.maxHP * p1.moves[i].percentHealed * 48 / p1.maxHP);
+			}
 			recoveryText = ' (' + minHealthRecovered + ' - ' + maxHealthRecovered + notation + ' recovered)';
 		}
 		var recoilText = '';
@@ -175,16 +175,18 @@ function calculate() {
 		} else if (p2.moves[i].hasRecoil) {
 			recoilText = ' (50% recoil damage)';
 		}
+		var bestMove;
 		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
 		$(resultLocations[1][i].damage).text(minDisplay + " - " + maxDisplay + notation + recoveryText + recoilText);
 		if (fastestSide === "tie") {
-			if (maxDamage > highestDamage) {
-				highestDamage = maxDamage;
-				bestResult = $(resultLocations[0][i].move);
-			}
-		}
-		else {
-			var bestMove = battling[fastestSide].maxDamages[0].moveOrder;
+			battling.sort(function() {
+				return 0.5 - Math.random();
+			});
+			bestMove = battling[0].maxDamages[0].moveOrder;
+			var chosenPokemon = battling[0] === p1 ? "0" : "1";
+			bestResult = $(resultLocations[chosenPokemon][bestMove].move);
+		} else {
+			bestMove = battling[fastestSide].maxDamages[0].moveOrder;
 			bestResult = $(resultLocations[fastestSide][bestMove].move);
 		}
 	}
@@ -199,7 +201,7 @@ function calculate() {
 	$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
 }
 
-$(".result-move").change(function () {
+$(".result-move").change(function() {
 	if (damageResults) {
 		var result = findDamageResult($(this));
 		if (result) {
