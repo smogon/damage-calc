@@ -162,8 +162,8 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
             (defender.ability === "RKS System" && defender.item.indexOf("Memory") !== -1) ||
-            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && defender.name.indexOf(defender.item.substring(0, defender.item.indexOf("ite"))) !== -1));
-            // The last case only applies when holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
+            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && megaStones[defender.item].indexOf(defender.name) !== -1));
+            // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
 		typeEffectiveness = 1;
@@ -236,6 +236,15 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Nature's Madness") {
 		var lostHP = field.isProtected ? 0 : Math.floor(defender.curHP / 2);
 		return {"damage": [lostHP], "description": buildDescription(description)};
+	}
+
+	if (move.name === "Spectral Thief") {
+		for (stat in defender.boosts) {
+			if (defender.boosts[stat] > 0) {
+				attacker.boosts[stat] += attacker.ability === "Contrary" ? - defender.boosts[stat] : defender.boosts[stat];
+				attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat], attacker.boosts[stat]);
+			}
+		}
 	}
 
 	if (move.hits > 1) {
@@ -693,7 +702,7 @@ function getDamageResult(attacker, defender, move, field) {
             attacker.ability !== "Unnerve") {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
-	}
+  }
 	if (field.isProtected && move.isZ) {
 		if (attacker.item.indexOf(" Z") !== -1) {
 			finalMods.push(0x400);
@@ -857,16 +866,16 @@ function checkIntimidate(source, target) {
 }
 
 function checkStatBoost(p1, p2){
-	if ($('#StatBoostL').prop("checked")) {
-		for (stat in p1.boosts) {
-			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
-		}
+  if ($('#StatBoostL').prop("checked")) {
+    for (stat in p1.boosts) {
+      p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
     }
-    if ($('#StatBoostR').prop("checked")) {
-        for (stat in p2.boosts) {
-			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
+  }
+  if ($('#StatBoostR').prop("checked")) {
+    for (stat in p2.boosts) {
+      p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
 		}
-    }
+  }
 }
 
 function checkDownload(source, target) {
@@ -924,7 +933,7 @@ function isGroundedForCalc(pokemon, field) {
 }
 
 function hasMegaStone(pokemon) {
-	return megaStones.indexOf(pokemon.item) !== -1;
+	return mega_Stones.indexOf(pokemon.item) !== -1;
 }
 
 // GameFreak rounds DOWN on .5
