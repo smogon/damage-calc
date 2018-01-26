@@ -543,6 +543,9 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}
+	this.hasType = function(type) {
+		return this.type1 === type || this.type2 === type;
+	};
 }
 
 function getMoveDetails(moveInfo, item) {
