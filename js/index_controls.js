@@ -245,7 +245,7 @@ $(".gen").change(function () {
 });
 
 $(".mode").change(function () {
-	window.location.replace("honkalculate.html?mode=" + $(this).attr("id"));
+	window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));
 });
 
 $(".notation").change(function () {

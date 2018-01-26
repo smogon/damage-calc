@@ -10,11 +10,11 @@ $.fn.DataTable.ColVis.prototype._fnDomColumnButton = function (i) {
 
 	return $(
 		'<li ' + (dt.bJUI ? 'class="ui-button ui-state-default"' : '') + '>' +
-            '<label>' +
-            '<input type="checkbox" />' +
-            '<span>' + title + '</span>' +
-            '</label>' +
-            '</li>'
+		'<label>' +
+		'<input type="checkbox" />' +
+		'<span>' + title + '</span>' +
+		'</label>' +
+		'</li>'
 	)
 		.click(function (e) {
 			var showHide = !$('input', this).is(":checked");
@@ -23,8 +23,8 @@ $.fn.DataTable.ColVis.prototype._fnDomColumnButton = function (i) {
 			}
 
 			/* Need to consider the case where the initialiser created more than one table - change the
-             * API index that DataTables is using
-             */
+			 * API index that DataTables is using
+			 */
 			var oldIndex = $.fn.dataTableExt.iApiIndex;
 			$.fn.dataTableExt.iApiIndex = that._fnDataTablesApiIndex();
 
@@ -234,9 +234,9 @@ function placeBsBtn() {
 
 $(".mode").change(function () {
 	if ($("#one-vs-one").prop("checked")) {
-		window.location.replace("index.html");
+		window.location.replace('index' + linkExtension);
 	} else {
-		window.location.replace("honkalculate.html?mode=" + $(this).attr("id"));
+		window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));
 	}
 });
 
@@ -295,7 +295,12 @@ $(".set-selector").change(function (e) {
 var mode, dtHeight, dtWidth;
 $(document).ready(function () {
 	var url = window.location.href;
-	mode = url.substring(url.indexOf('=') + 1, url.length);
+	var equalsPos = (url.indexOf('='));
+	if (equalsPos < 0) {
+		mode = "one-vs-all";
+	} else {
+		mode = url.substring(equalsPos + 1, url.length);
+	}
 	$("#" + mode).prop("checked", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
 	$("#holder-2").show();
