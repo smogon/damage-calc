@@ -808,7 +808,9 @@ function getSetOptions(sets) {
 					pokemon: pokeName,
 					set: setName,
 					text: pokeName + " (" + setName + ")",
-					id: pokeName + " (" + setName + ")"
+					id: pokeName + " (" + setName + ")",
+					isCustom: setdex[pokeName][setName].isCustomSet,
+					nickname: setdex[pokeName][setName].nickname || "" 
 				});
 			}
 		}
@@ -960,13 +962,13 @@ function loadCustomList(id) {
 	var customSetsOptions = getSetOptions(customSets);
 	$("#" + id + " .set-selector").select2({
 			formatResult: function(set){
-				return set.pokemon;
+				return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
 			},
 			query: function(query){
 				var pageSize = 20;
 				var results = _.filter(getSetOptions(), function(option){
-					if (option.set === "Custom Set") {
-						return option.pokemon;
+					if (option.isCustom) {
+						return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
 					}
 				});
 				query.callback({
@@ -996,6 +998,5 @@ $(document).ready(function () {
 	});
 	$(".set-selector").val(getSetOptions()[gen < 3 ? 3 : 1].id);
 	$(".set-selector").change();
-
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 });

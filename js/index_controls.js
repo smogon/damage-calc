@@ -44,7 +44,7 @@ function calculate() {
 			maxDamage : maxDamage
 		});
 		p1.maxDamages.sort(function(firstMove, secondMove){
-			return firstMove.maxDamage - secondMove.maxDamage;
+			return secondMove.maxDamage - firstMove.maxDamage;
 		});
 		minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p2.maxHP) / 10 : Math.floor(minDamage * 48 / p2.maxHP);
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p2.maxHP) / 10 : Math.floor(maxDamage * 48 / p2.maxHP);
@@ -116,7 +116,7 @@ function calculate() {
 			maxDamage : maxDamage
 		});
 		p2.maxDamages.sort(function(firstMove, secondMove){
-			return firstMove.maxDamage - secondMove.maxDamage;
+			return secondMove.maxDamage - firstMove.maxDamage;
 		});
 		minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p1.maxHP) / 10 : Math.floor(minDamage * 48 / p1.maxHP);
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * 48 / p1.maxHP);

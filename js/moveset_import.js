@@ -200,6 +200,7 @@ function addToDex(poke) {
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;
+	dexObject.isCustomSet = poke.isCustomSet ? true : false;
 	if (localStorage.customsets) {
 		customsets = JSON.parse(localStorage.customsets);
 	} else {
@@ -209,7 +210,7 @@ function addToDex(poke) {
 		customsets[poke.name] = {};
 	}
 	customsets[poke.name][poke.nameProp] = dexObject;
-	if (poke.name == "Aegislash-Blade") {
+	if (poke.name === "Aegislash-Blade") {
 		if (!customsets["Aegislash-Shield"]) {
 			customsets["Aegislash-Shield"] = {};
 		}
@@ -253,19 +254,17 @@ function addSets(pokes) {
 				currentPoke = POKEDEX_SM[currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
-				if (j === 1) {
-					currentPoke.nameProp = currentRow[j - 1].trim();
-
+				if (j === 1 && currentRow[0].trim()) {
+					currentPoke.nameProp = currentRow[0].trim();
 				} else {
 					currentPoke.nameProp = "Custom Set";
-
 				}
+				currentPoke.isCustomSet = true;
 				currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
 				addedpokes++;
-
 			}
 		}
 	}
