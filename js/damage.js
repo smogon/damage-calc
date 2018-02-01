@@ -652,7 +652,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var applyBurn = (attacker.status === "Burned" && move.category === "Physical" && attacker.ability !== "Guts" && !move.ignoresBurn);
 	description.isBurned = applyBurn;
 	var finalMods = [];
-	if (field.isReflect && move.category === "Physical" && !isCritical) {
+	if (field.isReflect && move.category === "Physical" && !isCritical && !field.isAuroraVeil) { //doesn't stack with Aurora Veil
 		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isReflect = true;
 	} else if (field.isLightScreen && move.category === "Special" && !isCritical) {
@@ -679,7 +679,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0xC00);
 		description.isFriendGuard = true;
 	}
-	if (field.isAuroraVeil && !isCritical) { //doesn't protect from critical hits
+	if (field.isAuroraVeil && !isCritical && !field.isReflect) { //doesn't protect from critical hits and doesn't stack with Reflect
 		finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800); // 0.5x damage from physical and special attacks in singles, 0.66x damage in Doubles
 		description.isAuroraVeil = true;
 	}
