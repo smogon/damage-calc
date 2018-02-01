@@ -71,10 +71,11 @@
 			eotText.push('hail damage');
 		}
 	}
-	if (defender.item === 'Leftovers') {
+	var keepsItem = move.name === "Knock Off" && defender.ability !== 'Sticky Hold' ? false : true;
+	if (defender.item === 'Leftovers' && keepsItem) {
 		eot += Math.floor(defender.maxHP / 16);
 		eotText.push('Leftovers recovery');
-	} else if (defender.item === 'Black Sludge') {
+	} else if (defender.item === 'Black Sludge' && keepsItem) {
 		if (defender.type1 === 'Poison' || defender.type2 === 'Poison') {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Black Sludge recovery');
