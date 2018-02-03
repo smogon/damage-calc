@@ -2525,8 +2525,6 @@ var SETDEX_BW = {
 		"RU Mixed Attacker": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Rash", "ability": "Early Bird", "item": "Life Orb", "moves": ["Leaf Storm", "Sucker Punch", "Hidden Power Fire", "Focus Blast"]},
 		"UU Swords Dance": {"level": 100, "evs": {"sd": 56, "df": 56, "at": 252, "hp": 96, "sp": 44}, "nature": "Adamant", "ability": "Early Bird", "item": "Life Orb", "moves": ["Swords Dance", "Seed Bomb", "Sucker Punch", "Nature Power"]},
 		"UU Nasty Plot": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Nasty Plot", "Giga Drain", "Dark Pulse", "Hidden Power Fire"]},
-		"OU Special Sweeper": {"level": 100, "evs": {"hp": 76, "sp": 180, "sa": 252}, "nature": "Naive", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Growth", "Giga Drain", "Dark Pulse", "Low Kick"]},
-		"OU All-Out Mixed Offense": {"level": 100, "evs": {"at": 76, "sp": 180, "sa": 252}, "nature": "Naive", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Leaf Storm", "Sucker Punch", "Low Kick", "Hidden Power Ice"]},
 		"Uber Special Sweeper": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Nasty Plot", "Grass Knot", "Dark Pulse", "Focus Blast"]},
 	},
 	"Shinx": {
@@ -3079,6 +3077,7 @@ var SETDEX_BW = {
 	"Vullaby": {
 		"LC Nasty Plot": {"level": 5, "evs": {"sd": 76, "sp": 196, "sa": 236}, "nature": "Timid", "ability": "Weak Armor", "item": "Eviolite", "moves": ["Nasty Plot", "Air Slash", "Dark Pulse", "Roost"]},
 		"LC Bulky Attacker": {"level": 5, "evs": {"sd": 236, "df": 76, "hp": 116, "sa": 76}, "nature": "Bold", "ability": "Overcoat", "item": "Eviolite", "moves": ["Air Slash", "Dark Pulse", "Roost", "Toxic"]},
+		"LC Whirlwind Physical Phazer": {"level": 5, "evs": {"sd": 156, "df": 116, "at": 76, "hp": 116}, "nature": "Careful", "ability": "Overcoat", "item": "Eviolite", "moves": ["Whirlwind", "Brave Bird", "Roost", "Knock Off"]},
 	},
 	"Wailmer": {
 		"LC Tank": {"level": 5, "evs": {"sd": 236, "df": 236, "hp": 36}, "nature": "Bold", "ability": "Pressure", "item": "Eviolite", "moves": ["Rest", "Sleep Talk", "Roar", "Scald"]},
