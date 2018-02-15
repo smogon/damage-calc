@@ -67,6 +67,39 @@ function getDamageResult(attacker, defender, move, field) {
 		"defenderName": defender.name
 	};
 
+	if (move.name === "Metronome") {
+		var allowedMoves = [];
+		var moveList = Object.keys(moves);
+		moveList.splice(moveList.indexOf("(No Move)"), 1);
+		var exceptions = getMetronomeExceptions();
+		var allowedMoves = moveList.filter(function(individualMove) {
+			var allow_condition = exceptions.indexOf(individualMove) === -1 &&
+			(gen === 7 ? (!moves[individualMove].isZ && !moves[individualMove].isMultiHit) : true) &&
+			moves[individualMove].category;
+			// "Pure" Z-moves cannot be invoked by Metronome, as well as multi-hit moves (starting from Gen 7)
+			// Although status moves can be called in-game, there is no use to calculate a move whose damage is nil,
+			// especially when randomly called
+			if (allow_condition) {
+				return individualMove;
+			}
+		});
+
+		if (allowedMoves.length) {
+			allowedMoves.sort(function() { return 0.5 - Math.random(); });
+			var baseMoveName = allowedMoves[0];
+			move = moves[baseMoveName];
+			move.name = baseMoveName;
+			if (attacker.item === "Normalium Z" && move.category) {
+				move = convertToZMove(move);
+				baseMoveName = ZMOVES_TYPING[move.type];
+			}
+			description.metronome = "(" + baseMoveName + " called)";
+		} else {
+			// Shouldn't happen, but that's a fallback option anyways
+			return {"damage": [0], "description": buildDescription(description)};
+		}
+	}
+
 	if (move.bp === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -953,4 +986,40 @@ function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMo
 		damageAmount = Math.floor(damageAmount / 2);
 	}
 	return pokeRound(Math.max(1, damageAmount * finalMod / 0x1000));
+}
+
+function getMetronomeExceptions() {
+	var gen1_banList = ["Struggle"];
+	var gen2_banlist = gen1_banList.concat(["Counter", "Destiny Bond", "Detect", "Endure", "Mimic", "Mirror Coat", "Protect", "Sketch", "Sleep Talk", "Thief"]);
+	var gen3_banlist = gen2_banlist.concat(["Covet", "Focus Punch", "Follow Me", "Helping Hand", "Snatch", "Trick"]);
+	var gen4_banlist = gen3_banlist.concat(["Assist", "Chatter", "Copycat", "Feint", "Me First", "Mirror Move", "Switcheroo"]);
+	var gen5_banlist = gen4_banlist.concat(["After You", "Bestow", "Freeze Shock", "Ice Burn", "Nature Power", "Quash", "Quick Guard", "Rage Powder", "Relic Song", "Secret Sword", "Snarl", "Snore", "Techno Blast", "Transform", "V-create", "Wide Guard"]);
+	var gen6_banlist = [];
+	var gen7_banlist = [];
+	var banlists = [gen1_banList, gen2_banlist, gen3_banlist, gen4_banlist, gen5_banlist, gen6_banlist, gen7_banlist];
+	return banlists[gen - 1].concat(["Metronome"]); // Common to all generations
+}
+
+function convertToZMove(move) {
+	var obj = {};
+	obj.name = getZMoveName(move.name, move.type, "Normalium Z");
+	obj.type = move.type;
+	obj.bp = move.category === "Physical" || move.category === "Special" ?
+		move.bp >= 140 ? 200 :
+		move.bp === 130 ? 195 :
+		inInterval(move.bp, 120, 125) ? 190 :
+		move.bp === 110 ? 185 :
+		move.bp === 100 ? 180 :
+		inInterval(move.bp, 90, 95) ? 175 :
+		inInterval(move.bp, 80, 85) ? 160 :
+		inInterval(move.bp, 70, 75) ? 140 :
+		inInterval(move.bp, 60, 65) ? 120 :
+		inInterval(move.bp, 0, 55) ? 100 : 0 
+		: 0;
+	obj.isZ = true;
+	return obj;
+}
+
+function inInterval(val, min, max) {
+	return val <= max && val >= min;
 }
