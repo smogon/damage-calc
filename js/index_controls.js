@@ -49,7 +49,7 @@ function calculate() {
 		minDisplay = notation === '%' ? Math.floor(minDamage * 1000 / p2.maxHP) / 10 : Math.floor(minDamage * 48 / p2.maxHP);
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p2.maxHP) / 10 : Math.floor(maxDamage * 48 / p2.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
-		result.koChanceText = p1.moves[i].bp === 0 ? 'nice move' :
+		result.koChanceText = p1.moves[i].bp === 0 && p1.moves[i].name !== "Metronome" ? 'nice move' :
 			getKOChanceText(result.damage, p1, p2, field.getSide(1), p1.moves[i], p1.moves[i].hits, p1.ability === 'Bad Dreams');
 		var recoveryText = '';
 		if (p1.moves[i].givesHealth) {
