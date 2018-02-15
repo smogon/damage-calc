@@ -288,7 +288,13 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
-	if (move.isMultiHit) {
+	if (moveName === "Metronome") {
+		moveGroupObj.children(".move-z").hide();
+		moveGroupObj.children(".z-btn").hide();
+		 // Metronome has no Z-move by itself, it uses the Z-move matching the randomly selected move
+	} else if (move.isMultiHit) {
+		moveGroupObj.children(".move-z").show();
+		moveGroupObj.children(".z-btn").show();
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
@@ -296,9 +302,13 @@ $(".move-selector").change(function () {
 	} else if (move.dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").show();
+		moveGroupObj.children(".move-z").show();
+		moveGroupObj.children(".z-btn").show();
 	} else {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".move-z").show();
+		moveGroupObj.children(".z-btn").show();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
 });
