@@ -131,6 +131,7 @@ function buildDescription(description) {
 		output += "Helping Hand ";
 	}
 	output += description.moveName + " ";
+	output = appendIfSet(output, description.metronome);
 	if (description.moveBP && description.moveType) {
 		output += "(" + description.moveBP + " BP " + description.moveType + ") ";
 	} else if (description.moveBP) {

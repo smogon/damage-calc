@@ -248,6 +248,10 @@ var MOVES_RBY = {
 		givesHealth: true,
 		percentHealed: 0.5
 	},
+	'Metronome': {
+		bp: 0,
+		type: 'Normal'
+	},
 	'Mirror Move': {
 		bp: 0,
 		type: 'Flying'
