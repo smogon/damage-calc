@@ -126,6 +126,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	'Lustrous Orb',
 	'Macho Brace',
 	'Meadow Plate',
+	'Metronome',
 	'Micle Berry',
 	'Mind Plate',
 	'Muscle Band',
