@@ -181,8 +181,8 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.name === "Sky Drop" && (defender.hasType("Flying") || (gen >= 6 && defender.weight >= 200) || field.isGravity)) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if (move.name === "Synchronoise" && [defender.type1, defender.type2].indexOf(attacker.type1) === -1 &&
-            (!attacker.type2 || [defender.type1, defender.type2].indexOf(attacker.type2) === -1)) {
+	if (move.name === "Synchronoise" && !defender.hasType(attacker.type1) &&
+            (!attacker.type2 || !defender.hasType(attacker.type2))) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 	if (move.name === "Dream Eater" && (defender.status !== 'Asleep' && defender.ability !== 'Comatose')) {
@@ -760,6 +760,21 @@ function getDamageResult(attacker, defender, move, field) {
 				description.attackerItem = attacker.item;
 			}
 		}
+	}
+	if (attacker.item === "Metronome" && move.metronomeCount > 1) {
+		var boostTurns;
+		if (move.dropsStats) {
+			boostTurns = move.usedTimes;
+		} else {
+			boostTurns = move.metronomeCount;
+		}
+		for (metronome = 0; metronome < boostTurns; metronome++) {
+			var totalMetronomeBoost = 1 + metronome / 10;
+			damage = damage.map(function(damageRoll) {
+				return pokeRound(damageRoll * totalMetronomeBoost);
+			});
+		}
+		description.attackerItem = "Metronome";
 	}
 	description.attackBoost = attacker.boosts[attackStat];
 	return {"damage": damage, "description": buildDescription(description)};
