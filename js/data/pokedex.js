@@ -12388,6 +12388,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sp": 15
 		},
 		"w": 1.5,
+		"canEvolve": true
 	},
 	"Mudbray": {
 		"t1": "Ground",
