@@ -5,7 +5,7 @@
 	if (damage[damage.length - 1] === 0) {
 		return 'aim for the horn next time';
 	}
-	if (damage[0] >= defender.maxHP && move.usedTimes === 1) {
+	if (damage[0] >= defender.maxHP && (move.usedTimes === 1 && move.metronomeCount === 1)) {
 		return 'guaranteed OHKO';
 	}
 
@@ -158,7 +158,7 @@
 	}
 	var c;
 	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
-	if (move.usedTimes === 1 || move.isZ) {
+	if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
 		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, 1, defender.maxHP, toxicCounter);
 		if (c === 1) {
 			return 'guaranteed OHKO' + afterText;

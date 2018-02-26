@@ -279,6 +279,7 @@ $(".status").bind("keyup change", function () {
 	}
 });
 
+var lockerMove = "";
 // auto-update move details on select
 $(".move-selector").change(function () {
 	var moveName = $(this).val();
@@ -288,6 +289,7 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
+	moveGroupObj.children(".metronome").prop("disabled", !!move.dropsStats);
 	if (move.isMultiHit) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
@@ -301,6 +303,16 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
+});
+
+$(".item").change(function () {
+	var itemName = $(this).val();
+	var correspondingPokemon = $(this).parent().parent().parent().prop("id");
+	if (itemName === "Metronome") {
+		$("#" + correspondingPokemon + " .metronome").show();
+	} else {
+		$("#" + correspondingPokemon + " .metronome").hide();
+	}
 });
 
 // auto-update set details on select
@@ -503,7 +515,7 @@ function Pokemon(pokeInfo) {
 				category: defaultDetails.category,
 				isCrit: !!defaultDetails.alwaysCrit,
 				hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1,
-				usedTimes: 1
+				usedTimes: defaultDetails.usedTimes
 			}));
 		}
 		this.weight = pokemon.w;
@@ -571,7 +583,8 @@ function getMoveDetails(moveInfo, item) {
 			category: moveInfo.find(".move-cat").val(),
 			isCrit: moveInfo.find(".move-crit").prop("checked"),
 			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
-			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1
+			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
+			metronomeCount : moveInfo.find(".metronome").prop("style").display !== "none" ? ~~moveInfo.find(".metronome").val() : 1
 		});
 	}
 }
