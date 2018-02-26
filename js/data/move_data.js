@@ -6,7 +6,8 @@ var MOVES_RBY = {
 	},
 	'Acid': {
 		bp: 40,
-		type: 'Poison'
+		type: 'Poison',
+		category: 'Special'
 	},
 	'Agility': {
 		bp: 0,
@@ -346,7 +347,8 @@ var MOVES_RBY = {
 	},
 	'Sludge': {
 		bp: 65,
-		type: 'Poison'
+		type: 'Poison',
+		category: 'Special'
 	},
 	'Soft-Boiled': {
 		bp: 0,
