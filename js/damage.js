@@ -329,7 +329,7 @@ function getDamageResult(attacker, defender, move, field) {
 		//console.log("A " + field.terrain + " terrain " + move.type + move.name + " with " + move.bp + " base power " + " agaisnt a(n) " + defender.name + " that has " + defender.type1 + " " + defender.type2 + " typing");
 		break;
 	case "Water Shuriken":
-		basePower = (attacker.name === "Greninja-Ash") ? 20 : 15;
+		basePower = (attacker.name === "Greninja-Ash" && attacker.ability === "Battle Bond") ? 20 : 15;
 		description.moveBP = basePower;
 		break;
 	case "Wring Out":
