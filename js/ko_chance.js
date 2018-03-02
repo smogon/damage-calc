@@ -16,8 +16,8 @@
 		hazards += Math.floor(effectiveness * defender.maxHP / 8);
 		hazardText.push('Stealth Rock');
 	}
-	if ([defender.type1, defender.type2].indexOf('Flying') === -1 &&
-            ['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 && defender.item !== 'Air Balloon') {
+	if (!defender.hasType('Flying') &&
+		['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 && defender.item !== 'Air Balloon') {
 		if (field.spikes === 1) {
 			hazards += Math.floor(defender.maxHP / 8);
 			if (gen === 2) {
@@ -159,7 +159,7 @@
 	var c;
 	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
 	if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
-		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, 1, defender.maxHP, toxicCounter);
+		c = getKOChance(damage, defender.curHP - hazards, 0, 1, 1, defender.maxHP, toxicCounter);
 		if (c === 1) {
 			return 'guaranteed OHKO' + afterText;
 		} else if (c > 0) {
@@ -168,7 +168,7 @@
 		var i;
 
 		for (i = 2; i <= 4; i++) {
-			c = getKOChance(damage, defender.maxHP - hazards, eot, i, 1, defender.maxHP, toxicCounter);
+			c = getKOChance(damage, defender.curHP - hazards, eot, i, 1, defender.maxHP, toxicCounter);
 			if (c === 1) {
 				return 'guaranteed ' + i + 'HKO' + afterText;
 			} else if (c > 0) {
@@ -177,9 +177,9 @@
 		}
 
 		for (i = 5; i <= 9; i++) {
-			if (predictTotal(damage[0], eot, i, 1, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+			if (predictTotal(damage[0], eot, i, 1, toxicCounter, defender.maxHP) >= defender.curHP - hazards) {
 				return 'guaranteed ' + i + 'HKO' + afterText;
-			} else if (predictTotal(damage[damage.length - 1], eot, i, 1, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+			} else if (predictTotal(damage[damage.length - 1], eot, i, 1, toxicCounter, defender.maxHP) >= defender.curHP - hazards) {
 				return 'possible ' + i + 'HKO' + afterText;
 			}
 		}
@@ -191,9 +191,9 @@
 		} else if (c > 0) {
 			return qualifier + Math.round(c * 1000) / 10 + '% chance to ' + move.usedTimes + 'HKO' + afterText;
 		}
-		if (predictTotal(damage[0], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+		if (predictTotal(damage[0], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.curHP - hazards) {
 			return 'guaranteed KO in ' + move.usedTimes + ' turns' + afterText;
-		} else if (predictTotal(damage[damage.length - 1], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+		} else if (predictTotal(damage[damage.length - 1], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.curHP - hazards) {
 			return 'possible KO in ' + move.usedTimes + ' turns' + afterText;
 		} 
 		return 'not a KO';
