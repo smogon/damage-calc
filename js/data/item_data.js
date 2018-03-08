@@ -126,6 +126,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	'Lustrous Orb',
 	'Macho Brace',
 	'Meadow Plate',
+	'Metronome',
 	'Micle Berry',
 	'Mind Plate',
 	'Muscle Band',
@@ -190,15 +191,69 @@ var ITEMS_BW = ITEMS_DPP.concat([
 	'Water Gem'
 ]);
 
-var ITEMS_XY = ITEMS_BW.concat([
-	'Assault Vest',
+var megaStones = {
+	'Absolite': 'Absol',
+	'Abomasite': 'Abomasnow',
+	'Aerodactylite': 'Aerodactyl',
+	'Aggronite': 'Aggron',
+	'Alakazite': 'Alakazam',
+	'Altarite': 'Altaria',
+	'Ampharosite': 'Ampharos',
+	'Audinite': 'Audino',
+	'Banettite': 'Banette',
+	'Beedrillite': 'Beedrill',
+	'Blastoisinite': 'Blastoise',
+	'Blazikenite': 'Blaziken',
+	'Cameruptite': 'Camerupt',
+	'Charizardite X': 'Charizard',
+	'Charizardite Y': 'Charizard',
+	'Diancite': 'Diancie',
+	'Galladite': 'Gallade',
+	'Garchompite': 'Garchomp',
+	'Gardevoirite': 'Gardevoir',
+	'Gengarite': 'Gengar',
+	'Glalitite': 'Glalie',
+	'Gyaradosite': 'Gyarados',
+	'Heracrossite': 'Heracross',
+	'Houndoomite': 'Houndoom',
+	'Kangaskhanite': 'Kangaskhan',
+	'Latiasite': 'Latias',
+	'Latiosite': 'Latios',
+	'Lopunnite': 'Lopunny',
+	'Lucarionite': 'Lucario',
+	'Manectite': 'Manectric',
+	'Mawilite': 'Mawile',
+	'Medichamite': 'Medicham',
+	'Metagrossite': 'Metagross',
+	'Mewtwonite X': 'Mewtwo',
+	'Mewtwonite Y': 'Mewtwo',
+	'Pidgeotite': 'Pidgeot',
+	'Pinsirite': 'Pinsir',
+	'Sablenite': 'Sableye',
+	'Salamencite': 'Salamence',
+	'Sceptilite': 'Sceptile',
+	'Scizorite': 'Scizor',
+	'Sharpedonite': 'Sharpedo',
+	'Slowbronite': 'Slowbro',
+	'Steelixite': 'Steelix',
+	'Swampertite': 'Swampert',
+	'Tyranitarite': 'Tyranitar',
+	'Venusaurite': 'Venusaur'
+};
+
+var mega_Stones = Object.keys(megaStones);
+
+var XY_items = mega_Stones.concat(['Assault Vest',
+	'Safety Googles',
+	'Fairy Gem',
 	'Kee Berry',
 	'Maranga Berry',
 	'Pixie Plate',
 	'Power Herb',
 	'Roseli Berry',
-	'Safety Goggles'
-]);
+	'Safety Googles']).sort();
+
+var ITEMS_XY = ITEMS_BW.concat(XY_items);
 
 var ITEMS_SM = ITEMS_XY.concat([
 	'Adrenaline Orb',
@@ -388,7 +443,7 @@ function getFlingPower(item) {
 										'Life Orb', 'Light Ball', 'Magnet', 'Metal Coat', 'Miracle Seed', 'Mystic Water', 'Never-Melt Ice',
 										'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 'Twisted Spoon'].indexOf(item) !== -1 ? 30 :
 										item.indexOf('Berry') !== -1 ||
-										['Air Baloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
+										['Air Balloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
 											'Focus Sash', 'Grassy Seed', 'Lagging tail', 'leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
 											'Muscle Band', 'Power Herb', 'Psychic Seed', 'Quick Powder', 'Reaper Cloth', 'Red Card', 'Ring Target',
 											'Shed Shell', 'Silk Scarf', 'Silver Powder', 'Smooth Rock', 'Soft Sand', 'Soothe Bell', 'White Herb',
@@ -465,43 +520,15 @@ function getTechnoBlast(item) {
 }
 
 function getMultiAttack(item) {
-	switch (item) {
-	case 'Bug Memory':
-		return 'Bug';
-	case 'Dark Memory':
-		return 'Dark';
-	case 'Dragon Memory':
-		return 'Dragon';
-	case 'Electric Memory':
-		return 'Electric';
-	case 'Fairy Memory':
-		return 'Fairy';
-	case 'Fighting Memory':
-		return 'Fighting';
-	case 'Fire Memory':
-		return 'Fire';
-	case 'Flying Memory':
-		return 'Flying';
-	case 'Ghost Memory':
-		return 'Ghost';
-	case 'Grass Memory':
-		return 'Grass';
-	case 'Ground Memory':
-		return 'Ground';
-	case 'Ice Memory':
-		return 'Ice';
-	case 'Poison Memory':
-		return 'Poison';
-	case 'Psychic Memory':
-		return 'Psychic';
-	case 'Rock Memory':
-		return 'Rock';
-	case 'Steel Memory':
-		return 'Steel';
-	case 'Water Memory':
-		return 'Water';
-	default:
-		return '';
+	if (item.indexOf("Memory") !== -1) {
+		return item.substring(0, item.indexOf(" ")); 
 	}
+	return '';
 }
 
+var seedBoostedStat = {
+	'Electric Seed': DF,
+	'Grassy Seed': DF,
+	'Misty Seed': SD,
+	'Psychic Seed': SD
+};

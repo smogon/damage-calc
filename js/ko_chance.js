@@ -5,7 +5,7 @@
 	if (damage[damage.length - 1] === 0) {
 		return 'aim for the horn next time';
 	}
-	if (damage[0] >= defender.maxHP) {
+	if (damage[0] >= defender.maxHP && (move.usedTimes === 1 && move.metronomeCount === 1)) {
 		return 'guaranteed OHKO';
 	}
 
@@ -44,7 +44,7 @@
 			eot -= Math.floor(defender.maxHP / 8);
 			eotText.push(defender.ability + ' damage');
 		}
-	} else if (field.weather === 'Rain' || field.weather === "Heavy Rain") {
+	} else if (field.weather.indexOf("Rain") !== -1) {
 		if (defender.ability === 'Dry Skin') {
 			eot += Math.floor(defender.maxHP / 8);
 			eotText.push('Dry Skin recovery');
@@ -71,10 +71,11 @@
 			eotText.push('hail damage');
 		}
 	}
-	if (defender.item === 'Leftovers') {
+	var keepsItem = move.name === "Knock Off" && defender.ability !== 'Sticky Hold' ? false : true;
+	if (defender.item === 'Leftovers' && keepsItem) {
 		eot += Math.floor(defender.maxHP / 16);
 		eotText.push('Leftovers recovery');
-	} else if (defender.item === 'Black Sludge') {
+	} else if (defender.item === 'Black Sludge' && keepsItem) {
 		if (defender.type1 === 'Poison' || defender.type2 === 'Poison') {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Black Sludge recovery');
@@ -92,10 +93,8 @@
 			eotText.push('Leech Seed damage');
 		}
 	}
-	if (field.isAttackerSeeded) {
-		if (attacker.ability === "Magic Guard") {
-			// No effect
-		} else if (attacker.ability === "Liquid Ooze") {
+	if (field.isAttackerSeeded && attacker.ability !== "Magic Guard") {
+		if (attacker.ability === "Liquid Ooze") {
 			eot -= gen >= 2 ? Math.floor(attacker.maxHP / 8) : Math.floor(attacker.maxHP / 16);
 			eotText.push("Liquid Ooze damage");
 		} else {
@@ -104,8 +103,7 @@
 		}
 	}
 	if (field.terrain === "Grassy") {
-		if (field.isGravity || (defender.type1 !== "Flying" && defender.type2 !== "Flying" &&
-                defender.item !== "Air Balloon" && defender.ability !== "Levitate")) {
+		if (isGroundedForCalc(defender, field)) {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Grassy Terrain recovery');
 		}
@@ -139,7 +137,7 @@
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push('Bad Dreams');
 	}
-	if (move.name === 'Bind' || move.name === 'Clamp' || move.name === 'Fire Spin' || move.name === 'Infestation' || move.name === 'Magma Storm' || move.name === 'Sand Tomb' || move.name === 'Whirlpool' || move.name === 'Wrap') {
+	if (['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'].indexOf(move.name) !== -1) {
 		if (attacker.item === "Binding Band") {
 			eot -= gen > 5 ? Math.floor(defender.maxHP / 6) : Math.floor(defender.maxHP / 8);
 			eotText.push('trapping damage');
@@ -148,7 +146,7 @@
 			eotText.push('trapping damage');
 		}
 	}
-	if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && (defender.type1 !== "Fire" && defender.type2 !== "Fire")) {
+	if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && [defender.type1, defender.type2].indexOf("Fire") === -1) {
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push('Sea of Fire damage');
 	}
@@ -158,55 +156,73 @@
 		qualifier = 'approx. ';
 		damage = squashMultihit(damage, hits);
 	}
-
-	var c = getKOChance(damage, defender.maxHP - hazards, 0, 1, defender.maxHP, toxicCounter);
-	var afterText = hazardText.length > 0 ? ' after ' + serializeText(hazardText) : '';
-	if (c === 1) {
-		return 'guaranteed OHKO' + afterText;
-	} else if (c > 0) {
-		return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
-	}
-
-	afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
-	var i;
-	for (i = 2; i <= 4; i++) {
-		c = getKOChance(damage, defender.maxHP - hazards, eot, i, defender.maxHP, toxicCounter);
+	var c;
+	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
+	if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
+		c = getKOChance(damage, defender.maxHP - hazards, 0, 1, 1, defender.maxHP, toxicCounter);
 		if (c === 1) {
-			return 'guaranteed ' + i + 'HKO' + afterText;
+			return 'guaranteed OHKO' + afterText;
 		} else if (c > 0) {
-			return qualifier + Math.round(c * 1000) / 10 + '% chance to ' + i + 'HKO' + afterText;
+			return qualifier + Math.round(c * 1000) / 10 + '% chance to OHKO' + afterText;
 		}
-	}
+		var i;
 
-	for (i = 5; i <= 9; i++) {
-		if (predictTotal(damage[0], eot, i, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
-			return 'guaranteed ' + i + 'HKO' + afterText;
-		} else if (predictTotal(damage[damage.length - 1], eot, i, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
-			return 'possible ' + i + 'HKO' + afterText;
+		for (i = 2; i <= 4; i++) {
+			c = getKOChance(damage, defender.maxHP - hazards, eot, i, 1, defender.maxHP, toxicCounter);
+			if (c === 1) {
+				return 'guaranteed ' + i + 'HKO' + afterText;
+			} else if (c > 0) {
+				return qualifier + Math.round(c * 1000) / 10 + '% chance to ' + i + 'HKO' + afterText;
+			}
 		}
+
+		for (i = 5; i <= 9; i++) {
+			if (predictTotal(damage[0], eot, i, 1, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+				return 'guaranteed ' + i + 'HKO' + afterText;
+			} else if (predictTotal(damage[damage.length - 1], eot, i, 1, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+				return 'possible ' + i + 'HKO' + afterText;
+			}
+		}
+
+	} else {
+		c = getKOChance(damage, defender.maxHP - hazards, eot, move.usedTimes || 1, move.usedTimes || 1, defender.maxHP, toxicCounter);
+		if (c === 1) {
+			return 'guaranteed KO in ' + move.usedTimes + ' turns' + afterText;
+		} else if (c > 0) {
+			return qualifier + Math.round(c * 1000) / 10 + '% chance to ' + move.usedTimes + 'HKO' + afterText;
+		}
+		if (predictTotal(damage[0], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+			return 'guaranteed KO in ' + move.usedTimes + ' turns' + afterText;
+		} else if (predictTotal(damage[damage.length - 1], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.maxHP - hazards) {
+			return 'possible KO in ' + move.usedTimes + ' turns' + afterText;
+		} 
+		return 'not a KO';
 	}
 
 	return 'possibly the worst move ever';
 }
 
-function getKOChance(damage, hp, eot, hits, maxHP, toxicCounter) {
+function getKOChance(damage, hp, eot, hits, moveHits, maxHP, toxicCounter) {
 	var n = damage.length;
 	var minDamage = damage[0];
 	var maxDamage = damage[n - 1];
 	var i;
 	if (hits === 1) {
-		if (maxDamage < hp) {
-			return 0;
-		}
 		for (i = 0; i < n; i++) {
 			if (damage[i] >= hp) {
 				return (n - i) / n;
 			}
 		}
+	} else {
+		for (var j = 0; j < n; j++) {
+			if (damage[j] >= hp) {
+				return j / n;
+			}
+		}
 	}
-	if (predictTotal(maxDamage, eot, hits, toxicCounter, maxHP) < hp) {
+	if (predictTotal(maxDamage, eot, hits, moveHits, toxicCounter, maxHP) < hp) {
 		return 0;
-	} else if (predictTotal(minDamage, eot, hits, toxicCounter, maxHP) >= hp) {
+	} else if (predictTotal(minDamage, eot, hits, moveHits, toxicCounter, maxHP) >= hp) {
 		return 1;
 	}
 	var toxicDamage = 0;
@@ -216,7 +232,7 @@ function getKOChance(damage, hp, eot, hits, maxHP, toxicCounter) {
 	}
 	var sum = 0;
 	for (i = 0; i < n; i++) {
-		var c = getKOChance(damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, maxHP, toxicCounter);
+		var c = getKOChance(damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, moveHits, maxHP, toxicCounter);
 		if (c === 1) {
 			sum += (n - i);
 			break;
@@ -227,14 +243,18 @@ function getKOChance(damage, hp, eot, hits, maxHP, toxicCounter) {
 	return sum / n;
 }
 
-function predictTotal(damage, eot, hits, toxicCounter, maxHP) {
+function predictTotal(damage, eot, hits, moveHits, toxicCounter, maxHP) {
 	var toxicDamage = 0;
 	if (toxicCounter > 0) {
 		for (var i = 0; i < hits - 1; i++) {
 			toxicDamage += Math.floor((toxicCounter + i) * maxHP / 16);
 		}
 	}
-	var total = (damage * hits) - (eot * (hits - 1)) + toxicDamage;
+	if (hits > 1 && moveHits === 1) {
+		var total = (damage * hits) - (eot * (hits - 1)) + toxicDamage;
+	} else {
+		var total = damage - (eot * (hits - 1)) + toxicDamage;
+	}
 	return total;
 }
 

@@ -1,6 +1,24 @@
 var TYPE_CHART_RBY = {
+	None: {
+		Normal: 1,
+		Grass: 1,
+		Fire: 1,
+		Water: 1,
+		Electric: 1,
+		Ice: 1,
+		Flying: 1,
+		Bug: 1,
+		Poison: 1,
+		Ground: 1,
+		Rock: 1,
+		Fighting: 1,
+		Psychic: 1,
+		Ghost: 1,
+		Dragon: 1
+	},
 	Normal: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 1,
@@ -19,6 +37,7 @@ var TYPE_CHART_RBY = {
 	},
 	Grass: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 0.5,
 		Fire: 0.5,
@@ -37,6 +56,7 @@ var TYPE_CHART_RBY = {
 	},
 	Fire: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 2,
 		Fire: 0.5,
@@ -55,6 +75,7 @@ var TYPE_CHART_RBY = {
 	},
 	Water: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 0.5,
 		Fire: 2,
@@ -73,6 +94,7 @@ var TYPE_CHART_RBY = {
 	},
 	Electric: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 0.5,
 		Fire: 1,
@@ -91,6 +113,7 @@ var TYPE_CHART_RBY = {
 	},
 	Ice: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 2,
 		Fire: 1,
@@ -109,6 +132,7 @@ var TYPE_CHART_RBY = {
 	},
 	Flying: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 2,
 		Fire: 1,
@@ -127,6 +151,7 @@ var TYPE_CHART_RBY = {
 	},
 	Bug: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 2,
 		Fire: 0.5,
@@ -145,6 +170,7 @@ var TYPE_CHART_RBY = {
 	},
 	Poison: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 2,
 		Fire: 1,
@@ -163,6 +189,7 @@ var TYPE_CHART_RBY = {
 	},
 	Ground: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 0.5,
 		Fire: 2,
@@ -181,6 +208,7 @@ var TYPE_CHART_RBY = {
 	},
 	Rock: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 2,
@@ -199,6 +227,7 @@ var TYPE_CHART_RBY = {
 	},
 	Fighting: {
 		category: 'Physical',
+		None: 1,
 		Normal: 2,
 		Grass: 1,
 		Fire: 1,
@@ -217,6 +246,7 @@ var TYPE_CHART_RBY = {
 	},
 	Psychic: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 1,
@@ -235,6 +265,7 @@ var TYPE_CHART_RBY = {
 	},
 	Ghost: {
 		category: 'Physical',
+		None: 1,
 		Normal: 0,
 		Grass: 1,
 		Fire: 1,
@@ -253,6 +284,7 @@ var TYPE_CHART_RBY = {
 	},
 	Dragon: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 1,
@@ -272,6 +304,10 @@ var TYPE_CHART_RBY = {
 };
 
 var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
+	None: {
+		Dark: 1,
+		Steel: 1
+	},
 	Normal: {
 		Dark: 1,
 		Steel: 0.5
@@ -338,6 +374,7 @@ var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
 	},
 	Dark: {
 		category: 'Special',
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 1,
@@ -358,6 +395,7 @@ var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
 	},
 	Steel: {
 		category: 'Physical',
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 0.5,
@@ -379,6 +417,9 @@ var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
 });
 
 var TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_GSC, {
+	None: {
+		Fairy: 1
+	},
 	Normal: {
 		Fairy: 1
 	},
@@ -433,6 +474,7 @@ var TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_GSC, {
 		Fairy: 2
 	},
 	Fairy: {
+		None: 1,
 		Normal: 1,
 		Grass: 1,
 		Fire: 0.5,

@@ -25,7 +25,7 @@ function makeCachebuster(template, output) {
 		} catch (e) {}
 
 		return b + '="./' + c + '?' + hash + '"';
-	});
+	}).replace(/\.template\.html/g, '.html');
 	process.stdout.write("Writing new `" + output + "` file... ");
 	fs.writeFileSync(path.resolve(rootDir, output), indexContents);
 	console.log("DONE");

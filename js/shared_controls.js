@@ -1,3 +1,39 @@
+if (!Array.prototype.indexOf) {
+	Array.prototype.indexOf = function(searchElement, fromIndex) {
+	var k;
+
+	if (this == null) {
+		throw new TypeError('"this" equals null or n is undefined');
+	}
+
+	var O = Object(this);
+
+	var len = O.length >>> 0;
+
+	if (len === 0) {
+		return -1;
+	}
+
+	var n = +fromIndex || 0;
+
+	if (Math.abs(n) === Infinity) {
+		n = 0;
+	}
+	if (n >= len) {
+		return -1;
+	}
+
+	k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+	while (k < len) {
+		if (k in O && O[k] === searchElement) {
+	    	return k;
+	  	}
+	  	k++;
+	}
+		return -1;
+	};
+}
+
 // input field validation
 var bounds = {
 	"level": [0, 100],
@@ -84,9 +120,9 @@ $(".sl .dvs").keyup(function () {
 
 function getHPDVs(poke) {
 	return (~~poke.find(".at .dvs").val() % 2) * 8 +
-            (~~poke.find(".df .dvs").val() % 2) * 4 +
-            (~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2) * 2 +
-            (~~poke.find(".sp .dvs").val() % 2);
+(~~poke.find(".df .dvs").val() % 2) * 4 +
+(~~poke.find(".sp .dvs").val() % 2) * 2 +
+(~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2);
 }
 
 function calcStats(poke) {
@@ -243,6 +279,7 @@ $(".status").bind("keyup change", function () {
 	}
 });
 
+var lockerMove = "";
 // auto-update move details on select
 $(".move-selector").change(function () {
 	var moveName = $(this).val();
@@ -252,14 +289,30 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
+	moveGroupObj.children(".metronome").prop("disabled", !!move.dropsStats);
 	if (move.isMultiHit) {
+		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
 		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".item").val() === 'Grip Claw' ? 5 : 3);
+	} else if (move.dropsStats) {
+		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".stat-drops").show();
 	} else {
 		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".stat-drops").hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
+});
+
+$(".item").change(function () {
+	var itemName = $(this).val();
+	var $metronomeControl = $(this).closest('.poke-info').find('.metronome');
+	if (itemName === "Metronome") {
+		$metronomeControl.show();
+	} else {
+		$metronomeControl.hide();
+	}
 });
 
 // auto-update set details on select
@@ -292,13 +345,13 @@ $(".set-selector").change(function () {
 		if (pokemonName in setdex && setName in setdex[pokemonName]) {
 			var set = setdex[pokemonName][setName];
 			pokeObj.find(".level").val(set.level);
-			pokeObj.find(".hp .evs").val((set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0);
-			pokeObj.find(".hp .ivs").val((set.ivs && typeof set.ivs.hp !== "undefined") ? set.ivs.hp : 31);
-			pokeObj.find(".hp .dvs").val((set.dvs && typeof set.dvs.hp !== "undefined") ? set.dvs.hp : 15);
+			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
+			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
+			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);
 			for (i = 0; i < STATS.length; i++) {
-				pokeObj.find("." + STATS[i] + " .evs").val((set.evs && typeof set.evs[STATS[i]] !== "undefined") ? set.evs[STATS[i]] : 0);
-				pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && typeof set.ivs[STATS[i]] !== "undefined") ? set.ivs[STATS[i]] : 31);
-				pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && typeof set.dvs[STATS[i]] !== "undefined") ? set.dvs[STATS[i]] : 15);
+				pokeObj.find("." + STATS[i] + " .evs").val((set.evs && set.evs[STATS[i]] !== undefined) ? set.evs[STATS[i]] : 0);
+				pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && set.ivs[STATS[i]] !== undefined) ? set.ivs[STATS[i]] : 31);
+				pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && set.dvs[STATS[i]] !== undefined) ? set.dvs[STATS[i]] : 15);
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab ? pokemon.ab : set.ability, "");
@@ -351,16 +404,17 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
 	if (setName !== 'Blank Set') {
 		var set = setdex[pokemonName][setName];
-
-		// Repurpose the previous filtering code to provide the "different default" logic
-		if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
-            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
-            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
-            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
-            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
-			defaultForme = 1;
-		} else if (set.item.indexOf('ite Y') !== -1) {
-			defaultForme = 2;
+		if (set.item) {
+			// Repurpose the previous filtering code to provide the "different default" logic
+			if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
+	            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
+	            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
+	            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
+	            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
+				defaultForme = 1;
+			} else if (set.item.indexOf('ite Y') !== -1) {
+				defaultForme = 2;
+			}
 		}
 	}
 
@@ -370,7 +424,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 }
 
 function setSelectValueIfValid(select, value, fallback) {
-	select.val(select.children("option[value='" + value + "']").length !== 0 ? value : fallback);
+	select.val(select.children("option[value='" + value + "']").length ? value : fallback);
 }
 
 $(".forme").change(function () {
@@ -381,7 +435,7 @@ $(".forme").change(function () {
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
 	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(typeof altForme.t2 != "undefined" ? altForme.t2 : "");
+	$(this).parent().siblings().find(".type2").val(altForme.t2 ? altForme.t2 : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 
 	for (var i = 0; i < STATS.length; i++) {
@@ -389,15 +443,15 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[STATS[i]]);
 		baseStat.keyup();
 	}
-
-	if (abilities.indexOf(altForme.ab) > -1) {
+	var chosenSet = setdex[pokemonName][setName];
+	if (abilities.indexOf(altForme.ab) !== -1) {
 		container.find(".ability").val(altForme.ab);
 	} else {
-		container.find(".ability").val("");
+		container.find(".ability").val(chosenSet.ability);
 	}
 	container.find(".ability").keyup();
 
-	if ($(this).val().indexOf("Mega") === 0 && $(this).val() !== "Rayquaza-Mega") {
+	if ($(this).val().indexOf("-Mega") !== -1 && $(this).val() !== "Rayquaza-Mega") {
 		container.find(".item").val("").keyup();
 	} else {
 		container.find(".item").prop("disabled", false);
@@ -460,7 +514,8 @@ function Pokemon(pokeInfo) {
 				type: defaultDetails.type,
 				category: defaultDetails.category,
 				isCrit: !!defaultDetails.alwaysCrit,
-				hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1
+				hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1,
+				usedTimes: defaultDetails.usedTimes
 			}));
 		}
 		this.weight = pokemon.w;
@@ -500,6 +555,9 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}
+	this.hasType = function(type) {
+		return this.type1 === type || this.type2 === type;
+	};
 }
 
 function getMoveDetails(moveInfo, item) {
@@ -524,7 +582,9 @@ function getMoveDetails(moveInfo, item) {
 			type: moveInfo.find(".move-type").val(),
 			category: moveInfo.find(".move-cat").val(),
 			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1
+			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
+			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
+			metronomeCount : moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
 		});
 	}
 }
@@ -546,7 +606,8 @@ function getZMoveName(moveName, moveType, item) {
 														moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer" :
 															moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt" :
 																moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika" :
-																	ZMOVES_TYPING[moveType];
+																	moveName === "Nature\'s Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
+																		ZMOVES_TYPING[moveType];
 }
 
 function Field() {
@@ -685,6 +746,8 @@ $(".gen").change(function () {
 		calcStat = CALC_STAT_ADV;
 	}
 	clearField();
+	$("#importedSets").prop("checked", false);
+	loadDefaultLists();
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));
@@ -735,8 +798,12 @@ function clearField() {
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 
-function getSetOptions() {
-	var pokeNames = Object.keys(pokedex);
+function getSetOptions(sets) {
+	var setsHolder = sets;
+	if (setsHolder === undefined) {
+		setsHolder = pokedex;
+	}
+	var pokeNames = Object.keys(setsHolder);
 	pokeNames.sort();
 	var setOptions = [];
 	var idNum = 0;
@@ -754,7 +821,9 @@ function getSetOptions() {
 					pokemon: pokeName,
 					set: setName,
 					text: pokeName + " (" + setName + ")",
-					id: pokeName + " (" + setName + ")"
+					id: pokeName + " (" + setName + ")",
+					isCustom: setdex[pokeName][setName].isCustomSet,
+					nickname: setdex[pokeName][setName].nickname || "" 
 				});
 			}
 		}
@@ -873,12 +942,7 @@ function getTerrainEffects() {
 	}
 }
 
-$(document).ready(function () {
-	$("#gen7").prop("checked", true);
-	$("#gen7").change();
-	$("#percentage").prop("checked", true);
-	$("#percentage").change();
-
+function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
 			return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
@@ -901,6 +965,43 @@ $(document).ready(function () {
 			callback(data);
 		}
 	});
+}
+
+function bothPokemon(selector) {
+	return "#p1 " + selector + ", #p2 " + selector; 
+}
+
+function loadCustomList(id) {
+	var customSetsOptions = getSetOptions(customSets);
+	$("#" + id + " .set-selector").select2({
+			formatResult: function(set){
+				return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
+			},
+			query: function(query){
+				var pageSize = 20;
+				var results = _.filter(getSetOptions(), function(option){
+					if (option.isCustom) {
+						return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
+					}
+				});
+				query.callback({
+					results: results,
+					more: results.length >= query.page * pageSize
+				});
+			},
+			initSelection: function(element, callback){
+				var data = "";
+				callback(data);
+			}
+		});
+}
+
+$(document).ready(function () {
+	$("#gen7").prop("checked", true);
+	$("#gen7").change();
+	$("#percentage").prop("checked", true);
+	$("#percentage").change();
+	loadDefaultLists();
 	$(".move-selector").select2({
 		dropdownAutoWidth: true,
 		matcher: function (term, text) {
@@ -910,6 +1011,5 @@ $(document).ready(function () {
 	});
 	$(".set-selector").val(getSetOptions()[gen < 3 ? 3 : 1].id);
 	$(".set-selector").change();
-
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 });

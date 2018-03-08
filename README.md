@@ -13,7 +13,7 @@ Most notable for having all-vs-one (wall) and one-vs-all (sweeper) calcs.
 Instructions
 ------------
 
-Double-click `index.html`
+Double-click `index.template.html`.
 
 
 Credits and license

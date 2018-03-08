@@ -144,6 +144,7 @@ function buildDescription(description) {
 	if (description.hits) {
 		output += "(" + description.hits + " hits) ";
 	}
+	output = appendIfSet(output, description.moveTurns);
 	output += "vs. ";
 	if (description.defenseBoost) {
 		if (description.defenseBoost > 0) {

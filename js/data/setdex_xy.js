@@ -921,9 +921,6 @@ var SETDEX_XY = {
 		"RU All-out Attacker": {"level": 100, "evs": {"at": 252, "hp": 224, "sp": 32}, "nature": "Adamant", "ability": "Sheer Force", "item": "Life Orb", "moves": ["Outrage", "Sucker Punch", "Fire Punch", "Iron Tail"]},
 		"UU Stealth Rock Setter": {"level": 100, "evs": {"at": 252, "hp": 236, "sp": 20}, "nature": "Adamant", "ability": "Sheer Force", "item": "Roseli Berry", "moves": ["Stealth Rock", "Dragon Claw", "Fire Punch", "Gunk Shot"]},
 	},
-	"Dugtrio": {
-		"OU Trapper": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "ivs": {"hp": 28}, "nature": "Jolly", "ability": "Arena Trap", "item": "Focus Sash", "moves": ["Earthquake", "Reversal", "Screech", "Memento"]},
-	},
 	"Dunsparce": {
 		"PU Stealth Rock": {"level": 100, "evs": {"sd": 252, "at": 4, "hp": 252}, "nature": "Careful", "ability": "Serene Grace", "item": "Leftovers", "moves": ["Stealth Rock", "Body Slam", "Magic Coat", "Roost"]},
 	},
@@ -1745,6 +1742,7 @@ var SETDEX_XY = {
 	},
 	"Klinklang": {
 		"NU Shift Gear": {"level": 100, "evs": {"at": 252, "hp": 80, "sp": 176}, "nature": "Adamant", "ability": "Clear Body", "item": "Leftovers", "moves": ["Shift Gear", "Gear Grind", "Return", "Substitute"]},
+		"RU Physical Sweeper": {"level": 100, "evs": {"at": 252, "hp": 108, "sp": 148}, "nature": "Adamant", "ability": "Clear Body", "item": "Leftovers", "moves": ["Shift Gear", "Gear Grind", "Substitute", "Wild Charge"]},
 	},
 	"Koffing": {
 		"LC Defensive": {"level": 5, "evs": {"sd": 236, "df": 236, "hp": 36}, "nature": "Bold", "ability": "Levitate", "item": "Eviolite", "moves": ["Will-O-Wisp", "Pain Split", "Sludge Bomb", "Fire Blast"]},
@@ -2173,14 +2171,14 @@ var SETDEX_XY = {
 		"Doubles Transform Support": {"level": 100, "evs": {"sd": 4, "hp": 252, "sp": 252}, "nature": "Jolly", "ability": "Synchronize", "item": "Sitrus Berry", "moves": ["Fake Out", "Transform", "Will-O-Wisp", "Protect"]},
 	},
 	"Mewtwo": {
-		"Uber Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Life Orb", "moves": ["Psystrike", "Focus Blast", "Ice Beam", "Fire Blast"]},
+		"Uber Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "ivs": {"at": 0}, "nature": "Timid", "ability": "Pressure", "item": "Life Orb", "moves": ["Psystrike", "Focus Blast", "Ice Beam", "Fire Blast"]},
 		"Uber Physical Attacker": {"level": 100, "evs": {"df": 144, "at": 112, "sp": 252}, "nature": "Jolly", "ability": "Pressure", "item": "Mewtwonite X", "moves": ["Low Kick", "Taunt", "Earthquake", "Ice Punch"]},
 	},
 	"Mewtwo-Mega-X": {
 		"Uber Physical Attacker": {"level": 100, "evs": {"df": 144, "at": 112, "sp": 252}, "nature": "Jolly", "ability": "Pressure", "item": "Mewtwonite X", "moves": ["Low Kick", "Taunt", "Earthquake", "Ice Punch"]},
 	},
 	"Mewtwo-Mega-Y": {
-		"Uber Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Life Orb", "moves": ["Psystrike", "Focus Blast", "Ice Beam", "Fire Blast"]},
+		"Uber Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "ivs": {"at": 0}, "nature": "Timid", "ability": "Pressure", "item": "Life Orb", "moves": ["Psystrike", "Focus Blast", "Ice Beam", "Fire Blast"]},
 	},
 	"Mienfoo": {
 		"LC Bulky Attacker": {"level": 5, "evs": {"sd": 36, "df": 196, "sp": 236}, "nature": "Jolly", "ability": "Regenerator", "item": "Eviolite", "moves": ["Drain Punch", "Knock Off", "U-turn", "Taunt"]},
@@ -3303,7 +3301,6 @@ var SETDEX_XY = {
 	},
 	"Trapinch": {
 		"LC Trapper": {"level": 5, "evs": {"sd": 76, "df": 236, "at": 36, "hp": 156}, "nature": "Adamant", "ability": "Arena Trap", "item": "Berry Juice", "moves": ["Earthquake", "Feint", "Rock Slide", "Toxic"]},
-		"PU RestTalk": {"level": 100, "evs": {"sd": 232, "df": 28, "hp": 248}, "nature": "Careful", "ability": "Arena Trap", "item": "Eviolite", "moves": ["Earthquake", "Toxic", "Sleep Talk", "Rest"]},
 	},
 	"Treecko": {
 		"LC Swords Dance": {"level": 5, "evs": {"df": 156, "at": 236, "hp": 116}, "nature": "Jolly", "ability": "Unburden", "item": "Berry Juice", "moves": ["Swords Dance", "Bullet Seed", "Acrobatics", "Drain Punch"]},
