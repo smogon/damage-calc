@@ -307,11 +307,11 @@ $(".move-selector").change(function () {
 
 $(".item").change(function () {
 	var itemName = $(this).val();
-	var correspondingPokemon = $(this).parent().parent().parent().prop("id");
+	var $metronomeControl = $(this).closest('.poke-info').find('.metronome');
 	if (itemName === "Metronome") {
-		$("#" + correspondingPokemon + " .metronome").show();
+		$metronomeControl.show();
 	} else {
-		$("#" + correspondingPokemon + " .metronome").hide();
+		$metronomeControl.hide();
 	}
 });
 
@@ -584,7 +584,7 @@ function getMoveDetails(moveInfo, item) {
 			isCrit: moveInfo.find(".move-crit").prop("checked"),
 			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
 			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
-			metronomeCount : moveInfo.find(".metronome").prop("style").display !== "none" ? ~~moveInfo.find(".metronome").val() : 1
+			metronomeCount : moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
 		});
 	}
 }
