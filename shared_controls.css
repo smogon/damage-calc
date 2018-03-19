@@ -403,3 +403,9 @@ select.toxic-counter {
     min-height: 10em;
     resize: vertical;
 }
+
+.healthbar {
+    height: 10px;
+    width: 200px;
+    border: 1px solid black;
+}
