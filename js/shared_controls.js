@@ -144,7 +144,16 @@ function calcPercentHP(poke, max, current) {
 function drawHealthBar(poke, max, current) {
 	var fillPercent = Math.floor(100 * current / max);
 	var fillColor = fillPercent >= 50 ? "green" : fillPercent >= 20 ? "yellow" : "red";
-	poke.find(".healthbar").css("background", "linear-gradient(to right, " + fillColor + " " + fillPercent + "%, white 0%)");
+
+	var healthbar = poke.find(".hpbar");
+	healthbar.addClass("hp-" + fillColor);
+	var unwantedColors = ["green", "yellow", "red"];
+	unwantedColors.splice(unwantedColors.indexOf(fillColor), 1);
+	for (i = 0; i < unwantedColors.length; i++) {
+		healthbar.removeClass("hp-" + unwantedColors[i]);
+	}
+	
+	healthbar.css("background", "linear-gradient(to right, " + fillColor + " " + fillPercent + "%, white 0%");
 }
 $(".current-hp").keyup(function () {
 	var max = $(this).parent().children(".max-hp").text();
