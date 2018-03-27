@@ -412,6 +412,10 @@ $(".set-selector").change(function () {
 		calcStats(pokeObj);
 		abilityObj.change();
 		itemObj.change();
+		if (pokemon.gender === "genderless") {
+			pokeObj.find(".gender").parent().hide();
+			pokeObj.find(".gender").val("");
+		} else pokeObj.find(".gender").parent().show();
 	}
 });
 
@@ -535,6 +539,7 @@ function Pokemon(pokeInfo) {
 			}));
 		}
 		this.weight = pokemon.w;
+		this.gender = pokemon.gender ? "genderless" : "Male";
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		if (setName.indexOf("(") === -1) {
@@ -570,7 +575,9 @@ function Pokemon(pokeInfo) {
 			getMoveDetails(pokeInfo.find(".move4"), this.item)
 		];
 		this.weight = +pokeInfo.find(".weight").val();
+		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
 	}
+
 	this.hasType = function(type) {
 		return this.type1 === type || this.type2 === type;
 	};
