@@ -82,7 +82,7 @@ function getDamageResult(attacker, defender, move, field) {
 			defAbility = "";
 			description.attackerAbility = attacker.ability;
 		}
-		if (["Menacing Moonraze Maelstrom", "Moongeist Beam", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
+		if (["Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
 			defAbility = "";
 		}
 	}
