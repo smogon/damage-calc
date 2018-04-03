@@ -318,10 +318,12 @@ function checkExeptions(poke) {
 }
 
 $(bothPokemon("#clearSets")).click(function () {
-	localStorage.removeItem("customsets");
-	alert("Custom Sets successfully cleared. Please refresh the page.");
-	$(bothPokemon("#importedSetsOptions")).css("display","none");
-	loadDefaultLists();
+	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
+		localStorage.removeItem("customsets");
+		alert("Custom Sets successfully cleared. Please refresh the page.");
+		$(bothPokemon("#importedSetsOptions")).hide();
+		loadDefaultLists();
+	}
 });
 
 $(bothPokemon("#importedSets")).click(function () {
