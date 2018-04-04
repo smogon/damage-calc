@@ -143,7 +143,7 @@ function calcPercentHP(poke, max, current) {
 }
 function drawHealthBar(poke, max, current) {
 	var fillPercent = Math.floor(100 * current / max);
-	var fillColor = fillPercent >= 50 ? "green" : fillPercent >= 20 ? "yellow" : "red";
+	var fillColor = fillPercent > 50 ? "green" : fillPercent > 20 ? "yellow" : "red";
 
 	var healthbar = poke.find(".hpbar");
 	healthbar.addClass("hp-" + fillColor);
