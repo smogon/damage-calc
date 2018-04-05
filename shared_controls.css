@@ -411,6 +411,7 @@ select.toxic-counter {
     border-right-width: 1px;
     border-bottom-width: 2px;
     border-left-width: 0.5px;
+    border-radius: 3px;
 }
 
 .hpbar.hp-green {
@@ -418,7 +419,6 @@ select.toxic-counter {
     background-color: green;
     border-bottom-color: #007734;
     border-right-color: #007734;
-    border-radius: 3px;
 }
 
 .hpbar.hp-yellow {
