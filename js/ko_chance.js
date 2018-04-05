@@ -137,7 +137,7 @@
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push('Bad Dreams');
 	}
-	if (['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'].indexOf(move.name) !== -1) {
+	if (['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'].indexOf(move.name) !== -1 && defender.ability !== 'Magic Guard') {
 		if (attacker.item === "Binding Band") {
 			eot -= gen > 5 ? Math.floor(defender.maxHP / 6) : Math.floor(defender.maxHP / 8);
 			eotText.push('trapping damage');
@@ -146,7 +146,7 @@
 			eotText.push('trapping damage');
 		}
 	}
-	if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && [defender.type1, defender.type2].indexOf("Fire") === -1) {
+	if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && [defender.type1, defender.type2].indexOf("Fire") === -1 && defender.ability !== 'Magic Guard') {
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push('Sea of Fire damage');
 	}
