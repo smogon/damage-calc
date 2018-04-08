@@ -11,13 +11,13 @@
 
 	var hazards = 0;
 	var hazardText = [];
-	if (field.isSR && ['Magic Guard', 'Mountaineer'].indexOf(defender.ability) === -1) {
+	if (field.isSR && defender.hasAbility("Magic Guard", "Mountaineer")) {
 		var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
 		hazards += Math.floor(effectiveness * defender.maxHP / 8);
 		hazardText.push('Stealth Rock');
 	}
 	if (!defender.hasType('Flying') &&
-		['Magic Guard', 'Levitate'].indexOf(defender.ability) === -1 && defender.item !== 'Air Balloon') {
+		defender.hasAbility("Magic Guard", "Levitate") && !defender.hasItem("Air Balloon")) {
 		if (field.spikes === 1) {
 			hazards += Math.floor(defender.maxHP / 8);
 			if (gen === 2) {
@@ -39,62 +39,61 @@
 
 	var eot = 0;
 	var eotText = [];
-	if (field.weather === 'Sun' || field.weather === "Harsh Sunshine") {
-		if (defender.ability === 'Dry Skin' || defender.ability === 'Solar Power') {
+	if (field.hasWeather("Sun", "Harsh Sunshine")) {
+		if (defender.hasAbility("Dry Skin", "Solar Power")) {
 			eot -= Math.floor(defender.maxHP / 8);
 			eotText.push(defender.ability + ' damage');
 		}
 	} else if (field.weather.indexOf("Rain") !== -1) {
-		if (defender.ability === 'Dry Skin') {
+		if (defender.hasAbility("Dry Skin")) {
 			eot += Math.floor(defender.maxHP / 8);
 			eotText.push('Dry Skin recovery');
-		} else if (defender.ability === 'Rain Dish') {
+		} else if (defender.hasAbility("Rain Dish")) {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Rain Dish recovery');
 		}
 	} else if (field.weather === 'Sand') {
-		if (['Rock', 'Ground', 'Steel'].indexOf(defender.type1) === -1 &&
-                ['Rock', 'Ground', 'Steel'].indexOf(defender.type2) === -1 &&
-                ['Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil'].indexOf(defender.ability) === -1 &&
-                defender.item !== 'Safety Goggles') {
+		if (defender.hasType("Rock", "Ground", "Steel") &&
+                defender.hasAbility("Magic Guard", "Overcoat", "Sand Force", "Sand Rush", "Sand Veil") &&
+                defender.hasItem("Safety Goggles")) {
 			eot -= Math.floor(defender.maxHP / 16);
 			eotText.push('sandstorm damage');
 		}
-	} else if (field.weather === 'Hail') {
-		if (defender.ability === 'Ice Body') {
+	} else if (field.weather === "Hail") {
+		if (defender.hasAbility("Ice Body")) {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Ice Body recovery');
-		} else if (defender.type1 !== 'Ice' && defender.type2 !== 'Ice' &&
-                ['Magic Guard', 'Overcoat', 'Snow Cloak'].indexOf(defender.ability) === -1 &&
-                defender.item !== 'Safety Goggles') {
+		} else if (defender.hasType("Ice") &&
+                defender.hasAbility("Magic Guard", "Overcoat", "Snow Cloak") &&
+                defender.item !== "Safety Goggles") {
 			eot -= Math.floor(defender.maxHP / 16);
-			eotText.push('hail damage');
+			eotText.push("hail damage");
 		}
 	}
 	var keepsItem = move.name === "Knock Off" && defender.ability !== 'Sticky Hold' ? false : true;
 	if (defender.item === 'Leftovers' && keepsItem) {
 		eot += Math.floor(defender.maxHP / 16);
 		eotText.push('Leftovers recovery');
-	} else if (defender.item === 'Black Sludge' && keepsItem) {
-		if (defender.type1 === 'Poison' || defender.type2 === 'Poison') {
+	} else if (defender.hasItem("Black Sludge") && keepsItem) {
+		if (defender.hasType("Poison")) {
 			eot += Math.floor(defender.maxHP / 16);
-			eotText.push('Black Sludge recovery');
-		} else if (defender.ability !== 'Magic Guard' && defender.ability !== 'Klutz') {
+			eotText.push("Black Sludge recovery");
+		} else if (!defender.hasAbility("Magic Guard", "Klutz")) {
 			eot -= Math.floor(defender.maxHP / 8);
-			eotText.push('Black Sludge damage');
+			eotText.push("Black Sludge damage");
 		}
-	} else if (defender.item === 'Sticky Barb') {
+	} else if (defender.hasItem("Sticky Barb")) {
 		eot -= Math.floor(defender.maxHP / 8);
-		eotText.push('Sticky Barb damage');
+		eotText.push("Sticky Barb damage");
 	}
 	if (field.isDefenderSeeded) {
-		if (defender.ability !== 'Magic Guard') {
+		if (!defender.hasAbility("Magic Guard")) {
 			eot -= gen >= 2 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16); // 1/16 in gen 1, 1/8 in gen 2 onwards
-			eotText.push('Leech Seed damage');
+			eotText.push("Leech Seed damage");
 		}
 	}
-	if (field.isAttackerSeeded && attacker.ability !== "Magic Guard") {
-		if (attacker.ability === "Liquid Ooze") {
+	if (field.isAttackerSeeded && !attacker.hasAbility("Magic Guard")) {
+		if (attacker.hasAbility("Liquid Ooze")) {
 			eot -= gen >= 2 ? Math.floor(attacker.maxHP / 8) : Math.floor(attacker.maxHP / 16);
 			eotText.push("Liquid Ooze damage");
 		} else {
@@ -105,48 +104,48 @@
 	if (field.terrain === "Grassy") {
 		if (isGroundedForCalc(defender, field)) {
 			eot += Math.floor(defender.maxHP / 16);
-			eotText.push('Grassy Terrain recovery');
+			eotText.push("Grassy Terrain recovery");
 		}
 	}
 	var toxicCounter = 0;
-	if (defender.status === 'Poisoned') {
-		if (defender.ability === 'Poison Heal') {
+	if (defender.hasStatus("Poisoned")) {
+		if (defender.hasAbility("Poison Heal")) {
 			eot += Math.floor(defender.maxHP / 8);
-			eotText.push('Poison Heal');
-		} else if (defender.ability !== 'Magic Guard') {
+			eotText.push("Poison Heal");
+		} else if (!defender.hasAbility("Magic Guard")) {
 			eot -= Math.floor(defender.maxHP / 8);
-			eotText.push('poison damage');
+			eotText.push("poison damage");
 		}
-	} else if (defender.status === 'Badly Poisoned') {
-		if (defender.ability === 'Poison Heal') {
+	} else if (defender.hasStatus("Badly Poisoned")) {
+		if (defender.hasAbility("Poison Heal")) {
 			eot += Math.floor(defender.maxHP / 8);
-			eotText.push('Poison Heal');
-		} else if (defender.ability !== 'Magic Guard') {
-			eotText.push('toxic damage');
+			eotText.push("Poison Heal");
+		} else if (!defender.hasAbility("Magic Guard")) {
+			eotText.push("toxic damage");
 			toxicCounter = defender.toxicCounter;
 		}
-	} else if (defender.status === 'Burned') {
-		if (defender.ability === 'Heatproof') {
+	} else if (defender.hasStatus("Burned")) {
+		if (defender.hasAbility("Heatproof")) {
 			eot -= gen > 6 ? Math.floor(defender.maxHP / 32) : Math.floor(defender.maxHP / 16);
-			eotText.push('reduced burn damage');
-		} else if (defender.ability !== 'Magic Guard') {
+			eotText.push("reduced burn damage");
+		} else if (!defender.hasAbility("Magic Guard")) {
 			eot -= gen > 6 ? Math.floor(defender.maxHP / 16) : Math.floor(defender.maxHP / 8);
-			eotText.push('burn damage');
+			eotText.push("burn damage");
 		}
-	} else if ((defender.status === 'Asleep' || defender.ability === 'Comatose') && isBadDreams && defender.ability !== 'Magic Guard') {
+	} else if ((defender.hasStatus("Asleep") || defender.hasAbility("Comatose")) && isBadDreams && !defender.hasAbility("Magic Guard")) {
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push('Bad Dreams');
 	}
-	if (['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'].indexOf(move.name) !== -1 && defender.ability !== 'Magic Guard') {
-		if (attacker.item === "Binding Band") {
+	if (["Bind", "Clamp", "Fire Spin", "Infestation", "Magma Storm", "Sand Tomb", "Whirlpool", "Wrap"].indexOf(move.name) !== -1 && !defender.hasAbility("Magic Guard")) {
+		if (attacker.hasItem("Binding Band")) {
 			eot -= gen > 5 ? Math.floor(defender.maxHP / 6) : Math.floor(defender.maxHP / 8);
-			eotText.push('trapping damage');
+			eotText.push("trapping damage");
 		} else {
 			eot -= gen > 5 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16);
-			eotText.push('trapping damage');
+			eotText.push("trapping damage");
 		}
 	}
-	if ((move.name === 'Fire Pledge (Grass Pledge Boosted)' || move.name === 'Grass Pledge (Fire Pledge Boosted)') && [defender.type1, defender.type2].indexOf("Fire") === -1 && defender.ability !== 'Magic Guard') {
+	if ((move.name === "Fire Pledge (Grass Pledge Boosted)" || move.name === "Grass Pledge (Fire Pledge Boosted)") && !defender.hasType("Fire") && !defender.hasAbility("Magic Guard")) {
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push('Sea of Fire damage');
 	}

@@ -65,12 +65,12 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
 
-	if ((defender.ability.indexOf("Flash Fire") !== -1 && move.type === "Fire") ||
-            (defender.ability === "Levitate" && move.type === "Ground") ||
-            (defender.ability === "Volt Absorb" && move.type === "Electric") ||
-            (defender.ability === "Water Absorb" && move.type === "Water") ||
-            (defender.ability === "Wonder Guard" && typeEffectiveness <= 1) ||
-            (defender.ability === "Soundproof" && move.isSound)) {
+	if ((defender.hasAbility("Flash Fire", "Flash Fire (activated)") && move.type === "Fire") ||
+            (defender.hasAbility("Levitate") && move.type === "Ground") ||
+            (defender.hasAbility("Volt Absorb") && move.type === "Electric") ||
+            (defender.hasAbility("Water Absorb") && move.type === "Water") ||
+            (defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
+            (defender.hasAbility("Soundproof") && move.isSound)) {
 		description.defenderAbility = defender.ability;
 		return {"damage": [0], "description": buildDescription(description)};
 	}
@@ -120,7 +120,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 	var at = attacker.rawStats[attackStat];
 	var df = defender.rawStats[defenseStat];
 
-	if (isPhysical && (attacker.ability === "Huge Power" || attacker.ability === "Pure Power")) {
+	if (isPhysical && (attacker.hasAbility("Huge Power", "Pure Power"))) {
 		at *= 2;
 		description.attackerAbility = attacker.ability;
 	}
@@ -128,45 +128,45 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 	if (attacker.item !== "Sea Incense" && getItemBoostType(attacker.item) === move.type) {
 		at = Math.floor(at * 1.1);
 		description.attackerItem = attacker.item;
-	} else if (attacker.item === "Sea Incense" && move.type === "Water") {
+	} else if (attacker.hasItem("Sea Incense") && move.type === "Water") {
 		at = Math.floor(at * 1.05);
 		description.attackerItem = attacker.item;
-	} else if ((isPhysical && attacker.item === "Choice Band") ||
-            (!isPhysical && attacker.item === "Soul Dew" && (attacker.name === "Latios" || attacker.name === "Latias"))) {
+	} else if ((isPhysical && attacker.hasItem("Choice Band")) ||
+            (!isPhysical && attacker.hasItem("Soul Dew") && attacker.named("Latios", "Latias"))) {
 		at = Math.floor(at * 1.5);
 		description.attackerItem = attacker.item;
-	} else if ((!isPhysical && attacker.item === "Deep Sea Tooth" && attacker.name === "Clamperl") ||
-            (!isPhysical && attacker.item === "Light Ball" && attacker.name === "Pikachu") ||
-            (isPhysical && attacker.item === "Thick Club" && (attacker.name === "Cubone" || attacker.name === "Marowak"))) {
+	} else if ((!isPhysical && attacker.hasItem("Deep Sea Tooth") && attacker.named("Clamperl")) ||
+            (!isPhysical && attacker.hasItem("Light Ball") && attacker.named("Pikachu")) ||
+            (isPhysical && attacker.hasItem("Thick Club") && attacker.named("Cubone", "Marowak"))) {
 		at *= 2;
 		description.attackerItem = attacker.item;
 	}
 
-	if (!isPhysical && defender.item === "Soul Dew" && (defender.name === "Latios" || defender.name === "Latias")) {
+	if (!isPhysical && defender.hasItem("Soul Dew") && defender.named("Latios", "Latias")) {
 		df = Math.floor(df * 1.5);
 		description.defenderItem = defender.item;
-	} else if ((!isPhysical && defender.item === "Deep Sea Scale" && defender.name === "Clamperl") ||
-            (isPhysical && defender.item === "Metal Powder" && defender.name === "Ditto")) {
+	} else if ((!isPhysical && defender.hasItem("Deep Sea Scale") && defender.named("Clamperl")) ||
+            (isPhysical && defender.hasItem("Metal Powder") && defender.named("Ditto"))) {
 		df *= 2;
 		description.defenderItem = defender.item;
 	}
 
-	if (defender.ability === "Thick Fat" && (move.type === "Fire" || move.type === "Ice")) {
+	if (defender.hasAbility("Thick Fat") && (move.type === "Fire" || move.type === "Ice")) {
 		at = Math.floor(at / 2);
 		description.defenderAbility = defender.ability;
-	} else if (isPhysical && defender.ability === "Marvel Scale" && defender.status !== "Healthy") {
+	} else if (isPhysical && defender.hasAbility("Marvel Scale") && defender.status !== "Healthy") {
 		df = Math.floor(df * 1.5);
 		description.defenderAbility = defender.ability;
 	}
 
-	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
+	if (isPhysical && (attacker.hasAbility("Hustle") || (attacker.hasAbility("Guts") && attacker.status !== "Healthy")) || (!isPhysical && (attacker.hasAbility("Plus", "Minus")))) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.curHP <= attacker.maxHP / 3 &&
-            ((attacker.ability === "Overgrow" && move.type === "Grass") ||
-            (attacker.ability === "Blaze" && move.type === "Fire") ||
-            (attacker.ability === "Torrent" && move.type === "Water") ||
-            (attacker.ability === "Swarm" && move.type === "Bug"))) {
+            ((attacker.hasAbility("Overgrow") && move.type === "Grass") ||
+            (attacker.hasAbility("Blaze") && move.type === "Fire") ||
+            (attacker.hasAbility("Torrent") && move.type === "Water") ||
+            (attacker.hasAbility("Swarm") && move.type === "Bug"))) {
 		bp = Math.floor(bp * 1.5);
 		description.attackerAbility = attacker.ability;
 	}
@@ -175,7 +175,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		df = Math.floor(df / 2);
 	}
 
-	var isCritical = move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defender.ability) === -1;
+	var isCritical = move.isCrit && !defender.hasAbility("Battle Armor", "Shell Armor");
 
 	var attackBoost = attacker.boosts[attackStat];
 	var defenseBoost = defender.boosts[defenseStat];
@@ -190,7 +190,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 
 	var baseDamage = Math.floor(Math.floor(Math.floor(2 * lv / 5 + 2) * at * bp / df) / 50);
 
-	if (attacker.status === "Burned" && isPhysical && attacker.ability !== "Guts") {
+	if (attacker.hasStatus("Burned") && isPhysical && attacker.ability !== "Guts") {
 		baseDamage = Math.floor(baseDamage / 2);
 		description.isBurned = true;
 	}
@@ -215,12 +215,12 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
 	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
-            (move.name === "Solar Beam" && ["Rain", "Sand", "Hail"].indexOf(field.weather) !== -1)) {
+            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail") !== -1)) {
 		baseDamage = Math.floor(baseDamage / 2);
 		description.weather = field.weather;
 	}
 
-	if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
+	if (attacker.hasAbility("Flash Fire (activated)") && move.type === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.attackerAbility = "Flash Fire";
 	}

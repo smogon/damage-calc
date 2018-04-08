@@ -571,8 +571,28 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}
-	this.hasType = function(type) {
+	this.hasAbility = function () {
+		for (i = 0; i < arguments.length; i++) {
+			return this.ability === arguments[i];
+		}
+	};
+	this.hasItem = function () {
+		for (i = 0; i < arguments.length; i++) {
+			return this.item === arguments[i];
+		}
+	};
+	this.hasStatus = function () {
+		for (i = 0; i < arguments.length; i++) {
+			return this.status === arguments[i];
+		}
+	};
+	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
+	};
+	this.named = function () {
+		for (i = 0; i < arguments.length; i++) {
+			return this.name === arguments[i];
+		}
 	};
 }
 
@@ -676,6 +696,12 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isHelpingHand = isHelpingHand;
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
+	var i;
+	this.hasWeather = function () {
+		for (i = 0; i < arguments.length; i++) {
+			return this.weather === arguments[i];
+		}
+	};
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
