@@ -2110,6 +2110,17 @@ var POKEDEX_RBY = {
 };
 
 var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
+	"Articuno": { "gender": "genderless" },
+	"Chansey": { "canEvolve": true },
+	"Ditto": { "gender": "genderless" },
+	"Electrode": { "gender": "genderless" },
+	"Golbat": { "canEvolve": true },
+	"Mew": { "gender": "genderless" },
+	"Mewtwo": { "gender": "genderless" },
+	"Moltres": { "gender": "genderless" },
+	"Scyther": { "canEvolve": true },
+	"Seadra": { "canEvolve": true },
+	"Zapdos": { "gender": "genderless" }
 	"Aipom": {
 		"t1": "Normal",
 		"bs": {
@@ -2147,7 +2158,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		},
 		"w": 33.5
 	},
-	"Articuno": { "gender": "genderless" },
 	"Azumarill": {
 		"t1": "Water",
 		"bs": {
@@ -2212,7 +2222,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		"ab": "Natural Cure",
 		"gender": "genderless"
 	},
-	"Chansey": { "canEvolve": true },
 	"Chikorita": {
 		"t1": "Grass",
 		"bs": {
@@ -2305,7 +2314,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		"w": 7.9,
 		"canEvolve": true
 	},
-	"Ditto": { "gender": "genderless" },
 	"Delibird": {
 		"t1": "Ice",
 		"t2": "Flying",
@@ -2343,7 +2351,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		},
 		"w": 14.0
 	},
-	"Electrode": { "gender": "genderless" },
 	"Elekid": {
 		"t1": "Electric",
 		"bs": {
@@ -2471,7 +2478,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		},
 		"w": 48.7
 	},
-	"Golbat": { "canEvolve": true },
 	"Heracross": {
 		"t1": "Bug",
 		"t2": "Fighting",
@@ -2783,9 +2789,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		"w": 1.0,
 		"ab": "Levitate"
 	},
-	"Mew": { "gender": "genderless" },
-	"Mewtwo": { "gender": "genderless" },
-	"Moltres": { "gender": "genderless" },
 	"Murkrow": {
 		"t1": "Dark",
 		"t2": "Flying",
@@ -2999,7 +3002,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		},
 		"w": 12.0
 	},
-	"Scyther": { "canEvolve": true },
 	"Scizor": {
 		"t1": "Bug",
 		"t2": "Steel",
@@ -3014,7 +3016,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		"w": 118.0,
 		"ab": "Technician"
 	},
-	"Seadra": { "canEvolve": true },
 	"Sentret": {
 		"t1": "Normal",
 		"bs": {
@@ -3431,7 +3432,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 		},
 		"w": 38.0
 	},
-	"Zapdos": { "gender": "genderless" }
 });
 
 var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
@@ -5257,6 +5257,18 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 });
 
 var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
+	"Aipom": { "canEvolve": true },
+	"Electabuzz": { "canEvolve": true },
+	"Gligar": { "canEvolve": true },
+	"Misdreavus": { "canEvolve": true },
+	"Murkrow": { "canEvolve": true },
+	"Piloswine": { "canEvolve": true },
+	"Porygon2": { "canEvolve": true },
+	"Rhyhorn": { "canEvolve": true },
+	"Roselia": { "canEvolve": true },
+	"Tangela": { "canEvolve": true },
+	"Togetic": { "canEvolve": true },
+	"Yanma": { "canEvolve": true },
 	"Abomasnow": {
 		"t1": "Grass",
 		"t2": "Ice",
@@ -5270,7 +5282,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		},
 		"w": 135.5
 	},
-	"Aipom": { "canEvolve": true },
 	"Ambipom": {
 		"t1": "Normal",
 		"bs": {
@@ -5935,7 +5946,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		},
 		"w": 106.6
 	},
-	"Electabuzz": { "canEvolve": true },
 	"Electivire": {
 		"t1": "Electric",
 		"bs": {
@@ -6157,7 +6167,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 3.9,
 		"canEvolve": true
 	},
-	"Gligar": { "canEvolve": true },
 	"Gliscor": {
 		"t1": "Ground",
 		"t2": "Flying",
@@ -6493,7 +6502,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 13.0,
 		"canEvolve": true
 	},
-	"Misdreavus": { "canEvolve": true },
 	"Mismagius": {
 		"t1": "Ghost",
 		"bs": {
@@ -6547,7 +6555,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 105.0,
 		"canEvolve": true
 	},
-	"Murkrow": { "canEvolve": true },
 	"Pachirisu": {
 		"t1": "Electric",
 		"bs": {
@@ -6588,7 +6595,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"ab": "Hydration",
 		"gender": "genderless"
 	},
-	"Piloswine": { "canEvolve": true },
 	"Piplup": {
 		"t1": "Water",
 		"bs": {
@@ -6602,7 +6608,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 5.2,
 		"canEvolve": true
 	},
-	"Porygon2": { "canEvolve": true },
 	"Porygon-Z": {
 		"t1": "Normal",
 		"bs": {
@@ -6706,7 +6711,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		},
 		"w": 44.0
 	},
-	"Rhyhorn": { "canEvolve": true },
 	"Rhyperior": {
 		"t1": "Ground",
 		"t2": "Rock",
@@ -6733,7 +6737,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 20.2,
 		"canEvolve": true
 	},
-	"Roselia": { "canEvolve": true },
 	"Roserade": {
 		"t1": "Grass",
 		"t2": "Poison",
@@ -7052,7 +7055,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		},
 		"w": 4.0
 	},
-	"Tangela": { "canEvolve": true },
 	"Tangrowth": {
 		"t1": "Grass",
 		"bs": {
@@ -7065,7 +7067,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		},
 		"w": 128.6
 	},
-	"Togetic": { "canEvolve": true },
 	"Togekiss": {
 		"t1": "Normal",
 		"t2": "Flying",
@@ -7210,7 +7211,6 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		},
 		"w": 6.5
 	},
-	"Yanma": { "canEvolve": true },
 	"Yanmega": {
 		"t1": "Bug",
 		"t2": "Flying",
