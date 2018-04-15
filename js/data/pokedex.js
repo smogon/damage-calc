@@ -2120,7 +2120,15 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 	"Moltres": { "gender": "genderless" },
 	"Scyther": { "canEvolve": true },
 	"Seadra": { "canEvolve": true },
-	"Zapdos": { "gender": "genderless" }
+	"Zapdos": { "gender": "genderless" },
+	"Magnemite": {
+		"gender": "genderless",
+		"t2": "Steel"
+	},
+	"Magneton": {
+		"t2": "Steel",
+		"gender": "genderless"
+	},
 	"Aipom": {
 		"t1": "Normal",
 		"bs": {
@@ -2704,14 +2712,6 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sp": 30
 		},
 		"w": 55.0
-	},
-	"Magnemite": {
-		"gender": "genderless",
-		"t2": "Steel"
-	},
-	"Magneton": {
-		"t2": "Steel",
-		"gender": "genderless"
 	},
 	"Mantine": {
 		"t1": "Water",
