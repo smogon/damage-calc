@@ -305,7 +305,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Weather Ball":
-		basePower = field.weather !== "" ? 100 : 50;
+		basePower = (field.weather !== "" && field.weather !== "Delta Stream") ? 100 : 50;
 		description.moveBP = basePower;
 		break;
 	case "Fling":
