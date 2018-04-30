@@ -571,17 +571,17 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}
-	this.hasAbility = function () {
+	this.hasAbility = function (arguments) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.ability === arguments[i];
 		}
 	};
-	this.hasItem = function () {
+	this.hasItem = function (arguments) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.item === arguments[i];
 		}
 	};
-	this.hasStatus = function () {
+	this.hasStatus = function (arguments) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.status === arguments[i];
 		}
@@ -589,7 +589,7 @@ function Pokemon(pokeInfo) {
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
 	};
-	this.named = function () {
+	this.named = function (arguments) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.name === arguments[i];
 		}
@@ -697,7 +697,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
 	var i;
-	this.hasWeather = function () {
+	this.hasWeather = function (arguments) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.weather === arguments[i];
 		}
