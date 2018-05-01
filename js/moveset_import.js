@@ -20,7 +20,7 @@ function ExportPokemon(pokeInfo) {
 	if (gen > 2) {
 		finalText += "EVs: ";
 		var EVs_Array = [];
-		if (pokemon.HPEVs != -1 && pokemon.HPEVs > 0) { // Do HP EVs exist and are they greater than 0?
+		if (pokemon.HPEVs && pokemon.HPEVs > 0) { // Do HP EVs exist and are they greater than 0?
 			EV_counter += pokemon.HPEVs;
 			EVs_Array.push(pokemon.HPEVs + " HP");
 		}
