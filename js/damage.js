@@ -250,6 +250,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.hits > 1) {
 		description.hits = move.hits;
 	}
+
 	var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
 
 	////////////////////////////////
@@ -376,6 +377,17 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if (attacker.ability === "Sheer Force" && move.hasSecondaryEffect) {
 		bpMods.push(0x14CD);
+		description.attackerAbility = attacker.ability;
+	}
+
+	if (attacker.ability === "Rivalry" && [attacker.gender, defender.gender].indexOf("genderless") === -1) {
+		if (attacker.gender === defender.gender) {
+			bpMods.push(0x1400);
+			description.rivalry = "buffed";
+		} else {
+			bpMods.push(0xCCD);
+			description.rivalry = "nerfed";
+		}
 		description.attackerAbility = attacker.ability;
 	}
 
