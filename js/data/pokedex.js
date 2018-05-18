@@ -12206,6 +12206,19 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		"w": 29.7,
 		"canEvolve": true
 	},
+	"Jumbao": {
+		"t1": "Grass",
+		"t2": "Fairy",
+		"bs": {
+			"hp": 92,
+			"at": 63,
+			"df": 97,
+			"sa": 124,
+			"sd": 104,
+			"sp": 96
+		},
+		"w": 600
+	},
 	"Kartana": {
 		"t1": "Grass",
 		"t2": "Steel",
