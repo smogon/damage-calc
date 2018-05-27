@@ -143,7 +143,8 @@ var MOVES_RBY = {
 	},
 	'Fire Spin': {
 		bp: 15,
-		type: 'Fire'
+		type: 'Fire',
+		category: 'Special'
 	},
 	'Flamethrower': {
 		bp: 95,
@@ -2914,6 +2915,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	'Fire Pledge': {zp: 160},
 	'Fire Punch': {zp: 140},
+	'Fire Spin': {zp: 100},
 	'First Impression': {
 		bp: 90,
 		type: 'Bug',
