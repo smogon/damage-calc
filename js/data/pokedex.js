@@ -1003,7 +1003,8 @@ var POKEDEX_RBY = {
 			"sp": 45,
 			"sl": 50
 		},
-		"w": 70.5
+		"w": 70.5,
+		"canEvolve": true
 	},
 	"Machop": {
 		"t1": "Fighting",
