@@ -2428,6 +2428,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	'Disarming Voice': {
 		bp: 40,
 		type: 'Fairy',
+		category: 'Special',
 		isSound: true
 	},
 	'Draco Meteor': {bp: 130},
