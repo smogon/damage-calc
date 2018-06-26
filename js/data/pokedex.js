@@ -13643,7 +13643,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sp": 80
 		},
 		"w": 12.0,
-		"ab": "Wimp Out"
+		"ab": "Wimp Out",
+		"canEvolve": true
 	},
 	"Wishiwashi": {
 		"t1": "Water",
