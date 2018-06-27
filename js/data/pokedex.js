@@ -11926,7 +11926,6 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sp": 70
 		},
 		"w": 36.6,
-		"canEvolve": true
 	},
 	"Dewpider": {
 		"t1": "Water",
