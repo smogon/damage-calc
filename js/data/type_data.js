@@ -1,5 +1,6 @@
 var TYPE_CHART_RBY = {
 	None: {
+		category: 'Physical',
 		Normal: 1,
 		Grass: 1,
 		Fire: 1,
@@ -10,10 +11,10 @@ var TYPE_CHART_RBY = {
 		Bug: 1,
 		Poison: 1,
 		Ground: 1,
-		Rock: 1,
+		Rock: 0.5,
 		Fighting: 1,
 		Psychic: 1,
-		Ghost: 1,
+		Ghost: 0,
 		Dragon: 1
 	},
 	Normal: {
@@ -306,7 +307,9 @@ var TYPE_CHART_RBY = {
 var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
 	None: {
 		Dark: 1,
-		Steel: 1
+		Ghost: 1,
+		Rock: 1,
+		Steel: 1,
 	},
 	Normal: {
 		Dark: 1,
