@@ -1,5 +1,6 @@
 var TYPE_CHART_RBY = {
 	None: {
+		category: 'Physical',
 		Normal: 1,
 		Grass: 1,
 		Fire: 1,
