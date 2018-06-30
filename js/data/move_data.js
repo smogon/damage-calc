@@ -362,6 +362,7 @@ var MOVES_RBY = {
 	'Struggle': {
 		bp: 50,
 		type: 'Normal',
+		category: 'Physical',
 		hasRecoil: 50
 	},
 	'Submission': {
