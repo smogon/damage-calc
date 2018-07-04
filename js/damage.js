@@ -278,7 +278,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Low Kick":
 	case "Grass Knot":
-		var w = defender.weight;
+		var w = defender.weight * getWeightFactor(defender);
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
@@ -288,7 +288,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Heavy Slam":
 	case "Heat Crash":
-		var wr = attacker.weight / defender.weight;
+		var wr = attacker.weight * getWeightFactor(attacker) / (defender.weight * getWeightFactor(defender));
 		basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
 		description.moveBP = basePower;
 		break;
@@ -980,4 +980,8 @@ function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMo
 		damageAmount = Math.floor(damageAmount / 2);
 	}
 	return pokeRound(Math.max(1, damageAmount * finalMod / 0x1000));
+}
+
+function getWeightFactor(pokemon) {
+	return (pokemon.ability === "Heavy Metal" ? 2 : pokemon.ability === "Light Metal" ? 0.5 : 1);
 }

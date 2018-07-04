@@ -2103,6 +2103,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		makesContact: true,
 		hasRecoil: 25
 	},
+	'Heat Crash': {
+		bp: 1,
+		type: 'Fire',
+		category: 'Physical',
+		makesContact: true
+	},
 	'Heavy Slam': {
 		bp: 1,
 		type: 'Steel',
