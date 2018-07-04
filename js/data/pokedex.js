@@ -3001,7 +3001,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 35,
 			"sp": 65
 		},
-		"w": 12.0
+		"w": 12.0,
+		"canEvolve": true
 	},
 	"Scizor": {
 		"t1": "Bug",
@@ -3538,7 +3539,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 30,
 			"sp": 50
 		},
-		"w": 42.1
+		"w": 42.1,
+		"canEvolve": true
 	},
 	"Baltoy": {
 		"t1": "Ground",
@@ -3686,7 +3688,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 20,
 			"sp": 65
 		},
-		"w": 20.8
+		"w": 20.8,
+		"canEvolve": true
 	},
 	"Cascoon": {
 		"t1": "Bug",
@@ -6894,7 +6897,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 88,
 			"sp": 30
 		},
-		"w": 57.0
+		"w": 57.0,
+		"canEvolve": true
 	},
 	"Shinx": {
 		"t1": "Electric",
@@ -7674,7 +7678,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 45,
 			"sp": 50
 		},
-		"w": 37.5
+		"w": 37.5,
+		"canEvolve": true
 	},
 	"Deerling": {
 		"t1": "Normal",
@@ -11898,7 +11903,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sd": 40,
 			"sp": 84
 		},
-		"w": 0.2
+		"w": 0.2,
+		"canEvolve": true
 	},
 	"Dartrix": {
 		"t1": "Grass",
@@ -12839,6 +12845,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		},
 		"w": 1.8,
 		"ab": "Beast Boost",
+		"canEvolve": true,
 		"gender": "genderless"
 	},
 	"Popplio": {
@@ -13077,6 +13084,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sp": 15
 		},
 		"w": 70.0,
+		"canEvolve": true
 	},
 	"Shiinotic": {
 		"t1": "Grass",
