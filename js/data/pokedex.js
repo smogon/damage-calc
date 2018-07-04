@@ -12845,8 +12845,8 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		},
 		"w": 1.8,
 		"ab": "Beast Boost",
-		"canEvolve": true,
-		"gender": "genderless"
+		"gender": "genderless",
+		"canEvolve": true
 	},
 	"Popplio": {
 		"t1": "Water",
