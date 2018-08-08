@@ -197,7 +197,7 @@ var megaStones = {
 	'Aerodactylite': 'Aerodactyl',
 	'Aggronite': 'Aggron',
 	'Alakazite': 'Alakazam',
-	'Altarite': 'Altaria',
+	'Altarianite': 'Altaria',
 	'Ampharosite': 'Ampharos',
 	'Audinite': 'Audino',
 	'Banettite': 'Banette',

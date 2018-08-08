@@ -2274,6 +2274,7 @@ var SETDEX_DPP = {
 		"OU RestTalk": {"level": 100, "evs": {"sd": 72, "df": 184, "hp": 252}, "nature": "Calm", "ability": "Liquid Ooze", "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Toxic Spikes", "Surf"]},
 		"OU Offensive Rapid Spin": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Liquid Ooze", "item": "Life Orb", "moves": ["Hydro Pump", "Rapid Spin", "Sludge Bomb", "Ice Beam"]},
 		"OU Swords Dance": {"level": 100, "evs": {"at": 232, "sp": 196, "sa": 80}, "nature": "Lonely", "ability": "Clear Body", "item": "Life Orb", "moves": ["Swords Dance", "Waterfall", "Poison Jab", "Hydro Pump"]},
+		"Uber Lead": {"level": 100, "evs": {"hp": 132, "sp": 216, "sa": 160}, "nature": "Timid", "ability": "Clear Body", "item": "Lum Berry", "moves": ["Toxic Spikes", "Rapid Spin", "Icy Wind", "Hydro Pump"]},
 	},
 	"Togekiss": {
 		"OU Defensive Nasty Plot": {"level": 100, "evs": {"hp": 252, "sp": 220, "sa": 36}, "nature": "Modest", "ability": "Serene Grace", "item": "Leftovers", "moves": ["Nasty Plot", "Air Slash", "Aura Sphere", "Roost"]},

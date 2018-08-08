@@ -362,6 +362,7 @@ var MOVES_RBY = {
 	'Struggle': {
 		bp: 50,
 		type: 'Normal',
+		category: 'Physical',
 		hasRecoil: 50
 	},
 	'Submission': {
@@ -2101,6 +2102,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		category: 'Physical',
 		makesContact: true,
 		hasRecoil: 25
+	},
+	'Heat Crash': {
+		bp: 1,
+		type: 'Fire',
+		category: 'Physical',
+		makesContact: true
 	},
 	'Heavy Slam': {
 		bp: 1,

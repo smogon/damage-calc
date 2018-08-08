@@ -1,6 +1,6 @@
 ﻿function getKOChanceText(damage, attacker, defender, field, move, hits, isBadDreams) {
 	if (isNaN(damage[0])) {
-		return 'something broke; please tell Austin or Marty';
+		return 'something broke; please tell Austin';
 	}
 	if (damage[damage.length - 1] === 0) {
 		return 'aim for the horn next time';

@@ -105,10 +105,10 @@ var SETDEX_XY = {
 		"Uber Kindhearted Fish": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Impish", "ability": "Regenerator", "item": "Leftovers", "moves": ["Wish", "Protect", "Toxic", "Knock Off"]},
 	},
 	"Altaria": {
+		"PU Physically Defensive": {"level": 100, "evs": {"df": 164, "hp": 248, "sp": 96}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Flamethrower", "Toxic", "Heal Bell", "Roost"]},
 		"PU Special Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Natural Cure", "item": "Life Orb", "moves": ["Draco Meteor", "Fire Blast", "Roost", "Toxic"]},
 		"PU Offensive Dragon Dance": {"level": 100, "evs": {"at": 252, "hp": 64, "sp": 192}, "nature": "Adamant", "ability": "Natural Cure", "item": "Yache Berry", "moves": ["Dragon Dance", "Dragon Claw", "Earthquake", "Roost"]},
 		"PU Bulky Dragon Dance": {"level": 100, "evs": {"sd": 68, "hp": 248, "sp": 192}, "nature": "Careful", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Dragon Dance", "Dragon Claw", "Roost", "Cotton Guard"]},
-		"PU Physically Defensive": {"level": 100, "evs": {"df": 164, "hp": 248, "sp": 96}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Flamethrower", "Dragon Pulse", "Heal Bell", "Roost"]},
 		"NU Defensive": {"level": 100, "evs": {"sd": 28, "df": 212, "hp": 252, "sp": 16}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Roost", "Flamethrower", "Toxic", "Haze"]},
 		"NU Choice Specs": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Natural Cure", "item": "Choice Specs", "moves": ["Draco Meteor", "Fire Blast", "Dragon Pulse", "Rest"]},
 		"OU Offensive Dragon Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Natural Cure", "item": "Altarianite", "moves": ["Dragon Dance", "Return", "Earthquake", "Roost"]},
@@ -368,7 +368,7 @@ var SETDEX_XY = {
 	"Beheeyem": {
 		"PU Defensive Nasty Plot": {"level": 100, "evs": {"df": 236, "hp": 248, "sa": 24}, "nature": "Modest", "ability": "Analytic", "item": "Colbur Berry", "moves": ["Nasty Plot", "Psychic", "Signal Beam", "Recover"]},
 		"PU Choice Specs": {"level": 100, "evs": {"hp": 212, "sp": 44, "sa": 252}, "nature": "Modest", "ability": "Analytic", "item": "Choice Specs", "moves": ["Psychic", "Signal Beam", "Hidden Power Ground", "Trick"]},
-		"PU Trick Room": {"level": 100, "evs": {"sd": 4, "hp": 252, "sa": 252}, "ivs": {"sd": 30, "sp": 1, "sa": 30}, "nature": "Quiet", "ability": "Analytic", "item": "Life Orb", "moves": ["Trick Room", "Psychic", "Signal Beam", "Shadow Ball"]},
+		"PU Trick Room": {"level": 100, "evs": {"sd": 4, "hp": 252, "sa": 252}, "nature": "Quiet", "ability": "Analytic", "item": "Life Orb", "moves": ["Trick Room", "Psychic", "Signal Beam", "Thunderbolt"]},
 		"NU Choice Specs": {"level": 100, "evs": {"hp": 132, "sp": 124, "sa": 252}, "nature": "Modest", "ability": "Analytic", "item": "Choice Specs", "moves": ["Psychic", "Signal Beam", "Hidden Power Ground", "Trick"]},
 	},
 	"Bellossom": {
@@ -433,8 +433,8 @@ var SETDEX_XY = {
 		"LC Life Orb": {"level": 5, "evs": {"sd": 20, "df": 20, "at": 196, "sp": 228, "sa": 36}, "ivs": {"hp": 0}, "nature": "Naive", "ability": "Sap Sipper", "item": "Life Orb", "moves": ["Wild Charge", "Volt Switch", "Flame Charge", "Double-Edge"]},
 	},
 	"Bouffalant": {
-		"PU Tank": {"level": 100, "evs": {"sd": 8, "at": 252, "hp": 248}, "nature": "Adamant", "ability": "Sap Sipper", "item": "Assault Vest", "moves": ["Return", "Earthquake", "Pursuit", "Facade"]},
 		"PU Substitute": {"level": 100, "evs": {"at": 136, "hp": 248, "sp": 124}, "nature": "Adamant", "ability": "Sap Sipper", "item": "Leftovers", "moves": ["Substitute", "Swords Dance", "Return", "Earthquake"]},
+		"PU Tank": {"level": 100, "evs": {"sd": 8, "at": 252, "hp": 248}, "nature": "Adamant", "ability": "Sap Sipper", "item": "Assault Vest", "moves": ["Return", "Earthquake", "Pursuit", "Facade"]},
 		"PU Choice Band": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Reckless", "item": "Choice Band", "moves": ["Head Charge", "Earthquake", "Megahorn", "Pursuit"]},
 		"NU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 120, "sp": 136}, "nature": "Adamant", "ability": "Sap Sipper", "item": "Leftovers", "moves": ["Swords Dance", "Return", "Earthquake", "Substitute"]},
 		"NU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 108, "sp": 148}, "nature": "Adamant", "ability": "Sap Sipper", "item": "Choice Band", "moves": ["Head Charge", "Earthquake", "Pursuit", "Megahorn"]},
@@ -624,7 +624,7 @@ var SETDEX_XY = {
 		"RU Physical Attacker": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Skill Link", "item": "Choice Band", "moves": ["Tail Slap", "Bullet Seed", "Rock Blast", "Knock Off"]},
 	},
 	"Clamperl": {
-		"LC Shell Smash": {"level": 5, "evs": {"sd": 76, "sp": 184, "sa": 248}, "nature": "Modest", "ability": "Shell Armor", "item": "Deep Sea Tooth", "moves": ["Shell Smash", "Surf", "Ice Beam", "Substitute"]},
+		"LC Shell Smash": {"level": 5, "evs": {"sd": 76, "sp": 184, "sa": 248}, "nature": "Timid", "ability": "Shell Armor", "item": "Deep Sea Tooth", "moves": ["Shell Smash", "Surf", "Ice Beam", "Substitute"]},
 	},
 	"Clauncher": {
 		"LC Pivot": {"level": 5, "evs": {"sd": 92, "df": 180, "at": 92, "sa": 132}, "nature": "Relaxed", "ability": "Mega Launcher", "item": "Eviolite", "moves": ["Scald", "Aqua Jet", "Ice Beam", "U-turn"]},
@@ -680,7 +680,6 @@ var SETDEX_XY = {
 	},
 	"Combusken": {
 		"PU Life Orb Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Speed Boost", "item": "Life Orb", "moves": ["Fire Blast", "Focus Blast", "Hidden Power Ice", "Protect"]},
-		"PU Speed Pass": {"level": 100, "evs": {"sd": 8, "hp": 248, "sp": 252}, "nature": "Timid", "ability": "Speed Boost", "item": "Eviolite", "moves": ["Will-O-Wisp", "Substitute", "Baton Pass", "Protect"]},
 		"NU Life Orb": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Speed Boost", "item": "Life Orb", "moves": ["Fire Blast", "Focus Blast", "Protect", "Hidden Power Electric"]},
 		"NU Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Speed Boost", "item": "Eviolite", "moves": ["Swords Dance", "Flare Blitz", "Low Kick", "Protect"]},
 	},
@@ -885,9 +884,6 @@ var SETDEX_XY = {
 		"OU Choice Specs": {"level": 100, "evs": {"hp": 228, "sp": 28, "sa": 252}, "nature": "Modest", "ability": "Adaptability", "item": "Choice Specs", "moves": ["Draco Meteor", "Sludge Wave", "Focus Blast", "Scald"]},
 		"Battle Spot Doubles Trick Room Attacker": {"level": 50, "evs": {"df": 4, "hp": 252, "sa": 252}, "ivs": {"sp": 0}, "nature": "Quiet", "ability": "Adaptability", "item": "Life Orb", "moves": ["Draco Meteor", "Sludge Bomb", "Focus Blast", "Protect"]},
 	},
-	"Dragonair": {
-		"PU Rest Talk Sweeper": {"level": 100, "evs": {"sd": 188, "at": 44, "hp": 252, "sp": 24}, "nature": "Careful", "ability": "Marvel Scale", "item": "Eviolite", "moves": ["Outrage", "Dragon Dance", "Rest", "Sleep Talk"]},
-	},
 	"Dragonite": {
 		"OU Fly Nite": {"level": 100, "evs": {"df": 116, "hp": 252, "sp": 140}, "nature": "Jolly", "ability": "Multiscale", "item": "Leftovers", "moves": ["Dragon Dance", "Substitute", "Roost", "Fly"]},
 		"OU Dragon Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Multiscale", "item": "Lum Berry", "moves": ["Dragon Dance", "Outrage", "Extreme Speed", "Earthquake"]},
@@ -1086,7 +1082,7 @@ var SETDEX_XY = {
 		"NU Offensive": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Flash Fire", "item": "Choice Band", "moves": ["Flare Blitz", "Superpower", "Quick Attack", "Baton Pass"]},
 	},
 	"Fletchinder": {
-		"RU Swords Dance": {"level": 100, "evs": {"sd": 28, "df": 76, "at": 252, "hp": 152}, "nature": "Adamant", "ability": "Gale Wings", "moves": ["Swords Dance", "Acrobatics", "Will-O-Wisp", "Roost"]},
+		"RU Linda": {"level": 100, "evs": {"sd": 28, "df": 76, "at": 252, "hp": 152}, "nature": "Adamant", "ability": "Gale Wings", "moves": ["Swords Dance", "Acrobatics", "Will-O-Wisp", "Roost"]},
 		"UU Linda": {"level": 100, "evs": {"at": 252, "hp": 104, "sp": 152}, "nature": "Adamant", "ability": "Gale Wings", "moves": ["Acrobatics", "Swords Dance", "Roost", "Will-O-Wisp"]},
 	},
 	"Fletchling": {
@@ -1871,7 +1867,7 @@ var SETDEX_XY = {
 	},
 	"Leafeon": {
 		"PU Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Chlorophyll", "item": "Yache Berry", "moves": ["Swords Dance", "Leaf Blade", "Knock Off", "Return"]},
-		"PU Choice Scarf": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Chlorophyll", "item": "Choice Scarf", "moves": ["Leaf Blade", "Knock Off", "Double-Edge", "Baton Pass"]},
+		"PU Choice Scarf": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Chlorophyll", "item": "Choice Scarf", "moves": ["Leaf Blade", "Knock Off", "Double-Edge", "Bullet Seed"]},
 		"PU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Leaf Guard", "item": "Choice Band", "moves": ["Bullet Seed", "Leaf Blade", "Knock Off", "Double-Edge"]},
 		"NU Offensive Swords Dance": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Chlorophyll", "item": "Starf Berry", "moves": ["Swords Dance", "Leaf Blade", "Knock Off", "Natural Gift"]},
 	},
@@ -2239,7 +2235,7 @@ var SETDEX_XY = {
 		"NU Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Soundproof", "item": "Life Orb", "moves": ["Psychic", "Dazzling Gleam", "Focus Blast", "Healing Wish"]},
 	},
 	"Muk": {
-		"PU CroMuk": {"level": 100, "evs": {"sd": 252, "at": 4, "hp": 252}, "nature": "Careful", "ability": "Sticky Hold", "item": "Black Sludge", "moves": ["Curse", "Poison Jab", "Rest", "Sleep Talk"]},
+		"PU CroMuk": {"level": 100, "evs": {"sd": 240, "df": 8, "hp": 248, "sp": 12}, "nature": "Careful", "ability": "Sticky Hold", "item": "Black Sludge", "moves": ["Curse", "Poison Jab", "Rest", "Sleep Talk"]},
 		"PU Choice Band": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "ability": "Poison Touch", "item": "Choice Band", "moves": ["Gunk Shot", "Shadow Sneak", "Fire Punch", "Ice Punch"]},
 		"PU Assault Vest": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "ability": "Poison Touch", "item": "Assault Vest", "moves": ["Gunk Shot", "Shadow Sneak", "Fire Punch", "Ice Punch"]},
 		"NU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 220, "sp": 36}, "nature": "Adamant", "ability": "Poison Touch", "item": "Choice Band", "moves": ["Gunk Shot", "Shadow Sneak", "Focus Punch", "Ice Punch"]},
@@ -2853,9 +2849,9 @@ var SETDEX_XY = {
 		"Uber SubSeed": {"level": 100, "evs": {"hp": 44, "sp": 252, "sa": 212}, "nature": "Timid", "ability": "Serene Grace", "item": "Leftovers", "moves": ["Substitute", "Leech Seed", "Air Slash", "Seed Flare"]},
 	},
 	"Shedinja": {
-		"PU Offensive Pivot": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Adamant", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Baton Pass", "Protect", "Shadow Sneak", "Will-O-Wisp"]},
-		"NU Swords Dance": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Adamant", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "Will-O-Wisp", "X-Scissor", "Shadow Sneak"]},
-		"UU Swords Dance / Pivot": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Adamant", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "X-Scissor", "Shadow Sneak", "Protect"]},
+		"PU Offensive Pivot": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Baton Pass", "Protect", "Shadow Sneak", "Will-O-Wisp"]},
+		"NU Swords Dance": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "Will-O-Wisp", "X-Scissor", "Shadow Sneak"]},
+		"UU Swords Dance / Pivot": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "X-Scissor", "Shadow Sneak", "Protect"]},
 	},
 	"Shellder": {
 		"LC Shell Smash Sweeper": {"level": 5, "evs": {"df": 36, "at": 236, "hp": 36, "sp": 196}, "nature": "Impish", "ability": "Skill Link", "item": "Eviolite", "moves": ["Shell Smash", "Rock Blast", "Icicle Spear", "Ice Shard"]},
@@ -2897,8 +2893,8 @@ var SETDEX_XY = {
 		"RU Flame Orb": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Magic Guard", "item": "Flame Orb", "moves": ["Calm Mind", "Psycho Shift", "Roost", "Air Slash"]},
 	},
 	"Simipour": {
-		"PU Mixed Attacker": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Naive", "ability": "Torrent", "item": "Life Orb", "moves": ["Hydro Pump", "Ice Beam", "Grass Knot", "Low Kick"]},
-		"PU Choice Scarf": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Naive", "ability": "Torrent", "item": "Choice Scarf", "moves": ["Hydro Pump", "Ice Beam", "Grass Knot", "Superpower"]},
+		"PU Mixed Attacker": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Naive", "ability": "Torrent", "item": "Life Orb", "moves": ["Hydro Pump", "Ice Beam", "Hidden Power Grass", "Superpower"]},
+		"PU Choice Scarf": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Naive", "ability": "Torrent", "item": "Choice Scarf", "moves": ["Hydro Pump", "Ice Beam", "Hidden Power Electric", "Superpower"]},
 		"PU Substitute + Nasty Plot": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Torrent", "item": "Salac Berry", "moves": ["Substitute", "Nasty Plot", "Hydro Pump", "Ice Beam"]},
 	},
 	"Simisage": {
