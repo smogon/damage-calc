@@ -44,7 +44,6 @@
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-wide btn-mid" for="one-vs-all">One vs All</label>
 			<input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-wide btn-right" for="all-vs-one">All vs One</label>            
         </span>
-		<button id="customDex" title="Import or export a custom dex" class="btn btn-wide">Custom Dex</button>
     </div>
     <hr />
     <div>
@@ -52,14 +51,19 @@
         <span class="tiers" title="Select the tier(s)/format.">
             <input class="visually-hidden" type="radio" name="tier" id="VGC17" /><label class="btn btn-left gen-specific g7" for="VGC17">VGC 17</label>
             <input class="visually-hidden" type="radio" name="tier" id="Doubles" /><label class="btn btn-mid gen-specific g5 g6 g7" for="Doubles">Doubles</label>
-            <input class="visually-hidden" type="radio" name="tier" id="LC" /><label class="btn btn-mid gen-specific g4 g5 g6 g7" for="LC">LC</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="PU" /><label class="btn btn-mid gen-specific g6 g7" for="PU">PU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="NU" /><label class="btn btn-mid gen-specific g3 g4 g5 g6 g7" for="NU">NU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="RU" /><label class="btn btn-mid gen-specific g5 g6 g7" for="RU">RU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="UU" /><label class="btn btn-mid" for="UU">UU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="OU" /><label class="btn btn-mid" for="OU">OU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="Uber" /><label class="btn btn-mid" for="Uber">Uber</label>
-			<input class="visually-hidden" type="checkbox" name="tier" id="Custom" /><label class="btn btn-right" for="Custom">Custom</label>
+            <input class="visually-hidden" type="radio" name="tier" id="LC" /><label class="btn btn-small btn-mid gen-specific g4 g5 g6 g7" for="LC">LC</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="PU" /><label class="btn btn-small btn-mid gen-specific g6 g7" for="PU">PU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="NU" /><label class="btn btn-small btn-mid gen-specific g3 g4 g5 g6 g7" for="NU">NU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="RU" /><label class="btn btn-small btn-mid gen-specific g5 g6 g7" for="RU">RU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="UU" /><label class="btn btn-small btn-mid" for="UU">UU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="OU" /><label class="btn btn-small btn-mid" for="OU">OU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="Uber" /><label class="btn btn-small btn-mid" for="Uber">Uber</label>
+			<input class="visually-hidden" type="radio" name="tier" id="Custom" /><label class="btn btn-right" for="Custom">Custom</label>
+			<span>
+				<select class="visually-hidden" id="customSelect">
+				</select>
+			</span>
+			<button class="visually-hidden" id="clearCustom">Clear Custom Formats</button>
     </span>
     </div>
 
@@ -726,6 +730,33 @@
                 </div>
             </div>
         </fieldset>
+		<fieldset class="panel panel-default tier-info">
+            <legend class="panel-heading panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">>  Custom Tier</a>
+            </legend>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <form class="import-team tier-import">
+						<table class="cust-tier-controls">
+							<tr>
+								<td><label>Tier name </label></td>
+								<td><input type="text" id="tierName"></input></td>
+							</tr>
+							<tr>
+								<td><label>Level </label></td>
+								<td><input type="number" id="tierLevel"></input></td>
+							</tr>
+							<tr>
+								<td><label>Doubles </label></td>
+								<td><input type="checkbox" id="isDoubles" value=true></input></td>
+							</tr>
+						</table>
+                        <textarea class="import-team-text"></textarea>
+                        <button id="importTier" class='bs-btn bs-btn-default'>Import</button>
+                    </form>
+                </div>
+            </div>
+        </fieldset>
     </div>
     <div>
         <fieldset class="panel holder-0">
@@ -779,6 +810,7 @@
     <script type="text/javascript" src="./js/damage_gsc.js?"></script>
     <script type="text/javascript" src="./js/damage_rby.js?"></script>
     <script type="text/javascript" src="./js/ko_chance.js?"></script>
+	<script type="text/javascript" src="./js/moveset_import.js?"></script>
 
     <div style="clear:both;padding:20px;text-align:left"><p>Created by Honko</p>
 		<p><a href="https://github.com/Zarel/honko-damagecalc/contributors" target="_blank">Contributors</a></p>

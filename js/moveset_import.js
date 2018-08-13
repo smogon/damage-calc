@@ -4,10 +4,8 @@ function placeBsBtn() {
 
 	$("#import.bs-btn").click(function () {
 		var pokes = document.getElementsByClassName("import-team-text")[0].value;
-		addSets(pokes);
+		addSets(pokes, null);
 	});
-
-
 }
 
 function ExportPokemon(pokeInfo) {
@@ -196,7 +194,6 @@ function addToDex(poke) {
 
 	if (poke.ability !== undefined) {
 		dexObject.ability = poke.ability;
-
 	}
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
@@ -245,7 +242,7 @@ function updateDex(customsets) {
 	localStorage.customsets = JSON.stringify(customsets);
 }
 
-function addSets(pokes) {
+function addSets(pokes, tierName) {
 	var rows = pokes.split("\n");
 	var currentRow;
 	var currentPoke;
@@ -263,6 +260,9 @@ function addSets(pokes) {
 				} else {
 					currentPoke.nameProp = "Custom Set";
 				}
+				
+				if(tierName!==null)currentPoke.nameProp=tierName+" "+currentPoke.nameProp;
+				
 				currentPoke.isCustomSet = true;
 				currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
@@ -351,4 +351,43 @@ $(document).ready(function () {
 	} else {
 		loadDefaultLists();
 	}
+	
+	if(localStorage.customTiers){
+		customTiers=JSON.parse(localStorage.customTiers);
+		updateTierSelect();
+		$("#clearCustom").attr("class", "");
+		$("#customSelect").attr("class", "");
+	}else{
+		customTiers=[];
+	}
 });
+
+var customTiers;
+
+$("#importTier").click(function(){
+	//Note that customTiers is currently a numbered array. It might be better to use a named array though.
+	
+	//Save info on the tier
+	var tier={
+		tierName:$("#tierName").prop("value"),
+		level:$("#tierLevel").prop("value"),
+		doubles:$("#isDoubles").prop("checked")
+	};
+	customTiers.push(tier);
+	localStorage.customTiers=JSON.stringify(customTiers);
+	updateTierSelect();
+	$("#customSelect").attr("class", "");
+	$("#clearCustom").attr("class", "");
+	//Prepend tier name to set names
+	var pokes = document.getElementsByClassName("import-team-text")[0].value;
+	var tierName=tier.tierName;
+	//Save sets
+	addSets(pokes, tierName);
+});
+
+function updateTierSelect(){
+	$("#customSelect").empty();//Easier to just empty and refill, idk if that's best
+	customTiers.forEach(function(tier){
+		$("#customSelect").append("<option value=\""+customTiers.indexOf(tier)+"\">"+tier.tierName+"</option>");
+	});
+}

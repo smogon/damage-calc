@@ -180,7 +180,7 @@ th {
 .poke-info {
     width: 30em;
 }
-.field-info, .poke-import {
+.field-info, .tier-info, .poke-import {
     text-align: center;
     width: 27.5em;
 }
@@ -433,4 +433,12 @@ select.toxic-counter {
     background-color: #ee4928;
     border-bottom-color: #a3260d;
     border-right-color: #a3260d;
+}
+
+.tier-import{
+	text-align:center;
+}
+
+.cust-tier-controls{
+	text-align:left;
 }

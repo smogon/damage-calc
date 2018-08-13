@@ -151,7 +151,7 @@ $(".gen").change(function () {
 	if ($.fn.DataTable.isDataTable("#holder-2")) {
 		table.clear();
 		constructDataTable();
-		placeBsBtn();
+		placeHonkBsBtn();
 	}
 });
 
@@ -221,7 +221,7 @@ function constructDataTable() {
 	$(".dataTables_wrapper").css({"max-width": dtWidth});
 }
 
-function placeBsBtn() {
+function placeHonkBsBtn() {
 	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$(".bs-btn").click(function () {
@@ -256,6 +256,10 @@ $(".tiers label").mouseup(function () {
 	if ((_.startsWith(oldID, "VGC") || oldID === "LC") && (!_.startsWith(newID, "VGC") && newID !== "LC")) {
 		setLevel("100");
 	}
+	if(newID==="Custom"){
+		//read level and whether tier is doubles or singles (maybe? see notes)
+		
+	}
 });
 
 $(".tiers input").change(function () {
@@ -275,6 +279,8 @@ $(".tiers input").change(function () {
 	if (_.startsWith(id, "VGC") && $('.level').val() !== "50") {
 		setLevel("50");
 	}
+	
+	if(id==="Custom"&&$("#customSelect").children().length>=1) $("#customSelect").trigger("change");
 });
 
 function setLevel(lvl) {
@@ -313,7 +319,7 @@ $(document).ready(function () {
 
 	calcDTDimensions();
 	constructDataTable();
-	placeBsBtn();
+	placeHonkBsBtn();
 });
 
 function calcDTDimensions() {
@@ -331,3 +337,23 @@ function calcDTDimensions() {
 function getBottomOffset(obj) {
 	return obj.offset().top + obj.outerHeight();
 }
+
+$("#clearCustom").click(function(){
+	if (confirm("Are you sure you want to delete your custom tiers/sets? This action cannot be undone.")) {
+		localStorage.removeItem("customTiers");
+		localStorage.removeItem("customsets");
+		alert("Custom content successfully cleared. Please refresh the page.");
+	}
+});
+
+$("#customSelect").change(function(){
+	var index=$(this).val();
+	if($("#Custom").prop("checked")){
+		setLevel(customTiers[index].level);
+		if(customTiers[index].doubles){
+			$("#doubles-format").prop("checked", true);
+		}else{
+			$("#singles-format").prop("checked", true);
+		}
+	}
+});
