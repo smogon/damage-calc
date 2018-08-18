@@ -68,7 +68,6 @@ function serialize(array, separator) {
 
 function getAbility(row) {
 	var ability = row[1] ? row[1].trim() : '';
-	
 	if (ABILITIES_SM.indexOf(ability) !== -1) {
 		return (ability);
 	} else {
