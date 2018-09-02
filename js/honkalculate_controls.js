@@ -299,8 +299,9 @@ $(".set-selector").change(function (e) {
 	}
 });
 
-var mode, dtHeight, dtWidth;
+var dtHeight, dtWidth;
 $(document).ready(function () {
+	var mode;
 	var url = window.location.href;
 	var equalsPos = (url.indexOf('='));
 	if (equalsPos < 0) {

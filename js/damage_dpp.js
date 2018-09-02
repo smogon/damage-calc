@@ -1,5 +1,4 @@
 ﻿function CALCULATE_ALL_MOVES_DPP(p1, p2, field) {
-	var SP;
 	checkAirLock(p1, field);
 	checkAirLock(p2, field);
 	checkForecast(p1, field.getWeather());
@@ -23,7 +22,6 @@
 }
 
 function CALCULATE_MOVES_OF_ATTACKER_DPP(attacker, defender, field) {
-	var SP;
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -44,7 +42,6 @@ function CALCULATE_MOVES_OF_ATTACKER_DPP(attacker, defender, field) {
 }
 
 function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
-	var basePower, SP, AT, SA, DF, SD;
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,

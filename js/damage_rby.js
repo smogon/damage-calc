@@ -1,5 +1,4 @@
 ﻿function CALCULATE_ALL_MOVES_RBY(p1, p2, field) {
-	var AT, DF, SL;
 	p1.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[AT], p1.boosts[AT])));
 	p1.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[DF], p1.boosts[DF])));
 	p1.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SL], p1.boosts[SL])));
@@ -17,7 +16,6 @@
 }
 
 function CALCULATE_MOVES_OF_ATTACKER_RBY(attacker, defender, field) {
-	var AT, SL, DF;
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
@@ -31,7 +29,6 @@ function CALCULATE_MOVES_OF_ATTACKER_RBY(attacker, defender, field) {
 }
 
 function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
-	var AT, DF, SL;
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,

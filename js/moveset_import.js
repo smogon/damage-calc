@@ -24,7 +24,7 @@ function ExportPokemon(pokeInfo) {
 			EV_counter += pokemon.HPEVs;
 			EVs_Array.push(pokemon.HPEVs + " HP");
 		}
-		for (stat in pokemon.evs) {
+		for (var stat in pokemon.evs) {
 			EV_counter += pokemon.evs[stat];
 			if (EV_counter > 510) {
 				break;
@@ -36,7 +36,7 @@ function ExportPokemon(pokeInfo) {
 		finalText += "\n";
 	}
 	var movesArray = [];
-	for (i = 0; i < 4; i++) {
+	for (var i = 0; i < 4; i++) {
 		var moveName = pokemon.moves[i].name;
 		if (moveName !== "(No Move)") {
 			finalText += "- " + moveName + "\n";
@@ -46,17 +46,17 @@ function ExportPokemon(pokeInfo) {
 	$("textarea.import-team-text").text(finalText);
 }
 
-$("#exportL").click(function() {
+$("#exportL").click(function () {
 	ExportPokemon($("#p1"));
 });
 
-$("#exportR").click(function() {
+$("#exportR").click(function () {
 	ExportPokemon($("#p2"));
 });
 
 function serialize(array, separator) {
 	var text = "";
-	for (i = 0; i < array.length; i++) {
+	for (var i = 0; i < array.length; i++) {
 		if (i < array.length - 1) {
 			text += array[i] + separator;
 		} else {
@@ -101,25 +101,23 @@ function getStats(currentPoke, rows, offset) {
 	var currentEV;
 	var currentIV;
 	var currentNature;
-	var j;
 	currentPoke.level = 100;
 	for (var x = offset; x < offset + 7; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
 		var ev;
+		var j;
 
 		switch (currentRow[0]) {
 		case 'Level':
 			currentPoke.level = parseInt(currentRow[1].trim());
 			break;
 		case 'EVs':
-
 			for (j = 1; j < currentRow.length; j++) {
 				currentEV = currentRow[j].trim().split(" ");
 				currentEV[1] = statConverter(currentEV[1].toLowerCase());
 				evs[currentEV[1]] = parseInt(currentEV[0]);
-
 			}
 			currentPoke.evs = evs;
 			break;
@@ -203,8 +201,8 @@ function addToDex(poke) {
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;
-	dexObject.isCustomSet = poke.isCustomSet ? true : false;
-  var customsets = {};
+	dexObject.isCustomSet = poke.isCustomSet;
+	var customsets;
 	if (localStorage.customsets) {
 		customsets = JSON.parse(localStorage.customsets);
 	} else {
@@ -224,7 +222,8 @@ function addToDex(poke) {
 }
 
 function updateDex(customsets) {
-	var pokemon, moveset;
+	var pokemon;
+	var moveset;
 	for (pokemon in customsets) {
 		for (moveset in customsets[pokemon]) {
 			if (!SETDEX_SM[pokemon]) SETDEX_SM[pokemon] = {};
@@ -251,10 +250,9 @@ function addSets(pokes) {
 	var currentRow;
 	var currentPoke;
 	var addedpokes = 0;
-	var i, j;
-	for (i = 0; i < rows.length; i++) {
+	for (var i = 0; i < rows.length; i++) {
 		currentRow = rows[i].split(/[\(\)@]/);
-		for (j = 0; j < currentRow.length; j++) {
+		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (POKEDEX_SM[currentRow[j].trim()] !== undefined) {
 				currentPoke = POKEDEX_SM[currentRow[j].trim()];
@@ -276,7 +274,7 @@ function addSets(pokes) {
 	}
 	if (addedpokes > 0) {
 		alert("Successfully imported " + addedpokes + " set(s)");
-		$(bothPokemon("#importedSetsOptions")).css("display","inline");
+		$(bothPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
@@ -336,20 +334,19 @@ $(bothPokemon("#importedSets")).click(function () {
 	var pokeID = $(this).parent().parent().prop("id");
 	var showCustomSets = $(this).prop("checked");
 	if (showCustomSets) {
-		loadCustomList(pokeID);
+		loadCustomList(pokeID); // eslint-disable-line no-undef
 	} else {
 		loadDefaultLists();
 	}
 });
 
-var customSets;
-
 $(document).ready(function () {
+	var customSets;
 	placeBsBtn();
 	if (localStorage.customsets) {
 		customSets = JSON.parse(localStorage.customsets);
-		updateDex(customSets);		
-		$(bothPokemon("#importedSetsOptions")).css("display","inline");
+		updateDex(customSets);
+		$(bothPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		loadDefaultLists();
 	}

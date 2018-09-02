@@ -31,7 +31,6 @@ function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
 }
 
 function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
-	var AT, SA, DF, SD;
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,

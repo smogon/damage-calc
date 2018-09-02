@@ -1,35 +1,28 @@
 if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(searchElement, fromIndex) {
-	var k;
-
-	if (this == null) {
-		throw new TypeError('"this" equals null or n is undefined');
-	}
-
-	var O = Object(this);
-
-	var len = O.length >>> 0;
-
-	if (len === 0) {
-		return -1;
-	}
-
-	var n = +fromIndex || 0;
-
-	if (Math.abs(n) === Infinity) {
-		n = 0;
-	}
-	if (n >= len) {
-		return -1;
-	}
-
-	k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
-	while (k < len) {
-		if (k in O && O[k] === searchElement) {
-	    	return k;
-	  	}
-	  	k++;
-	}
+	Array.prototype.indexOf = function (searchElement, fromIndex) { // eslint-disable-line
+		var k;
+		if (this == null) {
+			throw new TypeError('"this" equals null or n is undefined');
+		}
+		var O = Object(this);
+		var len = O.length >>> 0;
+		if (len === 0) {
+			return -1;
+		}
+		var n = +fromIndex || 0;
+		if (Math.abs(n) === Infinity) {
+			n = 0;
+		}
+		if (n >= len) {
+			return -1;
+		}
+		k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+		while (k < len) {
+			if (k in O && O[k] === searchElement) {
+				return k;
+			}
+			k++;
+		}
 		return -1;
 	};
 }
@@ -149,10 +142,9 @@ function drawHealthBar(poke, max, current) {
 	healthbar.addClass("hp-" + fillColor);
 	var unwantedColors = ["green", "yellow", "red"];
 	unwantedColors.splice(unwantedColors.indexOf(fillColor), 1);
-	for (i = 0; i < unwantedColors.length; i++) {
+	for (var i = 0; i < unwantedColors.length; i++) {
 		healthbar.removeClass("hp-" + unwantedColors[i]);
 	}
-	
 	healthbar.css("background", "linear-gradient(to right, " + fillColor + " " + fillPercent + "%, white 0%");
 }
 $(".current-hp").keyup(function () {
@@ -578,7 +570,7 @@ function Pokemon(pokeInfo) {
 		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
 	}
 
-	this.hasType = function(type) {
+	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
 	};
 }
@@ -607,7 +599,7 @@ function getMoveDetails(moveInfo, item) {
 			isCrit: moveInfo.find(".move-crit").prop("checked"),
 			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
 			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
-			metronomeCount : moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
+			metronomeCount: moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
 		});
 	}
 }
@@ -686,10 +678,10 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
-
+/* eslint-disable no-global-assign */
 $(".gen").change(function () {
-	gen = ~~$(this).val();
-	genWasChanged = true;
+	var gen = ~~$(this).val();
+	var genWasChanged = true;
 	switch (gen) {
 	case 1:
 		pokedex = POKEDEX_RBY;
@@ -790,6 +782,7 @@ $(".gen").change(function () {
 $(".notation").change(function () {
 	notation = $(this).val();
 });
+/* eslint-enable no-global-assign */
 
 function clearField() {
 	$("#singles-format").prop("checked", true);
@@ -846,7 +839,7 @@ function getSetOptions(sets) {
 					text: pokeName + " (" + setName + ")",
 					id: pokeName + " (" + setName + ")",
 					isCustom: setdex[pokeName][setName].isCustomSet,
-					nickname: setdex[pokeName][setName].nickname || "" 
+					nickname: setdex[pokeName][setName].nickname || ""
 				});
 			}
 		}
@@ -991,32 +984,33 @@ function loadDefaultLists() {
 }
 
 function bothPokemon(selector) {
-	return "#p1 " + selector + ", #p2 " + selector; 
+	return "#p1 " + selector + ", #p2 " + selector;
 }
 
 function loadCustomList(id) {
+	var customSets;
 	var customSetsOptions = getSetOptions(customSets);
 	$("#" + id + " .set-selector").select2({
-			formatResult: function(set){
-				return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
-			},
-			query: function(query){
-				var pageSize = 20;
-				var results = _.filter(getSetOptions(), function(option){
-					if (option.isCustom) {
-						return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
-					}
-				});
-				query.callback({
-					results: results,
-					more: results.length >= query.page * pageSize
-				});
-			},
-			initSelection: function(element, callback){
-				var data = "";
-				callback(data);
-			}
-		});
+		formatResult: function (set) {
+			return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
+		},
+		query: function (query) {
+			var pageSize = 20;
+			var results = _.filter(getSetOptions(), function (option) {
+				if (option.isCustom) {
+					return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
+				}
+			});
+			query.callback({
+				results: results,
+				more: results.length >= query.page * pageSize
+			});
+		},
+		initSelection: function (element, callback) {
+			var data = "";
+			callback(data);
+		}
+	});
 }
 
 $(document).ready(function () {

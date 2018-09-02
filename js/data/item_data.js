@@ -520,7 +520,7 @@ function getTechnoBlast(item) {
 
 function getMultiAttack(item) {
 	if (item.indexOf("Memory") !== -1) {
-		return item.substring(0, item.indexOf(" ")); 
+		return item.substring(0, item.indexOf(" "));
 	}
 	return '';
 }
