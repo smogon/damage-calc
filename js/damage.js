@@ -85,7 +85,7 @@ function getDamageResult(attacker, defender, move, field) {
 			defAbility = "";
 			description.attackerAbility = attacker.ability;
 		}
-		if (["Menacing Moonraze Maelstrom", "Moongeist Beam", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
+		if (["Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
 			defAbility = "";
 		}
 	}
@@ -253,6 +253,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (move.hits > 1) {
 		description.hits = move.hits;
 	}
+
 	var turnOrder = attacker.stats[SP] > defender.stats[SP] ? "FIRST" : "LAST";
 
 	////////////////////////////////
@@ -280,7 +281,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Low Kick":
 	case "Grass Knot":
-		var w = defender.weight;
+		var w = defender.weight * getWeightFactor(defender);
 		basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
 		description.moveBP = basePower;
 		break;
@@ -290,7 +291,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Heavy Slam":
 	case "Heat Crash":
-		var wr = attacker.weight / defender.weight;
+		var wr = attacker.weight * getWeightFactor(attacker) / (defender.weight * getWeightFactor(defender));
 		basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
 		description.moveBP = basePower;
 		break;
@@ -308,7 +309,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = basePower;
 		break;
 	case "Weather Ball":
-		basePower = field.weather !== "" ? 100 : 50;
+		basePower = (field.weather !== "" && field.weather !== "Delta Stream") ? 100 : 50;
 		description.moveBP = basePower;
 		break;
 	case "Fling":
@@ -382,6 +383,17 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
+	if (attacker.ability === "Rivalry" && [attacker.gender, defender.gender].indexOf("genderless") === -1) {
+		if (attacker.gender === defender.gender) {
+			bpMods.push(0x1400);
+			description.rivalry = "buffed";
+		} else {
+			bpMods.push(0xCCD);
+			description.rivalry = "nerfed";
+		}
+		description.attackerAbility = attacker.ability;
+	}
+
 	var isSTAB = attacker.hasType(move.type);
 
 	if (getItemBoostType(attacker.item) === move.type) {
@@ -439,7 +451,7 @@ function getDamageResult(attacker, defender, move, field) {
 		bpMods.push(0x14CD);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.ability === "Neuroforce" && typeEffectiveness > 1) {
-		bpMods.push(0x1333);
+		bpMods.push(0x1400);
 		description.attackerAbility = attacker.ability;
 	}
 
@@ -658,7 +670,7 @@ function getDamageResult(attacker, defender, move, field) {
 	if (field.isReflect && move.category === "Physical" && !isCritical && !field.isAuroraVeil) { //doesn't stack with Aurora Veil
 		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isReflect = true;
-	} else if (field.isLightScreen && move.category === "Special" && !isCritical) {
+	} else if (field.isLightScreen && move.category === "Special" && !isCritical && !field.isAuroraVeil) { //doesn't stack with Aurora Veil
 		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isLightScreen = true;
 	}
@@ -682,7 +694,7 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0xC00);
 		description.isFriendGuard = true;
 	}
-	if (field.isAuroraVeil && !isCritical && !field.isReflect) { //doesn't protect from critical hits and doesn't stack with Reflect
+	if (field.isAuroraVeil && !isCritical) { //doesn't protect from critical hits
 		finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800); // 0.5x damage from physical and special attacks in singles, 0.66x damage in Doubles
 		description.isAuroraVeil = true;
 	}
@@ -976,4 +988,8 @@ function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMo
 		damageAmount = Math.floor(damageAmount / 2);
 	}
 	return pokeRound(Math.max(1, damageAmount * finalMod / 0x1000));
+}
+
+function getWeightFactor(pokemon) {
+	return (pokemon.ability === "Heavy Metal" ? 2 : pokemon.ability === "Light Metal" ? 0.5 : 1);
 }

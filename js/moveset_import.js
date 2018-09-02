@@ -20,6 +20,10 @@ function ExportPokemon(pokeInfo) {
 	if (gen > 2) {
 		finalText += "EVs: ";
 		var EVs_Array = [];
+		if (pokemon.HPEVs && pokemon.HPEVs > 0) { // Do HP EVs exist and are they greater than 0?
+			EV_counter += pokemon.HPEVs;
+			EVs_Array.push(pokemon.HPEVs + " HP");
+		}
 		for (stat in pokemon.evs) {
 			EV_counter += pokemon.evs[stat];
 			if (EV_counter > 510) {
@@ -64,12 +68,10 @@ function serialize(array, separator) {
 
 function getAbility(row) {
 	var ability = row[1] ? row[1].trim() : '';
-	if (ABILITIES_SM.indexOf(ability) != -1) {
+	if (ABILITIES_SM.indexOf(ability) !== -1) {
 		return (ability);
-
 	} else {
 		return;
-
 	}
 
 }
@@ -264,7 +266,7 @@ function addSets(pokes) {
 					currentPoke.nameProp = "Custom Set";
 				}
 				currentPoke.isCustomSet = true;
-				currentPoke.ability = getAbility(rows[i + 1].split(":"));
+				currentPoke.ab = getAbility(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
@@ -322,10 +324,12 @@ function checkExeptions(poke) {
 }
 
 $(bothPokemon("#clearSets")).click(function () {
-	localStorage.removeItem("customsets");
-	alert("Custom Sets successfully cleared. Please refresh the page.");
-	$(bothPokemon("#importedSetsOptions")).css("display","none");
-	loadDefaultLists();
+	if (confirm("Are you sure you want to delete your custom sets? This action cannot be undone.")) {
+		localStorage.removeItem("customsets");
+		alert("Custom Sets successfully cleared. Please refresh the page.");
+		$(bothPokemon("#importedSetsOptions")).hide();
+		loadDefaultLists();
+	}
 });
 
 $(bothPokemon("#importedSets")).click(function () {

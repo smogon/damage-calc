@@ -134,10 +134,26 @@ function calcStats(poke) {
 function calcCurrentHP(poke, max, percent) {
 	var current = Math.ceil(percent * max / 100);
 	poke.find(".current-hp").val(current);
+	drawHealthBar(poke, max, current);
 }
 function calcPercentHP(poke, max, current) {
 	var percent = Math.floor(100 * current / max);
 	poke.find(".percent-hp").val(percent);
+	drawHealthBar(poke, max, current);
+}
+function drawHealthBar(poke, max, current) {
+	var fillPercent = Math.floor(100 * current / max);
+	var fillColor = fillPercent > 50 ? "green" : fillPercent > 20 ? "yellow" : "red";
+
+	var healthbar = poke.find(".hpbar");
+	healthbar.addClass("hp-" + fillColor);
+	var unwantedColors = ["green", "yellow", "red"];
+	unwantedColors.splice(unwantedColors.indexOf(fillColor), 1);
+	for (i = 0; i < unwantedColors.length; i++) {
+		healthbar.removeClass("hp-" + unwantedColors[i]);
+	}
+	
+	healthbar.css("background", "linear-gradient(to right, " + fillColor + " " + fillPercent + "%, white 0%");
 }
 $(".current-hp").keyup(function () {
 	var max = $(this).parent().children(".max-hp").text();
@@ -396,6 +412,10 @@ $(".set-selector").change(function () {
 		calcStats(pokeObj);
 		abilityObj.change();
 		itemObj.change();
+		if (pokemon.gender === "genderless") {
+			pokeObj.find(".gender").parent().hide();
+			pokeObj.find(".gender").val("");
+		} else pokeObj.find(".gender").parent().show();
 	}
 });
 
@@ -519,6 +539,7 @@ function Pokemon(pokeInfo) {
 			}));
 		}
 		this.weight = pokemon.w;
+		this.gender = pokemon.gender ? "genderless" : "Male";
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		if (setName.indexOf("(") === -1) {
@@ -554,7 +575,9 @@ function Pokemon(pokeInfo) {
 			getMoveDetails(pokeInfo.find(".move4"), this.item)
 		];
 		this.weight = +pokeInfo.find(".weight").val();
+		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
 	}
+
 	this.hasType = function(type) {
 		return this.type1 === type || this.type2 === type;
 	};

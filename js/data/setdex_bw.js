@@ -24,6 +24,7 @@ var SETDEX_BW = {
 		"UU Suicide Spiker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Sticky Hold", "item": "Focus Sash", "moves": ["Spikes", "Bug Buzz", "Focus Blast", "Yawn"]},
 		"UU All-Out Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Sticky Hold", "item": "Life Orb", "moves": ["Bug Buzz", "Focus Blast", "Hidden Power Ice", "Acid Spray"]},
 		"OU Spikes": {"level": 100, "evs": {"hp": 88, "sp": 188, "sa": 232}, "nature": "Modest", "ability": "Unburden", "item": "Focus Sash", "moves": ["Spikes", "Bug Buzz", "Final Gambit", "Focus Blast"]},
+		"Uber Lead": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "ivs": {"sd": 3, "df": 0, "hp": 0}, "nature": "Naive", "ability": "Unburden", "item": "Focus Sash", "moves": ["Spikes", "Yawn", "Bug Buzz", "U-turn"]},
 	},
 	"Aerodactyl": {
 		"RU Life Orb": {"level": 100, "evs": {"at": 220, "sp": 252, "sa": 36}, "nature": "Hasty", "ability": "Pressure", "item": "Life Orb", "moves": ["Stone Edge", "Earthquake", "Fire Blast", "Roost"]},
@@ -1777,11 +1778,6 @@ var SETDEX_BW = {
 		"LC Physical Attacker": {"level": 5, "evs": {"df": 76, "at": 236, "sp": 192}, "ivs": {"hp": 0}, "nature": "Jolly", "ability": "Technician", "item": "Normal Gem", "moves": ["Fake Out", "U-turn", "Covet", "Bite"]},
 	},
 	"Mesprit": {
-		"NU Substitute + Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 4, "sa": 252}, "nature": "Modest", "item": "Leftovers", "moves": ["Substitute", "Calm Mind", "Psychic", "Thunderbolt"]},
-		"NU Support": {"level": 100, "evs": {"sd": 80, "df": 176, "hp": 252}, "nature": "Bold", "item": "Leftovers", "moves": ["Psychic", "Stealth Rock", "Thunder Wave", "U-turn"]},
-		"NU Choice": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Choice Scarf", "moves": ["Psychic", "Thunderbolt", "Ice Beam", "Trick"]},
-		"NU Offensive Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Life Orb", "moves": ["Calm Mind", "Psychic", "Shadow Ball", "Hidden Power Fighting"]},
-		"NU Dual Screens": {"level": 100, "evs": {"sd": 80, "df": 176, "hp": 252}, "nature": "Bold", "item": "Light Clay", "moves": ["Reflect", "Light Screen", "Healing Wish", "Psychic"]},
 		"RU Offensive Stealth Rock": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Leftovers", "moves": ["Stealth Rock", "Psychic", "Thunderbolt", "U-turn"]},
 		"RU Calm Mind": {"level": 100, "evs": {"df": 4, "hp": 32, "sp": 220, "sa": 252}, "nature": "Timid", "item": "Life Orb", "moves": ["Calm Mind", "Psyshock", "Thunderbolt", "Hidden Power Fire"]},
 		"RU Choice Specs": {"level": 100, "evs": {"hp": 36, "sp": 220, "sa": 252}, "nature": "Timid", "item": "Choice Specs", "moves": ["Psyshock", "Thunderbolt", "Hidden Power Fire", "U-turn"]},
@@ -1805,7 +1801,7 @@ var SETDEX_BW = {
 		"RU THE MIGHTY METANG": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "item": "Eviolite", "moves": ["Stealth Rock", "Meteor Mash", "Earthquake", "Explosion"]},
 	},
 	"Mew": {
-		"UU Nasty Plot": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Life Orb", "moves": ["Nasty Plot", "Psyshock", "Fire Blast", "Giga Drain"]},
+		"UU Nasty Plot": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Synchronize", "item": "Life Orb", "moves": ["Nasty Plot", "Psyshock", "Fire Blast", "Giga Drain"]},
 		"UU Swords Dance": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Adamant", "item": "Life Orb", "moves": ["Swords Dance", "Zen Headbutt", "Drain Punch", "Sucker Punch"]},
 		"UU Specially Defensive": {"level": 100, "evs": {"sd": 232, "hp": 252, "sp": 24}, "nature": "Calm", "item": "Leftovers", "moves": ["Taunt", "Will-O-Wisp", "Soft-Boiled", "Psyshock"]},
 		"UU Baton Pass": {"level": 100, "evs": {"sd": 4, "hp": 252, "sp": 252}, "nature": "Timid", "item": "Leftovers", "moves": ["Baton Pass", "Taunt", "Rock Polish", "Nasty Plot"]},

@@ -143,7 +143,8 @@ var MOVES_RBY = {
 	},
 	'Fire Spin': {
 		bp: 15,
-		type: 'Fire'
+		type: 'Fire',
+		category: 'Special'
 	},
 	'Flamethrower': {
 		bp: 95,
@@ -361,6 +362,7 @@ var MOVES_RBY = {
 	'Struggle': {
 		bp: 50,
 		type: 'Normal',
+		category: 'Physical',
 		hasRecoil: 50
 	},
 	'Submission': {
@@ -2101,6 +2103,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		makesContact: true,
 		hasRecoil: 25
 	},
+	'Heat Crash': {
+		bp: 1,
+		type: 'Fire',
+		category: 'Physical',
+		makesContact: true
+	},
 	'Heavy Slam': {
 		bp: 1,
 		type: 'Steel',
@@ -2427,6 +2435,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	'Disarming Voice': {
 		bp: 40,
 		type: 'Fairy',
+		category: 'Special',
 		isSound: true
 	},
 	'Draco Meteor': {bp: 130},
@@ -2914,6 +2923,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	'Fire Pledge': {zp: 160},
 	'Fire Punch': {zp: 140},
+	'Fire Spin': {zp: 100},
 	'First Impression': {
 		bp: 90,
 		type: 'Bug',

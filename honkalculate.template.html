@@ -81,6 +81,10 @@
                             <label>Forme</label>
                             <select class="forme calc-trigger"></select>
                         </div>
+                        <div class="hide">
+                            <label>Gender</label>
+                            <select class="gender calc-trigger"><option></option><option selected="selected">Male</option><option>Female</option></select>
+                        </div>
                         <div>
                             <label>Level</label>
                             <input class="level" value="100" />
@@ -406,6 +410,9 @@
                         <label>Current HP</label>
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
+                        <br />
+                        <br />
+                        Health <div class="hpbar"></div>
                     </div>
                     <div class="move1">
                         <select class="move-selector small-select"></select>
@@ -771,7 +778,10 @@
     <script type="text/javascript" src="./js/damage_rby.js?"></script>
     <script type="text/javascript" src="./js/ko_chance.js?"></script>
 
-    <div style="clear:both;padding:20px;text-align:right"><p><a href="https://github.com/Zarel/honko-damagecalc" target="_blank">GitHub repository for the damage calculator</a></p></div>
+    <div style="clear:both;padding:20px;text-align:left"><p>Created by Honko</p>
+		<p><a href="https://github.com/Zarel/honko-damagecalc/contributors" target="_blank">Contributors</a></p>
+		<p><a href="https://github.com/Zarel/honko-damagecalc" target="_blank">GitHub repository</a></p>
+	</div>
 
 </body>
 

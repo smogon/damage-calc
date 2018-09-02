@@ -74,6 +74,12 @@ function calculate() {
 			if (_.contains(selectedTiers, setTier)) {
 				attacker = (mode === "one-vs-all") ? new Pokemon($("#p1")) : new Pokemon(setOptions[i].id);
 				defender = (mode === "one-vs-all") ? new Pokemon(setOptions[i].id) : new Pokemon($("#p1"));
+				if (attacker.ability === "Rivalry") {
+					attacker.gender = "genderless";
+				}
+				if (defender.ability === "Rivalry") {
+					defender.gender = "genderless";
+				}
 				var field = new Field();
 				var damageResults = calculateMovesOfAttacker(attacker, defender, field);
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;

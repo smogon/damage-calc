@@ -82,9 +82,8 @@ var SETDEX_ADV = {
 		"NU Endeavor": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "item": "Liechi Berry", "moves": ["Endeavor", "Substitute", "Hidden Power Bug", "Sludge Bomb"]},
 	},
 	"Bellossom": {
-		"NU Showdown Usage": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Chlorophyll", "item": "Leftovers", "moves": ["Sleep Powder", "Sunny Day", "Solar Beam", "Hidden Power Fire"]},
-		"UU SunnyBeamer": {"level": 100, "evs": {"hp": 8, "sp": 248, "sa": 252}, "nature": "Modest", "item": "Leftovers", "moves": ["Sunny Day", "Solar Beam", "Hidden Power Fire", "Sleep Powder"]},
-		"UU Double Powder": {"level": 100, "evs": {"sd": 176, "hp": 244, "sa": 88}, "nature": "Calm", "item": "Leftovers", "moves": ["Stun Spore", "Sleep Powder", "Hidden Power Grass", "Moonlight"]},
+		"NU Sunny Day Sweeper": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Chlorophyll", "item": "Leftovers", "moves": ["Sunny Day", "Sleep Powder", "Solar Beam", "Hidden Power Fire"]},
+		"NU Specially Defensive": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Calm", "ability": "Chlorophyll", "item": "Leftovers", "moves": ["Sleep Powder", "Giga Drain", "Stun Spore", "Moonlight"]},
 	},
 	"Blastoise": {
 		"UU Standard": {"level": 100, "evs": {"df": 148, "hp": 252, "sp": 40, "sa": 68}, "nature": "Bold", "item": "Leftovers", "moves": ["Surf", "Ice Beam", "Sleep Talk", "Rest"]},
@@ -203,7 +202,8 @@ var SETDEX_ADV = {
 		"OU Special Attacker": {"level": 100, "evs": {"sd": 92, "hp": 252, "sa": 164}, "nature": "Modest", "item": "Leftovers", "moves": ["Giga Drain", "Hidden Power Fire", "Toxic", "Recover"]},
 	},
 	"Crawdaunt": {
-		"NU Swords Dance": {"level": 100, "evs": {"at": 188, "hp": 188, "sa": 134}, "nature": "Adamant", "ability": "Shell Armor", "item": "Leftovers", "moves": ["Swords Dance", "Return", "Hidden Power Rock", "Surf"]},
+		"NU Mixed Choice Band": {"level": 100, "evs": {"at": 252, "sp": 124, "sa": 132}, "nature": "Naughty", "ability": "Hyper Cutter", "item": "Choice Band", "moves": ["Double-Edge", "Hidden Power Ghost", "Brick Break", "Surf"]},
+		"NU Special Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Shell Armor", "item": "Leftovers", "moves": ["Surf", "Crunch", "Ice Beam", "Hidden Power Electric"]},
 	},
 	"Crobat": {
 		"OU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 80, "sp": 176}, "nature": "Jolly", "item": "Choice Band", "moves": ["Sludge Bomb", "Aerial Ace", "Hidden Power Ground", "Shadow Ball"]},
@@ -373,7 +373,8 @@ var SETDEX_ADV = {
 		"UU Swords Dance + Salac": {"level": 100, "evs": {"at": 252, "hp": 60, "sp": 196}, "nature": "Adamant", "ability": "Hyper Cutter", "item": "Salac Berry", "moves": ["Earthquake", "Swords Dance", "Hidden Power Flying", "Substitute"]},
 	},
 	"Golbat": {
-		"NU Showdown Usage": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Inner Focus", "item": "Leftovers", "moves": ["Sludge Bomb", "Aerial Ace", "Hidden Power Ground", "Shadow Ball"]},
+		"NU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Naive", "ability": "Inner Focus", "item": "Choice Band", "moves": ["Sludge Bomb", "Aerial Ace", "Hidden Power Ground", "Giga Drain"]},
+		"NU Bulky Leftovers": {"level": 100, "evs": {"at": 112, "hp": 252, "sp": 144}, "nature": "Jolly", "ability": "Inner Focus", "item": "Leftovers", "moves": ["Sludge Bomb", "Aerial Ace", "Hidden Power Ground", "Toxic"]},
 	},
 	"Golduck": {
 		"UU Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Leftovers", "moves": ["Calm Mind", "Surf", "Hypnosis", "Ice Beam"]},
@@ -564,7 +565,6 @@ var SETDEX_ADV = {
 	},
 	"Lickitung": {
 		"NU Defensive": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Careful", "ability": "Own Tempo", "item": "Leftovers", "moves": ["Wish", "Protect", "Heal Bell", "Seismic Toss"]},
-		"NU Curse": {"level": 100, "evs": {"sd": 252, "at": 4, "hp": 252}, "nature": "Careful", "ability": "Own Tempo", "item": "Leftovers", "moves": ["Curse", "Body Slam", "Wish", "Protect"]},
 		"UU Showdown Usage": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Careful", "ability": "Oblivious", "item": "Leftovers", "moves": ["Protect", "Wish", "Body Slam", "Heal Bell"]},
 	},
 	"Linoone": {
@@ -635,7 +635,9 @@ var SETDEX_ADV = {
 		"NU Special Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "item": "Leftovers", "moves": ["Stun Spore", "Ice Beam", "Hydro Pump", "Substitute"]},
 	},
 	"Mawile": {
-		"NU Baton Pass": {"level": 100, "evs": {"sd": 56, "df": 200, "hp": 252}, "nature": "Impish", "ability": "Intimidate", "item": "Leftovers", "moves": ["Swords Dance", "Baton Pass", "Taunt", "Brick Break"]},
+		"NU Substitute + Baton Pass": {"level": 100, "evs": {"at": 252, "hp": 132, "sp": 124}, "nature": "Adamant", "ability": "Intimidate", "item": "Leftovers", "moves": ["Substitute", "Baton Pass", "Swords Dance", "Hidden Power Steel"]},
+		"NU Physically Defensive": {"level": 100, "evs": {"df": 252, "hp": 252, "sp": 4}, "nature": "Impish", "ability": "Intimidate", "item": "Leftovers", "moves": ["Hidden Power Steel", "Toxic", "Protect", "Baton Pass"]},
+		"NU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 132, "sp": 124}, "nature": "Adamant", "ability": "Intimidate", "item": "Choice Band", "moves": ["Hidden Power Steel", "Focus Punch", "Rock Slide", "Baton Pass"]},
 	},
 	"Medicham": {
 		"OU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Pure Power", "item": "Choice Band", "moves": ["Brick Break", "Shadow Ball", "Rock Slide", "Fake Out"]},
@@ -891,8 +893,7 @@ var SETDEX_ADV = {
 		"OU Substitute": {"level": 100, "evs": {"at": 122, "hp": 212, "sp": 176}, "nature": "Adamant", "item": "Leftovers", "moves": ["Earthquake", "Swords Dance", "Rock Slide", "Substitute"]},
 	},
 	"Roselia": {
-		"NU Spiker": {"level": 100, "evs": {"sd": 252, "hp": 252, "sp": 4}, "nature": "Calm", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Hidden Power Grass", "Spikes", "Leech Seed", "Synthesis"]},
-		"NU SubSeed": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Magical Leaf", "Hidden Power Ice", "Leech Seed", "Substitute"]},
+		"NU Defensive Spikes": {"level": 100, "evs": {"sd": 236, "df": 20, "hp": 252}, "nature": "Calm", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Spikes", "Synthesis", "Toxic", "Giga Drain"]},
 		"UU Showdown Usage": {"level": 100, "evs": {"sd": 216, "df": 40, "hp": 252}, "nature": "Calm", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Spikes", "Leech Seed", "Synthesis", "Stun Spore"]},
 	},
 	"Sableye": {

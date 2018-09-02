@@ -197,7 +197,7 @@ var megaStones = {
 	'Aerodactylite': 'Aerodactyl',
 	'Aggronite': 'Aggron',
 	'Alakazite': 'Alakazam',
-	'Altarite': 'Altaria',
+	'Altarianite': 'Altaria',
 	'Ampharosite': 'Ampharos',
 	'Audinite': 'Audino',
 	'Banettite': 'Banette',
@@ -244,14 +244,13 @@ var megaStones = {
 var mega_Stones = Object.keys(megaStones);
 
 var XY_items = mega_Stones.concat(['Assault Vest',
-	'Safety Googles',
 	'Fairy Gem',
 	'Kee Berry',
 	'Maranga Berry',
 	'Pixie Plate',
 	'Power Herb',
 	'Roseli Berry',
-	'Safety Googles']).sort();
+	'Safety Goggles']).sort();
 
 var ITEMS_XY = ITEMS_BW.concat(XY_items);
 
