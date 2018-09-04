@@ -163,7 +163,7 @@ function getDamageResult(attacker, defender, move, field) {
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
             (defender.ability === "RKS System" && defender.item.indexOf("Memory") !== -1) ||
             (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && defender.name.indexOf(megaStones[defender.item]) !== -1));
-            // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)          
+		// The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
 		typeEffectiveness = 1;
@@ -215,7 +215,7 @@ function getDamageResult(attacker, defender, move, field) {
 
 	description.HPEVs = defender.HPEVs + " HP";
 
-	if (["Seismic Toss","Night Shade"].indexOf(move.name) !== -1) {
+	if (["Seismic Toss", "Night Shade"].indexOf(move.name) !== -1) {
 		var lv = attacker.level;
 		if (attacker.ability === "Parental Bond") {
 			lv *= 2;
@@ -239,9 +239,9 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if (move.name === "Spectral Thief") {
-		for (stat in defender.boosts) {
+		for (var stat in defender.boosts) {
 			if (defender.boosts[stat] > 0) {
-				attacker.boosts[stat] += attacker.ability === "Contrary" ? - defender.boosts[stat] : defender.boosts[stat];
+				attacker.boosts[stat] += attacker.ability === "Contrary" ? -defender.boosts[stat] : defender.boosts[stat];
 				attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat], attacker.boosts[stat]);
 			}
 		}
@@ -507,7 +507,7 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if ((attacker.ability === "Guts" && attacker.status !== "Healthy" && move.category === "Physical") ||
-			attacker.curHP <= attacker.maxHP / 3 && 
+			attacker.curHP <= attacker.maxHP / 3 &&
 			(attacker.ability === "Overgrow" && move.type === "Grass" ||
 			attacker.ability === "Blaze" && move.type === "Fire" ||
 			attacker.ability === "Torrent" && move.type === "Water" ||
@@ -585,7 +585,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defAbility;
 	}
 
-	if (gen < 7 && (!hitsPhysical && ["Latios","Latias"].indexOf(defender.name) !== -1 && defender.item === "Soul Dew") || (defender.item === "Eviolite" && pokedex[defender.name].canEvolve) || (!hitsPhysical && defender.item === "Assault Vest")) {
+	if (gen < 7 && (!hitsPhysical && ["Latios", "Latias"].indexOf(defender.name) !== -1 && defender.item === "Soul Dew") || (defender.item === "Eviolite" && pokedex[defender.name].canEvolve) || (!hitsPhysical && defender.item === "Assault Vest")) {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
 	}
@@ -714,7 +714,7 @@ function getDamageResult(attacker, defender, move, field) {
             attacker.ability !== "Unnerve") {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
-  }
+	}
 	if (field.isProtected && move.isZ) {
 		if (attacker.item.indexOf(" Z") !== -1) {
 			finalMods.push(0x400);
@@ -722,7 +722,7 @@ function getDamageResult(attacker, defender, move, field) {
 		} else {
 			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 		}
-	} 
+	}
 	var finalMod = chainMods(finalMods);
 
 	var damage = [];
@@ -747,7 +747,7 @@ function getDamageResult(attacker, defender, move, field) {
 		for (var times = 0; times < move.usedTimes; times++) {
 			var newAttack = getModifiedStat(attacker.rawStats[attackStat], dropCount);
 			var damageMultiplier = 0;
-			damage = damage.map(function(affectedAmount) {
+			damage = damage.map(function (affectedAmount) {
 				if (times) {
 					var newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
 					var newFinalDamage = getFinalDamage(newBaseDamage, damageMultiplier, typeEffectiveness, applyBurn, stabMod, finalMod);
@@ -780,9 +780,9 @@ function getDamageResult(attacker, defender, move, field) {
 		} else {
 			boostTurns = move.metronomeCount;
 		}
-		for (metronome = 0; metronome < boostTurns; metronome++) {
+		for (var metronome = 0; metronome < boostTurns; metronome++) {
 			var totalMetronomeBoost = 1 + metronome / 10;
-			damage = damage.map(function(damageRoll) {
+			damage = damage.map(function (damageRoll) {
 				return pokeRound(damageRoll * totalMetronomeBoost);
 			});
 		}
@@ -856,19 +856,19 @@ function checkAirLock(pokemon, field) {
 function checkForecast(pokemon, weather) {
 	if (pokemon.ability === "Forecast" && pokemon.name === "Castform") {
 		switch (weather) {
-			case "Sun":
-			case "Harsh Sunlight":
-				pokemon.type1 = "Fire";
-				break;
-			case "Rain":
-			case "Heavy Rain":
-				pokemon.type1 = "Water";
-				break;
-			case "Hail":
-				pokemon.type1 = "Ice";
-				break;
-			default:
-				pokemon.type1 = "Normal";
+		case "Sun":
+		case "Harsh Sunlight":
+			pokemon.type1 = "Fire";
+			break;
+		case "Rain":
+		case "Heavy Rain":
+			pokemon.type1 = "Water";
+			break;
+		case "Hail":
+			pokemon.type1 = "Ice";
+			break;
+		default:
+			pokemon.type1 = "Normal";
 		}
 		pokemon.type2 = "";
 	}
@@ -892,17 +892,18 @@ function checkIntimidate(source, target) {
 	}
 }
 
-function checkStatBoost(p1, p2){
-  if ($('#StatBoostL').prop("checked")) {
-    for (stat in p1.boosts) {
-      p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
-    }
-  }
-  if ($('#StatBoostR').prop("checked")) {
-    for (stat in p2.boosts) {
-      p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
+function checkStatBoost(p1, p2) {
+	var stat;
+	if ($('#StatBoostL').prop("checked")) {
+		for (stat in p1.boosts) {
+			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
 		}
-  }
+	}
+	if ($('#StatBoostR').prop("checked")) {
+		for (stat in p2.boosts) {
+			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
+		}
+	}
 }
 
 function checkDownload(source, target) {

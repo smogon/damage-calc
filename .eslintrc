@@ -9,7 +9,28 @@
 		"browser": true
 	},
 	"globals": {
-		"_": false
+		"_": false, "buildDescription": false, "checkAirLock": false, "checkDownload": false, "checkIntimidate": false, "checkKlutz": false,
+		"checkForecast": false, "getMultiAttack": false, "Field": false, "gen": false, "mode": false, "NATURES": false, "Pokemon": false,  "typeChart": false,
+		"getFinalSpeed": false, "getItemBoostType": false, "getNaturalGift": false, "getMoveEffectiveness": false, "getTechnoBlast": false,
+		"getFlingPower": false, "countBoosts": false, "toSmogonStat": false, "getModifiedStat": false, "getBerryResistType": false,
+		"megaStones": false, "STATS": false, "seedBoostedStat": false, "mega_Stones": false, "getSetOptions": false,
+		"calcCurrentHP": false, "CALCULATE_MOVES_OF_ATTACKER_RBY": false, "CALCULATE_MOVES_OF_ATTACKER_GSC": false,
+		"CALCULATE_MOVES_OF_ATTACKER_ADV": false, "CALCULATE_MOVES_OF_ATTACKER_DPP": false, "CALCULATE_MOVES_OF_ATTACKER_BW": false,
+		"linkExtension": false, "genWasChanged": false, "autosetStatus": false, "autosetWeather": false, "autosetTerrain": false, "lastManualStatus": false,
+		"lastAutoStatus": false, "notation": false, "CALCULATE_ALL_MOVES_RBY": false, "CALCULATE_ALL_MOVES_GSC": false,
+		"CALCULATE_ALL_MOVES_ADV": false, "CALCULATE_ALL_MOVES_DPP": false, "CALCULATE_ALL_MOVES_BW": false,
+		"isGroundedForCalc": false, "ITEMS_SM": false, "SETDEX_SM": false, "SETDEX_XY": false,
+		"SETDEX_BW": false, "SETDEX_DPP": false, "SETDEX_ADV": false, "SETDEX_GSC": false, "SETDEX_RBY": false,
+		"ZMOVES_TYPING": false, "getSelectedTiers": false,
+		"MOVES_SM": false, "stickyMoves": false, "ABILITIES_SM": false, "bothPokemon": false, "POKEDEX_SM": false,
+		"loadDefaultLists": false, "POKEDEX_RBY": false, "TYPE_CHART_RBY": false, "MOVES_RBY": false, "STATS_RBY": false,
+		"CALC_HP_RBY": false, "CALC_STAT_RBY": false, "POKEDEX_GSC": false, "TYPE_CHART_GSC": false, 
+		"MOVES_GSC": false, "ITEMS_GSC": false, "STATS_GSC": false, "POKEDEX_ADV": false, "MOVES_ADV": false,
+		"ITEMS_ADV": false, "ABILITIES_ADV": false, "CALC_HP_ADV": false, "CALC_STAT_ADV": false,
+		"MOVES_DPP": false, "ITEMS_DPP": false, "ABILITIES_DPP": false, "POKEDEX_BW": false, "MOVES_BW": false,
+		"ITEMS_BW": false, "ABILITIES_BW": false, "POKEDEX_XY": false, "TYPE_CHART_XY": false, "MOVES_XY": false,
+		"ITEMS_XY": false, "ABILITIES_XY": false, "pokedex": false, "POKEDEX_DPP": false, 
+		"getKOChanceText": false, "AT": false, "ATK": false, "DF": false, "SP": false, "SD": false,  "SL": false, "SA": false, "SPA": false
 	},
 	"extends": "eslint:recommended",
 	"rules": {

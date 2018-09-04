@@ -71,11 +71,11 @@
 			eotText.push('hail damage');
 		}
 	}
-	var keepsItem = move.name === "Knock Off" && defender.ability !== 'Sticky Hold' ? false : true;
-	if (defender.item === 'Leftovers' && keepsItem) {
+	var loseItem = move.name === "Knock Off" && defender.ability !== 'Sticky Hold';
+	if (defender.item === 'Leftovers' && !loseItem) {
 		eot += Math.floor(defender.maxHP / 16);
 		eotText.push('Leftovers recovery');
-	} else if (defender.item === 'Black Sludge' && keepsItem) {
+	} else if (defender.item === 'Black Sludge' && !loseItem) {
 		if (defender.type1 === 'Poison' || defender.type2 === 'Poison') {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Black Sludge recovery');
@@ -195,7 +195,7 @@
 			return 'guaranteed KO in ' + move.usedTimes + ' turns' + afterText;
 		} else if (predictTotal(damage[damage.length - 1], eot, move.usedTimes, move.usedTimes, toxicCounter, defender.maxHP) >= defender.curHP - hazards) {
 			return 'possible KO in ' + move.usedTimes + ' turns' + afterText;
-		} 
+		}
 		return 'not a KO';
 	}
 

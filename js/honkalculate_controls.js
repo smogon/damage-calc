@@ -288,6 +288,7 @@ function setLevel(lvl) {
 }
 
 $(".set-selector").change(function (e) {
+	var genWasChanged;
 	var format = getSelectedTiers()[0];
 	if (genWasChanged) {
 		genWasChanged = false;
@@ -298,8 +299,9 @@ $(".set-selector").change(function (e) {
 	}
 });
 
-var mode, dtHeight, dtWidth;
+var dtHeight, dtWidth;
 $(document).ready(function () {
+	var mode;
 	var url = window.location.href;
 	var equalsPos = (url.indexOf('='));
 	if (equalsPos < 0) {
