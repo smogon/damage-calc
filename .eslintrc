@@ -43,9 +43,6 @@
 		"no-redeclare": "off",
 		"valid-jsdoc": "off",
 
-		// TODO: actually fix useless escapes
-		"no-useless-escape": "off",
-
 		"array-callback-return": "error",
 		"complexity": "off",
 		"consistent-return": "off",

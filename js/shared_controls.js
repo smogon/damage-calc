@@ -611,7 +611,7 @@ function getZMoveName(moveName, moveType, item) {
 				moveName === "Giga Impact" && item === "Snorlium Z" ? "Pulverizing Pancake" :
 					moveName === "Moongeist Beam" && item === "Lunalium Z" ? "Menacing Moonraze Maelstrom" :
 						moveName === "Photon Geyser" && item === "Ultranecrozium Z" ? "Light That Burns the Sky" :
-							moveName === "Play Rough" && item === "Mimikium Z" ? "Let\'s Snuggle Forever" :
+							moveName === "Play Rough" && item === "Mimikium Z" ? "Let's Snuggle Forever" :
 								moveName === "Psychic" && item === "Mewnium Z" ? "Genesis Supernova" :
 									moveName === "Sparkling Aria" && item === "Primarium Z" ? "Oceanic Operetta" :
 										moveName === "Spectral Thief" && item === "Marshadium Z" ? "Soul-Stealing 7-Star Strike" :
@@ -621,7 +621,7 @@ function getZMoveName(moveName, moveType, item) {
 														moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer" :
 															moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt" :
 																moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika" :
-																	moveName === "Nature\'s Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
+																	moveName === "Nature's Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
 																		ZMOVES_TYPING[moveType];
 }
 

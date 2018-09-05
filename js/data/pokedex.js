@@ -497,7 +497,7 @@ var POKEDEX_RBY = {
 		},
 		"w": 120.0
 	},
-	"Farfetch\'d": {
+	"Farfetch'd": {
 		"t1": "Normal",
 		"t2": "Flying",
 		"bs": {
