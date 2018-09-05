@@ -1,5 +1,5 @@
 if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function (searchElement, fromIndex) { // eslint-disable-line
+	Array.prototype.indexOf = function (searchElement, fromIndex) { // eslint-disable-line no-extend-native
 		var k;
 		if (this == null) {
 			throw new TypeError('"this" equals null or n is undefined');
@@ -678,7 +678,6 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
-/* eslint-disable no-global-assign */
 $(".gen").change(function () {
 	var gen = ~~$(this).val();
 	var genWasChanged = true;
@@ -782,7 +781,6 @@ $(".gen").change(function () {
 $(".notation").change(function () {
 	notation = $(this).val();
 });
-/* eslint-enable no-global-assign */
 
 function clearField() {
 	$("#singles-format").prop("checked", true);

@@ -332,7 +332,7 @@ $(bothPokemon("#importedSets")).click(function () {
 	var pokeID = $(this).parent().parent().prop("id");
 	var showCustomSets = $(this).prop("checked");
 	if (showCustomSets) {
-		loadCustomList(pokeID); // eslint-disable-line no-undef
+		loadCustomList(pokeID);
 	} else {
 		loadDefaultLists();
 	}
