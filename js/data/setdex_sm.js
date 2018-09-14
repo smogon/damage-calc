@@ -3469,7 +3469,7 @@ var SETDEX_SM = {
 		"Uber Trapping Boss": {"level": 100, "evs": {"df": 208, "at": 220, "hp": 80}, "nature": "Adamant", "ability": "Power Construct", "item": "Leftovers", "moves": ["Dragon Dance", "Thousand Arrows", "Thousand Waves", "Rest"]},
 	},
 	"Arghonaut": {
-		"CAP Mixed Wall": {"level": 100, "evs": { "hp": 252, "df":124  "sd": 88}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
+		"CAP Mixed Wall": {"level": 100, "evs": { "hp": 252, "df":124, "sd": 88}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
 	},
 	"Aurumoth": {
 		"CAP No Guard Quiver Dance": {"level": 100, "evs": { "df" 4 "sa": 252, "sp": 252}, "nature": "Timid", "ability": "No Guard", "item": "Fightinium Z", "moves": ["Quiver Dance", "Bug Buzz", "Psychic", "Focus Blast"]},
@@ -3496,6 +3496,11 @@ var SETDEX_SM = {
 	"Fidgit": {
 		"CAP Persistent": {"level": 100, "evs": {"df": 36, "hp": 252, "sd": 220}, "nature": "Timid", "ability": "Persistent", "item": "Black Sludge", "moves": ["Trick Room", "Stealth Rock", "Earth Power", "U-turn"]},
 	},
+	"Jumbao": {
+		"CAP Wall": {"level": 100, "evs": {"HP": 252, "df": 160, "sd": 96}, "nature": "Calm", "ability": "Trace", "item": "Leftovers", "moves": ["Moonblast", "Shore Up", "Hidden Power Ground", "Wish"]},
+		"CAP Offensive": {"level": 100, "evs": {"HP": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Drought", "item": "Grassium Z", "moves": ["Moonblast", "Solar Beam", "Flame Burst", "Shore Up"]},
+		"CAP Choice Scarf": {"level": 100, "evs": {"HP": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Trace", "item": "Choice Scarf", "moves": ["Moonblast", "Leaf Storm", "Flame Burst", "Healing Wish"]},
+	},
 	"Kerfluffle": {
 		"CAP Life Orb": {"level": 100, "evs": {"sp": 252, "sa": 252, "sd": 4}, "nature": "Timid", "ability": "Natural Cure", "item": "Life Orb", "moves": ["Moonblast", "Focus Blast", "Hidden Power Ground", "Parting Shot"]},
 	},
@@ -3508,19 +3513,23 @@ var SETDEX_SM = {
 		"CAP Special Attacker": {"level": 100, "evs": {"sp": 252, "sa": 252, "hp": 4}, "nature": "Timid", "ability": "Magic Guard", "item": "Life Orb", "moves": ["Volt Switch", "Thunderbolt", "Ice Beam", "Earth Power"]},
 	},
 	"Malaconda": {
-		"CAP Special Wall": {"level": 100, "evs": {"hp": 252, "at": 4, "df": 252}, "nature": "Impish", "ability": "Drought", "item": "Leftovers", "moves": ["Knock Off", "Pursuit", "Glare", "Synthesis"]},
+		"CAP Wall": {"level": 100, "evs": {"hp": 252, "at": 4, "df": 252}, "nature": "Impish", "ability": "Drought", "item": "Leftovers", "moves": ["Knock Off", "Pursuit", "Glare", "Synthesis"]},
 	},
 	"Mollux": {
 		"CAP Specially Defensive": {"level": 100, "evs": {"hp": 252, "df": 4, "sd": 252}, "nature": "Calm", "ability": "Dry Skin", "item": "Black Sludge", "moves": ["Lava Plume", "Sludge Bomb", "Recover", "Rapid Spin"]},
 	},
 	"Naviathan": {
-		"CAP Dragon Dance + 3 Attacks": {"level": 100, "evs": {"hp": 48, "at": 252, "sp": 208}, "nature": "Jolly", "ability": "Water Veil", "item": "Life Orb", "moves": ["Dragon Dance", "Waterfall", "Iron Head", "Wild Charge"]},
+		"CAP Dragon Dance": {"level": 100, "evs": {"hp": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Guts", "item": "Flame Orb", "moves": ["Dragon Dance", "Waterfall", "Facade", "Icicle Crash"]},
 		"CAP Calm Mind": {"level": 100, "evs": {"hp": 252, "df": 252, "sa": 4}, "nature": "Bold", "ability": "Heatproof", "item": "Leftovers", "moves": ["Calm Mind", "Scald", "Recover", "Hidden Power Ground"]},
 	},
 	"Necturna": {
 		"CAP Physical Sweeper": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Forewarn", "item": "Ghostium Z", "moves": ["Shell Smash", "Phantom Force", "Substitute", "Power Whip"]},
 		"CAP Choice Band": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Forewarn", "item": "Choice Band", "moves": ["V-create", "Shadow Claw", "Shadow Sneak", "Power Whip"]},
 		"CAP Sticky Web": {"level": 100, "evs": {"hp": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Forewarn", "item": "Colbur Berry", "moves": ["Sticky Web", "Will-O-Wisp", "Shadow Sneak", "Power Whip"]},
+	},
+	"Pajantom": {
+		"CAP Z Trapper": {"level": 100, "evs": {"hp": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Comatose", "item": "Dragonium Z", "moves": ["Outrage", "Spirit Shackle", "Ice Punch", "Heal Block"]},
+		"CAP Specially Defensive": {"level": 100, "evs": {"hp": 252, "sd": 252, "sp": 4}, "nature": "Careful", "ability": "Comatose", "item": "Leftovers", "moves": ["Spirit Shackle", "Toxic", "Protect", "Heal Block"]},
 	},
 	"Plasmanta": {
 		"CAP Special Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Storm Drain", "item": "Life Orb", "moves": ["Sludge Wave", "Thunderbolt", "Dazzling Gleam", "Hidden Power Ice"]},
@@ -3532,7 +3541,6 @@ var SETDEX_SM = {
 	"Revenankh": {
 		"CAP Bulk Up": {"level": 100, "evs": {"df": 172, "hp": 252, "sd": 84}, "nature": "Careful", "ability": "Triage", "item": "Leftovers", "moves": ["Bulk Up", "Drain Punch", "Shadow Sneak", "Moonlight"]},
 		"CAP Dual Status": {"level": 100, "evs": {"df": 172, "hp": 252, "sd": 84}, "nature": "Careful", "ability": "Triage", "item": "Leftovers", "moves": ["Glare", "Drain Punch", "Toxic", "Moonlight"]},
-
 	},
 	"Stratagem": {
 		"CAP Technician": {"level": 100, "evs": {"sd": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Technician", "item": "Life Orb", "moves": ["Ancient Power", "Earth Power", "Hidden Power Ice", "Energy Ball"]},
@@ -3547,7 +3555,6 @@ var SETDEX_SM = {
 		"CAP Offensive": {"level": 100, "evs": {"df": 4, "sa": 252, "sp": 252}, "nature": "Modest", "ability": "Prankster", "item": "Flyinium Z", "moves": ["Hurricane", "Focus Blast", "Nature Power", "Roost"]},
 		"CAP Stallbreaker": {"level": 100, "evs": {"df": 4, "sa": 252, "sp": 252}, "nature": "Modest", "ability": "Prankster", "item": "Life Orb", "moves": ["Taunt", "Hurricane", "Focus Blast", "Roost"]},
 		"CAP Rain Support": {"level": 100, "evs": {"hp": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Prankster", "item": "Damp Rock", "moves": ["Rain Dance", "Hurricane", "Focus Blast", "Healing Wish"]},
-
 	},
 	"Volkraken": {
 		"CAP Choice Scarf": {"level": 100, "evs": {"sp": 252, "sa": 252, "hp": 4}, "nature": "Timid", "ability": "Analytic", "item": "Choice Scarf", "moves": ["Fire Blast", "Surf", "Hydro Pump", "U-turn"]},
