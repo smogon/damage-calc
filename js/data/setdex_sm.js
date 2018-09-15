@@ -3479,7 +3479,7 @@ var SETDEX_SM = {
 		"CAP Belly Drum": {"level": 100, "evs": {"at": 252, "sp": 252, "hp": 4}, "nature": "Jolly", "ability": "Volt Absorb", "item": "Sitrus Berry", "moves": ["Belly Drum", "Acrobatics", "Drain Punch", "Bullet Punch"]},
 	},
 	"Colossoil": {
-		"CAP Assault Vest": {"level": 100, "evs": {"at": 204, "sd": 160 "sp":144}, "nature": "Adamant", "ability": "Guts", "item": "Assault Vest", "moves": ["Earthquake", "Knock Off", "Rapid Spin", "Sucker Punch"]},
+		"CAP Assault Vest": {"level": 100, "evs": {"at": 204, "sd": 160, "sp":144}, "nature": "Adamant", "ability": "Guts", "item": "Assault Vest", "moves": ["Earthquake", "Knock Off", "Rapid Spin", "Sucker Punch"]},
 		"CAP Flame Orb": {"level": 100, "evs": {"sp": 252, "at": 252, "df": 4}, "nature": "Adamant", "ability": "Guts", "item": "Flame Orb", "moves": ["Earthquake", "Knock Off", "U-turn", "Sucker Punch"]},
 	},
 	"Crucibelle": {
