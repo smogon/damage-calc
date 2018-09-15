@@ -3469,17 +3469,17 @@ var SETDEX_SM = {
 		"Uber Trapping Boss": {"level": 100, "evs": {"df": 208, "at": 220, "hp": 80}, "nature": "Adamant", "ability": "Power Construct", "item": "Leftovers", "moves": ["Dragon Dance", "Thousand Arrows", "Thousand Waves", "Rest"]},
 	},
 	"Arghonaut": {
-		"CAP Mixed Wall": {"level": 100, "evs": { "hp": 252, "df":124, "sd": 88}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
+		"CAP Mixed Wall": {"level": 100, "evs": {"hp": 252, "df": 124, "sd": 88}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
 	},
 	"Aurumoth": {
-		"CAP No Guard Quiver Dance": {"level": 100, "evs": { "df": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "No Guard", "item": "Fightinium Z", "moves": ["Quiver Dance", "Bug Buzz", "Psychic", "Focus Blast"]},
+		"CAP No Guard Quiver Dance": {"level": 100, "evs": {"df": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "No Guard", "item": "Fightinium Z", "moves": ["Quiver Dance", "Bug Buzz", "Psychic", "Focus Blast"]},
 		"CAP Weak Armor Tail Glow": {"level": 100, "evs": {"hp": 104, "sa": 252, "sp": 152}, "nature": "Modest", "ability": "Weak Armor", "item": "Iapapa Berry", "moves": ["Tail Glow", "Bug Buzz", "Psyshock", "Focus Blast"]},
 	},
 	"Cawmodore": {
 		"CAP Belly Drum": {"level": 100, "evs": {"at": 252, "sp": 252, "hp": 4}, "nature": "Jolly", "ability": "Volt Absorb", "item": "Sitrus Berry", "moves": ["Belly Drum", "Acrobatics", "Drain Punch", "Bullet Punch"]},
 	},
 	"Colossoil": {
-		"CAP Assault Vest": {"level": 100, "evs": {"at": 204, "sd": 160, "sp":144}, "nature": "Adamant", "ability": "Guts", "item": "Assault Vest", "moves": ["Earthquake", "Knock Off", "Rapid Spin", "Sucker Punch"]},
+		"CAP Assault Vest": {"level": 100, "evs": {"at": 204, "sd": 160, "sp": 144}, "nature": "Adamant", "ability": "Guts", "item": "Assault Vest", "moves": ["Earthquake", "Knock Off", "Rapid Spin", "Sucker Punch"]},
 		"CAP Flame Orb": {"level": 100, "evs": {"sp": 252, "at": 252, "df": 4}, "nature": "Adamant", "ability": "Guts", "item": "Flame Orb", "moves": ["Earthquake", "Knock Off", "U-turn", "Sucker Punch"]},
 	},
 	"Crucibelle": {
