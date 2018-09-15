@@ -3472,7 +3472,7 @@ var SETDEX_SM = {
 		"CAP Mixed Wall": {"level": 100, "evs": { "hp": 252, "df":124, "sd": 88}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
 	},
 	"Aurumoth": {
-		"CAP No Guard Quiver Dance": {"level": 100, "evs": { "df": 4 "sa": 252, "sp": 252}, "nature": "Timid", "ability": "No Guard", "item": "Fightinium Z", "moves": ["Quiver Dance", "Bug Buzz", "Psychic", "Focus Blast"]},
+		"CAP No Guard Quiver Dance": {"level": 100, "evs": { "df": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "No Guard", "item": "Fightinium Z", "moves": ["Quiver Dance", "Bug Buzz", "Psychic", "Focus Blast"]},
 		"CAP Weak Armor Tail Glow": {"level": 100, "evs": {"hp": 104, "sa": 252, "sp": 152}, "nature": "Modest", "ability": "Weak Armor", "item": "Iapapa Berry", "moves": ["Tail Glow", "Bug Buzz", "Psyshock", "Focus Blast"]},
 	},
 	"Cawmodore": {
