@@ -3469,7 +3469,7 @@ var SETDEX_SM = {
 		"Uber Trapping Boss": {"level": 100, "evs": {"df": 208, "at": 220, "hp": 80}, "nature": "Adamant", "ability": "Power Construct", "item": "Leftovers", "moves": ["Dragon Dance", "Thousand Arrows", "Thousand Waves", "Rest"]},
 	},
 	"Arghonaut": {
-		"CAP Mixed Wall": {"level": 100, "evs": {"hp": 252, "df": 124, "sd": 88}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
+		"CAP Mixed Wall": {"level": 100, "evs": {"hp": 252, "df": 124, "sd": 132}, "nature": "Careful", "ability": "Unaware", "item": "Leftovers", "moves": ["Recover", "Drain Punch", "Knock Off", "Spikes"]},
 	},
 	"Aurumoth": {
 		"CAP No Guard Quiver Dance": {"level": 100, "evs": {"df": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "No Guard", "item": "Fightinium Z", "moves": ["Quiver Dance", "Bug Buzz", "Psychic", "Focus Blast"]},
