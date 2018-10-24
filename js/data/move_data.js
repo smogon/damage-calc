@@ -1606,7 +1606,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		bp: 140,
 		type: 'Grass',
 		category: 'Special',
-		dropsStats : 2
+		dropsStats: 2
 	},
 	'Lunar Dance': {
 		bp: 0,
@@ -2983,7 +2983,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	'Grass Pledge': {zp: 160},
 	'Gunk Shot': {zp: 190},
 	'Gust': {zp: 100},
-	'Guardian of Alola' : {
+	'Guardian of Alola': {
 		bp: 1,
 		type: 'Fairy',
 		category: 'Special',
@@ -3162,7 +3162,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	'Mystical Fire': {bp: 75, zp: 140},
 	'Natural Gift': {zp: 160},
-	'Nature\'s Madness' : {
+	'Nature\'s Madness': {
 		bp: 1,
 		type: 'Fairy',
 		category: 'Special',

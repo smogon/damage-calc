@@ -497,7 +497,7 @@ var POKEDEX_RBY = {
 		},
 		"w": 120.0
 	},
-	"Farfetch\'d": {
+	"Farfetch'd": {
 		"t1": "Normal",
 		"t2": "Flying",
 		"bs": {
@@ -2111,17 +2111,17 @@ var POKEDEX_RBY = {
 };
 
 var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
-	"Articuno": { "gender": "genderless" },
-	"Chansey": { "canEvolve": true },
-	"Ditto": { "gender": "genderless" },
-	"Electrode": { "gender": "genderless" },
-	"Golbat": { "canEvolve": true },
-	"Mew": { "gender": "genderless" },
-	"Mewtwo": { "gender": "genderless" },
-	"Moltres": { "gender": "genderless" },
-	"Scyther": { "canEvolve": true },
-	"Seadra": { "canEvolve": true },
-	"Zapdos": { "gender": "genderless" },
+	"Articuno": {"gender": "genderless"},
+	"Chansey": {"canEvolve": true},
+	"Ditto": {"gender": "genderless"},
+	"Electrode": {"gender": "genderless"},
+	"Golbat": {"canEvolve": true},
+	"Mew": {"gender": "genderless"},
+	"Mewtwo": {"gender": "genderless"},
+	"Moltres": {"gender": "genderless"},
+	"Scyther": {"canEvolve": true},
+	"Seadra": {"canEvolve": true},
+	"Zapdos": {"gender": "genderless"},
 	"Magnemite": {
 		"gender": "genderless",
 		"t2": "Steel"
@@ -5261,18 +5261,18 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 });
 
 var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
-	"Aipom": { "canEvolve": true },
-	"Electabuzz": { "canEvolve": true },
-	"Gligar": { "canEvolve": true },
-	"Misdreavus": { "canEvolve": true },
-	"Murkrow": { "canEvolve": true },
-	"Piloswine": { "canEvolve": true },
-	"Porygon2": { "canEvolve": true },
-	"Rhyhorn": { "canEvolve": true },
-	"Roselia": { "canEvolve": true },
-	"Tangela": { "canEvolve": true },
-	"Togetic": { "canEvolve": true },
-	"Yanma": { "canEvolve": true },
+	"Aipom": {"canEvolve": true},
+	"Electabuzz": {"canEvolve": true},
+	"Gligar": {"canEvolve": true},
+	"Misdreavus": {"canEvolve": true},
+	"Murkrow": {"canEvolve": true},
+	"Piloswine": {"canEvolve": true},
+	"Porygon2": {"canEvolve": true},
+	"Rhyhorn": {"canEvolve": true},
+	"Roselia": {"canEvolve": true},
+	"Tangela": {"canEvolve": true},
+	"Togetic": {"canEvolve": true},
+	"Yanma": {"canEvolve": true},
 	"Abomasnow": {
 		"t1": "Grass",
 		"t2": "Ice",
