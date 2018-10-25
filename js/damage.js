@@ -893,14 +893,13 @@ function checkIntimidate(source, target) {
 }
 
 function checkStatBoost(p1, p2) {
-	var stat;
 	if ($('#StatBoostL').prop("checked")) {
-		for (stat in p1.boosts) {
+		for (var stat in p1.boosts) {
 			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
 		}
 	}
 	if ($('#StatBoostR').prop("checked")) {
-		for (stat in p2.boosts) {
+		for (var stat in p2.boosts) {
 			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
 		}
 	}
