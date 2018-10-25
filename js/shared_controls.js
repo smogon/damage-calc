@@ -679,8 +679,11 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
 $(".gen").change(function () {
-	var gen = ~~$(this).val();
-	var genWasChanged = true;
+	/*eslint-disable */
+	gen = ~~$(this).val();
+	genWasChanged = true;
+	/* eslint-enable */
+	// declaring these variables with var here makes z moves not work; TODO
 	switch (gen) {
 	case 1:
 		pokedex = POKEDEX_RBY;
