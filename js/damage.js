@@ -478,7 +478,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var attack;
 	var attackSource = move.name === "Foul Play" ? defender : attacker;
 	if (move.usesHighestAttackStat) {
-		move.category = attackSource.stats[AT] >= attackSource.stats[SA] ? "Physical" : "Special";
+		move.category = attackSource.stats[AT] > attackSource.stats[SA] ? "Physical" : "Special";
 	}
 	var attackStat = move.category === "Physical" ? AT : SA;
 	description.attackEVs = attacker.evs[attackStat] +
