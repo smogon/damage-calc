@@ -314,6 +314,12 @@ function checkExeptions(poke) {
 	case 'Vivillon-Pokeball':
 		poke = "Vivillon";
 		break;
+	case 'Florges-White':
+	case 'Florges-Blue':
+	case 'Florges-Orange':
+	case 'Florges-Yellow':
+		poke = "Florges";
+		break;
 	}
 	return poke;
 
