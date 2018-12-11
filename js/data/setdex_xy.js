@@ -3535,7 +3535,7 @@ var SETDEX_XY = {
 	"Wobbuffet": {
 		"PU Bulky Death Fodder": {"level": 100, "evs": {"sd": 252, "df": 252, "hp": 4}, "nature": "Bold", "ability": "Telepathy", "item": "Leftovers", "moves": ["Encore", "Destiny Bond", "Counter", "Mirror Coat"]},
 		"Uber Utility Trapper": {"level": 100, "evs": {"sd": 252, "df": 176, "hp": 80}, "nature": "Calm", "ability": "Shadow Tag", "item": "Custap Berry", "moves": ["Encore", "Mirror Coat", "Counter", "Destiny Bond"]},
-		"Battle Spot Singles \(>_<)7": {"level": 50, "evs": {"sd": 252, "df": 252, "sp": 4}, "nature": "Bold", "ability": "Shadow Tag", "item": "Sitrus Berry", "moves": ["Encore", "Counter", "Mirror Coat", "Destiny Bond"]},
+		"Battle Spot Singles (>_<)7": {"level": 50, "evs": {"sd": 252, "df": 252, "sp": 4}, "nature": "Bold", "ability": "Shadow Tag", "item": "Sitrus Berry", "moves": ["Encore", "Counter", "Mirror Coat", "Destiny Bond"]},
 	},
 	"Woobat": {
 		"LC Baton Pass Recipient": {"level": 5, "evs": {"sd": 252, "df": 172, "hp": 76}, "nature": "Bold", "ability": "Unaware", "item": "Eviolite", "moves": ["Stored Power", "Calm Mind", "Roost", "Heat Wave"]},
