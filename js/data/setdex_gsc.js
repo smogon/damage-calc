@@ -1,10 +1,14 @@
 var SETDEX_GSC = {
+	"Abra": {
+		"NU Showdown Usage": {"level": 100, "item": "Twisted Spoon", "moves": ["Psychic", "Thunder Punch", "Encore", "Swagger"]},
+	},
 	"Aerodactyl": {
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Hidden Power Rock", "Wing Attack", "Fire Blast"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Earthquake", "Hidden Power Rock", "Substitute"]},
 		"OU Defensive": {"level": 100, "item": "Leftovers", "moves": ["Reflect", "Rest", "Whirlwind", "Hidden Power Rock"]},
 	},
 	"Aipom": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Agility", "Baton Pass", "Protect", "Return"]},
 		"OU Baton Pass": {"level": 100, "item": "Leftovers", "moves": ["Agility", "Baton Pass", "Return", "Counter"]},
 	},
 	"Alakazam": {
@@ -16,6 +20,7 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Fire Punch", "Rest", "Sleep Talk"]},
 	},
 	"Arbok": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Spite", "Earthquake", "Rest"]},
 		"OU Glare": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Glare", "Earthquake", "Giga Drain"]},
 	},
 	"Arcanine": {
@@ -23,6 +28,7 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Hidden Power Fighting", "Rest", "Sleep Talk"]},
 	},
 	"Ariados": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Baton Pass", "Agility", "Protect", "Sludge Bomb"]},
 		"UU Baton Pass Trapper": {"level": 100, "item": "Leftovers", "moves": ["Spider Web", "Protect", "Disable", "Baton Pass"]},
 		"UU Physical Attacker": {"level": 100, "moves": ["Sludge Bomb", "Hidden Power Bug", "Screech", "Thief"]},
 		"OU Baton Pass Trapper": {"level": 100, "item": "Leftovers", "moves": ["Spider Web", "Agility", "Baton Pass", "Sludge Bomb"]},
@@ -32,10 +38,15 @@ var SETDEX_GSC = {
 		"OU Reflect": {"level": 100, "item": "Leftovers", "moves": ["Ice Beam", "Toxic", "Reflect", "Rest"]},
 	},
 	"Azumarill": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Ice Beam", "Toxic", "Rest"]},
 		"UU Belly Drummer": {"level": 100, "item": "Leftovers", "moves": ["Belly Drum", "Return", "Surf", "Hidden Power Ghost"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Return", "Hydro Pump", "Hidden Power Ghost"]},
 	},
+	"Bayleef": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Leech Seed", "Synthesis", "Light Screen", "Body Slam"]},
+	},
 	"Beedrill": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Swords Dance", "Agility", "Hidden Power Bug"]},
 		"OU Swords Dance": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Hidden Power Ground", "Swords Dance", "Agility"]},
 	},
 	"Bellossom": {
@@ -51,6 +62,7 @@ var SETDEX_GSC = {
 		"OU Special Wall": {"level": 100, "item": "Leftovers", "moves": ["Soft-Boiled", "Heal Bell", "Light Screen", "Sing"]},
 	},
 	"Butterfree": {
+		"NU Showdown Usage": {"level": 100, "item": "Quick Claw", "moves": ["Sleep Powder", "Stun Spore", "Psychic", "Reflect"]},
 		"OU Double Powder": {"level": 100, "item": "Leftovers", "moves": ["Sleep Powder", "Stun Spore", "Psychic", "Giga Drain"]},
 	},
 	"Celebi": {
@@ -71,6 +83,7 @@ var SETDEX_GSC = {
 		"OU Defensive": {"level": 100, "item": "Leftovers", "moves": ["Rapid Spin", "Spikes", "Surf", "Toxic"]},
 	},
 	"Corsola": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Recover", "Curse", "Rock Slide"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Mirror Coat", "Curse", "Ancient Power", "Recover"]},
 		"OU Support": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Recover", "Toxic", "Mirror Coat"]},
 	},
@@ -79,14 +92,20 @@ var SETDEX_GSC = {
 		"OU Offensive": {"level": 100, "item": "Leftovers", "moves": ["Wing Attack", "Hidden Power Ground", "Toxic", "Screech"]},
 		"OU Toxic Staller": {"level": 100, "item": "Leftovers", "moves": ["Confuse Ray", "Toxic", "Wing Attack", "Mean Look"]},
 	},
+	"Cubone": {
+		"NU Showdown Usage": {"level": 100, "item": "Thick Club", "moves": ["Earthquake", "Swords Dance", "Rock Slide", "Rest"]},
+	},
 	"Delibird": {
+		"NU Showdown Usage": {"level": 100, "item": "", "moves": ["Spikes", "Ice Beam", "Thief", "Present"]},
 		"OU Spiker": {"level": 100, "item": "Leftovers", "moves": ["Spikes", "Ice Beam", "Toxic", "Hidden Power Flying"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Hidden Power Flying", "Ice Beam", "Rest"]},
 	},
 	"Dewgong": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Ice Beam", "Rest", "Surf", "Sleep Talk"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Ice Beam", "Rest", "Encore"]},
 	},
 	"Ditto": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["", "Transform"]},
 		"OU The Set": {"level": 100, "item": "Metal Powder", "moves": ["Transform"]},
 	},
 	"Dodrio": {
@@ -97,14 +116,19 @@ var SETDEX_GSC = {
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Hidden Power Rock", "Curse", "Rest"]},
 		"OU Utility": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Roar", "Rapid Spin", "Rest"]},
 	},
+	"Dragonair": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Extreme Speed", "Rest", "Thunderbolt", "Thunder Wave"]},
+	},
 	"Dragonite": {
 		"OU All-Out Attacker": {"level": 100, "item": "Leftovers", "moves": ["Ice Beam", "Thunder", "Dynamic Punch", "Body Slam"]},
 		"OU Haze Support": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Haze", "Double-Edge", "Reflect"]},
 	},
 	"Dugtrio": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Rock Slide", "Sludge Bomb", "Substitute"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Rock Slide", "Sludge Bomb", "Substitute"]},
 	},
 	"Dunsparce": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Return", "Curse", "Spite"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Return", "Rest", "Sleep Talk"]},
 		"OU Swagger + Psych Up": {"level": 100, "item": "Leftovers", "moves": ["Glare", "Swagger", "Psych Up", "Headbutt"]},
 		"OU SunnyBeam": {"level": 100, "item": "Leftovers", "moves": ["Sunny Day", "Solar Beam", "Flamethrower", "Return"]},
@@ -126,6 +150,9 @@ var SETDEX_GSC = {
 		"OU EspyJump": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Growth", "Baton Pass", "Substitute"]},
 		"OU Growth Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Morning Sun", "Growth", "Bite"]},
 	},
+	"Exeggcute": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Explosion", "Sleep Powder", "Psychic", "Giga Drain"]},
+	},
 	"Exeggutor": {
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Giga Drain", "Sleep Powder", "Explosion"]},
 	},
@@ -134,15 +161,18 @@ var SETDEX_GSC = {
 		"OU Offensive": {"level": 100, "item": "Stick", "moves": ["Swords Dance", "Return", "Hidden Power Flying", "Agility"]},
 	},
 	"Fearow": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Drill Peck", "Double-Edge", "Hidden Power Ground", "Sleep Talk"]},
 		"OU Substitute + 3 Attacks": {"level": 100, "item": "Leftovers", "moves": ["Drill Peck", "Return", "Substitute", "Hidden Power Ground"]},
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Double-Edge", "Drill Peck"]},
 	},
 	"Feraligatr": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Rest", "Sleep Talk", "Toxic"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Hydro Pump", "Crunch", "Surf"]},
 		"OU Mixed Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Hydro Pump", "Earthquake", "Rock Slide", "Curse"]},
 		"OU Special Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Hydro Pump", "Ice Beam", "Crunch", "Hidden Power Grass"]},
 	},
 	"Flareon": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Baton Pass", "Growth", "Zap Cannon"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Shadow Ball", "Baton Pass", "Growth"]},
 		"OU All-Out Attacker": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Shadow Ball", "Return", "Hidden Power Rock"]},
 	},
@@ -151,6 +181,9 @@ var SETDEX_GSC = {
 	},
 	"Furret": {
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Double-Edge", "Rest", "Curse", "Shadow Ball"]},
+	},
+	"Gastly": {
+		"NU Showdown Usage": {"level": 100, "item": "", "moves": ["Explosion", "Thunder", "Thief", "Night Shade"]},
 	},
 	"Gengar": {
 		"OU Assassin": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Ice Punch", "Hypnosis", "Explosion"]},
@@ -166,6 +199,7 @@ var SETDEX_GSC = {
 		"OU Thief": {"level": 100, "item": "Mint Berry", "moves": ["Earthquake", "Wing Attack", "Rest", "Thief"]},
 	},
 	"Golduck": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Ice Beam", "Hydro Pump", "Hypnosis", "Hidden Power Electric"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Surf", "Hypnosis", "Hidden Power Electric"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Hypnosis", "Surf", "Ice Beam"]},
 	},
@@ -177,6 +211,7 @@ var SETDEX_GSC = {
 		"OU Heal Bell": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Return", "Heal Bell"]},
 	},
 	"Graveler": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Explosion", "Rock Slide", "Hidden Power Rock"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Rapid Spin", "Hidden Power Rock", "Explosion"]},
 	},
 	"Gyarados": {
@@ -190,13 +225,16 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Megahorn", "Rest", "Sleep Talk", "Earthquake"]},
 	},
 	"Hitmonchan": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Hidden Power Ghost", "Mach Punch", "Rest"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Return", "Counter", "Hidden Power Ghost"]},
 	},
 	"Hitmonlee": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Meditate", "Body Slam", "Rest"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Meditate", "Mach Punch", "Reversal"]},
 		"OU Meditate": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Meditate", "Hidden Power Rock", "Return"]},
 	},
 	"Hitmontop": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Curse", "Rapid Spin", "Rest"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Curse", "Rapid Spin", "Hidden Power Ghost"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["High Jump Kick", "Curse", "Counter", "Hidden Power Ghost"]},
 	},
@@ -213,6 +251,9 @@ var SETDEX_GSC = {
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Thunder Wave", "Reflect", "Rest"]},
 		"OU Support": {"level": 100, "item": "Leftovers", "moves": ["Thunder Wave", "Psychic", "Light Screen", "Reflect"]},
 		"OU Offensive": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Thunder Punch", "Ice Punch", "Reflect"]},
+	},
+	"Ivysaur": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Synthesis", "Leech Seed", "Reflect", "Light Screen"]},
 	},
 	"Jolteon": {
 		"OU Baton Pass": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Hidden Power Water", "Agility", "Baton Pass"]},
@@ -241,6 +282,7 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Double-Edge", "Surf"]},
 	},
 	"Kingler": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Swords Dance", "Return", "Hidden Power Ground", "Substitute"]},
 		"OU Swords Dance": {"level": 100, "item": "Leftovers", "moves": ["Swords Dance", "Return", "Hidden Power Ground", "Substitute"]},
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Swords Dance", "Double-Edge", "Rest", "Sleep Talk"]},
 	},
@@ -254,9 +296,11 @@ var SETDEX_GSC = {
 		"OU Tank": {"level": 100, "item": "Leftovers", "moves": ["Confuse Ray", "Ice Beam", "Thunder", "Surf"]},
 	},
 	"Ledian": {
+		"NU Showdown Usage": {"level": 100, "item": "Berserk Gene", "moves": ["Baton Pass", "Light Screen", "Reflect", "Agility"]},
 		"OU Baton Pass": {"level": 100, "item": "Leftovers", "moves": ["Baton Pass", "Agility", "Light Screen", "Reflect"]},
 	},
 	"Lickitung": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Body Slam", "Sleep Talk", "Swords Dance"]},
 		"OU Swords Dance": {"level": 100, "item": "Leftovers", "moves": ["Body Slam", "Swords Dance", "Sleep Talk", "Rest"]},
 		"OU Special Attacker": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Ice Beam", "Sleep Talk", "Rest"]},
 	},
@@ -268,10 +312,14 @@ var SETDEX_GSC = {
 		"OU Pure Attacker": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Rock Slide", "Earthquake", "Fire Blast"]},
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Curse", "Rest", "Sleep Talk"]},
 	},
+	"Machoke": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Earthquake", "Rock Slide", "Meditate"]},
+	},
 	"Magcargo": {
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Rock Slide", "Earthquake", "Fire Blast"]},
 	},
 	"Magmar": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Thunder Punch", "Cross Chop", "Psychic"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Thunder Punch", "Cross Chop", "Hidden Power Water"]},
 		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Cross Chop", "Thunder Punch", "Hidden Power Water"]},
 	},
@@ -280,6 +328,7 @@ var SETDEX_GSC = {
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Thunder Wave", "Hidden Power Water", "Substitute"]},
 	},
 	"Mantine": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Rest", "Toxic", "Confuse Ray"]},
 		"OU Support": {"level": 100, "item": "Leftovers", "moves": ["Hydro Pump", "Confuse Ray", "Toxic", "Haze"]},
 	},
 	"Marowak": {
@@ -313,6 +362,7 @@ var SETDEX_GSC = {
 		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Explosion", "Sludge Bomb", "Curse"]},
 	},
 	"Murkrow": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Drill Peck", "Pursuit", "Haze", "Shadow Ball"]},
 		"OU All-Out Attacker": {"level": 100, "item": "Leftovers", "moves": ["Drill Peck", "Feint Attack", "Pursuit", "Night Shade"]},
 	},
 	"Nidoking": {
@@ -323,14 +373,17 @@ var SETDEX_GSC = {
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Lovely Kiss", "Thunder", "Ice Beam"]},
 	},
 	"Ninetales": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Hypnosis", "Toxic", "Roar"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Flamethrower", "Toxic", "Roar"]},
 		"OU Hypnosis": {"level": 100, "item": "Leftovers", "moves": ["Hypnosis", "Toxic", "Roar", "Fire Blast"]},
 	},
 	"Noctowl": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Curse", "Whirlwind", "Return"]},
 		"OU Reflect": {"level": 100, "item": "Leftovers", "moves": ["Hypnosis", "Reflect", "Night Shade", "Rest"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Hypnosis", "Curse", "Return", "Rest"]},
 	},
 	"Octillery": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Flamethrower", "Ice Beam", "Rest"]},
 		"OU Mixed Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Flamethrower", "Surf", "Return", "Ice Beam"]},
 	},
 	"Omastar": {
@@ -339,15 +392,18 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Hydro Pump", "Ice Beam"]},
 	},
 	"Parasect": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Hidden Power Bug", "Spore", "Stun Spore", "Giga Drain"]},
 		"OU Double Powder": {"level": 100, "item": "Leftovers", "moves": ["Spore", "Hidden Power Bug", "Giga Drain", "Stun Spore"]},
 		"OU Special Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Spore", "Growth", "Giga Drain", "Hidden Power Fire"]},
 		"OU Swords Dance": {"level": 100, "item": "Leftovers", "moves": ["Spore", "Hidden Power Bug", "Return", "Swords Dance"]},
 	},
 	"Persian": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Return", "Substitute", "Swagger", "Psych Up"]},
 		"OU Screech": {"level": 100, "item": "Leftovers", "moves": ["Return", "Hypnosis", "Screech", "Zap Cannon"]},
 		"OU Swagger + Psych Up": {"level": 100, "item": "Leftovers", "moves": ["Return", "Shadow Ball", "Swagger", "Psych Up"]},
 	},
 	"Pidgeot": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Double-Edge", "Whirlwind", "Rest", "Sleep Talk"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Return", "Hidden Power Flying", "Toxic", "Steel Wing"]},
 	},
 	"Pikachu": {
@@ -360,6 +416,7 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Earthquake", "Blizzard"]},
 	},
 	"Pineco": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Spikes", "Explosion", "Rapid Spin", "Toxic"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Spikes", "Explosion", "Rapid Spin", "Hidden Power Bug"]},
 	},
 	"Pinsir": {
@@ -372,15 +429,23 @@ var SETDEX_GSC = {
 		"OU Belly Drum": {"level": 100, "item": "Leftovers", "moves": ["Belly Drum", "Surf", "Lovely Kiss", "Body Slam"]},
 	},
 	"Poliwrath": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Belly Drum", "Earthquake", "Lovely Kiss", "Return"]},
 		"UU Showdown Usage": {"level": 100, "item": "", "moves": ["Belly Drum", "Earthquake", "Lovely Kiss", "Return"]},
 		"OU Belly Drum": {"level": 100, "item": "Leftovers", "moves": ["Belly Drum", "Lovely Kiss", "Hydro Pump", "Body Slam"]},
+	},
+	"Porygon": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Recover", "Thunderbolt", "Thunder Wave", "Ice Beam"]},
 	},
 	"Porygon2": {
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Recover", "Return", "Curse", "Ice Beam"]},
 	},
 	"Primeape": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Rock Slide", "Rest", "Sleep Talk"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Rock Slide", "Meditate", "Hidden Power Bug"]},
 		"OU Physical Attacker": {"level": 100, "item": "Leftovers", "moves": ["Cross Chop", "Rock Slide", "Hidden Power Bug", "Meditate"]},
+	},
+	"Pupitar": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rock Slide", "Earthquake", "Screech", "Pursuit"]},
 	},
 	"Quagsire": {
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Rest", "Belly Drum", "Hidden Power Rock"]},
@@ -391,6 +456,7 @@ var SETDEX_GSC = {
 		"OU Spikes": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Sludge Bomb", "Hydro Pump", "Spikes"]},
 	},
 	"Raichu": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Rest", "Sleep Talk", "Surf"]},
 		"UU Showdown Usage": {"level": 100, "item": "", "moves": ["Surf", "Thunderbolt", "Thunder Wave", "Seismic Toss"]},
 		"OU Rain Dance": {"level": 100, "item": "Leftovers", "moves": ["Thunder", "Surf", "Rain Dance", "Substitute"]},
 		"OU Thunder Wave": {"level": 100, "item": "Miracle Berry", "moves": ["Thunderbolt", "Surf", "Thunder Wave", "Seismic Toss"]},
@@ -401,10 +467,12 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Thunderbolt", "Hidden Power Ice", "Rest", "Sleep Talk"]},
 	},
 	"Rapidash": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Double-Edge", "Rest", "Sleep Talk"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Return", "Hypnosis", "Hidden Power Ground"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Fire Blast", "Return", "Hypnosis"]},
 	},
 	"Raticate": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Super Fang", "Double-Edge", "Roar", "Thunder"]},
 		"OU Super Fang": {"level": 100, "item": "Leftovers", "moves": ["Super Fang", "Substitute", "Mimic", "Body Slam"]},
 	},
 	"Rhydon": {
@@ -427,6 +495,7 @@ var SETDEX_GSC = {
 		"OU Special Attacker": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Ice Beam", "Rest", "Sleep Talk"]},
 	},
 	"Shuckle": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Toxic", "Encore", "Sandstorm"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rollout", "Defense Curl", "Encore", "Rest"]},
 		"OU Wrap": {"level": 100, "item": "Leftovers", "moves": ["Toxic", "Wrap", "Rest", "Encore"]},
 	},
@@ -447,6 +516,7 @@ var SETDEX_GSC = {
 		"OU Spikes": {"level": 100, "item": "Leftovers", "moves": ["Spikes", "Encore", "Destiny Bond", "Mirror Coat"]},
 	},
 	"Sneasel": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Shadow Ball", "Return", "Screech", "Reflect"]},
 		"OU Physical Attacker": {"level": 100, "item": "Leftovers", "moves": ["Dynamic Punch", "Shadow Ball", "Return", "Reflect"]},
 	},
 	"Snorlax": {
@@ -455,6 +525,7 @@ var SETDEX_GSC = {
 		"OU MixLax": {"level": 100, "item": "Leftovers", "moves": ["Double-Edge", "Earthquake", "Fire Blast", "Self-Destruct"]},
 	},
 	"Stantler": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Return", "Earthquake", "Confuse Ray", "Rest"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Return", "Earthquake", "Confuse Ray", "Hypnosis"]},
 		"OU Screen Support": {"level": 100, "item": "Leftovers", "moves": ["Confuse Ray", "Return", "Reflect", "Earthquake"]},
 	},
@@ -465,6 +536,7 @@ var SETDEX_GSC = {
 		"OU Curse + Roar": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Curse", "Roar", "Explosion"]},
 	},
 	"Sudowoodo": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rock Slide", "Self-Destruct", "Earthquake", "Curse"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rock Slide", "Earthquake", "Self-Destruct", "Curse"]},
 		"OU Physical Attacker": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Rock Slide", "Earthquake", "Self-Destruct"]},
 		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Self-Destruct", "Rock Slide", "Thunder Punch", "Fire Punch"]},
@@ -474,11 +546,13 @@ var SETDEX_GSC = {
 		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Sleep Talk", "Ice Beam", "Rest"]},
 	},
 	"Sunflora": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Synthesis", "Growth", "Giga Drain", "Razor Leaf"]},
 		"OU Growth": {"level": 100, "item": "Leftovers", "moves": ["Growth", "Razor Leaf", "Hidden Power Water", "Synthesis"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Sludge Bomb", "Return", "Hidden Power Ghost"]},
 		"OU SunnyBeam": {"level": 100, "item": "Leftovers", "moves": ["Growth", "Sunny Day", "Solar Beam", "Hidden Power Fire"]},
 	},
 	"Tangela": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Synthesis", "Giga Drain", "Sleep Powder", "Growth"]},
 		"OU Double Powder": {"level": 100, "item": "Leftovers", "moves": ["Stun Spore", "Sleep Powder", "Giga Drain", "Reflect"]},
 	},
 	"Tauros": {
@@ -488,6 +562,7 @@ var SETDEX_GSC = {
 		"OU Swords Dance": {"level": 100, "item": "Leftovers", "moves": ["Substitute", "Swords Dance", "Surf", "Sludge Bomb"]},
 	},
 	"Togetic": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Encore", "Toxic", "Solar Beam"]},
 		"OU Special Attacker": {"level": 100, "item": "Leftovers", "moves": ["Charm", "Fire Blast", "Safeguard", "Psychic"]},
 		"OU SunnyBeam": {"level": 100, "item": "Leftovers", "moves": ["Sunny Day", "Solar Beam", "Fire Blast", "Encore"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Hidden Power Flying", "Return", "Rest"]},
@@ -516,6 +591,7 @@ var SETDEX_GSC = {
 		"OU Growth Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Growth", "Rest", "Sleep Talk"]},
 	},
 	"Venomoth": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Sleep Powder", "Psychic", "Baton Pass"]},
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Sludge Bomb", "Stun Spore", "Hidden Power Bug"]},
 	},
 	"Venusaur": {
@@ -532,17 +608,21 @@ var SETDEX_GSC = {
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Sleep Powder", "Leech Seed", "Sludge Bomb", "Moonlight"]},
 	},
 	"Weezing": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Explosion", "Thunder", "Fire Blast"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Sludge Bomb", "Explosion", "Thunder", "Pain Split"]},
 		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Thunder", "Fire Blast", "Sludge Bomb", "Explosion"]},
 	},
 	"Wigglytuff": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Rest", "Thunder Wave", "Sleep Talk", "Curse"]},
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Body Slam", "Rest", "Sleep Talk", "Curse"]},
 		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Double-Edge", "Ice Beam", "Thunderbolt", "Thunder Wave"]},
 	},
 	"Wobbuffet": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Mirror Coat", "Counter", "Destiny Bond", "Mimic"]},
 		"OU Oh, no! It's Wobbuffet! (Counter + Mirror Coat)": {"level": 100, "item": "Leftovers", "moves": ["Counter", "Mirror Coat", "Destiny Bond", "Safeguard"]},
 	},
 	"Xatu": {
+		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Drill Peck", "Rest", "Giga Drain"]},
 		"UU Showdown Usage": {"level": 100, "item": "", "moves": ["Psychic", "Drill Peck", "Giga Drain", "Thief"]},
 		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Drill Peck", "Confuse Ray", "Giga Drain"]},
 	},
