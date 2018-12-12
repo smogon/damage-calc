@@ -969,7 +969,7 @@ var SETDEX_BW = {
 		"UU Choice": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Justified", "item": "Choice Scarf", "moves": ["Close Combat", "Ice Punch", "Zen Headbutt", "Trick"]},
 		"UU Bulk Up": {"level": 100, "evs": {"at": 68, "hp": 252, "sp": 188}, "nature": "Adamant", "ability": "Justified", "item": "Leftovers", "moves": ["Bulk Up", "Drain Punch", "Ice Punch", "Night Slash"]},
 		"OU Bulk Up": {"level": 100, "evs": {"sd": 216, "at": 40, "hp": 240, "sp": 12}, "nature": "Careful", "ability": "Steadfast", "item": "Leftovers", "moves": ["Bulk Up", "Drain Punch", "Ice Punch", "Shadow Sneak"]},
-		"OU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "item": "Life Orb", "moves": ["Swords Dance", "Close Combat", "Ice Punch", "Shadow Sneak"]},
+		"OU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Steadfast", "item": "Life Orb", "moves": ["Swords Dance", "Close Combat", "Ice Punch", "Shadow Sneak"]},
 	},
 	"Galvantula": {
 		"RU All-Out Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Compound Eyes", "item": "Life Orb", "moves": ["Thunder", "Bug Buzz", "Hidden Power Ground", "Giga Drain"]},
@@ -1201,7 +1201,7 @@ var SETDEX_BW = {
 		"Uber Choice Scarf": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Flash Fire", "item": "Choice Scarf", "moves": ["Overheat", "Hidden Power Rock", "Dragon Pulse", "Flamethrower"]},
 		"Doubles Offensive Tran": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "item": "Fire Gem", "moves": ["Heat Wave", "Earth Power", "Dragon Pulse", "Protect"]},
 		"Doubles ErupTran": {"level": 100, "evs": {"sd": 4, "hp": 252, "sa": 252}, "ivs": {"sp": 0}, "nature": "Quiet", "item": "Charcoal", "moves": ["Eruption", "Heat Wave", "Earth Power", "Protect"]},
-		"Doubles SubProtect": {"level": 100, "evs": {"df": 52, "hp": 252, "sa": 200}, "nature": "Modest", "item": "Chople Berry", "moves": ["Substitute", "Protect", "Heat Wave", "Earth Power"]},
+		"Doubles SubProtect": {"level": 100, "evs": {"df": 52, "hp": 252, "sa": 204}, "nature": "Modest", "item": "Chople Berry", "moves": ["Substitute", "Protect", "Heat Wave", "Earth Power"]},
 	},
 	"Heracross": {
 		"UU Choice Scarf": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Moxie", "item": "Choice Scarf", "moves": ["Close Combat", "Megahorn", "Stone Edge", "Earthquake"]},
@@ -1436,7 +1436,7 @@ var SETDEX_BW = {
 		"OU Bulk Up": {"level": 100, "evs": {"at": 252, "hp": 156, "sp": 100}, "nature": "Adamant", "item": "Leftovers", "moves": ["Bulk Up", "Earthquake", "Crunch", "Stone Edge"]},
 	},
 	"Kyogre": {
-		"Uber Choice Scarf": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "item": "Choice Scarf", "moves": ["Water Spout", "Surf", "Thunder", "Ice Beam"]},
+		"Uber Choice Scarf": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Drizzle", "item": "Choice Scarf", "moves": ["Water Spout", "Surf", "Thunder", "Ice Beam"]},
 		"Uber Choice Specs": {"level": 100, "evs": {"hp": 252, "sp": 4, "sa": 252}, "nature": "Modest", "item": "Choice Specs", "moves": ["Water Spout", "Surf", "Thunder", "Ice Beam"]},
 		"Uber Calm Mind + 3 Attacks": {"level": 100, "evs": {"hp": 252, "sp": 4, "sa": 252}, "nature": "Modest", "item": "Leftovers", "moves": ["Calm Mind", "Surf", "Thunder", "Ice Beam"]},
 		"Uber Mono-Attacker": {"level": 100, "evs": {"df": 252, "hp": 252, "sp": 4}, "nature": "Bold", "item": "Leftovers", "moves": ["Calm Mind", "Scald", "Rest", "Sleep Talk"]},
@@ -1989,7 +1989,7 @@ var SETDEX_BW = {
 		"NU Generous Sparky": {"level": 100, "evs": {"sd": 44, "hp": 156, "sp": 252, "sa": 56}, "nature": "Timid", "ability": "Volt Absorb", "item": "Lum Berry", "moves": ["Bestow", "Covet", "Volt Switch", "Super Fang"]},
 	},
 	"Palkia": {
-		"Uber #penis (All-Out Attacker)": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Lustrous Orb", "moves": ["Spacial Rend", "Surf", "Fire Blast", "Thunder"]},
+		"Uber All-Out Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Lustrous Orb", "moves": ["Spacial Rend", "Surf", "Fire Blast", "Thunder"]},
 		"Uber Choice Scarf": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Choice Scarf", "moves": ["Surf", "Spacial Rend", "Fire Blast", "Thunder"]},
 		"Uber Choice Specs": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Choice Specs", "moves": ["Hydro Pump", "Spacial Rend", "Draco Meteor", "Thunder"]},
 		"Uber Trick Room": {"level": 100, "evs": {"df": 4, "hp": 252, "sa": 252}, "ivs": {"sp": 0}, "nature": "Quiet", "item": "Lustrous Orb", "moves": ["Trick Room", "Spacial Rend", "Hydro Pump", "Fire Blast"]},
