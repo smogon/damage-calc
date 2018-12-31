@@ -745,7 +745,7 @@ function getDamageResult(attacker, defender, move, field) {
 		var usedWhiteHerb = false;
 		var dropCount = attacker.boosts[attackStat];
 		for (var times = 0; times < move.usedTimes; times++) {
-			var newAttack = getModifiedStat(attacker.rawStats[attackStat], dropCount);
+			var newAttack = getModifiedStat(attack, dropCount);
 			var damageMultiplier = 0;
 			damage = damage.map(function (affectedAmount) {
 				if (times) {
