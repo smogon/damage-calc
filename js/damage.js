@@ -229,7 +229,14 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 
 	if (move.name === "Guardian of Alola") {
-		var zLostHP = field.isProtected ? Math.floor(defender.curHP / 4) : Math.floor(defender.curHP * 3 / 4);
+		var zLostHP = Math.floor(defender.curHP * 3 / 4);
+		if (field.isProtected) {
+			if (attacker.item.indexOf(" Z") !== -1) {
+				zLostHP = Math.ceil(zLostHP / 4 - 0.5);
+			} else {
+				alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			}
+		}
 		 return {"damage": [zLostHP], "description": buildDescription(description)};
 	}
 
