@@ -444,7 +444,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
-	if (isAerilate || isPixilate || isRefrigerate || isGalvanize) {
+	if (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize) {
 		bpMods.push(gen >= 7 ? 0x1333 : 0x14CD);
 		description.attackerAbility = attacker.ability;
 	} else if ((attacker.ability === "Mega Launcher" && move.isPulse) ||
