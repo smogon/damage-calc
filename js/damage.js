@@ -122,8 +122,9 @@ function getDamageResult(attacker, defender, move, field) {
 	var isGalvanize = false;
 	var isLiquidVoice = false;
 	var isNormalize = false;
-
-	if (!move.isZ) {
+	var noTypeChange = ["Revelation Dance", "Judgement", "Nature Power", "Techo Blast", "Multi Attack", "Natural Gift", "Weather Ball"].indexOf(move.name) !== -1;
+	
+	if (!move.isZ && !noTypeChange) {
 		isAerilate = attacker.ability === "Aerilate" && move.type === "Normal";
 		isPixilate = attacker.ability === "Pixilate" && move.type === "Normal";
 		isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal";
