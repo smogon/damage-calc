@@ -79,7 +79,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var defAbility = defender.ability;
 	var defenderIgnoresAbility = ["Full Metal Body", "Prism Armor", "Shadow Shield"].indexOf(defAbility) !== -1;
 	var attackerIgnoresAbility = ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1;
-	if (attackerIgnoresAbility && !defenderIgnoresAbility)) {
+	if (attackerIgnoresAbility && !defenderIgnoresAbility) {
 			defAbility = "";
 			description.attackerAbility = attacker.ability;
 		}
