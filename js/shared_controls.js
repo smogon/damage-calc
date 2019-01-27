@@ -395,8 +395,20 @@ $(".set-selector").change(function () {
 		}
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
+		var baseForme;
+		if (pokemon.isAlternateForme) {
+			// try to find the base forme name by chopping off everything after the last dash
+			var baseFormeName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
+			// special case: -Mega-X and -Mega-Y
+			if (baseFormeName.substring(baseFormeName.lastIndexOf('-')) === '-Mega') {
+				baseFormeName = baseFormeName.substring(0, baseFormeName.lastIndexOf('-'));
+			}
+			baseForme = pokedex[baseFormeName];
+		}
 		if (pokemon.formes) {
 			showFormes(formeObj, setName, pokemonName, pokemon);
+		} else if (baseForme && baseForme.formes) {
+			showFormes(formeObj, setName, pokemonName, baseForme);
 		} else {
 			formeObj.hide();
 		}
@@ -422,7 +434,8 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
 	            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
 	            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
-	            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
+				(pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1) ||
+				(pokemonName === "Greninja-Ash" && set.ability === "Battle Bond")) {
 				defaultForme = 1;
 			} else if (set.item.indexOf('ite Y') !== -1) {
 				defaultForme = 2;
@@ -854,13 +867,13 @@ function getSetOptions(sets) {
 	return setOptions;
 }
 
-function getSelectOptions(arr, sort) {
+function getSelectOptions(arr, sort, defaultOption) {
 	if (sort) {
 		arr.sort();
 	}
 	var r = '';
 	for (var i = 0; i < arr.length; i++) {
-		r += '<option value="' + arr[i] + '">' + arr[i] + '</option>';
+		r += '<option value="' + arr[i] + '" ' + (defaultOption === i ? 'selected' : '') + '>' + arr[i] + '</option>';
 	}
 	return r;
 }
