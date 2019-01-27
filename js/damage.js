@@ -80,11 +80,11 @@ function getDamageResult(attacker, defender, move, field) {
 	var defenderIgnoresAbility = ["Full Metal Body", "Prism Armor", "Shadow Shield"].indexOf(defAbility) !== -1;
 	var attackerIgnoresAbility = ["Mold Breaker", "Teravolt", "Turboblaze"].indexOf(attacker.ability) !== -1;
 	if (attackerIgnoresAbility && !defenderIgnoresAbility) {
-			defAbility = "";
-			description.attackerAbility = attacker.ability;
-		}
+		defAbility = "";
+		description.attackerAbility = attacker.ability;
+	}
 	if (["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
-			defAbility = "";
+		defAbility = "";
 	}
 
 	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && ["Battle Armor", "Shell Armor"].indexOf(defAbility) === -1 || attacker.ability === "Merciless" && defender.status.indexOf("Poisoned") !== -1) && move.usedTimes === 1);
