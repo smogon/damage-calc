@@ -5626,7 +5626,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 50,
 			"sp": 75
 		},
-		"w": 0.6
+		"w": 0.6,
+		"canEvolve": true
 	},
 	"Bronzong": {
 		"t1": "Steel",
@@ -5973,7 +5974,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 40,
 			"sp": 60
 		},
-		"w": 15.0
+		"w": 15.0,
+		"canEvolve": true
 	},
 	"Empoleon": {
 		"t1": "Water",
@@ -6025,7 +6027,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 70,
 			"sp": 40
 		},
-		"w": 73.0
+		"w": 73.0,
+		"canEvolve": true
 	},
 	"Floatzel": {
 		"t1": "Water",
@@ -6638,6 +6641,20 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 		"w": 23.0,
 		"canEvolve": true
 	},
+	"Privatyke": {
+		"t1": "Water",
+		"t2": "Fighting",
+		"bs": {
+			"hp": 65,
+			"at": 75,
+			"df": 65,
+			"sa": 40,
+			"sd": 60,
+			"sp": 45
+		},
+		"w": 35.0,
+		"canEvolve": true
+	},
 	"Probopass": {
 		"t1": "Rock",
 		"t2": "Steel",
@@ -6687,6 +6704,19 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sp": 58
 		},
 		"w": 102.5
+	},
+	"Rebble": {
+		"t1": "Rock",
+		"bs": {
+			"hp": 45,
+			"at": 25,
+			"df": 65,
+			"sa": 75,
+			"sd": 55,
+			"sp": 80
+		},
+		"w": 7.0,
+		"canEvolve": true
 	},
 	"Regigigas": {
 		"t1": "Normal",
@@ -7058,7 +7088,21 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 39,
 			"sp": 91
 		},
-		"w": 4.0
+		"w": 4.0,
+		"canEvolve": true
+	},
+	"Tactite": {
+		"t1": "Rock",
+		"bs": {
+			"hp": 70,
+			"at": 40,
+			"df": 65,
+			"sa": 100,
+			"sd": 65,
+			"sp": 95
+		},
+		"w": 16.0,
+		"canEvolve": true
 	},
 	"Tangrowth": {
 		"t1": "Grass",
@@ -7150,6 +7194,20 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sp": 40
 		},
 		"w": 38.5
+	},
+	"Voodoll": {
+		"t1": "Normal",
+		"t2": "Dark",
+		"bs": {
+			"hp": 55,
+			"at": 40,
+			"df": 55,
+			"sa": 75,
+			"sd": 50,
+			"sp": 70
+		},
+		"w": 25.0,
+		"canEvolve": true
 	},
 	"Voodoom": {
 		"t1": "Fighting",
@@ -7314,7 +7372,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 40,
 			"sp": 54
 		},
-		"w": 341.4
+		"w": 341.4,
+		"canEvolve": true
 	},
 	"Audino": {
 		"t1": "Normal",
@@ -7452,7 +7511,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 90,
 			"sp": 30
 		},
-		"w": 11.5
+		"w": 11.5,
+		"canEvolve": true
 	},
 	"Braviary": {
 		"t1": "Normal",
@@ -7491,7 +7551,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 55,
 			"sp": 88
 		},
-		"w": 25.0
+		"w": 25.0,
+		"canEvolve": true
 	},
 	"Cawmodore": {
 		"t1": "Steel",
@@ -7635,7 +7696,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 30,
 			"sp": 44
 		},
-		"w": 4.8
+		"w": 4.8,
+		"canEvolve": true
 	},
 	"Darmanitan": {
 		"t1": "Fire",
@@ -8589,7 +8651,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 75,
 			"sp": 51
 		},
-		"w": 1.8
+		"w": 1.8,
+		"canEvolve": true
 	},
 	"Necturna": {
 		"t1": "Grass",
@@ -8907,7 +8970,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 70,
 			"sp": 40
 		},
-		"w": 20.0
+		"w": 20.0,
+		"canEvolve": true
 	},
 	"Seismitoad": {
 		"t1": "Water",
@@ -9820,7 +9884,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sd": 40,
 			"sp": 87
 		},
-		"w": 72.5
+		"w": 72.5,
+		"canEvolve": true
 	},
 	"Carbink": {
 		"t1": "Rock",
@@ -10062,7 +10127,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sd": 30,
 			"sp": 77
 		},
-		"w": 1.9
+		"w": 1.9,
+		"canEvolve": true
 	},
 	"Floette": {
 		"t1": "Fairy",
@@ -11242,6 +11308,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 49
 		},
 		"w": 1.8,
+		"canEvolve": true
 	},
 	"Groudon-Primal": {
 		"t1": "Ground",
@@ -11432,7 +11499,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sd": 68,
 			"sp": 70
 		},
-		"w": 6.0
+		"w": 6.0,
+		"canEvolve": true
 	},
 	"Spewpa": {
 		"t1": "Bug",
@@ -12569,6 +12637,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		},
 		"w": 52.0,
 		"isAlternateForme": true
+	},
+	"Mumbao": {
+		"t1": "Grass",
+		"t2": "Fairy",
+		"bs": {
+			"hp": 55,
+			"at": 30,
+			"df": 64,
+			"sa": 87,
+			"sd": 73,
+			"sp": 66
+		},
+		"w": 250,
+		"canEvolve": true
 	},
 	"Naganadel": {
 		"t1": "Poison",
