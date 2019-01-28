@@ -3736,9 +3736,9 @@ var SETDEX_SM = {
 		"BH Physical Setup Check": {"level": 100, "evs": {"sd": 252, "df": 252, "at": 252, "hp": 252, "sa": 252}, "ivs": {"sp": 0}, "nature": "Relaxed", "ability": "Fur Coat", "item": "Safety Goggles", "moves": ["Shore Up", "Core Enforcer", "Topsy-Turvy", "U-turn"]},
 	},
 	"Jumbao": {
-		"CAP Wall": {"level": 100, "evs": {"HP": 252, "df": 160, "sd": 96}, "nature": "Calm", "ability": "Trace", "item": "Leftovers", "moves": ["Moonblast", "Shore Up", "Hidden Power Ground", "Wish"]},
-		"CAP Offensive": {"level": 100, "evs": {"HP": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Drought", "item": "Grassium Z", "moves": ["Moonblast", "Solar Beam", "Flame Burst", "Shore Up"]},
-		"CAP Choice Scarf": {"level": 100, "evs": {"HP": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Trace", "item": "Choice Scarf", "moves": ["Moonblast", "Leaf Storm", "Flame Burst", "Healing Wish"]},
+		"CAP Wall": {"level": 100, "evs": {"hp": 252, "df": 160, "sd": 96}, "nature": "Calm", "ability": "Trace", "item": "Leftovers", "moves": ["Moonblast", "Shore Up", "Hidden Power Ground", "Wish"]},
+		"CAP Offensive": {"level": 100, "evs": {"hp": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Drought", "item": "Grassium Z", "moves": ["Moonblast", "Solar Beam", "Flame Burst", "Shore Up"]},
+		"CAP Choice Scarf": {"level": 100, "evs": {"hp": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Trace", "item": "Choice Scarf", "moves": ["Moonblast", "Leaf Storm", "Flame Burst", "Healing Wish"]},
 	},
 	"Kerfluffle": {
 		"CAP Life Orb": {"level": 100, "evs": {"sp": 252, "sa": 252, "sd": 4}, "nature": "Timid", "ability": "Natural Cure", "item": "Life Orb", "moves": ["Moonblast", "Focus Blast", "Hidden Power Ground", "Parting Shot"]},
