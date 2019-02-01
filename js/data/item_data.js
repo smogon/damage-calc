@@ -250,7 +250,8 @@ var XY_items = mega_Stones.concat(['Assault Vest',
 	'Pixie Plate',
 	'Power Herb',
 	'Roseli Berry',
-	'Safety Goggles']).sort();
+	'Safety Goggles',
+	'Weakness Policy']).sort();
 
 var ITEMS_XY = ITEMS_BW.concat(XY_items);
 
