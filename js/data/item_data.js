@@ -443,7 +443,7 @@ function getFlingPower(item) {
 										'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 'Twisted Spoon'].indexOf(item) !== -1 ? 30 :
 										item.indexOf('Berry') !== -1 ||
 										['Air Balloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
-											'Focus Sash', 'Grassy Seed', 'Lagging tail', 'leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
+											'Focus Sash', 'Grassy Seed', 'Lagging Tail', 'Leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
 											'Muscle Band', 'Power Herb', 'Psychic Seed', 'Quick Powder', 'Reaper Cloth', 'Red Card', 'Ring Target',
 											'Shed Shell', 'Silk Scarf', 'Silver Powder', 'Smooth Rock', 'Soft Sand', 'Soothe Bell', 'White Herb',
 											'Wide Lens', 'Wise Glasses', 'Zoom Lens'].indexOf(item) !== -1 ? 10 :
