@@ -215,7 +215,7 @@ var megaStones = {
 	'Glalitite': 'Glalie',
 	'Gyaradosite': 'Gyarados',
 	'Heracrossite': 'Heracross',
-	'Houndoomite': 'Houndoom',
+	'Houndoominite': 'Houndoom',
 	'Kangaskhanite': 'Kangaskhan',
 	'Latiasite': 'Latias',
 	'Latiosite': 'Latios',
