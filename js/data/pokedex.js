@@ -11865,6 +11865,20 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		"ab": "Beast Boost",
 		"gender": "genderless"
 	},
+	"Caribolt": {
+		"t1": "Grass",
+		"t2": "Electric",
+		"bs": {
+			"hp": 84,
+			"at": 106,
+			"df": 82,
+			"sa": 77,
+			"sd": 80,
+			"sp": 106
+		},
+		"w": 140.0,
+		"ab": "Galvanize"
+	},
 	"Celesteela": {
 		"t1": "Steel",
 		"t2": "Flying",
@@ -13432,6 +13446,34 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		"w": 100.5,
 		"ab": "RKS System",
 		"gender": "genderless"
+	},
+	"Smokomodo": {
+		"t1": "Fire",
+		"t2": "Ground",
+		"bs": {
+			"hp": 88,
+			"at": 116,
+			"df": 67,
+			"sa": 88,
+			"sd": 78,
+			"sp": 97
+		},
+		"w": 205.0,
+		"ab": "Technician"
+	},
+	"Snaelstorm": {
+		"t1": "Water",
+		"t2": "Bug",
+		"bs": {
+			"hp": 91,
+			"at": 94,
+			"df": 110,
+			"sa": 80,
+			"sd": 97,
+			"sp": 63
+		},
+		"w": 120.0,
+		"ab": "Poison Heal"
 	},
 	"Solgaleo": {
 		"t1": "Psychic",
