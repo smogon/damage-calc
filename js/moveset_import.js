@@ -262,7 +262,7 @@ function addSets(pokes) {
 					currentPoke.nameProp = "Custom Set";
 				}
 				currentPoke.isCustomSet = true;
-				currentPoke.ab = getAbility(rows[i + 1].split(":"));
+				currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
