@@ -67,6 +67,13 @@ var MOVES_RBY = {
 		makesContact: true,
 		alwaysCrit: true
 	},
+	'Comet Punch': {
+		bp: 18,
+		type: 'Normal',
+		category: 'Physical',
+		makesContact: true,
+		isPunch: true
+	},
 	'Confuse Ray': {
 		bp: 0,
 		type: 'Ghost'
