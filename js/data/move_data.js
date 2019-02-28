@@ -965,6 +965,10 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		category: 'Physical',
 		makesContact: true
 	},
+	'Dragon Dance': {
+		bp: 0,
+		type: 'Dragon'
+	},
 	'Double-Edge': {hasRecoil: 33},
 	'Endeavor': {
 		bp: 1,
