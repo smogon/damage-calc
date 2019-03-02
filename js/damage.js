@@ -273,7 +273,7 @@ function getDamageResult(attacker, defender, move, field) {
 		break;
 	case "Electro Ball":
 		var r = Math.floor(attacker.stats[SP] / defender.stats[SP]);
-		basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : 60;
+		basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
 		description.moveBP = basePower;
 		break;
 	case "Gyro Ball":
