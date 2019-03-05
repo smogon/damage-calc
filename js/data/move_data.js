@@ -72,6 +72,7 @@ var MOVES_RBY = {
 		type: 'Normal',
 		category: 'Physical',
 		makesContact: true,
+		isMultiHit: true,
 		isPunch: true
 	},
 	'Confuse Ray': {
