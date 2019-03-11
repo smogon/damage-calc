@@ -164,6 +164,17 @@ $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
 });
 
+
+$(".ability").bind("keyup change", function () {
+	ability = $(this).closest(".poke-info").find(".ability").val();
+	if (['Snow Warning','Snow Cloak'].indexOf(ability) >= 0) {
+		$(".abilityToggleL1").show();
+	} else {
+		$(".abilityToggleL1").hide();
+	}
+});
+
+
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autosetTerrain($(this).val(), 0);
