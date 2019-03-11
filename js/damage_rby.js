@@ -7,6 +7,8 @@
 	p2.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SL], p2.boosts[SL])));
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
+	p1.stats[SP] = Math.min(999, Math.max(1, getFinalSpeed(p1, field, side1)));
+	p2.stats[SP] = Math.min(999, Math.max(1, getFinalSpeed(p2, field, side2)));
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = CALCULATE_DAMAGE_RBY(p1, p2, p1.moves[i], side1);
