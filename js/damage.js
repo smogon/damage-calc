@@ -871,6 +871,10 @@ function getFinalSpeed(pokemon, field, side) {
 		speed *= 2;
 	}
 	//TODO FIELD EFFECTS (Tailwind)
+	if (side.isTailwind) {
+		speed *= 2;
+	}
+
 	//PARALYSIS
 	if (pokemon.status === "Paralyzed" && pokemon.ability !== "Quick Feet") {
 		if (gen < 7) {
