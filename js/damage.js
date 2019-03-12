@@ -520,10 +520,10 @@ function getDamageResult(attacker, defender, move, field) {
 			attacker.ability === "Blaze" && move.type === "Fire" ||
 			attacker.ability === "Torrent" && move.type === "Water" ||
 			attacker.ability === "Swarm" && move.type === "Bug") ||
-			(move.category === "Special" && ["Plus", "Minus"].indexOf(attacker.ability) !== -1)) {
+			(move.category === "Special" && attacker.abilityOn && ["Plus", "Minus"].indexOf(attacker.ability) !== -1)) {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
-	} else if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
+	} else if (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire") {
 		atMods.push(0x1800);
 		description.attackerAbility = "Flash Fire";
 	} else if ((attacker.ability === "Solar Power" && field.weather.indexOf("Sun") !== -1 && move.category === "Special") ||
@@ -532,10 +532,13 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 		description.weather = field.weather;
 	} else if ((attacker.ability === "Defeatist" && attacker.curHP <= attacker.maxHP / 2) ||
-            (attacker.ability === "Slow Start" && move.category === "Physical")) {
+            (attacker.ability === "Slow Start" && attacker.abilityOn && move.category === "Physical")) {
 		atMods.push(0x800);
 		description.attackerAbility = attacker.ability;
 	} else if (["Huge Power", "Pure Power"].indexOf(attacker.ability) !== -1 && move.category === "Physical") {
+		atMods.push(0x2000);
+		description.attackerAbility = attacker.ability;
+	} else if (attacker.ability === "Stakeout" && attacker.abilityOn && move.category === "Physical") {
 		atMods.push(0x2000);
 		description.attackerAbility = attacker.ability;
 	}
