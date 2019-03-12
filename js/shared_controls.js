@@ -162,18 +162,16 @@ $(".percent-hp").keyup(function () {
 
 $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
-});
 
-
-$(".ability").bind("keyup change", function () {
-	ability = $(this).closest(".poke-info").find(".ability").val();
-	if (['Snow Warning','Snow Cloak'].indexOf(ability) >= 0) {
-		$(".abilityToggleL1").show();
+	var ability = $(this).closest(".poke-info").find(".ability").val();
+	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
+		$(this).closest(".poke-info").find(".abilityToggle").show();
 	} else {
-		$(".abilityToggleL1").hide();
+		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
+	//Reset checkbox to checked upon ability change
+	$(this).closest(".poke-info").find(".abilityToggle").prop('checked',true);
 });
-
 
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
@@ -540,6 +538,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
+		this.abilityOn = 	true;
 		this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
 		this.status = "Healthy";
 		this.toxicCounter = 0;
@@ -584,6 +583,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.nature = pokeInfo.find(".nature").val();
 		this.ability = pokeInfo.find(".ability").val();
+		this.abilityOn = 	pokeInfo.find(".abilityToggle").is(":checked");
 		this.item = pokeInfo.find(".item").val();
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
