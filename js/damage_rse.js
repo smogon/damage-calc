@@ -159,7 +159,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		description.defenderAbility = defender.ability;
 	}
 
-	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
+	if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && attacker.abilityOn && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.curHP <= attacker.maxHP / 3 &&
@@ -220,7 +220,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 
-	if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
+	if (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.attackerAbility = "Flash Fire";
 	}
