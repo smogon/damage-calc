@@ -15,7 +15,6 @@ var ABILITIES_ADV = [
 	'Effect Spore',
 	'Flame Body',
 	'Flash Fire',
-	'Flash Fire (activated)',
 	'Forecast',
 	'Guts',
 	'Huge Power',
