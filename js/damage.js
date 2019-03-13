@@ -448,6 +448,11 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
+	if(field.isBattery && move.category === "Special"){
+		bpMods.push(0x14CC);
+		description.isBattery = true;
+	}
+
 	if (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize) {
 		bpMods.push(gen >= 7 ? 0x1333 : 0x14CD);
 		description.attackerAbility = attacker.ability;
@@ -557,10 +562,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
-	if(field.isBattery && move.category === "Special"){
-		atMods.push(0x14CC);
-		description.isBattery = true;
-	}
+
 
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
