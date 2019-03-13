@@ -557,6 +557,11 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerItem = attacker.item;
 	}
 
+	if(field.isBattery && move.category === "Special"){
+		atMods.push(0x14CC);
+		description.isBattery = true;
+	}
+
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
 	////////////////////////////////

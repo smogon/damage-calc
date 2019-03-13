@@ -133,6 +133,9 @@ function buildDescription(description) {
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
 	}
+	if (description.isBattery){
+		output += " Battery boosted ";
+	}
 	output += description.moveName + " ";
 	if (description.moveBP && description.moveType) {
 		output += "(" + description.moveBP + " BP " + description.moveType + ") ";

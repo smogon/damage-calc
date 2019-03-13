@@ -677,6 +677,7 @@ function Field() {
 	var isTailwind = [$("#tailwindR").prop("checked"), $("#tailwindL").prop("checked")];
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
+	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
 
 	this.getWeather = function () {
 		return weather;
@@ -685,11 +686,11 @@ function Field() {
 		weather = "";
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i]);
+		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery) {
 	this.format = format;
 	this.terrain = terrain;
 	this.weather = weather;
@@ -706,6 +707,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isTailwind = isTailwind;
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
+	this.isBattery = isBattery;
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
@@ -845,6 +847,8 @@ function clearField() {
 	$("#friendGuardR").prop("checked", false);
 	$("#auroraVeilL").prop("checked", false);
 	$("#auroraVeilR").prop("checked", false);
+	$("#batteryL").prop("checked", false);
+	$("#batteryR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 
