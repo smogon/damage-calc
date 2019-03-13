@@ -865,12 +865,10 @@ function getFinalSpeed(pokemon, field, side) {
 		speed *= 2;
 	} else if (pokemon.ability === "Quick Feet" && pokemon.status !== "Healthy") {
 		speed = pokeRound(speed * 1.5);
-		//TODO add toggle for Slow Start
-	} else if (pokemon.ability === "Slow Start") {
+	} else if (pokemon.ability === "Slow Start" && pokemon.abilityOn) {
 		speed = pokeRound(speed / 2);
-		//TODO add toggle for Unburden
 	} else if ((pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
-						 (pokemon.ability === "Unburden" && pokemon.item === "")) {
+						 (pokemon.ability === "Unburden" && pokemon.item === "" && pokemon.abilityOn)) {
 		speed *= 2;
 	}
 	//TODO FIELD EFFECTS (Tailwind)
