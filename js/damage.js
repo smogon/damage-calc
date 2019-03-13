@@ -868,10 +868,10 @@ function getFinalSpeed(pokemon, field, side) {
 	} else if (pokemon.ability === "Slow Start" && pokemon.abilityOn) {
 		speed = pokeRound(speed / 2);
 	} else if ((pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
-						 (pokemon.ability === "Unburden" && pokemon.item === "" && pokemon.abilityOn)) {
+						 (pokemon.ability === "Unburden" && pokemon.abilityOn)) {
 		speed *= 2;
 	}
-	//TODO FIELD EFFECTS (Tailwind)
+	//FIELD EFFECTS (Tailwind)
 	if (side.isTailwind) {
 		speed *= 2;
 	}
@@ -884,8 +884,22 @@ function getFinalSpeed(pokemon, field, side) {
 			speed = pokeRound(speed * 0.5);
 		}
 	}
-	console.log(pokemon.name + " " + speed)
+
+	if(gen <= 2) {
+		speed = Math.min(999, speed);
+	}
+	speed = Math.max(1, speed);
+
+	printStat(pokemon, SP, speed);
 	return speed;
+}
+
+function printStat(pokemon, statName, stat) {
+	if (typeof pokemon.pokeInfo === "string") {
+		return;
+	} else {
+		pokemon.pokeInfo.find("." + statName + " .totalMod").text(stat);
+	}
 }
 
 function checkAirLock(pokemon, field) {

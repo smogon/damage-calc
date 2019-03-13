@@ -558,6 +558,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.weight = pokemon.w;
 		this.gender = pokemon.gender ? "genderless" : "Male";
+		this.pokeInfo = pokeInfo;
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		if (setName.indexOf("(") === -1) {
@@ -595,6 +596,7 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
+		this.pokeInfo = pokeInfo;
 	}
 
 	this.hasType = function (type) {
