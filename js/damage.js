@@ -8,12 +8,14 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkSeedBoost(p1, field);
 	checkSeedBoost(p2, field);
 	checkStatBoost(p1, p2);
+	var side1 = field.getSide(1);
+	var side2 = field.getSide(0);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
+	p1.stats[SP] = getFinalSpeed(p1, field, side1);
 	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
 	p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
+	p2.stats[SP] = getFinalSpeed(p2, field, side2);
 	checkIntimidate(p1, p2);
 	checkIntimidate(p2, p1);
 	checkDownload(p1, p2);
@@ -41,17 +43,18 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	checkForecast(defender, field.getWeather());
 	checkKlutz(attacker);
 	checkKlutz(defender);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
+	var attackerSide = field.getSide(~~(mode !== "one-vs-all"));
+	attacker.stats[SP] = getFinalSpeed(attacker, field, attackerSide);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
+	defender.stats[SP] = getFinalSpeed(defender, field, defenderSide);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	checkInfiltrator(attacker, defenderSide);
 	var results = [];
 	for (var i = 0; i < 4; i++) {
@@ -842,19 +845,48 @@ function getModifiedStat(stat, mod) {
 			stat;
 }
 
-function getFinalSpeed(pokemon, weather) {
+function getFinalSpeed(pokemon, field, side) {
+	var weather = field.getWeather();
+	var terrain = side.terrain;
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
+	//ITEM EFFECTS
 	if (pokemon.item === "Choice Scarf") {
-		speed = Math.floor(speed * 1.5);
+		speed = pokeRound(speed * 1.5);
 	} else if (["Macho Brace", "Iron Ball"].indexOf(pokemon.item) !== -1) {
-		speed = Math.floor(speed / 2);
+		speed = pokeRound(speed / 2);
+	} else if (pokemon.item === "Quick Powder" && pokemon.name === "Ditto") {
+		speed *= 2;
 	}
+	//ABILITIES
 	if ((pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") !== -1) ||
             (pokemon.ability === "Sand Rush" && weather === "Sand") ||
             (pokemon.ability === "Swift Swim" && weather.indexOf("Rain") !== -1) ||
             (pokemon.ability === "Slush Rush" && weather === "Hail")) {
 		speed *= 2;
+	} else if (pokemon.ability === "Quick Feet" && pokemon.status !== "Healthy") {
+		speed = pokeRound(speed * 1.5);
+		//TODO add toggle for Slow Start
+	} else if (pokemon.ability === "Slow Start") {
+		speed = pokeRound(speed / 2);
+		//TODO add toggle for Unburden
+	} else if ((pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
+						 (pokemon.ability === "Unburden" && pokemon.item === "")) {
+		speed *= 2;
 	}
+	//TODO FIELD EFFECTS (Tailwind)
+	if (side.isTailwind) {
+		speed *= 2;
+	}
+
+	//PARALYSIS
+	if (pokemon.status === "Paralyzed" && pokemon.ability !== "Quick Feet") {
+		if (gen < 7) {
+			speed = pokeRound(speed * 0.25);
+		} else {
+			speed = pokeRound(speed * 0.5);
+		}
+	}
+	console.log(pokemon.name + " " + speed)
 	return speed;
 }
 
