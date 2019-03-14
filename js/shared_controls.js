@@ -164,13 +164,16 @@ $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
+
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+	
 	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
 		$(this).closest(".poke-info").find(".abilityToggle").show();
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
 	//Reset checkbox to checked upon ability change
-	$(this).closest(".poke-info").find(".abilityToggle").prop('checked',true);
+	$(this).closest(".poke-info").find(".abilityToggle").prop('checked', true);
 });
 
 $("#p1 .ability").bind("keyup change", function () {

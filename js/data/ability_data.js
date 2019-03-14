@@ -1,12 +1,3 @@
-var TOGGLE_ABILITIES = [
-		'Flash Fire',
-		'Minus',
-		'Plus',
-		'Slow Start',
-		'Unburden',
-		'Stakeout'
-];
-
 var ABILITIES_ADV = [
 	'Air Lock',
 	'Battle Armor',

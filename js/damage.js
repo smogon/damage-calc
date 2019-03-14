@@ -448,7 +448,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
-	if(field.isBattery && move.category === "Special"){
+	if (field.isBattery && move.category === "Special") {
 		bpMods.push(0x14CC);
 		description.isBattery = true;
 	}
@@ -561,8 +561,6 @@ function getDamageResult(attacker, defender, move, field) {
 		atMods.push(0x1800);
 		description.attackerItem = attacker.item;
 	}
-
-
 
 	attack = Math.max(1, pokeRound(attack * chainMods(atMods) / 0x1000));
 
@@ -892,7 +890,7 @@ function getFinalSpeed(pokemon, field, side) {
 		}
 	}
 
-	if(gen <= 2) {
+	if (gen <= 2) {
 		speed = Math.min(999, speed);
 	}
 	speed = Math.max(1, speed);
