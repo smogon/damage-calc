@@ -541,7 +541,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
-		this.abilityOn = 	true;
+		this.abilityOn = true;
 		this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
 		this.status = "Healthy";
 		this.toxicCounter = 0;
@@ -587,7 +587,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.nature = pokeInfo.find(".nature").val();
 		this.ability = pokeInfo.find(".ability").val();
-		this.abilityOn = 	pokeInfo.find(".abilityToggle").is(":checked");
+		this.abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
 		this.item = pokeInfo.find(".item").val();
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
