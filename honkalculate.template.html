@@ -334,6 +334,8 @@
                                         <option value="-6">-6</option>
                                     </select>
                                 </td>
+                                <td><span class="totalMod">---</span>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -371,6 +373,7 @@
                         <div class="gen-specific g3 g4 g5 g6 g7">
                             <label>Ability</label>
                             <select class="ability terrain-trigger"></select>
+                            <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle" checked>
                         </div>
                         <div class="gen-specific g2 g3 g4 g5 g6 g7">
                             <label>Item</label>
@@ -700,7 +703,17 @@
                             <input class="visually-hidden" type="checkbox" id="helpingHandR" />
                             <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                         </div>
-                    </div>    
+                    </div>
+                    <div class="btn-group gen-specific g4 g5 g6 g7">
+                        <div class="left" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
+                            <input class="visually-hidden" type="checkbox" id="tailwindL" />
+                            <label class="btn btn-xxwide" for="tailwindL">Helping Hand</label>
+                        </div>
+                        <div class="right" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
+                            <input class="visually-hidden" type="checkbox" id="tailwindR" />
+                            <label class="btn btn-xxwide" for="tailwindR">Helping Hand</label>
+                        </div>
+                    </div>
                     <div class="btn-group gen-specific g5 g6 g7">
                         <div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
                             <input class="visually-hidden" type="checkbox" id="friendGuardL" />
@@ -719,6 +732,16 @@
                         <div class="right" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
                             <input class="visually-hidden" type="checkbox" id="auroraVeilR" />
                             <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g7">
+                        <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Battery ability?">
+                            <input class="visually-hidden" type="checkbox" id="batteryL" />
+                            <label class="btn btn-xxwide" for="batteryL">Battery</label>
+                        </div>
+                        <div class="right" title="Has this Pok&eacute;mon's power been boosted by an ally's Battery ability?">
+                            <input class="visually-hidden" type="checkbox" id="batteryR" />
+                            <label class="btn btn-xxwide" for="batteryR">Battery</label>
                         </div>
                     </div>
                 </div>

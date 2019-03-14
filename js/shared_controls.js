@@ -162,6 +162,18 @@ $(".percent-hp").keyup(function () {
 
 $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
+
+	var ability = $(this).closest(".poke-info").find(".ability").val();
+
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+
+	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
+		$(this).closest(".poke-info").find(".abilityToggle").show();
+	} else {
+		$(this).closest(".poke-info").find(".abilityToggle").hide();
+	}
+	//Reset checkbox to checked upon ability change
+	$(this).closest(".poke-info").find(".abilityToggle").prop('checked', true);
 });
 
 $("#p1 .ability").bind("keyup change", function () {
@@ -529,6 +541,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
+		this.abilityOn = true;
 		this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
 		this.status = "Healthy";
 		this.toxicCounter = 0;
@@ -548,6 +561,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.weight = pokemon.w;
 		this.gender = pokemon.gender ? "genderless" : "Male";
+		this.pokeInfo = pokeInfo;
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		if (setName.indexOf("(") === -1) {
@@ -573,6 +587,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.nature = pokeInfo.find(".nature").val();
 		this.ability = pokeInfo.find(".ability").val();
+		this.abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
 		this.item = pokeInfo.find(".item").val();
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
@@ -584,6 +599,7 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
+		this.pokeInfo = pokeInfo;
 	}
 
 	this.hasType = function (type) {
@@ -661,8 +677,10 @@ function Field() {
 	var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
 	var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
 	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
+	var isTailwind = [$("#tailwindR").prop("checked"), $("#tailwindL").prop("checked")];
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
+	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
 
 	this.getWeather = function () {
 		return weather;
@@ -671,11 +689,11 @@ function Field() {
 		weather = "";
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
+		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery) {
 	this.format = format;
 	this.terrain = terrain;
 	this.weather = weather;
@@ -689,8 +707,10 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isDefenderSeeded = isDefenderSeeded;
 	this.isForesight = isForesight;
 	this.isHelpingHand = isHelpingHand;
+	this.isTailwind = isTailwind;
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
+	this.isBattery = isBattery;
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
@@ -824,10 +844,14 @@ function clearField() {
 	$("#foresightR").prop("checked", false);
 	$("#helpingHandL").prop("checked", false);
 	$("#helpingHandR").prop("checked", false);
+	$("#tailwindL").prop("checked", false);
+	$("#tailwindR").prop("checked", false);
 	$("#friendGuardL").prop("checked", false);
 	$("#friendGuardR").prop("checked", false);
 	$("#auroraVeilL").prop("checked", false);
 	$("#auroraVeilR").prop("checked", false);
+	$("#batteryL").prop("checked", false);
+	$("#batteryR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 

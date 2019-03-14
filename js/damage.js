@@ -8,12 +8,14 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 	checkSeedBoost(p1, field);
 	checkSeedBoost(p2, field);
 	checkStatBoost(p1, p2);
+	var side1 = field.getSide(1);
+	var side2 = field.getSide(0);
 	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
 	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
+	p1.stats[SP] = getFinalSpeed(p1, field, side1);
 	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
 	p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
+	p2.stats[SP] = getFinalSpeed(p2, field, side2);
 	checkIntimidate(p1, p2);
 	checkIntimidate(p2, p1);
 	checkDownload(p1, p2);
@@ -41,17 +43,18 @@ function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
 	checkForecast(defender, field.getWeather());
 	checkKlutz(attacker);
 	checkKlutz(defender);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
+	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
+	var attackerSide = field.getSide(~~(mode !== "one-vs-all"));
+	attacker.stats[SP] = getFinalSpeed(attacker, field, attackerSide);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
+	defender.stats[SP] = getFinalSpeed(defender, field, defenderSide);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 	checkInfiltrator(attacker, defenderSide);
 	var results = [];
 	for (var i = 0; i < 4; i++) {
@@ -445,6 +448,11 @@ function getDamageResult(attacker, defender, move, field) {
 		description.isHelpingHand = true;
 	}
 
+	if (field.isBattery && move.category === "Special") {
+		bpMods.push(0x14CC);
+		description.isBattery = true;
+	}
+
 	if (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize) {
 		bpMods.push(gen >= 7 ? 0x1333 : 0x14CD);
 		description.attackerAbility = attacker.ability;
@@ -520,10 +528,10 @@ function getDamageResult(attacker, defender, move, field) {
 			attacker.ability === "Blaze" && move.type === "Fire" ||
 			attacker.ability === "Torrent" && move.type === "Water" ||
 			attacker.ability === "Swarm" && move.type === "Bug") ||
-			(move.category === "Special" && ["Plus", "Minus"].indexOf(attacker.ability) !== -1)) {
+			(move.category === "Special" && attacker.abilityOn && ["Plus", "Minus"].indexOf(attacker.ability) !== -1)) {
 		atMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
-	} else if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
+	} else if (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire") {
 		atMods.push(0x1800);
 		description.attackerAbility = "Flash Fire";
 	} else if ((attacker.ability === "Solar Power" && field.weather.indexOf("Sun") !== -1 && move.category === "Special") ||
@@ -532,10 +540,13 @@ function getDamageResult(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 		description.weather = field.weather;
 	} else if ((attacker.ability === "Defeatist" && attacker.curHP <= attacker.maxHP / 2) ||
-            (attacker.ability === "Slow Start" && move.category === "Physical")) {
+            (attacker.ability === "Slow Start" && attacker.abilityOn && move.category === "Physical")) {
 		atMods.push(0x800);
 		description.attackerAbility = attacker.ability;
 	} else if (["Huge Power", "Pure Power"].indexOf(attacker.ability) !== -1 && move.category === "Physical") {
+		atMods.push(0x2000);
+		description.attackerAbility = attacker.ability;
+	} else if (attacker.ability === "Stakeout" && attacker.abilityOn && move.category === "Physical") {
 		atMods.push(0x2000);
 		description.attackerAbility = attacker.ability;
 	}
@@ -839,20 +850,61 @@ function getModifiedStat(stat, mod) {
 			stat;
 }
 
-function getFinalSpeed(pokemon, weather) {
+function getFinalSpeed(pokemon, field, side) {
+	var weather = field.getWeather();
+	var terrain = side.terrain;
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
+	//ITEM EFFECTS
 	if (pokemon.item === "Choice Scarf") {
-		speed = Math.floor(speed * 1.5);
+		speed = pokeRound(speed * 1.5);
 	} else if (["Macho Brace", "Iron Ball"].indexOf(pokemon.item) !== -1) {
-		speed = Math.floor(speed / 2);
+		speed = pokeRound(speed / 2);
+	} else if (pokemon.item === "Quick Powder" && pokemon.name === "Ditto") {
+		speed *= 2;
 	}
+	//ABILITIES
 	if ((pokemon.ability === "Chlorophyll" && weather.indexOf("Sun") !== -1) ||
             (pokemon.ability === "Sand Rush" && weather === "Sand") ||
             (pokemon.ability === "Swift Swim" && weather.indexOf("Rain") !== -1) ||
             (pokemon.ability === "Slush Rush" && weather === "Hail")) {
 		speed *= 2;
+	} else if (pokemon.ability === "Quick Feet" && pokemon.status !== "Healthy") {
+		speed = pokeRound(speed * 1.5);
+	} else if (pokemon.ability === "Slow Start" && pokemon.abilityOn) {
+		speed = pokeRound(speed / 2);
+	} else if ((pokemon.ability === "Surge Surfer" && terrain === "Electric") ||
+						 (pokemon.ability === "Unburden" && pokemon.abilityOn)) {
+		speed *= 2;
 	}
+	//FIELD EFFECTS (Tailwind)
+	if (side.isTailwind) {
+		speed *= 2;
+	}
+
+	//PARALYSIS
+	if (pokemon.status === "Paralyzed" && pokemon.ability !== "Quick Feet") {
+		if (gen < 7) {
+			speed = pokeRound(speed * 0.25);
+		} else {
+			speed = pokeRound(speed * 0.5);
+		}
+	}
+
+	if (gen <= 2) {
+		speed = Math.min(999, speed);
+	}
+	speed = Math.max(1, speed);
+
+	printStat(pokemon, SP, speed);
 	return speed;
+}
+
+function printStat(pokemon, statName, stat) {
+	if (typeof pokemon.pokeInfo === "string") {
+		return;
+	} else {
+		pokemon.pokeInfo.find("." + statName + " .totalMod").text(stat);
+	}
 }
 
 function checkAirLock(pokemon, field) {

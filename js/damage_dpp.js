@@ -9,10 +9,10 @@
 	checkIntimidate(p2, p1);
 	checkDownload(p1, p2);
 	checkDownload(p2, p1);
-	p1.stats[SP] = getFinalSpeed(p1, field.getWeather());
-	p2.stats[SP] = getFinalSpeed(p2, field.getWeather());
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
+	p1.stats[SP] = getFinalSpeed(p1, field, side1);
+	p2.stats[SP] = getFinalSpeed(p2, field, side2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = CALCULATE_DAMAGE_DPP(p1, p2, p1.moves[i], side1);
@@ -31,9 +31,10 @@ function CALCULATE_MOVES_OF_ATTACKER_DPP(attacker, defender, field) {
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
-	attacker.stats[SP] = getFinalSpeed(attacker, field.getWeather());
-	defender.stats[SP] = getFinalSpeed(defender, field.getWeather());
 	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
+	var attackerSide = field.getSide(~~(mode !== "one-vs-all"));
+	attacker.stats[SP] = getFinalSpeed(attacker, field, attackerSide);
+	defender.stats[SP] = getFinalSpeed(defender, field, defenderSide);
 	var results = [];
 	for (var i = 0; i < 4; i++) {
 		results[i] = CALCULATE_DAMAGE_DPP(attacker, defender, attacker.moves[i], defenderSide);
@@ -269,8 +270,11 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
 		description.weather = field.weather;
-	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
+	} else if (isPhysical && (attacker.ability === "Hustle" || (attacker.ability === "Guts" && attacker.status !== "Healthy")) || (!isPhysical && attacker.abilityOn && (attacker.ability === "Plus" || attacker.ability === "Minus"))) {
 		attack = Math.floor(attack * 1.5);
+		description.attackerAbility = attacker.ability;
+	} else if (isPhysical && attacker.ability === "Slow Start" && attacker.abilityOn) {
+		attack = Math.floor(attack / 2);
 		description.attackerAbility = attacker.ability;
 	}
 
@@ -374,7 +378,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 
-	if (attacker.ability === "Flash Fire (activated)" && move.type === "Fire") {
+	if (attacker.ability === "Flash Fire" && attacker.abilityOn && move.type === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.attackerAbility = "Flash Fire";
 	}
