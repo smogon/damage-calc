@@ -67,6 +67,14 @@ var MOVES_RBY = {
 		makesContact: true,
 		alwaysCrit: true
 	},
+	'Comet Punch': {
+		bp: 18,
+		type: 'Normal',
+		category: 'Physical',
+		makesContact: true,
+		isMultiHit: true,
+		isPunch: true
+	},
 	'Confuse Ray': {
 		bp: 0,
 		type: 'Ghost'
@@ -143,7 +151,8 @@ var MOVES_RBY = {
 	},
 	'Fire Spin': {
 		bp: 15,
-		type: 'Fire'
+		type: 'Fire',
+		category: 'Special'
 	},
 	'Flamethrower': {
 		bp: 95,
@@ -361,6 +370,7 @@ var MOVES_RBY = {
 	'Struggle': {
 		bp: 50,
 		type: 'Normal',
+		category: 'Physical',
 		hasRecoil: 50
 	},
 	'Submission': {
@@ -955,6 +965,10 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		type: 'Dragon',
 		category: 'Physical',
 		makesContact: true
+	},
+	'Dragon Dance': {
+		bp: 0,
+		type: 'Dragon'
 	},
 	'Double-Edge': {hasRecoil: 33},
 	'Endeavor': {
@@ -1604,7 +1618,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 		bp: 140,
 		type: 'Grass',
 		category: 'Special',
-		dropsStats : 2
+		dropsStats: 2
 	},
 	'Lunar Dance': {
 		bp: 0,
@@ -2101,6 +2115,12 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		makesContact: true,
 		hasRecoil: 25
 	},
+	'Heat Crash': {
+		bp: 1,
+		type: 'Fire',
+		category: 'Physical',
+		makesContact: true
+	},
 	'Heavy Slam': {
 		bp: 1,
 		type: 'Steel',
@@ -2427,6 +2447,7 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	'Disarming Voice': {
 		bp: 40,
 		type: 'Fairy',
+		category: 'Special',
 		isSound: true
 	},
 	'Draco Meteor': {bp: 130},
@@ -2914,6 +2935,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	'Fire Pledge': {zp: 160},
 	'Fire Punch': {zp: 140},
+	'Fire Spin': {zp: 100},
 	'First Impression': {
 		bp: 90,
 		type: 'Bug',
@@ -2973,7 +2995,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	'Grass Pledge': {zp: 160},
 	'Gunk Shot': {zp: 190},
 	'Gust': {zp: 100},
-	'Guardian of Alola' : {
+	'Guardian of Alola': {
 		bp: 1,
 		type: 'Fairy',
 		category: 'Special',
@@ -3152,7 +3174,7 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 	},
 	'Mystical Fire': {bp: 75, zp: 140},
 	'Natural Gift': {zp: 160},
-	'Nature\'s Madness' : {
+	'Nature\'s Madness': {
 		bp: 1,
 		type: 'Fairy',
 		category: 'Special',

@@ -197,7 +197,7 @@ var megaStones = {
 	'Aerodactylite': 'Aerodactyl',
 	'Aggronite': 'Aggron',
 	'Alakazite': 'Alakazam',
-	'Altarite': 'Altaria',
+	'Altarianite': 'Altaria',
 	'Ampharosite': 'Ampharos',
 	'Audinite': 'Audino',
 	'Banettite': 'Banette',
@@ -215,7 +215,7 @@ var megaStones = {
 	'Glalitite': 'Glalie',
 	'Gyaradosite': 'Gyarados',
 	'Heracrossite': 'Heracross',
-	'Houndoomite': 'Houndoom',
+	'Houndoominite': 'Houndoom',
 	'Kangaskhanite': 'Kangaskhan',
 	'Latiasite': 'Latias',
 	'Latiosite': 'Latios',
@@ -244,14 +244,14 @@ var megaStones = {
 var mega_Stones = Object.keys(megaStones);
 
 var XY_items = mega_Stones.concat(['Assault Vest',
-	'Safety Googles',
 	'Fairy Gem',
 	'Kee Berry',
 	'Maranga Berry',
 	'Pixie Plate',
 	'Power Herb',
 	'Roseli Berry',
-	'Safety Googles']).sort();
+	'Safety Goggles',
+	'Weakness Policy']).sort();
 
 var ITEMS_XY = ITEMS_BW.concat(XY_items);
 
@@ -444,7 +444,7 @@ function getFlingPower(item) {
 										'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 'Twisted Spoon'].indexOf(item) !== -1 ? 30 :
 										item.indexOf('Berry') !== -1 ||
 										['Air Balloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
-											'Focus Sash', 'Grassy Seed', 'Lagging tail', 'leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
+											'Focus Sash', 'Grassy Seed', 'Lagging Tail', 'Leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
 											'Muscle Band', 'Power Herb', 'Psychic Seed', 'Quick Powder', 'Reaper Cloth', 'Red Card', 'Ring Target',
 											'Shed Shell', 'Silk Scarf', 'Silver Powder', 'Smooth Rock', 'Soft Sand', 'Soothe Bell', 'White Herb',
 											'Wide Lens', 'Wise Glasses', 'Zoom Lens'].indexOf(item) !== -1 ? 10 :
@@ -521,7 +521,7 @@ function getTechnoBlast(item) {
 
 function getMultiAttack(item) {
 	if (item.indexOf("Memory") !== -1) {
-		return item.substring(0, item.indexOf(" ")); 
+		return item.substring(0, item.indexOf(" "));
 	}
 	return '';
 }

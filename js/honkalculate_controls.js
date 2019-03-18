@@ -74,6 +74,12 @@ function calculate() {
 			if (_.contains(selectedTiers, setTier)) {
 				attacker = (mode === "one-vs-all") ? new Pokemon($("#p1")) : new Pokemon(setOptions[i].id);
 				defender = (mode === "one-vs-all") ? new Pokemon(setOptions[i].id) : new Pokemon($("#p1"));
+				if (attacker.ability === "Rivalry") {
+					attacker.gender = "genderless";
+				}
+				if (defender.ability === "Rivalry") {
+					defender.gender = "genderless";
+				}
 				var field = new Field();
 				var damageResults = calculateMovesOfAttacker(attacker, defender, field);
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
@@ -282,6 +288,7 @@ function setLevel(lvl) {
 }
 
 $(".set-selector").change(function (e) {
+	var genWasChanged;
 	var format = getSelectedTiers()[0];
 	if (genWasChanged) {
 		genWasChanged = false;
@@ -292,14 +299,14 @@ $(".set-selector").change(function (e) {
 	}
 });
 
-var mode, dtHeight, dtWidth;
+var dtHeight, dtWidth;
 $(document).ready(function () {
 	var url = window.location.href;
 	var equalsPos = (url.indexOf('='));
 	if (equalsPos < 0) {
-		mode = "one-vs-all";
+		window.mode = "one-vs-all";
 	} else {
-		mode = url.substring(equalsPos + 1, url.length);
+		window.mode = url.substring(equalsPos + 1, url.length);
 	}
 	$("#" + mode).prop("checked", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");

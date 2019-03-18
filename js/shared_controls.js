@@ -1,35 +1,28 @@
 if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(searchElement, fromIndex) {
-	var k;
-
-	if (this == null) {
-		throw new TypeError('"this" equals null or n is undefined');
-	}
-
-	var O = Object(this);
-
-	var len = O.length >>> 0;
-
-	if (len === 0) {
-		return -1;
-	}
-
-	var n = +fromIndex || 0;
-
-	if (Math.abs(n) === Infinity) {
-		n = 0;
-	}
-	if (n >= len) {
-		return -1;
-	}
-
-	k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
-	while (k < len) {
-		if (k in O && O[k] === searchElement) {
-	    	return k;
-	  	}
-	  	k++;
-	}
+	Array.prototype.indexOf = function (searchElement, fromIndex) { // eslint-disable-line no-extend-native
+		var k;
+		if (this == null) {
+			throw new TypeError('"this" equals null or n is undefined');
+		}
+		var O = Object(this);
+		var len = O.length >>> 0;
+		if (len === 0) {
+			return -1;
+		}
+		var n = +fromIndex || 0;
+		if (Math.abs(n) === Infinity) {
+			n = 0;
+		}
+		if (n >= len) {
+			return -1;
+		}
+		k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
+		while (k < len) {
+			if (k in O && O[k] === searchElement) {
+				return k;
+			}
+			k++;
+		}
 		return -1;
 	};
 }
@@ -149,10 +142,9 @@ function drawHealthBar(poke, max, current) {
 	healthbar.addClass("hp-" + fillColor);
 	var unwantedColors = ["green", "yellow", "red"];
 	unwantedColors.splice(unwantedColors.indexOf(fillColor), 1);
-	for (i = 0; i < unwantedColors.length; i++) {
+	for (var i = 0; i < unwantedColors.length; i++) {
 		healthbar.removeClass("hp-" + unwantedColors[i]);
 	}
-	
 	healthbar.css("background", "linear-gradient(to right, " + fillColor + " " + fillPercent + "%, white 0%");
 }
 $(".current-hp").keyup(function () {
@@ -170,6 +162,18 @@ $(".percent-hp").keyup(function () {
 
 $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
+
+	var ability = $(this).closest(".poke-info").find(".ability").val();
+
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+
+	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
+		$(this).closest(".poke-info").find(".abilityToggle").show();
+	} else {
+		$(this).closest(".poke-info").find(".abilityToggle").hide();
+	}
+	//Reset checkbox to checked upon ability change
+	$(this).closest(".poke-info").find(".abilityToggle").prop('checked', true);
 });
 
 $("#p1 .ability").bind("keyup change", function () {
@@ -403,8 +407,20 @@ $(".set-selector").change(function () {
 		}
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
+		var baseForme;
+		if (pokemon.isAlternateForme) {
+			// try to find the base forme name by chopping off everything after the last dash
+			var baseFormeName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
+			// special case: -Mega-X and -Mega-Y
+			if (baseFormeName.substring(baseFormeName.lastIndexOf('-')) === '-Mega') {
+				baseFormeName = baseFormeName.substring(0, baseFormeName.lastIndexOf('-'));
+			}
+			baseForme = pokedex[baseFormeName];
+		}
 		if (pokemon.formes) {
 			showFormes(formeObj, setName, pokemonName, pokemon);
+		} else if (baseForme && baseForme.formes) {
+			showFormes(formeObj, setName, pokemonName, baseForme);
 		} else {
 			formeObj.hide();
 		}
@@ -412,6 +428,10 @@ $(".set-selector").change(function () {
 		calcStats(pokeObj);
 		abilityObj.change();
 		itemObj.change();
+		if (pokemon.gender === "genderless") {
+			pokeObj.find(".gender").parent().hide();
+			pokeObj.find(".gender").val("");
+		} else pokeObj.find(".gender").parent().show();
 	}
 });
 
@@ -426,7 +446,8 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 	            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
 	            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
 	            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
-	            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
+				(pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1) ||
+				(pokemonName === "Greninja-Ash" && set.ability === "Battle Bond")) {
 				defaultForme = 1;
 			} else if (set.item.indexOf('ite Y') !== -1) {
 				defaultForme = 2;
@@ -460,8 +481,11 @@ $(".forme").change(function () {
 		baseStat.keyup();
 	}
 	var chosenSet = setdex[pokemonName][setName];
-	if (abilities.indexOf(altForme.ab) !== -1) {
+	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
+	if (abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
 		container.find(".ability").val(altForme.ab);
+	} else if (greninjaSet) {
+		$(this).parent().find(".ability");
 	} else {
 		container.find(".ability").val(chosenSet.ability);
 	}
@@ -517,6 +541,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
+		this.abilityOn = true;
 		this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
 		this.status = "Healthy";
 		this.toxicCounter = 0;
@@ -535,6 +560,8 @@ function Pokemon(pokeInfo) {
 			}));
 		}
 		this.weight = pokemon.w;
+		this.gender = pokemon.gender ? "genderless" : "Male";
+		this.pokeInfo = pokeInfo;
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		if (setName.indexOf("(") === -1) {
@@ -560,6 +587,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.nature = pokeInfo.find(".nature").val();
 		this.ability = pokeInfo.find(".ability").val();
+		this.abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
 		this.item = pokeInfo.find(".item").val();
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
@@ -570,6 +598,8 @@ function Pokemon(pokeInfo) {
 			getMoveDetails(pokeInfo.find(".move4"), this.item)
 		];
 		this.weight = +pokeInfo.find(".weight").val();
+		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
+		this.pokeInfo = pokeInfo;
 	}
 	this.hasAbility = function (ability) {
 		for (i = 0; i < arguments.length; i++) {
@@ -620,7 +650,7 @@ function getMoveDetails(moveInfo, item) {
 			isCrit: moveInfo.find(".move-crit").prop("checked"),
 			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
 			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
-			metronomeCount : moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
+			metronomeCount: moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
 		});
 	}
 }
@@ -632,7 +662,7 @@ function getZMoveName(moveName, moveType, item) {
 				moveName === "Giga Impact" && item === "Snorlium Z" ? "Pulverizing Pancake" :
 					moveName === "Moongeist Beam" && item === "Lunalium Z" ? "Menacing Moonraze Maelstrom" :
 						moveName === "Photon Geyser" && item === "Ultranecrozium Z" ? "Light That Burns the Sky" :
-							moveName === "Play Rough" && item === "Mimikium Z" ? "Let\'s Snuggle Forever" :
+							moveName === "Play Rough" && item === "Mimikium Z" ? "Let's Snuggle Forever" :
 								moveName === "Psychic" && item === "Mewnium Z" ? "Genesis Supernova" :
 									moveName === "Sparkling Aria" && item === "Primarium Z" ? "Oceanic Operetta" :
 										moveName === "Spectral Thief" && item === "Marshadium Z" ? "Soul-Stealing 7-Star Strike" :
@@ -642,7 +672,7 @@ function getZMoveName(moveName, moveType, item) {
 														moveName === "Thunderbolt" && item === "Aloraichium Z" ? "Stoked Sparksurfer" :
 															moveName === "Thunderbolt" && item === "Pikashunium Z" ? "10,000,000 Volt Thunderbolt" :
 																moveName === "Volt Tackle" && item === "Pikanium Z" ? "Catastropika" :
-																	moveName === "Nature\'s Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
+																	moveName === "Nature's Madness" && item === "Tapunium Z" ? "Guardian of Alola" :
 																		ZMOVES_TYPING[moveType];
 }
 
@@ -666,8 +696,10 @@ function Field() {
 	var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
 	var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
 	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
+	var isTailwind = [$("#tailwindR").prop("checked"), $("#tailwindL").prop("checked")];
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
+	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
 
 	this.getWeather = function () {
 		return weather;
@@ -676,11 +708,11 @@ function Field() {
 		weather = "";
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
+		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery) {
 	this.format = format;
 	this.terrain = terrain;
 	this.weather = weather;
@@ -694,21 +726,24 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isDefenderSeeded = isDefenderSeeded;
 	this.isForesight = isForesight;
 	this.isHelpingHand = isHelpingHand;
+	this.isTailwind = isTailwind;
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
+  this.isBattery = isBattery
 	var i;
-	this.hasWeather = function (arguments) {
+	this.hasWeather = function (weather) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.weather === arguments[i];
 		}
 	};
-}
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
-
 $(".gen").change(function () {
+	/*eslint-disable */
 	gen = ~~$(this).val();
 	genWasChanged = true;
+	/* eslint-enable */
+	// declaring these variables with var here makes z moves not work; TODO
 	switch (gen) {
 	case 1:
 		pokedex = POKEDEX_RBY;
@@ -833,10 +868,14 @@ function clearField() {
 	$("#foresightR").prop("checked", false);
 	$("#helpingHandL").prop("checked", false);
 	$("#helpingHandR").prop("checked", false);
+	$("#tailwindL").prop("checked", false);
+	$("#tailwindR").prop("checked", false);
 	$("#friendGuardL").prop("checked", false);
 	$("#friendGuardR").prop("checked", false);
 	$("#auroraVeilL").prop("checked", false);
 	$("#auroraVeilR").prop("checked", false);
+	$("#batteryL").prop("checked", false);
+	$("#batteryR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 
@@ -865,7 +904,7 @@ function getSetOptions(sets) {
 					text: pokeName + " (" + setName + ")",
 					id: pokeName + " (" + setName + ")",
 					isCustom: setdex[pokeName][setName].isCustomSet,
-					nickname: setdex[pokeName][setName].nickname || "" 
+					nickname: setdex[pokeName][setName].nickname || ""
 				});
 			}
 		}
@@ -879,13 +918,13 @@ function getSetOptions(sets) {
 	return setOptions;
 }
 
-function getSelectOptions(arr, sort) {
+function getSelectOptions(arr, sort, defaultOption) {
 	if (sort) {
 		arr.sort();
 	}
 	var r = '';
 	for (var i = 0; i < arr.length; i++) {
-		r += '<option value="' + arr[i] + '">' + arr[i] + '</option>';
+		r += '<option value="' + arr[i] + '" ' + (defaultOption === i ? 'selected' : '') + '>' + arr[i] + '</option>';
 	}
 	return r;
 }
@@ -1010,32 +1049,33 @@ function loadDefaultLists() {
 }
 
 function bothPokemon(selector) {
-	return "#p1 " + selector + ", #p2 " + selector; 
+	return "#p1 " + selector + ", #p2 " + selector;
 }
 
 function loadCustomList(id) {
+	var customSets;
 	var customSetsOptions = getSetOptions(customSets);
 	$("#" + id + " .set-selector").select2({
-			formatResult: function(set){
-				return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
-			},
-			query: function(query){
-				var pageSize = 20;
-				var results = _.filter(getSetOptions(), function(option){
-					if (option.isCustom) {
-						return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
-					}
-				});
-				query.callback({
-					results: results,
-					more: results.length >= query.page * pageSize
-				});
-			},
-			initSelection: function(element, callback){
-				var data = "";
-				callback(data);
-			}
-		});
+		formatResult: function (set) {
+			return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
+		},
+		query: function (query) {
+			var pageSize = 20;
+			var results = _.filter(getSetOptions(), function (option) {
+				if (option.isCustom) {
+					return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
+				}
+			});
+			query.callback({
+				results: results,
+				more: results.length >= query.page * pageSize
+			});
+		},
+		initSelection: function (element, callback) {
+			var data = "";
+			callback(data);
+		}
+	});
 }
 
 $(document).ready(function () {

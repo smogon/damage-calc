@@ -7,6 +7,8 @@
 	checkIntimidate(p2, p1);
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
+	p1.stats[SP] = getFinalSpeed(p1, field, side1);
+	p2.stats[SP] = getFinalSpeed(p2, field, side2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = CALCULATE_DAMAGE_ADV(p1, p2, p1.moves[i], side1);
@@ -159,7 +161,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		description.defenderAbility = defender.ability;
 	}
 
-	if (isPhysical && (attacker.hasAbility("Hustle") || (attacker.hasAbility("Guts") && attacker.status !== "Healthy")) || (!isPhysical && (attacker.hasAbility("Plus", "Minus")))) {
+	if (isPhysical && (attacker.hasAbility("Hustle") || (attacker.hasAbility("Guts") && attacker.status !== "Healthy")) || (!isPhysical && attacker.abilityOn && (attacker.hasAbility("Plus", "Minus")))) {
 		at = Math.floor(at * 1.5);
 		description.attackerAbility = attacker.ability;
 	} else if (attacker.curHP <= attacker.maxHP / 3 &&
@@ -220,7 +222,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		description.weather = field.weather;
 	}
 
-	if (attacker.hasAbility("Flash Fire (activated)") && move.type === "Fire") {
+	if (attacker.hasAbility("Flash Fire") && attacker.abilityOn && move.type === "Fire") {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.attackerAbility = "Flash Fire";
 	}
