@@ -746,7 +746,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.hasWeather = function (weather) {
 		for (i = 0; i < arguments.length; i++) {
 			if (this.weather === arguments[i]) {
-				return true
+				return true;
 			}
 		}
 		return false;
