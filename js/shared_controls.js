@@ -736,6 +736,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 			return this.weather === arguments[i];
 		}
 	};
+}
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
 $(".gen").change(function () {
