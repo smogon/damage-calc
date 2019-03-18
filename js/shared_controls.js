@@ -729,7 +729,7 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isTailwind = isTailwind;
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
-  this.isBattery = isBattery
+	this.isBattery = isBattery;
 	var i;
 	this.hasWeather = function (weather) {
 		for (i = 0; i < arguments.length; i++) {
