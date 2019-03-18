@@ -571,17 +571,17 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 	}
-	this.hasAbility = function (arguments) {
+	this.hasAbility = function (ability) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.ability === arguments[i];
 		}
 	};
-	this.hasItem = function (arguments) {
+	this.hasItem = function (item) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.item === arguments[i];
 		}
 	};
-	this.hasStatus = function (arguments) {
+	this.hasStatus = function (status) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.status === arguments[i];
 		}
@@ -589,7 +589,7 @@ function Pokemon(pokeInfo) {
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
 	};
-	this.named = function (arguments) {
+	this.named = function (name) {
 		for (i = 0; i < arguments.length; i++) {
 			return this.name === arguments[i];
 		}
