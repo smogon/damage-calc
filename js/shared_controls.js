@@ -602,27 +602,39 @@ function Pokemon(pokeInfo) {
 		this.pokeInfo = pokeInfo;
 	}
 	this.hasAbility = function (ability) {
-		for (i = 0; i < arguments.length; i++) {
-			return this.ability === arguments[i];
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.ability === arguments[i]) {
+				return true;
+			}
 		}
+		return false;
 	};
 	this.hasItem = function (item) {
-		for (i = 0; i < arguments.length; i++) {
-			return this.item === arguments[i];
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.item === arguments[i]) {
+				return true;
+			}
 		}
+		return false;
 	};
 	this.hasStatus = function (status) {
-		for (i = 0; i < arguments.length; i++) {
-			return this.status === arguments[i];
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.status === arguments[i]) {
+				return true;
+			}
 		}
+		return false;
 	};
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
 	};
 	this.named = function (name) {
-		for (i = 0; i < arguments.length; i++) {
-			return this.name === arguments[i];
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.name === arguments[i]) {
+				return true;
+			}
 		}
+		return false;
 	};
 }
 
@@ -733,8 +745,11 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	var i;
 	this.hasWeather = function (weather) {
 		for (i = 0; i < arguments.length; i++) {
-			return this.weather === arguments[i];
+			if (this.weather === arguments[i]) {
+				return true
+			}
 		}
+		return false;
 	};
 }
 
