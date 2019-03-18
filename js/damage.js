@@ -89,14 +89,14 @@ function getDamageResult(attacker, defender, move, field) {
 		defAbility = "";
 	}
 
-	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && defender.hasAbility("Battle Armor", "Shell Armor") === -1 || 
-		 	attacker.ability === "Merciless" && defender.hasStatus("Poisoned", "Badly Poisoned")) && move.usedTimes === 1);
+	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && defender.hasAbility("Battle Armor", "Shell Armor") === -1 ||
+		 attacker.ability === "Merciless" && defender.hasStatus("Poisoned", "Badly Poisoned")) && move.usedTimes === 1);
 
 	if (move.name === "Weather Ball") {
 		move.type = field.weather.indexOf("Sun") !== -1 ? "Fire" :
-				field.weather === "Sand" ? "Rock" :
-					field.weather === "Hail" ? "Ice" :
-						"Normal";
+			field.weather === "Sand" ? "Rock" :
+				field.weather === "Hail" ? "Ice" :
+					"Normal";
 		description.weather = field.weather;
 		description.moveType = move.type;
 	} else if (move.name === "Judgment" && attacker.item.indexOf("Plate") !== -1) {
@@ -113,8 +113,8 @@ function getDamageResult(attacker, defender, move, field) {
 		description.moveBP = move.bp;
 		description.moveType = move.type;
 	} else if (move.name === "Nature Power") {
-		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy"
-			: field.terrain === "Psychic" ? "Psychic" : "Normal";
+		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" :
+			field.terrain === "Psychic" ? "Psychic" : "Normal";
 	} else if (move.name === "Revelation Dance") {
 		move.type = attacker.type1;
 	}
@@ -520,9 +520,8 @@ function getDamageResult(attacker, defender, move, field) {
 		atMods.push(0x800);
 		description.defenderAbility = defender.ability;
 	}
-    
 	if ((attacker.hasAbility("Guts") && attacker.status !== "Healthy" && move.category === "Physical") ||
-			attacker.curHP <= attacker.maxHP / 3 && 
+			attacker.curHP <= attacker.maxHP / 3 &&
 			(attacker.hasAbility("Overgrow") && move.type === "Grass" ||
 			attacker.hasAbility("Blaze") && move.type === "Fire" ||
 			attacker.hasAbility("Torrent") && move.type === "Water" ||
@@ -603,7 +602,7 @@ function getDamageResult(attacker, defender, move, field) {
 		description.defenderAbility = defender.ability;
 	}
 
-	if (gen < 7 && (!hitsPhysical && defender.named("Latios","Latias") && defender.hasItem("Soul Dew")) || (defender.hasItem("Eviolite") && pokedex[defender.name].canEvolve) || (!hitsPhysical && defender.hasItem("Assault Vest"))) {
+	if (gen < 7 && (!hitsPhysical && defender.named("Latios", "Latias") && defender.hasItem("Soul Dew")) || (defender.hasItem("Eviolite") && pokedex[defender.name].canEvolve) || (!hitsPhysical && defender.hasItem("Assault Vest"))) {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
 	}
