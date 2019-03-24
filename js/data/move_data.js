@@ -2869,7 +2869,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		type: 'Dark',
 		category: 'Physical',
 		makesContact: true,
-		zp: 160
+		zp: 160,
+		ignoresDefenseBoosts: true
 	},
 	'Dazzling Gleam': {zp: 160},
 	'Diamond Storm': {zp: 180},
