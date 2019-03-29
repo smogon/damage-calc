@@ -76,7 +76,7 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
 		if (defender.boosts[defenseStat] !== 0) {
 			description.defenseBoost = defender.boosts[defenseStat];
 		}
-		if (isPhysical && attacker.status === "Burned") {
+		if (isPhysical && attacker.hasStatus("Burned")) {
 			at = Math.floor(at / 2);
 			description.isBurned = true;
 		}

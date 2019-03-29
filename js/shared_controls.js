@@ -585,9 +585,40 @@ function Pokemon(pokeInfo) {
 		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
 		this.pokeInfo = pokeInfo;
 	}
-
+	this.hasAbility = function (ability) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.ability === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
+	this.hasItem = function (item) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.item === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
+	this.hasStatus = function (status) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.status === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
+	};
+	this.named = function (name) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.name === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
 	};
 }
 
@@ -695,6 +726,14 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
 	this.isBattery = isBattery;
+	this.hasWeather = function (weather) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.weather === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
