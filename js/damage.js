@@ -94,9 +94,10 @@ function getDamageResult(attacker, defender, move, field) {
 
 	if (move.name === "Weather Ball") {
 		move.type = field.weather.indexOf("Sun") !== -1 ? "Fire" :
-			field.weather === "Sand" ? "Rock" :
-				field.weather === "Hail" ? "Ice" :
-					"Normal";
+			field.weather.indexOf("Rain") !== -1 ? "Water" :
+				field.weather === "Sand" ? "Rock" :
+					field.weather === "Hail" ? "Ice" :
+						"Normal";
 		description.weather = field.weather;
 		description.moveType = move.type;
 	} else if (move.name === "Judgment" && attacker.item.indexOf("Plate") !== -1) {
