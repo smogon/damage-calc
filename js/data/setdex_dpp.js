@@ -359,7 +359,11 @@ var SETDEX_DPP = {
 		"UU Cleric": {"level": 100, "evs": {"sd": 252, "df": 252, "hp": 4}, "nature": "Calm", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Aromatherapy", "Soft-Boiled", "Seismic Toss", "Stealth Rock"]},
 	},
 	"Charizard": {
-		"NU Showdown Usage": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Blaze", "item": "Life Orb", "moves": ["Air Slash", "Fire Blast", "Hidden Power Grass", "Roost"]},
+		"NU Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Blaze", "item": "Life Orb", "moves": ["Fire Blast", "Air Slash", "Hidden Power Grass", "Roost"]},
+		"NU Toxic Stall": {"level": 100, "evs": {"hp": 248, "sp": 252, "sa": 8}, "nature": "Timid", "ability": "Blaze", "item": "Leftovers", "moves": ["Substitute", "Toxic", "Flamethrower", "Roost"]},
+		"NU Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Blaze", "item": "Life Orb", "moves": ["Swords Dance", "Flare Blitz", "Thunder Punch", "Earthquake"]},
+		"NU Choice Specs": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Blaze", "item": "Choice Specs", "moves": ["Fire Blast", "Air Slash", "Hidden Power Grass", "Focus Blast"]},
+		"NU Dragon Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Blaze", "item": "Life Orb", "moves": ["Dragon Dance", "Flare Blitz", "Earthquake", "Thunder Punch"]},
 		"UU Special Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Blaze", "item": "Life Orb", "moves": ["Fire Blast", "Air Slash", "Hidden Power Grass", "Roost"]},
 		"UU Sunny Day": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Blaze", "item": "Life Orb", "moves": ["Sunny Day", "Fire Blast", "Solar Beam", "Roost"]},
 		"UU Dragon Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Blaze", "item": "Life Orb", "moves": ["Dragon Dance", "Flare Blitz", "Earthquake", "Thunder Punch"]},
@@ -544,7 +548,7 @@ var SETDEX_DPP = {
 	},
 	"Donphan": {
 		"UU Rapid Spin": {"level": 100, "evs": {"at": 252, "hp": 252, "sp": 4}, "nature": "Adamant", "ability": "Sturdy", "item": "Leftovers", "moves": ["Rapid Spin", "Earthquake", "Assurance", "Stealth Rock"]},
-		"UU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 172, "sp": 84}, "nature": "Adamant", "ability": "Sturdy", "item": "Choice Band", "moves": ["Earthquake", "Assurance", "Stone Edge", "Rapid Spin"]},
+		"UU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 172, "sp": 84}, "nature": "Adamant", "ability": "Sturdy", "item": "Choice Band", "moves": ["Earthquake", "Assurance", "Head Smash", "Rapid Spin"]},
 		"OU Rapid Spin": {"level": 100, "evs": {"df": 68, "at": 188, "hp": 252}, "nature": "Adamant", "ability": "Sturdy", "item": "Leftovers", "moves": ["Rapid Spin", "Earthquake", "Assurance", "Stealth Rock"]},
 		"OU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 172, "sp": 84}, "nature": "Adamant", "ability": "Sturdy", "item": "Choice Band", "moves": ["Earthquake", "Stone Edge", "Assurance", "Rapid Spin"]},
 	},
@@ -1319,6 +1323,7 @@ var SETDEX_DPP = {
 		"UU Choice Specs": {"level": 100, "evs": {"at": 80, "sp": 176, "sa": 252}, "nature": "Rash", "ability": "Magnet Pull", "item": "Choice Specs", "moves": ["Thunderbolt", "Flash Cannon", "Hidden Power Water", "Explosion"]},
 		"OU Choice Scarf": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Naive", "ability": "Magnet Pull", "item": "Choice Scarf", "moves": ["Thunderbolt", "Hidden Power Ice", "Flash Cannon", "Explosion"]},
 		"OU SubSalac": {"level": 100, "evs": {"hp": 12, "sp": 252, "sa": 244}, "nature": "Timid", "ability": "Magnet Pull", "item": "Salac Berry", "moves": ["Substitute", "Charge Beam", "Flash Cannon", "Hidden Power Grass"]},
+		"Uber Choice Scarf": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Hasty", "ability": "Magnet Pull", "item": "Choice Scarf", "moves": ["Thunder", "Hidden Power Fire", "Thunderbolt", "Explosion"]},
 	},
 	"Magnezone": {
 		"OU Substitute": {"level": 100, "evs": {"at": 40, "sp": 216, "sa": 252}, "nature": "Naive", "ability": "Magnet Pull", "item": "Leftovers", "moves": ["Substitute", "Thunderbolt", "Hidden Power Grass", "Explosion"]},
@@ -1705,6 +1710,8 @@ var SETDEX_DPP = {
 		"UU Life Orb Duck": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Download", "item": "Life Orb", "moves": ["Tri Attack", "Thunderbolt", "Ice Beam", "Recover"]},
 		"UU Charge Beam": {"level": 100, "evs": {"hp": 252, "sp": 96, "sa": 160}, "nature": "Modest", "item": "Leftovers", "moves": ["Charge Beam", "Ice Beam", "Tri Attack", "Recover"]},
 		"UU Offensive Choice Scarf": {"level": 100, "evs": {"hp": 52, "sp": 204, "sa": 252}, "nature": "Timid", "item": "Choice Scarf", "moves": ["Thunderbolt", "Ice Beam", "Tri Attack", "Trick"]},
+		"OU Utility Counter": {"level": 100, "evs": {"df": 216, "hp": 252, "sa": 40}, "nature": "Bold", "ability": "Trace", "item": "Leftovers", "moves": ["Recover", "Thunderbolt", "Ice Beam", "Thunder Wave"]},
+		"OU Trick Room": {"level": 100, "evs": {"df": 120, "hp": 252, "sa": 136}, "ivs": {"sp": 0}, "nature": "Quiet", "ability": "Trace", "item": "Leftovers", "moves": ["Trick Room", "Recover", "Thunderbolt", "Ice Beam"]},
 	},
 	"Primeape": {
 		"UU Choice Scarf": {"level": 100, "evs": {"at": 252, "hp": 32, "sp": 224}, "nature": "Jolly", "ability": "Vital Spirit", "item": "Choice Scarf", "moves": ["U-turn", "Close Combat", "Stone Edge", "Ice Punch"]},
@@ -1732,8 +1739,8 @@ var SETDEX_DPP = {
 		"Uber Support": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Calm", "ability": "Water Absorb", "item": "Leftovers", "moves": ["Toxic", "Yawn", "Encore", "Recover"]},
 	},
 	"Qwilfish": {
-		"UU Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Swift Swim", "item": "Life Orb", "moves": ["Swords Dance", "Waterfall", "Poison Jab", "Explosion"]},
 		"UU Spikes Lead": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "item": "Focus Sash", "moves": ["Spikes", "Explosion", "Taunt", "Waterfall"]},
+		"UU Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Swift Swim", "item": "Life Orb", "moves": ["Swords Dance", "Waterfall", "Poison Jab", "Explosion"]},
 		"UU Rain Dance Lead": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Swift Swim", "item": "Damp Rock", "moves": ["Rain Dance", "Waterfall", "Poison Jab", "Explosion"]},
 		"UU Offensive Spikes": {"level": 100, "evs": {"at": 252, "hp": 252, "sp": 4}, "nature": "Adamant", "ability": "Poison Point", "item": "Leftovers", "moves": ["Spikes", "Waterfall", "Poison Jab", "Explosion"]},
 		"UU Defensive Spikes": {"level": 100, "evs": {"sd": 104, "df": 152, "hp": 248, "sp": 4}, "nature": "Impish", "ability": "Poison Point", "item": "Leftovers", "moves": ["Spikes", "Pain Split", "Poison Jab", "Taunt"]},
@@ -1807,8 +1814,8 @@ var SETDEX_DPP = {
 		"UU Mono-Attacker": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Careful", "item": "Leftovers", "moves": ["Iron Head", "Curse", "Rest", "Sleep Talk"]},
 		"UU Lure": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "item": "Occa Berry", "moves": ["Curse", "Iron Head", "Explosion", "Earthquake"]},
 		"UU Rain Dance Support": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Careful", "item": "Damp Rock", "moves": ["Rain Dance", "Explosion", "Shadow Claw", "Seismic Toss"]},
-		"OU OU Tank": {"level": 100, "evs": {"df": 88, "at": 168, "hp": 252}, "nature": "Impish", "item": "Leftovers", "moves": ["Stealth Rock", "Explosion", "Ice Punch", "Earthquake"]},
-		"Uber Ubers Support": {"level": 100, "evs": {"sd": 152, "df": 80, "at": 24, "hp": 252}, "nature": "Careful", "item": "Leftovers", "moves": ["Stealth Rock", "Thunder Wave", "Ice Punch", "Explosion"]},
+		"OU Tank": {"level": 100, "evs": {"df": 88, "at": 168, "hp": 252}, "nature": "Impish", "item": "Leftovers", "moves": ["Stealth Rock", "Explosion", "Ice Punch", "Earthquake"]},
+		"Uber Support": {"level": 100, "evs": {"sd": 152, "df": 80, "at": 24, "hp": 252}, "nature": "Careful", "item": "Leftovers", "moves": ["Stealth Rock", "Thunder Wave", "Ice Punch", "Explosion"]},
 	},
 	"Relicanth": {
 		"NU Showdown Usage": {"level": 100, "evs": {"at": 252, "hp": 172, "sp": 84}, "nature": "Adamant", "ability": "Rock Head", "item": "Choice Band", "moves": ["Head Smash", "Earthquake", "Waterfall", "Rock Polish"]},
@@ -2258,7 +2265,7 @@ var SETDEX_DPP = {
 		"OU Knock it Off, Mojonbo Rules Here! (Physical Tank)": {"level": 100, "evs": {"df": 252, "at": 4, "hp": 252}, "nature": "Impish", "item": "Leftovers", "moves": ["Sleep Powder", "Knock Off", "Power Whip", "Earthquake"]},
 	},
 	"Tauros": {
-		"NU All-Out Attacker": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Intimidate", "item": "Choice Band", "moves": ["Double-Edge", "Earthquake", "Pursuit", "Return"]},
+		"NU All-Out Attacker": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Intimidate", "item": "Choice Band", "moves": ["Double-Edge", "Earthquake", "Pursuit", "Iron Head"]},
 		"UU All-Out Attacker": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Intimidate", "item": "Choice Band", "moves": ["Double-Edge", "Earthquake", "Stone Edge", "Payback"]},
 		"UU Anger Point": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Anger Point", "item": "Salac Berry", "moves": ["Substitute", "Return", "Earthquake", "Payback"]},
 	},
@@ -2309,6 +2316,7 @@ var SETDEX_DPP = {
 		"UU RestTalk": {"level": 100, "evs": {"df": 216, "hp": 252, "sp": 40}, "nature": "Impish", "item": "Leftovers", "moves": ["Rest", "Sleep Talk", "Roar", "Wood Hammer"]},
 		"UU Substitute + 3 Attacks": {"level": 100, "evs": {"at": 252, "hp": 216, "sp": 40}, "nature": "Adamant", "item": "Leftovers", "moves": ["Substitute", "Earthquake", "Wood Hammer", "Stone Edge"]},
 		"UU SubSeed": {"level": 100, "evs": {"at": 80, "hp": 216, "sp": 212}, "nature": "Adamant", "item": "Leftovers", "moves": ["Substitute", "Leech Seed", "Earthquake", "Toxic"]},
+		"OU Rock Polish": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Overgrow", "item": "Life Orb", "moves": ["Rock Polish", "Earthquake", "Wood Hammer", "Return"]},
 	},
 	"Totodile": {
 		"LC Swords Dance": {"level": 5, "evs": {"sd": 52, "df": 4, "at": 236, "hp": 36, "sp": 172}, "nature": "Jolly", "item": "Life Orb", "moves": ["Swords Dance", "Aqua Jet", "Return", "Crunch"]},

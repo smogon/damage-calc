@@ -162,6 +162,18 @@ $(".percent-hp").keyup(function () {
 
 $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
+
+	var ability = $(this).closest(".poke-info").find(".ability").val();
+
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+
+	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
+		$(this).closest(".poke-info").find(".abilityToggle").show();
+	} else {
+		$(this).closest(".poke-info").find(".abilityToggle").hide();
+	}
+	//Reset checkbox to checked upon ability change
+	$(this).closest(".poke-info").find(".abilityToggle").prop('checked', true);
 });
 
 $("#p1 .ability").bind("keyup change", function () {
@@ -395,8 +407,20 @@ $(".set-selector").change(function () {
 		}
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
+		var baseForme;
+		if (pokemon.isAlternateForme) {
+			// try to find the base forme name by chopping off everything after the last dash
+			var baseFormeName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
+			// special case: -Mega-X and -Mega-Y
+			if (baseFormeName.substring(baseFormeName.lastIndexOf('-')) === '-Mega') {
+				baseFormeName = baseFormeName.substring(0, baseFormeName.lastIndexOf('-'));
+			}
+			baseForme = pokedex[baseFormeName];
+		}
 		if (pokemon.formes) {
 			showFormes(formeObj, setName, pokemonName, pokemon);
+		} else if (baseForme && baseForme.formes) {
+			showFormes(formeObj, setName, pokemonName, baseForme);
 		} else {
 			formeObj.hide();
 		}
@@ -412,23 +436,8 @@ $(".set-selector").change(function () {
 });
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
-	var defaultForme = 0;
-
-	if (setName !== 'Blank Set') {
-		var set = setdex[pokemonName][setName];
-		if (set.item) {
-			// Repurpose the previous filtering code to provide the "different default" logic
-			if ((set.item.indexOf('ite') !== -1 && set.item.indexOf('ite Y') === -1) ||
-	            (pokemonName === "Groudon" && set.item.indexOf("Red Orb") !== -1) ||
-	            (pokemonName === "Kyogre" && set.item.indexOf("Blue Orb") !== -1) ||
-	            (pokemonName === "Meloetta" && set.moves.indexOf("Relic Song") !== -1) ||
-	            (pokemonName === "Rayquaza" && set.moves.indexOf("Dragon Ascent") !== -1)) {
-				defaultForme = 1;
-			} else if (set.item.indexOf('ite Y') !== -1) {
-				defaultForme = 2;
-			}
-		}
-	}
+	var defaultForme = pokemon.formes.indexOf(pokemonName);
+	if (defaultForme < 0) defaultForme = 0;
 
 	var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
 	formeObj.children("select").find("option").remove().end().append(formeOptions).change();
@@ -456,8 +465,11 @@ $(".forme").change(function () {
 		baseStat.keyup();
 	}
 	var chosenSet = setdex[pokemonName][setName];
-	if (abilities.indexOf(altForme.ab) !== -1) {
+	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
+	if (abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
 		container.find(".ability").val(altForme.ab);
+	} else if (greninjaSet) {
+		$(this).parent().find(".ability");
 	} else {
 		container.find(".ability").val(chosenSet.ability);
 	}
@@ -513,6 +525,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
+		this.abilityOn = true;
 		this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
 		this.status = "Healthy";
 		this.toxicCounter = 0;
@@ -532,6 +545,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.weight = pokemon.w;
 		this.gender = pokemon.gender ? "genderless" : "Male";
+		this.pokeInfo = pokeInfo;
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		if (setName.indexOf("(") === -1) {
@@ -557,6 +571,7 @@ function Pokemon(pokeInfo) {
 		}
 		this.nature = pokeInfo.find(".nature").val();
 		this.ability = pokeInfo.find(".ability").val();
+		this.abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
 		this.item = pokeInfo.find(".item").val();
 		this.status = pokeInfo.find(".status").val();
 		this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
@@ -568,10 +583,42 @@ function Pokemon(pokeInfo) {
 		];
 		this.weight = +pokeInfo.find(".weight").val();
 		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
+		this.pokeInfo = pokeInfo;
 	}
-
+	this.hasAbility = function (ability) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.ability === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
+	this.hasItem = function (item) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.item === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
+	this.hasStatus = function (status) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.status === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
 	this.hasType = function (type) {
 		return this.type1 === type || this.type2 === type;
+	};
+	this.named = function (name) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.name === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
 	};
 }
 
@@ -645,8 +692,10 @@ function Field() {
 	var isSeeded = [$("#leechSeedL").prop("checked"), $("#leechSeedR").prop("checked")];
 	var isForesight = [$("#foresightL").prop("checked"), $("#foresightR").prop("checked")];
 	var isHelpingHand = [$("#helpingHandR").prop("checked"), $("#helpingHandL").prop("checked")]; // affects attacks against opposite side
+	var isTailwind = [$("#tailwindR").prop("checked"), $("#tailwindL").prop("checked")];
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
+	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
 
 	this.getWeather = function () {
 		return weather;
@@ -655,11 +704,11 @@ function Field() {
 		weather = "";
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i]);
+		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
 	};
 }
 
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isFriendGuard, isAuroraVeil) {
+function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery) {
 	this.format = format;
 	this.terrain = terrain;
 	this.weather = weather;
@@ -673,14 +722,27 @@ function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLi
 	this.isDefenderSeeded = isDefenderSeeded;
 	this.isForesight = isForesight;
 	this.isHelpingHand = isHelpingHand;
+	this.isTailwind = isTailwind;
 	this.isFriendGuard = isFriendGuard;
 	this.isAuroraVeil = isAuroraVeil;
+	this.isBattery = isBattery;
+	this.hasWeather = function (weather) {
+		for (var i = 0; i < arguments.length; i++) {
+			if (this.weather === arguments[i]) {
+				return true;
+			}
+		}
+		return false;
+	};
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
 $(".gen").change(function () {
-	var gen = ~~$(this).val();
-	var genWasChanged = true;
+	/*eslint-disable */
+	gen = ~~$(this).val();
+	genWasChanged = true;
+	/* eslint-enable */
+	// declaring these variables with var here makes z moves not work; TODO
 	switch (gen) {
 	case 1:
 		pokedex = POKEDEX_RBY;
@@ -805,10 +867,14 @@ function clearField() {
 	$("#foresightR").prop("checked", false);
 	$("#helpingHandL").prop("checked", false);
 	$("#helpingHandR").prop("checked", false);
+	$("#tailwindL").prop("checked", false);
+	$("#tailwindR").prop("checked", false);
 	$("#friendGuardL").prop("checked", false);
 	$("#friendGuardR").prop("checked", false);
 	$("#auroraVeilL").prop("checked", false);
 	$("#auroraVeilR").prop("checked", false);
+	$("#batteryL").prop("checked", false);
+	$("#batteryR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
 }
 
@@ -851,13 +917,13 @@ function getSetOptions(sets) {
 	return setOptions;
 }
 
-function getSelectOptions(arr, sort) {
+function getSelectOptions(arr, sort, defaultOption) {
 	if (sort) {
 		arr.sort();
 	}
 	var r = '';
 	for (var i = 0; i < arr.length; i++) {
-		r += '<option value="' + arr[i] + '">' + arr[i] + '</option>';
+		r += '<option value="' + arr[i] + '" ' + (defaultOption === i ? 'selected' : '') + '>' + arr[i] + '</option>';
 	}
 	return r;
 }

@@ -9,6 +9,8 @@
 	p2.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SD], p2.boosts[SD])));
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
+	p1.stats[SP] = getFinalSpeed(p1, field, side1);
+	p2.stats[SP] = getFinalSpeed(p2, field, side2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = CALCULATE_DAMAGE_GSC(p1, p2, p1.moves[i], side1);
@@ -90,7 +92,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
 		if (defender.boosts[defenseStat] !== 0) {
 			description.defenseBoost = defender.boosts[defenseStat];
 		}
-		if (isPhysical && attacker.status === "Burned") {
+		if (isPhysical && attacker.hasStatus("Burned")) {
 			at = Math.floor(at / 2);
 			description.isBurned = true;
 		}
@@ -110,8 +112,8 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
 		}
 	}
 
-	if ((attacker.name === "Pikachu" && attacker.item === "Light Ball" && !isPhysical) ||
-            ((attacker.name === "Cubone" || attacker.name === "Marowak") && attacker.item === "Thick Club" && isPhysical)) {
+	if ((attacker.named("Pikachu") && attacker.hasItem("Light Ball") && !isPhysical) ||
+            (attacker.named("Cubone", "Marowak") && attacker.hasItem("Thick Club") && isPhysical)) {
 		at *= 2;
 		description.attackerItem = attacker.item;
 	}
@@ -121,7 +123,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
 		df = Math.floor(df / 4) % 256;
 	}
 
-	if (defender.name === "Ditto" && defender.item === "Metal Powder") {
+	if (defender.named("Ditto") && defender.hasItem("Metal Powder")) {
 		df = Math.floor(df * 1.5);
 		description.defenderItem = defender.item;
 	}

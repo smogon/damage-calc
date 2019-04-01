@@ -262,7 +262,7 @@ function addSets(pokes, tierName) {
 				if(tierName!==null)currentPoke.nameProp=tierName+" "+currentPoke.nameProp;
 				
 				currentPoke.isCustomSet = true;
-				currentPoke.ab = getAbility(rows[i + 1].split(":"));
+				currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
@@ -313,6 +313,12 @@ function checkExeptions(poke) {
 	case 'Vivillon-Fancy':
 	case 'Vivillon-Pokeball':
 		poke = "Vivillon";
+		break;
+	case 'Florges-White':
+	case 'Florges-Blue':
+	case 'Florges-Orange':
+	case 'Florges-Yellow':
+		poke = "Florges";
 		break;
 	}
 	return poke;

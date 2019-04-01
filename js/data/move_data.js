@@ -67,6 +67,14 @@ var MOVES_RBY = {
 		makesContact: true,
 		alwaysCrit: true
 	},
+	'Comet Punch': {
+		bp: 18,
+		type: 'Normal',
+		category: 'Physical',
+		makesContact: true,
+		isMultiHit: true,
+		isPunch: true
+	},
 	'Confuse Ray': {
 		bp: 0,
 		type: 'Ghost'
@@ -957,6 +965,10 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 		type: 'Dragon',
 		category: 'Physical',
 		makesContact: true
+	},
+	'Dragon Dance': {
+		bp: 0,
+		type: 'Dragon'
 	},
 	'Double-Edge': {hasRecoil: 33},
 	'Endeavor': {
@@ -2857,7 +2869,8 @@ var MOVES_SM = $.extend(true, {}, MOVES_XY, {
 		type: 'Dark',
 		category: 'Physical',
 		makesContact: true,
-		zp: 160
+		zp: 160,
+		ignoresDefenseBoosts: true
 	},
 	'Dazzling Gleam': {zp: 160},
 	'Diamond Storm': {zp: 180},

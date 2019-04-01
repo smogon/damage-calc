@@ -7,6 +7,8 @@
 	p2.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SL], p2.boosts[SL])));
 	var side1 = field.getSide(1);
 	var side2 = field.getSide(0);
+	p1.stats[SP] = getFinalSpeed(p1, field, side1);
+	p2.stats[SP] = getFinalSpeed(p2, field, side2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = CALCULATE_DAMAGE_RBY(p1, p2, p1.moves[i], side1);
@@ -74,7 +76,7 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
 		if (defender.boosts[defenseStat] !== 0) {
 			description.defenseBoost = defender.boosts[defenseStat];
 		}
-		if (isPhysical && attacker.status === "Burned") {
+		if (isPhysical && attacker.hasStatus("Burned")) {
 			at = Math.floor(at / 2);
 			description.isBurned = true;
 		}
@@ -130,6 +132,9 @@ function buildDescription(description) {
 	output += description.attackerName + " ";
 	if (description.isHelpingHand) {
 		output += "Helping Hand ";
+	}
+	if (description.isBattery) {
+		output += " Battery boosted ";
 	}
 	output += description.moveName + " ";
 	if (description.moveBP && description.moveType) {

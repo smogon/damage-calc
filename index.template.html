@@ -107,7 +107,7 @@
         <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript.)</span>
         </div>
     </div>
-    
+
     <div aria-label="Pok&eacute;mon 1" class="panel" role="region">
         <fieldset class="poke-info" id="p1">
             <legend align="center">Pok&eacute;mon 1</legend>
@@ -382,6 +382,8 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -420,6 +422,7 @@
                 <div class="gen-specific g3 g4 g5 g6 g7">
                     <label for="abilityL1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityL1"></select>
+                    <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger" checked>
                 </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7">
                     <label for="itemL1">Item</label>
@@ -599,7 +602,7 @@
             </div>
         </fieldset>
     </div>
-    
+
     <div class="panel">
         <div aria-label="Field information" role="region">
             <fieldset class="field-info">
@@ -770,6 +773,17 @@
                                 <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                             </div></td>
                         </tr>
+                        <tr class="gen-specific g4 g5 g6 g7">
+                            <td><div class="left" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
+                                <div hidden id="selectTailwindInstruction">Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?</div>
+                                <input aria-describedby="selectTailwindInstruction" class="visually-hidden calc-trigger" type="checkbox" id="tailwindL" />
+                                <label class="btn btn-xxwide" for="tailwindL">Tailwind</label>
+                            </div></td>
+                            <td><div class="right" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
+                                <input aria-describedby="selectTailwindInstruction" class="visually-hidden calc-trigger" type="checkbox" id="tailwindR" />
+                                <label class="btn btn-xxwide" for="tailwindR">Tailwind</label>
+                            </div></td>
+                        </tr>
                         <tr class="gen-specific g5 g6 g7">
                             <td><div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
                                 <div hidden id="selectFriendGuardInstruction">Is the Pok&eacute;mon protected by an ally's Friend Guard?</div>
@@ -792,17 +806,28 @@
                                 <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                             </div></td>
                         </tr>
-								<tr class="gen-specific g7">
-                            <td><div class="left" title="Has the Pok&eacute;mon boosted all its stats one stage?">
-										  <div hidden id="selectStatBoostInstruction">Has the Pok&eacute;mon boosted all its stats one stage?</div>
+                        <tr class="gen-specific g7">
+                          <td><div class="left" title="Has the Pok&eacute;mon boosted all its stats one stage?">
+                              <div hidden id="selectStatBoostInstruction">Has the Pok&eacute;mon boosted all its stats one stage?</div>
                                 <input aria-describedby="selectStatBoostInstruction" class="visually-hidden calc-trigger" type="checkbox" id="StatBoostL" />
                                 <label class="btn btn-xxwide" for="StatBoostL">+1 All Stats</label>
-									 </div></td>
+                              </div></td>
                             <td><div class="right" title="Has the Pok&eacute;mon boosted all its stats one stage?">
                                 <input aria-describedby="selectStatBoostInstruction" class="visually-hidden calc-trigger" type="checkbox" id="StatBoostR" />
                                 <label class="btn btn-xxwide" for="StatBoostR">+1 All Stats</label>
-						 		  </div></td>
-                  		</tr>
+                            </div></td>
+                        </tr>
+                        <tr class="gen-specific g7">
+                          <td><div class="left" title="Is the Pok&eacute;mon boosted by an ally's Battery ability?">
+                              <div hidden id="selectBatteryInstruction">Is the Pok&eacute;mon boosted by an ally's Battery ability?</div>
+                                <input aria-describedby="selectBatteryInstruction" class="visually-hidden calc-trigger" type="checkbox" id="batteryL" />
+                                <label class="btn btn-xxwide" for="batteryL">Battery</label>
+                              </div></td>
+                            <td><div class="right" title="Is the Pok&eacute;mon boosted by an ally's Battery ability?">
+                                <input aria-describedby="selectBatteryInstruction" class="visually-hidden calc-trigger" type="checkbox" id="batteryR" />
+                                <label class="btn btn-xxwide" for="batteryR">Battery</label>
+                            </div></td>
+                        </tr>
                         <tr>
                             <td><div class="left" title="Export the leftmost Pok&eacute;mon set">
                                 <button id="exportL">Export</button>
@@ -1101,6 +1126,8 @@
                                     <option value="-6">-6</option>
                                 </select>
                             </td>
+                            <td><span class="totalMod">---</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1139,6 +1166,7 @@
                 <div class="gen-specific g3 g4 g5 g6 g7">
                     <label for="abilityR1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityR1"></select>
+                    <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger" checked>
                 </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7">
                     <label for="itemR1">Item</label>

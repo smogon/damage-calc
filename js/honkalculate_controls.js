@@ -307,13 +307,12 @@ $(".set-selector").change(function (e) {
 
 var dtHeight, dtWidth;
 $(document).ready(function () {
-	var mode;
 	var url = window.location.href;
 	var equalsPos = (url.indexOf('='));
 	if (equalsPos < 0) {
-		mode = "one-vs-all";
+		window.mode = "one-vs-all";
 	} else {
-		mode = url.substring(equalsPos + 1, url.length);
+		window.mode = url.substring(equalsPos + 1, url.length);
 	}
 	$("#" + mode).prop("checked", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
