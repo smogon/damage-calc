@@ -2222,7 +2222,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 100,
 			"sp": 100
 		},
-		"w": 5.0
+		"w": 5.0,
 		"gender": "genderless"
 	},
 	"Chikorita": {
