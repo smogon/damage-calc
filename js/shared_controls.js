@@ -1049,12 +1049,11 @@ function loadDefaultLists() {
 
 function allPokemon(selector) {
 	var allSelector = "";
-	var numPoke = $(".poke-info").length;
-	for (i = 0; i < numPoke; i++) {
+	for (var i = 0; i < $(".poke-info").length; i++) {
 		if (i > 0) {
 			allSelector += ", ";
 		}
-		allSelector += "#p" + (i+1) + " " + selector;
+		allSelector += "#p" + (i++) + " " + selector;
 	}
 	return allSelector;
 }
