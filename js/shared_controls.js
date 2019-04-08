@@ -1041,21 +1041,21 @@ function loadDefaultLists() {
 			});
 		},
 		initSelection: function (element, callback) {
-		  var data = getSetOptions()[gen < 3 ? 3 : 1];
+			var data = getSetOptions()[gen < 3 ? 3 : 1];
 			callback(data);
 		}
 	});
 }
 
 function allPokemon(selector) {
-  var allSelector = "";
-  var numPoke = $(".poke-info").length;
-  for (i = 0; i < numPoke; i++) {
-    if (i > 0) {
-      allSelector += ", ";
-    }
-    allSelector += "#p" + (i+1) + " " + selector;
-  }
+	var allSelector = "";
+	var numPoke = $(".poke-info").length;
+	for (i = 0; i < numPoke; i++) {
+		if (i > 0) {
+			allSelector += ", ";
+		}
+		allSelector += "#p" + (i+1) + " " + selector;
+	}
 	return allSelector;
 }
 
