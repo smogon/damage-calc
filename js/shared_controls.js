@@ -1050,7 +1050,6 @@ function loadDefaultLists() {
 function allPokemon(selector) {
   var allSelector = "";
   var numPoke = $(".poke-info").length;
-
   for (i = 0; i < numPoke; i++) {
     if (i > 0) {
       allSelector += ", ";
