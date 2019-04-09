@@ -1053,7 +1053,7 @@ function allPokemon(selector) {
 		if (i > 0) {
 			allSelector += ", ";
 		}
-		allSelector += "#p" + (i++) + " " + selector;
+		allSelector += "#p" + (i + 1) + " " + selector;
 	}
 	return allSelector;
 }
