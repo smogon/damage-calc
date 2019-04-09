@@ -1047,8 +1047,15 @@ function loadDefaultLists() {
 	});
 }
 
-function bothPokemon(selector) {
-	return "#p1 " + selector + ", #p2 " + selector;
+function allPokemon(selector) {
+	var allSelector = "";
+	for (var i = 0; i < $(".poke-info").length; i++) {
+		if (i > 0) {
+			allSelector += ", ";
+		}
+		allSelector += "#p" + (i++) + " " + selector;
+	}
+	return allSelector;
 }
 
 function loadCustomList(id) {
