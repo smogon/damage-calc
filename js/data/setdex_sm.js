@@ -3735,6 +3735,9 @@ var SETDEX_SM = {
 		"BH Poison Heal": {"level": 100, "evs": {"sd": 252, "df": 252, "at": 252, "hp": 252, "sa": 252}, "ivs": {"sp": 0}, "nature": "Relaxed", "ability": "Poison Heal", "item": "Toxic Orb", "moves": ["Core Enforcer", "Spectral Thief", "U-turn", "Shore Up"]},
 		"BH Physical Setup Check": {"level": 100, "evs": {"sd": 252, "df": 252, "at": 252, "hp": 252, "sa": 252}, "ivs": {"sp": 0}, "nature": "Relaxed", "ability": "Fur Coat", "item": "Safety Goggles", "moves": ["Shore Up", "Core Enforcer", "Topsy-Turvy", "U-turn"]},
 	},
+	"Caribolt": {
+		"CAP Swords Dance": {"level": 100, "evs": {"at": 252, "df": 4, "sp": 252}, "nature": "Jolly", "ability": "Galvanize", "item": "Magnet", "moves": ["Swords Dance", "Quick Attack", "Power Whip", "Return"]},
+	},
 	"Jumbao": {
 		"CAP Wall": {"level": 100, "evs": {"hp": 252, "df": 160, "sd": 96}, "nature": "Calm", "ability": "Trace", "item": "Leftovers", "moves": ["Moonblast", "Shore Up", "Hidden Power Ground", "Wish"]},
 		"CAP Offensive": {"level": 100, "evs": {"hp": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Drought", "item": "Grassium Z", "moves": ["Moonblast", "Solar Beam", "Flame Burst", "Shore Up"]},
@@ -3754,6 +3757,12 @@ var SETDEX_SM = {
 	"Pyroak": {
 		"CAP Physically Defensive": {"level": 100, "evs": {"hp": 248, "sd": 8, "df": 252}, "nature": "Bold", "ability": "Battle Armor", "item": "Leftovers", "moves": ["Synthesis", "Lava Plume", "Earth Power", "Stealth Rock"]},
 		"CAP cbrevan": {"level": 100, "evs": {"at": 252, "hp": 248, "sd": 8}, "nature": "Adamant", "ability": "Rock Head", "item": "Life Orb", "moves": ["Sword Dance", "Flare Blitz", "Wood Hammer", "Earthquake"]},
+	},
+	"Smokomodo": {
+		"CAP Stallbreaker": {"level": 100, "evs": {"at": 252, "df": 64, "sd": 200}, "nature": "Jolly", "ability": "Blaze", "item": "Metronome", "moves": ["Flare Blitz", "Earthquake", "Taunt", "Morning Sun"]},
+	},
+	"Snaelstrom": {
+		"CAP Pivot": {"level": 100, "evs": {"hp": 244, "df": 4, "sp": 252}, "nature": "Relaxed", "ability": "Poison Heal", "item": "Toxic Orb", "moves": ["Scald", "U-turn", "Spiky Shield", "Stealth Rock"]},
 	},
 	"Stratagem": {
 		"CAP Technician": {"level": 100, "evs": {"sd": 4, "sa": 252, "sp": 252}, "nature": "Timid", "ability": "Technician", "item": "Life Orb", "moves": ["Ancient Power", "Earth Power", "Hidden Power Ice", "Energy Ball"]},
