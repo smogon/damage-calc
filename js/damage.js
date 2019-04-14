@@ -810,15 +810,6 @@ function getDamageResult(attacker, defender, move, field) {
 	return {"damage": damage, "description": buildDescription(description)};
 }
 
-function toSmogonStat(stat) {
-	return stat === AT ? "Atk" :
-		stat === DF ? "Def" :
-			stat === SA ? "SpA" :
-				stat === SD ? "SpD" :
-					stat === SP ? "Spe" :
-						"wtf";
-}
-
 function chainMods(mods) {
 	var M = 0x1000;
 	for (var i = 0; i < mods.length; i++) {
