@@ -622,6 +622,15 @@ function Pokemon(pokeInfo) {
 	};
 }
 
+function toSmogonStat(stat) {
+	return stat === AT ? "Atk" :
+		stat === DF ? "Def" :
+			stat === SA ? "SpA" :
+				stat === SD ? "SpD" :
+					stat === SP ? "Spe" :
+						"wtf";
+}
+
 function getMoveDetails(moveInfo, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var defaultDetails = moves[moveName];
