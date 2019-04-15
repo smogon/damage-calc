@@ -3760,6 +3760,7 @@ var SETDEX_SM = {
 	},
 	"Smokomodo": {
 		"CAP Stallbreaker": {"level": 100, "evs": {"at": 252, "df": 64, "sd": 200}, "nature": "Jolly", "ability": "Blaze", "item": "Metronome", "moves": ["Flare Blitz", "Earthquake", "Taunt", "Morning Sun"]},
+		"CAP Balance Breaker": {"level": 100, "evs": {"hp" 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Blaze", "item": "Iapapa Berry", "moves": ["Flare Blitz", "Earthquake", "Toxic", "Morning Sun"]},
 	},
 	"Snaelstrom": {
 		"CAP Pivot": {"level": 100, "evs": {"hp": 244, "df": 4, "sp": 252}, "nature": "Relaxed", "ability": "Poison Heal", "item": "Toxic Orb", "moves": ["Scald", "U-turn", "Spiky Shield", "Stealth Rock"]},
