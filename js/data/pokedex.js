@@ -11039,6 +11039,18 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 		"w": 155.5,
 		"isAlternateForme": true
 	},
+        "Meowstic-F": {
+		"t1": "Psychic",
+		"bs": {
+			"hp": 74,
+			"at": 48,
+			"df": 76,
+			"sa": 83,
+			"sd": 81,
+			"sp": 104
+		},
+		"w": 8.5
+	},
 	"Meowstic-M": {
 		"t1": "Psychic",
 		"bs": {
