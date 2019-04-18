@@ -172,8 +172,6 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
-	//Reset checkbox to checked upon ability change
-	$(this).closest(".poke-info").find(".abilityToggle").prop('checked', true);
 });
 
 $("#p1 .ability").bind("keyup change", function () {
