@@ -11039,7 +11039,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 		"w": 155.5,
 		"isAlternateForme": true
 	},
-        "Meowstic-F": {
+	"Meowstic-F": {
 		"t1": "Psychic",
 		"bs": {
 			"hp": 74,
