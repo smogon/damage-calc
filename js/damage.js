@@ -81,12 +81,15 @@ function getDamageResult(attacker, defender, move, field) {
 	var defAbility = defender.ability;
 	var defenderIgnoresAbility = defender.hasAbility("Full Metal Body", "Prism Armor", "Shadow Shield");
 	var attackerIgnoresAbility = attacker.hasAbility("Mold Breaker", "Teravolt", "Turboblaze");
+	var moveIgnoresAbility = ["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1;
 	if (attackerIgnoresAbility && !defenderIgnoresAbility) {
-		defAbility = "";
+		defender.ability = "";
+		//console.log(move.name + "|" + move.type + "|" + defAbility + "|" + attacker.ability);
 		description.attackerAbility = attacker.ability;
 	}
-	if (["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
-		defAbility = "";
+	if (moveIgnoresAbility) {
+		defender.ability = "";
+		//console.log(move.name + "|" + move.type + "|" + defAbility + "|" + attacker.ability);
 	}
 
 	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && defender.hasAbility("Battle Armor", "Shell Armor") === -1 ||
