@@ -82,13 +82,16 @@ function getDamageResult(attacker, defender, move, field) {
 	var defenderIgnoresAbility = defender.hasAbility("Full Metal Body", "Prism Armor", "Shadow Shield");
 	var attackerIgnoresAbility = attacker.hasAbility("Mold Breaker", "Teravolt", "Turboblaze");
 	var moveIgnoresAbility = ["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1;
-	if (attackerIgnoresAbility && !defenderIgnoresAbility) {
-		defender.ability = "";
-		//console.log(move.name + "|" + move.type + "|" + defAbility + "|" + attacker.ability);
-		description.attackerAbility = attacker.ability;
+	if (!defenderIgnoresAbility) {
+		if (!attackerIgnoresAbility) {
+			defAbility = "";
+			//console.log(move.name + "|" + move.type + "|" + defender.ability + "|" + attacker.ability); //for some reason 
+			//defender.ability is not being manipulated :/ SO FUCKING ANNOYING ahsafkhsadkfhsadkhfadf
+			description.attackerAbility = attacker.ability;
+		}
 	}
 	if (moveIgnoresAbility) {
-		defender.ability = "";
+		defAbility = "";
 		//console.log(move.name + "|" + move.type + "|" + defAbility + "|" + attacker.ability);
 	}
 
