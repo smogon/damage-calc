@@ -79,7 +79,11 @@ function calculate() {
 				maxRecoilDamage = notation === '%' ? Math.floor(p2.curHP * p1.moves[i].hasRecoil * 10 / p1.maxHP) / 10 :
 					Math.floor(p2.curHP * p1.moves[i].hasRecoil * 0.48 / p1.maxHP);
 			}
-			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+			if (p1.ability !== 'Rock Head') {
+				recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+			} else {
+				recoilText = '';
+			}
 		} else if (p1.moves[i].hasRecoil === 'crash') {
 			var genMultiplier = gen === 2 ? 12.5 : gen >= 3 ? 50 : 1;
 			var gen4CrashDamage = Math.floor(p2.maxHP * 0.5 / p1.maxHP * 100);
@@ -97,7 +101,7 @@ function calculate() {
 				gen === 2 ? (p2.type1 === "Ghost" || p2.type2 === "Ghost") ? ' (no crash damage on Ghost types)' : ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' crash damage on miss)' :
 					gen === 3 ? (p2.type1 === "Ghost" || p2.type2 === "Ghost") ? ' (no crash damage on Ghost types)' : ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' crash damage on miss)' :
 						gen === 4 ? (p2.type1 === "Ghost" || p2.type2 === "Ghost") ? ' (' + gen4CrashDamage + '% crash damage)' : ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' crash damage on miss)' :
-							gen > 4 ? ' (50% crash damage)' :
+							gen > 4 ? ' (50% crash damage on miss)' :
 								'';
 		} else if (p1.moves[i].hasRecoil === 'Struggle') {
 			recoilText = ' (25% struggle damage)';
@@ -150,7 +154,11 @@ function calculate() {
 				maxRecoilDamage = notation === '%' ? Math.floor(Math.min(p1.maxHP, p2.moves[i].hasRecoil) * 10 / p2.maxHP) / 10 :
 					Math.floor(Math.min(p1.maxHP, p2.moves[i].hasRecoil) * 0.48 / p2.maxHP);
 			}
-			recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+			if (p2.ability !== 'Rock Head') {
+				recoilText = ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' recoil damage)';
+			} else {
+				recoilText = '';
+			}
 		} else if (p2.moves[i].hasRecoil === 'crash') {
 			var genMultiplier = gen === 2 ? 12.5 : gen >= 3 ? 50 : 1;
 			var gen4CrashDamage = Math.floor(p2.maxHP * 0.5 / p1.maxHP * 100);
@@ -168,7 +176,7 @@ function calculate() {
 				gen === 2 ? (p1.type1 === "Ghost" || p1.type2 === "Ghost") ? ' (no crash damage on Ghost types)' : ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' crash damage on miss)' :
 					gen === 3 ? (p1.type1 === "Ghost" || p1.type2 === "Ghost") ? ' (no crash damage on Ghost types)' : ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' crash damage on miss)' :
 						gen === 4 ? (p1.type1 === "Ghost" || p1.type2 === "Ghost") ? ' (' + gen4CrashDamage + '% crash damage)' : ' (' + minRecoilDamage + ' - ' + maxRecoilDamage + notation + ' crash damage on miss)' :
-							gen > 4 ? ' (50% crash damage)' :
+							gen > 4 ? ' (50% crash damage on miss)' :
 								'';
 		} else if (p2.moves[i].hasRecoil === 'Struggle') {
 			recoilText = ' (25% struggle damage)';
