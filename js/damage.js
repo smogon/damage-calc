@@ -83,7 +83,7 @@ function getDamageResult(attacker, defender, move, field) {
 	var attackerIgnoresAbility = attacker.hasAbility("Mold Breaker", "Teravolt", "Turboblaze");
 	var moveIgnoresAbility = ["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1;
 	if (!defenderIgnoresAbility) {
-		if (!attackerIgnoresAbility) {
+		if (attackerIgnoresAbility) {
 			defAbility = "";
 			//console.log(move.name + "|" + move.type + "|" + defender.ability + "|" + attacker.ability); //for some reason 
 			//defender.ability is not being manipulated :/ SO FUCKING ANNOYING ahsafkhsadkfhsadkhfadf
@@ -95,8 +95,8 @@ function getDamageResult(attacker, defender, move, field) {
 		//console.log(move.name + "|" + move.type + "|" + defAbility + "|" + attacker.ability);
 	}
 
-	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && defender.hasAbility("Battle Armor", "Shell Armor") === -1 ||
-		 attacker.ability === "Merciless" && defender.hasStatus("Poisoned", "Badly Poisoned")) && move.usedTimes === 1);
+	var isCritical = (!move.isZ && move.isCrit) || ((move.isCrit && !defender.hasAbility("Battle Armor", "Shell Armor") ||
+		 attacker.hasAbility("Merciless") && defender.hasStatus("Poisoned", "Badly Poisoned")) && move.usedTimes === 1);
 
 	if (move.name === "Weather Ball") {
 		move.type = field.weather.indexOf("Sun") !== -1 ? "Fire" :
