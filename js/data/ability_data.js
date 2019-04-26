@@ -43,6 +43,7 @@ var ABILITIES_ADV = [
 	'Pressure',
 	'Pure Power',
 	'Rain Dish',
+	'Rock Head',
 	'Sand Stream',
 	'Sand Veil',
 	'Serene Grace',

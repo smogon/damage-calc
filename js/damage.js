@@ -85,8 +85,6 @@ function getDamageResult(attacker, defender, move, field) {
 	if (!defenderIgnoresAbility) {
 		if (attackerIgnoresAbility) {
 			defAbility = "";
-			//console.log(move.name + "|" + move.type + "|" + defender.ability + "|" + attacker.ability); //for some reason 
-			//defender.ability is not being manipulated :/ SO FUCKING ANNOYING ahsafkhsadkfhsadkhfadf
 			description.attackerAbility = attacker.ability;
 		}
 	}
