@@ -30,7 +30,7 @@ var SETDEX_GSC = {
 	"Ariados": {
 		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Baton Pass", "Agility", "Protect", "Sludge Bomb"]},
 		"UU Baton Pass Trapper": {"level": 100, "item": "Leftovers", "moves": ["Spider Web", "Protect", "Disable", "Baton Pass"]},
-		"UU Physical Attacker": {"level": 100, "moves": ["Sludge Bomb", "Hidden Power Bug", "Screech", "Thief"]},
+		"UU Physical Attacker": {"level": 100, "item": "No Item", "moves": ["Sludge Bomb", "Hidden Power Bug", "Screech", "Thief"]},
 		"OU Baton Pass Trapper": {"level": 100, "item": "Leftovers", "moves": ["Spider Web", "Agility", "Baton Pass", "Sludge Bomb"]},
 	},
 	"Articuno": {
@@ -154,7 +154,8 @@ var SETDEX_GSC = {
 		"NU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Explosion", "Sleep Powder", "Psychic", "Giga Drain"]},
 	},
 	"Exeggutor": {
-		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Psychic", "Giga Drain", "Sleep Powder", "Explosion"]},
+		"OU Standard Explosion": {"level": 100, "item": "Leftovers", "moves": ["Sleep Powder", "Psychic", "Giga Drain", "Explosion"]},
+		"OU Leech Seed": {"level": 100, "item": "Leftovers", "moves": ["Stun Spore", "Leech Seed", "Psychic", "Substitute"]},
 	},
 	"Farfetch'd": {
 		"OU Baton Pass": {"level": 100, "item": "Leftovers", "moves": ["Baton Pass", "Swords Dance", "Agility", "Return"]},
@@ -177,7 +178,7 @@ var SETDEX_GSC = {
 		"OU All-Out Attacker": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Shadow Ball", "Return", "Hidden Power Rock"]},
 	},
 	"Forretress": {
-		"OU Spikes": {"level": 100, "item": "Leftovers", "moves": ["Spikes", "Hidden Power Bug", "Rapid Spin", "Toxic"]},
+		"OU Spikes": {"level": 100, "item": "Leftovers", "moves": ["Spikes", "Rapid Spin", "Toxic", "Hidden Power Fire"]},
 	},
 	"Furret": {
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Double-Edge", "Rest", "Curse", "Shadow Ball"]},
@@ -484,7 +485,6 @@ var SETDEX_GSC = {
 	},
 	"Scizor": {
 		"OU Baton Pass": {"level": 100, "item": "Leftovers", "moves": ["Swords Dance", "Baton Pass", "Agility", "Hidden Power Bug"]},
-		"OU Swords Dance Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Swords Dance", "Substitute", "Steel Wing", "Hidden Power Bug"]},
 	},
 	"Scyther": {
 		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Swords Dance", "Baton Pass", "Wing Attack", "Hidden Power Bug"]},
@@ -568,8 +568,7 @@ var SETDEX_GSC = {
 		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Hidden Power Flying", "Return", "Rest"]},
 	},
 	"Typhlosion": {
-		"OU Mixed Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Thunder Punch", "Earthquake", "Hidden Power Ice"]},
-		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Thunder Punch", "Rest", "Sleep Talk"]},
+		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Fire Blast", "Dynamic Punch", "Hidden Power Grass", "Earthquake"]},
 	},
 	"Tyranitar": {
 		"OU Defensive": {"level": 100, "item": "Leftovers", "moves": ["Rock Slide", "Roar", "Curse", "Rest"]},

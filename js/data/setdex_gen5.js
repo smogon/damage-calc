@@ -1,7 +1,6 @@
 var SETDEX_BW = {
 	"Abomasnow": {
-		"UU SubSeed": {"level": 100, "evs": {"sd": 252, "hp": 248, "sp": 8}, "nature": "Sassy", "ability": "Snow Warning", "item": "Leftovers", "moves": ["Substitute", "Leech Seed", "Blizzard", "Wood Hammer"]},
-		"UU Mixed Attacker": {"level": 100, "evs": {"at": 252, "sp": 148, "sa": 108}, "nature": "Lonely", "ability": "Snow Warning", "item": "Expert Belt", "moves": ["Blizzard", "Wood Hammer", "Earthquake", "Ice Shard"]},
+		"UU SubSeed": {"level": 100, "evs": {"sd": 252, "hp": 248, "sp": 8}, "nature": "Calm", "ability": "Soundproof", "item": "Leftovers", "moves": ["Substitute", "Leech Seed", "Ice Beam", "Giga Drain"]},
 		"OU Mixed": {"level": 100, "evs": {"at": 252, "sp": 84, "sa": 172}, "nature": "Lonely", "ability": "Snow Warning", "item": "Expert Belt", "moves": ["Wood Hammer", "Ice Shard", "Hidden Power Fire", "Protect"]},
 		"OU Physical Attacker": {"level": 100, "evs": {"at": 252, "hp": 172, "sp": 84}, "nature": "Adamant", "ability": "Snow Warning", "item": "Leftovers", "moves": ["Ice Shard", "Wood Hammer", "Protect", "Leech Seed"]},
 		"Uber Leech Seed": {"level": 100, "evs": {"sd": 252, "hp": 248, "sa": 8}, "nature": "Calm", "ability": "Snow Warning", "item": "Leftovers", "moves": ["Protect", "Leech Seed", "Grass Knot", "Blizzard"]},
@@ -101,78 +100,78 @@ var SETDEX_BW = {
 		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Insect Plate", "moves": ["Swords Dance", "X-Scissor", "Stone Edge", "Earthquake"]},
 	},
 	"Arceus-Dark": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Dread Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Refresh"]},
-		"Uber Support": {"level": 100, "evs": {"sd": 216, "df": 40, "hp": 252}, "nature": "Sassy", "item": "Dread Plate", "moves": ["Recover", "Payback", "Flamethrower", "Will-O-Wisp"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Dread Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Refresh"]},
+		"Uber Support": {"level": 100, "evs": {"sd": 216, "df": 40, "hp": 252}, "nature": "Sassy", "ability": "Multitype", "item": "Dread Plate", "moves": ["Recover", "Payback", "Flamethrower", "Will-O-Wisp"]},
 	},
 	"Arceus-Dragon": {
 		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Draco Plate", "moves": ["Swords Dance", "Outrage", "Earthquake", "Extreme Speed"]},
 		"Uber Calm Mind": {"level": 100, "evs": {"hp": 248, "sp": 252, "sa": 8}, "nature": "Timid", "ability": "Multitype", "item": "Draco Plate", "moves": ["Calm Mind", "Judgment", "Fire Blast", "Recover"]},
 	},
 	"Arceus-Electric": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Zap Plate", "moves": ["Calm Mind", "Thunderbolt", "Ice Beam", "Recover"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Multitype", "item": "Zap Plate", "moves": ["Calm Mind", "Thunderbolt", "Ice Beam", "Recover"]},
 	},
 	"Arceus-Fighting": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Fist Plate", "moves": ["Calm Mind", "Judgment", "Ice Beam", "Recover"]},
-		"Uber Utility Counter": {"level": 100, "evs": {"df": 84, "hp": 252, "sp": 168, "sa": 4}, "nature": "Bold", "item": "Fist Plate", "moves": ["Toxic", "Judgment", "Ice Beam", "Recover"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Fist Plate", "moves": ["Calm Mind", "Judgment", "Ice Beam", "Recover"]},
+		"Uber Utility Counter": {"level": 100, "evs": {"df": 84, "hp": 252, "sp": 168, "sa": 4}, "nature": "Bold", "ability": "Multitype", "item": "Fist Plate", "moves": ["Toxic", "Judgment", "Ice Beam", "Recover"]},
 	},
 	"Arceus-Fire": {
-		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Flame Plate", "moves": ["Calm Mind", "Flamethrower", "Thunder", "Recover"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Multitype", "item": "Flame Plate", "moves": ["Calm Mind", "Flamethrower", "Thunder", "Recover"]},
 	},
 	"Arceus-Flying": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 96, "sp": 252, "sa": 160}, "nature": "Timid", "item": "Sky Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Substitute"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 96, "sp": 252, "sa": 160}, "nature": "Timid", "ability": "Multitype", "item": "Sky Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Substitute"]},
 	},
 	"Arceus-Ghost": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Spooky Plate", "moves": ["Calm Mind", "Judgment", "Focus Blast", "Recover"]},
-		"Uber Support": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "item": "Spooky Plate", "moves": ["Judgment", "Recover", "Will-O-Wisp", "Roar"]},
-		"Uber Anti-Lead": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Hasty", "item": "Spooky Plate", "moves": ["Judgment", "Flamethrower", "Extreme Speed", "Stealth Rock"]},
-		"Uber Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "item": "Spooky Plate", "moves": ["Shadow Force", "Swords Dance", "Brick Break", "Shadow Claw"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Spooky Plate", "moves": ["Calm Mind", "Judgment", "Focus Blast", "Recover"]},
+		"Uber Support": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "ability": "Multitype", "item": "Spooky Plate", "moves": ["Judgment", "Recover", "Will-O-Wisp", "Roar"]},
+		"Uber Anti-Lead": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Hasty", "ability": "Multitype", "item": "Spooky Plate", "moves": ["Judgment", "Flamethrower", "Extreme Speed", "Stealth Rock"]},
+		"Uber Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Spooky Plate", "moves": ["Shadow Force", "Swords Dance", "Brick Break", "Shadow Claw"]},
 	},
 	"Arceus-Grass": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Meadow Plate", "moves": ["Calm Mind", "Recover", "Grass Knot", "Ice Beam"]},
-		"Uber Support": {"level": 100, "evs": {"sd": 144, "hp": 252, "sp": 112}, "nature": "Timid", "item": "Meadow Plate", "moves": ["Recover", "Grass Knot", "Ice Beam", "Thunder Wave"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Meadow Plate", "moves": ["Calm Mind", "Recover", "Grass Knot", "Ice Beam"]},
+		"Uber Support": {"level": 100, "evs": {"sd": 144, "hp": 252, "sp": 112}, "nature": "Timid", "ability": "Multitype", "item": "Meadow Plate", "moves": ["Recover", "Grass Knot", "Ice Beam", "Thunder Wave"]},
 	},
 	"Arceus-Ground": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Earth Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Ice Beam"]},
-		"Uber Swords Dance": {"level": 100, "evs": {"at": 4, "hp": 252, "sp": 252}, "nature": "Jolly", "item": "Earth Plate", "moves": ["Swords Dance", "Recover", "Earthquake", "Stone Edge"]},
-		"Uber Support": {"level": 100, "evs": {"df": 96, "hp": 252, "sp": 160}, "nature": "Jolly", "item": "Earth Plate", "moves": ["Recover", "Will-O-Wisp", "Earthquake", "Stone Edge"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Earth Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Ice Beam"]},
+		"Uber Swords Dance": {"level": 100, "evs": {"at": 4, "hp": 252, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Earth Plate", "moves": ["Swords Dance", "Recover", "Earthquake", "Stone Edge"]},
+		"Uber Support": {"level": 100, "evs": {"df": 96, "hp": 252, "sp": 160}, "nature": "Jolly", "ability": "Multitype", "item": "Earth Plate", "moves": ["Recover", "Will-O-Wisp", "Earthquake", "Stone Edge"]},
 	},
 	"Arceus-Ice": {
-		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Icicle Plate", "moves": ["Calm Mind", "Judgment", "Thunder", "Fire Blast"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Multitype", "item": "Icicle Plate", "moves": ["Calm Mind", "Judgment", "Thunder", "Fire Blast"]},
 	},
 	"Arceus-Poison": {
-		"Uber Support": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Bold", "item": "Toxic Plate", "moves": ["Recover", "Will-O-Wisp", "Ice Beam", "Roar"]},
-		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "item": "Toxic Plate", "moves": ["Calm Mind", "Sludge Bomb", "Focus Blast", "Recover"]},
+		"Uber Support": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Bold", "ability": "Multitype", "item": "Toxic Plate", "moves": ["Recover", "Will-O-Wisp", "Ice Beam", "Roar"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "ability": "Multitype", "item": "Toxic Plate", "moves": ["Calm Mind", "Sludge Bomb", "Focus Blast", "Recover"]},
 	},
 	"Arceus-Psychic": {
-		"Uber Support": {"level": 100, "evs": {"df": 144, "hp": 252, "sp": 112}, "nature": "Timid", "item": "Mind Plate", "moves": ["Will-O-Wisp", "Recover", "Ice Beam", "Toxic"]},
-		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "item": "Mind Plate", "moves": ["Calm Mind", "Psyshock", "Recover", "Focus Blast"]},
+		"Uber Support": {"level": 100, "evs": {"df": 144, "hp": 252, "sp": 112}, "nature": "Timid", "ability": "Multitype", "item": "Mind Plate", "moves": ["Will-O-Wisp", "Recover", "Ice Beam", "Toxic"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "ability": "Multitype", "item": "Mind Plate", "moves": ["Calm Mind", "Psyshock", "Recover", "Focus Blast"]},
 	},
 	"Arceus-Rock": {
-		"Uber Mono-Attacker": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Stone Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Will-O-Wisp"]},
-		"Uber Offensive Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Stone Plate", "moves": ["Calm Mind", "Judgment", "Fire Blast", "Recover"]},
-		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "item": "Stone Plate", "moves": ["Swords Dance", "Stone Edge", "Earthquake", "Recover"]},
+		"Uber Mono-Attacker": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Stone Plate", "moves": ["Calm Mind", "Judgment", "Recover", "Will-O-Wisp"]},
+		"Uber Offensive Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Multitype", "item": "Stone Plate", "moves": ["Calm Mind", "Judgment", "Fire Blast", "Recover"]},
+		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Stone Plate", "moves": ["Swords Dance", "Stone Edge", "Earthquake", "Recover"]},
 	},
 	"Arceus-Steel": {
-		"Uber Calm Mind": {"level": 100, "evs": {"hp": 248, "sp": 252, "sa": 8}, "nature": "Timid", "item": "Iron Plate", "moves": ["Calm Mind", "Recover", "Judgment", "Roar"]},
-		"Uber Utility Support": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "item": "Iron Plate", "moves": ["Will-O-Wisp", "Roar", "Recover", "Ice Beam"]},
-		"Uber Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "item": "Iron Plate", "moves": ["Iron Head", "Swords Dance", "Earthquake", "Recover"]},
+		"Uber Calm Mind": {"level": 100, "evs": {"hp": 248, "sp": 252, "sa": 8}, "nature": "Timid", "ability": "Multitype", "item": "Iron Plate", "moves": ["Calm Mind", "Recover", "Judgment", "Roar"]},
+		"Uber Utility Support": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Timid", "ability": "Multitype", "item": "Iron Plate", "moves": ["Will-O-Wisp", "Roar", "Recover", "Ice Beam"]},
+		"Uber Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Iron Plate", "moves": ["Iron Head", "Swords Dance", "Earthquake", "Recover"]},
 	},
 	"Arceus-Water": {
-		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "item": "Splash Plate", "moves": ["Swords Dance", "Waterfall", "Dragon Claw", "Recover"]},
-		"Uber Offensive Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Splash Plate", "moves": ["Calm Mind", "Judgment", "Spacial Rend", "Fire Blast"]},
-		"Uber Defensive Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "item": "Splash Plate", "moves": ["Calm Mind", "Recover", "Surf", "Will-O-Wisp"]},
-		"Uber Sun Support": {"level": 100, "evs": {"sd": 200, "hp": 252, "sp": 56}, "nature": "Calm", "item": "Splash Plate", "moves": ["Recover", "Ice Beam", "Thunder Wave", "Roar"]},
+		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Multitype", "item": "Splash Plate", "moves": ["Swords Dance", "Waterfall", "Dragon Claw", "Recover"]},
+		"Uber Offensive Calm Mind": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Multitype", "item": "Splash Plate", "moves": ["Calm Mind", "Judgment", "Spacial Rend", "Fire Blast"]},
+		"Uber Defensive Calm Mind": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Multitype", "item": "Splash Plate", "moves": ["Calm Mind", "Recover", "Surf", "Will-O-Wisp"]},
+		"Uber Sun Support": {"level": 100, "evs": {"sd": 200, "hp": 252, "sp": 56}, "nature": "Calm", "ability": "Multitype", "item": "Splash Plate", "moves": ["Recover", "Ice Beam", "Thunder Wave", "Roar"]},
 	},
 	"Archen": {
 		"LC Eviolite": {"level": 5, "evs": {"sd": 76, "df": 76, "at": 100, "hp": 236}, "nature": "Adamant", "item": "Eviolite", "moves": ["Rock Slide", "Roost", "Acrobatics", "U-turn"]},
-		"LC Acrobatics": {"level": 5, "evs": {"at": 180, "hp": 76, "sp": 196}, "nature": "Jolly", "item": "Flying Gem", "moves": ["Acrobatics", "Stone Edge", "Earthquake", "U-turn"]},
+		"LC Acrobatics": {"level": 5, "evs": {"at": 180, "hp": 76, "sp": 196}, "nature": "Jolly", "ability": "Defeatist", "item": "Flying Gem", "moves": ["Acrobatics", "Stone Edge", "Earthquake", "U-turn"]},
 	},
 	"Archeops": {
-		"RU Acrobatics": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naive", "item": "Flying Gem", "moves": ["Acrobatics", "Stone Edge", "Earth Power", "Head Smash"]},
-		"UU Acrobatics": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "item": "Flying Gem", "moves": ["Acrobatics", "Stone Edge", "Earthquake", "U-turn"]},
-		"UU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "item": "Choice Band", "moves": ["Stone Edge", "Earthquake", "U-turn", "Aerial Ace"]},
-		"OU Acrobatics": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Naive", "item": "Flying Gem", "moves": ["Acrobatics", "Earthquake", "Stone Edge", "Hidden Power Ice"]},
-		"OU Physical Sweeper": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Naive", "item": "Leftovers", "moves": ["Stone Edge", "Earthquake", "Hidden Power Ice", "Hone Claws"]},
+		"RU Acrobatics": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naive", "ability": "Defeatist", "item": "Flying Gem", "moves": ["Acrobatics", "Stone Edge", "Earth Power", "Head Smash"]},
+		"UU Acrobatics": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Defeatist", "item": "Flying Gem", "moves": ["Acrobatics", "Stone Edge", "Earthquake", "U-turn"]},
+		"UU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Defeatist", "item": "Choice Band", "moves": ["Stone Edge", "Earthquake", "U-turn", "Aerial Ace"]},
+		"OU Acrobatics": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Naive", "ability": "Defeatist", "item": "Flying Gem", "moves": ["Acrobatics", "Earthquake", "Stone Edge", "Hidden Power Ice"]},
+		"OU Physical Sweeper": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Naive", "ability": "Defeatist", "item": "Leftovers", "moves": ["Stone Edge", "Earthquake", "Hidden Power Ice", "Hone Claws"]},
 	},
 	"Ariados": {
 		"NU Toxic Spikes": {"level": 100, "evs": {"df": 4, "at": 252, "hp": 120, "sp": 132}, "nature": "Jolly", "ability": "Insomnia", "item": "Focus Sash", "moves": ["Toxic Spikes", "X-Scissor", "Sucker Punch", "Baton Pass"]},
@@ -269,8 +268,7 @@ var SETDEX_BW = {
 	},
 	"Bisharp": {
 		"UU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 52, "sp": 204}, "nature": "Adamant", "ability": "Defiant", "item": "Leftovers", "moves": ["Swords Dance", "Sucker Punch", "Substitute", "Low Kick"]},
-		"OU Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "hp": 252}, "nature": "Adamant", "ability": "Defiant", "item": "Life Orb", "moves": ["Swords Dance", "Substitute", "Sucker Punch", "Brick Break"]},
-		"OU Thunder Wave": {"level": 100, "evs": {"sd": 204, "at": 172, "hp": 132}, "nature": "Adamant", "ability": "Defiant", "item": "Life Orb", "moves": ["Thunder Wave", "Pursuit", "Sucker Punch", "Brick Break"]},
+		"OU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 196, "sp": 60}, "nature": "Adamant", "ability": "Defiant", "item": "Black Glasses", "moves": ["Swords Dance", "Sucker Punch", "Low Kick", "Night Slash"]},
 		"Uber Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Defiant", "item": "Life Orb", "moves": ["Swords Dance", "Sucker Punch", "Low Kick", "Night Slash"]},
 		"Doubles Defiant": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "ability": "Defiant", "item": "Dark Gem", "moves": ["Sucker Punch", "Iron Head", "Low Kick", "Protect"]},
 	},
@@ -332,6 +330,7 @@ var SETDEX_BW = {
 	"Bronzor": {
 		"LC Tank": {"level": 5, "evs": {"sd": 148, "df": 68, "at": 4, "hp": 220, "sp": 16, "sa": 4}, "nature": "Careful", "ability": "Levitate", "item": "Eviolite", "moves": ["Stealth Rock", "Earthquake", "Flash Cannon", "Toxic"]},
 		"LC Oran Berry + Recycle": {"level": 5, "evs": {"sd": 148, "df": 68, "at": 4, "hp": 220, "sp": 16, "sa": 4}, "nature": "Careful", "ability": "Levitate", "item": "Oran Berry", "moves": ["Recycle", "Toxic", "Earthquake", "Flash Cannon"]},
+		"NU Calm Mind": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Levitate", "item": "Eviolite", "moves": ["Calm Mind", "Rest", "Flash Cannon", "Toxic"]},
 	},
 	"Budew": {
 		"LC Spiker": {"level": 5, "evs": {"sd": 36, "hp": 196, "sp": 76, "sa": 196}, "nature": "Modest", "ability": "Natural Cure", "item": "Eviolite", "moves": ["Spikes", "Giga Drain", "Sludge Bomb", "Rest"]},
@@ -532,7 +531,6 @@ var SETDEX_BW = {
 		"RU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Adaptability", "item": "Choice Band", "moves": ["Waterfall", "Crunch", "Superpower", "Toxic"]},
 		"RU Special Attacker": {"level": 100, "evs": {"at": 4, "sp": 252, "sa": 252}, "nature": "Rash", "ability": "Adaptability", "item": "Life Orb", "moves": ["Surf", "Dark Pulse", "Ice Beam", "Superpower"]},
 		"UU Dragon Dance": {"level": 100, "evs": {"at": 252, "hp": 12, "sp": 244}, "nature": "Jolly", "ability": "Adaptability", "item": "Life Orb", "moves": ["Dragon Dance", "Waterfall", "Crunch", "Superpower"]},
-		"OU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Adaptability", "item": "Choice Band", "moves": ["Crabhammer", "Crunch", "Superpower", "Double-Edge"]},
 	},
 	"Cresselia": {
 		"UU Defensive": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Bold", "ability": "Levitate", "item": "Leftovers", "moves": ["Moonlight", "Psychic", "Hidden Power Fighting", "Thunder Wave"]},
@@ -806,7 +804,7 @@ var SETDEX_BW = {
 		"RU Choice Scarf": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Blaze", "item": "Choice Scarf", "moves": ["Flare Blitz", "Superpower", "Wild Charge", "Sleep Talk"]},
 		"RU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 236, "sp": 20}, "nature": "Adamant", "ability": "Blaze", "item": "Choice Band", "moves": ["Flare Blitz", "Superpower", "Wild Charge", "Sleep Talk"]},
 		"RU Mixed Attacker": {"level": 100, "evs": {"at": 72, "sp": 184, "sa": 252}, "nature": "Rash", "ability": "Blaze", "item": "Expert Belt", "moves": ["Fire Blast", "Superpower", "Grass Knot", "Wild Charge"]},
-		"RU Defensive": {"level": 100, "evs": {"df": 252, "at": 4, "hp": 252}, "nature": "Impish", "ability": "Blaze", "item": "Leftovers", "moves": ["Flare Blitz", "Superpower", "Will-O-Wisp", "Protect"]},
+		"RU BigPig (Defensive)": {"level": 100, "evs": {"df": 252, "at": 4, "hp": 252}, "nature": "Impish", "ability": "Blaze", "item": "Leftovers", "moves": ["Flare Blitz", "Superpower", "Will-O-Wisp", "Protect"]},
 	},
 	"Emolga": {
 		"NU Tailwind Support": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Motor Drive", "item": "Leftovers", "moves": ["Tailwind", "Encore", "U-turn", "Air Slash"]},
@@ -956,7 +954,6 @@ var SETDEX_BW = {
 	},
 	"Gabite": {
 		"NU Tank": {"level": 100, "evs": {"at": 252, "hp": 64, "sp": 192}, "nature": "Jolly", "item": "Eviolite", "moves": ["Stealth Rock", "Outrage", "Earthquake", "Toxic"]},
-		"RU Choice Band": {"level": 100, "evs": {"at": 252, "sp": 240, "sa": 16}, "nature": "Naive", "ability": "Rough Skin", "item": "Choice Band", "moves": ["Outrage", "Earthquake", "Stone Edge", "Fire Blast"]},
 	},
 	"Gallade": {
 		"RU Bulky Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 200, "sp": 56}, "nature": "Adamant", "ability": "Justified", "item": "Lum Berry", "moves": ["Swords Dance", "Drain Punch", "Psycho Cut", "Night Slash"]},
@@ -1024,10 +1021,7 @@ var SETDEX_BW = {
 	},
 	"Gengar": {
 		"OU Bulky Will-O-Wisp": {"level": 100, "evs": {"hp": 248, "sp": 252, "sa": 8}, "nature": "Timid", "ability": "Levitate", "item": "Black Sludge", "moves": ["Will-O-Wisp", "Shadow Ball", "Focus Blast", "Substitute"]},
-		"OU Substitute + Disable": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Levitate", "item": "Black Sludge", "moves": ["Substitute", "Disable", "Shadow Ball", "Focus Blast"]},
-		"OU Substitute + Pain Split": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Levitate", "item": "Life Orb", "moves": ["Substitute", "Shadow Ball", "Focus Blast", "Pain Split"]},
-		"OU Offensive 3 Attacks": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Levitate", "item": "Life Orb", "moves": ["Substitute", "Shadow Ball", "Focus Blast", "Hidden Power Fire"]},
-		"OU Choice Scarf": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "ivs": {"df": 30, "at": 30}, "nature": "Timid", "ability": "Levitate", "item": "Choice Scarf", "moves": ["Shadow Ball", "Focus Blast", "Hidden Power Ice", "Trick"]},
+		"OU Substitute Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Levitate", "item": "Life Orb", "moves": ["Substitute", "Shadow Ball", "Focus Blast", "Will-O-Wisp"]},
 	},
 	"Geodude": {
 		"LC Stealth Rock": {"level": 5, "evs": {"sd": 196, "df": 116, "at": 196}, "nature": "Adamant", "ability": "Sturdy", "item": "Oran Berry", "moves": ["Stealth Rock", "Stone Edge", "Earthquake", "Fire Punch"]},
@@ -1214,7 +1208,7 @@ var SETDEX_BW = {
 		"OU Substitute + 3 Attacks": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Moxie", "item": "Leftovers", "moves": ["Substitute", "Close Combat", "Megahorn", "Stone Edge"]},
 		"Uber Choice Scarf": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Guts", "item": "Choice Scarf", "moves": ["Megahorn", "Close Combat", "Sleep Talk", "Stone Edge"]},
 		"Uber Choice Band": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Guts", "item": "Choice Band", "moves": ["Megahorn", "Close Combat", "Sleep Talk", "Stone Edge"]},
-		"Doubles All Out Attacker": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Moxie", "item": "Bug Gem", "moves": ["Megahorn", "Close Combat", "Feint", "Protect"]},
+		"Doubles All-Out Attacker": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Moxie", "item": "Bug Gem", "moves": ["Megahorn", "Close Combat", "Feint", "Protect"]},
 		"Doubles Choice Scarf": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Moxie", "item": "Choice Scarf", "moves": ["Megahorn", "Close Combat", "Rock Slide", "Earthquake"]},
 	},
 	"Hippopotas": {
@@ -1317,9 +1311,9 @@ var SETDEX_BW = {
 		"OU Baton Pass": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Volt Absorb", "item": "Leftovers", "moves": ["Substitute", "Baton Pass", "Thunderbolt", "Hidden Power Ice"]},
 	},
 	"Joltik": {
-		"LC Choice Scarf": {"level": 5, "evs": {"hp": 36, "sp": 236, "sa": 220}, "nature": "Modest", "ability": "Unnerve", "item": "Choice Scarf", "moves": ["Thunderbolt", "Bug Buzz", "Volt Switch", "Energy Ball"]},
-		"LC Agility": {"level": 5, "evs": {"hp": 36, "sp": 236, "sa": 220}, "nature": "Modest", "ability": "Unnerve", "item": "Life Orb", "moves": ["Agility", "Thunderbolt", "Bug Buzz", "Energy Ball"]},
-		"LC Substitute + 3 Attacks": {"level": 5, "evs": {"hp": 36, "sp": 236, "sa": 220}, "nature": "Timid", "ability": "Unnerve", "item": "Life Orb", "moves": ["Substitute", "Thunderbolt", "Bug Buzz", "Energy Ball"]},
+		"LC Choice Scarf": {"level": 5, "evs": {"df": 36, "sp": 236, "sa": 220}, "nature": "Modest", "ability": "Swarm", "item": "Choice Scarf", "moves": ["Volt Switch", "Thunderbolt", "Bug Buzz", "Giga Drain"]},
+		"LC Agility": {"level": 5, "evs": {"df": 36, "sp": 236, "sa": 220}, "nature": "Modest", "ability": "Unnerve", "item": "Life Orb", "moves": ["Agility", "Thunderbolt", "Bug Buzz", "Giga Drain"]},
+		"LC Eviolite": {"level": 5, "evs": {"sd": 116, "df": 196, "hp": 116, "sa": 60}, "nature": "Impish", "ability": "Unnerve", "item": "Eviolite", "moves": ["Thunderbolt", "Bug Buzz", "Giga Drain", "Thunder Wave"]},
 	},
 	"Jumpluff": {
 		"NU Swords Dance": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Chlorophyll", "item": "Flying Gem", "moves": ["Swords Dance", "Acrobatics", "Seed Bomb", "Sleep Powder"]},
@@ -1381,8 +1375,6 @@ var SETDEX_BW = {
 		"OU Choice Specs": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Choice Specs", "moves": ["Hydro Pump", "Secret Sword", "Hidden Power Ghost", "Icy Wind"]},
 		"OU Offensive": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Life Orb", "moves": ["Calm Mind", "Hydro Pump", "Secret Sword", "Hidden Power Ghost"]},
 		"OU SubCM": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Leftovers", "moves": ["Substitute", "Calm Mind", "Hydro Pump", "Secret Sword"]},
-		"Uber Calm Mind": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Life Orb", "moves": ["Calm Mind", "Hydro Pump", "Secret Sword", "Taunt"]},
-		"Uber Attacking Lead": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Life Orb", "moves": ["Taunt", "Hydro Pump", "Icy Wind", "Focus Blast"]},
 		"Doubles All-Out Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Life Orb", "moves": ["Hydro Pump", "Secret Sword", "Protect", "Icy Wind"]},
 	},
 	"Kingdra": {
@@ -1741,7 +1733,7 @@ var SETDEX_BW = {
 	"Marowak": {
 		"NU Offensive": {"level": 100, "evs": {"at": 252, "hp": 200, "sp": 56}, "nature": "Adamant", "ability": "Rock Head", "item": "Thick Club", "moves": ["Bonemerang", "Stone Edge", "Double-Edge", "Stealth Rock"]},
 		"RU Trick Room Sweeper": {"level": 100, "evs": {"df": 4, "at": 252, "hp": 252}, "ivs": {"sp": 0}, "nature": "Brave", "ability": "Rock Head", "item": "Thick Club", "moves": ["Earthquake", "Double-Edge", "Fire Punch", "Stone Edge"]},
-		"RU Substitute + 3 Attacks": {"level": 100, "evs": {"at": 252, "hp": 208, "sp": 44}, "nature": "Adamant", "ability": "Rock Head", "item": "Thick Club", "moves": ["Substitute", "Earthquake", "Double-Edge", "Fire Punch"]},
+		"RU Substitute Attacker": {"level": 100, "evs": {"at": 252, "hp": 212, "sp": 44}, "nature": "Adamant", "ability": "Rock Head", "item": "Thick Club", "moves": ["Substitute", "Earthquake", "Double-Edge", "Fire Punch"]},
 	},
 	"Masquerain": {
 		"NU QuiverPass": {"level": 100, "evs": {"df": 112, "hp": 248, "sp": 148}, "nature": "Timid", "ability": "Intimidate", "item": "Leftovers", "moves": ["Quiver Dance", "Baton Pass", "Roost", "Bug Buzz"]},
@@ -1887,7 +1879,6 @@ var SETDEX_BW = {
 	},
 	"Mr. Mime": {
 		"NU Baton Pass": {"level": 100, "evs": {"hp": 144, "sp": 252, "sa": 112}, "nature": "Timid", "ability": "Filter", "item": "Leftovers", "moves": ["Baton Pass", "Nasty Plot", "Substitute", "Psychic"]},
-		"RU Baton Pass": {"level": 100, "evs": {"sd": 4, "hp": 252, "sp": 252}, "nature": "Timid", "ability": "Filter", "item": "Leftovers", "moves": ["Baton Pass", "Nasty Plot", "Encore", "Psychic"]},
 	},
 	"Muk": {
 		"NU Touncher": {"level": 100, "evs": {"df": 4, "at": 252, "hp": 252}, "nature": "Adamant", "ability": "Poison Touch", "item": "Black Sludge", "moves": ["Poison Jab", "Shadow Sneak", "Ice Punch", "Memento"]},
@@ -2118,7 +2109,7 @@ var SETDEX_BW = {
 		"NU Choice Scarf": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Vital Spirit", "item": "Choice Scarf", "moves": ["Close Combat", "U-turn", "Ice Punch", "Stone Edge"]},
 		"NU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Vital Spirit", "item": "Choice Band", "moves": ["Close Combat", "U-turn", "Ice Punch", "Stone Edge"]},
 		"NU Encore": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Vital Spirit", "item": "Fist Plate", "moves": ["Close Combat", "Encore", "U-turn", "Punishment"]},
-		"RU Choice Scarf": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "item": "Choice Scarf", "moves": ["U-turn", "Close Combat", "Stone Edge", "Ice Punch"]},
+		"RU Choice Scarf": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Vital Spirit", "item": "Choice Scarf", "moves": ["U-turn", "Close Combat", "Stone Edge", "Ice Punch"]},
 		"RU Life Orb": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Vital Spirit", "item": "Life Orb", "moves": ["Close Combat", "Stone Edge", "Encore", "U-turn"]},
 	},
 	"Probopass": {
@@ -2295,8 +2286,6 @@ var SETDEX_BW = {
 		"RU SubSplit": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Life Orb", "moves": ["Substitute", "Blizzard", "Thunderbolt", "Pain Split"]},
 		"RU Choice Scarf": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Choice Scarf", "moves": ["Volt Switch", "Blizzard", "Thunderbolt", "Trick"]},
 		"RU All-Out Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Expert Belt", "moves": ["Volt Switch", "Blizzard", "Hidden Power Fire", "Thunderbolt"]},
-		"UU Choice Scarf": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Choice Scarf", "moves": ["Blizzard", "Thunderbolt", "Volt Switch", "Trick"]},
-		"UU SubSplit": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Life Orb", "moves": ["Blizzard", "Thunderbolt", "Substitute", "Pain Split"]},
 	},
 	"Rotom-Heat": {
 		"UU Choice Specs": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "item": "Choice Specs", "moves": ["Overheat", "Volt Switch", "Hidden Power Grass", "Trick"]},
@@ -2374,7 +2363,6 @@ var SETDEX_BW = {
 		"RU All-Out Attacker": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Sap Sipper", "item": "Choice Band", "moves": ["Return", "Horn Leech", "Nature Power", "Megahorn"]},
 		"UU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Sap Sipper", "item": "Life Orb", "moves": ["Swords Dance", "Horn Leech", "Return", "Nature Power"]},
 		"UU Baton Pass": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Sap Sipper", "item": "Lum Berry", "moves": ["Swords Dance", "Agility", "Baton Pass", "Horn Leech"]},
-		"OU Chlorophyll Sweeper": {"level": 100, "evs": {"at": 244, "hp": 48, "sp": 216}, "nature": "Adamant", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Horn Leech", "Double-Edge", "Nature Power", "Swords Dance"]},
 	},
 	"Sceptile": {
 		"RU Substitute + 3 Attacks": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Overgrow", "item": "Life Orb", "moves": ["Substitute", "Giga Drain", "Focus Blast", "Hidden Power Rock"]},
@@ -2786,7 +2774,6 @@ var SETDEX_BW = {
 		"UU Tank": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Relaxed", "ability": "Regenerator", "item": "Leftovers", "moves": ["Power Whip", "Earthquake", "Sleep Powder", "Leech Seed"]},
 		"UU Sweeper": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Adamant", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Swords Dance", "Power Whip", "Earthquake", "Rock Slide"]},
 		"OU Physically Defensive": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Regenerator", "item": "Leftovers", "moves": ["Sleep Powder", "Leech Seed", "Giga Drain", "Hidden Power Ice"]},
-		"OU Chlorophyll Sweeper": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naughty", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Growth", "Power Whip", "Earthquake", "Hidden Power Ice"]},
 	},
 	"Tauros": {
 		"NU Life Orb": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Sheer Force", "item": "Life Orb", "moves": ["Rock Climb", "Earthquake", "Zen Headbutt", "Substitute"]},
@@ -2811,6 +2798,7 @@ var SETDEX_BW = {
 	},
 	"Terrakion": {
 		"OU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Justified", "item": "Choice Band", "moves": ["Close Combat", "Stone Edge", "X-Scissor", "Sacred Sword"]},
+		"OU All-Out Attacker": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naive", "ability": "Justified", "item": "Life Orb", "moves": ["Close Combat", "Stone Edge", "Hidden Power Ice", "Earthquake"]},
 		"OU Stealth Rock": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Justified", "item": "Focus Sash", "moves": ["Stealth Rock", "Taunt", "Stone Edge", "Close Combat"]},
 		"OU Substitute + Swords Dance": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Justified", "item": "Rock Gem", "moves": ["Substitute", "Swords Dance", "Close Combat", "Stone Edge"]},
 		"OU Double Dancer": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Justified", "item": "Air Balloon", "moves": ["Rock Polish", "Swords Dance", "Close Combat", "Stone Edge"]},
@@ -3084,7 +3072,6 @@ var SETDEX_BW = {
 	},
 	"Walrein": {
 		"NU Specially Defensive": {"level": 100, "evs": {"sd": 252, "df": 8, "hp": 248}, "nature": "Calm", "ability": "Thick Fat", "item": "Leftovers", "moves": ["Toxic", "Ice Beam", "Roar", "Surf"]},
-		"UU Stallrein": {"level": 100, "evs": {"df": 168, "hp": 232, "sp": 108}, "nature": "Bold", "ability": "Ice Body", "item": "Leftovers", "moves": ["Substitute", "Protect", "Blizzard", "Roar"]},
 	},
 	"Wartortle": {
 		"NU Rapid Spin": {"level": 100, "evs": {"sd": 88, "df": 172, "hp": 248}, "nature": "Bold", "ability": "Torrent", "item": "Eviolite", "moves": ["Rapid Spin", "Foresight", "Scald", "Toxic"]},
@@ -3217,7 +3204,5 @@ var SETDEX_BW = {
 	"Zweilous": {
 		"NU Specially Defensive": {"level": 100, "evs": {"sd": 200, "hp": 248, "sp": 60}, "nature": "Careful", "item": "Eviolite", "moves": ["Rest", "Sleep Talk", "Roar", "Dragon Tail"]},
 		"NU Offensive Tank": {"level": 100, "evs": {"at": 252, "hp": 48, "sp": 208}, "nature": "Jolly", "item": "Eviolite", "moves": ["Outrage", "Substitute", "Toxic", "Crunch"]},
-		"RU Bulky Attacker": {"level": 100, "evs": {"at": 252, "hp": 180, "sp": 76}, "nature": "Adamant", "item": "Eviolite", "moves": ["Outrage", "Crunch", "Superpower", "Substitute"]},
-		"UU Physical Attacker": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "item": "Eviolite", "moves": ["Outrage", "Crunch", "Fire Fang", "Thunder Wave"]},
 	},
 };
