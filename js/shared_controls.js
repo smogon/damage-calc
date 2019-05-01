@@ -307,7 +307,6 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
-	moveGroupObj.children(".metronome").prop("disabled", !!move.dropsStats);
 	if (move.isMultiHit) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();

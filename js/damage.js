@@ -725,6 +725,15 @@ function getDamageResult(attacker, defender, move, field) {
 		finalMods.push(0xC00);
 		description.defenderAbility = defender.ability;
 	}
+	if (attacker.hasItem("Metronome") && move.metronomeCount >= 1) {
+		var metronomeCount = Math.floor(move.metronomeCount);
+		if (metronomeCount <= 4) {
+			finalMods.push(0x1000 + metronomeCount * 0x333);
+		} else {
+			finalMods.push(0x2000);
+		}
+		description.attackerItem = attacker.item;
+	}
 	if (attacker.hasItem("Expert Belt") && typeEffectiveness > 1 && !move.isZ) {
 		finalMods.push(0x1333);
 		description.attackerItem = attacker.item;
@@ -795,21 +804,7 @@ function getDamageResult(attacker, defender, move, field) {
 			}
 		}
 	}
-	if (attacker.hasItem("Metronome") && move.metronomeCount > 1) {
-		var boostTurns;
-		if (move.dropsStats) {
-			boostTurns = move.usedTimes;
-		} else {
-			boostTurns = move.metronomeCount;
-		}
-		for (var metronome = 0; metronome < boostTurns; metronome++) {
-			var totalMetronomeBoost = 1 + metronome / 10;
-			damage = damage.map(function (damageRoll) {
-				return pokeRound(damageRoll * totalMetronomeBoost);
-			});
-		}
-		description.attackerItem = "Metronome";
-	}
+
 	description.attackBoost = attacker.boosts[attackStat];
 	return {"damage": damage, "description": buildDescription(description)};
 }
