@@ -372,7 +372,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
 	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
-            (field.hasWeather("Rain", "Sand", "Hail") !== -1 && move.name === "Solar Beam")) {
+            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail"))) {
 		baseDamage = Math.floor(baseDamage * 0.5);
 		description.weather = field.weather;
 	}
