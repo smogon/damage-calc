@@ -217,7 +217,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
 	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
-            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail") !== -1)) {
+            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail"))) {
 		baseDamage = Math.floor(baseDamage / 2);
 		description.weather = field.weather;
 	}
