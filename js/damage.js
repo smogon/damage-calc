@@ -929,7 +929,7 @@ function checkKlutz(pokemon) {
 }
 
 function checkIntimidate(source, target) {
-	if (source.ability === "Intimidate" && !target.hasAbility("Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body")) {
+	if (source.ability === "Intimidate" && source.abilityOn && !target.hasAbility("Clear Body", "White Smoke", "Hyper Cutter", "Full Metal Body")) {
 		if (target.hasAbility("Contrary", "Defiant")) {
 			target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
 		} else if (target.hasAbility("Simple")) {
