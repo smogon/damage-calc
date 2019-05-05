@@ -354,6 +354,10 @@ var MOVES_RBY = {
 		alwaysCrit: true,
 		makesContact: true
 	},
+	'Sleep Powder': {
+		bp: 0,
+		type: 'Grass'
+	},
 	'Sludge': {
 		bp: 65,
 		type: 'Poison',
@@ -372,6 +376,10 @@ var MOVES_RBY = {
 		type: 'Normal',
 		category: 'Physical',
 		hasRecoil: 50
+	},
+	'Stun Spore': {
+		bp: 0,
+		type: 'Grass'
 	},
 	'Submission': {
 		bp: 80,
