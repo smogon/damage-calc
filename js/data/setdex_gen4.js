@@ -854,7 +854,6 @@ var SETDEX_DPP = {
 		"OU Britscor (Stallbreaker)": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Jolly", "ability": "Hyper Cutter", "item": "Leftovers", "moves": ["Taunt", "Earthquake", "Roost", "Toxic"]},
 		"OU Lead": {"level": 100, "evs": {"df": 4, "hp": 252, "sp": 252}, "nature": "Jolly", "ability": "Hyper Cutter", "item": "Leftovers", "moves": ["Stealth Rock", "Earthquake", "Roost", "Taunt"]},
 		"OU Swords Dance": {"level": 100, "evs": {"at": 252, "hp": 40, "sp": 216}, "nature": "Jolly", "ability": "Hyper Cutter", "item": "Life Orb", "moves": ["Swords Dance", "Earthquake", "Stone Edge", "Roost"]},
-		"OU Baton Pass": {"level": 100, "evs": {"sd": 196, "hp": 252, "sp": 60}, "nature": "Timid", "ability": "Hyper Cutter", "item": "Yache Berry", "moves": ["Baton Pass", "Rock Polish", "Swords Dance", "Taunt"]},
 	},
 	"Golbat": {
 		"UU Stallbreaker": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Inner Focus", "item": "Leftovers", "moves": ["Taunt", "Brave Bird", "Roost", "U-turn"]},
@@ -1551,7 +1550,7 @@ var SETDEX_DPP = {
 		"UU Choice Specs": {"level": 100, "evs": {"hp": 36, "sp": 220, "sa": 252}, "nature": "Timid", "ability": "Flash Fire", "item": "Choice Specs", "moves": ["Overheat", "Energy Ball", "Extrasensory", "Hidden Power Rock"]},
 	},
 	"Ninjask": {
-		"OU Baton Pass": {"level": 100, "evs": {"df": 244, "hp": 248, "sp": 16}, "nature": "Jolly", "ability": "Speed Boost", "item": "Leftovers", "moves": ["Baton Pass", "Swords Dance", "Substitute", "X-Scissor"]},
+		"OU Baton Pass": {"level": 100, "evs": {"df": 244, "hp": 248, "sp": 16}, "nature": "Jolly", "ability": "Speed Boost", "item": "Leftovers", "moves": ["Baton Pass", "Protect", "Substitute", "X-Scissor"]},
 		"Uber Baton Pass Lead": {"level": 100, "evs": {"df": 108, "at": 224, "sp": 176}, "nature": "Jolly", "ability": "Speed Boost", "item": "Liechi Berry", "moves": ["Baton Pass", "Swords Dance", "Substitute", "X-Scissor"]},
 		"Uber Swords Dance + Baton Pass": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Speed Boost", "item": "Focus Sash", "moves": ["Swords Dance", "Baton Pass", "Protect", "X-Scissor"]},
 	},
@@ -2095,7 +2094,6 @@ var SETDEX_DPP = {
 		"OU Lead": {"level": 100, "evs": {"df": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Own Tempo", "item": "Focus Sash", "moves": ["Spore", "Spikes", "U-turn", "Counter"]},
 		"OU Choice Scarf Lead": {"level": 100, "evs": {"df": 40, "hp": 252, "sp": 216}, "nature": "Jolly", "ability": "Own Tempo", "item": "Choice Scarf", "moves": ["Spore", "Trick", "Spikes", "U-turn"]},
 		"OU Lv. 1 Endeavor Lead": {"level": 100, "evs": {"sp": 252}, "nature": "Jolly", "ability": "Own Tempo", "item": "Focus Sash", "moves": ["Spore", "Endeavor", "Trick Room", "Dragon Rage"]},
-		"OU Baton Pass": {"level": 100, "evs": {"df": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "ability": "Own Tempo", "item": "Leftovers", "moves": ["Baton Pass", "Ingrain", "Spore", "Substitute"]},
 	},
 	"Smoochum": {
 		"LC Choice Scarf": {"level": 5, "evs": {"sp": 236, "sa": 240}, "nature": "Modest", "ability": "Forewarn", "item": "Choice Scarf", "moves": ["Blizzard", "Psychic", "Hidden Power Ground", "Ice Beam"]},
@@ -2369,7 +2367,7 @@ var SETDEX_DPP = {
 		"LC Priority Attacker": {"level": 5, "evs": {"at": 236, "sp": 236}, "nature": "Adamant", "ability": "Guts", "item": "Toxic Orb", "moves": ["Fake Out", "Bullet Punch", "High Jump Kick", "Rock Slide"]},
 	},
 	"Umbreon": {
-		"OU Baton Pass": {"level": 100, "evs": {"sd": 128, "hp": 252, "sp": 128}, "nature": "Careful", "ability": "Synchronize", "item": "Leftovers", "moves": ["Baton Pass", "Mean Look", "Wish", "Taunt"]},
+		"OU Baton Pass": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Impish", "ability": "Synchronize", "item": "Leftovers", "moves": ["Baton Pass", "Mean Look", "Wish", "Taunt"]},
 	},
 	"Unown": {
 		"UU Specs Unown": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Levitate", "item": "Choice Specs", "moves": ["Hidden Power Ice"]},
@@ -2399,7 +2397,6 @@ var SETDEX_DPP = {
 	"Vaporeon": {
 		"OU Wish Support": {"level": 100, "evs": {"sd": 36, "df": 224, "hp": 248}, "nature": "Bold", "ability": "Water Absorb", "item": "Leftovers", "moves": ["Wish", "Protect", "Surf", "Hidden Power Electric"]},
 		"OU Choice Specs": {"level": 100, "evs": {"df": 212, "sp": 44, "sa": 252}, "nature": "Modest", "ability": "Water Absorb", "item": "Choice Specs", "moves": ["Surf", "Ice Beam", "Hidden Power Electric", "Wish"]},
-		"OU Baton Pass": {"level": 100, "evs": {"df": 128, "hp": 252, "sp": 128}, "nature": "Bold", "ability": "Water Absorb", "item": "Leftovers", "moves": ["Baton Pass", "Substitute", "Acid Armor", "Surf"]},
 	},
 	"Venomoth": {
 		"NU Showdown Usage": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Tinted Lens", "item": "Choice Specs", "moves": ["Bug Buzz", "Sleep Powder", "U-turn", "Psychic"]},
