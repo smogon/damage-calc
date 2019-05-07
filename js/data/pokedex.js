@@ -1,5 +1,5 @@
 // if a pokemon has a setdex entry DO NOT add an ability property to the object
-// BESIDES Mega pokemon and their base forme for forme changing and importing purposes 
+// BESIDES Mega pokemon and their base forme for forme changing and importing purposes
 var POKEDEX_RBY = {
 	"Abra": {
 		"t1": "Psychic",
