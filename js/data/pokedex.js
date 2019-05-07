@@ -1,4 +1,5 @@
 // if a pokemon has a setdex entry DO NOT add an ability property to the object
+// BESIDES Mega pokemon and their base forme for forme changing and importing purposes 
 var POKEDEX_RBY = {
 	"Abra": {
 		"t1": "Psychic",
@@ -26,7 +27,8 @@ var POKEDEX_RBY = {
 			"sp": 130,
 			"sl": 60
 		},
-		"w": 59.0
+		"w": 59.0,
+		"ab": "Unnerve"
 	},
 	"Alakazam": {
 		"t1": "Psychic",
@@ -39,7 +41,8 @@ var POKEDEX_RBY = {
 			"sp": 120,
 			"sl": 135
 		},
-		"w": 48.0
+		"w": 48.0,
+		"ab": "Magic Guard"
 	},
 	"Arbok": {
 		"t1": "Poison",
@@ -93,7 +96,8 @@ var POKEDEX_RBY = {
 			"sp": 75,
 			"sl": 45
 		},
-		"w": 29.5
+		"w": 29.5,
+		"ab": "Swarm"
 	},
 	"Bellsprout": {
 		"t1": "Grass",
@@ -121,7 +125,8 @@ var POKEDEX_RBY = {
 			"sp": 78,
 			"sl": 85
 		},
-		"w": 85.5
+		"w": 85.5,
+		"ab": "Rain Dish"
 	},
 	"Bulbasaur": {
 		"t1": "Grass",
@@ -566,7 +571,8 @@ var POKEDEX_RBY = {
 			"sp": 110,
 			"sl": 130
 		},
-		"w": 40.5
+		"w": 40.5,
+		"ab": "Cursed Body"
 	},
 	"Geodude": {
 		"t1": "Rock",
@@ -708,7 +714,8 @@ var POKEDEX_RBY = {
 			"sp": 81,
 			"sl": 100
 		},
-		"w": 235.0
+		"w": 235.0,
+		"ab": "Intimidate"
 	},
 	"Haunter": {
 		"t1": "Ghost",
@@ -904,7 +911,8 @@ var POKEDEX_RBY = {
 			"sp": 90,
 			"sl": 40
 		},
-		"w": 80.0
+		"w": 80.0,
+		"ab": "Scrappy"
 	},
 	"Kingler": {
 		"t1": "Water",
@@ -1405,7 +1413,8 @@ var POKEDEX_RBY = {
 			"sp": 91,
 			"sl": 70
 		},
-		"w": 39.5
+		"w": 39.5,
+		"ab": "Big Pecks"
 	},
 	"Pidgeotto": {
 		"t1": "Normal",
@@ -1462,7 +1471,8 @@ var POKEDEX_RBY = {
 			"sp": 85,
 			"sl": 55
 		},
-		"w": 55.0
+		"w": 55.0,
+		"ab": "Hyper Cutter"
 	},
 	"Poliwag": {
 		"t1": "Water",
@@ -1750,7 +1760,8 @@ var POKEDEX_RBY = {
 			"sp": 30,
 			"sl": 80
 		},
-		"w": 78.5
+		"w": 78.5,
+		"ab": "Regenerator"
 	},
 	"Slowpoke": {
 		"t1": "Water",
@@ -1946,7 +1957,8 @@ var POKEDEX_RBY = {
 			"sp": 80,
 			"sl": 100
 		},
-		"w": 100.0
+		"w": 100.0,
+		"ab": "Chloropyll"
 	},
 	"Victreebel": {
 		"t1": "Grass",
@@ -2147,7 +2159,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 90,
 			"sp": 55
 		},
-		"w": 61.5
+		"w": 61.5,
+		"ab": "Static"
 	},
 	"Ariados": {
 		"t1": "Bug",
@@ -2491,7 +2504,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 95,
 			"sp": 85
 		},
-		"w": 54.0
+		"w": 54.0,
+		"ab": "Moxie"
 	},
 	"Hitmontop": {
 		"t1": "Fighting",
@@ -2558,7 +2572,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 80,
 			"sp": 95
 		},
-		"w": 35.0
+		"w": 35.0,
+		"ab": "Flash Fire"
 	},
 	"Houndour": {
 		"t1": "Dark",
@@ -3006,7 +3021,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 80,
 			"sp": 65
 		},
-		"w": 118.0
+		"w": 118.0,
+		"Technician"
 	},
 	"Sentret": {
 		"t1": "Normal",
@@ -3177,7 +3193,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 65,
 			"sp": 30
 		},
-		"w": 400.0
+		"w": 400.0,
+		"ab": "Sturdy"
 	},
 	"Sudowoodo": {
 		"t1": "Rock",
@@ -3318,7 +3335,8 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sd": 100,
 			"sp": 61
 		},
-		"w": 202.0
+		"w": 202.0,
+		"ab": "Sand Stream"
 	},
 	"Tyrogue": {
 		"t1": "Fighting",
@@ -3435,7 +3453,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 60,
 			"sp": 75
 		},
-		"w": 47.0
+		"w": 47.0,
+		"ab": "Justified"
 	},
 	"Aggron": {
 		"t1": "Steel",
@@ -3448,7 +3467,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 60,
 			"sp": 50
 		},
-		"w": 360.0
+		"w": 360.0,
+		"ab": "Sturdy"
 	},
 	"Altaria": {
 		"t1": "Dragon",
@@ -3461,7 +3481,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 105,
 			"sp": 80
 		},
-		"w": 20.6
+		"w": 20.6,
+		"ab": "Natural Cure"
 	},
 	"Anorith": {
 		"t1": "Rock",
@@ -3556,7 +3577,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 63,
 			"sp": 65
 		},
-		"w": 12.5
+		"w": 12.5,
+		"ab": "Frisk"
 	},
 	"Barboach": {
 		"t1": "Water",
@@ -3611,7 +3633,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 70,
 			"sp": 80
 		},
-		"w": 52.0
+		"w": 52.0,
+		"ab": "Speed Boost"
 	},
 	"Breloom": {
 		"t1": "Grass",
@@ -3663,7 +3686,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 75,
 			"sp": 40
 		},
-		"w": 220.0
+		"w": 220.0,
+		"ab": "Magma Armor"
 	},
 	"Carvanha": {
 		"t1": "Water",
@@ -3961,7 +3985,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 115,
 			"sp": 80
 		},
-		"w": 48.4
+		"w": 48.4,
+		"ab": "Trace"
 	},
 	"Glalie": {
 		"t1": "Ice",
@@ -3973,7 +3998,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 80,
 			"sp": 80
 		},
-		"w": 256.5
+		"w": 256.5,
+		"ab": "Ice Body"
 	},
 	"Gorebyss": {
 		"t1": "Water",
@@ -4151,7 +4177,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 130,
 			"sp": 110
 		},
-		"w": 40.0
+		"w": 40.0,
+		"ab": "Levitate"
 	},
 	"Latios": {
 		"t1": "Dragon",
@@ -4164,7 +4191,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 110,
 			"sp": 110
 		},
-		"w": 60.0
+		"w": 60.0,
+		"ab": "Levitate"
 	},
 	"Lileep": {
 		"t1": "Rock",
@@ -4295,7 +4323,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 60,
 			"sp": 105
 		},
-		"w": 40.2
+		"w": 40.2,
+		"ab": "Lightning Rod"
 	},
 	"Marshtomp": {
 		"t1": "Water",
@@ -4334,7 +4363,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 55,
 			"sp": 50
 		},
-		"w": 11.5
+		"w": 11.5,
+		"ab": "Huge Power"
 	},
 	"Medicham": {
 		"t1": "Fighting",
@@ -4347,7 +4377,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 75,
 			"sp": 80
 		},
-		"w": 31.5
+		"w": 31.5,
+		"ab": "Telepathy"
 	},
 	"Meditite": {
 		"t1": "Fighting",
@@ -4375,6 +4406,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sp": 70
 		},
 		"w": 550.0,
+		"ab": "Tough Claws",
 		"gender": "genderless"
 	},
 	"Metang": {
@@ -4572,6 +4604,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sp": 95
 		},
 		"w": 206.5,
+		"ab": "Air Lock",
 		"gender": "genderless"
 	},
 	"Regice": {
@@ -4650,7 +4683,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 65,
 			"sp": 50
 		},
-		"w": 11.0
+		"w": 11.0,
+		"ab": "Prankster"
 	},
 	"Salamence": {
 		"t1": "Dragon",
@@ -4663,7 +4697,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 80,
 			"sp": 100
 		},
-		"w": 102.6
+		"w": 102.6,
+		"ab": "Intimidate"
 	},
 	"Sceptile": {
 		"t1": "Grass",
@@ -4675,7 +4710,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 85,
 			"sp": 120
 		},
-		"w": 52.2
+		"w": 52.2,
+		"ab": "Overgrow"
 	},
 	"Sealeo": {
 		"t1": "Ice",
@@ -4727,7 +4763,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 40,
 			"sp": 95
 		},
-		"w": 88.8
+		"w": 88.8,
+		"ab": "Speed Boost"
 	},
 	"Shedinja": {
 		"t1": "Bug",
@@ -4965,7 +5002,8 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 			"sd": 90,
 			"sp": 60
 		},
-		"w": 81.9
+		"w": 81.9,
+		"ab": "Damp"
 	},
 	"Swellow": {
 		"t1": "Normal",
@@ -6028,7 +6066,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 115,
 			"sp": 80
 		},
-		"w": 52.0
+		"w": 52.0,
+		"ab": "Justified"
 	},
 	"Garchomp": {
 		"t1": "Dragon",
@@ -6041,7 +6080,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 85,
 			"sp": 102
 		},
-		"w": 95.0
+		"w": 95.0,
+		"ab": "Rough Skin"
 	},
 	"Gastrodon": {
 		"t1": "Water",
@@ -6309,7 +6349,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 96,
 			"sp": 105
 		},
-		"w": 33.3
+		"w": 33.3,
+		"ab": "Limber"
 	},
 	"Lucario": {
 		"t1": "Fighting",
@@ -6322,7 +6363,8 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 			"sd": 70,
 			"sp": 90
 		},
-		"w": 54.0
+		"w": 54.0,
+		"ab": "Justified"
 	},
 	"Lumineon": {
 		"t1": "Water",
@@ -7315,7 +7357,8 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"sd": 86,
 			"sp": 50
 		},
-		"w": 31.0
+		"w": 31.0,
+		"ab": "Regenerator"
 	},
 	"Aurumoth": {
 		"t1": "Bug",
@@ -9531,22 +9574,22 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 });
 
 var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
-	"Abomasnow": {"formes": ["Abomasnow", "Abomasnow-Mega"], "ab": "Snow Warning"},
-	"Absol": {"formes": ["Absol", "Absol-Mega"], "ab": "Magic Bounce"},
-	"Aerodactyl": {"formes": ["Aerodactyl", "Aerodactyl-Mega"], "ab": "Tough Claws"},
-	"Aggron": {"formes": ["Aggron", "Aggron-Mega"], "ab": "Filter"},
-	"Alakazam": {"bs": {"sd": 95}, "formes": ["Alakazam", "Alakazam-Mega"], "ab": "Trace"},
-	"Altaria": {"formes": ["Altaria", "Altaria-Mega"], "ab": ""},
-	"Ampharos": {"bs": {"df": 85}, "formes": ["Ampharos", "Ampharos-Mega"], "ab": "Mold Breaker"},
-	"Audino": {"formes": ["Audino", "Audino-Mega"], "ab": "Healer"},
+	"Abomasnow": {"formes": ["Abomasnow", "Abomasnow-Mega"]},
+	"Absol": {"formes": ["Absol", "Absol-Mega"]},
+	"Aerodactyl": {"formes": ["Aerodactyl", "Aerodactyl-Mega"]},
+	"Aggron": {"formes": ["Aggron", "Aggron-Mega"]},
+	"Alakazam": {"bs": {"sd": 95}, "formes": ["Alakazam", "Alakazam-Mega"]},
+	"Altaria": {"formes": ["Altaria", "Altaria-Mega"]},
+	"Ampharos": {"bs": {"df": 85}, "formes": ["Ampharos", "Ampharos-Mega"]},
+	"Audino": {"formes": ["Audino", "Audino-Mega"]},
 	"Azumarill": {"t2": "Fairy", "bs": {"sa": 60}},
 	"Azurill": {"t2": "Fairy"},
-	"Banette": {"formes": ["Banette", "Banette-Mega"], "ab": "Prankster"},
+	"Banette": {"formes": ["Banette", "Banette-Mega"]},
 	"Beautifly": {"bs": {"sa": 100}},
 	"Bellossom": {"bs": {"df": 95}},
-	"Beedrill": {"bs": {"at": 90}, "formes": ["Beedrill", "Beedrill-Mega"], "ab": "Adaptability"},
-	"Blastoise": {"formes": ["Blastoise", "Blastoise-Mega"], "ab": "Mega Launcher"},
-	"Blaziken": {"formes": ["Blaziken", "Blaziken-Mega"], "ab": "Speed Boost"},
+	"Beedrill": {"bs": {"at": 90}, "formes": ["Beedrill", "Beedrill-Mega"]},
+	"Blastoise": {"formes": ["Blastoise", "Blastoise-Mega"]},
+	"Blaziken": {"formes": ["Blaziken", "Blaziken-Mega"]},
 	"Butterfree": {"bs": {"sa": 90}},
 	"Camerupt": {"formes": ["Camerupt", "Camerupt-Mega"], "ab": "Sheer Force"},
 	"Charizard": {"formes": ["Charizard", "Charizard-Mega-X", "Charizard-Mega-Y"]},
@@ -9555,66 +9598,66 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 	"Cleffa": {"t1": "Fairy"},
 	"Cottonee": {"t2": "Fairy"},
 	"Exploud": {"bs": {"sd": 73}},
-	"Gallade": {"formes": ["Gallade", "Gallade-Mega"], "ab": "Inner Focus"},
-	"Garchomp": {"formes": ["Garchomp", "Garchomp-Mega"], "ab": "Sand Force"},
-	"Gardevoir": {"t2": "Fairy", "formes": ["Gardevoir", "Gardevoir-Mega"], "ab": "Pixilate"},
-	"Gengar": {"formes": ["Gengar", "Gengar-Mega"], "ab": "Shadow Tag"},
+	"Gallade": {"formes": ["Gallade", "Gallade-Mega"]},
+	"Garchomp": {"formes": ["Garchomp", "Garchomp-Mega"]},
+	"Gardevoir": {"t2": "Fairy", "formes": ["Gardevoir", "Gardevoir-Mega"]},
+	"Gengar": {"formes": ["Gengar", "Gengar-Mega"]},
 	"Gigalith": {"bs": {"sd": 80}},
-	"Glalie": {"formes": ["Glalie", "Glalie-Mega"], "ab": "Refrigerate"},
+	"Glalie": {"formes": ["Glalie", "Glalie-Mega"]},
 	"Golem": {"bs": {"at": 120}},
 	"Granbull": {"t1": "Fairy"},
 	"Groudon": {"formes": ["Groudon", "Groudon-Primal"]},
-	"Gyarados": {"formes": ["Gyarados", "Gyarados-Mega"], "ab": "Mold Breaker"},
-	"Heracross": {"formes": ["Heracross", "Heracross-Mega"], "ab": "Skill Link"},
-	"Houndoom": {"formes": ["Houndoom", "Houndoom-Mega"], "ab": "Solar Power"},
+	"Gyarados": {"formes": ["Gyarados", "Gyarados-Mega"]},
+	"Heracross": {"formes": ["Heracross", "Heracross-Mega"]},
+	"Houndoom": {"formes": ["Houndoom", "Houndoom-Mega"]},
 	"Igglybuff": {"t2": "Fairy"},
 	"Jigglypuff": {"t2": "Fairy"},
 	"Jumpluff": {"bs": {"sd": 95}},
-	"Kangaskhan": {"formes": ["Kangaskhan", "Kangaskhan-Mega"], "ab": "Parental Bond"},
+	"Kangaskhan": {"formes": ["Kangaskhan", "Kangaskhan-Mega"]},
 	"Krookodile": {"bs": {"df": 80}},
 	"Kyogre": {"formes": ["Kyogre", "Kyogre-Primal"]},
 	"Kirlia": {"t2": "Fairy"},
-	"Latias": {"formes": ["Latias", "Latias-Mega"], "ab": "Levitate"},
-	"Latios": {"formes": ["Latios", "Latios-Mega"], "ab": "Levitate"},
+	"Latias": {"formes": ["Latias", "Latias-Mega"]},
+	"Latios": {"formes": ["Latios", "Latios-Mega"]},
 	"Leavanny": {"bs": {"sd": 80}},
-	"Lopunny": {"formes": ["Lopunny", "Lopunny-Mega"], "ab": "Scrappy"},
-	"Lucario": {"formes": ["Lucario", "Lucario-Mega"], "ab": "Adaptability"},
-	"Manectric": {"formes": ["Manectric", "Manectric-Mega"], "ab": "Intimidate"},
+	"Lopunny": {"formes": ["Lopunny", "Lopunny-Mega"]},
+	"Lucario": {"formes": ["Lucario", "Lucario-Mega"]},
+	"Manectric": {"formes": ["Manectric", "Manectric-Mega"]},
 	"Marill": {"t2": "Fairy"},
-	"Mawile": {"t2": "Fairy", "formes": ["Mawile", "Mawile-Mega"], "ab": "Huge Power"},
-	"Medicham": {"formes": ["Medicham", "Medicham-Mega"], "ab": "Pure Power"},
-	"Metagross": {"formes": ["Metagross", "Metagross-Mega"], "ab": "Tough Claws"},
+	"Mawile": {"t2": "Fairy", "formes": ["Mawile", "Mawile-Mega"]},
+	"Medicham": {"formes": ["Medicham", "Medicham-Mega"]},
+	"Metagross": {"formes": ["Metagross", "Metagross-Mega"]},
 	"Mewtwo": {"formes": ["Mewtwo", "Mewtwo-Mega-X", "Mewtwo-Mega-Y"]},
 	"Mime Jr.": {"t2": "Fairy"},
 	"Mr. Mime": {"t2": "Fairy"},
 	"Nidoking": {"bs": {"at": 102}},
 	"Nidoqueen": {"bs": {"at": 92}},
-	"Pidgeot": {"bs": {"sp": 101}, "formes": ["Pidgeot", "Pidgeot-Mega"], "ab": "No Guard"},
+	"Pidgeot": {"bs": {"sp": 101}, "formes": ["Pidgeot", "Pidgeot-Mega"]},
 	"Pikachu": {"bs": {"df": 40, "sd": 50}},
-	"Pinsir": {"formes": ["Pinsir", "Pinsir-Mega"], "ab": "Aerilate"},
+	"Pinsir": {"formes": ["Pinsir", "Pinsir-Mega"]},
 	"Poliwrath": {"bs": {"at": 95}},
 	"Raichu": {"bs": {"sp": 110}},
 	"Ralts": {"t2": "Fairy"},
-	"Rayquaza": {"formes": ["Rayquaza", "Rayquaza-Mega"], "ab": "Delta Stream"},
+	"Rayquaza": {"formes": ["Rayquaza", "Rayquaza-Mega"]},
 	"Roserade": {"bs": {"df": 65}},
-	"Sableye": {"formes": ["Sableye", "Sableye-Mega"], "ab": "Magic Bounce"},
-	"Salamence": {"formes": ["Salamence", "Salamence-Mega"], "ab": "Aerilate"},
-	"Sceptile": {"formes": ["Sceptile", "Sceptile-Mega"], "ab": "Lightning Rod"},
-	"Scizor": {"formes": ["Scizor", "Scizor-Mega"], "ab": "Technician"},
+	"Sableye": {"formes": ["Sableye", "Sableye-Mega"]},
+	"Salamence": {"formes": ["Salamence", "Salamence-Mega"]},
+	"Sceptile": {"formes": ["Sceptile", "Sceptile-Mega"]},
+	"Scizor": {"formes": ["Scizor", "Scizor-Mega"]},
 	"Scolipede": {"bs": {"at": 100}},
-	"Sharpedo": {"formes": ["Sharpedo", "Sharpedo-Mega"], "ab": "Strong Jaw"},
-	"Slowbro": {"formes": ["Slowbro", "Slowbro-Mega"], "ab": "Shell Armor"},
+	"Sharpedo": {"formes": ["Sharpedo", "Sharpedo-Mega"]},
+	"Slowbro": {"formes": ["Slowbro", "Slowbro-Mega"]},
 	"Snubbull": {"t1": "Fairy"},
 	"Staraptor": {"bs": {"sd": 60}},
-	"Steelix": {"formes": ["Steelix", "Steelix-Mega"], "ab": "Sand Force"},
+	"Steelix": {"formes": ["Steelix", "Steelix-Mega"]},
 	"Stoutland": {"bs": {"at": 110}},
-	"Swampert": {"formes": ["Swampert", "Swampert-Mega"], "ab": "Swift Swim"},
+	"Swampert": {"formes": ["Swampert", "Swampert-Mega"]},
 	"Togekiss": {"t1": "Fairy"},
 	"Togepi": {"t1": "Fairy"},
 	"Togetic": {"t1": "Fairy"},
-	"Tyranitar": {"formes": ["Tyranitar", "Tyranitar-Mega"], "ab": "Sand Stream"},
+	"Tyranitar": {"formes": ["Tyranitar", "Tyranitar-Mega"]},
 	"Unfezant": {"bs": {"at": 115}},
-	"Venusaur": {"formes": ["Venusaur", "Venusaur-Mega"], "ab": "Thick Fat"},
+	"Venusaur": {"formes": ["Venusaur", "Venusaur-Mega"]},
 	"Victreebel": {"bs": {"sd": 70}},
 	"Vileplume": {"bs": {"sa": 110}},
 	"Whimsicott": {"t2": "Fairy"},
@@ -10369,6 +10412,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 30
 		},
 		"w": 185.0,
+		"ab": "Snow Warning",
 		"isAlternateForme": true
 	},
 	"Absol-Mega": {
@@ -10382,6 +10426,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 115
 		},
 		"w": 49.0,
+		"ab": "Magic Bounce",
 		"isAlternateForme": true
 	},
 	"Aerodactyl-Mega": {
@@ -10396,6 +10441,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 150
 		},
 		"w": 79.0,
+		"ab": "Tough Claws",
 		"isAlternateForme": true
 	},
 	"Aggron-Mega": {
@@ -10409,6 +10455,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 50
 		},
 		"w": 395.0,
+		"ab": "Filter",
 		"isAlternateForme": true
 	},
 	"Alakazam-Mega": {
@@ -10422,6 +10469,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 150
 		},
 		"w": 48.0,
+		"ab": "Trace",
 		"isAlternateForme": true
 	},
 	"Altaria-Mega": {
@@ -10436,6 +10484,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 80
 		},
 		"w": 20.6,
+		"ab": "Pixilate",
 		"isAlternateForme": true
 	},
 	"Ampharos-Mega": {
@@ -10450,6 +10499,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 45
 		},
 		"w": 61.5,
+		"ab": "Mold Breaker",
 		"isAlternateForme": true
 	},
 	"Audino-Mega": {
@@ -10464,6 +10514,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 50
 		},
 		"w": 32.0,
+		"ab": "Healer",
 		"isAlternateForme": true
 	},
 	"Banette-Mega": {
@@ -10477,6 +10528,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 75
 		},
 		"w": 13.0,
+		"ab": "Prankster",
 		"isAlternateForme": true
 	},
 	"Beedrill-Mega": {
@@ -10491,6 +10543,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 145,
 		},
 		"w": 40.5,
+		"ab": "Adaptability"
 		"isAlternateForme": true
 	},
 	"Blastoise-Mega": {
@@ -10504,6 +10557,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 78
 		},
 		"w": 101.1,
+		"ab": "Mega Launcher"
 		"isAlternateForme": true
 	},
 	"Blaziken-Mega": {
@@ -10518,6 +10572,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 100
 		},
 		"w": 52.0,
+		"ab": "Speed Boost",
 		"isAlternateForme": true
 	},
 	"Camerupt-Mega": {
@@ -10532,6 +10587,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 20
 		},
 		"w": 320.5,
+		"ab": "Sheer Force",
 		"isAlternateForme": true
 	},
 	"Charizard-Mega-X": {
@@ -10603,6 +10659,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 110
 		},
 		"w": 56.4,
+		"ab": "Inner Focus",
 		"isAlternateForme": true
 	},
 	"Garchomp-Mega": {
@@ -10617,6 +10674,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 92
 		},
 		"w": 95.0,
+		"ab": "Sand Force",
 		"isAlternateForme": true
 	},
 	"Gardevoir-Mega": {
@@ -10631,6 +10689,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 100
 		},
 		"w": 48.4,
+		"ab": "Pixilate",
 		"isAlternateForme": true
 	},
 	"Gengar-Mega": {
@@ -10645,6 +10704,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 130
 		},
 		"w": 40.5,
+		"ab": "Shadow Tag",
 		"isAlternateForme": true
 	},
 	"Glalie-Mega": {
@@ -10658,6 +10718,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 100
 		},
 		"w": 350.2,
+		"ab": "Refrigerate",
 		"isAlternateForme": true
 	},
 	"Gyarados-Mega": {
@@ -10672,7 +10733,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 81
 		},
 		"w": 305.0,
-		"isAlternateForme": true
+		"isAlternateForme": true,
+		"ab": "Mold Breaker"
 	},
 	"Heracross-Mega": {
 		"t1": "Bug",
@@ -10686,6 +10748,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 75
 		},
 		"w": 62.5,
+		"ab": "Skill Link",
 		"isAlternateForme": true
 	},
 	"Houndoom-Mega": {
@@ -10700,6 +10763,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 115
 		},
 		"w": 49.5,
+		"ab": "Solar Power",
 		"isAlternateForme": true
 	},
 	"Kangaskhan-Mega": {
@@ -10713,6 +10777,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 100
 		},
 		"w": 100.0,
+		"ab": "Parental Bond",
 		"isAlternateForme": true
 	},
 	"Latias-Mega": {
@@ -10727,6 +10792,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 110
 		},
 		"w": 52.0,
+		"ab": "Levitate",
 		"isAlternateForme": true
 	},
 	"Latios-Mega": {
@@ -10741,6 +10807,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 110
 		},
 		"w": 70.0,
+		"ab": "Levitate",
 		"isAlternateForme": true
 	},
 	"Lopunny-Mega": {
@@ -10755,7 +10822,8 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 135
 		},
 		"w": 28.3,
-		"isAlternateForme": true
+		"isAlternateForme": true,
+		"ab": "Scrappy"
 	},
 	"Lucario-Mega": {
 		"t1": "Fighting",
@@ -10769,6 +10837,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 112
 		},
 		"w": 57.5,
+		"ab": "Adaptability"
 		"isAlternateForme": true
 	},
 	"Manectric-Mega": {
@@ -10782,6 +10851,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 135
 		},
 		"w": 44.0,
+		"ab": "Intimidate"
 		"isAlternateForme": true
 	},
 	"Mawile-Mega": {
@@ -10796,6 +10866,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 50
 		},
 		"w": 23.5,
+		"ab": "Huge Power",
 		"isAlternateForme": true
 	},
 	"Medicham-Mega": {
@@ -10810,6 +10881,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 100
 		},
 		"w": 31.5,
+		"ab": "Pure Power",
 		"isAlternateForme": true
 	},
 	"Metagross-Mega": {
@@ -10824,6 +10896,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 110
 		},
 		"w": 942.9,
+		"ab": "Tough Claws"
 		"isAlternateForme": true,
 		"gender": "genderless"
 	},
@@ -10868,6 +10941,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 121
 		},
 		"w": 50.5,
+		"ab": "No Guard",
 		"isAlternateForme": true
 	},
 	"Pinsir-Mega": {
@@ -10882,6 +10956,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 105
 		},
 		"w": 59.0,
+		"ab": "Aerilate"
 		"isAlternateForme": true
 	},
 	"Rayquaza-Mega": {
@@ -10896,6 +10971,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 115
 		},
 		"w": 392.0,
+		"ab": "Delta Stream",
 		"isAlternateForme": true
 	},
 	"Sableye-Mega": {
@@ -10910,6 +10986,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 20
 		},
 		"w": 161.0,
+		"ab": "Magic Bounce",
 		"isAlternateForme": true
 	},
 	"Salamence-Mega": {
@@ -10924,6 +11001,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 120
 		},
 		"w": 112.6,
+		"ab": "Aerilate",
 		"isAlternateForme": true
 	},
 	"Sceptile-Mega": {
@@ -10938,6 +11016,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 145
 		},
 		"w": 55.2,
+		"ab": "Lightning Rod",
 		"isAlternateForme": true
 	},
 	"Scizor-Mega": {
@@ -10952,6 +11031,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 75
 		},
 		"w": 125.0,
+		"ab": "Technician",
 		"isAlternateForme": true
 	},
 	"Sharpedo-Mega": {
@@ -10966,6 +11046,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 105
 		},
 		"w": 130.3,
+		"ab": "Strong Jaw",
 		"isAlternateForme": true
 	},
 	"Slowbro-Mega": {
@@ -10980,6 +11061,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 30
 		},
 		"w": 120.0,
+		"ab": "Shell Armor",
 		"isAlternateForme": true
 	},
 	"Steelix-Mega": {
@@ -10994,6 +11076,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 30
 		},
 		"w": 740.0,
+		"ab": "Sand Force",
 		"isAlternateForme": true
 	},
 	"Swampert-Mega": {
@@ -11008,6 +11091,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 70
 		},
 		"w": 102.0,
+		"ab": "Swift Swim",
 		"isAlternateForme": true
 	},
 	"Tyranitar-Mega": {
@@ -11022,6 +11106,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 71
 		},
 		"w": 255.0,
+		"ab": "Sand Stream"
 		"isAlternateForme": true
 	},
 	"Venusaur-Mega": {
@@ -11036,6 +11121,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 80
 		},
 		"w": 155.5,
+		"ab": "Thick Fat"
 		"isAlternateForme": true
 	},
 	"Meowstic-F": {
