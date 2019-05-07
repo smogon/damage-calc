@@ -3022,7 +3022,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 			"sp": 65
 		},
 		"w": 118.0,
-		"Technician"
+		"ab": "Technician",
 	},
 	"Sentret": {
 		"t1": "Normal",
@@ -10543,7 +10543,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 145,
 		},
 		"w": 40.5,
-		"ab": "Adaptability"
+		"ab": "Adaptability",
 		"isAlternateForme": true
 	},
 	"Blastoise-Mega": {
@@ -10557,7 +10557,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 78
 		},
 		"w": 101.1,
-		"ab": "Mega Launcher"
+		"ab": "Mega Launcher",
 		"isAlternateForme": true
 	},
 	"Blaziken-Mega": {
@@ -10837,7 +10837,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 112
 		},
 		"w": 57.5,
-		"ab": "Adaptability"
+		"ab": "Adaptability",
 		"isAlternateForme": true
 	},
 	"Manectric-Mega": {
@@ -10851,7 +10851,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 135
 		},
 		"w": 44.0,
-		"ab": "Intimidate"
+		"ab": "Intimidate",
 		"isAlternateForme": true
 	},
 	"Mawile-Mega": {
@@ -10896,7 +10896,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 110
 		},
 		"w": 942.9,
-		"ab": "Tough Claws"
+		"ab": "Tough Claws",
 		"isAlternateForme": true,
 		"gender": "genderless"
 	},
@@ -10956,7 +10956,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 105
 		},
 		"w": 59.0,
-		"ab": "Aerilate"
+		"ab": "Aerilate",
 		"isAlternateForme": true
 	},
 	"Rayquaza-Mega": {
@@ -11106,7 +11106,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 71
 		},
 		"w": 255.0,
-		"ab": "Sand Stream"
+		"ab": "Sand Stream",
 		"isAlternateForme": true
 	},
 	"Venusaur-Mega": {
@@ -11121,7 +11121,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"sp": 80
 		},
 		"w": 155.5,
-		"ab": "Thick Fat"
+		"ab": "Thick Fat",
 		"isAlternateForme": true
 	},
 	"Meowstic-F": {
