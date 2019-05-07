@@ -73,7 +73,6 @@ function getAbility(row) {
 	} else {
 		return;
 	}
-
 }
 
 function statConverter(stat) {
@@ -193,7 +192,6 @@ function addToDex(poke) {
 
 	if (poke.ability !== undefined) {
 		dexObject.ability = poke.ability;
-
 	}
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
@@ -262,7 +260,11 @@ function addSets(pokes) {
 					currentPoke.nameProp = "Custom Set";
 				}
 				currentPoke.isCustomSet = true;
-				currentPoke.ability = getAbility(rows[i + 1].split(":"));
+				if (currentPoke.name.indexOf("-Mega") !== -1) {
+					currentPoke.ability = getAbility(rows[i + 1].split(":"));
+				} else {
+					currentPoke.ability = POKEDEX_SM[currentPoke.name].ability;
+				}
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
 				addToDex(currentPoke);
