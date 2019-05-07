@@ -1958,7 +1958,7 @@ var POKEDEX_RBY = {
 			"sl": 100
 		},
 		"w": 100.0,
-		"ab": "Chloropyll"
+		"ab": "Chlorophyll"
 	},
 	"Victreebel": {
 		"t1": "Grass",
