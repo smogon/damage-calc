@@ -44,7 +44,7 @@
 			eot -= Math.floor(defender.maxHP / 8);
 			eotText.push(defender.ability + ' damage');
 		}
-	} else if (field.weather.indexOf("Rain") !== -1) {
+	} else if (field.hasWeather("Rain", "Heavy Rain")) {
 		if (defender.hasAbility("Dry Skin")) {
 			eot += Math.floor(defender.maxHP / 8);
 			eotText.push('Dry Skin recovery');
@@ -52,14 +52,14 @@
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Rain Dish recovery');
 		}
-	} else if (field.weather === 'Sand') {
+	} else if (field.hasWeather("Sand")) {
 		if (defender.hasType("Rock", "Ground", "Steel") &&
                 defender.hasAbility("Magic Guard", "Overcoat", "Sand Force", "Sand Rush", "Sand Veil") &&
                 defender.hasItem("Safety Goggles")) {
 			eot -= Math.floor(defender.maxHP / 16);
 			eotText.push('sandstorm damage');
 		}
-	} else if (field.weather === "Hail") {
+	} else if (field.hasWeather("Hail")) {
 		if (defender.hasAbility("Ice Body")) {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push('Ice Body recovery');
@@ -70,7 +70,7 @@
 			eotText.push("hail damage");
 		}
 	}
-	var loseItem = move.name === "Knock Off" && defender.ability !== 'Sticky Hold';
+	var loseItem = move.name === "Knock Off" && defender.hasAbility("Sticky Hold");
 	if (defender.item === 'Leftovers' && !loseItem) {
 		eot += Math.floor(defender.maxHP / 16);
 		eotText.push('Leftovers recovery');
