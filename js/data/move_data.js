@@ -79,6 +79,10 @@ var MOVES_RBY = {
 		bp: 0,
 		type: 'Ghost'
 	},
+	'Conversion': {
+		bp: 0,
+		type: 'Normal'
+	},
 	'Defense Curl': {
 		bp: 0,
 		type: 'Normal'
@@ -529,6 +533,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		type: 'Ground',
 		category: 'Physical',
 		isMultiHit: true
+	},
+	'Conversion 2': {
+		bp: 0,
+		type: 'Normal'
 	},
 	'Crabhammer': {alwaysCrit: false},
 	'Cross Chop': {
@@ -2242,6 +2250,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		makesContact: true,
 		hasSecondaryEffect: true
 	},
+	'Reflect Type': {
+		bp: 0,
+		type: 'Normal'
+	},
 	'Relic Song': {
 		bp: 75,
 		type: 'Normal',
@@ -2322,6 +2334,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		hasSecondaryEffect: true,
 		isSound: true,
 		isSpread: true
+	},
+	'Soak': {
+		bp: 0,
+		type: 'Water'
 	},
 	'Steamroller': {
 		bp: 65,
@@ -2490,6 +2506,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		type: 'Fighting',
 		category: 'Physical',
 		makesContact: true
+	},
+	'Forest\'s Curse': {
+		bp: 0,
+		type: 'Grass'
 	},
 	'Freeze-Dry': {
 		bp: 70,
@@ -2674,6 +2694,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	},
 	'Thunder': {bp: 110},
 	'Thunderbolt': {bp: 90},
+	'Trick-or-Treat': {
+		bp: 0,
+		type: 'Ghost'
+	},
 	'Wake-Up Slap': {bp: 70},
 	'Water Pledge': {bp: 80},
 	'Water Shuriken': {
