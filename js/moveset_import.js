@@ -260,10 +260,11 @@ function addSets(pokes) {
 					currentPoke.nameProp = "Custom Set";
 				}
 				currentPoke.isCustomSet = true;
-				if (currentPoke.name.indexOf("-Mega") !== -1) {
-					currentPoke.ability = getAbility(rows[i + 1].split(":"));
-				} else {
+				if (currentPoke.name.indexOf("ite") === -1) {
 					currentPoke.ability = POKEDEX_SM[currentPoke.name].ability;
+					currentPoke.name = currentPoke.name + "-Mega";
+				} else {
+					currentPoke.ability = getAbility(rows[i + 1].split(":"));
 				}
 				currentPoke = getStats(currentPoke, rows, i + 1);
 				currentPoke = getMoves(currentPoke, rows, i);
