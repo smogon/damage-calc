@@ -52,6 +52,7 @@ var ITEMS_ADV = ITEMS_GSC.concat([
 	'Iapapa Berry',
 	'Kelpsy Berry',
 	'Lansat Berry',
+	'Lax Incense',
 	'Leppa Berry',
 	'Liechi Berry',
 	'Mago Berry',
@@ -102,6 +103,7 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	'Coba Berry',
 	'Colbur Berry',
 	'Custap Berry',
+	'Damp Rock',
 	'Destiny Knot',
 	'Draco Plate',
 	'Dread Plate',
@@ -111,10 +113,13 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 	'Flame Orb',
 	'Flame Plate',
 	'Focus Sash',
+	'Full Incense',
 	'Grip Claw',
 	'Griseous Orb',
 	'Haban Berry',
+	'Heat Rock',
 	'Icicle Plate',
+	'Icy Rock',
 	'Insect Plate',
 	'Iron Ball',
 	'Iron Plate',
@@ -162,10 +167,12 @@ var ITEMS_DPP = ITEMS_ADV.concat([
 ]);
 
 var ITEMS_BW = ITEMS_DPP.concat([
+	'Absorb Bulb',
 	'Air Balloon',
 	'Binding Band',
 	'Bug Gem',
 	'Burn Drive',
+	'Cell Battery'
 	'Chill Drive',
 	'Dark Gem',
 	'Dragon Gem',
@@ -436,18 +443,21 @@ function getFlingPower(item) {
 			item.indexOf('Plate') !== -1 || ['Deep Sea Tooth', 'Thick Club'].indexOf(item) !== -1 ? 90 :
 				['Assault Vest', 'Weakness Policy'].indexOf(item) !== -1 ? 80 :
 					['Poison Barb', 'Dragon Fang'].indexOf(item) !== -1 ? 70 :
-						['Adamant Orb', 'Lustrous Orb', 'Macho Brace', 'Stick'].indexOf(item) !== -1 ? 60 :
+						['Adamant Orb', 'Damp Rock', 'Heat Rock', 'Lustrous Orb', 'Macho Brace', 'Stick'].indexOf(item) !== -1 ? 60 :
 							item === 'Sharp Beak' ? 50 :
-								item === 'Eviolite' ? 40 :
-									['Black Belt', 'Black Sludge', 'Black Glasses', 'Charcoal', 'Deep Sea Scale', 'Flame Orb', "King's Rock",
-										'Life Orb', 'Light Ball', 'Magnet', 'Metal Coat', 'Miracle Seed', 'Mystic Water', 'Never-Melt Ice',
-										'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 'Twisted Spoon'].indexOf(item) !== -1 ? 30 :
+								['Icy Rock', 'Eviolite'].indexOf(item) !== -1 ? 40 :
+									['Absorb Bulb', 'Black Belt', 'Black Sludge', 'Black Glasses', 'Cell Battery', 'Charcoal', 'Deep Sea Scale', 
+									 	'Flame Orb', "King's Rock", 'Life Orb', 'Light Ball', 'Magnet', 'Metal Coat', 'Miracle Seed', 
+									 	'Mystic Water', 'Never-Melt Ice', 'Razor Fang', 'Soul Dew', 'Spell Tag', 'Toxic Orb', 
+									 'Twisted Spoon'].indexOf(item) !== -1 ? 30 :
 										item.indexOf('Berry') !== -1 ||
-										['Air Balloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 'Expert Belt', 'Focus Band',
-											'Focus Sash', 'Grassy Seed', 'Lagging Tail', 'Leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed',
-											'Muscle Band', 'Power Herb', 'Psychic Seed', 'Quick Powder', 'Reaper Cloth', 'Red Card', 'Ring Target',
-											'Shed Shell', 'Silk Scarf', 'Silver Powder', 'Smooth Rock', 'Soft Sand', 'Soothe Bell', 'White Herb',
-											'Wide Lens', 'Wise Glasses', 'Zoom Lens'].indexOf(item) !== -1 ? 10 :
+										['Air Balloon', 'Choice Band', 'Choice Scarf', 'Choice Specs', 'Destiny Knot', 'Electric Seed', 
+										 	'Expert Belt', 'Focus Band', 'Focus Sash', 'Full Incense', 'Grassy Seed', 'Lagging Tail', 
+										 	'Lax Incense', 'Leftovers', 'Mental Herb', 'Metal Powder', 'Misty Seed', 'Muscle Band', 
+										 	'Power Herb', 'Psychic Seed', 'Odd Incense', 'Quick Powder', 'Reaper Cloth', 'Red Card', 'Ring Target',
+											'Rock Incense', 'Rose Incense', 'Sea Incense', 'Shed Shell', 'Silk Scarf', 'Silver Powder', 
+										 	'Smooth Rock', 'Soft Sand', 'Soothe Bell', 'Wave Incense', 'White Herb', 'Wide Lens', 
+										 	'Wise Glasses', 'Zoom Lens'].indexOf(item) !== -1 ? 10 :
 											0;
 }
 
