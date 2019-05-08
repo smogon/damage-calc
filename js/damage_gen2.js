@@ -142,10 +142,10 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
 
 	baseDamage = Math.min(997, baseDamage) + 2;
 
-	if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
+	if ((field.hasWeather("Sun") && move.type === "Fire") || (field.hasWeather("Rain") && move.type === "Water")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
-	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && (move.type === "Fire" || move.name === "Solar Beam"))) {
+	} else if ((field.hasWeather("Sun") && move.type === "Water") || (field.hasWeather("Rain") && (move.type === "Fire" || move.name === "Solar Beam"))) {
 		baseDamage = Math.floor(baseDamage / 2);
 		description.weather = field.weather;
 	}
