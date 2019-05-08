@@ -107,7 +107,8 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if ((defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
+	var ignoresWonderGuard = move.type === "None" || move.name === "Fire Fang";
+	if ((!ignoresWonderGuard && defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
             (move.type === "Fire" && defender.hasAbility("Flash Fire")) ||
             (move.type === "Water" && defender.hasAbility("Dry Skin", "Water Absorb")) ||
             (move.type === "Electric" && defender.hasAbility("Motor Drive", "Volt Absorb")) ||
