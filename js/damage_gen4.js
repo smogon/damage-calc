@@ -213,8 +213,8 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
             (attacker.hasItem("Griseous Orb") && attacker.named("Giratina-Origin")) &&
             (move.type === attacker.type1 || move.type === attacker.type2) ||
 				(attacker.hasItem("Sea Incense", "Wave Incense") && move.type === "Water") ||
-				(attacker.hasItem("Odd Incense") && move.type === "Psychic")
-				(attacker.hasItem("Rock Incense") && move.type === "Rock")
+				(attacker.hasItem("Odd Incense") && move.type === "Psychic") ||
+				(attacker.hasItem("Rock Incense") && move.type === "Rock") ||
 				(attacker.hasItem("Rose Incense") && move.type === "Grass")) {
 		basePower = Math.floor(basePower * 1.2);
 		description.attackerItem = attacker.item;
