@@ -71,7 +71,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
             (defender.hasAbility("Levitate") && move.type === "Ground") ||
             (defender.hasAbility("Volt Absorb") && move.type === "Electric") ||
             (defender.hasAbility("Water Absorb") && move.type === "Water") ||
-            (defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
+            (move.type !== "None" && defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
             (defender.hasAbility("Soundproof") && move.isSound)) {
 		description.defenderAbility = defender.ability;
 		return {"damage": [0], "description": buildDescription(description)};
