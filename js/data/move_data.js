@@ -1917,8 +1917,6 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 });
 
 var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
-	'Doom Desire': {type: "Steel"},
-	'Future Sight': {type: "Psychic"},
 	'Acid Spray': {
 		bp: 40,
 		type: 'Poison',
@@ -1983,7 +1981,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		bp: 0,
 		type: 'Grass'
 	},
-	'Doom Desire': {bp: 140},
+	'Doom Desire': {bp: 140, type: 'Steel'},
 	'Dragon Tail': {
 		bp: 60,
 		type: 'Dragon',
@@ -2084,7 +2082,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		type: 'Fire',
 		category: 'Special'
 	},
-	'Future Sight': {bp: 100},
+	'Future Sight': {bp: 100, type: 'Psychic'},
 	'Gear Grind': {
 		bp: 50,
 		type: 'Steel',
