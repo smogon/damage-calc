@@ -70,7 +70,7 @@
 			eotText.push("hail damage");
 		}
 	}
-	var loseItem = move.name === "Knock Off" && defender.hasAbility("Sticky Hold");
+	var loseItem = move.name === "Knock Off" && !defender.hasAbility("Sticky Hold");
 	if (defender.item === 'Leftovers' && !loseItem) {
 		eot += Math.floor(defender.maxHP / 16);
 		eotText.push('Leftovers recovery');
