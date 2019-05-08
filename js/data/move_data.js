@@ -614,7 +614,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 	},
 	'Future Sight': {
 		bp: 80,
-		type: 'Psychic',
+		type: 'None',
 		category: 'Special'
 	},
 	'Giga Drain': {
@@ -973,7 +973,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	},
 	'Doom Desire': {
 		bp: 120,
-		type: 'Steel',
+		type: 'None',
 		category: 'Special'
 	},
 	'Dragon Claw': {
@@ -1981,7 +1981,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		bp: 0,
 		type: 'Grass'
 	},
-	'Doom Desire': {bp: 140},
+	'Doom Desire': {bp: 140, type: 'Steel'},
 	'Dragon Tail': {
 		bp: 60,
 		type: 'Dragon',
@@ -2082,7 +2082,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		type: 'Fire',
 		category: 'Special'
 	},
-	'Future Sight': {bp: 100},
+	'Future Sight': {bp: 100, type: 'Psychic'},
 	'Gear Grind': {
 		bp: 50,
 		type: 'Steel',
