@@ -455,7 +455,7 @@ $(".forme").change(function () {
 	$(this).parent().siblings().find(".type1").val(altForme.t1);
 	$(this).parent().siblings().find(".type2").val(altForme.t2 ? altForme.t2 : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
-	var pokeSTATS = ["hp", "at", "df","sa","sd","sp"];
+	var pokeSTATS = ["hp", "at", "df", "sa", "sd", "sp"];
 	for (var i = 0; i < pokeSTATS.length; i++) {
 		var baseStat = container.find("." + pokeSTATS[i]).find(".base");
 		baseStat.val(altForme.bs[pokeSTATS[i]]);
