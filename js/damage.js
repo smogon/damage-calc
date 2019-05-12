@@ -81,16 +81,20 @@ function getDamageResult(attacker, defender, move, field) {
 	var defAbility = defender.ability;
 	var defenderIgnoresAbility = defender.hasAbility("Full Metal Body", "Prism Armor", "Shadow Shield");
 	var attackerIgnoresAbility = attacker.hasAbility("Mold Breaker", "Teravolt", "Turboblaze");
-	if (attackerIgnoresAbility && !defenderIgnoresAbility) {
-		defAbility = "";
-		description.attackerAbility = attacker.ability;
+	var moveIgnoresAbility = ["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1;
+	if (!defenderIgnoresAbility) {
+		if (attackerIgnoresAbility) {
+			defAbility = "";
+			description.attackerAbility = attacker.ability;
+		}
 	}
-	if (["Light That Burns the Sky", "Menacing Moonraze Maelstrom", "Moongeist Beam", "Photon Geyser", "Searing Sunraze Smash", "Sunsteel Strike"].indexOf(move.name) !== -1) {
+	if (moveIgnoresAbility) {
 		defAbility = "";
+		//console.log(move.name + "|" + move.type + "|" + defAbility + "|" + attacker.ability);
 	}
 
-	var isCritical = (move.isZ && move.isCrit) || ((move.isCrit && defender.hasAbility("Battle Armor", "Shell Armor") === -1 ||
-		 attacker.ability === "Merciless" && defender.hasStatus("Poisoned", "Badly Poisoned")) && move.usedTimes === 1);
+	var isCritical = (!move.isZ && move.isCrit) || ((move.isCrit && !defender.hasAbility("Battle Armor", "Shell Armor") ||
+		 attacker.hasAbility("Merciless") && defender.hasStatus("Poisoned", "Badly Poisoned")) && move.usedTimes === 1);
 
 	if (move.name === "Weather Ball") {
 		move.type = field.weather.indexOf("Sun") !== -1 ? "Fire" :
@@ -134,7 +138,7 @@ function getDamageResult(attacker, defender, move, field) {
 		isRefrigerate = attacker.ability === "Refrigerate" && move.type === "Normal";
 		isGalvanize = attacker.ability === "Galvanize" && move.type === "Normal";
 		isLiquidVoice = attacker.ability === "Liquid Voice" && move.isSound;
-		isNormalize = attacker.ability === "Normalize" && move.type !== "Normal";
+		isNormalize = attacker.ability === "Normalize" && move.type;
 		if (isAerilate) {
 			move.type = "Flying";
 		} else if (isGalvanize) {
@@ -808,15 +812,6 @@ function getDamageResult(attacker, defender, move, field) {
 	}
 	description.attackBoost = attacker.boosts[attackStat];
 	return {"damage": damage, "description": buildDescription(description)};
-}
-
-function toSmogonStat(stat) {
-	return stat === AT ? "Atk" :
-		stat === DF ? "Def" :
-			stat === SA ? "SpA" :
-				stat === SD ? "SpD" :
-					stat === SP ? "Spe" :
-						"wtf";
 }
 
 function chainMods(mods) {

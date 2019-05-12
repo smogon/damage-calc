@@ -11,13 +11,13 @@
 
 	var hazards = 0;
 	var hazardText = [];
-	if (field.isSR && defender.hasAbility("Magic Guard", "Mountaineer")) {
+	if (field.isSR && !defender.hasAbility("Magic Guard", "Mountaineer")) {
 		var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
 		hazards += Math.floor(effectiveness * defender.maxHP / 8);
 		hazardText.push('Stealth Rock');
 	}
 	if (!defender.hasType('Flying') &&
-		defender.hasAbility("Magic Guard", "Levitate") && !defender.hasItem("Air Balloon")) {
+		!defender.hasAbility("Magic Guard", "Levitate") && !defender.hasItem("Air Balloon")) {
 		if (field.spikes === 1) {
 			hazards += Math.floor(defender.maxHP / 8);
 			if (gen === 2) {

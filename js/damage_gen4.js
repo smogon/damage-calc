@@ -216,7 +216,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 	}
 
 	if ((attacker.hasAbility("Reckless") && move.hasRecoil) ||
-            (attacker.hasAability("Iron Fist") && move.isPunch)) {
+            (attacker.hasAbility("Iron Fist") && move.isPunch)) {
 		basePower = Math.floor(basePower * 1.2);
 		description.attackerAbility = attacker.ability;
 	} else if ((attacker.curHP <= attacker.maxHP / 3 &&

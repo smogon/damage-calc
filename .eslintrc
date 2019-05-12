@@ -22,7 +22,7 @@
 		"isGroundedForCalc": false, "ITEMS_SM": false, "SETDEX_SM": false, "SETDEX_XY": false,
 		"SETDEX_BW": false, "SETDEX_DPP": false, "SETDEX_ADV": false, "SETDEX_GSC": false, "SETDEX_RBY": false,
 		"ZMOVES_TYPING": false, "getSelectedTiers": false,
-		"MOVES_SM": false, "stickyMoves": false, "ABILITIES_SM": false, "bothPokemon": false, "loadCustomList": false, "POKEDEX_SM": false,
+		"MOVES_SM": false, "stickyMoves": false, "ABILITIES_SM": false, "allPokemon": false, "loadCustomList": false, "POKEDEX_SM": false,
 		"loadDefaultLists": false, "POKEDEX_RBY": false, "TYPE_CHART_RBY": false, "MOVES_RBY": false, "STATS_RBY": false,
 		"CALC_HP_RBY": false, "CALC_STAT_RBY": false, "POKEDEX_GSC": false, "TYPE_CHART_GSC": false,
 		"MOVES_GSC": false, "ITEMS_GSC": false, "STATS_GSC": false, "POKEDEX_ADV": false, "MOVES_ADV": false,

@@ -131,7 +131,7 @@ var SETDEX_RBY = {
 		"UU Swords Dance": {"level": 100, "moves": ["Body Slam", "Hyper Beam", "Crabhammer", "Swords Dance"]},
 	},
 	"Lapras": {
-		"OU Parafusion": {"level": 100, "moves": ["Blizzard", "Thunderbolt", "Body Slam", "Confuse Ray"]},
+		"OU Standard": {"level": 100, "moves": ["Blizzard", "Thunderbolt", "Hyper Beam", "Sing"]},
 	},
 	"Lickitung": {
 		"UU Swords Dance": {"level": 100, "moves": ["Swords Dance", "Earthquake", "Hyper Beam", "Body Slam"]},

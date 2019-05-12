@@ -172,8 +172,6 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
-	//Reset checkbox to checked upon ability change
-	$(this).closest(".poke-info").find(".abilityToggle").prop('checked', true);
 });
 
 $("#p1 .ability").bind("keyup change", function () {
@@ -622,6 +620,15 @@ function Pokemon(pokeInfo) {
 	};
 }
 
+function toSmogonStat(stat) {
+	return stat === AT ? "Atk" :
+		stat === DF ? "Def" :
+			stat === SA ? "SpA" :
+				stat === SD ? "SpD" :
+					stat === SP ? "Spe" :
+						"wtf";
+}
+
 function getMoveDetails(moveInfo, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var defaultDetails = moves[moveName];
@@ -1047,8 +1054,15 @@ function loadDefaultLists() {
 	});
 }
 
-function bothPokemon(selector) {
-	return "#p1 " + selector + ", #p2 " + selector;
+function allPokemon(selector) {
+	var allSelector = "";
+	for (var i = 0; i < $(".poke-info").length; i++) {
+		if (i > 0) {
+			allSelector += ", ";
+		}
+		allSelector += "#p" + (i + 1) + " " + selector;
+	}
+	return allSelector;
 }
 
 function loadCustomList(id) {
