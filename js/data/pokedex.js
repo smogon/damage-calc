@@ -8579,7 +8579,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 			"df": 100,
 			"sa": 85,
 			"sd": 120,
-			"sp": 81
+			"sp": 58
 		},
 		"w": 49.6
 	},
@@ -10572,7 +10572,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 			"df": 75,
 			"sa": 85,
 			"sd": 125,
-			"sp": 114
+			"sp": 108
 		},
 		"w": 22.5,
 		"isAlternateForme": true

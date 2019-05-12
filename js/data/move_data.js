@@ -79,6 +79,10 @@ var MOVES_RBY = {
 		bp: 0,
 		type: 'Ghost'
 	},
+	'Conversion': {
+		bp: 0,
+		type: 'Normal'
+	},
 	'Defense Curl': {
 		bp: 0,
 		type: 'Normal'
@@ -354,6 +358,10 @@ var MOVES_RBY = {
 		alwaysCrit: true,
 		makesContact: true
 	},
+	'Sleep Powder': {
+		bp: 0,
+		type: 'Grass'
+	},
 	'Sludge': {
 		bp: 65,
 		type: 'Poison',
@@ -372,6 +380,10 @@ var MOVES_RBY = {
 		type: 'Normal',
 		category: 'Physical',
 		hasRecoil: 50
+	},
+	'Stun Spore': {
+		bp: 0,
+		type: 'Grass'
 	},
 	'Submission': {
 		bp: 80,
@@ -522,6 +534,10 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 		category: 'Physical',
 		isMultiHit: true
 	},
+	'Conversion 2': {
+		bp: 0,
+		type: 'Normal'
+	},
 	'Crabhammer': {alwaysCrit: false},
 	'Cross Chop': {
 		bp: 100,
@@ -598,7 +614,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 	},
 	'Future Sight': {
 		bp: 80,
-		type: 'Psychic',
+		type: 'None',
 		category: 'Special'
 	},
 	'Giga Drain': {
@@ -957,7 +973,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	},
 	'Doom Desire': {
 		bp: 120,
-		type: 'Steel',
+		type: 'None',
 		category: 'Special'
 	},
 	'Dragon Claw': {
@@ -1965,7 +1981,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		bp: 0,
 		type: 'Grass'
 	},
-	'Doom Desire': {bp: 140},
+	'Doom Desire': {bp: 140, type: 'Steel'},
 	'Dragon Tail': {
 		bp: 60,
 		type: 'Dragon',
@@ -2066,7 +2082,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		type: 'Fire',
 		category: 'Special'
 	},
-	'Future Sight': {bp: 100},
+	'Future Sight': {bp: 100, type: 'Psychic'},
 	'Gear Grind': {
 		bp: 50,
 		type: 'Steel',
@@ -2234,6 +2250,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		makesContact: true,
 		hasSecondaryEffect: true
 	},
+	'Reflect Type': {
+		bp: 0,
+		type: 'Normal'
+	},
 	'Relic Song': {
 		bp: 75,
 		type: 'Normal',
@@ -2314,6 +2334,10 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 		hasSecondaryEffect: true,
 		isSound: true,
 		isSpread: true
+	},
+	'Soak': {
+		bp: 0,
+		type: 'Water'
 	},
 	'Steamroller': {
 		bp: 65,
@@ -2482,6 +2506,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 		type: 'Fighting',
 		category: 'Physical',
 		makesContact: true
+	},
+	'Forest\'s Curse': {
+		bp: 0,
+		type: 'Grass'
 	},
 	'Freeze-Dry': {
 		bp: 70,
@@ -2666,6 +2694,10 @@ var MOVES_XY = $.extend(true, {}, MOVES_BW, {
 	},
 	'Thunder': {bp: 110},
 	'Thunderbolt': {bp: 90},
+	'Trick-or-Treat': {
+		bp: 0,
+		type: 'Ghost'
+	},
 	'Wake-Up Slap': {bp: 70},
 	'Water Pledge': {bp: 80},
 	'Water Shuriken': {

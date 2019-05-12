@@ -49,10 +49,10 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 	}
 
 	if (move.name === "Weather Ball") {
-		move.type = field.weather === "Sun" ? "Fire" :
-			field.weather === "Rain" ? "Water" :
-				field.weather === "Sand" ? "Rock" :
-					field.weather === "Hail" ? "Ice" :
+		move.type = field.hasWeather("Sun") ? "Fire" :
+			field.hasWeather("Rain") ? "Water" :
+				field.hasWeather("Sand") ? "Rock" :
+					field.hasWeather("Hail") ? "Ice" :
 						"Normal";
 		description.weather = field.weather;
 		description.moveType = move.type;
@@ -71,7 +71,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
             (defender.hasAbility("Levitate") && move.type === "Ground") ||
             (defender.hasAbility("Volt Absorb") && move.type === "Electric") ||
             (defender.hasAbility("Water Absorb") && move.type === "Water") ||
-            (defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
+            (move.type !== "None" && defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
             (defender.hasAbility("Soundproof") && move.isSound)) {
 		description.defenderAbility = defender.ability;
 		return {"damage": [0], "description": buildDescription(description)};
@@ -127,7 +127,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	if (attacker.item !== "Sea Incense" && getItemBoostType(attacker.item) === move.type) {
+	if (!attacker.hasItem("Sea Incense") && getItemBoostType(attacker.item) === move.type) {
 		at = Math.floor(at * 1.1);
 		description.attackerItem = attacker.item;
 	} else if (attacker.hasItem("Sea Incense") && move.type === "Water") {
@@ -213,11 +213,11 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 3 / 4);
 	}
 
-	if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
+	if ((field.hasWeather("Sun") && move.type === "Fire") || (field.hasWeather("Rain") && move.type === "Water")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
-	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
-            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail") !== -1)) {
+	} else if ((field.hasWeather("Sun") && move.type === "Water") || (field.hasWeather("Rain") && move.type === "Fire") ||
+            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail"))) {
 		baseDamage = Math.floor(baseDamage / 2);
 		description.weather = field.weather;
 	}

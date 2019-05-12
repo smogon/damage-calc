@@ -165,7 +165,7 @@ $(".ability").bind("keyup change", function () {
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
+	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
 
 	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
 		$(this).closest(".poke-info").find(".abilityToggle").show();
@@ -307,7 +307,6 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
-	moveGroupObj.children(".metronome").prop("disabled", !!move.dropsStats);
 	if (move.isMultiHit) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
@@ -456,10 +455,10 @@ $(".forme").change(function () {
 	$(this).parent().siblings().find(".type1").val(altForme.t1);
 	$(this).parent().siblings().find(".type2").val(altForme.t2 ? altForme.t2 : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
-
-	for (var i = 0; i < STATS.length; i++) {
-		var baseStat = container.find("." + STATS[i]).find(".base");
-		baseStat.val(altForme.bs[STATS[i]]);
+	var pokeSTATS = ["hp", "at", "df", "sa", "sd", "sp"];
+	for (var i = 0; i < pokeSTATS.length; i++) {
+		var baseStat = container.find("." + pokeSTATS[i]).find(".base");
+		baseStat.val(altForme.bs[pokeSTATS[i]]);
 		baseStat.keyup();
 	}
 	var chosenSet = setdex[pokemonName][setName];

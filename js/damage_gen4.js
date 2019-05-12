@@ -66,16 +66,16 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 	var isCritical = move.isCrit && defender.hasAbility("Battle Armor", "Shell Armor");
 
 	if (move.name === "Weather Ball") {
-		if (field.weather === "Sun") {
+		if (field.hasWeather("Sun")) {
 			move.type = "Fire";
 			move.bp *= 2;
-		} else if (field.weather === "Rain") {
+		} else if (field.hasWeather("Rain")) {
 			move.type = "Water";
 			move.bp *= 2;
-		} else if (field.weather === "Sand") {
+		} else if (field.hasWeather("Sand")) {
 			move.type = "Rock";
 			move.bp *= 2;
-		} else if (field.weather === "Hail") {
+		} else if (field.hasWeather("Hail")) {
 			move.type = "Ice";
 			move.bp *= 2;
 		} else {
@@ -107,7 +107,8 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 	if (typeEffectiveness === 0) {
 		return {"damage": [0], "description": buildDescription(description)};
 	}
-	if ((defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
+	var ignoresWonderGuard = move.type === "None" || move.name === "Fire Fang";
+	if ((!ignoresWonderGuard && defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
             (move.type === "Fire" && defender.hasAbility("Flash Fire")) ||
             (move.type === "Water" && defender.hasAbility("Dry Skin", "Water Absorb")) ||
             (move.type === "Electric" && defender.hasAbility("Motor Drive", "Volt Absorb")) ||
@@ -210,7 +211,11 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
             (attacker.hasItem("Adamant Orb") && attacker.named("Dialga")) ||
             (attacker.hasItem("Lustrous Orb") && attacker.named("Palkia")) ||
             (attacker.hasItem("Griseous Orb") && attacker.named("Giratina-Origin")) &&
-            (move.type === attacker.type1 || move.type === attacker.type2)) {
+            (move.type === attacker.type1 || move.type === attacker.type2) ||
+				(attacker.hasItem("Sea Incense", "Wave Incense") && move.type === "Water") ||
+				(attacker.hasItem("Odd Incense") && move.type === "Psychic") ||
+				(attacker.hasItem("Rock Incense") && move.type === "Rock") ||
+				(attacker.hasItem("Rose Incense") && move.type === "Grass")) {
 		basePower = Math.floor(basePower * 1.2);
 		description.attackerItem = attacker.item;
 	}
@@ -272,7 +277,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 	} else if (isPhysical && (attacker.hasAbility("Hustle") || (attacker.hasAbility("Guts") && !attacker.hasStatus("Healthy")) || (!isPhysical && attacker.abilityOn && attacker.hasAbility("Plus", "Minus")))) {
 		attack = Math.floor(attack * 1.5);
 		description.attackerAbility = attacker.ability;
-	} else if (isPhysical && attacker.ability === "Slow Start" && attacker.abilityOn) {
+	} else if (isPhysical && attacker.hasAbility("Slow Start") && attacker.abilityOn) {
 		attack = Math.floor(attack / 2);
 		description.attackerAbility = attacker.ability;
 	}
@@ -312,10 +317,10 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 		description.defenseBoost = defenseBoost;
 	}
 
-	if (defender.hasAbility("Marvel Scale") && defender.status !== "Healthy" && isPhysical) {
+	if (defender.hasAbility("Marvel Scale") && !defender.hasStatus("Healthy") && isPhysical) {
 		defense = Math.floor(defense * 1.5);
 		description.defenderAbility = defender.ability;
-	} else if (defender.hasAbility("Flower Gift") && field.weather === "Sun" && !isPhysical) {
+	} else if (defender.hasAbility("Flower Gift") && field.hasWeather("Sun") && !isPhysical) {
 		defense = Math.floor(defense * 1.5);
 		description.defenderAbility = defender.ability;
 		description.weather = field.weather;
@@ -348,7 +353,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 	////////////////////////////////
 	var baseDamage = Math.floor(Math.floor(Math.floor(2 * attacker.level / 5 + 2) * basePower * attack / 50) / defense);
 
-	if (attacker.hasStatus("Burned") && isPhysical && attacker.ability !== "Guts") {
+	if (attacker.hasStatus("Burned") && isPhysical && !attacker.hasAbility("Guts")) {
 		baseDamage = Math.floor(baseDamage * 0.5);
 		description.isBurned = true;
 	}
@@ -368,11 +373,11 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
 		baseDamage = Math.floor(baseDamage * 3 / 4);
 	}
 
-	if ((field.weather === "Sun" && move.type === "Fire") || (field.weather === "Rain" && move.type === "Water")) {
+	if ((field.hasWeather("Sun") && move.type === "Fire") || (field.hasWeather("Rain") && move.type === "Water")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.weather = field.weather;
-	} else if ((field.weather === "Sun" && move.type === "Water") || (field.weather === "Rain" && move.type === "Fire") ||
-            (field.hasWeather("Rain", "Sand", "Hail") !== -1 && move.name === "Solar Beam")) {
+	} else if ((field.hasWeather("Sun") && move.type === "Water") || (field.hasWeather("Rain") && move.type === "Fire") ||
+            (move.name === "Solar Beam" && field.hasWeather("Rain", "Sand", "Hail"))) {
 		baseDamage = Math.floor(baseDamage * 0.5);
 		description.weather = field.weather;
 	}
