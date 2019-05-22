@@ -368,8 +368,6 @@ $(document).ready(function () {
 var customTiers;
 
 $("#importTier").click(function(){
-	//Note that customTiers is currently a numbered array. It might be better to use a named array though.
-	
 	//Save info on the tier
 	var tier={
 		tierName:$("#tierName").prop("value"),
