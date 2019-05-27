@@ -1,8 +1,7 @@
 Resurrecting my notes because I may tinker further with this. Don't think I modified the 1vall/allv1 modes to account for all moves, rather than just the best moves. I think it should account for all moves, especially for cases where a powerful move might not be optimal in all scenarios (e.g. Explosion/Hyper Beam).
 
 OK so it turns out this isn't working correctly.
-===================
-First issue is that there's no redundancy checks for custom tiers- if you add one set to a tier called TEST, and then another one later, there will be two TEST tiers- probably ought to be considered the same tier. Probably not a huge deal since I don't think it would matter when picking out sets (see below issues lol), but there's no point storing this stuff unnecessarily
+
 ===================
 I'm also finding issues where some sets don't show up when clicking honkalculate. Complicating things is that these issues have arisen when using multiple Arc forms, don't know if that has anything to do with it. Haven't yet figured out what the issue is.
 

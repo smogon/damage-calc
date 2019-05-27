@@ -343,7 +343,7 @@ $("#clearCustom").click(function(){
 	if (confirm("Are you sure you want to delete your custom tiers/sets? This action cannot be undone.")) {
 		localStorage.removeItem("customTiers");
 		localStorage.removeItem("customsets");
-		alert("Custom content successfully cleared. Please refresh the page.");
+		location.reload();
 	}
 });
 

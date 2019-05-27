@@ -175,8 +175,6 @@ function getMoves(currentPoke, rows, offset) {
 	}
 	currentPoke.moves = moves;
 	return currentPoke;
-
-
 }
 
 function addToDex(poke) {
@@ -374,9 +372,14 @@ $("#importTier").click(function(){
 		level:$("#tierLevel").prop("value"),
 		doubles:$("#isDoubles").prop("checked")
 	};
-	customTiers.push(tier);
-	localStorage.customTiers=JSON.stringify(customTiers);
-	updateTierSelect();
+	var existing=[];
+	if(localStorage.customTiers)existing=JSON.parse(localStorage.customTiers);
+	if(existing.filter(savedTier=>(savedTier.tierName===tier.tierName)).length===0){
+		customTiers.push(tier);
+		localStorage.customTiers=JSON.stringify(customTiers);
+		updateTierSelect();
+	}
+	
 	$("#customSelect").attr("class", "");
 	$("#clearCustom").attr("class", "");
 	//Prepend tier name to set names
