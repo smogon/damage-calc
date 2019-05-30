@@ -257,7 +257,7 @@ function addSets(pokes, tierName) {
 					currentPoke.nameProp = "Custom Set";
 				}
 				
-				if(tierName!==null)currentPoke.nameProp=tierName+" "+currentPoke.nameProp;
+				if(tierName!==null&&tierName!=="")currentPoke.nameProp=tierName+" "+currentPoke.nameProp;
 				
 				currentPoke.isCustomSet = true;
 				currentPoke.ability = getAbility(rows[i + 1].split(":"));

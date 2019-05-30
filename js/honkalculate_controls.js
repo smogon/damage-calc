@@ -122,6 +122,10 @@ function getSelectedTiers() {
 	var selectedTiers = $('.tiers input:checked').map(function () {
 		return this.id;
 	}).get();
+	if(selectedTiers[0]==="Custom"){
+		var index=$('#customSelect').val();
+		selectedTiers=JSON.parse(localStorage.customTiers)[index].tierName;
+	}
 	return selectedTiers;
 }
 
@@ -151,6 +155,7 @@ $(".gen").change(function () {
 	if ($.fn.DataTable.isDataTable("#holder-2")) {
 		table.clear();
 		constructDataTable();
+		placeMoveNumSelect();
 		placeHonkBsBtn();
 	}
 });
@@ -222,7 +227,9 @@ function constructDataTable() {
 }
 
 function placeHonkBsBtn() {
-	var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
+	//Didn't see any adverse effects from removing absolute positioning?
+	//var honkalculator = "<button style='position:absolute' class='bs-btn bs-btn-default'>Honkalculate</button>";
+	var honkalculator = "<button class='bs-btn bs-btn-default'>Honkalculate</button>";
 	$("#holder-2_wrapper").prepend(honkalculator);
 	$(".bs-btn").click(function () {
 		var formats = getSelectedTiers();
@@ -236,6 +243,17 @@ function placeHonkBsBtn() {
 		table.clear();
 		calculate();
 	});
+}
+
+function placeMoveNumSelect(){
+	$("#holder-2_wrapper").prepend(
+		"&nbsp# of moves:"+
+		"<select id=\"moveNum\">"+
+			"<option value=\"1\">1</option>"+
+			"<option value=\"2\">2</option>"+
+            "<option value=\"3\">3</option>"+
+            "<option value=\"4\">4</option>"+
+		"</select>");
 }
 
 $(".mode").change(function () {
@@ -320,6 +338,7 @@ $(document).ready(function () {
 
 	calcDTDimensions();
 	constructDataTable();
+	placeMoveNumSelect();
 	placeHonkBsBtn();
 });
 
