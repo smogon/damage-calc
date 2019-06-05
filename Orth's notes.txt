@@ -1,3 +1,5 @@
-Resurrecting my notes because I may tinker further with this. Don't think I modified the 1vall/allv1 modes to account for all moves, rather than just the best moves. I think it should account for all moves, especially for cases where a powerful move might not be optimal in all scenarios (e.g. Explosion/Hyper Beam). To do this, I'll have to tweak the code around line 100 in honkalculate_controls, as the highestDamage-maxDamage comparison is what's eliminating all but the top results
+Resurrecting my notes because I may tinker further with this. Don't think I modified the 1vall/allv1 modes to account for all moves, rather than just the best moves. I think it should account for all moves, especially for cases where a powerful move might not be optimal in all scenarios (e.g. Explosion/Hyper Beam). 
+
+Issues- All v One KO chances not working- result is either "not a KO" or "[chance to KO/guaranteed] KO in undefined turns", with the latter only appearing if the move has a chance to OHKO. THIS ISSUE IS PRESENT ON THE OFFICIAL SITE AS WELL. Look into fixing this, and maybe make a separate pull request for any fix I find.
 
 One thing to note- ripping sets directly from the smogdex isn't always the best- Zyg-C gets exported as "Zygarde", which gets you the base form in the calc. Not terribly important, but still worth noting

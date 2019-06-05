@@ -84,8 +84,9 @@ function calculate() {
 				var damageResults = calculateMovesOfAttacker(attacker, defender, field);
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var defenderSide = field.getSide(~~(mode === "one-vs-all"));
-				var highestDamage = -1;
+				var numMoves=parseInt($("#moveNum").val());
 				var data = [setOptions[i].id];
+				var output=[{"data":[], "damage":-1}];
 				for (var n = 0; n < 4; n++) {
 					result = damageResults[n];
 					minDamage = result.damage[0] * attacker.moves[n].hits;
@@ -96,8 +97,8 @@ function calculate() {
 					maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
 					result.koChanceText = attacker.moves[n].bp === 0 ? 'nice move' :
 						getKOChanceText(result.damage, attacker, defender, defenderSide, attacker.moves[n], attacker.moves[n].hits, attacker.ability === 'Bad Dreams');
-					if (maxDamage > highestDamage) {
-						highestDamage = maxDamage;
+					var addVal=(output.length<numMoves)? true:false;
+					if (addVal||maxDamage > output[0].damage) {					
 						while (data.length > 1) {
 							data.pop();
 						}
@@ -105,13 +106,31 @@ function calculate() {
 						data.push(minPercentage + " - " + maxPercentage + "%");
 						data.push(minPixels + " - " + maxPixels + "px");
 						data.push(result.koChanceText);
+						if(addVal){
+							output.push({
+								"data":data.slice(0),
+								"damage":maxDamage
+							});
+						}else {
+							output[0]={
+								"data":data.slice(0),
+								"damage":maxDamage
+							};
+						}
+						output.sort(function(a,b){
+							return a.damage-b.damage;
+						});						
 					}
 				}
-				data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-				data.push((mode === "one-vs-all") ? defender.type2 : attacker.type2);
-				data.push((mode === "one-vs-all") ? defender.ability : attacker.ability);
-				data.push((mode === "one-vs-all") ? defender.item : attacker.item);
-				dataSet.push(data);
+				//Rather than pushing data, loop through output and push each element to the dataset
+				for(n=0;n<output.length;n++){
+					output[n].data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
+					output[n].data.push((mode === "one-vs-all") ? defender.type2 : attacker.type2);
+					output[n].data.push((mode === "one-vs-all") ? defender.ability : attacker.ability);
+					output[n].data.push((mode === "one-vs-all") ? defender.item : attacker.item);
+					dataSet.push(output[n].data);
+				}
+				
 			}
 		}
 	}
