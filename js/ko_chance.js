@@ -5,6 +5,13 @@
 	if (damage[damage.length - 1] === 0) {
 		return 'aim for the horn next time';
 	}
+	//Code doesn't really work if these aren't set.
+	if(move.usedTimes===undefined){
+		move.usedTimes=1;
+	}
+	if(move.metronomeCount===undefined){
+		move.metronomeCount=1;
+	}
 	if (damage[0] >= defender.maxHP && (move.usedTimes === 1 && move.metronomeCount === 1)) {
 		return 'guaranteed OHKO';
 	}

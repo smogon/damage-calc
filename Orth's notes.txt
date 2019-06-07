@@ -1,16 +1,24 @@
-Issues- All v One KO chances not working- result is either "not a KO" or "[chance to KO/guaranteed] KO in undefined turns", with the latter only appearing if the move has a chance to OHKO. THIS ISSUE IS PRESENT ON THE OFFICIAL SITE AS WELL. Look into fixing this, and maybe make a separate pull request for any fix I find.
+Ok, fixed code by checking if usedTimes/metronomeCount are undefined in ko_chance, and setting them to 1 if so.
 
-In order for guaranteed OHKO to be displayed (e.g. LO Zam HP Fire vs default Abomasnow set), it seems to need move.usedTimes and movem.metronomeCount to both equal 1. Neither property is present in the move object on the function. These properties are present in the one v all mode.
-move.usedTimes in particular seems to be necessary, as other later outputs also depend on it- it being undefined seems to be the main reason these things aren't working.
-The issue seems to arise in shared_controls function Pokemon. Interestingly, with the if/else that depends on the typeof pokeInfo being a string, the else statement explicitly adds all the data missing from av1. Doesn't make sense that there'd be an issue there though, since the data being passed should be exactly the same regardless of mode. Also need to track down the moves variable from this line in the if section
-	var defaultDetails = moves[moveName] || moves['(No Move)'];
-	Ok, that's declared 746 of shared_controls. It takes the appropriate generation's data from move_data. This data does not have the missing properties
-	
-Why the hell would this be written this way?
+This solution does not account for stat drops from moves such as Overheat, nor does it account for the effects of Metronome. I will probably want to account for this.
+e.g. Latias-Mega (Uber Support)	Draco Meteor	36.2 - 43%	guaranteed 3HKO
 
-getMoveDetails (shared_controls 631) indicates that a lot of the missing info comes from user input. That'd explain why it's only affecting av1.
-Still have no idea wtf the deal is with usedTimes. This is the code that sets it in getMoveDetails:
-			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
-			
-			
-I think the solution is to simply add some code to honkalculate_controls making sure these properties are set if they are undefined. This would mean I need to determine what moves.usedTimes should be
+In order to do so, both counters must increment for every turn the pokemon fails to KO. This cannot be done in shared_controls where the respective variables are set for 1v1 and 1va modes, since there is no UI for determining these values ahead of calculating xHKOs, so they must be determined in ko_chance
+One option to consider is just adding the appropriate UI to set these values manually. It's not inconceivable that players would want the option to either calc two fresh DMeteors (e.g. if the pokemon are switching between attacks) or two consecutive DMeteors (in which case stat drops are applied)
+
+Interestingly, I think the Metronome boost is only being calculated for a single attack based on prior usage
+252 Atk Metronome Abomasnow Ice Shard vs. 0 HP / 0- Def Abomasnow: 88-104 (27.4 - 32.3%) -- guaranteed 4HKO
+This should be a possible 3HKO if we're actually applying the Metronome boost with each hit.
+I guess this is by design? Still, seems odd when you're determining xHKOs for a single move
+
+Consider making the default Metronome count 0. Currently it's 1, which assumes that the move has been used on the prior turn. I think this is really weird, given the UI's default value is never. It also produces some odd, though technically correct KO text if never is selected (either "guaranteed KO in 1 turns" or "not a KO")
+
+Ooooooook turns out stat drop moves aren't quite working in 1va either. Using Abomasnow's ZU usage set with Leaf Storm (x2) and no Wood Hammer, I got the following results:
+	Jirachi (OU Choice Scarf)	Leaf Storm	28.7 - 34%	not a KO 
+		[This is correct, but not a KO is still something that's an unusual result]
+	Kyogre-Primal (Uber Calm Mind + Water Spout)	Leaf Storm	76.2 - 90.9%	not a KO 
+		[Over two turns this is a guaranteed KO]
+	Keldeo (OU Calm Mind)	Leaf Storm	132.5 - 156.6%	guaranteed KO in 2 turns after Leftovers recovery 
+		[This is an OHKO lol]
+	Kyogre (Uber Calm Mind + Water Spout)	Leaf Storm	87.9 - 103.8%	81.3% chance to 2HKO 
+		[It's giving the odds for a 2HKO, which is totally unnecessary since it's guaranteed. Should be giving odds for OHKO]
