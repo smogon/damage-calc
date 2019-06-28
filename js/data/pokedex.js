@@ -12273,7 +12273,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 			"sp": 112
 		},
 		"w": 25.0,
-		"formes": ["Lycanroc", "Lycanoc-Dusk", "Lycanroc-Midnight"]
+		"formes": ["Lycanroc", "Lycanroc-Dusk", "Lycanroc-Midnight"]
 	},
 	"Lycanroc-Dusk": {
 		"t1": "Rock",
