@@ -11934,7 +11934,7 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		"w": 66.6,
 		"isAlternateForme": true
 	},
-        "Equilibra": {
+	"Equilibra": {
 		"t1": "Steel",
 		"t2": "Ground",
 		"bs": {

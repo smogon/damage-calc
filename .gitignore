@@ -1,5 +1,4 @@
-/honkalculate.html
-/index.html
+dist/
 node_modules/
 eslint-cache/
 .eslintcache
