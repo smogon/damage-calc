@@ -11934,6 +11934,19 @@ var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
 		"w": 66.6,
 		"isAlternateForme": true
 	},
+        "Equilibra": {
+		"t1": "Steel",
+		"t2": "Ground",
+		"bs": {
+			"hp": 102,
+			"at": 50,
+			"df": 96,
+			"sa": 133,
+			"sd": 118,
+			"sp": 60
+		},
+		"w": 51.3
+	},
 	"Exeggutor-Alola": {
 		"t1": "Grass",
 		"t2": "Dragon",
