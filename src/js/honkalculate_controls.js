@@ -72,15 +72,15 @@ function calculate() {
 			setName = setOptions[i].id.substring(setOptions[i].id.indexOf("(") + 1, setOptions[i].id.lastIndexOf(")"));
 			setTier = setName.substring(0, setName.indexOf(" "));
 			if (_.contains(selectedTiers, setTier)) {
-				attacker = (mode === "one-vs-all") ? new Pokemon($("#p1")) : new Pokemon(setOptions[i].id);
-				defender = (mode === "one-vs-all") ? new Pokemon(setOptions[i].id) : new Pokemon($("#p1"));
+				attacker = (mode === "one-vs-all") ? createPokemon($("#p1")) : createPokemon(setOptions[i].id);
+				defender = (mode === "one-vs-all") ? createPokemon(setOptions[i].id) : createPokemon($("#p1"));
 				if (attacker.ability === "Rivalry") {
 					attacker.gender = "genderless";
 				}
 				if (defender.ability === "Rivalry") {
 					defender.gender = "genderless";
 				}
-				var field = new Field();
+				var field = createField();
 				var damageResults = calculateMovesOfAttacker(attacker, defender, field);
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var defenderSide = field.getSide(~~(mode === "one-vs-all"));

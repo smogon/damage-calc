@@ -4,10 +4,7 @@
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
-const exec = require('child_process').exec;
 
-const thisFile = __filename;
-const thisDir = __dirname;
 const rootDir = '.';
 
 // update version
@@ -31,5 +28,29 @@ function makeCachebuster(template, output) {
 	console.log("DONE");
 }
 
-makeCachebuster('honkalculate.template.html', 'honkalculate.html');
-makeCachebuster('index.template.html', 'index.html');
+function cpdir(src, dest) {
+	console.log("Copying `" + src + "` to `" + dest + "`");
+	try {
+		fs.mkdirSync(dest, '0755');
+	} catch(e) {
+		if (e.code != 'EEXIST') throw e;
+	}
+	for (const file of fs.readdirSync(src)) {
+		var current = fs.lstatSync(path.join(src, file));
+		if (current.isDirectory()) {
+			cpdir(path.join(src, file), path.join(dest, file));
+		} else if (current.isSymbolicLink()) {
+			var symlink = fs.readlinkSync(path.join(src, file));
+			fs.symlinkSync(symlink, path.join(dest, file));
+		} else {
+			const from = path.join(src, file);
+			const to = path.join(dest, file);
+			fs.createReadStream(from).pipe(fs.createWriteStream(to));
+		}
+	}
+}
+
+cpdir('src', 'dist');
+cpdir('damage/src', 'dist/damage');
+makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
+makeCachebuster('dist/index.template.html', 'dist/index.html');
