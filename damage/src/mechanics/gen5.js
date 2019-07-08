@@ -1,69 +1,36 @@
-function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
-	checkAirLock(p1, field);
-	checkAirLock(p2, field);
-	checkForecast(p1, field.getWeather());
-	checkForecast(p2, field.getWeather());
-	checkKlutz(p1);
-	checkKlutz(p2);
-	checkSeedBoost(p1, field);
-	checkSeedBoost(p2, field);
-	checkStatBoost(p1, p2);
-	var side1 = field.getSide(1);
-	var side2 = field.getSide(0);
-	p1.stats[DF] = getModifiedStat(p1.rawStats[DF], p1.boosts[DF]);
-	p1.stats[SD] = getModifiedStat(p1.rawStats[SD], p1.boosts[SD]);
-	p1.stats[SP] = getFinalSpeed(p1, field, side1);
-	p2.stats[DF] = getModifiedStat(p2.rawStats[DF], p2.boosts[DF]);
-	p2.stats[SD] = getModifiedStat(p2.rawStats[SD], p2.boosts[SD]);
-	p2.stats[SP] = getFinalSpeed(p2, field, side2);
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
-	checkDownload(p1, p2);
-	checkDownload(p2, p1);
-	p1.stats[AT] = getModifiedStat(p1.rawStats[AT], p1.boosts[AT]);
-	p1.stats[SA] = getModifiedStat(p1.rawStats[SA], p1.boosts[SA]);
-	p2.stats[AT] = getModifiedStat(p2.rawStats[AT], p2.boosts[AT]);
-	p2.stats[SA] = getModifiedStat(p2.rawStats[SA], p2.boosts[SA]);
-	var side1 = field.getSide(1);
-	var side2 = field.getSide(0);
-	checkInfiltrator(p1, side1);
-	checkInfiltrator(p2, side2);
-	var results = [[], []];
-	for (var i = 0; i < 4; i++) {
-		results[0][i] = getDamageResult(p1, p2, p1.moves[i], side1);
-		results[1][i] = getDamageResult(p2, p1, p2.moves[i], side2);
-	}
-	return results;
-}
-
-function CALCULATE_MOVES_OF_ATTACKER_BW(attacker, defender, field) {
+function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
 	checkKlutz(attacker);
 	checkKlutz(defender);
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
-	var attackerSide = field.getSide(~~(mode !== "one-vs-all"));
-	attacker.stats[SP] = getFinalSpeed(attacker, field, attackerSide);
+	checkSeedBoost(attacker, field);
+	checkSeedBoost(defender, field);
+	checkStatBoost(attacker, defender);
+
+	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
+	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
+	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(defender, field, defenderSide);
+	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
+	checkDownload(defender, attacker);
+
 	attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
 	attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
-	checkInfiltrator(attacker, defenderSide);
-	var results = [];
-	for (var i = 0; i < 4; i++) {
-		results[i] = getDamageResult(attacker, defender, attacker.moves[i], defenderSide);
-	}
-	return results;
-}
+	defender.stats[SA] = getModifiedStat(defender.rawStats[SA], defender.boosts[SA]);
 
-function getDamageResult(attacker, defender, move, field) {
+	checkInfiltrator(attacker, field.getSide(attackerSideNum));
+	checkInfiltrator(defender, field.getSide(1 - attackerSideNum));
+
+	field = field.getSide(attackerSideNum);
+
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,

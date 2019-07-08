@@ -30,7 +30,7 @@ function calculate() {
 	p1.maxDamages = [];
 	p2.maxDamages = [];
 	var field = createField();
-	damageResults = calculateAllMoves(p1, p2, field);
+	damageResults = calculateAllMoves(gen, p1, p2, field);
 	var fastestSide = p1.stats[SP] > p2.stats[SP] ? 0 : p1.stats[SP] === p2.stats[SP] ? "tie" : 1;
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;
 	var highestDamage = -1;
@@ -230,27 +230,14 @@ function findDamageResult(resultMoveObj) {
 	}
 }
 
-var calculateAllMoves;
-
-$(".gen").change(function () {
-	switch (gen) {
-	case 1:
-		calculateAllMoves = CALCULATE_ALL_MOVES_RBY;
-		break;
-	case 2:
-		calculateAllMoves = CALCULATE_ALL_MOVES_GSC;
-		break;
-	case 3:
-		calculateAllMoves = CALCULATE_ALL_MOVES_ADV;
-		break;
-	case 4:
-		calculateAllMoves = CALCULATE_ALL_MOVES_DPP;
-		break;
-	default:
-		calculateAllMoves = CALCULATE_ALL_MOVES_BW;
-		break;
+function calculateAllMoves(gen, p1, p2, field) {
+	var results = [[], []];
+	for (var i = 0; i < 4; i++) {
+		results[0][i] = CALCULATE_DAMAGE(gen, p1, p2, p1.moves[i], field, 1);
+		results[1][i] = CALCULATE_DAMAGE(gen, p2, p1, p2.moves[i], field, 0);
 	}
-});
+	return results;
+}
 
 $(".mode").change(function () {
 	window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));

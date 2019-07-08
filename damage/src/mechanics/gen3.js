@@ -1,38 +1,15 @@
-﻿function CALCULATE_ALL_MOVES_ADV(p1, p2, field) {
-	checkAirLock(p1, field);
-	checkAirLock(p2, field);
-	checkForecast(p1, field.getWeather());
-	checkForecast(p2, field.getWeather());
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
-	var side1 = field.getSide(1);
-	var side2 = field.getSide(0);
-	p1.stats[SP] = getFinalSpeed(p1, field, side1);
-	p2.stats[SP] = getFinalSpeed(p2, field, side2);
-	var results = [[], []];
-	for (var i = 0; i < 4; i++) {
-		results[0][i] = CALCULATE_DAMAGE_ADV(p1, p2, p1.moves[i], side1);
-		results[1][i] = CALCULATE_DAMAGE_ADV(p2, p1, p2.moves[i], side2);
-	}
-	return results;
-}
-
-function CALCULATE_MOVES_OF_ATTACKER_ADV(attacker, defender, field) {
+function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
-	var results = [];
-	for (var i = 0; i < 4; i++) {
-		results[i] = CALCULATE_DAMAGE_ADV(attacker, defender, attacker.moves[i], defenderSide);
-	}
-	return results;
-}
+	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
 
-function CALCULATE_DAMAGE_ADV(attacker, defender, move, field) {
+	field = field.getSide(attackerSideNum);
+
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,

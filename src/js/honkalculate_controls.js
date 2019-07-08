@@ -81,7 +81,7 @@ function calculate() {
 					defender.gender = "genderless";
 				}
 				var field = createField();
-				var damageResults = calculateMovesOfAttacker(attacker, defender, field);
+				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 				var highestDamage = -1;
@@ -125,27 +125,18 @@ function getSelectedTiers() {
 	return selectedTiers;
 }
 
-var calculateMovesOfAttacker;
+function calculateMovesOfAttacker(gen, attacker, defender, field) {
+	var sideNum = +(mode === "one-vs-all");
+	var results = [];
+	for (var i = 0; i < 4; i++) {
+		results[i] = CALCULATE_DAMAGE(gen, attacker, defender, attacker.moves[i], field, sideNum);
+	}
+	return results;
+}
+
 $(".gen").change(function () {
 	$(".tiers input").prop("checked", false);
 	$("#singles-format").attr("disabled", false);
-	switch (gen) {
-	case 1:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_RBY;
-		break;
-	case 2:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_GSC;
-		break;
-	case 3:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_ADV;
-		break;
-	case 4:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_DPP;
-		break;
-	default:
-		calculateMovesOfAttacker = CALCULATE_MOVES_OF_ATTACKER_BW;
-		break;
-	}
 	adjustTierBorderRadius();
 
 	if ($.fn.DataTable.isDataTable("#holder-2")) {

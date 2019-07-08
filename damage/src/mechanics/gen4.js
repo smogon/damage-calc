@@ -1,27 +1,4 @@
-﻿function CALCULATE_ALL_MOVES_DPP(p1, p2, field) {
-	checkAirLock(p1, field);
-	checkAirLock(p2, field);
-	checkForecast(p1, field.getWeather());
-	checkForecast(p2, field.getWeather());
-	checkKlutz(p1);
-	checkKlutz(p2);
-	checkIntimidate(p1, p2);
-	checkIntimidate(p2, p1);
-	checkDownload(p1, p2);
-	checkDownload(p2, p1);
-	var side1 = field.getSide(1);
-	var side2 = field.getSide(0);
-	p1.stats[SP] = getFinalSpeed(p1, field, side1);
-	p2.stats[SP] = getFinalSpeed(p2, field, side2);
-	var results = [[], []];
-	for (var i = 0; i < 4; i++) {
-		results[0][i] = CALCULATE_DAMAGE_DPP(p1, p2, p1.moves[i], side1);
-		results[1][i] = CALCULATE_DAMAGE_DPP(p2, p1, p2.moves[i], side2);
-	}
-	return results;
-}
-
-function CALCULATE_MOVES_OF_ATTACKER_DPP(attacker, defender, field) {
+function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -31,18 +8,12 @@ function CALCULATE_MOVES_OF_ATTACKER_DPP(attacker, defender, field) {
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
-	var attackerSide = field.getSide(~~(mode !== "one-vs-all"));
-	attacker.stats[SP] = getFinalSpeed(attacker, field, attackerSide);
-	defender.stats[SP] = getFinalSpeed(defender, field, defenderSide);
-	var results = [];
-	for (var i = 0; i < 4; i++) {
-		results[i] = CALCULATE_DAMAGE_DPP(attacker, defender, attacker.moves[i], defenderSide);
-	}
-	return results;
-}
+	checkDownload(defender, attacker);
+	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
 
-function CALCULATE_DAMAGE_DPP(attacker, defender, move, field) {
+	field = field.getSide(attackerSideNum);
+
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,
