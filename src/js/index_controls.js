@@ -24,12 +24,12 @@ for (var i = 0; i < 4; i++) {
 
 var damageResults;
 function calculate() {
-	var p1 = new Pokemon($("#p1"));
-	var p2 = new Pokemon($("#p2"));
+	var p1 = createPokemon($("#p1"));
+	var p2 = createPokemon($("#p2"));
 	var battling = [p1, p2];
 	p1.maxDamages = [];
 	p2.maxDamages = [];
-	var field = new Field();
+	var field = createField();
 	damageResults = calculateAllMoves(p1, p2, field);
 	var fastestSide = p1.stats[SP] > p2.stats[SP] ? 0 : p1.stats[SP] === p2.stats[SP] ? "tie" : 1;
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;

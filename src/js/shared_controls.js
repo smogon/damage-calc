@@ -480,143 +480,112 @@ $(".forme").change(function () {
 });
 
 
-function Pokemon(pokeInfo) {
+function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
-		this.name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
+		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		var pokemon = pokedex[this.name];
-		this.type1 = pokemon.t1;
-		this.type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
-		this.rawStats = [];
-		this.boosts = [];
-		this.stats = [];
-		this.evs = [];
+		var pokemon = pokedex[name];
+		var type1 = pokemon.t1;
+		var type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
+		var rawStats = [];
+		var boosts = [];
+		var stats = [];
+		var evs = [];
 
-		var set = setdex[this.name][setName];
-		this.level = set.level;
-		this.HPEVs = (set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0;
+		var set = setdex[name][setName];
+		var level = set.level;
+		var HPEVs = (set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0;
+		var maxHP;
 		if (gen < 3) {
 			var HPDVs = 15;
-			this.maxHP = ~~(((pokemon.bs.hp + HPDVs) * 2 + 63) * this.level / 100) + this.level + 10;
+			maxHP = ~~(((pokemon.bs.hp + HPDVs) * 2 + 63) * level / 100) + level + 10;
 		} else if (pokemon.bs.hp === 1) {
-			this.maxHP = 1;
+			maxHP = 1;
 		} else {
 			var HPIVs = 31;
-			this.maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(this.HPEVs / 4)) * this.level / 100) + this.level + 10;
+			maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(HPEVs / 4)) * level / 100) + level + 10;
 		}
-		this.curHP = this.maxHP;
-		this.nature = set.nature;
+		var curHP = maxHP;
+		var nature = set.nature;
 		for (var i = 0; i < STATS.length; i++) {
 			var stat = STATS[i];
-			this.boosts[stat] = 0;
-			this.evs[stat] = (set.evs && typeof set.evs[stat] !== "undefined") ? set.evs[stat] : 0;
+			boosts[stat] = 0;
+			evs[stat] = (set.evs && typeof set.evs[stat] !== "undefined") ? set.evs[stat] : 0;
 			if (gen < 3) {
 				var dvs = 15;
-				this.rawStats[stat] = ~~(((pokemon.bs[stat] + dvs) * 2 + 63) * this.level / 100) + 5;
+				rawStats[stat] = ~~(((pokemon.bs[stat] + dvs) * 2 + 63) * level / 100) + 5;
 			} else {
 				var ivs = (set.ivs && typeof set.ivs[stat] !== "undefined") ? set.ivs[stat] : 31;
-				var natureMods = NATURES[this.nature];
-				var nature = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
-				this.rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(this.evs[stat] / 4)) * this.level / 100) + 5) * nature);
+				var natureMods = NATURES[nature];
+				var n = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
+				rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(evs[stat] / 4)) * level / 100) + 5) * n);
 			}
 		}
-		this.ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
+		var ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
-		this.abilityOn = true;
-		this.item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
-		this.status = "Healthy";
-		this.toxicCounter = 0;
-		this.moves = [];
+		var abilityOn = true;
+		var item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
+		var status = "Healthy";
+		var toxicCounter = 0;
+		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
 			var moveName = set.moves[i];
 			var defaultDetails = moves[moveName] || moves['(No Move)'];
-			this.moves.push($.extend({}, defaultDetails, {
+			var isCrit = !!defaultDetails.alwaysCrit;
+			var hits = defaultDetails.isMultiHit ? ((ability === "Skill Link" || item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1;
+			var usedTimes = defaultDetails.usedTimes;
+			pokemonMoves.push(new Move($.extend({}, defaultDetails, {
 				name: (defaultDetails.bp === 0) ? "(No Move)" : moveName,
 				bp: defaultDetails.bp,
 				type: defaultDetails.type,
-				category: defaultDetails.category,
-				isCrit: !!defaultDetails.alwaysCrit,
-				hits: defaultDetails.isMultiHit ? ((this.ability === "Skill Link" || this.item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1,
-				usedTimes: defaultDetails.usedTimes
-			}));
+				category: defaultDetails.category
+			})), isCrit, hits, usedTimes);
 		}
-		this.weight = pokemon.w;
-		this.gender = pokemon.gender ? "genderless" : "Male";
-		this.pokeInfo = pokeInfo;
+		var weight = pokemon.w;
+		var gender = pokemon.gender ? "genderless" : "Male";
+
+		return new Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
+		var name;
 		if (setName.indexOf("(") === -1) {
-			this.name = setName;
+			name = setName;
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
-			this.name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
+			name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
-		this.type1 = pokeInfo.find(".type1").val();
-		this.type2 = pokeInfo.find(".type2").val();
-		this.level = ~~pokeInfo.find(".level").val();
-		this.maxHP = ~~pokeInfo.find(".hp .total").text();
-		this.curHP = ~~pokeInfo.find(".current-hp").val();
-		this.HPEVs = ~~pokeInfo.find(".hp .evs").val();
-		this.rawStats = [];
-		this.boosts = [];
-		this.stats = [];
-		this.evs = [];
+		var type1 = pokeInfo.find(".type1").val();
+		var type2 = pokeInfo.find(".type2").val();
+		var level = ~~pokeInfo.find(".level").val();
+		var maxHP = ~~pokeInfo.find(".hp .total").text();
+		var curHP = ~~pokeInfo.find(".current-hp").val();
+		var HPEVs = ~~pokeInfo.find(".hp .evs").val();
+		var rawStats = [];
+		var boosts = [];
+		var stats = [];
+		var evs = [];
 		for (var i = 0; i < STATS.length; i++) {
-			this.rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
-			this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
-			this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
+			rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
+			boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
+			evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
 		}
-		this.nature = pokeInfo.find(".nature").val();
-		this.ability = pokeInfo.find(".ability").val();
-		this.abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
-		this.item = pokeInfo.find(".item").val();
-		this.status = pokeInfo.find(".status").val();
-		this.toxicCounter = this.status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
-		this.moves = [
-			getMoveDetails(pokeInfo.find(".move1"), this.item),
-			getMoveDetails(pokeInfo.find(".move2"), this.item),
-			getMoveDetails(pokeInfo.find(".move3"), this.item),
-			getMoveDetails(pokeInfo.find(".move4"), this.item)
+		var nature = pokeInfo.find(".nature").val();
+		var ability = pokeInfo.find(".ability").val();
+		var abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
+		var item = pokeInfo.find(".item").val();
+		var status = pokeInfo.find(".status").val();
+		var toxicCounter = status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
+		var pokemonMoves = [
+			getMoveDetails(pokeInfo.find(".move1"), item),
+			getMoveDetails(pokeInfo.find(".move2"), item),
+			getMoveDetails(pokeInfo.find(".move3"), item),
+			getMoveDetails(pokeInfo.find(".move4"), item)
 		];
-		this.weight = +pokeInfo.find(".weight").val();
-		this.gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
-		this.pokeInfo = pokeInfo;
+		var weight = +pokeInfo.find(".weight").val();
+		var gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
+
+		return new Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
 	}
-	this.hasAbility = function (ability) {
-		for (var i = 0; i < arguments.length; i++) {
-			if (this.ability === arguments[i]) {
-				return true;
-			}
-		}
-		return false;
-	};
-	this.hasItem = function (item) {
-		for (var i = 0; i < arguments.length; i++) {
-			if (this.item === arguments[i]) {
-				return true;
-			}
-		}
-		return false;
-	};
-	this.hasStatus = function (status) {
-		for (var i = 0; i < arguments.length; i++) {
-			if (this.status === arguments[i]) {
-				return true;
-			}
-		}
-		return false;
-	};
-	this.hasType = function (type) {
-		return this.type1 === type || this.type2 === type;
-	};
-	this.named = function (name) {
-		for (var i = 0; i < arguments.length; i++) {
-			if (this.name === arguments[i]) {
-				return true;
-			}
-		}
-		return false;
-	};
 }
 
 function toSmogonStat(stat) {
@@ -632,28 +601,26 @@ function getMoveDetails(moveInfo, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var defaultDetails = moves[moveName];
 	var isZMove = gen >= 7 && moveInfo.find("input.move-z").prop("checked");
-
+	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	// If z-move is checked but there isn't a corresponding z-move, use the original move
 	if (isZMove && "zp" in defaultDetails) {
 		var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
-		return $.extend({}, moves[zMoveName], {
+		var hits = 1;
+		return new Move($.extend({}, moves[zMoveName], {
 			name: zMoveName,
 			bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
 			category: defaultDetails.category,
-			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			hits: 1
-		});
+		}), isCrit, hits);
 	} else {
-		return $.extend({}, defaultDetails, {
+		var hits = defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1;
+		var usedTimes = defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1;
+		var metronomeCount = moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1;
+		return new Move($.extend({}, defaultDetails, {
 			name: moveName,
 			bp: ~~moveInfo.find(".move-bp").val(),
 			type: moveInfo.find(".move-type").val(),
 			category: moveInfo.find(".move-cat").val(),
-			isCrit: moveInfo.find(".move-crit").prop("checked"),
-			hits: defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1,
-			usedTimes: defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1,
-			metronomeCount: moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1
-		});
+		}), isCrit, hits, usedTimes, metronomeCount);
 	}
 }
 
@@ -678,7 +645,7 @@ function getZMoveName(moveName, moveType, item) {
 																		ZMOVES_TYPING[moveType];
 }
 
-function Field() {
+function createField() {
 	var format = $("input:radio[name='format']:checked").val();
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
@@ -703,43 +670,7 @@ function Field() {
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
 
-	this.getWeather = function () {
-		return weather;
-	};
-	this.clearWeather = function () {
-		weather = "";
-	};
-	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
-	};
-}
-
-function Side(format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery) {
-	this.format = format;
-	this.terrain = terrain;
-	this.weather = weather;
-	this.isGravity = isGravity;
-	this.isSR = isSR;
-	this.spikes = spikes;
-	this.isReflect = isReflect;
-	this.isLightScreen = isLightScreen;
-	this.isProtected = isProtected;
-	this.isAttackerSeeded = isAttackerSeeded;
-	this.isDefenderSeeded = isDefenderSeeded;
-	this.isForesight = isForesight;
-	this.isHelpingHand = isHelpingHand;
-	this.isTailwind = isTailwind;
-	this.isFriendGuard = isFriendGuard;
-	this.isAuroraVeil = isAuroraVeil;
-	this.isBattery = isBattery;
-	this.hasWeather = function (weather) {
-		for (var i = 0; i < arguments.length; i++) {
-			if (this.weather === arguments[i]) {
-				return true;
-			}
-		}
-		return false;
-	};
+	return new Field(format, isGravity, isSR, weather, spikes, terrain, isReflect, isLightScreen, isProtected, isSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery);
 }
 
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;

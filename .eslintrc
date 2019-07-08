@@ -30,7 +30,8 @@
 		"MOVES_DPP": false, "ITEMS_DPP": false, "ABILITIES_DPP": false, "POKEDEX_BW": false, "MOVES_BW": false,
 		"ITEMS_BW": false, "ABILITIES_BW": false, "POKEDEX_XY": false, "TYPE_CHART_XY": false, "MOVES_XY": false,
 		"ITEMS_XY": false, "ABILITIES_XY": false, "pokedex": true, "POKEDEX_DPP": false,
-		"getKOChanceText": false, "AT": false, "ATK": false, "DF": false, "SP": false, "SD": false,  "SL": false, "SA": false, "SPA": false
+		"getKOChanceText": false, "AT": false, "ATK": false, "DF": false, "SP": false, "SD": false,  "SL": false, "SA": false, "SPA": false,
+		"createField": false, "createPokemon": false, "Move",
 	},
 	"extends": "eslint:recommended",
 	"rules": {
