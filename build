@@ -35,6 +35,7 @@ function cpdir(src, dest) {
 	} catch(e) {
 		if (e.code != 'EEXIST') throw e;
 	}
+	const copies = [];
 	for (const file of fs.readdirSync(src)) {
 		var current = fs.lstatSync(path.join(src, file));
 		if (current.isDirectory()) {
@@ -45,12 +46,20 @@ function cpdir(src, dest) {
 		} else {
 			const from = path.join(src, file);
 			const to = path.join(dest, file);
-			fs.createReadStream(from).pipe(fs.createWriteStream(to));
+			const writeableStream = fs.createWriteStream(to);
+			fs.createReadStream(from).pipe(writeableStream);
+			copies.push(new Promise(function (resolve, reject) {
+				writeableStream.on('error', reject);
+				writeableStream.on('finish', resolve);
+			}));
 		}
 	}
+	return Promise.all(copies);
 }
 
-cpdir('src', 'dist');
-cpdir('damage/src', 'dist/damage');
-makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
-makeCachebuster('dist/index.template.html', 'dist/index.html');
+
+cpdir('src', 'dist').then(function () {
+	cpdir('damage/src', 'dist/damage');
+	makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
+	makeCachebuster('dist/index.template.html', 'dist/index.html');
+});
