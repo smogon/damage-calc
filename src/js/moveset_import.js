@@ -145,7 +145,7 @@ function getStats(currentPoke, rows, offset) {
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
-		if (ITEMS_SM.indexOf(item) != -1) {
+		if (ITEMS[7].indexOf(item) != -1) {
 			return item;
 
 		}
@@ -252,8 +252,8 @@ function addSets(pokes) {
 		currentRow = rows[i].split(/[()@]/);
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			if (POKEDEX_SM[currentRow[j].trim()] !== undefined) {
-				currentPoke = POKEDEX_SM[currentRow[j].trim()];
+			if (SPECIES[7][currentRow[j].trim()] !== undefined) {
+				currentPoke = SPECIES[7][currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {

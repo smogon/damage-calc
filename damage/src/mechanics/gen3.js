@@ -1,12 +1,12 @@
-function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field, attackerSideNum) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
 	checkForecast(defender, field.getWeather());
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
-	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
 
 	field = field.getSide(attackerSideNum);
 
@@ -36,8 +36,8 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) 
 		description.moveBP = move.bp;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, field.isForesight);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, field.isForesight) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, field.isForesight);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, field.isForesight) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -87,7 +87,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) 
 		bp = move.bp;
 	}
 
-	var isPhysical = typeChart[move.type].category === "Physical";
+	var isPhysical = TYPE_CHART[gen][move.type].category === "Physical";
 	var attackStat = isPhysical ? AT : SA;
 	description.attackEVs = attacker.evs[attackStat] +
             (NATURES[attacker.nature][0] === attackStat ? "+" : NATURES[attacker.nature][1] === attackStat ? "-" : "") + " " +

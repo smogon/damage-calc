@@ -1,15 +1,15 @@
-function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_GSC(gen, attacker, defender, move, field, attackerSideNum) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA])));
 	attacker.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD])));
-	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
 
 	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
 	defender.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SA], defender.boosts[SA])));
 	defender.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SD], defender.boosts[SD])));
-	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
 
 	field = field.getSide(attackerSideNum);
 
@@ -28,8 +28,8 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) 
 		return {"damage": [0], "description": description};
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, field.isForesight);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, field.isForesight) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, field.isForesight);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, field.isForesight) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -53,7 +53,7 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) 
 		description.moveBP = move.bp;
 	}
 
-	var isPhysical = typeChart[move.type].category === "Physical";
+	var isPhysical = TYPE_CHART[gen][move.type].category === "Physical";
 	var attackStat = isPhysical ? AT : SA;
 	var defenseStat = isPhysical ? DF : SD;
 	var at = attacker.stats[attackStat];

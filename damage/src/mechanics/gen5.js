@@ -1,4 +1,4 @@
-function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideNum) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -10,10 +10,10 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
 	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
-	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
 
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
@@ -76,7 +76,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 	} else if (move.name === "Multi-Attack" && attacker.item.indexOf("Memory") !== -1) {
 		move.type = getMultiAttack(attacker.item);
 	} else if (move.name === "Natural Gift" && attacker.item.indexOf("Berry") !== -1) {
-		var gift = getNaturalGift(attacker.item);
+		var gift = getNaturalGift(gen, attacker.item);
 		move.type = gift.t;
 		move.bp = gift.p;
 		description.attackerItem = attacker.item;
@@ -128,8 +128,8 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		description.attackerAbility = attacker.ability;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 	var resistedKnockOffDamage = (defender.item === "" ||
             (defender.named("Giratina-Origin") && defender.hasItem("Griseous Orb")) ||
@@ -143,9 +143,9 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		typeEffectiveness = 1;
 	}
 	if (defender.hasItem("Ring Target") && typeEffectiveness === 0) {
-		if (typeChart[move.type][defender.type1] === 0) {
+		if (TYPE_CHART[gen][move.type][defender.type1] === 0) {
 			typeEffectiveness = typeEffect2;
-		} else if (typeChart[move.type][defender.type2] === 0) {
+		} else if (TYPE_CHART[gen][move.type][defender.type2] === 0) {
 			typeEffectiveness = typeEffect1;
 		}
 	}
@@ -174,7 +174,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		description.defenderAbility = defender.ability;
 		return {"damage": [0], "description": description};
 	}
-	if (field.weather === "Strong Winds" && (defender.hasType("Flying") && typeChart[move.type]["Flying"] > 1)) {
+	if (field.weather === "Strong Winds" && (defender.hasType("Flying") && TYPE_CHART[gen][move.type]["Flying"] > 1)) {
 		typeEffectiveness /= 2;
 		description.weather = field.weather;
 	}
@@ -250,7 +250,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		description.moveBP = basePower;
 		break;
 	case "Punishment":
-		basePower = Math.min(200, 60 + 20 * countBoosts(defender.boosts));
+		basePower = Math.min(200, 60 + 20 * countBoosts(gen, defender.boosts));
 		description.moveBP = basePower;
 		break;
 	case "Low Kick":
@@ -271,7 +271,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		break;
 	case "Stored Power":
 	case "Power Trip":
-		basePower = 20 + 20 * countBoosts(attacker.boosts);
+		basePower = 20 + 20 * countBoosts(gen, attacker.boosts);
 		description.moveBP = basePower;
 		break;
 	case "Acrobatics":
@@ -572,7 +572,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		description.defenderAbility = defender.ability;
 	}
 
-	if (gen < 7 && (!hitsPhysical && defender.named("Latios", "Latias") && defender.hasItem("Soul Dew")) || (defender.hasItem("Eviolite") && pokedex[defender.name].canEvolve) || (!hitsPhysical && defender.hasItem("Assault Vest"))) {
+	if (gen < 7 && (!hitsPhysical && defender.named("Latios", "Latias") && defender.hasItem("Soul Dew")) || (defender.hasItem("Eviolite") && SPECIES[gen][defender.name].canEvolve) || (!hitsPhysical && defender.hasItem("Assault Vest"))) {
 		dfMods.push(0x1800);
 		description.defenderItem = defender.item;
 	}
@@ -780,7 +780,7 @@ function chainMods(mods) {
 	return M;
 }
 
-function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
+function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity) {
 	if (isGhostRevealed && type === "Ghost" && ["Normal", "Fighting"].indexOf(move.type) !== -1) {
 		return 1;
 	} else if (isGravity && type === "Flying" && move.type === "Ground") {
@@ -788,9 +788,9 @@ function getMoveEffectiveness(move, type, isGhostRevealed, isGravity) {
 	} else if (move.name === "Freeze-Dry" && type === "Water") {
 		return 2;
 	} else if (move.name === "Flying Press") {
-		return typeChart["Fighting"][type] * typeChart["Flying"][type];
+		return TYPE_CHART[gen]["Fighting"][type] * TYPE_CHART[gen]["Flying"][type];
 	} else {
-		return typeChart[move.type][type];
+		return TYPE_CHART[gen][move.type][type];
 	}
 }
 
@@ -800,7 +800,7 @@ function getModifiedStat(stat, mod) {
 			stat;
 }
 
-function getFinalSpeed(pokemon, field, side) {
+function getFinalSpeed(gen, pokemon, field, side) {
 	var weather = field.getWeather();
 	var terrain = side.terrain;
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
@@ -937,11 +937,11 @@ function checkInfiltrator(attacker, affectedSide) {
 	}
 }
 
-function countBoosts(boosts) {
+function countBoosts(gen, boosts) {
 	var sum = 0;
-	for (var i = 0; i < STATS.length; i++) {
-		if (boosts[STATS[i]] > 0) {
-			sum += boosts[STATS[i]];
+	for (var i = 0; i < STATS[gen].length; i++) {
+		if (boosts[STATS[gen][i]] > 0) {
+			sum += boosts[STATS[gen][i]];
 		}
 	}
 	return sum;

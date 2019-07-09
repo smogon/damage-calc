@@ -237,3 +237,5 @@ var ABILITIES_SM = ABILITIES_XY.concat([
 	'Water Compaction',
 	'Wimp Out'
 ]);
+
+var ABILITIES = [[], [], [], ABILITIES_ADV, ABILITIES_DPP, ABILITIES_BW, ABILITIES_XY, ABILITIES_SM];

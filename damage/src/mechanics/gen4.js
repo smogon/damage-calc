@@ -1,4 +1,4 @@
-function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field, attackerSideNum) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.getWeather());
@@ -9,8 +9,8 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
 	checkDownload(defender, attacker);
-	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
-	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
 
 	field = field.getSide(attackerSideNum);
 
@@ -58,7 +58,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 	} else if (move.name === "Judgment" && attacker.item.indexOf("Plate") !== -1) {
 		move.type = getItemBoostType(attacker.item);
 	} else if (move.name === "Natural Gift" && attacker.item.indexOf("Berry") !== -1) {
-		var gift = getNaturalGift(attacker.item);
+		var gift = getNaturalGift(gen, attacker.item);
 		move.type = gift.t;
 		move.bp = gift.p;
 		description.attackerItem = attacker.item;
@@ -71,8 +71,8 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 		description.attackerAbility = attacker.ability;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(move, defender.type1, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(move, defender.type2, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -149,7 +149,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 		}
 		break;
 	case "Punishment":
-		var boostCount = countBoosts(defender.boosts);
+		var boostCount = countBoosts(gen, defender.boosts);
 		if (boostCount > 0) {
 			move.bp = Math.min(200, move.bp + 20 * boostCount);
 			description.moveBP = move.bp;

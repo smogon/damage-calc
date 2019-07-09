@@ -80,7 +80,7 @@ function appendIfSet(str, toAppend) {
 	return str;
 }
 
-function getKOChanceText(damage, attacker, defender, field, move, hits, isBadDreams) {
+function getKOChanceText(gen, damage, attacker, defender, field, move, hits, isBadDreams) {
 	if (isNaN(damage[0])) {
 		return 'something broke; please tell Austin';
 	}
@@ -101,7 +101,7 @@ function getKOChanceText(damage, attacker, defender, field, move, hits, isBadDre
 	var hazards = 0;
 	var hazardText = [];
 	if (field.isSR && !defender.hasAbility("Magic Guard", "Mountaineer")) {
-		var effectiveness = typeChart['Rock'][defender.type1] * (defender.type2 ? typeChart['Rock'][defender.type2] : 1);
+		var effectiveness = TYPE_CHART[gen]['Rock'][defender.type1] * (defender.type2 ? TYPE_CHART[gen]['Rock'][defender.type2] : 1);
 		hazards += Math.floor(effectiveness * defender.maxHP / 8);
 		hazardText.push('Stealth Rock');
 	}
@@ -242,7 +242,7 @@ function getKOChanceText(damage, attacker, defender, field, move, hits, isBadDre
 	var qualifier = '';
 	if (hits > 1) {
 		qualifier = 'approx. ';
-		damage = squashMultihit(damage, hits);
+		damage = squashMultihit(gen, damage, hits);
 	}
 	var c;
 	var afterText = hazardText.length > 0 || eotText.length > 0 ? ' after ' + serializeText(hazardText.concat(eotText)) : '';
@@ -346,7 +346,7 @@ function predictTotal(damage, eot, hits, moveHits, toxicCounter, maxHP) {
 	return total;
 }
 
-function squashMultihit(d, hits) {
+function squashMultihit(gen, d, hits) {
 	if (d.length === 1) {
 		return [d[0] * hits];
 	} else if (gen === 1) {

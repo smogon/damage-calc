@@ -3570,3 +3570,5 @@ var MOVES_SM = extend(true, {}, MOVES_XY, {
 		zp: 160
 	}
 });
+
+var MOVES = [[], MOVES_RBY, MOVES_GSC, MOVES_ADV, MOVES_DPP, MOVES_BW, MOVES_XY, MOVES_SM];

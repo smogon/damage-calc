@@ -1,13 +1,13 @@
-function CALCULATE_DAMAGE_RBY(attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_RBY(gen, attacker, defender, move, field, attackerSideNum) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL])));
-	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
 
 	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
 	defender.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SL], defender.boosts[SL])));
-	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
 
 	field = field.getSide(attackerSideNum);
 
@@ -26,8 +26,8 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field, attackerSideNum) 
 		return {"damage": [lv], "description": description};
 	}
 
-	var typeEffect1 = typeChart[move.type][defender.type1];
-	var typeEffect2 = defender.type2 ? typeChart[move.type][defender.type2] : 1;
+	var typeEffect1 = TYPE_CHART[gen][move.type][defender.type1];
+	var typeEffect2 = defender.type2 ? TYPE_CHART[gen][move.type][defender.type2] : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -38,7 +38,7 @@ function CALCULATE_DAMAGE_RBY(attacker, defender, move, field, attackerSideNum) 
 		description.hits = move.hits;
 	}
 
-	var isPhysical = typeChart[move.type].category === "Physical";
+	var isPhysical = TYPE_CHART[gen][move.type].category === "Physical";
 	var attackStat = isPhysical ? AT : SL;
 	var defenseStat = isPhysical ? DF : SL;
 	var at = attacker.stats[attackStat];

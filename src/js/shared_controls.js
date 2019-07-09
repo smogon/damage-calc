@@ -119,8 +119,8 @@ function getHPDVs(poke) {
 }
 
 function calcStats(poke) {
-	for (var i = 0; i < STATS.length; i++) {
-		calcStat(poke, STATS[i]);
+	for (var i = 0; i < STATS[gen].length; i++) {
+		calcStat(poke, STATS[gen][i]);
 	}
 }
 
@@ -348,8 +348,8 @@ $(".set-selector").change(function () {
 		pokeObj.find(".type2").val(pokemon.t2);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);
 		var i;
-		for (i = 0; i < STATS.length; i++) {
-			pokeObj.find("." + STATS[i] + " .base").val(pokemon.bs[STATS[i]]);
+		for (i = 0; i < STATS[gen].length; i++) {
+			pokeObj.find("." + STATS[gen][i] + " .base").val(pokemon.bs[STATS[gen][i]]);
 		}
 		pokeObj.find(".weight").val(pokemon.w);
 		pokeObj.find(".boost").val(0);
@@ -365,10 +365,10 @@ $(".set-selector").change(function () {
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
 			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);
-			for (i = 0; i < STATS.length; i++) {
-				pokeObj.find("." + STATS[i] + " .evs").val((set.evs && set.evs[STATS[i]] !== undefined) ? set.evs[STATS[i]] : 0);
-				pokeObj.find("." + STATS[i] + " .ivs").val((set.ivs && set.ivs[STATS[i]] !== undefined) ? set.ivs[STATS[i]] : 31);
-				pokeObj.find("." + STATS[i] + " .dvs").val((set.dvs && set.dvs[STATS[i]] !== undefined) ? set.dvs[STATS[i]] : 15);
+			for (i = 0; i < STATS[gen].length; i++) {
+				pokeObj.find("." + STATS[gen][i] + " .evs").val((set.evs && set.evs[STATS[gen][i]] !== undefined) ? set.evs[STATS[gen][i]] : 0);
+				pokeObj.find("." + STATS[gen][i] + " .ivs").val((set.ivs && set.ivs[STATS[gen][i]] !== undefined) ? set.ivs[STATS[gen][i]] : 31);
+				pokeObj.find("." + STATS[gen][i] + " .dvs").val((set.dvs && set.dvs[STATS[gen][i]] !== undefined) ? set.dvs[STATS[gen][i]] : 15);
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab ? pokemon.ab : set.ability, "");
@@ -383,10 +383,10 @@ $(".set-selector").change(function () {
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
 			pokeObj.find(".hp .dvs").val(15);
-			for (i = 0; i < STATS.length; i++) {
-				pokeObj.find("." + STATS[i] + " .evs").val(0);
-				pokeObj.find("." + STATS[i] + " .ivs").val(31);
-				pokeObj.find("." + STATS[i] + " .dvs").val(15);
+			for (i = 0; i < STATS[gen].length; i++) {
+				pokeObj.find("." + STATS[gen][i] + " .evs").val(0);
+				pokeObj.find("." + STATS[gen][i] + " .ivs").val(31);
+				pokeObj.find("." + STATS[gen][i] + " .dvs").val(15);
 			}
 			pokeObj.find(".nature").val("Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab, "");
@@ -507,8 +507,8 @@ function createPokemon(pokeInfo) {
 		}
 		var curHP = maxHP;
 		var nature = set.nature;
-		for (var i = 0; i < STATS.length; i++) {
-			var stat = STATS[i];
+		for (var i = 0; i < STATS[gen].length; i++) {
+			var stat = STATS[gen][i];
 			boosts[stat] = 0;
 			evs[stat] = (set.evs && typeof set.evs[stat] !== "undefined") ? set.evs[stat] : 0;
 			if (gen < 3) {
@@ -564,10 +564,10 @@ function createPokemon(pokeInfo) {
 		var boosts = [];
 		var stats = [];
 		var evs = [];
-		for (var i = 0; i < STATS.length; i++) {
-			rawStats[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .total").text();
-			boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
-			evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
+		for (var i = 0; i < STATS[gen].length; i++) {
+			rawStats[STATS[gen][i]] = ~~pokeInfo.find("." + STATS[gen][i] + " .total").text();
+			boosts[STATS[gen][i]] = ~~pokeInfo.find("." + STATS[gen][i] + " .boost").val();
+			evs[STATS[gen][i]] = ~~pokeInfo.find("." + STATS[gen][i] + " .evs").val();
 		}
 		var nature = pokeInfo.find(".nature").val();
 		var ability = pokeInfo.find(".ability").val();
@@ -586,15 +586,6 @@ function createPokemon(pokeInfo) {
 
 		return new Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
 	}
-}
-
-function toSmogonStat(stat) {
-	return stat === AT ? "Atk" :
-		stat === DF ? "Def" :
-			stat === SA ? "SpA" :
-				stat === SD ? "SpD" :
-					stat === SP ? "Spe" :
-						"wtf";
 }
 
 function getMoveDetails(moveInfo, item) {
@@ -673,91 +664,69 @@ function createField() {
 	return new Field(format, isGravity, isSR, weather, spikes, terrain, isReflect, isLightScreen, isProtected, isSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery);
 }
 
-var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, STATS, calcHP, calcStat;
+function CALC_HP_RBY(poke) {
+	var hp = poke.find(".hp");
+	var total;
+	var base = ~~hp.find(".base").val();
+	var dvs = ~~hp.find(".dvs").val();
+	var level = ~~poke.find(".level").val();
+	total = calcStatRBYFromDV("hp", base, dvs, level);
+	hp.find(".total").text(total);
+	poke.find(".max-hp").text(total);
+	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+}
+
+function CALC_STAT_RBY(poke, statName) {
+	var stat = poke.find("." + statName);
+	var base = ~~stat.find(".base").val();
+	var dvs = ~~stat.find(".dvs").val();
+	var level = ~~poke.find(".level").val();
+	var total = calcStatRBYFromDV(statName, base, dvs, level);
+	stat.find(".total").text(total);
+}
+
+function CALC_HP_ADV(poke) {
+	var hp = poke.find(".hp");
+	var base = ~~hp.find(".base").val();
+	var ivs = ~~hp.find(".ivs").val();
+	var evs = ~~hp.find(".evs").val();
+	var level = ~~poke.find(".level").val();
+	var total = calcStatADV("hp", base, ivs, evs, level);
+	hp.find(".total").text(total);
+	poke.find(".max-hp").text(total);
+	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+}
+
+function CALC_STAT_ADV(poke, statName) {
+	var stat = poke.find("." + statName);
+	var base = ~~stat.find(".base").val();
+	var ivs = ~~stat.find(".ivs").val();
+	var evs = ~~stat.find(".evs").val();
+	var level = ~~poke.find(".level").val();
+	var nature = poke.find(".nature").val();
+	var total = calcStatADV(statName, base, ivs, evs, level, nature);
+	stat.find(".total").text(total);
+}
+
+var CALC_HP = [null, CALC_HP_RBY, CALC_HP_RBY, CALC_HP_ADV, CALC_HP_ADV, CALC_HP_ADV, CALC_HP_ADV, CALC_HP_ADV];
+var CALC_STAT = [null, CALC_STAT_RBY, CALC_STAT_RBY, CALC_STAT_ADV, CALC_STAT_ADV, CALC_STAT_ADV, CALC_STAT_ADV, CALC_STAT_ADV];
+
+var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM];
+var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val();
+	gen = ~~$(this).val() || 7;
 	genWasChanged = true;
 	/* eslint-enable */
 	// declaring these variables with var here makes z moves not work; TODO
-	switch (gen) {
-	case 1:
-		pokedex = POKEDEX_RBY;
-		setdex = SETDEX_RBY;
-		typeChart = TYPE_CHART_RBY;
-		moves = MOVES_RBY;
-		items = [];
-		abilities = [];
-		STATS = STATS_RBY;
-		calcHP = CALC_HP_RBY;
-		calcStat = CALC_STAT_RBY;
-		break;
-	case 2:
-		pokedex = POKEDEX_GSC;
-		setdex = SETDEX_GSC;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_GSC;
-		items = ITEMS_GSC;
-		abilities = [];
-		STATS = STATS_GSC;
-		calcHP = CALC_HP_RBY;
-		calcStat = CALC_STAT_RBY;
-		break;
-	case 3:
-		pokedex = POKEDEX_ADV;
-		setdex = SETDEX_ADV;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_ADV;
-		items = ITEMS_ADV;
-		abilities = ABILITIES_ADV;
-		STATS = STATS_GSC;
-		calcHP = CALC_HP_ADV;
-		calcStat = CALC_STAT_ADV;
-		break;
-	case 4:
-		pokedex = POKEDEX_DPP;
-		setdex = SETDEX_DPP;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_DPP;
-		items = ITEMS_DPP;
-		abilities = ABILITIES_DPP;
-		STATS = STATS_GSC;
-		calcHP = CALC_HP_ADV;
-		calcStat = CALC_STAT_ADV;
-		break;
-	case 5:
-		pokedex = POKEDEX_BW;
-		setdex = SETDEX_BW;
-		typeChart = TYPE_CHART_GSC;
-		moves = MOVES_BW;
-		items = ITEMS_BW;
-		abilities = ABILITIES_BW;
-		STATS = STATS_GSC;
-		calcHP = CALC_HP_ADV;
-		calcStat = CALC_STAT_ADV;
-		break;
-	case 6:
-		pokedex = POKEDEX_XY;
-		setdex = SETDEX_XY;
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_XY;
-		items = ITEMS_XY;
-		abilities = ABILITIES_XY;
-		STATS = STATS_GSC;
-		calcHP = CALC_HP_ADV;
-		calcStat = CALC_STAT_ADV;
-		break;
-	default:
-		pokedex = POKEDEX_SM;
-		setdex = SETDEX_SM;
-		typeChart = TYPE_CHART_XY;
-		moves = MOVES_SM;
-		items = ITEMS_SM;
-		abilities = ABILITIES_SM;
-		STATS = STATS_GSC;
-		calcHP = CALC_HP_ADV;
-		calcStat = CALC_STAT_ADV;
-	}
+	pokedex = SPECIES[gen];
+	setdex = SETDEX[gen];
+	typeChart = TYPE_CHART[gen];
+	moves = MOVES[gen];
+	items = ITEMS[gen];
+	abilities = ABILITIES[gen];
+	calcHP = CALC_HP[gen];
+	calcStat = CALC_STAT[gen];
 	clearField();
 	$("#importedSets").prop("checked", false);
 	loadDefaultLists();

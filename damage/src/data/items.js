@@ -461,7 +461,7 @@ function getFlingPower(item) {
 											0;
 }
 
-function getNaturalGift(item) {
+function getNaturalGift(gen, item) {
 	var gift = {
 		'Apicot Berry': {'t': 'Ground', 'p': 100},
 		'Babiri Berry': {'t': 'Steel', 'p': 80},
@@ -542,3 +542,5 @@ var seedBoostedStat = {
 	'Misty Seed': SD,
 	'Psychic Seed': SD
 };
+
+var ITEMS = [[], [], ITEMS_GSC, ITEMS_ADV, ITEMS_DPP, ITEMS_BW, ITEMS_XY, ITEMS_SM];
