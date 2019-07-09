@@ -539,7 +539,7 @@ function createPokemon(pokeInfo) {
 				bp: defaultDetails.bp,
 				type: defaultDetails.type,
 				category: defaultDetails.category
-			})), isCrit, hits, usedTimes);
+			}), isCrit, hits, usedTimes));
 		}
 		var weight = pokemon.w;
 		var gender = pokemon.gender ? "genderless" : "Male";
