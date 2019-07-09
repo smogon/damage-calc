@@ -1,38 +1,18 @@
-﻿function CALCULATE_ALL_MOVES_GSC(p1, p2, field) {
-	p1.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[AT], p1.boosts[AT])));
-	p1.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[DF], p1.boosts[DF])));
-	p1.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SA], p1.boosts[SA])));
-	p1.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SD], p1.boosts[SD])));
-	p2.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[AT], p2.boosts[AT])));
-	p2.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[DF], p2.boosts[DF])));
-	p2.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SA], p2.boosts[SA])));
-	p2.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SD], p2.boosts[SD])));
-	var side1 = field.getSide(1);
-	var side2 = field.getSide(0);
-	p1.stats[SP] = getFinalSpeed(p1, field, side1);
-	p2.stats[SP] = getFinalSpeed(p2, field, side2);
-	var results = [[], []];
-	for (var i = 0; i < 4; i++) {
-		results[0][i] = CALCULATE_DAMAGE_GSC(p1, p2, p1.moves[i], side1);
-		results[1][i] = CALCULATE_DAMAGE_GSC(p2, p1, p2.moves[i], side2);
-	}
-	return results;
-}
-
-function CALCULATE_MOVES_OF_ATTACKER_GSC(attacker, defender, field) {
+function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
+	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA])));
-	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
-	defender.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SD], defender.boosts[SD])));
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
-	var results = [];
-	for (var i = 0; i < 4; i++) {
-		results[i] = CALCULATE_DAMAGE_GSC(attacker, defender, attacker.moves[i], defenderSide);
-	}
-	return results;
-}
+	attacker.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD])));
+	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
 
-function CALCULATE_DAMAGE_GSC(attacker, defender, move, field) {
+	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
+	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
+	defender.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SA], defender.boosts[SA])));
+	defender.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SD], defender.boosts[SD])));
+	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
+
+	field = field.getSide(attackerSideNum);
+
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,

@@ -1,36 +1,16 @@
-﻿function CALCULATE_ALL_MOVES_RBY(p1, p2, field) {
-	p1.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[AT], p1.boosts[AT])));
-	p1.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[DF], p1.boosts[DF])));
-	p1.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p1.rawStats[SL], p1.boosts[SL])));
-	p2.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[AT], p2.boosts[AT])));
-	p2.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[DF], p2.boosts[DF])));
-	p2.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(p2.rawStats[SL], p2.boosts[SL])));
-	var side1 = field.getSide(1);
-	var side2 = field.getSide(0);
-	p1.stats[SP] = getFinalSpeed(p1, field, side1);
-	p2.stats[SP] = getFinalSpeed(p2, field, side2);
-	var results = [[], []];
-	for (var i = 0; i < 4; i++) {
-		results[0][i] = CALCULATE_DAMAGE_RBY(p1, p2, p1.moves[i], side1);
-		results[1][i] = CALCULATE_DAMAGE_RBY(p2, p1, p2.moves[i], side2);
-	}
-	return results;
-}
-
-function CALCULATE_MOVES_OF_ATTACKER_RBY(attacker, defender, field) {
+function CALCULATE_DAMAGE_RBY(attacker, defender, move, field, attackerSideNum) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
+	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL])));
+	attacker.stats[SP] = getFinalSpeed(attacker, field, field.getSide(attackerSideNum));
+
+	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
 	defender.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SL], defender.boosts[SL])));
-	var defenderSide = field.getSide(~~(mode === "one-vs-all"));
-	var results = [];
-	for (var i = 0; i < 4; i++) {
-		results[i] = CALCULATE_DAMAGE_RBY(attacker, defender, attacker.moves[i], defenderSide);
-	}
-	return results;
-}
+	defender.stats[SP] = getFinalSpeed(defender, field, field.getSide(1 - attackerSideNum));
 
-function CALCULATE_DAMAGE_RBY(attacker, defender, move, field) {
+	field = field.getSide(attackerSideNum);
+
 	var description = {
 		"attackerName": attacker.name,
 		"moveName": move.name,
