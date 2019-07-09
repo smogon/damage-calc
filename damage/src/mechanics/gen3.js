@@ -17,12 +17,12 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) 
 	};
 
 	if (move.bp === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if (field.isProtected) {
 		description.isProtected = true;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if (move.name === "Weather Ball") {
@@ -41,7 +41,7 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) 
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if ((defender.hasAbility("Flash Fire", "Flash Fire (activated)") && move.type === "Fire") ||
@@ -51,14 +51,14 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) 
             (move.type !== "None" && defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
             (defender.hasAbility("Soundproof") && move.isSound)) {
 		description.defenderAbility = defender.ability;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
 
 	var lv = attacker.level;
 	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [lv], "description": buildDescription(description)};
+		return {"damage": [lv], "description": description};
 	}
 
 	if (move.hits > 1) {
@@ -231,5 +231,5 @@ function CALCULATE_DAMAGE_ADV(attacker, defender, move, field, attackerSideNum) 
 	for (var i = 85; i <= 100; i++) {
 		damage[i - 85] = Math.max(1, Math.floor(baseDamage * i / 100));
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+	return {"damage": damage, "description": description};
 }

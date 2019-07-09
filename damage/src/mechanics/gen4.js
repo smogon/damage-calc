@@ -21,12 +21,12 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 	};
 
 	if (move.bp === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if (field.isProtected && !move.bypassesProtect) {
 		description.isProtected = true;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if (attacker.hasAbility("Mold Breaker")) {
@@ -76,7 +76,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	var ignoresWonderGuard = move.type === "None" || move.name === "Fire Fang";
 	if ((!ignoresWonderGuard && defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
@@ -86,13 +86,13 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
             (move.type === "Ground" && !field.isGravity && defender.hasAbility("Levitate")) ||
             (move.isSound && defender.hasAbility("Soundproof"))) {
 		description.defenderAbility = defender.ability;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
 
 	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [attacker.level], "description": buildDescription(description)};
+		return {"damage": [attacker.level], "description": description};
 	}
 
 	if (move.hits > 1) {
@@ -419,7 +419,7 @@ function CALCULATE_DAMAGE_DPP(attacker, defender, move, field, attackerSideNum) 
 		damage[i] = Math.floor(damage[i] * berryMod);
 		damage[i] = Math.max(1, damage[i]);
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+	return {"damage": damage, "description": description};
 }
 
 function getSimpleModifiedStat(stat, mod) {

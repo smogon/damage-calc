@@ -38,12 +38,12 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 	};
 
 	if (move.bp === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if (field.isProtected && !move.bypassesProtect && !move.isZ) {
 		description.isProtected = true;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	var defAbility = defender.ability;
 	var defenderIgnoresAbility = defender.hasAbility("Full Metal Body", "Prism Armor", "Shadow Shield");
@@ -151,17 +151,17 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		}
 	}
 	if (typeEffectiveness === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if (move.name === "Sky Drop" && (defender.hasType("Flying") || (gen >= 6 && defender.weight >= 200) || field.isGravity)) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if (move.name === "Synchronoise" && !defender.hasType(attacker.type1) &&
             (!attacker.type2 || !defender.hasType(attacker.type2))) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if (move.name === "Dream Eater" && (!defender.hasStatus("Asleep") && !defender.hasAbility('Comatose'))) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if ((defender.hasAbility("Wonder Guard") && typeEffectiveness <= 1) ||
             (move.type === "Grass" && defender.hasAbility("Sap Sipper")) ||
@@ -173,7 +173,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
             (move.isSound && defender.hasAbility("Soundproof")) ||
             (move.hasPriority && defender.hasAbility("Queenly Majesty", "Dazzling"))) {
 		description.defenderAbility = defender.ability;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if (field.weather === "Strong Winds" && (defender.hasType("Flying") && typeChart[move.type]["Flying"] > 1)) {
 		typeEffectiveness /= 2;
@@ -181,11 +181,11 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 	}
 	if (move.type === "Ground" && move.name !== "Thousand Arrows" && !field.isGravity && defender.hasItem("Air Balloon")) {
 		description.defenderItem = defender.item;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if (move.hasPriority && field.terrain === "Psychic" && isGroundedForCalc(defender, field)) {
 		description.terrain = field.terrain;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	description.HPEVs = defender.HPEVs + " HP";
@@ -195,12 +195,12 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		if (attacker.hasAbility("Parental Bond")) {
 			lv *= 2;
 		}
-		return {"damage": [lv], "description": buildDescription(description)};
+		return {"damage": [lv], "description": description};
 	}
 
 	if (move.name === "Final Gambit") {
 		var hp = attacker.curHP;
-		return {"damage": [hp], "description": buildDescription(description)};
+		return {"damage": [hp], "description": description};
 	}
 
 	if (move.name === "Guardian of Alola") {
@@ -212,12 +212,12 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 				alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			}
 		}
-		 return {"damage": [zLostHP], "description": buildDescription(description)};
+		 return {"damage": [zLostHP], "description": description};
 	}
 
 	if (move.name === "Nature's Madness") {
 		var lostHP = field.isProtected ? 0 : Math.floor(defender.curHP / 2);
-		return {"damage": [lostHP], "description": buildDescription(description)};
+		return {"damage": [lostHP], "description": description};
 	}
 
 	if (move.name === "Spectral Thief") {
@@ -609,7 +609,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 		description.weather = field.weather;
 	} else if ((field.hasWeather("Harsh Sunshine") && move.type === "Water") || (field.hasWeather("Heavy Rain") && move.type === "Fire")) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 	if (isGroundedForCalc(attacker, field)) {
 		if (field.terrain === "Electric" && move.type === "Electric") {
@@ -776,7 +776,7 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 	}
 
 	description.attackBoost = attacker.boosts[attackStat];
-	return {"damage": damage, "description": buildDescription(description)};
+	return {"damage": damage, "description": description};
 }
 
 function chainMods(mods) {

@@ -20,12 +20,12 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) 
 	};
 
 	if (move.bp === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	if (field.isProtected) {
 		description.isProtected = true;
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	var typeEffect1 = getMoveEffectiveness(move, defender.type1, field.isForesight);
@@ -33,12 +33,12 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) 
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
-		return {"damage": [0], "description": buildDescription(description)};
+		return {"damage": [0], "description": description};
 	}
 
 	var lv = attacker.level;
 	if (move.name === "Seismic Toss" || move.name === "Night Shade") {
-		return {"damage": [lv], "description": buildDescription(description)};
+		return {"damage": [lv], "description": description};
 	}
 
 	if (move.hits > 1) {
@@ -138,12 +138,12 @@ function CALCULATE_DAMAGE_GSC(attacker, defender, move, field, attackerSideNum) 
 
 	// Flail and Reversal don't use random factor
 	if (move.name === "Flail" || move.name === "Reversal") {
-		return {"damage": [baseDamage], "description": buildDescription(description)};
+		return {"damage": [baseDamage], "description": description};
 	}
 
 	var damage = [];
 	for (var i = 217; i <= 255; i++) {
 		damage[i - 217] = Math.floor(baseDamage * i / 255);
 	}
-	return {"damage": damage, "description": buildDescription(description)};
+	return {"damage": damage, "description": description};
 }
