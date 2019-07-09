@@ -230,7 +230,21 @@ function findDamageResult(resultMoveObj) {
 	}
 }
 
+function checkStatBoost(p1, p2) {
+	if ($('#StatBoostL').prop("checked")) {
+		for (var stat in p1.boosts) {
+			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
+		}
+	}
+	if ($('#StatBoostR').prop("checked")) {
+		for (var stat in p2.boosts) {
+			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
+		}
+	}
+}
+
 function calculateAllMoves(gen, p1, p2, field) {
+	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
 		results[0][i] = CALCULATE_DAMAGE(gen, p1, p2, p1.moves[i], field, 1);
