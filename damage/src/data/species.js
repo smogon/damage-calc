@@ -2105,7 +2105,7 @@ var POKEDEX_RBY = {
 	}
 };
 
-var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
+var POKEDEX_GSC = extend(true, {}, POKEDEX_RBY, {
 	"Articuno": {"gender": "genderless"},
 	"Chansey": {"canEvolve": true},
 	"Ditto": {"gender": "genderless"},
@@ -3424,7 +3424,7 @@ var POKEDEX_GSC = $.extend(true, {}, POKEDEX_RBY, {
 	},
 });
 
-var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
+var POKEDEX_ADV = extend(true, {}, POKEDEX_GSC, {
 	"Absol": {
 		"t1": "Dark",
 		"bs": {
@@ -5230,7 +5230,7 @@ var POKEDEX_ADV = $.extend(true, {}, POKEDEX_GSC, {
 	}
 });
 
-var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
+var POKEDEX_DPP = extend(true, {}, POKEDEX_ADV, {
 	"Aipom": {"canEvolve": true},
 	"Electabuzz": {"canEvolve": true},
 	"Gligar": {"canEvolve": true},
@@ -7221,7 +7221,7 @@ var POKEDEX_DPP = $.extend(true, {}, POKEDEX_ADV, {
 	}
 });
 
-var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
+var POKEDEX_BW = extend(true, {}, POKEDEX_DPP, {
 	"Rotom-Mow": {"t2": "Grass"},
 	"Rotom-Frost": {"t2": "Ice"},
 	"Rotom-Heat": {"t2": "Fire"},
@@ -9530,7 +9530,7 @@ var POKEDEX_BW = $.extend(true, {}, POKEDEX_DPP, {
 	}
 });
 
-var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
+var POKEDEX_XY = extend(true, {}, POKEDEX_BW, {
 	"Venusaur": {"formes": ["Venusaur", "Venusaur-Mega"]},
 	"Charizard": {"formes": ["Charizard", "Charizard-Mega-X", "Charizard-Mega-Y"]},
 	"Blastoise": {"formes": ["Blastoise", "Blastoise-Mega"]},
@@ -11561,7 +11561,7 @@ var POKEDEX_XY = $.extend(true, {}, POKEDEX_BW, {
 	}
 });
 
-var POKEDEX_SM = $.extend(true, {}, POKEDEX_XY, {
+var POKEDEX_SM = extend(true, {}, POKEDEX_XY, {
 	"Alakazam-Mega": {"bs": {"sd": 105}},
 	"Arbok": {"bs": {"at": 95}},
 	"Ariados": {"bs": {"sd": 70}},

@@ -304,7 +304,7 @@ var TYPE_CHART_RBY = {
 	}
 };
 
-var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
+var TYPE_CHART_GSC = extend(true, {}, TYPE_CHART_RBY, {
 	None: {
 		Dark: 1,
 		Steel: 1
@@ -417,7 +417,7 @@ var TYPE_CHART_GSC = $.extend(true, {}, TYPE_CHART_RBY, {
 	}
 });
 
-var TYPE_CHART_XY = $.extend(true, {}, TYPE_CHART_GSC, {
+var TYPE_CHART_XY = extend(true, {}, TYPE_CHART_GSC, {
 	None: {
 		Fairy: 1
 	},

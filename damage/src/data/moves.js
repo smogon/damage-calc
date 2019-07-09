@@ -500,7 +500,7 @@ var MOVES_RBY = {
 	}
 };
 
-var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
+var MOVES_GSC = extend(true, {}, MOVES_RBY, {
 	'Aeroblast': {
 		bp: 100,
 		type: 'Flying',
@@ -882,7 +882,7 @@ var MOVES_GSC = $.extend(true, {}, MOVES_RBY, {
 delete MOVES_GSC['Acid'];
 delete MOVES_GSC['Mega Drain'];
 
-var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
+var MOVES_ADV = extend(true, {}, MOVES_GSC, {
 	'Aerial Ace': {
 		bp: 60,
 		type: 'Flying',
@@ -1309,7 +1309,7 @@ var MOVES_ADV = $.extend(true, {}, MOVES_GSC, {
 	}
 });
 
-var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
+var MOVES_DPP = extend(true, {}, MOVES_ADV, {
 	'Air Slash': {
 		bp: 75,
 		type: 'Flying',
@@ -1916,7 +1916,7 @@ var MOVES_DPP = $.extend(true, {}, MOVES_ADV, {
 	}
 });
 
-var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
+var MOVES_BW = extend(true, {}, MOVES_DPP, {
 	'Acid Spray': {
 		bp: 40,
 		type: 'Poison',
@@ -2429,7 +2429,7 @@ var MOVES_BW = $.extend(true, {}, MOVES_DPP, {
 	}
 });
 
-var MOVES_XY = $.extend(true, {}, MOVES_BW, {
+var MOVES_XY = extend(true, {}, MOVES_BW, {
 	'Air Cutter': {bp: 60},
 	'Arm Thrust': {
 		bp: 15,
@@ -2729,7 +2729,7 @@ var ZMOVES_TYPING = {
 	'Water': 'Hydro Vortex'
 };
 
-var MOVES_SM = $.extend(true, {}, MOVES_XY, {
+var MOVES_SM = extend(true, {}, MOVES_XY, {
 	'10,000,000 Volt Thunderbolt': {
 		bp: 195,
 		type: 'Electric',
