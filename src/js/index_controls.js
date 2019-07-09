@@ -35,10 +35,15 @@ function calculate() {
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;
 	var highestDamage = -1;
 	var bestResult;
+	var zProtectAlerted = false;
 	for (var i = 0; i < 4; i++) {
 		result = damageResults[0][i];
 		minDamage = result.damage[0] * p1.moves[i].hits;
 		maxDamage = result.damage[result.damage.length - 1] * p1.moves[i].hits;
+		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && field.getSide(1).isProtected && p1.moves[i].isZ) {
+			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			zProtectAlerted = true;
+		}
 		p1.maxDamages.push({
 			moveOrder: i,
 			maxDamage: maxDamage
@@ -115,6 +120,10 @@ function calculate() {
 		var recoveryText = '';
 		minDamage = result.damage[0] * p2.moves[i].hits;
 		maxDamage = result.damage[result.damage.length - 1] * p2.moves[i].hits;
+		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && field.getSide(0).isProtected && p2.moves[i].isZ) {
+			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			zProtectAlerted = true;
+		}
 		p2.maxDamages.push({
 			moveOrder: i,
 			maxDamage: maxDamage

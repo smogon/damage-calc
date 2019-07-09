@@ -204,14 +204,10 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 
 	if (move.name === "Guardian of Alola") {
 		var zLostHP = Math.floor(defender.curHP * 3 / 4);
-		if (field.isProtected) {
-			if (attacker.item.indexOf(" Z") !== -1) {
-				zLostHP = Math.ceil(zLostHP / 4 - 0.5);
-			} else {
-				alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
-			}
+		if (field.isProtected && attacker.item.indexOf(" Z") !== -1) {
+			zLostHP = Math.ceil(zLostHP / 4 - 0.5);
 		}
-		 return {"damage": [zLostHP], "description": description};
+		return {"damage": [zLostHP], "description": description};
 	}
 
 	if (move.name === "Nature's Madness") {
@@ -715,13 +711,9 @@ function CALCULATE_DAMAGE_BW(attacker, defender, move, field, attackerSideNum) {
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
-	if (field.isProtected && move.isZ) {
-		if (attacker.item.indexOf(" Z") !== -1) {
-			finalMods.push(0x400);
-			description.isProtected = true;
-		} else {
-			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
-		}
+	if (field.isProtected && move.isZ && attacker.item.indexOf(" Z") !== -1) {
+		finalMods.push(0x400);
+		description.isProtected = true;
 	}
 	var finalMod = chainMods(finalMods);
 
