@@ -57,9 +57,8 @@ function cpdir(src, dest) {
 	return Promise.all(copies);
 }
 
-
 cpdir('src', 'dist').then(function () {
-	cpdir('calc/src', 'dist/calc');
+	cpdir('calc/dist', 'dist/calc');
 	makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
 	makeCachebuster('dist/index.template.html', 'dist/index.html');
 });

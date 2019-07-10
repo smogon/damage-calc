@@ -27,6 +27,15 @@ if (!Array.prototype.indexOf) {
 	};
 }
 
+// convenience
+var AT = calc.AT;
+var DF = calc.DF;
+var SA = calc.SA;
+var SD = calc.SD;
+var SP = calc.SP;
+var SL = calc.SL;
+var STATS = calc.STATS;
+
 // input field validation
 var bounds = {
 	"level": [0, 100],
@@ -516,7 +525,7 @@ function createPokemon(pokeInfo) {
 				rawStats[stat] = ~~(((pokemon.bs[stat] + dvs) * 2 + 63) * level / 100) + 5;
 			} else {
 				var ivs = (set.ivs && typeof set.ivs[stat] !== "undefined") ? set.ivs[stat] : 31;
-				var natureMods = NATURES[nature];
+				var natureMods = calc.NATURES[nature];
 				var n = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
 				rawStats[stat] = ~~((~~((pokemon.bs[stat] * 2 + ivs + ~~(evs[stat] / 4)) * level / 100) + 5) * n);
 			}
@@ -534,7 +543,7 @@ function createPokemon(pokeInfo) {
 			var isCrit = !!defaultDetails.alwaysCrit;
 			var hits = defaultDetails.isMultiHit ? ((ability === "Skill Link" || item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1;
 			var usedTimes = defaultDetails.usedTimes;
-			pokemonMoves.push(new Move($.extend({}, defaultDetails, {
+			pokemonMoves.push(new calc.Move($.extend({}, defaultDetails, {
 				name: (defaultDetails.bp === 0) ? "(No Move)" : moveName,
 				bp: defaultDetails.bp,
 				type: defaultDetails.type,
@@ -544,7 +553,7 @@ function createPokemon(pokeInfo) {
 		var weight = pokemon.w;
 		var gender = pokemon.gender ? "genderless" : "Male";
 
-		return new Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
+		return new calc.Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		var name;
@@ -584,7 +593,7 @@ function createPokemon(pokeInfo) {
 		var weight = +pokeInfo.find(".weight").val();
 		var gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
 
-		return new Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
+		return new calc.Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
 	}
 }
 
@@ -597,7 +606,7 @@ function getMoveDetails(moveInfo, item) {
 	if (isZMove && "zp" in defaultDetails) {
 		var zMoveName = getZMoveName(moveName, defaultDetails.type, item);
 		var hits = 1;
-		return new Move($.extend({}, moves[zMoveName], {
+		return new calc.Move($.extend({}, moves[zMoveName], {
 			name: zMoveName,
 			bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
 			category: defaultDetails.category,
@@ -606,7 +615,7 @@ function getMoveDetails(moveInfo, item) {
 		var hits = defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1;
 		var usedTimes = defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1;
 		var metronomeCount = moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1;
-		return new Move($.extend({}, defaultDetails, {
+		return new calc.Move($.extend({}, defaultDetails, {
 			name: moveName,
 			bp: ~~moveInfo.find(".move-bp").val(),
 			type: moveInfo.find(".move-type").val(),
@@ -661,7 +670,7 @@ function createField() {
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryR").prop("checked"), $("#batteryL").prop("checked")];
 
-	return new Field(format, isGravity, isSR, weather, spikes, terrain, isReflect, isLightScreen, isProtected, isSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery);
+	return new calc.Field(format, isGravity, isSR, weather, spikes, terrain, isReflect, isLightScreen, isProtected, isSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery);
 }
 
 function CALC_HP_RBY(poke) {
@@ -670,7 +679,7 @@ function CALC_HP_RBY(poke) {
 	var base = ~~hp.find(".base").val();
 	var dvs = ~~hp.find(".dvs").val();
 	var level = ~~poke.find(".level").val();
-	total = calcStatRBYFromDV("hp", base, dvs, level);
+	total = calc.calcStatRBYFromDV("hp", base, dvs, level);
 	hp.find(".total").text(total);
 	poke.find(".max-hp").text(total);
 	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
@@ -681,7 +690,7 @@ function CALC_STAT_RBY(poke, statName) {
 	var base = ~~stat.find(".base").val();
 	var dvs = ~~stat.find(".dvs").val();
 	var level = ~~poke.find(".level").val();
-	var total = calcStatRBYFromDV(statName, base, dvs, level);
+	var total = calc.calcStatRBYFromDV(statName, base, dvs, level);
 	stat.find(".total").text(total);
 }
 
@@ -691,7 +700,7 @@ function CALC_HP_ADV(poke) {
 	var ivs = ~~hp.find(".ivs").val();
 	var evs = ~~hp.find(".evs").val();
 	var level = ~~poke.find(".level").val();
-	var total = calcStatADV("hp", base, ivs, evs, level);
+	var total = calc.calcStatADV("hp", base, ivs, evs, level);
 	hp.find(".total").text(total);
 	poke.find(".max-hp").text(total);
 	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
@@ -704,7 +713,7 @@ function CALC_STAT_ADV(poke, statName) {
 	var evs = ~~stat.find(".evs").val();
 	var level = ~~poke.find(".level").val();
 	var nature = poke.find(".nature").val();
-	var total = calcStatADV(statName, base, ivs, evs, level, nature);
+	var total = calc.calcStatADV(statName, base, ivs, evs, level, nature);
 	stat.find(".total").text(total);
 }
 
@@ -719,12 +728,12 @@ $(".gen").change(function () {
 	genWasChanged = true;
 	/* eslint-enable */
 	// declaring these variables with var here makes z moves not work; TODO
-	pokedex = SPECIES[gen];
+	pokedex = calc.SPECIES[gen];
 	setdex = SETDEX[gen];
-	typeChart = TYPE_CHART[gen];
-	moves = MOVES[gen];
-	items = ITEMS[gen];
-	abilities = ABILITIES[gen];
+	typeChart = calc.TYPE_CHART[gen];
+	moves = calc.MOVES[gen];
+	items = calc.ITEMS[gen];
+	abilities = calc.ABILITIES[gen];
 	calcHP = CALC_HP[gen];
 	calcStat = CALC_STAT[gen];
 	clearField();

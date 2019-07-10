@@ -6,8 +6,6 @@ function placeBsBtn() {
 		var pokes = document.getElementsByClassName("import-team-text")[0].value;
 		addSets(pokes);
 	});
-
-
 }
 
 function ExportPokemon(pokeInfo) {
@@ -29,7 +27,7 @@ function ExportPokemon(pokeInfo) {
 			if (EV_counter > 510) {
 				break;
 			} else if (pokemon.evs[stat]) {
-				EVs_Array.push(pokemon.evs[stat] + " " + toSmogonStat(stat));
+				EVs_Array.push(pokemon.evs[stat] + " " + calc.toSmogonStat(stat));
 			}
 		}
 		finalText += serialize(EVs_Array, " / ");
@@ -68,7 +66,7 @@ function serialize(array, separator) {
 
 function getAbility(row) {
 	var ability = row[1] ? row[1].trim() : '';
-	if (ABILITIES[7].indexOf(ability) !== -1) return ability;
+	if (calc.ABILITIES[7].indexOf(ability) !== -1) return ability;
 }
 
 function statConverter(stat) {
@@ -85,10 +83,7 @@ function statConverter(stat) {
 		return "sd";
 	case 'spe':
 		return "sp";
-
 	}
-
-
 }
 
 function getStats(currentPoke, rows, offset) {
@@ -129,51 +124,38 @@ function getStats(currentPoke, rows, offset) {
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
 		if (currentNature[1] == "Nature") {
 			currentPoke.nature = currentNature[0];
-
 		}
 	}
 	return currentPoke;
-
-
 }
 
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
-		if (ITEMS[7].indexOf(item) != -1) {
+		if (calc.ITEMS[7].indexOf(item) != -1) {
 			return item;
-
 		}
 	}
-	return;
-
 }
 
 function getMoves(currentPoke, rows, offset) {
 	var movesFound = false;
 	var moves = [];
 	for (var x = offset; x < offset + 12; x++) {
-
 		if (rows[x]) {
 			if (rows[x][0] == "-") {
 				movesFound = true;
-
 				var move = rows[x].substr(2, rows[x].length - 2).replace("[", "").replace("]", "").replace("  ", "");
 				moves.push(move);
-
 			} else {
 				if (movesFound == true) {
 					break;
-
 				}
-
 			}
 		}
 	}
 	currentPoke.moves = moves;
 	return currentPoke;
-
-
 }
 
 function addToDex(poke) {
@@ -188,7 +170,6 @@ function addToDex(poke) {
 
 	if (poke.ability !== undefined) {
 		dexObject.ability = poke.ability;
-
 	}
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
@@ -247,8 +228,8 @@ function addSets(pokes) {
 		currentRow = rows[i].split(/[()@]/);
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			if (SPECIES[7][currentRow[j].trim()] !== undefined) {
-				currentPoke = SPECIES[7][currentRow[j].trim()];
+			if (calc.SPECIES[7][currentRow[j].trim()] !== undefined) {
+				currentPoke = calc.SPECIES[7][currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {

@@ -1,0 +1,9 @@
+dist/
+node_modules/
+eslint-cache/
+.eslintcache
+.DS_Store
+Thumbs.db
+npm-debug.log
+package-lock.json
+.tsbuildinfo

@@ -780,9 +780,14 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> <!-- to be replaced (probably) -->
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/colvis/1.1.1/js/dataTables.colVis.min.js"></script>
+    <script type="text/javascript">
+        var calc = exports = {};
+        function require() { return exports; };
+    </script>
     <script type="text/javascript" src="./js/vendor/lodash.min.js"></script>
     <script type="text/javascript" src="./js/vendor/select2/select2.min.js"></script>
     <script type="text/javascript" src="./calc/util.js?"></script>
+    <script type="text/javascript" src="./calc/stats.js?"></script>
     <script type="text/javascript" src="./calc/data/species.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?"></script>
@@ -795,7 +800,6 @@
     <script type="text/javascript" src="./calc/data/natures.js?"></script>
     <script type="text/javascript" src="./calc/data/abilities.js?"></script>
     <script type="text/javascript" src="./calc/data/moves.js?"></script>
-    <script type="text/javascript" src="./calc/stats.js?"></script>
     <script type="text/javascript" src="./calc/data/items.js?"></script>
     <script type="text/javascript" src="./calc/move.js?"></script>
     <script type="text/javascript" src="./calc/pokemon.js?"></script>
@@ -809,6 +813,7 @@
     <script type="text/javascript" src="./calc/mechanics/gen1.js?"></script>
     <script type="text/javascript" src="./calc/calc.js?"></script>
     <script type="text/javascript" src="./calc/desc.js?"></script>
+    <script type="text/javascript" src="./calc/index.js?"></script>
 
     <div style="clear:both;padding:20px;text-align:left"><p>Created by Honko, maintained by Austin</p>
 		<p><a href="https://github.com/Zarel/honko-damagecalc/contributors" target="_blank">Contributors</a></p>
