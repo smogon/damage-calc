@@ -1,5 +1,7 @@
 function Pokemon(
-	name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, moves, weight, gender, pokeInfo
+	name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs,
+	maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter,
+	moves, weight, gender
 ) {
 	this.name = name;
 	this.type1 = type1;
@@ -21,7 +23,6 @@ function Pokemon(
 	this.moves = moves;
 	this.weight = weight;
 	this.gender = gender;
-	this.pokeInfo = pokeInfo;
 
 	this.hasAbility = function (ability) {
 		for (var i = 0; i < arguments.length; i++) {

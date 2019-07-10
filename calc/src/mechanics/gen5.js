@@ -843,17 +843,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
 		speed = Math.min(999, speed);
 	}
 	speed = Math.max(1, speed);
-
-	printStat(pokemon, SP, speed);
 	return speed;
-}
-
-function printStat(pokemon, statName, stat) {
-	if (typeof pokemon.pokeInfo === "string") {
-		return;
-	} else {
-		pokemon.pokeInfo.find("." + statName + " .totalMod").text(stat);
-	}
 }
 
 function checkAirLock(pokemon, field) {

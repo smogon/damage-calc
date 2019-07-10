@@ -1,5 +1,7 @@
 function Field(
-	format, isGravity, isSR, weather, spikes, terrain, isReflect, isLightScreen, isProtected, isSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery
+	format, isGravity, isSR, weather, spikes, terrain, isReflect,
+	isLightScreen, isProtected, isSeeded, isForesight, isHelpingHand,
+	isTailwind, isFriendGuard, isAuroraVeil, isBattery
 ) {
 	this.getWeather = function () {
 		return weather;
@@ -8,12 +10,17 @@ function Field(
 		weather = "";
 	};
 	this.getSide = function (i) {
-		return new Side(format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i], isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
+		return new Side(
+			format, terrain, weather, isGravity, isSR[i], spikes[i], isReflect[i],
+			isLightScreen[i], isProtected[i], isSeeded[1 - i], isSeeded[i], isForesight[i],
+			isHelpingHand[i], isTailwind[i], isFriendGuard[i], isAuroraVeil[i], isBattery[i]);
 	};
 }
 
 function Side(
-	format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen, isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand, isTailwind, isFriendGuard, isAuroraVeil, isBattery
+	format, terrain, weather, isGravity, isSR, spikes, isReflect, isLightScreen,
+	isProtected, isAttackerSeeded, isDefenderSeeded, isForesight, isHelpingHand,
+	isTailwind, isFriendGuard, isAuroraVeil, isBattery
 ) {
 	this.format = format;
 	this.terrain = terrain;
