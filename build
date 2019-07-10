@@ -59,7 +59,7 @@ function cpdir(src, dest) {
 
 
 cpdir('src', 'dist').then(function () {
-	cpdir('damage/src', 'dist/damage');
+	cpdir('calc/src', 'dist/calc');
 	makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
 	makeCachebuster('dist/index.template.html', 'dist/index.html');
 });
