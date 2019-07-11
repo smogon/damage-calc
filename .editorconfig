@@ -11,7 +11,7 @@ indent_size = 3
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{json,yml,webapp}]
+[*.{json,yml,webapp,ts}]
 # npm style
 indent_style = space
 indent_size = 2

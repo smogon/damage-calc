@@ -2,3 +2,4 @@ select2
 node_modules
 *.min.js
 dist
+calc

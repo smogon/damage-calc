@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "dist",
+    "incremental": true,
+    "tsBuildInfoFile": ".tsbuildinfo",
+    "allowJs": true,
+    "target": "es3",
+    "removeComments": true,
+    "declaration": false
+  },
+  "exclude": [
+    "dist"
+  ]
+}
