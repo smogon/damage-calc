@@ -34,7 +34,7 @@
     "no-angle-bracket-type-assertion": true,
     "no-any": false,
     "no-arg": true,
-    "no-conditional-assignment": true,
+    "no-conditional-assignment": false,
     "no-construct": true,
     "no-debugger": true,
     "no-default-export": true,

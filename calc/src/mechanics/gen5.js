@@ -136,7 +136,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
             (defender.name.indexOf("Arceus") !== -1 && defender.item.indexOf("Plate") !== -1) ||
             (defender.name.indexOf("Genesect") !== -1 && defender.item.indexOf("Drive") !== -1) ||
             (defender.hasAbility("RKS System") && defender.item.indexOf("Memory") !== -1) ||
-            (defender.item.indexOf(" Z") !== -1) || (hasMegaStone(defender) && defender.name.indexOf(megaStones[defender.item]) !== -1));
+            (defender.item.indexOf(" Z") !== -1) || (MEGA_STONES[defender.item] && defender.name.indexOf(MEGA_STONES[defender.item]) !== -1));
 		// The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)
 
 	if (typeEffectiveness === 0 && move.name === "Thousand Arrows") {
@@ -943,10 +943,6 @@ function isGroundedForCalc(pokemon, field) {
         !pokemon.hasAbility("Levitate") &&
         !pokemon.hasItem("Air Balloon")
 	);
-}
-
-function hasMegaStone(pokemon) {
-	return mega_Stones.indexOf(pokemon.item) !== -1;
 }
 
 // GameFreak rounds DOWN on .5

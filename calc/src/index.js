@@ -59,6 +59,8 @@ calc.NATURES = NATURES;
 calc.TYPE_CHART = TYPE_CHART;
 calc.STATS = STATS;
 
+calc.getZMoveName = getZMoveName;
+
 // TODO: Description/KO Chance will be exposed through a 'Result' type.
 calc.buildDescription = buildDescription;
 calc.getKOChanceText = getKOChanceText;
