@@ -1,8 +1,8 @@
-function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
-	checkForecast(attacker, field.getWeather());
-	checkForecast(defender, field.getWeather());
+	checkForecast(attacker, field.weather);
+	checkForecast(defender, field.weather);
 	checkKlutz(attacker);
 	checkKlutz(defender);
 	checkSeedBoost(attacker, field);
@@ -10,10 +10,10 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 
 	attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
 	attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
-	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
 	defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
 	defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
 
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
@@ -25,10 +25,8 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 	defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
 	defender.stats[SA] = getModifiedStat(defender.rawStats[SA], defender.boosts[SA]);
 
-	checkInfiltrator(attacker, field.getSide(attackerSideNum));
-	checkInfiltrator(defender, field.getSide(1 - attackerSideNum));
-
-	field = field.getSide(attackerSideNum);
+	checkInfiltrator(attacker, field.defenderSide);
+	checkInfiltrator(defender, field.attackerSide);
 
 	var description = {
 		"attackerName": attacker.name,
@@ -40,7 +38,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 		return {"damage": [0], "description": description};
 	}
 
-	if (field.isProtected && !move.bypassesProtect && !move.isZ) {
+	if (field.defenderSide.isProtected && !move.bypassesProtect && !move.isZ) {
 		description.isProtected = true;
 		return {"damage": [0], "description": description};
 	}
@@ -83,7 +81,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 		description.moveBP = move.bp;
 		description.moveType = move.type;
 	} else if (move.name === "Nature Power") {
-		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" :
+		move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.defenderSide.terrain === "Misty" ? "Fairy" :
 			field.terrain === "Psychic" ? "Psychic" : "Normal";
 	} else if (move.name === "Revelation Dance") {
 		move.type = attacker.type1;
@@ -128,8 +126,8 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 		description.attackerAbility = attacker.ability;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, attacker.ability === "Scrappy" || field.isForesight, field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, attacker.ability === "Scrappy" || field.defenderSide.isForesight, field.isGravity);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, attacker.hasAbility("Scrappy") || field.defenderSide.isForesight, field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 	var resistedKnockOffDamage = (defender.item === "" ||
             (defender.named("Giratina-Origin") && defender.hasItem("Griseous Orb")) ||
@@ -204,14 +202,14 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 
 	if (move.name === "Guardian of Alola") {
 		var zLostHP = Math.floor(defender.curHP * 3 / 4);
-		if (field.isProtected && attacker.item.indexOf(" Z") !== -1) {
+		if (field.defenderSide.isProtected && attacker.item.indexOf(" Z") !== -1) {
 			zLostHP = Math.ceil(zLostHP / 4 - 0.5);
 		}
 		return {"damage": [zLostHP], "description": description};
 	}
 
 	if (move.name === "Nature's Madness") {
-		var lostHP = field.isProtected ? 0 : Math.floor(defender.curHP / 2);
+		var lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP / 2);
 		return {"damage": [lostHP], "description": description};
 	}
 
@@ -412,12 +410,12 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 		description.moveBP = move.bp;
 	}
 
-	if (field.isHelpingHand) {
+	if (field.attackerSide.isHelpingHand) {
 		bpMods.push(0x1800);
 		description.isHelpingHand = true;
 	}
 
-	if (field.isBattery && move.category === "Special") {
+	if (field.attackerSide.isBattery && move.category === "Special") {
 		bpMods.push(0x14CC);
 		description.isBattery = true;
 	}
@@ -594,7 +592,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 	//////////// DAMAGE ////////////
 	////////////////////////////////
 	var baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
-	if (field.format !== "Singles" && move.isSpread) {
+	if (field.gameType !== "Singles" && move.isSpread) {
 		baseDamage = pokeRound(baseDamage * 0xC00 / 0x1000);
 	}
 	if ((field.hasWeather("Sun", "Harsh Sunshine") && move.type === "Fire") || (field.hasWeather("Rain", "Heavy Rain") && move.type === "Water")) {
@@ -651,14 +649,14 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 	var applyBurn = (attacker.hasStatus("Burned") && move.category === "Physical" && !attacker.hasAbility("Guts") && !move.ignoresBurn);
 	description.isBurned = applyBurn;
 	var finalMods = [];
-	if (field.isReflect && move.category === "Physical" && !isCritical && !field.isAuroraVeil) { //doesn't stack with Aurora Veil
-		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
+	if (field.defenderSide.isReflect && move.category === "Physical" && !isCritical && !field.defenderSide.isAuroraVeil) { //doesn't stack with Aurora Veil
+		finalMods.push(field.gameType !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isReflect = true;
-	} else if (field.isLightScreen && move.category === "Special" && !isCritical && !field.isAuroraVeil) { //doesn't stack with Aurora Veil
-		finalMods.push(field.format !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
+	} else if (field.defenderSide.isLightScreen && move.category === "Special" && !isCritical && !field.defenderSide.isAuroraVeil) { //doesn't stack with Aurora Veil
+		finalMods.push(field.gameType !== "Singles" ? (gen >= 6 ? 0xAAC : 0xA8F) : 0x800);
 		description.isLightScreen = true;
 	}
-	if (defender.hasAbility("Multiscale", "Shadow Shield") && defender.curHP === defender.maxHP && !field.isSR && (!field.spikes || defender.hasType("Flying"))) {
+	if (defender.hasAbility("Multiscale", "Shadow Shield") && defender.curHP === defender.maxHP && !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType("Flying"))) {
 		finalMods.push(0x800);
 		description.defenderAbility = defender.ability;
 	}
@@ -674,12 +672,12 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 		finalMods.push(0x1800);
 		description.attackerAbility = attacker.ability;
 	}
-	if (field.isFriendGuard) {
+	if (field.defenderSide.isFriendGuard) {
 		finalMods.push(0xC00);
 		description.isFriendGuard = true;
 	}
-	if (field.isAuroraVeil && !isCritical) { //doesn't protect from critical hits
-		finalMods.push(field.format !== "Singles" ? 0xAAC : 0x800); // 0.5x damage from physical and special attacks in singles, 0.66x damage in Doubles
+	if (field.defenderSide.isAuroraVeil && !isCritical) { //doesn't protect from critical hits
+		finalMods.push(field.gameType !== "Singles" ? 0xAAC : 0x800); // 0.5x damage from physical and special attacks in singles, 0.66x damage in Doubles
 		description.isAuroraVeil = true;
 	}
 	if (attacker.hasAbility("Sniper") && isCritical) {
@@ -711,7 +709,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 		finalMods.push(0x800);
 		description.defenderItem = defender.item;
 	}
-	if (field.isProtected && move.isZ && attacker.item.indexOf(" Z") !== -1) {
+	if (field.defenderSide.isProtected && move.isZ && attacker.item.indexOf(" Z") !== -1) {
 		finalMods.push(0x400);
 		description.isProtected = true;
 	}
@@ -721,7 +719,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field, attackerSideN
 	for (var i = 0; i < 16; i++) {
 		damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
 		// is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
-		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.format === "Singles" || !move.isSpread)) {
+		if (attacker.ability === "Parental Bond" && move.hits === 1 && (field.gameType === "Singles" || !move.isSpread)) {
 			var bondFactor = gen < 7 ? 3 / 2 : 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
 			damage[i] = Math.floor(damage[i] * bondFactor);
 			description.attackerAbility = attacker.ability;
@@ -801,8 +799,8 @@ function getModifiedStat(stat, mod) {
 }
 
 function getFinalSpeed(gen, pokemon, field, side) {
-	var weather = field.getWeather();
-	var terrain = side.terrain;
+	var weather = field.weather;
+	var terrain = field.terrain;
 	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
 	//ITEM EFFECTS
 	if (pokemon.hasItem("Choice Scarf")) {
@@ -848,7 +846,7 @@ function getFinalSpeed(gen, pokemon, field, side) {
 
 function checkAirLock(pokemon, field) {
 	if (pokemon.hasAbility("Air Lock", "Cloud Nine")) {
-		field.clearWeather();
+		field.weather = '';
 	}
 }
 
@@ -902,10 +900,9 @@ function checkDownload(source, target) {
 }
 
 function checkSeedBoost(pokemon, field) {
-	var mappedField = field.getSide();
-	if (mappedField.terrain && pokemon.item.indexOf("Seed") !== -1) {
+	if (field.terrain && pokemon.item.indexOf("Seed") !== -1) {
 		var terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(" "));
-		if (terrainSeed === mappedField.terrain) {
+		if (terrainSeed === field.terrain) {
 			if (terrainSeed === "Grassy" || terrainSeed === "Electric") {
 				pokemon.boosts[DF] = pokemon.hasAbility("Contrary") ? Math.max(-6, pokemon.boosts[DF] - 1) : Math.min(6, pokemon.boosts[DF] + 1);
 			} else {
@@ -919,8 +916,8 @@ function hasTerrainSeed(pokemon) {
 	return pokemon.hasItem("Electric Seed", "Misty Seed", "Grassy Seed", "Psychic Seed");
 }
 
-function checkInfiltrator(attacker, affectedSide) {
-	if (attacker.hasAbility("Infiltrator")) {
+function checkInfiltrator(pokemon, affectedSide) {
+	if (pokemon.hasAbility("Infiltrator")) {
 		affectedSide.isReflect = false;
 		affectedSide.isLightScreen = false;
 		affectedSide.isAuroraVeil = false;

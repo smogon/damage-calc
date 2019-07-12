@@ -1,14 +1,12 @@
-function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
-	checkForecast(attacker, field.getWeather());
-	checkForecast(defender, field.getWeather());
+	checkForecast(attacker, field.weather);
+	checkForecast(defender, field.weather);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
-	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
-	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
-
-	field = field.getSide(attackerSideNum);
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
 
 	var description = {
 		"attackerName": attacker.name,
@@ -20,7 +18,7 @@ function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field, attackerSide
 		return {"damage": [0], "description": description};
 	}
 
-	if (field.isProtected) {
+	if (field.defenderSide.isProtected) {
 		description.isProtected = true;
 		return {"damage": [0], "description": description};
 	}
@@ -36,8 +34,8 @@ function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field, attackerSide
 		description.moveBP = move.bp;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, field.isForesight);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, field.isForesight) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, field.defenderSide.isForesight);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -175,17 +173,17 @@ function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field, attackerSide
 	}
 
 	if (!isCritical) {
-		var screenMultiplier = field.format !== "Singles" ? (2 / 3) : (1 / 2);
-		if (isPhysical && field.isReflect) {
+		var screenMultiplier = field.gameType !== "Singles" ? (2 / 3) : (1 / 2);
+		if (isPhysical && field.defenderSide.isReflect) {
 			baseDamage = Math.floor(baseDamage * screenMultiplier);
 			description.isReflect = true;
-		} else if (!isPhysical && field.isLightScreen) {
+		} else if (!isPhysical && field.defenderSide.isLightScreen) {
 			baseDamage = Math.floor(baseDamage * screenMultiplier);
 			description.isLightScreen = true;
 		}
 	}
 
-	if (field.format !== "Singles" && move.isSpread) {
+	if (field.gameType !== "Singles" && move.isSpread) {
 		// some sources say 3/4, some say 2/3, some say 1/2...using 3/4 for now since that's what DPP+ use
 		baseDamage = Math.floor(baseDamage * 3 / 4);
 	}
@@ -216,7 +214,7 @@ function CALCULATE_DAMAGE_ADV(gen, attacker, defender, move, field, attackerSide
 		description.moveBP = move.bp * 2;
 	}
 
-	if (field.isHelpingHand) {
+	if (field.attackerSide.isHelpingHand) {
 		baseDamage = Math.floor(baseDamage * 1.5);
 		description.isHelpingHand = true;
 	}

@@ -1,18 +1,16 @@
-function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
-	checkForecast(attacker, field.getWeather());
-	checkForecast(defender, field.getWeather());
+	checkForecast(attacker, field.weather);
+	checkForecast(defender, field.weather);
 	checkKlutz(attacker);
 	checkKlutz(defender);
 	checkIntimidate(attacker, defender);
 	checkIntimidate(defender, attacker);
 	checkDownload(attacker, defender);
 	checkDownload(defender, attacker);
-	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
-	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
-
-	field = field.getSide(attackerSideNum);
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
 
 	var description = {
 		"attackerName": attacker.name,
@@ -24,7 +22,7 @@ function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field, attackerSide
 		return {"damage": [0], "description": description};
 	}
 
-	if (field.isProtected && !move.bypassesProtect) {
+	if (field.defenderSide.isProtected && !move.bypassesProtect) {
 		description.isProtected = true;
 		return {"damage": [0], "description": description};
 	}
@@ -71,8 +69,8 @@ function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field, attackerSide
 		description.attackerAbility = attacker.ability;
 	}
 
-	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, attacker.hasAbility("Scrappy") || field.isForesight, field.isGravity) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, attacker.hasAbility("Scrappy") || field.defenderSide.isForesight, field.isGravity);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, attacker.hasAbility("Scrappy") || field.defenderSide.isForesight, field.isGravity) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -169,7 +167,7 @@ function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field, attackerSide
 
 	var basePower = move.bp;
 
-	if (field.isHelpingHand) {
+	if (field.attackerSide.isHelpingHand) {
 		basePower = Math.floor(basePower * 1.5);
 		description.isHelpingHand = true;
 	}
@@ -330,17 +328,17 @@ function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field, attackerSide
 	}
 
 	if (!isCritical) {
-		var screenMultiplier = field.format !== "Singles" ? (2 / 3) : (1 / 2);
-		if (isPhysical && field.isReflect) {
+		var screenMultiplier = field.gameType !== "Singles" ? (2 / 3) : (1 / 2);
+		if (isPhysical && field.defenderSide.isReflect) {
 			baseDamage = Math.floor(baseDamage * screenMultiplier);
 			description.isReflect = true;
-		} else if (!isPhysical && field.isLightScreen) {
+		} else if (!isPhysical && field.defenderSide.isLightScreen) {
 			baseDamage = Math.floor(baseDamage * screenMultiplier);
 			description.isLightScreen = true;
 		}
 	}
 
-	if (field.format !== "Singles" && move.isSpread) {
+	if (field.gameType !== "Singles" && move.isSpread) {
 		baseDamage = Math.floor(baseDamage * 3 / 4);
 	}
 

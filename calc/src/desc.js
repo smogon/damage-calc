@@ -100,24 +100,24 @@ function getKOChanceText(gen, damage, attacker, defender, field, move, hits, isB
 
 	var hazards = 0;
 	var hazardText = [];
-	if (field.isSR && !defender.hasAbility("Magic Guard", "Mountaineer")) {
+	if (field.defenderSide.isSR && !defender.hasAbility("Magic Guard", "Mountaineer")) {
 		var effectiveness = TYPE_CHART[gen]['Rock'][defender.type1] * (defender.type2 ? TYPE_CHART[gen]['Rock'][defender.type2] : 1);
 		hazards += Math.floor(effectiveness * defender.maxHP / 8);
 		hazardText.push('Stealth Rock');
 	}
 	if (!defender.hasType('Flying') &&
 		!defender.hasAbility("Magic Guard", "Levitate") && !defender.hasItem("Air Balloon")) {
-		if (field.spikes === 1) {
+		if (field.defenderSide.spikes === 1) {
 			hazards += Math.floor(defender.maxHP / 8);
 			if (gen === 2) {
 				hazardText.push('Spikes');
 			} else {
 				hazardText.push('1 layer of Spikes');
 			}
-		} else if (field.spikes === 2) {
+		} else if (field.defenderSide.spikes === 2) {
 			hazards += Math.floor(defender.maxHP / 6);
 			hazardText.push('2 layers of Spikes');
-		} else if (field.spikes === 3) {
+		} else if (field.defenderSide.spikes === 3) {
 			hazards += Math.floor(defender.maxHP / 4);
 			hazardText.push('3 layers of Spikes');
 		}
@@ -175,13 +175,13 @@ function getKOChanceText(gen, damage, attacker, defender, field, move, hits, isB
 		eot -= Math.floor(defender.maxHP / 8);
 		eotText.push("Sticky Barb damage");
 	}
-	if (field.isDefenderSeeded) {
+	if (field.defenderSide.isSeeded) {
 		if (!defender.hasAbility("Magic Guard")) {
 			eot -= gen >= 2 ? Math.floor(defender.maxHP / 8) : Math.floor(defender.maxHP / 16); // 1/16 in gen 1, 1/8 in gen 2 onwards
 			eotText.push("Leech Seed damage");
 		}
 	}
-	if (field.isAttackerSeeded && !attacker.hasAbility("Magic Guard")) {
+	if (field.attackerSide.isSeeded && !attacker.hasAbility("Magic Guard")) {
 		if (attacker.hasAbility("Liquid Ooze")) {
 			eot -= gen >= 2 ? Math.floor(attacker.maxHP / 8) : Math.floor(attacker.maxHP / 16);
 			eotText.push("Liquid Ooze damage");

@@ -1,17 +1,15 @@
-function CALCULATE_DAMAGE_GSC(gen, attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_GSC(gen, attacker, defender, move, field) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA])));
 	attacker.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD])));
-	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
 
 	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
 	defender.stats[SA] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SA], defender.boosts[SA])));
 	defender.stats[SD] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SD], defender.boosts[SD])));
-	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
-
-	field = field.getSide(attackerSideNum);
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
 
 	var description = {
 		"attackerName": attacker.name,
@@ -23,13 +21,13 @@ function CALCULATE_DAMAGE_GSC(gen, attacker, defender, move, field, attackerSide
 		return {"damage": [0], "description": description};
 	}
 
-	if (field.isProtected) {
+	if (field.defenderSide.isProtected) {
 		description.isProtected = true;
 		return {"damage": [0], "description": description};
 	}
 
-	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, field.isForesight);
-	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, field.isForesight) : 1;
+	var typeEffect1 = getMoveEffectiveness(gen, move, defender.type1, field.defenderSide.isForesight);
+	var typeEffect2 = defender.type2 ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight) : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -83,10 +81,10 @@ function CALCULATE_DAMAGE_GSC(gen, attacker, defender, move, field, attackerSide
 	}
 
 	if (!ignoreMods) {
-		if (isPhysical && field.isReflect) {
+		if (isPhysical && field.defenderSide.isReflect) {
 			df *= 2;
 			description.isReflect = true;
-		} else if (!isPhysical && field.isLightScreen) {
+		} else if (!isPhysical && field.defenderSide.isLightScreen) {
 			df *= 2;
 			description.isLightScreen = true;
 		}
@@ -124,10 +122,10 @@ function CALCULATE_DAMAGE_GSC(gen, attacker, defender, move, field, attackerSide
 
 	if ((field.hasWeather("Sun") && move.type === "Fire") || (field.hasWeather("Rain") && move.type === "Water")) {
 		baseDamage = Math.floor(baseDamage * 1.5);
-		description.weather = field.weather;
+		description.weather = field.defenderSide.weather;
 	} else if ((field.hasWeather("Sun") && move.type === "Water") || (field.hasWeather("Rain") && (move.type === "Fire" || move.name === "Solar Beam"))) {
 		baseDamage = Math.floor(baseDamage / 2);
-		description.weather = field.weather;
+		description.weather = field.defenderSide.weather;
 	}
 
 	if (move.type === attacker.type1 || move.type === attacker.type2) {

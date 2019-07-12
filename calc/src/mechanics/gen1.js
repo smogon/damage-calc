@@ -1,15 +1,13 @@
-function CALCULATE_DAMAGE_RBY(gen, attacker, defender, move, field, attackerSideNum) {
+function CALCULATE_DAMAGE_RBY(gen, attacker, defender, move, field) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL])));
-	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.getSide(attackerSideNum));
+	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
 
 	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
 	defender.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SL], defender.boosts[SL])));
-	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.getSide(1 - attackerSideNum));
-
-	field = field.getSide(attackerSideNum);
+	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
 
 	var description = {
 		"attackerName": attacker.name,
@@ -67,10 +65,10 @@ function CALCULATE_DAMAGE_RBY(gen, attacker, defender, move, field, attackerSide
 	}
 
 	if (!move.isCrit) {
-		if (isPhysical && field.isReflect) {
+		if (isPhysical && field.defenderSide.isReflect) {
 			df *= 2;
 			description.isReflect = true;
-		} else if (!isPhysical && field.isLightScreen) {
+		} else if (!isPhysical && field.defenderSide.isLightScreen) {
 			df *= 2;
 			description.isLightScreen = true;
 		}

@@ -1,4 +1,4 @@
-export type Format = 'Singles' | 'Doubles';
+export type GameType = 'Singles' | 'Doubles';
 export type Terrain = '' | 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
 export type Weather =
   | ''
@@ -11,72 +11,48 @@ export type Weather =
   | 'Strong Winds';
 
 class Field {
+  gameType: GameType;
   weather: Weather;
-  getSide: (sideNum: 0 | 1) => Side;
+  terrain: Terrain;
+  isGravity: boolean;
+  attackerSide: Side;
+  defenderSide: Side;
 
   constructor(
-    format: Format,
-    isGravity: boolean,
-    isSR: [boolean, boolean],
+    gameType: GameType,
     weather: Weather,
-    spikes: [number, number],
     terrain: Terrain,
-    isReflect: [boolean, boolean],
-    isLightScreen: [boolean, boolean],
-    isProtected: [boolean, boolean],
-    isSeeded: [boolean, boolean],
-    isForesight: [boolean, boolean],
-    isHelpingHand: [boolean, boolean],
-    isTailwind: [boolean, boolean],
-    isFriendGuard: [boolean, boolean],
-    isAuroraVeil: [boolean, boolean],
-    isBattery: [boolean, boolean]
+    isGravity: boolean,
+    attackerSide: Side,
+    defenderSide: Side
   ) {
-    this.weather = weather;
-    this.getSide = (i: number) =>
-      new Side(
-        format,
-        terrain,
-        weather,
-        isGravity,
-        isSR[i],
-        spikes[i],
-        isReflect[i],
-        isLightScreen[i],
-        isProtected[i],
-        isSeeded[1 - i],
-        isSeeded[i],
-        isForesight[i],
-        isHelpingHand[i],
-        isTailwind[i],
-        isFriendGuard[i],
-        isAuroraVeil[i],
-        isBattery[i]
-      );
+    this.gameType = gameType || 'Singles';
+    this.terrain = terrain || '';
+    this.weather = weather || '';
+    this.isGravity = !!isGravity;
+
+    this.attackerSide = attackerSide;
+    this.defenderSide = defenderSide;
   }
 
-  getWeather() {
-    return this.weather;
+  hasWeather(...weathers: Weather[]) {
+    return weathers.indexOf(this.weather) !== -1;
   }
 
-  // TODO: remove this so that we can create Side on initialization
-  clearWeather() {
-    this.weather = '';
+  swap() {
+    return new Field(
+      this.gameType, this.weather, this.terrain, this.isGravity,
+      this.defenderSide, this.attackerSide);
   }
 }
 
 class Side {
-  format: Format;
-  terrain: Terrain;
-  weather: Weather;
-  isGravity: boolean;
-  isSR: boolean;
   spikes: number;
+  isSR: boolean;
   isReflect: boolean;
   isLightScreen: boolean;
   isProtected: boolean;
-  isAttackerSeeded: boolean;
-  isDefenderSeeded: boolean;
+  isSeeded: boolean;
   isForesight: boolean;
   isTailwind: boolean;
   isHelpingHand: boolean;
@@ -85,45 +61,31 @@ class Side {
   isBattery: boolean;
 
   constructor(
-    format?: Format,
-    terrain?: Terrain,
-    weather?: Weather,
-    isGravity?: boolean,
-    isSR?: boolean,
     spikes?: number,
+    isSR?: boolean,
     isReflect?: boolean,
     isLightScreen?: boolean,
     isProtected?: boolean,
-    isAttackerSeeded?: boolean,
-    isDefenderSeeded?: boolean,
+    isSeeded?: boolean,
     isForesight?: boolean,
-    isHelpingHand?: boolean,
     isTailwind?: boolean,
+    isHelpingHand?: boolean,
     isFriendGuard?: boolean,
     isAuroraVeil?: boolean,
     isBattery?: boolean
   ) {
-    this.format = format || 'Singles';
-    this.terrain = terrain || '';
-    this.weather = weather || '';
-    this.isGravity = !!isGravity;
-    this.isSR = !!isSR;
     this.spikes = spikes || 0;
+    this.isSR = !!isSR;
     this.isReflect = !!isReflect;
     this.isLightScreen = !!isLightScreen;
     this.isProtected = !!isProtected;
-    this.isAttackerSeeded = !!isAttackerSeeded;
-    this.isDefenderSeeded = !!isDefenderSeeded;
+    this.isSeeded = !!isSeeded;
     this.isForesight = !!isForesight;
-    this.isHelpingHand = !!isHelpingHand;
     this.isTailwind = !!isTailwind;
+    this.isHelpingHand = !!isHelpingHand;
     this.isFriendGuard = !!isFriendGuard;
     this.isAuroraVeil = !!isAuroraVeil;
     this.isBattery = !!isBattery;
-  }
-
-  hasWeather(...weathers: Weather[]) {
-    return weathers.indexOf(this.weather) !== -1;
   }
 }
 

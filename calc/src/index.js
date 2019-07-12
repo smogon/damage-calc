@@ -50,6 +50,7 @@ calc.calculateDamage = calculateDamage;
 calc.Pokemon = Pokemon;
 calc.Move = Move;
 calc.Field = Field;
+calc.Side = Side;
 
 calc.ABILITIES = ABILITIES;
 calc.ITEMS = ITEMS;

@@ -73,18 +73,23 @@ function calculate() {
 			setName = setOptions[i].id.substring(setOptions[i].id.indexOf("(") + 1, setOptions[i].id.lastIndexOf(")"));
 			setTier = setName.substring(0, setName.indexOf(" "));
 			if (_.contains(selectedTiers, setTier)) {
-				attacker = (mode === "one-vs-all") ? createPokemon(pokeInfo) : createPokemon(setOptions[i].id);
-				defender = (mode === "one-vs-all") ? createPokemon(setOptions[i].id) : createPokemon(pokeInfo);
+				var field = createField();
+				if (mode === "one-vs-all") {
+					attacker = createPokemon(pokeInfo);
+					defender = createPokemon(setOptions[i].id);
+				} else {
+					attacker = createPokemon(setOptions[i].id);
+					defender = createPokemon(pokeInfo);
+					field = field.swap();
+				}
 				if (attacker.ability === "Rivalry") {
 					attacker.gender = "genderless";
 				}
 				if (defender.ability === "Rivalry") {
 					defender.gender = "genderless";
 				}
-				var field = createField();
 				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
-				var defenderSide = field.getSide(~~(mode === "one-vs-all"));
 				var highestDamage = -1;
 				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
@@ -96,7 +101,7 @@ function calculate() {
 					minPixels = Math.floor(minDamage * 48 / defender.maxHP);
 					maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
 					result.koChanceText = attacker.moves[n].bp === 0 ? 'nice move' :
-						calc.getKOChanceText(gen, result.damage, attacker, defender, defenderSide, attacker.moves[n], attacker.moves[n].hits, attacker.ability === 'Bad Dreams');
+						calc.getKOChanceText(gen, result.damage, attacker, defender, field, attacker.moves[n], attacker.moves[n].hits, attacker.ability === 'Bad Dreams');
 					if (maxDamage > highestDamage) {
 						highestDamage = maxDamage;
 						while (data.length > 1) {
@@ -129,10 +134,9 @@ function getSelectedTiers() {
 }
 
 function calculateMovesOfAttacker(gen, attacker, defender, field) {
-	var sideNum = +(mode === "one-vs-all");
 	var results = [];
 	for (var i = 0; i < 4; i++) {
-		results[i] = calc.calculateDamage(gen, attacker, defender, attacker.moves[i], field, sideNum);
+		results[i] = calc.calculateDamage(gen, attacker, defender, attacker.moves[i], field);
 	}
 	return results;
 }

@@ -31,8 +31,9 @@ function calculate() {
 	var battling = [p1, p2];
 	p1.maxDamages = [];
 	p2.maxDamages = [];
-	var field = createField();
-	damageResults = calculateAllMoves(gen, p1, p2, field);
+	var p1field = createField();
+	var p2field = p1field.swap();
+	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
 	p1info.find(".sp .totalMod").text(p1.stats[SP]);
 	p2info.find(".sp .totalMod").text(p2.stats[SP]);
 	var fastestSide = p1.stats[SP] > p2.stats[SP] ? 0 : p1.stats[SP] === p2.stats[SP] ? "tie" : 1;
@@ -44,7 +45,7 @@ function calculate() {
 		result = damageResults[0][i];
 		minDamage = result.damage[0] * p1.moves[i].hits;
 		maxDamage = result.damage[result.damage.length - 1] * p1.moves[i].hits;
-		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && field.getSide(1).isProtected && p1.moves[i].isZ) {
+		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && p1field.defenderSide.isProtected && p1.moves[i].isZ) {
 			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			zProtectAlerted = true;
 		}
@@ -59,7 +60,7 @@ function calculate() {
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p2.maxHP) / 10 : Math.floor(maxDamage * 48 / p2.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
 		result.koChanceText = p1.moves[i].bp === 0 ? 'nice move' :
-			calc.getKOChanceText(gen, result.damage, p1, p2, field.getSide(1), p1.moves[i], p1.moves[i].hits, p1.ability === 'Bad Dreams');
+			calc.getKOChanceText(gen, result.damage, p1, p2, p1field, p1.moves[i], p1.moves[i].hits, p1.ability === 'Bad Dreams');
 		var recoveryText = '';
 		if (p1.moves[i].givesHealth) {
 			var minHealthRecovered = notation === '%' ? Math.floor(minDamage * p1.moves[i].percentHealed * 1000 / p1.maxHP) /
@@ -124,7 +125,7 @@ function calculate() {
 		var recoveryText = '';
 		minDamage = result.damage[0] * p2.moves[i].hits;
 		maxDamage = result.damage[result.damage.length - 1] * p2.moves[i].hits;
-		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && field.getSide(0).isProtected && p2.moves[i].isZ) {
+		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && p2field.defenderSide.isProtected && p2.moves[i].isZ) {
 			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			zProtectAlerted = true;
 		}
@@ -139,7 +140,7 @@ function calculate() {
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * 48 / p1.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
 		result.koChanceText = p2.moves[i].bp === 0 ? 'nice move' :
-			calc.getKOChanceText(gen, result.damage, p2, p1, field.getSide(0), p2.moves[i], p2.moves[i].hits, p2.ability === 'Bad Dreams');
+			calc.getKOChanceText(gen, result.damage, p2, p1, p2field, p2.moves[i], p2.moves[i].hits, p2.ability === 'Bad Dreams');
 		if (p2.moves[i].givesHealth) {
 			var minHealthRecovered = notation === '%' ? Math.floor(minDamage * p2.moves[i].percentHealed * 1000 / p2.maxHP) /
                 10 : Math.floor(minDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
@@ -256,12 +257,12 @@ function checkStatBoost(p1, p2) {
 	}
 }
 
-function calculateAllMoves(gen, p1, p2, field) {
+function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
-		results[0][i] = calc.calculateDamage(gen, p1, p2, p1.moves[i], field, 1);
-		results[1][i] = calc.calculateDamage(gen, p2, p1, p2.moves[i], field, 0);
+		results[0][i] = calc.calculateDamage(gen, p1, p2, p1.moves[i], p1field);
+		results[1][i] = calc.calculateDamage(gen, p2, p1, p2.moves[i], p2field);
 	}
 	return results;
 }
