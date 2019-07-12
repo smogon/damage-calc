@@ -191,7 +191,7 @@ function getKOChanceText(gen, damage, attacker, defender, field, move, hits, isB
 		}
 	}
 	if (field.terrain === "Grassy") {
-		if (isGroundedForCalc(defender, field)) {
+		if (isGrounded(defender, field)) {
 			eot += Math.floor(defender.maxHP / 16);
 			eotText.push("Grassy Terrain recovery");
 		}

@@ -1,4 +1,4 @@
-function CALCULATE_DAMAGE_DPP(gen, attacker, defender, move, field) {
+function calculateDPP(gen, attacker, defender, move, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.weather);

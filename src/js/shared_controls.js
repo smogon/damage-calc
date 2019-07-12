@@ -868,7 +868,7 @@ var stickyMoves = (function () {
 	};
 })();
 
-function isGrounded(pokeInfo) {
+function isPokeInfoGrounded(pokeInfo) {
 	return $("#gravity").prop("checked") || (
 		pokeInfo.find(".type1").val() !== "Flying" &&
         pokeInfo.find(".type2").val() !== "Flying" &&
@@ -887,9 +887,9 @@ function getTerrainEffects() {
 		var id = $(this).closest(".poke-info").prop("id");
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 		if (terrainValue === "Electric") {
-			$("#" + id).find("[value='Asleep']").prop("disabled", isGrounded($("#" + id)));
+			$("#" + id).find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#" + id)));
 		} else if (terrainValue === "Misty") {
-			$("#" + id).find(".status").prop("disabled", isGrounded($("#" + id)));
+			$("#" + id).find(".status").prop("disabled", isPokeInfoGrounded($("#" + id)));
 		}
 		break;
 	case "ability":
@@ -898,11 +898,11 @@ function getTerrainEffects() {
 		if (terrainValue === "Electric") {
 			$("#p1").find(".status").prop("disabled", false);
 			$("#p2").find(".status").prop("disabled", false);
-			$("#p1").find("[value='Asleep']").prop("disabled", isGrounded($("#p1")));
-			$("#p2").find("[value='Asleep']").prop("disabled", isGrounded($("#p2")));
+			$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p2")));
 		} else if (terrainValue === "Misty") {
-			$("#p1").find(".status").prop("disabled", isGrounded($("#p1")));
-			$("#p2").find(".status").prop("disabled", isGrounded($("#p2")));
+			$("#p1").find(".status").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find(".status").prop("disabled", isPokeInfoGrounded($("#p2")));
 		} else {
 			$("#p1").find("[value='Asleep']").prop("disabled", false);
 			$("#p1").find(".status").prop("disabled", false);
@@ -916,11 +916,11 @@ function getTerrainEffects() {
 			// need to enable status because it may be disabled by Misty Terrain before.
 			$("#p1").find(".status").prop("disabled", false);
 			$("#p2").find(".status").prop("disabled", false);
-			$("#p1").find("[value='Asleep']").prop("disabled", isGrounded($("#p1")));
-			$("#p2").find("[value='Asleep']").prop("disabled", isGrounded($("#p2")));
+			$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p2")));
 		} else if ($(this).prop("checked") && $(this).val() === "Misty") {
-			$("#p1").find(".status").prop("disabled", isGrounded($("#p1")));
-			$("#p2").find(".status").prop("disabled", isGrounded($("#p2")));
+			$("#p1").find(".status").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find(".status").prop("disabled", isPokeInfoGrounded($("#p2")));
 		} else {
 			$("#p1").find("[value='Asleep']").prop("disabled", false);
 			$("#p1").find(".status").prop("disabled", false);

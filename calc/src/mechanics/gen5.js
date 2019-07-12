@@ -1,4 +1,4 @@
-function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field) {
+function calculateBW(gen, attacker, defender, move, field) {
 	checkAirLock(attacker, field);
 	checkAirLock(defender, field);
 	checkForecast(attacker, field.weather);
@@ -180,7 +180,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field) {
 		description.defenderItem = defender.item;
 		return {"damage": [0], "description": description};
 	}
-	if (move.hasPriority && field.terrain === "Psychic" && isGroundedForCalc(defender, field)) {
+	if (move.hasPriority && field.terrain === "Psychic" && isGrounded(defender, field)) {
 		description.terrain = field.terrain;
 		return {"damage": [0], "description": description};
 	}
@@ -604,7 +604,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field) {
 	} else if ((field.hasWeather("Harsh Sunshine") && move.type === "Water") || (field.hasWeather("Heavy Rain") && move.type === "Fire")) {
 		return {"damage": [0], "description": description};
 	}
-	if (isGroundedForCalc(attacker, field)) {
+	if (isGrounded(attacker, field)) {
 		if (field.terrain === "Electric" && move.type === "Electric") {
 			baseDamage = pokeRound(baseDamage * 0x1800 / 0x1000);
 			description.terrain = field.terrain;
@@ -616,7 +616,7 @@ function CALCULATE_DAMAGE_BW(gen, attacker, defender, move, field) {
 			description.terrain = field.terrain;
 		}
 	}
-	if (isGroundedForCalc(defender, field)) {
+	if (isGrounded(defender, field)) {
 		if (field.terrain === "Misty" && move.type === "Dragon") {
 			baseDamage = pokeRound(baseDamage * 0x800 / 0x1000);
 			description.terrain = field.terrain;
@@ -934,7 +934,7 @@ function countBoosts(gen, boosts) {
 	return sum;
 }
 
-function isGroundedForCalc(pokemon, field) {
+function isGrounded(pokemon, field) {
 	return field.isGravity || (
 		!pokemon.hasType("Flying") &&
         !pokemon.hasAbility("Levitate") &&

@@ -44,8 +44,7 @@ var calc = calc || exports;
 // FIXME: convert everything to Typescript so this all just turns into export
 // statements and actually works in a module environment.
 
-// TODO: rename - 'calculate' causes collisions in the UI.
-calc.calculateDamage = calculateDamage;
+calc.calculate = calculate;
 
 calc.Pokemon = Pokemon;
 calc.Move = Move;

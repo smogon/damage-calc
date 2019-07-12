@@ -23,7 +23,7 @@ for (var i = 0; i < 4; i++) {
 }
 
 var damageResults;
-function calculate() {
+function performCalculations() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");
 	var p1 = createPokemon(p1info);
@@ -261,8 +261,8 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
-		results[0][i] = calc.calculateDamage(gen, p1, p2, p1.moves[i], p1field);
-		results[1][i] = calc.calculateDamage(gen, p2, p1, p2.moves[i], p2field);
+		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
+		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
 	}
 	return results;
 }
@@ -272,12 +272,12 @@ $(".mode").change(function () {
 });
 
 $(".notation").change(function () {
-	calculate();
+	performCalculations();
 });
 
 $(document).ready(function () {
 	$(".calc-trigger").bind("change keyup", function () {
-		setTimeout(calculate, 0);
+		setTimeout(performCalculations, 0);
 	});
-	calculate();
+	performCalculations();
 });

@@ -62,7 +62,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 	return parseInt(b) - parseInt(a);
 };
 
-function calculate() {
+function performCalculations() {
 	var attacker, defender, setName, setTier;
 	var selectedTiers = getSelectedTiers();
 	var setOptions = getSetOptions();
@@ -136,7 +136,7 @@ function getSelectedTiers() {
 function calculateMovesOfAttacker(gen, attacker, defender, field) {
 	var results = [];
 	for (var i = 0; i < 4; i++) {
-		results[i] = calc.calculateDamage(gen, attacker, defender, attacker.moves[i], field);
+		results[i] = calc.calculate(gen, attacker, defender, attacker.moves[i], field);
 	}
 	return results;
 }
@@ -232,7 +232,7 @@ function placeBsBtn() {
 			setTimeout(function () { $(".bs-btn").popover('destroy'); }, 1350);
 		}
 		table.clear();
-		calculate();
+		performCalculations();
 	});
 }
 
