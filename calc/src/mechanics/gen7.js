@@ -802,58 +802,6 @@ function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity) {
 	}
 }
 
-function getModifiedStat(stat, mod) {
-	return mod > 0 ? Math.floor(stat * (2 + mod) / 2) :
-		mod < 0 ? Math.floor(stat * 2 / (2 - mod)) :
-			stat;
-}
-
-function getFinalSpeed(gen, pokemon, field, side) {
-	var weather = field.weather;
-	var terrain = field.terrain;
-	var speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
-	//ITEM EFFECTS
-	if (pokemon.hasItem("Choice Scarf")) {
-		speed = pokeRound(speed * 1.5);
-	} else if (pokemon.hasItem("Macho Brace", "Iron Ball")) {
-		speed = pokeRound(speed / 2);
-	} else if (pokemon.hasItem("Quick Powder") && pokemon.named("Ditto")) {
-		speed *= 2;
-	}
-	if ((pokemon.hasAbility("Chlorophyll") && weather.indexOf("Sun") !== -1) ||
-            (pokemon.hasAbility("Sand Rush") && weather === "Sand") ||
-            (pokemon.hasAbility("Swift Swim") && weather.indexOf("Rain") !== -1) ||
-            (pokemon.hasAbility("Slush Rush") && weather === "Hail")) {
-		speed *= 2;
-	} else if (pokemon.hasAbility("Quick Feet") && !pokemon.hasStatus("Healthy")) {
-		speed = pokeRound(speed * 1.5);
-	} else if (pokemon.hasAbility("Slow Start") && pokemon.abilityOn) {
-		speed = pokeRound(speed / 2);
-	} else if ((pokemon.hasAbility("Surge Surfer") && terrain === "Electric") ||
-						 (pokemon.hasAbility("Unburden") && pokemon.abilityOn)) {
-		speed *= 2;
-	}
-	//FIELD EFFECTS (Tailwind)
-	if (side.isTailwind) {
-		speed *= 2;
-	}
-
-	//PARALYSIS
-	if (pokemon.hasStatus("Paralyzed") && !pokemon.hasAbility("Quick Feet")) {
-		if (gen < 7) {
-			speed = pokeRound(speed * 0.25);
-		} else {
-			speed = pokeRound(speed * 0.5);
-		}
-	}
-
-	if (gen <= 2) {
-		speed = Math.min(999, speed);
-	}
-	speed = Math.max(1, speed);
-	return speed;
-}
-
 function checkAirLock(pokemon, field) {
 	if (pokemon.hasAbility("Air Lock", "Cloud Nine")) {
 		field.weather = '';
@@ -942,11 +890,6 @@ function countBoosts(gen, boosts) {
 		}
 	}
 	return sum;
-}
-
-// GameFreak rounds DOWN on .5
-function pokeRound(num) {
-	return (num % 1 > 0.5) ? Math.ceil(num) : Math.floor(num);
 }
 
 function getBaseDamage(level, basePower, attack, defense) {

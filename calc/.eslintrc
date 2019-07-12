@@ -17,6 +17,7 @@
         "NATURES": false,
         "Pokemon": false,
         "getFinalSpeed": false,
+        "pokeRound": false,
         "getItemBoostType": false,
         "getNaturalGift": false,
         "getMoveEffectiveness": false,
