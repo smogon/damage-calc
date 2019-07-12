@@ -654,7 +654,7 @@ function createField() {
 			spikes[i], isSR[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[i],
 			isForesight[i], isTailwind[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i],
 			isBattery[i]);
-	}
+	};
 	return new calc.Field(format, weather, terrain, isGravity, createSide(0), createSide(1));
 }
 

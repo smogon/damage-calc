@@ -12,6 +12,7 @@
         "checkForecast": false,
         "getMultiAttack": false,
         "Field": false,
+		  "Side": false,
         "NATURES": false,
         "Pokemon": false,
         "getFinalSpeed": false,
