@@ -730,9 +730,18 @@ $(".gen").change(function () {
 	var itemOptions = getSelectOptions(items, true);
 	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
 
-	$(".set-selector").val(getSetOptions()[gen < 3 ? 3 : 1].id);
+	$(".set-selector").val(getFirstValidSetOption().id);
 	$(".set-selector").change();
 });
+
+function getFirstValidSetOption() {
+	var sets = getSetOptions();
+	// NB: The first set is never valid, so we start searching after it.
+	for (var i = 1; i < sets.length; i++) {
+		if (sets[i].id && sets[i].id.indexOf('(Blank Set)') === -1) return sets[i];
+	}
+	return undefined;
+}
 
 $(".notation").change(function () {
 	notation = $(this).val();
@@ -935,8 +944,7 @@ function loadDefaultLists() {
 			});
 		},
 		initSelection: function (element, callback) {
-			var data = getSetOptions()[gen < 3 ? 3 : 1];
-			callback(data);
+			callback(getFirstValidSetOption());
 		}
 	});
 }
@@ -991,7 +999,7 @@ $(document).ready(function () {
 			return text.toUpperCase().indexOf(term.toUpperCase()) === 0 || text.toUpperCase().indexOf(" " + term.toUpperCase()) >= 0;
 		}
 	});
-	$(".set-selector").val(getSetOptions()[gen < 3 ? 3 : 1].id);
+	$(".set-selector").val(getFirstValidSetOption().id);
 	$(".set-selector").change();
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 });
