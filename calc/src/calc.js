@@ -1,7 +1,7 @@
 function calculate(gen, attacker, defender, move, field) {
 	var MECHANICS = [
 		function () {}, calculateRBY, calculateGSC, calculateADV,
-		calculateDPP, calculateBW, calculateBW, calculateBW
+		calculateDPP, calculateBW, calculateXY, calculateSM
 	];
-	return MECHANICS[gen](gen, attacker, defender, move, field);
+	return MECHANICS[gen](attacker, defender, move, field);
 }

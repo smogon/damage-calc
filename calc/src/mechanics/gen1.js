@@ -1,13 +1,15 @@
-function calculateRBY(gen, attacker, defender, move, field) {
+var RBY = 1;
+
+function calculateRBY(attacker, defender, move, field) {
 	attacker.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT])));
 	attacker.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF])));
 	attacker.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL])));
-	attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
+	attacker.stats[SP] = getFinalSpeed(RBY, attacker, field, field.attackerSide);
 
 	defender.stats[AT] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[AT], defender.boosts[AT])));
 	defender.stats[DF] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[DF], defender.boosts[DF])));
 	defender.stats[SL] = Math.min(999, Math.max(1, getModifiedStat(defender.rawStats[SL], defender.boosts[SL])));
-	defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
+	defender.stats[SP] = getFinalSpeed(RBY, defender, field, field.defenderSide);
 
 	var description = {
 		"attackerName": attacker.name,
@@ -24,8 +26,8 @@ function calculateRBY(gen, attacker, defender, move, field) {
 		return {"damage": [lv], "description": description};
 	}
 
-	var typeEffect1 = TYPE_CHART[gen][move.type][defender.type1];
-	var typeEffect2 = defender.type2 ? TYPE_CHART[gen][move.type][defender.type2] : 1;
+	var typeEffect1 = TYPE_CHART[RBY][move.type][defender.type1];
+	var typeEffect2 = defender.type2 ? TYPE_CHART[RBY][move.type][defender.type2] : 1;
 	var typeEffectiveness = typeEffect1 * typeEffect2;
 
 	if (typeEffectiveness === 0) {
@@ -36,7 +38,7 @@ function calculateRBY(gen, attacker, defender, move, field) {
 		description.hits = move.hits;
 	}
 
-	var isPhysical = TYPE_CHART[gen][move.type].category === "Physical";
+	var isPhysical = TYPE_CHART[RBY][move.type].category === "Physical";
 	var attackStat = isPhysical ? AT : SL;
 	var defenseStat = isPhysical ? DF : SL;
 	var at = attacker.stats[attackStat];
