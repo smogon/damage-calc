@@ -17,6 +17,7 @@
 //   - field.js
 //   - move.js
 //
+//   - mechanics/util.js
 //   - mechanics/gen5.js
 //   - mechanics/gen4.js
 //   - mechanics/gen3.js

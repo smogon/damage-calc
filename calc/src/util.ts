@@ -1,3 +1,11 @@
+export function error(err: boolean, msg: string) {
+  if (err) {
+    throw new Error(msg);
+  } else {
+    console.log(error);
+  }
+}
+
 // jQuery JavaScript Library v2.0.3
 // Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
 const class2Type: { [c: string]: string } = {

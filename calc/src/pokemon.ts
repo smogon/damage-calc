@@ -89,8 +89,11 @@ class Pokemon {
     return statuses.indexOf(this.status) !== -1;
   }
 
-  hasType(type: Type) {
-    return this.type1 === type || this.type2 === type;
+  hasType(...types: Type[]) {
+    for (const type in types) {
+      if (this.type1 === type || this.type2 === type) return true;
+    }
+    return false;
   }
 
   named(...names: string[]) {

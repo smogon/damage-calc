@@ -934,14 +934,6 @@ function countBoosts(gen, boosts) {
 	return sum;
 }
 
-function isGrounded(pokemon, field) {
-	return field.isGravity || (
-		!pokemon.hasType("Flying") &&
-        !pokemon.hasAbility("Levitate") &&
-        !pokemon.hasItem("Air Balloon")
-	);
-}
-
 // GameFreak rounds DOWN on .5
 function pokeRound(num) {
 	return (num % 1 > 0.5) ? Math.ceil(num) : Math.floor(num);

@@ -60,7 +60,7 @@ function performCalculations() {
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p2.maxHP) / 10 : Math.floor(maxDamage * 48 / p2.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
 		result.koChanceText = p1.moves[i].bp === 0 ? 'nice move' :
-			calc.getKOChanceText(gen, result.damage, p1, p2, p1field, p1.moves[i], p1.moves[i].hits, p1.ability === 'Bad Dreams');
+			calc.getKOChanceText(gen, result.damage, p1, p2, p1field, p1.moves[i], p1.moves[i].hits, p1.ability === 'Bad Dreams', false);
 		var recoveryText = '';
 		if (p1.moves[i].givesHealth) {
 			var minHealthRecovered = notation === '%' ? Math.floor(minDamage * p1.moves[i].percentHealed * 1000 / p1.maxHP) /
@@ -140,7 +140,7 @@ function performCalculations() {
 		maxDisplay = notation === '%' ? Math.floor(maxDamage * 1000 / p1.maxHP) / 10 : Math.floor(maxDamage * 48 / p1.maxHP);
 		result.damageText = minDamage + "-" + maxDamage + " (" + minDisplay + " - " + maxDisplay + notation + ")";
 		result.koChanceText = p2.moves[i].bp === 0 ? 'nice move' :
-			calc.getKOChanceText(gen, result.damage, p2, p1, p2field, p2.moves[i], p2.moves[i].hits, p2.ability === 'Bad Dreams');
+			calc.getKOChanceText(gen, result.damage, p2, p1, p2field, p2.moves[i], p2.moves[i].hits, p2.ability === 'Bad Dreams', false);
 		if (p2.moves[i].givesHealth) {
 			var minHealthRecovered = notation === '%' ? Math.floor(minDamage * p2.moves[i].percentHealed * 1000 / p2.maxHP) /
                 10 : Math.floor(minDamage * p2.moves[i].percentHealed * 48 / p2.maxHP);
