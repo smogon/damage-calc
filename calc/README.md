@@ -8,4 +8,4 @@ or applications.
 
 This package is also distributed under the terms of the [MIT License][1].
 
-    [1]: https://github.com/Zarel/honko-damagecalc/blob/master/damage/LICENSE
+  [1]: https://github.com/Zarel/honko-damagecalc/blob/master/damage/LICENSE
