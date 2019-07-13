@@ -13306,7 +13306,7 @@ const SM: { [name: string]: Species } = extend(true, {}, XY, {
     w: 205.0,
     ab: 'Technician',
   },
-  Snaelstorm: {
+  Snaelstrom: {
     t1: 'Water',
     t2: 'Bug',
     bs: {
