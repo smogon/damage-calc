@@ -1,6 +1,8 @@
 import { Pokemon } from '../pokemon';
-import { Field, Side } from '../field';
-import { SP } from '../stats';
+import { Move } from '../move';
+import { Field, Side, Weather } from '../field';
+import { AT, DF, SA, SD, SP } from '../stats';
+import { TYPE_CHART, Type } from '../data/types';
 
 function isGrounded(pokemon: Pokemon, field: Field) {
   return (
@@ -67,5 +69,95 @@ function pokeRound(num: number) {
   return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
 }
 
+function getMoveEffectiveness(
+  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  move: Move,
+  type: Type,
+  isGhostRevealed?: boolean,
+  isGravity?: boolean
+) {
+  if (isGhostRevealed && type === 'Ghost' && ['Normal', 'Fighting'].indexOf(move.type) !== -1) {
+    return 1;
+  } else if (isGravity && type === 'Flying' && move.type === 'Ground') {
+    return 1;
+  } else if (move.name === 'Freeze-Dry' && type === 'Water') {
+    return 2;
+  } else if (move.name === 'Flying Press') {
+    return TYPE_CHART[gen]['Fighting'][type] * TYPE_CHART[gen]['Flying'][type];
+  } else {
+    return TYPE_CHART[gen][move.type][type];
+  }
+}
+
+function checkAirLock(pokemon: Pokemon, field: Field) {
+  if (pokemon.hasAbility('Air Lock', 'Cloud Nine')) {
+    field.weather = '';
+  }
+}
+
+function checkForecast(pokemon: Pokemon, weather: Weather) {
+  if (pokemon.hasAbility('Forecast') && pokemon.named('Castform')) {
+    switch (weather) {
+      case 'Sun':
+      case 'Harsh Sunshine':
+        pokemon.type1 = 'Fire';
+        break;
+      case 'Rain':
+      case 'Heavy Rain':
+        pokemon.type1 = 'Water';
+        break;
+      case 'Hail':
+        pokemon.type1 = 'Ice';
+        break;
+      default:
+        pokemon.type1 = 'Normal';
+    }
+    pokemon.type2 = undefined;
+  }
+}
+
+function checkKlutz(pokemon: Pokemon) {
+  if (pokemon.hasAbility('Klutz')) {
+    pokemon.item = '';
+  }
+}
+
+function checkIntimidate(source: Pokemon, target: Pokemon) {
+  if (
+    source.ability === 'Intimidate' &&
+    source.abilityOn &&
+    !target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body')
+  ) {
+    if (target.hasAbility('Contrary', 'Defiant')) {
+      target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
+    } else if (target.hasAbility('Simple')) {
+      target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
+    } else {
+      target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
+    }
+  }
+}
+
+function checkDownload(source: Pokemon, target: Pokemon) {
+  if (source.hasAbility('Download')) {
+    if (target.stats[SD] <= target.stats[DF]) {
+      source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
+    } else {
+      source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
+    }
+  }
+}
+
 // TODO: switch to inline exports no longer relying on globals
-export { isGrounded, getModifiedStat, getFinalSpeed, pokeRound };
+export {
+  isGrounded,
+  getModifiedStat,
+  getFinalSpeed,
+  pokeRound,
+  getMoveEffectiveness,
+  checkAirLock,
+  checkForecast,
+  checkKlutz,
+  checkIntimidate,
+  checkDownload,
+};
