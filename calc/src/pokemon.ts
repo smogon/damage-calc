@@ -90,7 +90,7 @@ class Pokemon {
   }
 
   hasType(...types: Type[]) {
-    for (const type in types) {
+    for (const type of types) {
       if (this.type1 === type || this.type2 === type) return true;
     }
     return false;
