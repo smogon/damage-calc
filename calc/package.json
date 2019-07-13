@@ -13,25 +13,21 @@
     "url": "http://guangcongluo.com"
   },
   "contributors": [
-    {
-      "name": "Mathieu Dias-Martins"
-    },
-    {
-      "name": "Austin Couturier",
-      "email": "austincouturier@icloud.com"
-    }
+    "Austin Couturier <austincouturier@icloud.com>",
+    "Kirk Scheibelhut <kjs@scheibo.com>",
+    "Mathieu Dias-Martins"
   ],
   "license": "MIT",
   "dependencies": {
     "@types/node": "^12.6.2"
   },
   "devDependencies": {
-    "eslint": "^6.0.1",
-    "tslint": "^5.18.0",
+    "gts": "^1.0.0",
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "lint": "eslint --cache . && tslint --project .",
+    "lint": "gts check",
+    "fix": "gts fix",
     "compile": "tsc -p .",
     "test": "true",
     "prepare": "npm run compile",

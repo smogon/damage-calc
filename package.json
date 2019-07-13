@@ -14,14 +14,9 @@
     "url": "http://guangcongluo.com"
   },
   "contributors": [
-    {
-      "name": "Mathieu Dias-Martins",
-      "email": "marty@hisemail.com"
-    },
-    {
-      "name": "Austin Couturier",
-      "email": "austincouturier@icloud.com"
-    }
+    "Austin Couturier <austincouturier@icloud.com>",
+    "Kirk Scheibelhut <kjs@scheibo.com>",
+    "Mathieu Dias-Martins"
   ],
   "license": "MIT",
   "dependencies": {
@@ -33,6 +28,7 @@
   },
   "scripts": {
     "lint": "subpkg run lint && eslint --cache .",
+    "fix": "subpkg run fix",
     "compile": "subpkg run compile && node build",
     "test": "subpkg run test",
     "prepare": "npm run compile",

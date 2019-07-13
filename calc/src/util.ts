@@ -80,6 +80,7 @@ function extend(this: any, ...args: any[]) {
 
   for (; i < length; i++) {
     if ((options = args[i]) != null) {
+      // tslint:disable-next-line: forin
       for (name in options) {
         src = target[name];
         copy = options[name];

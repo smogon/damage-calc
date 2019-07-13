@@ -13,6 +13,7 @@ import {
   checkKlutz,
   checkIntimidate,
   checkDownload,
+  countBoosts,
 } from './util';
 import { NATURES } from '../data/natures';
 

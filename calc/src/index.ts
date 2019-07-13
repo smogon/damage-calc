@@ -41,45 +41,34 @@
 // If we're not being used as a module we're just going to rely on globals and
 // that the correct loading order being followed.
 
-// The object that we intend to expose in an environment without modules.
-var calc = calc || exports;
+export { calculate } from './calc';
+export { Pokemon } from './pokemon';
+export { Move } from './move';
+export { Field, Side } from './field';
 
-// FIXME: convert everything to Typescript so this all just turns into export
-// statements and actually works in a module environment.
-
-calc.calculate = calculate;
-
-calc.Pokemon = Pokemon;
-calc.Move = Move;
-calc.Field = Field;
-calc.Side = Side;
-
-calc.ABILITIES = ABILITIES;
-calc.ITEMS = ITEMS;
-calc.MOVES = MOVES;
-calc.SPECIES = SPECIES;
-calc.NATURES = NATURES;
-calc.TYPE_CHART = TYPE_CHART;
-calc.STATS = STATS;
-
-calc.getZMoveName = getZMoveName;
+export { ABILITIES } from './data/abilities';
+export { ITEMS } from './data/items';
+// TODO: encapsulate getZMoveName and stop exporting
+export { MOVES, getZMoveName } from './data/moves';
+export { SPECIES } from './data/species';
+export { NATURES } from './data/natures';
+export { TYPE_CHART } from './data/types';
+// TODO: Migrate all to standard stat notation and turn this into a 'displayStat' function.
+// TODO: expose a single calcStat(gen, ...) method.
+// TODO: remove stat constants, just use literals.
+export {
+  STATS,
+  HP,
+  AT,
+  DF,
+  SA,
+  SD,
+  SP,
+  SL,
+  toSmogonStat,
+  calcStatRBYFromDV,
+  calcStatADV,
+} from './stats';
 
 // TODO: Description/KO Chance will be exposed through a 'Result' type.
-calc.buildDescription = buildDescription;
-calc.getKOChanceText = getKOChanceText;
-
-// TODO: Migrate all to standard stat notation and turn this into a 'displayStat' function.
-calc.toSmogonStat = toSmogonStat;
-
-// TODO: expose a single calcStat(gen, ...) method.
-calc.calcStatRBYFromDV = calcStatRBYFromDV;
-calc.calcStatADV = calcStatADV;
-
-// TODO: remove, just use literals.
-calc.HP = HP;
-calc.AT = AT;
-calc.DF = DF;
-calc.SP = SP;
-calc.SD = SD;
-calc.SL = SL;
-calc.SA = SA;
+export { buildDescription, getKOChanceText } from './desc';

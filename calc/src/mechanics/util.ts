@@ -1,7 +1,7 @@
 import { Pokemon } from '../pokemon';
 import { Move } from '../move';
 import { Field, Side, Weather } from '../field';
-import { AT, DF, SA, SD, SP } from '../stats';
+import { AT, DF, SA, SD, SP, STATS, StatsTable } from '../stats';
 import { TYPE_CHART, Type } from '../data/types';
 
 function isGrounded(pokemon: Pokemon, field: Field) {
@@ -148,6 +148,16 @@ function checkDownload(source: Pokemon, target: Pokemon) {
   }
 }
 
+function countBoosts(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, boosts: StatsTable<number>) {
+  let sum = 0;
+  for (let i = 0; i < STATS[gen].length; i++) {
+    if (boosts[STATS[gen][i]] > 0) {
+      sum += boosts[STATS[gen][i]];
+    }
+  }
+  return sum;
+}
+
 // TODO: switch to inline exports no longer relying on globals
 export {
   isGrounded,
@@ -160,4 +170,5 @@ export {
   checkKlutz,
   checkIntimidate,
   checkDownload,
+  countBoosts,
 };

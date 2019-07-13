@@ -41,8 +41,13 @@ class Field {
 
   swap() {
     return new Field(
-      this.gameType, this.weather, this.terrain, this.isGravity,
-      this.defenderSide, this.attackerSide);
+      this.gameType,
+      this.weather,
+      this.terrain,
+      this.isGravity,
+      this.defenderSide,
+      this.attackerSide
+    );
   }
 }
 

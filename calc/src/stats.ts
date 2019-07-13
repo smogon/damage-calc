@@ -150,4 +150,4 @@ export function calcStat(
 }
 
 // TODO: switch to inline exports no longer relying on globals
-export { HP, AT, DF, SA, SD, SP, SL, STATS };
+export { HP, AT, DF, SA, SD, SP, SL, STATS, toSmogonStat, calcStatRBYFromDV, calcStatADV };
