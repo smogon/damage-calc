@@ -51,9 +51,6 @@ export function displayStat(stat: Stat) {
   }
 }
 
-// TODO: remove alias
-export const toSmogonStat = displayStat;
-
 // TODO: stop exporting
 export function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
   if (stat === HP) {

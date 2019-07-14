@@ -53,22 +53,10 @@ export { MOVES, getZMoveName } from './data/moves';
 export { SPECIES } from './data/species';
 export { NATURES } from './data/natures';
 export { TYPE_CHART } from './data/types';
-// TODO: Migrate all to standard stat notation and turn this into a 'displayStat' function.
+// TODO: Migrate all to standard stat notation
 // TODO: expose a single calcStat(gen, ...) method.
 // TODO: remove stat constants, just use literals.
-export {
-  STATS,
-  HP,
-  AT,
-  DF,
-  SA,
-  SD,
-  SP,
-  SL,
-  toSmogonStat,
-  calcStatRBYFromDV,
-  calcStatADV,
-} from './stats';
+export { STATS, HP, AT, DF, SA, SD, SP, SL, calcStatRBYFromDV, calcStatADV } from './stats';
 
 // TODO: Description/KO Chance will be exposed through a 'Result' type.
 export { buildDescription, getKOChanceText } from './desc';

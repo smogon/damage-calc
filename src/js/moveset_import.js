@@ -27,7 +27,7 @@ function ExportPokemon(pokeInfo) {
 			if (EV_counter > 510) {
 				break;
 			} else if (pokemon.evs[stat]) {
-				EVs_Array.push(pokemon.evs[stat] + " " + calc.toSmogonStat(stat));
+				EVs_Array.push(pokemon.evs[stat] + " " + calc.displayStat(stat));
 			}
 		}
 		finalText += serialize(EVs_Array, " / ");
