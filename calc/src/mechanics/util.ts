@@ -1,10 +1,10 @@
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field, Side, Weather } from '../field';
-import { AT, DF, SA, SD, SP, STATS, StatsTable } from '../stats';
 import { TYPE_CHART, Type } from '../data/types';
+import { Field, Side, Weather } from '../field';
+import { Move } from '../move';
+import { Pokemon } from '../pokemon';
+import { AT, DF, SA, SD, SP, STATS, StatsTable } from '../stats';
 
-function isGrounded(pokemon: Pokemon, field: Field) {
+export function isGrounded(pokemon: Pokemon, field: Field) {
   return (
     field.isGravity ||
     (!pokemon.hasType('Flying') &&
@@ -13,7 +13,7 @@ function isGrounded(pokemon: Pokemon, field: Field) {
   );
 }
 
-function getModifiedStat(stat: number, mod: number, gen?: 1 | 2 | 3 | 4 | 5 | 6 | 7) {
+export function getModifiedStat(stat: number, mod: number, gen?: 1 | 2 | 3 | 4 | 5 | 6 | 7) {
   if (mod > 0) {
     stat = Math.floor((stat * (2 + mod)) / 2);
   } else if (mod < 0) {
@@ -25,7 +25,12 @@ function getModifiedStat(stat: number, mod: number, gen?: 1 | 2 | 3 | 4 | 5 | 6 
   return gen && gen < 3 ? Math.min(999, Math.max(1, stat)) : stat;
 }
 
-function getFinalSpeed(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, pokemon: Pokemon, field: Field, side: Side) {
+export function getFinalSpeed(
+  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  pokemon: Pokemon,
+  field: Field,
+  side: Side
+) {
   const weather = field.weather;
   const terrain = field.terrain;
   let speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
@@ -65,11 +70,11 @@ function getFinalSpeed(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, pokemon: Pokemon, field: 
 }
 
 // GameFreak rounds DOWN on .5
-function pokeRound(num: number) {
+export function pokeRound(num: number) {
   return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
 }
 
-function getMoveEffectiveness(
+export function getMoveEffectiveness(
   gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
   move: Move,
   type: Type,
@@ -89,13 +94,13 @@ function getMoveEffectiveness(
   }
 }
 
-function checkAirLock(pokemon: Pokemon, field: Field) {
+export function checkAirLock(pokemon: Pokemon, field: Field) {
   if (pokemon.hasAbility('Air Lock', 'Cloud Nine')) {
     field.weather = '';
   }
 }
 
-function checkForecast(pokemon: Pokemon, weather: Weather) {
+export function checkForecast(pokemon: Pokemon, weather: Weather) {
   if (pokemon.hasAbility('Forecast') && pokemon.named('Castform')) {
     switch (weather) {
       case 'Sun':
@@ -116,13 +121,13 @@ function checkForecast(pokemon: Pokemon, weather: Weather) {
   }
 }
 
-function checkKlutz(pokemon: Pokemon) {
+export function checkKlutz(pokemon: Pokemon) {
   if (pokemon.hasAbility('Klutz')) {
     pokemon.item = '';
   }
 }
 
-function checkIntimidate(source: Pokemon, target: Pokemon) {
+export function checkIntimidate(source: Pokemon, target: Pokemon) {
   if (
     source.ability === 'Intimidate' &&
     source.abilityOn &&
@@ -138,7 +143,7 @@ function checkIntimidate(source: Pokemon, target: Pokemon) {
   }
 }
 
-function checkDownload(source: Pokemon, target: Pokemon) {
+export function checkDownload(source: Pokemon, target: Pokemon) {
   if (source.hasAbility('Download')) {
     if (target.stats[SD] <= target.stats[DF]) {
       source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
@@ -148,7 +153,7 @@ function checkDownload(source: Pokemon, target: Pokemon) {
   }
 }
 
-function countBoosts(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, boosts: StatsTable<number>) {
+export function countBoosts(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, boosts: StatsTable<number>) {
   let sum = 0;
   for (let i = 0; i < STATS[gen].length; i++) {
     if (boosts[STATS[gen][i]] > 0) {
@@ -157,18 +162,3 @@ function countBoosts(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, boosts: StatsTable<number>)
   }
   return sum;
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export {
-  isGrounded,
-  getModifiedStat,
-  getFinalSpeed,
-  pokeRound,
-  getMoveEffectiveness,
-  checkAirLock,
-  checkForecast,
-  checkKlutz,
-  checkIntimidate,
-  checkDownload,
-  countBoosts,
-};

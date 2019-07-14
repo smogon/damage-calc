@@ -441,7 +441,4 @@ const XY: TypeChart = extend(true, {}, GSC, {
 
 const SM = XY;
 
-const TYPE_CHART = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
-
-// TODO: switch to inline exports no longer relying on globals
-export { TYPE_CHART };
+export const TYPE_CHART = [[], RBY, GSC, ADV, DPP, BW, XY, SM];

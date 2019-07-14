@@ -1,6 +1,6 @@
 import { Gender } from './data/species';
-import { StatsTable } from './stats';
 import { Type } from './data/types';
+import { StatsTable } from './stats';
 
 export type Status =
   | 'Healthy'
@@ -11,7 +11,7 @@ export type Status =
   | 'Asleep'
   | 'Frozen';
 
-class Pokemon {
+export class Pokemon {
   name: string;
   type1: Type;
   type2?: Type;
@@ -100,6 +100,3 @@ class Pokemon {
     return names.indexOf(this.name) !== -1;
   }
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { Pokemon };

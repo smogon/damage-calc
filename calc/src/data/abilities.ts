@@ -242,7 +242,4 @@ const SM = XY.concat([
   'Wimp Out',
 ]);
 
-const ABILITIES = [[], [], [], ADV, DPP, BW, XY, SM];
-
-// TODO: switch to inline exports no longer relying on globals
-export { ABILITIES };
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM];

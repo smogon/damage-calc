@@ -1,8 +1,7 @@
 import { Category, getZMoveName, MoveData, MOVES, Recoil } from './data/moves';
 import { Type } from './data/types';
-import { extend } from './util';
 
-class Move {
+export class Move {
   name: string;
   hits: number;
   usedTimes?: number;
@@ -68,6 +67,3 @@ class Move {
     this.metronomeCount = metronomeCount;
   }
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { Move };

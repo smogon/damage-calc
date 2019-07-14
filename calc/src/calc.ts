@@ -1,6 +1,6 @@
-import { Pokemon } from './pokemon';
-import { Move } from './move';
 import { Field } from './field';
+import { Move } from './move';
+import { Pokemon } from './pokemon';
 
 import { calculateRBY } from './mechanics/gen1';
 import { calculateGSC } from './mechanics/gen2';
@@ -21,7 +21,7 @@ const MECHANICS = [
   calculateSM,
 ];
 
-function calculate(
+export function calculate(
   gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
   attacker: Pokemon,
   defender: Pokemon,
@@ -30,6 +30,3 @@ function calculate(
 ) {
   return MECHANICS[gen](attacker, defender, move, field);
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { calculate };

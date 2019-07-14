@@ -1,9 +1,10 @@
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field } from '../field';
 import { getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType } from '../data/items';
-import { AT, DF, SA, SD, SP, displayStat } from '../stats';
+import { NATURES } from '../data/natures';
 import { RawDesc } from '../desc';
+import { Field } from '../field';
+import { Move } from '../move';
+import { Pokemon } from '../pokemon';
+import { AT, DF, SA, SD, SP, displayStat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -15,11 +16,10 @@ import {
   checkDownload,
   countBoosts,
 } from './util';
-import { NATURES } from '../data/natures';
 
 const DPP = 4;
 
-function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
+export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
@@ -513,6 +513,3 @@ function getSimpleModifiedStat(stat: number, mod: number) {
     ? Math.floor((stat * 2) / (2 - simpleMod))
     : stat;
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { calculateDPP };

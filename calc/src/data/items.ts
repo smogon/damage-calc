@@ -203,7 +203,7 @@ const BW = DPP.concat([
   'Water Gem',
 ]);
 
-const MEGA_STONES = {
+export const MEGA_STONES = {
   Absolite: 'Absol',
   Abomasite: 'Abomasnow',
   Aerodactylite: 'Aerodactyl',
@@ -378,14 +378,14 @@ const BERRIES = {
   'Yache Berry': { t: 'Ice', p: 80 },
 };
 
-const SEED_BOOSTED_STAT: { [item: string]: Stat } = {
+export const SEED_BOOSTED_STAT: { [item: string]: Stat } = {
   'Electric Seed': DF,
   'Grassy Seed': DF,
   'Misty Seed': SD,
   'Psychic Seed': SD,
 };
 
-function getItemBoostType(item: string | undefined) {
+export function getItemBoostType(item: string | undefined) {
   switch (item) {
     case 'Draco Plate':
     case 'Dragon Fang':
@@ -451,7 +451,7 @@ function getItemBoostType(item: string | undefined) {
   }
 }
 
-function getBerryResistType(berry: string | undefined) {
+export function getBerryResistType(berry: string | undefined) {
   switch (berry) {
     case 'Chilan Berry':
       return 'Normal';
@@ -567,7 +567,7 @@ const FLING_10 = new Set([
   'Zoom Lens',
 ]);
 
-function getFlingPower(item: string) {
+export function getFlingPower(item: string) {
   if (item === 'Iron Ball') return 130;
   if (item === 'Hard Stone') return 100;
   if (item.indexOf('Plate') !== -1 || ['Deep Sea Tooth', 'Thick Club'].indexOf(item) !== -1) {
@@ -583,7 +583,7 @@ function getFlingPower(item: string) {
   return 0;
 }
 
-function getNaturalGift(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, item: string) {
+export function getNaturalGift(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, item: string) {
   let t: Type = 'Normal';
   let p = 1;
 
@@ -596,7 +596,7 @@ function getNaturalGift(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, item: string) {
   return { t, p };
 }
 
-function getTechnoBlast(item: string) {
+export function getTechnoBlast(item: string) {
   switch (item) {
     case 'Burn Drive':
       return 'Fire';
@@ -611,24 +611,11 @@ function getTechnoBlast(item: string) {
   }
 }
 
-function getMultiAttack(item: string) {
+export function getMultiAttack(item: string) {
   if (item.indexOf('Memory') !== -1) {
     return item.substring(0, item.indexOf(' ')) as Type;
   }
   return undefined;
 }
 
-const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
-
-// TODO: switch to inline exports no longer relying on globals
-export {
-  ITEMS,
-  getMultiAttack,
-  getTechnoBlast,
-  getNaturalGift,
-  getFlingPower,
-  getBerryResistType,
-  getItemBoostType,
-  SEED_BOOSTED_STAT,
-  MEGA_STONES,
-};
+export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM];

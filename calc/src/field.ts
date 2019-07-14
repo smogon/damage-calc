@@ -10,7 +10,7 @@ export type Weather =
   | 'Heavy Rain'
   | 'Strong Winds';
 
-class Field {
+export class Field {
   gameType: GameType;
   weather: Weather;
   terrain: Terrain;
@@ -51,7 +51,7 @@ class Field {
   }
 }
 
-class Side {
+export class Side {
   spikes: number;
   isSR: boolean;
   isReflect: boolean;
@@ -93,6 +93,3 @@ class Side {
     this.isBattery = !!isBattery;
   }
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { Field, Side };

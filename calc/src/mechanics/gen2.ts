@@ -1,15 +1,15 @@
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field } from '../field';
-import { TYPE_CHART } from '../data/types';
-import { AT, DF, SA, SD, SP } from '../stats';
-import { RawDesc } from '../desc';
 import { getItemBoostType } from '../data/items';
+import { TYPE_CHART } from '../data/types';
+import { RawDesc } from '../desc';
+import { Field } from '../field';
+import { Move } from '../move';
+import { Pokemon } from '../pokemon';
+import { AT, DF, SA, SD, SP } from '../stats';
 import { getModifiedStat, getFinalSpeed, getMoveEffectiveness } from './util';
 
 const GSC = 2;
 
-function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
+export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
   attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT], GSC);
   attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF], GSC);
   attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA], GSC);
@@ -173,6 +173,3 @@ function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, field: F
   }
   return { damage, description };
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { calculateGSC };

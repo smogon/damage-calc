@@ -56,7 +56,7 @@ function isPlainObject(obj: any) {
   return true;
 }
 
-function extend(this: any, ...args: any[]) {
+export function extend(this: any, ...args: any[]) {
   let options, name, src, copy, copyIsArray, clone;
   let target = args[0] || {};
   let i = 1;
@@ -107,6 +107,3 @@ function extend(this: any, ...args: any[]) {
 
   return target;
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { extend };

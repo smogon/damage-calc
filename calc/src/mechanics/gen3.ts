@@ -1,11 +1,11 @@
+import { getItemBoostType } from '../data/items';
+import { NATURES } from '../data/natures';
+import { TYPE_CHART } from '../data/types';
+import { RawDesc } from '../desc';
 import { Pokemon } from '../pokemon';
 import { Move } from '../move';
 import { Field } from '../field';
-import { TYPE_CHART } from '../data/types';
-import { NATURES } from '../data/natures';
-import { getItemBoostType } from '../data/items';
 import { AT, DF, SA, SD, SP, displayStat } from '../stats';
-import { RawDesc } from '../desc';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -17,7 +17,7 @@ import {
 
 const ADV = 3;
 
-function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
+export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
@@ -294,6 +294,3 @@ function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, field: F
   }
   return { damage, description };
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { calculateADV };

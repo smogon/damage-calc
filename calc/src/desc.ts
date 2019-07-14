@@ -1,9 +1,9 @@
 import { TYPE_CHART, Type } from './data/types';
-import { Pokemon } from './pokemon';
-import { Move } from './move';
 import { Field, Terrain, Weather } from './field';
-import { error } from './util';
 import { isGrounded } from './mechanics/util';
+import { Move } from './move';
+import { Pokemon } from './pokemon';
+import { error } from './util';
 
 export interface RawDesc {
   HPEVs?: string;
@@ -36,7 +36,7 @@ export interface RawDesc {
   weather?: Weather;
 }
 
-function buildDescription(description: RawDesc) {
+export function buildDescription(description: RawDesc) {
   let output = '';
   if (description.attackBoost) {
     if (description.attackBoost > 0) {
@@ -115,7 +115,7 @@ function appendIfSet(str: string, toAppend?: string) {
   return toAppend ? `${str}${toAppend} ` : str;
 }
 
-function getKOChanceText(
+export function getKOChanceText(
   gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
   damage: number[],
   attacker: Pokemon,
@@ -675,6 +675,3 @@ function serializeText(arr: string[]) {
     return text + 'and ' + arr[arr.length - 1];
   }
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { buildDescription, getKOChanceText };

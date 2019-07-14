@@ -12,13 +12,13 @@ export interface StatsTable<T> {
   sl?: T;
 }
 
-const HP: Stat = 'hp';
-const AT: Stat = 'at';
-const DF: Stat = 'df';
-const SA: Stat = 'sa';
-const SD: Stat = 'sd';
-const SP: Stat = 'sp';
-const SL: Stat = 'sl';
+export const HP: Stat = 'hp';
+export const AT: Stat = 'at';
+export const DF: Stat = 'df';
+export const SA: Stat = 'sa';
+export const SD: Stat = 'sd';
+export const SP: Stat = 'sp';
+export const SL: Stat = 'sl';
 
 const RBY: Stat[] = [HP, AT, DF, SL, SP];
 const GSC: Stat[] = [HP, AT, DF, SA, SD, SP];
@@ -28,7 +28,7 @@ const BW: Stat[] = GSC;
 const XY: Stat[] = GSC;
 const SM: Stat[] = GSC;
 
-const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+export const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
 
 export function displayStat(stat: Stat) {
   switch (stat) {
@@ -52,9 +52,10 @@ export function displayStat(stat: Stat) {
 }
 
 // TODO: remove alias
-const toSmogonStat = displayStat;
+export const toSmogonStat = displayStat;
 
-function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
+// TODO: stop exporting
+export function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
   if (stat === HP) {
     return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
   } else {
@@ -62,7 +63,8 @@ function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) 
   }
 }
 
-function calcStatADV(
+// TODO: stop exporting
+export function calcStatADV(
   stat: Stat,
   base: number,
   iv: number,
@@ -148,6 +150,3 @@ export function calcStat(
 ) {
   return CALC_STAT[gen](stat, base, iv, ev, level, nature);
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { HP, AT, DF, SA, SD, SP, SL, STATS, toSmogonStat, calcStatRBYFromDV, calcStatADV };

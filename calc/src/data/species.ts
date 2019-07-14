@@ -13705,7 +13705,4 @@ const SM: { [name: string]: Species } = extend(true, {}, XY, {
   },
 });
 
-const SPECIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
-
-// TODO: switch to inline exports no longer relying on globals
-export { SPECIES };
+export const SPECIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM];

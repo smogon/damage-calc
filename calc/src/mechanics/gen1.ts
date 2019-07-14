@@ -1,14 +1,14 @@
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field } from '../field';
 import { TYPE_CHART } from '../data/types';
-import { AT, DF, SL, SP } from '../stats';
 import { RawDesc } from '../desc';
+import { Field } from '../field';
+import { Move } from '../move';
+import { Pokemon } from '../pokemon';
+import { AT, DF, SL, SP } from '../stats';
 import { getModifiedStat, getFinalSpeed } from './util';
 
 const RBY = 1;
 
-function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
+export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
   attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT], RBY);
   attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF], RBY);
   attacker.stats[SL] = getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL], RBY);
@@ -101,6 +101,3 @@ function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, field: F
   }
   return { damage, description };
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { calculateRBY };

@@ -1,6 +1,6 @@
 import { Stat } from '../stats';
 
-const NATURES: { [name: string]: [Stat?, Stat?] } = {
+export const NATURES: { [name: string]: [Stat?, Stat?] } = {
   Adamant: ['at', 'sa'],
   Bashful: [undefined, undefined],
   Bold: ['df', 'at'],
@@ -27,6 +27,3 @@ const NATURES: { [name: string]: [Stat?, Stat?] } = {
   Serious: [undefined, undefined],
   Timid: ['sp', 'at'],
 };
-
-// TODO: switch to inline exports no longer relying on globals
-export { NATURES };

@@ -3606,7 +3606,7 @@ const ZMOVES_TYPING: { [type in Type]?: string } = {
   Water: 'Hydro Vortex',
 };
 
-function getZMoveName(moveName: string, moveType: Type, item: string) {
+export function getZMoveName(moveName: string, moveType: Type, item: string) {
   if (moveName.indexOf('Hidden Power') !== -1) return 'Breakneck Blitz';
   if (moveName === 'Clanging Scales' && item === 'Kommonium Z') return 'Clangorous Soulblaze';
   if (moveName === 'Darkest Lariat' && item === 'Incinium Z') return 'Malicious Moonsault';
@@ -3633,9 +3633,6 @@ function getZMoveName(moveName: string, moveType: Type, item: string) {
   return ZMOVES_TYPING[moveType];
 }
 
-const ZMOVES: string[] = Object.values(ZMOVES_TYPING);
+export const ZMOVES: string[] = Object.values(ZMOVES_TYPING);
 
-const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];
-
-// TODO: switch to inline exports no longer relying on globals
-export { MOVES, ZMOVES, getZMoveName };
+export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];

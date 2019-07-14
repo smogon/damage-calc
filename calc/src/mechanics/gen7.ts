@@ -1,6 +1,3 @@
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field, Side } from '../field';
 import {
   getItemBoostType,
   getNaturalGift,
@@ -11,8 +8,14 @@ import {
   MEGA_STONES,
   SEED_BOOSTED_STAT,
 } from '../data/items';
-import { AT, DF, SA, SD, SP, displayStat } from '../stats';
+import { NATURES } from '../data/natures';
+import { SPECIES } from '../data/species';
+import { TYPE_CHART } from '../data/types';
 import { RawDesc } from '../desc';
+import { Field, Side } from '../field';
+import { Move } from '../move';
+import { Pokemon } from '../pokemon';
+import { AT, DF, SA, SD, SP, displayStat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -26,17 +29,15 @@ import {
   countBoosts,
   pokeRound,
 } from './util';
-import { NATURES } from '../data/natures';
-import { TYPE_CHART, SPECIES } from '..';
 
 const SM = 7;
 
-function makeCalculate(gen: 5 | 6 | 7) {
+export function makeCalculate(gen: 5 | 6 | 7) {
   return (attacker: Pokemon, defender: Pokemon, move: Move, field: Field) =>
     calculateModern(gen, attacker, defender, move, field);
 }
 
-const calculateSM = makeCalculate(SM);
+export const calculateSM = makeCalculate(SM);
 
 function calculateModern(
   gen: 5 | 6 | 7,
@@ -1135,6 +1136,3 @@ function getFinalDamage(
 function getWeightFactor(pokemon: Pokemon) {
   return pokemon.hasAbility('Heavy Metal') ? 2 : pokemon.hasAbility('Light Metal') ? 0.5 : 1;
 }
-
-// TODO: switch to inline exports no longer relying on globals
-export { calculateSM, makeCalculate };
