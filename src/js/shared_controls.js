@@ -539,16 +539,7 @@ function createPokemon(pokeInfo) {
 		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
 			var moveName = set.moves[i];
-			var defaultDetails = moves[moveName] || moves['(No Move)'];
-			var isCrit = !!defaultDetails.alwaysCrit;
-			var hits = defaultDetails.isMultiHit ? ((ability === "Skill Link" || item === "Grip Claw") ? 5 : 3) : defaultDetails.isTwoHit ? 2 : 1;
-			var usedTimes = defaultDetails.usedTimes;
-			pokemonMoves.push(new calc.Move($.extend({}, defaultDetails, {
-				name: (defaultDetails.bp === 0) ? "(No Move)" : moveName,
-				bp: defaultDetails.bp,
-				type: defaultDetails.type,
-				category: defaultDetails.category
-			}), isCrit, hits, usedTimes));
+			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", ability, item));
 		}
 		var weight = pokemon.w;
 		var gender = pokemon.gender ? "genderless" : "Male";
@@ -585,10 +576,10 @@ function createPokemon(pokeInfo) {
 		var status = pokeInfo.find(".status").val();
 		var toxicCounter = status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
 		var pokemonMoves = [
-			getMoveDetails(pokeInfo.find(".move1"), item),
-			getMoveDetails(pokeInfo.find(".move2"), item),
-			getMoveDetails(pokeInfo.find(".move3"), item),
-			getMoveDetails(pokeInfo.find(".move4"), item)
+			getMoveDetails(pokeInfo.find(".move1"), ability, item),
+			getMoveDetails(pokeInfo.find(".move2"), ability, item),
+			getMoveDetails(pokeInfo.find(".move3"), ability, item),
+			getMoveDetails(pokeInfo.find(".move4"), ability, item)
 		];
 		var weight = +pokeInfo.find(".weight").val();
 		var gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
@@ -597,31 +588,19 @@ function createPokemon(pokeInfo) {
 	}
 }
 
-function getMoveDetails(moveInfo, item) {
+function getMoveDetails(moveInfo, ability, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
-	var defaultDetails = moves[moveName];
 	var isZMove = gen >= 7 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
-	// If z-move is checked but there isn't a corresponding z-move, use the original move
-	if (isZMove && "zp" in defaultDetails) {
-		var zMoveName = calc.getZMoveName(moveName, defaultDetails.type, item);
-		var hits = 1;
-		return new calc.Move($.extend({}, moves[zMoveName], {
-			name: zMoveName,
-			bp: moves[zMoveName].bp === 1 ? defaultDetails.zp : moves[zMoveName].bp,
-			category: defaultDetails.category,
-		}), isCrit, hits);
-	} else {
-		var hits = defaultDetails.isMultiHit ? ~~moveInfo.find(".move-hits").val() : defaultDetails.isTwoHit ? 2 : 1;
-		var usedTimes = defaultDetails.dropsStats ? ~~moveInfo.find(".stat-drops").val() : 1;
-		var metronomeCount = moveInfo.find(".metronome").is(':visible') ? ~~moveInfo.find(".metronome").val() : 1;
-		return new calc.Move($.extend({}, defaultDetails, {
-			name: moveName,
-			bp: ~~moveInfo.find(".move-bp").val(),
-			type: moveInfo.find(".move-type").val(),
-			category: moveInfo.find(".move-cat").val(),
-		}), isCrit, hits, usedTimes, metronomeCount);
-	}
+	var hits = +moveInfo.find(".move-hits").val();
+	var usedTimes = +moveInfo.find(".stat-drops").val();
+	var metronomeCount = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
+	var overrides = {
+		bp: +moveInfo.find(".move-bp").val(),
+		type: moveInfo.find(".move-type").val(),
+		category: moveInfo.find(".move-cat").val(),
+	};
+	return new calc.Move(gen, moveName, ability, item, isZMove, isCrit, hits, usedTimes, metronomeCount, overrides);
 }
 
 function createField() {
