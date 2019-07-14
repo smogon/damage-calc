@@ -17,7 +17,7 @@ function makeCachebuster(template, output) {
 		let hash = Math.random(); // just in case creating the hash fails
 		try {
 			const filename = c.replace('//play.pokemonshowdown.com/', '../../play.pokemonshowdown.com/');
-			const fstr = fs.readFileSync(path.resolve(rootDir, filename), {encoding: 'utf8'});
+			const fstr = fs.readFileSync(path.resolve(rootDir, 'dist', filename), {encoding: 'utf8'});
 			hash = crypto.createHash('md5').update(fstr).digest('hex').substr(0, 8);
 		} catch (e) {}
 
@@ -58,7 +58,8 @@ function cpdir(src, dest) {
 }
 
 cpdir('src', 'dist').then(function () {
-	cpdir('calc/dist', 'dist/calc');
-	makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
-	makeCachebuster('dist/index.template.html', 'dist/index.html');
+	cpdir('calc/dist', 'dist/calc').then(function () {
+		makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
+		makeCachebuster('dist/index.template.html', 'dist/index.html');
+	});
 });
