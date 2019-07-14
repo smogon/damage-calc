@@ -15,7 +15,7 @@ import { RawDesc } from '../desc';
 import { Field, Side } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
-import { AT, DF, SA, SD, SP, displayStat } from '../stats';
+import { displayStat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -55,22 +55,22 @@ function calculateModern(
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 
-  attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF]);
-  attacker.stats[SD] = getModifiedStat(attacker.rawStats[SD], attacker.boosts[SD]);
-  attacker.stats[SP] = getFinalSpeed(gen, attacker, field, field.attackerSide);
-  defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF]);
-  defender.stats[SD] = getModifiedStat(defender.rawStats[SD], defender.boosts[SD]);
-  defender.stats[SP] = getFinalSpeed(gen, defender, field, field.defenderSide);
+  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def);
+  attacker.stats.spd = getModifiedStat(attacker.rawStats.spd, attacker.boosts.spd);
+  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def);
+  defender.stats.spd = getModifiedStat(defender.rawStats.spd, defender.boosts.spd);
+  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
 
   checkIntimidate(attacker, defender);
   checkIntimidate(defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
 
-  attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT]);
-  attacker.stats[SA] = getModifiedStat(attacker.rawStats[SA], attacker.boosts[SA]);
-  defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT]);
-  defender.stats[SA] = getModifiedStat(defender.rawStats[SA], defender.boosts[SA]);
+  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk);
+  attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa);
+  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk);
+  defender.stats.spa = getModifiedStat(defender.rawStats.spa, defender.boosts.spa);
 
   checkInfiltrator(attacker, field.defenderSide);
   checkInfiltrator(defender, field.attackerSide);
@@ -353,7 +353,7 @@ function calculateModern(
     description.hits = move.hits;
   }
 
-  const turnOrder = attacker.stats[SP] > defender.stats[SP] ? 'FIRST' : 'LAST';
+  const turnOrder = attacker.stats.spe > defender.stats.spe ? 'FIRST' : 'LAST';
 
   ////////////////////////////////
   ////////// BASE POWER //////////
@@ -366,12 +366,12 @@ function calculateModern(
       description.moveBP = basePower;
       break;
     case 'Electro Ball':
-      const r = Math.floor(attacker.stats[SP] / defender.stats[SP]);
+      const r = Math.floor(attacker.stats.spe / defender.stats.spe);
       basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
       description.moveBP = basePower;
       break;
     case 'Gyro Ball':
-      basePower = Math.min(150, Math.floor((25 * defender.stats[SP]) / attacker.stats[SP]));
+      basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
       description.moveBP = basePower;
       break;
     case 'Punishment':
@@ -652,9 +652,9 @@ function calculateModern(
   let attack: number;
   const attackSource = move.name === 'Foul Play' ? defender : attacker;
   if (move.usesHighestAttackStat) {
-    move.category = attackSource.stats[AT] > attackSource.stats[SA] ? 'Physical' : 'Special';
+    move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
-  const attackStat = move.category === 'Physical' ? AT : SA;
+  const attackStat = move.category === 'Physical' ? 'atk' : 'spa';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
@@ -767,7 +767,7 @@ function calculateModern(
   ////////////////////////////////
   let defense: number;
   const hitsPhysical = move.category === 'Physical' || move.dealsPhysicalDamage;
-  const defenseStat = hitsPhysical ? DF : SD;
+  const defenseStat = hitsPhysical ? 'def' : 'spd';
   description.defenseEVs =
     defender.evs[defenseStat] +
     (NATURES[defender.nature][0] === defenseStat
@@ -1086,13 +1086,13 @@ function checkSeedBoost(pokemon: Pokemon, field: Field) {
     const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
     if (terrainSeed === field.terrain) {
       if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
-        pokemon.boosts[DF] = pokemon.hasAbility('Contrary')
-          ? Math.max(-6, pokemon.boosts[DF] - 1)
-          : Math.min(6, pokemon.boosts[DF] + 1);
+        pokemon.boosts.def = pokemon.hasAbility('Contrary')
+          ? Math.max(-6, pokemon.boosts.def - 1)
+          : Math.min(6, pokemon.boosts.def + 1);
       } else {
-        pokemon.boosts[SD] = pokemon.hasAbility('Contrary')
-          ? Math.max(-6, pokemon.boosts[SD] - 1)
-          : Math.min(6, pokemon.boosts[SD] + 1);
+        pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+          ? Math.max(-6, pokemon.boosts.spd - 1)
+          : Math.min(6, pokemon.boosts.spd + 1);
       }
     }
   }

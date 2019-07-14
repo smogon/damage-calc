@@ -1,4 +1,3 @@
-import { StatsTable } from '../stats';
 import { extend } from '../util';
 import { Type } from './types';
 
@@ -8,7 +7,15 @@ export type Gender = 'male' | 'female' | 'genderless';
 export interface Species {
   readonly t1: Type; // type1
   readonly t2?: Type; // type2
-  readonly bs: StatsTable<number>; // baseStats
+  readonly bs: {
+    hp: number;
+    at: number;
+    df: number;
+    sa: number;
+    sd: number;
+    sp: number;
+    sl?: number;
+  }; // baseStats
   readonly w: number; // weight
   readonly canEvolve?: boolean;
   readonly gender?: Gender;

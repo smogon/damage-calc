@@ -39,12 +39,6 @@
         "pokedex": true,
         "createField": false,
         "createPokemon": false,
-        "AT": false,
-        "DF": false,
-        "SA": false,
-        "SD": false,
-        "SP": false,
-        "SL": false
     },
     "extends": "eslint:recommended",
     "rules": {

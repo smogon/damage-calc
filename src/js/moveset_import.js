@@ -69,7 +69,7 @@ function getAbility(row) {
 	if (calc.ABILITIES[7].indexOf(ability) !== -1) return ability;
 }
 
-function statConverter(stat) {
+function statToLegacyStat(stat) {
 	switch (stat) {
 	case 'hp':
 		return "hp";
@@ -106,7 +106,7 @@ function getStats(currentPoke, rows, offset) {
 		case 'EVs':
 			for (j = 1; j < currentRow.length; j++) {
 				currentEV = currentRow[j].trim().split(" ");
-				currentEV[1] = statConverter(currentEV[1].toLowerCase());
+				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
 				evs[currentEV[1]] = parseInt(currentEV[0]);
 			}
 			currentPoke.evs = evs;
@@ -114,7 +114,7 @@ function getStats(currentPoke, rows, offset) {
 		case 'IVs':
 			for (j = 1; j < currentRow.length; j++) {
 				currentIV = currentRow[j].trim().split(" ");
-				currentIV[1] = statConverter(currentIV[1].toLowerCase());
+				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
 				ivs[currentIV[1]] = parseInt(currentIV[0]);
 			}
 			currentPoke.ivs = ivs;

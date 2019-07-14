@@ -2,7 +2,7 @@ import { TYPE_CHART, Type } from '../data/types';
 import { Field, Side, Weather } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
-import { AT, DF, SA, SD, SP, STATS, StatsTable } from '../stats';
+import { STATS, StatsTable } from '../stats';
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
   return (
@@ -33,7 +33,7 @@ export function getFinalSpeed(
 ) {
   const weather = field.weather;
   const terrain = field.terrain;
-  let speed = getModifiedStat(pokemon.rawStats[SP], pokemon.boosts[SP]);
+  let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe);
 
   if (pokemon.hasItem('Choice Scarf')) {
     speed = pokeRound(speed * 1.5);
@@ -134,21 +134,21 @@ export function checkIntimidate(source: Pokemon, target: Pokemon) {
     !target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body')
   ) {
     if (target.hasAbility('Contrary', 'Defiant')) {
-      target.boosts[AT] = Math.min(6, target.boosts[AT] + 1);
+      target.boosts.atk = Math.min(6, target.boosts.atk + 1);
     } else if (target.hasAbility('Simple')) {
-      target.boosts[AT] = Math.max(-6, target.boosts[AT] - 2);
+      target.boosts.atk = Math.max(-6, target.boosts.atk - 2);
     } else {
-      target.boosts[AT] = Math.max(-6, target.boosts[AT] - 1);
+      target.boosts.atk = Math.max(-6, target.boosts.atk - 1);
     }
   }
 }
 
 export function checkDownload(source: Pokemon, target: Pokemon) {
   if (source.hasAbility('Download')) {
-    if (target.stats[SD] <= target.stats[DF]) {
-      source.boosts[SA] = Math.min(6, source.boosts[SA] + 1);
+    if (target.stats.spd <= target.stats.def) {
+      source.boosts.spa = Math.min(6, source.boosts.spa + 1);
     } else {
-      source.boosts[AT] = Math.min(6, source.boosts[AT] + 1);
+      source.boosts.atk = Math.min(6, source.boosts.atk + 1);
     }
   }
 }

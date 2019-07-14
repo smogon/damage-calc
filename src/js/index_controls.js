@@ -34,9 +34,9 @@ function performCalculations() {
 	var p1field = createField();
 	var p2field = p1field.swap();
 	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
-	p1info.find(".sp .totalMod").text(p1.stats[SP]);
-	p2info.find(".sp .totalMod").text(p2.stats[SP]);
-	var fastestSide = p1.stats[SP] > p2.stats[SP] ? 0 : p1.stats[SP] === p2.stats[SP] ? "tie" : 1;
+	p1info.find(".sp .totalMod").text(p1.stats.spe);
+	p2info.find(".sp .totalMod").text(p2.stats.spe);
+	var fastestSide = p1.stats.spe > p2.stats.spe ? 0 : p1.stats.spe === p2.stats.spe ? "tie" : 1;
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;
 	var highestDamage = -1;
 	var bestResult;

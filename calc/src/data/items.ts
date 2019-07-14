@@ -1,4 +1,4 @@
-import { Stat, DF, SD } from '../stats';
+import { Stat } from '../stats';
 import { Type } from './types';
 
 const RBY = [];
@@ -379,10 +379,10 @@ const BERRIES = {
 };
 
 export const SEED_BOOSTED_STAT: { [item: string]: Stat } = {
-  'Electric Seed': DF,
-  'Grassy Seed': DF,
-  'Misty Seed': SD,
-  'Psychic Seed': SD,
+  'Electric Seed': 'def',
+  'Grassy Seed': 'def',
+  'Misty Seed': 'spd',
+  'Psychic Seed': 'spd',
 };
 
 export function getItemBoostType(item: string | undefined) {

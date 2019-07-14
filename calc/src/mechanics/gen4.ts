@@ -4,7 +4,7 @@ import { RawDesc } from '../desc';
 import { Field } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
-import { AT, DF, SA, SD, SP, displayStat } from '../stats';
+import { displayStat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -30,8 +30,8 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   checkIntimidate(defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
-  attacker.stats[SP] = getFinalSpeed(DPP, attacker, field, field.attackerSide);
-  defender.stats[SP] = getFinalSpeed(DPP, defender, field, field.defenderSide);
+  attacker.stats.spe = getFinalSpeed(DPP, attacker, field, field.attackerSide);
+  defender.stats.spe = getFinalSpeed(DPP, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -134,7 +134,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   if (move.hits > 1) {
     description.hits = move.hits;
   }
-  const turnOrder = attacker.stats[SP] > defender.stats[SP] ? 'FIRST' : 'LAST';
+  const turnOrder = attacker.stats.spe > defender.stats.spe ? 'FIRST' : 'LAST';
 
   ////////////////////////////////
   ////////// BASE POWER //////////
@@ -175,7 +175,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
       description.moveBP = move.bp;
       break;
     case 'Gyro Ball':
-      move.bp = Math.min(150, Math.floor((25 * defender.stats[SP]) / attacker.stats[SP]));
+      move.bp = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
       description.moveBP = move.bp;
       break;
     case 'Payback':
@@ -263,7 +263,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   ////////////////////////////////
   ////////// (SP)ATTACK //////////
   ////////////////////////////////
-  const attackStat = isPhysical ? AT : SA;
+  const attackStat = isPhysical ? 'atk' : 'spa';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
@@ -331,7 +331,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   ////////////////////////////////
   ///////// (SP)DEFENSE //////////
   ////////////////////////////////
-  const defenseStat = isPhysical ? DF : SD;
+  const defenseStat = isPhysical ? 'def' : 'spd';
   description.defenseEVs =
     defender.evs[defenseStat] +
     (NATURES[defender.nature][0] === defenseStat

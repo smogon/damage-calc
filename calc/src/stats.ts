@@ -1,27 +1,18 @@
 import { NATURES } from './data/natures';
 
-// TODO: convert to standard notation...
-export type Stat = 'hp' | 'at' | 'df' | 'sa' | 'sd' | 'sp' | 'sl';
+export type Stat = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe' | 'spc';
 export interface StatsTable<T> {
   hp: T;
-  at: T;
-  df: T;
-  sa: T;
-  sd: T;
-  sp: T;
-  sl?: T;
+  atk: T;
+  def: T;
+  spa: T;
+  spd: T;
+  spe: T;
+  spc?: T;
 }
 
-export const HP: Stat = 'hp';
-export const AT: Stat = 'at';
-export const DF: Stat = 'df';
-export const SA: Stat = 'sa';
-export const SD: Stat = 'sd';
-export const SP: Stat = 'sp';
-export const SL: Stat = 'sl';
-
-const RBY: Stat[] = [HP, AT, DF, SL, SP];
-const GSC: Stat[] = [HP, AT, DF, SA, SD, SP];
+const RBY: Stat[] = ['hp', 'atk', 'def', 'spc', 'spe'];
+const GSC: Stat[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
 const ADV: Stat[] = GSC;
 const DPP: Stat[] = GSC;
 const BW: Stat[] = GSC;
@@ -32,19 +23,19 @@ export const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
 
 export function displayStat(stat: Stat) {
   switch (stat) {
-    case HP:
+    case 'hp':
       return 'HP';
-    case AT:
+    case 'atk':
       return 'Atk';
-    case DF:
+    case 'def':
       return 'Def';
-    case SA:
+    case 'spa':
       return 'SpA';
-    case SD:
+    case 'spd':
       return 'SpD';
-    case SP:
+    case 'spe':
       return 'Spe';
-    case SL:
+    case 'spc':
       return 'Spc';
     default:
       throw new Error(`unknown stat ${stat}`);
@@ -53,7 +44,7 @@ export function displayStat(stat: Stat) {
 
 // TODO: stop exporting
 export function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
-  if (stat === HP) {
+  if (stat === 'hp') {
     return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
   } else {
     return Math.floor((((base + dv) * 2 + 63) * level) / 100) + 5;
@@ -69,7 +60,7 @@ export function calcStatADV(
   level: number,
   nature?: string
 ) {
-  if (stat === HP) {
+  if (stat === 'hp') {
     return base === 1
       ? base
       : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;

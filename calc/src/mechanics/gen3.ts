@@ -5,7 +5,7 @@ import { RawDesc } from '../desc';
 import { Pokemon } from '../pokemon';
 import { Move } from '../move';
 import { Field } from '../field';
-import { AT, DF, SA, SD, SP, displayStat } from '../stats';
+import { displayStat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -24,8 +24,8 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   checkForecast(defender, field.weather);
   checkIntimidate(attacker, defender);
   checkIntimidate(defender, attacker);
-  attacker.stats[SP] = getFinalSpeed(ADV, attacker, field, field.attackerSide);
-  defender.stats[SP] = getFinalSpeed(ADV, defender, field, field.defenderSide);
+  attacker.stats.spe = getFinalSpeed(ADV, attacker, field, field.attackerSide);
+  defender.stats.spe = getFinalSpeed(ADV, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -118,7 +118,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   const isPhysical = TYPE_CHART[ADV][move.type].category === 'Physical';
-  const attackStat = isPhysical ? AT : SA;
+  const attackStat = isPhysical ? 'atk' : 'spa';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
@@ -128,7 +128,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
       : '') +
     ' ' +
     displayStat(attackStat);
-  const defenseStat = isPhysical ? DF : SD;
+  const defenseStat = isPhysical ? 'def' : 'spd';
   description.defenseEVs =
     defender.evs[defenseStat] +
     (NATURES[defender.nature][0] === defenseStat

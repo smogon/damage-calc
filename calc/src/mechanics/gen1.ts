@@ -3,21 +3,20 @@ import { RawDesc } from '../desc';
 import { Field } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
-import { AT, DF, SL, SP } from '../stats';
 import { getModifiedStat, getFinalSpeed } from './util';
 
 const RBY = 1;
 
 export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
-  attacker.stats[AT] = getModifiedStat(attacker.rawStats[AT], attacker.boosts[AT], RBY);
-  attacker.stats[DF] = getModifiedStat(attacker.rawStats[DF], attacker.boosts[DF], RBY);
-  attacker.stats[SL] = getModifiedStat(attacker.rawStats[SL], attacker.boosts[SL], RBY);
-  attacker.stats[SP] = getFinalSpeed(RBY, attacker, field, field.attackerSide);
+  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, RBY);
+  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, RBY);
+  attacker.stats.spc = getModifiedStat(attacker.rawStats.spc, attacker.boosts.spc, RBY);
+  attacker.stats.spe = getFinalSpeed(RBY, attacker, field, field.attackerSide);
 
-  defender.stats[AT] = getModifiedStat(defender.rawStats[AT], defender.boosts[AT], RBY);
-  defender.stats[DF] = getModifiedStat(defender.rawStats[DF], defender.boosts[DF], RBY);
-  defender.stats[SL] = getModifiedStat(defender.rawStats[SL], defender.boosts[SL], RBY);
-  defender.stats[SP] = getFinalSpeed(RBY, defender, field, field.defenderSide);
+  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, RBY);
+  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, RBY);
+  defender.stats.spc = getModifiedStat(defender.rawStats.spc, defender.boosts.spc, RBY);
+  defender.stats.spe = getFinalSpeed(RBY, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -40,8 +39,8 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
   if (move.hits > 1) description.hits = move.hits;
 
   const isPhysical = TYPE_CHART[RBY][move.type].category === 'Physical';
-  const attackStat = isPhysical ? AT : SL;
-  const defenseStat = isPhysical ? DF : SL;
+  const attackStat = isPhysical ? 'atk' : 'spc';
+  const defenseStat = isPhysical ? 'def' : 'spc';
   let at = attacker.stats[attackStat];
   let df = defender.stats[defenseStat];
 
