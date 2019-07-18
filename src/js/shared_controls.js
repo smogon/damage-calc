@@ -27,6 +27,10 @@ if (!Array.prototype.indexOf) {
 	};
 }
 
+function startsWith(string, target) {
+	return (string || '').slice(0, target.length) === target;
+}
+
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
 var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
@@ -427,7 +431,7 @@ $(".set-selector").change(function () {
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
 			var format = getSelectedTiers()[0];
 			if (format === "LC") pokeObj.find(".level").val(5);
-			if (_.startsWith(format, "VGC")) pokeObj.find(".level").val(50);
+			if (startsWith(format, "VGC")) pokeObj.find(".level").val(50);
 		}
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
@@ -937,12 +941,17 @@ function loadDefaultLists() {
 		},
 		query: function (query) {
 			var pageSize = 30;
-			var results = _.filter(getSetOptions(), function (option) {
+			var results = [];
+			var options = getSetOptions();
+			for (var i = 0; i < options.length; i++) {
+				var option = options[i];
 				var pokeName = option.pokemon.toUpperCase();
-				return !query.term || query.term.toUpperCase().split(" ").every(function (term) {
+				if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
 					return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
-				});
-			});
+				})) {
+					results.push(option);
+				}
+			}
 			query.callback({
 				results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
 				more: results.length >= query.page * pageSize
@@ -974,11 +983,14 @@ function loadCustomList(id) {
 		},
 		query: function (query) {
 			var pageSize = 20;
-			var results = _.filter(getSetOptions(), function (option) {
-				if (option.isCustom) {
-					return (option.nickname ? option.pokemon + " (" + option.nickname + ")" : option.id);
+			var results = [];
+			var options = getSetOptions();
+			for (var i = 0; i < options.length; i++) {
+				var option = options[i];
+				if (option.isCustom && (option.nickname || option.id)) {
+					results.push(option);
 				}
-			});
+			}
 			query.callback({
 				results: results,
 				more: results.length >= query.page * pageSize

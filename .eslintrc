@@ -9,7 +9,6 @@
         "browser": true
     },
     "globals": {
-        "_": false,
         "calc": false,
         "gen": false,
         "mode": false,
@@ -23,6 +22,7 @@
         "autosetTerrain": false,
         "lastManualStatus": false,
         "lastAutoStatus": false,
+        "startsWith": false,
         "notation": true,
         "SETDEX_SM": false,
         "SETDEX_XY": false,
