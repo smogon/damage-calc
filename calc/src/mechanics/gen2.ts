@@ -68,7 +68,7 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.moveBP = move.bp;
   }
 
-  const isPhysical = TYPE_CHART[GSC][move.type].category === 'Physical';
+  const isPhysical = TYPE_CHART[GSC][move.type]!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
   const defenseStat = isPhysical ? 'def' : 'spd';
   let at = attacker.stats[attackStat];

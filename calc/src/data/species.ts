@@ -13712,4 +13712,4 @@ const SM: { [name: string]: Species } = extend(true, {}, XY, {
   },
 });
 
-export const SPECIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];

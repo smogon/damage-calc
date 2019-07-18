@@ -88,9 +88,9 @@ export function getMoveEffectiveness(
   } else if (move.name === 'Freeze-Dry' && type === 'Water') {
     return 2;
   } else if (move.name === 'Flying Press') {
-    return TYPE_CHART[gen]['Fighting'][type] * TYPE_CHART[gen]['Flying'][type];
+    return TYPE_CHART[gen]['Fighting']![type]! * TYPE_CHART[gen]['Flying']![type]!;
   } else {
-    return TYPE_CHART[gen][move.type][type];
+    return TYPE_CHART[gen][move.type]![type]!;
   }
 }
 
@@ -156,8 +156,8 @@ export function checkDownload(source: Pokemon, target: Pokemon) {
 export function countBoosts(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, boosts: StatsTable<number>) {
   let sum = 0;
   for (let i = 0; i < STATS[gen].length; i++) {
-    if (boosts[STATS[gen][i]] > 0) {
-      sum += boosts[STATS[gen][i]];
+    if (boosts[STATS[gen][i]]) {
+      sum += boosts[STATS[gen][i]]!;
     }
   }
   return sum;

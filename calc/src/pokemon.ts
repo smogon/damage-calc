@@ -78,11 +78,11 @@ export class Pokemon {
   }
 
   hasAbility(...abilities: string[]) {
-    return abilities.indexOf(this.ability) !== -1;
+    return this.ability && abilities.indexOf(this.ability) !== -1;
   }
 
   hasItem(...items: string[]) {
-    return items.indexOf(this.item) !== -1;
+    return this.item && items.indexOf(this.item) !== -1;
   }
 
   hasStatus(...statuses: Status[]) {

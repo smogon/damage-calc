@@ -117,7 +117,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
       bp = move.bp;
   }
 
-  const isPhysical = TYPE_CHART[ADV][move.type].category === 'Physical';
+  const isPhysical = TYPE_CHART[ADV][move.type]!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
   description.attackEVs =
     attacker.evs[attackStat] +

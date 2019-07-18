@@ -1,7 +1,7 @@
 import { Stat } from '../stats';
 import { Type } from './types';
 
-const RBY = [];
+const RBY: string[] = [];
 
 const GSC = [
   'Berry',
@@ -203,7 +203,7 @@ const BW = DPP.concat([
   'Water Gem',
 ]);
 
-export const MEGA_STONES = {
+export const MEGA_STONES: { [species: string]: string } = {
   Absolite: 'Absol',
   Abomasite: 'Abomasnow',
   Aerodactylite: 'Aerodactyl',
@@ -334,7 +334,7 @@ const SM = XY.concat([
   'Yellow Nectar',
 ]);
 
-const BERRIES = {
+const BERRIES: { [berry: string]: { t: Type; p: number } } = {
   'Apicot Berry': { t: 'Ground', p: 100 },
   'Babiri Berry': { t: 'Steel', p: 80 },
   'Belue Berry': { t: 'Electric', p: 100 },
@@ -618,4 +618,4 @@ export function getMultiAttack(item: string) {
   return undefined;
 }
 
-export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+export const ITEMS = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];

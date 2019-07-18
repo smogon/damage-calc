@@ -3630,9 +3630,9 @@ export function getZMoveName(moveName: string, moveType: Type, item: string) {
     if (item === 'Aloraichium Z') return 'Stoked Sparksurfer';
     if (item === 'Pikashunium Z') return '10,000,000 Volt Thunderbolt';
   }
-  return ZMOVES_TYPING[moveType];
+  return ZMOVES_TYPING[moveType]!;
 }
 
-export const ZMOVES: string[] = Object.values(ZMOVES_TYPING);
+export const ZMOVES = Object.values(ZMOVES_TYPING) as string[];
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];

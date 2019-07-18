@@ -147,8 +147,8 @@ export function getKOChanceText(
   const hazardText = [];
   if (field.defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
     const effectiveness =
-      TYPE_CHART[gen]['Rock'][defender.type1] *
-      (defender.type2 ? TYPE_CHART[gen]['Rock'][defender.type2] : 1);
+      TYPE_CHART[gen]['Rock']![defender.type1]! *
+      (defender.type2 ? TYPE_CHART[gen]['Rock']![defender.type2]! : 1);
     hazards += Math.floor((effectiveness * defender.maxHP) / 8);
     hazardText.push('Stealth Rock');
   }

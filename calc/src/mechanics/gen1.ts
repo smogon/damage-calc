@@ -10,12 +10,12 @@ const RBY = 1;
 export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
   attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, RBY);
   attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, RBY);
-  attacker.stats.spc = getModifiedStat(attacker.rawStats.spc, attacker.boosts.spc, RBY);
+  attacker.stats.spc = getModifiedStat(attacker.rawStats.spc!, attacker.boosts.spc!, RBY);
   attacker.stats.spe = getFinalSpeed(RBY, attacker, field, field.attackerSide);
 
   defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, RBY);
   defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, RBY);
-  defender.stats.spc = getModifiedStat(defender.rawStats.spc, defender.boosts.spc, RBY);
+  defender.stats.spc = getModifiedStat(defender.rawStats.spc!, defender.boosts.spc!, RBY);
   defender.stats.spe = getFinalSpeed(RBY, defender, field, field.defenderSide);
 
   const description: RawDesc = {
@@ -31,23 +31,23 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
     return { damage: [lv], description };
   }
 
-  const typeEffect1 = TYPE_CHART[RBY][move.type][defender.type1];
-  const typeEffect2 = defender.type2 ? TYPE_CHART[RBY][move.type][defender.type2] : 1;
+  const typeEffect1 = TYPE_CHART[RBY][move.type]![defender.type1]!;
+  const typeEffect2 = defender.type2 ? TYPE_CHART[RBY][move.type]![defender.type2]! : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) return { damage: [0], description };
   if (move.hits > 1) description.hits = move.hits;
 
-  const isPhysical = TYPE_CHART[RBY][move.type].category === 'Physical';
+  const isPhysical = TYPE_CHART[RBY][move.type]!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spc';
   const defenseStat = isPhysical ? 'def' : 'spc';
-  let at = attacker.stats[attackStat];
-  let df = defender.stats[defenseStat];
+  let at = attacker.stats[attackStat]!;
+  let df = defender.stats[defenseStat]!;
 
   if (move.isCrit) {
     lv *= 2;
-    at = attacker.rawStats[attackStat];
-    df = defender.rawStats[defenseStat];
+    at = attacker.rawStats[attackStat]!;
+    df = defender.rawStats[defenseStat]!;
     description.isCritical = true;
   } else {
     if (attacker.boosts[attackStat] !== 0) {

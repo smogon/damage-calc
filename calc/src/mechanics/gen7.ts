@@ -15,7 +15,7 @@ import { RawDesc } from '../desc';
 import { Field, Side } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
-import { displayStat } from '../stats';
+import { displayStat, Stat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -133,14 +133,26 @@ function calculateModern(
       : 'Normal';
     description.weather = field.weather;
     description.moveType = move.type;
-  } else if (move.name === 'Judgment' && attacker.item.indexOf('Plate') !== -1) {
-    move.type = getItemBoostType(attacker.item);
-  } else if (move.name === 'Techno Blast' && attacker.item.indexOf('Drive') !== -1) {
-    move.type = getTechnoBlast(attacker.item);
-  } else if (move.name === 'Multi-Attack' && attacker.item.indexOf('Memory') !== -1) {
-    move.type = getMultiAttack(attacker.item);
-  } else if (move.name === 'Natural Gift' && attacker.item.indexOf('Berry') !== -1) {
-    const gift = getNaturalGift(gen, attacker.item);
+  } else if (move.name === 'Judgment' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
+    move.type = getItemBoostType(attacker.item)!;
+  } else if (
+    move.name === 'Techno Blast' &&
+    attacker.item &&
+    attacker.item.indexOf('Drive') !== -1
+  ) {
+    move.type = getTechnoBlast(attacker.item)!;
+  } else if (
+    move.name === 'Multi-Attack' &&
+    attacker.item &&
+    attacker.item.indexOf('Memory') !== -1
+  ) {
+    move.type = getMultiAttack(attacker.item)!;
+  } else if (
+    move.name === 'Natural Gift' &&
+    attacker.item &&
+    attacker.item.indexOf('Berry') !== -1
+  ) {
+    const gift = getNaturalGift(gen, attacker.item)!;
     move.type = gift.t;
     move.bp = gift.p;
     description.attackerItem = attacker.item;
@@ -231,7 +243,7 @@ function calculateModern(
     : 1;
   let typeEffectiveness = typeEffect1 * typeEffect2;
   const resistedKnockOffDamage =
-    defender.item === '' ||
+    !defender.item ||
     (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
     (defender.name.indexOf('Arceus') !== -1 && defender.item.indexOf('Plate') !== -1) ||
     (defender.name.indexOf('Genesect') !== -1 && defender.item.indexOf('Drive') !== -1) ||
@@ -244,9 +256,9 @@ function calculateModern(
     typeEffectiveness = 1;
   }
   if (defender.hasItem('Ring Target') && typeEffectiveness === 0) {
-    if (TYPE_CHART[gen][move.type][defender.type1] === 0) {
+    if (TYPE_CHART[gen][move.type]![defender.type1]! === 0) {
       typeEffectiveness = typeEffect2;
-    } else if (TYPE_CHART[gen][move.type][defender.type2] === 0) {
+    } else if (defender.type2 && TYPE_CHART[gen][move.type]![defender.type2]! === 0) {
       typeEffectiveness = typeEffect1;
     }
   }
@@ -292,7 +304,7 @@ function calculateModern(
   }
   if (
     field.weather === 'Strong Winds' &&
-    (defender.hasType('Flying') && TYPE_CHART[gen][move.type]['Flying'] > 1)
+    (defender.hasType('Flying') && TYPE_CHART[gen][move.type]!['Flying']! > 1)
   ) {
     typeEffectiveness /= 2;
     description.weather = field.weather;
@@ -328,7 +340,7 @@ function calculateModern(
 
   if (move.name === 'Guardian of Alola') {
     let zLostHP = Math.floor((defender.curHP * 3) / 4);
-    if (field.defenderSide.isProtected && attacker.item.indexOf(' Z') !== -1) {
+    if (field.defenderSide.isProtected && attacker.item && attacker.item.indexOf(' Z') !== -1) {
       zLostHP = Math.ceil(zLostHP / 4 - 0.5);
     }
     return { damage: [zLostHP], description };
@@ -340,11 +352,12 @@ function calculateModern(
   }
 
   if (move.name === 'Spectral Thief') {
-    for (const stat in defender.boosts) {
-      if (defender.boosts[stat] > 0) {
+    let stat: Stat;
+    for (stat in defender.boosts) {
+      if (defender.boosts[stat]) {
         attacker.boosts[stat] +=
-          attacker.ability === 'Contrary' ? -defender.boosts[stat] : defender.boosts[stat];
-        attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat], attacker.boosts[stat]);
+          attacker.ability === 'Contrary' ? -defender.boosts[stat]! : defender.boosts[stat]!;
+        attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat]!, attacker.boosts[stat]!);
       }
     }
   }
@@ -414,7 +427,7 @@ function calculateModern(
       description.moveBP = basePower;
       break;
     case 'Fling':
-      basePower = getFlingPower(attacker.item);
+      basePower = getFlingPower(attacker.item || '');
       description.moveBP = basePower;
       description.attackerItem = attacker.item;
       break;
@@ -529,7 +542,7 @@ function calculateModern(
 
   const isSTAB = attacker.hasType(move.type);
 
-  if (getItemBoostType(attacker.item) === move.type) {
+  if (attacker.item && getItemBoostType(attacker.item) === move.type) {
     bpMods.push(0x1333);
     description.attackerItem = attacker.item;
   } else if (
@@ -890,8 +903,8 @@ function calculateModern(
   }
   if (
     hasTerrainSeed(defender) &&
-    field.terrain === defender.item.substring(0, defender.item.indexOf(' ')) &&
-    SEED_BOOSTED_STAT[defender.item] === defenseStat
+    field.terrain === defender.item!.substring(0, defender.item!.indexOf(' ')) &&
+    SEED_BOOSTED_STAT[defender.item!] === defenseStat
   ) {
     // Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome (like Grassy Seed when being hit by a special move)
     description.defenderItem = defender.item;
@@ -977,8 +990,8 @@ function calculateModern(
     finalMods.push(0xc00);
     description.defenderAbility = defender.ability;
   }
-  if (attacker.hasItem('Metronome') && move.metronomeCount >= 1) {
-    const metronomeCount = Math.floor(move.metronomeCount);
+  if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
+    const metronomeCount = Math.floor(move.metronomeCount!);
     if (metronomeCount <= 4) {
       finalMods.push(0x1000 + metronomeCount * 0x333);
     } else {
@@ -1001,7 +1014,12 @@ function calculateModern(
     finalMods.push(0x800);
     description.defenderItem = defender.item;
   }
-  if (field.defenderSide.isProtected && move.isZ && attacker.item.indexOf(' Z') !== -1) {
+  if (
+    field.defenderSide.isProtected &&
+    move.isZ &&
+    attacker.item &&
+    attacker.item.indexOf(' Z') !== -1
+  ) {
     finalMods.push(0x400);
     description.isProtected = true;
   }
@@ -1021,7 +1039,7 @@ function calculateModern(
       description.attackerAbility = attacker.ability;
     }
   }
-  if (move.dropsStats && move.usedTimes > 1) {
+  if (move.dropsStats && (move.usedTimes || 0) > 1) {
     let simpleMultiplier = 1;
     if (attacker.hasAbility('Simple')) {
       simpleMultiplier = 2;
@@ -1030,7 +1048,7 @@ function calculateModern(
     const hasWhiteHerb = attacker.item === 'White Herb';
     let usedWhiteHerb = false;
     let dropCount = attacker.boosts[attackStat];
-    for (let times = 0; times < move.usedTimes; times++) {
+    for (let times = 0; times < move.usedTimes!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
@@ -1082,6 +1100,7 @@ function chainMods(mods: number[]) {
 }
 
 function checkSeedBoost(pokemon: Pokemon, field: Field) {
+  if (!pokemon.item) return;
   if (field.terrain && pokemon.item.indexOf('Seed') !== -1) {
     const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
     if (terrainSeed === field.terrain) {

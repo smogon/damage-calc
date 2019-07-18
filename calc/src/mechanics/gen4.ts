@@ -75,10 +75,14 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.weather = field.weather;
     description.moveType = move.type;
     description.moveBP = basePower;
-  } else if (move.name === 'Judgment' && attacker.item.indexOf('Plate') !== -1) {
-    move.type = getItemBoostType(attacker.item);
-  } else if (move.name === 'Natural Gift' && attacker.item.indexOf('Berry') !== -1) {
-    const gift = getNaturalGift(DPP, attacker.item);
+  } else if (move.name === 'Judgment' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
+    move.type = getItemBoostType(attacker.item)!;
+  } else if (
+    move.name === 'Natural Gift' &&
+    attacker.item &&
+    attacker.item.indexOf('Berry') !== -1
+  ) {
+    const gift = getNaturalGift(DPP, attacker.item)!;
     move.type = gift.t;
     move.bp = gift.p;
     description.attackerItem = attacker.item;
@@ -164,7 +168,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
       description.moveBP = move.bp;
       break;
     case 'Fling':
-      move.bp = getFlingPower(attacker.item);
+      move.bp = getFlingPower(attacker.item || '');
       description.moveBP = move.bp;
       description.attackerItem = attacker.item;
       break;

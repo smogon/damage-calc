@@ -46,7 +46,7 @@ export class Move {
     let data: MoveData & { name: string } = extend(true, { name }, MOVES[gen][name], overrides);
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (useZ && 'zp' in data) {
-      const zMoveName: string = getZMoveName(data.name, data.type, item)!;
+      const zMoveName: string = getZMoveName(data.name, data.type, item || '');
       const zMove = MOVES[gen][zMoveName];
       data = extend(true, {}, zMove, {
         name: zMoveName,
