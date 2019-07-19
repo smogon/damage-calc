@@ -43,7 +43,7 @@ export function displayStat(stat: Stat) {
 }
 
 // TODO: stop exporting
-export function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
+function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
   if (stat === 'hp') {
     return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
   } else {
@@ -52,7 +52,7 @@ export function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: n
 }
 
 // TODO: stop exporting
-export function calcStatADV(
+function calcStatADV(
   stat: Stat,
   base: number,
   iv: number,

@@ -53,8 +53,7 @@ export { MOVES, getZMoveName } from './data/moves';
 export { SPECIES } from './data/species';
 export { NATURES } from './data/natures';
 export { TYPE_CHART } from './data/types';
-// TODO: expose a single calcStat(gen, ...) method.
-export { STATS, calcStatRBYFromDV, calcStatADV } from './stats';
+export { STATS, calcStat } from './stats';
 
 // TODO: Description/KO Chance will be exposed through a 'Result' type.
 export { buildDescription, getKOChanceText } from './desc';

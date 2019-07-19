@@ -54,7 +54,6 @@ function legacyStatToStat(st) {
 	}
 }
 
-
 // input field validation
 var bounds = {
 	"level": [0, 100],
@@ -525,16 +524,7 @@ function createPokemon(pokeInfo) {
 		var set = setdex[name][setName];
 		var level = set.level;
 		var HPEVs = (set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0;
-		var maxHP;
-		if (gen < 3) {
-			var HPDVs = 15;
-			maxHP = ~~(((pokemon.bs.hp + HPDVs) * 2 + 63) * level / 100) + level + 10;
-		} else if (pokemon.bs.hp === 1) {
-			maxHP = 1;
-		} else {
-			var HPIVs = 31;
-			maxHP = ~~((pokemon.bs.hp * 2 + HPIVs + ~~(HPEVs / 4)) * level / 100) + level + 10;
-		}
+		var maxHP = calc.calcStat(gen, "hp", pokemon.bs.hp, 31, gen < 3 ? 252 : HPEVs, level);
 		var curHP = maxHP;
 		var nature = set.nature;
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
@@ -542,15 +532,8 @@ function createPokemon(pokeInfo) {
 			var stat = legacyStatToStat(legacyStat);
 			boosts[stat] = 0;
 			evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
-			if (gen < 3) {
-				var dvs = 15;
-				rawStats[stat] = ~~(((pokemon.bs[legacyStat] + dvs) * 2 + 63) * level / 100) + 5;
-			} else {
-				var ivs = (set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
-				var natureMods = calc.NATURES[nature];
-				var n = natureMods[0] === stat ? 1.1 : natureMods[1] === stat ? 0.9 : 1;
-				rawStats[stat] = ~~((~~((pokemon.bs[legacyStat] * 2 + ivs + ~~(evs[stat] / 4)) * level / 100) + 5) * n);
-			}
+			var ivs = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
+			rawStats[stat] = calc.calcStat(gen, stat, pokemon.bs[legacyStat], ivs, evs[stat], level, nature);
 		}
 		var ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
 			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
@@ -661,52 +644,29 @@ function createField() {
 	return new calc.Field(format, weather, terrain, isGravity, createSide(0), createSide(1));
 }
 
-function CALC_HP_RBY(poke) {
-	var hp = poke.find(".hp");
-	var total;
-	var base = ~~hp.find(".base").val();
-	var dvs = ~~hp.find(".dvs").val();
-	var level = ~~poke.find(".level").val();
-	total = calc.calcStatRBYFromDV("hp", base, dvs, level);
-	hp.find(".total").text(total);
+function calcHP(poke) {
+	var total = calcStat(poke, "hp");
 	poke.find(".max-hp").text(total);
 	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
 }
 
-function CALC_STAT_RBY(poke, statName) {
+function calcStat(poke, statName) {
 	var stat = poke.find("." + statName);
 	var base = ~~stat.find(".base").val();
-	var dvs = ~~stat.find(".dvs").val();
 	var level = ~~poke.find(".level").val();
-	var total = calc.calcStatRBYFromDV(legacyStatToStat(statName), base, dvs, level);
+	var nature, ivs, evs;
+	if (gen < 3) {
+		ivs = ~~stat.find(".dvs").val() * 2;
+		evs = 252;
+	} else {
+		ivs = ~~stat.find(".ivs").val();
+		evs = ~~stat.find(".evs").val();
+		if (statName !== "hp") nature = poke.find(".nature").val();
+	}
+	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
 	stat.find(".total").text(total);
+	return total;
 }
-
-function CALC_HP_ADV(poke) {
-	var hp = poke.find(".hp");
-	var base = ~~hp.find(".base").val();
-	var ivs = ~~hp.find(".ivs").val();
-	var evs = ~~hp.find(".evs").val();
-	var level = ~~poke.find(".level").val();
-	var total = calc.calcStatADV("hp", base, ivs, evs, level);
-	hp.find(".total").text(total);
-	poke.find(".max-hp").text(total);
-	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
-}
-
-function CALC_STAT_ADV(poke, statName) {
-	var stat = poke.find("." + statName);
-	var base = ~~stat.find(".base").val();
-	var ivs = ~~stat.find(".ivs").val();
-	var evs = ~~stat.find(".evs").val();
-	var level = ~~poke.find(".level").val();
-	var nature = poke.find(".nature").val();
-	var total = calc.calcStatADV(legacyStatToStat(statName), base, ivs, evs, level, nature);
-	stat.find(".total").text(total);
-}
-
-var CALC_HP = [null, CALC_HP_RBY, CALC_HP_RBY, CALC_HP_ADV, CALC_HP_ADV, CALC_HP_ADV, CALC_HP_ADV, CALC_HP_ADV];
-var CALC_STAT = [null, CALC_STAT_RBY, CALC_STAT_RBY, CALC_STAT_ADV, CALC_STAT_ADV, CALC_STAT_ADV, CALC_STAT_ADV, CALC_STAT_ADV];
 
 var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM];
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
@@ -722,8 +682,6 @@ $(".gen").change(function () {
 	moves = calc.MOVES[gen];
 	items = calc.ITEMS[gen];
 	abilities = calc.ABILITIES[gen];
-	calcHP = CALC_HP[gen];
-	calcStat = CALC_STAT[gen];
 	clearField();
 	$("#importedSets").prop("checked", false);
 	loadDefaultLists();
