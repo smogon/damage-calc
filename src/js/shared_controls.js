@@ -544,7 +544,7 @@ function createPokemon(pokeInfo) {
 		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
 			var moveName = set.moves[i];
-			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", ability, item));
+			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item}));
 		}
 		var weight = pokemon.w;
 		var gender = pokemon.gender ? "genderless" : "Male";
@@ -607,7 +607,10 @@ function getMoveDetails(moveInfo, ability, item) {
 		type: moveInfo.find(".move-type").val(),
 		category: moveInfo.find(".move-cat").val(),
 	};
-	return new calc.Move(gen, moveName, ability, item, isZMove, isCrit, hits, usedTimes, metronomeCount, overrides);
+	return new calc.Move(gen, moveName, {
+		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
+		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides
+	});
 }
 
 function createField() {
@@ -636,12 +639,17 @@ function createField() {
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
 
 	var createSide = function (i) {
-		return new calc.Side(
-			spikes[i], isSR[i], isReflect[i], isLightScreen[i], isProtected[i], isSeeded[i],
-			isForesight[i], isTailwind[i], isHelpingHand[i], isFriendGuard[i], isAuroraVeil[i],
-			isBattery[i]);
+		return new calc.Side({
+			spikes: spikes[i], isSR: isSR[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
+			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
+			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i]
+		});
 	};
-	return new calc.Field(format, weather, terrain, isGravity, createSide(0), createSide(1));
+	return new calc.Field({
+		format: format, weather: weather, terrain: terrain, isGravity: isGravity,
+		attackerSide: createSide(0), defenderSide: createSide(1)
+	});
 }
 
 function calcHP(poke) {

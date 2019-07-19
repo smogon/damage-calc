@@ -31,7 +31,7 @@ export function getFinalSpeed(
   field: Field,
   side: Side
 ) {
-  const weather = field.weather;
+  const weather = field.weather || '';
   const terrain = field.terrain;
   let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe);
 
@@ -96,11 +96,11 @@ export function getMoveEffectiveness(
 
 export function checkAirLock(pokemon: Pokemon, field: Field) {
   if (pokemon.hasAbility('Air Lock', 'Cloud Nine')) {
-    field.weather = '';
+    field.weather = undefined;
   }
 }
 
-export function checkForecast(pokemon: Pokemon, weather: Weather) {
+export function checkForecast(pokemon: Pokemon, weather?: Weather) {
   if (pokemon.hasAbility('Forecast') && pokemon.named('Castform')) {
     switch (weather) {
       case 'Sun':

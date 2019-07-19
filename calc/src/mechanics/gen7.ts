@@ -423,7 +423,7 @@ function calculateModern(
       description.moveBP = basePower;
       break;
     case 'Weather Ball':
-      basePower = field.weather !== '' && !field.hasWeather('Strong Winds') ? 100 : 50;
+      basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
       description.moveBP = basePower;
       break;
     case 'Fling':
@@ -444,7 +444,7 @@ function calculateModern(
       break;
     case 'Nature Power':
       basePower =
-        ['Electric', 'Grassy', 'Psychic'].indexOf(field.terrain) !== -1
+        ['Electric', 'Grassy', 'Psychic'].indexOf(field.terrain || '') !== -1
           ? 90
           : field.terrain === 'Misty'
           ? 95

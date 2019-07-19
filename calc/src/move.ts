@@ -34,19 +34,26 @@ export class Move {
   constructor(
     gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
     name: string,
-    ability?: string,
-    item?: string,
-    useZ?: boolean,
-    isCrit?: boolean,
-    hits?: number,
-    usedTimes?: number,
-    metronomeCount?: number,
-    overrides?: Partial<MoveData>
+    options: {
+      ability?: string;
+      item?: string;
+      useZ?: boolean;
+      isCrit?: boolean;
+      hits?: number;
+      usedTimes?: number;
+      metronomeCount?: number;
+      overrides?: Partial<MoveData>;
+    }
   ) {
-    let data: MoveData & { name: string } = extend(true, { name }, MOVES[gen][name], overrides);
+    let data: MoveData & { name: string } = extend(
+      true,
+      { name },
+      MOVES[gen][name],
+      options.overrides
+    );
     // If isZMove but there isn't a corresponding z-move, use the original move
-    if (useZ && 'zp' in data) {
-      const zMoveName: string = getZMoveName(data.name, data.type, item || '');
+    if (options.useZ && 'zp' in data) {
+      const zMoveName: string = getZMoveName(data.name, data.type, options.item || '');
       const zMove = MOVES[gen][zMoveName];
       data = extend(true, {}, zMove, {
         name: zMoveName,
@@ -56,12 +63,12 @@ export class Move {
       this.hits = 1;
     } else {
       this.hits = data.isMultiHit
-        ? hits || (ability === 'Skill Link' || item === 'Grip Claw' ? 5 : 3)
+        ? options.hits || (options.ability === 'Skill Link' || options.item === 'Grip Claw' ? 5 : 3)
         : data.isTwoHit
         ? 2
         : 1;
-      this.usedTimes = (data.dropsStats && usedTimes) || 1;
-      this.metronomeCount = metronomeCount;
+      this.usedTimes = (data.dropsStats && options.usedTimes) || 1;
+      this.metronomeCount = options.metronomeCount;
     }
 
     this.name = data.name;
@@ -72,7 +79,7 @@ export class Move {
     this.isSpread = !!data.isSpread;
     this.makesContact = !!data.makesContact;
     this.hasRecoil = data.hasRecoil;
-    this.isCrit = !!isCrit || !!data.alwaysCrit;
+    this.isCrit = !!options.isCrit || !!data.alwaysCrit;
     this.givesHealth = !!data.givesHealth;
     this.percentHealed = data.percentHealed;
     this.ignoresBurn = !!data.ignoresBurn;

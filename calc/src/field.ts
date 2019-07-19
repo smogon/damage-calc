@@ -1,7 +1,6 @@
 export type GameType = 'Singles' | 'Doubles';
-export type Terrain = '' | 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
+export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
 export type Weather =
-  | ''
   | 'Sand'
   | 'Sun'
   | 'Rain'
@@ -12,42 +11,42 @@ export type Weather =
 
 export class Field {
   gameType: GameType;
-  weather: Weather;
-  terrain: Terrain;
+  weather?: Weather;
+  terrain?: Terrain;
   isGravity: boolean;
   attackerSide: Side;
   defenderSide: Side;
 
-  constructor(
-    gameType: GameType,
-    weather: Weather,
-    terrain: Terrain,
-    isGravity: boolean,
-    attackerSide: Side,
-    defenderSide: Side
-  ) {
-    this.gameType = gameType || 'Singles';
-    this.terrain = terrain || '';
-    this.weather = weather || '';
-    this.isGravity = !!isGravity;
+  constructor(field: {
+    gameType?: GameType;
+    weather?: Weather;
+    terrain?: Terrain;
+    isGravity?: boolean;
+    attackerSide: Partial<Side>;
+    defenderSide: Partial<Side>;
+  }) {
+    this.gameType = field.gameType || 'Singles';
+    this.terrain = field.terrain;
+    this.weather = field.weather;
+    this.isGravity = !!field.isGravity;
 
-    this.attackerSide = attackerSide;
-    this.defenderSide = defenderSide;
+    this.attackerSide = new Side(field.attackerSide);
+    this.defenderSide = new Side(field.defenderSide);
   }
 
   hasWeather(...weathers: Weather[]) {
-    return weathers.indexOf(this.weather) !== -1;
+    return this.weather && weathers.indexOf(this.weather) !== -1;
   }
 
   swap() {
-    return new Field(
-      this.gameType,
-      this.weather,
-      this.terrain,
-      this.isGravity,
-      this.defenderSide,
-      this.attackerSide
-    );
+    return new Field({
+      gameType: this.gameType,
+      weather: this.weather,
+      terrain: this.terrain,
+      isGravity: this.isGravity,
+      defenderSide: this.attackerSide,
+      attackerSide: this.defenderSide,
+    });
   }
 }
 
@@ -65,31 +64,31 @@ export class Side {
   isAuroraVeil: boolean;
   isBattery: boolean;
 
-  constructor(
-    spikes?: number,
-    isSR?: boolean,
-    isReflect?: boolean,
-    isLightScreen?: boolean,
-    isProtected?: boolean,
-    isSeeded?: boolean,
-    isForesight?: boolean,
-    isTailwind?: boolean,
-    isHelpingHand?: boolean,
-    isFriendGuard?: boolean,
-    isAuroraVeil?: boolean,
-    isBattery?: boolean
-  ) {
-    this.spikes = spikes || 0;
-    this.isSR = !!isSR;
-    this.isReflect = !!isReflect;
-    this.isLightScreen = !!isLightScreen;
-    this.isProtected = !!isProtected;
-    this.isSeeded = !!isSeeded;
-    this.isForesight = !!isForesight;
-    this.isTailwind = !!isTailwind;
-    this.isHelpingHand = !!isHelpingHand;
-    this.isFriendGuard = !!isFriendGuard;
-    this.isAuroraVeil = !!isAuroraVeil;
-    this.isBattery = !!isBattery;
+  constructor(side: {
+    spikes?: number;
+    isSR?: boolean;
+    isReflect?: boolean;
+    isLightScreen?: boolean;
+    isProtected?: boolean;
+    isSeeded?: boolean;
+    isForesight?: boolean;
+    isTailwind?: boolean;
+    isHelpingHand?: boolean;
+    isFriendGuard?: boolean;
+    isAuroraVeil?: boolean;
+    isBattery?: boolean;
+  }) {
+    this.spikes = side.spikes || 0;
+    this.isSR = !!side.isSR;
+    this.isReflect = !!side.isReflect;
+    this.isLightScreen = !!side.isLightScreen;
+    this.isProtected = !!side.isProtected;
+    this.isSeeded = !!side.isSeeded;
+    this.isForesight = !!side.isForesight;
+    this.isTailwind = !!side.isTailwind;
+    this.isHelpingHand = !!side.isHelpingHand;
+    this.isFriendGuard = !!side.isFriendGuard;
+    this.isAuroraVeil = !!side.isAuroraVeil;
+    this.isBattery = !!side.isBattery;
   }
 }

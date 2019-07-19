@@ -272,7 +272,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.isCritical = true;
   }
 
-  if (move.name === 'Weather Ball' && field.weather !== '') {
+  if (move.name === 'Weather Ball' && field.weather) {
     baseDamage *= 2;
     description.moveBP = move.bp * 2;
   }
