@@ -427,7 +427,7 @@ function calculateModern(
       description.moveBP = basePower;
       break;
     case 'Fling':
-      basePower = getFlingPower(attacker.item || '');
+      basePower = getFlingPower(attacker.item);
       description.moveBP = basePower;
       description.attackerItem = attacker.item;
       break;
@@ -444,7 +444,7 @@ function calculateModern(
       break;
     case 'Nature Power':
       basePower =
-        ['Electric', 'Grassy', 'Psychic'].indexOf(field.terrain || '') !== -1
+        field.terrain && ['Electric', 'Grassy', 'Psychic'].indexOf(field.terrain) !== -1
           ? 90
           : field.terrain === 'Misty'
           ? 95

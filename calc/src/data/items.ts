@@ -567,7 +567,8 @@ const FLING_10 = new Set([
   'Zoom Lens',
 ]);
 
-export function getFlingPower(item: string) {
+export function getFlingPower(item?: string) {
+  if (!item) return 0;
   if (item === 'Iron Ball') return 130;
   if (item === 'Hard Stone') return 100;
   if (item.indexOf('Plate') !== -1 || ['Deep Sea Tooth', 'Thick Club'].indexOf(item) !== -1) {

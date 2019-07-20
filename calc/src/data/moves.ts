@@ -3606,7 +3606,8 @@ const ZMOVES_TYPING: { [type in Type]?: string } = {
   Water: 'Hydro Vortex',
 };
 
-export function getZMoveName(moveName: string, moveType: Type, item: string) {
+export function getZMoveName(moveName: string, moveType: Type, item?: string) {
+  item = item || '';
   if (moveName.indexOf('Hidden Power') !== -1) return 'Breakneck Blitz';
   if (moveName === 'Clanging Scales' && item === 'Kommonium Z') return 'Clangorous Soulblaze';
   if (moveName === 'Darkest Lariat' && item === 'Incinium Z') return 'Malicious Moonsault';

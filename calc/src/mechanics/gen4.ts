@@ -168,7 +168,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
       description.moveBP = move.bp;
       break;
     case 'Fling':
-      move.bp = getFlingPower(attacker.item || '');
+      move.bp = getFlingPower(attacker.item);
       description.moveBP = move.bp;
       description.attackerItem = attacker.item;
       break;

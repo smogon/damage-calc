@@ -53,7 +53,7 @@ export class Move {
     );
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useZ && 'zp' in data) {
-      const zMoveName: string = getZMoveName(data.name, data.type, options.item || '');
+      const zMoveName: string = getZMoveName(data.name, data.type, options.item);
       const zMove = MOVES[gen][zMoveName];
       data = extend(true, {}, zMove, {
         name: zMoveName,
