@@ -5,6 +5,7 @@ import { RawDesc } from '../desc';
 import { Pokemon } from '../pokemon';
 import { Move } from '../move';
 import { Field } from '../field';
+import { Result } from '../result';
 import { displayStat } from '../stats';
 import {
   getModifiedStat,
@@ -33,13 +34,18 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     defenderName: defender.name,
   };
 
+  const damage: number[] = [];
+  const result = new Result(ADV, attacker, defender, move, field, damage, description);
+
   if (move.bp === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (field.defenderSide.isProtected) {
     description.isProtected = true;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (move.name === 'Weather Ball') {
@@ -69,7 +75,8 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (
@@ -81,14 +88,16 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     (defender.hasAbility('Soundproof') && move.isSound)
   ) {
     description.defenderAbility = defender.ability;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   description.HPEVs = defender.HPEVs + ' HP';
 
   const lv = attacker.level;
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
-    return { damage: [lv], description };
+    damage.push(lv);
+    return result;
   }
 
   if (move.hits > 1) {
@@ -287,10 +296,8 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
-
-  const damage = [];
   for (let i = 85; i <= 100; i++) {
     damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
   }
-  return { damage, description };
+  return result;
 }

@@ -4,6 +4,7 @@ import { RawDesc } from '../desc';
 import { Field } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
+import { Result } from '../result';
 import { getModifiedStat, getFinalSpeed, getMoveEffectiveness } from './util';
 
 const GSC = 2;
@@ -27,13 +28,18 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
     defenderName: defender.name,
   };
 
+  const damage: number[] = [];
+  const result = new Result(GSC, attacker, defender, move, field, damage, description);
+
   if (move.bp === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (field.defenderSide.isProtected) {
     description.isProtected = true;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   const typeEffect1 = getMoveEffectiveness(
@@ -48,12 +54,14 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   const lv = attacker.level;
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
-    return { damage: [lv], description };
+    damage.push(lv);
+    return result;
   }
 
   if (move.hits > 1) {
@@ -163,12 +171,12 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
 
   // Flail and Reversal don't use random factor
   if (move.name === 'Flail' || move.name === 'Reversal') {
-    return { damage: [baseDamage], description };
+    damage.push(baseDamage);
+    return result;
   }
 
-  const damage = [];
   for (let i = 217; i <= 255; i++) {
     damage[i - 217] = Math.floor((baseDamage * i) / 255);
   }
-  return { damage, description };
+  return result;
 }

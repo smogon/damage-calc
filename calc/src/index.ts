@@ -28,6 +28,7 @@
 //
 //   - calc.js
 //   - desc.js
+//   - result.ts
 //
 //   - index.js
 //
@@ -45,15 +46,12 @@ export { calculate } from './calc';
 export { Pokemon } from './pokemon';
 export { Move } from './move';
 export { Field, Side } from './field';
+export { Result } from './result';
 
 export { ABILITIES } from './data/abilities';
 export { ITEMS } from './data/items';
-// TODO: encapsulate getZMoveName and stop exporting
-export { MOVES, getZMoveName } from './data/moves';
+export { MOVES } from './data/moves';
 export { SPECIES } from './data/species';
 export { NATURES } from './data/natures';
 export { TYPE_CHART } from './data/types';
 export { STATS, calcStat } from './stats';
-
-// TODO: Description/KO Chance will be exposed through a 'Result' type.
-export { buildDescription, getKOChanceText } from './desc';

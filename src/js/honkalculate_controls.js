@@ -63,7 +63,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	var setName, setTier, spe;
+	var  attacker, defender, setName, setTier;
 	var selectedTiers = getSelectedTiers();
 	var setOptions = getSetOptions();
 	var dataSet = [];
@@ -74,7 +74,6 @@ function performCalculations() {
 			setTier = setName.substring(0, setName.indexOf(" "));
 			if (selectedTiers.indexOf(setTier) !== -1) {
 				var field = createField();
-				var attacker, defender;
 				if (mode === "one-vs-all") {
 					attacker = createPokemon(pokeInfo);
 					defender = createPokemon(setOptions[i].id);
@@ -90,20 +89,19 @@ function performCalculations() {
 					defender.gender = "genderless";
 				}
 				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
-				spe = mode === "one-vs-all" ? damageResults.attackerSpe : damageResults.defenderSpe;
+				attacker = damageResults[0].attacker;
+				defender = damageResults[0].defender;
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var highestDamage = -1;
 				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
-					result = damageResults.results[n];
+					result = damageResults[n];
 					minDamage = result.damage[0] * attacker.moves[n].hits;
 					maxDamage = result.damage[result.damage.length - 1] * attacker.moves[n].hits;
 					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
 					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP) / 10;
 					minPixels = Math.floor(minDamage * 48 / defender.maxHP);
 					maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
-					result.koChanceText = attacker.moves[n].bp === 0 ? 'nice move' :
-						calc.getKOChanceText(gen, result.damage, attacker, defender, field, attacker.moves[n], attacker.moves[n].hits, attacker.ability === 'Bad Dreams', false);
 					if (maxDamage > highestDamage) {
 						highestDamage = maxDamage;
 						while (data.length > 1) {
@@ -112,7 +110,7 @@ function performCalculations() {
 						data.push(attacker.moves[n].name.replace("Hidden Power", "HP"));
 						data.push(minPercentage + " - " + maxPercentage + "%");
 						data.push(minPixels + " - " + maxPixels + "px");
-						data.push(result.koChanceText);
+						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || 'possibly the worst move ever'));
 					}
 				}
 				data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
@@ -123,7 +121,8 @@ function performCalculations() {
 			}
 		}
 	}
-	if (spe) pokeInfo.find(".sp .totalMod").text(spe);
+	var pokemon = mode === "one-vs-all" ? attacker : defender;
+	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
 	table.rows.add(dataSet).draw();
 }
 
@@ -136,13 +135,10 @@ function getSelectedTiers() {
 
 function calculateMovesOfAttacker(gen, attacker, defender, field) {
 	var results = [];
-	var a, b;
 	for (var i = 0; i < 4; i++) {
-		a = attacker.clone();
-		b = defender.clone();
-		results[i] = calc.calculate(gen, a, b, a.moves[i], field);
+		results[i] = calc.calculate(gen, attacker.clone(), defender.clone(), attacker.moves[i], field);
 	}
-	return {results: results, attackerSpe: a.stats.spe, defenderSpe: b.stats.spe};
+	return results;
 }
 
 $(".gen").change(function () {

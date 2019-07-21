@@ -15,6 +15,7 @@ import { RawDesc } from '../desc';
 import { Field, Side } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
+import { Result } from '../result';
 import { displayStat, Stat } from '../stats';
 import {
   getModifiedStat,
@@ -81,13 +82,18 @@ function calculateModern(
     defenderName: defender.name,
   };
 
+  let damage: number[] = [];
+  const result = new Result(gen, attacker, defender, move, field, damage, description);
+
   if (move.bp === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (field.defenderSide.isProtected && !move.bypassesProtect && !move.isZ) {
     description.isProtected = true;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   let defAbility = defender.ability;
   const defenderIgnoresAbility = defender.hasAbility(
@@ -263,26 +269,30 @@ function calculateModern(
     }
   }
   if (typeEffectiveness === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (
     move.name === 'Sky Drop' &&
     (defender.hasType('Flying') || (gen >= 6 && defender.weight >= 200) || field.isGravity)
   ) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (
     move.name === 'Synchronoise' &&
     !defender.hasType(attacker.type1) &&
     (!attacker.type2 || !defender.hasType(attacker.type2))
   ) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (
     move.name === 'Dream Eater' &&
     (!defender.hasStatus('Asleep') && !defender.hasAbility('Comatose'))
   ) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (
     (defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
@@ -300,7 +310,8 @@ function calculateModern(
     (move.hasPriority && defender.hasAbility('Queenly Majesty', 'Dazzling'))
   ) {
     description.defenderAbility = defender.ability;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (
     field.weather === 'Strong Winds' &&
@@ -316,11 +327,13 @@ function calculateModern(
     defender.hasItem('Air Balloon')
   ) {
     description.defenderItem = defender.item;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (move.hasPriority && field.terrain === 'Psychic' && isGrounded(defender, field)) {
     description.terrain = field.terrain;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   description.HPEVs = defender.HPEVs + ' HP';
@@ -330,12 +343,13 @@ function calculateModern(
     if (attacker.hasAbility('Parental Bond')) {
       lv *= 2;
     }
-    return { damage: [lv], description };
+    damage.push(lv);
+    return result;
   }
 
   if (move.name === 'Final Gambit') {
-    const hp = attacker.curHP;
-    return { damage: [hp], description };
+    damage.push(attacker.curHP);
+    return result;
   }
 
   if (move.name === 'Guardian of Alola') {
@@ -343,12 +357,14 @@ function calculateModern(
     if (field.defenderSide.isProtected && attacker.item && attacker.item.indexOf(' Z') !== -1) {
       zLostHP = Math.ceil(zLostHP / 4 - 0.5);
     }
-    return { damage: [zLostHP], description };
+    damage.push(zLostHP);
+    return result;
   }
 
   if (move.name === "Nature's Madness") {
     const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP / 2);
-    return { damage: [lostHP], description };
+    damage.push(lostHP);
+    return result;
   }
 
   if (move.name === 'Spectral Thief') {
@@ -874,7 +890,8 @@ function calculateModern(
     (field.hasWeather('Harsh Sunshine') && move.type === 'Water') ||
     (field.hasWeather('Heavy Rain') && move.type === 'Fire')
   ) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   if (isGrounded(attacker, field)) {
     if (field.terrain === 'Electric' && move.type === 'Electric') {
@@ -1021,7 +1038,6 @@ function calculateModern(
   }
   const finalMod = chainMods(finalMods);
 
-  let damage = [];
   for (let i = 0; i < 16; i++) {
     damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
     // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
@@ -1082,7 +1098,7 @@ function calculateModern(
   }
 
   description.attackBoost = attacker.boosts[attackStat];
-  return { damage, description };
+  return result;
 }
 
 function chainMods(mods: number[]) {

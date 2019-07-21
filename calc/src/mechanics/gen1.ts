@@ -3,6 +3,7 @@ import { RawDesc } from '../desc';
 import { Field } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
+import { Result } from '../result';
 import { getModifiedStat, getFinalSpeed } from './util';
 
 const RBY = 1;
@@ -24,18 +25,28 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
     defenderName: defender.name,
   };
 
-  if (move.bp === 0) return { damage: [0], description };
+  const damage: number[] = [];
+  const result = new Result(RBY, attacker, defender, move, field, damage, description);
+
+  if (move.bp === 0) {
+    damage.push(0);
+    return result;
+  }
 
   let lv = attacker.level;
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
-    return { damage: [lv], description };
+    damage.push(lv);
+    return result;
   }
 
   const typeEffect1 = TYPE_CHART[RBY][move.type]![defender.type1]!;
   const typeEffect2 = defender.type2 ? TYPE_CHART[RBY][move.type]![defender.type2]! : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
-  if (typeEffectiveness === 0) return { damage: [0], description };
+  if (typeEffectiveness === 0) {
+    damage.push(0);
+    return result;
+  }
   if (move.hits > 1) description.hits = move.hits;
 
   const isPhysical = TYPE_CHART[RBY][move.type]!.category === 'Physical';
@@ -94,9 +105,8 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
   // If baseDamage >= 768, don't apply random factor? upokecenter says this, but nobody else does
-  const damage = [];
   for (let i = 217; i <= 255; i++) {
     damage[i - 217] = Math.floor((baseDamage * i) / 255);
   }
-  return { damage, description };
+  return result;
 }

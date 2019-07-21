@@ -4,6 +4,7 @@ import { RawDesc } from '../desc';
 import { Field } from '../field';
 import { Move } from '../move';
 import { Pokemon } from '../pokemon';
+import { Result } from '../result';
 import { displayStat } from '../stats';
 import {
   getModifiedStat,
@@ -39,13 +40,18 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     defenderName: defender.name,
   };
 
+  const damage: number[] = [];
+  const result = new Result(DPP, attacker, defender, move, field, damage, description);
+
   if (move.bp === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (field.defenderSide.isProtected && !move.bypassesProtect) {
     description.isProtected = true;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   if (attacker.hasAbility('Mold Breaker')) {
@@ -114,7 +120,8 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
   const ignoresWonderGuard = move.type === 'None' || move.name === 'Fire Fang';
   if (
@@ -126,13 +133,15 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     (move.isSound && defender.hasAbility('Soundproof'))
   ) {
     description.defenderAbility = defender.ability;
-    return { damage: [0], description };
+    damage.push(0);
+    return result;
   }
 
   description.HPEVs = defender.HPEVs + ' HP';
 
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
-    return { damage: [attacker.level], description };
+    damage.push(attacker.level);
+    return result;
   }
 
   if (move.hits > 1) {
@@ -490,7 +499,6 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.defenderItem = defender.item;
   }
 
-  const damage = [];
   for (let i = 0; i < 16; i++) {
     damage[i] = Math.floor((baseDamage * (85 + i)) / 100);
     damage[i] = Math.floor(damage[i] * stabMod);
@@ -502,7 +510,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     damage[i] = Math.floor(damage[i] * berryMod);
     damage[i] = Math.max(1, damage[i]);
   }
-  return { damage, description };
+  return result;
 }
 
 function getSimpleModifiedStat(stat: number, mod: number) {
