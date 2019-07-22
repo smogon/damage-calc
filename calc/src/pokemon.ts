@@ -1,6 +1,7 @@
 import { Gender } from './data/species';
 import { Type } from './data/types';
 import { StatsTable } from './stats';
+import { extend } from './util';
 
 export type Status =
   | 'Healthy'
@@ -105,10 +106,10 @@ export class Pokemon {
       this.name,
       this.type1,
       this.type2,
-      this.rawStats,
-      this.boosts,
-      this.stats,
-      this.evs,
+      extend(true, {}, this.rawStats),
+      extend(true, {}, this.boosts),
+      extend(true, {}, this.stats),
+      extend(true, {}, this.evs),
       this.level,
       this.HPEVs,
       this.maxHP,
@@ -119,7 +120,7 @@ export class Pokemon {
       this.item,
       this.status,
       this.toxicCounter,
-      this.moves,
+      this.moves.slice(),
       this.weight,
       this.gender
     );
