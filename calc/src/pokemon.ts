@@ -99,4 +99,29 @@ export class Pokemon {
   named(...names: string[]) {
     return names.indexOf(this.name) !== -1;
   }
+
+  clone() {
+    return new Pokemon(
+      this.name,
+      this.type1,
+      this.type2,
+      this.rawStats,
+      this.boosts,
+      this.stats,
+      this.evs,
+      this.level,
+      this.HPEVs,
+      this.maxHP,
+      this.curHP,
+      this.nature,
+      this.ability,
+      this.abilityOn,
+      this.item,
+      this.status,
+      this.toxicCounter,
+      this.moves,
+      this.weight,
+      this.gender
+    );
+  }
 }
