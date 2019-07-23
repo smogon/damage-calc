@@ -193,9 +193,9 @@ export function getKOChanceText(
     }
   } else if (field.hasWeather('Sand')) {
     if (
-      defender.hasType('Rock', 'Ground', 'Steel') &&
-      defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
-      defender.hasItem('Safety Goggles')
+      !defender.hasType('Rock', 'Ground', 'Steel') &&
+      !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
+      !defender.hasItem('Safety Goggles')
     ) {
       eot -= Math.floor(defender.maxHP / 16);
       eotText.push('sandstorm damage');
@@ -205,9 +205,9 @@ export function getKOChanceText(
       eot += Math.floor(defender.maxHP / 16);
       eotText.push('Ice Body recovery');
     } else if (
-      defender.hasType('Ice') &&
-      defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
-      defender.item !== 'Safety Goggles'
+      !defender.hasType('Ice') &&
+      !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
+      !defender.hasItem('Safety Goggles')
     ) {
       eot -= Math.floor(defender.maxHP / 16);
       eotText.push('hail damage');
