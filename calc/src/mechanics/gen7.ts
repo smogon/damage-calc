@@ -488,11 +488,7 @@ function calculateModern(
   } else if (
     (attacker.hasAbility('Reckless') &&
       (typeof move.hasRecoil === 'number' || move.hasRecoil === 'crash')) ||
-    (attacker.hasAbility('Iron Fist') && move.isPunch) ||
-    (attacker.hasItem('Sea Incense', 'Wave Incense') && move.type === 'Water') ||
-    (attacker.hasItem('Odd Incense') && move.type === 'Psychic') ||
-    (attacker.hasItem('Rock Incense') && move.type === 'Rock') ||
-    (attacker.hasItem('Rose Incense') && move.type === 'Grass')
+    (attacker.hasAbility('Iron Fist') && move.isPunch)
   ) {
     bpMods.push(0x1333);
     description.attackerAbility = attacker.ability;
