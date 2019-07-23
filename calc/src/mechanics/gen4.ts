@@ -53,7 +53,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.attackerAbility = attacker.ability;
   }
 
-  const isCritical = move.isCrit && defender.hasAbility('Battle Armor', 'Shell Armor');
+  const isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
 
   let basePower = move.bp;
   if (move.name === 'Weather Ball') {
