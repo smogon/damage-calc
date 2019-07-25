@@ -33,10 +33,11 @@ function performCalculations() {
 	p2.maxDamages = [];
 	var p1field = createField();
 	var p2field = p1field.swap();
-	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
-	p1info.find(".sp .totalMod").text(p1.stats.spe);
-	p2info.find(".sp .totalMod").text(p2.stats.spe);
-	var fastestSide = p1.stats.spe > p2.stats.spe ? 0 : p1.stats.spe === p2.stats.spe ? "tie" : 1;
+	var results = calculateAllMoves(gen, p1, p1field, p2, p2field);
+	damageResults = results.results;
+	p1info.find(".sp .totalMod").text(results.p1spe);
+	p2info.find(".sp .totalMod").text(results.p2spe);
+	var fastestSide = results.p1spe > results.p2spe ? 0 : results.p1spe === results.p2spe ? "tie" : 1;
 	var result, minDamage, maxDamage, minDisplay, maxDisplay;
 	var highestDamage = -1;
 	var bestResult;
@@ -260,16 +261,14 @@ function checkStatBoost(p1, p2) {
 function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 	checkStatBoost(p1, p2);
 	var results = [[], []];
+	var a, b;
 	for (var i = 0; i < 4; i++) {
-		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
-		p1 = p1.clone();
-		p2 = p2.clone();
-
-		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
-		p1 = p1.clone();
-		p2 = p2.clone();
+		a = p1.clone();
+		b = p2.clone();
+		results[0][i] = calc.calculate(gen, a, b, p1.moves[i], p1field);
+		results[1][i] = calc.calculate(gen, p2.clone(), p1.clone(), p2.moves[i], p2field);
 	}
-	return results;
+	return {results: results, p1spe: a.stats.spe, p2spe: b.stats.spe};
 }
 
 $(".mode").change(function () {
