@@ -614,7 +614,7 @@ function getMoveDetails(moveInfo, ability, item) {
 }
 
 function createField() {
-	var format = $("input:radio[name='format']:checked").val();
+	var gameType = $("input:radio[name='format']:checked").val();
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
@@ -647,7 +647,7 @@ function createField() {
 		});
 	};
 	return new calc.Field({
-		format: format, weather: weather, terrain: terrain, isGravity: isGravity,
+		gameType: gameType, weather: weather, terrain: terrain, isGravity: isGravity,
 		attackerSide: createSide(0), defenderSide: createSide(1)
 	});
 }
