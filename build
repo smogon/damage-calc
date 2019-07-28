@@ -57,6 +57,10 @@ function cpdir(src, dest) {
 	return Promise.all(copies);
 }
 
+if (process.argv[2] !== 'view') {
+	require('child_process').execSync('npm --prefix calc/ run compile', {stdio: 'inherit'});
+}
+
 cpdir('src', 'dist').then(function () {
 	cpdir('calc/dist', 'dist/calc').then(function () {
 		makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');

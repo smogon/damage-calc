@@ -29,7 +29,7 @@
   "scripts": {
     "lint": "subpkg run lint && eslint --cache .",
     "fix": "subpkg run fix",
-    "compile": "subpkg run compile && node build",
+    "compile": "subpkg run compile && node build view",
     "test": "subpkg run test",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
