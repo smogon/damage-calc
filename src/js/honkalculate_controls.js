@@ -63,7 +63,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	var attacker, defender, setName, setTier;
+	var setName, setTier, spe;
 	var selectedTiers = getSelectedTiers();
 	var setOptions = getSetOptions();
 	var dataSet = [];
@@ -74,6 +74,7 @@ function performCalculations() {
 			setTier = setName.substring(0, setName.indexOf(" "));
 			if (selectedTiers.indexOf(setTier) !== -1) {
 				var field = createField();
+				var attacker, defender;
 				if (mode === "one-vs-all") {
 					attacker = createPokemon(pokeInfo);
 					defender = createPokemon(setOptions[i].id);
@@ -89,11 +90,12 @@ function performCalculations() {
 					defender.gender = "genderless";
 				}
 				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
+				spe = mode === "one-vs-all" ? damageResults.attackerSpe : damageResults.defenderSpe;
 				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var highestDamage = -1;
 				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
-					result = damageResults[n];
+					result = damageResults.results[n];
 					minDamage = result.damage[0] * attacker.moves[n].hits;
 					maxDamage = result.damage[result.damage.length - 1] * attacker.moves[n].hits;
 					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
@@ -121,8 +123,7 @@ function performCalculations() {
 			}
 		}
 	}
-	var pokemon = mode === "one-vs-all" ? attacker : defender;
-	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
+	if (spe) pokeInfo.find(".sp .totalMod").text(spe);
 	table.rows.add(dataSet).draw();
 }
 
@@ -135,10 +136,13 @@ function getSelectedTiers() {
 
 function calculateMovesOfAttacker(gen, attacker, defender, field) {
 	var results = [];
+	var a, b;
 	for (var i = 0; i < 4; i++) {
-		results[i] = calc.calculate(gen, attacker.clone(), defender.clone(), attacker.moves[i], field);
+		a = attacker.clone();
+		b = defender.clone();
+		results[i] = calc.calculate(gen, a, b, a.moves[i], field);
 	}
-	return results;
+	return {results: results, attackerSpe: a.stats.spe, defenderSpe: b.stats.spe};
 }
 
 $(".gen").change(function () {
