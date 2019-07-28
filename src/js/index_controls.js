@@ -138,7 +138,7 @@ function checkStatBoost(p1, p2) {
 function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 	checkStatBoost(p1, p2);
 	var results = [[], []];
-	for (var i = 0; i < 4; i++) {;
+	for (var i = 0; i < 4; i++) {
 		results[0][i] = calc.calculate(gen, p1.clone(), p2.clone(), p1.moves[i], p1field);
 		results[1][i] = calc.calculate(gen, p2.clone(), p1.clone(), p2.moves[i], p2field);
 	}

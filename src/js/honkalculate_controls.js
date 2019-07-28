@@ -63,7 +63,7 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	var  attacker, defender, setName, setTier;
+	var attacker, defender, setName, setTier;
 	var selectedTiers = getSelectedTiers();
 	var setOptions = getSetOptions();
 	var dataSet = [];
