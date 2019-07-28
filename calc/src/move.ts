@@ -43,7 +43,7 @@ export class Move {
       usedTimes?: number;
       metronomeCount?: number;
       overrides?: Partial<MoveData>;
-    }
+    } = {}
   ) {
     let data: MoveData & { name: string } = extend(
       true,

@@ -92,7 +92,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     return result;
   }
 
-  description.HPEVs = defender.HPEVs + ' HP';
+  description.HPEVs = defender.evs.hp + ' HP';
 
   const lv = attacker.level;
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
@@ -108,13 +108,13 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   switch (move.name) {
     case 'Flail':
     case 'Reversal':
-      const p = Math.floor((48 * attacker.curHP) / attacker.maxHP);
+      const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
       bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
       description.moveBP = bp;
       break;
     case 'Eruption':
     case 'Water Spout':
-      bp = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP));
+      bp = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
       description.moveBP = bp;
       break;
     case 'Low Kick':
@@ -204,7 +204,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     at = Math.floor(at * 1.5);
     description.attackerAbility = attacker.ability;
   } else if (
-    attacker.curHP <= attacker.maxHP / 3 &&
+    attacker.curHP <= attacker.maxHP() / 3 &&
     ((attacker.hasAbility('Overgrow') && move.type === 'Grass') ||
       (attacker.hasAbility('Blaze') && move.type === 'Fire') ||
       (attacker.hasAbility('Torrent') && move.type === 'Water') ||

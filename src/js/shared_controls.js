@@ -402,7 +402,7 @@ $(".set-selector").change(function () {
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			setSelectValueIfValid(abilityObj, (set.ability && typeof set.ability !== "undefined") ? set.ability :
-			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "", "");
+				(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "", "");
 			setSelectValueIfValid(itemObj, set.item, "");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
@@ -514,43 +514,34 @@ function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		var pokemon = pokedex[name];
-		var type1 = pokemon.t1;
-		var type2 = (pokemon.t2 && typeof pokemon.t2 !== "undefined") ? pokemon.t2 : "";
-		var rawStats = {};
-		var boosts = {};
-		var stats = {};
-		var evs = {};
-
 		var set = setdex[name][setName];
-		var level = set.level;
-		var HPEVs = (set.evs && typeof set.evs.hp !== "undefined") ? set.evs.hp : 0;
-		var maxHP = calc.calcStat(gen, "hp", pokemon.bs.hp, 31, gen < 3 ? 252 : HPEVs, level);
-		var curHP = maxHP;
-		var nature = set.nature;
+
+		var ivs = {};
+		var evs = {};
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var legacyStat = LEGACY_STATS[gen][i];
 			var stat = legacyStatToStat(legacyStat);
-			boosts[stat] = 0;
+
+			ivs[stat] = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
 			evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
-			var ivs = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
-			rawStats[stat] = calc.calcStat(gen, stat, pokemon.bs[legacyStat], ivs, evs[stat], level, nature);
 		}
-		var ability = (set.ability && typeof set.ability !== "undefined") ? set.ability :
-			(pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
-		var abilityOn = true;
-		var item = (set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0)) ? set.item : "";
-		var status = "Healthy";
-		var toxicCounter = 0;
+
 		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
 			var moveName = set.moves[i];
 			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item}));
 		}
-		var weight = pokemon.w;
-		var gender = pokemon.gender ? "genderless" : "Male";
 
-		return new calc.Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
+		return new calc.Pokemon(gen, name, {
+			level: set.level,
+			ability: set.ability,
+			abilityOn: true,
+			item: set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0) ? set.item : "",
+			nature: set.nature,
+			ivs: ivs,
+			evs: evs,
+			moves: pokemonMoves
+		});
 	} else {
 		var setName = pokeInfo.find("input.set-selector").val();
 		var name;
@@ -560,39 +551,44 @@ function createPokemon(pokeInfo) {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
 			name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
-		var type1 = pokeInfo.find(".type1").val();
-		var type2 = pokeInfo.find(".type2").val();
-		var level = ~~pokeInfo.find(".level").val();
-		var maxHP = ~~pokeInfo.find(".hp .total").text();
-		var curHP = ~~pokeInfo.find(".current-hp").val();
-		var HPEVs = ~~pokeInfo.find(".hp .evs").val();
-		var rawStats = {};
-		var boosts = {};
-		var stats = {};
-		var evs = {};
 
+		var ivs = {};
+		var evs = {};
+		var boosts = {};
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
-			rawStats[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .total").text();
-			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
+			ivs[stat] = gen > 1 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2;
 			evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
+			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 		}
-		var nature = pokeInfo.find(".nature").val();
-		var ability = pokeInfo.find(".ability").val();
-		var abilityOn = pokeInfo.find(".abilityToggle").is(":checked");
-		var item = pokeInfo.find(".item").val();
-		var status = pokeInfo.find(".status").val();
-		var toxicCounter = status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0;
-		var pokemonMoves = [
-			getMoveDetails(pokeInfo.find(".move1"), ability, item),
-			getMoveDetails(pokeInfo.find(".move2"), ability, item),
-			getMoveDetails(pokeInfo.find(".move3"), ability, item),
-			getMoveDetails(pokeInfo.find(".move4"), ability, item)
-		];
-		var weight = +pokeInfo.find(".weight").val();
-		var gender = pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless";
 
-		return new calc.Pokemon(name, type1, type2, rawStats, boosts, stats, evs, level, HPEVs, maxHP, curHP, nature, ability, abilityOn, item, status, toxicCounter, pokemonMoves, weight, gender, pokeInfo);
+		var ability = pokeInfo.find(".ability").val();
+		var item = pokeInfo.find(".item").val();
+		return new calc.Pokemon(gen, name, {
+			level: ~~pokeInfo.find(".level").val(),
+			ability: ability,
+			abilityOn: pokeInfo.find(".abilityToggle").is(":checked"),
+			item: item,
+			gender: pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless",
+			nature: pokeInfo.find(".nature").val(),
+			ivs: ivs,
+			evs: evs,
+			boosts: boosts,
+			curHP: ~~pokeInfo.find(".current-hp").val(),
+			status: pokeInfo.find(".status").val(),
+			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
+			moves: [
+				getMoveDetails(pokeInfo.find(".move1"), ability, item),
+				getMoveDetails(pokeInfo.find(".move2"), ability, item),
+				getMoveDetails(pokeInfo.find(".move3"), ability, item),
+				getMoveDetails(pokeInfo.find(".move4"), ability, item)
+			],
+			overrides: {
+				t1: pokeInfo.find(".type1").val(),
+				t2: pokeInfo.find(".type2").val(),
+				w: +pokeInfo.find(".weight").val()
+			}
+		});
 	}
 }
 

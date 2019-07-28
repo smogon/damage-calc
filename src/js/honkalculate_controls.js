@@ -98,10 +98,10 @@ function performCalculations() {
 					result = damageResults[n];
 					minDamage = result.damage[0] * attacker.moves[n].hits;
 					maxDamage = result.damage[result.damage.length - 1] * attacker.moves[n].hits;
-					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP) / 10;
-					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP) / 10;
-					minPixels = Math.floor(minDamage * 48 / defender.maxHP);
-					maxPixels = Math.floor(maxDamage * 48 / defender.maxHP);
+					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP()) / 10;
+					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP()) / 10;
+					minPixels = Math.floor(minDamage * 48 / defender.maxHP());
+					maxPixels = Math.floor(maxDamage * 48 / defender.maxHP());
 					if (maxDamage > highestDamage) {
 						highestDamage = maxDamage;
 						while (data.length > 1) {
@@ -114,9 +114,9 @@ function performCalculations() {
 					}
 				}
 				data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-				data.push((mode === "one-vs-all") ? defender.type2 : attacker.type2);
-				data.push((mode === "one-vs-all") ? defender.ability : attacker.ability);
-				data.push((mode === "one-vs-all") ? defender.item : attacker.item);
+				data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
+				data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
+				data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 				dataSet.push(data);
 			}
 		}

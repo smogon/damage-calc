@@ -224,7 +224,7 @@ function calculateModern(
   if (
     (attacker.hasAbility('Gale Wings') &&
       move.type === 'Flying' &&
-      (gen >= 7 ? attacker.curHP === attacker.maxHP : true)) ||
+      (gen >= 7 ? attacker.curHP === attacker.maxHP() : true)) ||
     (attacker.hasAbility('Triage') && move.givesHealth)
   ) {
     move.hasPriority = true;
@@ -336,7 +336,7 @@ function calculateModern(
     return result;
   }
 
-  description.HPEVs = defender.HPEVs + ' HP';
+  description.HPEVs = defender.evs.hp + ' HP';
 
   if (['Seismic Toss', 'Night Shade'].indexOf(move.name) !== -1) {
     let lv = attacker.level;
@@ -449,12 +449,12 @@ function calculateModern(
       break;
     case 'Eruption':
     case 'Water Spout':
-      basePower = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP));
+      basePower = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
       description.moveBP = basePower;
       break;
     case 'Flail':
     case 'Reversal':
-      const p = Math.floor((48 * attacker.curHP) / attacker.maxHP);
+      const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
       basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
       description.moveBP = basePower;
       break;
@@ -471,7 +471,7 @@ function calculateModern(
       description.moveBP = basePower;
       break;
     case 'Wring Out':
-      basePower = Math.max(1, Math.ceil((defender.curHP * 120) / defender.maxHP - 0.5));
+      basePower = Math.max(1, Math.ceil((defender.curHP * 120) / defender.maxHP() - 0.5));
       description.moveBP = basePower;
       break;
     default:
@@ -586,7 +586,7 @@ function calculateModern(
   if (
     (move.name === 'Facade' &&
       attacker.hasStatus('Burned', 'Paralyzed', 'Poisoned', 'Badly Poisoned')) ||
-    (move.name === 'Brine' && defender.curHP <= defender.maxHP / 2) ||
+    (move.name === 'Brine' && defender.curHP <= defender.maxHP() / 2) ||
     (move.name === 'Venoshock' && defender.hasStatus('Poisoned', 'Badly Poisoned'))
   ) {
     bpMods.push(0x2000);
@@ -720,7 +720,7 @@ function calculateModern(
     (attacker.hasAbility('Guts') &&
       !attacker.hasStatus('Healthy') &&
       move.category === 'Physical') ||
-    (attacker.curHP <= attacker.maxHP / 3 &&
+    (attacker.curHP <= attacker.maxHP() / 3 &&
       ((attacker.hasAbility('Overgrow') && move.type === 'Grass') ||
         (attacker.hasAbility('Blaze') && move.type === 'Fire') ||
         (attacker.hasAbility('Torrent') && move.type === 'Water') ||
@@ -745,7 +745,7 @@ function calculateModern(
     description.attackerAbility = attacker.ability;
     description.weather = field.weather;
   } else if (
-    (attacker.hasAbility('Defeatist') && attacker.curHP <= attacker.maxHP / 2) ||
+    (attacker.hasAbility('Defeatist') && attacker.curHP <= attacker.maxHP() / 2) ||
     (attacker.hasAbility('Slow Start') && attacker.abilityOn && move.category === 'Physical')
   ) {
     atMods.push(0x800);
@@ -967,7 +967,7 @@ function calculateModern(
   }
   if (
     defender.hasAbility('Multiscale', 'Shadow Shield') &&
-    defender.curHP === defender.maxHP &&
+    defender.curHP === defender.maxHP() &&
     !field.defenderSide.isSR &&
     (!field.defenderSide.spikes || defender.hasType('Flying'))
   ) {

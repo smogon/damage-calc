@@ -42,7 +42,6 @@ export function displayStat(stat: Stat) {
   }
 }
 
-// TODO: stop exporting
 function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
   if (stat === 'hp') {
     return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
@@ -51,7 +50,6 @@ function calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) 
   }
 }
 
-// TODO: stop exporting
 function calcStatADV(
   stat: Stat,
   base: number,
@@ -114,6 +112,25 @@ export function IVToDV(iv: number) {
 
 export function DVToIV(dv: number) {
   return dv * 2 + 1;
+}
+
+export function shortForm(stat: Stat) {
+  switch (stat) {
+    case 'hp':
+      return 'hp';
+    case 'atk':
+      return 'at';
+    case 'def':
+      return 'df';
+    case 'spa':
+      return 'sa';
+    case 'spd':
+      return 'sd';
+    case 'spe':
+      return 'sp';
+    case 'spc':
+      return 'sl';
+  }
 }
 
 const CALC_STAT = [
