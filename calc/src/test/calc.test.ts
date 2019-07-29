@@ -182,7 +182,6 @@ describe('calc', () => {
         '252 Atk Abomasnow Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO'
       );
       const recoil = result.recoil();
-      // TODO: return recoil damage as exact HP?
       expect(recoil.recoil).toBeRange(24, 28.3);
       expect(recoil.text).toBe('24 - 28.3% recoil damage');
 
@@ -192,8 +191,7 @@ describe('calc', () => {
         '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
       );
       const recovery = result.recovery();
-      // TODO: return recovery as exact HP?
-      expect(recovery.recovery).toBeRange(64.4, 76);
+      expect(recovery.recovery).toBeRange(199, 235);
       expect(recovery.text).toBe('64.4 - 76% recovered');
     });
 

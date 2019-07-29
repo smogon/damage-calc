@@ -111,13 +111,20 @@ export function getRecovery(
         attacker.maxHP()
       );
     }
-    recovery = [minHealthRecovered, maxHealthRecovered];
-    text = recovery.length === 2 ? `${recovery[0]} - ${recovery[1]}${notation} recovered` : '';
+    recovery = [
+      Math.min(Math.floor(minDamage * move.percentHealed!), attacker.maxHP()),
+      Math.min(Math.floor(maxDamage * move.percentHealed!), attacker.maxHP()),
+    ];
+    text =
+      recovery.length === 2
+        ? `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`
+        : '';
   }
 
   return { recovery, text };
 }
 
+// TODO: return recoil damage as exact HP
 export function getRecoil(
   gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
   attacker: Pokemon,
@@ -232,6 +239,7 @@ export function getKOChance(
     return { chance: 0, n: 0, text: '' };
   }
   if (damage[damage.length - 1] === 0) {
+    error(err, 'damage[damage.length - 1] === 0.');
     return { chance: 0, n: 0, text: '' };
   }
 
