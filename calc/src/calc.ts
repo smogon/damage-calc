@@ -1,6 +1,7 @@
 import { Field } from './field';
 import { Move } from './move';
 import { Pokemon } from './pokemon';
+import { Result } from './result';
 
 import { calculateRBY } from './mechanics/gen1';
 import { calculateGSC } from './mechanics/gen2';
@@ -26,7 +27,8 @@ export function calculate(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
-  field: Field
+  field?: Field
 ) {
-  return MECHANICS[gen](attacker, defender, move, field);
+  // TODO: clone here to prevent mutating what is passed in
+  return MECHANICS[gen](attacker, defender, move, field || new Field()) as Result;
 }

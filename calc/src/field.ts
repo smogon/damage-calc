@@ -17,14 +17,16 @@ export class Field {
   attackerSide: Side;
   defenderSide: Side;
 
-  constructor(field: {
-    gameType?: GameType;
-    weather?: Weather;
-    terrain?: Terrain;
-    isGravity?: boolean;
-    attackerSide: Partial<Side>;
-    defenderSide: Partial<Side>;
-  }) {
+  constructor(
+    field: {
+      gameType?: GameType;
+      weather?: Weather;
+      terrain?: Terrain;
+      isGravity?: boolean;
+      attackerSide: Partial<Side>;
+      defenderSide: Partial<Side>;
+    } = { attackerSide: {}, defenderSide: {} }
+  ) {
     this.gameType = field.gameType || 'Singles';
     this.terrain = field.terrain;
     this.weather = field.weather;

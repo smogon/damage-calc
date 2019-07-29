@@ -78,7 +78,8 @@ export function displayMove(
   const recoveryText = getRecovery(attacker, defender, move, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
 
-  return `${minDisplay} - ${maxDisplay}${notation}${recoveryText}${recoilText}`;
+  return `${minDisplay} - ${maxDisplay}${notation}${recoveryText &&
+    ` (${recoveryText}`}${recoilText && ` (${recoilText})`}`;
 }
 
 export function getRecovery(
@@ -111,7 +112,7 @@ export function getRecovery(
       );
     }
     recovery = [minHealthRecovered, maxHealthRecovered];
-    text = recovery.length === 2 ? ` (${recovery[0]}  - ${recovery[1]}${notation} recovered)` : '';
+    text = recovery.length === 2 ? `${recovery[0]} - ${recovery[1]}${notation} recovered` : '';
   }
 
   return { recovery, text };
@@ -153,7 +154,7 @@ export function getRecoil(
     }
     if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
-      text = ` (${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage)`;
+      text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
   } else if (move.hasRecoil === 'crash') {
     const genMultiplier = gen === 2 ? 12.5 : gen >= 3 ? 50 : 1;
@@ -181,7 +182,7 @@ export function getRecoil(
     switch (gen) {
       case 1:
         recoil = toDisplay(notation, 1, attacker.maxHP());
-        text = ' (1hp damage on miss)';
+        text = '1hp damage on miss';
         break;
       case 2:
       case 3:
@@ -190,30 +191,28 @@ export function getRecoil(
           if (gen === 4) {
             const gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
             recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
-            text = ` (${gen4CrashDamage}% crash damage)`;
+            text = `${gen4CrashDamage}% crash damage`;
           } else {
             recoil = 0;
-            text = ' (no crash damage on Ghost types)';
+            text = 'no crash damage on Ghost types';
           }
         } else {
-          text = ` (${minRecoilDamage} - ${maxRecoilDamage}${notation}\
-              crash damage on miss)`;
+          text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} crash damage on miss`;
         }
         break;
       case 4:
-        text = ` (${minRecoilDamage} - ${maxRecoilDamage}${notation}\
-            crash damage on miss)`;
+        text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} crash damage on miss`;
         break;
       default:
         recoil = notation === '%' ? 24 : 50;
-        text = ' (50% crash damage)';
+        text = '50% crash damage';
     }
   } else if (move.hasRecoil === 'Struggle') {
     recoil = notation === '%' ? 12 : 25;
-    text = ' (25% struggle damage)';
+    text = '25% struggle damage';
   } else if (move.hasRecoil) {
     recoil = notation === '%' ? 24 : 50;
-    text = ' (50% recoil damage)';
+    text = '50% recoil damage';
   }
 
   return { recoil, text };
@@ -864,7 +863,7 @@ function buildDescription(description: RawDesc) {
   }
   output = appendIfSet(output, description.HPEVs);
   if (description.defenseEVs) {
-    output += ' / ' + description.defenseEVs + ' ';
+    output += '/ ' + description.defenseEVs + ' ';
   }
   output = appendIfSet(output, description.defenderItem);
   output = appendIfSet(output, description.defenderAbility);

@@ -1,0 +1,237 @@
+import { calculate } from '../calc';
+import { Pokemon } from '../pokemon';
+import { Move } from '../move';
+import { Field } from '../field';
+
+declare global {
+  namespace jest {
+    interface Matchers<R> {
+      toBeRange(a: number, b: number): R;
+    }
+  }
+}
+
+expect.extend({
+  toBeRange(received: number[], floor: number, ceiling: number) {
+    const a = received[0];
+    const b = received[received.length - 1];
+    const pass = a === floor && b === ceiling;
+    if (pass) {
+      return {
+        message: () => `expected range (${a}, ${b}) not to be within range (${floor}, ${ceiling})`,
+        pass,
+      };
+    } else {
+      return {
+        message: () => `expected range (${a}, ${b}) to be within range (${floor}, ${ceiling})`,
+        pass,
+      };
+    }
+  },
+});
+
+describe('calc', () => {
+  describe('gen', () => {
+    test('1', () => {
+      const result = calculate(
+        1,
+        new Pokemon(1, 'Gengar'),
+        new Pokemon(1, 'Chansey'),
+        new Move(1, 'Thunderbolt')
+      );
+      expect(result.damage).toBeRange(79, 94);
+      expect(result.desc()).toBe(
+        'Gengar Thunderbolt vs. Chansey: 79-94 (11.2 - 13.3%) -- possible 8HKO'
+      );
+    });
+    test('2', () => {
+      const result = calculate(
+        2,
+        new Pokemon(2, 'Gengar'),
+        new Pokemon(2, 'Chansey', { item: 'Leftovers' }),
+        new Move(2, 'Dynamic Punch')
+      );
+      expect(result.damage).toBeRange(304, 358);
+      expect(result.desc()).toBe(
+        'Gengar Dynamic Punch vs. Chansey: 304-358 (43.2 - 50.9%) -- guaranteed 3HKO after Leftovers recovery'
+      );
+    });
+    test('3', () => {
+      const result = calculate(
+        3,
+        new Pokemon(3, 'Gengar', {
+          nature: 'Mild',
+          evs: { atk: 100 },
+        }),
+        new Pokemon(3, 'Chansey', {
+          item: 'Leftovers',
+          nature: 'Bold',
+          evs: { hp: 252, def: 252 },
+        }),
+        new Move(3, 'Focus Punch')
+      );
+      expect(result.damage).toBeRange(346, 408);
+      expect(result.desc()).toBe(
+        '100 Atk Gengar Focus Punch vs. 252 HP / 252+ Def Chansey: 346-408 (49.1 - 57.9%) -- 59% chance to 2HKO after Leftovers recovery'
+      );
+    });
+    test('4', () => {
+      const result = calculate(
+        4,
+        new Pokemon(4, 'Gengar', {
+          item: 'Choice Specs',
+          nature: 'Timid',
+          evs: { spa: 252 },
+          boosts: { spa: 1 },
+        }),
+        new Pokemon(4, 'Chansey', {
+          item: 'Leftovers',
+          nature: 'Calm',
+          evs: { hp: 252, spd: 252 },
+        }),
+        new Move(4, 'Focus Blast')
+      );
+      expect(result.damage).toBeRange(408, 482);
+      expect(result.desc()).toBe(
+        '+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Chansey: 408-482 (57.9 - 68.4%) -- guaranteed 2HKO after Leftovers recovery'
+      );
+    });
+    test('5', () => {
+      const result = calculate(
+        5,
+        new Pokemon(5, 'Gengar', {
+          item: 'Choice Specs',
+          nature: 'Timid',
+          evs: { spa: 252 },
+          boosts: { spa: 1 },
+        }),
+        new Pokemon(5, 'Chansey', {
+          item: 'Eviolite',
+          nature: 'Calm',
+          evs: { hp: 252, spd: 252 },
+        }),
+        new Move(5, 'Focus Blast')
+      );
+      expect(result.damage).toBeRange(274, 324);
+      expect(result.fullDesc('px')).toBe(
+        '+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Eviolite Chansey: 274-324 (18 - 22px) -- guaranteed 3HKO'
+      );
+    });
+    test('6', () => {
+      const result = calculate(
+        6,
+        new Pokemon(6, 'Gengar', {
+          item: 'Life Orb',
+          nature: 'Modest',
+          evs: { spa: 252 },
+        }),
+        new Pokemon(6, 'Chansey', {
+          item: 'Eviolite',
+          nature: 'Bold',
+          evs: { hp: 252, def: 252 },
+        }),
+        new Move(6, 'Sludge Bomb')
+      );
+      expect(result.damage).toBeRange(134, 160);
+      expect(result.desc()).toBe(
+        '252+ SpA Life Orb Gengar Sludge Bomb vs. 252 HP / 0 SpD Eviolite Chansey: 134-160 (19 - 22.7%) -- possible 5HKO'
+      );
+    });
+    test('7', () => {
+      const result = calculate(
+        7,
+        new Pokemon(7, 'Gengar', {
+          item: 'Life Orb',
+          nature: 'Modest',
+          evs: { spa: 252 },
+          boosts: { spa: 3 },
+        }),
+        new Pokemon(7, 'Chansey', {
+          item: 'Eviolite',
+          nature: 'Bold',
+          evs: { hp: 100, spd: 100 },
+          boosts: { spd: 1 },
+        }),
+        new Move(7, 'Sludge Bomb')
+      );
+      expect(result.damage).toBeRange(204, 242);
+      expect(result.desc()).toBe(
+        '+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO'
+      );
+    });
+  });
+
+  describe('field', () => {
+    test('none', () => {
+      const abomasnow = new Pokemon(7, 'Abomasnow', {
+        item: 'Icy Rock',
+        ability: 'Snow Warning',
+        nature: 'Hasty',
+        evs: { atk: 252, spd: 4, spe: 252 },
+      });
+      const hoopa = new Pokemon(7, 'Hoopa-Unbound', {
+        item: 'Choice Band',
+        ability: 'Magician',
+        nature: 'Jolly',
+        evs: { hp: 32, atk: 224, spe: 252 },
+      });
+
+      let result = calculate(7, abomasnow, hoopa, new Move(7, 'Wood Hammer'));
+      expect(result.damage).toBeRange(234, 276);
+      expect(result.desc()).toBe(
+        '252 Atk Abomasnow Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO'
+      );
+      const recoil = result.recoil();
+      // TODO: return recoil damage as exact HP?
+      expect(recoil.recoil).toBeRange(24, 28.3);
+      expect(recoil.text).toBe('24 - 28.3% recoil damage');
+
+      result = calculate(7, hoopa, abomasnow, new Move(7, 'Drain Punch'));
+      expect(result.damage).toBeRange(398, 470);
+      expect(result.desc()).toBe(
+        '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
+      );
+      const recovery = result.recovery();
+      // TODO: return recovery as exact HP?
+      expect(recovery.recovery).toBeRange(64.4, 76);
+      expect(recovery.text).toBe('64.4 - 76% recovered');
+    });
+
+    test('none', () => {
+      const abomasnow = new Pokemon(7, 'Abomasnow', {
+        item: 'Icy Rock',
+        ability: 'Snow Warning',
+        nature: 'Hasty',
+        evs: { atk: 252, spd: 4, spe: 252 },
+      });
+      const hoopa = new Pokemon(7, 'Hoopa-Unbound', {
+        item: 'Choice Band',
+        ability: 'Magician',
+        nature: 'Jolly',
+        evs: { hp: 32, atk: 224, spe: 252 },
+      });
+      const field = new Field({
+        gameType: 'Doubles',
+        terrain: 'Grassy',
+        weather: 'Hail',
+        defenderSide: {
+          isSR: true,
+          spikes: 1,
+          isLightScreen: true,
+          isSeeded: true,
+          isFriendGuard: true,
+        },
+        attackerSide: {
+          isHelpingHand: true,
+          isTailwind: true,
+        },
+      });
+      const result = calculate(7, abomasnow, hoopa, new Move(7, 'Blizzard'), field);
+      expect(result.damage).toBeRange(50, 59);
+      expect(result.desc()).toBe(
+        "0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally's Friend Guard: 50-59 (16.1 - 19%)" +
+          ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery'
+      );
+    });
+  });
+});
