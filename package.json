@@ -23,7 +23,7 @@
     "calc": "file:calc"
   },
   "devDependencies": {
-    "eslint": "^5.5.0",
+    "eslint": "^6.1.0",
     "subpkg": "^0.0.1"
   },
   "scripts": {

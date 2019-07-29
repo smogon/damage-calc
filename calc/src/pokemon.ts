@@ -50,9 +50,9 @@ export class Pokemon {
       item?: string;
       gender?: Gender;
       nature?: string;
-      ivs?: StatsTable<number>;
-      evs?: StatsTable<number>;
-      boosts?: StatsTable<number>;
+      ivs?: Partial<StatsTable<number>>;
+      evs?: Partial<StatsTable<number>>;
+      boosts?: Partial<StatsTable<number>>;
       curHP?: number;
       status?: Status;
       toxicCounter?: number;
