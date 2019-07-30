@@ -584,7 +584,7 @@ export function getFlingPower(item?: string) {
   return 0;
 }
 
-export function getNaturalGift(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, item: string) {
+export function getNaturalGift(gen: Generation, item: string) {
   let t: Type = 'Normal';
   let p = 1;
 

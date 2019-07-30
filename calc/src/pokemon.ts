@@ -13,7 +13,7 @@ export type Status =
   | 'Frozen';
 
 export class Pokemon {
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  gen: Generation;
   name: string;
   species: Species;
 
@@ -41,7 +41,7 @@ export class Pokemon {
   moves: string[];
 
   constructor(
-    gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+    gen: Generation,
     name: string,
     options: {
       level?: number;
@@ -150,7 +150,7 @@ export class Pokemon {
     });
   }
 
-  private calcStat(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, stat: Stat) {
+  private calcStat(gen: Generation, stat: Stat) {
     return calcStat(
       gen,
       stat,
@@ -162,12 +162,7 @@ export class Pokemon {
     );
   }
 
-  static getForme(
-    gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
-    speciesName: string,
-    item?: string,
-    moveName?: string
-  ) {
+  static getForme(gen: Generation, speciesName: string, item?: string, moveName?: string) {
     const species = SPECIES[gen][speciesName];
     if (!species || !species.formes) {
       return speciesName;
@@ -191,7 +186,7 @@ export class Pokemon {
   }
 
   private static withDefault(
-    gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+    gen: Generation,
     current: Partial<StatsTable<number>> | undefined,
     val: number
   ) {

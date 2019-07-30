@@ -24,15 +24,7 @@ describe('stats', () => {
     const ADV: StatsTable<number> = { hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299 };
     for (let gen = 1; gen <= 7; gen++) {
       for (const stat of STATS[gen]) {
-        const val = calcStat(
-          gen as (1 | 2 | 3 | 4 | 5 | 6 | 7),
-          stat,
-          100,
-          31,
-          252,
-          100,
-          'Adamant'
-        );
+        const val = calcStat(gen as Generation, stat, 100, 31, 252, 100, 'Adamant');
         expect(val).toBe(gen < 3 ? RBY[stat] : ADV[stat]);
       }
     }

@@ -32,7 +32,7 @@ export class Move {
   usesHighestAttackStat: boolean;
 
   constructor(
-    gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+    gen: Generation,
     name: string,
     options: {
       ability?: string;

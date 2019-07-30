@@ -37,7 +37,7 @@ export interface RawDesc {
 }
 
 export function display(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -62,7 +62,7 @@ export function display(
 }
 
 export function displayMove(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -126,7 +126,7 @@ export function getRecovery(
 
 // TODO: return recoil damage as exact HP
 export function getRecoil(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -226,7 +226,7 @@ export function getRecoil(
 }
 
 export function getKOChance(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -385,7 +385,7 @@ export function getKOChance(
   return { chance: 0, n: 0, text: '' };
 }
 
-function getHazards(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, defender: Pokemon, defenderSide: Side) {
+function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   let damage = 0;
   const texts = [];
 
@@ -424,7 +424,7 @@ function getHazards(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, defender: Pokemon, defenderS
 }
 
 function getEndOfTurn(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -649,7 +649,7 @@ function predictTotal(
   return total;
 }
 
-function squashMultihit(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, d: number[], hits: number, err = true) {
+function squashMultihit(gen: Generation, d: number[], hits: number, err = true) {
   if (d.length === 1) {
     return [d[0] * hits];
   } else if (gen === 1) {

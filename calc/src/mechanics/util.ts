@@ -13,7 +13,7 @@ export function isGrounded(pokemon: Pokemon, field: Field) {
   );
 }
 
-export function getModifiedStat(stat: number, mod: number, gen?: 1 | 2 | 3 | 4 | 5 | 6 | 7) {
+export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
   if (mod > 0) {
     stat = Math.floor((stat * (2 + mod)) / 2);
   } else if (mod < 0) {
@@ -25,12 +25,7 @@ export function getModifiedStat(stat: number, mod: number, gen?: 1 | 2 | 3 | 4 |
   return gen && gen < 3 ? Math.min(999, Math.max(1, stat)) : stat;
 }
 
-export function getFinalSpeed(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
-  pokemon: Pokemon,
-  field: Field,
-  side: Side
-) {
+export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side) {
   const weather = field.weather || '';
   const terrain = field.terrain;
   let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe);
@@ -75,7 +70,7 @@ export function pokeRound(num: number) {
 }
 
 export function getMoveEffectiveness(
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+  gen: Generation,
   move: Move,
   type: Type,
   isGhostRevealed?: boolean,
@@ -153,7 +148,7 @@ export function checkDownload(source: Pokemon, target: Pokemon) {
   }
 }
 
-export function countBoosts(gen: 1 | 2 | 3 | 4 | 5 | 6 | 7, boosts: StatsTable<number>) {
+export function countBoosts(gen: Generation, boosts: StatsTable<number>) {
   let sum = 0;
   for (let i = 0; i < STATS[gen].length; i++) {
     if (boosts[STATS[gen][i]]) {

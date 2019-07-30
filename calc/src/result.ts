@@ -4,7 +4,7 @@ import { Move } from './move';
 import { Pokemon } from './pokemon';
 
 export class Result {
-  gen: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  gen: Generation;
   attacker: Pokemon;
   defender: Pokemon;
   move: Move;
@@ -13,7 +13,7 @@ export class Result {
   rawDesc: RawDesc;
 
   constructor(
-    gen: 1 | 2 | 3 | 4 | 5 | 6 | 7,
+    gen: Generation,
     attacker: Pokemon,
     defender: Pokemon,
     move: Move,
