@@ -552,11 +552,13 @@ function createPokemon(pokeInfo) {
 			name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
+		var baseStats = {};
 		var ivs = {};
 		var evs = {};
 		var boosts = {};
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
+			baseStats[LEGACY_STATS[gen][i]] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
 			ivs[stat] = gen > 1 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2;
 			evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
 			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
@@ -584,6 +586,7 @@ function createPokemon(pokeInfo) {
 				getMoveDetails(pokeInfo.find(".move4"), ability, item)
 			],
 			overrides: {
+				bs: baseStats,
 				t1: pokeInfo.find(".type1").val(),
 				t2: pokeInfo.find(".type2").val(),
 				w: +pokeInfo.find(".weight").val()

@@ -60,7 +60,7 @@ export class Pokemon {
       overrides?: Partial<Species>;
     } = {}
   ) {
-    this.species = extend(true, SPECIES[gen][name], options.overrides);
+    this.species = extend(true, {}, SPECIES[gen][name], options.overrides);
 
     this.gen = gen;
     this.name = name;
