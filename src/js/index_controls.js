@@ -29,7 +29,7 @@ function performCalculations() {
 	var p1 = createPokemon(p1info);
 	var p2 = createPokemon(p2info);
 	var p1field = createField();
-	var p2field = p1field.swap();
+	var p2field = p1field.clone().swap();
 
 	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
 	p1 = damageResults[0][0].attacker;
@@ -137,8 +137,8 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 	checkStatBoost(p1, p2);
 	var results = [[], []];
 	for (var i = 0; i < 4; i++) {
-		results[0][i] = calc.calculate(gen, p1.clone(), p2.clone(), p1.moves[i], p1field);
-		results[1][i] = calc.calculate(gen, p2.clone(), p1.clone(), p2.moves[i], p2field);
+		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
+		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
 	}
 	return results;
 }

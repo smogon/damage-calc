@@ -1,3 +1,5 @@
+import { extend } from './util';
+
 export type GameType = 'Singles' | 'Doubles';
 export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
 export type Weather =
@@ -41,13 +43,18 @@ export class Field {
   }
 
   swap() {
+    [this.attackerSide, this.defenderSide] = [this.defenderSide, this.attackerSide];
+    return this;
+  }
+
+  clone() {
     return new Field({
       gameType: this.gameType,
       weather: this.weather,
       terrain: this.terrain,
       isGravity: this.isGravity,
-      defenderSide: this.attackerSide,
-      attackerSide: this.defenderSide,
+      attackerSide: this.attackerSide,
+      defenderSide: this.defenderSide,
     });
   }
 }
@@ -92,5 +99,9 @@ export class Side {
     this.isFriendGuard = !!side.isFriendGuard;
     this.isAuroraVeil = !!side.isAuroraVeil;
     this.isBattery = !!side.isBattery;
+  }
+
+  clone() {
+    return new Side(this);
   }
 }

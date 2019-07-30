@@ -80,7 +80,7 @@ function performCalculations() {
 				} else {
 					attacker = createPokemon(setOptions[i].id);
 					defender = createPokemon(pokeInfo);
-					field = field.swap();
+					field.swap();
 				}
 				if (attacker.ability === "Rivalry") {
 					attacker.gender = "genderless";
@@ -136,7 +136,7 @@ function getSelectedTiers() {
 function calculateMovesOfAttacker(gen, attacker, defender, field) {
 	var results = [];
 	for (var i = 0; i < 4; i++) {
-		results[i] = calc.calculate(gen, attacker.clone(), defender.clone(), attacker.moves[i], field);
+		results[i] = calc.calculate(gen, attacker, defender, attacker.moves[i], field);
 	}
 	return results;
 }

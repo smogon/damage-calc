@@ -3,7 +3,13 @@ import { Type } from './data/types';
 import { extend } from './util';
 
 export class Move {
+  gen: Generation;
   name: string;
+  ability?: string;
+  item?: string;
+  useZ?: boolean;
+  overrides?: Partial<MoveData>;
+
   hits: number;
   usedTimes?: number;
   metronomeCount?: number;
@@ -71,7 +77,13 @@ export class Move {
       this.metronomeCount = options.metronomeCount;
     }
 
+    this.gen = gen;
     this.name = data.name;
+    this.ability = options.ability;
+    this.item = options.item;
+    this.useZ = options.useZ;
+    this.overrides = options.overrides;
+
     this.bp = data.bp;
     this.type = data.type;
     this.category = data.category || 'Status';
@@ -95,5 +107,18 @@ export class Move {
     this.bypassesProtect = !!data.bypassesProtect;
     this.isZ = !!data.isZ;
     this.usesHighestAttackStat = !!data.usesHighestAttackStat;
+  }
+
+  clone() {
+    return new Move(this.gen, this.name, {
+      ability: this.ability,
+      item: this.item,
+      useZ: this.useZ,
+      isCrit: this.isCrit,
+      hits: this.hits,
+      usedTimes: this.usedTimes,
+      metronomeCount: this.metronomeCount,
+      overrides: this.overrides,
+    });
   }
 }

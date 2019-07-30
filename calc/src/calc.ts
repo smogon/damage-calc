@@ -29,6 +29,10 @@ export function calculate(
   move: Move,
   field?: Field
 ) {
-  // TODO: clone here to prevent mutating what is passed in
-  return MECHANICS[gen](attacker, defender, move, field || new Field()) as Result;
+  return MECHANICS[gen](
+    attacker.clone(),
+    defender.clone(),
+    move.clone(),
+    field ? field.clone() : new Field()
+  ) as Result;
 }
