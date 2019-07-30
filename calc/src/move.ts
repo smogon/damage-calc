@@ -5,6 +5,8 @@ import { extend } from './util';
 export class Move {
   gen: Generation;
   name: string;
+
+  originalName: string;
   ability?: string;
   item?: string;
   useZ?: boolean;
@@ -51,12 +53,14 @@ export class Move {
       overrides?: Partial<MoveData>;
     } = {}
   ) {
+    this.originalName = name;
     let data: MoveData & { name: string } = extend(
       true,
       { name },
       MOVES[gen][name],
       options.overrides
     );
+
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useZ && 'zp' in data) {
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
@@ -110,7 +114,7 @@ export class Move {
   }
 
   clone() {
-    return new Move(this.gen, this.name, {
+    return new Move(this.gen, this.originalName, {
       ability: this.ability,
       item: this.item,
       useZ: this.useZ,
