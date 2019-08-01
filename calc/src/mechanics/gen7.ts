@@ -122,10 +122,9 @@ function calculateModern(
   }
 
   const isCritical =
-    (!move.isZ && move.isCrit) ||
-    (((move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor')) ||
+    ((move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor')) ||
       (attacker.hasAbility('Merciless') && defender.hasStatus('Poisoned', 'Badly Poisoned'))) &&
-      move.usedTimes === 1);
+    move.usedTimes === 1;
 
   if (move.name === 'Weather Ball') {
     move.type = field.hasWeather('Sun', 'Harsh Sunshine')

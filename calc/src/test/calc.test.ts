@@ -30,6 +30,20 @@ expect.extend({
   },
 });
 
+const ABOMASNOW = new Pokemon(7, 'Abomasnow', {
+  item: 'Icy Rock',
+  ability: 'Snow Warning',
+  nature: 'Hasty',
+  evs: { atk: 252, spd: 4, spe: 252 },
+});
+
+const HOOPA = new Pokemon(7, 'Hoopa-Unbound', {
+  item: 'Choice Band',
+  ability: 'Magician',
+  nature: 'Jolly',
+  evs: { hp: 32, atk: 224, spe: 252 },
+});
+
 describe('calc', () => {
   describe('gen', () => {
     test('1', () => {
@@ -163,20 +177,7 @@ describe('calc', () => {
 
   describe('field', () => {
     test('none', () => {
-      const abomasnow = new Pokemon(7, 'Abomasnow', {
-        item: 'Icy Rock',
-        ability: 'Snow Warning',
-        nature: 'Hasty',
-        evs: { atk: 252, spd: 4, spe: 252 },
-      });
-      const hoopa = new Pokemon(7, 'Hoopa-Unbound', {
-        item: 'Choice Band',
-        ability: 'Magician',
-        nature: 'Jolly',
-        evs: { hp: 32, atk: 224, spe: 252 },
-      });
-
-      let result = calculate(7, abomasnow, hoopa, new Move(7, 'Wood Hammer'));
+      let result = calculate(7, ABOMASNOW, HOOPA, new Move(7, 'Wood Hammer'));
       expect(result.damage).toBeRange(234, 276);
       expect(result.desc()).toBe(
         '252 Atk Abomasnow Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO'
@@ -185,7 +186,7 @@ describe('calc', () => {
       expect(recoil.recoil).toBeRange(24, 28.3);
       expect(recoil.text).toBe('24 - 28.3% recoil damage');
 
-      result = calculate(7, hoopa, abomasnow, new Move(7, 'Drain Punch'));
+      result = calculate(7, HOOPA, ABOMASNOW, new Move(7, 'Drain Punch'));
       expect(result.damage).toBeRange(398, 470);
       expect(result.desc()).toBe(
         '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
@@ -196,18 +197,6 @@ describe('calc', () => {
     });
 
     test('none', () => {
-      const abomasnow = new Pokemon(7, 'Abomasnow', {
-        item: 'Icy Rock',
-        ability: 'Snow Warning',
-        nature: 'Hasty',
-        evs: { atk: 252, spd: 4, spe: 252 },
-      });
-      const hoopa = new Pokemon(7, 'Hoopa-Unbound', {
-        item: 'Choice Band',
-        ability: 'Magician',
-        nature: 'Jolly',
-        evs: { hp: 32, atk: 224, spe: 252 },
-      });
       const field = new Field({
         gameType: 'Doubles',
         terrain: 'Grassy',
@@ -224,11 +213,22 @@ describe('calc', () => {
           isTailwind: true,
         },
       });
-      const result = calculate(7, abomasnow, hoopa, new Move(7, 'Blizzard'), field);
+      const result = calculate(7, ABOMASNOW, HOOPA, new Move(7, 'Blizzard'), field);
       expect(result.damage).toBeRange(50, 59);
       expect(result.desc()).toBe(
         "0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally's Friend Guard: 50-59 (16.1 - 19%)" +
           ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery'
+      );
+    });
+  });
+
+  describe('mechanics', () => {
+    test('zmove criticals', () => {
+      const zMove = new Move(7, 'Wood Hammer', { useZ: true, isCrit: true });
+      const result = calculate(7, ABOMASNOW, HOOPA, zMove);
+      expect(result.damage).toBeRange(555, 654);
+      expect(result.desc()).toBe(
+        '252 Atk Abomasnow Bloom Doom (190 BP) vs. 32 HP / 0 Def Hoopa-Unbound on a critical hit: 555-654 (179.6 - 211.6%) -- guaranteed OHKO'
       );
     });
   });

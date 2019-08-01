@@ -77,9 +77,9 @@ export class Move {
         : data.isTwoHit
         ? 2
         : 1;
-      this.usedTimes = (data.dropsStats && options.usedTimes) || 1;
       this.metronomeCount = options.metronomeCount;
     }
+    this.usedTimes = (data.dropsStats && options.usedTimes) || 1;
 
     this.gen = gen;
     this.name = data.name;
