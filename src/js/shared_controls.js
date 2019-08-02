@@ -941,8 +941,6 @@ function allPokemon(selector) {
 }
 
 function loadCustomList(id) {
-	var customSets;
-	var customSetsOptions = getSetOptions(customSets);
 	$("#" + id + " .set-selector").select2({
 		formatResult: function (set) {
 			return (set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id);
