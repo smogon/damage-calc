@@ -494,7 +494,8 @@ $(".forme").change(function () {
 	}
 	var chosenSet = setdex[pokemonName][setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
-	if (abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
+	var isAltForme = $(this).val() !== pokemonName;
+	if (isAltForme && abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
 		container.find(".ability").val(altForme.ab);
 	} else if (greninjaSet) {
 		$(this).parent().find(".ability");
