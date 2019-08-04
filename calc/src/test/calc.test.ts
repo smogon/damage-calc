@@ -245,4 +245,68 @@ describe('calc', () => {
       );
     });
   });
+
+  describe('mold breaker', () => {
+    test('gen 4', () => {
+      const pinsir = new Pokemon(4, 'Pinsir', {
+        item: 'Choice Band',
+        nature: 'Adamant',
+        ability: 'Hyper Cutter',
+        evs: { atk: 252 },
+      });
+      const gengar = new Pokemon(4, 'Gengar', {
+        item: 'Choice Specs',
+        nature: 'Timid',
+        evs: { spa: 252 },
+        boosts: { spa: 1 },
+      });
+      const earthquake = new Move(4, 'Earthquake');
+
+      let result = calculate(4, pinsir, gengar, earthquake);
+      expect(result.damage).toBeRange(0, 0);
+
+      pinsir.ability = 'Mold Breaker';
+      result = calculate(4, pinsir, gengar, earthquake);
+      expect(result.damage).toBeRange(528, 622);
+      expect(result.desc()).toBe(
+        '252+ Atk Choice Band Mold Breaker Pinsir Earthquake vs. 0 HP / 0 Def Gengar: 528-622 (202.2 - 238.3%) -- guaranteed OHKO'
+      );
+
+      pinsir.boosts.atk = 2;
+      gengar.ability = 'Unaware';
+      result = calculate(4, pinsir, gengar, earthquake);
+      expect(result.damage).toBeRange(1054, 1240);
+    });
+    test('gen 7', () => {
+      const pinsir = new Pokemon(7, 'Pinsir', {
+        item: 'Choice Band',
+        nature: 'Adamant',
+        ability: 'Hyper Cutter',
+        evs: { atk: 252 },
+      });
+      const gengar = new Pokemon(7, 'Gengar', {
+        item: 'Choice Specs',
+        nature: 'Timid',
+        ability: 'Levitate',
+        evs: { spa: 252 },
+        boosts: { spa: 1 },
+      });
+      const earthquake = new Move(7, 'Earthquake');
+
+      let result = calculate(7, pinsir, gengar, earthquake);
+      expect(result.damage).toBeRange(0, 0);
+
+      pinsir.ability = 'Mold Breaker';
+      result = calculate(7, pinsir, gengar, earthquake);
+      expect(result.damage).toBeRange(528, 622);
+      expect(result.desc()).toBe(
+        '252+ Atk Choice Band Mold Breaker Pinsir Earthquake vs. 0 HP / 0 Def Gengar: 528-622 (202.2 - 238.3%) -- guaranteed OHKO'
+      );
+
+      pinsir.boosts.atk = 2;
+      gengar.ability = 'Unaware';
+      result = calculate(7, pinsir, gengar, earthquake);
+      expect(result.damage).toBeRange(1054, 1240);
+    });
+  });
 });

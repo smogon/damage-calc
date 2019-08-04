@@ -95,7 +95,6 @@ function calculateModern(
     damage.push(0);
     return result;
   }
-  let defAbility = defender.ability;
   const defenderIgnoresAbility = defender.hasAbility(
     'Full Metal Body',
     'Prism Armor',
@@ -113,12 +112,12 @@ function calculateModern(
     ].indexOf(move.name) !== -1;
   if (!defenderIgnoresAbility) {
     if (attackerIgnoresAbility) {
-      defAbility = '';
+      defender.ability = '';
       description.attackerAbility = attacker.ability;
     }
   }
   if (moveIgnoresAbility) {
-    defAbility = '';
+    defender.ability = '';
   }
 
   const isCritical =
