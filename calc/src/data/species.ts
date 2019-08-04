@@ -882,6 +882,8 @@ const GSC: { [name: string]: Species } = extend(true, {}, RBY, {
   Ditto: { gender: 'genderless' },
   Electrode: { gender: 'genderless' },
   Golbat: { canEvolve: true },
+  Magnemite: { t2: 'Steel', gender: 'genderless' },
+  Magneton: { t2: 'Steel', gender: 'genderless' },
   Mew: { gender: 'genderless' },
   Mewtwo: { gender: 'genderless' },
   Moltres: { gender: 'genderless' },
