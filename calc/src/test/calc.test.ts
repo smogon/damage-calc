@@ -223,6 +223,19 @@ describe('calc', () => {
   });
 
   describe('mechanics', () => {
+    test('gen 2 DVs', () => {
+      const aerodactyl = new Pokemon(2, 'Aerodactyl');
+      const zapdos = new Pokemon(2, 'Zapdos', { ivs: { atk: 29, def: 27 }, item: 'Leftovers' });
+      expect(zapdos.ivs.hp).toBe(15);
+
+      const move = new Move(7, 'Ancient Power');
+      const result = calculate(2, aerodactyl, zapdos, move);
+      expect(result.damage).toBeRange(153, 180);
+      expect(result.desc()).toBe(
+        'Aerodactyl Ancient Power vs. Zapdos: 153-180 (41.6 - 49%) -- guaranteed 3HKO after Leftovers recovery'
+      );
+    });
+
     test('zmove criticals', () => {
       const zMove = new Move(7, 'Wood Hammer', { useZ: true, isCrit: true });
       const result = calculate(7, ABOMASNOW, HOOPA, zMove);

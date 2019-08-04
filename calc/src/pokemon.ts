@@ -194,7 +194,7 @@ export class Pokemon {
       true,
       {},
       { hp: val, atk: val, def: val, spe: val },
-      gen < 3 ? { spc: val } : { spa: val, spd: val },
+      gen < 2 ? { spc: val } : { spa: val, spd: val },
       current
     );
   }
