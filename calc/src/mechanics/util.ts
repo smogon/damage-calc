@@ -14,21 +14,30 @@ export function isGrounded(pokemon: Pokemon, field: Field) {
 }
 
 export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
-  if (mod > 0) {
-    stat = Math.floor((stat * (2 + mod)) / 2);
-  } else if (mod < 0) {
-    stat = Math.floor((stat * 2) / (2 - mod));
-  } else {
-    stat = stat;
+  const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
+  if (gen && gen < 3) {
+    if (mod >= 0) {
+      stat = Math.floor(stat * boostTable[mod]);
+    } else {
+      const numerators = [100, 66, 50, 40, 33, 28, 25];
+      stat = Math.floor((stat * numerators[-mod]) / 100);
+    }
+    return Math.min(999, Math.max(1, stat));
   }
 
-  return gen && gen < 3 ? Math.min(999, Math.max(1, stat)) : stat;
+  if (mod >= 0) {
+    stat = Math.floor(stat * boostTable[mod]);
+  } else {
+    stat = Math.floor(stat / boostTable[-mod]);
+  }
+
+  return stat;
 }
 
 export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side) {
   const weather = field.weather || '';
   const terrain = field.terrain;
-  let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe);
+  let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe, gen);
 
   if (pokemon.hasItem('Choice Scarf')) {
     speed = pokeRound(speed * 1.5);

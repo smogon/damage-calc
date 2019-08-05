@@ -1,4 +1,5 @@
 import { displayStat, DVToIV, getHPDV, IVToDV, STATS, calcStat, StatsTable } from '../stats';
+import { getModifiedStat } from '../mechanics/util';
 
 describe('stats', () => {
   test('displayStat', () => {
@@ -64,5 +65,10 @@ describe('stats', () => {
         spe: DVToIV(10),
       })
     ).toBe(13);
+  });
+
+  test('gen 2 modifications', () => {
+    expect(getModifiedStat(158, -1, 2)).toBe(104); // Snorlax after Curse
+    expect(getModifiedStat(238, -1, 2)).toBe(157); // Skarmory after Curse
   });
 });

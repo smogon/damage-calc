@@ -228,7 +228,7 @@ describe('calc', () => {
       const zapdos = new Pokemon(2, 'Zapdos', { ivs: { atk: 29, def: 27 }, item: 'Leftovers' });
       expect(zapdos.ivs.hp).toBe(15);
 
-      const move = new Move(7, 'Ancient Power');
+      const move = new Move(2, 'Ancient Power');
       const result = calculate(2, aerodactyl, zapdos, move);
       expect(result.damage).toBeRange(153, 180);
       expect(result.desc()).toBe(
