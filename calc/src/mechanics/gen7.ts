@@ -82,7 +82,7 @@ function calculateModern(
     defenderName: defender.name,
   };
 
-  let damage: number[] = [];
+  const damage: number[] = [];
   const result = new Result(gen, attacker, defender, move, field, damage, description);
 
   if (move.bp === 0) {
@@ -1061,7 +1061,7 @@ function calculateModern(
     for (let times = 0; times < move.usedTimes!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
-      damage = damage.map(affectedAmount => {
+      result.damage = damage.map(affectedAmount => {
         if (times) {
           const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
           const newFinalDamage = getFinalDamage(
