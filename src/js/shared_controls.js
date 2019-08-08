@@ -499,7 +499,7 @@ $(".forme").change(function () {
 		container.find(".ability").val(altForme.ab);
 	} else if (greninjaSet) {
 		$(this).parent().find(".ability");
-	} else {
+	} else if (chosenSet) {
 		container.find(".ability").val(chosenSet.ability);
 	}
 	container.find(".ability").keyup();
