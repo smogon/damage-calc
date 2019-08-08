@@ -65,16 +65,16 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   if (move.name === 'Weather Ball') {
     if (field.hasWeather('Sun')) {
       move.type = 'Fire';
-      move.bp *= 2;
+      basePower *= 2;
     } else if (field.hasWeather('Rain')) {
       move.type = 'Water';
-      move.bp *= 2;
+      basePower *= 2;
     } else if (field.hasWeather('Sand')) {
       move.type = 'Rock';
-      move.bp *= 2;
+      basePower *= 2;
     } else if (field.hasWeather('Hail')) {
       move.type = 'Ice';
-      move.bp *= 2;
+      basePower *= 2;
     } else {
       move.type = 'Normal';
     }
@@ -155,65 +155,67 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   switch (move.name) {
     case 'Brine':
       if (defender.curHP <= defender.maxHP() / 2) {
-        move.bp *= 2;
-        description.moveBP = move.bp;
+        basePower *= 2;
+        description.moveBP = basePower;
       }
       break;
     case 'Eruption':
     case 'Water Spout':
-      move.bp = Math.max(1, Math.floor((move.bp * attacker.curHP) / attacker.maxHP()));
-      description.moveBP = move.bp;
+      basePower = Math.max(1, Math.floor((basePower * attacker.curHP) / attacker.maxHP()));
+      description.moveBP = basePower;
       break;
     case 'Facade':
       if (attacker.hasStatus('Paralyzed', 'Poisoned', 'Badly Poisoned', 'Burned')) {
-        move.bp *= 2;
-        description.moveBP = move.bp;
+        basePower = move.bp * 2;
+        description.moveBP = basePower;
       }
       break;
     case 'Flail':
     case 'Reversal':
       const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
-      move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-      description.moveBP = move.bp;
+      basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+      description.moveBP = basePower;
       break;
     case 'Fling':
-      move.bp = getFlingPower(attacker.item);
-      description.moveBP = move.bp;
+      basePower = getFlingPower(attacker.item);
+      description.moveBP = basePower;
       description.attackerItem = attacker.item;
       break;
     case 'Grass Knot':
     case 'Low Kick':
       const w = defender.weight;
-      move.bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
-      description.moveBP = move.bp;
+      basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+      description.moveBP = basePower;
       break;
     case 'Gyro Ball':
-      move.bp = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
-      description.moveBP = move.bp;
+      basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
+      description.moveBP = basePower;
       break;
     case 'Payback':
       if (turnOrder !== 'FIRST') {
-        move.bp *= 2;
-        description.moveBP = move.bp;
+        basePower *= 2;
+        description.moveBP = basePower;
       }
       break;
     case 'Punishment':
       const boostCount = countBoosts(DPP, defender.boosts);
       if (boostCount > 0) {
-        move.bp = Math.min(200, move.bp + 20 * boostCount);
-        description.moveBP = move.bp;
+        basePower = Math.min(200, basePower + 20 * boostCount);
+        description.moveBP = basePower;
       }
       break;
     case 'Wake-Up Slap':
       if (defender.hasStatus('Asleep')) {
-        move.bp *= 2;
-        description.moveBP = move.bp;
+        basePower *= 2;
+        description.moveBP = basePower;
       }
       break;
     case 'Wring Out':
-      move.bp = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
-      description.moveBP = move.bp;
+      basePower = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
+      description.moveBP = basePower;
       break;
+    default:
+      basePower = move.bp;
   }
 
   if (field.attackerSide.isHelpingHand) {
@@ -252,7 +254,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
         (attacker.hasAbility('Blaze') && move.type === 'Fire') ||
         (attacker.hasAbility('Torrent') && move.type === 'Water') ||
         (attacker.hasAbility('Swarm') && move.type === 'Bug'))) ||
-    (attacker.hasAbility('Technician') && move.bp <= 60)
+    (attacker.hasAbility('Technician') && basePower <= 60)
   ) {
     basePower = Math.floor(basePower * 1.5);
     description.attackerAbility = attacker.ability;

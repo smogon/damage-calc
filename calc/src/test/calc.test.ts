@@ -244,6 +244,13 @@ describe('calc', () => {
         '252 Atk Abomasnow Bloom Doom (190 BP) vs. 32 HP / 0 Def Hoopa-Unbound on a critical hit: 555-654 (179.6 - 211.6%) -- guaranteed OHKO'
       );
     });
+
+    test('grass knot', () => {
+      let result = calculate(7, new Pokemon(7, 'Groudon'), new Pokemon(7, 'Groudon'), new Move(7, 'Grass Knot'));
+      expect(result.damage).toBeRange(190, 224);
+      result = calculate(4, new Pokemon(4, 'Groudon'), new Pokemon(4, 'Groudon'), new Move(4, 'Grass Knot'));
+      expect(result.damage).toBeRange(190, 224);
+    });
   });
 
   describe('mold breaker', () => {
