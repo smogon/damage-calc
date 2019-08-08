@@ -213,7 +213,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
       break;
     case 'Crush Grip':
     case 'Wring Out':
-      basePower = Math.floor(defender.curHP * 120 / defender.maxHP()) + 1;
+      basePower = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
       description.moveBP = basePower;
       break;
     default:
