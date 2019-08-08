@@ -16,6 +16,7 @@ import {
   checkIntimidate,
   checkDownload,
   countBoosts,
+  pokeRound,
 } from './util';
 
 const DPP = 4;
@@ -210,8 +211,9 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
         description.moveBP = basePower;
       }
       break;
+    case 'Crush Grip':
     case 'Wring Out':
-      basePower = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
+      basePower = Math.floor(defender.curHP * 120 / defender.maxHP()) + 1;
       description.moveBP = basePower;
       break;
     default:

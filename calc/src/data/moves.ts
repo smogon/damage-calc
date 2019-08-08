@@ -1452,6 +1452,12 @@ const DPP: { [name: string]: MoveData } = extend(true, {}, ADV, {
     makesContact: true,
     hasSecondaryEffect: true,
   },
+  'Crush Grip': {
+    bp: 1,
+    type: 'Normal',
+    category: 'Physical',
+    makesContact: true,
+  },
   'Dark Pulse': {
     bp: 80,
     type: 'Dark',

@@ -246,10 +246,30 @@ describe('calc', () => {
     });
 
     test('grass knot', () => {
-      let result = calculate(7, new Pokemon(7, 'Groudon'), new Pokemon(7, 'Groudon'), new Move(7, 'Grass Knot'));
+      let result = calculate(
+        7,
+        new Pokemon(7, 'Groudon'),
+        new Pokemon(7, 'Groudon'),
+        new Move(7, 'Grass Knot')
+      );
       expect(result.damage).toBeRange(190, 224);
-      result = calculate(4, new Pokemon(4, 'Groudon'), new Pokemon(4, 'Groudon'), new Move(4, 'Grass Knot'));
+      result = calculate(
+        4,
+        new Pokemon(4, 'Groudon'),
+        new Pokemon(4, 'Groudon'),
+        new Move(4, 'Grass Knot')
+      );
       expect(result.damage).toBeRange(190, 224);
+    });
+
+    test('wring out', () => {
+      const smeargle = new Pokemon(7, 'Smeargle', { level: 50, ability: 'Technician' });
+      const blissey = new Pokemon(7, 'Blissey', { level: 50, evs: { hp: 252 }, curHP: 184 });
+      const result = calculate(7, smeargle, blissey, new Move(7, 'Wring Out'));
+      expect(result.damage).toBeRange(15, 18);
+      expect(result.desc()).toBe(
+        '0 SpA Technician Smeargle Wring Out (60 BP) vs. 252 HP / 0 SpD Blissey: 15-18 (4.1 - 4.9%)'
+      );
     });
   });
 

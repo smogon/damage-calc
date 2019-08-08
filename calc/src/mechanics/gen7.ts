@@ -468,8 +468,10 @@ function calculateModern(
       basePower = attacker.name === 'Greninja-Ash' && attacker.hasAbility('Battle Bond') ? 20 : 15;
       description.moveBP = basePower;
       break;
+    case 'Crush Grip':
     case 'Wring Out':
-      basePower = Math.max(1, Math.ceil((defender.curHP * 120) / defender.maxHP() - 0.5));
+      basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP());
+      basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
       description.moveBP = basePower;
       break;
     default:
