@@ -359,6 +359,11 @@ $(".item").change(function () {
 	}
 });
 
+function smogonAnalysis(pokemonName) {
+	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm"][gen - 1];
+	return "https://smogon.com/dex/" + generation + "/pokemon/" + pokemonName.toLowerCase() + "/";
+}
+
 // auto-update set details on select
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
@@ -371,6 +376,7 @@ $(".set-selector").change(function () {
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
 			stickyMoves.clearStickyMove();
 		}
+		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.t1);
 		pokeObj.find(".type2").val(pokemon.t2);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);
