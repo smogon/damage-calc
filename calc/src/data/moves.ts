@@ -2669,6 +2669,12 @@ const XY: { [name: string]: MoveData } = extend(true, {}, BW, {
     givesHealth: true,
     percentHealed: 0.5,
   },
+  'Petal Blizzard': {
+    bp: 90,
+    type: 'Grass',
+    category: 'Physical',
+    isSpread: true,
+  },
   'Phantom Force': {
     bp: 90,
     type: 'Ghost',
@@ -3258,6 +3264,7 @@ const SM: { [name: string]: MoveData } = extend(true, {}, XY, {
   'Paleo Wave': { zp: 160 },
   'Parabolic Charge': { bp: 65, zp: 120 },
   Payback: { zp: 100 },
+  'Petal Blizzard': { zp: 175 },
   'Petal Dance': { zp: 190 },
   'Phantom Force': { zp: 175 },
   'Photon Geyser': {
