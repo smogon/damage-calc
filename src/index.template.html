@@ -116,7 +116,7 @@
                 <input type="checkbox" id="importedSets" /> Only show imported sets <br />
                 <button id="clearSets">Clear Custom Sets</button>
             </span>
-            <div class="info-group">
+            <div class="info-group top">
                 <div>
                     <label>Type</label>
                     <select aria-label="type1" class="type1 terrain-trigger calc-trigger"></select>
@@ -666,7 +666,7 @@
                     <label class="btn" for="gravity">Gravity</label>
                 </div>
                 <hr class="gen-specific g2 g3 g4 g5 g6 g7" />
-                <table>
+                <table class="field">
                     <thead>
                         <tr>
                             <th scope="col"><div class="visually-hidden">Pok&eacute;mon 1's side</div></th>
@@ -698,14 +698,14 @@
                                 <label class="btn btn-wide btn-right" for="spikesL3">3 Spikes</label>
                             </div></td>
                             <td><div aria-labelledby="selectSpikeInstruction" class="right" role="radiogroup" title="Are there Spikes on this side of the field?">
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
-                                <label class="btn btn-xsmall btn-left" for="spikesR0">0</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
-                                <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
+                                <label class="btn btn-wide btn-left" for="spikesR3">3 Spikes</label>
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="2" id="spikesR2" />
                                 <label class="btn btn-xsmall btn-mid" for="spikesR2">2</label>
-                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="3" id="spikesR3" />
-                                <label class="btn btn-wide btn-right" for="spikesR3">3 Spikes</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="1" id="spikesR1" />
+                                <label class="btn btn-xsmall btn-mid" for="spikesR1">1</label>
+                                <input class="visually-hidden calc-trigger" type="radio" name="spikesR" value="0" id="spikesR0" checked="checked" />
+                                <label class="btn btn-xsmall btn-right" for="spikesR0">0</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g2">
@@ -727,10 +727,10 @@
                                 <label class="btn btn-xwide btn-right" for="lightScreenL">Light Screen</label>
                             </div></td>
                             <td><div class="right" title="Is this Pok&eacute;mon protected by Reflect and/or Light Screen?">
-                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectR" />
-                                <label class="btn btn-left" for="reflectR">Reflect</label>
                                 <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="lightScreenR" />
-                                <label class="btn btn-xwide btn-right" for="lightScreenR">Light Screen</label>
+                                <label class="btn btn-xwide btn-left" for="lightScreenR">Light Screen</label>
+                                <input aria-describedby="selectScreenInstruction" class="visually-hidden calc-trigger" type="checkbox" id="reflectR" />
+                                <label class="btn btn-right" for="reflectR">Reflect</label>
                             </div></td>
                         </tr>
                         <tr class="gen-specific g2 g3 g4 g5 g6 g7">
@@ -864,7 +864,7 @@
                 <input type="checkbox" id="importedSets" /> Only show imported sets <br />
                 <button id="clearSets">Clear Custom Sets</button>
             </span>
-            <div class="info-group">
+            <div class="info-group top">
                 <div>
                     <label>Type</label>
                     <select aria-label="Type 1" class="type1 terrain-trigger calc-trigger"></select>

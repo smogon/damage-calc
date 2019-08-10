@@ -312,6 +312,10 @@ th {
     display: inline-block;
     width: 6em;
 }
+.top label, .info-selectors label {
+    display: inline-block;
+    width: 5em;
+}
 .poke-info input:not([type]), .poke-info input[type="text"], .poke-info span {
     display: inline-block;
     width: 2.5em;
@@ -327,7 +331,7 @@ th {
     width: 100%;
 }
 .info-selectors select {
-    width: 8em;
+    width: 10em;
 }
 select.toxic-counter {
     width: 4.5em;
@@ -345,7 +349,7 @@ select.toxic-counter {
     width: 5.5em;
 }
 .move-cat {
-    width: 5.7em;
+    width: 6em;
 }
 .move-hits {
     width: 4.5em;
@@ -355,6 +359,7 @@ select.toxic-counter {
     width: 2.5em;
     height: 1em;
     padding: 3px 3px;
+    margin: 0px 1px;
 }
 .poke-info .z-btn {
     font-size: 0.8em;
@@ -366,6 +371,9 @@ select.toxic-counter {
 /* field info */
 .field-info .btn {
     font-size: 0.8em;
+}
+table.field {
+    width: 100%;
 }
 
 [hidden], .hide {
