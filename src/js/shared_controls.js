@@ -557,7 +557,8 @@ function createPokemon(pokeInfo) {
 			name = setName;
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
-			name = (pokedex[pokemonName].formes) ? pokeInfo.find(".forme").val() : pokemonName;
+			var species = pokedex[pokemonName];
+			name = (species.formes || species.isAlternateForme) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
 		var baseStats = {};
