@@ -690,6 +690,7 @@ var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, 
 $(".gen").change(function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 7;
+	if ('ga' in window) ga('send', 'event', 'gen', gen);
 	genWasChanged = true;
 	/* eslint-enable */
 	// declaring these variables with var here makes z moves not work; TODO
