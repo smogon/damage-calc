@@ -498,7 +498,8 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[pokeSTATS[i]]);
 		baseStat.keyup();
 	}
-	var chosenSet = setdex[pokemonName][setName];
+	var pokemonSets = setdex[pokemonName];
+	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
 	if (isAltForme && abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
