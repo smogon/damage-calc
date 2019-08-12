@@ -331,10 +331,10 @@ th {
     width: 100%;
 }
 .info-selectors select {
-    width: 10em;
+    width: 12em;
 }
 select.toxic-counter {
-    width: 4.5em;
+    width: 5.5em;
 }
 .move-selector, .move-bp, .move-type, .move-cat, .move-hits {
     font-size: 0.9em;
