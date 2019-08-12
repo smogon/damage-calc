@@ -11,6 +11,8 @@ https://pokemonshowdown.com/damagecalc/
 
 Most notable for having all-vs-one (wall) and one-vs-all (sweeper) calcs.
 
+Also not random battle friendly.
+
 Instructions
 ------------
 
