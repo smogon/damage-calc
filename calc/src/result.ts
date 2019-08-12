@@ -53,7 +53,7 @@ export class Result {
   }
 
   recovery(notation = '%') {
-    return getRecovery(this.attacker, this.defender, this.move, this.damage, notation);
+    return getRecovery(this.gen, this.attacker, this.defender, this.move, this.damage, notation);
   }
 
   recoil(notation = '%') {

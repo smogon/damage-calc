@@ -75,7 +75,7 @@ export function displayMove(
   const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
   const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
 
-  const recoveryText = getRecovery(attacker, defender, move, damage, notation).text;
+  const recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
 
   return `${minDisplay} - ${maxDisplay}${notation}${recoveryText &&
@@ -83,6 +83,7 @@ export function displayMove(
 }
 
 export function getRecovery(
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -92,35 +93,32 @@ export function getRecovery(
   const minDamage = damage[0] * move.hits;
   const maxDamage = damage[damage.length - 1] * move.hits;
 
-  let recovery = [0, 0];
+  const recovery = [0, 0];
   let text = '';
 
-  if (move.givesHealth) {
-    let minHealthRecovered = toDisplay(notation, minDamage * move.percentHealed!, attacker.maxHP());
-    let maxHealthRecovered = toDisplay(notation, maxDamage * move.percentHealed!, attacker.maxHP());
-
-    if (notation === '%' ? minHealthRecovered > 100 : minHealthRecovered > 48) {
-      minHealthRecovered = toDisplay(
-        notation,
-        defender.maxHP() * move.percentHealed!,
-        attacker.maxHP()
-      );
-      maxHealthRecovered = toDisplay(
-        notation,
-        defender.maxHP() * move.percentHealed!,
-        attacker.maxHP()
-      );
-    }
-    recovery = [
-      Math.min(Math.floor(minDamage * move.percentHealed!), attacker.maxHP()),
-      Math.min(Math.floor(maxDamage * move.percentHealed!), attacker.maxHP()),
-    ];
-    text =
-      recovery.length === 2
-        ? `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`
-        : '';
+  const ignoresShellBell =
+    gen === 3 && (move.name === 'Doom Desire' || move.name === 'Future Sight');
+  if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
+    const max = defender.maxHP() / 8;
+    recovery[0] += Math.min(minDamage / 8, max);
+    recovery[1] += Math.min(maxDamage / 8, max);
   }
 
+  if (move.givesHealth) {
+    const max = defender.maxHP() * move.percentHealed!;
+    recovery[0] += Math.min(minDamage * move.percentHealed!, max);
+    recovery[1] += Math.min(maxDamage * move.percentHealed!, max);
+  }
+
+  if (recovery[1] === 0) return { recovery, text };
+
+  recovery[0] = Math.min(recovery[0], attacker.maxHP());
+  recovery[1] = Math.min(recovery[1], attacker.maxHP());
+
+  const minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
+  const maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
+
+  text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`;
   return { recovery, text };
 }
 

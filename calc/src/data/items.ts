@@ -78,6 +78,7 @@ const ADV = GSC.concat([
   'Razz Berry',
   'Salac Berry',
   'Sea Incense',
+  'Shell Bell',
   'Silk Scarf',
   'Sitrus Berry',
   'Soul Dew',
