@@ -79,7 +79,7 @@ export function displayMove(
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
 
   return `${minDisplay} - ${maxDisplay}${notation}${recoveryText &&
-    ` (${recoveryText}`}${recoilText && ` (${recoilText})`}`;
+    ` (${recoveryText}`})${recoilText && ` (${recoilText})`}`;
 }
 
 export function getRecovery(
