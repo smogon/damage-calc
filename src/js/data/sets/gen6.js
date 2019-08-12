@@ -530,8 +530,7 @@ var SETDEX_XY = {
 		"UU Nasty Plot": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Nasty Plot", "Giga Drain", "Psychic", "Dazzling Gleam"]},
 		"UU Utility": {"level": 100, "evs": {"df": 244, "hp": 240, "sp": 24}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Giga Drain", "Recover", "Thunder Wave", "U-turn"]},
 		"UU Offensive Stealth Rock": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Natural Cure", "item": "Life Orb", "moves": ["Stealth Rock", "Leaf Storm", "Psychic", "Earth Power"]},
-		"OU Baton Pass": {"level": 100, "evs": {"df": 148, "hp": 252, "sp": 108}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Recover", "Baton Pass", "Giga Drain", "Nasty Plot"]},
-		"OU Support": {"level": 100, "evs": {"sd": 84, "df": 156, "hp": 252, "sp": 16}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Giga Drain", "Recover", "Baton Pass", "Stealth Rock"]},
+		"OU Support": {"level": 100, "evs": {"sd": 84, "df": 156, "hp": 252, "sp": 16}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Giga Drain", "Recover", "Thunder Wave", "Stealth Rock"]},
 		"OU Nasty Plot + 2 Attacks": {"level": 100, "evs": {"df": 148, "hp": 252, "sp": 108}, "nature": "Bold", "ability": "Natural Cure", "item": "Leftovers", "moves": ["Nasty Plot", "Giga Drain", "Recover", "Earth Power"]},
 	},
 	"Chandelure": {
@@ -915,6 +914,9 @@ var SETDEX_XY = {
 		"RU All-out Attacker": {"level": 100, "evs": {"at": 252, "hp": 224, "sp": 32}, "nature": "Adamant", "ability": "Sheer Force", "item": "Life Orb", "moves": ["Outrage", "Sucker Punch", "Fire Punch", "Iron Tail"]},
 		"UU Stealth Rock Setter": {"level": 100, "evs": {"at": 252, "hp": 236, "sp": 20}, "nature": "Adamant", "ability": "Sheer Force", "item": "Roseli Berry", "moves": ["Stealth Rock", "Dragon Claw", "Fire Punch", "Gunk Shot"]},
 	},
+	"Dugtrio": {
+		"OU Mole Man": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Sand Force", "item": "Focus Sash", "moves": ["Stealth Rock", "Memento", "Earthquake", "Toxic"]},
+	},
 	"Dunsparce": {
 		"PU Stealth Rock": {"level": 100, "evs": {"sd": 252, "at": 4, "hp": 252}, "nature": "Careful", "ability": "Serene Grace", "item": "Leftovers", "moves": ["Stealth Rock", "Body Slam", "Magic Coat", "Roost"]},
 	},
@@ -1076,8 +1078,8 @@ var SETDEX_XY = {
 		"LC Calm Mind Attacker": {"level": 5, "evs": {"df": 204, "hp": 164, "sp": 20, "sa": 108}, "nature": "Bold", "ability": "Flower Veil", "item": "Eviolite", "moves": ["Calm Mind", "Synthesis", "Moonblast", "Psychic"]},
 	},
 	"Flareon": {
-		"PU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Flash Fire", "item": "Choice Band", "moves": ["Flare Blitz", "Superpower", "Quick Attack", "Baton Pass"]},
-		"NU Offensive": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Flash Fire", "item": "Choice Band", "moves": ["Flare Blitz", "Superpower", "Quick Attack", "Baton Pass"]},
+		"PU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Flash Fire", "item": "Choice Band", "moves": ["Flare Blitz", "Superpower", "Quick Attack", "Double-Edge"]},
+		"NU Choice Band": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "nature": "Adamant", "ability": "Flash Fire", "item": "Choice Band", "moves": ["Flare Blitz", "Superpower", "Quick Attack", "Double-Edge"]},
 	},
 	"Fletchinder": {
 		"RU Swords Dance": {"level": 100, "evs": {"sd": 28, "df": 76, "at": 252, "hp": 152}, "nature": "Adamant", "ability": "Gale Wings", "item": "No Item", "moves": ["Swords Dance", "Acrobatics", "Will-O-Wisp", "Roost"]},
@@ -1092,10 +1094,6 @@ var SETDEX_XY = {
 		"PU Special Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Water Veil", "item": "Life Orb", "moves": ["Hydro Pump", "Ice Beam", "Hidden Power Electric", "Surf"]},
 		"PU Choice Band": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Water Veil", "item": "Choice Band", "moves": ["Waterfall", "Ice Punch", "Aqua Jet", "Return"]},
 		"NU Life Orb Attacker": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Swift Swim", "item": "Life Orb", "moves": ["Hydro Pump", "Ice Beam", "Focus Blast", "Hidden Power Electric"]},
-	},
-	"Floette-Eternal": {
-		"OU Offensive Wish Tank": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Flower Veil", "item": "Life Orb", "moves": ["Light of Ruin", "Wish", "Protect", "Hidden Power Fire"]},
-		"OU Choice Specs": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Flower Veil", "item": "Choice Specs", "moves": ["Light of Ruin", "Moonblast", "Psychic", "Hidden Power Fire"]},
 	},
 	"Florges": {
 		"UU Defensive Support": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Bold", "ability": "Flower Veil", "item": "Leftovers", "moves": ["Wish", "Synthesis", "Moonblast", "Aromatherapy"]},
@@ -1285,7 +1283,7 @@ var SETDEX_XY = {
 		"Uber Physical Defog": {"level": 100, "evs": {"df": 248, "at": 248, "sp": 12}, "nature": "Adamant", "ability": "Levitate", "item": "Griseous Orb", "moves": ["Defog", "Shadow Sneak", "Dragon Tail", "Shadow Force"]},
 	},
 	"Glaceon": {
-		"PU Choice Specs": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Ice Body", "item": "Choice Specs", "moves": ["Ice Beam", "Hidden Power Fighting", "Shadow Ball", "Baton Pass"]},
+		"PU Choice Specs": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Ice Body", "item": "Choice Specs", "moves": ["Ice Beam", "Hidden Power Fighting", "Shadow Ball", "Frost Breath"]},
 	},
 	"Glalie": {
 		"PU Spikes Lead": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naive", "ability": "Inner Focus", "item": "Focus Sash", "moves": ["Spikes", "Taunt", "Explosion", "Freeze-Dry"]},
@@ -1301,7 +1299,7 @@ var SETDEX_XY = {
 		"LC Life Orb Attacker": {"level": 5, "evs": {"df": 20, "at": 236, "sp": 236}, "ivs": {"hp": 1}, "nature": "Jolly", "ability": "Limber", "item": "Life Orb", "moves": ["Return", "Sucker Punch", "Fake Out", "Play Rough"]},
 	},
 	"Gligar": {
-		"UU Standard": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Impish", "ability": "Hyper Cutter", "item": "Eviolite", "moves": ["Roost", "Earthquake", "Defog", "U-turn"]},
+		"UU Pivot": {"level": 100, "evs": {"sd": 240, "df": 16, "hp": 252}, "nature": "Impish", "ability": "Hyper Cutter", "item": "Eviolite", "moves": ["Earthquake", "U-turn", "Roost", "Defog"]},
 	},
 	"Gliscor": {
 		"OU Swords Dance Stallbreaker": {"level": 100, "evs": {"sd": 200, "df": 8, "hp": 244, "sp": 56}, "nature": "Careful", "ability": "Poison Heal", "item": "Toxic Orb", "moves": ["Swords Dance", "Earthquake", "Knock Off", "Roost"]},
@@ -1640,8 +1638,8 @@ var SETDEX_XY = {
 		"Doubles Follow Me": {"level": 100, "evs": {"sd": 164, "df": 92, "hp": 252}, "nature": "Impish", "ability": "Serene Grace", "item": "Safety Goggles", "moves": ["Follow Me", "Iron Head", "Icy Wind", "Protect"]},
 	},
 	"Jolteon": {
-		"RU SubPass": {"level": 100, "evs": {"hp": 80, "sp": 252, "sa": 176}, "nature": "Timid", "ability": "Volt Absorb", "item": "Leftovers", "moves": ["Substitute", "Baton Pass", "Thunderbolt", "Wish"]},
-		"RU All-out Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Volt Absorb", "item": "Life Orb", "moves": ["Thunderbolt", "Signal Beam", "Hidden Power Ice", "Volt Switch"]},
+		"RU Offensive Wish": {"level": 100, "evs": {"hp": 80, "sp": 252, "sa": 176}, "nature": "Timid", "ability": "Volt Absorb", "item": "Leftovers", "moves": ["Substitute", "Hidden Power Ice", "Thunderbolt", "Wish"]},
+		"RU All-Out Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Volt Absorb", "item": "Life Orb", "moves": ["Thunderbolt", "Signal Beam", "Hidden Power Ice", "Volt Switch"]},
 		"UU All-Out Attacking": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Volt Absorb", "item": "Choice Specs", "moves": ["Volt Switch", "Thunderbolt", "Hidden Power Ice", "Shadow Ball"]},
 	},
 	"Joltik": {
@@ -2033,8 +2031,7 @@ var SETDEX_XY = {
 		"Doubles Tail Glow": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Hydration", "item": "Safety Goggles", "moves": ["Scald", "Ice Beam", "Tail Glow", "Protect"]},
 	},
 	"Mandibuzz": {
-		"UU Specially Defensive": {"level": 100, "evs": {"sd": 216, "hp": 240, "sp": 52}, "nature": "Careful", "ability": "Overcoat", "item": "Leftovers", "moves": ["Roost", "Knock Off", "Taunt", "Defog"]},
-		"UU Physically Defensive": {"level": 100, "evs": {"df": 216, "hp": 240, "sp": 52}, "nature": "Impish", "ability": "Overcoat", "item": "Leftovers", "moves": ["Roost", "Foul Play", "Taunt", "Defog"]},
+		"UU Specially Defensive": {"level": 100, "evs": {"sd": 252, "df": 8, "hp": 248}, "nature": "Careful", "ability": "Overcoat", "item": "Leftovers", "moves": ["Foul Play", "Roost", "Defog", "U-turn"]},
 		"OU Utility": {"level": 100, "evs": {"sd": 108, "df": 136, "hp": 248, "sp": 16}, "nature": "Bold", "ability": "Overcoat", "item": "Leftovers", "moves": ["Foul Play", "Roost", "Taunt", "Defog"]},
 	},
 	"Manectric": {
@@ -2082,7 +2079,7 @@ var SETDEX_XY = {
 		"PU Physically Defensive": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Impish", "ability": "Intimidate", "item": "Leftovers", "moves": ["Play Rough", "Stealth Rock", "Knock Off", "Toxic"]},
 		"NU Mixed Wallbreaker": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naughty", "ability": "Sheer Force", "item": "Life Orb", "moves": ["Play Rough", "Iron Head", "Fire Blast", "Sucker Punch"]},
 		"NU Defensive": {"level": 100, "evs": {"df": 252, "at": 4, "hp": 252}, "nature": "Impish", "ability": "Intimidate", "item": "Leftovers", "moves": ["Stealth Rock", "Play Rough", "Super Fang", "Pain Split"]},
-		"RU Defensive": {"level": 100, "evs": {"df": 252, "at": 4, "hp": 252}, "nature": "Impish", "ability": "Intimidate", "item": "Leftovers", "moves": ["Play Rough", "Stealth Rock", "Baton Pass", "Swords Dance"]},
+		"RU Defensive": {"level": 100, "evs": {"df": 252, "at": 4, "hp": 252}, "nature": "Impish", "ability": "Intimidate", "item": "Leftovers", "moves": ["Play Rough", "Stealth Rock", "Super Fang", "Swords Dance"]},
 		"Uber Special Tank": {"level": 100, "evs": {"sd": 244, "at": 16, "hp": 248}, "nature": "Adamant", "ability": "Intimidate", "item": "Mawilite", "moves": ["Iron Head", "Play Rough", "Sucker Punch", "Baton Pass"]},
 		"Doubles Physical Attacker": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 252}, "nature": "Adamant", "ability": "Intimidate", "item": "Mawilite", "moves": ["Play Rough", "Iron Head", "Sucker Punch", "Protect"]},
 		"Battle Spot Singles Physical Attacker": {"level": 50, "evs": {"at": 252, "hp": 252, "sp": 4}, "nature": "Adamant", "ability": "Intimidate", "item": "Mawilite", "moves": ["Play Rough", "Sucker Punch", "Swords Dance", "Knock Off"]},
@@ -2256,7 +2253,6 @@ var SETDEX_XY = {
 	"Musharna": {
 		"NU Calm Mind": {"level": 100, "evs": {"df": 252, "hp": 240, "sp": 16}, "nature": "Bold", "ability": "Synchronize", "item": "Leftovers", "moves": ["Calm Mind", "Psyshock", "Moonlight", "Signal Beam"]},
 		"NU Stored Power": {"level": 100, "evs": {"df": 252, "hp": 240, "sp": 16}, "nature": "Bold", "ability": "Synchronize", "item": "Leftovers", "moves": ["Calm Mind", "Barrier", "Moonlight", "Stored Power"]},
-		"RU Bulky Pivot": {"level": 100, "evs": {"sd": 16, "df": 252, "hp": 240}, "nature": "Bold", "ability": "Synchronize", "item": "Colbur Berry", "moves": ["Baton Pass", "Thunder Wave", "Psyshock", "Moonlight"]},
 	},
 	"Natu": {
 		"LC Defensive": {"level": 5, "evs": {"sd": 76, "df": 156, "hp": 196, "sp": 36, "sa": 36}, "nature": "Bold", "ability": "Magic Bounce", "item": "Eviolite", "moves": ["Psychic", "Roost", "Heat Wave", "U-turn"]},
@@ -2851,7 +2847,7 @@ var SETDEX_XY = {
 	"Shedinja": {
 		"PU Swords Dance": {"level": 100, "evs": {"sd": 4, "at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "X-Scissor", "Shadow Sneak", "Will-O-Wisp"]},
 		"NU Swords Dance": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "Will-O-Wisp", "X-Scissor", "Shadow Sneak"]},
-		"UU Swords Dance / Pivot": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "X-Scissor", "Shadow Sneak", "Protect"]},
+		"UU Swords Dance": {"level": 100, "evs": {"at": 252, "sp": 252}, "ivs": {"sd": 0, "df": 0}, "nature": "Lonely", "ability": "Wonder Guard", "item": "Focus Sash", "moves": ["Swords Dance", "X-Scissor", "Shadow Sneak", "Protect"]},
 	},
 	"Shellder": {
 		"LC Shell Smash Sweeper": {"level": 5, "evs": {"df": 36, "at": 236, "hp": 36, "sp": 196}, "nature": "Impish", "ability": "Skill Link", "item": "Eviolite", "moves": ["Shell Smash", "Rock Blast", "Icicle Spear", "Ice Shard"]},
@@ -3146,7 +3142,6 @@ var SETDEX_XY = {
 	"Sylveon": {
 		"UU Choice Specs": {"level": 100, "evs": {"df": 4, "sp": 252, "sa": 252}, "nature": "Modest", "ability": "Pixilate", "item": "Choice Specs", "moves": ["Hyper Voice", "Psyshock", "Hidden Power Fire", "Shadow Ball"]},
 		"UU Cleric": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Bold", "ability": "Pixilate", "item": "Leftovers", "moves": ["Hyper Voice", "Heal Bell", "Wish", "Protect"]},
-		"OU Choice Specs": {"level": 100, "evs": {"hp": 240, "sp": 16, "sa": 252}, "nature": "Modest", "ability": "Pixilate", "item": "Choice Specs", "moves": ["Hyper Voice", "Psyshock", "Hidden Power Fire", "Baton Pass"]},
 		"Doubles Choice Specs": {"level": 100, "evs": {"df": 200, "hp": 56, "sa": 252}, "nature": "Modest", "ability": "Pixilate", "item": "Choice Specs", "moves": ["Hyper Voice", "Psyshock", "Hidden Power Ground", "Hyper Beam"]},
 		"Doubles Calm Mind": {"level": 100, "evs": {"sd": 8, "df": 164, "hp": 248, "sa": 88}, "nature": "Modest", "ability": "Pixilate", "item": "Leftovers", "moves": ["Hyper Voice", "Calm Mind", "Substitute", "Protect"]},
 		"Battle Spot Singles Choice Specs Wallbreaker": {"level": 50, "evs": {"df": 12, "hp": 236, "sp": 12, "sa": 248}, "nature": "Modest", "ability": "Pixilate", "item": "Choice Specs", "moves": ["Hyper Voice", "Psyshock", "Shadow Ball", "Hidden Power Fire"]},
@@ -3255,10 +3250,8 @@ var SETDEX_XY = {
 		"LC Baton Pass": {"level": 5, "evs": {"sd": 76, "df": 156, "hp": 236, "sp": 36}, "nature": "Bold", "ability": "Serene Grace", "item": "Eviolite", "moves": ["Baton Pass", "Nasty Plot", "Fire Blast", "Dazzling Gleam"]},
 	},
 	"Togetic": {
-		"RU Nasty Pass": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "ivs": {"sp": 30}, "nature": "Bold", "ability": "Super Luck", "item": "Eviolite", "moves": ["Nasty Plot", "Baton Pass", "Dazzling Gleam", "Roost"]},
 		"RU Support": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 252}, "nature": "Bold", "ability": "Super Luck", "item": "Eviolite", "moves": ["Roost", "Thunder Wave", "Dazzling Gleam", "Heal Bell"]},
 		"UU Support": {"level": 100, "evs": {"sd": 252, "df": 8, "hp": 248}, "nature": "Calm", "ability": "Serene Grace", "item": "Eviolite", "moves": ["Seismic Toss", "Roost", "Defog", "Heal Bell"]},
-		"UU Nasty Pass": {"level": 100, "evs": {"sd": 252, "hp": 248, "sa": 8}, "ivs": {"sp": 0}, "nature": "Sassy", "ability": "Super Luck", "item": "Eviolite", "moves": ["Nasty Plot", "Baton Pass", "Roost", "Dazzling Gleam"]},
 	},
 	"Torchic": {
 		"LC Baton Pass": {"level": 5, "evs": {"sd": 36, "df": 196, "at": 36, "sp": 236}, "nature": "Impish", "ability": "Speed Boost", "item": "Eviolite", "moves": ["Protect", "Curse", "Substitute", "Baton Pass"]},

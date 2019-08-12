@@ -28,7 +28,9 @@ var SETDEX_RBY = {
 		"UU Double Powder": {"level": 100, "moves": ["Psychic", "Mega Drain", "Sleep Powder", "Stun Spore"]},
 	},
 	"Chansey": {
-		"OU Special Wall": {"level": 100, "moves": ["Ice Beam", "Soft-Boiled", "Thunder Wave", "Thunderbolt"]},
+		"OU Reflect": {"level": 100, "moves": ["Reflect", "Seismic Toss", "Soft-Boiled", "Thunder Wave"]},
+		"OU BoltBeam": {"level": 100, "moves": ["Thunderbolt", "Ice Beam", "Soft-Boiled", "Thunder Wave"]},
+		"OU Sing / Counter": {"level": 100, "moves": ["Sing", "Seismic Toss", "Soft-Boiled", "Thunder Wave"]},
 	},
 	"Charizard": {
 		"UU Showdown Usage": {"level": 100, "moves": ["Earthquake", "Fire Blast", "Flamethrower", "Swords Dance"]},
@@ -67,7 +69,7 @@ var SETDEX_RBY = {
 		"UU Support": {"level": 100, "moves": ["Thunderbolt", "Thunder Wave", "Explosion", "Screech"]},
 	},
 	"Exeggutor": {
-		"OU Standard": {"level": 100, "moves": ["Sleep Powder", "Psychic", "Explosion", "Stun Spore"]},
+		"OU Sleeper": {"level": 100, "moves": ["Sleep Powder", "Psychic", "Explosion", "Double-Edge"]},
 	},
 	"Farfetch'd": {
 		"UU Staller?": {"level": 100, "moves": ["Sand Attack", "Substitute", "Slash", "Toxic"]},
@@ -253,7 +255,7 @@ var SETDEX_RBY = {
 		"UU Bind": {"level": 100, "moves": ["Bind", "Sleep Powder", "Stun Spore", "Mega Drain"]},
 	},
 	"Tauros": {
-		"OU Standard": {"level": 100, "moves": ["Body Slam", "Hyper Beam", "Earthquake", "Blizzard"]},
+		"OU The Bull": {"level": 100, "moves": ["Body Slam", "Hyper Beam", "Blizzard", "Earthquake"]},
 	},
 	"Tentacruel": {
 		"UU Showdown Usage": {"level": 100, "moves": ["Wrap", "Blizzard", "Surf", "Rest"]},

@@ -370,7 +370,7 @@ var SETDEX_GSC = {
 		"OU Mixed Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Lovely Kiss", "Ice Beam", "Thunder"]},
 	},
 	"Nidoqueen": {
-		"UU Showdown Usage": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Ice Beam", "Thunder", "Lovely Kiss"]},
+		"UU The Queen of UU (3 attacks)": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Thunder", "Ice Beam", "Lovely Kiss"]},
 		"OU Standard": {"level": 100, "item": "Leftovers", "moves": ["Earthquake", "Lovely Kiss", "Thunder", "Ice Beam"]},
 	},
 	"Ninetales": {
@@ -583,8 +583,8 @@ var SETDEX_GSC = {
 		"OU The Power Within": {"level": 100, "item": "Twisted Spoon", "moves": ["Hidden Power Psychic"]},
 	},
 	"Ursaring": {
-		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Return", "Rest", "Sleep Talk"]},
-		"OU Mixed Attacker": {"level": 100, "item": "Leftovers", "moves": ["Return", "Earthquake", "Zap Cannon", "Curse"]},
+		"OU Curse": {"level": 100, "item": "Leftovers", "moves": ["Curse", "Return", "Earthquake", "Roar"]},
+		"OU RestTalk": {"level": 100, "item": "Leftovers", "moves": ["Return", "Curse", "Rest", "Sleep Talk"]},
 	},
 	"Vaporeon": {
 		"OU Growth Sweeper": {"level": 100, "item": "Leftovers", "moves": ["Surf", "Growth", "Rest", "Sleep Talk"]},
