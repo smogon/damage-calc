@@ -112,11 +112,11 @@ export function getRecovery(
 
   if (recovery[1] === 0) return { recovery, text };
 
-  recovery[0] = Math.min(recovery[0], attacker.maxHP());
-  recovery[1] = Math.min(recovery[1], attacker.maxHP());
-
   const minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
   const maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
+
+  recovery[0] = Math.floor(recovery[0]);
+  recovery[1] = Math.floor(recovery[1]);
 
   text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`;
   return { recovery, text };

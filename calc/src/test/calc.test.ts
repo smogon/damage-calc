@@ -192,8 +192,8 @@ describe('calc', () => {
         '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
       );
       const recovery = result.recovery();
-      expect(recovery.recovery).toBeRange(199, 235);
-      expect(recovery.text).toBe('64.4 - 76% recovered');
+      expect(recovery.recovery).toBeRange(160, 160);
+      expect(recovery.text).toBe('51.9 - 51.9% recovered');
     });
 
     test('none', () => {
