@@ -202,8 +202,7 @@ var SETDEX_BW = {
 		"OU Special Attacker": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Levitate", "item": "Life Orb", "moves": ["U-turn", "Psyshock", "Fire Blast", "Hidden Power Fighting"]},
 	},
 	"Azumarill": {
-		"UU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 252, "sp": 4}, "nature": "Adamant", "ability": "Huge Power", "item": "Choice Band", "moves": ["Waterfall", "Aqua Jet", "Return", "Ice Punch"]},
-		"UU SubPunch": {"level": 100, "evs": {"at": 252, "hp": 252, "sp": 4}, "nature": "Adamant", "ability": "Huge Power", "item": "Leftovers", "moves": ["Substitute", "Focus Punch", "Waterfall", "Aqua Jet"]},
+		"UU Choice Band": {"level": 100, "evs": {"sd": 4, "at": 252, "hp": 168, "sp": 84}, "nature": "Adamant", "ability": "Huge Power", "item": "Choice Band", "moves": ["Aqua Jet", "Waterfall", "Double-Edge", "Ice Punch"]},
 		"OU Choice Band": {"level": 100, "evs": {"at": 252, "hp": 212, "sp": 44}, "nature": "Adamant", "ability": "Huge Power", "item": "Choice Band", "moves": ["Aqua Jet", "Waterfall", "Superpower", "Ice Punch"]},
 	},
 	"Azurill": {
@@ -320,7 +319,7 @@ var SETDEX_BW = {
 	"Bronzor": {
 		"LC Tank": {"level": 5, "evs": {"sd": 148, "df": 68, "at": 4, "hp": 220, "sp": 16, "sa": 4}, "nature": "Careful", "ability": "Levitate", "item": "Eviolite", "moves": ["Stealth Rock", "Earthquake", "Flash Cannon", "Toxic"]},
 		"LC Oran Berry + Recycle": {"level": 5, "evs": {"sd": 148, "df": 68, "at": 4, "hp": 220, "sp": 16, "sa": 4}, "nature": "Careful", "ability": "Levitate", "item": "Oran Berry", "moves": ["Recycle", "Toxic", "Earthquake", "Flash Cannon"]},
-		"NU Calm Mind": {"level": 100, "evs": {"sd": 4, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Levitate", "item": "Eviolite", "moves": ["Calm Mind", "Rest", "Flash Cannon", "Toxic"]},
+		"NU Calm Mind": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Levitate", "item": "Eviolite", "moves": ["Calm Mind", "Rest", "Flash Cannon", "Toxic"]},
 	},
 	"Budew": {
 		"LC Spiker": {"level": 5, "evs": {"sd": 36, "hp": 196, "sp": 76, "sa": 196}, "nature": "Modest", "ability": "Natural Cure", "item": "Eviolite", "moves": ["Spikes", "Giga Drain", "Sludge Bomb", "Rest"]},
@@ -688,7 +687,7 @@ var SETDEX_BW = {
 		"LC Bulky Rain Dance": {"level": 5, "evs": {"sd": 116, "df": 196, "hp": 180, "sa": 4}, "nature": "Calm", "ability": "Hydration", "item": "Eviolite", "moves": ["Rain Dance", "Surf", "Hurricane", "Rest"]},
 	},
 	"Dugtrio": {
-		"OU Trapper": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Arena Trap", "item": "Focus Sash", "moves": ["Reversal", "Earthquake", "Stone Edge", "Stealth Rock"]},
+		"OU May the Sand Force be with You": {"level": 100, "evs": {"df": 4, "at": 252, "sp": 252}, "nature": "Jolly", "ability": "Sand Force", "item": "Life Orb", "moves": ["Earthquake", "Stone Edge", "Memento", "Stealth Rock"]},
 	},
 	"Dunsparce": {
 		"NU ParaFlinch": {"level": 100, "evs": {"sd": 252, "df": 4, "hp": 252}, "nature": "Careful", "ability": "Serene Grace", "item": "Leftovers", "moves": ["Glare", "Coil", "Headbutt", "Roost"]},
@@ -1293,6 +1292,7 @@ var SETDEX_BW = {
 	},
 	"Keldeo": {
 		"OU All-Out Attacker": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Expert Belt", "moves": ["Hydro Pump", "Secret Sword", "Hidden Power Bug", "Icy Wind"]},
+		"OU Toxic + Protect": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Leftovers", "moves": ["Toxic", "Protect", "Scald", "Secret Sword"]},
 		"OU Choice Scarf": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Choice Scarf", "moves": ["Surf", "Hydro Pump", "Hidden Power Ice", "Secret Sword"]},
 		"OU Choice Specs": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Choice Specs", "moves": ["Hydro Pump", "Secret Sword", "Hidden Power Ghost", "Icy Wind"]},
 		"OU Offensive": {"level": 100, "evs": {"sd": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Justified", "item": "Life Orb", "moves": ["Calm Mind", "Hydro Pump", "Secret Sword", "Hidden Power Ghost"]},
@@ -1360,7 +1360,7 @@ var SETDEX_BW = {
 		"OU Special Life Orb": {"level": 100, "evs": {"hp": 32, "sp": 224, "sa": 252}, "nature": "Timid", "ability": "Pressure", "item": "Life Orb", "moves": ["Blizzard", "Draco Meteor", "Focus Blast", "Roost"]},
 		"OU Mixed": {"level": 100, "evs": {"at": 32, "sp": 224, "sa": 252}, "nature": "Hasty", "ability": "Pressure", "item": "Life Orb", "moves": ["Draco Meteor", "Blizzard", "Earth Power", "Outrage"]},
 		"Doubles Substitute": {"level": 100, "evs": {"hp": 32, "sp": 224, "sa": 252}, "nature": "Modest", "ability": "Pressure", "item": "Ice Gem", "moves": ["Blizzard", "Earth Power", "Substitute", "Protect"]},
-		"Doubles Choiced Attacker": {"level": 100, "evs": {"hp": 108, "sp": 152, "sa": 252}, "nature": "Modest", "ability": "Pressure", "item": "Choice Scarf", "moves": ["Blizzard", "Draco Meteor", "Earth Power", "Dragon Pulse"]},
+		"Doubles Choiced Attacker": {"level": 100, "evs": {"hp": 104, "sp": 152, "sa": 252}, "nature": "Modest", "ability": "Pressure", "item": "Choice Scarf", "moves": ["Blizzard", "Draco Meteor", "Earth Power", "Dragon Pulse"]},
 		"Doubles Bulky Attacker": {"level": 100, "evs": {"sd": 4, "hp": 252, "sa": 252}, "nature": "Modest", "ability": "Pressure", "item": "Haban Berry", "moves": ["Draco Meteor", "Blizzard", "Earth Power", "Protect"]},
 	},
 	"Kyurem-Black": {
@@ -1786,7 +1786,6 @@ var SETDEX_BW = {
 	},
 	"Murkrow": {
 		"NU Calm Mind": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Prankster", "item": "Eviolite", "moves": ["Calm Mind", "Roost", "Dark Pulse", "Feather Dance"]},
-		"NU SubSwagger": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Prankster", "item": "Eviolite", "moves": ["Substitute", "Swagger", "Roost", "Foul Play"]},
 		"RU Mixed Attacker": {"level": 100, "evs": {"at": 240, "sp": 252, "sa": 16}, "nature": "Naive", "ability": "Insomnia", "item": "Life Orb", "moves": ["Brave Bird", "Sucker Punch", "Heat Wave", "Hidden Power Grass"]},
 		"RU Stallbreaker": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Bold", "ability": "Prankster", "item": "Eviolite", "moves": ["Taunt", "Roost", "Toxic", "Foul Play"]},
 	},
@@ -2827,9 +2826,7 @@ var SETDEX_BW = {
 		"LC Substitute + Disable": {"level": 5, "evs": {"sd": 156, "df": 116, "hp": 36, "sp": 76, "sa": 116}, "nature": "Bold", "ability": "Tinted Lens", "item": "Eviolite", "moves": ["Substitute", "Disable", "Morning Sun", "Signal Beam"]},
 	},
 	"Venusaur": {
-		"OU Chlorophyll Sweeper": {"level": 100, "evs": {"df": 4, "hp": 72, "sp": 180, "sa": 252}, "ivs": {"at": 2, "sp": 30, "sa": 30}, "nature": "Timid", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Growth", "Giga Drain", "Hidden Power Fire", "Sludge Bomb"]},
-		"OU Sunny Day": {"level": 100, "evs": {"df": 4, "hp": 72, "sp": 180, "sa": 252}, "ivs": {"at": 2, "sp": 30, "sa": 30}, "nature": "Timid", "ability": "Chlorophyll", "item": "Black Sludge", "moves": ["Sunny Day", "Giga Drain", "Hidden Power Fire", "Sleep Powder"]},
-		"OU SubSeed": {"level": 100, "evs": {"sd": 244, "hp": 252, "sp": 12}, "ivs": {"at": 2, "sp": 30, "sa": 30}, "nature": "Calm", "ability": "Chlorophyll", "item": "Black Sludge", "moves": ["Leech Seed", "Substitute", "Sleep Powder", "Hidden Power Fire"]},
+		"OU Sun 'Sweeper'": {"level": 100, "evs": {"df": 4, "hp": 72, "sp": 180, "sa": 252}, "ivs": {"at": 2, "sp": 30, "sa": 30}, "nature": "Timid", "ability": "Chlorophyll", "item": "Life Orb", "moves": ["Sunny Day", "Growth", "Giga Drain", "Hidden Power Fire"]},
 	},
 	"Vespiquen": {
 		"NU Wall": {"level": 100, "evs": {"sd": 8, "df": 252, "hp": 248}, "nature": "Impish", "ability": "Pressure", "item": "Leftovers", "moves": ["Protect", "Roost", "Toxic", "Attack Order"]},

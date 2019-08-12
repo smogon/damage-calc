@@ -114,7 +114,7 @@ var SETDEX_ADV = {
 	"Cacturne": {
 		"NU Offensive Spikes": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Sand Veil", "item": "Leftovers", "moves": ["Spikes", "Giga Drain", "Hidden Power Dark", "Destiny Bond"]},
 		"NU SubPunch": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Adamant", "ability": "Sand Veil", "item": "Leftovers", "moves": ["Substitute", "Focus Punch", "Hidden Power Ghost", "Leech Seed"]},
-		"NU Support": {"level": 100, "evs": {"hp": 196, "sp": 56, "sa": 252}, "nature": "Modest", "ability": "Sand Veil", "item": "Leftovers", "moves": ["Spikes", "Encore", "Hidden Power Dark", "Needle Arm"]},
+		"NU Support": {"level": 100, "evs": {"hp": 200, "sp": 56, "sa": 252}, "nature": "Modest", "ability": "Sand Veil", "item": "Leftovers", "moves": ["Spikes", "Encore", "Hidden Power Dark", "Needle Arm"]},
 		"UU Destiny Bond": {"level": 100, "evs": {"at": 252, "hp": 4, "sp": 252}, "nature": "Jolly", "item": "Salac Berry", "moves": ["Endure", "Destiny Bond", "Focus Punch", "Hidden Power Ghost"]},
 		"OU SubSeed": {"level": 100, "evs": {"hp": 28, "sp": 228, "sa": 252}, "nature": "Timid", "item": "Leftovers", "moves": ["Leech Seed", "Substitute", "Needle Arm", "Hidden Power Ice"]},
 		"OU SubPunch": {"level": 100, "evs": {"at": 96, "hp": 160, "sa": 252}, "nature": "Quiet", "item": "Leftovers", "moves": ["Substitute", "Focus Punch", "Thunder Punch", "Leech Seed"]},
@@ -1156,7 +1156,10 @@ var SETDEX_ADV = {
 		"UU Cleric": {"level": 100, "evs": {"sd": 224, "hp": 252, "sp": 32}, "nature": "Careful", "ability": "Chlorophyll", "item": "Leftovers", "moves": ["Aromatherapy", "Sleep Powder", "Sludge Bomb", "Leech Seed"]},
 	},
 	"Volbeat": {
-		"NU Tail Glow": {"level": 100, "evs": {"hp": 4, "sp": 252, "sa": 252}, "nature": "Timid", "ability": "Swarm", "item": "Leftovers", "moves": ["Tail Glow", "Thunderbolt", "Ice Punch", "Baton Pass"]},
+		"NU Tail Glow Pass": {"level": 100, "evs": {"hp": 252, "sp": 252, "sa": 4}, "nature": "Timid", "ability": "Swarm", "item": "Leftovers", "moves": ["Tail Glow", "Baton Pass", "Substitute", "Thunderbolt"]},
+	},
+	"Voltorb": {
+		"NU Suicide Rain Lead": {"level": 100, "evs": {"at": 252, "sp": 252, "sa": 4}, "nature": "Naive", "ability": "Static", "item": "Silk Scarf", "moves": ["Rain Dance", "Thunder", "Light Screen", "Explosion"]},
 	},
 	"Wailord": {
 		"NU Specially Defensive": {"level": 100, "evs": {"sd": 252, "df": 252, "sa": 4}, "nature": "Modest", "ability": "Water Veil", "item": "Leftovers", "moves": ["Surf", "Ice Beam", "Toxic", "Rest"]},
