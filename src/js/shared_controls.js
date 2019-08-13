@@ -449,6 +449,14 @@ $(".set-selector").change(function () {
 			if (baseFormeName.substring(baseFormeName.lastIndexOf('-')) === '-Mega') {
 				baseFormeName = baseFormeName.substring(0, baseFormeName.lastIndexOf('-'));
 			}
+			// more special cases: Pokemon that have forme names containing dashes (Necrozma-Dawn-Wings, Oricorio-Pom-Pom)
+			var basePokemonWithDashedFormes = ['Necrozma', 'Oricorio'];
+			for (i = 0; i < basePokemonWithDashedFormes.length; i++) {
+				if (baseFormeName.startsWith(basePokemonWithDashedFormes[i])) {
+					baseFormeName = basePokemonWithDashedFormes[i];
+					break;
+				}
+			}
 			baseForme = pokedex[baseFormeName];
 		}
 		if (pokemon.formes) {
