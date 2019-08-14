@@ -693,11 +693,34 @@ function calcStat(poke, statName) {
 	return total;
 }
 
+var GENERATION = {
+	'1': 1, 'rb': 1, 'rby': 1,
+	'2': 2, 'gs': 2, 'gsc': 2,
+	'3': 3, 'rs': 3, 'rse': 3, 'frlg': 3, 'adv': 3,
+	'4': 4, 'dp': 4, 'dpp': 4, 'hgss': 4,
+	'5': 5, 'bw': 5, 'bw2': 5, 'b2w2': 5,
+	'6': 6, 'xy': 6, 'oras': 6,
+	'7': 7, 'sm': 7, 'usm': 7, 'usum': 7
+};
+
 var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM];
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 7;
+	var params = new URLSearchParams(window.location.search);
+	if (gen === 7) {
+		params.delete('gen');
+		params = '' + params;
+		if (window.history && window.history.replaceState) {
+			window.history.replaceState({}, document.title, window.location.pathname + (params.length ? '?' + params : ''));
+		}
+	} else {
+		params.set('gen', gen);
+		if (window.history && window.history.pushState) {
+			window.history.pushState({}, document.title, window.location.pathname + '?' + params);
+		}
+	}
 	genWasChanged = true;
 	/* eslint-enable */
 	// declaring these variables with var here makes z moves not work; TODO
@@ -985,8 +1008,10 @@ function loadCustomList(id) {
 }
 
 $(document).ready(function () {
-	$("#gen7").prop("checked", true);
-	$("#gen7").change();
+	var params = new URLSearchParams(window.location.search);
+	var g = GENERATION[params.get('gen')] || 7;
+	$("#gen" + g).prop("checked", true);
+	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
 	loadDefaultLists();

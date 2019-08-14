@@ -144,7 +144,9 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 }
 
 $(".mode").change(function () {
-	window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));
+	var params = new URLSearchParams(window.location.search);
+	params.set('mode', $(this).attr("id"));
+	window.location.replace('honkalculate' + linkExtension + '?' + params);
 });
 
 $(".notation").change(function () {
@@ -152,6 +154,11 @@ $(".notation").change(function () {
 });
 
 $(document).ready(function () {
+	var params = new URLSearchParams(window.location.search);
+	var m = params.get('mode');
+	if (m && m !== 'one-vs-one') {
+		window.location.replace('honkalculate' + linkExtension + '?' + params);
+	}
 	$(".calc-trigger").bind("change keyup", function () {
 		setTimeout(performCalculations, 0);
 	});
