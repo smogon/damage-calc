@@ -718,7 +718,10 @@ $(".gen").change(function () {
 	} else {
 		params.set('gen', gen);
 		if (window.history && window.history.pushState) {
-			window.history.pushState({}, document.title, window.location.pathname + '?' + params);
+			params.sort();
+			var path = window.location.pathname + '?' + params;
+			window.history.pushState({}, document.title, path);
+			gtag('config', 'UA-26211653-3', {'page_path': path});
 		}
 	}
 	genWasChanged = true;
