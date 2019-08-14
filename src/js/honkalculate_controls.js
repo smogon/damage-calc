@@ -238,9 +238,14 @@ function placeBsBtn() {
 
 $(".mode").change(function () {
 	if ($("#one-vs-one").prop("checked")) {
-		window.location.replace('index' + linkExtension);
+		var params = new URLSearchParams(window.location.search);
+		params.delete('mode');
+		params = '' + params;
+		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
 	} else {
-		window.location.replace('honkalculate' + linkExtension + '?mode=' + $(this).attr("id"));
+		var params = new URLSearchParams(window.location.search);
+		params.set('mode', $(this).attr("id"));
+		window.location.replace('honkalculate' + linkExtension + '?' + params);
 	}
 });
 
@@ -299,12 +304,11 @@ $(".set-selector").change(function (e) {
 
 var dtHeight, dtWidth;
 $(document).ready(function () {
-	var url = window.location.href;
-	var equalsPos = (url.indexOf('='));
-	if (equalsPos < 0) {
+	var params = new URLSearchParams(window.location.search);
+	if (!params.has('mode')) {
 		window.mode = "one-vs-all";
 	} else {
-		window.mode = url.substring(equalsPos + 1, url.length);
+		window.mode = params.get('mode');
 	}
 	$("#" + mode).prop("checked", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
