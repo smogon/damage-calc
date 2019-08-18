@@ -6722,7 +6722,7 @@ const SM: { [name: string]: Species } = extend(true, {}, XY, {
     t1: 'Rock',
     bs: { hp: 75, at: 115, df: 65, sa: 55, sd: 65, sp: 112 },
     w: 25,
-    formes: ['Lycanroc', 'Lycarnoc-Dusk', 'Lycanroc-Midnight'],
+    formes: ['Lycanroc', 'Lycanroc-Dusk', 'Lycanroc-Midnight'],
     ab: 'Sand Rush',
   },
   'Lycanroc-Dusk': {
