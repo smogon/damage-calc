@@ -790,6 +790,11 @@ const GSC: { [name: string]: MoveData } = extend(true, {}, RBY, {
     bp: 0,
     type: 'Normal',
   },
+  Morning Sun: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Special',
+  },
   Moonlight: {
     bp: 0,
     type: 'Normal',
