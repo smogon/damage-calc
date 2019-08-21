@@ -1,5 +1,6 @@
 import { Gender, Species, SPECIES } from './data/species';
 import { Type } from './data/types';
+import { Generation } from './gen';
 import { StatsTable, calcStat, STATS, DVToIV, getHPDV, shortForm, Stat } from './stats';
 import { extend } from './util';
 

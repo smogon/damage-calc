@@ -1,4 +1,5 @@
 import { NATURES } from './data/natures';
+import { Generation } from './gen';
 
 export type Stat = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe' | 'spc';
 export interface StatsTable<T> {

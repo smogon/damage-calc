@@ -43,6 +43,7 @@
 // that the correct loading order being followed.
 
 export { calculate } from './calc';
+export { Generation } from './gen';
 export { Pokemon } from './pokemon';
 export { Move } from './move';
 export { Field, Side } from './field';
@@ -54,4 +55,4 @@ export { MOVES } from './data/moves';
 export { SPECIES } from './data/species';
 export { NATURES } from './data/natures';
 export { TYPE_CHART } from './data/types';
-export { STATS, calcStat } from './stats';
+export { STATS, StatsTable, Stat, calcStat } from './stats';

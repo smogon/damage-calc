@@ -1,3 +1,4 @@
+import { Generation } from '../gen';
 import { Stat } from '../stats';
 import { Type } from './types';
 

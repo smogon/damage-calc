@@ -1,5 +1,6 @@
 import { TYPE_CHART, Type } from './data/types';
 import { Field, Terrain, Weather, Side } from './field';
+import { Generation } from './gen';
 import { isGrounded } from './mechanics/util';
 import { Move } from './move';
 import { Pokemon } from './pokemon';

@@ -1,4 +1,5 @@
 import { Field } from './field';
+import { Generation } from './gen';
 import { Move } from './move';
 import { Pokemon } from './pokemon';
 import { Result } from './result';

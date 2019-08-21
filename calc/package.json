@@ -2,7 +2,9 @@
   "name": "calc",
   "version": "0.3.0",
   "description": "Logic behind the official damage calculator for the Pokémon Showdown battle simulator",
-  "homepage": "http://pokemonshowdown.com/calc",
+  "homepage": "https://calc.pokemonshowdown.com/",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Zarel/honko-damagecalc.git"

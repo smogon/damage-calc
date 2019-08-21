@@ -1,3 +1,4 @@
+import { Generation } from '../gen';
 import { displayStat, DVToIV, getHPDV, IVToDV, STATS, calcStat, StatsTable } from '../stats';
 import { getModifiedStat } from '../mechanics/util';
 
