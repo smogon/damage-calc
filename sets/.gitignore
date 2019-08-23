@@ -1,0 +1,8 @@
+dist/
+node_modules/
+.DS_Store
+Thumbs.db
+npm-debug.log
+package-lock.json
+.tsbuildinfo
+tmp/

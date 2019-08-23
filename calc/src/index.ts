@@ -50,7 +50,7 @@ export { Field, Side } from './field';
 export { Result } from './result';
 
 export { ABILITIES } from './data/abilities';
-export { ITEMS } from './data/items';
+export { ITEMS, MEGA_STONES } from './data/items';
 export { MOVES } from './data/moves';
 export { SPECIES } from './data/species';
 export { NATURES } from './data/natures';

@@ -221,6 +221,7 @@ export const MEGA_STONES: { [species: string]: string } = {
   Cameruptite: 'Camerupt',
   'Charizardite X': 'Charizard',
   'Charizardite Y': 'Charizard',
+  Crucibellite: 'Crucibelle',
   Diancite: 'Diancie',
   Galladite: 'Gallade',
   Garchompite: 'Garchomp',
@@ -228,7 +229,7 @@ export const MEGA_STONES: { [species: string]: string } = {
   Gengarite: 'Gengar',
   Glalitite: 'Glalie',
   Gyaradosite: 'Gyarados',
-  Heracrossite: 'Heracross',
+  Heracronite: 'Heracross',
   Houndoominite: 'Houndoom',
   Kangaskhanite: 'Kangaskhan',
   Latiasite: 'Latias',
@@ -621,4 +622,4 @@ export function getMultiAttack(item: string) {
   return undefined;
 }
 
-export const ITEMS = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];
+export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM];

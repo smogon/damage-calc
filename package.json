@@ -20,7 +20,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "calc": "file:calc"
+    "calc": "file:calc",
+    "sets": "file:sets"
   },
   "devDependencies": {
     "eslint": "^6.1.0",
@@ -37,6 +38,7 @@
     "postinstall": "subpkg install"
   },
   "subPackages": [
-    "calc"
+    "calc",
+    "sets"
   ]
 }
