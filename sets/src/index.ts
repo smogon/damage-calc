@@ -247,8 +247,11 @@ async function importGen(gen: calc.Generation, date: string, dir: string, legacy
   await Promise.all(imports);
 
   const statisticsByFormat = new Map<Format, smogon.UsageStatistics | null>();
-  for (const f in numByFormat) {
-    const format = f as Format;
+  const formats = new Set([
+    ...Object.keys(numByFormat),
+    ...Object.keys(OLD_STATISTICS).map(f => Formats.fromString(f).format!),
+  ]) as Set<Format>;
+  for (const format of formats) {
     if (!statisticsByFormat.has(format)) {
       const url = getStatisticsURL(date, gen, format);
       const response = await fetch(url);
@@ -259,8 +262,10 @@ async function importGen(gen: calc.Generation, date: string, dir: string, legacy
       }
     }
 
-    const source = `smogon.com/dex/${smogon.Analyses.gen(gen)}`;
-    report(gen, format as Format, numByFormat[format], source);
+    if (numByFormat[format]) {
+      const source = `smogon.com/dex/${smogon.Analyses.gen(gen)}`;
+      report(gen, format as Format, numByFormat[format], source);
+    }
   }
 
   for (const [format, statistics] of statisticsByFormat.entries()) {
@@ -565,16 +570,12 @@ function validPokemonSet(gen: calc.Generation, format: Format, set: PokemonSet) 
   if (typeof set.level !== 'number' || set.level < 1 || set.level > 100) {
     return false;
   }
-  if (
-    !empty(set.ability) &&
-    (ABILITIES_BY_ID[gen][toID(set.ability)] || MISSING[toID(set.ability)]) !== set.ability
-  ) {
+  const a = set.ability;
+  if (!empty(a) && (ABILITIES_BY_ID[gen][toID(a)] || MISSING[toID(a)]) !== a) {
     return false;
   }
-  if (
-    !empty(set.item) &&
-    (ITEMS_BY_ID[gen][toID(set.item)] || MISSING[toID(set.item)]) !== set.item
-  ) {
+  const i = set.item;
+  if (!empty(i) && (ITEMS_BY_ID[gen][toID(i)] || MISSING[toID(i)]) !== i) {
     return false;
   }
   if (Array.isArray(set.moves)) {
