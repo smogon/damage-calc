@@ -44,35 +44,38 @@ interface Weights {
   moves: { [id: string]: number };
 }
 
-type Format =
-  | 'Ubers'
-  | 'OU'
-  | 'UU'
-  | 'RU'
-  | 'NU'
-  | 'PU'
-  | 'LC'
-  | 'Doubles'
-  | '1v1'
-  | 'ZU'
-  | 'CAP'
-  | 'BSS'
-  | 'BSD'
-  | 'LGPE OU'
-  | 'AG'
-  | 'BH'
-  | 'Monotype'
-  | 'Random'
-  | 'VGC 11'
-  | 'VGC 12'
-  | 'VGC 14'
-  | 'VGC 15'
-  | 'VGC 16'
-  | 'VGC 17'
-  | 'VGC 18'
-  | 'VGC 19';
+const FORMATS = {
+  Ubers: 'ubers',
+  OU: 'ou',
+  UU: 'uu',
+  RU: 'ru',
+  NU: 'nu',
+  PU: 'pu',
+  LC: 'lc',
+  Doubles: 'doublesou',
+  '1v1': '1v1',
+  ZU: 'zu',
+  CAP: 'cap',
+  BSS: 'battlespotsingles',
+  BSD: 'battlespotdoubles',
+  'LGPE OU': 'letsgoou',
+  AG: 'anythinggoes',
+  BH: 'balancedhackmons',
+  Monotype: 'monotype',
+  Random: 'randombattle',
+  'VGC 11': 'vgc2011',
+  'VGC 12': 'vgc2012',
+  'VGC 14': 'vgc2014',
+  'VGC 15': 'vgc2015',
+  'VGC 16': 'vgc2016',
+  'VGC 17': 'vgc2017',
+  'VGC 18': 'vgc2018',
+  'VGC 19': 'vgc2019ultraseries',
+};
 
-const FORMATS: { [id: string]: Format } = {
+type Format = keyof typeof FORMATS;
+
+const FORMATS_BY_ID: { [id: string]: Format } = {
   uber: 'Ubers',
   ubers: 'Ubers',
   ou: 'OU',
@@ -123,35 +126,6 @@ const FORMATS: { [id: string]: Format } = {
   randombattle: 'Random',
 };
 
-const PS: { [format: string]: string } = {
-  Ubers: 'ubers',
-  OU: 'ou',
-  UU: 'uu',
-  RU: 'ru',
-  NU: 'nu',
-  PU: 'pu',
-  LC: 'lc',
-  Doubles: 'doublesou',
-  '1v1': '1v1',
-  ZU: 'zu',
-  CAP: 'cap',
-  BSS: 'battlespotsingles',
-  BSD: 'battlespotdoubles',
-  'LGPE OU': 'letsgoou',
-  AG: 'anythinggoes',
-  BH: 'balancedhackmons',
-  Monotype: 'monotype',
-  Random: 'randombattle',
-  'VGC 11': 'vgc2011',
-  'VGC 12': 'vgc2012',
-  'VGC 14': 'vgc2014',
-  'VGC 15': 'vgc2015',
-  'VGC 16': 'vgc2016',
-  'VGC 17': 'vgc2017',
-  'VGC 18': 'vgc2018',
-  'VGC 19': 'vgc2019ultraseries',
-};
-
 const ABILITIES_BY_ID: Array<{ [id: string]: string }> = [];
 for (const abilities of calc.ABILITIES) {
   const map: { [id: string]: string } = {};
@@ -197,9 +171,9 @@ const Formats = new (class {
       // BUG: this will break in ~10 years when gen10 gets released...
       if (s.slice(0, 3) === 'gen') {
         gen = Number(s[3]) as calc.Generation;
-        format = FORMATS[toID(s.slice(4))];
+        format = FORMATS_BY_ID[toID(s.slice(4))];
       } else {
-        format = FORMATS[toID(s)];
+        format = FORMATS_BY_ID[toID(s)];
       }
     }
     if (!gen && format && format.startsWith('VGC')) {
@@ -561,7 +535,7 @@ const OLD_STATISTICS: { [key: string]: string } = {
 };
 
 function getStatisticsURL(date: string, gen: calc.Generation, format: Format) {
-  const f = `gen${gen}${PS[format]}`;
+  const f = `gen${gen}${FORMATS[format]}`;
   return OLD_STATISTICS[f] || smogon.Statistics.url(date, f);
 }
 
@@ -716,7 +690,7 @@ function addUsageBasedSets(
       }
     }
   }
-  report(gen, format, num, `smogon.com/stats/gen${gen}${PS[format]}`);
+  report(gen, format, num, `smogon.com/stats/gen${gen}${FORMATS[format]}`);
 }
 
 const STATS: calc.Stat[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
