@@ -325,7 +325,7 @@ async function importSets(
       for (const moveset of analysis.movesets) {
         const set = toPokemonSet(format, pokemon, moveset);
         if (validPokemonSet(gen, format, set)) {
-          if (filter(format, pokemon, set)) continue;
+          if (filter(gen, format, pokemon, set)) continue;
           sets[cleanName(moveset.name)] = set;
           numByFormat[format] = (numByFormat[format] || 0) + 1;
         } else {
@@ -381,18 +381,24 @@ function cleanName(name: string) {
   return name.replace(/"/g, `'`);
 }
 
-function filter(format: Format, pokemon: string, set: PokemonSet) {
+function filter(gen: calc.Generation, format: Format, pokemon: string, set: PokemonSet) {
   const hasMove = (m: string) => set.moves && set.moves.includes(m);
-  if (format === 'BH') return false;
-  if (MEGAS[pokemon] && MEGAS[pokemon] !== set.item) return true;
+
   if (pokemon === 'Groudon-Primal' && set.item !== 'Red Orb') return true;
-  if (pokemon === 'Kyogre-Primal' && set.item !== 'Blue Orb') return true;
+  if (pokemon === 'Kyogre-Primal' && set.item !== 'Blue Orb' && !(format === 'BH' && gen === 7)) {
+    return true;
+  }
+  if (pokemon === 'Rayquaza-Mega' && (format === 'Ubers' || !hasMove('Dragon Ascent'))) return true;
+  if (format === 'BH') return false; // Everying else is legal in 'BH'
+
+  if (MEGAS[pokemon] && MEGAS[pokemon] !== set.item) return true;
   if (pokemon === 'Necrozma-Ultra' && set.item !== 'Ultranecrozium Z') return true;
   if (pokemon === 'Greninja-Ash' && set.ability !== 'Battle Bond') return true;
   if (pokemon === 'Zygarde-Complete' && set.ability !== 'Power Construct') return true;
   if (pokemon === 'Darmanitan-Z' && set.ability !== 'Zen Mode') return true;
   if (pokemon === 'Meloetta-P' && !hasMove('Relic Song')) return true;
-  return pokemon === 'Rayquaza-Mega' && (format === 'Ubers' || !hasMove('Dragon Ascent'));
+
+  return false;
 }
 
 const THIRD_PARTY_SOURCES: {
@@ -495,7 +501,7 @@ async function addThirdPartySets(
         for (const name in json[pokemon]) {
           const set = fixThirdParty(format, pokemon, json[pokemon][name]);
           if (validPokemonSet(gen, format, set)) {
-            if (filter(format, pokemon, set)) continue;
+            if (filter(gen, format, pokemon, set)) continue;
             sets[pokemon][cleanName(name)] = set;
             num++;
           } else {
@@ -682,7 +688,7 @@ function addUsageBasedSets(
       }
       // NOTE: we shouldn't really need to check validity or filter here
       if (validPokemonSet(gen, format, set)) {
-        if (filter(format, pokemon, set)) continue;
+        if (filter(gen, format, pokemon, set)) continue;
         sets[pokemon] = { 'Showdown Usage': set };
         num++;
       } else {
