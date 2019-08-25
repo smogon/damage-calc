@@ -6,12 +6,14 @@ import * as calc from 'calc';
 import * as smogon from 'smogon';
 
 import * as missing from './missing.json';
+import * as tiers from './tiers.json';
 
 import { Response } from 'node-fetch';
 const fetch = require('node-fetch');
 const JSON5 = require('json5');
 
 const MISSING = missing as { [id: string]: string };
+const TIERS = tiers as {[gen: number]: {[id: string]: Format}};
 
 // TODO: Migrate sets to calc.StatsTable
 interface StatsTable<T> {
@@ -247,15 +249,20 @@ async function importGen(gen: calc.Generation, date: string, dir: string, legacy
     addUsageBasedSets(gen, format, statistics, setsByFormat);
   }
 
-  if (!legacy) await addThirdPartySets(gen, setsByFormat);
-
-  const weightsByFormat = getWeightsByFormat(statisticsByFormat);
-  const sets = legacy
-    ? JSON.stringify(toLegacy(gen, setsByFormat))
-    : JSON.stringify(setsByFormat, null, 2);
-  fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.json`), sets);
-  const weights = JSON.stringify(weightsByFormat, null, 2);
-  fs.writeFileSync(path.resolve(dir, `weights/gen${gen}.json`), weights);
+  if (!legacy) {
+    await addThirdPartySets(gen, setsByFormat);
+    const data = {
+      sets: setsByFormat,
+      weights: getWeightsByFormat(statisticsByFormat),
+      tiers: TIERS[gen],
+    };
+    fs.writeFileSync(path.resolve(dir, `gen${gen}.json`), JSON.stringify(data, null, 2));
+  } else {
+    const name = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM'][gen - 1];
+    const sets = JSON.stringify(toLegacy(gen, setsByFormat));
+    const js = `/* AUTOMATICALLY GENERATED, DO NOT EDIT! */\nvar SETDEX_${name} = ${sets};`;
+    fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
+  }
 }
 
 const LEGACY: { [format: string]: string } = {
@@ -283,14 +290,35 @@ const CURRENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
 function toLegacy(gen: calc.Generation, setsByFormat: { [format: string]: PokemonSets }) {
   const legacy: PokemonSets = {};
 
-  for (const format in LEGACY) {
-    const sets = setsByFormat[format];
-    if (!sets || (gen < 7 && CURRENT_ONLY.includes(format as Format))) continue;
-    for (const pokemon in sets) {
+  for (const pokemon of Object.keys(calc.SPECIES[gen]).sort()) {
+    for (const format in LEGACY) {
+      const sets = setsByFormat[format];
+      if (!sets || (gen < 7 && CURRENT_ONLY.includes(format as Format))) continue;
+      if (!sets[pokemon]) continue;
       legacy[pokemon] = legacy[pokemon] || {};
       for (const name in sets[pokemon]) {
-        legacy[pokemon][`${LEGACY[format]} ${name}`] = sets[pokemon][name];
+        legacy[pokemon][`${format}|${LEGACY[format]} ${name}`] = sets[pokemon][name];
       }
+    }
+
+    const sets = legacy[pokemon];
+    if (!sets) continue;
+
+    const sorted = Object.keys(sets);
+    const format = TIERS[gen][pokemon];
+    if (format) {
+      sorted.sort((a: string, b: string) => {
+        const formatA = a.split('|')[0] === format;
+        const formatB = b.split('|')[0] === format;
+        if (formatA === formatB) return 0;
+        if (formatA) return -1;
+        return formatB ? 1 : 0;
+      });
+    }
+
+    legacy[pokemon] = {};
+    for (const name of sorted) {
+      legacy[pokemon][name.slice(name.indexOf('|') + 1)] = sets[name];
     }
   }
 

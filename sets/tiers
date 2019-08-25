@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+const Dex = require('../../Pokemon-Showdown/.sim-dist/dex').Dex;
+
+const TIERS = {};
+
+const FORMATS = {
+	'Uber': 'Ubers',
+	'CAP LC': 'CAP',
+	'CAP NFE': 'CAP',
+	'UUBL': 'OU',
+	'NUBL': 'RU',
+	'LC Uber': 'LC',
+	'RUBL': 'UU',
+	'PUBL': 'NU',
+	'(PU)': 'ZU',
+	'(OU)': 'OU',
+};
+
+for (let gen = 1; gen <= 7; gen++) {
+	const dex = Dex.forFormat('gen' + gen + 'ou');
+	for (const k in dex.data.Pokedex) {
+		const val = dex.getTemplate(k);
+		if (!val || (typeof val.exists === 'boolean' && !val.exists) || val.gen > gen) continue;
+		if (['Illegal', 'Unreleased', 'NFE'].includes(val.tier)) continue;
+		if (val.tier.startsWith('CAP') && gen < 4) continue;
+		TIERS[gen] = (TIERS[gen] || {});
+		TIERS[gen][Dex.getId(val)] = FORMATS[val.tier] || val.tier;
+	}
+}
+
+console.log(JSON.stringify(TIERS, null, 2));
