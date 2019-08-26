@@ -24,7 +24,7 @@
     "sets": "file:sets"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
+    "eslint": "^6.2.2",
     "subpkg": "^0.0.1"
   },
   "scripts": {

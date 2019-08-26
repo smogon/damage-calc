@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/json5": "0.0.30",
-    "@types/node": "^12.6.8",
+    "@types/node": "^12.7.2",
     "@types/node-fetch": "^2.5.0",
     "calc": "file:../calc",
     "json5": "^2.1.0",
@@ -27,7 +27,7 @@
     "source-map-support": "^0.5.13"
   },
   "devDependencies": {
-    "gts": "^1.0.0",
+    "gts": "^1.1.0",
     "typescript": "^3.5.3"
   },
   "scripts": {
