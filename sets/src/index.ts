@@ -305,7 +305,7 @@ function toLegacy(gen: calc.Generation, setsByFormat: { [format: string]: Pokemo
     if (!sets) continue;
 
     const sorted = Object.keys(sets);
-    const format = TIERS[gen][pokemon];
+    const format = TIERS[gen][toID(pokemon)];
     if (format) {
       sorted.sort((a: string, b: string) => {
         const formatA = a.split('|')[0] === format;
