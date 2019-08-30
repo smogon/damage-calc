@@ -17,13 +17,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@types/json5": "0.0.30",
     "@types/node": "^12.7.2",
-    "@types/node-fetch": "^2.5.0",
+    "@pokemon-showdown/sets": "file:../../Pokemon-Showdown/tools/set-import/sets",
     "calc": "file:../calc",
-    "json5": "^2.1.0",
-    "node-fetch": "^2.6.0",
-    "smogon": "^0.0.2",
     "source-map-support": "^0.5.13"
   },
   "devDependencies": {

@@ -5,4 +5,4 @@ const path = require('path');
 const sets = require('./dist/index');
 
 const dir = path.resolve(__dirname, process.argv[2] || '../src/js/data');
-(async () => { await sets.importAll(dir, true); })().catch(err => console.error(err));
+(async () => { await sets.importAll(dir); })().catch(err => console.error(err));
