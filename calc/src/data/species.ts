@@ -5410,7 +5410,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     canEvolve: true,
     ab: 'Blaze',
   },
-  Flabebe: {
+  'Flabébé': {
     t1: 'Fairy',
     bs: {hp: 44, at: 38, df: 39, sa: 61, sd: 79, sp: 42},
     w: 0.1,

@@ -66,11 +66,12 @@ export async function importAll(dir: string) {
       for (const format in FORMATS) {
         const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
         if (!data || !data.sets || (gen < 7 && CURRENT_ONLY.includes(format as Format))) continue;
+        const forme = toForme(pokemon);
         const smogon = data.sets['smogon.com/dex'];
-        if (smogon && smogon[pokemon]) {
+        if (smogon && smogon[forme]) {
           setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
-          for (const name in smogon[pokemon]) {
-            setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(smogon[pokemon][name]);
+          for (const name in smogon[forme]) {
+            setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(smogon[forme][name]);
           }
         } else {
           const eligible =
@@ -81,10 +82,10 @@ export async function importAll(dir: string) {
           if (!eligible) continue;
 
           const usage = data.sets['smogon.com/stats'];
-          if (usage && usage[pokemon]) {
+          if (usage && usage[forme]) {
             setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
-            for (const name in usage[pokemon]) {
-              setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(usage[pokemon][name]);
+            for (const name in usage[forme]) {
+              setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(usage[forme][name]);
             }
           }
         }
@@ -116,6 +117,18 @@ export async function importAll(dir: string) {
     const js = `${comment}\nvar SETDEX_${GENS[gen - 1]} = ${sets};`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
   }
+}
+
+const FORMES: {[name: string]: string} = {
+  'Aegislash-Blade': 'Aegislash',
+  'Aegislash-Shield': 'Aegislash',
+  'Wishiwashi-School': 'Wishiwashi',
+  'Minior-Meteor': 'Minior',
+}
+
+function toForme(pokemon: string) {
+  if (pokemon.endsWith('-Totem')) return pokemon.slice(0, -6);
+  return FORMES[pokemon] || pokemon;
 }
 
 type ID = '' | string & { __isID: true };
