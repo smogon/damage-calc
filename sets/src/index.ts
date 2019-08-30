@@ -111,7 +111,7 @@ export async function importAll(dir: string) {
       }
     }
 
-    const comment = '/* AUTOMATICALLY GENERATED, DO NOT EDIT! */';
+    const comment = '/* AUTOMATICALLY GENERATED FROM @pokemon-showdown/sets, DO NOT EDIT! */';
     const sets = JSON.stringify(setsByPokemon, null, 2); // FIXME
     const js = `${comment}\nvar SETDEX_${GENS[gen - 1]} = ${sets};`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
