@@ -272,7 +272,27 @@ describe('calc', () => {
       );
     });
   });
+  describe('water absorb', () => {
+    test('gen 3', () => {
+      const cacturne = new Pokemon(3, 'Cacturne', {
+        ability: 'Sand Veil',
+      });
+      const blastoise = new Pokemon(3, 'Blastoise', {
+        evs: { spa: 252 },
+      });
+      const surf = new Move(3, 'Surf');
 
+      let result = calculate(3, blastoise, cacturne, surf);
+      expect(result.damage).toBeRange(88, 104);
+      expect(result.desc()).toBe(
+        '252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (31.3 - 37%) -- 76.6% chance to 3HKO'
+      );
+
+      cacturne.ability = 'Water Absorb';
+      result = calculate(3, blastoise, cacturne, surf);
+      expect(result.damage).toBeRange(0, 0);
+    });
+  });
   describe('mold breaker', () => {
     test('gen 4', () => {
       const pinsir = new Pokemon(4, 'Pinsir', {
