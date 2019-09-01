@@ -116,7 +116,7 @@ function calculateModern(
       description.attackerAbility = attacker.ability;
     }
   }
-  if (moveIgnoresAbility) {
+  if (moveIgnoresAbility && !defenderIgnoresAbility) {
     defender.ability = '';
   }
 
