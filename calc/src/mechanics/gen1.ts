@@ -104,7 +104,6 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
     baseDamage = Math.floor(baseDamage * 1.5);
   }
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
-  // If baseDamage >= 768, don't apply random factor? upokecenter says this, but nobody else does
   for (let i = 217; i <= 255; i++) {
     damage[i - 217] = Math.floor((baseDamage * i) / 255);
   }
