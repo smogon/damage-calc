@@ -1,6 +1,6 @@
 {
-  "name": "calc",
-  "version": "0.1.0",
+  "name": "@pokemon-showdown/calc",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Logic behind the official damage calculator for the Pokémon Showdown battle simulator",
