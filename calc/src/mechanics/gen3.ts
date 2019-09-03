@@ -249,7 +249,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     }
   }
 
-  if (field.gameType !== 'Singles' && move.isSpread) {
+  if (field.gameType !== 'Singles' && move.isSpread && move.isSpread !== 'allAdjacent') {
     baseDamage = Math.floor(baseDamage / 2);
   }
 

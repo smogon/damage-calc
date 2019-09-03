@@ -20,7 +20,7 @@ export class Move {
   type: Type;
   category: Category;
   hasSecondaryEffect: boolean;
-  isSpread: boolean;
+  isSpread: boolean | 'allAdjacent';
   makesContact: boolean;
   hasRecoil?: Recoil;
   isCrit: boolean;
@@ -93,7 +93,7 @@ export class Move {
     this.type = data.type;
     this.category = data.category || 'Status';
     this.hasSecondaryEffect = !!data.hasSecondaryEffect;
-    this.isSpread = !!data.isSpread;
+    this.isSpread = data.isSpread === 'allAdjacent' ? data.isSpread : !!data.isSpread;
     this.makesContact = !!data.makesContact;
     this.hasRecoil = data.hasRecoil;
     this.isCrit = !!options.isCrit || !!data.alwaysCrit;

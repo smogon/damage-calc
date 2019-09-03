@@ -272,6 +272,36 @@ describe('calc', () => {
       );
     });
   });
+  describe('gen 3 spread', () => {
+    test('allAdjacent', () => {
+      const gengar = new Pokemon(3, 'Gengar', { nature: 'Mild', evs: { atk: 100 } });
+      const blissey = new Pokemon(3, 'Chansey', {
+        item: 'Leftovers',
+        nature: 'Bold',
+        evs: { hp: 252, def: 252 },
+      });
+      const field = new Field({ gameType: 'Doubles' });
+      const result = calculate(3, gengar, blissey, new Move(3, 'Explosion'), field);
+      expect(result.damage).toBeRange(578, 681);
+      expect(result.desc()).toBe(
+        '100 Atk Gengar Explosion vs. 252 HP / 252+ Def Chansey: 578-681 (82.1 - 96.7%) -- guaranteed 2HKO after Leftovers recovery'
+      );
+    });
+    test('allAdjacentFoes', () => {
+      const gengar = new Pokemon(3, 'Gengar', { nature: 'Modest', evs: { spa: 252 } });
+      const blissey = new Pokemon(3, 'Chansey', {
+        item: 'Leftovers',
+        nature: 'Bold',
+        evs: { hp: 252, def: 252 },
+      });
+      const field = new Field({ gameType: 'Doubles' });
+      const result = calculate(3, gengar, blissey, new Move(3, 'Blizzard'), field);
+      expect(result.damage).toBeRange(69, 82);
+      expect(result.desc()).toBe(
+        '252+ SpA Gengar Blizzard vs. 252 HP / 0 SpD Chansey: 69-82 (9.8 - 11.6%)'
+      );
+    });
+  });
   describe('water absorb', () => {
     test('gen 3', () => {
       const cacturne = new Pokemon(3, 'Cacturne', {

@@ -9,7 +9,7 @@ export interface MoveData {
   readonly type: Type;
   readonly category?: Category;
   readonly hasSecondaryEffect?: boolean;
-  readonly isSpread?: boolean;
+  readonly isSpread?: boolean | 'allAdjacent';
   readonly makesContact?: boolean;
   readonly hasRecoil?: Recoil;
   readonly alwaysCrit?: boolean;
@@ -166,13 +166,13 @@ const RBY: { [name: string]: MoveData } = {
     bp: 100,
     type: 'Ground',
     category: 'Physical',
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   Explosion: {
     bp: 170,
     type: 'Normal',
     category: 'Physical',
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   'Fire Blast': {
     bp: 120,
@@ -369,7 +369,7 @@ const RBY: { [name: string]: MoveData } = {
     bp: 130,
     type: 'Normal',
     category: 'Physical',
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   Sing: {
     bp: 0,
@@ -1488,7 +1488,7 @@ const DPP: { [name: string]: MoveData } = extend(true, {}, ADV, {
     type: 'Electric',
     category: 'Special',
     hasSecondaryEffect: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   Dive: { bp: 80 },
   'Double Hit': {
@@ -1673,7 +1673,7 @@ const DPP: { [name: string]: MoveData } = extend(true, {}, ADV, {
     type: 'Fire',
     category: 'Special',
     hasSecondaryEffect: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   'Leaf Blade': { bp: 90 },
   'Leaf Storm': {
@@ -1890,6 +1890,7 @@ const DPP: { [name: string]: MoveData } = extend(true, {}, ADV, {
     makesContact: true,
     hasPriority: true,
   },
+  Surf: { isSpread: 'allAdjacent' },
   Switcheroo: {
     bp: 0,
     type: 'Dark',
@@ -1998,7 +1999,7 @@ const BW: { [name: string]: MoveData } = extend(true, {}, DPP, {
     type: 'Ground',
     category: 'Physical',
     hasSecondaryEffect: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   'Bullet Seed': { bp: 25 },
   'Chip Away': {
@@ -2338,7 +2339,7 @@ const BW: { [name: string]: MoveData } = extend(true, {}, DPP, {
     type: 'Fire',
     category: 'Special',
     hasSecondaryEffect: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
     isBullet: true,
   },
   'Secret Sword': {
@@ -2366,7 +2367,7 @@ const BW: { [name: string]: MoveData } = extend(true, {}, DPP, {
     type: 'Poison',
     category: 'Special',
     hasSecondaryEffect: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   'Smack Down': {
     bp: 50,
@@ -2414,6 +2415,7 @@ const BW: { [name: string]: MoveData } = extend(true, {}, DPP, {
     bp: 70,
     type: 'Psychic',
     category: 'Special',
+    isSpread: 'allAdjacent',
   },
   Tackle: { bp: 50 },
   'Tail Slap': {
@@ -2497,7 +2499,7 @@ const XY: { [name: string]: MoveData } = extend(true, {}, BW, {
     type: 'Normal',
     category: 'Special',
     isSound: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   Chatter: { bp: 65 },
   Crabhammer: { bp: 100 },
@@ -2673,12 +2675,13 @@ const XY: { [name: string]: MoveData } = extend(true, {}, BW, {
     category: 'Special',
     givesHealth: true,
     percentHealed: 0.5,
+    isSpread: 'allAdjacent',
   },
   'Petal Blizzard': {
     bp: 90,
     type: 'Grass',
     category: 'Physical',
-    isSpread: true,
+    isSpread: 'allAdjacent',
   },
   'Phantom Force': {
     bp: 90,
@@ -2857,7 +2860,7 @@ const SM: { [name: string]: MoveData } = extend(true, {}, XY, {
     type: 'Dark',
     category: 'Physical',
     makesContact: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
     zp: 120,
   },
   'Bubble Beam': { zp: 120 },
@@ -3213,7 +3216,7 @@ const SM: { [name: string]: MoveData } = extend(true, {}, XY, {
     bp: 150,
     type: 'Fire',
     category: 'Special',
-    isSpread: true,
+    isSpread: 'allAdjacent',
     hasRecoil: true,
     zp: 200,
   },
@@ -3461,7 +3464,7 @@ const SM: { [name: string]: MoveData } = extend(true, {}, XY, {
     type: 'Water',
     category: 'Special',
     isSound: true,
-    isSpread: true,
+    isSpread: 'allAdjacent',
     zp: 175,
   },
   'Spectral Thief': {
