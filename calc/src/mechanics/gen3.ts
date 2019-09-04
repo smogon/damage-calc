@@ -249,9 +249,8 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     }
   }
 
-  if (field.gameType !== 'Singles' && move.isSpread) {
-    // some sources say 3/4, some say 2/3, some say 1/2...using 3/4 for now since that's what DPP+ use
-    baseDamage = Math.floor((baseDamage * 3) / 4);
+  if (field.gameType !== 'Singles' && move.isSpread && move.isSpread !== 'allAdjacent') {
+    baseDamage = Math.floor(baseDamage / 2);
   }
 
   if (
@@ -274,7 +273,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.attackerAbility = 'Flash Fire';
   }
 
-  baseDamage = Math.max(1, baseDamage) + 2;
+  baseDamage = (move.category === 'Physical' ? Math.max(1, baseDamage) : baseDamage) + 2;
 
   if (isCritical) {
     baseDamage *= 2;

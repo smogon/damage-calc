@@ -23,17 +23,17 @@ export class Field {
       weather?: Weather;
       terrain?: Terrain;
       isGravity?: boolean;
-      attackerSide: Partial<Side>;
-      defenderSide: Partial<Side>;
-    } = { attackerSide: {}, defenderSide: {} }
+      attackerSide?: Partial<Side>;
+      defenderSide?: Partial<Side>;
+    } = {}
   ) {
     this.gameType = field.gameType || 'Singles';
     this.terrain = field.terrain;
     this.weather = field.weather;
     this.isGravity = !!field.isGravity;
 
-    this.attackerSide = new Side(field.attackerSide);
-    this.defenderSide = new Side(field.defenderSide);
+    this.attackerSide = new Side(field.attackerSide || {});
+    this.defenderSide = new Side(field.defenderSide || {});
   }
 
   hasWeather(...weathers: Weather[]) {
