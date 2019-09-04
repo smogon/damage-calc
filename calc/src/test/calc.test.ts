@@ -236,6 +236,17 @@ describe('calc', () => {
       );
     });
 
+    test('gen 2 struggle', () => {
+      const attacker = new Pokemon(2, 'Skarmory', {boosts: {atk: 6, def: 6}});
+      const defender = new Pokemon(2, 'Skarmory', {boosts: {atk: 6, def: 6}});
+      const move = new Move(2, 'Struggle');
+      const result = calculate(2, attacker, defender, move);
+      expect(result.damage).toBeRange(37, 44);
+      expect(result.desc()).toBe(
+        '+6 Skarmory Struggle vs. +6 Skarmory: 37-44 (11.1 - 13.2%) -- possible 8HKO'
+      );
+    });
+
     test('zmove criticals', () => {
       const zMove = new Move(7, 'Wood Hammer', { useZ: true, isCrit: true });
       const result = calculate(7, ABOMASNOW, HOOPA, zMove);
