@@ -1,10 +1,10 @@
-import { TYPE_CHART } from '../data/types';
-import { RawDesc } from '../desc';
-import { Field } from '../field';
-import { Move } from '../move';
-import { Pokemon } from '../pokemon';
-import { Result } from '../result';
-import { getModifiedStat, getFinalSpeed } from './util';
+import {TYPE_CHART} from '../data/types';
+import {RawDesc} from '../desc';
+import {Field} from '../field';
+import {Move} from '../move';
+import {Pokemon} from '../pokemon';
+import {Result} from '../result';
+import {getModifiedStat, getFinalSpeed} from './util';
 
 const RBY = 1;
 

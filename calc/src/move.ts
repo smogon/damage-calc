@@ -1,7 +1,7 @@
-import { Category, getZMoveName, MoveData, MOVES, Recoil } from './data/moves';
-import { Type } from './data/types';
-import { Generation } from './gen';
-import { extend } from './util';
+import {Category, getZMoveName, MoveData, MOVES, Recoil} from './data/moves';
+import {Type} from './data/types';
+import {Generation} from './gen';
+import {extend} from './util';
 
 export class Move {
   gen: Generation;
@@ -55,12 +55,7 @@ export class Move {
     } = {}
   ) {
     this.originalName = name;
-    let data: MoveData & { name: string } = extend(
-      true,
-      { name },
-      MOVES[gen][name],
-      options.overrides
-    );
+    let data: MoveData & {name: string} = extend(true, {name}, MOVES[gen][name], options.overrides);
 
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useZ && 'zp' in data) {

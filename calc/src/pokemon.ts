@@ -1,8 +1,8 @@
-import { Gender, Species, SPECIES } from './data/species';
-import { Type } from './data/types';
-import { Generation } from './gen';
-import { StatsTable, calcStat, STATS, DVToIV, getHPDV, shortForm, Stat } from './stats';
-import { extend } from './util';
+import {Gender, Species, SPECIES} from './data/species';
+import {Type} from './data/types';
+import {Generation} from './gen';
+import {StatsTable, calcStat, STATS, DVToIV, getHPDV, shortForm, Stat} from './stats';
+import {extend} from './util';
 
 export type Status =
   | 'Healthy'
@@ -194,8 +194,8 @@ export class Pokemon {
     return extend(
       true,
       {},
-      { hp: val, atk: val, def: val, spe: val },
-      gen < 2 ? { spc: val } : { spa: val, spd: val },
+      {hp: val, atk: val, def: val, spe: val},
+      gen < 2 ? {spc: val} : {spa: val, spd: val},
       current
     );
   }

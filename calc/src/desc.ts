@@ -1,10 +1,10 @@
-import { TYPE_CHART, Type } from './data/types';
-import { Field, Terrain, Weather, Side } from './field';
-import { Generation } from './gen';
-import { isGrounded } from './mechanics/util';
-import { Move } from './move';
-import { Pokemon } from './pokemon';
-import { error } from './util';
+import {TYPE_CHART, Type} from './data/types';
+import {Field, Terrain, Weather, Side} from './field';
+import {Generation} from './gen';
+import {isGrounded} from './mechanics/util';
+import {Move} from './move';
+import {Pokemon} from './pokemon';
+import {error} from './util';
 
 export interface RawDesc {
   HPEVs?: string;
@@ -111,7 +111,7 @@ export function getRecovery(
     recovery[1] += Math.min(maxDamage * move.percentHealed!, max);
   }
 
-  if (recovery[1] === 0) return { recovery, text };
+  if (recovery[1] === 0) return {recovery, text};
 
   const minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
   const maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
@@ -120,7 +120,7 @@ export function getRecovery(
   recovery[1] = Math.floor(recovery[1]);
 
   text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`;
-  return { recovery, text };
+  return {recovery, text};
 }
 
 // TODO: return recoil damage as exact HP
@@ -221,7 +221,7 @@ export function getRecoil(
     text = '50% recoil damage';
   }
 
-  return { recoil, text };
+  return {recoil, text};
 }
 
 export function getKOChance(
@@ -235,11 +235,11 @@ export function getKOChance(
 ) {
   if (isNaN(damage[0])) {
     error(err, 'damage[0] must be a number.');
-    return { chance: 0, n: 0, text: '' };
+    return {chance: 0, n: 0, text: ''};
   }
   if (damage[damage.length - 1] === 0) {
     error(err, 'damage[damage.length - 1] === 0.');
-    return { chance: 0, n: 0, text: '' };
+    return {chance: 0, n: 0, text: ''};
   }
 
   // Code doesn't really work if these aren't set.
@@ -247,7 +247,7 @@ export function getKOChance(
   if (move.metronomeCount === undefined) move.metronomeCount = 1;
 
   if (damage[0] >= defender.maxHP() && (move.usedTimes === 1 && move.metronomeCount === 1)) {
-    return { chance: 1, n: 1, text: 'guaranteed OHKO' };
+    return {chance: 1, n: 1, text: 'guaranteed OHKO'};
   }
 
   const hazards = getHazards(gen, defender, field.defenderSide);
@@ -280,7 +280,7 @@ export function getKOChance(
       toxicCounter
     );
     if (chance === 1) {
-      return { chance, n: 1, text: `guaranteed OHKO${afterText}` };
+      return {chance, n: 1, text: `guaranteed OHKO${afterText}`};
     } else if (chance > 0) {
       return {
         chance,
@@ -300,7 +300,7 @@ export function getKOChance(
         toxicCounter
       );
       if (chance === 1) {
-        return { chance, n: i, text: `guaranteed ${i}HKO${afterText}` };
+        return {chance, n: i, text: `guaranteed ${i}HKO${afterText}`};
       } else if (chance > 0) {
         return {
           chance,
@@ -315,12 +315,12 @@ export function getKOChance(
         predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
         defender.curHP - hazards.damage
       ) {
-        return { chance: 1, n: i, text: `guaranteed ${i}HKO${afterText}` };
+        return {chance: 1, n: i, text: `guaranteed ${i}HKO${afterText}`};
       } else if (
         predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
         defender.curHP - hazards.damage
       ) {
-        return { n: i, text: `possible ${i}HKO${afterText}` };
+        return {n: i, text: `possible ${i}HKO${afterText}`};
       }
     }
   } else {
@@ -376,12 +376,12 @@ export function getKOChance(
       ) >=
       defender.curHP - hazards.damage
     ) {
-      return { n: move.usedTimes, text: `possible KO in ${move.usedTimes} turns${afterText}` };
+      return {n: move.usedTimes, text: `possible KO in ${move.usedTimes} turns${afterText}`};
     }
-    return { n: move.usedTimes, text: 'not a KO' };
+    return {n: move.usedTimes, text: 'not a KO'};
   }
 
-  return { chance: 0, n: 0, text: '' };
+  return {chance: 0, n: 0, text: ''};
 }
 
 function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
@@ -419,7 +419,7 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
     damage = 0;
   }
 
-  return { damage, texts };
+  return {damage, texts};
 }
 
 function getEndOfTurn(
@@ -566,7 +566,7 @@ function getEndOfTurn(
     texts.push('Sea of Fire damage');
   }
 
-  return { damage, texts };
+  return {damage, texts};
 }
 
 function computeKOChance(

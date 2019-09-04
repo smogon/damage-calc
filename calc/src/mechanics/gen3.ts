@@ -1,12 +1,12 @@
-import { getItemBoostType } from '../data/items';
-import { NATURES } from '../data/natures';
-import { TYPE_CHART } from '../data/types';
-import { RawDesc } from '../desc';
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field } from '../field';
-import { Result } from '../result';
-import { displayStat } from '../stats';
+import {getItemBoostType} from '../data/items';
+import {NATURES} from '../data/natures';
+import {TYPE_CHART} from '../data/types';
+import {RawDesc} from '../desc';
+import {Pokemon} from '../pokemon';
+import {Move} from '../move';
+import {Field} from '../field';
+import {Result} from '../result';
+import {displayStat} from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,

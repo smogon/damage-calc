@@ -1,6 +1,6 @@
-import { Generation } from '../gen';
-import { displayStat, DVToIV, getHPDV, IVToDV, STATS, calcStat, StatsTable } from '../stats';
-import { getModifiedStat } from '../mechanics/util';
+import {Generation} from '../gen';
+import {displayStat, DVToIV, getHPDV, IVToDV, STATS, calcStat, StatsTable} from '../stats';
+import {getModifiedStat} from '../mechanics/util';
 
 describe('stats', () => {
   test('displayStat', () => {
@@ -23,7 +23,7 @@ describe('stats', () => {
       spc: 298,
       spe: 298,
     };
-    const ADV: StatsTable<number> = { hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299 };
+    const ADV: StatsTable<number> = {hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299};
     for (let gen = 1; gen <= 7; gen++) {
       for (const stat of STATS[gen]) {
         const val = calcStat(gen as Generation, stat, 100, 31, 252, 100, 'Adamant');

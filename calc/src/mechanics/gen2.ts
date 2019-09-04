@@ -1,11 +1,11 @@
-import { getItemBoostType } from '../data/items';
-import { TYPE_CHART } from '../data/types';
-import { RawDesc } from '../desc';
-import { Field } from '../field';
-import { Move } from '../move';
-import { Pokemon } from '../pokemon';
-import { Result } from '../result';
-import { getModifiedStat, getFinalSpeed, getMoveEffectiveness } from './util';
+import {getItemBoostType} from '../data/items';
+import {TYPE_CHART} from '../data/types';
+import {RawDesc} from '../desc';
+import {Field} from '../field';
+import {Move} from '../move';
+import {Pokemon} from '../pokemon';
+import {Result} from '../result';
+import {getModifiedStat, getFinalSpeed, getMoveEffectiveness} from './util';
 
 const GSC = 2;
 

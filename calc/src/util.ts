@@ -8,7 +8,7 @@ export function error(err: boolean, msg: string) {
 
 // jQuery JavaScript Library v2.0.3
 // Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
-const class2Type: { [c: string]: string } = {
+const class2Type: {[c: string]: string} = {
   '[object Boolean]': 'boolean',
   '[object Number]': 'number',
   '[object String]': 'string',

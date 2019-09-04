@@ -1,8 +1,8 @@
-import { Move } from '../move';
+import {Move} from '../move';
 
 describe('Move', () => {
   test('clone', () => {
-    const m = new Move(7, 'Blizzard', { useZ: true });
+    const m = new Move(7, 'Blizzard', {useZ: true});
     expect(m.name).toBe('Subzero Slammer');
     expect(m.bp).toBe(185);
 
