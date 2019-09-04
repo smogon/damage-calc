@@ -237,8 +237,8 @@ describe('calc', () => {
     });
 
     test('gen 2 struggle', () => {
-      const attacker = new Pokemon(2, 'Skarmory', {boosts: {atk: 6, def: 6}});
-      const defender = new Pokemon(2, 'Skarmory', {boosts: {atk: 6, def: 6}});
+      const attacker = new Pokemon(2, 'Skarmory', { boosts: { atk: 6, def: 6 } });
+      const defender = new Pokemon(2, 'Skarmory', { boosts: { atk: 6, def: 6 } });
       const move = new Move(2, 'Struggle');
       const result = calculate(2, attacker, defender, move);
       expect(result.damage).toBeRange(37, 44);
