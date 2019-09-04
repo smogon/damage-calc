@@ -123,11 +123,13 @@ function findDamageResult(resultMoveObj) {
 function checkStatBoost(p1, p2) {
 	if ($('#StatBoostL').prop("checked")) {
 		for (var stat in p1.boosts) {
+			if (stat === 'hp') continue;
 			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
 		}
 	}
 	if ($('#StatBoostR').prop("checked")) {
 		for (var stat in p2.boosts) {
+			if (stat === 'hp') continue;
 			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
 		}
 	}

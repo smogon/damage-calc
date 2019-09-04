@@ -160,10 +160,11 @@ export function checkDownload(source: Pokemon, target: Pokemon) {
 
 export function countBoosts(gen: Generation, boosts: StatsTable<number>) {
   let sum = 0;
-  for (let i = 0; i < STATS[gen].length; i++) {
-    if (boosts[STATS[gen][i]]) {
-      sum += boosts[STATS[gen][i]]!;
-    }
+  // NOTE: starting from 1 because HP is not boostable
+  for (let i = 1; i < STATS[gen].length; i++) {
+    // Only positive boosts are counted
+    const boost = boosts[STATS[gen][i]];
+    if (boost && boost > 0) sum += boost;
   }
   return sum;
 }
