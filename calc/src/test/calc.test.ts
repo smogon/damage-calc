@@ -1,7 +1,7 @@
-import { calculate } from '../calc';
-import { Pokemon } from '../pokemon';
-import { Move } from '../move';
-import { Field } from '../field';
+import {calculate} from '../calc';
+import {Pokemon} from '../pokemon';
+import {Move} from '../move';
+import {Field} from '../field';
 
 declare global {
   namespace jest {
@@ -34,14 +34,14 @@ const ABOMASNOW = new Pokemon(7, 'Abomasnow', {
   item: 'Icy Rock',
   ability: 'Snow Warning',
   nature: 'Hasty',
-  evs: { atk: 252, spd: 4, spe: 252 },
+  evs: {atk: 252, spd: 4, spe: 252},
 });
 
 const HOOPA = new Pokemon(7, 'Hoopa-Unbound', {
   item: 'Choice Band',
   ability: 'Magician',
   nature: 'Jolly',
-  evs: { hp: 32, atk: 224, spe: 252 },
+  evs: {hp: 32, atk: 224, spe: 252},
 });
 
 describe('calc', () => {
@@ -62,7 +62,7 @@ describe('calc', () => {
       const result = calculate(
         2,
         new Pokemon(2, 'Gengar'),
-        new Pokemon(2, 'Chansey', { item: 'Leftovers' }),
+        new Pokemon(2, 'Chansey', {item: 'Leftovers'}),
         new Move(2, 'Dynamic Punch')
       );
       expect(result.damage).toBeRange(304, 358);
@@ -75,12 +75,12 @@ describe('calc', () => {
         3,
         new Pokemon(3, 'Gengar', {
           nature: 'Mild',
-          evs: { atk: 100 },
+          evs: {atk: 100},
         }),
         new Pokemon(3, 'Chansey', {
           item: 'Leftovers',
           nature: 'Bold',
-          evs: { hp: 252, def: 252 },
+          evs: {hp: 252, def: 252},
         }),
         new Move(3, 'Focus Punch')
       );
@@ -95,13 +95,13 @@ describe('calc', () => {
         new Pokemon(4, 'Gengar', {
           item: 'Choice Specs',
           nature: 'Timid',
-          evs: { spa: 252 },
-          boosts: { spa: 1 },
+          evs: {spa: 252},
+          boosts: {spa: 1},
         }),
         new Pokemon(4, 'Chansey', {
           item: 'Leftovers',
           nature: 'Calm',
-          evs: { hp: 252, spd: 252 },
+          evs: {hp: 252, spd: 252},
         }),
         new Move(4, 'Focus Blast')
       );
@@ -116,13 +116,13 @@ describe('calc', () => {
         new Pokemon(5, 'Gengar', {
           item: 'Choice Specs',
           nature: 'Timid',
-          evs: { spa: 252 },
-          boosts: { spa: 1 },
+          evs: {spa: 252},
+          boosts: {spa: 1},
         }),
         new Pokemon(5, 'Chansey', {
           item: 'Eviolite',
           nature: 'Calm',
-          evs: { hp: 252, spd: 252 },
+          evs: {hp: 252, spd: 252},
         }),
         new Move(5, 'Focus Blast')
       );
@@ -137,12 +137,12 @@ describe('calc', () => {
         new Pokemon(6, 'Gengar', {
           item: 'Life Orb',
           nature: 'Modest',
-          evs: { spa: 252 },
+          evs: {spa: 252},
         }),
         new Pokemon(6, 'Chansey', {
           item: 'Eviolite',
           nature: 'Bold',
-          evs: { hp: 252, def: 252 },
+          evs: {hp: 252, def: 252},
         }),
         new Move(6, 'Sludge Bomb')
       );
@@ -157,14 +157,14 @@ describe('calc', () => {
         new Pokemon(7, 'Gengar', {
           item: 'Life Orb',
           nature: 'Modest',
-          evs: { spa: 252 },
-          boosts: { spa: 3 },
+          evs: {spa: 252},
+          boosts: {spa: 3},
         }),
         new Pokemon(7, 'Chansey', {
           item: 'Eviolite',
           nature: 'Bold',
-          evs: { hp: 100, spd: 100 },
-          boosts: { spd: 1 },
+          evs: {hp: 100, spd: 100},
+          boosts: {spd: 1},
         }),
         new Move(7, 'Sludge Bomb')
       );
@@ -225,7 +225,7 @@ describe('calc', () => {
   describe('mechanics', () => {
     test('gen 2 DVs', () => {
       const aerodactyl = new Pokemon(2, 'Aerodactyl');
-      const zapdos = new Pokemon(2, 'Zapdos', { ivs: { atk: 29, def: 27 }, item: 'Leftovers' });
+      const zapdos = new Pokemon(2, 'Zapdos', {ivs: {atk: 29, def: 27}, item: 'Leftovers'});
       expect(zapdos.ivs.hp).toBe(15);
 
       const move = new Move(2, 'Ancient Power');
@@ -237,8 +237,8 @@ describe('calc', () => {
     });
 
     test('gen 2 struggle', () => {
-      const attacker = new Pokemon(2, 'Skarmory', { boosts: { atk: 6, def: 6 } });
-      const defender = new Pokemon(2, 'Skarmory', { boosts: { atk: 6, def: 6 } });
+      const attacker = new Pokemon(2, 'Skarmory', {boosts: {atk: 6, def: 6}});
+      const defender = new Pokemon(2, 'Skarmory', {boosts: {atk: 6, def: 6}});
       const move = new Move(2, 'Struggle');
       const result = calculate(2, attacker, defender, move);
       expect(result.damage).toBeRange(37, 44);
@@ -248,7 +248,7 @@ describe('calc', () => {
     });
 
     test('zmove criticals', () => {
-      const zMove = new Move(7, 'Wood Hammer', { useZ: true, isCrit: true });
+      const zMove = new Move(7, 'Wood Hammer', {useZ: true, isCrit: true});
       const result = calculate(7, ABOMASNOW, HOOPA, zMove);
       expect(result.damage).toBeRange(555, 654);
       expect(result.desc()).toBe(
@@ -274,8 +274,8 @@ describe('calc', () => {
     });
 
     test('wring out', () => {
-      const smeargle = new Pokemon(7, 'Smeargle', { level: 50, ability: 'Technician' });
-      const blissey = new Pokemon(7, 'Blissey', { level: 50, evs: { hp: 252 }, curHP: 184 });
+      const smeargle = new Pokemon(7, 'Smeargle', {level: 50, ability: 'Technician'});
+      const blissey = new Pokemon(7, 'Blissey', {level: 50, evs: {hp: 252}, curHP: 184});
       const result = calculate(7, smeargle, blissey, new Move(7, 'Wring Out'));
       expect(result.damage).toBeRange(15, 18);
       expect(result.desc()).toBe(
@@ -285,13 +285,13 @@ describe('calc', () => {
   });
   describe('gen 3 spread', () => {
     test('allAdjacent', () => {
-      const gengar = new Pokemon(3, 'Gengar', { nature: 'Mild', evs: { atk: 100 } });
+      const gengar = new Pokemon(3, 'Gengar', {nature: 'Mild', evs: {atk: 100}});
       const blissey = new Pokemon(3, 'Chansey', {
         item: 'Leftovers',
         nature: 'Bold',
-        evs: { hp: 252, def: 252 },
+        evs: {hp: 252, def: 252},
       });
-      const field = new Field({ gameType: 'Doubles' });
+      const field = new Field({gameType: 'Doubles'});
       const result = calculate(3, gengar, blissey, new Move(3, 'Explosion'), field);
       expect(result.damage).toBeRange(578, 681);
       expect(result.desc()).toBe(
@@ -299,13 +299,13 @@ describe('calc', () => {
       );
     });
     test('allAdjacentFoes', () => {
-      const gengar = new Pokemon(3, 'Gengar', { nature: 'Modest', evs: { spa: 252 } });
+      const gengar = new Pokemon(3, 'Gengar', {nature: 'Modest', evs: {spa: 252}});
       const blissey = new Pokemon(3, 'Chansey', {
         item: 'Leftovers',
         nature: 'Bold',
-        evs: { hp: 252, def: 252 },
+        evs: {hp: 252, def: 252},
       });
-      const field = new Field({ gameType: 'Doubles' });
+      const field = new Field({gameType: 'Doubles'});
       const result = calculate(3, gengar, blissey, new Move(3, 'Blizzard'), field);
       expect(result.damage).toBeRange(69, 82);
       expect(result.desc()).toBe(
@@ -319,7 +319,7 @@ describe('calc', () => {
         ability: 'Sand Veil',
       });
       const blastoise = new Pokemon(3, 'Blastoise', {
-        evs: { spa: 252 },
+        evs: {spa: 252},
       });
       const surf = new Move(3, 'Surf');
 
@@ -340,13 +340,13 @@ describe('calc', () => {
         item: 'Choice Band',
         nature: 'Adamant',
         ability: 'Hyper Cutter',
-        evs: { atk: 252 },
+        evs: {atk: 252},
       });
       const gengar = new Pokemon(4, 'Gengar', {
         item: 'Choice Specs',
         nature: 'Timid',
-        evs: { spa: 252 },
-        boosts: { spa: 1 },
+        evs: {spa: 252},
+        boosts: {spa: 1},
       });
       const earthquake = new Move(4, 'Earthquake');
 
@@ -370,14 +370,14 @@ describe('calc', () => {
         item: 'Choice Band',
         nature: 'Adamant',
         ability: 'Hyper Cutter',
-        evs: { atk: 252 },
+        evs: {atk: 252},
       });
       const gengar = new Pokemon(7, 'Gengar', {
         item: 'Choice Specs',
         nature: 'Timid',
         ability: 'Levitate',
-        evs: { spa: 252 },
-        boosts: { spa: 1 },
+        evs: {spa: 252},
+        boosts: {spa: 1},
       });
       const earthquake = new Move(7, 'Earthquake');
 

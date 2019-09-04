@@ -1,4 +1,4 @@
-import { makeCalculate } from './gen7';
+import {makeCalculate} from './gen7';
 
 const BW = 5;
 

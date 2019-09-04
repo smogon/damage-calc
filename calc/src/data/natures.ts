@@ -1,6 +1,6 @@
-import { Stat } from '../stats';
+import {Stat} from '../stats';
 
-export const NATURES: { [name: string]: [Stat?, Stat?] } = {
+export const NATURES: {[name: string]: [Stat?, Stat?]} = {
   Adamant: ['atk', 'spa'],
   Bashful: [undefined, undefined],
   Bold: ['def', 'atk'],

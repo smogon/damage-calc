@@ -42,17 +42,17 @@
 // If we're not being used as a module we're just going to rely on globals and
 // that the correct loading order being followed.
 
-export { calculate } from './calc';
-export { Generation } from './gen';
-export { Pokemon } from './pokemon';
-export { Move } from './move';
-export { Field, Side } from './field';
-export { Result } from './result';
+export {calculate} from './calc';
+export {Generation} from './gen';
+export {Pokemon} from './pokemon';
+export {Move} from './move';
+export {Field, Side} from './field';
+export {Result} from './result';
 
-export { ABILITIES } from './data/abilities';
-export { ITEMS, MEGA_STONES } from './data/items';
-export { MOVES } from './data/moves';
-export { SPECIES } from './data/species';
-export { NATURES } from './data/natures';
-export { TYPE_CHART } from './data/types';
-export { STATS, StatsTable, Stat, calcStat } from './stats';
+export {ABILITIES} from './data/abilities';
+export {ITEMS, MEGA_STONES} from './data/items';
+export {MOVES} from './data/moves';
+export {SPECIES} from './data/species';
+export {NATURES} from './data/natures';
+export {TYPE_CHART} from './data/types';
+export {STATS, StatsTable, Stat, calcStat} from './stats';

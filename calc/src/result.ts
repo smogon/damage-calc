@@ -1,8 +1,8 @@
-import { RawDesc, display, displayMove, getRecovery, getRecoil, getKOChance } from './desc';
-import { Generation } from './gen';
-import { Field } from './field';
-import { Move } from './move';
-import { Pokemon } from './pokemon';
+import {RawDesc, display, displayMove, getRecovery, getRecoil, getKOChance} from './desc';
+import {Generation} from './gen';
+import {Field} from './field';
+import {Move} from './move';
+import {Pokemon} from './pokemon';
 
 export class Result {
   gen: Generation;

@@ -1,5 +1,5 @@
-import { NATURES } from './data/natures';
-import { Generation } from './gen';
+import {NATURES} from './data/natures';
+import {Generation} from './gen';
 
 export type Stat = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe' | 'spc';
 export interface StatsTable<T> {
@@ -98,7 +98,7 @@ function calcStat0(
   return 0;
 }
 
-export function getHPDV(ivs: { atk: number; def: number; spe: number; spc: number }) {
+export function getHPDV(ivs: {atk: number; def: number; spe: number; spc: number}) {
   return (
     (IVToDV(ivs.atk) % 2) * 8 +
     (IVToDV(ivs.def) % 2) * 4 +

@@ -1,11 +1,11 @@
-import { getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType } from '../data/items';
-import { NATURES } from '../data/natures';
-import { RawDesc } from '../desc';
-import { Field } from '../field';
-import { Move } from '../move';
-import { Pokemon } from '../pokemon';
-import { Result } from '../result';
-import { displayStat } from '../stats';
+import {getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType} from '../data/items';
+import {NATURES} from '../data/natures';
+import {RawDesc} from '../desc';
+import {Field} from '../field';
+import {Move} from '../move';
+import {Pokemon} from '../pokemon';
+import {Result} from '../result';
+import {displayStat} from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,

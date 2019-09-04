@@ -8,15 +8,15 @@ import {
   MEGA_STONES,
   SEED_BOOSTED_STAT,
 } from '../data/items';
-import { NATURES } from '../data/natures';
-import { SPECIES } from '../data/species';
-import { TYPE_CHART } from '../data/types';
-import { RawDesc } from '../desc';
-import { Field, Side } from '../field';
-import { Move } from '../move';
-import { Pokemon } from '../pokemon';
-import { Result } from '../result';
-import { displayStat, Stat } from '../stats';
+import {NATURES} from '../data/natures';
+import {SPECIES} from '../data/species';
+import {TYPE_CHART} from '../data/types';
+import {RawDesc} from '../desc';
+import {Field, Side} from '../field';
+import {Move} from '../move';
+import {Pokemon} from '../pokemon';
+import {Result} from '../result';
+import {displayStat, Stat} from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
