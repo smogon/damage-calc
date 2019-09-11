@@ -28,12 +28,12 @@ interface PokemonSet {
 }
 
 interface PokemonSets {
-  [pokemon: string]: { [name: string]: PokemonSet };
+  [pokemon: string]: {[name: string]: PokemonSet};
 }
 
 type Format = keyof typeof FORMATS;
 
-const FORMATS: { [format: string]: string } = {
+const FORMATS: {[format: string]: string} = {
   OU: 'ou',
   UU: 'uu',
   RU: 'ru',
@@ -45,7 +45,7 @@ const FORMATS: { [format: string]: string } = {
   AG: 'anythinggoes',
   Monotype: 'monotype',
   Doubles: 'doublesou',
-  'VGC18': 'vgc2018',
+  VGC18: 'vgc2018',
   'Battle Spot Singles': 'battlespotsingles',
   'Battle Spot Doubles': 'battlespotdoubles',
   BH: 'balancedhackmons',
@@ -71,7 +71,9 @@ export async function importSets(dir: string) {
         if (smogon && smogon[forme]) {
           setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
           for (const name in smogon[forme]) {
-            setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(smogon[forme][name]);
+            setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
+              smogon[forme][name]
+            );
           }
         } else {
           const eligible =
@@ -85,7 +87,9 @@ export async function importSets(dir: string) {
           if (usage && usage[forme]) {
             setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
             for (const name in usage[forme]) {
-              setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(usage[forme][name]);
+              setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
+                usage[forme][name]
+              );
             }
           }
         }
@@ -124,14 +128,14 @@ const FORMES: {[name: string]: string} = {
   'Aegislash-Shield': 'Aegislash',
   'Wishiwashi-School': 'Wishiwashi',
   'Minior-Meteor': 'Minior',
-}
+};
 
 function toForme(pokemon: string) {
   if (pokemon.endsWith('-Totem')) return pokemon.slice(0, -6);
   return FORMES[pokemon] || pokemon;
 }
 
-type ID = '' | string & { __isID: true };
+type ID = '' | string & {__isID: true};
 function toID(text: any): ID {
   return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
