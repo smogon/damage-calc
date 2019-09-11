@@ -1,5 +1,5 @@
 {
-  "name": "sets",
+  "name": "import",
   "private": true,
   "version": "0.1.0",
   "main": "index.js",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^12.7.2",
-    "@pokemon-showdown/sets": "file:../../Pokemon-Showdown/tools/set-import/sets",
+    "@pokemon-showdown/sets": "^0.0.1",
     "calc": "file:../calc",
     "source-map-support": "^0.5.13"
   },

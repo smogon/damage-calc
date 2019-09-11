@@ -5410,7 +5410,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     canEvolve: true,
     ab: 'Blaze',
   },
-  'Flabébé': {
+  Flabébé: {
     t1: 'Fairy',
     bs: {hp: 44, at: 38, df: 39, sa: 61, sd: 79, sp: 42},
     w: 0.1,
@@ -6010,7 +6010,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 8.5,
     ab: 'Infiltrator',
   },
-  'Meowstic': {
+  Meowstic: {
     t1: 'Psychic',
     bs: {hp: 74, at: 48, df: 76, sa: 83, sd: 81, sp: 104},
     w: 8.5,
