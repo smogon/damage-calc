@@ -4076,9 +4076,9 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 105, at: 140, df: 55, sa: 30, sd: 55, sp: 95},
     w: 92.9,
     ab: 'Sheer Force',
-    formes: ['Darmanitan', 'Darmanitan-Z'],
+    formes: ['Darmanitan', 'Darmanitan-Zen'],
   },
-  'Darmanitan-Z': {
+  'Darmanitan-Zen': {
     t1: 'Fire',
     t2: 'Psychic',
     bs: {hp: 105, at: 30, df: 105, sa: 140, sd: 105, sp: 55},
@@ -4524,10 +4524,10 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 100, at: 77, df: 77, sa: 128, sd: 128, sp: 90},
     w: 6.5,
     ab: 'Serene Grace',
-    formes: ['Meloetta', 'Meloetta-P'],
+    formes: ['Meloetta', 'Meloetta-Pirouette'],
     gender: 'genderless',
   },
-  'Meloetta-P': {
+  'Meloetta-Pirouette': {
     t1: 'Normal',
     t2: 'Fighting',
     bs: {hp: 100, at: 128, df: 90, sa: 77, sd: 77, sp: 128},
@@ -5410,7 +5410,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     canEvolve: true,
     ab: 'Blaze',
   },
-  Flabebe: {
+  Flabébé: {
     t1: 'Fairy',
     bs: {hp: 44, at: 38, df: 39, sa: 61, sd: 79, sp: 42},
     w: 0.1,
@@ -6010,7 +6010,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 8.5,
     ab: 'Infiltrator',
   },
-  'Meowstic-M': {
+  Meowstic: {
     t1: 'Psychic',
     bs: {hp: 74, at: 48, df: 76, sa: 83, sd: 81, sp: 104},
     w: 8.5,
