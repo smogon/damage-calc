@@ -58,16 +58,16 @@ const CURRENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
 const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
 
-export async function importAll(dir: string) {
+export async function importSets(dir: string) {
   for (let gen = 1; gen <= 7; gen++) {
     const setsByPokemon: PokemonSets = {};
 
     for (const pokemon of Object.keys(calc.SPECIES[gen]).sort()) {
       for (const format in FORMATS) {
         const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
-        if (!data || !data.sets || (gen < 7 && CURRENT_ONLY.includes(format as Format))) continue;
+        if (!data || (gen < 7 && CURRENT_ONLY.includes(format as Format))) continue;
         const forme = toForme(pokemon);
-        const smogon = data.sets['smogon.com/dex'];
+        const smogon = data['smogon.com/dex'];
         if (smogon && smogon[forme]) {
           setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
           for (const name in smogon[forme]) {
@@ -81,7 +81,7 @@ export async function importAll(dir: string) {
 
           if (!eligible) continue;
 
-          const usage = data.sets['smogon.com/stats'];
+          const usage = data['smogon.com/stats'];
           if (usage && usage[forme]) {
             setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
             for (const name in usage[forme]) {
@@ -113,7 +113,7 @@ export async function importAll(dir: string) {
     }
 
     const comment = '/* AUTOMATICALLY GENERATED FROM @pokemon-showdown/sets, DO NOT EDIT! */';
-    const sets = JSON.stringify(setsByPokemon, null, 2); // FIXME
+    const sets = JSON.stringify(setsByPokemon);
     const js = `${comment}\nvar SETDEX_${GENS[gen - 1]} = ${sets};`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
   }
