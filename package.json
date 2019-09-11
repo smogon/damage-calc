@@ -20,8 +20,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "calc": "file:calc",
-    "sets": "file:sets"
+    "calc": "file:calc"
   },
   "devDependencies": {
     "eslint": "^6.2.2",
