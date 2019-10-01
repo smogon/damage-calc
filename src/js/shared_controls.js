@@ -337,8 +337,9 @@ $(".move-selector").change(function () {
 	if (move.isMultiHit) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
-		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
-		moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".item").val() === 'Grip Claw' ? 5 : 3);
+		var pokemon = $(this).closest(".poke-info");
+		var moveHits = (pokemon.find(".ability").val() === 'Skill Link' || pokemon.find(".item").val() === 'Grip Claw') ? 5 : 3;
+		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (move.dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").show();
