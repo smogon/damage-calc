@@ -623,7 +623,7 @@ function getMoveDetails(moveInfo, ability, item) {
 	var overrides = {
 		bp: +moveInfo.find(".move-bp").val(),
 		type: moveInfo.find(".move-type").val(),
-		category: moveInfo.find(".move-cat").val(),
+		category: moveInfo.find(".move-cat").val()
 	};
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
