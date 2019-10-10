@@ -1,5 +1,5 @@
 {
-  "name": "@pokemon-showdown/calc",
+  "name": "@smogon/calc",
   "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -7,15 +7,11 @@
   "homepage": "https://calc.pokemonshowdown.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zarel/honko-damagecalc.git"
-  },
-  "author": {
-    "name": "Guangcong Luo",
-    "email": "zarel@zarel.com",
-    "url": "http://guangcongluo.com"
+    "url": "https://github.com/smogon/damage-calc.git"
   },
   "contributors": [
     "Austin Couturier <austincouturier@icloud.com>",
+    "Guangcong Luo <zarel@zarel.com>",
     "Kirk Scheibelhut <kjs@scheibo.com>",
     "Mathieu Dias-Martins"
   ],

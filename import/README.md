@@ -8,4 +8,4 @@ only run as needed and as such it is not declared in the main package's `subPack
 
 This package is also distributed under the terms of the [MIT License][1].
 
-   [1]: https://github.com/Zarel/honko-damagecalc/blob/master/import/LICENSE
+   [1]: https://github.com/smogon/damage-calc/blob/master/import/LICENSE
