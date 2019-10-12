@@ -799,6 +799,11 @@ const GSC: {[name: string]: MoveData} = extend(true, {}, RBY, {
     bp: 0,
     type: 'Normal',
   },
+  Present: {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
   Protect: {
     bp: 0,
     type: 'Normal',
@@ -1348,6 +1353,8 @@ const ADV: {[name: string]: MoveData} = extend(true, {}, GSC, {
     type: 'Normal',
   },
 });
+
+delete ADV['Present'];
 
 const DPP: {[name: string]: MoveData} = extend(true, {}, ADV, {
   'Air Slash': {
