@@ -1,0 +1,16 @@
+{
+  "extends": "gts/tslint.json",
+  "rules": {
+    "variable-name": false,
+    "new-parens": false,
+    "switch-default": false,
+    "no-floating-promises": true,
+    "no-any": false,
+    "no-conditional-assignment": false,
+    "prefer-const": {
+      "options": {
+        "destructuring": "all"
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@smogon/calc",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "Logic behind the official damage calculator for the Pokémon Showdown battle simulator",
+  "homepage": "https://calc.pokemonshowdown.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smogon/damage-calc.git"
+  },
+  "contributors": [
+    "Austin Couturier <austincouturier@icloud.com>",
+    "Guangcong Luo <zarel@zarel.com>",
+    "Kirk Scheibelhut <kjs@scheibo.com>",
+    "Mathieu Dias-Martins"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.7.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "gts": "^1.1.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "lint": "gts check",
+    "fix": "gts fix",
+    "compile": "tsc -p .",
+    "test": "jest",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  }
+}

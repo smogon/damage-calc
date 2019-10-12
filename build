@@ -4,10 +4,7 @@
 const path = require('path');
 const fs = require('fs');
 const crypto = require('crypto');
-const exec = require('child_process').exec;
 
-const thisFile = __filename;
-const thisDir = __dirname;
 const rootDir = '.';
 
 // update version
@@ -20,16 +17,53 @@ function makeCachebuster(template, output) {
 		let hash = Math.random(); // just in case creating the hash fails
 		try {
 			const filename = c.replace('//play.pokemonshowdown.com/', '../../play.pokemonshowdown.com/');
-			const fstr = fs.readFileSync(path.resolve(rootDir, filename), {encoding: 'utf8'});
+			const fstr = fs.readFileSync(path.resolve(rootDir, 'dist', filename), {encoding: 'utf8'});
 			hash = crypto.createHash('md5').update(fstr).digest('hex').substr(0, 8);
 		} catch (e) {}
 
 		return b + '="./' + c + '?' + hash + '"';
-	});
+	}).replace(/\.template\.html/g, '.html');
 	process.stdout.write("Writing new `" + output + "` file... ");
 	fs.writeFileSync(path.resolve(rootDir, output), indexContents);
 	console.log("DONE");
 }
 
-makeCachebuster('honkalculate.template.html', 'honkalculate.html');
-makeCachebuster('index.template.html', 'index.html');
+function cpdir(src, dest) {
+	console.log("Copying `" + src + "` to `" + dest + "`");
+	try {
+		fs.mkdirSync(dest, '0755');
+	} catch(e) {
+		if (e.code != 'EEXIST') throw e;
+	}
+	const copies = [];
+	for (const file of fs.readdirSync(src)) {
+		var current = fs.lstatSync(path.join(src, file));
+		if (current.isDirectory()) {
+			cpdir(path.join(src, file), path.join(dest, file));
+		} else if (current.isSymbolicLink()) {
+			var symlink = fs.readlinkSync(path.join(src, file));
+			fs.symlinkSync(symlink, path.join(dest, file));
+		} else {
+			const from = path.join(src, file);
+			const to = path.join(dest, file);
+			const writeableStream = fs.createWriteStream(to);
+			fs.createReadStream(from).pipe(writeableStream);
+			copies.push(new Promise(function (resolve, reject) {
+				writeableStream.on('error', reject);
+				writeableStream.on('finish', resolve);
+			}));
+		}
+	}
+	return Promise.all(copies);
+}
+
+if (process.argv[2] !== 'view') {
+	require('child_process').execSync('npm --prefix calc/ run compile', {stdio: 'inherit'});
+}
+
+cpdir('src', 'dist').then(function () {
+	cpdir('calc/dist', 'dist/calc').then(function () {
+		makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
+		makeCachebuster('dist/index.template.html', 'dist/index.html');
+	});
+});

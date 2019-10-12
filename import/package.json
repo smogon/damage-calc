@@ -1,0 +1,38 @@
+{
+  "name": "import",
+  "private": true,
+  "version": "0.1.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "description": "Logic for importing Pokémon sets for use by the calc",
+  "homepage": "https://calc.pokemonshowdown.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smogon/damage-calc.git"
+  },
+  "author": {
+    "name": "Kirk Scheibelhut",
+    "email": "pre@pkmn.cc",
+    "url": "https://pkmn.cc"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^12.7.2",
+    "@pokemon-showdown/sets": "^0.0.1",
+    "calc": "file:../calc",
+    "source-map-support": "^0.5.13"
+  },
+  "devDependencies": {
+    "gts": "^1.1.0",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "lint": "gts check",
+    "fix": "gts fix",
+    "compile": "tsc -p .",
+    "test": "true",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  }
+}
