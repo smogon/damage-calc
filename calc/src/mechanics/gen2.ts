@@ -58,7 +58,7 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
     return result;
   }
 
-  var lv = attacker.level;
+  let lv = attacker.level;
   if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
     damage.push(lv);
     return result;
