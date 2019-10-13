@@ -1354,8 +1354,6 @@ const ADV: {[name: string]: MoveData} = extend(true, {}, GSC, {
   },
 });
 
-delete ADV['Present'];
-
 const DPP: {[name: string]: MoveData} = extend(true, {}, ADV, {
   'Air Slash': {
     bp: 75,
