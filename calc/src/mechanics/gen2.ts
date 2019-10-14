@@ -127,12 +127,28 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
     at = Math.floor(at / 4) % 256;
     df = Math.floor(df / 4) % 256;
   }
-  
+
   // Gen 2 Present has a glitched damage calculation using the secondary types of the Pokemon for the Attacker's Level and Defender's Defense.
   if (move.name === 'Present') {
-    var type_index: { [id: string]: number; } = {
-      "Normal":0, "Fighting":1, "Flying":2, "Poison":3, "Ground":4, "Rock":5, "Bug":7, "Ghost":8, "Steel":9,
-      "None":19,"Fire":20, "Water":21, "Grass": 22, "Electric":23, "Psychic":24, "Ice":25, "Dragon":26, "Dark":27
+    const type_index: {[id: string]: number} = {
+      Normal: 0,
+      Fighting: 1,
+      Flying: 2,
+      Poison: 3,
+      Ground: 4,
+      Rock: 5,
+      Bug: 7,
+      Ghost: 8,
+      Steel: 9,
+      None: 19,
+      Fire: 20,
+      Water: 21,
+      Grass: 22,
+      Electric: 23,
+      Psychic: 24,
+      Ice: 25,
+      Dragon: 26,
+      Dark: 27,
     };
 
     at = 10;
