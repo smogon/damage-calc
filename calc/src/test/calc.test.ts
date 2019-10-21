@@ -247,6 +247,18 @@ describe('calc', () => {
       );
     });
 
+    test('gen 2 present', () => {
+      const attacker = new Pokemon(2, 'Togepi', {level: 5, boosts: {atk: -6}, status: 'Burned'});
+      const defender = new Pokemon(2, 'Umbreon', {boosts: {def: 6}});
+      const move = new Move(2, 'Present');
+      const field = new Field({defenderSide: {isReflect: true}});
+      const result = calculate(2, attacker, defender, move, field);
+      expect(result.damage).toBeRange(125, 147);
+      expect(result.desc()).toBe(
+        '-6 burned Togepi Present vs. +6 Umbreon through Reflect: 125-147 (31.8 - 37.4%) -- 89.1% chance to 3HKO'
+      );
+    });
+
     test('zmove criticals', () => {
       const zMove = new Move(7, 'Wood Hammer', {useZ: true, isCrit: true});
       const result = calculate(7, ABOMASNOW, HOOPA, zMove);

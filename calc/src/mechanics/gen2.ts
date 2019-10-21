@@ -161,14 +161,14 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.defenderItem = defender.item;
   }
 
+  if (move.isCrit) {
+    lv *= 2;
+    description.isCritical = true;
+  }
+
   let baseDamage = Math.floor(
     Math.floor((Math.floor((2 * lv) / 5 + 2) * Math.max(1, at) * move.bp) / Math.max(1, df)) / 50
   );
-
-  if (move.isCrit) {
-    baseDamage *= 2;
-    description.isCritical = true;
-  }
 
   if (getItemBoostType(attacker.item) === move.type) {
     baseDamage = Math.floor(baseDamage * 1.1);
