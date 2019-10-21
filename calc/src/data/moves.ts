@@ -799,6 +799,11 @@ const GSC: {[name: string]: MoveData} = extend(true, {}, RBY, {
     bp: 0,
     type: 'Normal',
   },
+  Present: {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
   Protect: {
     bp: 0,
     type: 'Normal',
