@@ -485,7 +485,7 @@ function getEndOfTurn(
   }
   if (field.defenderSide.isSeeded) {
     if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen >= 2 ? 8 : 16)) // 1/16 in gen 1, 1/8 in gen 2 onwards
+      damage -= Math.floor(defender.maxHP() / (gen >= 2 ? 8 : 16)); // 1/16 in gen 1, 1/8 in gen 2 onwards
       texts.push('Leech Seed damage');
     }
   }
