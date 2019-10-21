@@ -485,16 +485,16 @@ function getEndOfTurn(
   }
   if (field.defenderSide.isSeeded) {
     if (!defender.hasAbility('Magic Guard')) {
-      damage -= gen >= 2 ? Math.floor(defender.maxHP() / 8) : Math.floor(defender.maxHP() / 16); // 1/16 in gen 1, 1/8 in gen 2 onwards
+      damage -= Math.floor(defender.maxHP() / (gen >= 2 ? 8 : 16)) // 1/16 in gen 1, 1/8 in gen 2 onwards
       texts.push('Leech Seed damage');
     }
   }
   if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
     if (attacker.hasAbility('Liquid Ooze')) {
-      damage -= gen >= 2 ? Math.floor(attacker.maxHP() / 8) : Math.floor(attacker.maxHP() / 16);
+      damage -= Math.floor(attacker.maxHP() / (gen >= 2 ? 8 : 16));
       texts.push('Liquid Ooze damage');
     } else {
-      damage += gen >= 2 ? Math.floor(attacker.maxHP() / 8) : Math.floor(attacker.maxHP() / 16);
+      damage += Math.floor(attacker.maxHP() / (gen >= 2 ? 8 : 16));
       texts.push('Leech Seed recovery');
     }
   }
@@ -521,11 +521,10 @@ function getEndOfTurn(
     }
   } else if (defender.hasStatus('Burned')) {
     if (defender.hasAbility('Heatproof')) {
-      damage -= gen > 6 ? Math.floor(defender.maxHP() / 32) : Math.floor(defender.maxHP() / 16);
+      damage -= Math.floor(defender.maxHP() / (gen > 6 ? 32 : 16));
       texts.push('reduced burn damage');
     } else if (!defender.hasAbility('Magic Guard')) {
-      damage -=
-        gen === 1 || gen > 6 ? Math.floor(defender.maxHP() / 16) : Math.floor(defender.maxHP() / 8);
+      damage -= Math.floor(defender.maxHP() / (gen === 1 || gen > 6 ? 16 : 8));
       texts.push('burn damage');
     }
   } else if (
