@@ -1,4 +1,4 @@
-﻿import {
+﻿﻿import {
   getItemBoostType,
   getNaturalGift,
   getFlingPower,
@@ -38,7 +38,7 @@ export function makeCalculate(gen: 5 | 6 | 7 | 8) {
     calculateModern(gen, attacker, defender, move, field);
 }
 
-export const calculateSM = makeCalculate(SM);
+export const calculateSS = makeCalculate(SS);
 
 function calculateModern(
   gen: 5 | 6 | 7 | 8,

@@ -1,4 +1,4 @@
-﻿import {extend} from '../util';
+﻿﻿import {extend} from '../util';
 import {Type} from './types';
 
 export type Gender = 'male' | 'female' | 'genderless';
@@ -7500,6 +7500,6 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     gender: 'genderless',
   },
 });
-const SM: {[name: string]: Species} = {
-},
+const SS: {[name: string]: Species} = {
+};
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
