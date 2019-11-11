@@ -154,6 +154,7 @@ function getMoves(currentPoke, rows, offset) {
 
 function addToDex(poke) {
 	var dexObject = {};
+	if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
 	if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
 	if (SETDEX_XY[poke.name] == undefined) SETDEX_XY[poke.name] = {};
 	if (SETDEX_BW[poke.name] == undefined) SETDEX_BW[poke.name] = {};
@@ -194,6 +195,8 @@ function addToDex(poke) {
 function updateDex(customsets) {
 	for (var pokemon in customsets) {
 		for (var moveset in customsets[pokemon]) {
+			if (!SETDEX_SS[pokemon]) SETDEX_SS[pokemon] = {};
+			SETDEX_SS[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SM[pokemon]) SETDEX_SM[pokemon] = {};
 			SETDEX_SM[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_XY[pokemon]) SETDEX_XY[pokemon] = {};

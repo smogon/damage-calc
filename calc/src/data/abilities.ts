@@ -242,4 +242,8 @@ const SM = XY.concat([
   'Wimp Out',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+const SS = SM.concat([
+  '',
+]);
+
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];

@@ -3660,6 +3660,9 @@ export function getZMoveName(moveName: string, moveType: Type, item?: string) {
   return ZMOVES_TYPING[moveType]!;
 }
 
+const SS: {[name: string]: MoveData} = {
+}
+
 export const ZMOVES = Object.values(ZMOVES_TYPING) as string[];
 
-export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];
+export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];

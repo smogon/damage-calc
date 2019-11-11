@@ -441,4 +441,6 @@ const XY: TypeChart = extend(true, {}, GSC, {
 
 const SM = XY;
 
-export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM];
+const SS = SM;
+
+export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];

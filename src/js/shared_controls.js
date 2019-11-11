@@ -702,9 +702,10 @@ var GENERATION = {
 	'5': 5, 'bw': 5, 'bw2': 5, 'b2w2': 5,
 	'6': 6, 'xy': 6, 'oras': 6,
 	'7': 7, 'sm': 7, 'usm': 7, 'usum': 7
+	'8': 8, 'ss': 8
 };
 
-var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM];
+var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
@@ -1013,7 +1014,7 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 7;
+	var g = GENERATION[params.get('gen')] || 8;
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);

@@ -11,6 +11,7 @@ import {calculateDPP} from './mechanics/gen4';
 import {calculateBW} from './mechanics/gen5';
 import {calculateXY} from './mechanics/gen6';
 import {calculateSM} from './mechanics/gen7';
+import {calculateSS} from './mechanics/gen8';
 
 const MECHANICS = [
   () => {},
@@ -21,6 +22,7 @@ const MECHANICS = [
   calculateBW,
   calculateXY,
   calculateSM,
+  calculateSS,
 ];
 
 export function calculate(

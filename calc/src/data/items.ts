@@ -338,6 +338,10 @@ const SM = XY.concat([
   'Yellow Nectar',
 ]);
 
+const SS = SM.concat([
+  '',
+]);
+
 const BERRIES: {[berry: string]: {t: Type; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
   'Apicot Berry': {t: 'Ground', p: 100},
@@ -649,4 +653,4 @@ export function getMultiAttack(item: string) {
   return undefined;
 }
 
-export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
