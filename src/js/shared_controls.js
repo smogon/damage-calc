@@ -615,7 +615,7 @@ function createPokemon(pokeInfo) {
 
 function getMoveDetails(moveInfo, ability, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
-	var isZMove = gen >= 7 && moveInfo.find("input.move-z").prop("checked");
+	var isZMove = gen === 7 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
 	var usedTimes = +moveInfo.find(".stat-drops").val();
@@ -709,9 +709,9 @@ var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SET
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 7;
+	gen = ~~$(this).val() || 8;
 	var params = new URLSearchParams(window.location.search);
-	if (gen === 7) {
+	if (gen === 8) {
 		params.delete('gen');
 		params = '' + params;
 		if (window.history && window.history.replaceState) {

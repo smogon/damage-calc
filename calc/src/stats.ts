@@ -19,8 +19,9 @@ const DPP: Stat[] = GSC;
 const BW: Stat[] = GSC;
 const XY: Stat[] = GSC;
 const SM: Stat[] = GSC;
+const SS: Stat[] = GSC;
 
-export const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+export const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 
 export function displayStat(stat: Stat) {
   switch (stat) {

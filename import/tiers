@@ -17,7 +17,7 @@ const FORMATS = {
 	'(OU)': 'OU',
 };
 
-for (let gen = 1; gen <= 7; gen++) {
+for (let gen = 1; gen <= 8; gen++) {
 	const dex = Dex.forFormat('gen' + gen + 'ou');
 	for (const k in dex.data.Pokedex) {
 		const val = dex.getTemplate(k);

@@ -60,7 +60,7 @@ function serialize(array, separator) {
 
 function getAbility(row) {
 	var ability = row[1] ? row[1].trim() : '';
-	if (calc.ABILITIES[7].indexOf(ability) !== -1) return ability;
+	if (calc.ABILITIES[8].indexOf(ability) !== -1) return ability;
 }
 
 function statToLegacyStat(stat) {
@@ -86,7 +86,7 @@ function getStats(currentPoke, rows, offset) {
 	var currentIV;
 	var currentNature;
 	currentPoke.level = 100;
-	for (var x = offset; x < offset + 7; x++) {
+	for (var x = offset; x < offset + 8; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
@@ -126,7 +126,7 @@ function getStats(currentPoke, rows, offset) {
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
-		if (calc.ITEMS[7].indexOf(item) != -1) {
+		if (calc.ITEMS[8].indexOf(item) != -1) {
 			return item;
 		}
 	}
@@ -225,8 +225,8 @@ function addSets(pokes) {
 		currentRow = rows[i].split(/[()@]/);
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			if (calc.SPECIES[7][currentRow[j].trim()] !== undefined) {
-				currentPoke = calc.SPECIES[7][currentRow[j].trim()];
+			if (calc.SPECIES[8][currentRow[j].trim()] !== undefined) {
+				currentPoke = calc.SPECIES[8][currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
