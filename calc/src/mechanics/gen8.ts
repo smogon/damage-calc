@@ -175,6 +175,12 @@ function calculateModern(
         : 'Normal';
   } else if (move.name === 'Revelation Dance') {
     move.type = attacker.type1;
+  } else if (move.name === 'Aura Wheel') {
+    if (attacker.name === 'Morpeko') {
+      move.type = 'Electic';
+    } else if (attacker.name === 'Morpeko-Hangry') {
+      move.type = 'Dark';
+    }
   }
 
   let isAerilate = false;
@@ -388,10 +394,20 @@ function calculateModern(
   let basePower: number;
 
   switch (move.name) {
+    case 'Behemoth Bash':
+    case 'Behemoth Blade':
+    case 'Dynamax Cannon',
+      basePower = move.bp * (['G-max', 'Dynamax'].indexOf(defender.name) !== -1) ? 2 : 1;
+      description.moveBP = basePower;
+      break;
     case 'Payback':
       basePower = turnOrder === 'LAST' ? 100 : 50;
       description.moveBP = basePower;
       break;
+    case 'Bolt Break':
+    case 'Fishious Rend':
+      basePower = turnOrder !== 'LAST' ? move.bp * 2 : move.bp * 1;
+      description.moveBP = basePower;
     case 'Electro Ball':
       const r = Math.floor(attacker.stats.spe / defender.stats.spe);
       basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
@@ -649,6 +665,9 @@ function calculateModern(
   } else if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
     bpMods.push(0x1400);
     description.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Steely Spirit') && move.type === 'Steel') {
+    bpMods.push(0x2000);
+    description.attackerAbility = attacker.ability;
   }
 
   const isAttackerAura = attacker.ability === move.type + ' Aura';
@@ -760,6 +779,9 @@ function calculateModern(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword')) {
+    atMods.push(0x1800);
+    description.attackerAbility = attacker.ability;
   }
 
   if (
@@ -835,6 +857,9 @@ function calculateModern(
     dfMods.push(0x1800);
     description.defenderAbility = defender.ability;
     description.weather = field.weather;
+  } else if (defender.hasAbility('Ice Scales') && !hitsPhysical) {
+    dfMods.push(0x2000);
+    description.defenderAbility = defender.ability;
   }
 
   if (field.terrain === 'Grassy' && defender.hasAbility('Grass Pelt') && hitsPhysical) {
@@ -1003,6 +1028,10 @@ function calculateModern(
     finalMods.push(0xc00);
     description.defenderAbility = defender.ability;
   }
+  if (defender.hasAbility('Punk Rock')) {
+      finalMods.push(0x800);
+      description.defenderAbility = defender.ability;
+  }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
     const metronomeCount = Math.floor(move.metronomeCount!);
     if (metronomeCount <= 4) {
@@ -1015,7 +1044,7 @@ function calculateModern(
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(0x1333);
     description.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Life Orb') && !move.isZ) {
+  } else if (attacker.hasItem('Life Orb') || attacker.hasAbility('Power Spot') && !move.isZ) {
     finalMods.push(0x14cc);
     description.attackerItem = attacker.item;
   }

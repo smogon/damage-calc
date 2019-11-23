@@ -340,7 +340,7 @@ const SM = XY.concat([
 
 const SS = SM.concat([
   'Berry Sweet',
-  'Blunder Policy,
+  'Blunder Policy',
   'Chipped Pot',
   'Clover Sweet',
   'Cracked Pot',
