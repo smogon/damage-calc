@@ -177,7 +177,7 @@ function calculateModern(
     move.type = attacker.type1;
   } else if (move.name === 'Aura Wheel') {
     if (attacker.name === 'Morpeko') {
-      move.type = 'Electic';
+      move.type = 'Electric';
     } else if (attacker.name === 'Morpeko-Hangry') {
       move.type = 'Dark';
     }
