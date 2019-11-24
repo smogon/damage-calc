@@ -396,8 +396,8 @@ function calculateModern(
   switch (move.name) {
     case 'Behemoth Bash':
     case 'Behemoth Blade':
-    case 'Dynamax Cannon',
-      basePower = move.bp * (['G-max', 'Dynamax'].indexOf(defender.name) !== -1) ? 2 : 1;
+    case 'Dynamax Cannon':
+      basePower = move.bp * (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1 ? 2 : 1);
       description.moveBP = basePower;
       break;
     case 'Payback':
@@ -698,7 +698,7 @@ function calculateModern(
   if (move.usesHighestAttackStat) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
-  const attackStat = move.category === 'Physical' ? 'atk' : 'spa';
+  const attackStat = move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
