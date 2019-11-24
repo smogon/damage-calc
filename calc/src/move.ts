@@ -67,44 +67,46 @@ export class Move {
       const maxMoveName: string = getMaxMoveName(data.type, options.species, !!(data.category === 'Status'));
       const maxMove = MOVES[gen][maxMoveName];
       const maxMoveBasePower = function (move: MoveData) {
-        if (move.maxPower) return move.maxPower;
+        var movePower = 10;
+        if (move.maxPower) movePower = move.maxPower;
         if (!move.maxPower && move.category !== 'Status') {
           if (!move.bp) {
-            return 100;
+            movePower = 100;
           } else if (move.type === 'Fighting' || move.type === 'Poison') {
             if (move.bp >= 150) {
-             return 100;
+              movePower = 100;
             } else if (move.bp >= 110) {
-             return 95;
+              movePower = 95;
             } else if (move.bp >= 75) {
-              return 90;
+              movePower = 90;
             } else if (move.bp >= 65) {
-             return 85;
+              movePower = 85;
             } else if (move.bp >= 55) {
-              return 80;
+              movePower = 80;
             } else if (move.bp >= 45) {
-              return 75;
+              movePower = 75;
             } else {
-              return 70;
+              movePower = 70;
             }
           } else {
             if (move.bp >= 150) {
-              return 150;
+              movePower = 150;
             } else if (move.bp >= 110) {
-              return 140;
+              movePower = 140;
             } else if (move.bp >= 75) {
-              return 130;
+              movePower = 130;
             } else if (move.bp >= 65) {
-              return 120;
+              movePower = 120;
             } else if (move.bp >= 55) {
-              return 110;
+              movePower = 110;
             } else if (move.bp >= 45) {
-              return 100;
+              movePower = 100;
             } else  {
-              return 90;
+              movePower = 90;
             }
           }
         }
+        return movePower;
       };
       data = extend(true, {}, maxMove, {
         name: maxMoveName,
