@@ -408,6 +408,7 @@ function calculateModern(
     case 'Fishious Rend':
       basePower = move.bp * (turnOrder !== 'LAST' ? 2 : 1);
       description.moveBP = basePower;
+      break;
     case 'Electro Ball':
       const r = Math.floor(attacker.stats.spe / defender.stats.spe);
       basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
