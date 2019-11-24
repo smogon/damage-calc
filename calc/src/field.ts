@@ -75,7 +75,7 @@ export class Side {
   constructor(side: {
     spikes?: number;
     isSR?: boolean;
-    steelspikes: boolean;
+    steelspikes?: boolean;
     isReflect?: boolean;
     isLightScreen?: boolean;
     isProtected?: boolean;

@@ -64,7 +64,7 @@ export class Move {
 
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useMax && 'maxPower' in data) {
-      const maxMoveName: string = getMaxMoveName(options.species, data.type, !!(data.category === 'Status'));
+      const maxMoveName: string = getMaxMoveName(data.type, options.species, !!(data.category === 'Status'));
       const maxMove = MOVES[gen][maxMoveName];
       const maxMoveBasePower = function (move: MoveData) {
         if (move.maxPower) return move.maxPower;

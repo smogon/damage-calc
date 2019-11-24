@@ -404,9 +404,9 @@ function calculateModern(
       basePower = turnOrder === 'LAST' ? 100 : 50;
       description.moveBP = basePower;
       break;
-    case 'Bolt Break':
+    case 'Bolt Beak':
     case 'Fishious Rend':
-      basePower = turnOrder !== 'LAST' ? move.bp * 2 : move.bp * 1;
+      basePower = move.bp * (turnOrder !== 'LAST' ? 2 : 1);
       description.moveBP = basePower;
     case 'Electro Ball':
       const r = Math.floor(attacker.stats.spe / defender.stats.spe);
@@ -799,7 +799,7 @@ function calculateModern(
       attacker.hasItem('Soul Dew') &&
       attacker.named('Latios', 'Latias') &&
       move.category === 'Special') ||
-    (!move.isZ &&
+    (!move.isZ && !move.isMax &&
       ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
         (attacker.hasItem('Choice Specs') && move.category === 'Special')))
   ) {

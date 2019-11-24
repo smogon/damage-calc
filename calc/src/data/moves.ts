@@ -3671,7 +3671,7 @@ export function getZMoveName(moveName: string, moveType: Type, item?: string) {
   return ZMOVES_TYPING[moveType]!;
 }
 
-export function getMaxMoveName(pokemonSpecies: string, moveType: Type, isStatus?: boolean) {
+export function getMaxMoveName(moveType: Type, pokemonSpecies?: string, isStatus?: boolean) {
   if (isStatus) return 'Max Guard';
   if (moveType === 'Fire') {
     if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
