@@ -644,6 +644,10 @@ function createField() {
 		weather = $("input:radio[name='weather']:checked").val();
 		spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
 	}
+	var steelspikes;
+	if (gen === 8) {
+		steelspikes = [$("#steelspikesL").prop("checked"), $("#steelspikesR").prop("checked")];
+	}
 	var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
@@ -658,7 +662,7 @@ function createField() {
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
+			spikes: spikes[i], isSR: isSR[i], steelspikes: steelspikes[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i]
@@ -778,6 +782,8 @@ function clearField() {
 	$("#spikesR0").prop("checked", true);
 	$("#gscSpikesL").prop("checked", false);
 	$("#gscSpikesR").prop("checked", false);
+	$("#steelspikesL").prop("checked", false);
+	$("#steelspikesR").prop("checked", false);
 	$("#reflectL").prop("checked", false);
 	$("#reflectR").prop("checked", false);
 	$("#lightScreenL").prop("checked", false);

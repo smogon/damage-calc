@@ -3671,42 +3671,113 @@ export function getZMoveName(moveName: string, moveType: Type, item?: string) {
   return ZMOVES_TYPING[moveType]!;
 }
 
+export function getMaxMoveName(pokemonSpecies: string, moveType: Type, isStatus?: boolean) {
+  if (isStatus) return 'Max Guard';
+  if (moveType === 'Fire') {
+    if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
+    if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
+  }
+  if (moveType === 'Normal') {
+    if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
+    if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
+    if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
+  }
+  if (moveType === 'Fairy') {
+    if (pokemonSpecies === 'Alcremie-Gmax') return 'G-Max Finale';
+    if (pokemonSpecies === 'Hatterene-Gmax') return 'G-Max Smite';
+  }
+  if (moveType === 'Steel') {
+    if (pokemonSpecies === 'Copperajah-Gmax') return 'G-Max Steelsurge';
+    if (pokemonSpecies === 'Melmetal-Gmax') return 'G-Max Meltdown';
+  }
+  if (moveType === 'Electric') {
+    if (pokemonSpecies === 'Pikachu-Gmax') return 'G-Max Volt Crash';
+    if (pokemonSpecies === 'Toxtricity-Gmax') return 'G-Max Stun Shock';
+  }
+  if (moveType === 'Grass') {
+    if (pokemonSpecies === 'Appletun-Gmax') return 'G-Max Sweetness';
+    if (pokemonSpecies === 'Flapple-Gmax') return 'G-Max Tartness';
+  }
+  if (moveType === 'Water') {
+    if (pokemonSpecies === 'Drednaw-Gmax') return 'G-Max Stonesurge';
+    if (pokemonSpecies === 'Kingler-Gmax') return 'G-Max Foam Burst';
+  }
+  if (moveType === 'Poison' && pokemonSpecies === 'Garbodor-Gmax') return 'G-Max Malodor';
+  if (moveType === 'Fighting' && pokemonSpecies === 'Machamp-Gmax') return 'G-Max Chi Strike';
+  if (moveType === 'Ghost' && pokemonSpecies === 'Gengar-Gmax') return 'G-Max Terror';
+  if (moveType === 'Ice' && pokemonSpecies === 'Lapras-Gmax') return 'G-Max Resonance';
+  if (moveType === 'Flying' && pokemonSpecies === 'Corviknight-Gmax') return 'G-Max Wind Rage';
+  if (moveType === 'Dragon' && pokemonSpecies === 'Duraludon-Gmax') return 'G-Max Depletion';
+  if (moveType === 'Psychic' && pokemonSpecies === 'Orbeetle-Gmax') return 'G-Max Gravitas';
+  if (moveType === 'Rock' && pokemonSpecies === 'Coalossal-Gmax') return 'G-Max Volcalith';
+  if (moveType === 'Ground' && pokemonSpecies === 'Sandaconda-Gmax') return 'G-Max Sandblast';
+  if (moveType === 'Dark' && pokemonSpecies === 'Grimmsnarl-Gmax') return 'G-Max Snooze';
+  return 'Max ' + MAXMOVES_TYPING[moveType];
+}
+
+const MAXMOVES_TYPING: {[type in Type]?: string} = {
+  Bug: 'Flutterby',
+  Dark: 'Darkness',
+  Dragon: 'Wyrmwind',
+  Electric: 'Lightning',
+  Fairy: 'Starfall',
+  Fighting: 'Knuckle',
+  Fire: 'Flare',
+  Flying: 'Airstream',
+  Ghost: 'Phantasm',
+  Grass: 'Overgrowth',
+  Ground: 'Quake',
+  Ice: 'Hailstorm',
+  Normal: 'Strike',
+  Poison: 'Ooze',
+  Psychic: 'Mindstorm',
+  Rock: 'Rockfall',
+  Steel: 'Steelspike',
+  Water: 'Geyser',
+};
+
 const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
   'Apple Acid': {
     bp: 80,
     type: 'Grass',
     category: 'Special',
     hasSecondaryEffect: true,
+    maxPower: 130,
   },
   'Aura Wheel': {
     bp: 110,
     type: 'Electric',
     category: 'Physical',
     hasSecondaryEffect: true,
+    maxPower: 140,
   },
   'Behemoth Bash': {
     bp: 100,
     type: 'Steel',
     category: 'Physical',
     makesContact: true,
+    maxPower: 130,
   },
   'Behemoth Blade': {
     bp: 100,
     type: 'Steel',
     category: 'Physical',
     makesContact: true,
+    maxPower: 130,
   },
   'Body Press': {
     bp: 80,
     type: 'Fighting',
     category: 'Physical',
     makesContact: true,
+    maxPower: 90,
   },
   'Bolt Beak': {
     bp: 85,
     type: 'Electric',
     category: 'Physical',
     makesContact: true,
+    maxPower: 130,
   },
   Bonemerang: {maxPower: 130},
   'Bone Rush': {maxPower: 130},
@@ -3715,6 +3786,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     type: 'Grass',
     category: 'Physical',
     makesContact: true,
+    maxPower: 90,
   },
   'Breaking Swipe': {
     bp: 60,
@@ -3723,6 +3795,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     makesContact: true,
     hasSecondaryEffect: true,
     isSpread: 'allAdjacent',
+    maxPower: 110,
   },
   'Bullet Seed': {maxPower: 130},
   'Clangorous Soul': {
@@ -3759,12 +3832,14 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     type: 'Grass',
     category: 'Physical',
     hasSecondaryEffect: true,
+    maxPower: 130,
   },
   'Dual Chop': {maxPower: 130},
   'Dynamax Cannon': {
     bp: 100,
     type: 'Dragon',
     category: 'Special',
+    maxPower: 130,
   },
   'Electro Ball': {maxPower: 130},
   Endeavor: {maxPower: 130},
@@ -3772,12 +3847,14 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     bp: 160,
     type: 'Dragon',
     category: 'Special',
+    maxPower: 150,
   },
   'False Surrender': {
     bp: 80,
     type: 'Dark',
     category: 'Physical',
     makesContact: true,
+    maxPower: 130,
   },
   'Fishious Rend': {
     bp: 85,
@@ -3785,6 +3862,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     category: 'Physical',
     makesContact: true,
     isBite: true,
+    maxPower: 130,
   },
   Fissure: {maxPower: 130},
   Flail: {maxPower: 130},
@@ -3876,7 +3954,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     isMax: true,
   },
   'G-Max Smite': {
-    bp: 1,
+    bp: 10,
     type: 'Fairy',
     category: 'Physical',
     isMax: true,
@@ -3899,6 +3977,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     type: 'Grass',
     category: 'Physical',
     hasSecondaryEffect: true,
+    maxPower: 130,
   },
   Guillotine: {maxPower: 130},
   'Gyro Ball': {maxPower: 130},
@@ -3912,6 +3991,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     category: 'Physical',
     makesContact: true,
     isBite: true,
+    maxPower: 130,
   },
   'Life Dew': {
     bp: 0,
@@ -3939,13 +4019,13 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     isMax: true,
   },
   'Max Flare': {
-    bp: 100,
+    bp: 10,
     type: 'Fire',
     category: 'Physical',
     isMax: true,
   },
   'Max Flutterby': {
-    bp: 1,
+    bp: 10,
     type: 'Bug',
     category: 'Physical',
     isMax: true,
@@ -4045,7 +4125,9 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     bp: 150,
     type: 'Fighting',
     category: 'Physical',
+    maxPower: 100,
   },
+  'Multi-Attack': {bp: 120},
   'Natural Gift': {maxPower: 130},
   'No Retreat': {
     bp: 0,
@@ -4069,6 +4151,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     category: 'Special',
     isSound: true,
     isSpread: 'allAdjacent',
+    maxPower: 130,
   },
   'Pin Missile': {maxPower: 130},
   'Power Trip': {maxPower: 130},
@@ -4079,7 +4162,9 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     category: 'Physical',
     hasSecondaryEffect: true,
     isBullet: true,
+    maxPower: 140,
   },
+  'Rapid Spin': {bp: 50},
   Return: {maxPower: 130},
   'Rock Blast': {maxPower: 130},
   'Seismic Toss': {maxPower: 75},
@@ -4089,11 +4174,13 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     type: 'Grass',
     category: 'Physical',
     makesContact: true,
+    maxPower: 90,
   },
   'Snipe Shot': {
     bp: 80,
     type: 'Water',
     category: 'Special',
+    maxPower: 130,
   },
   'Spike Cannon': {maxPower: 120},
   'Spirit Break': {
@@ -4101,12 +4188,14 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     type: 'Fairy',
     category: 'Physical',
     hasSecondaryEffect: true,
+    maxPower: 130,
   },
   'Steel Beam': {
     bp: 140,
     type: 'Steel',
     category: 'Special',
     isSpread: 'allAdjacent',
+    maxPower: 140,
   },
   'Stored Power': {maxPower: 130},
   'Strange Steam': {
@@ -4114,6 +4203,7 @@ const SS: {[name: string]: MoveData} = extend(true, {}, SM, {
     type: 'Fairy',
     category: 'Special',
     hasSecondaryEffect: true,
+    maxPower: 130,
   },
   'Stuff Cheeks': {
     bp: 0,
