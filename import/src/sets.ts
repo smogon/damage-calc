@@ -55,17 +55,17 @@ const FORMATS: {[format: string]: string} = {
 
 const CURRENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
 
-const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM'];
+const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
 
 export async function importSets(dir: string) {
-  for (let gen = 1; gen <= 7; gen++) {
+  for (let gen = 1; gen <= 8; gen++) {
     const setsByPokemon: PokemonSets = {};
 
     for (const pokemon of Object.keys(calc.SPECIES[gen]).sort()) {
       for (const format in FORMATS) {
         const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
-        if (!data || (gen < 7 && CURRENT_ONLY.includes(format as Format))) continue;
+        if (!data || (gen < 8 && CURRENT_ONLY.includes(format as Format))) continue;
         const forme = toForme(pokemon);
         const smogon = data['smogon.com/dex'];
         if (smogon && smogon[forme]) {
@@ -79,7 +79,7 @@ export async function importSets(dir: string) {
           const eligible =
             (gen <= 3 && format === 'UU') ||
             (gen >= 2 && gen <= 4 && format === 'NU') ||
-            (gen === 7 && USAGE.includes(format));
+            (gen === 8 && USAGE.includes(format));
 
           if (!eligible) continue;
 

@@ -1,4 +1,4 @@
-import {
+﻿import {
   getItemBoostType,
   getNaturalGift,
   getFlingPower,
@@ -31,17 +31,17 @@ import {
   pokeRound,
 } from './util';
 
-const SM = 7;
+const SS = 8;
 
-export function makeCalculate(gen: 5 | 6 | 7) {
+export function makeCalculate(gen: 5 | 6 | 7 | 8) {
   return (attacker: Pokemon, defender: Pokemon, move: Move, field: Field) =>
     calculateModern(gen, attacker, defender, move, field);
 }
 
-export const calculateSM = makeCalculate(SM);
+export const calculateSS = makeCalculate(SS);
 
 function calculateModern(
-  gen: 5 | 6 | 7,
+  gen: 5 | 6 | 7 | 8,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -175,6 +175,12 @@ function calculateModern(
         : 'Normal';
   } else if (move.name === 'Revelation Dance') {
     move.type = attacker.type1;
+  } else if (move.name === 'Aura Wheel') {
+    if (attacker.name === 'Morpeko') {
+      move.type = 'Electric';
+    } else if (attacker.name === 'Morpeko-Hangry') {
+      move.type = 'Dark';
+    }
   }
 
   let isAerilate = false;
@@ -390,8 +396,19 @@ function calculateModern(
   let basePower: number;
 
   switch (move.name) {
+    case 'Behemoth Bash':
+    case 'Behemoth Blade':
+    case 'Dynamax Cannon':
+      basePower = move.bp * (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1 ? 2 : 1);
+      description.moveBP = basePower;
+      break;
     case 'Payback':
       basePower = turnOrder === 'LAST' ? 100 : 50;
+      description.moveBP = basePower;
+      break;
+    case 'Bolt Beak':
+    case 'Fishious Rend':
+      basePower = move.bp * (turnOrder !== 'LAST' ? 2 : 1);
       description.moveBP = basePower;
       break;
     case 'Electro Ball':
@@ -651,6 +668,9 @@ function calculateModern(
   } else if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
     bpMods.push(0x1400);
     description.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Steely Spirit') && move.type === 'Steel') {
+    bpMods.push(0x2000);
+    description.attackerAbility = attacker.ability;
   }
 
   const isAttackerAura = attacker.ability === move.type + ' Aura';
@@ -681,7 +701,8 @@ function calculateModern(
   if (move.usesHighestAttackStat) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
-  const attackStat = move.category === 'Physical' ? 'atk' : 'spa';
+  const attackStat =
+    move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
@@ -762,6 +783,9 @@ function calculateModern(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword')) {
+    atMods.push(0x1800);
+    description.attackerAbility = attacker.ability;
   }
 
   if (
@@ -781,6 +805,7 @@ function calculateModern(
       attacker.named('Latios', 'Latias') &&
       move.category === 'Special') ||
     (!move.isZ &&
+      !move.isMax &&
       ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
         (attacker.hasItem('Choice Specs') && move.category === 'Special')))
   ) {
@@ -838,6 +863,9 @@ function calculateModern(
     dfMods.push(0x1800);
     description.defenderAbility = defender.ability;
     description.weather = field.weather;
+  } else if (defender.hasAbility('Ice Scales') && !hitsPhysical) {
+    dfMods.push(0x2000);
+    description.defenderAbility = defender.ability;
   }
 
   if (field.terrain === 'Grassy' && defender.hasAbility('Grass Pelt') && hitsPhysical) {
@@ -1008,6 +1036,10 @@ function calculateModern(
     finalMods.push(0xc00);
     description.defenderAbility = defender.ability;
   }
+  if (defender.hasAbility('Punk Rock')) {
+    finalMods.push(0x800);
+    description.defenderAbility = defender.ability;
+  }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
     const metronomeCount = Math.floor(move.metronomeCount!);
     if (metronomeCount <= 4) {
@@ -1020,7 +1052,7 @@ function calculateModern(
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(0x1333);
     description.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Life Orb') && !move.isZ) {
+  } else if (attacker.hasItem('Life Orb') || (attacker.hasAbility('Power Spot') && !move.isZ)) {
     finalMods.push(0x14cc);
     description.attackerItem = attacker.item;
   }

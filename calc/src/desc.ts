@@ -246,7 +246,7 @@ export function getKOChance(
   if (move.usedTimes === undefined) move.usedTimes = 1;
   if (move.metronomeCount === undefined) move.metronomeCount = 1;
 
-  if (damage[0] >= defender.maxHP() && (move.usedTimes === 1 && move.metronomeCount === 1)) {
+  if (damage[0] >= defender.maxHP() && move.usedTimes === 1 && move.metronomeCount === 1) {
     return {chance: 1, n: 1, text: 'guaranteed OHKO'};
   }
 
@@ -394,6 +394,13 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
       (defender.type2 ? TYPE_CHART[gen]['Rock']![defender.type2]! : 1);
     damage += Math.floor((effectiveness * defender.maxHP()) / 8);
     texts.push('Stealth Rock');
+  }
+  if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
+    const effectiveness =
+      TYPE_CHART[gen]['Steel']![defender.type1]! *
+      (defender.type2 ? TYPE_CHART[gen]['Steel']![defender.type2]! : 1);
+    damage += Math.floor((effectiveness * defender.maxHP()) / 8);
+    texts.push('Steelsurge');
   }
   if (
     !defender.hasType('Flying') &&

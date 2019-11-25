@@ -242,4 +242,30 @@ const SM = XY.concat([
   'Wimp Out',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+const SS = SM.concat([
+  'Dauntless Shield',
+  'Gorilla Tactics',
+  'Gulp Missile',
+  'Hunger Switch',
+  'Ice Face',
+  'Ice Scales',
+  'Intrepid Sword',
+  'Libero',
+  'Mimicry',
+  'Mirror Armor',
+  'Neutralizing Gas',
+  'Pastel Veil',
+  'Perish Body',
+  'Power Spot',
+  'Propeller Tail',
+  'Punk Rock',
+  'Ripen',
+  'Sand Spit',
+  'Screen Cleaner',
+  'Stalwart',
+  'Steam Engine',
+  'Steely Spirit',
+  'Wandering Spirit',
+]);
+
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];

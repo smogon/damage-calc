@@ -391,7 +391,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.defenderItem = defender.item;
   }
 
-  if (field.weather === 'Sand' && (defender.hasType('Rock') && !isPhysical)) {
+  if (field.weather === 'Sand' && defender.hasType('Rock') && !isPhysical) {
     defense = Math.floor(defense * 1.5);
     description.weather = field.weather;
   }

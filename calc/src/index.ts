@@ -18,6 +18,7 @@
 //   - move.js
 //
 //   - mechanics/util.js
+//   - mechanics/gen8.js
 //   - mechanics/gen7.js
 //   - mechanics/gen6.js
 //   - mechanics/gen5.js

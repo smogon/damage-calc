@@ -5,7 +5,7 @@ import {Field} from '../field';
 
 declare global {
   namespace jest {
-    interface Matchers<R> {
+    interface Matchers<R, T> {
       toBeRange(a: number, b: number): R;
     }
   }
@@ -167,6 +167,28 @@ describe('calc', () => {
           boosts: {spd: 1},
         }),
         new Move(7, 'Sludge Bomb')
+      );
+      expect(result.damage).toBeRange(204, 242);
+      expect(result.desc()).toBe(
+        '+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO'
+      );
+    });
+    test('8', () => {
+      const result = calculate(
+        8,
+        new Pokemon(8, 'Gengar', {
+          item: 'Life Orb',
+          nature: 'Modest',
+          evs: {spa: 252},
+          boosts: {spa: 3},
+        }),
+        new Pokemon(8, 'Chansey', {
+          item: 'Eviolite',
+          nature: 'Bold',
+          evs: {hp: 100, spd: 100},
+          boosts: {spd: 1},
+        }),
+        new Move(8, 'Sludge Bomb')
       );
       expect(result.damage).toBeRange(204, 242);
       expect(result.desc()).toBe(

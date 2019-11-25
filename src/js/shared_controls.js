@@ -615,7 +615,7 @@ function createPokemon(pokeInfo) {
 
 function getMoveDetails(moveInfo, ability, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
-	var isZMove = gen >= 7 && moveInfo.find("input.move-z").prop("checked");
+	var isZMove = gen === 7 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
 	var usedTimes = +moveInfo.find(".stat-drops").val();
@@ -644,6 +644,7 @@ function createField() {
 		weather = $("input:radio[name='weather']:checked").val();
 		spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
 	}
+	var steelsurge = [$("#steelsurgeL").prop("checked"), $("#steelsurgeR").prop("checked")];
 	var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
@@ -658,7 +659,7 @@ function createField() {
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
+			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i]
@@ -701,16 +702,17 @@ var GENERATION = {
 	'4': 4, 'dp': 4, 'dpp': 4, 'hgss': 4,
 	'5': 5, 'bw': 5, 'bw2': 5, 'b2w2': 5,
 	'6': 6, 'xy': 6, 'oras': 6,
-	'7': 7, 'sm': 7, 'usm': 7, 'usum': 7
+	'7': 7, 'sm': 7, 'usm': 7, 'usum': 7,
+	'8': 8, 'ss': 8
 };
 
-var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM];
+var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 7;
+	gen = ~~$(this).val() || 8;
 	var params = new URLSearchParams(window.location.search);
-	if (gen === 7) {
+	if (gen === 8) {
 		params.delete('gen');
 		params = '' + params;
 		if (window.history && window.history.replaceState) {
@@ -777,6 +779,8 @@ function clearField() {
 	$("#spikesR0").prop("checked", true);
 	$("#gscSpikesL").prop("checked", false);
 	$("#gscSpikesR").prop("checked", false);
+	$("#steelsurgeL").prop("checked", false);
+	$("#steelsurgeR").prop("checked", false);
 	$("#reflectL").prop("checked", false);
 	$("#reflectR").prop("checked", false);
 	$("#lightScreenL").prop("checked", false);
@@ -1013,7 +1017,7 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 7;
+	var g = GENERATION[params.get('gen')] || 8;
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);

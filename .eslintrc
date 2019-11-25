@@ -24,6 +24,7 @@
         "lastAutoStatus": false,
         "startsWith": false,
         "notation": true,
+        "SETDEX_SS": false,
         "SETDEX_SM": false,
         "SETDEX_XY": false,
         "SETDEX_BW": false,

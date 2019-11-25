@@ -338,6 +338,27 @@ const SM = XY.concat([
   'Yellow Nectar',
 ]);
 
+const SS = SM.concat([
+  'Berry Sweet',
+  'Blunder Policy',
+  'Chipped Pot',
+  'Clover Sweet',
+  'Cracked Pot',
+  'Eject Pack',
+  'Flower Sweet',
+  'Heavy-Duty Boots',
+  'Love Sweet',
+  'Ribbon Sweet',
+  'Room Service',
+  'Rusted Shield',
+  'Rusted Sword',
+  'Star Sweet',
+  'Strawberry Sweet',
+  'Sweet Apple',
+  'Tart Apple',
+  'Throat Spray',
+]);
+
 const BERRIES: {[berry: string]: {t: Type; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
   'Apicot Berry': {t: 'Ground', p: 100},
@@ -524,6 +545,15 @@ export function getBerryResistType(berry: string | undefined) {
   }
 }
 
+const FLING_80 = new Set([
+  'Assault Vest',
+  'Blunder Policy',
+  'Chipped Pot',
+  'Cracked Pot',
+  'Heavy-Duty Boots',
+  'Weakness Policy',
+]);
+
 const FLING_60 = new Set([
   'Adamant Orb',
   'Damp Rock',
@@ -552,17 +582,23 @@ const FLING_30 = new Set([
   'Razor Fang',
   'Soul Dew',
   'Spell Tag',
+  'Sweet Apple',
+  'Tart Apple',
+  'Throat Spray',
   'Toxic Orb',
   'Twisted Spoon',
 ]);
 const FLING_10 = new Set([
   'Air Balloon',
+  'Berry Sweet',
   'Choice Band',
   'Choice Scarf',
   'Choice Specs',
+  'Clover Sweet',
   'Destiny Knot',
   'Electric Seed',
   'Expert Belt',
+  'Flower Sweet',
   'Focus Band',
   'Focus Sash',
   'Full Incense',
@@ -570,6 +606,7 @@ const FLING_10 = new Set([
   'Lagging Tail',
   'Lax Incense',
   'Leftovers',
+  'Love Sweet',
   'Mental Herb',
   'Metal Powder',
   'Misty Seed',
@@ -580,6 +617,7 @@ const FLING_10 = new Set([
   'Quick Powder',
   'Reaper Cloth',
   'Red Card',
+  'Ribbon Sweet',
   'Ring Target',
   'Rock Incense',
   'Rose Incense',
@@ -590,6 +628,8 @@ const FLING_10 = new Set([
   'Smooth Rock',
   'Soft Sand',
   'Soothe Bell',
+  'Star Sweet',
+  'Strawberry Sweet',
   'Wave Incense',
   'White Herb',
   'Wide Lens',
@@ -600,14 +640,14 @@ const FLING_10 = new Set([
 export function getFlingPower(item?: string) {
   if (!item) return 0;
   if (item === 'Iron Ball') return 130;
-  if (item === 'Hard Stone') return 100;
+  if (['Hard Stone', 'Room Service'].indexOf(item) !== -1) return 100;
   if (item.indexOf('Plate') !== -1 || ['Deep Sea Tooth', 'Thick Club'].indexOf(item) !== -1) {
     return 90;
   }
-  if (['Assault Vest', 'Weakness Policy'].indexOf(item) !== -1) return 80;
+  if (FLING_80.has(item)) return 80;
   if (['Poison Barb', 'Dragon Fang'].indexOf(item) !== -1) return 70;
   if (FLING_60.has(item)) return 60;
-  if (item === 'Sharp Beak') return 50;
+  if (['Eject Pack', 'Sharp Beak'].indexOf(item) !== -1) return 50;
   if (['Icy Rock', 'Eviolite'].indexOf(item) !== -1) return 40;
   if (FLING_30.has(item)) return 30;
   if (item.indexOf('Berry') !== -1 || FLING_10.has(item)) return 10;
@@ -649,4 +689,4 @@ export function getMultiAttack(item: string) {
   return undefined;
 }
 
-export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM];
+export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];

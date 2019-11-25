@@ -175,8 +175,8 @@ export class Pokemon {
         ((item.indexOf('ite') !== -1 && item.indexOf('ite Y') === -1) ||
           (speciesName === 'Groudon' && item === 'Red Orb') ||
           (speciesName === 'Kyogre' && item === 'Blue Orb'))) ||
-      ((moveName && (speciesName === 'Meloetta' && moveName === 'Relic Song')) ||
-        (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent'))
+      (moveName && speciesName === 'Meloetta' && moveName === 'Relic Song') ||
+      (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent')
     ) {
       i = 1;
     } else if (item && item.indexOf('ite Y') !== -1) {

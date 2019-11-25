@@ -1,4 +1,4 @@
-import {Category, getZMoveName, MoveData, MOVES, Recoil} from './data/moves';
+import {Category, getZMoveName, getMaxMoveName, MoveData, MOVES, Recoil} from './data/moves';
 import {Type} from './data/types';
 import {Generation} from './gen';
 import {extend} from './util';
@@ -10,7 +10,9 @@ export class Move {
   originalName: string;
   ability?: string;
   item?: string;
+  species?: string;
   useZ?: boolean;
+  useMax?: boolean;
   overrides?: Partial<MoveData>;
 
   hits: number;
@@ -38,6 +40,7 @@ export class Move {
   dealsPhysicalDamage: boolean;
   bypassesProtect: boolean;
   isZ: boolean;
+  isMax: boolean;
   usesHighestAttackStat: boolean;
 
   constructor(
@@ -46,7 +49,9 @@ export class Move {
     options: {
       ability?: string;
       item?: string;
+      species?: string;
       useZ?: boolean;
+      useMax?: boolean;
       isCrit?: boolean;
       hits?: number;
       usedTimes?: number;
@@ -58,6 +63,62 @@ export class Move {
     let data: MoveData & {name: string} = extend(true, {name}, MOVES[gen][name], options.overrides);
 
     // If isZMove but there isn't a corresponding z-move, use the original move
+    if (options.useMax && 'maxPower' in data) {
+      const maxMoveName: string = getMaxMoveName(
+        data.type,
+        options.species,
+        !!(data.category === 'Status')
+      );
+      const maxMove = MOVES[gen][maxMoveName];
+      const maxMoveBasePower = (move: MoveData) => {
+        let movePower = 10;
+        if (move.maxPower) movePower = move.maxPower;
+        if (!move.maxPower && move.category !== 'Status') {
+          if (!move.bp) {
+            movePower = 100;
+          } else if (move.type === 'Fighting' || move.type === 'Poison') {
+            if (move.bp >= 150) {
+              movePower = 100;
+            } else if (move.bp >= 110) {
+              movePower = 95;
+            } else if (move.bp >= 75) {
+              movePower = 90;
+            } else if (move.bp >= 65) {
+              movePower = 85;
+            } else if (move.bp >= 55) {
+              movePower = 80;
+            } else if (move.bp >= 45) {
+              movePower = 75;
+            } else {
+              movePower = 70;
+            }
+          } else {
+            if (move.bp >= 150) {
+              movePower = 150;
+            } else if (move.bp >= 110) {
+              movePower = 140;
+            } else if (move.bp >= 75) {
+              movePower = 130;
+            } else if (move.bp >= 65) {
+              movePower = 120;
+            } else if (move.bp >= 55) {
+              movePower = 110;
+            } else if (move.bp >= 45) {
+              movePower = 100;
+            } else {
+              movePower = 90;
+            }
+          }
+        }
+        return movePower;
+      };
+      data = extend(true, {}, maxMove, {
+        name: maxMoveName,
+        bp: maxMove.bp === 10 ? maxMoveBasePower(data) : maxMove.bp,
+        category: data.category,
+      });
+      this.hits = 1;
+    }
     if (options.useZ && 'zp' in data) {
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
       const zMove = MOVES[gen][zMoveName];
@@ -82,6 +143,7 @@ export class Move {
     this.ability = options.ability;
     this.item = options.item;
     this.useZ = options.useZ;
+    this.useMax = options.useMax;
     this.overrides = options.overrides;
 
     this.bp = data.bp;
@@ -106,6 +168,7 @@ export class Move {
     this.dealsPhysicalDamage = !!data.dealsPhysicalDamage;
     this.bypassesProtect = !!data.bypassesProtect;
     this.isZ = !!data.isZ;
+    this.isMax = !!data.isMax;
     this.usesHighestAttackStat = !!data.usesHighestAttackStat;
   }
 
@@ -113,7 +176,9 @@ export class Move {
     return new Move(this.gen, this.originalName, {
       ability: this.ability,
       item: this.item,
+      species: this.species,
       useZ: this.useZ,
+      useMax: this.useMax,
       isCrit: this.isCrit,
       hits: this.hits,
       usedTimes: this.usedTimes,
