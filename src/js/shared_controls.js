@@ -644,10 +644,7 @@ function createField() {
 		weather = $("input:radio[name='weather']:checked").val();
 		spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
 	}
-	var steelspikes;
-	if (gen === 8) {
-		steelspikes = [$("#steelspikesL").prop("checked"), $("#steelspikesR").prop("checked")];
-	}
+	var steelspikes = [$("#steelspikesL").prop("checked"), $("#steelspikesR").prop("checked")];
 	var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
