@@ -177,7 +177,7 @@ function calculateModern(
     move.type = attacker.type1;
   } else if (move.name === 'Aura Wheel') {
     if (attacker.name === 'Morpeko') {
-      move.type = 'Electic';
+      move.type = 'Electric';
     } else if (attacker.name === 'Morpeko-Hangry') {
       move.type = 'Dark';
     }
@@ -396,18 +396,19 @@ function calculateModern(
   switch (move.name) {
     case 'Behemoth Bash':
     case 'Behemoth Blade':
-    case 'Dynamax Cannon',
-      basePower = move.bp * (['G-max', 'Dynamax'].indexOf(defender.name) !== -1) ? 2 : 1;
+    case 'Dynamax Cannon':
+      basePower = move.bp * (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1 ? 2 : 1);
       description.moveBP = basePower;
       break;
     case 'Payback':
       basePower = turnOrder === 'LAST' ? 100 : 50;
       description.moveBP = basePower;
       break;
-    case 'Bolt Break':
+    case 'Bolt Beak':
     case 'Fishious Rend':
-      basePower = turnOrder !== 'LAST' ? move.bp * 2 : move.bp * 1;
+      basePower = move.bp * (turnOrder !== 'LAST' ? 2 : 1);
       description.moveBP = basePower;
+      break;
     case 'Electro Ball':
       const r = Math.floor(attacker.stats.spe / defender.stats.spe);
       basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
@@ -698,7 +699,7 @@ function calculateModern(
   if (move.usesHighestAttackStat) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
-  const attackStat = move.category === 'Physical' ? 'atk' : 'spa';
+  const attackStat = move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
@@ -799,7 +800,7 @@ function calculateModern(
       attacker.hasItem('Soul Dew') &&
       attacker.named('Latios', 'Latias') &&
       move.category === 'Special') ||
-    (!move.isZ &&
+    (!move.isZ && !move.isMax &&
       ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
         (attacker.hasItem('Choice Specs') && move.category === 'Special')))
   ) {
