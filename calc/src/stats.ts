@@ -144,6 +144,7 @@ const CALC_STAT = [
   calcStatADV,
   calcStatADV,
   calcStatADV,
+  calcStatADV,
 ];
 
 export function calcStat(
