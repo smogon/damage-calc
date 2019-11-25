@@ -1,4 +1,4 @@
-﻿﻿import {
+﻿import {
   getItemBoostType,
   getNaturalGift,
   getFlingPower,
@@ -699,7 +699,8 @@ function calculateModern(
   if (move.usesHighestAttackStat) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
-  const attackStat = move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
+  const attackStat =
+    move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
@@ -800,7 +801,8 @@ function calculateModern(
       attacker.hasItem('Soul Dew') &&
       attacker.named('Latios', 'Latias') &&
       move.category === 'Special') ||
-    (!move.isZ && !move.isMax &&
+    (!move.isZ &&
+      !move.isMax &&
       ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
         (attacker.hasItem('Choice Specs') && move.category === 'Special')))
   ) {
@@ -1030,8 +1032,8 @@ function calculateModern(
     description.defenderAbility = defender.ability;
   }
   if (defender.hasAbility('Punk Rock')) {
-      finalMods.push(0x800);
-      description.defenderAbility = defender.ability;
+    finalMods.push(0x800);
+    description.defenderAbility = defender.ability;
   }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
     const metronomeCount = Math.floor(move.metronomeCount!);
@@ -1045,7 +1047,7 @@ function calculateModern(
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(0x1333);
     description.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Life Orb') || attacker.hasAbility('Power Spot') && !move.isZ) {
+  } else if (attacker.hasItem('Life Orb') || (attacker.hasAbility('Power Spot') && !move.isZ)) {
     finalMods.push(0x14cc);
     description.attackerItem = attacker.item;
   }

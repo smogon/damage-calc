@@ -1,4 +1,4 @@
-﻿﻿import {extend} from '../util';
+﻿import {extend} from '../util';
 import {Type} from './types';
 
 export type Gender = 'male' | 'female' | 'genderless';
@@ -7521,7 +7521,9 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
   Butterfree: {formes: ['Butterfree', 'Butterfree-Gmax']},
   Charizard: {formes: ['Charizard', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-Gmax']},
   Corsola: {formes: ['Corsola', 'Corsola-Galar']},
-  Darmanitan: {formes: ['Darmanitan', 'Darmanitan-Zen', 'Darmanitan-Galar', 'Darmanitan-Zen-Galar']},
+  Darmanitan: {
+    formes: ['Darmanitan', 'Darmanitan-Zen', 'Darmanitan-Galar', 'Darmanitan-Zen-Galar'],
+  },
   Darumaka: {formes: ['Darumaka', 'Darumaka-Galar']},
   Eevee: {formes: ['Eevee', 'Eevee-Gmax']},
   "Farfetch'd": {formes: ["Farfetch'd", "Farfetch'd-Galar"]},
