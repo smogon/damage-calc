@@ -5,7 +5,7 @@ import {Field} from '../field';
 
 declare global {
   namespace jest {
-    interface Matchers<R> {
+    interface Matchers<R, T> {
       toBeRange(a: number, b: number): R;
     }
   }

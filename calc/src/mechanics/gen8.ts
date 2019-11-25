@@ -293,7 +293,8 @@ function calculateModern(
   }
   if (
     move.name === 'Dream Eater' &&
-    (!defender.hasStatus('Asleep') && !defender.hasAbility('Comatose'))
+    !defender.hasStatus('Asleep') &&
+    !defender.hasAbility('Comatose')
   ) {
     damage.push(0);
     return result;
@@ -319,7 +320,8 @@ function calculateModern(
   }
   if (
     field.weather === 'Strong Winds' &&
-    (defender.hasType('Flying') && TYPE_CHART[gen][move.type]!['Flying']! > 1)
+    defender.hasType('Flying') &&
+    TYPE_CHART[gen][move.type]!['Flying']! > 1
   ) {
     typeEffectiveness /= 2;
     description.weather = field.weather;
@@ -788,7 +790,8 @@ function calculateModern(
 
   if (
     (attacker.hasItem('Thick Club') &&
-      (attacker.named('Cubone', 'Marowak', 'Marowak-Alola') && move.category === 'Physical')) ||
+      attacker.named('Cubone', 'Marowak', 'Marowak-Alola') &&
+      move.category === 'Physical') ||
     (attacker.hasItem('Deep Sea Tooth') &&
       attacker.named('Clamperl') &&
       move.category === 'Special') ||
@@ -872,7 +875,9 @@ function calculateModern(
 
   if (
     (gen < 7 &&
-      (!hitsPhysical && defender.named('Latios', 'Latias') && defender.hasItem('Soul Dew'))) ||
+      !hitsPhysical &&
+      defender.named('Latios', 'Latias') &&
+      defender.hasItem('Soul Dew')) ||
     (defender.hasItem('Eviolite') && SPECIES[gen][defender.name].canEvolve) ||
     (!hitsPhysical && defender.hasItem('Assault Vest'))
   ) {
