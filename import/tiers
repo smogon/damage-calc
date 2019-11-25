@@ -15,6 +15,7 @@ const FORMATS = {
 	'PUBL': 'NU',
 	'(PU)': 'ZU',
 	'(OU)': 'OU',
+	'New': 'OU',
 };
 
 for (let gen = 1; gen <= 8; gen++) {

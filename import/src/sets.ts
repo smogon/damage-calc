@@ -63,39 +63,13 @@ export async function importSets(dir: string) {
     const setsByPokemon: PokemonSets = {};
 
     for (const pokemon of Object.keys(calc.SPECIES[gen]).sort()) {
-      for (const format in FORMATS) {
-        const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
-        if (!data || (gen < 8 && CURRENT_ONLY.includes(format as Format))) continue;
-        const forme = toForme(pokemon);
-        const smogon = data['smogon.com/dex'];
-        if (smogon && smogon[forme]) {
-          setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
-          for (const name in smogon[forme]) {
-            setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
-              smogon[forme][name]
-            );
-          }
-        } else {
-          const eligible =
-            (gen <= 3 && format === 'UU') ||
-            (gen >= 2 && gen <= 4 && format === 'NU') ||
-            (gen === 8 && USAGE.includes(format));
-
-          if (!eligible) continue;
-
-          const usage = data['smogon.com/stats'];
-          if (usage && usage[forme]) {
-            setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
-            for (const name in usage[forme]) {
-              setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
-                usage[forme][name]
-              );
-            }
-          }
-        }
+      await importSetsForPokemon(pokemon, gen as ps.Generation, setsByPokemon);
+      let sets = setsByPokemon[pokemon];
+      // If we can't find any sets for Gen 8 yet, just copy the Gen 7 sets instead...
+      if (!sets && gen === 8) {
+        await importSetsForPokemon(pokemon, 7, setsByPokemon);
+        sets = setsByPokemon[pokemon];
       }
-
-      const sets = setsByPokemon[pokemon];
       if (!sets) continue;
 
       const sorted = Object.keys(sets);
@@ -120,6 +94,40 @@ export async function importSets(dir: string) {
     const sets = JSON.stringify(setsByPokemon);
     const js = `${comment}\nvar SETDEX_${GENS[gen - 1]} = ${sets};`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
+  }
+}
+
+async function importSetsForPokemon(pokemon: string, gen: ps.Generation, setsByPokemon: PokemonSets) {
+  for (const format in FORMATS) {
+    const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
+    if (!data || (gen < 8 && CURRENT_ONLY.includes(format as Format))) continue;
+    const forme = toForme(pokemon);
+    const smogon = data['smogon.com/dex'];
+    if (smogon && smogon[forme]) {
+      setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
+      for (const name in smogon[forme]) {
+        setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
+          smogon[forme][name]
+        );
+      }
+    } else {
+      const eligible =
+        (gen <= 3 && format === 'UU') ||
+        (gen >= 2 && gen <= 4 && format === 'NU') ||
+        (gen === 8 && USAGE.includes(format));
+
+      if (!eligible) continue;
+
+      const usage = data['smogon.com/stats'];
+      if (usage && usage[forme]) {
+        setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
+        for (const name in usage[forme]) {
+          setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
+            usage[forme][name]
+          );
+        }
+      }
+    }
   }
 }
 
