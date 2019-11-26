@@ -53,7 +53,7 @@ const FORMATS: {[format: string]: string} = {
   '1v1': '1v1',
 };
 
-const CURRENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
+const RECENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
 
 const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
@@ -100,7 +100,7 @@ export async function importSets(dir: string) {
 async function importSetsForPokemon(pokemon: string, gen: ps.Generation, setsByPokemon: PokemonSets) {
   for (const format in FORMATS) {
     const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
-    if (!data || (gen < 8 && CURRENT_ONLY.includes(format as Format))) continue;
+    if (!data || (gen < 7 && RECENT_ONLY.includes(format as Format))) continue;
     const forme = toForme(pokemon);
     const smogon = data['smogon.com/dex'];
     if (smogon && smogon[forme]) {
