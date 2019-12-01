@@ -386,8 +386,11 @@ export function getKOChance(
 
 function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   let damage = 0;
-  const texts = [];
+  const texts: string[] = [];
 
+  if (defender.hasItem('Heavy-Duty Boots')) {
+    return {damage, texts};
+  }
   if (defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
     const effectiveness =
       TYPE_CHART[gen]['Rock']![defender.type1]! *
