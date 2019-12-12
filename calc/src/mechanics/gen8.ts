@@ -928,13 +928,13 @@ function calculateModern(
   }
   if (isGrounded(attacker, field)) {
     if (field.terrain === 'Electric' && move.type === 'Electric') {
-      baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+      baseDamage = pokeRound((baseDamage * 0x14CD) / 0x1000);
       description.terrain = field.terrain;
     } else if (field.terrain === 'Grassy' && move.type === 'Grass') {
-      baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+      baseDamage = pokeRound((baseDamage * 0x14CD) / 0x1000);
       description.terrain = field.terrain;
     } else if (field.terrain === 'Psychic' && move.type === 'Psychic') {
-      baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+      baseDamage = pokeRound((baseDamage * 0x14CD) / 0x1000);
       description.terrain = field.terrain;
     }
   }
