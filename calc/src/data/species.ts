@@ -7516,7 +7516,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
   },
 });
 const SS: {[name: string]: Species} = extend(true, {}, SM, {
-  Aegislash: {bs: {df: 140, sd: 140}},
+  'Aegislash-Shield': {bs: {df: 140, sd: 140}},
   'Aegislash-Blade': {bs: {at: 140, sa: 140}},
   Butterfree: {formes: ['Butterfree', 'Butterfree-Gmax']},
   Charizard: {formes: ['Charizard', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-Gmax']},
