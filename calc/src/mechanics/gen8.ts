@@ -129,12 +129,12 @@ function calculateGen8(
     move.type = field.hasWeather('Sun', 'Harsh Sunshine')
       ? 'Fire'
       : field.hasWeather('Rain', 'Heavy Rain')
-        ? 'Water'
-        : field.hasWeather('Sand')
-          ? 'Rock'
-          : field.hasWeather('Hail')
-            ? 'Ice'
-            : 'Normal';
+      ? 'Water'
+      : field.hasWeather('Sand')
+      ? 'Rock'
+      : field.hasWeather('Hail')
+      ? 'Ice'
+      : 'Normal';
     description.weather = field.weather;
     description.moveType = move.type;
   } else if (move.name === 'Judgment' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
@@ -167,12 +167,12 @@ function calculateGen8(
       field.terrain === 'Electric'
         ? 'Electric'
         : field.terrain === 'Grassy'
-          ? 'Grass'
-          : field.terrain === 'Misty'
-            ? 'Fairy'
-            : field.terrain === 'Psychic'
-              ? 'Psychic'
-              : 'Normal';
+        ? 'Grass'
+        : field.terrain === 'Misty'
+        ? 'Fairy'
+        : field.terrain === 'Psychic'
+        ? 'Psychic'
+        : 'Normal';
   } else if (move.name === 'Revelation Dance') {
     move.type = attacker.type1;
   } else if (move.name === 'Aura Wheel') {
@@ -244,12 +244,12 @@ function calculateGen8(
   );
   const typeEffect2 = defender.type2
     ? getMoveEffectiveness(
-      gen,
-      move,
-      defender.type2,
-      attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
-      field.isGravity
-    )
+        gen,
+        move,
+        defender.type2,
+        attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
+        field.isGravity
+      )
     : 1;
   let typeEffectiveness = typeEffect1 * typeEffect2;
   const resistedKnockOffDamage =
@@ -480,8 +480,8 @@ function calculateGen8(
         field.terrain && ['Electric', 'Grassy', 'Psychic'].indexOf(field.terrain) !== -1
           ? 90
           : field.terrain === 'Misty'
-            ? 95
-            : 80;
+          ? 95
+          : 80;
       break;
     case 'Water Shuriken':
       basePower = attacker.name === 'Greninja-Ash' && attacker.hasAbility('Battle Bond') ? 20 : 15;
@@ -708,8 +708,8 @@ function calculateGen8(
     (NATURES[attacker.nature][0] === attackStat
       ? '+'
       : NATURES[attacker.nature][1] === attackStat
-        ? '-'
-        : '') +
+      ? '-'
+      : '') +
     ' ' +
     displayStat(attackStat);
   if (
@@ -826,8 +826,8 @@ function calculateGen8(
     (NATURES[defender.nature][0] === defenseStat
       ? '+'
       : NATURES[defender.nature][1] === defenseStat
-        ? '-'
-        : '') +
+      ? '-'
+      : '') +
     ' ' +
     displayStat(defenseStat);
   if (
