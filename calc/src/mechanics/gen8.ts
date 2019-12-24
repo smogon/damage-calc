@@ -35,12 +35,12 @@ const SS = 8;
 
 export function makeCalculate(gen: 5 | 6 | 7 | 8) {
   return (attacker: Pokemon, defender: Pokemon, move: Move, field: Field) =>
-    calculateModern(gen, attacker, defender, move, field);
+    calculateGen8(gen, attacker, defender, move, field);
 }
 
 export const calculateSS = makeCalculate(SS);
 
-function calculateModern(
+function calculateGen8(
   gen: 5 | 6 | 7 | 8,
   attacker: Pokemon,
   defender: Pokemon,
@@ -1036,9 +1036,13 @@ function calculateModern(
     finalMods.push(0xc00);
     description.defenderAbility = defender.ability;
   }
-  if (defender.hasAbility('Punk Rock')) {
+  if (move.isSound && defender.hasAbility('Punk Rock')) {
     finalMods.push(0x800);
     description.defenderAbility = defender.ability;
+  }
+  if (move.isSound && attacker.hasAbility('Punk Rock')) {
+    finalMods.push(0x1300);
+    description.attackerAbility = attacker.ability;
   }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
     const metronomeCount = Math.floor(move.metronomeCount!);
