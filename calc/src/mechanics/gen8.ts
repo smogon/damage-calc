@@ -783,7 +783,10 @@ function calculateGen8(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword') && move.category === 'Physical') {
+  } else if (
+    attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword') &&
+    move.category === 'Physical'
+  ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
   }
