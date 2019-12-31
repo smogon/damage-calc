@@ -783,7 +783,7 @@ function calculateGen8(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword')) {
+  } else if (attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword') && move.category === 'Physical') {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
   }
@@ -895,6 +895,11 @@ function calculateGen8(
 
   if (defender.hasAbility('Fur Coat') && hitsPhysical) {
     dfMods.push(0x2000);
+    description.defenderAbility = defender.ability;
+  }
+
+  if (defender.hasAbility('Dauntless Shield') && hitsPhysical) {
+    dfMods.push(0x1800);
     description.defenderAbility = defender.ability;
   }
 
