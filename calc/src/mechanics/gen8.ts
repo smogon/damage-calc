@@ -702,7 +702,7 @@ function calculateGen8(
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
-    move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'atk' : 'def';
+    move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
     attacker.evs[attackStat] +
     (NATURES[attacker.nature][0] === attackStat
