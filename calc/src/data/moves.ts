@@ -170,6 +170,12 @@ const RBY: {[name: string]: MoveData} = {
     category: 'Physical',
     isSpread: 'allAdjacent',
   },
+  'Egg Bomb': {
+    bp: 100,
+    type: 'Normal',
+    category: 'Physical',
+    isBullet: true,
+  },
   Explosion: {
     bp: 170,
     type: 'Normal',
@@ -411,6 +417,13 @@ const RBY: {[name: string]: MoveData} = {
   Spore: {
     bp: 0,
     type: 'Grass',
+  },
+  Stomp: {
+    bp: 65,
+    type: 'Normal',
+    category: 'Physical',
+    hasSecondaryEffect: true,
+    makesContact: true,
   },
   Struggle: {
     bp: 50,
@@ -2991,6 +3004,7 @@ const SM: {[name: string]: MoveData} = extend(true, {}, XY, {
   'Dynamic Punch': {zp: 180},
   'Earth Power': {zp: 175},
   Earthquake: {zp: 180},
+  'Egg Bomb': {zp: 180},
   'Electro Ball': {zp: 160},
   Electroweb: {zp: 100},
   Endeavor: {zp: 160},
@@ -3512,6 +3526,7 @@ const SM: {[name: string]: MoveData} = extend(true, {}, XY, {
     category: 'Special',
     isZ: true,
   },
+  Stomp: {zp: 120},
   'Stomping Tantrum': {
     bp: 75,
     type: 'Ground',
