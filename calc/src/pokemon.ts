@@ -25,7 +25,8 @@ export class Pokemon {
   level: number;
   gender?: Gender;
   ability?: string;
-  abilityOn: boolean;
+  abilityOn?: boolean;
+  isMax?: boolean;
   item?: string;
 
   nature: string;
@@ -48,6 +49,7 @@ export class Pokemon {
       level?: number;
       ability?: string;
       abilityOn?: boolean;
+      isMax?: boolean;
       item?: string;
       gender?: Gender;
       nature?: string;

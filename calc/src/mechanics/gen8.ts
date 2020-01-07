@@ -1,4 +1,4 @@
-﻿import {
+﻿﻿import {
   getItemBoostType,
   getNaturalGift,
   getFlingPower,
@@ -783,7 +783,10 @@ function calculateGen8(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Gorilla Tactics') && (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1)) {
+  } else if (
+    attacker.hasAbility('Gorilla Tactics') && 
+    (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1)
+  ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
   }

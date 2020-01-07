@@ -361,7 +361,7 @@ $(".item").change(function () {
 });
 
 function smogonAnalysis(pokemonName) {
-	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm"][gen - 1];
+	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss"][gen - 1];
 	return "https://smogon.com/dex/" + generation + "/pokemon/" + pokemonName.toLowerCase() + "/";
 }
 
@@ -616,6 +616,7 @@ function createPokemon(pokeInfo) {
 function getMoveDetails(moveInfo, ability, item) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen === 7 && moveInfo.find("input.move-z").prop("checked");
+	var isMax = gen === 8 && moveInfo.find(".move-max").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
 	var usedTimes = +moveInfo.find(".stat-drops").val();
