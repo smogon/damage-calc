@@ -158,6 +158,12 @@ export function checkDownload(source: Pokemon, target: Pokemon) {
   }
 }
 
+export function checkIntrepidSword(source: Pokemon) {
+  if (source.hasAbility('Intrepid Sword')) {
+    source.boosts.atk = Math.min(6, source.boosts.atk + 1);
+  }
+}
+
 export function countBoosts(gen: Generation, boosts: StatsTable<number>) {
   let sum = 0;
   // NOTE: starting from 1 because HP is not boostable

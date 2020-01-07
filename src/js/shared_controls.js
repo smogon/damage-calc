@@ -438,7 +438,7 @@ $(".set-selector").change(function () {
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
 			var format = getSelectedTiers()[0];
 			var has50lvl = startsWith(format, "VGC") || startsWith(format, "Battle Spot");
-			//var isDoubles = format === 'Doubles' || has50lvl; *TODO* 
+			//var isDoubles = format === 'Doubles' || has50lvl; *TODO*
 			if (format === "LC") pokeObj.find(".level").val(5);
 			if (has50lvl) pokeObj.find(".level").val(50);
 			//if (isDoubles) field.gameType = 'Doubles'; *TODO*
