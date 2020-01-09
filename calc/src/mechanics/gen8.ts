@@ -26,6 +26,7 @@ import {
   checkKlutz,
   checkIntimidate,
   checkDownload,
+  checkIntrepidSword,
   isGrounded,
   countBoosts,
   pokeRound,
@@ -67,6 +68,8 @@ function calculateGen8(
   checkIntimidate(defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
+  checkIntrepidSword(attacker);
+  checkIntrepidSword(defender);
 
   attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk);
   attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa);
@@ -783,7 +786,10 @@ function calculateGen8(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Gorilla Tactics') && (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1)) {
+  } else if (
+    attacker.hasAbility('Gorilla Tactics') &&
+    ['Gmax', 'Dynamax'].indexOf(defender.name) !== -1
+  ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
   }
