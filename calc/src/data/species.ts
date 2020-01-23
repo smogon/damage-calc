@@ -7531,7 +7531,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
   Charizard: {formes: ['Charizard', 'Charizard-Mega-X', 'Charizard-Mega-Y', 'Charizard-Gmax']},
   Corsola: {formes: ['Corsola', 'Corsola-Galar']},
   Darmanitan: {
-    formes: ['Darmanitan', 'Darmanitan-Zen', 'Darmanitan-Galar', 'Darmanitan-Zen-Galar'],
+    formes: ['Darmanitan', 'Darmanitan-Zen', 'Darmanitan-Galar', 'Darmanitan-Galar-Zen'],
   },
   Darumaka: {formes: ['Darumaka', 'Darumaka-Galar']},
   Eevee: {formes: ['Eevee', 'Eevee-Gmax']},
@@ -7797,7 +7797,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     ab: 'Gorilla Tactics',
     isAlternateForme: true,
   },
-  'Darmanitan-Zen-Galar': {
+  'Darmanitan-Galar-Zen': {
     t1: 'Ice',
     t2: 'Fire',
     bs: {hp: 105, at: 160, df: 55, sa: 30, sd: 55, sp: 135},
