@@ -258,6 +258,10 @@ const RBY: {[name: string]: MoveData} = {
     hasSecondaryEffect: true,
     isBite: true,
   },
+  Hypnosis: {
+    bp: 0,
+    type: 'Psychic',
+  },
   'Ice Beam': {
     bp: 95,
     type: 'Ice',
@@ -302,8 +306,25 @@ const RBY: {[name: string]: MoveData} = {
   'Mega Drain': {
     bp: 40,
     type: 'Grass',
+    category: 'Special',
     givesHealth: true,
     percentHealed: 0.5,
+  },
+  'Mega Kick': {
+    bp: 120,
+    type: 'Normal',
+    category: 'Physical',
+    makesContact: true,
+  },
+  'Mega Punch': {
+    bp: 80,
+    type: 'Normal',
+    category: 'Physical',
+    makesContact: true,
+  },
+  Mimic: {
+    bp: 0,
+    type: 'Normal',
   },
   'Mirror Move': {
     bp: 0,
@@ -3234,6 +3255,8 @@ const SM: {[name: string]: MoveData} = extend(true, {}, XY, {
     isZ: true,
   },
   Megahorn: {zp: 190},
+  'Mega Kick': {zp: 190},
+  'Mega Punch': {zp: 160},
   'Menacing Moonraze Maelstrom': {
     bp: 200,
     type: 'Ghost',
