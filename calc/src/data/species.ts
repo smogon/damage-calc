@@ -7547,6 +7547,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
   Pikachu: {formes: ['Pikachu', 'Pikachu-Gmax']},
   Ponyta: {formes: ['Ponyta', 'Ponyta-Galar']},
   Rapidash: {formes: ['Rapidash', 'Rapidash-Galar']},
+  Slowpoke: {formes: ['Slowpoke', 'Slowpoke-Galar']},
   Snorlax: {formes: ['Snorlax', 'Snorlax-Gmax']},
   Stunfisk: {formes: ['Stunfisk', 'Stunfisk-Galar']},
   Weezing: {formes: ['Weezing', 'Weezing-Galar']},
@@ -8368,6 +8369,14 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     w: 2.5,
     ab: 'Cheek Pouch',
     canEvolve: true,
+  },
+  'Slowpoke-Galar': {
+    t1: 'Psychic',
+    bs: {hp: 90, at: 65, df: 65, sa: 40, sd: 40, sp: 15},
+    w: 36,
+    ab: 'Own Tempo',
+    canEvolve: true,
+    isAlternateForme: true,
   },
   Snom: {
     t1: 'Ice',
