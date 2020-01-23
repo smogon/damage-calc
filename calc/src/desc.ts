@@ -346,8 +346,8 @@ export function getKOChance(
         text:
           qualifier +
           (move.usedTimes > 1 
-           ? 100 - Math.round(chance * 1000) / 10 :
-           Math.round(chance * 1000) / 10) +
+           ? 100 - Math.round(chance * 1000) / 10
+           : Math.round(chance * 1000) / 10) +
           `% chance to ${move.usedTimes}HKO${afterText}`,
       };
     }
