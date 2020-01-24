@@ -906,7 +906,6 @@ function calculateGen8(
     dfMods.push(0x2000);
     description.defenderAbility = defender.ability;
   }
-    
   if (defender.hasAbility('Dauntless Shield') && hitsPhysical) {
     dfMods.push(0x1800);
     description.defenderAbility = defender.ability;
