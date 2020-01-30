@@ -7945,7 +7945,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
   'Eternatus-Eternamax': {
     t1: 'Poison',
     t2: 'Dragon',
-    bs: {hp: 225, at: 115, df: 250, sa: 125, sd: 250, sp: 130},
+    bs: {hp: 255, at: 115, df: 250, sa: 125, sd: 250, sp: 130},
     w: 950,
     ab: 'Pressure',
     gender: 'genderless',
