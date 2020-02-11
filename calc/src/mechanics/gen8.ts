@@ -515,9 +515,6 @@ function calculateGen8(
   } else if (attacker.hasAbility('Analytic') && turnOrder !== 'FIRST') {
     bpMods.push(0x14cd);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Punk Rock') && move.isSound) {
-    bpMods.push(0x14cd);
-    description.attackerAbility = attacker.ability;
   } else if (
     attacker.hasAbility('Sand Force') &&
     field.hasWeather('Sand') &&
