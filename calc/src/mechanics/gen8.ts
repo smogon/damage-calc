@@ -26,6 +26,7 @@ import {
   checkKlutz,
   checkIntimidate,
   checkDownload,
+  checkIntrepidSword,
   isGrounded,
   countBoosts,
   pokeRound,
@@ -67,6 +68,8 @@ function calculateGen8(
   checkIntimidate(defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
+  checkIntrepidSword(attacker);
+  checkIntrepidSword(defender);
 
   attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk);
   attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa);
@@ -512,6 +515,9 @@ function calculateGen8(
   } else if (attacker.hasAbility('Analytic') && turnOrder !== 'FIRST') {
     bpMods.push(0x14cd);
     description.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Punk Rock') && move.isSound) {
+    bpMods.push(0x14cd);
+    description.attackerAbility = attacker.ability;
   } else if (
     attacker.hasAbility('Sand Force') &&
     field.hasWeather('Sand') &&
@@ -783,7 +789,10 @@ function calculateGen8(
   ) {
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Gorilla Tactics', 'Intrepid Sword')) {
+  } else if (
+    attacker.hasAbility('Gorilla Tactics') &&
+    ['Gmax', 'Dynamax'].indexOf(defender.name) !== -1
+  ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
   }
@@ -897,6 +906,10 @@ function calculateGen8(
     dfMods.push(0x2000);
     description.defenderAbility = defender.ability;
   }
+  if (defender.hasAbility('Dauntless Shield') && hitsPhysical) {
+    dfMods.push(0x1800);
+    description.defenderAbility = defender.ability;
+  }
 
   defense = Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000));
 
@@ -928,13 +941,13 @@ function calculateGen8(
   }
   if (isGrounded(attacker, field)) {
     if (field.terrain === 'Electric' && move.type === 'Electric') {
-      baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+      baseDamage = pokeRound((baseDamage * 0x14cd) / 0x1000);
       description.terrain = field.terrain;
     } else if (field.terrain === 'Grassy' && move.type === 'Grass') {
-      baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+      baseDamage = pokeRound((baseDamage * 0x14cd) / 0x1000);
       description.terrain = field.terrain;
     } else if (field.terrain === 'Psychic' && move.type === 'Psychic') {
-      baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+      baseDamage = pokeRound((baseDamage * 0x14cd) / 0x1000);
       description.terrain = field.terrain;
     }
   }
@@ -1036,7 +1049,7 @@ function calculateGen8(
     finalMods.push(0xc00);
     description.defenderAbility = defender.ability;
   }
-  if (move.isSound && defender.hasAbility('Punk Rock')) {
+  if (defender.hasAbility('Punk Rock') && move.isSound) {
     finalMods.push(0x800);
     description.defenderAbility = defender.ability;
   }
