@@ -39,20 +39,20 @@ var LEGACY_STATS = [
 
 function legacyStatToStat(st) {
 	switch (st) {
-		case 'hp':
-			return "hp";
-		case 'at':
-			return "atk";
-		case 'df':
-			return "def";
-		case 'sa':
-			return "spa";
-		case 'sd':
-			return "spd";
-		case 'sp':
-			return "spe";
-		case 'sl':
-			return "spc";
+	case 'hp':
+		return "hp";
+	case 'at':
+		return "atk";
+	case 'df':
+		return "def";
+	case 'sa':
+		return "spa";
+	case 'sd':
+		return "spd";
+	case 'sp':
+		return "spe";
+	case 'sl':
+		return "spc";
 	}
 }
 
@@ -222,39 +222,39 @@ function autosetWeather(ability, i) {
 		lastAutoWeather[1 - i] = "";
 	}
 	switch (ability) {
-		case "Drought":
-			lastAutoWeather[i] = "Sun";
-			$("#sun").prop("checked", true);
-			break;
-		case "Drizzle":
-			lastAutoWeather[i] = "Rain";
-			$("#rain").prop("checked", true);
-			break;
-		case "Sand Stream":
-			lastAutoWeather[i] = "Sand";
-			$("#sand").prop("checked", true);
-			break;
-		case "Snow Warning":
-			lastAutoWeather[i] = "Hail";
-			$("#hail").prop("checked", true);
-			break;
-		case "Desolate Land":
-			lastAutoWeather[i] = "Harsh Sunshine";
-			$("#harsh-sunshine").prop("checked", true);
-			break;
-		case "Primordial Sea":
-			lastAutoWeather[i] = "Heavy Rain";
-			$("#heavy-rain").prop("checked", true);
-			break;
-		case "Delta Stream":
-			lastAutoWeather[i] = "Strong Winds";
-			$("#strong-winds").prop("checked", true);
-			break;
-		default:
-			lastAutoWeather[i] = "";
-			var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
-			$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
-			break;
+	case "Drought":
+		lastAutoWeather[i] = "Sun";
+		$("#sun").prop("checked", true);
+		break;
+	case "Drizzle":
+		lastAutoWeather[i] = "Rain";
+		$("#rain").prop("checked", true);
+		break;
+	case "Sand Stream":
+		lastAutoWeather[i] = "Sand";
+		$("#sand").prop("checked", true);
+		break;
+	case "Snow Warning":
+		lastAutoWeather[i] = "Hail";
+		$("#hail").prop("checked", true);
+		break;
+	case "Desolate Land":
+		lastAutoWeather[i] = "Harsh Sunshine";
+		$("#harsh-sunshine").prop("checked", true);
+		break;
+	case "Primordial Sea":
+		lastAutoWeather[i] = "Heavy Rain";
+		$("#heavy-rain").prop("checked", true);
+		break;
+	case "Delta Stream":
+		lastAutoWeather[i] = "Strong Winds";
+		$("#strong-winds").prop("checked", true);
+		break;
+	default:
+		lastAutoWeather[i] = "";
+		var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
+		$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+		break;
 	}
 }
 
@@ -270,29 +270,29 @@ function autosetTerrain(ability, i) {
 	// terrain input uses checkbox instead of radio, need to uncheck all first
 	$("input:checkbox[name='terrain']:checked").prop("checked", false);
 	switch (ability) {
-		case "Electric Surge":
-			lastAutoTerrain[i] = "Electric";
-			$("#electric").prop("checked", true);
-			break;
-		case "Grassy Surge":
-			lastAutoTerrain[i] = "Grassy";
-			$("#grassy").prop("checked", true);
-			break;
-		case "Misty Surge":
-			lastAutoTerrain[i] = "Misty";
-			$("#misty").prop("checked", true);
-			break;
-		case "Psychic Surge":
-			lastAutoTerrain[i] = "Psychic";
-			$("#psychic").prop("checked", true);
-			break;
-		default:
-			lastAutoTerrain[i] = "";
-			var newTerrain = lastAutoTerrain[1 - i] !== "" ? lastAutoTerrain[1 - i] : lastManualTerrain;
-			if ("No terrain" !== newTerrain) {
-				$("input:checkbox[name='terrain'][value='" + newTerrain + "']").prop("checked", true);
-			}
-			break;
+	case "Electric Surge":
+		lastAutoTerrain[i] = "Electric";
+		$("#electric").prop("checked", true);
+		break;
+	case "Grassy Surge":
+		lastAutoTerrain[i] = "Grassy";
+		$("#grassy").prop("checked", true);
+		break;
+	case "Misty Surge":
+		lastAutoTerrain[i] = "Misty";
+		$("#misty").prop("checked", true);
+		break;
+	case "Psychic Surge":
+		lastAutoTerrain[i] = "Psychic";
+		$("#psychic").prop("checked", true);
+		break;
+	default:
+		lastAutoTerrain[i] = "";
+		var newTerrain = lastAutoTerrain[1 - i] !== "" ? lastAutoTerrain[1 - i] : lastManualTerrain;
+		if ("No terrain" !== newTerrain) {
+			$("input:checkbox[name='terrain'][value='" + newTerrain + "']").prop("checked", true);
+		}
+		break;
 	}
 }
 
@@ -968,53 +968,53 @@ function getTerrainEffects() {
 	var className = $(this).prop("className");
 	className = className.substring(0, className.indexOf(" "));
 	switch (className) {
-		case "type1":
-		case "type2":
-		case "item":
-			var id = $(this).closest(".poke-info").prop("id");
-			var terrainValue = $("input:checkbox[name='terrain']:checked").val();
-			if (terrainValue === "Electric") {
-				$("#" + id).find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#" + id)));
-			} else if (terrainValue === "Misty") {
-				$("#" + id).find(".status").prop("disabled", isPokeInfoGrounded($("#" + id)));
-			}
-			break;
-		case "ability":
-			// with autoset, ability change may cause terrain change, need to consider both sides
-			var terrainValue = $("input:checkbox[name='terrain']:checked").val();
-			if (terrainValue === "Electric") {
-				$("#p1").find(".status").prop("disabled", false);
-				$("#p2").find(".status").prop("disabled", false);
-				$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
-				$("#p2").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p2")));
-			} else if (terrainValue === "Misty") {
-				$("#p1").find(".status").prop("disabled", isPokeInfoGrounded($("#p1")));
-				$("#p2").find(".status").prop("disabled", isPokeInfoGrounded($("#p2")));
-			} else {
-				$("#p1").find("[value='Asleep']").prop("disabled", false);
-				$("#p1").find(".status").prop("disabled", false);
-				$("#p2").find("[value='Asleep']").prop("disabled", false);
-				$("#p2").find(".status").prop("disabled", false);
-			}
-			break;
-		default:
-			$("input:checkbox[name='terrain']").not(this).prop("checked", false);
-			if ($(this).prop("checked") && $(this).val() === "Electric") {
-				// need to enable status because it may be disabled by Misty Terrain before.
-				$("#p1").find(".status").prop("disabled", false);
-				$("#p2").find(".status").prop("disabled", false);
-				$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
-				$("#p2").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p2")));
-			} else if ($(this).prop("checked") && $(this).val() === "Misty") {
-				$("#p1").find(".status").prop("disabled", isPokeInfoGrounded($("#p1")));
-				$("#p2").find(".status").prop("disabled", isPokeInfoGrounded($("#p2")));
-			} else {
-				$("#p1").find("[value='Asleep']").prop("disabled", false);
-				$("#p1").find(".status").prop("disabled", false);
-				$("#p2").find("[value='Asleep']").prop("disabled", false);
-				$("#p2").find(".status").prop("disabled", false);
-			}
-			break;
+	case "type1":
+	case "type2":
+	case "item":
+		var id = $(this).closest(".poke-info").prop("id");
+		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
+		if (terrainValue === "Electric") {
+			$("#" + id).find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#" + id)));
+		} else if (terrainValue === "Misty") {
+			$("#" + id).find(".status").prop("disabled", isPokeInfoGrounded($("#" + id)));
+		}
+		break;
+	case "ability":
+		// with autoset, ability change may cause terrain change, need to consider both sides
+		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
+		if (terrainValue === "Electric") {
+			$("#p1").find(".status").prop("disabled", false);
+			$("#p2").find(".status").prop("disabled", false);
+			$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p2")));
+		} else if (terrainValue === "Misty") {
+			$("#p1").find(".status").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find(".status").prop("disabled", isPokeInfoGrounded($("#p2")));
+		} else {
+			$("#p1").find("[value='Asleep']").prop("disabled", false);
+			$("#p1").find(".status").prop("disabled", false);
+			$("#p2").find("[value='Asleep']").prop("disabled", false);
+			$("#p2").find(".status").prop("disabled", false);
+		}
+		break;
+	default:
+		$("input:checkbox[name='terrain']").not(this).prop("checked", false);
+		if ($(this).prop("checked") && $(this).val() === "Electric") {
+			// need to enable status because it may be disabled by Misty Terrain before.
+			$("#p1").find(".status").prop("disabled", false);
+			$("#p2").find(".status").prop("disabled", false);
+			$("#p1").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find("[value='Asleep']").prop("disabled", isPokeInfoGrounded($("#p2")));
+		} else if ($(this).prop("checked") && $(this).val() === "Misty") {
+			$("#p1").find(".status").prop("disabled", isPokeInfoGrounded($("#p1")));
+			$("#p2").find(".status").prop("disabled", isPokeInfoGrounded($("#p2")));
+		} else {
+			$("#p1").find("[value='Asleep']").prop("disabled", false);
+			$("#p1").find(".status").prop("disabled", false);
+			$("#p2").find("[value='Asleep']").prop("disabled", false);
+			$("#p2").find(".status").prop("disabled", false);
+		}
+		break;
 	}
 }
 
