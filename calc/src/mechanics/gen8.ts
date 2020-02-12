@@ -515,9 +515,6 @@ function calculateGen8(
   } else if (attacker.hasAbility('Analytic') && turnOrder !== 'FIRST') {
     bpMods.push(0x14cd);
     description.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Punk Rock') && move.isSound) {
-    bpMods.push(0x14cd);
-    description.attackerAbility = attacker.ability;
   } else if (
     attacker.hasAbility('Sand Force') &&
     field.hasWeather('Sand') &&
@@ -791,7 +788,7 @@ function calculateGen8(
     description.attackerAbility = attacker.ability;
   } else if (
     attacker.hasAbility('Gorilla Tactics') &&
-    ['Gmax', 'Dynamax'].indexOf(defender.name) !== -1
+    ['Gmax', 'Dynamax'].indexOf(attacker.name) === -1
   ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
@@ -1052,6 +1049,10 @@ function calculateGen8(
   if (defender.hasAbility('Punk Rock') && move.isSound) {
     finalMods.push(0x800);
     description.defenderAbility = defender.ability;
+  }
+  if (move.isSound && attacker.hasAbility('Punk Rock')) {
+    finalMods.push(0x14cd);
+    description.attackerAbility = attacker.ability;
   }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
     const metronomeCount = Math.floor(move.metronomeCount!);
