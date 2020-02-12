@@ -33,7 +33,9 @@ function startsWith(string, target) {
 
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
-var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
+var LEGACY_STATS = [
+	[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC
+];
 
 function legacyStatToStat(st) {
 	switch (st) {
@@ -66,11 +68,13 @@ var bounds = {
 for (var bounded in bounds) {
 	attachValidation(bounded, bounds[bounded][0], bounds[bounded][1]);
 }
+
 function attachValidation(clazz, min, max) {
 	$("." + clazz).keyup(function () {
 		validate($(this), min, max);
 	});
 }
+
 function validate(obj, min, max) {
 	obj.val(Math.max(min, Math.min(max, ~~obj.val())));
 }
@@ -156,11 +160,13 @@ function calcCurrentHP(poke, max, percent) {
 	poke.find(".current-hp").val(current);
 	drawHealthBar(poke, max, current);
 }
+
 function calcPercentHP(poke, max, current) {
 	var percent = Math.floor(100 * current / max);
 	poke.find(".percent-hp").val(percent);
 	drawHealthBar(poke, max, current);
 }
+
 function drawHealthBar(poke, max, current) {
 	var fillPercent = Math.floor(100 * current / max);
 	var fillColor = fillPercent > 50 ? "green" : fillPercent > 20 ? "yellow" : "red";
@@ -208,6 +214,7 @@ $("#p1 .ability").bind("keyup change", function () {
 
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
+
 function autosetWeather(ability, i) {
 	var currentWeather = $("input:radio[name='weather']:checked").val();
 	if (lastAutoWeather.indexOf(currentWeather) === -1) {
@@ -253,6 +260,7 @@ function autosetWeather(ability, i) {
 
 var lastManualTerrain = "";
 var lastAutoTerrain = ["", ""];
+
 function autosetTerrain(ability, i) {
 	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
 	if (lastAutoTerrain.indexOf(currentTerrain) === -1) {
@@ -292,8 +300,13 @@ $("#p1 .item").bind("keyup change", function () {
 	autosetStatus("#p1", $(this).val());
 });
 
-var lastManualStatus = { "#p1": "Healthy" };
-var lastAutoStatus = { "#p1": "Healthy" };
+var lastManualStatus = {
+	"#p1": "Healthy"
+};
+var lastAutoStatus = {
+	"#p1": "Healthy"
+};
+
 function autosetStatus(p, item) {
 	var currentStatus = $(p + " .status").val();
 	if (currentStatus !== lastAutoStatus[p]) {
@@ -546,7 +559,10 @@ function createPokemon(pokeInfo) {
 		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
 			var moveName = set.moves[i];
-			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", { ability: ability, item: item }));
+			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {
+				ability: ability,
+				item: item
+			}));
 		}
 
 		return new calc.Pokemon(gen, name, {
@@ -631,8 +647,15 @@ function getMoveDetails(moveInfo, ability, item, isMax) {
 		category: moveInfo.find(".move-cat").val()
 	};
 	return new calc.Move(gen, moveName, {
-		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
-		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides, useMax: isMax
+		ability: ability,
+		item: item,
+		useZ: isZMove,
+		isCrit: isCrit,
+		hits: hits,
+		usedTimes: usedTimes,
+		metronomeCount: metronomeCount,
+		overrides: overrides,
+		useMax: isMax
 	});
 }
 
@@ -665,15 +688,29 @@ function createField() {
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
-			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
-			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isDynamaxed: dynamaxed[i]
+			spikes: spikes[i],
+			isSR: isSR[i],
+			steelsurge: steelsurge[i],
+			isReflect: isReflect[i],
+			isLightScreen: isLightScreen[i],
+			isProtected: isProtected[i],
+			isSeeded: isSeeded[i],
+			isForesight: isForesight[i],
+			isTailwind: isTailwind[i],
+			isHelpingHand: isHelpingHand[i],
+			isFriendGuard: isFriendGuard[i],
+			isAuroraVeil: isAuroraVeil[i],
+			isBattery: isBattery[i],
+			isDynamaxed: dynamaxed[i]
 		});
 	};
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain, isGravity: isGravity,
-		attackerSide: createSide(0), defenderSide: createSide(1)
+		gameType: gameType,
+		weather: weather,
+		terrain: terrain,
+		isGravity: isGravity,
+		attackerSide: createSide(0),
+		defenderSide: createSide(1)
 	});
 }
 
@@ -705,17 +742,39 @@ function calcStat(poke, statName) {
 }
 
 var GENERATION = {
-	'1': 1, 'rb': 1, 'rby': 1,
-	'2': 2, 'gs': 2, 'gsc': 2,
-	'3': 3, 'rs': 3, 'rse': 3, 'frlg': 3, 'adv': 3,
-	'4': 4, 'dp': 4, 'dpp': 4, 'hgss': 4,
-	'5': 5, 'bw': 5, 'bw2': 5, 'b2w2': 5,
-	'6': 6, 'xy': 6, 'oras': 6,
-	'7': 7, 'sm': 7, 'usm': 7, 'usum': 7,
-	'8': 8, 'ss': 8
+	'1': 1,
+	'rb': 1,
+	'rby': 1,
+	'2': 2,
+	'gs': 2,
+	'gsc': 2,
+	'3': 3,
+	'rs': 3,
+	'rse': 3,
+	'frlg': 3,
+	'adv': 3,
+	'4': 4,
+	'dp': 4,
+	'dpp': 4,
+	'hgss': 4,
+	'5': 5,
+	'bw': 5,
+	'bw2': 5,
+	'b2w2': 5,
+	'6': 6,
+	'xy': 6,
+	'oras': 6,
+	'7': 7,
+	'sm': 7,
+	'usm': 7,
+	'usum': 7,
+	'8': 8,
+	'ss': 8
 };
 
-var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
+var SETDEX = [
+	[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS
+];
 var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
@@ -733,7 +792,9 @@ $(".gen").change(function () {
 			params.sort();
 			var path = window.location.pathname + '?' + params;
 			window.history.pushState({}, document.title, path);
-			gtag('config', 'UA-26211653-3', { 'page_path': path });
+			gtag('config', 'UA-26211653-3', {
+				'page_path': path
+			});
 		}
 	}
 	genWasChanged = true;
