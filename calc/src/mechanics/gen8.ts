@@ -1051,7 +1051,7 @@ function calculateGen8(
     description.defenderAbility = defender.ability;
   }
   if (move.isSound && attacker.hasAbility('Punk Rock')) {
-    finalMods.push(0x1300);
+    finalMods.push(0x14cd);
     description.attackerAbility = attacker.ability;
   }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
