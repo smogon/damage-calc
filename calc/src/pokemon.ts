@@ -108,7 +108,7 @@ export class Pokemon {
   }
 
   /* get */ maxHP() {
-    return this.rawStats.hp;
+    return this.isMax ? this.rawStats.hp * 2 : this.rawStats.hp;
   }
 
   hasAbility(...abilities: string[]) {

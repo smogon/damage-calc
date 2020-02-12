@@ -52,10 +52,8 @@ export function display(
   const minDamage = damage[0] * move.hits;
   const maxDamage = damage[damage.length - 1] * move.hits;
 
-  const maxHP = defender.isMax ? defender.maxHP() * 2 : defender.maxHP();
-
-  const minDisplay = toDisplay(notation, minDamage, maxHP);
-  const maxDisplay = toDisplay(notation, maxDamage, maxHP);
+  const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
+  const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
 
   const desc = buildDescription(rawDesc);
   const damageText = `${minDamage}-${maxDamage} (${minDisplay} - ${maxDisplay}${notation})`;
@@ -76,10 +74,8 @@ export function displayMove(
   const minDamage = damage[0] * move.hits;
   const maxDamage = damage[damage.length - 1] * move.hits;
 
-  const maxHP = defender.isMax ? defender.maxHP() * 2 : defender.maxHP();
-
-  const minDisplay = toDisplay(notation, minDamage, maxHP);
-  const maxDisplay = toDisplay(notation, maxDamage, maxHP);
+  const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
+  const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
 
   const recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
