@@ -628,7 +628,7 @@ function getMoveDetails(moveInfo, ability, item) {
 	};
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
-		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides
+		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides, useMax: isMax
 	});
 }
 

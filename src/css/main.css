@@ -367,6 +367,12 @@ select.toxic-counter {
     height: 1em;
     padding: 3px 3px;
 }
+.poke-info .max-btn {
+	font-size: 0.8em;
+	width: 2.5em;
+	height: 1em;
+	padding: 3px 3px;
+}
 
 /* field info */
 .field-info .btn {
