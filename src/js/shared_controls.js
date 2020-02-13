@@ -140,9 +140,9 @@ $(".sl .dvs").keyup(function () {
 
 function getHPDVs(poke) {
 	return (~~poke.find(".at .dvs").val() % 2) * 8 +
-		(~~poke.find(".df .dvs").val() % 2) * 4 +
-		(~~poke.find(".sp .dvs").val() % 2) * 2 +
-		(~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2);
+(~~poke.find(".df .dvs").val() % 2) * 4 +
+(~~poke.find(".sp .dvs").val() % 2) * 2 +
+(~~poke.find(gen === 1 ? ".sl .dvs" : ".sa .dvs").val() % 2);
 }
 
 function calcStats(poke) {
@@ -897,12 +897,11 @@ var stickyMoves = (function () {
 function isPokeInfoGrounded(pokeInfo) {
 	return $("#gravity").prop("checked") || (
 		pokeInfo.find(".type1").val() !== "Flying" &&
-		pokeInfo.find(".type2").val() !== "Flying" &&
-		pokeInfo.find(".ability").val() !== "Levitate" &&
-		pokeInfo.find(".item").val() !== "Air Balloon"
+        pokeInfo.find(".type2").val() !== "Flying" &&
+        pokeInfo.find(".ability").val() !== "Levitate" &&
+        pokeInfo.find(".item").val() !== "Air Balloon"
 	);
 }
-
 function getTerrainEffects() {
 	var className = $(this).prop("className");
 	className = className.substring(0, className.indexOf(" "));
