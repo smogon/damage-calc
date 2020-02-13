@@ -697,7 +697,7 @@ function calcStat(poke, statName) {
 		if (statName !== "hp") nature = poke.find(".nature").val();
 	}
 	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
-	if (gen >= 8 && statName === "hp" && poke.isMax) {
+	if (gen === 8 && statName === "hp" && poke.isMax) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);
@@ -733,7 +733,7 @@ $(".gen").change(function () {
 			params.sort();
 			var path = window.location.pathname + '?' + params;
 			window.history.pushState({}, document.title, path);
-			gtag('config', 'UA-26211653-3', { 'page_path': path });
+			gtag('config', 'UA-26211653-3', {'page_path': path});
 		}
 	}
 	genWasChanged = true;
