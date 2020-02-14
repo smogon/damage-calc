@@ -620,7 +620,6 @@ function createPokemon(pokeInfo) {
 function getMoveDetails(moveInfo, ability, item, isMax) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen === 7 && moveInfo.find("input.move-z").prop("checked");
-	var isMax = gen === 8 && isMax;
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
 	var usedTimes = +moveInfo.find(".stat-drops").val();
@@ -697,7 +696,7 @@ function calcStat(poke, statName) {
 		if (statName !== "hp") nature = poke.find(".nature").val();
 	}
 	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
-	if (gen === 8 && statName === "hp" && poke.isMax) {
+	if (statName === "hp" && poke.isMax) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);
