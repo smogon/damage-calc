@@ -3038,10 +3038,6 @@ const XY: {
     isSound: true,
     maxPower: 90,
   },
-  'Draco Meteor': {
-    bp: 130,
-    maxPower: 140,
-  },
   'Dragon Ascent': {
     bp: 120,
     type: 'Flying',
@@ -3927,157 +3923,6 @@ const SM: {
     hasPriority: true,
     zp: 175,
   },
-  'Draco Meteor': {
-    zp: 195,
-    maxPower: 140,
-  },
-  'Dragon Ascent': {
-    zp: 190,
-    maxPower: 140,
-  },
-  'Dragon Claw': {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Dragon Pulse': {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Dragon Rush': {
-    zp: 180,
-    maxPower: 130,
-  },
-  'Dragon Tail': {
-    zp: 120,
-    maxPower: 110,
-  },
-  'Drain Punch': {
-    zp: 140,
-    maxPower: 90,
-  },
-  'Dream Eater': {
-    zp: 180,
-    maxPower: 130,
-  },
-  'Drill Run': {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Dual Chop': {
-    zp: 100,
-    maxPower: 130,
-  },
-  'Dynamic Punch': {
-    zp: 180,
-    maxPower: 90,
-  },
-  'Earth Power': {
-    zp: 175,
-    maxPower: 130,
-  },
-  Earthquake: {
-    zp: 180,
-    maxPower: 130,
-  },
-  'Electro Ball': {
-    zp: 160,
-    maxPower: 130,
-  },
-  Electroweb: {
-    zp: 100,
-    maxPower: 110,
-  },
-  Endeavor: {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Energy Ball': {
-    zp: 175,
-    maxPower: 130,
-  },
-  Eruption: {
-    zp: 200,
-    maxPower: 150,
-  },
-  Explosion: {
-    zp: 200,
-    maxPower: 150,
-  },
-  Extrasensory: {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Extreme Speed': {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Fake Out': {
-    zp: 100,
-    maxPower: 90,
-  },
-  Facade: {
-    zp: 140,
-    maxPower: 120,
-  },
-  Feint: {
-    zp: 100,
-    maxPower: 90,
-  },
-  'Feint Attack': {
-    zp: 120,
-    maxPower: 110,
-  },
-  'Fell Stinger': {
-    bp: '50',
-    zp: 100,
-    maxPower: 100,
-  },
-  'Fiery Dance': {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Final Gambit': {
-    zp: 180,
-    maxPower: 100,
-  },
-  'Fire Blast': {
-    zp: 185,
-    maxPower: 140,
-  },
-  'Fire Fang': {
-    zp: 120,
-    maxPower: 120,
-  },
-  'Fire Lash': {
-    bp: 80,
-    type: 'Fire',
-    category: 'Physical',
-    hasSecondaryEffect: true,
-    makesContact: true,
-    zp: 160,
-    maxPower: 130,
-  },
-  'Fire Pledge': {
-    zp: 160,
-    maxPower: 130,
-  },
-  'Fire Punch': {
-    zp: 140,
-    maxPower: 130,
-  },
-  'Fire Spin': {
-    zp: 100,
-    maxPower: 90,
-  },
-  'First Impression': {
-    bp: 90,
-    type: 'Bug',
-    category: 'Physical',
-    makesContact: true,
-    hasPriority: true,
-    zp: 175,
-    maxPower: 130,
-  },
   Flail: {
     zp: 160,
     maxPower: 130,
@@ -4576,7 +4421,6 @@ const SM: {
     zp: 190,
     maxPower: 140,
   },
-  Megahorn: {zp: 190, maxPower: 140},
   'Mega Kick': {zp: 190},
   'Mega Punch': {zp: 160},
   'Menacing Moonraze Maelstrom': {
