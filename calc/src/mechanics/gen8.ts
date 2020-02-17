@@ -792,7 +792,7 @@ function calculateGen8(
     description.attackerAbility = attacker.ability;
   } else if (
     attacker.hasAbility('Gorilla Tactics') &&
-    ['Gmax', 'Dynamax'].indexOf(attacker.name) !== -1
+    ['Gmax', 'Dynamax'].indexOf(attacker.name) === -1
   ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
