@@ -901,6 +901,7 @@ function isPokeInfoGrounded(pokeInfo) {
         pokeInfo.find(".item").val() !== "Air Balloon"
 	);
 }
+
 function getTerrainEffects() {
 	var className = $(this).prop("className");
 	className = className.substring(0, className.indexOf(" "));
