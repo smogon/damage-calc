@@ -329,7 +329,7 @@ export function getKOChance(
       damage,
       defender.maxHP() - hazards.damage,
       eot.damage,
-      move.usedTimes || 1,
+      move.hits || 1,
       move.usedTimes || 1,
       defender.maxHP(),
       toxicCounter
@@ -354,7 +354,7 @@ export function getKOChance(
       predictTotal(
         damage[0],
         eot.damage,
-        move.usedTimes,
+        move.hits,
         move.usedTimes,
         toxicCounter,
         defender.maxHP()
@@ -370,7 +370,7 @@ export function getKOChance(
       predictTotal(
         damage[damage.length - 1],
         eot.damage,
-        move.usedTimes,
+        move.hits,
         move.usedTimes,
         toxicCounter,
         defender.maxHP()
@@ -596,12 +596,6 @@ function computeKOChance(
     for (let i = 0; i < n; i++) {
       if (damage[i] >= hp) {
         return (n - i) / n;
-      }
-    }
-  } else {
-    for (let j = 0; j < n; j++) {
-      if (damage[j] >= hp) {
-        return j / n;
       }
     }
   }

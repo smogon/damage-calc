@@ -26,6 +26,7 @@ import {
   checkKlutz,
   checkIntimidate,
   checkDownload,
+  checkIntrepidSword,
   isGrounded,
   countBoosts,
   pokeRound,
@@ -67,6 +68,8 @@ function calculateGen8(
   checkIntimidate(defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
+  checkIntrepidSword(attacker);
+  checkIntrepidSword(defender);
 
   attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk);
   attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa);
@@ -789,7 +792,7 @@ function calculateGen8(
     description.attackerAbility = attacker.ability;
   } else if (
     attacker.hasAbility('Gorilla Tactics') &&
-    ['Gmax', 'Dynamax'].indexOf(defender.name) !== -1
+    ['Gmax', 'Dynamax'].indexOf(attacker.name) !== -1
   ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;
@@ -902,6 +905,10 @@ function calculateGen8(
 
   if (defender.hasAbility('Fur Coat') && hitsPhysical) {
     dfMods.push(0x2000);
+    description.defenderAbility = defender.ability;
+  }
+  if (defender.hasAbility('Dauntless Shield') && hitsPhysical) {
+    dfMods.push(0x1800);
     description.defenderAbility = defender.ability;
   }
 
@@ -1043,12 +1050,12 @@ function calculateGen8(
     finalMods.push(0xc00);
     description.defenderAbility = defender.ability;
   }
-  if (move.isSound && defender.hasAbility('Punk Rock')) {
+  if (defender.hasAbility('Punk Rock') && move.isSound) {
     finalMods.push(0x800);
     description.defenderAbility = defender.ability;
   }
   if (move.isSound && attacker.hasAbility('Punk Rock')) {
-    finalMods.push(0x1300);
+    finalMods.push(0x14cd);
     description.attackerAbility = attacker.ability;
   }
   if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
