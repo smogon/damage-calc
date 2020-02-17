@@ -71,6 +71,7 @@ export class Side {
   isFriendGuard: boolean;
   isAuroraVeil: boolean;
   isBattery: boolean;
+  isDynamaxed: boolean;
 
   constructor(side: {
     spikes?: number;
@@ -86,6 +87,7 @@ export class Side {
     isFriendGuard?: boolean;
     isAuroraVeil?: boolean;
     isBattery?: boolean;
+    isDynamaxed?: boolean;
   }) {
     this.spikes = side.spikes || 0;
     this.isSR = !!side.isSR;
@@ -100,6 +102,7 @@ export class Side {
     this.isFriendGuard = !!side.isFriendGuard;
     this.isAuroraVeil = !!side.isAuroraVeil;
     this.isBattery = !!side.isBattery;
+    this.isDynamaxed = !!side.isDynamaxed;
   }
 
   clone() {

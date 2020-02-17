@@ -1,4 +1,4 @@
-﻿﻿import {
+﻿import {
   getItemBoostType,
   getNaturalGift,
   getFlingPower,
@@ -73,6 +73,9 @@ function calculateGen8(
   defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk);
   defender.stats.spa = getModifiedStat(defender.rawStats.spa, defender.boosts.spa);
 
+  defender.isMax = field.defenderSide.isDynamaxed;
+  attacker.isMax = field.attackerSide.isDynamaxed;
+
   checkInfiltrator(attacker, field.defenderSide);
   checkInfiltrator(defender, field.attackerSide);
 
@@ -80,6 +83,7 @@ function calculateGen8(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
+    isDefenderDynamaxed: field.defenderSide.isDynamaxed,
   };
 
   const damage: number[] = [];
@@ -784,8 +788,8 @@ function calculateGen8(
     atMods.push(0x2000);
     description.attackerAbility = attacker.ability;
   } else if (
-    attacker.hasAbility('Gorilla Tactics') && 
-    (['Gmax', 'Dynamax'].indexOf(defender.name) !== -1)
+    attacker.hasAbility('Gorilla Tactics') &&
+    ['Gmax', 'Dynamax'].indexOf(defender.name) !== -1
   ) {
     atMods.push(0x1800);
     description.attackerAbility = attacker.ability;

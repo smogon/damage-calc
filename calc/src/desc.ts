@@ -35,6 +35,7 @@ export interface RawDesc {
   rivalry?: 'buffed' | 'nerfed';
   terrain?: Terrain;
   weather?: Weather;
+  isDefenderDynamaxed?: boolean;
 }
 
 export function display(
@@ -886,6 +887,9 @@ function buildDescription(description: RawDesc) {
   output = appendIfSet(output, description.defenderAbility);
   if (description.isProtected) {
     output += 'protected ';
+  }
+  if (description.isDefenderDynamaxed) {
+    output += 'Dynamax ';
   }
   output += description.defenderName;
   if (description.weather && description.terrain) {
