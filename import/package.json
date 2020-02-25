@@ -17,14 +17,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^12.7.2",
-    "@pokemon-showdown/sets": "^0.0.4",
+    "@types/node": "^13.7.5",
+    "@pokemon-showdown/sets": "^0.1.0",
     "calc": "file:../calc",
-    "source-map-support": "^0.5.13"
+    "source-map-support": "^0.5.16"
   },
   "devDependencies": {
-    "gts": "^1.1.0",
-    "typescript": "^3.5.3"
+    "gts": "^1.1.2",
+    "typescript": "^3.8.2"
   },
   "scripts": {
     "lint": "gts check",

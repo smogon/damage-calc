@@ -1,6 +1,6 @@
 {
   "name": "@smogon/calc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "description": "Logic behind the official damage calculator for the Pokémon Showdown battle simulator",
@@ -17,14 +17,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^13.5.0"
+    "@types/node": "^13.7.5"
   },
   "devDependencies": {
-    "@types/jest": "^24.9.1",
+    "@types/jest": "^25.1.3",
     "gts": "^1.1.2",
     "jest": "^25.1.0",
-    "ts-jest": "^25.0.0",
-    "typescript": "^3.7.5"
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.2"
   },
   "scripts": {
     "lint": "gts check",
