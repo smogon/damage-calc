@@ -8,15 +8,15 @@
   MEGA_STONES,
   SEED_BOOSTED_STAT,
 } from '../data/items';
-import {NATURES} from '../data/natures';
-import {SPECIES} from '../data/species';
-import {TYPE_CHART} from '../data/types';
-import {RawDesc} from '../desc';
-import {Field, Side} from '../field';
-import {Move} from '../move';
-import {Pokemon} from '../pokemon';
-import {Result} from '../result';
-import {displayStat, Stat} from '../stats';
+import { NATURES } from '../data/natures';
+import { SPECIES } from '../data/species';
+import { TYPE_CHART } from '../data/types';
+import { RawDesc } from '../desc';
+import { Field, Side } from '../field';
+import { Move } from '../move';
+import { Pokemon } from '../pokemon';
+import { Result } from '../result';
+import { displayStat, Stat } from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -136,12 +136,12 @@ function calculateGen8(
     move.type = field.hasWeather('Sun', 'Harsh Sunshine')
       ? 'Fire'
       : field.hasWeather('Rain', 'Heavy Rain')
-      ? 'Water'
-      : field.hasWeather('Sand')
-      ? 'Rock'
-      : field.hasWeather('Hail')
-      ? 'Ice'
-      : 'Normal';
+        ? 'Water'
+        : field.hasWeather('Sand')
+          ? 'Rock'
+          : field.hasWeather('Hail')
+            ? 'Ice'
+            : 'Normal';
     description.weather = field.weather;
     description.moveType = move.type;
   } else if (move.name === 'Judgment' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
@@ -174,12 +174,12 @@ function calculateGen8(
       field.terrain === 'Electric'
         ? 'Electric'
         : field.terrain === 'Grassy'
-        ? 'Grass'
-        : field.terrain === 'Misty'
-        ? 'Fairy'
-        : field.terrain === 'Psychic'
-        ? 'Psychic'
-        : 'Normal';
+          ? 'Grass'
+          : field.terrain === 'Misty'
+            ? 'Fairy'
+            : field.terrain === 'Psychic'
+              ? 'Psychic'
+              : 'Normal';
   } else if (move.name === 'Revelation Dance') {
     move.type = attacker.type1;
   } else if (move.name === 'Aura Wheel') {
@@ -251,12 +251,12 @@ function calculateGen8(
   );
   const typeEffect2 = defender.type2
     ? getMoveEffectiveness(
-        gen,
-        move,
-        defender.type2,
-        attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
-        field.isGravity
-      )
+      gen,
+      move,
+      defender.type2,
+      attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
+      field.isGravity
+    )
     : 1;
   let typeEffectiveness = typeEffect1 * typeEffect2;
   const resistedKnockOffDamage =
@@ -487,8 +487,8 @@ function calculateGen8(
         field.terrain && ['Electric', 'Grassy', 'Psychic'].indexOf(field.terrain) !== -1
           ? 90
           : field.terrain === 'Misty'
-          ? 95
-          : 80;
+            ? 95
+            : 80;
       break;
     case 'Water Shuriken':
       basePower = attacker.name === 'Greninja-Ash' && attacker.hasAbility('Battle Bond') ? 20 : 15;
@@ -710,15 +710,8 @@ function calculateGen8(
   }
   const attackStat =
     move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
-  description.attackEVs =
-    attacker.evs[attackStat] +
-    (NATURES[attacker.nature][0] === attackStat
-      ? '+'
-      : NATURES[attacker.nature][1] === attackStat
-      ? '-'
-      : '') +
-    ' ' +
-    displayStat(attackStat);
+  description.attackEVs = move.name === "Foul Play" ? getEVDescriptionText(defender, attackStat, defender.nature) : getEVDescriptionText(attacker, attackStat, attacker.nature);
+
   if (
     attackSource.boosts[attackStat] === 0 ||
     (isCritical && attackSource.boosts[attackStat] < 0)
@@ -836,8 +829,8 @@ function calculateGen8(
     (NATURES[defender.nature][0] === defenseStat
       ? '+'
       : NATURES[defender.nature][1] === defenseStat
-      ? '-'
-      : '') +
+        ? '-'
+        : '') +
     ' ' +
     displayStat(defenseStat);
   if (
@@ -1152,7 +1145,8 @@ function calculateGen8(
     }
   }
 
-  description.attackBoost = attacker.boosts[attackStat];
+  description.attackBoost = move.name === "Foul Play" ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+
   return result;
 }
 
@@ -1195,6 +1189,10 @@ function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
     affectedSide.isAuroraVeil = false;
   }
 }
+
+function getEVDescriptionText(pokemon: Pokemon, stat: "atk" | "def" | "spd" | "spa", nature: string): string {
+  return pokemon.evs[stat] + (NATURES[nature][0] === stat ? "+" : NATURES[nature][1] === stat ? "-" : "") + " " + displayStat(stat);
+};
 
 function getBaseDamage(level: number, basePower: number, attack: number, defense: number) {
   return Math.floor(
