@@ -711,14 +711,10 @@ function calculateGen8(
   const attackStat =
     move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
-    attacker.evs[attackStat] +
-    (NATURES[attacker.nature][0] === attackStat
-      ? '+'
-      : NATURES[attacker.nature][1] === attackStat
-      ? '-'
-      : '') +
-    ' ' +
-    displayStat(attackStat);
+    move.name === 'Foul Play'
+      ? getEVDescriptionText(defender, attackStat, defender.nature)
+      : getEVDescriptionText(attacker, attackStat, attacker.nature);
+
   if (
     attackSource.boosts[attackStat] === 0 ||
     (isCritical && attackSource.boosts[attackStat] < 0)
@@ -1152,7 +1148,9 @@ function calculateGen8(
     }
   }
 
-  description.attackBoost = attacker.boosts[attackStat];
+  description.attackBoost =
+    move.name === 'Foul Play' ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+
   return result;
 }
 
@@ -1194,6 +1192,19 @@ function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
     affectedSide.isLightScreen = false;
     affectedSide.isAuroraVeil = false;
   }
+}
+
+function getEVDescriptionText(
+  pokemon: Pokemon,
+  stat: 'atk' | 'def' | 'spd' | 'spa',
+  nature: string
+): string {
+  return (
+    pokemon.evs[stat] +
+    (NATURES[nature][0] === stat ? '+' : NATURES[nature][1] === stat ? '-' : '') +
+    ' ' +
+    displayStat(stat)
+  );
 }
 
 function getBaseDamage(level: number, basePower: number, attack: number, defense: number) {
