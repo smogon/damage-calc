@@ -33,6 +33,7 @@
     "postinstall": "subpkg install"
   },
   "subPackages": [
-    "calc"
+    "calc",
+    "import"
   ]
 }
