@@ -14,7 +14,7 @@ describe('stats', () => {
   });
 
   test('calcStat', () => {
-    const RBY: StatsTable<number> = {
+    const RBY: StatsTable = {
       hp: 403,
       atk: 298,
       def: 298,
@@ -23,7 +23,7 @@ describe('stats', () => {
       spc: 298,
       spe: 298,
     };
-    const ADV: StatsTable<number> = {hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299};
+    const ADV: StatsTable = {hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299};
     for (let gen = 1; gen <= 7; gen++) {
       for (const stat of STATS[gen]) {
         const val = calcStat(gen as Generation, stat, 100, 31, 252, 100, 'Adamant');

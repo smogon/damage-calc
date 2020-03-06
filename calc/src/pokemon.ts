@@ -30,11 +30,11 @@ export class Pokemon {
   item?: string;
 
   nature: string;
-  ivs: StatsTable<number>;
-  evs: StatsTable<number>;
-  boosts: StatsTable<number>;
-  rawStats: StatsTable<number>;
-  stats: StatsTable<number>;
+  ivs: StatsTable;
+  evs: StatsTable;
+  boosts: StatsTable;
+  rawStats: StatsTable;
+  stats: StatsTable;
 
   curHP: number;
   status: Status;
@@ -53,9 +53,9 @@ export class Pokemon {
       item?: string;
       gender?: Gender;
       nature?: string;
-      ivs?: Partial<StatsTable<number>>;
-      evs?: Partial<StatsTable<number>>;
-      boosts?: Partial<StatsTable<number>>;
+      ivs?: Partial<StatsTable>;
+      evs?: Partial<StatsTable>;
+      boosts?: Partial<StatsTable>;
       curHP?: number;
       status?: Status;
       toxicCounter?: number;
@@ -93,8 +93,8 @@ export class Pokemon {
       );
     }
 
-    this.rawStats = {} as StatsTable<number>;
-    this.stats = {} as StatsTable<number>;
+    this.rawStats = {} as StatsTable;
+    this.stats = {} as StatsTable;
     for (const stat of STATS[gen]) {
       const val = this.calcStat(gen, stat);
       this.rawStats[stat] = val;
@@ -190,7 +190,7 @@ export class Pokemon {
 
   private static withDefault(
     gen: Generation,
-    current: Partial<StatsTable<number>> | undefined,
+    current: Partial<StatsTable> | undefined,
     val: number
   ) {
     return extend(

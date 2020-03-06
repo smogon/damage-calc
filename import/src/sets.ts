@@ -8,7 +8,7 @@ import * as tiers from './tiers.json';
 const TIERS = tiers as {[gen: number]: {[id: string]: Format}};
 
 // TODO: Migrate sets to calc.StatsTable
-interface StatsTable<T> {
+interface StatsTable<T = number> {
   hp?: T;
   at?: T;
   df?: T;
@@ -22,8 +22,8 @@ interface PokemonSet {
   ability?: string;
   item?: string;
   nature?: string;
-  ivs?: Partial<StatsTable<number>>;
-  evs?: Partial<StatsTable<number>>;
+  ivs?: Partial<StatsTable>;
+  evs?: Partial<StatsTable>;
   moves: string[];
 }
 
@@ -97,7 +97,11 @@ export async function importSets(dir: string) {
   }
 }
 
-async function importSetsForPokemon(pokemon: string, gen: ps.Generation, setsByPokemon: PokemonSets) {
+async function importSetsForPokemon(
+  pokemon: string,
+  gen: ps.Generation,
+  setsByPokemon: PokemonSets
+) {
   for (const format in FORMATS) {
     const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
     if (!data || (gen < 7 && RECENT_ONLY.includes(format as Format))) continue;
@@ -143,7 +147,7 @@ function toForme(pokemon: string) {
   return FORMES[pokemon] || pokemon;
 }
 
-type ID = '' | string & {__isID: true};
+type ID = '' | (string & {__isID: true});
 function toID(text: any): ID {
   return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }
@@ -160,8 +164,8 @@ function toCalc(set: ps.DeepPartial<ps.PokemonSet>): PokemonSet {
   };
 }
 
-function toStatsTable(stats: ps.DeepPartial<ps.StatsTable<number>>): StatsTable<number> {
-  const s: Partial<StatsTable<number>> = {};
+function toStatsTable(stats: ps.DeepPartial<ps.StatsTable<number>>): StatsTable {
+  const s: Partial<StatsTable> = {};
 
   let stat: keyof ps.StatsTable<number>;
   for (stat in stats) {

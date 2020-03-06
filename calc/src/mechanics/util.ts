@@ -164,7 +164,7 @@ export function checkIntrepidSword(source: Pokemon) {
   }
 }
 
-export function countBoosts(gen: Generation, boosts: StatsTable<number>) {
+export function countBoosts(gen: Generation, boosts: StatsTable) {
   let sum = 0;
   // NOTE: starting from 1 because HP is not boostable
   for (let i = 1; i < STATS[gen].length; i++) {

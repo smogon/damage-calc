@@ -2,15 +2,7 @@ import {NATURES} from './data/natures';
 import {Generation} from './gen';
 
 export type Stat = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe' | 'spc';
-export interface StatsTable<T> {
-  hp: T;
-  atk: T;
-  def: T;
-  spa: T;
-  spd: T;
-  spe: T;
-  spc?: T;
-}
+export type StatsTable<T = number> = {[stat in Exclude<Stat, 'spc'>]: T} & {spc?: T};
 
 const RBY: Stat[] = ['hp', 'atk', 'def', 'spc', 'spe'];
 const GSC: Stat[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
