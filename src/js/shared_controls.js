@@ -587,8 +587,8 @@ function createPokemon(pokeInfo) {
 
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
-		var isMax = pokeInfo.find(".max").prop("checked");
-		pokeInfo.isMax = isMax;
+		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
@@ -599,16 +599,16 @@ function createPokemon(pokeInfo) {
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
-			isMax: isMax,
+			isDynamaxed: isDynamaxed,
 			boosts: boosts,
 			curHP: ~~pokeInfo.find(".current-hp").val(),
 			status: pokeInfo.find(".status").val(),
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
-				getMoveDetails(pokeInfo.find(".move1"), ability, item, isMax),
-				getMoveDetails(pokeInfo.find(".move2"), ability, item, isMax),
-				getMoveDetails(pokeInfo.find(".move3"), ability, item, isMax),
-				getMoveDetails(pokeInfo.find(".move4"), ability, item, isMax)
+				getMoveDetails(pokeInfo.find(".move1"), ability, item, isDynamaxed),
+				getMoveDetails(pokeInfo.find(".move2"), ability, item, isDynamaxed),
+				getMoveDetails(pokeInfo.find(".move3"), ability, item, isDynamaxed),
+				getMoveDetails(pokeInfo.find(".move4"), ability, item, isDynamaxed)
 			],
 			overrides: {
 				bs: baseStats,
@@ -620,7 +620,7 @@ function createPokemon(pokeInfo) {
 	}
 }
 
-function getMoveDetails(moveInfo, ability, item, isMax) {
+function getMoveDetails(moveInfo, ability, item, useMax) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen === 7 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
@@ -634,7 +634,7 @@ function getMoveDetails(moveInfo, ability, item, isMax) {
 	};
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
-		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides, useMax: isMax
+		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides, useMax: useMax
 	});
 }
 
@@ -663,14 +663,13 @@ function createField() {
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
-	var isDynamaxed = [$("#maxL").prop("checked"), $("#maxR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
 			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isDynamaxed: isDynamaxed[i]
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i]
 		});
 	};
 	return new calc.Field({
@@ -699,7 +698,7 @@ function calcStat(poke, statName) {
 		if (statName !== "hp") nature = poke.find(".nature").val();
 	}
 	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
-	if (statName === "hp" && poke.isMax) {
+	if (statName === "hp" && poke.isDynamaxed) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);

@@ -26,7 +26,7 @@ export class Pokemon {
   gender?: Gender;
   ability?: string;
   abilityOn?: boolean;
-  isMax?: boolean;
+  isDynamaxed?: boolean;
   item?: string;
 
   nature: string;
@@ -108,7 +108,7 @@ export class Pokemon {
   }
 
   /* get */ maxHP() {
-    return this.isMax ? this.rawStats.hp * 2 : this.rawStats.hp;
+    return this.isDynamaxed ? this.rawStats.hp * 2 : this.rawStats.hp;
   }
 
   hasAbility(...abilities: string[]) {

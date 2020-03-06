@@ -76,9 +76,6 @@ function calculateGen8(
   defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk);
   defender.stats.spa = getModifiedStat(defender.rawStats.spa, defender.boosts.spa);
 
-  defender.isMax = field.defenderSide.isDynamaxed;
-  attacker.isMax = field.attackerSide.isDynamaxed;
-
   checkInfiltrator(attacker, field.defenderSide);
   checkInfiltrator(defender, field.attackerSide);
 
@@ -86,7 +83,7 @@ function calculateGen8(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
-    isDefenderDynamaxed: field.defenderSide.isDynamaxed,
+    isDefenderDynamaxed: defender.isDynamaxed,
   };
 
   const damage: number[] = [];
