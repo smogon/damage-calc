@@ -59,8 +59,8 @@ export class Field {
 
 export class Side {
   spikes: number;
-  isSR: boolean;
   steelsurge: boolean;
+  isSR: boolean;
   isReflect: boolean;
   isLightScreen: boolean;
   isProtected: boolean;
@@ -75,8 +75,8 @@ export class Side {
 
   constructor(side: {
     spikes?: number;
-    isSR?: boolean;
     steelsurge?: boolean;
+    isSR?: boolean;
     isReflect?: boolean;
     isLightScreen?: boolean;
     isProtected?: boolean;
@@ -90,8 +90,8 @@ export class Side {
     isDynamaxed?: boolean;
   }) {
     this.spikes = side.spikes || 0;
-    this.isSR = !!side.isSR;
     this.steelsurge = !!side.steelsurge;
+    this.isSR = !!side.isSR;
     this.isReflect = !!side.isReflect;
     this.isLightScreen = !!side.isLightScreen;
     this.isProtected = !!side.isProtected;
