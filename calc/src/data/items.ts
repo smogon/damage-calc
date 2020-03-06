@@ -1,3 +1,4 @@
+import {toID} from '../util';
 import {Generation} from '../gen';
 import {Stat} from '../stats';
 import {Type} from './types';
@@ -690,3 +691,13 @@ export function getMultiAttack(item: string) {
 }
 
 export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+
+export const ITEMS_BY_ID: Array<{[id: string]: string}> = [];
+
+for (const items of ITEMS) {
+  const map: {[id: string]: string} = {};
+  for (const i of items) {
+    map[toID(i)] = i;
+  }
+  ITEMS_BY_ID.push(map);
+}

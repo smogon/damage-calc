@@ -1,3 +1,5 @@
+import {toID} from '../util';
+
 const RBY: string[] = [];
 
 const GSC: string[] = [];
@@ -269,3 +271,13 @@ const SS = SM.concat([
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+
+export const ABILITIES_BY_ID: Array<{[id: string]: string}> = [];
+
+for (const abilities of ABILITIES) {
+  const map: {[id: string]: string} = {};
+  for (const a of abilities) {
+    map[toID(a)] = a;
+  }
+  ABILITIES_BY_ID.push(map);
+}

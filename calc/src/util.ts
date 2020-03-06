@@ -1,3 +1,8 @@
+export type ID = '' | (string & {__isID: true});
+export function toID(text: any): ID {
+  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+}
+
 export function error(err: boolean, msg: string) {
   if (err) {
     throw new Error(msg);

@@ -1,3 +1,4 @@
+import {toID} from '../util';
 import {Stat} from '../stats';
 
 export const NATURES: {[name: string]: [Stat?, Stat?]} = {
@@ -27,3 +28,8 @@ export const NATURES: {[name: string]: [Stat?, Stat?]} = {
   Serious: [undefined, undefined],
   Timid: ['spe', 'atk'],
 };
+
+export const NATURES_BY_ID: {[id: string]: string} = {};
+for (const n of Object.keys(NATURES)) {
+  NATURES_BY_ID[toID(n)] = n;
+}

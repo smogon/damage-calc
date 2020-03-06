@@ -1,10 +1,11 @@
-import {extend} from '../util';
+import {toID, extend} from '../util';
 import {Type} from './types';
 
 export type Category = 'Physical' | 'Special' | 'Status';
 export type Recoil = boolean | number | 'crash' | 'Struggle';
 
 export interface MoveData {
+  readonly name?: string;
   readonly bp: number;
   readonly type: Type;
   readonly category?: Category;
@@ -6005,3 +6006,14 @@ const SS: {
 export const ZMOVES = Object.values(ZMOVES_TYPING) as string[];
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+export const MOVES_BY_ID: Array<{[id: string]: MoveData}> = [];
+
+for (const moves of MOVES) {
+  const map: {[id: string]: MoveData} = {};
+  for (const m of Object.keys(moves)) {
+    const v = moves[m];
+    (v as any).name = m;
+    map[toID(m)] = v;
+  }
+  MOVES_BY_ID.push(map);
+}
