@@ -16,19 +16,19 @@ const TIERS = [
 type Tier = typeof TIERS[number];
 
 const TO_TIER = tiers as {[gen: number]: {[id: string]: Tier}};
-const RANDOM = rand as unknown as {
+const RANDOM = (rand as unknown) as {
   [gen: number]: {
-    level: {[id in Tier]?: number},
-    custom: {[pokemon: string]: number},
-    default: number,
-  }
+    level: {[id in Tier]?: number};
+    custom: {[pokemon: string]: number};
+    default: number;
+  };
 };
 
 const STATS = ['hp', 'at', 'df', 'sa', 'sd', 'sp'] as const;
 type Stat = typeof STATS[number];
 
 // TODO: Migrate sets to calc.StatsTable
-type StatsTable<T = number> = { [k in Stat]?: T }
+type StatsTable<T = number> = {[k in Stat]?: T};
 
 interface PokemonSet {
   level: number;
@@ -47,7 +47,7 @@ interface PokemonSets {
 type RandomPokemonOptions = Exclude<PokemonSet, 'ability' | 'item' | 'ivs'> & {
   abilities?: string[];
   items?: string[];
-}
+};
 
 type Format = keyof typeof FORMATS;
 
@@ -72,16 +72,16 @@ const FORMATS: {[format: string]: string} = {
 };
 
 const TO_FORMAT: {[tier in Tier]?: Format} = {
-	'Uber': 'Ubers',
-	'CAP LC': 'CAP',
-	'CAP NFE': 'CAP',
-	'UUBL': 'OU',
-	'NUBL': 'RU',
-	'LC Uber': 'LC',
-	'RUBL': 'UU',
-	'PUBL': 'NU',
-	'(PU)': 'ZU',
-	'(OU)': 'OU',
+  Uber: 'Ubers',
+  'CAP LC': 'CAP',
+  'CAP NFE': 'CAP',
+  UUBL: 'OU',
+  NUBL: 'RU',
+  'LC Uber': 'LC',
+  RUBL: 'UU',
+  PUBL: 'NU',
+  '(PU)': 'ZU',
+  '(OU)': 'OU',
 };
 
 const RECENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
@@ -139,7 +139,8 @@ export async function importSets(dir: string, randomDir?: string) {
     const comment = '/* AUTOMATICALLY GENERATED FROM @pokemon-showdown/sets, DO NOT EDIT! */';
     const sets = JSON.stringify(setsByPokemon);
     const options = JSON.stringify(randomOptionsByPokemon);
-    const js = `${comment}\n` +
+    const js =
+      `${comment}\n` +
       `var SETDEX_${GENS[gen - 1]} = ${sets};\n` +
       `var RANDOM_${GENS[gen - 1]} = ${options};`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
@@ -210,8 +211,12 @@ function importRandomOptionsForPokemon(
   const tier = TO_TIER[gen][toID(f)];
   const r = RANDOM[gen];
 
-  const abilities = Object.keys(stats.Abilities).map(a => calc.ABILITIES_BY_ID[gen][a]).filter(a => a);
-  const items = Object.keys(stats.Items).map(i => calc.ITEMS_BY_ID[gen][i]).filter(i => i);
+  const abilities = Object.keys(stats.Abilities)
+    .map(a => calc.ABILITIES_BY_ID[gen][a])
+    .filter(a => a);
+  const items = Object.keys(stats.Items)
+    .map(i => calc.ITEMS_BY_ID[gen][i])
+    .filter(i => i);
 
   return {
     level: r.custom[forme] || r.level[tier] || r.default,
@@ -219,7 +224,9 @@ function importRandomOptionsForPokemon(
     items: items.length ? items : undefined,
     nature,
     evs,
-    moves: Object.keys(stats.Moves).map(m => calc.MOVES_BY_ID[gen][m]?.name!).filter(m => m),
+    moves: Object.keys(stats.Moves)
+      .map(m => calc.MOVES_BY_ID[gen][m]?.name!)
+      .filter(m => m),
   };
 }
 
