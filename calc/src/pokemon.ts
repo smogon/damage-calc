@@ -75,6 +75,7 @@ export class Pokemon {
     this.gender = options.gender || this.species.gender || 'male';
     this.ability = options.ability || this.species.ab;
     this.abilityOn = !!options.abilityOn;
+    this.isMax = options.isMax;
     this.item = options.item;
 
     this.nature = options.nature || 'Serious';
