@@ -1,0 +1,194 @@
+{
+  "1": {
+    "level": {
+      "LC": 88,
+      "NFE": 80,
+      "UU": 74,
+      "OU": 68,
+      "Uber": 65
+    },
+    "custom": {
+      "Mewtwo": 62,
+      "Caterpie": 99,
+      "Metapod": 99,
+      "Weedle": 99,
+      "Kakuna": 99,
+      "Magikarp": 99,
+      "Ditto": 88
+    },
+    "default": 80
+  },
+  "2": {
+    "level": {
+      "LC": 90,
+      "NFE": 84,
+      "NU": 80,
+      "NUBL": 76,
+      "UU": 74,
+      "UUBL": 70,
+      "OU": 68,
+      "Uber": 64
+    },
+    "custom": {
+      "Caterpie": 99,
+      "Kakuna": 99,
+      "Magikarp": 99,
+      "Metapod": 99,
+      "Weedle": 99,
+      "Unown": 98,
+      "Wobbuffet": 82,
+      "Ditto": 82,
+      "Snorlax": 66,
+      "Nidoqueen": 70
+    },
+    "default": 90
+  },
+  "3": {
+    "level": {
+      "LC": 87,
+      "NFE": 85,
+      "NU": 83,
+      "NUBL": 81,
+      "UU": 79,
+      "UUBL": 77,
+      "OU": 75,
+      "Uber": 71
+    },
+    "custom": {
+      "Ditto": 99,
+      "Unown": 99
+    },
+    "default": 75
+  },
+  "4": {
+    "level": {
+      "LC": 87,
+      "NFE": 85,
+      "NU": 83,
+      "NUBL": 81,
+      "UU": 79,
+      "UUBL": 77,
+      "OU": 75,
+      "Uber": 71
+    },
+    "custom": {
+      "Delibird": 99,
+      "Ditto": 99,
+      "Farfetch'd": 99,
+      "Unown": 99
+    },
+    "default": 75
+  },
+  "5": {
+    "level": {
+      "Uber": 78,
+      "OU": 80,
+      "UUBL": 81,
+      "UU": 82,
+      "RUBL": 83,
+      "RU": 84,
+      "NUBL": 85,
+      "NU": 86
+    },
+    "custom": {
+      "Blaziken": 79,
+      "Deoxys-Defense": 79,
+      "Landorus": 79,
+      "Manaphy": 79,
+      "Thundurus": 79,
+      "Tornadus-Therian": 79,
+      "Unown": 100
+    },
+    "default": 80
+  },
+  "6": {
+    "level": {
+      "(PU)": 89,
+      "PU": 88,
+      "PUBL": 87,
+      "NU": 86,
+      "NUBL": 85,
+      "RU": 84,
+      "RUBL": 83,
+      "UU": 82,
+      "UUBL": 81,
+      "(OU)": 80,
+      "OU": 80,
+      "Unreleased": 80,
+      "Uber": 78
+    },
+    "custom": {
+      "Dugtrio": 82,
+      "Gothitelle": 82,
+      "Ninetales": 84,
+      "Politoed": 84,
+      "Wobbuffet": 82,
+      "Genesect-Douse": 80,
+      "Castform": 100,
+      "Delibird": 100,
+      "Spinda": 100,
+      "Unown": 100
+    },
+    "default": 90
+  },
+  "7": {
+    "level": {
+      "(PU)": 89,
+      "PU": 88,
+      "PUBL": 87,
+      "NU": 86,
+      "NUBL": 85,
+      "RU": 84,
+      "RUBL": 83,
+      "UU": 82,
+      "UUBL": 81,
+      "(OU)": 80,
+      "OU": 80,
+      "Uber": 78
+    },
+    "custom": {
+      "Dugtrio": 82,
+      "Gothitelle": 82,
+      "Pelipper": 84,
+      "Politoed": 84,
+      "Wobbuffet": 82,
+      "Floette-Eternal": 80,
+      "Genesect-Douse": 80,
+      "Castform": 100,
+      "Delibird": 100,
+      "Spinda": 100,
+      "Unown": 100
+    },
+    "default": 90
+  },
+  "8": {
+    "level": {
+      "NFE": 89,
+      "PU": 88,
+      "PUBL": 87,
+      "NU": 86,
+      "NUBL": 85,
+      "RU": 84,
+      "RUBL": 83,
+      "UU": 82,
+      "UUBL": 81,
+      "OU": 80,
+      "Uber": 72
+    },
+    "custom": {
+      "Delibird": 100,
+      "Shedinja": 100,
+      "Pikachu": 90,
+      "Pikachu-Original": 90,
+      "Pikachu-Hoenn": 90,
+      "Pikachu-Sinnoh": 90,
+      "Pikachu-Unova": 90,
+      "Pikachu-Kalos": 90,
+      "Pikachu-Alola": 90,
+      "Pikachu-Partner": 90,
+      "Wobbuffet": 80,
+      "Glalie": 72
+    },
+    "default": 80
+  }
+}

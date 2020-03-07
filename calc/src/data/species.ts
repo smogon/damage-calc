@@ -1,4 +1,4 @@
-﻿import {extend} from '../util';
+﻿import {toID, extend} from '../util';
 import {Type} from './types';
 
 export type Gender = 'male' | 'female' | 'genderless';
@@ -8535,3 +8535,14 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
   },
 });
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+export const SPECIES_BY_ID: Array<{[id: string]: Species}> = [];
+
+for (const species of SPECIES) {
+  const map: {[id: string]: Species} = {};
+  for (const p of Object.keys(species)) {
+    const v = species[p];
+    (v as any).name = p;
+    map[toID(p)] = v;
+  }
+  SPECIES_BY_ID.push(map);
+}

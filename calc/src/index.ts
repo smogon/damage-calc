@@ -49,11 +49,12 @@ export {Pokemon} from './pokemon';
 export {Move} from './move';
 export {Field, Side} from './field';
 export {Result} from './result';
+export {toID} from './util';
 
-export {ABILITIES} from './data/abilities';
-export {ITEMS, MEGA_STONES} from './data/items';
-export {MOVES} from './data/moves';
-export {SPECIES} from './data/species';
-export {NATURES} from './data/natures';
+export {ABILITIES, ABILITIES_BY_ID} from './data/abilities';
+export {ITEMS, ITEMS_BY_ID, MEGA_STONES} from './data/items';
+export {MOVES, MOVES_BY_ID} from './data/moves';
+export {SPECIES, SPECIES_BY_ID} from './data/species';
+export {NATURES, NATURES_BY_ID} from './data/natures';
 export {TYPE_CHART} from './data/types';
 export {STATS, StatsTable, Stat, calcStat} from './stats';
