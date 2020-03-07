@@ -49,7 +49,7 @@ export class Pokemon {
       level?: number;
       ability?: string;
       abilityOn?: boolean;
-      isMax?: boolean;
+      isDynamaxed?: boolean;
       item?: string;
       gender?: Gender;
       nature?: string;
@@ -75,6 +75,7 @@ export class Pokemon {
     this.gender = options.gender || this.species.gender || 'male';
     this.ability = options.ability || this.species.ab;
     this.abilityOn = !!options.abilityOn;
+    this.isDynamaxed = !!options.isDynamaxed;
     this.item = options.item;
 
     this.nature = options.nature || 'Serious';
