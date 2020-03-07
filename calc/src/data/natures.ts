@@ -3,14 +3,14 @@ import {Stat} from '../stats';
 
 export const NATURES: {[name: string]: [Stat?, Stat?]} = {
   Adamant: ['atk', 'spa'],
-  Bashful: [undefined, undefined],
+  Bashful: ['spa', 'spa'],
   Bold: ['def', 'atk'],
   Brave: ['atk', 'spe'],
   Calm: ['spd', 'atk'],
   Careful: ['spd', 'spa'],
-  Docile: [undefined, undefined],
+  Docile: ['def', 'def'],
   Gentle: ['spd', 'def'],
-  Hardy: [undefined, undefined],
+  Hardy: ['atk', 'atk'],
   Hasty: ['spe', 'def'],
   Impish: ['def', 'spa'],
   Jolly: ['spe', 'spa'],
@@ -21,11 +21,11 @@ export const NATURES: {[name: string]: [Stat?, Stat?]} = {
   Naive: ['spe', 'spd'],
   Naughty: ['atk', 'spd'],
   Quiet: ['spa', 'spe'],
-  Quirky: [undefined, undefined],
+  Quirky: ['spd', 'spd'],
   Rash: ['spa', 'spd'],
   Relaxed: ['def', 'spe'],
   Sassy: ['spd', 'spe'],
-  Serious: [undefined, undefined],
+  Serious: ['spe', 'spe'],
   Timid: ['spe', 'atk'],
 };
 
