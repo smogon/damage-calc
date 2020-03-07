@@ -26,7 +26,7 @@ export class Pokemon {
   gender?: Gender;
   ability?: string;
   abilityOn?: boolean;
-  isMax?: boolean;
+  isDynamaxed?: boolean;
   item?: string;
 
   nature: string;
@@ -49,7 +49,7 @@ export class Pokemon {
       level?: number;
       ability?: string;
       abilityOn?: boolean;
-      isMax?: boolean;
+      isDynamaxed?: boolean;
       item?: string;
       gender?: Gender;
       nature?: string;
@@ -75,6 +75,7 @@ export class Pokemon {
     this.gender = options.gender || this.species.gender || 'male';
     this.ability = options.ability || this.species.ab;
     this.abilityOn = !!options.abilityOn;
+    this.isDynamaxed = !!options.isDynamaxed;
     this.item = options.item;
 
     this.nature = options.nature || 'Serious';
@@ -108,7 +109,7 @@ export class Pokemon {
   }
 
   /* get */ maxHP() {
-    return this.isMax ? this.rawStats.hp * 2 : this.rawStats.hp;
+    return this.isDynamaxed ? this.rawStats.hp * 2 : this.rawStats.hp;
   }
 
   hasAbility(...abilities: string[]) {
@@ -139,6 +140,7 @@ export class Pokemon {
       level: this.level,
       ability: this.ability,
       abilityOn: this.abilityOn,
+      isDynamaxed: this.isDynamaxed,
       item: this.item,
       gender: this.gender,
       nature: this.nature,
