@@ -140,6 +140,7 @@ export class Pokemon {
       level: this.level,
       ability: this.ability,
       abilityOn: this.abilityOn,
+      isDynamaxed: this.isDynamaxed,
       item: this.item,
       gender: this.gender,
       nature: this.nature,
