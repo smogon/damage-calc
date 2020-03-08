@@ -60,7 +60,14 @@ function calcStatADV(
     const mods: [Stat?, Stat?] = nature ? NATURES[nature] : [undefined, undefined];
     let n: number;
     if (mods) {
-      n = mods[0] === stat ? 1.1 : mods[1] === stat ? 0.9 : 1;
+      n =
+        mods[0] === stat && mods[1] === stat
+          ? 1
+          : mods[0] === stat
+          ? 1.1
+          : mods[1] === stat
+          ? 0.9
+          : 1;
     } else {
       n = 1;
     }
