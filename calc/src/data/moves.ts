@@ -3039,6 +3039,7 @@ const XY: {
     isSound: true,
     maxPower: 90,
   },
+  'Draco Meteor': {bp: '140'},
   'Dragon Ascent': {
     bp: 120,
     type: 'Flying',
