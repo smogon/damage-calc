@@ -431,6 +431,14 @@ const RBY: {
     category: 'Physical',
     maxPower: 100,
   },
+  'Rolling Kick': {
+    bp: 70,
+    type: 'Fighting',
+    category: 'Physical',
+    hasSecondaryEffect: true,
+    zp: 120,
+    maxPower: 75,
+  },
   'Seismic Toss': {
     bp: 100,
     type: 'Fighting',
@@ -479,6 +487,13 @@ const RBY: {
     type: 'Poison',
     category: 'Special',
     maxPower: 85,
+  },
+  'Solar Beam': {
+    bp: 120,
+    type: 'Grass',
+    category: 'Special',
+    zp: 190,
+    maxPower: 120,
   },
   'Soft-Boiled': {
     bp: 0,
