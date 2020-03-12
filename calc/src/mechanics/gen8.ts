@@ -673,7 +673,7 @@ function calculateGen8(
     bpMods.push(0x1400);
     description.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Steely Spirit') && move.type === 'Steel') {
-    bpMods.push(0x2000);
+    bpMods.push(0x1800);
     description.attackerAbility = attacker.ability;
   }
 
