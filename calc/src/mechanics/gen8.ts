@@ -1063,7 +1063,7 @@ function calculateGen8(
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(0x1333);
     description.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Life Orb') || (attacker.hasAbility('Power Spot') && !move.isZ)) {
+  } else if (attacker.hasItem('Life Orb')) {
     finalMods.push(0x14cc);
     description.attackerItem = attacker.item;
   }
