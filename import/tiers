@@ -9,7 +9,8 @@ for (let gen = 1; gen <= 8; gen++) {
 	for (const k in dex.data.Pokedex) {
 		const val = dex.getTemplate(k);
 		if (!val || (typeof val.exists === 'boolean' && !val.exists) || val.gen > gen) continue;
-		if (['Illegal', 'Unreleased'].includes(val.tier)) continue;
+		if (val.tier === 'Unreleased') continue;
+		if (val.tier === 'Illegal' && (gen < 8 || TIERS[7][Dex.getId(val)] !== 'Uber')) continue;
 		if (val.tier.startsWith('CAP') && gen < 4) continue;
 		TIERS[gen] = (TIERS[gen] || {});
 		TIERS[gen][Dex.getId(val)] = val.tier;

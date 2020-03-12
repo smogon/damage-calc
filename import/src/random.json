@@ -163,29 +163,18 @@
   },
   "8": {
     "level": {
-      "NFE": 89,
+      "NFE": 90,
       "PU": 88,
-      "PUBL": 87,
       "NU": 86,
-      "NUBL": 85,
       "RU": 84,
-      "RUBL": 83,
       "UU": 82,
-      "UUBL": 81,
       "OU": 80,
       "Uber": 72
     },
     "custom": {
       "Delibird": 100,
+      "Darmanitan-Galar-Zen": 80,
       "Shedinja": 100,
-      "Pikachu": 90,
-      "Pikachu-Original": 90,
-      "Pikachu-Hoenn": 90,
-      "Pikachu-Sinnoh": 90,
-      "Pikachu-Unova": 90,
-      "Pikachu-Kalos": 90,
-      "Pikachu-Alola": 90,
-      "Pikachu-Partner": 90,
       "Wobbuffet": 80,
       "Glalie": 72
     },

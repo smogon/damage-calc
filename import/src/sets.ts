@@ -10,8 +10,8 @@ const toID = calc.toID;
 
 // prettier-ignore
 const TIERS = [
-  'LC', 'NFE', 'UU', 'OU', 'Uber', 'NU', 'NUBL', 'UUBL', 'CAP', 'LC Uber',
-  'CAP LC', 'CAP NFE', 'RU', 'RUBL', 'PU', '(PU)', 'PUBL', '(OU)', 'AG','(Uber)'
+  'LC', 'NFE', 'UU', 'OU', 'Uber', 'NU', 'NUBL', 'UUBL', 'CAP', 'LC Uber', 'CAP LC',
+  'CAP NFE', 'RU', 'RUBL', 'PU', '(PU)', 'PUBL', '(OU)', 'AG','(Uber)', 'Illegal',
 ] as const;
 type Tier = typeof TIERS[number];
 
@@ -211,6 +211,9 @@ function importRandomOptionsForPokemon(
   const tier = TO_TIER[gen][toID(f)];
   const r = RANDOM[gen];
 
+  let level = r.custom[forme] || r.level[tier] || r.default;
+  if (gen === 8 && tier === 'Illegal' && TO_TIER[7][toID(f)]) level = 72;
+
   const abilities = Object.keys(stats.Abilities)
     .map(a => calc.ABILITIES_BY_ID[gen][a])
     .filter(a => a);
@@ -219,7 +222,7 @@ function importRandomOptionsForPokemon(
     .filter(i => i);
 
   return {
-    level: r.custom[forme] || r.level[tier] || r.default,
+    level,
     abilities: abilities.length ? abilities : undefined,
     items: items.length ? items : undefined,
     nature,
