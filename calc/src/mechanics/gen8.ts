@@ -262,7 +262,8 @@ function calculateGen8(
     (defender.name.indexOf('Arceus') !== -1 && defender.item.indexOf('Plate') !== -1) ||
     (defender.name.indexOf('Genesect') !== -1 && defender.item.indexOf('Drive') !== -1) ||
     (defender.hasAbility('RKS System') && defender.item.indexOf('Memory') !== -1) ||
-    defender.item.indexOf(' Z') !== -1 || defender.hasItem('Rusted Sword') ||
+    defender.item.indexOf(' Z') !== -1 ||
+    defender.named('Zacian') && defender.hasItem('Rusted Sword') ||
     (MEGA_STONES[defender.item] && defender.name.indexOf(MEGA_STONES[defender.item]) !== -1);
   // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)
 
