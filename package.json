@@ -2,7 +2,6 @@
   "name": "damage-calc",
   "private": true,
   "description": "The official damage calculator for the Pokémon Showdown battle simulator",
-  "version": "0.3.1",
   "homepage": "https://calc.pokemonshowdown.com/",
   "repository": {
     "type": "git",
