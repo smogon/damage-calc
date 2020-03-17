@@ -47,7 +47,7 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
     damage.push(0);
     return result;
   }
-  if (move.hits > 1) description.hits = move.hits;
+  if (move.multiHit > 1) description.hits = move.multiHit;
 
   const isPhysical = TYPE_CHART[RBY][move.type]!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spc';

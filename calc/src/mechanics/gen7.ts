@@ -123,7 +123,7 @@ function calculateModern(
   const isCritical =
     ((move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor')) ||
       (attacker.hasAbility('Merciless') && defender.hasStatus('Poisoned', 'Badly Poisoned'))) &&
-    move.usedTimes === 1;
+    move.timesUsed === 1;
 
   if (move.name === 'Weather Ball') {
     move.type = field.hasWeather('Sun', 'Harsh Sunshine')
@@ -378,8 +378,8 @@ function calculateModern(
     }
   }
 
-  if (move.hits > 1) {
-    description.hits = move.hits;
+  if (move.multiHit > 1) {
+    description.hits = move.multiHit;
   }
 
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'FIRST' : 'LAST';
@@ -1048,7 +1048,7 @@ function calculateModern(
     // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
     if (
       attacker.ability === 'Parental Bond' &&
-      move.hits === 1 &&
+      move.multiHit === 1 &&
       (field.gameType === 'Singles' || !move.isSpread)
     ) {
       const bondFactor = gen < 7 ? 3 / 2 : 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
@@ -1056,16 +1056,16 @@ function calculateModern(
       description.attackerAbility = attacker.ability;
     }
   }
-  if (move.dropsStats && (move.usedTimes || 0) > 1) {
+  if (move.dropsStats && (move.timesUsed || 0) > 1) {
     let simpleMultiplier = 1;
     if (attacker.hasAbility('Simple')) {
       simpleMultiplier = 2;
     }
-    description.moveTurns = 'over ' + move.usedTimes + ' turns';
+    description.moveTurns = 'over ' + move.timesUsed + ' turns';
     const hasWhiteHerb = attacker.item === 'White Herb';
     let usedWhiteHerb = false;
     let dropCount = attacker.boosts[attackStat];
-    for (let times = 0; times < move.usedTimes!; times++) {
+    for (let times = 0; times < move.timesUsed!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
       result.damage = damage.map(affectedAmount => {
