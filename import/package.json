@@ -17,8 +17,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^13.7.7",
-    "@pokemon-showdown/sets": "^0.2.0",
+    "@types/node": "^13.9.1",
+    "@pokemon-showdown/sets": "^0.2.3",
     "calc": "file:../calc",
     "smogon": "^0.4.0",
     "source-map-support": "^0.5.16"
@@ -31,7 +31,6 @@
     "lint": "gts check",
     "fix": "gts fix",
     "compile": "tsc -p .",
-    "test": "true",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
     "posttest": "npm run lint"
