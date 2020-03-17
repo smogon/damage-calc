@@ -65,7 +65,7 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   if (move.multiHit > 1) {
-    description.hits = move.multiHit;
+    description.multiHit = move.multiHit;
   }
 
   // Flail and Reversal are variable BP and never crit

@@ -379,7 +379,7 @@ function calculateModern(
   }
 
   if (move.multiHit > 1) {
-    description.hits = move.multiHit;
+    description.multiHit = move.multiHit;
   }
 
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'FIRST' : 'LAST';

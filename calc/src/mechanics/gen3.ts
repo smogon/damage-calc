@@ -101,7 +101,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   if (move.multiHit > 1) {
-    description.hits = move.multiHit;
+    description.multiHit = move.multiHit;
   }
 
   let bp;
