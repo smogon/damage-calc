@@ -18,7 +18,7 @@ export interface RawDesc {
   defenderName: string;
   defenseBoost?: number;
   defenseEVs?: string;
-  hits?: number;
+  multiHit?: number;
   isAuroraVeil?: boolean;
   isFriendGuard?: boolean;
   isHelpingHand?: boolean;
@@ -49,8 +49,8 @@ export function display(
   notation = '%',
   err = true
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const minDamage = damage[0] * move.multiHit;
+  const maxDamage = damage[damage.length - 1] * move.multiHit;
 
   const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
   const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
@@ -71,8 +71,8 @@ export function displayMove(
   damage: number[],
   notation = '%'
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const minDamage = damage[0] * move.multiHit;
+  const maxDamage = damage[damage.length - 1] * move.multiHit;
 
   const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
   const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
@@ -92,8 +92,8 @@ export function getRecovery(
   damage: number[],
   notation = '%'
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const minDamage = damage[0] * move.multiHit;
+  const maxDamage = damage[damage.length - 1] * move.multiHit;
 
   const recovery = [0, 0];
   let text = '';
@@ -133,8 +133,8 @@ export function getRecoil(
   damage: number[],
   notation = '%'
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const minDamage = damage[0] * move.multiHit;
+  const maxDamage = damage[damage.length - 1] * move.multiHit;
 
   let recoil: [number, number] | number = [0, 0];
   let text = '';
@@ -244,10 +244,10 @@ export function getKOChance(
   }
 
   // Code doesn't really work if these aren't set.
-  if (move.usedTimes === undefined) move.usedTimes = 1;
+  if (move.timesUsed === undefined) move.timesUsed = 1;
   if (move.metronomeCount === undefined) move.metronomeCount = 1;
 
-  if (damage[0] >= defender.maxHP() && move.usedTimes === 1 && move.metronomeCount === 1) {
+  if (damage[0] >= defender.maxHP() && move.timesUsed === 1 && move.metronomeCount === 1) {
     return {chance: 1, n: 1, text: 'guaranteed OHKO'};
   }
 
@@ -260,9 +260,9 @@ export function getKOChance(
 
   // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
   let qualifier = '';
-  if (move.hits > 1) {
+  if (move.multiHit > 1) {
     qualifier = 'approx. ';
-    damage = squashMultihit(gen, damage, move.hits, err);
+    damage = squashMultiHit(gen, damage, move.multiHit, err);
   }
 
   const afterText =
@@ -270,7 +270,7 @@ export function getKOChance(
       ? ' after ' + serializeText(hazards.texts.concat(eot.texts))
       : '';
 
-  if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
+  if ((move.timesUsed === 1 && move.metronomeCount === 1) || move.isZ) {
     const chance = computeKOChance(
       damage,
       defender.curHP - hazards.damage,
@@ -329,33 +329,35 @@ export function getKOChance(
       damage,
       defender.maxHP() - hazards.damage,
       eot.damage,
-      move.hits || 1,
-      move.usedTimes || 1,
+      move.multiHit || 1,
+      move.timesUsed || 1,
       defender.maxHP(),
       toxicCounter
     );
     if (chance === 1) {
       return {
         chance,
-        n: move.usedTimes,
-        text: `guaranteed KO in ${move.usedTimes} turns${afterText}`,
+        n: move.timesUsed,
+        text: `guaranteed KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (chance > 0) {
       return {
         chance,
-        n: move.usedTimes,
+        n: move.timesUsed,
         text:
           qualifier +
-          Math.round(chance * 1000) / 10 +
-          `% chance to ${move.usedTimes}HKO${afterText}`,
+          (move.timesUsed > 1 
+           ? 100 - Math.round(chance * 1000) / 10
+           : Math.round(chance * 1000) / 10) +
+          `% chance to ${move.timesUsed}HKO${afterText}`,
       };
     }
     if (
       predictTotal(
         damage[0],
         eot.damage,
-        move.hits,
-        move.usedTimes,
+        move.multiHit,
+        move.timesUsed,
         toxicCounter,
         defender.maxHP()
       ) >=
@@ -363,23 +365,23 @@ export function getKOChance(
     ) {
       return {
         chance: 1,
-        n: move.usedTimes,
-        text: `guaranteed KO in ${move.usedTimes} turns${afterText}`,
+        n: move.timesUsed,
+        text: `guaranteed KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (
       predictTotal(
         damage[damage.length - 1],
         eot.damage,
-        move.hits,
-        move.usedTimes,
+        move.multiHit,
+        move.timesUsed,
         toxicCounter,
         defender.maxHP()
       ) >=
       defender.curHP - hazards.damage
     ) {
-      return {n: move.usedTimes, text: `possible KO in ${move.usedTimes} turns${afterText}`};
+      return {n: move.timesUsed, text: `possible KO in ${move.timesUsed} turns${afterText}`};
     }
-    return {n: move.usedTimes, text: 'not a KO'};
+    return {n: move.timesUsed, text: 'not a KO'};
   }
 
   return {chance: 0, n: 0, text: ''};
@@ -584,24 +586,24 @@ function computeKOChance(
   damage: number[],
   hp: number,
   eot: number,
-  hits: number,
-  moveHits: number,
+  multiHit: number,
+  timesUsed: number,
   maxHP: number,
   toxicCounter: number
 ) {
   const n = damage.length;
   const minDamage = damage[0];
   const maxDamage = damage[n - 1];
-  if (hits === 1) {
+  if (multiHit === 1) {
     for (let i = 0; i < n; i++) {
       if (damage[i] >= hp) {
         return (n - i) / n;
       }
     }
   }
-  if (predictTotal(maxDamage, eot, hits, moveHits, toxicCounter, maxHP) < hp) {
+  if (predictTotal(maxDamage, eot, multiHit, timesUsed, toxicCounter, maxHP) < hp) {
     return 0;
-  } else if (predictTotal(minDamage, eot, hits, moveHits, toxicCounter, maxHP) >= hp) {
+  } else if (predictTotal(minDamage, eot, multiHit, timesUsed, toxicCounter, maxHP) >= hp) {
     return 1;
   }
   let toxicDamage = 0;
@@ -615,8 +617,8 @@ function computeKOChance(
       damage,
       hp - damage[i] + eot - toxicDamage,
       eot,
-      hits - 1,
-      moveHits,
+      multiHit - 1,
+      timesUsed,
       maxHP,
       toxicCounter
     );
@@ -633,37 +635,37 @@ function computeKOChance(
 function predictTotal(
   damage: number,
   eot: number,
-  hits: number,
-  moveHits: number,
+  multiHit: number,
+  timesUsed: number,
   toxicCounter: number,
   maxHP: number
 ) {
   let toxicDamage = 0;
   if (toxicCounter > 0) {
-    for (let i = 0; i < hits - 1; i++) {
+    for (let i = 0; i < multiHit - 1; i++) {
       toxicDamage += Math.floor(((toxicCounter + i) * maxHP) / 16);
     }
   }
   let total = 0;
-  if (hits > 1 && moveHits === 1) {
-    total = damage * hits - eot * (hits - 1) + toxicDamage;
+  if (multiHit > 1 && timesUsed === 1) {
+    total = damage * multiHit - eot * (multiHit - 1) + toxicDamage;
   } else {
-    total = damage - eot * (hits - 1) + toxicDamage;
+    total = damage - eot * (multiHit - 1) + toxicDamage;
   }
   return total;
 }
 
-function squashMultihit(gen: Generation, d: number[], hits: number, err = true) {
+function squashMultiHit(gen: Generation, d: number[], multiHit: number, err = true) {
   if (d.length === 1) {
-    return [d[0] * hits];
+    return [d[0] * multiHit];
   } else if (gen === 1) {
     const r = [];
     for (let i = 0; i < d.length; i++) {
-      r[i] = d[i] * hits;
+      r[i] = d[i] * multiHit;
     }
     return r;
   } else if (d.length === 16) {
-    switch (hits) {
+    switch (multiHit) {
       case 2:
         return [
           2 * d[0],
@@ -741,11 +743,11 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
           5 * d[15],
         ];
       default:
-        error(err, `Unexpected # of hits: ${hits}`);
+        error(err, `Unexpected # of multiHit: ${multiHit}`);
         return d;
     }
   } else if (d.length === 39) {
-    switch (hits) {
+    switch (multiHit) {
       case 2:
         return [
           2 * d[0],
@@ -823,7 +825,7 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
           5 * d[38],
         ];
       default:
-        error(err, `Unexpected # of hits: ${hits}`);
+        error(err, `Unexpected # of multiHit: ${multiHit}`);
         return d;
     }
   } else {
@@ -862,8 +864,8 @@ function buildDescription(description: RawDesc) {
   } else if (description.moveType) {
     output += '(' + description.moveType + ') ';
   }
-  if (description.hits) {
-    output += '(' + description.hits + ' hits) ';
+  if (description.multiHit) {
+    output += '(' + description.multiHit + ' multiHit) ';
   }
   output = appendIfSet(output, description.moveTurns);
   output += 'vs. ';

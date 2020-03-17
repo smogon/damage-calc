@@ -15,8 +15,8 @@ export class Move {
   useMax?: boolean;
   overrides?: Partial<MoveData>;
 
-  hits: number;
-  usedTimes?: number;
+  multiHit: number;
+  timesUsed?: number;
   metronomeCount?: number;
   bp: number;
   type: Type;
@@ -53,8 +53,8 @@ export class Move {
       useZ?: boolean;
       useMax?: boolean;
       isCrit?: boolean;
-      hits?: number;
-      usedTimes?: number;
+      multiHit?: number;
+      timesUsed?: number;
       metronomeCount?: number;
       overrides?: Partial<MoveData>;
     } = {}
@@ -117,7 +117,7 @@ export class Move {
         bp: maxMove.bp === 10 ? maxMoveBasePower(data) : maxMove.bp,
         category: data.category,
       });
-      this.hits = 1;
+      this.multiHit = 1;
     }
     if (options.useZ && 'zp' in data) {
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
@@ -127,16 +127,16 @@ export class Move {
         bp: zMove.bp === 1 ? data.zp : zMove.bp,
         category: data.category,
       });
-      this.hits = 1;
+      this.multiHit = 1;
     } else {
-      this.hits = data.isMultiHit
-        ? options.hits || (options.ability === 'Skill Link' || options.item === 'Grip Claw' ? 5 : 3)
+      this.multiHit = data.isMultiHit
+        ? options.multiHit || (options.ability === 'Skill Link' || options.item === 'Grip Claw' ? 5 : 3)
         : data.isTwoHit
         ? 2
         : 1;
       this.metronomeCount = options.metronomeCount;
     }
-    this.usedTimes = (data.dropsStats && options.usedTimes) || 1;
+    this.timesUsed = (data.dropsStats && options.timesUsed) || 1;
 
     this.gen = gen;
     this.name = data.name;
@@ -180,8 +180,8 @@ export class Move {
       useZ: this.useZ,
       useMax: this.useMax,
       isCrit: this.isCrit,
-      hits: this.hits,
-      usedTimes: this.usedTimes,
+      multiHit: this.multiHit,
+      timesUsed: this.timesUsed,
       metronomeCount: this.metronomeCount,
       overrides: this.overrides,
     });
