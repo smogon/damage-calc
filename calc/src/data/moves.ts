@@ -1,18 +1,15 @@
+import * as I from '../data/interface';
 import {toID, extend} from '../util';
-import {Type} from './types';
-
-export type Category = 'Physical' | 'Special' | 'Status';
-export type Recoil = boolean | number | 'crash' | 'Struggle';
 
 export interface MoveData {
   readonly name?: string;
   readonly bp: number;
-  readonly type: Type;
-  readonly category?: Category;
+  readonly type: I.TypeName;
+  readonly category?: I.MoveCategory;
   readonly hasSecondaryEffect?: boolean;
   readonly isSpread?: boolean | 'allAdjacent';
   readonly makesContact?: boolean;
-  readonly hasRecoil?: Recoil;
+  readonly hasRecoil?: I.MoveRecoil;
   readonly alwaysCrit?: boolean;
   readonly givesHealth?: boolean;
   readonly percentHealed?: number;
@@ -792,7 +789,7 @@ const GSC: {
   },
   'Future Sight': {
     bp: 80,
-    type: 'None',
+    type: '???',
     category: 'Special',
     maxPower: 140,
   },
@@ -1081,7 +1078,7 @@ const GSC: {
     maxPower: 120,
   },
   Struggle: {
-    type: 'None',
+    type: '???',
     hasRecoil: 25,
     maxPower: 100,
   },
@@ -1236,7 +1233,7 @@ const ADV: {
   },
   'Doom Desire': {
     bp: 120,
-    type: 'None',
+    type: '???',
     category: 'Special',
     maxPower: 140,
   },
@@ -5321,124 +5318,6 @@ const SM: {
   },
 });
 
-const ZMOVES_TYPING: {
-  [type in Type]?: string;
-} = {
-  Bug: 'Savage Spin-Out',
-  Dark: 'Black Hole Eclipse',
-  Dragon: 'Devastating Drake',
-  Electric: 'Gigavolt Havoc',
-  Fairy: 'Twinkle Tackle',
-  Fighting: 'All-Out Pummeling',
-  Fire: 'Inferno Overdrive',
-  Flying: 'Supersonic Skystrike',
-  Ghost: 'Never-Ending Nightmare',
-  Grass: 'Bloom Doom',
-  Ground: 'Tectonic Rage',
-  Ice: 'Subzero Slammer',
-  Normal: 'Breakneck Blitz',
-  Poison: 'Acid Downpour',
-  Psychic: 'Shattered Psyche',
-  Rock: 'Continental Crush',
-  Steel: 'Corkscrew Crash',
-  Water: 'Hydro Vortex',
-};
-
-export function getZMoveName(moveName: string, moveType: Type, item?: string) {
-  item = item || '';
-  if (moveName.indexOf('Hidden Power') !== -1) return 'Breakneck Blitz';
-  if (moveName === 'Clanging Scales' && item === 'Kommonium Z') return 'Clangorous Soulblaze';
-  if (moveName === 'Darkest Lariat' && item === 'Incinium Z') return 'Malicious Moonsault';
-  if (moveName === 'Giga Impact' && item === 'Snorlium Z') return 'Pulverizing Pancake';
-  if (moveName === 'Moongeist Beam' && item === 'Lunalium Z') return 'Menacing Moonraze Maelstrom';
-  if (moveName === 'Photon Geyser' && item === 'Ultranecrozium Z') {
-    return 'Light That Burns the Sky';
-  }
-  if (moveName === 'Play Rough' && item === 'Mimikium Z') return "Let's Snuggle Forever";
-  if (moveName === 'Psychic' && item === 'Mewnium Z') return 'Genesis Supernova';
-  if (moveName === 'Sparkling Aria' && item === 'Primarium Z') return 'Oceanic Operetta';
-  if (moveName === 'Spectral Thief' && item === 'Marshadium Z') {
-    return 'Soul-Stealing 7-Star Strike';
-  }
-  if (moveName === 'Spirit Shackle' && item === 'Decidium Z') return 'Sinister Arrow Raid';
-  if (moveName === 'Stone Edge' && item === 'Lycanium Z') return 'Splintered Stormshards';
-  if (moveName === 'Sunsteel Strike' && item === 'Solganium Z') return 'Searing Sunraze Smash';
-  if (moveName === 'Volt Tackle' && item === 'Pikanium Z') return 'Catastropika';
-  if (moveName === "Nature's Madness" && item === 'Tapunium Z') return 'Guardian of Alola';
-  if (moveName === 'Thunderbolt') {
-    if (item === 'Aloraichium Z') return 'Stoked Sparksurfer';
-    if (item === 'Pikashunium Z') return '10,000,000 Volt Thunderbolt';
-  }
-  return ZMOVES_TYPING[moveType]!;
-}
-
-export function getMaxMoveName(moveType: Type, pokemonSpecies?: string, isStatus?: boolean) {
-  if (isStatus) return 'Max Guard';
-  if (moveType === 'Fire') {
-    if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
-    if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
-  }
-  if (moveType === 'Normal') {
-    if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
-    if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
-    if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
-  }
-  if (moveType === 'Fairy') {
-    if (pokemonSpecies === 'Alcremie-Gmax') return 'G-Max Finale';
-    if (pokemonSpecies === 'Hatterene-Gmax') return 'G-Max Smite';
-  }
-  if (moveType === 'Steel') {
-    if (pokemonSpecies === 'Copperajah-Gmax') return 'G-Max Steelsurge';
-    if (pokemonSpecies === 'Melmetal-Gmax') return 'G-Max Meltdown';
-  }
-  if (moveType === 'Electric') {
-    if (pokemonSpecies === 'Pikachu-Gmax') return 'G-Max Volt Crash';
-    if (pokemonSpecies === 'Toxtricity-Gmax') return 'G-Max Stun Shock';
-  }
-  if (moveType === 'Grass') {
-    if (pokemonSpecies === 'Appletun-Gmax') return 'G-Max Sweetness';
-    if (pokemonSpecies === 'Flapple-Gmax') return 'G-Max Tartness';
-  }
-  if (moveType === 'Water') {
-    if (pokemonSpecies === 'Drednaw-Gmax') return 'G-Max Stonesurge';
-    if (pokemonSpecies === 'Kingler-Gmax') return 'G-Max Foam Burst';
-  }
-  if (moveType === 'Poison' && pokemonSpecies === 'Garbodor-Gmax') return 'G-Max Malodor';
-  if (moveType === 'Fighting' && pokemonSpecies === 'Machamp-Gmax') return 'G-Max Chi Strike';
-  if (moveType === 'Ghost' && pokemonSpecies === 'Gengar-Gmax') return 'G-Max Terror';
-  if (moveType === 'Ice' && pokemonSpecies === 'Lapras-Gmax') return 'G-Max Resonance';
-  if (moveType === 'Flying' && pokemonSpecies === 'Corviknight-Gmax') return 'G-Max Wind Rage';
-  if (moveType === 'Dragon' && pokemonSpecies === 'Duraludon-Gmax') return 'G-Max Depletion';
-  if (moveType === 'Psychic' && pokemonSpecies === 'Orbeetle-Gmax') return 'G-Max Gravitas';
-  if (moveType === 'Rock' && pokemonSpecies === 'Coalossal-Gmax') return 'G-Max Volcalith';
-  if (moveType === 'Ground' && pokemonSpecies === 'Sandaconda-Gmax') return 'G-Max Sandblast';
-  if (moveType === 'Dark' && pokemonSpecies === 'Grimmsnarl-Gmax') return 'G-Max Snooze';
-  return 'Max ' + MAXMOVES_TYPING[moveType];
-}
-
-const MAXMOVES_TYPING: {
-  [type in Type]?: string;
-} = {
-  Bug: 'Flutterby',
-  Dark: 'Darkness',
-  Dragon: 'Wyrmwind',
-  Electric: 'Lightning',
-  Fairy: 'Starfall',
-  Fighting: 'Knuckle',
-  Fire: 'Flare',
-  Flying: 'Airstream',
-  Ghost: 'Phantasm',
-  Grass: 'Overgrowth',
-  Ground: 'Quake',
-  Ice: 'Hailstorm',
-  Normal: 'Strike',
-  Poison: 'Ooze',
-  Psychic: 'Mindstorm',
-  Rock: 'Rockfall',
-  Steel: 'Steelspike',
-  Water: 'Geyser',
-};
-
 const SS: {
   [name: string]: MoveData;
 } = extend(true, {}, SM, {
@@ -6019,17 +5898,75 @@ const SS: {
   },
 });
 
-export const ZMOVES = Object.values(ZMOVES_TYPING) as string[];
-
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
-export const MOVES_BY_ID: Array<{[id: string]: MoveData}> = [];
+
+export class Moves implements I.Moves {
+  private readonly gen: I.GenerationNum;
+
+  constructor(gen: I.GenerationNum) {
+    this.gen = gen;
+  }
+
+  get(id: I.ID) {
+    return MOVES_BY_ID[this.gen][id];
+  }
+
+  *[Symbol.iterator]() {
+    for (const id in MOVES_BY_ID[this.gen]) {
+      yield this.get(id as I.ID)!;
+    }
+  }
+}
+
+class Move implements I.Move {
+  readonly kind: 'Move';
+  readonly id: I.ID;
+  readonly name: I.MoveName;
+  readonly bp!: number;
+  readonly type!: I.TypeName;
+  readonly category?: I.MoveCategory;
+  readonly hasSecondaryEffect?: boolean;
+  readonly isSpread?: boolean | 'allAdjacent';
+  readonly makesContact?: boolean;
+  readonly hasRecoil?: I.MoveRecoil;
+  readonly alwaysCrit?: boolean;
+  readonly givesHealth?: boolean;
+  readonly percentHealed?: number;
+  readonly ignoresBurn?: boolean;
+  readonly isPunch?: boolean;
+  readonly isBite?: boolean;
+  readonly isBullet?: boolean;
+  readonly isSound?: boolean;
+  readonly isPulse?: boolean;
+  readonly hasPriority?: boolean;
+  readonly dropsStats?: number;
+  readonly ignoresDefenseBoosts?: boolean;
+  readonly dealsPhysicalDamage?: boolean;
+  readonly bypassesProtect?: boolean;
+  readonly isZ?: boolean;
+  readonly isMax?: boolean;
+  readonly usesHighestAttackStat?: boolean;
+  readonly zp?: number;
+  readonly maxPower?: number;
+  readonly isMultiHit?: boolean;
+  readonly isTwoHit?: boolean;
+
+  constructor(name: string, data: MoveData) {
+    this.kind = 'Move';
+    this.id = toID(name);
+    this.name = name as I.MoveName;
+    Object.assign(this, data);
+  }
+}
+
+const MOVES_BY_ID: Array<{[id: string]: Move}> = [];
 
 for (const moves of MOVES) {
-  const map: {[id: string]: MoveData} = {};
-  for (const m of Object.keys(moves)) {
-    const v = moves[m];
-    (v as any).name = m;
-    map[toID(m)] = v;
+  const map: {[id: string]: Move} = {};
+  for (const move in moves) {
+    const data = moves[move];
+    const m = new Move(move, data);
+    map[m.id] = m;
   }
   MOVES_BY_ID.push(map);
 }

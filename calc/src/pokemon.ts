@@ -1,8 +1,6 @@
-import {Gender, Species, SPECIES} from './data/species';
-import {Type} from './data/types';
-import {Generation} from './gen';
-import {StatsTable, calcStat, STATS, DVToIV, getHPDV, shortForm, Stat} from './stats';
-import {extend} from './util';
+import * as I from './data/interface';
+import {StatsTable, STATS, Stat, Stats} from './stats';
+import {toID, extend} from './util';
 
 export type Status =
   | 'Healthy'
@@ -14,16 +12,16 @@ export type Status =
   | 'Frozen';
 
 export class Pokemon {
-  gen: Generation;
+  gen: I.Generation;
   name: string;
-  species: Species;
+  species: I.Specie;
 
-  type1: Type;
-  type2?: Type;
+  type1: I.TypeName;
+  type2?: I.TypeName;
   weight: number;
 
   level: number;
-  gender?: Gender;
+  gender?: I.GenderName;
   ability?: string;
   abilityOn?: boolean;
   isDynamaxed?: boolean;
@@ -43,7 +41,7 @@ export class Pokemon {
   moves: string[];
 
   constructor(
-    gen: Generation,
+    gen: I.Generation,
     name: string,
     options: {
       level?: number;
@@ -51,7 +49,7 @@ export class Pokemon {
       abilityOn?: boolean;
       isDynamaxed?: boolean;
       item?: string;
-      gender?: Gender;
+      gender?: I.GenderName;
       nature?: string;
       ivs?: Partial<StatsTable>;
       evs?: Partial<StatsTable>;
@@ -60,10 +58,10 @@ export class Pokemon {
       status?: Status;
       toxicCounter?: number;
       moves?: string[];
-      overrides?: Partial<Species>;
+      overrides?: Partial<I.Specie>;
     } = {}
   ) {
-    this.species = extend(true, {}, SPECIES[gen][name], options.overrides);
+    this.species = extend(true, {}, gen.species.get(toID(name)), options.overrides);
 
     this.gen = gen;
     this.name = name;
@@ -72,7 +70,7 @@ export class Pokemon {
     this.weight = this.species.w;
 
     this.level = options.level || 100;
-    this.gender = options.gender || this.species.gender || 'male';
+    this.gender = options.gender || this.species.gender || 'M';
     this.ability = options.ability || this.species.ab;
     this.abilityOn = !!options.abilityOn;
     this.isDynamaxed = !!options.isDynamaxed;
@@ -80,12 +78,12 @@ export class Pokemon {
 
     this.nature = options.nature || 'Serious';
     this.ivs = Pokemon.withDefault(gen, options.ivs, 31);
-    this.evs = Pokemon.withDefault(gen, options.evs, gen >= 3 ? 0 : 252);
+    this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0);
 
-    if (gen < 3) {
-      this.ivs.hp = DVToIV(
-        getHPDV({
+    if (gen.num < 3) {
+      this.ivs.hp = Stats.DVToIV(
+        Stats.getHPDV({
           atk: this.ivs.atk,
           def: this.ivs.def,
           spe: this.ivs.spe,
@@ -96,7 +94,7 @@ export class Pokemon {
 
     this.rawStats = {} as StatsTable;
     this.stats = {} as StatsTable;
-    for (const stat of STATS[gen]) {
+    for (const stat of STATS[gen.num]) {
       const val = this.calcStat(gen, stat);
       this.rawStats[stat] = val;
       this.stats[stat] = val;
@@ -124,7 +122,7 @@ export class Pokemon {
     return statuses.indexOf(this.status) !== -1;
   }
 
-  hasType(...types: Type[]) {
+  hasType(...types: I.TypeName[]) {
     for (const type of types) {
       if (this.type1 === type || this.type2 === type) return true;
     }
@@ -155,11 +153,11 @@ export class Pokemon {
     });
   }
 
-  private calcStat(gen: Generation, stat: Stat) {
-    return calcStat(
+  private calcStat(gen: I.Generation, stat: Stat) {
+    return Stats.calcStat(
       gen,
       stat,
-      this.species.bs[shortForm(stat)]!,
+      this.species.bs[Stats.shortForm(stat)]!,
       this.ivs[stat]!,
       this.evs[stat]!,
       this.level,
@@ -167,8 +165,8 @@ export class Pokemon {
     );
   }
 
-  static getForme(gen: Generation, speciesName: string, item?: string, moveName?: string) {
-    const species = SPECIES[gen][speciesName];
+  static getForme(gen: I.Generation, speciesName: string, item?: string, moveName?: string) {
+    const species = gen.species.get(toID(speciesName));
     if (!species || !species.formes) {
       return speciesName;
     }
@@ -191,7 +189,7 @@ export class Pokemon {
   }
 
   private static withDefault(
-    gen: Generation,
+    gen: I.Generation,
     current: Partial<StatsTable> | undefined,
     val: number
   ) {
@@ -199,7 +197,7 @@ export class Pokemon {
       true,
       {},
       {hp: val, atk: val, def: val, spe: val},
-      gen < 2 ? {spc: val} : {spa: val, spd: val},
+      gen.num < 2 ? {spc: val} : {spa: val, spd: val},
       current
     );
   }

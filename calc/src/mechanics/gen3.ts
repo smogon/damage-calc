@@ -1,12 +1,12 @@
-import {getItemBoostType} from '../data/items';
-import {NATURES} from '../data/natures';
-import {TYPE_CHART} from '../data/types';
+import {Generation} from '../data/interface';
+import {toID} from '../util';
+import {getItemBoostType} from '../items';
 import {RawDesc} from '../desc';
 import {Pokemon} from '../pokemon';
 import {Move} from '../move';
 import {Field} from '../field';
 import {Result} from '../result';
-import {displayStat} from '../stats';
+import {Stats} from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -16,17 +16,21 @@ import {
   checkIntimidate,
 } from './util';
 
-const ADV = 3;
-
-export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
+export function calculateADV(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field
+) {
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
   checkIntimidate(attacker, defender);
   checkIntimidate(defender, attacker);
-  attacker.stats.spe = getFinalSpeed(ADV, attacker, field, field.attackerSide);
-  defender.stats.spe = getFinalSpeed(ADV, defender, field, field.defenderSide);
+  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -35,7 +39,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   };
 
   const damage: number[] = [];
-  const result = new Result(ADV, attacker, defender, move, field, damage, description);
+  const result = new Result(gen, attacker, defender, move, field, damage, description);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -64,13 +68,13 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   const typeEffect1 = getMoveEffectiveness(
-    ADV,
+    gen,
     move,
     defender.type1,
     field.defenderSide.isForesight
   );
   const typeEffect2 = defender.type2
-    ? getMoveEffectiveness(ADV, move, defender.type2, field.defenderSide.isForesight)
+    ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight)
     : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
@@ -84,7 +88,7 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
     (defender.hasAbility('Levitate') && move.type === 'Ground') ||
     (defender.hasAbility('Volt Absorb') && move.type === 'Electric') ||
     (defender.hasAbility('Water Absorb') && move.type === 'Water') ||
-    (move.type !== 'None' && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
+    (move.type !== '???' && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
     (defender.hasAbility('Soundproof') && move.isSound)
   ) {
     description.defenderAbility = defender.ability;
@@ -126,27 +130,21 @@ export function calculateADV(attacker: Pokemon, defender: Pokemon, move: Move, f
       bp = move.bp;
   }
 
-  const isPhysical = TYPE_CHART[ADV][move.type]!.category === 'Physical';
+  const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
+  const attackerNature = gen.natures.get(toID(attacker.nature))!;
   description.attackEVs =
     attacker.evs[attackStat] +
-    (NATURES[attacker.nature][0] === attackStat
-      ? '+'
-      : NATURES[attacker.nature][1] === attackStat
-      ? '-'
-      : '') +
+    (attackerNature.plus === attackStat ? '+' : attackerNature.minus === attackStat ? '-' : '') +
     ' ' +
-    displayStat(attackStat);
+    Stats.displayStat(attackStat);
   const defenseStat = isPhysical ? 'def' : 'spd';
+  const defenderNature = gen.natures.get(toID(defender.nature))!;
   description.defenseEVs =
     defender.evs[defenseStat] +
-    (NATURES[defender.nature][0] === defenseStat
-      ? '+'
-      : NATURES[defender.nature][1] === defenseStat
-      ? '-'
-      : '') +
+    (defenderNature.plus === defenseStat ? '+' : defenderNature.minus === defenseStat ? '-' : '') +
     ' ' +
-    displayStat(defenseStat);
+    Stats.displayStat(defenseStat);
   let at = attacker.rawStats[attackStat];
   let df = defender.rawStats[defenseStat];
 

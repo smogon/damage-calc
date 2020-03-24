@@ -474,7 +474,7 @@ $(".set-selector").change(function () {
 		calcStats(pokeObj);
 		abilityObj.change();
 		itemObj.change();
-		if (pokemon.gender === "genderless") {
+		if (pokemon.gender === "N") {
 			pokeObj.find(".gender").parent().hide();
 			pokeObj.find(".gender").val("");
 		} else pokeObj.find(".gender").parent().show();
@@ -595,7 +595,7 @@ function createPokemon(pokeInfo) {
 			ability: ability,
 			abilityOn: pokeInfo.find(".abilityToggle").is(":checked"),
 			item: item,
-			gender: pokeInfo.find(".gender").is(":visible") ? pokeInfo.find(".gender").val() : "genderless",
+			gender: pokeInfo.find(".gender").is(":visible") ? getGender(pokeInfo.find(".gender").val()) : "N",
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
@@ -618,6 +618,12 @@ function createPokemon(pokeInfo) {
 			}
 		});
 	}
+}
+
+function getGender(gender) {
+	if (!gender || gender === 'genderless' || gender === 'N') return 'N';
+	if (gender.toLowerCase() === 'male' || gender === 'M') return 'M';
+	return 'F';
 }
 
 function getMoveDetails(moveInfo, ability, item, useMax) {

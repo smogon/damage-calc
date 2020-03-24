@@ -83,10 +83,10 @@ function performCalculations() {
 					field.swap();
 				}
 				if (attacker.ability === "Rivalry") {
-					attacker.gender = "genderless";
+					attacker.gender = "N";
 				}
 				if (defender.ability === "Rivalry") {
-					defender.gender = "genderless";
+					defender.gender = "N";
 				}
 				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
 				attacker = damageResults[0].attacker;

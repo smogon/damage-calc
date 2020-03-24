@@ -1,7 +1,4 @@
-import {calculate} from '../calc';
-import {Pokemon} from '../pokemon';
-import {Move} from '../move';
-import {Field} from '../field';
+import {calculate, Pokemon, Move, Field} from '../index';
 
 declare global {
   namespace jest {

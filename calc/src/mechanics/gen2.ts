@@ -1,5 +1,6 @@
-import {getItemBoostType} from '../data/items';
-import {TYPE_CHART} from '../data/types';
+import {Generation} from '../data/interface';
+import {toID} from '../util';
+import {getItemBoostType} from '../items';
 import {RawDesc} from '../desc';
 import {Field} from '../field';
 import {Move} from '../move';
@@ -7,20 +8,24 @@ import {Pokemon} from '../pokemon';
 import {Result} from '../result';
 import {getModifiedStat, getFinalSpeed, getMoveEffectiveness} from './util';
 
-const GSC = 2;
+export function calculateGSC(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field
+) {
+  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
+  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, gen);
+  attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa, gen);
+  attacker.stats.spd = getModifiedStat(attacker.rawStats.spd, attacker.boosts.spd, gen);
+  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
 
-export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
-  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, GSC);
-  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, GSC);
-  attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa, GSC);
-  attacker.stats.spd = getModifiedStat(attacker.rawStats.spd, attacker.boosts.spd, GSC);
-  attacker.stats.spe = getFinalSpeed(GSC, attacker, field, field.attackerSide);
-
-  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, GSC);
-  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, GSC);
-  defender.stats.spa = getModifiedStat(defender.rawStats.spa, defender.boosts.spa, GSC);
-  defender.stats.spd = getModifiedStat(defender.rawStats.spd, defender.boosts.spd, GSC);
-  defender.stats.spe = getFinalSpeed(GSC, defender, field, field.defenderSide);
+  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, gen);
+  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+  defender.stats.spa = getModifiedStat(defender.rawStats.spa, defender.boosts.spa, gen);
+  defender.stats.spd = getModifiedStat(defender.rawStats.spd, defender.boosts.spd, gen);
+  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -29,7 +34,7 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
   };
 
   const damage: number[] = [];
-  const result = new Result(GSC, attacker, defender, move, field, damage, description);
+  const result = new Result(gen, attacker, defender, move, field, damage, description);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -43,13 +48,13 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   const typeEffect1 = getMoveEffectiveness(
-    GSC,
+    gen,
     move,
     defender.type1,
     field.defenderSide.isForesight
   );
   const typeEffect2 = defender.type2
-    ? getMoveEffectiveness(GSC, move, defender.type2, field.defenderSide.isForesight)
+    ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight)
     : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
@@ -76,7 +81,7 @@ export function calculateGSC(attacker: Pokemon, defender: Pokemon, move: Move, f
     description.moveBP = move.bp;
   }
 
-  const isPhysical = TYPE_CHART[GSC][move.type]!.category === 'Physical';
+  const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
   const defenseStat = isPhysical ? 'def' : 'spd';
   let at = attacker.stats[attackStat];

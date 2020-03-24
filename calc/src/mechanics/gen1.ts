@@ -1,4 +1,5 @@
-import {TYPE_CHART} from '../data/types';
+import {Generation} from '../data/interface';
+import {toID} from '../util';
 import {RawDesc} from '../desc';
 import {Field} from '../field';
 import {Move} from '../move';
@@ -6,18 +7,22 @@ import {Pokemon} from '../pokemon';
 import {Result} from '../result';
 import {getModifiedStat, getFinalSpeed} from './util';
 
-const RBY = 1;
+export function calculateRBY(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field
+) {
+  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
+  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, gen);
+  attacker.stats.spc = getModifiedStat(attacker.rawStats.spc!, attacker.boosts.spc!, gen);
+  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
 
-export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
-  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, RBY);
-  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, RBY);
-  attacker.stats.spc = getModifiedStat(attacker.rawStats.spc!, attacker.boosts.spc!, RBY);
-  attacker.stats.spe = getFinalSpeed(RBY, attacker, field, field.attackerSide);
-
-  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, RBY);
-  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, RBY);
-  defender.stats.spc = getModifiedStat(defender.rawStats.spc!, defender.boosts.spc!, RBY);
-  defender.stats.spe = getFinalSpeed(RBY, defender, field, field.defenderSide);
+  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, gen);
+  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+  defender.stats.spc = getModifiedStat(defender.rawStats.spc!, defender.boosts.spc!, gen);
+  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -26,7 +31,7 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
   };
 
   const damage: number[] = [];
-  const result = new Result(RBY, attacker, defender, move, field, damage, description);
+  const result = new Result(gen, attacker, defender, move, field, damage, description);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -39,8 +44,10 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
     return result;
   }
 
-  const typeEffect1 = TYPE_CHART[RBY][move.type]![defender.type1]!;
-  const typeEffect2 = defender.type2 ? TYPE_CHART[RBY][move.type]![defender.type2]! : 1;
+  const moveType = gen.types.get(toID(move.type))!;
+
+  const typeEffect1 = moveType.damageTaken[defender.type1]!;
+  const typeEffect2 = defender.type2 ? moveType.damageTaken[defender.type2]! : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {
@@ -49,7 +56,7 @@ export function calculateRBY(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
   if (move.hits > 1) description.hits = move.hits;
 
-  const isPhysical = TYPE_CHART[RBY][move.type]!.category === 'Physical';
+  const isPhysical = moveType.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spc';
   const defenseStat = isPhysical ? 'def' : 'spc';
   let at = attacker.stats[attackStat]!;

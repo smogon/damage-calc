@@ -1,4 +1,4 @@
-import {Move} from '../move';
+import {Move} from '../index';
 
 describe('Move', () => {
   test('clone', () => {

@@ -1,22 +1,20 @@
-﻿import {
+﻿import {Generation} from '../data/interface';
+import {toID} from '../util';
+import {
   getItemBoostType,
   getNaturalGift,
   getFlingPower,
   getBerryResistType,
   getTechnoBlast,
   getMultiAttack,
-  MEGA_STONES,
   SEED_BOOSTED_STAT,
-} from '../data/items';
-import {NATURES} from '../data/natures';
-import {SPECIES} from '../data/species';
-import {TYPE_CHART} from '../data/types';
+} from '../items';
 import {RawDesc} from '../desc';
 import {Field, Side} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {displayStat, Stat} from '../stats';
+import {Stats, Stat} from '../stats';
 import {
   getModifiedStat,
   getFinalSpeed,
@@ -32,17 +30,8 @@ import {
   pokeRound,
 } from './util';
 
-const SS = 8;
-
-export function makeCalculate(gen: 5 | 6 | 7 | 8) {
-  return (attacker: Pokemon, defender: Pokemon, move: Move, field: Field) =>
-    calculateGen8(gen, attacker, defender, move, field);
-}
-
-export const calculateSS = makeCalculate(SS);
-
-function calculateGen8(
-  gen: 5 | 6 | 7 | 8,
+export function calculateModern(
+  gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -232,7 +221,7 @@ function calculateGen8(
   if (
     (attacker.hasAbility('Gale Wings') &&
       move.type === 'Flying' &&
-      (gen >= 7 ? attacker.curHP === attacker.maxHP() : true)) ||
+      (gen.num >= 7 ? attacker.curHP === attacker.maxHP() : true)) ||
     (attacker.hasAbility('Triage') && move.givesHealth)
   ) {
     move.hasPriority = true;
@@ -256,24 +245,28 @@ function calculateGen8(
       )
     : 1;
   let typeEffectiveness = typeEffect1 * typeEffect2;
-  const resistedKnockOffDamage =
+  let resistedKnockOffDamage =
     !defender.item ||
     (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
     (defender.name.indexOf('Arceus') !== -1 && defender.item.indexOf('Plate') !== -1) ||
     (defender.name.indexOf('Genesect') !== -1 && defender.item.indexOf('Drive') !== -1) ||
     (defender.hasAbility('RKS System') && defender.item.indexOf('Memory') !== -1) ||
     defender.item.indexOf(' Z') !== -1 ||
-    (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
-    (MEGA_STONES[defender.item] && defender.name.indexOf(MEGA_STONES[defender.item]) !== -1);
+    (defender.named('Zacian') && defender.hasItem('Rusted Sword'));
   // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)
+  if (!resistedKnockOffDamage && defender.item) {
+    const item = gen.items.get(toID(defender.item))!;
+    resistedKnockOffDamage = item.megaEvolves && defender.name.indexOf(item.megaEvolves) !== -1;
+  }
 
   if (typeEffectiveness === 0 && move.name === 'Thousand Arrows') {
     typeEffectiveness = 1;
   }
   if (defender.hasItem('Ring Target') && typeEffectiveness === 0) {
-    if (TYPE_CHART[gen][move.type]![defender.type1]! === 0) {
+    const damageTaken = gen.types.get(toID(move.type))!.damageTaken;
+    if (damageTaken[defender.type1]! === 0) {
       typeEffectiveness = typeEffect2;
-    } else if (defender.type2 && TYPE_CHART[gen][move.type]![defender.type2]! === 0) {
+    } else if (defender.type2 && damageTaken[defender.type2]! === 0) {
       typeEffectiveness = typeEffect1;
     }
   }
@@ -283,7 +276,7 @@ function calculateGen8(
   }
   if (
     move.name === 'Sky Drop' &&
-    (defender.hasType('Flying') || (gen >= 6 && defender.weight >= 200) || field.isGravity)
+    (defender.hasType('Flying') || (gen.num >= 6 && defender.weight >= 200) || field.isGravity)
   ) {
     damage.push(0);
     return result;
@@ -326,7 +319,7 @@ function calculateGen8(
   if (
     field.weather === 'Strong Winds' &&
     defender.hasType('Flying') &&
-    TYPE_CHART[gen][move.type]!['Flying']! > 1
+    gen.types.get(toID(move.type))!.damageTaken['Flying']! > 1
   ) {
     typeEffectiveness /= 2;
     description.weather = field.weather;
@@ -562,10 +555,7 @@ function calculateGen8(
     description.attackerAbility = attacker.ability;
   }
 
-  if (
-    attacker.hasAbility('Rivalry') &&
-    [attacker.gender, defender.gender].indexOf('genderless') === -1
-  ) {
+  if (attacker.hasAbility('Rivalry') && [attacker.gender, defender.gender].indexOf('N') === -1) {
     if (attacker.gender === defender.gender) {
       bpMods.push(0x1400);
       description.rivalry = 'buffed';
@@ -596,14 +586,14 @@ function calculateGen8(
     bpMods.push(0x1333);
     description.attackerItem = attacker.item;
   } else if (attacker.item === move.type + ' Gem') {
-    bpMods.push(gen >= 6 ? 0x14cd : 0x1800);
+    bpMods.push(gen.num >= 6 ? 0x14cd : 0x1800);
     description.attackerItem = attacker.item;
   } else if (
     attacker.hasItem('Soul Dew') &&
     attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
     isSTAB
   ) {
-    bpMods.push(gen >= 7 ? 0x1333 : 0x1000);
+    bpMods.push(gen.num >= 7 ? 0x1333 : 0x1000);
     description.attackerItem = attacker.item;
   }
 
@@ -619,7 +609,7 @@ function calculateGen8(
     bpMods.push(0x800);
     description.moveBP = move.bp / 2;
     description.weather = field.weather;
-  } else if (gen >= 6 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
+  } else if (gen.num >= 6 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
     bpMods.push(0x1800);
     description.moveBP = move.bp * 1.5;
   } else if (
@@ -659,7 +649,7 @@ function calculateGen8(
   }
 
   if (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize) {
-    bpMods.push(gen >= 7 ? 0x1333 : 0x14cd);
+    bpMods.push(gen.num >= 7 ? 0x1333 : 0x14cd);
     description.attackerAbility = attacker.ability;
   } else if (
     (attacker.hasAbility('Mega Launcher') && move.isPulse) ||
@@ -710,8 +700,8 @@ function calculateGen8(
     move.category === 'Special' ? 'spa' : move.name === 'Body Press' ? 'def' : 'atk';
   description.attackEVs =
     move.name === 'Foul Play'
-      ? getEVDescriptionText(defender, attackStat, defender.nature)
-      : getEVDescriptionText(attacker, attackStat, attacker.nature);
+      ? getEVDescriptionText(gen, defender, attackStat, defender.nature)
+      : getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   if (
     attackSource.boosts[attackStat] === 0 ||
@@ -804,7 +794,7 @@ function calculateGen8(
     atMods.push(0x2000);
     description.attackerItem = attacker.item;
   } else if (
-    (gen < 7 &&
+    (gen.num < 7 &&
       attacker.hasItem('Soul Dew') &&
       attacker.named('Latios', 'Latias') &&
       move.category === 'Special') ||
@@ -825,15 +815,12 @@ function calculateGen8(
   let defense: number;
   const hitsPhysical = move.category === 'Physical' || move.dealsPhysicalDamage;
   const defenseStat = hitsPhysical ? 'def' : 'spd';
+  const defenderNature = gen.natures.get(toID(defender.nature))!;
   description.defenseEVs =
     defender.evs[defenseStat] +
-    (NATURES[defender.nature][0] === defenseStat
-      ? '+'
-      : NATURES[defender.nature][1] === defenseStat
-      ? '-'
-      : '') +
+    (defenderNature.plus === defenseStat ? '+' : defenderNature.minus === defenseStat ? '-' : '') +
     ' ' +
-    displayStat(defenseStat);
+    Stats.displayStat(defenseStat);
   if (
     defender.boosts[defenseStat] === 0 ||
     (isCritical && defender.boosts[defenseStat] > 0) ||
@@ -878,11 +865,11 @@ function calculateGen8(
   }
 
   if (
-    (gen < 7 &&
+    (gen.num < 7 &&
       !hitsPhysical &&
       defender.named('Latios', 'Latias') &&
       defender.hasItem('Soul Dew')) ||
-    (defender.hasItem('Eviolite') && SPECIES[gen][defender.name].canEvolve) ||
+    (defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.canEvolve) ||
     (!hitsPhysical && defender.hasItem('Assault Vest'))
   ) {
     dfMods.push(0x1800);
@@ -964,7 +951,7 @@ function calculateGen8(
     description.defenderItem = defender.item;
   }
   if (isCritical) {
-    baseDamage = Math.floor(baseDamage * (gen >= 6 ? 1.5 : 2));
+    baseDamage = Math.floor(baseDamage * (gen.num >= 6 ? 1.5 : 2));
     description.isCritical = isCritical;
   }
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
@@ -994,7 +981,7 @@ function calculateGen8(
     !field.defenderSide.isAuroraVeil
   ) {
     // doesn't stack with Aurora Veil
-    finalMods.push(field.gameType !== 'Singles' ? (gen >= 6 ? 0xaac : 0xa8f) : 0x800);
+    finalMods.push(field.gameType !== 'Singles' ? (gen.num >= 6 ? 0xaac : 0xa8f) : 0x800);
     description.isReflect = true;
   } else if (
     field.defenderSide.isLightScreen &&
@@ -1003,7 +990,7 @@ function calculateGen8(
     !field.defenderSide.isAuroraVeil
   ) {
     // doesn't stack with Aurora Veil
-    finalMods.push(field.gameType !== 'Singles' ? (gen >= 6 ? 0xaac : 0xa8f) : 0x800);
+    finalMods.push(field.gameType !== 'Singles' ? (gen.num >= 6 ? 0xaac : 0xa8f) : 0x800);
     description.isLightScreen = true;
   }
   if (
@@ -1095,7 +1082,7 @@ function calculateGen8(
       move.hits === 1 &&
       (field.gameType === 'Singles' || !move.isSpread)
     ) {
-      const bondFactor = gen < 7 ? 3 / 2 : 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
+      const bondFactor = gen.num < 7 ? 3 / 2 : 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
       damage[i] = Math.floor(damage[i] * bondFactor);
       description.attackerAbility = attacker.ability;
     }
@@ -1193,15 +1180,17 @@ function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
 }
 
 function getEVDescriptionText(
+  gen: Generation,
   pokemon: Pokemon,
   stat: 'atk' | 'def' | 'spd' | 'spa',
-  nature: string
+  natureName: string
 ): string {
+  const nature = gen.natures.get(toID(natureName))!;
   return (
     pokemon.evs[stat] +
-    (NATURES[nature][0] === stat ? '+' : NATURES[nature][1] === stat ? '-' : '') +
+    (nature.plus === stat ? '+' : nature.minus === stat ? '-' : '') +
     ' ' +
-    displayStat(stat)
+    Stats.displayStat(stat)
   );
 }
 

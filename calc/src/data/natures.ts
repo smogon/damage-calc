@@ -1,7 +1,8 @@
+import * as I from './interface';
 import {toID} from '../util';
 import {Stat} from '../stats';
 
-export const NATURES: {[name: string]: [Stat?, Stat?]} = {
+export const NATURES: {[name: string]: [Stat, Stat]} = {
   Adamant: ['atk', 'spa'],
   Bashful: ['spa', 'spa'],
   Bold: ['def', 'atk'],
@@ -29,7 +30,37 @@ export const NATURES: {[name: string]: [Stat?, Stat?]} = {
   Timid: ['spe', 'atk'],
 };
 
-export const NATURES_BY_ID: {[id: string]: string} = {};
-for (const n of Object.keys(NATURES)) {
-  NATURES_BY_ID[toID(n)] = n;
+export class Natures implements I.Natures {
+  get(id: I.ID) {
+    return NATURES_BY_ID[id];
+  }
+
+  *[Symbol.iterator]() {
+    for (const id in NATURES_BY_ID) {
+      yield this.get(id as I.ID)!;
+    }
+  }
+}
+
+class Nature implements I.Nature {
+  readonly kind: 'Nature';
+  readonly id: I.ID;
+  readonly name: I.NatureName;
+  readonly plus: I.StatName;
+  readonly minus: I.StatName;
+
+  constructor(name: string, [plus, minus]: [I.StatName, I.StatName]) {
+    this.kind = 'Nature';
+    this.id = toID(name);
+    this.name = name as I.NatureName;
+    this.plus = plus;
+    this.minus = minus;
+  }
+}
+
+const NATURES_BY_ID: {[id: string]: Nature} = {};
+
+for (const nature in NATURES) {
+  const n = new Nature(nature, NATURES[nature] as [I.StatName, I.StatName]);
+  NATURES_BY_ID[n.id] = n;
 }
