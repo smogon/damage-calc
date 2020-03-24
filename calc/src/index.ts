@@ -91,7 +91,7 @@ export class Move extends A.Move {
       overrides?: Partial<I.Move>;
     } = {}
   ) {
-    super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options);
+    super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options as any);
   }
 }
 
@@ -117,7 +117,7 @@ export class Pokemon extends A.Pokemon {
       overrides?: Partial<I.Specie>;
     } = {}
   ) {
-    super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options);
+    super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options as any);
   }
 
   static getForme(
@@ -129,8 +129,8 @@ export class Pokemon extends A.Pokemon {
     return A.Pokemon.getForme(
       typeof gen === 'number' ? Generations.get(gen) : gen,
       speciesName,
-      item,
-      moveName
+      item as I.ItemName,
+      moveName as I.MoveName
     );
   }
 }

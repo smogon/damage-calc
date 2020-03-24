@@ -1,9 +1,9 @@
-import {Generation, TypeName, ID} from '../data/interface';
+import {Generation, TypeName, NatureName, ID, ItemName} from '../data/interface';
 import {toID} from '../util';
 import {Field, Side, Weather} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
-import {STATS, StatsTable} from '../stats';
+import {STATS, Stats, StatsTable} from '../stats';
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
   return (
@@ -131,7 +131,7 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
 
 export function checkKlutz(pokemon: Pokemon) {
   if (pokemon.hasAbility('Klutz')) {
-    pokemon.item = '';
+    pokemon.item = '' as ItemName;
   }
 }
 
@@ -176,4 +176,25 @@ export function countBoosts(gen: Generation, boosts: StatsTable) {
     if (boost && boost > 0) sum += boost;
   }
   return sum;
+}
+
+export function getEVDescriptionText(
+  gen: Generation,
+  pokemon: Pokemon,
+  stat: 'atk' | 'def' | 'spd' | 'spa',
+  natureName: NatureName
+): string {
+  const nature = gen.natures.get(toID(natureName))!;
+  return (
+    pokemon.evs[stat] +
+    (nature.plus === nature.minus
+      ? ''
+      : nature.plus === stat
+      ? '+'
+      : nature.minus === stat
+      ? '-'
+      : '') +
+    ' ' +
+    Stats.displayStat(stat)
+  );
 }

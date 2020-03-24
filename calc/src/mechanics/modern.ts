@@ -1,4 +1,4 @@
-﻿import {Generation} from '../data/interface';
+﻿import {Generation, AbilityName} from '../data/interface';
 import {toID} from '../util';
 import {
   getItemBoostType,
@@ -14,9 +14,10 @@ import {Field, Side} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {Stats, Stat} from '../stats';
+import {Stat} from '../stats';
 import {
   getModifiedStat,
+  getEVDescriptionText,
   getFinalSpeed,
   getMoveEffectiveness,
   checkAirLock,
@@ -105,12 +106,12 @@ export function calculateModern(
     ].indexOf(move.name) !== -1;
   if (!defenderIgnoresAbility) {
     if (attackerIgnoresAbility) {
-      defender.ability = '';
+      defender.ability = '' as AbilityName;
       description.attackerAbility = attacker.ability;
     }
   }
   if (moveIgnoresAbility && !defenderIgnoresAbility) {
-    defender.ability = '';
+    defender.ability = '' as AbilityName;
   }
 
   const isCritical =
@@ -815,12 +816,7 @@ export function calculateModern(
   let defense: number;
   const hitsPhysical = move.category === 'Physical' || move.dealsPhysicalDamage;
   const defenseStat = hitsPhysical ? 'def' : 'spd';
-  const defenderNature = gen.natures.get(toID(defender.nature))!;
-  description.defenseEVs =
-    defender.evs[defenseStat] +
-    (defenderNature.plus === defenseStat ? '+' : defenderNature.minus === defenseStat ? '-' : '') +
-    ' ' +
-    Stats.displayStat(defenseStat);
+  description.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
   if (
     defender.boosts[defenseStat] === 0 ||
     (isCritical && defender.boosts[defenseStat] > 0) ||
@@ -1177,21 +1173,6 @@ function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
     affectedSide.isLightScreen = false;
     affectedSide.isAuroraVeil = false;
   }
-}
-
-function getEVDescriptionText(
-  gen: Generation,
-  pokemon: Pokemon,
-  stat: 'atk' | 'def' | 'spd' | 'spa',
-  natureName: string
-): string {
-  const nature = gen.natures.get(toID(natureName))!;
-  return (
-    pokemon.evs[stat] +
-    (nature.plus === stat ? '+' : nature.minus === stat ? '-' : '') +
-    ' ' +
-    Stats.displayStat(stat)
-  );
 }
 
 function getBaseDamage(level: number, basePower: number, attack: number, defense: number) {

@@ -8571,9 +8571,9 @@ class Specie implements I.Specie {
   readonly w!: number; // weight
   readonly canEvolve?: boolean;
   readonly gender?: I.GenderName;
-  readonly formes?: string[];
+  readonly formes?: I.SpeciesName[];
   readonly isAlternateForme?: boolean;
-  readonly ab?: string; // ability
+  readonly ab?: I.AbilityName; // ability
 
   constructor(name: string, data: SpeciesData) {
     this.kind = 'Species';

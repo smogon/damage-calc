@@ -22,12 +22,12 @@ export class Pokemon {
 
   level: number;
   gender?: I.GenderName;
-  ability?: string;
+  ability?: I.AbilityName;
   abilityOn?: boolean;
   isDynamaxed?: boolean;
-  item?: string;
+  item?: I.ItemName;
 
-  nature: string;
+  nature: I.NatureName;
   ivs: StatsTable;
   evs: StatsTable;
   boosts: StatsTable;
@@ -38,26 +38,26 @@ export class Pokemon {
   status: Status;
   toxicCounter: number;
 
-  moves: string[];
+  moves: I.MoveName[];
 
   constructor(
     gen: I.Generation,
     name: string,
     options: {
       level?: number;
-      ability?: string;
+      ability?: I.AbilityName;
       abilityOn?: boolean;
       isDynamaxed?: boolean;
-      item?: string;
+      item?: I.ItemName;
       gender?: I.GenderName;
-      nature?: string;
+      nature?: I.NatureName;
       ivs?: Partial<StatsTable>;
       evs?: Partial<StatsTable>;
       boosts?: Partial<StatsTable>;
       curHP?: number;
       status?: Status;
       toxicCounter?: number;
-      moves?: string[];
+      moves?: I.MoveName[];
       overrides?: Partial<I.Specie>;
     } = {}
   ) {
@@ -76,7 +76,7 @@ export class Pokemon {
     this.isDynamaxed = !!options.isDynamaxed;
     this.item = options.item;
 
-    this.nature = options.nature || 'Serious';
+    this.nature = options.nature || ('Serious' as I.NatureName);
     this.ivs = Pokemon.withDefault(gen, options.ivs, 31);
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0);
@@ -165,7 +165,12 @@ export class Pokemon {
     );
   }
 
-  static getForme(gen: I.Generation, speciesName: string, item?: string, moveName?: string) {
+  static getForme(
+    gen: I.Generation,
+    speciesName: string,
+    item?: I.ItemName,
+    moveName?: I.MoveName
+  ) {
     const species = gen.species.get(toID(speciesName));
     if (!species || !species.formes) {
       return speciesName;

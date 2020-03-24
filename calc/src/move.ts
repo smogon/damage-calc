@@ -6,9 +6,9 @@ export class Move {
   name: string;
 
   originalName: string;
-  ability?: string;
-  item?: string;
-  species?: string;
+  ability?: I.AbilityName;
+  item?: I.ItemName;
+  species?: I.SpeciesName;
   useZ?: boolean;
   useMax?: boolean;
   overrides?: Partial<I.Move>;
@@ -45,9 +45,9 @@ export class Move {
     gen: I.Generation,
     name: string,
     options: {
-      ability?: string;
-      item?: string;
-      species?: string;
+      ability?: I.AbilityName;
+      item?: I.ItemName;
+      species?: I.SpeciesName;
       useZ?: boolean;
       useMax?: boolean;
       isCrit?: boolean;

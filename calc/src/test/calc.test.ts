@@ -1,4 +1,5 @@
 import {calculate, Pokemon, Move, Field} from '../index';
+import {AbilityName} from '../data/interface';
 
 declare global {
   namespace jest {
@@ -360,7 +361,7 @@ describe('calc', () => {
         '252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (31.3 - 37%) -- 76.6% chance to 3HKO'
       );
 
-      cacturne.ability = 'Water Absorb';
+      cacturne.ability = 'Water Absorb' as AbilityName;
       result = calculate(3, blastoise, cacturne, surf);
       expect(result.damage).toBeRange(0, 0);
     });
@@ -384,7 +385,7 @@ describe('calc', () => {
       let result = calculate(4, pinsir, gengar, earthquake);
       expect(result.damage).toBeRange(0, 0);
 
-      pinsir.ability = 'Mold Breaker';
+      pinsir.ability = 'Mold Breaker' as AbilityName;
       result = calculate(4, pinsir, gengar, earthquake);
       expect(result.damage).toBeRange(528, 622);
       expect(result.desc()).toBe(
@@ -392,7 +393,7 @@ describe('calc', () => {
       );
 
       pinsir.boosts.atk = 2;
-      gengar.ability = 'Unaware';
+      gengar.ability = 'Unaware' as AbilityName;
       result = calculate(4, pinsir, gengar, earthquake);
       expect(result.damage).toBeRange(1054, 1240);
     });
@@ -415,7 +416,7 @@ describe('calc', () => {
       let result = calculate(7, pinsir, gengar, earthquake);
       expect(result.damage).toBeRange(0, 0);
 
-      pinsir.ability = 'Mold Breaker';
+      pinsir.ability = 'Mold Breaker' as AbilityName;
       result = calculate(7, pinsir, gengar, earthquake);
       expect(result.damage).toBeRange(528, 622);
       expect(result.desc()).toBe(
@@ -423,7 +424,7 @@ describe('calc', () => {
       );
 
       pinsir.boosts.atk = 2;
-      gengar.ability = 'Unaware';
+      gengar.ability = 'Unaware' as AbilityName;
       result = calculate(7, pinsir, gengar, earthquake);
       expect(result.damage).toBeRange(1054, 1240);
     });

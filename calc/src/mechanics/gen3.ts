@@ -6,9 +6,9 @@ import {Pokemon} from '../pokemon';
 import {Move} from '../move';
 import {Field} from '../field';
 import {Result} from '../result';
-import {Stats} from '../stats';
 import {
   getModifiedStat,
+  getEVDescriptionText,
   getFinalSpeed,
   getMoveEffectiveness,
   checkAirLock,
@@ -132,19 +132,10 @@ export function calculateADV(
 
   const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
-  const attackerNature = gen.natures.get(toID(attacker.nature))!;
-  description.attackEVs =
-    attacker.evs[attackStat] +
-    (attackerNature.plus === attackStat ? '+' : attackerNature.minus === attackStat ? '-' : '') +
-    ' ' +
-    Stats.displayStat(attackStat);
+  description.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
   const defenseStat = isPhysical ? 'def' : 'spd';
-  const defenderNature = gen.natures.get(toID(defender.nature))!;
-  description.defenseEVs =
-    defender.evs[defenseStat] +
-    (defenderNature.plus === defenseStat ? '+' : defenderNature.minus === defenseStat ? '-' : '') +
-    ' ' +
-    Stats.displayStat(defenseStat);
+  description.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
+
   let at = attacker.rawStats[attackStat];
   let df = defender.rawStats[defenseStat];
 

@@ -1,4 +1,4 @@
-import {Generation} from '../data/interface';
+import {Generation, AbilityName} from '../data/interface';
 import {toID} from '../util';
 import {getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType} from '../items';
 import {RawDesc} from '../desc';
@@ -6,9 +6,9 @@ import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {Stats} from '../stats';
 import {
   getModifiedStat,
+  getEVDescriptionText,
   getFinalSpeed,
   getMoveEffectiveness,
   checkAirLock,
@@ -60,7 +60,7 @@ export function calculateDPP(
   }
 
   if (attacker.hasAbility('Mold Breaker')) {
-    defender.ability = '';
+    defender.ability = '' as AbilityName;
     description.attackerAbility = attacker.ability;
   }
 
@@ -281,12 +281,7 @@ export function calculateDPP(
   ////////// (SP)ATTACK //////////
   ////////////////////////////////
   const attackStat = isPhysical ? 'atk' : 'spa';
-  const attackerNature = gen.natures.get(toID(attacker.nature))!;
-  description.attackEVs =
-    attacker.evs[attackStat] +
-    (attackerNature.plus === attackStat ? '+' : attackerNature.minus === attackStat ? '-' : '') +
-    ' ' +
-    Stats.displayStat(attackStat);
+  description.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
   let attack: number;
   const attackBoost = attacker.boosts[attackStat];
   const rawAttack = attacker.rawStats[attackStat];
@@ -346,12 +341,7 @@ export function calculateDPP(
   ///////// (SP)DEFENSE //////////
   ////////////////////////////////
   const defenseStat = isPhysical ? 'def' : 'spd';
-  const defenderNature = gen.natures.get(toID(defender.nature))!;
-  description.defenseEVs =
-    defender.evs[defenseStat] +
-    (defenderNature.plus === defenseStat ? '+' : defenderNature.minus === defenseStat ? '-' : '') +
-    ' ' +
-    Stats.displayStat(defenseStat);
+  description.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
   let defense: number;
   const defenseBoost = defender.boosts[defenseStat];
   const rawDefense = defender.rawStats[defenseStat];

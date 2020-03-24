@@ -161,9 +161,9 @@ export interface Specie {
   readonly w: number; // weight
   readonly canEvolve?: boolean;
   readonly gender?: GenderName;
-  readonly formes?: string[];
+  readonly formes?: SpeciesName[];
   readonly isAlternateForme?: boolean;
-  readonly ab?: string; // ability
+  readonly ab?: AbilityName; // ability
 }
 
 export interface Types {
