@@ -1,31 +1,12 @@
-import {extend} from '../util';
-import {Category} from './moves';
+import * as I from './interface';
+import {toID, extend} from '../util';
 
-export type Type =
-  | 'None'
-  | 'Normal'
-  | 'Grass'
-  | 'Fire'
-  | 'Water'
-  | 'Electric'
-  | 'Ice'
-  | 'Flying'
-  | 'Bug'
-  | 'Poison'
-  | 'Ground'
-  | 'Rock'
-  | 'Fighting'
-  | 'Psychic'
-  | 'Ghost'
-  | 'Dragon'
-  | 'Dark'
-  | 'Steel'
-  | 'Fairy';
-type Types = {[type in Type]?: number};
-export type TypeChart = {[type in Type]?: Types & {category: Category}};
+export type TypeChart = {
+  [type in I.TypeName]?: {[type in I.TypeName]?: number} & {category: I.MoveCategory};
+};
 
 const RBY: TypeChart = {
-  None: {
+  '???': {
     category: 'Physical',
     Normal: 1,
     Grass: 1,
@@ -45,7 +26,7 @@ const RBY: TypeChart = {
   },
   Normal: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 1,
@@ -64,7 +45,7 @@ const RBY: TypeChart = {
   },
   Grass: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 0.5,
     Fire: 0.5,
@@ -83,7 +64,7 @@ const RBY: TypeChart = {
   },
   Fire: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 2,
     Fire: 0.5,
@@ -102,7 +83,7 @@ const RBY: TypeChart = {
   },
   Water: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 0.5,
     Fire: 2,
@@ -121,7 +102,7 @@ const RBY: TypeChart = {
   },
   Electric: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 0.5,
     Fire: 1,
@@ -140,7 +121,7 @@ const RBY: TypeChart = {
   },
   Ice: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 2,
     Fire: 1,
@@ -159,7 +140,7 @@ const RBY: TypeChart = {
   },
   Flying: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 2,
     Fire: 1,
@@ -178,7 +159,7 @@ const RBY: TypeChart = {
   },
   Bug: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 2,
     Fire: 0.5,
@@ -197,7 +178,7 @@ const RBY: TypeChart = {
   },
   Poison: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 2,
     Fire: 1,
@@ -216,7 +197,7 @@ const RBY: TypeChart = {
   },
   Ground: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 0.5,
     Fire: 2,
@@ -235,7 +216,7 @@ const RBY: TypeChart = {
   },
   Rock: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 2,
@@ -254,7 +235,7 @@ const RBY: TypeChart = {
   },
   Fighting: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 2,
     Grass: 1,
     Fire: 1,
@@ -273,7 +254,7 @@ const RBY: TypeChart = {
   },
   Psychic: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 1,
@@ -292,7 +273,7 @@ const RBY: TypeChart = {
   },
   Ghost: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 0,
     Grass: 1,
     Fire: 1,
@@ -311,7 +292,7 @@ const RBY: TypeChart = {
   },
   Dragon: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 1,
@@ -331,7 +312,7 @@ const RBY: TypeChart = {
 };
 
 const GSC: TypeChart = extend(true, {}, RBY, {
-  None: {Dark: 1, Steel: 1},
+  '???': {Dark: 1, Steel: 1},
   Normal: {Dark: 1, Steel: 0.5},
   Grass: {Dark: 1, Steel: 0.5},
   Fire: {Dark: 1, Steel: 2},
@@ -349,7 +330,7 @@ const GSC: TypeChart = extend(true, {}, RBY, {
   Dragon: {Dark: 1, Steel: 0.5},
   Dark: {
     category: 'Special',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 1,
@@ -370,7 +351,7 @@ const GSC: TypeChart = extend(true, {}, RBY, {
   },
   Steel: {
     category: 'Physical',
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 0.5,
@@ -398,7 +379,7 @@ const DPP = GSC;
 const BW = GSC;
 
 const XY: TypeChart = extend(true, {}, GSC, {
-  None: {Fairy: 1},
+  '???': {Fairy: 1},
   Normal: {Fairy: 1},
   Grass: {Fairy: 1},
   Fire: {Fairy: 1},
@@ -417,7 +398,7 @@ const XY: TypeChart = extend(true, {}, GSC, {
   Dark: {Steel: 1, Fairy: 0.5},
   Steel: {Fairy: 2},
   Fairy: {
-    None: 1,
+    '???': 1,
     Normal: 1,
     Grass: 1,
     Fire: 0.5,
@@ -444,3 +425,50 @@ const SM = XY;
 const SS = SM;
 
 export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+
+export class Types implements I.Types {
+  private readonly gen: I.GenerationNum;
+
+  constructor(gen: I.GenerationNum) {
+    this.gen = gen;
+  }
+
+  get(id: I.ID) {
+    // toID('???') => '', as do many other things, but returning the '???' type seems appropriate :)
+    return TYPES_BY_ID[this.gen][id];
+  }
+
+  *[Symbol.iterator]() {
+    for (const id in TYPES_BY_ID[this.gen]) {
+      yield this.get(id as I.ID)!;
+    }
+  }
+}
+
+class Type implements I.Type {
+  readonly kind: 'Type';
+  readonly id: I.ID;
+  readonly name: I.TypeName;
+  readonly category: I.MoveCategory;
+  readonly damageTaken: Readonly<{[type in I.TypeName]?: I.TypeEffectiveness}>;
+
+  constructor(name: string, damageTaken: TypeChart[I.TypeName]) {
+    this.kind = 'Type';
+    this.id = toID(name);
+    this.name = name as I.TypeName;
+    this.category = damageTaken!.category;
+    delete damageTaken!.category;
+    this.damageTaken = damageTaken! as {[type in I.TypeName]?: I.TypeEffectiveness};
+  }
+}
+
+const TYPES_BY_ID: Array<{[id: string]: Type}> = [];
+
+for (const typeChart of TYPE_CHART) {
+  const map: {[id: string]: Type} = {};
+  for (const type in typeChart) {
+    const t = new Type(type, Object.assign({}, typeChart[type as I.TypeName]!));
+    map[t.id] = t;
+  }
+  TYPES_BY_ID.push(map);
+}

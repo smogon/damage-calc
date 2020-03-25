@@ -1,13 +1,14 @@
-import {getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType} from '../data/items';
-import {NATURES} from '../data/natures';
+import {Generation, AbilityName} from '../data/interface';
+import {toID} from '../util';
+import {getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType} from '../items';
 import {RawDesc} from '../desc';
 import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {displayStat} from '../stats';
 import {
   getModifiedStat,
+  getEVDescriptionText,
   getFinalSpeed,
   getMoveEffectiveness,
   checkAirLock,
@@ -16,12 +17,15 @@ import {
   checkIntimidate,
   checkDownload,
   countBoosts,
-  pokeRound,
 } from './util';
 
-const DPP = 4;
-
-export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, field: Field) {
+export function calculateDPP(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field
+) {
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
@@ -32,8 +36,8 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   checkIntimidate(defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
-  attacker.stats.spe = getFinalSpeed(DPP, attacker, field, field.attackerSide);
-  defender.stats.spe = getFinalSpeed(DPP, defender, field, field.defenderSide);
+  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
 
   const description: RawDesc = {
     attackerName: attacker.name,
@@ -42,7 +46,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   };
 
   const damage: number[] = [];
-  const result = new Result(DPP, attacker, defender, move, field, damage, description);
+  const result = new Result(gen, attacker, defender, move, field, damage, description);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -56,7 +60,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   if (attacker.hasAbility('Mold Breaker')) {
-    defender.ability = '';
+    defender.ability = '' as AbilityName;
     description.attackerAbility = attacker.ability;
   }
 
@@ -89,7 +93,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     attacker.item &&
     attacker.item.indexOf('Berry') !== -1
   ) {
-    const gift = getNaturalGift(DPP, attacker.item)!;
+    const gift = getNaturalGift(gen, attacker.item)!;
     move.type = gift.t;
     move.bp = gift.p;
     description.attackerItem = attacker.item;
@@ -103,7 +107,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   }
 
   const typeEffect1 = getMoveEffectiveness(
-    DPP,
+    gen,
     move,
     defender.type1,
     attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
@@ -111,7 +115,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   );
   const typeEffect2 = defender.type2
     ? getMoveEffectiveness(
-        DPP,
+        gen,
         move,
         defender.type2,
         attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
@@ -124,7 +128,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
     damage.push(0);
     return result;
   }
-  const ignoresWonderGuard = move.type === 'None' || move.name === 'Fire Fang';
+  const ignoresWonderGuard = move.type === '???' || move.name === 'Fire Fang';
   if (
     (!ignoresWonderGuard && defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
     (move.type === 'Fire' && defender.hasAbility('Flash Fire')) ||
@@ -199,7 +203,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
       }
       break;
     case 'Punishment':
-      const boostCount = countBoosts(DPP, defender.boosts);
+      const boostCount = countBoosts(gen, defender.boosts);
       if (boostCount > 0) {
         basePower = Math.min(200, basePower + 20 * boostCount);
         description.moveBP = basePower;
@@ -277,15 +281,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   ////////// (SP)ATTACK //////////
   ////////////////////////////////
   const attackStat = isPhysical ? 'atk' : 'spa';
-  description.attackEVs =
-    attacker.evs[attackStat] +
-    (NATURES[attacker.nature][0] === attackStat
-      ? '+'
-      : NATURES[attacker.nature][1] === attackStat
-      ? '-'
-      : '') +
-    ' ' +
-    displayStat(attackStat);
+  description.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
   let attack: number;
   const attackBoost = attacker.boosts[attackStat];
   const rawAttack = attacker.rawStats[attackStat];
@@ -345,15 +341,7 @@ export function calculateDPP(attacker: Pokemon, defender: Pokemon, move: Move, f
   ///////// (SP)DEFENSE //////////
   ////////////////////////////////
   const defenseStat = isPhysical ? 'def' : 'spd';
-  description.defenseEVs =
-    defender.evs[defenseStat] +
-    (NATURES[defender.nature][0] === defenseStat
-      ? '+'
-      : NATURES[defender.nature][1] === defenseStat
-      ? '-'
-      : '') +
-    ' ' +
-    displayStat(defenseStat);
+  description.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
   let defense: number;
   const defenseBoost = defender.boosts[defenseStat];
   const rawDefense = defender.rawStats[defenseStat];

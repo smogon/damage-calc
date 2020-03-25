@@ -1,5 +1,5 @@
 import {RawDesc, display, displayMove, getRecovery, getRecoil, getKOChance} from './desc';
-import {Generation} from './gen';
+import {Generation} from './data/interface';
 import {Field} from './field';
 import {Move} from './move';
 import {Pokemon} from './pokemon';

@@ -214,11 +214,13 @@ function importRandomOptionsForPokemon(
   let level = r.custom[forme] || r.level[tier] || r.default;
   if (gen === 8 && tier === 'Illegal' && TO_TIER[7][toID(f)]) level = 72;
 
+  const generation = calc.Generations.get(gen);
+
   const abilities = Object.keys(stats.Abilities)
-    .map(a => calc.ABILITIES_BY_ID[gen][a])
+    .map(a => generation.abilities.get(toID(a))?.name as string)
     .filter(a => a);
   const items = Object.keys(stats.Items)
-    .map(i => calc.ITEMS_BY_ID[gen][i])
+    .map(i => generation.items.get(toID(i))?.name as string)
     .filter(i => i);
 
   return {
@@ -228,7 +230,7 @@ function importRandomOptionsForPokemon(
     nature,
     evs,
     moves: Object.keys(stats.Moves)
-      .map(m => calc.MOVES_BY_ID[gen][m]?.name!)
+      .map(m => generation.moves.get(toID(m))?.name as string)
       .filter(m => m),
   };
 }

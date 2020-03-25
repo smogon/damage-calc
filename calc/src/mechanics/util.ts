@@ -1,9 +1,9 @@
-import {TYPE_CHART, Type} from '../data/types';
+import {Generation, TypeName, NatureName, ID, ItemName} from '../data/interface';
+import {toID} from '../util';
 import {Field, Side, Weather} from '../field';
-import {Generation} from '../gen';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
-import {STATS, StatsTable} from '../stats';
+import {STATS, Stats, StatsTable} from '../stats';
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
   return (
@@ -16,7 +16,7 @@ export function isGrounded(pokemon: Pokemon, field: Field) {
 
 export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
   const boostTable = [1, 1.5, 2, 2.5, 3, 3.5, 4];
-  if (gen && gen < 3) {
+  if (gen && gen.num < 3) {
     if (mod >= 0) {
       stat = Math.floor(stat * boostTable[mod]);
     } else {
@@ -67,10 +67,10 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
 
   if (side.isTailwind) speed *= 2;
   if (pokemon.hasStatus('Paralyzed') && !pokemon.hasAbility('Quick Feet')) {
-    speed = pokeRound(speed * (gen < 7 ? 0.25 : 0.5));
+    speed = pokeRound(speed * (gen.num < 7 ? 0.25 : 0.5));
   }
 
-  if (gen <= 2) speed = Math.min(999, speed);
+  if (gen.num <= 2) speed = Math.min(999, speed);
   return Math.max(1, speed);
 }
 
@@ -82,7 +82,7 @@ export function pokeRound(num: number) {
 export function getMoveEffectiveness(
   gen: Generation,
   move: Move,
-  type: Type,
+  type: TypeName,
   isGhostRevealed?: boolean,
   isGravity?: boolean
 ) {
@@ -93,9 +93,12 @@ export function getMoveEffectiveness(
   } else if (move.name === 'Freeze-Dry' && type === 'Water') {
     return 2;
   } else if (move.name === 'Flying Press') {
-    return TYPE_CHART[gen]['Fighting']![type]! * TYPE_CHART[gen]['Flying']![type]!;
+    return (
+      gen.types.get('fighting' as ID)!.damageTaken[type]! *
+      gen.types.get('flying' as ID)!.damageTaken[type]!
+    );
   } else {
-    return TYPE_CHART[gen][move.type]![type]!;
+    return gen.types.get(toID(move.type))!.damageTaken[type]!;
   }
 }
 
@@ -128,7 +131,7 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
 
 export function checkKlutz(pokemon: Pokemon) {
   if (pokemon.hasAbility('Klutz')) {
-    pokemon.item = '';
+    pokemon.item = '' as ItemName;
   }
 }
 
@@ -167,10 +170,31 @@ export function checkIntrepidSword(source: Pokemon) {
 export function countBoosts(gen: Generation, boosts: StatsTable) {
   let sum = 0;
   // NOTE: starting from 1 because HP is not boostable
-  for (let i = 1; i < STATS[gen].length; i++) {
+  for (let i = 1; i < STATS[gen.num].length; i++) {
     // Only positive boosts are counted
-    const boost = boosts[STATS[gen][i]];
+    const boost = boosts[STATS[gen.num][i]];
     if (boost && boost > 0) sum += boost;
   }
   return sum;
+}
+
+export function getEVDescriptionText(
+  gen: Generation,
+  pokemon: Pokemon,
+  stat: 'atk' | 'def' | 'spd' | 'spa',
+  natureName: NatureName
+): string {
+  const nature = gen.natures.get(toID(natureName))!;
+  return (
+    pokemon.evs[stat] +
+    (nature.plus === nature.minus
+      ? ''
+      : nature.plus === stat
+      ? '+'
+      : nature.minus === stat
+      ? '-'
+      : '') +
+    ' ' +
+    Stats.displayStat(stat)
+  );
 }

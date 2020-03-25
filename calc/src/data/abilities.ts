@@ -1,3 +1,4 @@
+import * as I from './interface';
 import {toID} from '../util';
 
 const RBY: string[] = [];
@@ -272,12 +273,43 @@ const SS = SM.concat([
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 
-export const ABILITIES_BY_ID: Array<{[id: string]: string}> = [];
+export class Abilities implements I.Abilities {
+  private readonly gen: I.GenerationNum;
+
+  constructor(gen: I.GenerationNum) {
+    this.gen = gen;
+  }
+
+  get(id: I.ID) {
+    return ABILITIES_BY_ID[this.gen][id];
+  }
+
+  *[Symbol.iterator]() {
+    for (const id in ABILITIES_BY_ID[this.gen]) {
+      yield this.get(id as I.ID)!;
+    }
+  }
+}
+
+class Ability implements I.Ability {
+  readonly kind: 'Ability';
+  readonly id: I.ID;
+  readonly name: I.AbilityName;
+
+  constructor(name: string) {
+    this.kind = 'Ability';
+    this.id = toID(name);
+    this.name = name as I.AbilityName;
+  }
+}
+
+const ABILITIES_BY_ID: Array<{[id: string]: Ability}> = [];
 
 for (const abilities of ABILITIES) {
-  const map: {[id: string]: string} = {};
-  for (const a of abilities) {
-    map[toID(a)] = a;
+  const map: {[id: string]: Ability} = {};
+  for (const ability of abilities) {
+    const a = new Ability(ability);
+    map[a.id] = a;
   }
   ABILITIES_BY_ID.push(map);
 }

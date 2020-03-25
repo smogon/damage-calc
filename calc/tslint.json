@@ -6,7 +6,9 @@
     "switch-default": false,
     "no-floating-promises": true,
     "no-any": false,
+    "forin": false,
     "no-conditional-assignment": false,
+    "interface-over-type-literal": false,
     "prefer-const": {
       "options": {
         "destructuring": "all"

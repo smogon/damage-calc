@@ -1,6 +1,5 @@
-import {TYPE_CHART, Type} from './data/types';
+import {Generation, TypeName, ID} from './data/interface';
 import {Field, Terrain, Weather, Side} from './field';
-import {Generation} from './gen';
 import {isGrounded} from './mechanics/util';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
@@ -31,7 +30,7 @@ export interface RawDesc {
   moveBP?: number;
   moveName: string;
   moveTurns?: string;
-  moveType?: Type;
+  moveType?: TypeName;
   rivalry?: 'buffed' | 'nerfed';
   terrain?: Terrain;
   weather?: Weather;
@@ -99,7 +98,7 @@ export function getRecovery(
   let text = '';
 
   const ignoresShellBell =
-    gen === 3 && (move.name === 'Doom Desire' || move.name === 'Future Sight');
+    gen.num === 3 && (move.name === 'Doom Desire' || move.name === 'Future Sight');
   if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
     const max = defender.maxHP() / 8;
     recovery[0] += Math.min(minDamage / 8, max);
@@ -164,10 +163,10 @@ export function getRecoil(
       text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
   } else if (move.hasRecoil === 'crash') {
-    const genMultiplier = gen === 2 ? 12.5 : gen >= 3 ? 50 : 1;
+    const genMultiplier = gen.num === 2 ? 12.5 : gen.num >= 3 ? 50 : 1;
 
     let minRecoilDamage, maxRecoilDamage;
-    if (damageOverflow && gen !== 2) {
+    if (damageOverflow && gen.num !== 2) {
       minRecoilDamage = toDisplay(notation, defender.curHP * genMultiplier, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(notation, defender.curHP * genMultiplier, attacker.maxHP(), 100);
     } else {
@@ -186,7 +185,7 @@ export function getRecoil(
     }
 
     recoil = [minRecoilDamage, maxRecoilDamage];
-    switch (gen) {
+    switch (gen.num) {
       case 1:
         recoil = toDisplay(notation, 1, attacker.maxHP());
         text = '1hp damage on miss';
@@ -195,7 +194,7 @@ export function getRecoil(
       case 3:
       case 4:
         if (defender.hasType('Ghost')) {
-          if (gen === 4) {
+          if (gen.num === 4) {
             const gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
             recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
             text = `${gen4CrashDamage}% crash damage`;
@@ -393,16 +392,18 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
     return {damage, texts};
   }
   if (defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
+    const rockType = gen.types.get('rock' as ID)!;
     const effectiveness =
-      TYPE_CHART[gen]['Rock']![defender.type1]! *
-      (defender.type2 ? TYPE_CHART[gen]['Rock']![defender.type2]! : 1);
+      rockType.damageTaken[defender.type1]! *
+      (defender.type2 ? rockType.damageTaken[defender.type2]! : 1);
     damage += Math.floor((effectiveness * defender.maxHP()) / 8);
     texts.push('Stealth Rock');
   }
   if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
+    const steelType = gen.types.get('steel' as ID)!;
     const effectiveness =
-      TYPE_CHART[gen]['Steel']![defender.type1]! *
-      (defender.type2 ? TYPE_CHART[gen]['Steel']![defender.type2]! : 1);
+      steelType.damageTaken[defender.type1]! *
+      (defender.type2 ? steelType.damageTaken[defender.type2]! : 1);
     damage += Math.floor((effectiveness * defender.maxHP()) / 8);
     texts.push('Steelsurge');
   }
@@ -413,7 +414,7 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   ) {
     if (defenderSide.spikes === 1) {
       damage += Math.floor(defender.maxHP() / 8);
-      if (gen === 2) {
+      if (gen.num === 2) {
         texts.push('Spikes');
       } else {
         texts.push('1 layer of Spikes');
@@ -462,7 +463,7 @@ function getEndOfTurn(
       !defender.hasAbility('Magic Guard', 'Overcoat', 'Sand Force', 'Sand Rush', 'Sand Veil') &&
       !defender.hasItem('Safety Goggles')
     ) {
-      damage -= Math.floor(defender.maxHP() / (gen === 2 ? 8 : 16));
+      damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
       texts.push('sandstorm damage');
     }
   } else if (field.hasWeather('Hail')) {
@@ -496,16 +497,16 @@ function getEndOfTurn(
   }
   if (field.defenderSide.isSeeded) {
     if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen >= 2 ? 8 : 16)); // 1/16 in gen 1, 1/8 in gen 2 onwards
+      damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16)); // 1/16 in gen 1, 1/8 in gen 2 onwards
       texts.push('Leech Seed damage');
     }
   }
   if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
     if (attacker.hasAbility('Liquid Ooze')) {
-      damage -= Math.floor(attacker.maxHP() / (gen >= 2 ? 8 : 16));
+      damage -= Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
       texts.push('Liquid Ooze damage');
     } else {
-      damage += Math.floor(attacker.maxHP() / (gen >= 2 ? 8 : 16));
+      damage += Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
       texts.push('Leech Seed recovery');
     }
   }
@@ -520,7 +521,7 @@ function getEndOfTurn(
       damage += Math.floor(defender.maxHP() / 8);
       texts.push('Poison Heal');
     } else if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen === 1 ? 16 : 8));
+      damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
       texts.push('poison damage');
     }
   } else if (defender.hasStatus('Badly Poisoned')) {
@@ -532,10 +533,10 @@ function getEndOfTurn(
     }
   } else if (defender.hasStatus('Burned')) {
     if (defender.hasAbility('Heatproof')) {
-      damage -= Math.floor(defender.maxHP() / (gen > 6 ? 32 : 16));
+      damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
       texts.push('reduced burn damage');
     } else if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen === 1 || gen > 6 ? 16 : 8));
+      damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
       texts.push('burn damage');
     }
   } else if (
@@ -560,10 +561,10 @@ function getEndOfTurn(
     !defender.hasAbility('Magic Guard')
   ) {
     if (attacker.hasItem('Binding Band')) {
-      damage -= gen > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
+      damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
       texts.push('trapping damage');
     } else {
-      damage -= gen > 5 ? Math.floor(defender.maxHP() / 8) : Math.floor(defender.maxHP() / 16);
+      damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 8) : Math.floor(defender.maxHP() / 16);
       texts.push('trapping damage');
     }
   }
@@ -656,7 +657,7 @@ function predictTotal(
 function squashMultihit(gen: Generation, d: number[], hits: number, err = true) {
   if (d.length === 1) {
     return [d[0] * hits];
-  } else if (gen === 1) {
+  } else if (gen.num === 1) {
     const r = [];
     for (let i = 0; i < d.length; i++) {
       r[i] = d[i] * hits;

@@ -1,12 +1,10 @@
-﻿import {toID, extend} from '../util';
-import {Type} from './types';
-
-export type Gender = 'male' | 'female' | 'genderless';
+﻿import * as I from './interface';
+import {toID, extend} from '../util';
 
 // TODO: rename these fields to be readable
-export interface Species {
-  readonly t1: Type; // type1
-  readonly t2?: Type; // type2
+export interface SpeciesData {
+  readonly t1: I.TypeName; // type1
+  readonly t2?: I.TypeName; // type2
   readonly bs: {
     hp: number;
     at: number;
@@ -18,13 +16,13 @@ export interface Species {
   }; // baseStats
   readonly w: number; // weight
   readonly canEvolve?: boolean;
-  readonly gender?: Gender;
+  readonly gender?: I.GenderName;
   readonly formes?: string[];
   readonly isAlternateForme?: boolean;
   readonly ab?: string; // ability
 }
 
-const RBY: {[name: string]: Species} = {
+const RBY: {[name: string]: SpeciesData} = {
   Abra: {
     t1: 'Psychic',
     bs: {hp: 25, at: 20, df: 15, sa: 105, sd: 55, sp: 90, sl: 105},
@@ -876,20 +874,20 @@ const RBY: {[name: string]: Species} = {
   },
 };
 
-const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
-  Articuno: {gender: 'genderless'},
+const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, {
+  Articuno: {gender: 'N'},
   Chansey: {canEvolve: true},
-  Ditto: {gender: 'genderless'},
-  Electrode: {gender: 'genderless'},
+  Ditto: {gender: 'N'},
+  Electrode: {gender: 'N'},
   Golbat: {canEvolve: true},
-  Magnemite: {t2: 'Steel', gender: 'genderless'},
-  Magneton: {t2: 'Steel', gender: 'genderless'},
-  Mew: {gender: 'genderless'},
-  Mewtwo: {gender: 'genderless'},
-  Moltres: {gender: 'genderless'},
+  Magnemite: {t2: 'Steel', gender: 'N'},
+  Magneton: {t2: 'Steel', gender: 'N'},
+  Mew: {gender: 'N'},
+  Mewtwo: {gender: 'N'},
+  Moltres: {gender: 'N'},
   Scyther: {canEvolve: true},
   Seadra: {canEvolve: true},
-  Zapdos: {gender: 'genderless'},
+  Zapdos: {gender: 'N'},
   Aipom: {t1: 'Normal', bs: {hp: 55, at: 70, df: 55, sa: 40, sd: 55, sp: 85}, w: 11.5},
   Ampharos: {t1: 'Electric', bs: {hp: 90, at: 75, df: 75, sa: 115, sd: 90, sp: 55}, w: 61.5},
   Ariados: {
@@ -913,7 +911,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     bs: {hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100},
     w: 5,
     ab: 'Natural Cure',
-    gender: 'genderless',
+    gender: 'N',
   },
   Chikorita: {
     t1: 'Grass',
@@ -977,7 +975,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     bs: {hp: 115, at: 115, df: 85, sa: 90, sd: 75, sp: 100},
     w: 198,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   Espeon: {t1: 'Psychic', bs: {hp: 65, at: 65, df: 60, sa: 130, sd: 95, sp: 110}, w: 26.5},
   Feraligatr: {t1: 'Water', bs: {hp: 85, at: 105, df: 100, sa: 79, sd: 83, sp: 78}, w: 88.8},
@@ -1019,7 +1017,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     t2: 'Flying',
     bs: {hp: 106, at: 130, df: 90, sa: 110, sd: 154, sp: 90},
     w: 199,
-    gender: 'genderless',
+    gender: 'N',
   },
   Hoothoot: {
     t1: 'Normal',
@@ -1097,7 +1095,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     t2: 'Flying',
     bs: {hp: 106, at: 90, df: 130, sa: 90, sd: 154, sp: 110},
     w: 216,
-    gender: 'genderless',
+    gender: 'N',
   },
   Magby: {
     t1: 'Fire',
@@ -1182,12 +1180,12 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     canEvolve: true,
   },
   Politoed: {t1: 'Water', bs: {hp: 90, at: 75, df: 75, sa: 90, sd: 100, sp: 70}, w: 33.9},
-  Porygon: {canEvolve: true, gender: 'genderless'},
+  Porygon: {canEvolve: true, gender: 'N'},
   Porygon2: {
     t1: 'Normal',
     bs: {hp: 85, at: 80, df: 90, sa: 105, sd: 95, sp: 60},
     w: 32.5,
-    gender: 'genderless',
+    gender: 'N',
   },
   Pupitar: {
     t1: 'Rock',
@@ -1220,7 +1218,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     bs: {hp: 90, at: 85, df: 75, sa: 115, sd: 100, sp: 115},
     w: 178,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   Remoraid: {
     t1: 'Water',
@@ -1313,7 +1311,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     bs: {hp: 100, at: 75, df: 115, sa: 90, sd: 115, sp: 85},
     w: 187,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   Sunflora: {t1: 'Grass', bs: {hp: 75, at: 75, df: 55, sa: 105, sd: 85, sp: 30}, w: 8.5},
   Sunkern: {
@@ -1372,7 +1370,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
     bs: {hp: 48, at: 72, df: 48, sa: 72, sd: 48, sp: 48},
     w: 5,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Ursaring: {t1: 'Normal', bs: {hp: 90, at: 130, df: 75, sa: 75, sd: 75, sp: 55}, w: 125.8},
   Wobbuffet: {t1: 'Psychic', bs: {hp: 190, at: 33, df: 58, sa: 33, sd: 58, sp: 33}, w: 28.5},
@@ -1392,7 +1390,7 @@ const GSC: {[name: string]: Species} = extend(true, {}, RBY, {
   Yanma: {t1: 'Bug', t2: 'Flying', bs: {hp: 65, at: 65, df: 45, sa: 75, sd: 45, sp: 95}, w: 38},
 });
 
-const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
+const ADV: {[name: string]: SpeciesData} = extend(true, {}, GSC, {
   Abra: {ab: 'Synchronize'},
   Aerodactyl: {ab: 'Rock Head'},
   Alakazam: {ab: 'Synchronize'},
@@ -1692,7 +1690,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     w: 21.5,
     ab: 'Levitate',
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   Banette: {
     t1: 'Ghost',
@@ -1721,7 +1719,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 40, at: 55, df: 80, sa: 35, sd: 60, sp: 30},
     w: 95.2,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Blaziken: {
@@ -1799,7 +1797,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 60, at: 70, df: 105, sa: 70, sd: 120, sp: 75},
     w: 108,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Combusken: {
     t1: 'Fire',
@@ -1841,28 +1839,28 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 50, at: 150, df: 50, sa: 150, sd: 50, sp: 150},
     w: 60.8,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Deoxys-Attack': {
     t1: 'Psychic',
     bs: {hp: 50, at: 180, df: 20, sa: 180, sd: 20, sp: 150},
     w: 60.8,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Deoxys-Defense': {
     t1: 'Psychic',
     bs: {hp: 50, at: 70, df: 160, sa: 70, sd: 160, sp: 90},
     w: 60.8,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Deoxys-Speed': {
     t1: 'Psychic',
     bs: {hp: 50, at: 95, df: 90, sa: 95, sd: 90, sp: 180},
     w: 60.8,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   Dusclops: {
     t1: 'Ghost',
@@ -1935,7 +1933,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 100, at: 150, df: 140, sa: 100, sd: 90, sp: 90},
     w: 950,
     ab: 'Drought',
-    gender: 'genderless',
+    gender: 'N',
   },
   Grovyle: {
     t1: 'Grass',
@@ -1981,7 +1979,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100},
     w: 1.1,
     ab: 'Serene Grace',
-    gender: 'genderless',
+    gender: 'N',
   },
   Kecleon: {
     t1: 'Normal',
@@ -2001,7 +1999,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 100, at: 100, df: 90, sa: 150, sd: 140, sp: 90},
     w: 352,
     ab: 'Drizzle',
-    gender: 'genderless',
+    gender: 'N',
   },
   Lairon: {
     t1: 'Steel',
@@ -2075,7 +2073,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 70, at: 55, df: 65, sa: 95, sd: 85, sp: 70},
     w: 168,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Luvdisc: {
     t1: 'Water',
@@ -2137,7 +2135,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     t2: 'Psychic',
     bs: {hp: 80, at: 135, df: 130, sa: 95, sd: 90, sp: 70},
     w: 550,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Metang: {
@@ -2146,7 +2144,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 60, at: 75, df: 100, sa: 55, sd: 80, sp: 50},
     w: 202.5,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Mightyena: {
@@ -2245,27 +2243,27 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 105, at: 150, df: 90, sa: 150, sd: 90, sp: 95},
     w: 206.5,
     ab: 'Air Lock',
-    gender: 'genderless',
+    gender: 'N',
   },
   Regice: {
     t1: 'Ice',
     bs: {hp: 80, at: 50, df: 100, sa: 100, sd: 200, sp: 50},
     w: 175,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Regirock: {
     t1: 'Rock',
     bs: {hp: 80, at: 100, df: 200, sa: 50, sd: 100, sp: 50},
     w: 230,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Registeel: {
     t1: 'Steel',
     bs: {hp: 80, at: 75, df: 150, sa: 75, sd: 150, sp: 50},
     w: 205,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Relicanth: {
@@ -2336,7 +2334,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 1, at: 90, df: 45, sa: 30, sd: 30, sp: 40},
     w: 1.2,
     ab: 'Wonder Guard',
-    gender: 'genderless',
+    gender: 'N',
   },
   Shelgon: {
     t1: 'Dragon',
@@ -2406,7 +2404,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
     bs: {hp: 70, at: 95, df: 85, sa: 55, sd: 65, sp: 70},
     w: 154,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Spheal: {
     t1: 'Ice',
@@ -2599,7 +2597,7 @@ const ADV: {[name: string]: Species} = extend(true, {}, GSC, {
   },
 });
 
-const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
+const DPP: {[name: string]: SpeciesData} = extend(true, {}, ADV, {
   Aipom: {canEvolve: true},
   Electabuzz: {canEvolve: true},
   Gligar: {canEvolve: true},
@@ -2630,119 +2628,119 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Bug': {
     t1: 'Bug',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Dark': {
     t1: 'Dark',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Dragon': {
     t1: 'Dragon',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Electric': {
     t1: 'Electric',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Fighting': {
     t1: 'Fighting',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Fire': {
     t1: 'Fire',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Flying': {
     t1: 'Flying',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Ghost': {
     t1: 'Ghost',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Grass': {
     t1: 'Grass',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Ground': {
     t1: 'Ground',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Ice': {
     t1: 'Ice',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Poison': {
     t1: 'Poison',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Psychic': {
     t1: 'Psychic',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Rock': {
     t1: 'Rock',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Steel': {
     t1: 'Steel',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Arceus-Water': {
     t1: 'Water',
     bs: {hp: 120, at: 120, df: 120, sa: 120, sd: 120, sp: 120},
     w: 320,
     ab: 'Multitype',
-    gender: 'genderless',
+    gender: 'N',
   },
   Arghonaut: {
     t1: 'Water',
@@ -2756,7 +2754,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 75, at: 125, df: 70, sa: 125, sd: 70, sp: 115},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Bastiodon: {
     t1: 'Rock',
@@ -2799,7 +2797,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     t2: 'Psychic',
     bs: {hp: 67, at: 89, df: 116, sa: 79, sd: 116, sp: 33},
     w: 187,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Levitate',
   },
   Bronzor: {
@@ -2808,7 +2806,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 57, at: 24, df: 86, sa: 24, sd: 86, sp: 23},
     w: 60.5,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Levitate',
   },
   Budew: {
@@ -2928,14 +2926,14 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 70, at: 90, df: 90, sa: 135, sd: 90, sp: 125},
     w: 50.5,
     ab: 'Bad Dreams',
-    gender: 'genderless',
+    gender: 'N',
   },
   Dialga: {
     t1: 'Steel',
     t2: 'Dragon',
     bs: {hp: 100, at: 120, df: 120, sa: 150, sd: 100, sp: 90},
     w: 683,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Pressure',
   },
   Drapion: {
@@ -3223,7 +3221,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     t2: 'Steel',
     bs: {hp: 70, at: 70, df: 115, sa: 130, sd: 90, sp: 60},
     w: 180,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Magnet Pull',
   },
   Mamoswine: {
@@ -3238,7 +3236,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100},
     w: 1.4,
     ab: 'Hydration',
-    gender: 'genderless',
+    gender: 'N',
   },
   Mantyke: {
     t1: 'Water',
@@ -3253,7 +3251,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 80, at: 105, df: 105, sa: 105, sd: 105, sp: 80},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Mime Jr.': {
     t1: 'Psychic',
@@ -3301,7 +3299,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     t2: 'Dragon',
     bs: {hp: 90, at: 120, df: 100, sa: 150, sd: 120, sp: 100},
     w: 336,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Pressure',
   },
   Phione: {
@@ -3309,7 +3307,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 80, at: 80, df: 80, sa: 80, sd: 80, sp: 80},
     w: 3.1,
     ab: 'Hydration',
-    gender: 'genderless',
+    gender: 'N',
   },
   Piplup: {
     t1: 'Water',
@@ -3322,7 +3320,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     t1: 'Normal',
     bs: {hp: 85, at: 80, df: 70, sa: 135, sd: 75, sp: 90},
     w: 34,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Adaptability',
   },
   Prinplup: {
@@ -3378,7 +3376,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 110, at: 160, df: 110, sa: 80, sd: 110, sp: 100},
     w: 420,
     ab: 'Slow Start',
-    gender: 'genderless',
+    gender: 'N',
   },
   Revenankh: {
     t1: 'Ghost',
@@ -3414,7 +3412,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 50, at: 50, df: 77, sa: 95, sd: 77, sp: 91},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Rotom-Mow': {
     t1: 'Electric',
@@ -3422,7 +3420,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Rotom-Frost': {
     t1: 'Electric',
@@ -3430,7 +3428,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Rotom-Heat': {
     t1: 'Electric',
@@ -3438,7 +3436,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Rotom-Fan': {
     t1: 'Electric',
@@ -3446,7 +3444,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Rotom-Wash': {
     t1: 'Electric',
@@ -3454,14 +3452,14 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 50, at: 65, df: 107, sa: 105, sd: 107, sp: 86},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Shaymin: {
     t1: 'Grass',
     bs: {hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100},
     w: 2.1,
     ab: 'Natural Cure',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Shaymin-Sky': {
     t1: 'Grass',
@@ -3469,7 +3467,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 100, at: 103, df: 75, sa: 120, sd: 75, sp: 127},
     w: 5.2,
     ab: 'Serene Grace',
-    gender: 'genderless',
+    gender: 'N',
   },
   Shellos: {
     t1: 'Water',
@@ -3621,7 +3619,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
     bs: {hp: 75, at: 75, df: 130, sa: 75, sd: 130, sp: 95},
     w: 0.3,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Vespiquen: {
     t1: 'Bug',
@@ -3682,7 +3680,7 @@ const DPP: {[name: string]: Species} = extend(true, {}, ADV, {
   },
 });
 
-const BW: {[name: string]: Species} = extend(true, {}, DPP, {
+const BW: {[name: string]: SpeciesData} = extend(true, {}, DPP, {
   Abra: {ab: 'Magic Guard'},
   Aggron: {ab: 'Sturdy'},
   Aipom: {ab: 'Skill Link'},
@@ -4021,7 +4019,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 91, at: 90, df: 129, sa: 90, sd: 72, sp: 108},
     w: 250,
     ab: 'Justified',
-    gender: 'genderless',
+    gender: 'N',
   },
   Cofagrigus: {
     t1: 'Ghost',
@@ -4054,7 +4052,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 70, at: 50, df: 30, sa: 95, sd: 135, sp: 105},
     w: 148,
     ab: 'Levitate',
-    gender: 'genderless',
+    gender: 'N',
   },
   Cubchoo: {
     t1: 'Ice',
@@ -4264,7 +4262,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
     w: 82.5,
     ab: 'Download',
-    gender: 'genderless',
+    gender: 'N',
   },
   Gigalith: {
     t1: 'Rock',
@@ -4278,7 +4276,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 59, at: 74, df: 50, sa: 35, sd: 50, sp: 35},
     w: 92,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'No Guard',
   },
   Golurk: {
@@ -4286,7 +4284,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     t2: 'Ghost',
     bs: {hp: 89, at: 124, df: 80, sa: 55, sd: 80, sp: 55},
     w: 330,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'No Guard',
   },
   Gothita: {
@@ -4370,14 +4368,14 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 91, at: 72, df: 90, sa: 129, sd: 90, sp: 108},
     w: 48.5,
     ab: 'Justified',
-    gender: 'genderless',
+    gender: 'N',
   },
   Klang: {
     t1: 'Steel',
     bs: {hp: 60, at: 80, df: 95, sa: 70, sd: 85, sp: 50},
     w: 51,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Klink: {
@@ -4385,14 +4383,14 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 40, at: 55, df: 70, sa: 45, sd: 60, sp: 30},
     w: 21,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Plus',
   },
   Klinklang: {
     t1: 'Steel',
     bs: {hp: 60, at: 100, df: 115, sa: 70, sd: 85, sp: 90},
     w: 81,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Clear Body',
   },
   Krokorok: {
@@ -4416,7 +4414,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 125, at: 130, df: 90, sa: 130, sd: 90, sp: 95},
     w: 325,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Kyurem-Black': {
     t1: 'Dragon',
@@ -4424,7 +4422,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 125, at: 170, df: 100, sa: 120, sd: 90, sp: 95},
     w: 325,
     ab: 'Teravolt',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Kyurem-White': {
     t1: 'Dragon',
@@ -4432,7 +4430,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 125, at: 120, df: 90, sa: 170, sd: 100, sp: 95},
     w: 325,
     ab: 'Turboblaze',
-    gender: 'genderless',
+    gender: 'N',
   },
   Lampent: {
     t1: 'Ghost',
@@ -4525,7 +4523,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     w: 6.5,
     ab: 'Serene Grace',
     formes: ['Meloetta', 'Meloetta-Pirouette'],
-    gender: 'genderless',
+    gender: 'N',
   },
   'Meloetta-Pirouette': {
     t1: 'Normal',
@@ -4534,7 +4532,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     w: 6.5,
     ab: 'Serene Grace',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   Mienfoo: {
     t1: 'Fighting',
@@ -4678,7 +4676,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 100, at: 120, df: 100, sa: 150, sd: 120, sp: 90},
     w: 330,
     ab: 'Turboblaze',
-    gender: 'genderless',
+    gender: 'N',
   },
   Reuniclus: {
     t1: 'Psychic',
@@ -4880,7 +4878,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 91, at: 129, df: 90, sa: 72, sd: 90, sp: 108},
     w: 260,
     ab: 'Justified',
-    gender: 'genderless',
+    gender: 'N',
   },
   Throh: {
     t1: 'Fighting',
@@ -5006,7 +5004,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 100, at: 100, df: 100, sa: 100, sd: 100, sp: 100},
     w: 4,
     ab: 'Victory Star',
-    gender: 'genderless',
+    gender: 'N',
   },
   Virizion: {
     t1: 'Grass',
@@ -5014,7 +5012,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 91, at: 90, df: 72, sa: 90, sd: 129, sp: 108},
     w: 200,
     ab: 'Justified',
-    gender: 'genderless',
+    gender: 'N',
   },
   Volcarona: {
     t1: 'Bug',
@@ -5078,7 +5076,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
     bs: {hp: 100, at: 150, df: 120, sa: 120, sd: 100, sp: 90},
     w: 345,
     ab: 'Teravolt',
-    gender: 'genderless',
+    gender: 'N',
   },
   Zoroark: {
     t1: 'Dark',
@@ -5103,7 +5101,7 @@ const BW: {[name: string]: Species} = extend(true, {}, DPP, {
   },
 });
 
-const XY: {[name: string]: Species} = extend(true, {}, BW, {
+const XY: {[name: string]: SpeciesData} = extend(true, {}, BW, {
   Abomasnow: {formes: ['Abomasnow', 'Abomasnow-Mega']},
   Absol: {formes: ['Absol', 'Absol-Mega']},
   Aerodactyl: {formes: ['Aerodactyl', 'Aerodactyl-Mega']},
@@ -5322,7 +5320,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     t2: 'Fairy',
     bs: {hp: 50, at: 50, df: 150, sa: 50, sd: 150, sp: 50},
     w: 5.7,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Sturdy',
   },
   Chesnaught: {
@@ -5366,7 +5364,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 8.8,
     ab: 'Clear Body',
     formes: ['Diancie', 'Diancie-Mega'],
-    gender: 'genderless',
+    gender: 'N',
   },
   Dedenne: {
     t1: 'Electric',
@@ -5577,7 +5575,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     t2: 'Ghost',
     bs: {hp: 80, at: 110, df: 60, sa: 150, sd: 130, sp: 70},
     w: 9,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Magician',
   },
   'Hoopa-Unbound': {
@@ -5585,7 +5583,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     t2: 'Dark',
     bs: {hp: 80, at: 160, df: 60, sa: 170, sd: 130, sp: 80},
     w: 490,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Magician',
   },
   Inkay: {
@@ -5755,7 +5753,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 27.8,
     ab: 'Magic Bounce',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Gallade-Mega': {
     t1: 'Psychic',
@@ -5889,7 +5887,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 942.9,
     ab: 'Tough Claws',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Mewtwo-Mega-X': {
     t1: 'Psychic',
@@ -5898,7 +5896,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 127,
     ab: 'Steadfast',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Mewtwo-Mega-Y': {
     t1: 'Psychic',
@@ -5906,7 +5904,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 33,
     ab: 'Insomnia',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Pidgeot-Mega': {
     t1: 'Normal',
@@ -6089,7 +6087,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 999.7,
     ab: 'Desolate Land',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Kyogre-Primal': {
     t1: 'Water',
@@ -6097,7 +6095,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     w: 430,
     ab: 'Primordial Sea',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Pumpkaboo-Average': {
     t1: 'Ghost',
@@ -6257,7 +6255,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     t2: 'Water',
     bs: {hp: 80, at: 110, df: 120, sa: 130, sd: 90, sp: 70},
     w: 195,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Water Absorb',
   },
   Volkraken: {
@@ -6280,7 +6278,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     bs: {hp: 126, at: 131, df: 95, sa: 131, sd: 98, sp: 99},
     w: 215,
     ab: 'Fairy Aura',
-    gender: 'genderless',
+    gender: 'N',
   },
   Yveltal: {
     t1: 'Dark',
@@ -6288,7 +6286,7 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     bs: {hp: 126, at: 131, df: 95, sa: 131, sd: 98, sp: 99},
     w: 203,
     ab: 'Dark Aura',
-    gender: 'genderless',
+    gender: 'N',
   },
   Zygarde: {
     t1: 'Dragon',
@@ -6296,11 +6294,11 @@ const XY: {[name: string]: Species} = extend(true, {}, BW, {
     bs: {hp: 108, at: 100, df: 121, sa: 81, sd: 95, sp: 95},
     w: 305,
     ab: 'Aura Break',
-    gender: 'genderless',
+    gender: 'N',
   },
 });
 
-const SM: {[name: string]: Species} = extend(true, {}, XY, {
+const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
   'Alakazam-Mega': {bs: {sd: 105}},
   Arbok: {bs: {at: 95}},
   Arghonaut: {ab: 'Technician'},
@@ -6384,7 +6382,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 53, at: 127, df: 53, sa: 151, sd: 79, sp: 107},
     w: 13,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Bounsweet: {
     t1: 'Grass',
@@ -6413,7 +6411,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 107, at: 139, df: 139, sa: 53, sd: 53, sp: 79},
     w: 333.6,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Caribolt: {
     t1: 'Grass',
@@ -6428,7 +6426,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 97, at: 101, df: 103, sa: 107, sd: 101, sp: 61},
     w: 999.9,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Charjabug: {
     t1: 'Bug',
@@ -6449,7 +6447,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 43, at: 29, df: 131, sa: 29, sd: 131, sp: 37},
     w: 999.9,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Sturdy',
   },
   Cosmog: {
@@ -6457,7 +6455,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 43, at: 29, df: 31, sa: 29, sd: 31, sp: 37},
     w: 0.1,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Unaware',
   },
   Crabominable: {
@@ -6510,7 +6508,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     t2: 'Grass',
     bs: {hp: 70, at: 131, df: 100, sa: 86, sd: 90, sp: 40},
     w: 210,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Steelworker',
   },
   Drampa: {
@@ -6636,7 +6634,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 223, at: 101, df: 53, sa: 97, sd: 53, sp: 43},
     w: 888,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Hakamo-o': {
     t1: 'Dragon',
@@ -6673,7 +6671,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 59, at: 181, df: 131, sa: 59, sd: 31, sp: 109},
     w: 0.1,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Komala: {
     t1: 'Normal',
@@ -6710,7 +6708,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 137, at: 113, df: 89, sa: 137, sd: 107, sp: 97},
     w: 120,
     ab: 'Shadow Shield',
-    gender: 'genderless',
+    gender: 'N',
   },
   Lurantis: {
     t1: 'Grass',
@@ -6752,7 +6750,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     t2: 'Fairy',
     bs: {hp: 80, at: 95, df: 115, sa: 130, sd: 115, sp: 65},
     w: 80.5,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Soul-Heart',
   },
   Mareanie: {
@@ -6783,14 +6781,14 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     t2: 'Ghost',
     bs: {hp: 90, at: 125, df: 80, sa: 90, sd: 90, sp: 125},
     w: 22.2,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Technician',
   },
   Melmetal: {
     t1: 'Steel',
     bs: {hp: 135, at: 143, df: 143, sa: 80, sd: 65, sp: 34},
     w: 800,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Iron Fist',
   },
   Meltan: {
@@ -6798,7 +6796,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 46, at: 65, df: 65, sa: 55, sd: 35, sp: 34},
     w: 8,
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Magnet Pull',
   },
   'Meowth-Alola': {
@@ -6831,7 +6829,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 60, at: 100, df: 60, sa: 100, sd: 60, sp: 120},
     w: 0.3,
     formes: ['Minior', 'Minior-Meteor'],
-    gender: 'genderless',
+    gender: 'N',
     ab: 'Shields Down',
   },
   'Minior-Meteor': {
@@ -6885,7 +6883,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 73, at: 73, df: 73, sa: 127, sd: 73, sp: 121},
     w: 150,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Necrozma: {
     t1: 'Psychic',
@@ -6893,7 +6891,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 230,
     ab: 'Prism Armor',
     formes: ['Necrozma', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Necrozma-Ultra'],
-    gender: 'genderless',
+    gender: 'N',
   },
   'Necrozma-Dawn-Wings': {
     t1: 'Psychic',
@@ -6902,7 +6900,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 350,
     ab: 'Prism Armor',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Necrozma-Dusk-Mane': {
     t1: 'Psychic',
@@ -6911,7 +6909,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 460,
     ab: 'Prism Armor',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Necrozma-Ultra': {
     t1: 'Psychic',
@@ -6920,7 +6918,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 230,
     ab: 'Neuroforce',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   Nihilego: {
     t1: 'Rock',
@@ -6928,7 +6926,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 109, at: 53, df: 47, sa: 127, sd: 131, sp: 103},
     w: 55.5,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Ninetales-Alola': {
     t1: 'Ice',
@@ -7011,7 +7009,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 71, at: 137, df: 37, sa: 137, sd: 37, sp: 151},
     w: 25,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Pikipek: {
     t1: 'Normal',
@@ -7027,7 +7025,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 1.8,
     ab: 'Beast Boost',
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   Popplio: {
     t1: 'Water',
@@ -7174,126 +7172,126 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Bug': {
     t1: 'Bug',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Dark': {
     t1: 'Dark',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Dragon': {
     t1: 'Dragon',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Electric': {
     t1: 'Electric',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Fairy': {
     t1: 'Fairy',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Fighting': {
     t1: 'Fighting',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Fire': {
     t1: 'Fire',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Flying': {
     t1: 'Flying',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Ghost': {
     t1: 'Ghost',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Grass': {
     t1: 'Grass',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Ground': {
     t1: 'Ground',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Ice': {
     t1: 'Ice',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Poison': {
     t1: 'Poison',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Psychic': {
     t1: 'Psychic',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Rock': {
     t1: 'Rock',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Steel': {
     t1: 'Steel',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Silvally-Water': {
     t1: 'Water',
     bs: {hp: 95, at: 95, df: 95, sa: 95, sd: 95, sp: 95},
     w: 100.5,
     ab: 'RKS System',
-    gender: 'genderless',
+    gender: 'N',
   },
   Smokomodo: {
     t1: 'Fire',
@@ -7315,7 +7313,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 137, at: 137, df: 107, sa: 113, sd: 89, sp: 97},
     w: 230,
     ab: 'Full Metal Body',
-    gender: 'genderless',
+    gender: 'N',
   },
   Stakataka: {
     t1: 'Rock',
@@ -7323,7 +7321,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 61, at: 131, df: 211, sa: 53, sd: 101, sp: 13},
     w: 820,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Steenee: {
     t1: 'Grass',
@@ -7346,7 +7344,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 70, at: 130, df: 115, sa: 85, sd: 95, sp: 75},
     w: 45.5,
     ab: 'Grassy Surge',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Tapu Fini': {
     t1: 'Water',
@@ -7354,7 +7352,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 70, at: 75, df: 115, sa: 95, sd: 130, sp: 85},
     w: 21.2,
     ab: 'Misty Surge',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Tapu Koko': {
     t1: 'Electric',
@@ -7362,7 +7360,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 70, at: 115, df: 85, sa: 95, sd: 75, sp: 130},
     w: 20.5,
     ab: 'Electric Surge',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Tapu Lele': {
     t1: 'Psychic',
@@ -7370,7 +7368,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 70, at: 85, df: 75, sa: 130, sd: 115, sp: 95},
     w: 18.6,
     ab: 'Psychic Surge',
-    gender: 'genderless',
+    gender: 'N',
   },
   Togedemaru: {
     t1: 'Electric',
@@ -7436,7 +7434,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 120.5,
     ab: 'Battle Armor',
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   Vikavolt: {
     t1: 'Bug',
@@ -7489,7 +7487,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     bs: {hp: 83, at: 89, df: 71, sa: 173, sd: 71, sp: 83},
     w: 100,
     ab: 'Beast Boost',
-    gender: 'genderless',
+    gender: 'N',
   },
   Yungoos: {
     t1: 'Normal',
@@ -7511,7 +7509,7 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 33.5,
     ab: 'Power Construct',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Zygarde-Complete': {
     t1: 'Dragon',
@@ -7520,10 +7518,10 @@ const SM: {[name: string]: Species} = extend(true, {}, XY, {
     w: 610,
     ab: 'Power Construct',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
 });
-const SS: {[name: string]: Species} = extend(true, {}, SM, {
+const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, {
   'Aegislash-Shield': {bs: {df: 140, sd: 140}},
   'Aegislash-Blade': {bs: {at: 140, sa: 140}},
   'Aegislash-Both': {bs: {at: 140, df: 140, sa: 140, sd: 140}},
@@ -7597,7 +7595,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 90, at: 90, df: 100, sa: 80, sd: 90, sp: 55},
     w: 175,
     ab: 'Water Absorb',
-    gender: 'genderless',
+    gender: 'N',
   },
   Arctozolt: {
     t1: 'Electric',
@@ -7605,7 +7603,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 90, at: 100, df: 90, sa: 90, sd: 80, sp: 55},
     w: 150,
     ab: 'Volt Absorb',
-    gender: 'genderless',
+    gender: 'N',
   },
   Arrokuda: {
     t1: 'Water',
@@ -7828,7 +7826,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 90, at: 90, df: 100, sa: 70, sd: 80, sp: 75},
     w: 215,
     ab: 'Water Absorb',
-    gender: 'genderless',
+    gender: 'N',
   },
   Dracozolt: {
     t1: 'Electric',
@@ -7836,7 +7834,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 90, at: 100, df: 90, sa: 80, sd: 70, sp: 75},
     w: 190,
     ab: 'Volt Absorb',
-    gender: 'genderless',
+    gender: 'N',
   },
   Dragapult: {
     t1: 'Dragon',
@@ -7939,7 +7937,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 140, at: 85, df: 95, sa: 145, sd: 95, sp: 130},
     w: 950,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
     formes: ['Eternatus', 'Eternatus-Eternamax'],
   },
   'Eternatus-Eternamax': {
@@ -7948,7 +7946,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 255, at: 115, df: 250, sa: 125, sd: 250, sp: 130},
     w: 950,
     ab: 'Pressure',
-    gender: 'genderless',
+    gender: 'N',
     isAlternateForme: true,
   },
   Falinks: {
@@ -7956,7 +7954,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 65, at: 100, df: 100, sa: 70, sd: 60, sp: 75},
     w: 62,
     ab: 'Battle Armor',
-    gender: 'genderless',
+    gender: 'N',
   },
   "Farfetch'd-Galar": {
     t1: 'Fighting',
@@ -8143,7 +8141,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     w: 0,
     ab: 'Iron Fist',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Meowth-Galar': {
     t1: 'Steel',
@@ -8261,7 +8259,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 60, at: 65, df: 65, sa: 134, sd: 114, sp: 70},
     w: 0.4,
     ab: 'Weak Armor',
-    gender: 'genderless',
+    gender: 'N',
   },
   'Ponyta-Galar': {
     t1: 'Psychic',
@@ -8347,7 +8345,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     w: 0.2,
     ab: 'Weak Armor',
     canEvolve: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   "Sirfetch'd": {
     t1: 'Fighting',
@@ -8495,7 +8493,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     bs: {hp: 92, at: 130, df: 115, sa: 80, sd: 115, sp: 138},
     w: 110,
     ab: 'Intrepid Sword',
-    gender: 'genderless',
+    gender: 'N',
     formes: ['Zacian', 'Zacian-Crowned'],
   },
   'Zacian-Crowned': {
@@ -8505,14 +8503,14 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     w: 355,
     ab: 'Intrepid Sword',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   Zamazenta: {
     t1: 'Fighting',
     bs: {hp: 92, at: 130, df: 115, sa: 80, sd: 115, sp: 138},
     w: 210,
     ab: 'Dauntless Shield',
-    gender: 'genderless',
+    gender: 'N',
     formes: ['Zamazenta', 'Zamazenta-Crowned'],
   },
   'Zamazenta-Crowned': {
@@ -8522,7 +8520,7 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     w: 785,
     ab: 'Dauntless Shield',
     isAlternateForme: true,
-    gender: 'genderless',
+    gender: 'N',
   },
   'Zigzagoon-Galar': {
     t1: 'Dark',
@@ -8534,15 +8532,63 @@ const SS: {[name: string]: Species} = extend(true, {}, SM, {
     isAlternateForme: true,
   },
 });
+
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
-export const SPECIES_BY_ID: Array<{[id: string]: Species}> = [];
+
+export class Species implements I.Species {
+  private readonly gen: I.GenerationNum;
+
+  constructor(gen: I.GenerationNum) {
+    this.gen = gen;
+  }
+
+  get(id: I.ID) {
+    return SPECIES_BY_ID[this.gen][id];
+  }
+
+  *[Symbol.iterator]() {
+    for (const id in SPECIES_BY_ID[this.gen]) {
+      yield this.get(id as I.ID)!;
+    }
+  }
+}
+
+class Specie implements I.Specie {
+  readonly kind: 'Species';
+  readonly id: I.ID;
+  readonly name: I.SpeciesName;
+  readonly t1!: I.TypeName; // type1
+  readonly t2?: I.TypeName; // type2
+  readonly bs!: {
+    hp: number;
+    at: number;
+    df: number;
+    sa: number;
+    sd: number;
+    sp: number;
+    sl?: number;
+  }; // baseStats
+  readonly w!: number; // weight
+  readonly canEvolve?: boolean;
+  readonly gender?: I.GenderName;
+  readonly formes?: I.SpeciesName[];
+  readonly isAlternateForme?: boolean;
+  readonly ab?: I.AbilityName; // ability
+
+  constructor(name: string, data: SpeciesData) {
+    this.kind = 'Species';
+    this.id = toID(name);
+    this.name = name as I.SpeciesName;
+    extend(this, data);
+  }
+}
+const SPECIES_BY_ID: Array<{[id: string]: Specie}> = [];
 
 for (const species of SPECIES) {
-  const map: {[id: string]: Species} = {};
-  for (const p of Object.keys(species)) {
-    const v = species[p];
-    (v as any).name = p;
-    map[toID(p)] = v;
+  const map: {[id: string]: Specie} = {};
+  for (const specie in species) {
+    const m = new Specie(specie, species[specie]);
+    map[m.id] = m;
   }
   SPECIES_BY_ID.push(map);
 }

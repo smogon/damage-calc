@@ -1,7 +1,5 @@
+import * as I from './interface';
 import {toID} from '../util';
-import {Generation} from '../gen';
-import {Stat} from '../stats';
-import {Type} from './types';
 
 const RBY: string[] = [];
 
@@ -360,7 +358,7 @@ const SS = SM.concat([
   'Throat Spray',
 ]);
 
-const BERRIES: {[berry: string]: {t: Type; p: number}} = {
+const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
   'Apicot Berry': {t: 'Ground', p: 100},
   'Aspear Berry': {t: 'Ice', p: 80},
@@ -430,274 +428,59 @@ const BERRIES: {[berry: string]: {t: Type; p: number}} = {
   'Yache Berry': {t: 'Ice', p: 80},
 };
 
-export const SEED_BOOSTED_STAT: {[item: string]: Stat} = {
-  'Electric Seed': 'def',
-  'Grassy Seed': 'def',
-  'Misty Seed': 'spd',
-  'Psychic Seed': 'spd',
-};
-
-export function getItemBoostType(item: string | undefined) {
-  switch (item) {
-    case 'Draco Plate':
-    case 'Dragon Fang':
-      return 'Dragon';
-    case 'Dread Plate':
-    case 'Black Glasses':
-      return 'Dark';
-    case 'Earth Plate':
-    case 'Soft Sand':
-      return 'Ground';
-    case 'Fist Plate':
-    case 'Black Belt':
-      return 'Fighting';
-    case 'Flame Plate':
-    case 'Charcoal':
-      return 'Fire';
-    case 'Icicle Plate':
-    case 'Never-Melt Ice':
-      return 'Ice';
-    case 'Insect Plate':
-    case 'Silver Powder':
-      return 'Bug';
-    case 'Iron Plate':
-    case 'Metal Coat':
-      return 'Steel';
-    case 'Meadow Plate':
-    case 'Rose Incense':
-    case 'Miracle Seed':
-      return 'Grass';
-    case 'Mind Plate':
-    case 'Odd Incense':
-    case 'Twisted Spoon':
-      return 'Psychic';
-    case 'Pixie Plate':
-      return 'Fairy';
-    case 'Sky Plate':
-    case 'Sharp Beak':
-      return 'Flying';
-    case 'Splash Plate':
-    case 'Sea Incense':
-    case 'Wave Incense':
-    case 'Mystic Water':
-      return 'Water';
-    case 'Spooky Plate':
-    case 'Spell Tag':
-      return 'Ghost';
-    case 'Stone Plate':
-    case 'Rock Incense':
-    case 'Hard Stone':
-      return 'Rock';
-    case 'Toxic Plate':
-    case 'Poison Barb':
-      return 'Poison';
-    case 'Zap Plate':
-    case 'Magnet':
-      return 'Electric';
-    case 'Silk Scarf':
-    case 'Pink Bow':
-    case 'Polkadot Bow':
-      return 'Normal';
-    default:
-      return undefined;
-  }
-}
-
-export function getBerryResistType(berry: string | undefined) {
-  switch (berry) {
-    case 'Chilan Berry':
-      return 'Normal';
-    case 'Occa Berry':
-      return 'Fire';
-    case 'Passho Berry':
-      return 'Water';
-    case 'Wacan Berry':
-      return 'Electric';
-    case 'Rindo Berry':
-      return 'Grass';
-    case 'Yache Berry':
-      return 'Ice';
-    case 'Chople Berry':
-      return 'Fighting';
-    case 'Kebia Berry':
-      return 'Poison';
-    case 'Shuca Berry':
-      return 'Ground';
-    case 'Coba Berry':
-      return 'Flying';
-    case 'Payapa Berry':
-      return 'Psychic';
-    case 'Tanga Berry':
-      return 'Bug';
-    case 'Charti Berry':
-      return 'Rock';
-    case 'Kasib Berry':
-      return 'Ghost';
-    case 'Haban Berry':
-      return 'Dragon';
-    case 'Colbur Berry':
-      return 'Dark';
-    case 'Babiri Berry':
-      return 'Steel';
-    case 'Roseli Berry':
-      return 'Fairy';
-    default:
-      return undefined;
-  }
-}
-
-const FLING_80 = new Set([
-  'Assault Vest',
-  'Blunder Policy',
-  'Chipped Pot',
-  'Cracked Pot',
-  'Heavy-Duty Boots',
-  'Weakness Policy',
-]);
-
-const FLING_60 = new Set([
-  'Adamant Orb',
-  'Damp Rock',
-  'Heat Rock',
-  'Lustrous Orb',
-  'Macho Brace',
-  'Stick',
-]);
-const FLING_30 = new Set([
-  'Absorb Bulb',
-  'Black Belt',
-  'Black Sludge',
-  'Black Glasses',
-  'Cell Battery',
-  'Charcoal',
-  'Deep Sea Scale',
-  'Flame Orb',
-  "King's Rock",
-  'Life Orb',
-  'Light Ball',
-  'Magnet',
-  'Metal Coat',
-  'Miracle Seed',
-  'Mystic Water',
-  'Never-Melt Ice',
-  'Razor Fang',
-  'Soul Dew',
-  'Spell Tag',
-  'Sweet Apple',
-  'Tart Apple',
-  'Throat Spray',
-  'Toxic Orb',
-  'Twisted Spoon',
-]);
-const FLING_10 = new Set([
-  'Air Balloon',
-  'Berry Sweet',
-  'Choice Band',
-  'Choice Scarf',
-  'Choice Specs',
-  'Clover Sweet',
-  'Destiny Knot',
-  'Electric Seed',
-  'Expert Belt',
-  'Flower Sweet',
-  'Focus Band',
-  'Focus Sash',
-  'Full Incense',
-  'Grassy Seed',
-  'Lagging Tail',
-  'Lax Incense',
-  'Leftovers',
-  'Love Sweet',
-  'Mental Herb',
-  'Metal Powder',
-  'Misty Seed',
-  'Muscle Band',
-  'Power Herb',
-  'Psychic Seed',
-  'Odd Incense',
-  'Quick Powder',
-  'Reaper Cloth',
-  'Red Card',
-  'Ribbon Sweet',
-  'Ring Target',
-  'Rock Incense',
-  'Rose Incense',
-  'Sea Incense',
-  'Shed Shell',
-  'Silk Scarf',
-  'Silver Powder',
-  'Smooth Rock',
-  'Soft Sand',
-  'Soothe Bell',
-  'Star Sweet',
-  'Strawberry Sweet',
-  'Wave Incense',
-  'White Herb',
-  'Wide Lens',
-  'Wise Glasses',
-  'Zoom Lens',
-]);
-
-export function getFlingPower(item?: string) {
-  if (!item) return 0;
-  if (item === 'Iron Ball') return 130;
-  if (['Hard Stone', 'Room Service'].indexOf(item) !== -1) return 100;
-  if (item.indexOf('Plate') !== -1 || ['Deep Sea Tooth', 'Thick Club'].indexOf(item) !== -1) {
-    return 90;
-  }
-  if (FLING_80.has(item)) return 80;
-  if (['Poison Barb', 'Dragon Fang'].indexOf(item) !== -1) return 70;
-  if (FLING_60.has(item)) return 60;
-  if (['Eject Pack', 'Sharp Beak'].indexOf(item) !== -1) return 50;
-  if (['Icy Rock', 'Eviolite'].indexOf(item) !== -1) return 40;
-  if (FLING_30.has(item)) return 30;
-  if (item.indexOf('Berry') !== -1 || FLING_10.has(item)) return 10;
-  return 0;
-}
-
-export function getNaturalGift(gen: Generation, item: string) {
-  let t: Type = 'Normal';
-  let p = 1;
-
-  const gift = BERRIES[item];
-  if (gift) {
-    t = gift.t;
-    p = gen < 6 ? gift.p - 20 : gift.p;
-  }
-
-  return {t, p};
-}
-
-export function getTechnoBlast(item: string) {
-  switch (item) {
-    case 'Burn Drive':
-      return 'Fire';
-    case 'Chill Drive':
-      return 'Ice';
-    case 'Douse Drive':
-      return 'Water';
-    case 'Shock Drive':
-      return 'Electric';
-    default:
-      return undefined;
-  }
-}
-
-export function getMultiAttack(item: string) {
-  if (item.indexOf('Memory') !== -1) {
-    return item.substring(0, item.indexOf(' ')) as Type;
-  }
-  return undefined;
-}
-
 export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 
-export const ITEMS_BY_ID: Array<{[id: string]: string}> = [];
+export class Items implements I.Items {
+  private readonly gen: I.GenerationNum;
 
+  constructor(gen: I.GenerationNum) {
+    this.gen = gen;
+  }
+
+  get(id: I.ID) {
+    return ITEMS_BY_ID[this.gen][id];
+  }
+
+  *[Symbol.iterator]() {
+    for (const id in ITEMS_BY_ID[this.gen]) {
+      yield this.get(id as I.ID)!;
+    }
+  }
+}
+
+class Item implements I.Item {
+  readonly kind: 'Item';
+  readonly id: I.ID;
+  readonly name: I.ItemName;
+  readonly megaEvolves?: I.SpeciesName;
+  readonly isBerry?: boolean;
+  readonly naturalGift?: Readonly<{basePower: number; type: I.TypeName}>;
+
+  constructor(name: string, gen: number) {
+    this.kind = 'Item';
+    this.id = toID(name);
+    this.name = name as I.ItemName;
+    this.megaEvolves = MEGA_STONES[name] as I.SpeciesName;
+    const berry = BERRIES[name];
+    if (berry) {
+      this.isBerry = true;
+      this.naturalGift = {
+        basePower: gen < 6 ? berry.p - 20 : berry.p,
+        type: berry.t as I.TypeName,
+      };
+    }
+  }
+}
+
+const ITEMS_BY_ID: Array<{[id: string]: Item}> = [];
+
+let gen = 0;
 for (const items of ITEMS) {
-  const map: {[id: string]: string} = {};
-  for (const i of items) {
-    map[toID(i)] = i;
+  gen++;
+  const map: {[id: string]: Item} = {};
+  for (const item of items) {
+    const i = new Item(item, gen);
+    map[i.id] = i;
   }
   ITEMS_BY_ID.push(map);
 }
