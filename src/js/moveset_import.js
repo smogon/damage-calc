@@ -259,6 +259,9 @@ function checkExeptions(poke) {
 	case 'Basculin-Blue-Striped':
 		poke = "Basculin";
 		break;
+	case 'Gastrodon-East':
+		poke = "Gastrodon";
+		break;
 	case 'Keldeo-Resolute':
 		poke = "Keldeo";
 		break;
