@@ -164,9 +164,9 @@ $(".notation").change(function () {
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
-	if (m && (m !== 'one-vs-one' && mode !== 'randoms')) {
+	if (m && (m !== 'one-vs-one' && m !== 'randoms')) {
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
-	} else if (m && (m !== 'one-vs-one' && mode !== 'all-vs-one')) {
+	} else if (m && (m !== 'one-vs-one' && m !== 'all-vs-one')) {
 		window.location.replace('randoms' + linkExtension + '?' + params);
 	}
 	$(".calc-trigger").bind("change keyup", function () {
