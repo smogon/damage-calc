@@ -393,10 +393,10 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var getRandDex = pokemonName in randdex && setName in randdex[pokemonName];
+		var getRandDex = pokemonName in randdex;
 		var getSets = pokemonName in setdex && setName in setdex[pokemonName];
 		if (getSets || getRandDex) {
-			var set = getSets ? setdex[pokemonName][setName] : randdex[pokemonName][setName];
+			var set = getSets ? setdex[pokemonName][setName] : randdex[pokemonName];
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -538,7 +538,7 @@ function createPokemon(pokeInfo) {
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
 		var isRandoms = mode === 'randoms';
-		var set = isRandoms ? randdex[name][setName] : setdex[name][setName];
+		var set = isRandoms ? randdex[name] : setdex[name][setName];
 
 		var ivs = {};
 		var evs = {};
