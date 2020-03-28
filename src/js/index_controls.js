@@ -151,8 +151,7 @@ $(".mode").change(function () {
 	var mode = params.get('mode');
 	if (mode === 'randoms') {
 		window.location.replace('randoms' + linkExtension + '?' + params);
-	}
-	else {
+	} else {
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
 	}
 });

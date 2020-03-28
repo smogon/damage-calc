@@ -246,7 +246,7 @@ $(".mode").change(function () {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');
 		params = '' + params;
-		window.location.replace('randoms' + linkExtension + (params.length ? '?' + params : '')); 
+		window.location.replace('randoms' + linkExtension + (params.length ? '?' + params : ''));
 	} else {
 		var params = new URLSearchParams(window.location.search);
 		params.set('mode', $(this).attr("id"));

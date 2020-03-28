@@ -393,10 +393,10 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var getRanDex = pokemonName in randdex && setname in randdex[pokemonName];
+		var getRandDex = pokemonName in randdex && setname in randdex[pokemonName];
 		var getSets = pokemonName in setdex && setname in setdex[pokemonName];
 		if (getSets || getRandDex) {
-			var set = getSets ? setdex[pokemonName][setName] : randDex[pokemonName][setName];
+			var set = getSets ? setdex[pokemonName][setName] : randdex[pokemonName][setName];
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -727,7 +727,7 @@ var GENERATION = {
 };
 
 var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
-var RANDDEX = [[], RANDOMS_RBY, RANDOMS_GSC, RANDOMS_ADV, RANDOMS, DPP, RANDOMS_BW, RANDOMS_XY, RANDOMS_SM, RANDOMS_SS]
+var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RANDOM_XY, RANDOM_SM, RANDOM_SS]
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
@@ -855,8 +855,8 @@ function getSetOptions(sets) {
 						nickname: randdex[pokeName][setName].nickname || ""
 					});
 				}
-		}
-	} else {
+			}
+		} else {
 			if (pokeName in setdex) {
 				var setNames = Object.keys(setdex[pokeName]);
 				for (var j = 0; j < setNames.length; j++) {
