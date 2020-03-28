@@ -628,7 +628,7 @@ function getGender(gender) {
 
 function getMoveDetails(moveInfo, ability, item, useMax) {
 	var moveName = moveInfo.find("select.move-selector").val();
-	var isZMove = gen === 7 && moveInfo.find("input.move-z").prop("checked");
+	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
 	var usedTimes = +moveInfo.find(".stat-drops").val();
