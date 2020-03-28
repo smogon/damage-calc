@@ -393,8 +393,10 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		if (pokemonName in setdex && setName in setdex[pokemonName]) {
-			var set = setdex[pokemonName][setName];
+		var getRanDex = pokemonName in randdex && setname in randdex[pokemonName];
+		var getSets = pokemonName in setdex && setname in setdex[pokemonName];
+		if (getSets || getRandDex) {
+			var set = getSets ? setdex[pokemonName][setName] : randDex[pokemonName][setName];
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -510,7 +512,8 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[pokeSTATS[i]]);
 		baseStat.keyup();
 	}
-	var pokemonSets = setdex[pokemonName];
+	var isRandoms = mode === 'randoms';
+	var pokemonSets = isRandoms ? randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
@@ -534,7 +537,8 @@ function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		var set = setdex[name][setName];
+		var isRandoms = mode === 'randoms';
+		var set = isRandoms ? randdex[name][setName] : setdex[name][setName];
 
 		var ivs = {};
 		var evs = {};
@@ -723,7 +727,8 @@ var GENERATION = {
 };
 
 var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
-var gen, genWasChanged, notation, pokedex, setdex, typeChart, moves, abilities, items, calcHP, calcStat;
+var RANDDEX = [[], RANDOMS_RBY, RANDOMS_GSC, RANDOMS_ADV, RANDOMS, DPP, RANDOMS_BW, RANDOMS_XY, RANDOMS_SM, RANDOMS_SS]
+var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 8;
@@ -748,6 +753,7 @@ $(".gen").change(function () {
 	// declaring these variables with var here makes z moves not work; TODO
 	pokedex = calc.SPECIES[gen];
 	setdex = SETDEX[gen];
+	randdex = RANDDEX[gen];
 	typeChart = calc.TYPE_CHART[gen];
 	moves = calc.MOVES[gen];
 	items = calc.ITEMS[gen];
@@ -835,18 +841,35 @@ function getSetOptions(sets) {
 			pokemon: pokeName,
 			text: pokeName
 		});
-		if (pokeName in setdex) {
-			var setNames = Object.keys(setdex[pokeName]);
-			for (var j = 0; j < setNames.length; j++) {
-				var setName = setNames[j];
-				setOptions.push({
-					pokemon: pokeName,
-					set: setName,
-					text: pokeName + " (" + setName + ")",
-					id: pokeName + " (" + setName + ")",
-					isCustom: setdex[pokeName][setName].isCustomSet,
-					nickname: setdex[pokeName][setName].nickname || ""
-				});
+		if (mode === 'randoms') {
+			if (pokeName in randdex) {
+				var setNames = Object.keys(randdex[pokeName]);
+				for (var j = 0; j < setNames.length; j++) {
+					var setName = setNames[j];
+					setOptions.push({
+						pokemon: pokeName,
+						set: setName,
+						text: pokeName + " (" + setName + ")",
+						id: pokeName + " (" + setName + ")",
+						isCustom: randdex[pokeName][setName].isCustomSet,
+						nickname: randdex[pokeName][setName].nickname || ""
+					});
+				}
+		}
+	} else {
+			if (pokeName in setdex) {
+				var setNames = Object.keys(setdex[pokeName]);
+				for (var j = 0; j < setNames.length; j++) {
+					var setName = setNames[j];
+					setOptions.push({
+						pokemon: pokeName,
+						set: setName,
+						text: pokeName + " (" + setName + ")",
+						id: pokeName + " (" + setName + ")",
+						isCustom: setdex[pokeName][setName].isCustomSet,
+						nickname: setdex[pokeName][setName].nickname || ""
+					});
+				}
 			}
 		}
 		setOptions.push({
