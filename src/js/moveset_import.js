@@ -261,6 +261,16 @@ function addSets(pokes) {
 	}
 }
 
+function getRandomSetMoves(poke, moveset) {
+	if (typeof poke.pokeInfo === "String") {
+		return;
+	} else {
+		poke.pokeInfo.find(".extraSetMoves").text(moveset);
+	}
+}
+
+getRandomSetMoves(poke, moveset);
+
 function checkExeptions(poke) {
 	switch (poke) {
 	case 'Aegislash':

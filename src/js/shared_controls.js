@@ -393,8 +393,8 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var getRandDex = pokemonName in randdex && setname in randdex[pokemonName];
-		var getSets = pokemonName in setdex && setname in setdex[pokemonName];
+		var getRandDex = pokemonName in randdex && setName in randdex[pokemonName];
+		var getSets = pokemonName in setdex && setName in setdex[pokemonName];
 		if (getSets || getRandDex) {
 			var set = getSets ? setdex[pokemonName][setName] : randdex[pokemonName][setName];
 			pokeObj.find(".level").val(set.level);
@@ -727,7 +727,7 @@ var GENERATION = {
 };
 
 var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
-var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RANDOM_XY, RANDOM_SM, RANDOM_SS]
+var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RANDOM_XY, RANDOM_SM, RANDOM_SS];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat;
 $(".gen").change(function () {
 	/*eslint-disable */
