@@ -154,15 +154,25 @@ function getMoves(currentPoke, rows, offset) {
 
 function addToDex(poke) {
 	var dexObject = {};
-	if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
-	if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
-	if (SETDEX_XY[poke.name] == undefined) SETDEX_XY[poke.name] = {};
-	if (SETDEX_BW[poke.name] == undefined) SETDEX_BW[poke.name] = {};
-	if (SETDEX_DPP[poke.name] == undefined) SETDEX_DPP[poke.name] = {};
-	if (SETDEX_ADV[poke.name] == undefined) SETDEX_ADV[poke.name] = {};
-	if (SETDEX_GSC[poke.name] == undefined) SETDEX_GSC[poke.name] = {};
-	if (SETDEX_RBY[poke.name] == undefined) SETDEX_RBY[poke.name] = {};
-
+	if (mode === 'randoms') {
+		if (RANDOM_SS[poke.name] == undefined) RANDOM_SS[poke.name] = {};
+		if (RANDOM_SM[poke.name] == undefined) RANDOM_SM[poke.name] = {};
+		if (RANDOM_XY[poke.name] == undefined) RANDOM_XY[poke.name] = {};
+		if (RANDOM_BW[poke.name] == undefined) RANDOM_BW[poke.name] = {};
+		if (RANDOM_DPP[poke.name] == undefined) RANDOM_DPP[poke.name] = {};
+		if (RANDOM_ADV[poke.name] == undefined) RANDOM_ADV[poke.name] = {};
+		if (RANDOM_GSC[poke.name] == undefined) RANDOM_GSC[poke.name] = {};
+		if (RANDOM_RBY[poke.name] == undefined) RANDOM_RBY[poke.name] = {};
+	} else {
+		if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
+		if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
+		if (SETDEX_XY[poke.name] == undefined) SETDEX_XY[poke.name] = {};
+		if (SETDEX_BW[poke.name] == undefined) SETDEX_BW[poke.name] = {};
+		if (SETDEX_DPP[poke.name] == undefined) SETDEX_DPP[poke.name] = {};
+		if (SETDEX_ADV[poke.name] == undefined) SETDEX_ADV[poke.name] = {};
+		if (SETDEX_GSC[poke.name] == undefined) SETDEX_GSC[poke.name] = {};
+		if (SETDEX_RBY[poke.name] == undefined) SETDEX_RBY[poke.name] = {};
+	}
 	if (poke.ability !== undefined) {
 		dexObject.ability = poke.ability;
 	}

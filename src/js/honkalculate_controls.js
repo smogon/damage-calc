@@ -242,6 +242,11 @@ $(".mode").change(function () {
 		params.delete('mode');
 		params = '' + params;
 		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
+	} else if ($("#randoms").prop("checked")) {
+		var params = new URLSearchParams(window.location.search);
+		params.delete('mode');
+		params = '' + params;
+		window.location.replace('randoms' + linkExtension + (params.length ? '?' + params : '')); 
 	} else {
 		var params = new URLSearchParams(window.location.search);
 		params.set('mode', $(this).attr("id"));
