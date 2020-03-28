@@ -152,17 +152,17 @@ function calcStats(poke) {
 }
 
 function calcCurrentHP(poke, max, percent) {
-	var current = Math.ceil(percent * max / 100);
+	var current = percent * max / 100;
 	poke.find(".current-hp").val(current);
 	drawHealthBar(poke, max, current);
 }
 function calcPercentHP(poke, max, current) {
-	var percent = Math.floor(100 * current / max);
+	var percent = 100 * current / max;
 	poke.find(".percent-hp").val(percent);
 	drawHealthBar(poke, max, current);
 }
 function drawHealthBar(poke, max, current) {
-	var fillPercent = Math.floor(100 * current / max);
+	var fillPercent = 100 * current / max;
 	var fillColor = fillPercent > 50 ? "green" : fillPercent > 20 ? "yellow" : "red";
 
 	var healthbar = poke.find(".hpbar");
