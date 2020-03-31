@@ -429,7 +429,7 @@ const RBY: {
     maxPower: 100,
   },
   'Rolling Kick': {
-    bp: 70,
+    bp: 60,
     type: 'Fighting',
     category: 'Physical',
     hasSecondaryEffect: true,
