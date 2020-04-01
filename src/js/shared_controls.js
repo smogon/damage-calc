@@ -348,6 +348,10 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
+	//var i;
+	//for (i = 0; i < move.length; i++) {
+		//$(this).closest('.poke-info').find(".extraSetMoves").text(move[3]);
+	//}
 });
 
 $(".item").change(function () {
@@ -416,7 +420,9 @@ $(".set-selector").change(function () {
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
+				console.log(set.moves[0] + set.moves[1]);
 				moveObj.change();
+				$(this).closest('.poke-info').find(".extraSetMoves").text('-' + set.moves[0] + ' -' + set.moves[1]);
 			}
 		} else {
 			pokeObj.find(".level").val(100);
@@ -512,7 +518,7 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[pokeSTATS[i]]);
 		baseStat.keyup();
 	}
-	var isRandoms = mode === 'randoms';
+	var isRandoms = $("#randoms").prop("checked");
 	var pokemonSets = isRandoms ? randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
@@ -522,7 +528,11 @@ $(".forme").change(function () {
 	} else if (greninjaSet) {
 		$(this).parent().find(".ability");
 	} else if (chosenSet) {
-		container.find(".ability").val(chosenSet.ability);
+		if (!isRandoms) {
+			container.find(".abilities").val(chosenSet.ability);
+		} else {
+			container.find(".ability").val(chosenSet.ability);
+		}
 	}
 	container.find(".ability").keyup();
 
@@ -537,7 +547,7 @@ function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		var isRandoms = mode === 'randoms';
+		var isRandoms = $("#randoms").prop("checked");
 		var set = isRandoms ? randdex[name] : setdex[name][setName];
 
 		var ivs = {};
@@ -841,20 +851,15 @@ function getSetOptions(sets) {
 			pokemon: pokeName,
 			text: pokeName
 		});
-		if (mode === 'randoms') {
+		if ($("#randoms").prop("checked")) {
 			if (pokeName in randdex) {
 				var setNames = Object.keys(randdex[pokeName]);
-				for (var j = 0; j < setNames.length; j++) {
-					var setName = setNames[j];
-					setOptions.push({
-						pokemon: pokeName,
-						set: setName,
-						text: pokeName + " (" + setName + ")",
-						id: pokeName + " (" + setName + ")",
-						isCustom: randdex[pokeName][setName].isCustomSet,
-						nickname: randdex[pokeName][setName].nickname || ""
-					});
-				}
+				setOptions.push({
+					pokemon: pokeName,
+					set: 'Randoms Set',
+					text: pokeName + " (" + "Randoms" + ")",
+					id: pokeName + " (" + "Randoms" + ")",
+				});
 			}
 		} else {
 			if (pokeName in setdex) {

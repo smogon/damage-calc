@@ -154,7 +154,7 @@ function getMoves(currentPoke, rows, offset) {
 
 function addToDex(poke) {
 	var dexObject = {};
-	if (mode === 'randoms') {
+	if ($("#randoms").prop("checked")) {
 		if (RANDOM_SS[poke.name] == undefined) RANDOM_SS[poke.name] = {};
 		if (RANDOM_SM[poke.name] == undefined) RANDOM_SM[poke.name] = {};
 		if (RANDOM_XY[poke.name] == undefined) RANDOM_XY[poke.name] = {};
@@ -259,10 +259,6 @@ function addSets(pokes) {
 	} else {
 		alert("No sets imported, please check your syntax and try again");
 	}
-}
-
-function getRandomSetMoves(poke, moveset) {
-	poke.pokeInfo.find(".extraSetMoves").text(moveset);
 }
 
 function checkExeptions(poke) {
