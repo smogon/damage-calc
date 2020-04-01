@@ -397,6 +397,10 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
+		if ($("#randoms").prop("checked")) {
+			$(this).closest('.poke-info').find(".extraSetItems").text("All possible items: " + randdex[pokemonName].items);
+			$(this).closest('.poke-info').find(".extraSetAbilities").text("All possible abilities: " + randdex[pokemonName].abilities);
+		}
 		var getRandDex = pokemonName in randdex;
 		var getSets = pokemonName in setdex && setName in setdex[pokemonName];
 		if (getSets || getRandDex) {
@@ -420,9 +424,11 @@ $(".set-selector").change(function () {
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
-				console.log(set.moves[0] + set.moves[1]);
+				//console.log(randdex[pokemonName].moves);
 				moveObj.change();
-				$(this).closest('.poke-info').find(".extraSetMoves").text('-' + set.moves[0] + ' -' + set.moves[1]);
+				if ($("#randoms").prop("checked")) {
+					$(this).closest('.poke-info').find(".extraSetMoves").text("All possible moves: " + randdex[pokemonName].moves);
+				}
 			}
 		} else {
 			pokeObj.find(".level").val(100);
@@ -445,10 +451,10 @@ $(".set-selector").change(function () {
 		}
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
 			var format = getSelectedTiers()[0];
-			var has50lvl = startsWith(format, "VGC") || startsWith(format, "Battle Spot");
+			var is50lvl = startsWith(format, "VGC") || startsWith(format, "Battle Spot");
 			//var isDoubles = format === 'Doubles' || has50lvl; *TODO*
 			if (format === "LC") pokeObj.find(".level").val(5);
-			if (has50lvl) pokeObj.find(".level").val(50);
+			if (is50lvl) pokeObj.find(".level").val(50);
 			//if (isDoubles) field.gameType = 'Doubles'; *TODO*
 		}
 		var formeObj = $(this).siblings().find(".forme").parent();
@@ -858,7 +864,7 @@ function getSetOptions(sets) {
 					pokemon: pokeName,
 					set: 'Randoms Set',
 					text: pokeName + " (" + "Randoms" + ")",
-					id: pokeName + " (" + "Randoms" + ")",
+					id: pokeName + " (" + "Randoms" + ")"
 				});
 			}
 		} else {
