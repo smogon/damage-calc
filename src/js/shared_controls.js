@@ -348,10 +348,6 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
-	//var i;
-	//for (i = 0; i < move.length; i++) {
-		//$(this).closest('.poke-info').find(".extraSetMoves").text(move[3]);
-	//}
 });
 
 $(".item").change(function () {
@@ -424,7 +420,6 @@ $(".set-selector").change(function () {
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
-				//console.log(randdex[pokemonName].moves);
 				moveObj.change();
 				if ($("#randoms").prop("checked")) {
 					$(this).closest('.poke-info').find(".extraSetMoves").text("All possible moves: " + randdex[pokemonName].moves);
