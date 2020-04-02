@@ -394,8 +394,10 @@ $(".set-selector").change(function () {
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
 		if ($("#randoms").prop("checked")) {
-			$(this).closest('.poke-info').find(".extraSetItems").text("All possible items: " + randdex[pokemonName].items);
-			$(this).closest('.poke-info').find(".extraSetAbilities").text("All possible abilities: " + randdex[pokemonName].abilities);
+			var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : "";
+			var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : "";
+			$(this).closest('.poke-info').find(".extraSetItems").text(listItems);
+			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities);
 		}
 		var getRandDex = pokemonName in randdex;
 		var getSets = pokemonName in setdex && setName in setdex[pokemonName];
@@ -422,7 +424,7 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 				moveObj.change();
 				if ($("#randoms").prop("checked")) {
-					$(this).closest('.poke-info').find(".extraSetMoves").text("All possible moves: " + randdex[pokemonName].moves);
+					$(this).closest('.poke-info').find(".extraSetMoves").text(randdex[pokemonName].moves);
 				}
 			}
 		} else {
