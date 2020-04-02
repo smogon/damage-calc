@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-const Dex = require('../../Pokemon-Showdown/.sim-dist/dex').Dex;
+const Dex = require('../../pokemon-showdown/.sim-dist/dex').Dex;
 
 const TIERS = {};
 
 for (let gen = 1; gen <= 8; gen++) {
 	const dex = Dex.forFormat('gen' + gen + 'ou');
 	for (const k in dex.data.Pokedex) {
-		const val = dex.getTemplate(k);
+		const val = dex.getSpecies(k);
 		if (!val || (typeof val.exists === 'boolean' && !val.exists) || val.gen > gen) continue;
 		if (val.tier === 'Unreleased') continue;
 		if (val.tier === 'Illegal' && (gen < 8 || TIERS[7][Dex.getId(val)] !== 'Uber')) continue;
