@@ -863,6 +863,9 @@ function getSetOptions(sets) {
 					text: pokeName + " (" + "Randoms" + ")",
 					id: pokeName + " (" + "Randoms" + ")"
 				});
+				if (!pokeName in randdex) {
+					delete Object.keys(randdex[pokeName]);
+				}
 			}
 		} else {
 			if (pokeName in setdex) {
@@ -879,13 +882,15 @@ function getSetOptions(sets) {
 					});
 				}
 			}
+		} 
+		if (!$("#randoms").prop("checked")) {
+			setOptions.push({
+				pokemon: pokeName,
+				set: "Blank Set",
+				text: pokeName + " (Blank Set)",
+				id: pokeName + " (Blank Set)"
+			});
 		}
-		setOptions.push({
-			pokemon: pokeName,
-			set: "Blank Set",
-			text: pokeName + " (Blank Set)",
-			id: pokeName + " (Blank Set)"
-		});
 	}
 	return setOptions;
 }
