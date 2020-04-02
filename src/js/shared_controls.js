@@ -863,7 +863,7 @@ function getSetOptions(sets) {
 					text: pokeName + " (" + "Randoms" + ")",
 					id: pokeName + " (" + "Randoms" + ")"
 				});
-				if (!pokeName in randdex) {
+				if (!setOptions) {
 					delete Object.keys(randdex[pokeName]);
 				}
 			}
@@ -882,7 +882,7 @@ function getSetOptions(sets) {
 					});
 				}
 			}
-		} 
+		}
 		if (!$("#randoms").prop("checked")) {
 			setOptions.push({
 				pokemon: pokeName,
