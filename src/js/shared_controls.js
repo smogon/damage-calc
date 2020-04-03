@@ -885,8 +885,8 @@ function getSetOptions(sets) {
 			set: "Blank Set",
 			text: pokeName + " (Blank Set)",
 			id: pokeName + " (Blank Set)"
-			});
-		}
+		});
+	}
 	return setOptions;
 }
 
