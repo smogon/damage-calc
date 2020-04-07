@@ -396,8 +396,8 @@ $(".set-selector").change(function () {
 		if ($("#randoms").prop("checked")) {
 			var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : "";
 			var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : "";
-			$(this).closest('.poke-info').find(".extraSetItems").text(listItems);
-			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities);
+			$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
+			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
 		}
 		var getRandDex = pokemonName in randdex;
 		var getSets = pokemonName in setdex && setName in setdex[pokemonName];
@@ -424,7 +424,7 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 				moveObj.change();
 				if ($("#randoms").prop("checked")) {
-					$(this).closest('.poke-info').find(".extraSetMoves").text(randdex[pokemonName].moves);
+					$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(randdex[pokemonName].moves));
 				}
 			}
 		} else {
@@ -491,6 +491,16 @@ $(".set-selector").change(function () {
 		} else pokeObj.find(".gender").parent().show();
 	}
 });
+
+function formatMovePool(moves) {
+	const formatted = [];
+	for (var i = 0; i < moves.length; i++) {
+		var m = GENERATION.moves.get(calc.toID(moves[i]));
+		console.log(moves[i], m && m.basePower);
+		formatted.push(m && m.bp ? moves[i] : '<i>' + moves[i] + '</i>');
+	}
+	return formatted.join(', ');
+}
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {
 	var defaultForme = pokemon.formes.indexOf(pokemonName);
@@ -741,10 +751,11 @@ var GENERATION = {
 
 var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
 var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RANDOM_XY, RANDOM_SM, RANDOM_SS];
-var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat;
+var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 8;
+	GENERATION = calc.Generations.get(gen);
 	var params = new URLSearchParams(window.location.search);
 	if (gen === 8) {
 		params.delete('gen');

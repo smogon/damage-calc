@@ -42,7 +42,7 @@
 
     <div aria-label="Settings" role="region">
         <span class="title-text">Pok&eacute;mon Damage Calculator</span>
-        <span aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
+        <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
             <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
             <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
@@ -53,17 +53,17 @@
             <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">S/M</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
         </span>
-        <span aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation.">
+        <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation.">
             <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
             <input class="notation visually-hidden" type="radio" name="notation" id="pixels" value="px" /><label class="btn btn-small btn-left" for="pixels">48th</label>
             <input class="notation visually-hidden" type="radio" name="notation" id="percentage" value="%" /><label class="btn btn-small btn-right" for="percentage">100%</label>
         </span>
-        <span aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
+        <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
             <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of function.</span>
-            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-small btn-left" for="all-vs-one">All vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-small btn-left" for="one-vs-all">One vs All</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-small btn-left" for="one-vs-one">One vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" checked="checked" /><label class="btn btn-small btn-left" for="randoms">Random Battles</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-left" for="one-vs-one">One vs One</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-mid" for="one-vs-all">One vs All</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-mid" for="all-vs-one">All vs One</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" checked="checked" /><label class="btn btn-right" for="randoms">Random Battles</label>
         </span>
     </div>
     <hr />
@@ -441,17 +441,19 @@
                     <select class="ability terrain-trigger calc-trigger" id="abilityL1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
                 </div>
-                <div class ="gen-specific g3 g4 g5 g6 g7 g8">
-                <td>Ability pool</td>
-                <br><td><small><span class="extraSetAbilities"></span></small></td>
-                </div>
                 <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
                     <label for="itemL1">Item</label>
                     <select class="item terrain-trigger calc-trigger" id="itemL1"></select>
                 </div>
-                <div class ="gen-specific g2 g3 g4 g5 g6 g7 g8">
-                    <td>Item pool</td>
-                    <br><td><small><span class="extraSetItems"></span></small></td>
+                <div class="pool">
+                    <div class ="ability-pool gen-specific g3 g4 g5 g6 g7 g8">
+                        <div>Ability Pool</div>
+                        <small class="extraSetAbilities"></small>
+                    </div>
+                    <div class ="items-pool gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <div>Item Pool</div>
+                        <small class="extraSetItems"></small>
+                    </div>
                 </div>
                 <div>
                     <label for="statusL1">Status</label>
@@ -632,9 +634,9 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
-            <div class ="gen-specific g1 g2 g3 g4 g5 g6 g7 g8">
-                <td>Move pool</td>
-                <br><td><small><span class="extraSetMoves"></span></small></td>
+            <div class ="pool move-pool gen-specific g1 g2 g3 g4 g5 g6 g7 g8">
+                <div>Move Pool</div>
+                <small class="extraSetMoves"></small>
             </div>
         </fieldset>
     </div>
@@ -1212,17 +1214,19 @@
                     <select class="ability terrain-trigger calc-trigger" id="abilityR1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
                 </div>
-                <div class ="gen-specific g3 g4 g5 g6 g7 g8">
-                    <td>Ability pool</td>
-                    <br><td><small><span class="extraSetAbilities"></span></small></td>
-                </div>
-                <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                         <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
                     <label for="itemR1">Item</label>
                     <select class="item terrain-trigger calc-trigger" id="itemR1"></select>
                 </div>
-                <div class ="gen-specific g2 g3 g4 g5 g6 g7 g8">
-                    <td>Item pool</td>
-                    <br><td><small><span class="extraSetItems"></span></small></td>
+                <div class="pool">
+                    <div class ="ability-pool gen-specific g3 g4 g5 g6 g7 g8">
+                        <div>Ability Pool</div>
+                        <small class="extraSetAbilities"></small>
+                    </div>
+                    <div class ="item-pool gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <div>Item Pool</div>
+                        <small class="extraSetItems"></small>
+                    </div>
                 </div>
                 <div>
                     <label for="statusR1">Status</label>
@@ -1401,9 +1405,9 @@
                     <option value="5">5 times</option>
                 </select>
             </div>
-            <div class ="gen-specific g1 g2 g3 g4 g5 g6 g7 g8">
-                <td>Move pool</td>
-                <br><td><small><span class="extraSetMoves"></span></small></td>
+            <div class ="move-pool pool gen-specific g1 g2 g3 g4 g5 g6 g7 g8">
+                <div>Move Pool</div>
+                <small class="extraSetMoves"></small>
             </div>
         </fieldset>
     </div>
