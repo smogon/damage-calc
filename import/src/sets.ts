@@ -204,7 +204,11 @@ function importRandomOptionsForPokemon(
   const [nature, evstring] = best.spread.split(':');
   const evs: Partial<StatsTable> = {};
   for (const [i, ev] of evstring.split('/').entries()) {
-    evs[STATS[i]] = Number(ev);
+    const val = Number(ev);
+    // This is safe because EVs are only ever decreased from the default of 85 by the generation
+    // algorithm and not increased. We use 84 as the cutoff here instead of 85 because stats rounds
+    // EVs down to their effective bucket.
+    if (val < 84) evs[STATS[i]] = val;
   }
 
   const f = pokemon.endsWith('-Gmax') ? toForme(pokemon.slice(0, -5)) : forme;

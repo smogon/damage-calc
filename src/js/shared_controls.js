@@ -416,7 +416,7 @@ $(".set-selector").change(function () {
 			pokeObj.find(".hp .dvs").val((set.dvs && set.dvs.hp !== undefined) ? set.dvs.hp : 15);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
-					(set.evs && set.evs[LEGACY_STATS[gen][i]] !== undefined) ? set.evs[LEGACY_STATS[gen][i]] : 0);
+					(set.evs && set.evs[LEGACY_STATS[gen][i]] !== undefined) ? set.evs[LEGACY_STATS[gen][i]] : (randset ? 85 : 0));
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[LEGACY_STATS[gen][i]] !== undefined) ? set.ivs[LEGACY_STATS[gen][i]] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
