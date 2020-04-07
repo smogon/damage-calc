@@ -393,6 +393,7 @@ $(".set-selector").change(function () {
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
 		var randset = randdex[pokemonName];
+		var regSets = pokemonName in setdex && setName in setdex[pokemonName];
 
 		if ($("#randoms").prop("checked")) {
 			if (randset) {
@@ -407,8 +408,8 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".item-pool").hide();
 			}
 		}
-		if (randset) {
-			var set = randset;
+		if (regSets || randset) {
+			var set = regSets ? setdex[pokemonName][setName] : randset;
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -1026,12 +1027,10 @@ function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
 			var blankSet = "<i>" + object.pokemon + "</i>";
-			var regSets = "<b>" + object.pokemon + "</b>" + " " + object.set;
 			if ($("#randoms").prop("checked")) {
 				return object.set === 'Blank Set' ? blankSet : object.pokemon;
 			} else {
-				blankSet = "<i>" + object.pokemon + " (Blank Set)" + "</i>";
-				return object.set === 'Blank Set' ? blankSet : regSets;
+				return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
 			}
 		},
 		query: function (query) {
@@ -1044,7 +1043,11 @@ function loadDefaultLists() {
 				if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
 					return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
 				})) {
-					if (option.id) results.push(option);
+					if ($("#randoms").prop("checked")) {
+						if (option.id) results.push(option);
+					} else {
+						results.push(option);
+					}
 				}
 			}
 			query.callback({
