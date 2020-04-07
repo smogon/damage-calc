@@ -503,7 +503,7 @@ $(".set-selector").change(function () {
 });
 
 function formatMovePool(moves) {
-	const formatted = [];
+	var formatted = [];
 	for (var i = 0; i < moves.length; i++) {
 		var m = GENERATION.moves.get(calc.toID(moves[i]));
 		formatted.push(m && m.bp ? moves[i] : '<i>' + moves[i] + '</i>');
@@ -1025,7 +1025,14 @@ function getTerrainEffects() {
 function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
-			return object.set === 'Blank Set' ? "<i>" + object.pokemon + "</i>" : object.pokemon;
+			var blankSet = "<i>" + object.pokemon + "</i>";
+			var regSets = "<b>" + object.pokemon + "</b>" + " " + object.set;
+			if ($("#randoms").prop("checked")) {
+				return object.set === 'Blank Set' ? blankSet : object.pokemon;
+			} else {
+				blankSet = "<i>" + object.pokemon + " (Blank Set)" + "</i>";
+				return object.set === 'Blank Set' ? blankSet : regSets;
+			}
 		},
 		query: function (query) {
 			var pageSize = 30;
