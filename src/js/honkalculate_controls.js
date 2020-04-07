@@ -310,11 +310,17 @@ $(".set-selector").change(function (e) {
 var dtHeight, dtWidth;
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	if (!params.has('mode')) {
-		window.mode = "one-vs-all";
+	var mode = params.get("mode");
+	if (mode) {
+		if (mode === "randoms") {
+			window.location.replace("randoms" + linkExtension + "?" + params);
+		} else if (mode !== "one-vs-all" && mode !== "all-vs-one") {
+			window.location.replace("index" + linkExtension + "?" + params);
+		}
 	} else {
-		window.mode = params.get('mode');
+		mode = "one-vs-all";
 	}
+
 	$("#" + mode).prop("checked", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
 	$("#holder-2").show();
