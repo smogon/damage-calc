@@ -368,9 +368,8 @@ function smogonAnalysis(pokemonName) {
 // auto-update set details on select
 $(".set-selector").change(function () {
 	var fullSetName = $(this).val();
-	var pokemonName, setName;
-	pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
-	setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
+	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
+	var setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 	var pokemon = pokedex[pokemonName];
 	if (pokemon) {
 		var pokeObj = $(this).closest(".poke-info");
@@ -393,16 +392,23 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
+		var randset = randdex[pokemonName];
+
 		if ($("#randoms").prop("checked")) {
-			var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : "";
-			var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : "";
-			$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
-			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
+			if (randset) {
+				var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : [];
+				var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : [];
+				$(this).closest('.poke-info').find(".ability-pool").show();
+				$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
+				$(this).closest('.poke-info').find(".item-pool").show();
+				$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
+			} else {
+				$(this).closest('.poke-info').find(".ability-pool").hide();
+				$(this).closest('.poke-info').find(".item-pool").hide();
+			}
 		}
-		var getRandDex = pokemonName in randdex;
-		var getSets = pokemonName in setdex && setName in setdex[pokemonName];
-		if (getSets || getRandDex) {
-			var set = getSets ? setdex[pokemonName][setName] : randdex[pokemonName];
+		if (randset) {
+			var set = randset;
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -423,9 +429,10 @@ $(".set-selector").change(function () {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 				moveObj.change();
-				if ($("#randoms").prop("checked")) {
-					$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(randdex[pokemonName].moves));
-				}
+			}
+			if ($("#randoms").prop("checked")) {
+				$(this).closest('.poke-info').find(".move-pool").show();
+				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(randset.moves));
 			}
 		} else {
 			pokeObj.find(".level").val(100);
@@ -444,6 +451,9 @@ $(".set-selector").change(function () {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				moveObj.val("(No Move)");
 				moveObj.change();
+			}
+			if ($("#randoms").prop("checked")) {
+				$(this).closest('.poke-info').find(".move-pool").hide();
 			}
 		}
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
@@ -496,7 +506,6 @@ function formatMovePool(moves) {
 	const formatted = [];
 	for (var i = 0; i < moves.length; i++) {
 		var m = GENERATION.moves.get(calc.toID(moves[i]));
-		console.log(moves[i], m && m.basePower);
 		formatted.push(m && m.bp ? moves[i] : '<i>' + moves[i] + '</i>');
 	}
 	return formatted.join(', ');
@@ -874,6 +883,13 @@ function getSetOptions(sets) {
 					text: pokeName + " (" + "Randoms" + ")",
 					id: pokeName + " (" + "Randoms" + ")"
 				});
+			} else {
+				setOptions.push({
+					pokemon: pokeName,
+					set: "Blank Set",
+					text: pokeName + " (Blank Set)",
+					id: pokeName + " (Blank Set)"
+				});
 			}
 		} else {
 			if (pokeName in setdex) {
@@ -890,13 +906,13 @@ function getSetOptions(sets) {
 					});
 				}
 			}
+			setOptions.push({
+				pokemon: pokeName,
+				set: "Blank Set",
+				text: pokeName + " (Blank Set)",
+				id: pokeName + " (Blank Set)"
+			});
 		}
-		setOptions.push({
-			pokemon: pokeName,
-			set: "Blank Set",
-			text: pokeName + " (Blank Set)",
-			id: pokeName + " (Blank Set)"
-		});
 	}
 	return setOptions;
 }
@@ -1009,7 +1025,7 @@ function getTerrainEffects() {
 function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
-			return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
+			return object.set === 'Blank Set' ? "<i>" + object.pokemon + "</i>" : object.pokemon;
 		},
 		query: function (query) {
 			var pageSize = 30;
@@ -1021,7 +1037,7 @@ function loadDefaultLists() {
 				if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
 					return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
 				})) {
-					results.push(option);
+					if (option.id) results.push(option);
 				}
 			}
 			query.callback({
