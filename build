@@ -65,5 +65,6 @@ cpdir('src', 'dist').then(function () {
 	cpdir('calc/dist', 'dist/calc').then(function () {
 		makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
 		makeCachebuster('dist/index.template.html', 'dist/index.html');
+		makeCachebuster('dist/randoms.template.html', 'dist/randoms.html');
 	});
 });

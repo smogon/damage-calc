@@ -148,7 +148,14 @@ function calculateAllMoves(gen, p1, p1field, p2, p2field) {
 $(".mode").change(function () {
 	var params = new URLSearchParams(window.location.search);
 	params.set('mode', $(this).attr("id"));
-	window.location.replace('honkalculate' + linkExtension + '?' + params);
+	var mode = params.get('mode');
+	if (mode === 'randoms') {
+		window.location.replace('randoms' + linkExtension + '?' + params);
+	} else if (mode === 'one-vs-one') {
+		window.location.replace('index' + linkExtension + '?' + params);
+	} else {
+		window.location.replace('honkalculate' + linkExtension + '?' + params);
+	}
 });
 
 $(".notation").change(function () {
@@ -158,8 +165,20 @@ $(".notation").change(function () {
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
-	if (m && m !== 'one-vs-one') {
-		window.location.replace('honkalculate' + linkExtension + '?' + params);
+	if (m) {
+		if (m !== 'one-vs-one' && m !== 'randoms') {
+			window.location.replace('honkalculate' + linkExtension + '?' + params);
+		} else {
+			if ($('#randoms').prop('checked')) {
+				if (m === 'one-vs-one') {
+					window.location.replace('index' + linkExtension + '?' + params);
+				}
+			} else {
+				if (m === 'randoms') {
+					window.location.replace('randoms' + linkExtension + '?' + params);
+				}
+			}
+		}
 	}
 	$(".calc-trigger").bind("change keyup", function () {
 		setTimeout(performCalculations, 0);
