@@ -190,6 +190,7 @@ function importRandomOptionsForPokemon(
   gen: ps.Generation,
   usage: UsageStatistics
 ): RandomPokemonOptions | undefined {
+  if (pokemon.endsWith('-Totem')) return undefined; // No Totems in randbats
   const forme = toForme(pokemon);
   const stats = usage.data[forme];
   if (!stats) return undefined;
