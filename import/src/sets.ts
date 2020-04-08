@@ -44,7 +44,7 @@ interface PokemonSets {
   [pokemon: string]: {[name: string]: PokemonSet};
 }
 
-type RandomPokemonOptions = Exclude<PokemonSet, 'ability' | 'item' | 'ivs'> & {
+type RandomPokemonOptions = Exclude<PokemonSet, 'ability' | 'item'> & {
   abilities?: string[];
   items?: string[];
 };
@@ -202,13 +202,20 @@ function importRandomOptionsForPokemon(
     }
   }
   const [nature, evstring] = best.spread.split(':');
+  const ivs: Partial<StatsTable> = {};
   const evs: Partial<StatsTable> = {};
   for (const [i, ev] of evstring.split('/').entries()) {
     const val = Number(ev);
-    // This is safe because EVs are only ever decreased from the default of 85 by the generation
-    // algorithm and not increased. We use 84 as the cutoff here instead of 85 because stats rounds
-    // EVs down to their effective bucket.
-    if (val < 84) evs[STATS[i]] = val;
+    const stat = STATS[i];
+    if (stat === 'hp' && val < 84) {
+      // HP can be arbitrarily set, but we want to round down to the nearest bucket of 4
+      evs[stat] = Math.floor(val/4) * 4;
+    } else if ((stat === 'at' || stat === 'sp') && val === 0) {
+      // Atttack and Speed can only ever be 85 or 0 - if its 0 IVs need to be set to 0 as well
+      ivs[stat] = val;
+      evs[stat] = val;
+    }
+    // Otherwise it should be 85, and any other value is due to stupid rounding from usage stats
   }
 
   const f = pokemon.endsWith('-Gmax') ? toForme(pokemon.slice(0, -5)) : forme;
@@ -232,6 +239,7 @@ function importRandomOptionsForPokemon(
     abilities: abilities.length ? abilities : undefined,
     items: items.length ? items : undefined,
     nature,
+    ivs,
     evs,
     moves: Object.keys(stats.Moves)
       .map(m => generation.moves.get(toID(m))?.name as string)
