@@ -1069,7 +1069,15 @@ export function calculateSMSS(
   const finalMod = chainMods(finalMods);
 
   for (let i = 0; i < 16; i++) {
-    damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, protect, stabMod, finalMod);
+    damage[i] = getFinalDamage(
+      baseDamage,
+      i,
+      typeEffectiveness,
+      applyBurn,
+      protect,
+      stabMod,
+      finalMod
+    );
     // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
     if (
       attacker.ability === 'Parental Bond' &&
