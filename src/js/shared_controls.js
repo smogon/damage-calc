@@ -392,21 +392,19 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var randset = randdex[pokemonName];
+		var randset = $("#randoms").prop("checked") ? randdex[pokemonName] : undefined;
 		var regSets = pokemonName in setdex && setName in setdex[pokemonName];
 
-		if ($("#randoms").prop("checked")) {
-			if (randset) {
-				var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : [];
-				var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : [];
-				if (gen >= 3) $(this).closest('.poke-info').find(".ability-pool").show();
-				$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
-				if (gen >= 2) $(this).closest('.poke-info').find(".item-pool").show();
-				$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
-			} else {
-				$(this).closest('.poke-info').find(".ability-pool").hide();
-				$(this).closest('.poke-info').find(".item-pool").hide();
-			}
+		if (randset) {
+			var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : [];
+			var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : [];
+			if (gen >= 3) $(this).closest('.poke-info').find(".ability-pool").show();
+			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
+			if (gen >= 2) $(this).closest('.poke-info').find(".item-pool").show();
+			$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
+		} else {
+			$(this).closest('.poke-info').find(".ability-pool").hide();
+			$(this).closest('.poke-info').find(".item-pool").hide();
 		}
 		if (regSets || randset) {
 			var set = regSets ? setdex[pokemonName][setName] : randset;
@@ -437,7 +435,7 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 				moveObj.change();
 			}
-			if ($("#randoms").prop("checked") && randset) {
+			if (randset) {
 				$(this).closest('.poke-info').find(".move-pool").show();
 				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(randset.moves));
 			}
