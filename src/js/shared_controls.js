@@ -893,13 +893,6 @@ function getSetOptions(sets) {
 					text: pokeName + " (" + "Randoms" + ")",
 					id: pokeName + " (" + "Randoms" + ")"
 				});
-			} else {
-				setOptions.push({
-					pokemon: pokeName,
-					set: "Blank Set",
-					text: pokeName + " (Blank Set)",
-					id: pokeName + " (Blank Set)"
-				});
 			}
 		} else {
 			if (pokeName in setdex) {
@@ -1035,9 +1028,8 @@ function getTerrainEffects() {
 function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
-			var blankSet = "<i>" + object.pokemon + "</i>";
 			if ($("#randoms").prop("checked")) {
-				return object.set === 'Blank Set' ? blankSet : object.pokemon;
+				return object.pokemon;
 			} else {
 				return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
 			}
