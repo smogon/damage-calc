@@ -200,6 +200,7 @@ const BW = DPP.concat([
   'Red Card',
   'Ring Target',
   'Rock Gem',
+  'Rocky Helmet',
   'Shock Drive',
   'Steel Gem',
   'Water Gem',
