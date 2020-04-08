@@ -800,7 +800,7 @@ export function calculateSMSS(
     description.defenderAbility = defender.ability;
   }
 
-  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+  if (move.name === 'Pursuit' && field.defenderSide.isSwitching) {
     atMods.push(0x2000);
     description.isSwitching = true;
   }
@@ -1122,7 +1122,7 @@ export function calculateSMSS(
             applyBurn,
             stabMod,
             finalMod,
-            protect,
+            protect
           );
           damageMultiplier++;
           return affectedAmount + newFinalDamage;

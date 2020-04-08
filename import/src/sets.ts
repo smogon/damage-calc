@@ -210,7 +210,7 @@ function importRandomOptionsForPokemon(
     const stat = STATS[i];
     if (stat === 'hp' && val < 84) {
       // HP can be arbitrarily set, but we want to round down to the nearest bucket of 4
-      evs[stat] = Math.floor(val/4) * 4;
+      evs[stat] = Math.floor(val / 4) * 4;
     } else if ((stat === 'at' || stat === 'sp') && val === 0) {
       // Atttack and Speed can only ever be 85 or 0 - if its 0 IVs need to be set to 0 as well
       ivs[stat] = val;

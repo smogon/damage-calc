@@ -456,7 +456,7 @@ export function calculateDPP(
     description.attackerItem = attacker.item;
   }
 
-  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+  if (move.name === 'Pursuit' && field.defenderSide.isSwitching) {
     baseDamage = Math.floor(baseDamage * 2);
     description.isSwitching = true;
   }

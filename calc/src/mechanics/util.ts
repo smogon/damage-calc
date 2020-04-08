@@ -216,7 +216,7 @@ export function getFinalDamage(
   isBurned: boolean,
   stabMod: number,
   finalMod: number,
-  protect?: boolean,
+  protect?: boolean
 ) {
   let damageAmount = Math.floor(
     pokeRound((Math.floor((baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) * effectiveness
@@ -225,7 +225,6 @@ export function getFinalDamage(
   if (protect) damageAmount = pokeRound((damageAmount * 0x400) / 0x1000);
   return pokeRound(Math.max(1, (damageAmount * finalMod) / 0x1000));
 }
-
 
 export function getWeightFactor(pokemon: Pokemon) {
   return pokemon.hasAbility('Heavy Metal') ? 2 : pokemon.hasAbility('Light Metal') ? 0.5 : 1;
