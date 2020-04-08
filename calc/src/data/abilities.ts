@@ -146,6 +146,7 @@ const BW = DPP.concat([
   'Iron Barbs',
   'Lightning Rod',
   'Light Metal',
+  'Justified',
   'Magic Bounce',
   'Moody',
   'Moxie',
