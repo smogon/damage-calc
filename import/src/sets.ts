@@ -4,7 +4,8 @@ import * as fs from 'fs';
 import * as ps from '@pokemon-showdown/sets';
 import * as calc from 'calc';
 import * as tiers from './tiers.json';
-import * as rand from './random.json';
+import * as randLevels from './random-levels.json';
+import * as randMoves from './random-moves.json';
 import {Statistics, UsageStatistics} from 'smogon';
 const toID = calc.toID;
 
@@ -16,11 +17,17 @@ const TIERS = [
 type Tier = typeof TIERS[number];
 
 const TO_TIER = tiers as {[gen: number]: {[id: string]: Tier}};
-const RANDOM = (rand as unknown) as {
+const RANDOM_LEVELS = (randLevels as unknown) as {
   [gen: number]: {
     level: {[id in Tier]?: number};
     custom: {[pokemon: string]: number};
     default: number;
+  };
+};
+
+const RANDOM_MOVES = randMoves as {
+  [gen: number]: {
+    [pokemon: string]: string[];
   };
 };
 
@@ -190,9 +197,11 @@ function importRandomOptionsForPokemon(
   gen: ps.Generation,
   usage: UsageStatistics
 ): RandomPokemonOptions | undefined {
-  if (pokemon.endsWith('-Totem')) return undefined; // No Totems in randbats
-  const forme = toForme(pokemon);
-  const stats = usage.data[forme];
+  if (toID(pokemon) === 'aegislash') pokemon = 'Aegislash-Shield';
+  let moves = RANDOM_MOVES[gen][toID(pokemon)];
+  if (!moves) return undefined;
+  const stats = usage.data[toForme(pokemon)];
+
   if (!stats) return undefined;
 
   const best = {spread: '', usage: 0};
@@ -219,11 +228,11 @@ function importRandomOptionsForPokemon(
     // Otherwise it should be 85, and any other value is due to stupid rounding from usage stats
   }
 
-  const f = pokemon.endsWith('-Gmax') ? toForme(pokemon.slice(0, -5)) : forme;
+  const f = pokemon.endsWith('-Gmax') ? toForme(pokemon.slice(0, -5)) : pokemon;
   const tier = TO_TIER[gen][toID(f)];
-  const r = RANDOM[gen];
+  const r = RANDOM_LEVELS[gen];
 
-  let level = r.custom[forme] || r.level[tier] || r.default;
+  let level = r.custom[pokemon] || r.level[tier] || r.default;
   if (gen === 8 && tier === 'Illegal' && TO_TIER[7][toID(f)]) level = 72;
 
   const generation = calc.Generations.get(gen);
@@ -235,6 +244,11 @@ function importRandomOptionsForPokemon(
     .map(i => generation.items.get(toID(i))?.name as string)
     .filter(i => i);
 
+  const statsMoves = Object.keys(stats.Moves).filter(m => moves.includes(m));
+  // Sort the actual moves by how often they appear in usage stats
+  moves = [...statsMoves, ...moves.filter(m => !statsMoves.includes(m))]
+    .map(m => generation.moves.get(toID(m))?.name as string)
+    .filter(m => m);
   return {
     level,
     abilities: abilities.length ? abilities : undefined,
@@ -242,9 +256,7 @@ function importRandomOptionsForPokemon(
     nature,
     ivs,
     evs,
-    moves: Object.keys(stats.Moves)
-      .map(m => generation.moves.get(toID(m))?.name as string)
-      .filter(m => m),
+    moves,
   };
 }
 
