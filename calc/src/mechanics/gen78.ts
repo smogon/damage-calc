@@ -131,7 +131,7 @@ export function calculateSMSS(
       : 'Normal';
     description.weather = field.weather;
     description.moveType = move.type;
-  } else if (move.name === 'Judgment' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
+  } else if (move.name === 'Judgement' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
     move.type = getItemBoostType(attacker.item)!;
   } else if (
     move.name === 'Techno Blast' &&
@@ -222,7 +222,7 @@ export function calculateSMSS(
   if (
     (attacker.hasAbility('Gale Wings') &&
       move.type === 'Flying' &&
-      (gen.num >= 7 ? attacker.curHP === attacker.maxHP() : true)) ||
+      attacker.curHP === attacker.maxHP()) ||
     (attacker.hasAbility('Triage') && move.givesHealth)
   ) {
     move.hasPriority = true;
@@ -277,7 +277,7 @@ export function calculateSMSS(
   }
   if (
     move.name === 'Sky Drop' &&
-    (defender.hasType('Flying') || (gen.num >= 6 && defender.weight >= 200) || field.isGravity)
+    (defender.hasType('Flying') || defender.weight >= 200 || field.isGravity)
   ) {
     damage.push(0);
     return result;
@@ -587,14 +587,14 @@ export function calculateSMSS(
     bpMods.push(0x1333);
     description.attackerItem = attacker.item;
   } else if (attacker.item === move.type + ' Gem') {
-    bpMods.push(gen.num >= 6 ? 0x14cd : 0x1800);
+    bpMods.push(0x14cd);
     description.attackerItem = attacker.item;
   } else if (
     attacker.hasItem('Soul Dew') &&
     attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
     isSTAB
   ) {
-    bpMods.push(gen.num >= 7 ? 0x1333 : 0x1000);
+    bpMods.push(0x1333);
     description.attackerItem = attacker.item;
   }
 
@@ -610,7 +610,7 @@ export function calculateSMSS(
     bpMods.push(0x800);
     description.moveBP = move.bp / 2;
     description.weather = field.weather;
-  } else if (gen.num >= 6 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
+  } else if (move.name === 'Knock Off' && !resistedKnockOffDamage) {
     bpMods.push(0x1800);
     description.moveBP = move.bp * 1.5;
   } else if (
@@ -650,7 +650,7 @@ export function calculateSMSS(
   }
 
   if (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize) {
-    bpMods.push(gen.num >= 7 ? 0x1333 : 0x14cd);
+    bpMods.push(0x1333);
     description.attackerAbility = attacker.ability;
   } else if (
     (attacker.hasAbility('Mega Launcher') && move.isPulse) ||
@@ -795,14 +795,10 @@ export function calculateSMSS(
     atMods.push(0x2000);
     description.attackerItem = attacker.item;
   } else if (
-    (gen.num < 7 &&
-      attacker.hasItem('Soul Dew') &&
-      attacker.named('Latios', 'Latias') &&
-      move.category === 'Special') ||
-    (!move.isZ &&
-      !move.isMax &&
-      ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
-        (attacker.hasItem('Choice Specs') && move.category === 'Special')))
+    !move.isZ &&
+    !move.isMax &&
+    ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
+      (attacker.hasItem('Choice Specs') && move.category === 'Special'))
   ) {
     atMods.push(0x1800);
     description.attackerItem = attacker.item;
@@ -861,10 +857,6 @@ export function calculateSMSS(
   }
 
   if (
-    (gen.num < 7 &&
-      !hitsPhysical &&
-      defender.named('Latios', 'Latias') &&
-      defender.hasItem('Soul Dew')) ||
     (defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.canEvolve) ||
     (!hitsPhysical && defender.hasItem('Assault Vest'))
   ) {
@@ -947,7 +939,7 @@ export function calculateSMSS(
     description.defenderItem = defender.item;
   }
   if (isCritical) {
-    baseDamage = Math.floor(baseDamage * (gen.num >= 6 ? 1.5 : 2));
+    baseDamage = Math.floor(baseDamage * 1.5);
     description.isCritical = isCritical;
   }
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
@@ -977,7 +969,7 @@ export function calculateSMSS(
     !field.defenderSide.isAuroraVeil
   ) {
     // doesn't stack with Aurora Veil
-    finalMods.push(field.gameType !== 'Singles' ? (gen.num >= 6 ? 0xaac : 0xa8f) : 0x800);
+    finalMods.push(field.gameType !== 'Singles' ? 0xaac : 0x800);
     description.isReflect = true;
   } else if (
     field.defenderSide.isLightScreen &&
@@ -986,7 +978,7 @@ export function calculateSMSS(
     !field.defenderSide.isAuroraVeil
   ) {
     // doesn't stack with Aurora Veil
-    finalMods.push(field.gameType !== 'Singles' ? (gen.num >= 6 ? 0xaac : 0xa8f) : 0x800);
+    finalMods.push(field.gameType !== 'Singles' ? 0xaac : 0x800);
     description.isLightScreen = true;
   }
   if (
@@ -1078,7 +1070,7 @@ export function calculateSMSS(
       move.hits === 1 &&
       (field.gameType === 'Singles' || !move.isSpread)
     ) {
-      const bondFactor = gen.num < 7 ? 3 / 2 : 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
+      const bondFactor = 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
       damage[i] = Math.floor(damage[i] * bondFactor);
       description.attackerAbility = attacker.ability;
     }

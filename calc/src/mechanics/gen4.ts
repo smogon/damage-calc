@@ -86,7 +86,7 @@ export function calculateDPP(
     description.weather = field.weather;
     description.moveType = move.type;
     description.moveBP = basePower;
-  } else if (move.name === 'Judgment' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
+  } else if (move.name === 'Judgement' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
     move.type = getItemBoostType(attacker.item)!;
   } else if (
     move.name === 'Natural Gift' &&
