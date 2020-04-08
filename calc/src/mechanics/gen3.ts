@@ -238,6 +238,11 @@ export function calculateADV(
     }
   }
 
+  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+    baseDamage = Math.floor(baseDamage * 2);
+    description.isSwitching = true;
+  }
+
   if (field.gameType !== 'Singles' && move.isSpread && move.isSpread !== 'allAdjacent') {
     baseDamage = Math.floor(baseDamage / 2);
   }

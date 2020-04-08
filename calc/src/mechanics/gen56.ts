@@ -585,6 +585,10 @@ export function calculateBWXY(
     atMods.push(0x800);
     description.defenderAbility = defender.ability;
   }
+  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+    atMods.push(0x2000);
+    description.isSwitching = true;
+  }
   if (
     (attacker.hasAbility('Guts') &&
       !attacker.hasStatus('Healthy') &&

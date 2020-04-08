@@ -175,6 +175,11 @@ export function calculateGSC(
     description.isCritical = true;
   }
 
+  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+    baseDamage = Math.floor(baseDamage * 2);
+    description.isSwitching = true;
+  }
+
   if (getItemBoostType(attacker.item) === move.type) {
     baseDamage = Math.floor(baseDamage * 1.1);
     description.attackerItem = attacker.item;

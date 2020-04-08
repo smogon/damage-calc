@@ -794,6 +794,11 @@ export function calculateSMSS(
     description.defenderAbility = defender.ability;
   }
 
+  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+    atMods.push(0x2000);
+    description.isSwitching = true;
+  }
+
   if (
     (attacker.hasItem('Thick Club') &&
       attacker.named('Cubone', 'Marowak', 'Marowak-Alola') &&

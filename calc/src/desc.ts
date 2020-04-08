@@ -27,6 +27,7 @@ export interface RawDesc {
   isProtected?: boolean;
   isReflect?: boolean;
   isBattery?: boolean;
+  isSwitching?: boolean;
   moveBP?: number;
   moveName: string;
   moveTurns?: string;
@@ -854,6 +855,9 @@ function buildDescription(description: RawDesc) {
   }
   if (description.isBattery) {
     output += ' Battery boosted ';
+  }
+  if (description.isSwitching) {
+    output += ' after switching';
   }
   output += description.moveName + ' ';
   if (description.moveBP && description.moveType) {

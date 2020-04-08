@@ -456,6 +456,11 @@ export function calculateDPP(
     description.attackerItem = attacker.item;
   }
 
+  if (move.name === "Pursuit" && field.defenderSide.isSwitching) {
+    baseDamage = Math.floor(baseDamage * 2);
+    description.isSwitching = true;
+  }
+
   // the random factor is applied between the LO mod and the STAB mod, so don't apply anything below this until we're inside the loop
   let stabMod = 1;
   if (move.type === attacker.type1 || move.type === attacker.type2) {
