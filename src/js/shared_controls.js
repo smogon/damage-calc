@@ -425,7 +425,7 @@ $(".set-selector").change(function () {
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
-			if (randset) {
+			if ($("#randoms").prop("checked")) {
 				setSelectValueIfValid(abilityObj, randset.abilities && randset.abilities[0], abilityFallback);
 				setSelectValueIfValid(itemObj, randset.items && randset.items[0], "");
 			} else {
@@ -437,7 +437,7 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
 				moveObj.change();
 			}
-			if ($("#randoms").prop("checked")) {
+			if ($("#randoms").prop("checked") && randset) {
 				$(this).closest('.poke-info').find(".move-pool").show();
 				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(randset.moves));
 			}
