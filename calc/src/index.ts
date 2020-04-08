@@ -20,7 +20,8 @@
 //   - item.ts
 //
 //   - mechanics/util.js
-//   - mechanics/modern.js
+//   - mechanics/gen78.js
+//   - mechanics/gen56.js
 //   - mechanics/gen4.js
 //   - mechanics/gen3.js
 //   - mechanics/gen2.js

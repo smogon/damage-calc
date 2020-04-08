@@ -31,7 +31,7 @@ import {
   pokeRound,
 } from './util';
 
-export function calculateModern(
+export function calculateBWXY(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
