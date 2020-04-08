@@ -167,6 +167,70 @@ export function checkIntrepidSword(source: Pokemon) {
   }
 }
 
+export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
+  if (pokemon.hasAbility('Infiltrator')) {
+    affectedSide.isReflect = false;
+    affectedSide.isLightScreen = false;
+    affectedSide.isAuroraVeil = false;
+  }
+}
+
+export function checkSeedBoost(pokemon: Pokemon, field: Field) {
+  if (!pokemon.item) return;
+  if (field.terrain && pokemon.item.indexOf('Seed') !== -1) {
+    const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
+    if (terrainSeed === field.terrain) {
+      if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
+        pokemon.boosts.def = pokemon.hasAbility('Contrary')
+          ? Math.max(-6, pokemon.boosts.def - 1)
+          : Math.min(6, pokemon.boosts.def + 1);
+      } else {
+        pokemon.boosts.spd = pokemon.hasAbility('Contrary')
+          ? Math.max(-6, pokemon.boosts.spd - 1)
+          : Math.min(6, pokemon.boosts.spd + 1);
+      }
+    }
+  }
+}
+
+export function chainMods(mods: number[]) {
+  let M = 0x1000;
+  for (let i = 0; i < mods.length; i++) {
+    if (mods[i] !== 0x1000) {
+      M = (M * mods[i] + 0x800) >> 12;
+    }
+  }
+  return M;
+}
+
+export function getBaseDamage(level: number, basePower: number, attack: number, defense: number) {
+  return Math.floor(
+    Math.floor((Math.floor((2 * level) / 5 + 2) * basePower * attack) / defense) / 50 + 2
+  );
+}
+
+export function getFinalDamage(
+  baseAmount: number,
+  i: number,
+  effectiveness: number,
+  isBurned: boolean,
+  stabMod: number,
+  finalMod: number,
+  protect?: boolean,
+) {
+  let damageAmount = Math.floor(
+    pokeRound((Math.floor((baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) * effectiveness
+  );
+  if (isBurned) damageAmount = Math.floor(damageAmount / 2);
+  if (protect) damageAmount = pokeRound((damageAmount * 0x400) / 0x1000);
+  return pokeRound(Math.max(1, (damageAmount * finalMod) / 0x1000));
+}
+
+
+export function getWeightFactor(pokemon: Pokemon) {
+  return pokemon.hasAbility('Heavy Metal') ? 2 : pokemon.hasAbility('Light Metal') ? 0.5 : 1;
+}
+
 export function countBoosts(gen: Generation, boosts: StatsTable) {
   let sum = 0;
   // NOTE: starting from 1 because HP is not boostable

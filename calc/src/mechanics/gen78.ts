@@ -1,33 +1,39 @@
 ﻿import {Generation, AbilityName} from '../data/interface';
 import {toID} from '../util';
 import {
-  getItemBoostType,
-  getNaturalGift,
-  getFlingPower,
   getBerryResistType,
-  getTechnoBlast,
+  getFlingPower,
+  getItemBoostType,
   getMultiAttack,
+  getNaturalGift,
+  getTechnoBlast,
   SEED_BOOSTED_STAT,
 } from '../items';
 import {RawDesc} from '../desc';
-import {Field, Side} from '../field';
+import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
 import {Stat} from '../stats';
 import {
-  getModifiedStat,
-  getEVDescriptionText,
-  getFinalSpeed,
-  getMoveEffectiveness,
+  chainMods,
   checkAirLock,
-  checkForecast,
-  checkKlutz,
-  checkIntimidate,
   checkDownload,
+  checkForecast,
+  checkInfiltrator,
+  checkIntimidate,
   checkIntrepidSword,
-  isGrounded,
+  checkKlutz,
+  checkSeedBoost,
   countBoosts,
+  getBaseDamage,
+  getEVDescriptionText,
+  getFinalDamage,
+  getFinalSpeed,
+  getModifiedStat,
+  getMoveEffectiveness,
+  getWeightFactor,
+  isGrounded,
   pokeRound,
 } from './util';
 
@@ -1079,9 +1085,9 @@ export function calculateSMSS(
       i,
       typeEffectiveness,
       applyBurn,
-      protect,
       stabMod,
-      finalMod
+      finalMod,
+      protect
     );
     // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier until I know the specifics
     if (
@@ -1114,9 +1120,9 @@ export function calculateSMSS(
             damageMultiplier,
             typeEffectiveness,
             applyBurn,
-            protect,
             stabMod,
-            finalMod
+            finalMod,
+            protect,
           );
           damageMultiplier++;
           return affectedAmount + newFinalDamage;
@@ -1147,69 +1153,6 @@ export function calculateSMSS(
   return result;
 }
 
-function chainMods(mods: number[]) {
-  let M = 0x1000;
-  for (let i = 0; i < mods.length; i++) {
-    if (mods[i] !== 0x1000) {
-      M = (M * mods[i] + 0x800) >> 12;
-    }
-  }
-  return M;
-}
-
-function checkSeedBoost(pokemon: Pokemon, field: Field) {
-  if (!pokemon.item) return;
-  if (field.terrain && pokemon.item.indexOf('Seed') !== -1) {
-    const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
-    if (terrainSeed === field.terrain) {
-      if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
-        pokemon.boosts.def = pokemon.hasAbility('Contrary')
-          ? Math.max(-6, pokemon.boosts.def - 1)
-          : Math.min(6, pokemon.boosts.def + 1);
-      } else {
-        pokemon.boosts.spd = pokemon.hasAbility('Contrary')
-          ? Math.max(-6, pokemon.boosts.spd - 1)
-          : Math.min(6, pokemon.boosts.spd + 1);
-      }
-    }
-  }
-}
-
 function hasTerrainSeed(pokemon: Pokemon) {
   return pokemon.hasItem('Electric Seed', 'Misty Seed', 'Grassy Seed', 'Psychic Seed');
-}
-
-function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
-  if (pokemon.hasAbility('Infiltrator')) {
-    affectedSide.isReflect = false;
-    affectedSide.isLightScreen = false;
-    affectedSide.isAuroraVeil = false;
-  }
-}
-
-function getBaseDamage(level: number, basePower: number, attack: number, defense: number) {
-  return Math.floor(
-    Math.floor((Math.floor((2 * level) / 5 + 2) * basePower * attack) / defense) / 50 + 2
-  );
-}
-
-function getFinalDamage(
-  baseAmount: number,
-  i: number,
-  effectiveness: number,
-  isBurned: boolean,
-  protect: boolean,
-  stabMod: number,
-  finalMod: number
-) {
-  let damageAmount = Math.floor(
-    pokeRound((Math.floor((baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) * effectiveness
-  );
-  if (isBurned) damageAmount = Math.floor(damageAmount / 2);
-  if (protect) damageAmount = pokeRound((damageAmount * 0x400) / 0x1000);
-  return pokeRound(Math.max(1, (damageAmount * finalMod) / 0x1000));
-}
-
-function getWeightFactor(pokemon: Pokemon) {
-  return pokemon.hasAbility('Heavy Metal') ? 2 : pokemon.hasAbility('Light Metal') ? 0.5 : 1;
 }
