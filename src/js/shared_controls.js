@@ -560,7 +560,7 @@ $(".forme").change(function () {
 		if (!isRandoms) {
 			container.find(".abilities").val(chosenSet.ability);
 		} else {
-			container.find(".ability").val(chosenSet.ability);
+			container.find(".ability").val(chosenSet.abilities[0]);
 		}
 	}
 	container.find(".ability").keyup();
@@ -877,7 +877,6 @@ function getSetOptions(sets) {
 	var pokeNames = Object.keys(setsHolder);
 	pokeNames.sort();
 	var setOptions = [];
-	var idNum = 0;
 	for (var i = 0; i < pokeNames.length; i++) {
 		var pokeName = pokeNames[i];
 		setOptions.push({
