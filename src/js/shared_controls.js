@@ -399,9 +399,9 @@ $(".set-selector").change(function () {
 			if (randset) {
 				var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : [];
 				var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : [];
-				$(this).closest('.poke-info').find(".ability-pool").show();
+				if (gen >= 3) $(this).closest('.poke-info').find(".ability-pool").show();
 				$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
-				$(this).closest('.poke-info').find(".item-pool").show();
+				if (gen >= 2) $(this).closest('.poke-info').find(".item-pool").show();
 				$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
 			} else {
 				$(this).closest('.poke-info').find(".ability-pool").hide();
@@ -425,10 +425,10 @@ $(".set-selector").change(function () {
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
 			if (randset) {
-				setSelectValueIfValid(abilityObj, randset.abilities[0], abilityFallback);
-				setSelectValueIfValid(itemObj, randset.items[0], "");
+				setSelectValueIfValid(abilityObj, randset.abilities && randset.abilities[0], abilityFallback);
+				setSelectValueIfValid(itemObj, randset.items && randset.items[0], "");
 			} else {
-				setSelectValueIfValid(abilityObj, (set.ability && typeof set.ability !== "undefined") ? set.ability : abilityFallback, "");
+				setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
 				setSelectValueIfValid(itemObj, set.item, "");
 			}
 			for (i = 0; i < 4; i++) {
@@ -527,7 +527,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 }
 
 function setSelectValueIfValid(select, value, fallback) {
-	select.val(select.children("option[value='" + value + "']").length ? value : fallback);
+	select.val(!value ? fallback : select.children("option[value='" + value + "']").length ? value : fallback);
 }
 
 $(".forme").change(function () {
