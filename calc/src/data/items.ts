@@ -135,6 +135,7 @@ const DPP = ADV.concat([
   'Kebia Berry',
   'Lagging Tail',
   'Life Orb',
+  'Light Clay',
   'Lustrous Orb',
   'Macho Brace',
   'Meadow Plate',
