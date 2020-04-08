@@ -640,7 +640,7 @@ export function calculateBWXY(
       attacker.named('Latios', 'Latias') &&
       move.category === 'Special') ||
     (attacker.hasItem('Choice Band') && move.category === 'Physical') ||
-      (attacker.hasItem('Choice Specs') && move.category === 'Special')
+    (attacker.hasItem('Choice Specs') && move.category === 'Special')
   ) {
     atMods.push(0x1800);
     description.attackerItem = attacker.item;
