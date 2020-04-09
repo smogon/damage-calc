@@ -88,7 +88,8 @@
       "RUBL": 83,
       "RU": 84,
       "NUBL": 85,
-      "NU": 86
+      "NU": 86,
+      "(NU)": 87
     },
     "custom": {
       "Blaziken": 79,
@@ -103,18 +104,20 @@
   },
   "6": {
     "level": {
-      "(PU)": 89,
+      "(PU)": 88,
       "PU": 88,
-      "PUBL": 87,
+      "PUBL": 88,
+      "(NU)": 86,
       "NU": 86,
-      "NUBL": 85,
+      "NUBL": 86,
+      "(RU)": 84,
       "RU": 84,
-      "RUBL": 83,
+      "RUBL": 84,
+      "(UU)": 82,
       "UU": 82,
-      "UUBL": 81,
+      "UUBL": 82,
       "(OU)": 80,
       "OU": 80,
-      "Unreleased": 80,
       "Uber": 78
     },
     "custom": {

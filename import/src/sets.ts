@@ -232,10 +232,13 @@ function importRandomOptionsForPokemon(
   const tier = TO_TIER[gen][toID(f)];
   const r = RANDOM_LEVELS[gen];
 
+  const generation = calc.Generations.get(gen);
+
   let level = r.custom[pokemon] || r.level[tier] || r.default;
   if (gen === 8 && tier === 'Illegal' && TO_TIER[7][toID(f)]) level = 72;
-
-  const generation = calc.Generations.get(gen);
+  if (gen === 6 && level === r.default && !generation.species.get(toID(pokemon))?.canEvolve) {
+    level = 80;
+  }
 
   const abilities = Object.keys(stats.Abilities)
     .map(a => generation.abilities.get(toID(a))?.name as string)
