@@ -151,15 +151,23 @@ function calcStats(poke) {
 	}
 }
 
-function calcCurrentHP(poke, max, percent) {
-	var current = percent * max / 100;
+function calcCurrentHP(poke, max, percent, skipDraw) {
+	var current = Math.round(Number(percent) * Number(max) / 100);
 	poke.find(".current-hp").val(current);
-	drawHealthBar(poke, max, current);
+	if (!skipDraw) drawHealthBar(poke, max, current);
+	return current;
 }
-function calcPercentHP(poke, max, current) {
-	var percent = 100 * current / max;
+function calcPercentHP(poke, max, current, skipDraw) {
+	var percent = Math.round(100 * Number(current) / Number(max));
+	if (percent === 0 && current > 0) {
+		percent = 1;
+	} else if (percent === 100 & current < max) {
+		percent = 99;
+	}
+
 	poke.find(".percent-hp").val(percent);
-	drawHealthBar(poke, max, current);
+	if (!skipDraw) drawHealthBar(poke, max, current);
+	return percent;
 }
 function drawHealthBar(poke, max, current) {
 	var fillPercent = 100 * current / max;
@@ -174,6 +182,7 @@ function drawHealthBar(poke, max, current) {
 	}
 	healthbar.css("background", "linear-gradient(to right, " + fillColor + " " + fillPercent + "%, white 0%");
 }
+// TODO: these HP inputs should really be input type=number with min=0, step=1, constrained by max=maxHP or 100
 $(".current-hp").keyup(function () {
 	var max = $(this).parent().children(".max-hp").text();
 	validate($(this), 0, max);
@@ -753,8 +762,18 @@ function createField() {
 
 function calcHP(poke) {
 	var total = calcStat(poke, "hp");
-	poke.find(".max-hp").text(total);
-	calcCurrentHP(poke, total, ~~poke.find(".percent-hp").val());
+	var $maxHP = poke.find(".max-hp");
+
+	var prevMaxHP = Number($maxHP.attr('data-prev')) || total;
+	var prevCurrentHP = Math.min(Number(poke.find(".current-hp").val()), prevMaxHP);
+	// NOTE: poke.find(".percent-hp").val() is a rounded value!
+	var prevPercentHP = 100 * prevCurrentHP / prevMaxHP;
+
+	$maxHP.text(total);
+	$maxHP.attr('data-prev', total);
+
+	var newCurrentHP = calcCurrentHP(poke, total, prevPercentHP);
+	calcPercentHP(poke, total, newCurrentHP);
 }
 
 function calcStat(poke, statName) {
