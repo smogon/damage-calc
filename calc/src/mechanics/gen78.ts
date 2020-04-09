@@ -1017,7 +1017,7 @@ export function calculateSMSS(
     description.defenderAbility = defender.ability;
   } else if (
     (defender.hasAbility('Punk Rock') && move.isSound) ||
-    (defender.hasAbility('Ice Scales') && !hitsPhysical)
+    (defender.hasAbility('Ice Scales') && move.category === 'Special')
   ) {
     finalMods.push(0x800);
     description.defenderAbility = defender.ability;
