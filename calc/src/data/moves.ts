@@ -1043,7 +1043,7 @@ const GSC: {
     bp: 0,
     type: 'Normal',
   },
-  'Perish Song':{
+  'Perish Song': {
     bp: 0,
     type: 'Normal',
   },
