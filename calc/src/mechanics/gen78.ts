@@ -257,6 +257,8 @@ export function calculateSMSS(
     (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
     (defender.name.indexOf('Arceus') !== -1 && defender.item.indexOf('Plate') !== -1) ||
     (defender.name.indexOf('Genesect') !== -1 && defender.item.indexOf('Drive') !== -1) ||
+    (defender.named('Groudon-Primal') && defender.hasItem('Red Orb')) ||
+    (defender.named('Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
     (defender.hasAbility('RKS System') && defender.item.indexOf('Memory') !== -1) ||
     defender.item.indexOf(' Z') !== -1 ||
     (defender.named('Zacian') && defender.hasItem('Rusted Sword'));

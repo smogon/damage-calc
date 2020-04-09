@@ -201,7 +201,9 @@ export function calculateBWXY(
     !defender.item ||
     (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
     (defender.name.indexOf('Arceus') !== -1 && defender.item.indexOf('Plate') !== -1) ||
-    (defender.name.indexOf('Genesect') !== -1 && defender.item.indexOf('Drive') !== -1);
+    (defender.name.indexOf('Genesect') !== -1 && defender.item.indexOf('Drive') !== -1) ||
+    (defender.named('Groudon-Primal') && defender.hasItem('Red Orb')) ||
+    (defender.named('Kyogre-Primal') && defender.hasItem('Blue Orb'));
   // The last case only applies when the Pokemon is holding the Mega Stone that matches its species (or when it's already a Mega-Evolution)
   if (!resistedKnockOffDamage && defender.item) {
     const item = gen.items.get(toID(defender.item))!;
