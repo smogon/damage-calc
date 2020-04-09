@@ -141,6 +141,12 @@ html, body {
     max-width: 1285px;
     margin: 0 auto;
 }
+.credits {
+    clear: both;
+    padding: 20px;
+    max-width: 1285px;
+    margin: 0px auto;
+}
 div.wrapper > div > span {
     padding-right: 5px;
 }

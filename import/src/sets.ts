@@ -244,11 +244,16 @@ function importRandomOptionsForPokemon(
     .map(i => generation.items.get(toID(i))?.name as string)
     .filter(i => i);
 
-  const statsMoves = Object.keys(stats.Moves).filter(m => moves.includes(m));
-  // Sort the actual moves by how often they appear in usage stats
-  moves = [...statsMoves, ...moves.filter(m => !statsMoves.includes(m))]
-    .map(m => generation.moves.get(toID(m))?.name as string)
+  const moveIDs: {[id: string]: string} = {};
+  for (const m of moves) {
+    moveIDs[toID(m)] = m;
+  }
+
+  const statsMoves = Object.keys(stats.Moves)
+    .map(m => moveIDs[m])
     .filter(m => m);
+  // Sort the actual moves by how often they appear in usage stats
+  moves = [...statsMoves, ...moves.filter(m => !statsMoves.includes(m))];
   return {
     level,
     abilities: abilities.length ? abilities : undefined,

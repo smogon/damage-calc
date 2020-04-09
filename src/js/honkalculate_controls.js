@@ -310,15 +310,15 @@ $(".set-selector").change(function (e) {
 var dtHeight, dtWidth;
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var mode = params.get("mode");
-	if (mode) {
-		if (mode === "randoms") {
+	window.mode = params.get("mode");
+	if (window.mode) {
+		if (window.mode === "randoms") {
 			window.location.replace("randoms" + linkExtension + "?" + params);
-		} else if (mode !== "one-vs-all" && mode !== "all-vs-one") {
+		} else if (window.mode !== "one-vs-all" && window.mode !== "all-vs-one") {
 			window.location.replace("index" + linkExtension + "?" + params);
 		}
 	} else {
-		mode = "one-vs-all";
+		window.mode = "one-vs-all";
 	}
 
 	$("#" + mode).prop("checked", true);
