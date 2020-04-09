@@ -857,7 +857,7 @@ function buildDescription(description: RawDesc) {
     output += ' Battery boosted ';
   }
   if (description.isSwitching) {
-    output += ' after switching';
+    output += ' switching boosted ';
   }
   output += description.moveName + ' ';
   if (description.moveBP && description.moveType) {
