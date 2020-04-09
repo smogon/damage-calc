@@ -535,7 +535,7 @@ function selectMovesFromRandomOptions(moves) {
 	}
 
 	while (selected.length < 4 && nonDamaging.length) {
-		selected.push(nonDamaging.pop())
+		selected.push(nonDamaging.pop());
 	}
 
 	return selected;
