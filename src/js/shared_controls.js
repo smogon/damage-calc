@@ -430,9 +430,10 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
 				setSelectValueIfValid(itemObj, set.item, "");
 			}
+			const moves = randset ? selectMovesFromRandomOptions(randset.moves) : set.moves;
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
-				setSelectValueIfValid(moveObj, set.moves[i], "(No Move)");
+				setSelectValueIfValid(moveObj, moves[i], "(No Move)");
 				moveObj.change();
 			}
 			if (randset) {
@@ -510,10 +511,34 @@ $(".set-selector").change(function () {
 function formatMovePool(moves) {
 	var formatted = [];
 	for (var i = 0; i < moves.length; i++) {
-		var m = GENERATION.moves.get(calc.toID(moves[i]));
-		formatted.push(m && m.bp ? moves[i] : '<i>' + moves[i] + '</i>');
+		formatted.push(isKnownDamagingMove(moves[i]) ? moves[i] : '<i>' + moves[i] + '</i>');
 	}
 	return formatted.join(', ');
+}
+
+function isKnownDamagingMove(move) {
+	var m = GENERATION.moves.get(calc.toID(move));
+	return m && m.bp;
+}
+
+function selectMovesFromRandomOptions(moves) {
+	var selected = [];
+
+	var nonDamaging = [];
+	for (var i = 0; i < moves.length; i++) {
+		if (isKnownDamagingMove(moves[i])) {
+			selected.push(moves[i]);
+			if (selected.length >= 4) break;
+		} else {
+			nonDamaging.push(moves[i]);
+		}
+	}
+
+	while (selected.length < 4 && nonDamaging.length) {
+		selected.push(nonDamaging.pop())
+	}
+
+	return selected;
 }
 
 function showFormes(formeObj, setName, pokemonName, pokemon) {

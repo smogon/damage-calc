@@ -36,7 +36,7 @@ for (let gen = 1; gen <= 8; gen++) {
 			}
 		}
 
-		if (moves.size) MOVES[gen][id] = Array.from(moves);
+		if (moves.size) MOVES[gen][id] = Array.from(moves).map(m => Dex.getMove(m).name);
 	}
 }
 
