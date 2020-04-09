@@ -47,6 +47,10 @@ const RBY: {
     category: 'Special',
     maxPower: 70,
   },
+  'Acid Armor': {
+    bp: 0,
+    type: 'Poison',
+  },
   Agility: {
     bp: 0,
     type: 'Psychic',
@@ -85,6 +89,14 @@ const RBY: {
     category: 'Physical',
     makesContact: true,
     hasSecondaryEffect: true,
+    maxPower: 130,
+  },
+  Bonemerang: {
+    bp: 50,
+    type: 'Ground',
+    category: 'Physical',
+    isTwoHit: true,
+    zp: 100,
     maxPower: 130,
   },
   'Bone Club': {
@@ -130,6 +142,14 @@ const RBY: {
     bp: 0,
     type: 'Normal',
   },
+  //TODO Do Counter mechanics
+  /*'Counter': {
+    bp: 0,
+    type: 'Fighting',
+    makesContact: true,
+    zp: 100,
+    maxPower: 75,
+  },*/
   'Defense Curl': {
     bp: 0,
     type: 'Normal',
@@ -247,6 +267,10 @@ const RBY: {
     bp: 0,
     type: 'Normal',
   },
+  Growth: {
+    bp: 0,
+    type: 'Normal',
+  },
   Gust: {
     bp: 40,
     type: 'Normal',
@@ -334,6 +358,10 @@ const RBY: {
   'Lovely Kiss': {
     bp: 0,
     type: 'Normal',
+  },
+  Meditate: {
+    bp: 0,
+    type: 'Psychic',
   },
   'Mega Drain': {
     bp: 40,
@@ -436,6 +464,14 @@ const RBY: {
     zp: 120,
     maxPower: 75,
   },
+  Screech: {
+    bp: 0,
+    type: 'Normal',
+  },
+  'Sand Attack': {
+    bp: 0,
+    type: 'Ground',
+  },
   'Seismic Toss': {
     bp: 100,
     type: 'Fighting',
@@ -484,6 +520,10 @@ const RBY: {
     type: 'Poison',
     category: 'Special',
     maxPower: 85,
+  },
+  Smokescreen: {
+    bp: 0,
+    type: 'Normal',
   },
   'Solar Beam': {
     bp: 120,
@@ -568,6 +608,10 @@ const RBY: {
     hasRecoil: 25,
     maxPower: 130,
   },
+  Teleport: {
+    bp: 0,
+    type: 'Psychic',
+  },
   Thrash: {
     bp: 90,
     type: 'Normal',
@@ -605,6 +649,10 @@ const RBY: {
   Toxic: {
     bp: 0,
     type: 'Poison',
+  },
+  Transform: {
+    bp: 0,
+    type: 'Normal',
   },
   'Tri Attack': {
     bp: 80,
@@ -689,6 +737,10 @@ const GSC: {
     isMultiHit: true,
     maxPower: 130,
   },
+  Charm: {
+    bp: 0,
+    type: 'Normal',
+  },
   'Conversion 2': {
     bp: 0,
     type: 'Normal',
@@ -729,6 +781,14 @@ const GSC: {
     bp: 120,
     maxPower: 140,
   },
+  'Dragon Breath': {
+    bp: 60,
+    type: 'Dragon',
+    category: 'Special',
+    hasSecondaryEffect: true,
+    zp: 120,
+    maxPower: 110,
+  },
   'Dynamic Punch': {
     bp: 100,
     type: 'Fighting',
@@ -758,12 +818,11 @@ const GSC: {
     hasPriority: true,
     maxPower: 130,
   },
-  'Feint Attack': {
+  'Faint Attack': {
     bp: 60,
     type: 'Dark',
     category: 'Physical',
     makesContact: true,
-    maxPower: 110,
   },
   Flail: {
     bp: 1,
@@ -945,6 +1004,10 @@ const GSC: {
     makesContact: true,
     maxPower: 140,
   },
+  'Mean Look': {
+    bp: 0,
+    type: 'Normal',
+  },
   'Metal Claw': {
     bp: 50,
     type: 'Steel',
@@ -957,12 +1020,30 @@ const GSC: {
     bp: 0,
     type: 'Normal',
   },
+  //TODO Do Mirror Coat mechanics
+  /*'Mirror Coat': {
+    bp: 0,
+    type: 'Psychic',
+  },*/
   'Morning Sun': {
     bp: 0,
     type: 'Normal',
     category: 'Special',
   },
   Moonlight: {
+    bp: 0,
+    type: 'Normal',
+  },
+  //TODO Do Nightmare mechanics
+  /*'Nightmare': {
+    bp: 0,
+    type: 'Ghost',
+  },*/
+  'Pain Split': {
+    bp: 0,
+    type: 'Normal',
+  },
+  'Perish Song':{
     bp: 0,
     type: 'Normal',
   },
@@ -982,6 +1063,10 @@ const GSC: {
     category: 'Physical',
     makesContact: true,
     maxPower: 90,
+  },
+  'Rain Dance': {
+    bp: 0,
+    type: 'Water',
   },
   'Rapid Spin': {
     bp: 20,
@@ -1016,12 +1101,25 @@ const GSC: {
     hasSecondaryEffect: true,
     maxPower: 70,
   },
+  Rollout: {
+    bp: 30,
+    type: 'Rock',
+    category: 'Physical',
+    makesContact: true,
+    isMultiHit: true,
+    zp: 100,
+    MaxPower: 90,
+  },
   'Sacred Fire': {
     bp: 100,
     type: 'Fire',
     category: 'Physical',
     hasSecondaryEffect: true,
     maxPower: 130,
+  },
+  Safeguard: {
+    bp: 0,
+    type: 'Normal',
   },
   'Self-Destruct': {
     bp: 200,
@@ -1065,6 +1163,10 @@ const GSC: {
     hasSecondaryEffect: true,
     maxPower: 120,
   },
+  'Spider Web': {
+    bp: 0,
+    type: 'Bug',
+  },
   Spikes: {
     bp: 0,
     type: 'Ground',
@@ -1087,6 +1189,10 @@ const GSC: {
     type: 'Fire',
   },
   Swagger: {
+    bp: 0,
+    type: 'Normal',
+  },
+  'Sweet Kiss': {
     bp: 0,
     type: 'Normal',
   },
@@ -1171,13 +1277,6 @@ const ADV: {
     hasSecondaryEffect: true,
     maxPower: 130,
   },
-  Bonemerang: {
-    bp: 50,
-    type: 'Ground',
-    category: 'Physical',
-    isTwoHit: true,
-    maxPower: 130,
-  },
   Bounce: {
     bp: 85,
     type: 'Flying',
@@ -1206,6 +1305,10 @@ const ADV: {
     maxPower: 130,
   },
   'Calm Mind': {
+    bp: 0,
+    type: 'Psychic',
+  },
+  'Cosmic Power': {
     bp: 0,
     type: 'Psychic',
   },
@@ -1303,6 +1406,10 @@ const ADV: {
     category: 'Special',
     maxPower: 150,
   },
+  'Grass Whistle': {
+    bp: 0,
+    type: 'Grass',
+  },
   'Heat Wave': {
     bp: 100,
     type: 'Fire',
@@ -1312,6 +1419,10 @@ const ADV: {
     maxPower: 130,
   },
   'Helping Hand': {
+    bp: 0,
+    type: 'Normal',
+  },
+  Howl: {
     bp: 0,
     type: 'Normal',
   },
@@ -1381,6 +1492,10 @@ const ADV: {
   'Magic Coat': {
     bp: 0,
     type: 'Psychic',
+  },
+  Memento: {
+    bp: 0,
+    type: 'Dark',
   },
   'Meteor Mash': {
     bp: 100,
@@ -1561,6 +1676,10 @@ const ADV: {
     bp: 0,
     type: 'Dark',
   },
+  'Teeter Dance': {
+    bp: 0,
+    type: 'Normal',
+  },
   Trick: {
     bp: 0,
     type: 'Psychic',
@@ -1619,6 +1738,10 @@ const ADV: {
 const DPP: {
   [name: string]: MoveData;
 } = extend(true, {}, ADV, {
+  Acupressure: {
+    bp: 0,
+    type: 'Normal',
+  },
   'Air Slash': {
     bp: 75,
     type: 'Flying',
@@ -1732,6 +1855,10 @@ const DPP: {
     category: 'Physical',
     makesContact: true,
     maxPower: 95,
+  },
+  Copycat: {
+    bp: 0,
+    type: 'Normal',
   },
   Covet: {
     bp: 60,
@@ -2039,6 +2166,14 @@ const DPP: {
     bp: 0,
     type: 'Electric',
   },
+  //TODO Do Metal Burst mechanics
+  /*'Metal Burst': {
+    bp: 0,
+    category: 'Physical',
+    type: 'Steel',
+    zp: 100,
+    maxPower: 100,
+  },*/
   'Me First': {
     bp: 0,
     type: 'Normal',
@@ -2728,6 +2863,10 @@ const BW: {
     makesContact: true,
     maxPower: 140,
   },
+  'Power Split': {
+    bp: 0,
+    type: 'Psychic',
+  },
   Psyshock: {
     bp: 80,
     type: 'Psychic',
@@ -2978,7 +3117,13 @@ const BW: {
     hasRecoil: 25,
     maxPower: 130,
   },
+  'Work Up': {
+    bp: 0,
+    type: 'Normal',
+  },
 });
+
+delete BW['Faint Attack'];
 
 const XY: {
   [name: string]: MoveData;
@@ -3021,6 +3166,7 @@ const XY: {
     isSpread: 'allAdjacent',
     maxPower: 140,
   },
+  Charm: {type: 'Fairy'},
   Chatter: {
     bp: 65,
     maxPower: 120,
@@ -3028,6 +3174,10 @@ const XY: {
   Crabhammer: {
     bp: 100,
     maxPower: 130,
+  },
+  Confide: {
+    bp: 0,
+    type: 'Normal',
   },
   'Dazzling Gleam': {
     bp: 80,
@@ -3072,6 +3222,10 @@ const XY: {
     percentHealed: 0.75,
     maxPower: 100,
   },
+  'Electric Terrain': {
+    bp: 0,
+    type: 'Electic',
+  },
   'Energy Ball': {
     bp: 90,
     maxPower: 130,
@@ -3079,6 +3233,14 @@ const XY: {
   Facade: {
     ignoresBurn: true,
     maxPower: 120,
+  },
+  'Feint Attack': {
+    bp: 60,
+    type: 'Dark',
+    category: 'Physical',
+    makesContact: true,
+    zp: 100,
+    maxPower: 130,
   },
   'Fell Stinger': {
     bp: 30,
@@ -3132,6 +3294,10 @@ const XY: {
   'Grass Pledge': {
     bp: 80,
     maxPower: 130,
+  },
+  'Happy Hour': {
+    bp: 0,
+    type: 'Normal',
   },
   'Heat Wave': {
     bp: 95,
@@ -3204,6 +3370,10 @@ const XY: {
   'Hidden Power Water': {
     bp: 60,
     maxPower: 110,
+  },
+  'Hold Hands': {
+    bp: 0,
+    type: 'Normal',
   },
   Hurricane: {
     bp: 110,
@@ -3337,6 +3507,10 @@ const XY: {
     isSpread: 'allAdjacent',
     maxPower: 120,
   },
+  'Parting Shot': {
+    bp: 0,
+    type: 'Dark',
+  },
   'Petal Blizzard': {
     bp: 90,
     type: 'Grass',
@@ -3419,6 +3593,7 @@ const XY: {
     bp: 90,
     maxPower: 130,
   },
+  'Sweet Kiss': {type: 'Fairy'},
   Synchronoise: {
     bp: 120,
     maxPower: 140,
@@ -3575,9 +3750,17 @@ const SM: {
     zp: 120,
     maxPower: 120,
   },
+  'Aurora Veil': {
+    bp: 0,
+    type: 'Ice',
+  },
   Avalanche: {
     zp: 120,
     maxPower: 110,
+  },
+  'Baneful Bunker': {
+    bp: 0,
+    type: 'Poison',
   },
   'Beak Blast': {
     bp: 100,
@@ -4913,6 +5096,10 @@ const SM: {
     zp: 120,
     maxPower: 110,
   },
+  'Shore Up': {
+    bp: 0,
+    type: 'Ground',
+  },
   'Signal Beam': {
     zp: 140,
     maxPower: 130,
@@ -5074,6 +5261,10 @@ const SM: {
   'Storm Throw': {
     zp: 120,
     maxPower: 80,
+  },
+  'Strength Sap': {
+    bp: 0,
+    type: 'Grass',
   },
   'Struggle Bug': {
     zp: 100,
@@ -5361,9 +5552,6 @@ const SS: {
     type: 'Electric',
     category: 'Physical',
     makesContact: true,
-    maxPower: 130,
-  },
-  Bonemerang: {
     maxPower: 130,
   },
   'Bone Rush': {
