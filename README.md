@@ -1,6 +1,8 @@
 Honko Damage Calculator
 =======================
 
+![Test Status](https://github.com/smogon/damage-calc/workflows/Tests/badge.svg)
+
 Damage Calculator for Pokemon cartridge battles, Gen 1-8.
 
 If you are currently looking at smogon/damage-calc and not a fork, this
