@@ -46,8 +46,8 @@ export function calculateRBY(
 
   const moveType = gen.types.get(toID(move.type))!;
 
-  const typeEffect1 = moveType.damageTaken[defender.type1]!;
-  const typeEffect2 = defender.type2 ? moveType.damageTaken[defender.type2]! : 1;
+  const typeEffect1 = moveType.effectiveness[defender.type1]!;
+  const typeEffect2 = defender.type2 ? moveType.effectiveness[defender.type2]! : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
   if (typeEffectiveness === 0) {

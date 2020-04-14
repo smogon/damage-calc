@@ -114,6 +114,7 @@ const DPP = ADV.concat([
   'Persistent',
   'Poison Heal',
   'Quick Feet',
+  'Rebound',
   'Reckless',
   'Rivalry',
   'Scrappy',
@@ -127,6 +128,7 @@ const DPP = ADV.concat([
   'Solid Rock',
   'Stall',
   'Steadfast',
+  'Storm Drain',
   'Super Luck',
   'Tangled Feet',
   'Technician',
@@ -162,6 +164,7 @@ const BW = DPP.concat([
   'Pickpocket',
   'Poison Touch',
   'Prankster',
+  'Rattled',
   'Regenerator',
   'Sand Force',
   'Sand Rush',
@@ -194,6 +197,7 @@ const XY = BW.concat([
   'Fur Coat',
   'Gale Wings',
   'Gooey',
+  'Grass Pelt',
   'Magician',
   'Mega Launcher',
   'Parental Bond',
@@ -223,7 +227,6 @@ const SM = XY.concat([
   'Fluffy',
   'Full Metal Body',
   'Galvanize',
-  'Grass Pelt',
   'Grassy Surge',
   'Innards Out',
   'Liquid Voice',
@@ -255,6 +258,8 @@ const SM = XY.concat([
 ]);
 
 const SS = SM.concat([
+  'Ball Fetch',
+  'Cotton Down',
   'Dauntless Shield',
   'Gorilla Tactics',
   'Gulp Missile',

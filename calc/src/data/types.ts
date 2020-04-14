@@ -450,15 +450,15 @@ class Type implements I.Type {
   readonly id: I.ID;
   readonly name: I.TypeName;
   readonly category: I.MoveCategory;
-  readonly damageTaken: Readonly<{[type in I.TypeName]?: I.TypeEffectiveness}>;
+  readonly effectiveness: Readonly<{[type in I.TypeName]?: I.TypeEffectiveness}>;
 
-  constructor(name: string, damageTaken: TypeChart[I.TypeName]) {
+  constructor(name: string, effectiveness: TypeChart[I.TypeName]) {
     this.kind = 'Type';
     this.id = toID(name);
     this.name = name as I.TypeName;
-    this.category = damageTaken!.category;
-    delete damageTaken!.category;
-    this.damageTaken = damageTaken! as {[type in I.TypeName]?: I.TypeEffectiveness};
+    this.category = effectiveness!.category;
+    delete effectiveness!.category;
+    this.effectiveness = effectiveness! as {[type in I.TypeName]?: I.TypeEffectiveness};
   }
 }
 

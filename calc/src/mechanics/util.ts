@@ -94,11 +94,11 @@ export function getMoveEffectiveness(
     return 2;
   } else if (move.name === 'Flying Press') {
     return (
-      gen.types.get('fighting' as ID)!.damageTaken[type]! *
-      gen.types.get('flying' as ID)!.damageTaken[type]!
+      gen.types.get('fighting' as ID)!.effectiveness[type]! *
+      gen.types.get('flying' as ID)!.effectiveness[type]!
     );
   } else {
-    return gen.types.get(toID(move.type))!.damageTaken[type]!;
+    return gen.types.get(toID(move.type))!.effectiveness[type]!;
   }
 }
 

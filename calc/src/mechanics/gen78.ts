@@ -272,10 +272,10 @@ export function calculateSMSS(
     typeEffectiveness = 1;
   }
   if (defender.hasItem('Ring Target') && typeEffectiveness === 0) {
-    const damageTaken = gen.types.get(toID(move.type))!.damageTaken;
-    if (damageTaken[defender.type1]! === 0) {
+    const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
+    if (effectiveness[defender.type1]! === 0) {
       typeEffectiveness = typeEffect2;
-    } else if (defender.type2 && damageTaken[defender.type2]! === 0) {
+    } else if (defender.type2 && effectiveness[defender.type2]! === 0) {
       typeEffectiveness = typeEffect1;
     }
   }
@@ -328,7 +328,7 @@ export function calculateSMSS(
   if (
     field.weather === 'Strong Winds' &&
     defender.hasType('Flying') &&
-    gen.types.get(toID(move.type))!.damageTaken['Flying']! > 1
+    gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1
   ) {
     typeEffectiveness /= 2;
     description.weather = field.weather;

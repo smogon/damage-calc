@@ -145,7 +145,7 @@ export interface Species {
 }
 
 // TODO: rename these fields to be readable
-export interface Specie {
+export interface Specie extends Data<SpeciesName> {
   readonly kind: 'Species';
   readonly t1: TypeName; // type1
   readonly t2?: TypeName; // type2
@@ -176,7 +176,7 @@ export type TypeEffectiveness = 0 | 0.5 | 1 | 2;
 export interface Type extends Data<TypeName> {
   readonly kind: 'Type';
   readonly category?: MoveCategory;
-  readonly damageTaken: Readonly<{[type in TypeName]?: TypeEffectiveness}>;
+  readonly effectiveness: Readonly<{[type in TypeName]?: TypeEffectiveness}>;
 }
 
 export interface Natures {

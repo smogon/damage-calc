@@ -395,16 +395,16 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   if (defenderSide.isSR && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
     const rockType = gen.types.get('rock' as ID)!;
     const effectiveness =
-      rockType.damageTaken[defender.type1]! *
-      (defender.type2 ? rockType.damageTaken[defender.type2]! : 1);
+      rockType.effectiveness[defender.type1]! *
+      (defender.type2 ? rockType.effectiveness[defender.type2]! : 1);
     damage += Math.floor((effectiveness * defender.maxHP()) / 8);
     texts.push('Stealth Rock');
   }
   if (defenderSide.steelsurge && !defender.hasAbility('Magic Guard', 'Mountaineer')) {
     const steelType = gen.types.get('steel' as ID)!;
     const effectiveness =
-      steelType.damageTaken[defender.type1]! *
-      (defender.type2 ? steelType.damageTaken[defender.type2]! : 1);
+      steelType.effectiveness[defender.type1]! *
+      (defender.type2 ? steelType.effectiveness[defender.type2]! : 1);
     damage += Math.floor((effectiveness * defender.maxHP()) / 8);
     texts.push('Steelsurge');
   }
