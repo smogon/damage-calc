@@ -25,7 +25,7 @@ describe('Stats', () => {
       spe: 298,
     };
     const ADV: StatsTable = {hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299};
-    for (let gen = 1; gen <= 7; gen++) {
+    for (let gen = 1; gen <= 8; gen++) {
       for (const stat of STATS[gen]) {
         const val = Stats.calcStat(
           Generations.get(gen as GenerationNum),
@@ -41,9 +41,9 @@ describe('Stats', () => {
     }
 
     // Shedinja
-    expect(Stats.calcStat(Generations.get(7), 'hp', 1, 31, 252, 100, 'Jolly')).toBe(1);
+    expect(Stats.calcStat(Generations.get(8), 'hp', 1, 31, 252, 100, 'Jolly')).toBe(1);
     // no nature
-    expect(Stats.calcStat(Generations.get(7), 'atk', 100, 31, 252, 100)).toBe(299);
+    expect(Stats.calcStat(Generations.get(8), 'atk', 100, 31, 252, 100)).toBe(299);
   });
 
   test('dvs', () => {
