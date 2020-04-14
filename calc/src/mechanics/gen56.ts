@@ -228,7 +228,7 @@ export function calculateBWXY(
   }
   if (
     move.name === 'Sky Drop' &&
-    (defender.hasType('Flying') || (gen.num >= 6 && defender.weight >= 200) || field.isGravity)
+    (defender.hasType('Flying') || (gen.num > 5 && defender.weight >= 200) || field.isGravity)
   ) {
     damage.push(0);
     return result;
@@ -481,7 +481,7 @@ export function calculateBWXY(
     bpMods.push(0x1333);
     description.attackerItem = attacker.item;
   } else if (attacker.item === move.type + ' Gem') {
-    bpMods.push(gen.num >= 6 ? 0x14cd : 0x1800);
+    bpMods.push(gen.num > 5 ? 0x14cd : 0x1800);
     description.attackerItem = attacker.item;
   } else if (
     attacker.hasItem('Soul Dew') &&
@@ -504,7 +504,7 @@ export function calculateBWXY(
     bpMods.push(0x800);
     description.moveBP = move.bp / 2;
     description.weather = field.weather;
-  } else if (gen.num >= 6 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
+  } else if (gen.num > 5 && move.name === 'Knock Off' && !resistedKnockOffDamage) {
     bpMods.push(0x1800);
     description.moveBP = move.bp * 1.5;
   }
@@ -777,7 +777,7 @@ export function calculateBWXY(
     }
   }
   if (isCritical) {
-    baseDamage = Math.floor(baseDamage * (gen.num >= 6 ? 1.5 : 2));
+    baseDamage = Math.floor(baseDamage * (gen.num > 5 ? 1.5 : 2));
     description.isCritical = isCritical;
   }
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
@@ -801,10 +801,10 @@ export function calculateBWXY(
   description.isBurned = applyBurn;
   const finalMods = [];
   if (field.defenderSide.isReflect && move.category === 'Physical' && !isCritical) {
-    finalMods.push(field.gameType !== 'Singles' ? (gen.num >= 6 ? 0xaac : 0xa8f) : 0x800);
+    finalMods.push(field.gameType !== 'Singles' ? (gen.num > 5 ? 0xaac : 0xa8f) : 0x800);
     description.isReflect = true;
   } else if (field.defenderSide.isLightScreen && move.category === 'Special' && !isCritical) {
-    finalMods.push(field.gameType !== 'Singles' ? (gen.num >= 6 ? 0xaac : 0xa8f) : 0x800);
+    finalMods.push(field.gameType !== 'Singles' ? (gen.num > 5 ? 0xaac : 0xa8f) : 0x800);
     description.isLightScreen = true;
   }
   if (
