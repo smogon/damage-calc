@@ -72,7 +72,6 @@ const GSC = [
 
 const GSC_ONLY = [
   'Berry',
-  'Berry Juice',
   'Berserk Gene',
   'Bitter Berry',
   'Burnt Berry',

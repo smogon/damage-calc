@@ -868,7 +868,7 @@ const RBY: {[name: string]: SpeciesData} = {
 
 const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, {
   //gen 1 pokemon changes
-  Abra: {bs: {sa: 105, sd: 55}}, 
+  Abra: {bs: {sa: 105, sd: 55}},
   Aerodactyl: {bs: {sa: 60, sd: 75}},
   Alakazam: {bs: {sa: 135, sd: 85}},
   Arbok: {bs: {sa: 65, sd: 79}},
@@ -990,7 +990,7 @@ const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, {
   Sandslash: {bs: {sa: 45, sd: 55}},
   Scyther: {bs: {sa: 55, sd: 80}, canEvolve: true},
   Seadra: {bs: {sa: 95, sd: 45}, canEvolve: true},
-  Seaking: {bs: { sa: 65, sd: 80}},
+  Seaking: {bs: {sa: 65, sd: 80}},
   Seel: {bs: {sa: 45, sd: 70}},
   Shellder: {bs: {sa: 45, sd: 25}},
   Slowbro: {bs: {sa: 100, sd: 80}},

@@ -5,6 +5,16 @@ import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {STATS, Stats, StatsTable} from '../stats';
 
+const EV_ITEMS = [
+  'Macho Brace',
+  'Power Anklet',
+  'Power Band',
+  'Power Belt',
+  'Power Bracer',
+  'Power Lens',
+  'Power Weight',
+];
+
 export function isGrounded(pokemon: Pokemon, field: Field) {
   return (
     field.isGravity ||
@@ -42,7 +52,7 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
 
   if (pokemon.hasItem('Choice Scarf')) {
     speed = pokeRound(speed * 1.5);
-  } else if (pokemon.hasItem('Macho Brace', 'Iron Ball')) {
+  } else if (pokemon.hasItem('Iron Ball', ...EV_ITEMS)) {
     speed = pokeRound(speed / 2);
   } else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
     speed *= 2;
@@ -130,7 +140,7 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
 }
 
 export function checkKlutz(pokemon: Pokemon) {
-  if (pokemon.hasAbility('Klutz')) {
+  if (pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!)) {
     pokemon.item = '' as ItemName;
   }
 }

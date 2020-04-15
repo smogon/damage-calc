@@ -180,7 +180,13 @@ export function calculateGSC(
     description.isSwitching = true;
   }
 
-  if (getItemBoostType(attacker.item) === move.type) {
+  // In Gen 2 and no other gens, Dragon Fang in a no-op and Dragon Scale erroneously has its effect
+  const itemBoostType =
+    attacker.item === 'Dragon Fang'
+      ? undefined
+      : getItemBoostType(attacker.item === 'Dragon Scale' ? 'Dragon Fang' : attacker.item);
+
+  if (itemBoostType === move.type) {
     baseDamage = Math.floor(baseDamage * 1.1);
     description.attackerItem = attacker.item;
   }
