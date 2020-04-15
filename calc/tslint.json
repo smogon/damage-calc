@@ -1,6 +1,7 @@
 {
   "extends": "gts/tslint.json",
   "rules": {
+    "ban-ts-ignore": false,
     "variable-name": false,
     "new-parens": false,
     "switch-default": false,
