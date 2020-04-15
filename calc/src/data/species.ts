@@ -9,8 +9,8 @@ export interface SpeciesData {
     hp: number;
     at: number;
     df: number;
-    sa: number;
-    sd: number;
+    sa?: number;
+    sd?: number;
     sp: number;
     sl?: number;
   }; // baseStats
@@ -4506,6 +4506,14 @@ const BW: {[name: string]: SpeciesData} = extend(true, {}, DPP, {
     ab: 'No Guard',
   },
   Keldeo: {
+    t1: 'Water',
+    t2: 'Fighting',
+    bs: {hp: 91, at: 72, df: 90, sa: 129, sd: 90, sp: 108},
+    w: 48.5,
+    ab: 'Justified',
+    gender: 'N',
+  },
+  'Keldeo-Resolute': {
     t1: 'Water',
     t2: 'Fighting',
     bs: {hp: 91, at: 72, df: 90, sa: 129, sd: 90, sp: 108},

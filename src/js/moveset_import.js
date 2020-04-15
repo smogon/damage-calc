@@ -272,9 +272,6 @@ function checkExeptions(poke) {
 	case 'Gastrodon-East':
 		poke = "Gastrodon";
 		break;
-	case 'Keldeo-Resolute':
-		poke = "Keldeo";
-		break;
 	case 'Mimikyu-Busted-Totem':
 		poke = "Mimikyu-Totem";
 		break;
