@@ -1,6 +1,7 @@
 dist/
 node_modules/
 eslint-cache/
+coverage/
 .eslintcache
 .DS_Store
 Thumbs.db
