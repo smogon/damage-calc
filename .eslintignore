@@ -1,6 +1,0 @@
-select2
-node_modules
-*.min.js
-dist
-calc
-src/js/data
