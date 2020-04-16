@@ -1,5 +1,6 @@
 import {calculate, Pokemon, Move, Field} from '../index';
-import {AbilityName} from '../data/interface';
+import {AbilityName, GenerationNum} from '../data/interface';
+import {moveCursor} from 'readline';
 
 declare global {
   namespace jest {
@@ -306,17 +307,34 @@ describe('calc', () => {
     });
 
     test('Night Shade and Seismic Toss', () => {
-      const mew = new Pokemon(1, 'Mew', {level: 50});
-      const vulpix = new Pokemon(1, 'Vulpix', {level: 100});
-      const nightshade = new Move(1, 'Night Shade');
-      const stoss = new Move(1, 'Seismic Toss');
-      let result = calculate(1, mew, vulpix, stoss);
-      expect(result.damage).toBeRange(50, 50);
-      expect(result.desc()).toBe(
-        'Mew Seismic Toss vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO'
-      );
-      result = calculate(1, mew, vulpix, nightshade);
-      expect(result.damage).toBeRange(50, 50);
+      for (let genNum = 1; genNum <= 8; genNum++) {
+        const gen = genNum as GenerationNum;
+        const mew = new Pokemon(gen, 'Mew', {level: 50});
+        const vulpix = new Pokemon(gen, 'Vulpix', {level: 100});
+        const nightshade = new Move(gen, 'Night Shade');
+        const stoss = new Move(gen, 'Seismic Toss');
+        let result = calculate(gen, mew, vulpix, stoss);
+        if (gen > 2) {
+          expect(result.damage).toBeRange(50, 50);
+          expect(result.desc()).toBe(
+            'Mew Seismic Toss vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO'
+          );
+        } else {
+          expect(result.damage).toBeRange(50, 50);
+          expect(result.desc()).toBe(
+            'Mew Seismic Toss vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO'
+          );
+        }
+        result = calculate(gen, mew, vulpix, nightshade);
+        if (gen > 2) {
+          expect(result.damage).toBeRange(50, 50);
+          expect(result.desc()).toBe(
+            'Mew Night Shade vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO'
+          );
+        } else {
+          expect(result.damage).toBeRange(50, 50);
+        }
+      }
     });
 
     test('Critical hits should ignore attack decreasers', () => {
@@ -325,42 +343,92 @@ describe('calc', () => {
           isReflect: true,
         },
       });
-      const mew = new Pokemon(1, 'Mew', {level: 100, status: 'Burned'});
-      const vulpix = new Pokemon(1, 'Vulpix', {level: 100});
-      const Explosion = new Move(1, 'Explosion', {isCrit: true});
-      let result = calculate(1, mew, vulpix, Explosion, field);
-      mew.boosts.atk = 2;
-      vulpix.boosts.def = 2;
-      expect(result.damage).toBeRange(799, 939);
-      expect(result.desc()).toBe(
-        'Mew Explosion vs. Vulpix on a critical hit: 799-939 (286.3 - 336.5%) -- guaranteed OHKO'
-      );
-      Explosion.isCrit = false;
-      result = calculate(1, mew, vulpix, Explosion, field);
-      expect(result.damage).toBeRange(102, 120);
+      for (let genNum = 1; genNum <= 8; genNum++) {
+        const gen = genNum as GenerationNum;
+        const mew = new Pokemon(gen, 'Mew', {status: 'Burned'});
+        const vulpix = new Pokemon(gen, 'Vulpix');
+        const Explosion = new Move(gen, 'Explosion', {isCrit: true});
+        let result = calculate(gen, mew, vulpix, Explosion, field);
+        mew.boosts.atk = 2;
+        vulpix.boosts.def = 2;
+        if (gen < 2) {
+          expect(result.damage).toBeRange(799, 939);
+          expect(result.desc()).toBe(
+            'Mew Explosion vs. Vulpix on a critical hit: 799-939 (286.3 - 336.5%) -- guaranteed OHKO'
+          );
+        } else if (gen < 5 && gen > 2) {
+          expect(result.damage).toBeRange(729, 858);
+          expect(result.desc()).toBe(
+            '0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 729-858 (335.9 - 395.3%) -- guaranteed OHKO'
+          );
+        } else if (gen === 5) {
+          expect(result.damage).toBeRange(364, 429);
+          expect(result.desc()).toBe(
+            '0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 364-429 (167.7 - 197.6%) -- guaranteed OHKO'
+          );
+        } else if (gen >= 6) {
+          expect(result.damage).toBeRange(273, 321);
+          expect(result.desc()).toBe(
+            '0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 273-321 (125.8 - 147.9%) -- guaranteed OHKO'
+          );
+        }
+        Explosion.isCrit = false;
+        result = calculate(gen, mew, vulpix, Explosion, field);
+        if (gen === 1) {
+          expect(result.damage).toBeRange(102, 120);
+        } else if (gen === 2) {
+          expect(result.damage).toBeRange(149, 176);
+        } else if (gen > 2 && gen < 5) {
+          expect(result.damage).toBeRange(182, 215);
+        } else {
+          expect(result.damage).toBeRange(91, 107);
+        }
+      }
     });
 
     test('Damage should be 0 when applicable', () => {
+      for (let genNum = 1; genNum <= 8; genNum++) {
+        const gen = genNum as GenerationNum;
+        const snorlax = new Pokemon(gen, 'Snorlax');
+        const vulpix = new Pokemon(gen, 'Vulpix');
+        const gengar = new Pokemon(gen, 'Gengar');
+        const barrier = new Move(gen, 'Barrier');
+        const cometPunch = new Move(gen, 'Comet Punch');
+        const hyperBeam = new Move(gen, 'Hyper Beam');
+        let result = calculate(gen, snorlax, vulpix, barrier);
+        expect(result.damage).toBeRange(0, 0);
+        expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
+        result = calculate(gen, snorlax, vulpix, cometPunch);
+        if (gen < 3) {
+          expect(result.damage).toBeRange(36, 43);
+          expect(result.desc()).toBe(
+            'Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- guaranteed 3HKO'
+          );
+        } else if (gen === 3) {
+          expect(result.damage).toBeRange(44, 52);
+          expect(result.desc()).toBe(
+            '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 132-156 (60.8 - 71.8%) -- guaranteed 2HKO'
+          );
+        } else {
+          expect(result.damage).toBeRange(43, 52);
+          expect(result.desc()).toBe(
+            '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 129-156 (59.4 - 71.8%) -- guaranteed 2HKO'
+          );
+        }
+        result = calculate(gen, snorlax, gengar, hyperBeam);
+        expect(result.damage).toBeRange(0, 0);
+      }
       const field = new Field({
         defenderSide: {
           isLightScreen: true,
         },
       });
-      const snorlax = new Pokemon(1, 'Snorlax', {level: 100});
-      const vulpix = new Pokemon(1, 'Vulpix', {level: 100});
-      const gengar = new Pokemon(1, 'Vulpix', {level: 100});
-      const barrier = new Move(1, 'Barrier');
-      const cometPunch = new Move(1, 'Comet Punch');
-      const hyperBeam = new Move(1, 'Hyper Beam');
-      let result = calculate(1, snorlax, vulpix, barrier, field);
-      expect(result.damage).toBeRange(0, 0);
+      const vulpix = new Pokemon(1, 'Vulpix');
+      const gengar = new Pokemon(1, 'Gengar');
+      const surf = new Move(1, 'Surf');
+      const result = calculate(1, gengar, vulpix, surf, field);
       expect(result.desc()).toBe(
-        'Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)'
-      );
-      result = calculate(1, snorlax, vulpix, cometPunch, field);
-      expect(result.damage).toBeRange(36, 43);
-      expect(result.desc()).toBe(
-        'Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- guaranteed 3HKO'
+        'Gengar Surf vs. Vulpix through Light Screen: 108-128 (38.7 - 45.8%) -- guaranteed 3HKO'
       );
     });
 
