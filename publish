@@ -2,15 +2,11 @@
 
 # Setup
 
-TMP=$(mktemp -qdt "$(basename $0).XXXXXX" 2>/dev/null || mktemp -q -d)
-trap "rm -rf $TMP" 0
-
 rev=$(git rev-parse --short HEAD | tr -d "\n")
 
 # Build
 
 node build
-cp -a dist/ $TMP
 
 # Checkout: master -> gh-pages
 
@@ -18,7 +14,7 @@ git checkout gh-pages
 
 # Publish
 
-cp -a $TMP/* .
+cp -a dist/* .
 
 git add -A .
 git commit -m "Publish: '${rev}'"
