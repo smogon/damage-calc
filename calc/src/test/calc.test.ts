@@ -305,6 +305,65 @@ describe('calc', () => {
       expect(result.damage).toBeRange(190, 224);
     });
 
+    test('Night Shade and Seismic Toss', () => {
+      const mew = new Pokemon(1, 'Mew', {level: 50});
+      const vulpix = new Pokemon(1, 'Vulpix', {level: 100});
+      const nightshade = new Move(1, 'Night Shade');
+      const stoss = new Move(1, 'Seismic Toss');
+      let result = calculate(1, mew, vulpix, stoss);
+      expect(result.damage).toBeRange(50, 50);
+      expect(result.desc()).toBe(
+        'Mew Seismic Toss vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO'
+      );
+      result = calculate(1, mew, vulpix, nightshade);
+      expect(result.damage).toBeRange(50, 50);
+    });
+
+    test('Critical hits should ignore attack decreasers', () => {
+      const field = new Field({
+        defenderSide: {
+          isReflect: true,
+        },
+      });
+      const mew = new Pokemon(1, 'Mew', {level: 100, status: 'Burned'});
+      const vulpix = new Pokemon(1, 'Vulpix', {level: 100});
+      const Explosion = new Move(1, 'Explosion', {isCrit: true});
+      let result = calculate(1, mew, vulpix, Explosion, field);
+      mew.boosts.atk = 2;
+      vulpix.boosts.def = 2;
+      expect(result.damage).toBeRange(799, 939);
+      expect(result.desc()).toBe(
+        'Mew Explosion vs. Vulpix on a critical hit: 799-939 (286.3 - 336.5%) -- guaranteed OHKO'
+      );
+      Explosion.isCrit = false;
+      result = calculate(1, mew, vulpix, Explosion, field);
+      expect(result.damage).toBeRange(102, 120);
+    });
+
+    test('Damage should be 0 when applicable', () => {
+      const field = new Field({
+        defenderSide: {
+          isLightScreen: true,
+        },
+      });
+      const snorlax = new Pokemon(1, 'Snorlax', {level: 100});
+      const vulpix = new Pokemon(1, 'Vulpix', {level: 100});
+      const gengar = new Pokemon(1, 'Vulpix', {level: 100});
+      const barrier = new Move(1, 'Barrier');
+      const cometPunch = new Move(1, 'Comet Punch');
+      const hyperBeam = new Move(1, 'Hyper Beam');
+      let result = calculate(1, snorlax, vulpix, barrier, field);
+      expect(result.damage).toBeRange(0, 0);
+      expect(result.desc()).toBe(
+        'Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)'
+      );
+      result = calculate(1, snorlax, vulpix, cometPunch, field);
+      expect(result.damage).toBeRange(36, 43);
+      expect(result.desc()).toBe(
+        'Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- guaranteed 3HKO'
+      );
+    });
+
     test('wring out', () => {
       const smeargle = new Pokemon(7, 'Smeargle', {level: 50, ability: 'Technician'});
       const blissey = new Pokemon(7, 'Blissey', {level: 50, evs: {hp: 252}, curHP: 184});
