@@ -65,7 +65,7 @@ export function calculate(
   defender: A.Pokemon,
   move: A.Move,
   field?: A.Field
-) {
+): A.Result {
   return (Acalculate || A.calculate)(
     typeof gen === 'number' ? Generations.get(gen) : gen,
     attacker,
