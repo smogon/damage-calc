@@ -84,6 +84,39 @@ describe('calc', () => {
         }
       });
     });
+
+    inGens(7, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Psychic Terrain (gen ${gen})`, () => {
+        const result = calculate(
+          Pokemon('Mewtwo', {
+            nature: 'Timid',
+            evs: {spa: 252},
+            boosts: {spa: 2},
+          }),
+          Pokemon('Milotic', {
+            item: 'Flame Orb',
+            nature: 'Bold',
+            ability: 'Marvel Scale',
+            evs: {hp: 248, def: 184},
+            status: 'Burned',
+            boosts: {spd: 1},
+          }),
+          Move('Psystrike'),
+          Field({terrain: 'Psychic'})
+        );
+        if (gen < 8) {
+          expect(result.damage).toBeRange(331, 391);
+          expect(result.desc()).toBe(
+            '+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 331-391 (84.2 - 99.4%) -- guaranteed 2HKO after burn damage'
+          );
+        } else {
+          expect(result.damage).toBeRange(288, 339);
+          expect(result.desc()).toBe(
+            '+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 288-339 (73.2 - 86.2%) -- guaranteed 2HKO after burn damage'
+          );
+        }
+      });
+    });
   });
 
   describe('Gen 1', () => {
@@ -464,7 +497,7 @@ describe('calc', () => {
   });
 
   describe('Gen 8', () => {
-    inGen(8, ({calculate, Pokemon, Move}) => {
+    inGen(8, ({calculate, Pokemon, Move, Field}) => {
       test('Basic: Gengar vs. Chansey', () => {
         const result = calculate(
           Pokemon('Gengar', {

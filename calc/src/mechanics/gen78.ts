@@ -652,15 +652,16 @@ export function calculateSMSS(
     description.moveBP = move.bp * 2;
   }
 
+  const terrainMultiplier = gen.num > 7 ? 0x14cd : 0x1800;
   if (isGrounded(attacker, field)) {
     if (field.terrain === 'Electric' && move.type === 'Electric') {
-      bpMods.push(0x1800);
+      bpMods.push(terrainMultiplier);
       description.terrain = field.terrain;
     } else if (field.terrain === 'Grassy' && move.type === 'Grass') {
-      bpMods.push(0x1800);
+      bpMods.push(terrainMultiplier);
       description.terrain = field.terrain;
     } else if (field.terrain === 'Psychic' && move.type === 'Psychic') {
-      bpMods.push(0x1800);
+      bpMods.push(terrainMultiplier);
       description.terrain = field.terrain;
     }
   }
