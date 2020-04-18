@@ -2741,7 +2741,7 @@ const DPP: {
     hasSecondaryEffect: true,
     maxPower: 130,
   },
-  Judgment: {
+  Judgement: {
     bp: 100,
     type: 'Normal',
     category: 'Special',
@@ -5404,7 +5404,7 @@ const SM: {
     zp: 180,
     maxPower: 130,
   },
-  Judgment: {
+  Judgement: {
     zp: 180,
     maxPower: 130,
   },
