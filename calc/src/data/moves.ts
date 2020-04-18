@@ -36,6 +36,303 @@ export interface MoveData {
 const RBY: {
   [name: string]: MoveData;
 } = {
+  // TODO: Unsorted
+  Absorb: {
+    bp: 20,
+    type: 'Grass',
+    category: 'Special',
+  },
+  Barrage: {
+    bp: 15,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Bide: {
+    bp: 0,
+    type: '???',
+    category: 'Physical',
+  },
+  Bite: {
+    bp: 60,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Bubble: {
+    bp: 20,
+    type: 'Water',
+    category: 'Special',
+  },
+  Constrict: {
+    bp: 10,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Counter: {
+    bp: 0,
+    type: 'Fighting',
+    category: 'Physical',
+  },
+  'Dizzy Punch': {
+    bp: 70,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Double Slap': {
+    bp: 15,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Dragon Rage': {
+    bp: 1,
+    type: 'Dragon',
+    category: 'Special',
+  },
+  Fissure: {
+    bp: 0,
+    type: 'Ground',
+    category: 'Physical',
+  },
+  'Focus Energy': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Fury Attack': {
+    bp: 15,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Guillotine: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Horn Drill': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Karate Chop': {
+    bp: 50,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Metronome: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Minimize: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Mist: {
+    bp: 0,
+    type: 'Ice',
+    category: 'Status',
+  },
+  'Petal Dance': {
+    bp: 70,
+    type: 'Grass',
+    category: 'Special',
+  },
+  'Poison Sting': {
+    bp: 15,
+    type: 'Poison',
+    category: 'Physical',
+  },
+  Psywave: {
+    bp: 1,
+    type: 'Psychic',
+    category: 'Special',
+  },
+  Rage: {
+    bp: 20,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Razor Wind': {
+    bp: 80,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Sonic Boom': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Spike Cannon': {
+    bp: 20,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Growl: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Leer: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Low Kick': {
+    bp: 50,
+    type: 'Fighting',
+    category: 'Physical',
+  },
+  'Poison Gas': {
+    bp: 0,
+    type: 'Poison',
+    category: 'Status',
+  },
+  'Poison Powder': {
+    bp: 0,
+    type: 'Poison',
+    category: 'Status',
+  },
+  'String Shot': {
+    bp: 0,
+    type: 'Bug',
+    category: 'Status',
+  },
+  'Tail Whip': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Flash: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Vine Whip': {
+    bp: 35,
+    type: 'Grass',
+    category: 'Special',
+  },
+  Lick: {
+    bp: 20,
+    type: 'Ghost',
+    category: 'Physical',
+  },
+  Smog: {
+    bp: 20,
+    type: 'Poison',
+    category: 'Physical',
+  },
+  Supersonic: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Kinesis: {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  Sharpen: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Confusion: {
+    bp: 50,
+    type: 'Psychic',
+    category: 'Special',
+  },
+  Cut: {
+    bp: 50,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Ember: {
+    bp: 40,
+    type: 'Fire',
+    category: 'Special',
+  },
+  Harden: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Headbutt: {
+    bp: 70,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Horn Attack': {
+    bp: 65,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Paleo Wave': {
+    bp: 85,
+    type: 'Rock',
+    category: 'Physical',
+  },
+  'Pay Day': {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Peck: {
+    bp: 35,
+    type: 'Flying',
+    category: 'Physical',
+  },
+  Pound: {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Psybeam: {
+    bp: 65,
+    type: 'Psychic',
+    category: 'Special',
+  },
+  Scratch: {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Shadow Strike': {
+    bp: 80,
+    type: 'Ghost',
+    category: 'Physical',
+  },
+  Slam: {
+    bp: 80,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Splash: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Strength: {
+    bp: 80,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Thunder Shock': {
+    bp: 40,
+    type: 'Electric',
+    category: 'Special',
+  },
+  'Vise Grip': {
+    bp: 55,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Withdraw: {
+    bp: 0,
+    type: 'Water',
+    category: 'Status',
+  },
+  // Sorted
   '(No Move)': {
     bp: 0,
     type: 'Normal',
@@ -700,6 +997,158 @@ const RBY: {
 const GSC: {
   [name: string]: MoveData;
 } = extend(true, {}, RBY, {
+  // TODO Unsorted
+  Acid: {
+    bp: 40,
+    type: 'Poison',
+    category: 'Physical',
+  },
+  Attract: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Beat Up': {
+    bp: 10,
+    type: 'Dark',
+    category: 'Special',
+  },
+  Detect: {
+    bp: 0,
+    type: 'Fighting',
+    category: 'Status',
+  },
+  Foresight: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Lock-On': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Mind Reader': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Mirror Coat': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Special',
+  },
+  Nightmare: {
+    bp: 0,
+    type: 'Ghost',
+    category: 'Status',
+  },
+  Outrage: {
+    bp: 90,
+    type: 'Dragon',
+    category: 'Special',
+  },
+  'Powder Snow': {
+    bp: 40,
+    type: 'Ice',
+    category: 'Special',
+  },
+  'Psych Up': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Sandstorm: {
+    bp: 0,
+    type: 'Rock',
+    category: 'Status',
+  },
+  Sketch: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Spite: {
+    bp: 0,
+    type: 'Ghost',
+    category: 'Status',
+  },
+  'Sweet Scent': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Triple Kick': {
+    bp: 10,
+    type: 'Fighting',
+    category: 'Physical',
+  },
+  Twister: {
+    bp: 40,
+    type: 'Dragon',
+    category: 'Special',
+  },
+  'Feint Attack': {
+    bp: 60,
+    type: 'Dark',
+    category: 'Special',
+  },
+  'Hidden Power': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Mega Drain': {
+    bp: 40,
+    type: 'Grass',
+    category: 'Special',
+  },
+  'Cotton Spore': {
+    bp: 0,
+    type: 'Grass',
+    category: 'Status',
+  },
+  'Fury Cutter': {
+    bp: 10,
+    type: 'Bug',
+    category: 'Physical',
+  },
+  Magnitude: {
+    bp: 0,
+    type: 'Ground',
+    category: 'Physical',
+  },
+  'Scary Face': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Snore: {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'False Swipe': {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Mud-Slap': {
+    bp: 20,
+    type: 'Ground',
+    category: 'Physical',
+  },
+  Octazooka: {
+    bp: 65,
+    type: 'Water',
+    category: 'Special',
+  },
+  'Vital Throw': {
+    bp: 70,
+    type: 'Fighting',
+    category: 'Physical',
+  },
+  // Sorted
   Aeroblast: {
     bp: 100,
     type: 'Flying',
@@ -1231,12 +1680,141 @@ const GSC: {
   },
 });
 
-delete GSC['Acid'];
-delete GSC['Mega Drain'];
-
 const ADV: {
   [name: string]: MoveData;
 } = extend(true, {}, GSC, {
+  // TODO Unsorted
+  'Arm Thrust': {
+    bp: 15,
+    type: 'Fighting',
+    category: 'Physical',
+  },
+  Assist: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Block: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Camouflage: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Charge: {
+    bp: 0,
+    type: 'Electric',
+    category: 'Status',
+  },
+  'Follow Me': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Hail: {
+    bp: 0,
+    type: 'Ice',
+    category: 'Status',
+  },
+  'Nature Power': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Odor Sleuth': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Role Play': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Skill Swap': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Smelling Salts': {
+    bp: 60,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Spit Up': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  Swallow: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Tickle: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Imprison: {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Mud Sport': {
+    bp: 0,
+    type: 'Ground',
+    category: 'Status',
+  },
+  Snatch: {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  Torment: {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  'Water Sport': {
+    bp: 0,
+    type: 'Water',
+    category: 'Status',
+  },
+  'Metal Sound': {
+    bp: 0,
+    type: 'Steel',
+    category: 'Status',
+  },
+  'Ice Ball': {
+    bp: 30,
+    type: 'Ice',
+    category: 'Special',
+  },
+  'Fake Tears': {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  'Feather Dance': {
+    bp: 0,
+    type: 'Flying',
+    category: 'Status',
+  },
+  Flatter: {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  Grudge: {
+    bp: 0,
+    type: 'Ghost',
+    category: 'Status',
+  },
+  // Sorted
   'Aerial Ace': {
     bp: 60,
     type: 'Flying',
@@ -1738,6 +2316,78 @@ const ADV: {
 const DPP: {
   [name: string]: MoveData;
 } = extend(true, {}, ADV, {
+  // TODO Unsorted
+  Embargo: {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  Gravity: {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Heal Block': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Lucky Chant': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Metal Burst': {
+    bp: 0,
+    type: 'Steel',
+    category: 'Physical',
+  },
+  'Miracle Eye': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Power Trick': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Worry Seed': {
+    bp: 0,
+    type: 'Grass',
+    category: 'Status',
+  },
+  'Gastro Acid': {
+    bp: 0,
+    type: 'Poison',
+    category: 'Status',
+  },
+  Captivate: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Heart Swap': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Trump Card': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Special',
+  },
+  'Guard Swap': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Power Swap': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  // Sorted
   Acupressure: {
     bp: 0,
     type: 'Normal',
@@ -2488,6 +3138,63 @@ const DPP: {
 const BW: {
   [name: string]: MoveData;
 } = extend(true, {}, DPP, {
+  // TODO Unsorted
+  Bestow: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Echoed Voice': {
+    bp: 40,
+    type: 'Normal',
+    category: 'Special',
+  },
+  Entrainment: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Magic Room': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Simple Beam': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Telekinesis: {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Wonder Room': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Ally Switch': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  Quash: {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  'After You': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Guard Split': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  // Sorted
   'Acid Spray': {
     bp: 40,
     type: 'Poison',
@@ -3128,6 +3835,113 @@ delete BW['Faint Attack'];
 const XY: {
   [name: string]: MoveData;
 } = extend(true, {}, BW, {
+  // TODO Unsorted
+  'Misty Terrain': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  Powder: {
+    bp: 0,
+    type: 'Bug',
+    category: 'Status',
+  },
+  'Grassy Terrain': {
+    bp: 0,
+    type: 'Grass',
+    category: 'Status',
+  },
+  'Ion Deluge': {
+    bp: 0,
+    type: 'Electric',
+    category: 'Status',
+  },
+  Rototiller: {
+    bp: 0,
+    type: 'Ground',
+    category: 'Status',
+  },
+  'Aromatic Mist': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  'Baby-Doll Eyes': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  Celebrate: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Crafty Shield': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  'Eerie Impulse': {
+    bp: 0,
+    type: 'Electric',
+    category: 'Status',
+  },
+  Electrify: {
+    bp: 0,
+    type: 'Electric',
+    category: 'Status',
+  },
+  'Fairy Lock': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  'Fairy Wind': {
+    bp: 40,
+    type: 'Fairy',
+    category: 'Special',
+  },
+  'Flower Shield': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  'Hold Back': {
+    bp: 40,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  'Magnetic Flux': {
+    bp: 0,
+    type: 'Electric',
+    category: 'Status',
+  },
+  'Mat Block': {
+    bp: 0,
+    type: 'Fighting',
+    category: 'Status',
+  },
+  'Noble Roar': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Play Nice': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Topsy-Turvy': {
+    bp: 0,
+    type: 'Dark',
+    category: 'Status',
+  },
+  'Venom Drench': {
+    bp: 0,
+    type: 'Poison',
+    category: 'Status',
+  },
+  // Sorted
   'Air Cutter': {
     bp: 60,
     maxPower: 110,
@@ -3652,6 +4466,128 @@ const XY: {
 const SM: {
   [name: string]: MoveData;
 } = extend(true, {}, XY, {
+  // TODO Unsorted
+  'Baddy Bad': {
+    bp: 90,
+    type: 'Dark',
+    category: 'Special',
+  },
+  'Bouncy Bubble': {
+    bp: 90,
+    type: 'Water',
+    category: 'Special',
+  },
+  'Buzzy Buzz': {
+    bp: 90,
+    type: 'Electric',
+    category: 'Special',
+  },
+  'Extreme Evoboost': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Floral Healing': {
+    bp: 0,
+    type: 'Fairy',
+    category: 'Status',
+  },
+  'Freezy Frost': {
+    bp: 90,
+    type: 'Ice',
+    category: 'Special',
+  },
+  'Glitzy Glow': {
+    bp: 90,
+    type: 'Psychic',
+    category: 'Special',
+  },
+  Instruct: {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Psychic Terrain': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Sappy Seed': {
+    bp: 90,
+    type: 'Grass',
+    category: 'Physical',
+  },
+  'Sizzly Slide': {
+    bp: 90,
+    type: 'Fire',
+    category: 'Physical',
+  },
+  'Sparkly Swirl': {
+    bp: 90,
+    type: 'Fairy',
+    category: 'Special',
+  },
+  Spotlight: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Toxic Thread': {
+    bp: 0,
+    type: 'Poison',
+    category: 'Status',
+  },
+  'Zippy Zap': {
+    bp: 50,
+    type: 'Electric',
+    category: 'Physical',
+  },
+  'Floaty Fall': {
+    bp: 90,
+    type: 'Flying',
+    category: 'Physical',
+  },
+  'Gear Up': {
+    bp: 0,
+    type: 'Steel',
+    category: 'Status',
+  },
+  'Laser Focus': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Pika Papow': {
+    bp: 0,
+    type: 'Electric',
+    category: 'Special',
+  },
+  Purify: {
+    bp: 0,
+    type: 'Poison',
+    category: 'Status',
+  },
+  'Speed Swap': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
+  },
+  'Splishy Splash': {
+    bp: 90,
+    type: 'Water',
+    category: 'Special',
+  },
+  'Tearful Look': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Veevee Volley': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
+  // Sorted
   '10,000,000 Volt Thunderbolt': {
     bp: 195,
     type: 'Electric',
@@ -6085,6 +7021,25 @@ const SS: {
     maxPower: 140,
   },
 });
+
+const LGPE_MOVES = [
+  'Baddy Bad',
+  'Bouncy Bubble',
+  'Buzzy Buzz',
+  'Freezy Frost',
+  'Glitzy Glow',
+  'Sappy Seed',
+  'Sizzly Slide',
+  'Sparkly Swirl',
+  'Zippy Zap',
+  'Floaty Fall',
+  'Pika Papow',
+  'Splishy Splash',
+  'Veevee Volley',
+];
+for (const m of LGPE_MOVES) {
+  delete SS[m];
+}
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 
