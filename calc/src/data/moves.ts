@@ -439,14 +439,6 @@ const RBY: {
     bp: 0,
     type: 'Normal',
   },
-  //TODO Do Counter mechanics
-  /*'Counter': {
-    bp: 0,
-    type: 'Fighting',
-    makesContact: true,
-    zp: 100,
-    maxPower: 75,
-  },*/
   'Defense Curl': {
     bp: 0,
     type: 'Normal',
@@ -1469,11 +1461,6 @@ const GSC: {
     bp: 0,
     type: 'Normal',
   },
-  //TODO Do Mirror Coat mechanics
-  /*'Mirror Coat': {
-    bp: 0,
-    type: 'Psychic',
-  },*/
   'Morning Sun': {
     bp: 0,
     type: 'Normal',
@@ -1483,11 +1470,6 @@ const GSC: {
     bp: 0,
     type: 'Normal',
   },
-  //TODO Do Nightmare mechanics
-  /*'Nightmare': {
-    bp: 0,
-    type: 'Ghost',
-  },*/
   'Pain Split': {
     bp: 0,
     type: 'Normal',
@@ -2816,14 +2798,6 @@ const DPP: {
     bp: 0,
     type: 'Electric',
   },
-  //TODO Do Metal Burst mechanics
-  /*'Metal Burst': {
-    bp: 0,
-    category: 'Physical',
-    type: 'Steel',
-    zp: 100,
-    maxPower: 100,
-  },*/
   'Me First': {
     bp: 0,
     type: 'Normal',
