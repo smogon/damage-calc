@@ -506,6 +506,14 @@ export function calculateSMSS(
 
   const bpMods = [];
 
+  // Research from DaWoblefet and Anubis show that the Technician modifier is calculated at the
+  // very beginning in Gen 8 as opposed to later on after several mods have been applied like Gen 7
+  // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
+  if (gen.num === 8 && attacker.hasAbility('Technician') && basePower <= 60) {
+    bpMods.push(0x1800);
+    description.attackerAbility = attacker.ability;
+  }
+
   const isAttackerAura = attacker.ability === move.type + ' Aura';
   const isDefenderAura = defender.ability === move.type + ' Aura';
   const auraActive = isAttackerAura || isDefenderAura;
@@ -577,11 +585,16 @@ export function calculateSMSS(
     description.attackerAbility = attacker.ability;
   }
 
-  // If the basePower before this point would trigger Technician, don't apply it
-  const bp = pokeRound((basePower * chainMods(bpMods)) / 0x1000);
+  if (gen.num === 7) {
+    // Apply bpMods to determine whether the base power at this point in time triggers Technician
+    const bp = pokeRound((basePower * chainMods(bpMods)) / 0x1000);
+    if (attacker.hasAbility('Technician') && bp <= 60) {
+      bpMods.push(0x1800);
+      description.attackerAbility = attacker.ability;
+    }
+  }
 
   if (
-    (attacker.hasAbility('Technician') && bp <= 60) ||
     (attacker.hasAbility('Flare Boost') &&
       attacker.hasStatus('Burned') &&
       move.category === 'Special') ||
