@@ -44,7 +44,7 @@ describe('calc', () => {
       test(`Critical hits ignore attack decreases (gen ${gen})`, () => {
         const field = Field({defenderSide: {isReflect: true}});
 
-        const mew = Pokemon('Mew', {status: 'Burned'});
+        const mew = Pokemon('Mew', {status: 'brn'});
         const vulpix = Pokemon('Vulpix');
         const explosion = Move('Explosion', {isCrit: true});
         let result = calculate(mew, vulpix, explosion, field);
@@ -98,7 +98,7 @@ describe('calc', () => {
             nature: 'Bold',
             ability: 'Marvel Scale',
             evs: {hp: 248, def: 184},
-            status: 'Burned',
+            status: 'brn',
             boosts: {spd: 1},
           }),
           Move('Psystrike'),
@@ -157,7 +157,7 @@ describe('calc', () => {
       });
 
       test('Present', () => {
-        const attacker = Pokemon('Togepi', {level: 5, boosts: {atk: -6}, status: 'Burned'});
+        const attacker = Pokemon('Togepi', {level: 5, boosts: {atk: -6}, status: 'brn'});
         const defender = Pokemon('Umbreon', {boosts: {def: 6}});
         const move = Move('Present');
         const field = Field({defenderSide: {isReflect: true}});

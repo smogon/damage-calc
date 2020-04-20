@@ -99,7 +99,7 @@ export function getRecovery(
   let text = '';
 
   const ignoresShellBell =
-    gen.num === 3 && (move.name === 'Doom Desire' || move.name === 'Future Sight');
+    gen.num === 3 && move.named('Doom Desire', 'Future Sight');
   if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
     const max = defender.maxHP() / 8;
     recovery[0] += Math.min(minDamage / 8, max);
@@ -147,17 +147,9 @@ export function getRecoil(
       maxRecoilDamage = toDisplay(notation, defender.curHP * move.hasRecoil, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
-        notation,
-        Math.min(minDamage, defender.curHP) * move.hasRecoil,
-        attacker.maxHP(),
-        100
-      );
+        notation, Math.min(minDamage, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(
-        notation,
-        Math.min(maxDamage, defender.curHP) * move.hasRecoil,
-        attacker.maxHP(),
-        100
-      );
+        notation, Math.min(maxDamage, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
     }
     if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
@@ -172,17 +164,9 @@ export function getRecoil(
       maxRecoilDamage = toDisplay(notation, defender.curHP * genMultiplier, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
-        notation,
-        Math.min(minDamage, defender.maxHP()) * genMultiplier,
-        attacker.maxHP(),
-        100
-      );
+        notation,  Math.min(minDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(
-        notation,
-        Math.min(maxDamage, defender.maxHP()) * genMultiplier,
-        attacker.maxHP(),
-        100
-      );
+        notation, Math.min(maxDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
     }
 
     recoil = [minRecoilDamage, maxRecoilDamage];
@@ -191,9 +175,7 @@ export function getRecoil(
         recoil = toDisplay(notation, 1, attacker.maxHP());
         text = '1hp damage on miss';
         break;
-      case 2:
-      case 3:
-      case 4:
+      case 2: case 3: case 4:
         if (defender.hasType('Ghost')) {
           if (gen.num === 4) {
             const gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
@@ -254,11 +236,10 @@ export function getKOChance(
   const hazards = getHazards(gen, defender, field.defenderSide);
   const eot = getEndOfTurn(gen, attacker, defender, move, field);
   const toxicCounter =
-    defender.status === 'Badly Poisoned' && defender.ability !== 'Magic Guard'
-      ? defender.toxicCounter
-      : 0;
+     defender.hasStatus('tox') && !defender.hasAbility('Magic Guard') ? defender.toxicCounter : 0;
 
-  // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it to an approximate distribution
+  // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it
+  // to an approximate distribution
   let qualifier = '';
   if (move.hits > 1) {
     qualifier = 'approx. ';
@@ -272,14 +253,7 @@ export function getKOChance(
 
   if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
     const chance = computeKOChance(
-      damage,
-      defender.curHP - hazards.damage,
-      0,
-      1,
-      1,
-      defender.maxHP(),
-      toxicCounter
-    );
+      damage, defender.curHP - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter);
     if (chance === 1) {
       return {chance, n: 1, text: `guaranteed OHKO${afterText}`};
     } else if (chance > 0) {
@@ -292,14 +266,7 @@ export function getKOChance(
 
     for (let i = 2; i <= 4; i++) {
       const chance = computeKOChance(
-        damage,
-        defender.curHP - hazards.damage,
-        eot.damage,
-        i,
-        1,
-        defender.maxHP(),
-        toxicCounter
-      );
+        damage, defender.curHP - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter);
       if (chance === 1) {
         return {chance, n: i, text: `guaranteed ${i}HKO${afterText}`};
       } else if (chance > 0) {
@@ -350,16 +317,10 @@ export function getKOChance(
           `% chance to ${move.usedTimes}HKO${afterText}`,
       };
     }
+
     if (
-      predictTotal(
-        damage[0],
-        eot.damage,
-        move.hits,
-        move.usedTimes,
-        toxicCounter,
-        defender.maxHP()
-      ) >=
-      defender.curHP - hazards.damage
+      predictTotal(damage[0], eot.damage, move.hits, move.usedTimes, toxicCounter, defender.maxHP())
+      >= defender.curHP - hazards.damage
     ) {
       return {
         chance: 1,
@@ -385,6 +346,9 @@ export function getKOChance(
   return {chance: 0, n: 0, text: ''};
 }
 
+const TRAPPING =
+  ['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'];
+
 function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   let damage = 0;
   const texts: string[] = [];
@@ -408,10 +372,10 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
     damage += Math.floor((effectiveness * defender.maxHP()) / 8);
     texts.push('Steelsurge');
   }
-  if (
-    !defender.hasType('Flying') &&
-    !defender.hasAbility('Magic Guard', 'Levitate') &&
-    !defender.hasItem('Air Balloon')
+
+  if (!defender.hasType('Flying') &&
+      !defender.hasAbility('Magic Guard', 'Levitate') &&
+      !defender.hasItem('Air Balloon')
   ) {
     if (defenderSide.spikes === 1) {
       damage += Math.floor(defender.maxHP() / 8);
@@ -428,6 +392,7 @@ function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
       texts.push('3 layers of Spikes');
     }
   }
+
   if (isNaN(damage)) {
     damage = 0;
   }
@@ -480,8 +445,9 @@ function getEndOfTurn(
       texts.push('hail damage');
     }
   }
-  const loseItem = move.name === 'Knock Off' && !defender.hasAbility('Sticky Hold');
-  if (defender.item === 'Leftovers' && !loseItem) {
+
+  const loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
+  if (defender.hasItem('Leftovers') && !loseItem) {
     damage += Math.floor(defender.maxHP() / 16);
     texts.push('Leftovers recovery');
   } else if (defender.hasItem('Black Sludge') && !loseItem) {
@@ -496,12 +462,15 @@ function getEndOfTurn(
     damage -= Math.floor(defender.maxHP() / 8);
     texts.push('Sticky Barb damage');
   }
+
   if (field.defenderSide.isSeeded) {
     if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16)); // 1/16 in gen 1, 1/8 in gen 2 onwards
+      // 1/16 in gen 1, 1/8 in gen 2 onwards
+      damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16));
       texts.push('Leech Seed damage');
     }
   }
+
   if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
     if (attacker.hasAbility('Liquid Ooze')) {
       damage -= Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
@@ -511,13 +480,15 @@ function getEndOfTurn(
       texts.push('Leech Seed recovery');
     }
   }
-  if (field.terrain === 'Grassy') {
+
+  if (field.hasTerrain('Grassy')) {
     if (isGrounded(defender, field)) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Grassy Terrain recovery');
     }
   }
-  if (defender.hasStatus('Poisoned')) {
+
+  if (defender.hasStatus('psn')) {
     if (defender.hasAbility('Poison Heal')) {
       damage += Math.floor(defender.maxHP() / 8);
       texts.push('Poison Heal');
@@ -525,14 +496,14 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
       texts.push('poison damage');
     }
-  } else if (defender.hasStatus('Badly Poisoned')) {
+  } else if (defender.hasStatus('tox')) {
     if (defender.hasAbility('Poison Heal')) {
       damage += Math.floor(defender.maxHP() / 8);
       texts.push('Poison Heal');
     } else if (!defender.hasAbility('Magic Guard')) {
       texts.push('toxic damage');
     }
-  } else if (defender.hasStatus('Burned')) {
+  } else if (defender.hasStatus('brn')) {
     if (defender.hasAbility('Heatproof')) {
       damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
       texts.push('reduced burn damage');
@@ -541,26 +512,15 @@ function getEndOfTurn(
       texts.push('burn damage');
     }
   } else if (
-    (defender.hasStatus('Asleep') || defender.hasAbility('Comatose')) &&
+    (defender.hasStatus('slp') || defender.hasAbility('Comatose')) &&
     attacker.hasAbility('isBadDreams') &&
     !defender.hasAbility('Magic Guard')
   ) {
     damage -= Math.floor(defender.maxHP() / 8);
     texts.push('Bad Dreams');
   }
-  if (
-    [
-      'Bind',
-      'Clamp',
-      'Fire Spin',
-      'Infestation',
-      'Magma Storm',
-      'Sand Tomb',
-      'Whirlpool',
-      'Wrap',
-    ].indexOf(move.name) !== -1 &&
-    !defender.hasAbility('Magic Guard')
-  ) {
+
+  if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name)) {
     if (attacker.hasItem('Binding Band')) {
       damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
       texts.push('trapping damage');
@@ -569,12 +529,8 @@ function getEndOfTurn(
       texts.push('trapping damage');
     }
   }
-  if (
-    (move.name === 'Fire Pledge (Grass Pledge Boosted)' ||
-      move.name === 'Grass Pledge (Fire Pledge Boosted)') &&
-    !defender.hasType('Fire') &&
-    !defender.hasAbility('Magic Guard')
-  ) {
+  if (!defender.hasType('Fire') && !defender.hasAbility('Magic Guard') &&
+      (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
     damage -= Math.floor(defender.maxHP() / 8);
     texts.push('Sea of Fire damage');
   }
@@ -612,16 +568,8 @@ function computeKOChance(
     toxicCounter++;
   }
   let sum = 0;
-  for (let i = 0; i < n; i++) {
-    const c = computeKOChance(
-      damage,
-      hp - damage[i] + eot - toxicDamage,
-      eot,
-      hits - 1,
-      moveHits,
-      maxHP,
-      toxicCounter
-    );
+  for (let i = 0; i < n; i++) { const c = computeKOChance(
+      damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, moveHits, maxHP, toxicCounter);
     if (c === 1) {
       sum += n - i;
       break;
@@ -668,79 +616,32 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
     switch (hits) {
       case 2:
         return [
-          2 * d[0],
-          d[2] + d[3],
-          d[4] + d[4],
-          d[4] + d[5],
-          d[5] + d[6],
-          d[6] + d[6],
-          d[6] + d[7],
-          d[7] + d[7],
-          d[8] + d[8],
-          d[8] + d[9],
-          d[9] + d[9],
-          d[9] + d[10],
-          d[10] + d[11],
-          d[11] + d[11],
-          d[12] + d[13],
-          2 * d[15],
+          2 * d[0],  d[2] + d[3], d[4] + d[4], d[4] + d[5], d[5] + d[6], d[6] + d[6],
+          d[6] + d[7], d[7] + d[7], d[8] + d[8], d[8] + d[9], d[9] + d[9], d[9] + d[10],
+          d[10] + d[11], d[11] + d[11], d[12] + d[13], 2 * d[15],
         ];
       case 3:
         return [
-          3 * d[0],
-          d[3] + d[3] + d[4],
-          d[4] + d[4] + d[5],
-          d[5] + d[5] + d[6],
-          d[5] + d[6] + d[6],
-          d[6] + d[6] + d[7],
-          d[6] + d[7] + d[7],
-          d[7] + d[7] + d[8],
-          d[7] + d[8] + d[8],
-          d[8] + d[8] + d[9],
-          d[8] + d[9] + d[9],
-          d[9] + d[9] + d[10],
-          d[9] + d[10] + d[10],
-          d[10] + d[11] + d[11],
-          d[11] + d[12] + d[12],
-          3 * d[15],
+          3 * d[0], d[3] + d[3] + d[4], d[4] + d[4] + d[5], d[5] + d[5] + d[6],
+          d[5] + d[6] + d[6], d[6] + d[6] + d[7], d[6] + d[7] + d[7], d[7] + d[7] + d[8],
+          d[7] + d[8] + d[8], d[8] + d[8] + d[9], d[8] + d[9] + d[9], d[9] + d[9] + d[10],
+          d[9] + d[10] + d[10], d[10] + d[11] + d[11], d[11] + d[12] + d[12], 3 * d[15],
         ];
       case 4:
         return [
-          4 * d[0],
-          4 * d[4],
-          d[4] + d[5] + d[5] + d[5],
-          d[5] + d[5] + d[6] + d[6],
-          4 * d[6],
-          d[6] + d[6] + d[7] + d[7],
-          4 * d[7],
-          d[7] + d[7] + d[7] + d[8],
-          d[7] + d[8] + d[8] + d[8],
-          4 * d[8],
-          d[8] + d[8] + d[9] + d[9],
-          4 * d[9],
-          d[9] + d[9] + d[10] + d[10],
-          d[10] + d[10] + d[10] + d[11],
-          4 * d[11],
-          4 * d[15],
+          4 * d[0], 4 * d[4], d[4] + d[5] + d[5] + d[5], d[5] + d[5] + d[6] + d[6],
+          4 * d[6], d[6] + d[6] + d[7] + d[7], 4 * d[7], d[7] + d[7] + d[7] + d[8],
+          d[7] + d[8] + d[8] + d[8], 4 * d[8], d[8] + d[8] + d[9] + d[9], 4 * d[9],
+          d[9] + d[9] + d[10] + d[10], d[10] + d[10] + d[10] + d[11], 4 * d[11],4 * d[15],
         ];
       case 5:
         return [
-          5 * d[0],
-          d[4] + d[4] + d[4] + d[5] + d[5],
-          d[5] + d[5] + d[5] + d[5] + d[6],
-          d[5] + d[6] + d[6] + d[6] + d[6],
-          d[6] + d[6] + d[6] + d[6] + d[7],
-          d[6] + d[6] + d[7] + d[7] + d[7],
-          5 * d[7],
-          d[7] + d[7] + d[7] + d[8] + d[8],
-          d[7] + d[7] + d[8] + d[8] + d[8],
-          5 * d[8],
-          d[8] + d[8] + d[8] + d[9] + d[9],
-          d[8] + d[9] + d[9] + d[9] + d[9],
-          d[9] + d[9] + d[9] + d[9] + d[10],
-          d[9] + d[10] + d[10] + d[10] + d[10],
-          d[10] + d[10] + d[11] + d[11] + d[11],
-          5 * d[15],
+          5 * d[0], d[4] + d[4] + d[4] + d[5] + d[5], d[5] + d[5] + d[5] + d[5] + d[6],
+          d[5] + d[6] + d[6] + d[6] + d[6], d[6] + d[6] + d[6] + d[6] + d[7],
+          d[6] + d[6] + d[7] + d[7] + d[7], 5 * d[7], d[7] + d[7] + d[7] + d[8] + d[8],
+          d[7] + d[7] + d[8] + d[8] + d[8], 5 * d[8], d[8] + d[8] + d[8] + d[9] + d[9],
+          d[8] + d[9] + d[9] + d[9] + d[9], d[9] + d[9] + d[9] + d[9] + d[10],
+          d[9] + d[10] + d[10] + d[10] + d[10], d[10] + d[10] + d[11] + d[11] + d[11], 5 * d[15],
         ];
       default:
         error(err, `Unexpected # of hits: ${hits}`);
@@ -750,79 +651,28 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
     switch (hits) {
       case 2:
         return [
-          2 * d[0],
-          2 * d[7],
-          2 * d[10],
-          2 * d[12],
-          2 * d[14],
-          d[15] + d[16],
-          2 * d[17],
-          d[18] + d[19],
-          d[19] + d[20],
-          2 * d[21],
-          d[22] + d[23],
-          2 * d[24],
-          2 * d[26],
-          2 * d[28],
-          2 * d[31],
-          2 * d[38],
+          2 * d[0], 2 * d[7], 2 * d[10], 2 * d[12], 2 * d[14], d[15] + d[16],
+          2 * d[17], d[18] + d[19], d[19] + d[20], 2 * d[21], d[22] + d[23],
+          2 * d[24], 2 * d[26], 2 * d[28], 2 * d[31], 2 * d[38],
         ];
       case 3:
         return [
-          3 * d[0],
-          3 * d[9],
-          3 * d[12],
-          3 * d[13],
-          3 * d[15],
-          3 * d[16],
-          3 * d[17],
-          3 * d[18],
-          3 * d[20],
-          3 * d[21],
-          3 * d[22],
-          3 * d[23],
-          3 * d[25],
-          3 * d[26],
-          3 * d[29],
-          3 * d[38],
+          3 * d[0], 3 * d[9], 3 * d[12], 3 * d[13], 3 * d[15], 3 * d[16],
+          3 * d[17], 3 * d[18], 3 * d[20], 3 * d[21], 3 * d[22], 3 * d[23],
+          3 * d[25], 3 * d[26], 3 * d[29], 3 * d[38],
         ];
       case 4:
         return [
-          4 * d[0],
-          2 * d[10] + 2 * d[11],
-          4 * d[13],
-          4 * d[14],
-          2 * d[15] + 2 * d[16],
-          2 * d[16] + 2 * d[17],
-          2 * d[17] + 2 * d[18],
-          2 * d[18] + 2 * d[19],
-          2 * d[19] + 2 * d[20],
-          2 * d[20] + 2 * d[21],
-          2 * d[21] + 2 * d[22],
-          2 * d[22] + 2 * d[23],
-          4 * d[24],
-          4 * d[25],
-          2 * d[27] + 2 * d[28],
-          4 * d[38],
+          4 * d[0], 2 * d[10] + 2 * d[11], 4 * d[13], 4 * d[14], 2 * d[15] + 2 * d[16],
+          2 * d[16] + 2 * d[17], 2 * d[17] + 2 * d[18], 2 * d[18] + 2 * d[19],
+          2 * d[19] + 2 * d[20], 2 * d[20] + 2 * d[21], 2 * d[21] + 2 * d[22],
+          2 * d[22] + 2 * d[23], 4 * d[24], 4 * d[25], 2 * d[27] + 2 * d[28], 4 * d[38],
         ];
       case 5:
         return [
-          5 * d[0],
-          5 * d[11],
-          5 * d[13],
-          5 * d[15],
-          5 * d[16],
-          5 * d[17],
-          5 * d[18],
-          5 * d[19],
-          5 * d[19],
-          5 * d[20],
-          5 * d[21],
-          5 * d[22],
-          5 * d[23],
-          5 * d[25],
-          5 * d[27],
-          5 * d[38],
+          5 * d[0], 5 * d[11], 5 * d[13], 5 * d[15], 5 * d[16], 5 * d[17],
+          5 * d[18], 5 * d[19], 5 * d[19], 5 * d[20], 5 * d[21], 5 * d[22],
+          5 * d[23], 5 * d[25], 5 * d[27], 5 * d[38],
         ];
       default:
         error(err, `Unexpected # of hits: ${hits}`);

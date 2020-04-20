@@ -5,7 +5,7 @@ import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {getModifiedStat, getFinalSpeed} from './util';
+import {computeFinalStats} from './util';
 
 export function calculateRBY(
   gen: Generation,
@@ -14,24 +14,16 @@ export function calculateRBY(
   move: Move,
   field: Field
 ) {
-  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
-  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, gen);
-  attacker.stats.spc = getModifiedStat(attacker.rawStats.spc!, attacker.boosts.spc!, gen);
-  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+  computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spc', 'spe');
 
-  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, gen);
-  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
-  defender.stats.spc = getModifiedStat(defender.rawStats.spc!, defender.boosts.spc!, gen);
-  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
-
-  const description: RawDesc = {
+  const desc: RawDesc = {
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
   };
 
   const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, description);
+  const result = new Result(gen, attacker, defender, move, field, damage, desc);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -39,22 +31,31 @@ export function calculateRBY(
   }
 
   let lv = attacker.level;
-  if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
+  if (move.named('Seismic Toss', 'Night Shade')) {
     damage.push(lv);
+    return result;
+  } else if (move.named('Sonic Boom')) {
+    damage.push(20);
+    return result;
+  } else if (move.named('Dragon Rage')) {
+    damage.push(40);
     return result;
   }
 
   const moveType = gen.types.get(toID(move.type))!;
 
-  const typeEffect1 = moveType.effectiveness[defender.type1]!;
-  const typeEffect2 = defender.type2 ? moveType.effectiveness[defender.type2]! : 1;
-  const typeEffectiveness = typeEffect1 * typeEffect2;
+  const type1Effectiveness = moveType.effectiveness[defender.type1]!;
+  const type2Effectiveness = defender.type2 ? moveType.effectiveness[defender.type2]! : 1;
+  const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0) {
     damage.push(0);
     return result;
   }
-  if (move.hits > 1) description.hits = move.hits;
+
+  if (move.hits > 1) {
+    desc.hits = move.hits;
+  }
 
   const isPhysical = moveType.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spc';
@@ -66,31 +67,27 @@ export function calculateRBY(
     lv *= 2;
     at = attacker.rawStats[attackStat]!;
     df = defender.rawStats[defenseStat]!;
-    description.isCritical = true;
+    desc.isCritical = true;
   } else {
-    if (attacker.boosts[attackStat] !== 0) {
-      description.attackBoost = attacker.boosts[attackStat];
-    }
-    if (defender.boosts[defenseStat] !== 0) {
-      description.defenseBoost = defender.boosts[defenseStat];
-    }
-    if (isPhysical && attacker.hasStatus('Burned')) {
+    if (attacker.boosts[attackStat] !== 0) desc.attackBoost = attacker.boosts[attackStat];
+    if (defender.boosts[defenseStat] !== 0) desc.defenseBoost = defender.boosts[defenseStat];
+    if (isPhysical && attacker.hasStatus('brn')) {
       at = Math.floor(at / 2);
-      description.isBurned = true;
+      desc.isBurned = true;
     }
   }
 
-  if (move.name === 'Explosion' || move.name === 'Self-Destruct') {
+  if (move.named('Explosion', 'Self-Destruct')) {
     df = Math.floor(df / 2);
   }
 
   if (!move.isCrit) {
     if (isPhysical && field.defenderSide.isReflect) {
       df *= 2;
-      description.isReflect = true;
+      desc.isReflect = true;
     } else if (!isPhysical && field.defenderSide.isLightScreen) {
       df *= 2;
-      description.isLightScreen = true;
+      desc.isLightScreen = true;
     }
   }
 
@@ -99,20 +96,19 @@ export function calculateRBY(
     df = Math.floor(df / 4) % 256;
   }
 
-  let baseDamage =
-    Math.min(
-      997,
-      Math.floor(
-        Math.floor((Math.floor((2 * lv) / 5 + 2) * Math.max(1, at) * move.bp) / Math.max(1, df)) /
-          50
-      )
-    ) + 2;
-  if (move.type === attacker.type1 || move.type === attacker.type2) {
+  let baseDamage = Math.floor(
+    Math.floor((Math.floor((2 * lv) / 5 + 2) * Math.max(1, at) * move.bp) / Math.max(1, df)) / 50
+  );
+  baseDamage = Math.min(997, baseDamage) + 2;
+
+  if (move.hasType(attacker.type1, attacker.type2)) {
     baseDamage = Math.floor(baseDamage * 1.5);
   }
+
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
   for (let i = 217; i <= 255; i++) {
     damage[i - 217] = Math.floor((baseDamage * i) / 255);
   }
+
   return result;
 }

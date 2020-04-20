@@ -46,7 +46,7 @@
 
 import {Generations} from './data';
 import {Stat, StatsTable} from './stats';
-import {Status} from './pokemon';
+import {StatusName} from './pokemon';
 import * as I from './data/interface';
 import * as A from './adaptable';
 
@@ -112,7 +112,7 @@ export class Pokemon extends A.Pokemon {
       evs?: Partial<StatsTable>;
       boosts?: Partial<StatsTable>;
       curHP?: number;
-      status?: Status;
+      status?: StatusName;
       toxicCounter?: number;
       moves?: string[];
       overrides?: Partial<I.Specie>;

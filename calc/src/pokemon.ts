@@ -2,14 +2,7 @@ import * as I from './data/interface';
 import {StatsTable, STATS, Stat, Stats} from './stats';
 import {toID, extend} from './util';
 
-export type Status =
-  | 'Healthy'
-  | 'Paralyzed'
-  | 'Poisoned'
-  | 'Badly Poisoned'
-  | 'Burned'
-  | 'Asleep'
-  | 'Frozen';
+export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
 
 export class Pokemon {
   gen: I.Generation;
@@ -35,7 +28,7 @@ export class Pokemon {
   stats: StatsTable;
 
   curHP: number;
-  status: Status;
+  status: StatusName | '';
   toxicCounter: number;
 
   moves: I.MoveName[];
@@ -55,7 +48,7 @@ export class Pokemon {
       evs?: Partial<StatsTable>;
       boosts?: Partial<StatsTable>;
       curHP?: number;
-      status?: Status;
+      status?: StatusName | '';
       toxicCounter?: number;
       moves?: I.MoveName[];
       overrides?: Partial<I.Specie>;
@@ -101,7 +94,7 @@ export class Pokemon {
     }
 
     this.curHP = options.curHP && options.curHP <= this.maxHP() ? options.curHP : this.maxHP();
-    this.status = options.status || 'Healthy';
+    this.status = options.status || '';
     this.toxicCounter = options.toxicCounter || 0;
     this.moves = options.moves || [];
   }
@@ -111,15 +104,15 @@ export class Pokemon {
   }
 
   hasAbility(...abilities: string[]) {
-    return this.ability && abilities.indexOf(this.ability) !== -1;
+    return !!(this.ability && abilities.includes(this.ability));
   }
 
   hasItem(...items: string[]) {
-    return this.item && items.indexOf(this.item) !== -1;
+    return !!(this.item && items.includes(this.item));
   }
 
-  hasStatus(...statuses: Status[]) {
-    return statuses.indexOf(this.status) !== -1;
+  hasStatus(...statuses: StatusName[]) {
+    return !!(this.status && statuses.includes(this.status));
   }
 
   hasType(...types: I.TypeName[]) {
@@ -130,7 +123,7 @@ export class Pokemon {
   }
 
   named(...names: string[]) {
-    return names.indexOf(this.name) !== -1;
+    return names.includes(this.name);
   }
 
   clone() {

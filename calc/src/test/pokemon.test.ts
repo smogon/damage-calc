@@ -14,7 +14,8 @@ describe('Pokemon', () => {
     expect(p.item).toBeUndefined();
     expect(p.ability).toBe('Cursed Body');
     expect(p.nature).toBe('Serious');
-    expect(p.status).toBe('Healthy');
+    expect(p.status).toBe('');
+    expect(p.hasStatus()).toBe(false);
     expect(p.toxicCounter).toBe(0);
     expect(p.curHP).toBe(p.stats.hp);
 
@@ -39,7 +40,7 @@ describe('Pokemon', () => {
       evs: {spd: 4, def: 252, hp: 252},
       boosts: {atk: -1, spa: 2, spd: 1},
       curHP: 60,
-      status: 'Badly Poisoned',
+      status: 'tox',
       toxicCounter: 2,
       moves: ['Surf', 'Rest', 'Curse', 'Sleep Talk'],
     });
@@ -53,7 +54,7 @@ describe('Pokemon', () => {
     expect(p.item).toBe('Leftovers');
     expect(p.ability).toBe('Inner Focus');
     expect(p.nature).toBe('Bold');
-    expect(p.status).toBe('Badly Poisoned');
+    expect(p.status).toBe('tox');
     expect(p.toxicCounter).toBe(2);
     expect(p.curHP).toBe(60);
 

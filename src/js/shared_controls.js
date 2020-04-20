@@ -35,6 +35,16 @@ var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
 var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
 
+var CALC_STATUS = {
+	'Healthy': '',
+	'Paralyzed': 'par',
+	'Poisoned': 'psn',
+	'Badly Poisoned': 'tox',
+	'Burned': 'brn',
+	'Asleep': 'slp',
+	'Frozen': 'frz'
+};
+
 function legacyStatToStat(st) {
 	switch (st) {
 	case 'hp':
@@ -677,7 +687,7 @@ function createPokemon(pokeInfo) {
 			isDynamaxed: isDynamaxed,
 			boosts: boosts,
 			curHP: ~~pokeInfo.find(".current-hp").val(),
-			status: pokeInfo.find(".status").val(),
+			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
 				getMoveDetails(pokeInfo.find(".move1"), ability, item, isDynamaxed),

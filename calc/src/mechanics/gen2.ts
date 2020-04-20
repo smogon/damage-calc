@@ -6,7 +6,7 @@ import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {getModifiedStat, getFinalSpeed, getMoveEffectiveness} from './util';
+import {computeFinalStats, getMoveEffectiveness} from './util';
 
 export function calculateGSC(
   gen: Generation,
@@ -15,26 +15,16 @@ export function calculateGSC(
   move: Move,
   field: Field
 ) {
-  attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
-  attacker.stats.def = getModifiedStat(attacker.rawStats.def, attacker.boosts.def, gen);
-  attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa, gen);
-  attacker.stats.spd = getModifiedStat(attacker.rawStats.spd, attacker.boosts.spd, gen);
-  attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+  computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
 
-  defender.stats.atk = getModifiedStat(defender.rawStats.atk, defender.boosts.atk, gen);
-  defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
-  defender.stats.spa = getModifiedStat(defender.rawStats.spa, defender.boosts.spa, gen);
-  defender.stats.spd = getModifiedStat(defender.rawStats.spd, defender.boosts.spd, gen);
-  defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
-
-  const description: RawDesc = {
+  const desc: RawDesc = {
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
   };
 
   const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, description);
+  const result = new Result(gen, attacker, defender, move, field, damage, desc);
 
   if (move.bp === 0) {
     damage.push(0);
@@ -42,21 +32,17 @@ export function calculateGSC(
   }
 
   if (field.defenderSide.isProtected) {
-    description.isProtected = true;
+    desc.isProtected = true;
     damage.push(0);
     return result;
   }
 
-  const typeEffect1 = getMoveEffectiveness(
-    gen,
-    move,
-    defender.type1,
-    field.defenderSide.isForesight
-  );
-  const typeEffect2 = defender.type2
+  const type1Effectiveness =
+    getMoveEffectiveness(gen, move, defender.type1, field.defenderSide.isForesight);
+  const type2Effectiveness = defender.type2
     ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight)
     : 1;
-  const typeEffectiveness = typeEffect1 * typeEffect2;
+  const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0) {
     damage.push(0);
@@ -64,21 +50,27 @@ export function calculateGSC(
   }
 
   let lv = attacker.level;
-  if (move.name === 'Seismic Toss' || move.name === 'Night Shade') {
+  if (move.named('Seismic Toss', 'Night Shade')) {
     damage.push(lv);
+    return result;
+  } else if (move.named('Sonic Boom')) {
+    damage.push(20);
+    return result;
+  } else if (move.named('Dragon Rage')) {
+    damage.push(40);
     return result;
   }
 
   if (move.hits > 1) {
-    description.hits = move.hits;
+    desc.hits = move.hits;
   }
 
   // Flail and Reversal are variable BP and never crit
-  if (move.name === 'Flail' || move.name === 'Reversal') {
+  if (move.named('Flail', 'Reversal')) {
     move.isCrit = false;
     const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
     move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-    description.moveBP = move.bp;
+    desc.moveBP = move.bp;
   }
 
   const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
@@ -87,45 +79,40 @@ export function calculateGSC(
   let at = attacker.stats[attackStat];
   let df = defender.stats[defenseStat];
 
-  // ignore Reflect, Light Screen, stat stages, and burns if attack is a crit and attacker does not have stat stage advantage
+  // ignore Reflect, Light Screen, stat stages, and burns if attack is a crit and attacker does
+  // not have stat stage advantage
   const ignoreMods = move.isCrit && attacker.boosts[attackStat] <= defender.boosts[defenseStat];
 
   if (ignoreMods) {
     at = attacker.rawStats[attackStat];
     df = defender.rawStats[defenseStat];
   } else {
-    if (attacker.boosts[attackStat] !== 0) {
-      description.attackBoost = attacker.boosts[attackStat];
-    }
-    if (defender.boosts[defenseStat] !== 0) {
-      description.defenseBoost = defender.boosts[defenseStat];
-    }
-    if (isPhysical && attacker.hasStatus('Burned')) {
+    if (attacker.boosts[attackStat] !== 0) desc.attackBoost = attacker.boosts[attackStat];
+    if (defender.boosts[defenseStat] !== 0) desc.defenseBoost = defender.boosts[defenseStat];
+    if (isPhysical && attacker.hasStatus('brn')) {
       at = Math.floor(at / 2);
-      description.isBurned = true;
+      desc.isBurned = true;
     }
   }
 
-  if (move.name === 'Explosion' || move.name === 'Self-Destruct') {
+  if (move.named('Explosion', 'Self-Destruct')) {
     df = Math.floor(df / 2);
   }
 
   if (!ignoreMods) {
     if (isPhysical && field.defenderSide.isReflect) {
       df *= 2;
-      description.isReflect = true;
+      desc.isReflect = true;
     } else if (!isPhysical && field.defenderSide.isLightScreen) {
       df *= 2;
-      description.isLightScreen = true;
+      desc.isLightScreen = true;
     }
   }
 
-  if (
-    (attacker.named('Pikachu') && attacker.hasItem('Light Ball') && !isPhysical) ||
-    (attacker.named('Cubone', 'Marowak') && attacker.hasItem('Thick Club') && isPhysical)
-  ) {
+  if ((attacker.named('Pikachu') && attacker.hasItem('Light Ball') && !isPhysical) ||
+      (attacker.named('Cubone', 'Marowak') && attacker.hasItem('Thick Club') && isPhysical)) {
     at *= 2;
-    description.attackerItem = attacker.item;
+    desc.attackerItem = attacker.item;
   }
 
   if (at > 255 || df > 255) {
@@ -133,37 +120,23 @@ export function calculateGSC(
     df = Math.floor(df / 4) % 256;
   }
 
-  // Gen 2 Present has a glitched damage calculation using the secondary types of the Pokemon for the Attacker's Level and Defender's Defense.
-  if (move.name === 'Present') {
-    const type_index: {[id: string]: number} = {
-      Normal: 0,
-      Fighting: 1,
-      Flying: 2,
-      Poison: 3,
-      Ground: 4,
-      Rock: 5,
-      Bug: 7,
-      Ghost: 8,
-      Steel: 9,
-      None: 19,
-      Fire: 20,
-      Water: 21,
-      Grass: 22,
-      Electric: 23,
-      Psychic: 24,
-      Ice: 25,
-      Dragon: 26,
-      Dark: 27,
+  // Gen 2 Present has a glitched damage calculation using the secondary types of the Pokemon
+  // for the Attacker's Level and Defender's Defense.
+  if (move.named('Present')) {
+    const lookup: {[id: string]: number} = {
+      Normal: 0, Fighting: 1, Flying: 2, Poison: 3, Ground: 4, Rock: 5, Bug: 7,
+      Ghost: 8, Steel: 9, '???': 19, Fire: 20, Water: 21, Grass: 22, Electric: 23,
+      Psychic: 24, Ice: 25, Dragon: 26, Dark: 27,
     };
 
     at = 10;
-    df = Math.max(type_index[attacker.type2 ? attacker.type2 : attacker.type1], 1);
-    lv = Math.max(type_index[defender.type2 ? defender.type2 : defender.type1], 1);
+    df = Math.max(lookup[attacker.type2 ? attacker.type2 : attacker.type1], 1);
+    lv = Math.max(lookup[defender.type2 ? defender.type2 : defender.type1], 1);
   }
 
   if (defender.named('Ditto') && defender.hasItem('Metal Powder')) {
     df = Math.floor(df * 1.5);
-    description.defenderItem = defender.item;
+    desc.defenderItem = defender.item;
   }
 
   let baseDamage = Math.floor(
@@ -172,49 +145,47 @@ export function calculateGSC(
 
   if (move.isCrit) {
     baseDamage *= 2;
-    description.isCritical = true;
+    desc.isCritical = true;
   }
 
-  if (move.name === 'Pursuit' && field.defenderSide.isSwitching) {
+  if (move.named('Pursuit') && field.defenderSide.isSwitching) {
     baseDamage = Math.floor(baseDamage * 2);
-    description.isSwitching = true;
+    desc.isSwitching = true;
   }
 
   // In Gen 2 and no other gens, Dragon Fang in a no-op and Dragon Scale erroneously has its effect
   const itemBoostType =
-    attacker.item === 'Dragon Fang'
+    attacker.hasItem('Dragon Fang')
       ? undefined
-      : getItemBoostType(attacker.item === 'Dragon Scale' ? 'Dragon Fang' : attacker.item);
+      : getItemBoostType(attacker.hasItem('Dragon Scale') ? 'Dragon Fang' : attacker.item);
 
-  if (itemBoostType === move.type) {
+  if (move.hasType(itemBoostType)) {
     baseDamage = Math.floor(baseDamage * 1.1);
-    description.attackerItem = attacker.item;
+    desc.attackerItem = attacker.item;
   }
 
   baseDamage = Math.min(997, baseDamage) + 2;
 
-  if (
-    (field.hasWeather('Sun') && move.type === 'Fire') ||
-    (field.hasWeather('Rain') && move.type === 'Water')
-  ) {
+  if ((field.hasWeather('Sun') && move.hasType('Fire')) ||
+      (field.hasWeather('Rain') && move.hasType('Water'))) {
     baseDamage = Math.floor(baseDamage * 1.5);
-    description.weather = field.weather;
+    desc.weather = field.weather;
   } else if (
-    (field.hasWeather('Sun') && move.type === 'Water') ||
-    (field.hasWeather('Rain') && (move.type === 'Fire' || move.name === 'Solar Beam'))
+    (field.hasWeather('Sun') && move.hasType('Water')) ||
+    (field.hasWeather('Rain') && (move.hasType('Fire') || move.named('Solar Beam')))
   ) {
     baseDamage = Math.floor(baseDamage / 2);
-    description.weather = field.weather;
+    desc.weather = field.weather;
   }
 
-  if (move.type === attacker.type1 || move.type === attacker.type2) {
+  if (move.hasType(attacker.type1, attacker.type2)) {
     baseDamage = Math.floor(baseDamage * 1.5);
   }
 
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
 
   // Flail and Reversal don't use random factor
-  if (move.name === 'Flail' || move.name === 'Reversal') {
+  if (move.named('Flail', 'Reversal')) {
     damage.push(baseDamage);
     return result;
   }
@@ -222,5 +193,6 @@ export function calculateGSC(
   for (let i = 217; i <= 255; i++) {
     damage[i - 217] = Math.floor((baseDamage * i) / 255);
   }
+
   return result;
 }

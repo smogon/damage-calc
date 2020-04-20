@@ -1,5 +1,5 @@
 import {StatsTable} from '../stats';
-import {Status} from '../pokemon';
+import {StatusName} from '../pokemon';
 import * as I from '../data/interface';
 import {calculate, Pokemon, Move} from '../index';
 import {Field, GameType, Terrain, Weather, Side} from '../field';
@@ -69,7 +69,7 @@ const pokemon = (gen: I.GenerationNum) => (
     evs?: Partial<StatsTable>;
     boosts?: Partial<StatsTable>;
     curHP?: number;
-    status?: Status;
+    status?: StatusName;
     toxicCounter?: number;
     moves?: string[];
     overrides?: Partial<I.Specie>;

@@ -37,7 +37,11 @@ export class Field {
   }
 
   hasWeather(...weathers: Weather[]) {
-    return this.weather && weathers.indexOf(this.weather) !== -1;
+    return !!(this.weather && weathers.includes(this.weather));
+  }
+
+  hasTerrain(...terrains: Terrain[]) {
+    return !!(this.terrain && terrains.includes(this.terrain));
   }
 
   swap() {

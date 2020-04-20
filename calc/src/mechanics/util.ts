@@ -1,6 +1,6 @@
-import {Generation, TypeName, NatureName, ID, ItemName} from '../data/interface';
+import {Generation, TypeName, NatureName, ID, ItemName, StatName} from '../data/interface';
 import {toID} from '../util';
-import {Field, Side, Weather} from '../field';
+import {Field, Side, Weather, Terrain} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {STATS, Stats, StatsTable} from '../stats';
@@ -16,12 +16,10 @@ const EV_ITEMS = [
 ];
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
-  return (
-    field.isGravity ||
+  return (field.isGravity ||
     (!pokemon.hasType('Flying') &&
       !pokemon.hasAbility('Levitate') &&
-      !pokemon.hasItem('Air Balloon'))
-  );
+      !pokemon.hasItem('Air Balloon')));
 }
 
 export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
@@ -45,46 +43,65 @@ export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
   return stat;
 }
 
+export function computeFinalStats(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  field: Field,
+  ...stats: Array<StatName | 'spc'>
+) {
+  const sides: Array<[Pokemon, Side]> =
+    [[attacker, field.attackerSide], [defender, field.defenderSide]];
+  for (const [pokemon, side] of sides) {
+    for (const stat of stats) {
+      if (stat === 'spe') {
+        pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side);
+      } else {
+        pokemon.stats[stat] = getModifiedStat(pokemon.rawStats[stat]!, pokemon.boosts[stat]!, gen);
+      }
+    }
+  }
+}
+
 export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, side: Side) {
   const weather = field.weather || '';
   const terrain = field.terrain;
   let speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe, gen);
+  let mods = 1;
 
   if (pokemon.hasItem('Choice Scarf')) {
-    speed = pokeRound(speed * 1.5);
+    mods *= 1.5;
   } else if (pokemon.hasItem('Iron Ball', ...EV_ITEMS)) {
-    speed = pokeRound(speed / 2);
+    mods *= 0.5;
   } else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
-    speed *= 2;
+    mods *= 2;
   }
-  if (
-    (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
-    (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
-    (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
-    (pokemon.hasAbility('Slush Rush') && weather === 'Hail')
+
+  if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
+      (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
+      (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
+      (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
+      (pokemon.hasAbility('Slush Rush') && weather === 'Hail') ||
+      (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
   ) {
     speed *= 2;
-  } else if (pokemon.hasAbility('Quick Feet') && !pokemon.hasStatus('Healthy')) {
-    speed = pokeRound(speed * 1.5);
+  } else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
+    mods *= 1.5;
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
-    speed = pokeRound(speed / 2);
-  } else if (
-    (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric') ||
-    (pokemon.hasAbility('Unburden') && pokemon.abilityOn)
-  ) {
-    speed *= 2;
+    mods *= 0.5;
   }
 
-  if (side.isTailwind) speed *= 2;
-  if (pokemon.hasStatus('Paralyzed') && !pokemon.hasAbility('Quick Feet')) {
-    speed = pokeRound(speed * (gen.num < 7 ? 0.25 : 0.5));
+  if (side.isTailwind) mods *= 2;
+  speed = pokeRound(speed * mods);
+  if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet')) {
+    speed = Math.floor(speed * (gen.num < 7 ? 0.25 : 0.5));
   }
 
-  if (gen.num <= 2) speed = Math.min(999, speed);
+  speed = Math.min(gen.num <= 2 ? 999 : 10000, speed);
   return Math.max(1, speed);
 }
 
-// GameFreak rounds DOWN on .5
+// Game Freak rounds DOWN on .5
 export function pokeRound(num: number) {
   return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
 }
@@ -96,13 +113,13 @@ export function getMoveEffectiveness(
   isGhostRevealed?: boolean,
   isGravity?: boolean
 ) {
-  if (isGhostRevealed && type === 'Ghost' && ['Normal', 'Fighting'].includes(move.type)) {
+  if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
     return 1;
-  } else if (isGravity && type === 'Flying' && move.type === 'Ground') {
+  } else if (isGravity && type === 'Flying' && move.hasType('Ground')) {
     return 1;
-  } else if (move.name === 'Freeze-Dry' && type === 'Water') {
+  } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;
-  } else if (move.name === 'Flying Press') {
+  } else if (move.named('Flying Press')) {
     return (
       gen.types.get('fighting' as ID)!.effectiveness[type]! *
       gen.types.get('flying' as ID)!.effectiveness[type]!
@@ -146,9 +163,7 @@ export function checkKlutz(pokemon: Pokemon) {
 }
 
 export function checkIntimidate(source: Pokemon, target: Pokemon) {
-  if (
-    source.ability === 'Intimidate' &&
-    source.abilityOn &&
+  if (source.hasAbility('Intimidate') && source.abilityOn &&
     !target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body')
   ) {
     if (target.hasAbility('Contrary', 'Defiant')) {
@@ -194,8 +209,8 @@ export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
 export function checkSeedBoost(pokemon: Pokemon, field: Field) {
   if (!pokemon.item) return;
   if (field.terrain && pokemon.item.includes('Seed')) {
-    const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
-    if (terrainSeed === field.terrain) {
+    const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' ')) as Terrain;
+    if (field.hasTerrain(terrainSeed)) {
       if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
         pokemon.boosts.def = pokemon.hasAbility('Contrary')
           ? Math.max(-6, pokemon.boosts.def - 1)
@@ -264,16 +279,10 @@ export function getEVDescriptionText(
   natureName: NatureName
 ): string {
   const nature = gen.natures.get(toID(natureName))!;
-  return (
-    pokemon.evs[stat] +
-    (nature.plus === nature.minus
-      ? ''
-      : nature.plus === stat
-        ? '+'
-        : nature.minus === stat
-          ? '-'
-          : '') +
-    ' ' +
-    Stats.displayStat(stat)
-  );
+  return (pokemon.evs[stat] +
+    (nature.plus === nature.minus ? ''
+    : nature.plus === stat ? '+'
+    : nature.minus === stat ? '-'
+    : '') + ' ' +
+     Stats.displayStat(stat));
 }

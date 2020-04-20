@@ -128,6 +128,14 @@ export class Move {
     this.usesHighestAttackStat = !!data.usesHighestAttackStat;
   }
 
+  named(...names: string[]) {
+    return names.includes(this.name);
+  }
+
+  hasType(...types: Array<(I.TypeName | undefined)>) {
+    return types.includes(this.type);
+  }
+
   clone() {
     return new Move(this.gen, this.originalName, {
       ability: this.ability,
