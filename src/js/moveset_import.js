@@ -20,7 +20,7 @@ function ExportPokemon(pokeInfo) {
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
 			if (pokemon.evs[stat]) {
-				EVs_Array.push(pokemon.evs[stat] + " " + calc.displayStat(stat));
+				EVs_Array.push(pokemon.evs[stat] + " " + calc.Stats.displayStat(stat));
 				EV_counter += pokemon.evs[stat];
 				if (EV_counter > 510) break;
 			}
