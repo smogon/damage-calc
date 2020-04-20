@@ -1507,7 +1507,7 @@ const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, {
 });
 
 const ADV: {[name: string]: SpeciesData} = extend(true, {}, GSC, {
-  //gen 1 pokemon changes
+  // gen 1 pokemon changes
   Abra: {ab: 'Synchronize'},
   Aerodactyl: {ab: 'Rock Head'},
   Alakazam: {ab: 'Synchronize'},

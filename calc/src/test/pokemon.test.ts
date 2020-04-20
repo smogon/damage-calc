@@ -11,7 +11,7 @@ describe('Pokemon', () => {
     expect(p.weight).toBe(40.5);
     expect(p.level).toBe(100);
     expect(p.gender).toBe('M');
-    expect(p.item).toBe(undefined);
+    expect(p.item).toBeUndefined();
     expect(p.ability).toBe('Cursed Body');
     expect(p.nature).toBe('Serious');
     expect(p.status).toBe('Healthy');
@@ -46,7 +46,7 @@ describe('Pokemon', () => {
 
     expect(p.name).toBe('Suicune');
     expect(p.type1).toBe('Water');
-    expect(p.type2).toBe(undefined);
+    expect(p.type2).toBeUndefined();
     expect(p.weight).toBe(187.0);
     expect(p.level).toBe(50);
     expect(p.gender).toBe('N');

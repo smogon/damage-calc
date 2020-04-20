@@ -497,7 +497,7 @@ describe('calc', () => {
   });
 
   describe('Gen 8', () => {
-    inGen(8, ({calculate, Pokemon, Move, Field}) => {
+    inGen(8, ({calculate, Pokemon, Move}) => {
       test('Basic: Gengar vs. Chansey', () => {
         const result = calculate(
           Pokemon('Gengar', {

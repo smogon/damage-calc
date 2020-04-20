@@ -1,4 +1,4 @@
-export type As<T> = {__brand: T};
+export interface As<T> {__brand: T}
 export type ID = string & As<'ID'>;
 export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type GenderName = 'M' | 'F' | 'N';

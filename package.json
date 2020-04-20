@@ -1,18 +1,7 @@
 {
-  "name": "damage-calc",
   "private": true,
-  "description": "The official damage calculator for the Pokémon Showdown battle simulator",
   "homepage": "https://calc.pokemonshowdown.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/smogon/damage-calc.git"
-  },
-  "contributors": [
-    "Austin Couturier <austincouturier@icloud.com>",
-    "Guangcong Luo <zarel@zarel.com>",
-    "Kirk Scheibelhut <kjs@scheibo.com>",
-    "Mathieu Dias-Martins"
-  ],
+  "repository": "github:smogon/damage-calc",
   "license": "MIT",
   "dependencies": {
     "calc": "file:calc"
@@ -21,18 +10,39 @@
     "eslint": "^6.8.0",
     "subpkg": "^2.0.0"
   },
+  "optionalDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-transform-arrow-functions": "^7.8.3",
+    "@babel/plugin-transform-block-scoping": "^7.8.3",
+    "@babel/plugin-transform-classes": "^7.9.2",
+    "@babel/plugin-transform-computed-properties": "^7.8.3",
+    "@babel/plugin-transform-destructuring": "^7.8.8",
+    "@babel/plugin-transform-for-of": "^7.9.0",
+    "@babel/plugin-transform-literals": "^7.8.3",
+    "@babel/plugin-transform-member-expression-literals": "^7.8.3",
+    "@babel/plugin-transform-parameters": "^7.9.3",
+    "@babel/plugin-transform-property-literals": "^7.8.3",
+    "@babel/plugin-transform-shorthand-properties": "^7.8.3",
+    "@babel/plugin-transform-spread": "^7.8.3",
+    "@babel/plugin-transform-template-literals": "^7.8.3",
+    "@babel/plugin-transform-typescript": "^7.9.4",
+    "@babel/preset-env": "^7.9.0",
+    "terser": "^4.6.10"
+  },
   "scripts": {
-    "lint": "subpkg run lint && eslint --cache .",
-    "fix": "subpkg run fix",
+    "lint": "subpkg run lint && eslint --cache src/**/*.js",
+    "fix": "subpkg run fix && eslint --fix src/**/*.js",
     "compile": "subpkg run compile && node build view",
-    "test": "subpkg run test",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
-    "posttest": "npm run lint",
+    "bundle": "subpkg run bundle",
+    "build": "subpkg run build && node build view",
+    "test": "subpkg run test && npm run build",
     "postinstall": "subpkg install"
   },
   "subPackages": [
-    "calc",
-    "import"
+    "calc"
   ]
 }

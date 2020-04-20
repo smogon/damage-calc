@@ -1,5 +1,4 @@
 import {Generation, AbilityName} from '../data/interface';
-import {toID} from '../util';
 import {getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType} from '../items';
 import {RawDesc} from '../desc';
 import {Field} from '../field';
@@ -86,12 +85,12 @@ export function calculateDPP(
     description.weather = field.weather;
     description.moveType = move.type;
     description.moveBP = basePower;
-  } else if (move.name === 'Judgement' && attacker.item && attacker.item.indexOf('Plate') !== -1) {
+  } else if (move.name === 'Judgement' && attacker.item && attacker.item.includes('Plate')) {
     move.type = getItemBoostType(attacker.item)!;
   } else if (
     move.name === 'Natural Gift' &&
     attacker.item &&
-    attacker.item.indexOf('Berry') !== -1
+    attacker.item.includes('Berry')
   ) {
     const gift = getNaturalGift(gen, attacker.item)!;
     move.type = gift.t;
@@ -115,12 +114,12 @@ export function calculateDPP(
   );
   const typeEffect2 = defender.type2
     ? getMoveEffectiveness(
-        gen,
-        move,
-        defender.type2,
-        attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
-        field.isGravity
-      )
+      gen,
+      move,
+      defender.type2,
+      attacker.hasAbility('Scrappy') || field.defenderSide.isForesight,
+      field.isGravity
+    )
     : 1;
   const typeEffectiveness = typeEffect1 * typeEffect2;
 
@@ -155,73 +154,73 @@ export function calculateDPP(
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'FIRST' : 'LAST';
 
   ////////////////////////////////
-  ////////// BASE POWER //////////
+  // //////// BASE POWER //////////
   ////////////////////////////////
   switch (move.name) {
-    case 'Brine':
-      if (defender.curHP <= defender.maxHP() / 2) {
-        basePower *= 2;
-        description.moveBP = basePower;
-      }
-      break;
-    case 'Eruption':
-    case 'Water Spout':
-      basePower = Math.max(1, Math.floor((basePower * attacker.curHP) / attacker.maxHP()));
+  case 'Brine':
+    if (defender.curHP <= defender.maxHP() / 2) {
+      basePower *= 2;
       description.moveBP = basePower;
-      break;
-    case 'Facade':
-      if (attacker.hasStatus('Paralyzed', 'Poisoned', 'Badly Poisoned', 'Burned')) {
-        basePower = move.bp * 2;
-        description.moveBP = basePower;
-      }
-      break;
-    case 'Flail':
-    case 'Reversal':
-      const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
-      basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+    }
+    break;
+  case 'Eruption':
+  case 'Water Spout':
+    basePower = Math.max(1, Math.floor((basePower * attacker.curHP) / attacker.maxHP()));
+    description.moveBP = basePower;
+    break;
+  case 'Facade':
+    if (attacker.hasStatus('Paralyzed', 'Poisoned', 'Badly Poisoned', 'Burned')) {
+      basePower = move.bp * 2;
       description.moveBP = basePower;
-      break;
-    case 'Fling':
-      basePower = getFlingPower(attacker.item);
+    }
+    break;
+  case 'Flail':
+  case 'Reversal':
+    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+    description.moveBP = basePower;
+    break;
+  case 'Fling':
+    basePower = getFlingPower(attacker.item);
+    description.moveBP = basePower;
+    description.attackerItem = attacker.item;
+    break;
+  case 'Grass Knot':
+  case 'Low Kick':
+    const w = defender.weight;
+    basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+    description.moveBP = basePower;
+    break;
+  case 'Gyro Ball':
+    basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
+    description.moveBP = basePower;
+    break;
+  case 'Payback':
+    if (turnOrder !== 'FIRST') {
+      basePower *= 2;
       description.moveBP = basePower;
-      description.attackerItem = attacker.item;
-      break;
-    case 'Grass Knot':
-    case 'Low Kick':
-      const w = defender.weight;
-      basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+    }
+    break;
+  case 'Punishment':
+    const boostCount = countBoosts(gen, defender.boosts);
+    if (boostCount > 0) {
+      basePower = Math.min(200, basePower + 20 * boostCount);
       description.moveBP = basePower;
-      break;
-    case 'Gyro Ball':
-      basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
+    }
+    break;
+  case 'Wake-Up Slap':
+    if (defender.hasStatus('Asleep')) {
+      basePower *= 2;
       description.moveBP = basePower;
-      break;
-    case 'Payback':
-      if (turnOrder !== 'FIRST') {
-        basePower *= 2;
-        description.moveBP = basePower;
-      }
-      break;
-    case 'Punishment':
-      const boostCount = countBoosts(gen, defender.boosts);
-      if (boostCount > 0) {
-        basePower = Math.min(200, basePower + 20 * boostCount);
-        description.moveBP = basePower;
-      }
-      break;
-    case 'Wake-Up Slap':
-      if (defender.hasStatus('Asleep')) {
-        basePower *= 2;
-        description.moveBP = basePower;
-      }
-      break;
-    case 'Crush Grip':
-    case 'Wring Out':
-      basePower = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
-      description.moveBP = basePower;
-      break;
-    default:
-      basePower = move.bp;
+    }
+    break;
+  case 'Crush Grip':
+  case 'Wring Out':
+    basePower = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
+    description.moveBP = basePower;
+    break;
+  default:
+    basePower = move.bp;
   }
 
   if (field.attackerSide.isHelpingHand) {
@@ -278,7 +277,7 @@ export function calculateDPP(
   }
 
   ////////////////////////////////
-  ////////// (SP)ATTACK //////////
+  // //////// (SP)ATTACK //////////
   ////////////////////////////////
   const attackStat = isPhysical ? 'atk' : 'spa';
   description.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
@@ -338,7 +337,7 @@ export function calculateDPP(
   }
 
   ////////////////////////////////
-  ///////// (SP)DEFENSE //////////
+  // /////// (SP)DEFENSE //////////
   ////////////////////////////////
   const defenseStat = isPhysical ? 'def' : 'spd';
   description.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
@@ -393,7 +392,7 @@ export function calculateDPP(
   }
 
   ////////////////////////////////
-  //////////// DAMAGE ////////////
+  // ////////// DAMAGE ////////////
   ////////////////////////////////
   let baseDamage = Math.floor(
     Math.floor((Math.floor((2 * attacker.level) / 5 + 2) * basePower * attack) / 50) / defense
@@ -515,6 +514,6 @@ function getSimpleModifiedStat(stat: number, mod: number) {
   return simpleMod > 0
     ? Math.floor((stat * (2 + simpleMod)) / 2)
     : simpleMod < 0
-    ? Math.floor((stat * 2) / (2 - simpleMod))
-    : stat;
+      ? Math.floor((stat * 2) / (2 - simpleMod))
+      : stat;
 }

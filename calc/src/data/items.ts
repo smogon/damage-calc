@@ -589,7 +589,7 @@ class Item implements I.Item {
       this.isBerry = true;
       this.naturalGift = {
         basePower: gen < 6 ? berry.p - 20 : berry.p,
-        type: berry.t as I.TypeName,
+        type: berry.t,
       };
     }
   }

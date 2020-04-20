@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": "@pkmn",
+  "rules": {
+    "max-len": [
+      "error", {
+        "code": 100,
+        "ignorePattern": "^\\s*['\"`/]"
+      }
+    ]
+  }
+}

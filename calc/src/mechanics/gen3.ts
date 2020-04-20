@@ -56,12 +56,12 @@ export function calculateADV(
     move.type = field.hasWeather('Sun')
       ? 'Fire'
       : field.hasWeather('Rain')
-      ? 'Water'
-      : field.hasWeather('Sand')
-      ? 'Rock'
-      : field.hasWeather('Hail')
-      ? 'Ice'
-      : 'Normal';
+        ? 'Water'
+        : field.hasWeather('Sand')
+          ? 'Rock'
+          : field.hasWeather('Hail')
+            ? 'Ice'
+            : 'Normal';
     description.weather = field.weather;
     description.moveType = move.type;
     description.moveBP = move.bp;
@@ -110,24 +110,24 @@ export function calculateADV(
 
   let bp;
   switch (move.name) {
-    case 'Flail':
-    case 'Reversal':
-      const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
-      bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-      description.moveBP = bp;
-      break;
-    case 'Eruption':
-    case 'Water Spout':
-      bp = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
-      description.moveBP = bp;
-      break;
-    case 'Low Kick':
-      const w = defender.weight;
-      bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
-      description.moveBP = bp;
-      break;
-    default:
-      bp = move.bp;
+  case 'Flail':
+  case 'Reversal':
+    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+    description.moveBP = bp;
+    break;
+  case 'Eruption':
+  case 'Water Spout':
+    bp = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
+    description.moveBP = bp;
+    break;
+  case 'Low Kick':
+    const w = defender.weight;
+    bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
+    description.moveBP = bp;
+    break;
+  default:
+    bp = move.bp;
   }
 
   const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';

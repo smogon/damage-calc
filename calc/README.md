@@ -1,4 +1,6 @@
-# calc
+# `@smogon/calc`
+
+[![npm version](https://img.shields.io/npm/v/@smogon/calc.svg)](https://www.npmjs.com/package/@smogon/calc)&nbsp;
 
 This package powers the Pokémon Showdown damage calculator, providing a
 programmatic interface for computing damage ranges. While the top level package

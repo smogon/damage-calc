@@ -3,37 +3,36 @@
   "version": "0.2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "description": "Logic behind the official damage calculator for the Pokémon Showdown battle simulator",
-  "homepage": "https://calc.pokemonshowdown.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/smogon/damage-calc.git"
-  },
+  "description": "Pokémon battle calculator",
+  "repository": "github:smogon/damage-calc",
   "contributors": [
-    "Austin Couturier <austincouturier@icloud.com>",
-    "Guangcong Luo <zarel@zarel.com>",
-    "Kirk Scheibelhut <kjs@scheibo.com>",
-    "Mathieu Dias-Martins"
+    "Kirk Scheibelhut <pre@smogon.com>",
+    "Austin Couturier <austincouturier@icloud.com>"
   ],
   "license": "MIT",
   "dependencies": {
     "@types/node": "^13.9.1"
   },
   "devDependencies": {
+    "@pkmn/eslint-config": "^0.2.3",
     "@types/jest": "^25.1.4",
-    "gts": "^1.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint": "^6.8.0",
     "jest": "^25.1.0",
     "ts-jest": "^25.2.1",
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "lint": "gts check",
-    "fix": "gts fix",
+    "lint": "eslint --cache src/**/*.ts",
+    "fix": "eslint --fix src/**/*.ts",
     "compile": "tsc -p .",
+    "build": "npm run compile",
     "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "npm run compile",
-    "pretest": "npm run compile",
+    "prepare": "npm run build",
+    "pretest": "npm run build",
     "posttest": "npm run lint"
   }
 }

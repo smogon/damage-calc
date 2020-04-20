@@ -58,9 +58,9 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
     speed *= 2;
   }
   if (
-    (pokemon.hasAbility('Chlorophyll') && weather.indexOf('Sun') !== -1) ||
+    (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
     (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
-    (pokemon.hasAbility('Swift Swim') && weather.indexOf('Rain') !== -1) ||
+    (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
     (pokemon.hasAbility('Slush Rush') && weather === 'Hail')
   ) {
     speed *= 2;
@@ -96,7 +96,7 @@ export function getMoveEffectiveness(
   isGhostRevealed?: boolean,
   isGravity?: boolean
 ) {
-  if (isGhostRevealed && type === 'Ghost' && ['Normal', 'Fighting'].indexOf(move.type) !== -1) {
+  if (isGhostRevealed && type === 'Ghost' && ['Normal', 'Fighting'].includes(move.type)) {
     return 1;
   } else if (isGravity && type === 'Flying' && move.type === 'Ground') {
     return 1;
@@ -121,19 +121,19 @@ export function checkAirLock(pokemon: Pokemon, field: Field) {
 export function checkForecast(pokemon: Pokemon, weather?: Weather) {
   if (pokemon.hasAbility('Forecast') && pokemon.named('Castform')) {
     switch (weather) {
-      case 'Sun':
-      case 'Harsh Sunshine':
-        pokemon.type1 = 'Fire';
-        break;
-      case 'Rain':
-      case 'Heavy Rain':
-        pokemon.type1 = 'Water';
-        break;
-      case 'Hail':
-        pokemon.type1 = 'Ice';
-        break;
-      default:
-        pokemon.type1 = 'Normal';
+    case 'Sun':
+    case 'Harsh Sunshine':
+      pokemon.type1 = 'Fire';
+      break;
+    case 'Rain':
+    case 'Heavy Rain':
+      pokemon.type1 = 'Water';
+      break;
+    case 'Hail':
+      pokemon.type1 = 'Ice';
+      break;
+    default:
+      pokemon.type1 = 'Normal';
     }
     pokemon.type2 = undefined;
   }
@@ -193,7 +193,7 @@ export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
 
 export function checkSeedBoost(pokemon: Pokemon, field: Field) {
   if (!pokemon.item) return;
-  if (field.terrain && pokemon.item.indexOf('Seed') !== -1) {
+  if (field.terrain && pokemon.item.includes('Seed')) {
     const terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
     if (terrainSeed === field.terrain) {
       if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
@@ -211,9 +211,9 @@ export function checkSeedBoost(pokemon: Pokemon, field: Field) {
 
 export function chainMods(mods: number[]) {
   let M = 0x1000;
-  for (let i = 0; i < mods.length; i++) {
-    if (mods[i] !== 0x1000) {
-      M = (M * mods[i] + 0x800) >> 12;
+  for (const mod of mods) {
+    if (mod !== 0x1000) {
+      M = (M * mod + 0x800) >> 12;
     }
   }
   return M;
@@ -269,10 +269,10 @@ export function getEVDescriptionText(
     (nature.plus === nature.minus
       ? ''
       : nature.plus === stat
-      ? '+'
-      : nature.minus === stat
-      ? '-'
-      : '') +
+        ? '+'
+        : nature.minus === stat
+          ? '-'
+          : '') +
     ' ' +
     Stats.displayStat(stat)
   );

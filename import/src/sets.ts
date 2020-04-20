@@ -12,7 +12,7 @@ const toID = calc.toID;
 // prettier-ignore
 const TIERS = [
   'LC', 'NFE', 'UU', 'OU', 'Uber', 'NU', 'NUBL', 'UUBL', 'CAP', 'LC Uber', 'CAP LC',
-  'CAP NFE', 'RU', 'RUBL', 'PU', '(PU)', 'PUBL', '(OU)', 'AG','(Uber)', 'Illegal',
+  'CAP NFE', 'RU', 'RUBL', 'PU', '(PU)', 'PUBL', '(OU)', 'AG', '(Uber)', 'Illegal',
 ] as const;
 type Tier = typeof TIERS[number];
 
@@ -164,7 +164,7 @@ async function importSetsForPokemon(
     if (!data || (gen < 7 && RECENT_ONLY.includes(format as Format))) continue;
     const forme = toForme(pokemon);
     const smogon = data['smogon.com/dex'];
-    if (smogon && smogon[forme]) {
+    if (smogon?.[forme]) {
       setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
       for (const name in smogon[forme]) {
         setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
@@ -180,7 +180,7 @@ async function importSetsForPokemon(
       if (!eligible) continue;
 
       const usage = data['smogon.com/stats'];
-      if (usage && usage[forme]) {
+      if (usage?.[forme]) {
         setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
         for (const name in usage[forme]) {
           setsByPokemon[pokemon][`${FORMATS[format]}|${format} ${name}`] = toCalc(
@@ -307,19 +307,19 @@ function toStatsTable(stats: ps.DeepPartial<ps.StatsTable<number>>): StatsTable 
 
 function shortForm(stat: keyof ps.StatsTable<number>) {
   switch (stat) {
-    case 'hp':
-      return 'hp';
-    case 'atk':
-      return 'at';
-    case 'def':
-      return 'df';
-    case 'spa':
-      return 'sa';
-    case 'spd':
-      return 'sd';
-    case 'spe':
-      return 'sp';
-    default:
-      throw new TypeError('spc unsupported');
+  case 'hp':
+    return 'hp';
+  case 'atk':
+    return 'at';
+  case 'def':
+    return 'df';
+  case 'spa':
+    return 'sa';
+  case 'spd':
+    return 'sd';
+  case 'spe':
+    return 'sp';
+  default:
+    throw new TypeError('spc unsupported');
   }
 }

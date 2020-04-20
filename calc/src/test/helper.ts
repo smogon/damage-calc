@@ -1,4 +1,3 @@
-import {Generations} from '../data';
 import {StatsTable} from '../stats';
 import {Status} from '../pokemon';
 import * as I from '../data/interface';
@@ -13,6 +12,7 @@ declare global {
   }
 }
 
+/* global expect */
 expect.extend({
   toBeRange(received: number[], floor: number, ceiling: number) {
     const a = received[0];
