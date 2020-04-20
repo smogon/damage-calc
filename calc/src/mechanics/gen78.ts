@@ -18,6 +18,7 @@ import {Stat} from '../stats';
 import {
   chainMods,
   checkAirLock,
+  checkDauntlessShield,
   checkDownload,
   checkForecast,
   checkInfiltrator,
@@ -66,6 +67,8 @@ export function calculateSMSS(
   checkDownload(defender, attacker);
   checkIntrepidSword(attacker);
   checkIntrepidSword(defender);
+  checkDauntlessShield(attacker);
+  checkDauntlessShield(defender);
 
   attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk);
   attacker.stats.spa = getModifiedStat(attacker.rawStats.spa, attacker.boosts.spa);

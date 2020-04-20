@@ -177,6 +177,12 @@ export function checkIntrepidSword(source: Pokemon) {
   }
 }
 
+export function checkDauntlessShield(source: Pokemon) {
+  if (source.hasAbility('Dauntless Shield')) {
+    source.boosts.def = Math.min(6, source.boosts.def + 1);
+  }
+}
+
 export function checkInfiltrator(pokemon: Pokemon, affectedSide: Side) {
   if (pokemon.hasAbility('Infiltrator')) {
     affectedSide.isReflect = false;
