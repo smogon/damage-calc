@@ -456,8 +456,12 @@ export function calculateDPP(
   }
 
   if (move.name === 'Pursuit' && field.defenderSide.isSwitching) {
-    baseDamage = Math.floor(baseDamage * 2);
-    description.isSwitching = true;
+    if (attacker.hasAbility('Technician')) {//technician negates switching boost, thanks DaWoblefet
+      baseDamage = Math.floor(baseDamage * 1);
+    } else {
+      baseDamage = Math.floor(baseDamage * 2);
+      description.isSwitching = true;
+    }
   }
 
   // the random factor is applied between the LO mod and the STAB mod, so don't apply anything below this until we're inside the loop

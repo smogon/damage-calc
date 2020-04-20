@@ -592,8 +592,12 @@ export function calculateBWXY(
     description.defenderAbility = defender.ability;
   }
   if (move.name === 'Pursuit' && field.defenderSide.isSwitching) {
-    atMods.push(0x2000);
-    description.isSwitching = true;
+    if (attacker.hasAbility('Technician')) {//technician negates switching boost, thanks DaWoblefet
+      atMods.push(0x1000);
+    } else {
+      atMods.push(0x2000);
+      description.isSwitching = true;
+    }
   }
   if (
     (attacker.hasAbility('Guts') &&
