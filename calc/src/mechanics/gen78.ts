@@ -492,7 +492,8 @@ export function calculateSMSS(
     desc.isBattery = true;
   }
 
-  if (attacker.hasAbility('Sheer Force') && move.hasSecondaryEffect) {
+  // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
+  if (attacker.hasAbility('Sheer Force') && move.hasSecondaryEffect && !move.isMax) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   } else if (
