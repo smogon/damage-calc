@@ -475,7 +475,8 @@ export function calculateSMSS(
     desc.attackerAbility = attacker.ability;
   }
 
-  if (!move.isZ && (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize)) {
+  if (!move.isZ && !move.isMax &&
+      (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize)) {
     bpMods.push(0x1333);
     desc.attackerAbility = attacker.ability;
   } else if (
@@ -749,6 +750,7 @@ export function calculateSMSS(
   ) {
     atMods.push(0x2000);
     desc.attackerItem = attacker.item;
+    // Choice Band/Scarf/Specs move lock and stat boosts are ignored during Dynamax (Anubis)
   } else if (!move.isZ && !move.isMax &&
     ((attacker.hasItem('Choice Band') && move.category === 'Physical') ||
       (attacker.hasItem('Choice Specs') && move.category === 'Special'))
