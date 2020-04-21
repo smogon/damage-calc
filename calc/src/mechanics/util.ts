@@ -286,3 +286,15 @@ export function getEVDescriptionText(
     : '') + ' ' +
      Stats.displayStat(stat));
 }
+
+export function handleFixedDamageMoves(attacker: Pokemon, move: Move) {
+  const times = attacker.hasAbility('Parental Bond') ? 2 : 1;
+  if (move.named('Seismic Toss', 'Night Shade')) {
+    return attacker.level * times;
+  } else if (move.named('Dragon Rage')) {
+    return 40 * times;
+  } else if (move.named('Sonic Boom')) {
+    return 20 * times;
+  }
+  return 0;
+}

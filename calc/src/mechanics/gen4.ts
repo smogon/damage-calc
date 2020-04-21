@@ -16,6 +16,7 @@ import {
   checkIntimidate,
   checkDownload,
   countBoosts,
+  handleFixedDamageMoves,
 } from './util';
 
 export function calculateDPP(
@@ -132,14 +133,9 @@ export function calculateDPP(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  if (move.named('Seismic Toss', 'Night Shade')) {
-    damage.push(attacker.level);
-    return result;
-  } else if (move.named('Sonic Boom')) {
-    damage.push(20);
-    return result;
-  } else if (move.named('Dragon Rage')) {
-    damage.push(40);
+  const fixedDamage = handleFixedDamageMoves(attacker, move);
+  if (fixedDamage) {
+    damage.push(fixedDamage);
     return result;
   }
 

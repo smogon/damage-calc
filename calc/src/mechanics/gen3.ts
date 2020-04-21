@@ -14,6 +14,7 @@ import {
   checkAirLock,
   checkForecast,
   checkIntimidate,
+  handleFixedDamageMoves,
 } from './util';
 
 export function calculateADV(
@@ -94,15 +95,9 @@ export function calculateADV(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  const lv = attacker.level;
-  if (move.named('Seismic Toss', 'Night Shade')) {
-    damage.push(lv);
-    return result;
-  } else if (move.named('Sonic Boom')) {
-    damage.push(20);
-    return result;
-  } else if (move.named('Dragon Rage')) {
-    damage.push(40);
+  const fixedDamage = handleFixedDamageMoves(attacker, move);
+  if (fixedDamage) {
+    damage.push(fixedDamage);
     return result;
   }
 
@@ -219,6 +214,7 @@ export function calculateADV(
     desc.defenseBoost = defenseBoost;
   }
 
+  const lv = attacker.level;
   let baseDamage = Math.floor(Math.floor((Math.floor((2 * lv) / 5 + 2) * at * bp) / df) / 50);
 
   if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {

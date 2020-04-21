@@ -6,16 +6,20 @@ import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {computeFinalStats, getMoveEffectiveness} from './util';
+import {computeFinalStats, getMoveEffectiveness, handleFixedDamageMoves} from './util';
 
-export function calculateGSC(
+export function calculateRBYGSC(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
   field: Field
 ) {
-  computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
+  if (gen.num === 1) {
+    computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spc', 'spe');
+  } else {
+    computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
+  }
 
   const desc: RawDesc = {
     attackerName: attacker.name,
@@ -37,6 +41,15 @@ export function calculateGSC(
     return result;
   }
 
+  // Fixed damage moves (eg. Night Shade) ignore type effectiveness in Gen 1
+  if (gen.num === 1) {
+    const fixedDamage = handleFixedDamageMoves(attacker, move);
+    if (fixedDamage) {
+      damage.push(fixedDamage);
+      return result;
+    }
+  }
+
   const type1Effectiveness =
     getMoveEffectiveness(gen, move, defender.type1, field.defenderSide.isForesight);
   const type2Effectiveness = defender.type2
@@ -49,16 +62,12 @@ export function calculateGSC(
     return result;
   }
 
-  let lv = attacker.level;
-  if (move.named('Seismic Toss', 'Night Shade')) {
-    damage.push(lv);
-    return result;
-  } else if (move.named('Sonic Boom')) {
-    damage.push(20);
-    return result;
-  } else if (move.named('Dragon Rage')) {
-    damage.push(40);
-    return result;
+  if (gen.num === 2) {
+    const fixedDamage = handleFixedDamageMoves(attacker, move);
+    if (fixedDamage) {
+      damage.push(fixedDamage);
+      return result;
+    }
   }
 
   if (move.hits > 1) {
@@ -74,18 +83,25 @@ export function calculateGSC(
   }
 
   const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
-  const attackStat = isPhysical ? 'atk' : 'spa';
-  const defenseStat = isPhysical ? 'def' : 'spd';
-  let at = attacker.stats[attackStat];
-  let df = defender.stats[defenseStat];
+  const attackStat = isPhysical ? 'atk' : (gen.num === 1 ? 'spc' : 'spa');
+  const defenseStat = isPhysical ? 'def' : (gen.num === 1 ? 'spc' : 'spd');
+  let at = attacker.stats[attackStat]!;
+  let df = defender.stats[defenseStat]!;
 
-  // ignore Reflect, Light Screen, stat stages, and burns if attack is a crit and attacker does
-  // not have stat stage advantage
-  const ignoreMods = move.isCrit && attacker.boosts[attackStat] <= defender.boosts[defenseStat];
+  // Whether we ignore Reflect, Light Screen, stat stages, and burns if attack is a crit differs
+  // by gen - in gen 2 we also need to check that the attacker does not have stat stage advantage
+  const ignoreMods = move.isCrit &&
+    (gen.num === 1 ||
+    (gen.num === 2 && attacker.boosts[attackStat]! <= defender.boosts[defenseStat]!));
 
+  let lv = attacker.level;
   if (ignoreMods) {
-    at = attacker.rawStats[attackStat];
-    df = defender.rawStats[defenseStat];
+    at = attacker.rawStats[attackStat]!;
+    df = defender.rawStats[defenseStat]!;
+    if (gen.num === 1) {
+      lv *= 2;
+      desc.isCritical = true;
+    }
   } else {
     if (attacker.boosts[attackStat] !== 0) desc.attackBoost = attacker.boosts[attackStat];
     if (defender.boosts[defenseStat] !== 0) desc.defenseBoost = defender.boosts[defenseStat];
@@ -143,7 +159,8 @@ export function calculateGSC(
     Math.floor((Math.floor((2 * lv) / 5 + 2) * Math.max(1, at) * move.bp) / Math.max(1, df)) / 50
   );
 
-  if (move.isCrit) {
+  // Gen 1 handles move.isCrit above by doubling level
+  if (gen.num === 2 && move.isCrit) {
     baseDamage *= 2;
     desc.isCritical = true;
   }

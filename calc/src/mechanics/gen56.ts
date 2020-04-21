@@ -29,6 +29,7 @@ import {
   getModifiedStat,
   getMoveEffectiveness,
   getWeightFactor,
+  handleFixedDamageMoves,
   isGrounded,
   pokeRound,
 } from './util';
@@ -234,15 +235,9 @@ export function calculateBWXY(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  const times = attacker.hasAbility('Parental Bond') ? 2 : 1;
-  if (move.named('Seismic Toss', 'Night Shade')) {
-    damage.push(attacker.level * times);
-    return result;
-  } else if (move.named('Sonic Boom')) {
-    damage.push(20 * times);
-    return result;
-  } else if (move.named('Dragon Rage')) {
-    damage.push(40 * times);
+  const fixedDamage = handleFixedDamageMoves(attacker, move);
+  if (fixedDamage) {
+    damage.push(fixedDamage);
     return result;
   }
 

@@ -24,8 +24,7 @@
 //   - mechanics/gen56.js
 //   - mechanics/gen4.js
 //   - mechanics/gen3.js
-//   - mechanics/gen2.js
-//   - mechanics/gen1.js
+//   - mechanics/gen12.js
 //
 //   - calc.js
 //   - desc.js
