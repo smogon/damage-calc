@@ -77,7 +77,7 @@ export function calculateRBYGSC(
   // Flail and Reversal are variable BP and never crit
   if (move.named('Flail', 'Reversal')) {
     move.isCrit = false;
-    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = move.bp;
   }

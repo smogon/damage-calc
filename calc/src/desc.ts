@@ -139,17 +139,19 @@ export function getRecoil(
   let recoil: [number, number] | number = [0, 0];
   let text = '';
 
-  const damageOverflow = minDamage > defender.curHP || maxDamage > defender.curHP;
+  const damageOverflow = minDamage > defender.curHP() || maxDamage > defender.curHP();
   if (typeof move.hasRecoil === 'number') {
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow) {
-      minRecoilDamage = toDisplay(notation, defender.curHP * move.hasRecoil, attacker.maxHP(), 100);
-      maxRecoilDamage = toDisplay(notation, defender.curHP * move.hasRecoil, attacker.maxHP(), 100);
+      minRecoilDamage =
+        toDisplay(notation, defender.curHP() * move.hasRecoil, attacker.maxHP(), 100);
+      maxRecoilDamage =
+        toDisplay(notation, defender.curHP() * move.hasRecoil, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
-        notation, Math.min(minDamage, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
+        notation, Math.min(minDamage, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(
-        notation, Math.min(maxDamage, defender.curHP) * move.hasRecoil, attacker.maxHP(), 100);
+        notation, Math.min(maxDamage, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
     }
     if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
@@ -160,8 +162,10 @@ export function getRecoil(
 
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow && gen.num !== 2) {
-      minRecoilDamage = toDisplay(notation, defender.curHP * genMultiplier, attacker.maxHP(), 100);
-      maxRecoilDamage = toDisplay(notation, defender.curHP * genMultiplier, attacker.maxHP(), 100);
+      minRecoilDamage =
+        toDisplay(notation, defender.curHP() * genMultiplier, attacker.maxHP(), 100);
+      maxRecoilDamage =
+        toDisplay(notation, defender.curHP() * genMultiplier, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
         notation,  Math.min(minDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
@@ -253,7 +257,7 @@ export function getKOChance(
 
   if ((move.timesUsed === 1 && move.timesUsedWithMetronome === 1) || move.isZ) {
     const chance = computeKOChance(
-      damage, defender.curHP - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter);
+      damage, defender.curHP() - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter);
     if (chance === 1) {
       return {chance, n: 1, text: `guaranteed OHKO${afterText}`};
     } else if (chance > 0) {
@@ -266,7 +270,14 @@ export function getKOChance(
 
     for (let i = 2; i <= 4; i++) {
       const chance = computeKOChance(
-        damage, defender.curHP - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter);
+        damage,
+        defender.curHP() - hazards.damage,
+        eot.damage,
+        i,
+        1,
+        defender.maxHP(),
+        toxicCounter
+      );
       if (chance === 1) {
         return {chance, n: i, text: `guaranteed ${i}HKO${afterText}`};
       } else if (chance > 0) {
@@ -281,12 +292,12 @@ export function getKOChance(
     for (let i = 5; i <= 9; i++) {
       if (
         predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
-        defender.curHP - hazards.damage
+        defender.curHP() - hazards.damage
       ) {
         return {chance: 1, n: i, text: `guaranteed ${i}HKO${afterText}`};
       } else if (
         predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
-        defender.curHP - hazards.damage
+        defender.curHP() - hazards.damage
       ) {
         return {n: i, text: `possible ${i}HKO${afterText}`};
       }
@@ -320,7 +331,7 @@ export function getKOChance(
 
     if (
       predictTotal(damage[0], eot.damage, move.hits, move.timesUsed, toxicCounter, defender.maxHP())
-      >= defender.curHP - hazards.damage
+      >= defender.curHP() - hazards.damage
     ) {
       return {
         chance: 1,
@@ -336,7 +347,7 @@ export function getKOChance(
         toxicCounter,
         defender.maxHP()
       ) >=
-      defender.curHP - hazards.damage
+      defender.curHP() - hazards.damage
     ) {
       return {n: move.timesUsed, text: `possible KO in ${move.timesUsed} turns${afterText}`};
     }

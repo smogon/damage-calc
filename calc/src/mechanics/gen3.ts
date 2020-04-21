@@ -109,13 +109,13 @@ export function calculateADV(
   switch (move.name) {
   case 'Flail':
   case 'Reversal':
-    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = bp;
     break;
   case 'Eruption':
   case 'Water Spout':
-    bp = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
+    bp = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
     desc.moveBP = bp;
     break;
   case 'Low Kick':
@@ -187,7 +187,7 @@ export function calculateADV(
   ) {
     at = Math.floor(at * 1.5);
     desc.attackerAbility = attacker.ability;
-  } else if (attacker.curHP <= attacker.maxHP() / 3 &&
+  } else if (attacker.curHP() <= attacker.maxHP() / 3 &&
     ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
      (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
      (attacker.hasAbility('Torrent') && move.hasType('Water')) ||

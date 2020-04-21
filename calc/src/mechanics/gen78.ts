@@ -204,7 +204,7 @@ export function calculateSMSS(
   if ((attacker.hasAbility('Triage') && move.givesHealth) ||
       (attacker.hasAbility('Gale Wings') &&
        move.hasType('Flying') &&
-       attacker.curHP === attacker.maxHP())) {
+       attacker.curHP() === attacker.maxHP())) {
     move.hasPriority = true;
     desc.attackerAbility = attacker.ability;
   }
@@ -306,12 +306,12 @@ export function calculateSMSS(
   }
 
   if (move.named('Final Gambit')) {
-    damage.push(attacker.curHP);
+    damage.push(attacker.curHP());
     return result;
   }
 
   if (move.named('Guardian of Alola')) {
-    let zLostHP = Math.floor((defender.curHP * 3) / 4);
+    let zLostHP = Math.floor((defender.curHP() * 3) / 4);
     if (field.defenderSide.isProtected && attacker.item && attacker.item.includes(' Z')) {
       zLostHP = Math.ceil(zLostHP / 4 - 0.5);
     }
@@ -320,7 +320,7 @@ export function calculateSMSS(
   }
 
   if (move.named("Nature's Madness")) {
-    const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP / 2);
+    const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP() / 2);
     damage.push(lostHP);
     return result;
   }
@@ -420,12 +420,12 @@ export function calculateSMSS(
     break;
   case 'Eruption':
   case 'Water Spout':
-    basePower = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
+    basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
     desc.moveBP = basePower;
     break;
   case 'Flail':
   case 'Reversal':
-    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -441,7 +441,7 @@ export function calculateSMSS(
     break;
   case 'Crush Grip':
   case 'Wring Out':
-    basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP());
+    basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
     basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
     desc.moveBP = basePower;
     break;
@@ -601,7 +601,7 @@ export function calculateSMSS(
   }
 
   if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
-      (move.named('Brine') && defender.curHP <= defender.maxHP() / 2) ||
+      (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
       (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))
   ) {
     bpMods.push(0x2000);
@@ -680,7 +680,7 @@ export function calculateSMSS(
   // Slow Start also halves damage with special Z-moves
   if ((attacker.hasAbility('Slow Start') && attacker.abilityOn &&
        (move.category === 'Physical' || (move.category === 'Special' && move.isZ))) ||
-      (attacker.hasAbility('Defeatist') && attacker.curHP <= attacker.maxHP() / 2)
+      (attacker.hasAbility('Defeatist') && attacker.curHP() <= attacker.maxHP() / 2)
   ) {
     atMods.push(0x800);
     desc.attackerAbility = attacker.ability;
@@ -700,7 +700,7 @@ export function calculateSMSS(
     desc.weather = field.weather;
   } else if (
     (attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
-    (attacker.curHP <= attacker.maxHP() / 3 &&
+    (attacker.curHP() <= attacker.maxHP() / 3 &&
       ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
        (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
        (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
@@ -925,7 +925,7 @@ export function calculateSMSS(
     finalMods.push(0x2000);
   }
 
-  if (defender.hasAbility('Multiscale', 'Shadow Shield') && defender.curHP === defender.maxHP() &&
+  if (defender.hasAbility('Multiscale', 'Shadow Shield') && defender.curHP() === defender.maxHP() &&
       !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying'))) {
     finalMods.push(0x800);
     desc.defenderAbility = defender.ability;

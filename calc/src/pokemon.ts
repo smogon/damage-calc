@@ -27,11 +27,12 @@ export class Pokemon {
   rawStats: StatsTable;
   stats: StatsTable;
 
-  curHP: number;
   status: StatusName | '';
   toxicCounter: number;
 
   moves: I.MoveName[];
+
+  private originalCurHP: number;
 
   constructor(
     gen: I.Generation,
@@ -93,14 +94,19 @@ export class Pokemon {
       this.stats[stat] = val;
     }
 
-    this.curHP = options.curHP && options.curHP <= this.maxHP() ? options.curHP : this.maxHP();
+    this.originalCurHP =
+      options.curHP && options.curHP <= this.rawStats.hp ? options.curHP : this.rawStats.hp;
     this.status = options.status || '';
     this.toxicCounter = options.toxicCounter || 0;
     this.moves = options.moves || [];
   }
 
-  /* get */ maxHP() {
-    return this.isDynamaxed ? this.rawStats.hp * 2 : this.rawStats.hp;
+  maxHP(original = false) {
+    return !original && this.isDynamaxed ? this.rawStats.hp * 2 : this.rawStats.hp;
+  }
+
+  curHP(original = false) {
+    return !original && this.isDynamaxed ? this.originalCurHP * 2 : this.originalCurHP;
   }
 
   hasAbility(...abilities: string[]) {
@@ -138,7 +144,7 @@ export class Pokemon {
       ivs: extend(true, {}, this.ivs),
       evs: extend(true, {}, this.evs),
       boosts: extend(true, {}, this.boosts),
-      curHP: this.curHP,
+      curHP: this.originalCurHP,
       status: this.status,
       toxicCounter: this.toxicCounter,
       moves: this.moves.slice(),

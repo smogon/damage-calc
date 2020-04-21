@@ -243,7 +243,7 @@ export function calculateBWXY(
   }
 
   if (move.named('Final Gambit')) {
-    damage.push(attacker.curHP);
+    damage.push(attacker.curHP());
     return result;
   }
 
@@ -318,12 +318,12 @@ export function calculateBWXY(
     break;
   case 'Eruption':
   case 'Water Spout':
-    basePower = Math.max(1, Math.floor((150 * attacker.curHP) / attacker.maxHP()));
+    basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
     desc.moveBP = basePower;
     break;
   case 'Flail':
   case 'Reversal':
-    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -339,7 +339,7 @@ export function calculateBWXY(
     break;
   case 'Crush Grip':
   case 'Wring Out':
-    basePower = 100 * Math.floor((defender.curHP * 4096) / defender.maxHP());
+    basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
     basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
     desc.moveBP = basePower;
     break;
@@ -431,7 +431,7 @@ export function calculateBWXY(
   }
 
   if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
-      (move.named('Brine') && defender.curHP <= defender.maxHP() / 2) ||
+      (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
       (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))) {
     bpMods.push(0x2000);
     desc.moveBP = move.bp * 2;
@@ -537,7 +537,7 @@ export function calculateBWXY(
   }
 
   if ((attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
-      (attacker.curHP <= attacker.maxHP() / 3 &&
+      (attacker.curHP() <= attacker.maxHP() / 3 &&
         ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
          (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
          (attacker.hasAbility('Torrent') && move.hasType('Water')) ||
@@ -562,7 +562,7 @@ export function calculateBWXY(
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
   } else if (
-    (attacker.hasAbility('Defeatist') && attacker.curHP <= attacker.maxHP() / 2) ||
+    (attacker.hasAbility('Defeatist') && attacker.curHP() <= attacker.maxHP() / 2) ||
     (attacker.hasAbility('Slow Start') && attacker.abilityOn && move.category === 'Physical')
   ) {
     atMods.push(0x800);
@@ -744,7 +744,7 @@ export function calculateBWXY(
     desc.isLightScreen = true;
   }
 
-  if (defender.hasAbility('Multiscale') && defender.curHP === defender.maxHP() &&
+  if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
       !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying'))) {
     finalMods.push(0x800);
     desc.defenderAbility = defender.ability;

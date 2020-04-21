@@ -149,14 +149,14 @@ export function calculateDPP(
 
   switch (move.name) {
   case 'Brine':
-    if (defender.curHP <= defender.maxHP() / 2) {
+    if (defender.curHP() <= defender.maxHP() / 2) {
       basePower *= 2;
       desc.moveBP = basePower;
     }
     break;
   case 'Eruption':
   case 'Water Spout':
-    basePower = Math.max(1, Math.floor((basePower * attacker.curHP) / attacker.maxHP()));
+    basePower = Math.max(1, Math.floor((basePower * attacker.curHP()) / attacker.maxHP()));
     desc.moveBP = basePower;
     break;
   case 'Facade':
@@ -167,7 +167,7 @@ export function calculateDPP(
     break;
   case 'Flail':
   case 'Reversal':
-    const p = Math.floor((48 * attacker.curHP) / attacker.maxHP());
+    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -207,7 +207,7 @@ export function calculateDPP(
     break;
   case 'Crush Grip':
   case 'Wring Out':
-    basePower = Math.floor((defender.curHP * 120) / defender.maxHP()) + 1;
+    basePower = Math.floor((defender.curHP() * 120) / defender.maxHP()) + 1;
     desc.moveBP = basePower;
     break;
   default:
@@ -238,7 +238,7 @@ export function calculateDPP(
       (attacker.hasAbility('Iron Fist') && move.isPunch)) {
     basePower = Math.floor(basePower * 1.2);
     desc.attackerAbility = attacker.ability;
-  } else if ((attacker.curHP <= attacker.maxHP() / 3 &&
+  } else if ((attacker.curHP() <= attacker.maxHP() / 3 &&
     ((attacker.hasAbility('Overgrow') && move.hasType('Grass')) ||
       (attacker.hasAbility('Blaze') && move.hasType('Fire')) ||
       (attacker.hasAbility('Torrent') && move.hasType('Water')) ||

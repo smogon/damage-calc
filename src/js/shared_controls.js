@@ -675,6 +675,9 @@ function createPokemon(pokeInfo) {
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
+		var curHP = ~~pokeInfo.find(".current-hp").val();
+		// FIXME the Pokemon constructor expects non-dynamaxed HP
+		if (isDynamaxed) curHP = Math.floor(curHP / 2);
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
 			ability: ability,
@@ -686,7 +689,7 @@ function createPokemon(pokeInfo) {
 			evs: evs,
 			isDynamaxed: isDynamaxed,
 			boosts: boosts,
-			curHP: ~~pokeInfo.find(".current-hp").val(),
+			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [

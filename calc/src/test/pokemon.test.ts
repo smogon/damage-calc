@@ -17,7 +17,7 @@ describe('Pokemon', () => {
     expect(p.status).toBe('');
     expect(p.hasStatus()).toBe(false);
     expect(p.toxicCounter).toBe(0);
-    expect(p.curHP).toBe(p.stats.hp);
+    expect(p.curHP()).toBe(p.stats.hp);
 
     let stat: Stat;
     // tslint:disable-next-line:forin
@@ -56,7 +56,7 @@ describe('Pokemon', () => {
     expect(p.nature).toBe('Bold');
     expect(p.status).toBe('tox');
     expect(p.toxicCounter).toBe(2);
-    expect(p.curHP).toBe(60);
+    expect(p.curHP()).toBe(60);
 
     expect(p.ivs).toEqual({hp: 31, atk: 31, def: 31, spa: 30, spd: 31, spe: 31});
     expect(p.evs).toEqual({hp: 252, atk: 0, def: 252, spa: 0, spd: 4, spe: 0});
@@ -79,8 +79,8 @@ describe('Pokemon', () => {
     expect(p.evs).toEqual({hp: 252, atk: 200, def: 252, spc: 252, spe: 252});
     expect(p.stats).toEqual({hp: 343, atk: 298, def: 274, spc: 228, spe: 318});
 
-    // curHP capped to maxHP
-    expect(p.curHP).toBe(p.maxHP());
+    // curHP() capped to maxHP
+    expect(p.curHP()).toBe(p.maxHP());
   });
 
   test('getForme', () => {
