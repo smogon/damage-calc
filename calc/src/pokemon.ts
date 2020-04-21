@@ -102,11 +102,17 @@ export class Pokemon {
   }
 
   maxHP(original = false) {
-    return !original && this.isDynamaxed ? this.rawStats.hp * 2 : this.rawStats.hp;
+    // Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
+    return !original && this.isDynamaxed && this.species.bs.hp !== 1
+      ? this.rawStats.hp * 2
+      : this.rawStats.hp;
   }
 
   curHP(original = false) {
-    return !original && this.isDynamaxed ? this.originalCurHP * 2 : this.originalCurHP;
+    // Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
+    return !original && this.isDynamaxed && this.species.bs.hp !== 1
+      ? this.originalCurHP * 2
+      : this.originalCurHP;
   }
 
   hasAbility(...abilities: string[]) {
