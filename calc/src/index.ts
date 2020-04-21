@@ -86,8 +86,8 @@ export class Move extends A.Move {
       useMax?: boolean;
       isCrit?: boolean;
       hits?: number;
-      usedTimes?: number;
-      metronomeCount?: number;
+      timesUsed?: number;
+      timesUsedWithMetronome?: number;
       overrides?: Partial<I.Move>;
     } = {}
   ) {

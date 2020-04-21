@@ -49,8 +49,8 @@ const move = (gen: I.GenerationNum) => (
     useMax?: boolean;
     isCrit?: boolean;
     hits?: number;
-    usedTimes?: number;
-    metronomeCount?: number;
+    timesUsed?: number;
+    timesUsedWithMetronome?: number;
     overrides?: Partial<I.Move>;
   } = {}
 ) => new Move(gen, name, options);

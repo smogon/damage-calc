@@ -14,8 +14,8 @@ export class Move {
   overrides?: Partial<I.Move>;
 
   hits: number;
-  usedTimes?: number;
-  metronomeCount?: number;
+  timesUsed?: number;
+  timesUsedWithMetronome?: number;
   bp: number;
   type: I.TypeName;
   category: I.MoveCategory;
@@ -52,8 +52,8 @@ export class Move {
       useMax?: boolean;
       isCrit?: boolean;
       hits?: number;
-      usedTimes?: number;
-      metronomeCount?: number;
+      timesUsed?: number;
+      timesUsedWithMetronome?: number;
       overrides?: Partial<I.Move>;
     } = {}
   ) {
@@ -90,9 +90,9 @@ export class Move {
         : data.isTwoHit
         ? 2
         : 1;
-      this.metronomeCount = options.metronomeCount;
+      this.timesUsedWithMetronome = options.timesUsedWithMetronome;
     }
-    this.usedTimes = (data.dropsStats && options.usedTimes) || 1;
+    this.timesUsed = (data.dropsStats && options.timesUsed) || 1;
 
     this.gen = gen;
     this.name = data.name;
@@ -145,8 +145,8 @@ export class Move {
       useMax: this.useMax,
       isCrit: this.isCrit,
       hits: this.hits,
-      usedTimes: this.usedTimes,
-      metronomeCount: this.metronomeCount,
+      timesUsed: this.timesUsed,
+      timesUsedWithMetronome: this.timesUsedWithMetronome,
       overrides: this.overrides,
     });
   }

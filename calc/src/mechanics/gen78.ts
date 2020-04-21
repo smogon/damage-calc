@@ -121,7 +121,7 @@ export function calculateSMSS(
   const isCritical =
     ((move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor')) ||
       (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
-    move.usedTimes === 1;
+    move.timesUsed === 1;
 
   if (move.named('Weather Ball')) {
     move.type =
@@ -961,10 +961,10 @@ export function calculateSMSS(
   } else if (attacker.hasItem('Life Orb')) {
     finalMods.push(0x14cc);
     desc.attackerItem = attacker.item;
-  } else if (attacker.hasItem('Metronome') && (move.metronomeCount || 0) >= 1) {
-    const metronomeCount = Math.floor(move.metronomeCount!);
-    if (metronomeCount <= 4) {
-      finalMods.push(0x1000 + metronomeCount * 0x333);
+  } else if (attacker.hasItem('Metronome') && move.timesUsedWithMetronome! >= 1) {
+    const timesUsedWithMetronome = Math.floor(move.timesUsedWithMetronome!);
+    if (timesUsedWithMetronome <= 4) {
+      finalMods.push(0x1000 + timesUsedWithMetronome * 0x333);
     } else {
       finalMods.push(0x2000);
     }
@@ -998,17 +998,17 @@ export function calculateSMSS(
     }
   }
 
-  if (move.dropsStats && (move.usedTimes || 0) > 1) {
+  if (move.dropsStats && (move.timesUsed || 0) > 1) {
     let simpleMultiplier = 1;
     if (attacker.hasAbility('Simple')) {
       simpleMultiplier = 2;
     }
 
-    desc.moveTurns = `over ${move.usedTimes} turns`;
+    desc.moveTurns = `over ${move.timesUsed} turns`;
     const hasWhiteHerb = attacker.hasItem('White Herb');
     let usedWhiteHerb = false;
     let dropCount = attacker.boosts[attackStat];
-    for (let times = 0; times < move.usedTimes!; times++) {
+    for (let times = 0; times < move.timesUsed!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
       result.damage = damage.map(affectedAmount => {

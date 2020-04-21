@@ -226,10 +226,10 @@ export function getKOChance(
   }
 
   // Code doesn't really work if these aren't set.
-  if (move.usedTimes === undefined) move.usedTimes = 1;
-  if (move.metronomeCount === undefined) move.metronomeCount = 1;
+  if (move.timesUsed === undefined) move.timesUsed = 1;
+  if (move.timesUsedWithMetronome === undefined) move.timesUsedWithMetronome = 1;
 
-  if (damage[0] >= defender.maxHP() && move.usedTimes === 1 && move.metronomeCount === 1) {
+  if (damage[0] >= defender.maxHP() && move.timesUsed === 1 && move.timesUsedWithMetronome === 1) {
     return {chance: 1, n: 1, text: 'guaranteed OHKO'};
   }
 
@@ -251,7 +251,7 @@ export function getKOChance(
       ? ' after ' + serializeText(hazards.texts.concat(eot.texts))
       : '';
 
-  if ((move.usedTimes === 1 && move.metronomeCount === 1) || move.isZ) {
+  if ((move.timesUsed === 1 && move.timesUsedWithMetronome === 1) || move.isZ) {
     const chance = computeKOChance(
       damage, defender.curHP - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter);
     if (chance === 1) {
@@ -297,50 +297,50 @@ export function getKOChance(
       defender.maxHP() - hazards.damage,
       eot.damage,
       move.hits || 1,
-      move.usedTimes || 1,
+      move.timesUsed || 1,
       defender.maxHP(),
       toxicCounter
     );
     if (chance === 1) {
       return {
         chance,
-        n: move.usedTimes,
-        text: `guaranteed KO in ${move.usedTimes} turns${afterText}`,
+        n: move.timesUsed,
+        text: `guaranteed KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (chance > 0) {
       return {
         chance,
-        n: move.usedTimes,
+        n: move.timesUsed,
         text:
           qualifier +
           Math.round(chance * 1000) / 10 +
-          `% chance to ${move.usedTimes}HKO${afterText}`,
+          `% chance to ${move.timesUsed}HKO${afterText}`,
       };
     }
 
     if (
-      predictTotal(damage[0], eot.damage, move.hits, move.usedTimes, toxicCounter, defender.maxHP())
+      predictTotal(damage[0], eot.damage, move.hits, move.timesUsed, toxicCounter, defender.maxHP())
       >= defender.curHP - hazards.damage
     ) {
       return {
         chance: 1,
-        n: move.usedTimes,
-        text: `guaranteed KO in ${move.usedTimes} turns${afterText}`,
+        n: move.timesUsed,
+        text: `guaranteed KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (
       predictTotal(
         damage[damage.length - 1],
         eot.damage,
         move.hits,
-        move.usedTimes,
+        move.timesUsed,
         toxicCounter,
         defender.maxHP()
       ) >=
       defender.curHP - hazards.damage
     ) {
-      return {n: move.usedTimes, text: `possible KO in ${move.usedTimes} turns${afterText}`};
+      return {n: move.timesUsed, text: `possible KO in ${move.timesUsed} turns${afterText}`};
     }
-    return {n: move.usedTimes, text: 'not a KO'};
+    return {n: move.timesUsed, text: 'not a KO'};
   }
 
   return {chance: 0, n: 0, text: ''};
