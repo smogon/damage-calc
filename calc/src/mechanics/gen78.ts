@@ -59,8 +59,8 @@ export function calculateSMSS(
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
-  checkIntimidate(attacker, defender);
-  checkIntimidate(defender, attacker);
+  checkIntimidate(gen, attacker, defender);
+  checkIntimidate(gen, defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
   checkIntrepidSword(attacker);
@@ -99,6 +99,7 @@ export function calculateSMSS(
     'Prism Armor',
     'Shadow Shield'
   );
+
   const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze');
   const moveIgnoresAbility = move.named(
     'Light That Burns the Sky',
@@ -118,9 +119,10 @@ export function calculateSMSS(
     }
   }
 
-  const isCritical =
-    ((move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor')) ||
-      (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
+  // Merciless does not ignore Shell Armor, damage dealt to a poisoned Pokemon with Shell Armor
+  // will not be a critical hit (UltiMario)
+  const isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor') &&
+    (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
     move.timesUsed === 1;
 
   if (move.named('Weather Ball')) {
@@ -252,7 +254,7 @@ export function calculateSMSS(
         (defender.hasType('Flying') || defender.weight >= 200 || field.isGravity)) ||
       (move.named('Synchronoise') && !defender.hasType(attacker.type1) &&
         (!attacker.type2 || !defender.hasType(attacker.type2))) ||
-      (move.named('Dream Eater') && !defender.hasStatus('slp') && !defender.hasAbility('Comatose'))
+      (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose')))
   ) {
     damage.push(0);
     return result;
@@ -380,7 +382,8 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Hex':
-    basePower = move.bp * (defender.status ? 2 : 1);
+    // Hex deals double damage to Pokemon with Comatose (ih8ih8sn0w)
+    basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Heavy Slam':
@@ -401,7 +404,8 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Wake-Up Slap':
-    basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
+    // Wake-Up Slap deals double damage to Pokemon with Comatose (ih8ih8sn0w)
+    basePower = move.bp * (defender.hasStatus('slp' || defender.hasAbility('Comatose')) ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Weather Ball':
@@ -728,6 +732,7 @@ export function calculateSMSS(
     desc.defenderAbility = defender.ability;
   }
 
+  // TODO: Payback no longer doubles in power when the target switches. (Sondero)
   if (move.named('Pursuit') && field.defenderSide.isSwitching) {
   // technician negates switching boost, thanks DaWoblefet
     if (attacker.hasAbility('Technician')) {
@@ -998,7 +1003,7 @@ export function calculateSMSS(
     }
   }
 
-  if (move.dropsStats && (move.timesUsed || 0) > 1) {
+  if (move.dropsStats && move.timesUsed! > 1) {
     let simpleMultiplier = 1;
     if (attacker.hasAbility('Simple')) {
       simpleMultiplier = 2;

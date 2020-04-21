@@ -28,8 +28,8 @@ export function calculateADV(
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
-  checkIntimidate(attacker, defender);
-  checkIntimidate(defender, attacker);
+  checkIntimidate(gen, attacker, defender);
+  checkIntimidate(gen, defender, attacker);
   attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
   defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
 

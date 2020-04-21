@@ -54,8 +54,8 @@ export function calculateBWXY(
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
-  checkIntimidate(attacker, defender);
-  checkIntimidate(defender, attacker);
+  checkIntimidate(gen, attacker, defender);
+  checkIntimidate(gen, defender, attacker);
   checkDownload(attacker, defender);
   checkDownload(defender, attacker);
 
