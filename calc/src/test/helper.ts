@@ -101,7 +101,7 @@ const side = (side: {
   isFriendGuard?: boolean;
   isAuroraVeil?: boolean;
   isBattery?: boolean;
-  isSwitching?: boolean;
+  isSwitching?: 'out' | 'in';
 }) => new Side(side);
 
 interface Gen {

@@ -75,7 +75,7 @@ export class Side {
   isFriendGuard: boolean;
   isAuroraVeil: boolean;
   isBattery: boolean;
-  isSwitching: boolean;
+  isSwitching?: 'out' | 'in';
 
   constructor(side: {
     spikes?: number;
@@ -91,7 +91,7 @@ export class Side {
     isFriendGuard?: boolean;
     isAuroraVeil?: boolean;
     isBattery?: boolean;
-    isSwitching?: boolean;
+    isSwitching?: 'out' | 'in';
   }) {
     this.spikes = side.spikes || 0;
     this.steelsurge = !!side.steelsurge;
@@ -106,7 +106,7 @@ export class Side {
     this.isFriendGuard = !!side.isFriendGuard;
     this.isAuroraVeil = !!side.isAuroraVeil;
     this.isBattery = !!side.isBattery;
-    this.isSwitching = !!side.isSwitching;
+    this.isSwitching = side.isSwitching;
   }
 
   clone() {

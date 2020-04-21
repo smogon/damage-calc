@@ -431,13 +431,13 @@ export function calculateDPP(
     desc.attackerItem = attacker.item;
   }
 
-  if (move.named('Pursuit') && field.defenderSide.isSwitching) {
+  if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
     // technician negates switching boost, thanks DaWoblefet
     if (attacker.hasAbility('Technician')) {
       baseDamage = Math.floor(baseDamage * 1);
     } else {
       baseDamage = Math.floor(baseDamage * 2);
-      desc.isSwitching = true;
+      desc.isSwitching = 'out';
     }
   }
 

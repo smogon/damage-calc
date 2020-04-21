@@ -757,14 +757,15 @@ function createField() {
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
-	var isSwitching = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
+	// TODO: support switching in as well!
+	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
 			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitching[i]
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
 		});
 	};
 	return new calc.Field({

@@ -526,13 +526,13 @@ export function calculateBWXY(
     desc.defenderAbility = defender.ability;
   }
 
-  if (move.named('Pursuit') && field.defenderSide.isSwitching) {
+  if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
     // technician negates switching boost, thanks DaWoblefet
     if (attacker.hasAbility('Technician')) {
       atMods.push(0x1000);
     } else {
       atMods.push(0x2000);
-      desc.isSwitching = true;
+      desc.isSwitching = 'out';
     }
   }
 

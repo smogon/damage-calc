@@ -165,9 +165,9 @@ export function calculateRBYGSC(
     desc.isCritical = true;
   }
 
-  if (move.named('Pursuit') && field.defenderSide.isSwitching) {
+  if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
     baseDamage = Math.floor(baseDamage * 2);
-    desc.isSwitching = true;
+    desc.isSwitching = 'out';
   }
 
   // In Gen 2 and no other gens, Dragon Fang in a no-op and Dragon Scale erroneously has its effect
