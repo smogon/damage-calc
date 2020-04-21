@@ -348,12 +348,6 @@ export function calculateSMSS(
   let basePower: number;
 
   switch (move.name) {
-  case 'Behemoth Bash':
-  case 'Behemoth Blade':
-  case 'Dynamax Cannon':
-    basePower = move.bp * (['Gmax', 'Dynamax'].some(s => defender.name.includes(s)) ? 2 : 1);
-    desc.moveBP = basePower;
-    break;
   case 'Payback':
     basePower = turnOrder === 'last' ? 100 : 50;
     desc.moveBP = basePower;
@@ -692,9 +686,8 @@ export function calculateSMSS(
      attacker.hasAbility('Flower Gift') &&
      field.hasWeather('Sun', 'Harsh Sunshine') &&
      move.category === 'Physical') ||
-    (attacker.hasAbility('Gorilla Tactics') &&
-     !['Gmax', 'Dynamax'].some(s => attacker.name.includes(s)))
-  ) {
+    // Gorilla Tactics has no effect during Dynamax (Anubis)
+    (attacker.hasAbility('Gorilla Tactics') && !attacker.isDynamaxed)) {
     atMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
