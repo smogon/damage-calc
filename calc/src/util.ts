@@ -1,5 +1,12 @@
 import {ID} from './data/interface';
 
+type Primitive = string | number | boolean | bigint | symbol | undefined | null;
+export type DeepPartial<T> =
+  T extends Primitive ? T
+  : T extends Array<infer U> ? Array<DeepPartial<U>>
+  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+  : Partial<T>;
+
 export function toID(text: any): ID {
   return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
 }

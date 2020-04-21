@@ -1,5 +1,5 @@
 ﻿import * as I from './interface';
-import {toID, extend} from '../util';
+import {toID, extend, DeepPartial} from '../util';
 
 // TODO: rename these fields to be readable
 export interface SpeciesData {
@@ -860,7 +860,7 @@ const RBY: {[name: string]: SpeciesData} = {
   },
 };
 
-const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, {
+const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   // gen 1 pokemon changes
   Abra: {bs: {sa: 105, sd: 55}},
   Aerodactyl: {bs: {sa: 60, sd: 75}},
@@ -1504,9 +1504,10 @@ const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, {
     w: 15,
   },
   Yanma: {t1: 'Bug', t2: 'Flying', bs: {hp: 65, at: 65, df: 45, sa: 75, sd: 45, sp: 95}, w: 38},
-});
+};
+const GSC: {[name: string]: SpeciesData} = extend(true, {}, RBY, GSC_PATCH);
 
-const ADV: {[name: string]: SpeciesData} = extend(true, {}, GSC, {
+const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   // gen 1 pokemon changes
   Abra: {ab: 'Synchronize'},
   Aerodactyl: {ab: 'Rock Head'},
@@ -2754,9 +2755,11 @@ const ADV: {[name: string]: SpeciesData} = extend(true, {}, GSC, {
     canEvolve: true,
     ab: 'Pickup',
   },
-});
+};
 
-const DPP: {[name: string]: SpeciesData} = extend(true, {}, ADV, {
+const ADV: {[name: string]: SpeciesData} = extend(true, {}, GSC, ADV_PATCH);
+
+const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Aipom: {canEvolve: true},
   Dusclops: {canEvolve: true},
   Electabuzz: {canEvolve: true},
@@ -3912,9 +3915,11 @@ const DPP: {[name: string]: SpeciesData} = extend(true, {}, ADV, {
     w: 51.5,
     ab: 'Speed Boost',
   },
-});
+};
 
-const BW: {[name: string]: SpeciesData} = extend(true, {}, DPP, {
+const DPP: {[name: string]: SpeciesData} = extend(true, {}, ADV, DPP_PATCH);
+
+const BW_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Rotom-Fan': {t2: 'Flying'},
   'Rotom-Frost': {t2: 'Ice'},
   'Rotom-Heat': {t2: 'Fire'},
@@ -5242,13 +5247,15 @@ const BW: {[name: string]: SpeciesData} = extend(true, {}, DPP, {
     ab: 'Hustle',
     canEvolve: true,
   },
-});
+};
+
+const BW: {[name: string]: SpeciesData} = extend(true, {}, DPP, BW_PATCH);
 
 // @ts-ignore readonly
 delete BW['Pichu'].formes;
 delete BW['Pichu-Spiky-eared'];
 
-const XY: {[name: string]: SpeciesData} = extend(true, {}, BW, {
+const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Abomasnow: {formes: ['Abomasnow', 'Abomasnow-Mega']},
   Absol: {formes: ['Absol', 'Absol-Mega']},
   Aerodactyl: {formes: ['Aerodactyl', 'Aerodactyl-Mega']},
@@ -6490,12 +6497,14 @@ const XY: {[name: string]: SpeciesData} = extend(true, {}, BW, {
     ab: 'Aura Break',
     gender: 'N',
   },
-});
+};
+
+const XY: {[name: string]: SpeciesData} = extend(true, {}, BW, XY_PATCH);
 
 XY['Arceus'].formes!.push('Arceus-Fairy');
 XY['Arceus'].formes!.sort();
 
-const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
+const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Alakazam-Mega': {bs: {sd: 105}},
   Arbok: {bs: {at: 95}},
   Ariados: {bs: {sd: 70}},
@@ -6656,7 +6665,6 @@ const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
     ab: 'Sturdy',
   },
   Coribalis: {
-    name: 'Coribalis',
     t1: 'Water',
     t2: 'Bug',
     bs: {hp: 76, at: 69, df: 90, sa: 65, sd: 77, sp: 43},
@@ -7642,7 +7650,6 @@ const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
     gender: 'N',
   },
   Smogecko: {
-    name: 'Smogecko',
     t1: 'Fire',
     bs: {hp: 48, at: 66, df: 43, sa: 58, sd: 48, sp: 56},
     w: 8.5,
@@ -7650,9 +7657,6 @@ const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
     ab: 'Blaze',
   },
   Smoguana: {
-    kind: 'Species',
-    id: 'smoguana',
-    name: 'Smoguana',
     t1: 'Fire',
     t2: 'Ground',
     bs: {hp: 68, at: 86, df: 53, sa: 68, sd: 68, sp: 76},
@@ -7706,7 +7710,6 @@ const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
     canEvolve: true,
   },
   Swirlpool: {
-    name: 'Swirlpool',
     t1: 'Water',
     bs: {hp: 61, at: 49, df: 70, sa: 50, sd: 62, sp: 28},
     w: 7,
@@ -7896,7 +7899,9 @@ const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, {
     isAlternateForme: true,
     gender: 'N',
   },
-});
+};
+
+const SM: {[name: string]: SpeciesData} = extend(true, {}, XY, SM_PATCH);
 
 delete SM['Pikachu-Cosplay'];
 delete SM['Pikachu-Rock-Star'];
@@ -7905,7 +7910,7 @@ delete SM['Pikachu-PhD'];
 delete SM['Pikachu-Pop-Star'];
 delete SM['Pikachu-Libre'];
 
-const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, {
+const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Aegislash-Blade': {bs: {at: 140, sa: 140}},
   'Aegislash-Both': {bs: {at: 140, df: 140, sa: 140, sd: 140}},
   'Aegislash-Shield': {bs: {df: 140, sd: 140}},
@@ -8955,7 +8960,9 @@ const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, {
     canEvolve: true,
     isAlternateForme: true,
   },
-});
+};
+
+const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, SS_PATCH);
 
 delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
