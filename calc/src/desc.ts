@@ -543,7 +543,7 @@ function computeKOChance(
   hp: number,
   eot: number,
   hits: number,
-  moveHits: number,
+  timesUsed: number,
   maxHP: number,
   toxicCounter: number
 ) {
@@ -557,9 +557,9 @@ function computeKOChance(
       }
     }
   }
-  if (predictTotal(maxDamage, eot, hits, moveHits, toxicCounter, maxHP) < hp) {
+  if (predictTotal(maxDamage, eot, hits, timesUsed, toxicCounter, maxHP) < hp) {
     return 0;
-  } else if (predictTotal(minDamage, eot, hits, moveHits, toxicCounter, maxHP) >= hp) {
+  } else if (predictTotal(minDamage, eot, hits, timesUsed, toxicCounter, maxHP) >= hp) {
     return 1;
   }
   let toxicDamage = 0;
@@ -569,7 +569,7 @@ function computeKOChance(
   }
   let sum = 0;
   for (let i = 0; i < n; i++) { const c = computeKOChance(
-      damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, moveHits, maxHP, toxicCounter);
+      damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, timesUsed, maxHP, toxicCounter);
     if (c === 1) {
       sum += n - i;
       break;
@@ -584,7 +584,7 @@ function predictTotal(
   damage: number,
   eot: number,
   hits: number,
-  moveHits: number,
+  timesUsed: number,
   toxicCounter: number,
   maxHP: number
 ) {
@@ -595,7 +595,7 @@ function predictTotal(
     }
   }
   let total = 0;
-  if (hits > 1 && moveHits === 1) {
+  if (hits > 1 && timesUsed === 1) {
     total = damage * hits - eot * (hits - 1) + toxicDamage;
   } else {
     total = damage - eot * (hits - 1) + toxicDamage;
