@@ -36,6 +36,7 @@ import {
   getWeightFactor,
   handleFixedDamageMoves,
   isGrounded,
+  OF16,
   pokeRound,
 } from './util';
 
@@ -471,10 +472,10 @@ export function calculateSMSS(
 
   if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
     if (attacker.gender === defender.gender) {
-      bpMods.push(0x1400);
+      bpMods.push(0xC00);
       desc.rivalry = 'buffed';
     } else {
-      bpMods.push(0xccd);
+      bpMods.push(0xCCD);
       desc.rivalry = 'nerfed';
     }
     desc.attackerAbility = attacker.ability;
@@ -493,7 +494,7 @@ export function calculateSMSS(
   }
 
   if (field.attackerSide.isBattery && move.category === 'Special') {
-    bpMods.push(0x14cd);
+    bpMods.push(0x14CD);
     desc.isBattery = true;
   }
 
@@ -584,7 +585,8 @@ export function calculateSMSS(
     desc.attackerItem = attacker.item;
   }
 
-  if (move.named('Solar Beam') && field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
+  if (move.named('Solar Beam', 'Solar Blade') &&
+      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
     bpMods.push(0x800);
     desc.moveBP = move.bp / 2;
     desc.weather = field.weather;
@@ -639,7 +641,7 @@ export function calculateSMSS(
     desc.moveBP = move.bp;
   }
 
-  basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000));
+  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000)));
 
   // #endregion
   // #region (Special) Attack
@@ -761,7 +763,7 @@ export function calculateSMSS(
     desc.attackerItem = attacker.item;
   }
 
-  attack = Math.max(1, pokeRound((attack * chainMods(atMods)) / 0x1000));
+  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods)) / 0x1000)));
 
   // #endregion
   // #region (Special) Defense
@@ -826,7 +828,7 @@ export function calculateSMSS(
     desc.defenderItem = defender.item;
   }
 
-  defense = Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000));
+  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000)));
 
   // #endregion
   // #region Damage

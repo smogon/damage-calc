@@ -31,6 +31,7 @@ import {
   getWeightFactor,
   handleFixedDamageMoves,
   isGrounded,
+  OF16,
   pokeRound,
 } from './util';
 
@@ -486,7 +487,7 @@ export function calculateBWXY(
     }
   }
 
-  basePower = Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000));
+  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000)));
 
   // #endregion
   // #region (Special) Attack
@@ -592,7 +593,7 @@ export function calculateBWXY(
     desc.attackerItem = attacker.item;
   }
 
-  attack = Math.max(1, pokeRound((attack * chainMods(atMods)) / 0x1000));
+  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods)) / 0x1000)));
 
   // #endregion
   // #region (Special) Defense
@@ -657,7 +658,7 @@ export function calculateBWXY(
     desc.defenderAbility = defender.ability;
   }
 
-  defense = Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000));
+  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000)));
 
   // #endregion
   // #region Damage

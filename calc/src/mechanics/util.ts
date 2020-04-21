@@ -101,11 +101,6 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
   return Math.max(1, speed);
 }
 
-// Game Freak rounds DOWN on .5
-export function pokeRound(num: number) {
-  return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
-}
-
 export function getMoveEffectiveness(
   gen: Generation,
   move: Move,
@@ -238,7 +233,11 @@ export function chainMods(mods: number[]) {
 
 export function getBaseDamage(level: number, basePower: number, attack: number, defense: number) {
   return Math.floor(
-    Math.floor((Math.floor((2 * level) / 5 + 2) * basePower * attack) / defense) / 50 + 2
+    OF32(
+      Math.floor(
+        OF32(OF32(Math.floor((2 * level) / 5 + 2) * basePower) * attack) / defense
+      ) / 50 + 2
+    )
   );
 }
 
@@ -252,11 +251,14 @@ export function getFinalDamage(
   protect?: boolean
 ) {
   let damageAmount = Math.floor(
-    pokeRound((Math.floor((baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) * effectiveness
+    OF32(
+      pokeRound(OF32(Math.floor(OF32(baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) *
+      effectiveness
+    )
   );
   if (isBurned) damageAmount = Math.floor(damageAmount / 2);
-  if (protect) damageAmount = pokeRound((damageAmount * 0x400) / 0x1000);
-  return pokeRound(Math.max(1, (damageAmount * finalMod) / 0x1000));
+  if (protect) damageAmount = pokeRound(OF32(damageAmount * 0x400) / 0x1000);
+  return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 0x1000)));
 }
 
 export function getWeightFactor(pokemon: Pokemon) {
@@ -299,4 +301,19 @@ export function handleFixedDamageMoves(attacker: Pokemon, move: Move) {
     return 20 * times;
   }
   return 0;
+}
+
+// Game Freak rounds DOWN on .5
+export function pokeRound(num: number) {
+  return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
+}
+
+// 16-bit Overflow
+export function OF16(n: number) {
+  return n > 0xFFFF ? n % 0x10000 : n;
+}
+
+// 32-bit Overflow
+export function OF32(n: number) {
+  return n > 0xFFFFFFFF ? n % 0x100000000 : n;
 }
