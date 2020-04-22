@@ -400,8 +400,6 @@ export function calculateBWXY(
     desc.attackerAbility = attacker.ability;
   }
 
-  const isSTAB = attacker.hasType(move.type);
-
   if (attacker.item && getItemBoostType(attacker.item) === move.type) {
     bpMods.push(0x1333);
     desc.attackerItem = attacker.item;
@@ -411,22 +409,21 @@ export function calculateBWXY(
   ) {
     bpMods.push(0x1199);
     desc.attackerItem = attacker.item;
-  } else if (isSTAB &&
-    ((attacker.hasItem('Adamant Orb') && attacker.named('Dialga')) ||
-     (attacker.hasItem('Lustrous Orb') && attacker.named('Palkia')) ||
-     (attacker.hasItem('Griseous Orb') && attacker.named('Giratina-Origin')))
+  } else if (
+    (attacker.hasItem('Adamant Orb') &&
+     attacker.named('Dialga') &&
+     move.hasType('Steel', 'Dragon')) ||
+    (attacker.hasItem('Lustrous Orb') &&
+     attacker.named('Palkia') &&
+     move.hasType('Water', 'Dragon')) ||
+    (attacker.hasItem('Griseous Orb') &&
+     attacker.named('Giratina-Origin') &&
+     move.hasType('Ghost', 'Dragon'))
   ) {
     bpMods.push(0x1333);
     desc.attackerItem = attacker.item;
   } else if (attacker.hasItem(`${move.type} Gem`)) {
     bpMods.push(gen.num > 5 ? 0x14cd : 0x1800);
-    desc.attackerItem = attacker.item;
-  } else if (
-    attacker.hasItem('Soul Dew') &&
-    attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
-    isSTAB
-  ) {
-    bpMods.push(0x1000);
     desc.attackerItem = attacker.item;
   }
 
@@ -584,7 +581,7 @@ export function calculateBWXY(
     desc.attackerItem = attacker.item;
   } else if (
     (attacker.hasItem('Soul Dew') &&
-      attacker.named('Latios', 'Latias') &&
+      attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
       move.category === 'Special') ||
     (attacker.hasItem('Choice Band') && move.category === 'Physical') ||
     (attacker.hasItem('Choice Specs') && move.category === 'Special')
@@ -640,7 +637,8 @@ export function calculateBWXY(
     desc.defenderAbility = defender.ability;
   }
 
-  if ((!hitsPhysical && defender.named('Latios', 'Latias') && defender.hasItem('Soul Dew')) ||
+  if ((!hitsPhysical && defender.hasItem('Soul Dew') &&
+       defender.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega')) ||
       (defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.canEvolve) ||
       (!hitsPhysical && defender.hasItem('Assault Vest'))) {
     dfMods.push(0x1800);
@@ -713,9 +711,10 @@ export function calculateBWXY(
     desc.isCritical = isCritical;
   }
 
-  // the random factor is applied between the crit mod and the stab mod, so don't apply anything below this until we're inside the loop
+  // the random factor is applied between the crit mod and the stab mod, so don't apply anything
+  // below this until we're inside the loop
   let stabMod = 0x1000;
-  if (isSTAB) {
+  if (attacker.hasType(move.type)) {
     if (attacker.hasAbility('Adaptability')) {
       stabMod = 0x2000;
       desc.attackerAbility = attacker.ability;

@@ -555,8 +555,6 @@ export function calculateSMSS(
     desc.defenderAbility = defender.ability;
   }
 
-  const isSTAB = attacker.hasType(move.type);
-
   if (attacker.item && move.hasType(getItemBoostType(attacker.item))) {
     bpMods.push(0x1333);
     desc.attackerItem = attacker.item;
@@ -566,12 +564,19 @@ export function calculateSMSS(
   ) {
     bpMods.push(0x1199);
     desc.attackerItem = attacker.item;
-  } else if (isSTAB &&
-    ((attacker.hasItem('Adamant Orb') && attacker.named('Dialga')) ||
-     (attacker.hasItem('Lustrous Orb') && attacker.named('Palkia')) ||
-     (attacker.hasItem('Griseous Orb') && attacker.named('Giratina-Origin')) ||
-     (attacker.hasItem('Soul Dew') &&
-      attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega')))
+  } else if (
+    (attacker.hasItem('Adamant Orb') &&
+     attacker.named('Dialga') &&
+     move.hasType('Steel', 'Dragon')) ||
+    (attacker.hasItem('Lustrous Orb') &&
+     attacker.named('Palkia') &&
+     move.hasType('Water', 'Dragon')) ||
+    (attacker.hasItem('Griseous Orb') &&
+     attacker.named('Giratina-Origin') &&
+     move.hasType('Ghost', 'Dragon')) ||
+    (attacker.hasItem('Soul Dew') &&
+     attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
+     move.hasType('Psychic', 'Dragon'))
   ) {
     bpMods.push(0x1333);
     desc.attackerItem = attacker.item;
@@ -866,7 +871,7 @@ export function calculateSMSS(
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
   // below this until we're inside the loop
   let stabMod = 0x1000;
-  if (isSTAB) {
+  if (attacker.hasType(move.type)) {
     if (attacker.hasAbility('Adaptability')) {
       stabMod = 0x2000;
       desc.attackerAbility = attacker.ability;

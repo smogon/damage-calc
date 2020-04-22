@@ -225,10 +225,15 @@ export function calculateDPP(
     basePower = Math.floor(basePower * 1.1);
     desc.attackerItem = attacker.item;
   } else if (move.hasType(getItemBoostType(attacker.item)) ||
-    (attacker.hasItem('Adamant Orb') && attacker.named('Dialga')) ||
-    (attacker.hasItem('Lustrous Orb') && attacker.named('Palkia')) ||
-    (attacker.hasItem('Griseous Orb') && attacker.named('Giratina-Origin') &&
-      move.hasType(attacker.type1, attacker.type2))
+    (attacker.hasItem('Adamant Orb') &&
+     attacker.named('Dialga') &&
+     move.hasType('Steel', 'Dragon')) ||
+    (attacker.hasItem('Lustrous Orb') &&
+     attacker.named('Palkia') &&
+     move.hasType('Water', 'Dragon')) ||
+    (attacker.hasItem('Griseous Orb') &&
+     attacker.named('Giratina-Origin') &&
+     move.hasType('Ghost', 'Dragon'))
   ) {
     basePower = Math.floor(basePower * 1.2);
     desc.attackerItem = attacker.item;
