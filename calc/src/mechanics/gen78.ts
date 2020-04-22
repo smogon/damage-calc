@@ -36,7 +36,7 @@ import {
   getWeightFactor,
   handleFixedDamageMoves,
   isGrounded,
-  OF16,
+  OF16, OF32,
   pokeRound,
 } from './util';
 
@@ -836,25 +836,23 @@ export function calculateSMSS(
 
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
 
-  // FIXME: apply OF32 before pokeRound everywhere in this section
-
   if (field.gameType !== 'Singles' && move.isSpread) {
-    baseDamage = pokeRound((baseDamage * 0xc00) / 0x1000);
+    baseDamage = pokeRound(OF32(baseDamage * 0xc00) / 0x1000);
   }
 
   if (attacker.hasAbility('Parental Bond (Child)')) {
-    baseDamage = pokeRound((baseDamage * 0x400) / 0x1000);
+    baseDamage = pokeRound(OF32(baseDamage * 0x400) / 0x1000);
   }
 
   if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
-    baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
+    baseDamage = pokeRound(OF32(baseDamage * 0x1800) / 0x1000);
     desc.weather = field.weather;
   } else if (
     (field.hasWeather('Sun') && move.hasType('Water')) ||
     (field.hasWeather('Rain') && move.hasType('Fire'))
   ) {
-    baseDamage = pokeRound((baseDamage * 0x800) / 0x1000);
+    baseDamage = pokeRound(OF32(baseDamage * 0x800) / 0x1000);
     desc.weather = field.weather;
   } else if (
     (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
@@ -872,7 +870,7 @@ export function calculateSMSS(
   }
 
   if (isCritical) {
-    baseDamage = Math.floor(baseDamage * 1.5);
+    baseDamage = Math.floor(OF32(baseDamage * 1.5));
     desc.isCritical = isCritical;
   }
 
