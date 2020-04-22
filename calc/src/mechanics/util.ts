@@ -260,12 +260,12 @@ export function getFinalDamage(
   finalMod: number,
   protect?: boolean
 ) {
-  let damageAmount = Math.floor(
-    OF32(
-      pokeRound(OF32(Math.floor(OF32(baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) *
-      effectiveness
-    )
-  );
+  let damageAmount = Math.floor(OF32(baseAmount * (85 + i)) / 100);
+  // If the stabMod would not accomplish anything we avoid applying it because it could cause
+  // us to calculate damage overflow incorrectly (DaWoblefet)
+  if (stabMod !== 0x1000) damageAmount = OF32(damageAmount * stabMod) / 0x1000;
+  damageAmount = Math.floor(OF32(pokeRound(damageAmount) * effectiveness));
+
   if (isBurned) damageAmount = Math.floor(damageAmount / 2);
   if (protect) damageAmount = pokeRound(OF32(damageAmount * 0x400) / 0x1000);
   return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 0x1000)));
