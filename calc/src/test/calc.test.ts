@@ -40,6 +40,42 @@ describe('calc', () => {
       });
     });
 
+    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+      test(`Mulihit (gen ${gen})`, () => {
+        const result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'));
+        if (gen < 3) {
+          expect(result.damage).toBeRange(36, 43);
+          expect(result.desc()).toBe(
+            'Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- approx. 3HKO'
+          );
+        } else if (gen === 3) {
+          expect(result.damage).toBeRange(44, 52);
+          expect(result.desc()).toBe(
+            '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 132-156 (60.8 - 71.8%) -- approx. 2HKO'
+          );
+        } else {
+          expect(result.damage).toBeRange(43, 52);
+          expect(result.desc()).toBe(
+            '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 129-156 (59.4 - 71.8%) -- approx. 2HKO'
+          );
+        }
+      });
+    });
+
+    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+      test(`Immunity (gen ${gen})`, () => {
+        expect(calculate(Pokemon('Snorlax'), Pokemon('Gengar'), Move('Hyper Beam')).damage).toBe(0);
+      });
+    });
+
+    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+      test(`Non-damaging (gen ${gen})`, () => {
+        const result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Barrier'));
+        expect(result.damage).toBe(0);
+        expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
+      });
+    });
+
     inGens(1, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Critical hits ignore attack decreases (gen ${gen})`, () => {
         const field = Field({defenderSide: {isReflect: true}});
@@ -126,8 +162,6 @@ describe('calc', () => {
           Move('Frustration')
         );
 
-        // TODO: Add Night Shade Test, Power Up Punch etc
-
         if (gen === 6) {
           expect(result.damage).toEqual([
             [153, 154, 156, 157, 159, 162, 163, 165, 166, 168, 171, 172, 174, 175, 177, 180],
@@ -192,12 +226,20 @@ describe('calc', () => {
 
 
   describe('Gen 1', () => {
-    inGen(1, ({calculate, Pokemon, Move}) => {
+    inGen(1, ({calculate, Pokemon, Move, Field}) => {
       test('Basic: Gengar vs. Chansey', () => {
         const result = calculate(Pokemon('Gengar'), Pokemon('Chansey'), Move('Thunderbolt'));
         expect(result.damage).toBeRange(79, 94);
         expect(result.desc()).toBe(
           'Gengar Thunderbolt vs. Chansey: 79-94 (11.2 - 13.3%) -- possible 8HKO'
+        );
+      });
+
+      test('Light Screen', () => {
+        const field = Field({defenderSide: {isLightScreen: true}});
+        const result = calculate(Pokemon('Gengar'), Pokemon('Vulpix'), Move('Surf'), field);
+        expect(result.desc()).toBe(
+          'Gengar Surf vs. Vulpix through Light Screen: 108-128 (38.7 - 45.8%) -- guaranteed 3HKO'
         );
       });
     });
@@ -565,6 +607,39 @@ describe('calc', () => {
         result = calculate(pinsir, gengar, earthquake);
         expect(result.damage).toBeRange(1054, 1240);
       });
+
+      test('16-bit Overflow', () => {
+        const result = calculate(
+          Pokemon('Mewtwo-Mega-Y', {evs: {spa: 196}}),
+          Pokemon('Wynaut', {level: 1, boosts: {spd: -6}}),
+          Move('Fire Blast'),
+          Field({attackerSide: {isHelpingHand: true}})
+        );
+        expect(result.damage).toEqual([
+          55725, 56380, 57036, 57691,
+          58347, 59003, 59658, 60314,
+          60969, 61625, 62281, 62936,
+          63592, 64247, 64903, 23, // <- overflow: 65559 & 0xFFFF
+        ]);
+      });
+
+      test('32-bit Overflow', () => {
+        let kyogre = Pokemon('Kyogre', {
+          ability: 'Water Bubble',
+          item: 'Choice Specs',
+          curHP: 340, // we need 149 base power Water Spout
+          ivs: {spa: 6}, // we need 311 Spa
+          boosts: {spa: 6},
+        });
+        const wynaut = Pokemon('Wynaut', {level: 1, boosts: {spd: -6}});
+        const waterSpout = Move('Water Spout');
+        const field = Field({weather: 'Rain', attackerSide: {isHelpingHand: true}});
+
+        expect(calculate(kyogre, wynaut, waterSpout, field).damage).toBeRange(55, 66);
+
+        kyogre = Pokemon('Kyogre', {...kyogre, curHP: 340, overrides: {t1: 'Normal'}});
+        expect(calculate(kyogre, wynaut, waterSpout, field).damage).toBeRange(37, 44);
+      });
     });
   });
 
@@ -594,53 +669,3 @@ describe('calc', () => {
     });
   });
 });
-
-/*
- TODO rewrite: this is 3 unrelated tests in one
- test('Damage should be 0 when applicable', () => {
-    for (let genNum = 1; genNum <= 8; genNum++) {
-      const gen = genNum as GenerationNum;
-      const snorlax = new Pokemon(gen, 'Snorlax');
-      const vulpix = new Pokemon(gen, 'Vulpix');
-      const gengar = new Pokemon(gen, 'Gengar');
-      const barrier = new Move(gen, 'Barrier');
-      const cometPunch = new Move(gen, 'Comet Punch');
-      const hyperBeam = new Move(gen, 'Hyper Beam');
-      let result = calculate(gen, snorlax, vulpix, barrier);
-      expect(result.damage).toBe(0);
-      expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
-      result = calculate(gen, snorlax, vulpix, cometPunch);
-      if (gen < 3) {
-        expect(result.damage).toBeRange(36, 43);
-        expect(result.desc()).toBe(
-          'Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- guaranteed 3HKO'
-        );
-      } else if (gen === 3) {
-        expect(result.damage).toBeRange(44, 52);
-        expect(result.desc()).toBe(
-          '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 132-156 (60.8 - 71.8%) -- guaranteed 2HKO'
-        );
-      } else {
-        expect(result.damage).toBeRange(43, 52);
-        expect(result.desc()).toBe(
-          '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 129-156 (59.4 - 71.8%) -- guaranteed 2HKO'
-        );
-      }
-      result = calculate(gen, snorlax, gengar, hyperBeam);
-      expect(result.damage).toBe(0);
-    }
-    const field = new Field({
-      defenderSide: {
-        isLightScreen: true,
-      },
-    });
-    const vulpix = new Pokemon(1, 'Vulpix');
-    const gengar = new Pokemon(1, 'Gengar');
-    const surf = new Move(1, 'Surf');
-    const result = calculate(1, gengar, vulpix, surf, field);
-    expect(result.desc()).toBe(
-      'Gengar Surf vs. Vulpix through Light Screen: 108-128 (38.7 - 45.8%) -- guaranteed 3HKO'
-    );
-  });
-});
-*/
