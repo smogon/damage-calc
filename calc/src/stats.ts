@@ -1,8 +1,5 @@
-import {Natures, Generation, StatName} from './data/interface';
+import {Natures, Generation, Stat} from './data/interface';
 import {toID} from './util';
-
-export type Stat = StatName | 'spc';
-export type StatsTable<T = number> = {[stat in StatName]: T} & {spc?: T};
 
 const RBY: Stat[] = ['hp', 'atk', 'def', 'spc', 'spe'];
 const GSC: Stat[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];

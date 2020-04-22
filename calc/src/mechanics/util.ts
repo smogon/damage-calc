@@ -1,9 +1,19 @@
-import {Generation, TypeName, NatureName, ID, ItemName, StatName} from '../data/interface';
+import {
+  Generation,
+  ID,
+  ItemName,
+  NatureName,
+  StatName,
+  StatsTable,
+  Terrain,
+  TypeName,
+  Weather,
+} from '../data/interface';
 import {toID} from '../util';
-import {Field, Side, Weather, Terrain} from '../field';
+import {Field, Side} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
-import {STATS, Stats, StatsTable} from '../stats';
+import {STATS, Stats} from '../stats';
 
 const EV_ITEMS = [
   'Macho Brace',

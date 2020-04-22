@@ -1,8 +1,8 @@
-import {StatsTable} from '../stats';
-import {StatusName} from '../pokemon';
 import * as I from '../data/interface';
 import {calculate, Pokemon, Move} from '../index';
-import {Field, GameType, Terrain, Weather, Side} from '../field';
+import {DeepPartial} from '../util';
+import {State} from '../state';
+import {Field, Side} from '../field';
 
 declare global {
   namespace jest {
@@ -41,68 +41,26 @@ const calc = (gen: I.GenerationNum) => (
 
 const move = (gen: I.GenerationNum) => (
   name: string,
-  options: {
+  options: DeepPartial<Omit<State.Move, 'ability' | 'item' | 'species'>> & {
     ability?: string;
     item?: string;
     species?: string;
-    useZ?: boolean;
-    useMax?: boolean;
-    isCrit?: boolean;
-    hits?: number;
-    timesUsed?: number;
-    timesUsedWithMetronome?: number;
-    overrides?: Partial<I.Move>;
   } = {}
-) => new Move(gen, name, options);
+) => new Move(gen, name, options as any);
 
 const pokemon = (gen: I.GenerationNum) => (
   name: string,
-  options: {
-    level?: number;
+  options: DeepPartial<Omit<State.Pokemon, 'ability' | 'item' | 'nature' | 'moves'>> & {
     ability?: string;
-    abilityOn?: boolean;
-    isDynamaxed?: boolean;
     item?: string;
-    gender?: I.GenderName;
     nature?: string;
-    ivs?: Partial<StatsTable>;
-    evs?: Partial<StatsTable>;
-    boosts?: Partial<StatsTable>;
-    curHP?: number;
-    status?: StatusName;
-    toxicCounter?: number;
     moves?: string[];
-    overrides?: Partial<I.Specie>;
   } = {}
-) => new Pokemon(gen, name, options);
+) => new Pokemon(gen, name, options as any);
 
-const field = (
-  field: {
-    gameType?: GameType;
-    weather?: Weather;
-    terrain?: Terrain;
-    isGravity?: boolean;
-    attackerSide?: Partial<Side>;
-    defenderSide?: Partial<Side>;
-  } = {}
-) => new Field(field);
+const field = (field: DeepPartial<State.Field> = {}) => new Field(field);
 
-const side = (side: {
-  spikes?: number;
-  steelsurge?: boolean;
-  isSR?: boolean;
-  isReflect?: boolean;
-  isLightScreen?: boolean;
-  isProtected?: boolean;
-  isSeeded?: boolean;
-  isForesight?: boolean;
-  isTailwind?: boolean;
-  isHelpingHand?: boolean;
-  isFriendGuard?: boolean;
-  isAuroraVeil?: boolean;
-  isBattery?: boolean;
-  isSwitching?: 'out' | 'in';
-}) => new Side(side);
+const side = (side: DeepPartial<State.Side> = {}) => new Side(side);
 
 interface Gen {
   gen: I.GenerationNum;

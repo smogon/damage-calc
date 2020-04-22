@@ -1,5 +1,5 @@
-import {Generation, TypeName, ID} from './data/interface';
-import {Field, Terrain, Weather, Side} from './field';
+import {Generation, Weather, Terrain, TypeName, ID} from './data/interface';
+import {Field, Side} from './field';
 import {isGrounded} from './mechanics/util';
 import {Move} from './move';
 import {Pokemon} from './pokemon';

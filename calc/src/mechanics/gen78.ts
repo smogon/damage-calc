@@ -1,4 +1,4 @@
-﻿import {Generation, AbilityName} from '../data/interface';
+﻿import {Generation, AbilityName, Stat, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
   getBerryResistType,
@@ -10,11 +10,10 @@ import {
   SEED_BOOSTED_STAT,
 } from '../items';
 import {RawDesc} from '../desc';
-import {Field, Terrain} from '../field';
+import {Field} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {Result} from '../result';
-import {Stat} from '../stats';
 import {
   chainMods,
   checkAirLock,

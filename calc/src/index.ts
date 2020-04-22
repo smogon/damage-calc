@@ -44,8 +44,8 @@
 // that the correct loading order being followed.
 
 import {Generations} from './data';
-import {Stat, StatsTable} from './stats';
-import {StatusName} from './pokemon';
+import {DeepPartial} from './util';
+import {State} from './state';
 import * as I from './data/interface';
 import * as A from './adaptable';
 
@@ -78,17 +78,10 @@ export class Move extends A.Move {
   constructor(
     gen: I.GenerationNum | I.Generation,
     name: string,
-    options: {
+    options: DeepPartial<Omit<State.Move, 'ability' | 'item' | 'species'>> & {
       ability?: string;
       item?: string;
       species?: string;
-      useZ?: boolean;
-      useMax?: boolean;
-      isCrit?: boolean;
-      hits?: number;
-      timesUsed?: number;
-      timesUsedWithMetronome?: number;
-      overrides?: Partial<I.Move>;
     } = {}
   ) {
     super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options as any);
@@ -99,22 +92,11 @@ export class Pokemon extends A.Pokemon {
   constructor(
     gen: I.GenerationNum | I.Generation,
     name: string,
-    options: {
-      level?: number;
+    options: DeepPartial<Omit<State.Pokemon, 'ability' | 'item' | 'nature' | 'moves'>> & {
       ability?: string;
-      abilityOn?: boolean;
-      isDynamaxed?: boolean;
       item?: string;
-      gender?: I.GenderName;
       nature?: string;
-      ivs?: Partial<StatsTable>;
-      evs?: Partial<StatsTable>;
-      boosts?: Partial<StatsTable>;
-      curHP?: number;
-      status?: StatusName;
-      toxicCounter?: number;
       moves?: string[];
-      overrides?: Partial<I.Specie>;
     } = {}
   ) {
     super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options as any);
@@ -137,7 +119,7 @@ export class Pokemon extends A.Pokemon {
 
 export function calcStat(
   gen: I.GenerationNum | I.Generation,
-  stat: Stat,
+  stat: I.Stat,
   base: number,
   iv: number,
   ev: number,
@@ -157,7 +139,7 @@ export function calcStat(
 
 export {Field, Side} from './field';
 export {Result} from './result';
-export {GenerationNum} from './data/interface';
+export {GenerationNum, StatsTable, Stat} from './data/interface';
 export {Generations} from './data/index';
 export {toID} from './util';
 
@@ -167,4 +149,4 @@ export {MOVES} from './data/moves';
 export {SPECIES} from './data/species';
 export {NATURES} from './data/natures';
 export {TYPE_CHART} from './data/types';
-export {STATS, StatsTable, Stats, Stat} from './stats';
+export {STATS, Stats} from './stats';

@@ -3,58 +3,31 @@ export type ID = string & As<'ID'>;
 export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type GenderName = 'M' | 'F' | 'N';
 export type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
+export type Stat = StatName | 'spc';
+export type StatsTable<T = number> = {[stat in StatName]: T} & {spc?: T};
 
 export type AbilityName = string & As<'AbilityName'>;
 export type ItemName = string & As<'ItemName'>;
 export type MoveName = string & As<'MoveName'>;
 export type SpeciesName = string & As<'SpeciesName'>;
 
-export type TypeName =
-  | '???'
-  | 'Normal'
-  | 'Grass'
-  | 'Fire'
-  | 'Water'
-  | 'Electric'
-  | 'Ice'
-  | 'Flying'
-  | 'Bug'
-  | 'Poison'
-  | 'Ground'
-  | 'Rock'
-  | 'Fighting'
-  | 'Psychic'
-  | 'Ghost'
-  | 'Dragon'
-  | 'Dark'
-  | 'Steel'
-  | 'Fairy';
+export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
+
+export type GameType = 'Singles' | 'Doubles';
+export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
+export type Weather =
+  | 'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds';
+
 export type NatureName =
-  | 'Adamant'
-  | 'Bashful'
-  | 'Bold'
-  | 'Brave'
-  | 'Calm'
-  | 'Careful'
-  | 'Docile'
-  | 'Gentle'
-  | 'Hardy'
-  | 'Hasty'
-  | 'Impish'
-  | 'Jolly'
-  | 'Lax'
-  | 'Lonely'
-  | 'Mild'
-  | 'Modest'
-  | 'Naive'
-  | 'Naughty'
-  | 'Quiet'
-  | 'Quirky'
-  | 'Rash'
-  | 'Relaxed'
-  | 'Sassy'
-  | 'Serious'
-  | 'Timid';
+  'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' |
+  'Careful' | 'Docile' | 'Gentle' | 'Hardy' | 'Hasty' |
+  'Impish' | 'Jolly' | 'Lax' | 'Lonely' | 'Mild' |
+  'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' |
+  'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
+
+export type TypeName =
+  'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
+  'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 export type MoveRecoil = boolean | number | 'crash' | 'Struggle';

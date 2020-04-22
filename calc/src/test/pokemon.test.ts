@@ -1,5 +1,5 @@
 import {Pokemon} from '../index';
-import {Stat} from '../stats';
+import {Stat, MoveName} from '../data/interface';
 
 describe('Pokemon', () => {
   test('defaults', () => {
@@ -63,7 +63,7 @@ describe('Pokemon', () => {
     expect(p.boosts).toEqual({hp: 0, atk: -1, def: 0, spa: 2, spd: 1, spe: 0});
     expect(p.stats).toEqual({hp: 207, atk: 85, def: 183, spa: 110, spd: 136, spe: 105});
 
-    expect(p.moves).toEqual(['Surf', 'Rest', 'Curse', 'Sleep Talk']);
+    expect(p.moves).toEqual(['Surf', 'Rest', 'Curse', 'Sleep Talk'] as MoveName[]);
   });
 
   test('gen1', () => {

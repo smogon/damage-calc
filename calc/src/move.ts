@@ -1,9 +1,10 @@
 import * as I from './data/interface';
-import {toID, extend} from './util';
+import {State} from './state';
+import {toID, DeepPartial, extend} from './util';
 
-export class Move {
+export class Move implements State.Move {
   gen: I.Generation;
-  name: string;
+  name: I.MoveName;
 
   originalName: string;
   ability?: I.AbilityName;
@@ -44,19 +45,13 @@ export class Move {
   constructor(
     gen: I.Generation,
     name: string,
-    options: {
+    options: DeepPartial<State.Move> & {
       ability?: I.AbilityName;
       item?: I.ItemName;
       species?: I.SpeciesName;
-      useZ?: boolean;
-      useMax?: boolean;
-      isCrit?: boolean;
-      hits?: number;
-      timesUsed?: number;
-      timesUsedWithMetronome?: number;
-      overrides?: Partial<I.Move>;
     } = {}
   ) {
+    name = options.name || name;
     this.originalName = name;
     let data: I.Move = extend(true, {name}, gen.moves.get(toID(name)), options.overrides);
 

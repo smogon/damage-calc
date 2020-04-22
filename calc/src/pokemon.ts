@@ -1,12 +1,11 @@
 import * as I from './data/interface';
-import {StatsTable, STATS, Stat, Stats} from './stats';
-import {toID, extend} from './util';
+import {STATS, Stats} from './stats';
+import {toID, DeepPartial, extend} from './util';
+import {State} from './state';
 
-export type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
-
-export class Pokemon {
+export class Pokemon implements Omit<State.Pokemon, 'curHP'> {
   gen: I.Generation;
-  name: string;
+  name: I.SpeciesName;
   species: I.Specie;
 
   type1: I.TypeName;
@@ -21,13 +20,13 @@ export class Pokemon {
   item?: I.ItemName;
 
   nature: I.NatureName;
-  ivs: StatsTable;
-  evs: StatsTable;
-  boosts: StatsTable;
-  rawStats: StatsTable;
-  stats: StatsTable;
+  ivs: I.StatsTable;
+  evs: I.StatsTable;
+  boosts: I.StatsTable;
+  rawStats: I.StatsTable;
+  stats: I.StatsTable;
 
-  status: StatusName | '';
+  status: I.StatusName | '';
   toxicCounter: number;
 
   moves: I.MoveName[];
@@ -37,28 +36,12 @@ export class Pokemon {
   constructor(
     gen: I.Generation,
     name: string,
-    options: {
-      level?: number;
-      ability?: I.AbilityName;
-      abilityOn?: boolean;
-      isDynamaxed?: boolean;
-      item?: I.ItemName;
-      gender?: I.GenderName;
-      nature?: I.NatureName;
-      ivs?: Partial<StatsTable>;
-      evs?: Partial<StatsTable>;
-      boosts?: Partial<StatsTable>;
-      curHP?: number;
-      status?: StatusName | '';
-      toxicCounter?: number;
-      moves?: I.MoveName[];
-      overrides?: Partial<I.Specie>;
-    } = {}
+    options: DeepPartial<State.Pokemon> = {}
   ) {
     this.species = extend(true, {}, gen.species.get(toID(name)), options.overrides);
 
     this.gen = gen;
-    this.name = name;
+    this.name = options.name || name as I.SpeciesName;
     this.type1 = this.species.t1;
     this.type2 = this.species.t2;
     this.weight = this.species.w;
@@ -86,8 +69,8 @@ export class Pokemon {
       );
     }
 
-    this.rawStats = {} as StatsTable;
-    this.stats = {} as StatsTable;
+    this.rawStats = {} as I.StatsTable;
+    this.stats = {} as I.StatsTable;
     for (const stat of STATS[gen.num]) {
       const val = this.calcStat(gen, stat);
       this.rawStats[stat] = val;
@@ -123,7 +106,7 @@ export class Pokemon {
     return !!(this.item && items.includes(this.item));
   }
 
-  hasStatus(...statuses: StatusName[]) {
+  hasStatus(...statuses: I.StatusName[]) {
     return !!(this.status && statuses.includes(this.status));
   }
 
@@ -158,7 +141,7 @@ export class Pokemon {
     });
   }
 
-  private calcStat(gen: I.Generation, stat: Stat) {
+  private calcStat(gen: I.Generation, stat: I.Stat) {
     return Stats.calcStat(
       gen,
       stat,
@@ -200,7 +183,7 @@ export class Pokemon {
 
   private static withDefault(
     gen: I.Generation,
-    current: Partial<StatsTable> | undefined,
+    current: Partial<I.StatsTable> | undefined,
     val: number
   ) {
     return extend(

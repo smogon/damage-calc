@@ -1,15 +1,8 @@
-export type GameType = 'Singles' | 'Doubles';
-export type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
-export type Weather =
-  | 'Sand'
-  | 'Sun'
-  | 'Rain'
-  | 'Hail'
-  | 'Harsh Sunshine'
-  | 'Heavy Rain'
-  | 'Strong Winds';
+import {State} from './state';
+import {DeepPartial} from './util';
+import {GameType, Weather, Terrain} from './data/interface';
 
-export class Field {
+export class Field implements State.Field {
   gameType: GameType;
   weather?: Weather;
   terrain?: Terrain;
@@ -17,16 +10,7 @@ export class Field {
   attackerSide: Side;
   defenderSide: Side;
 
-  constructor(
-    field: {
-      gameType?: GameType;
-      weather?: Weather;
-      terrain?: Terrain;
-      isGravity?: boolean;
-      attackerSide?: Partial<Side>;
-      defenderSide?: Partial<Side>;
-    } = {}
-  ) {
+  constructor(field: DeepPartial<State.Field> = {}) {
     this.gameType = field.gameType || 'Singles';
     this.terrain = field.terrain;
     this.weather = field.weather;
@@ -61,7 +45,7 @@ export class Field {
   }
 }
 
-export class Side {
+export class Side implements State.Side {
   spikes: number;
   steelsurge: boolean;
   isSR: boolean;
@@ -77,22 +61,7 @@ export class Side {
   isBattery: boolean;
   isSwitching?: 'out' | 'in';
 
-  constructor(side: {
-    spikes?: number;
-    steelsurge?: boolean;
-    isSR?: boolean;
-    isReflect?: boolean;
-    isLightScreen?: boolean;
-    isProtected?: boolean;
-    isSeeded?: boolean;
-    isForesight?: boolean;
-    isTailwind?: boolean;
-    isHelpingHand?: boolean;
-    isFriendGuard?: boolean;
-    isAuroraVeil?: boolean;
-    isBattery?: boolean;
-    isSwitching?: 'out' | 'in';
-  }) {
+  constructor(side: DeepPartial<State.Side> = {}) {
     this.spikes = side.spikes || 0;
     this.steelsurge = !!side.steelsurge;
     this.isSR = !!side.isSR;

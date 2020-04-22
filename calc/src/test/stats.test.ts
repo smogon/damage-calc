@@ -1,6 +1,6 @@
 import {Generations} from '../data';
-import {GenerationNum} from '../data/interface';
-import {Stats, STATS, StatsTable} from '../stats';
+import {GenerationNum, StatsTable} from '../data/interface';
+import {Stats, STATS} from '../stats';
 import {getModifiedStat} from '../mechanics/util';
 
 describe('Stats', () => {

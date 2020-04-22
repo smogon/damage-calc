@@ -1,8 +1,7 @@
 import * as I from './interface';
 import {toID} from '../util';
-import {Stat} from '../stats';
 
-export const NATURES: {[name: string]: [Stat, Stat]} = {
+export const NATURES: {[name: string]: [I.Stat, I.Stat]} = {
   Adamant: ['atk', 'spa'],
   Bashful: ['spa', 'spa'],
   Bold: ['def', 'atk'],
