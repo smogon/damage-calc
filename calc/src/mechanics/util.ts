@@ -231,6 +231,39 @@ export function checkSeedBoost(pokemon: Pokemon, field: Field) {
   }
 }
 
+// Note: We only need to handle guaranteed, damage-relevant boosts here for multi-hit accuracy
+export function checkMultihitBoost(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field
+) {
+  if (move.named('Power-Up Punch')) {
+    attacker.boosts.atk++;
+    attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
+  }
+  const stamina = defender.hasAbility('Stamina');
+  const weakarmor = defender.hasAbility('Weak Armor');
+  if (stamina || weakarmor) {
+    defender.boosts.def = defender.boosts.def + (stamina ? 1 : -1);
+    defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+    if (weakarmor) {
+      defender.boosts.spe += 2;
+      defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
+    }
+  }
+
+  // Gyro Ball (etc) makes contact into Gooey (etc) whenever its inflicting multiple hits because
+  // this can only happen if the attacker ability is Parental Bond (and thus can't be Long Reach)
+  if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
+    // BUG: Technically Sitrus/Figy Berry + Unburden can also affect the defender's speed, but
+    // this goes far behind what we care to implement (especially once Gluttony is considered) now
+    attacker.boosts.spe--;
+    defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
+  }
+}
+
 export function chainMods(mods: number[]) {
   let M = 0x1000;
   for (const mod of mods) {
@@ -302,13 +335,12 @@ export function getEVDescriptionText(
 }
 
 export function handleFixedDamageMoves(attacker: Pokemon, move: Move) {
-  const times = attacker.hasAbility('Parental Bond') ? 2 : 1;
   if (move.named('Seismic Toss', 'Night Shade')) {
-    return attacker.level * times;
+    return attacker.level;
   } else if (move.named('Dragon Rage')) {
-    return 40 * times;
+    return 40;
   } else if (move.named('Sonic Boom')) {
-    return 20 * times;
+    return 20;
   }
   return 0;
 }

@@ -91,13 +91,14 @@ function performCalculations() {
 				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
 				attacker = damageResults[0].attacker;
 				defender = damageResults[0].defender;
-				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
+				var result, minMaxDamage, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var highestDamage = -1;
 				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
 					result = damageResults[n];
-					minDamage = result.damage[0] * attacker.moves[n].hits;
-					maxDamage = result.damage[result.damage.length - 1] * attacker.moves[n].hits;
+					minMaxDamage = getMinMaxDamage(result.damage);
+					minDamage = minMaxDamage[0] * attacker.moves[n].hits;
+					maxDamage = minMaxDamage[1] * attacker.moves[n].hits;
 					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP()) / 10;
 					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP()) / 10;
 					minPixels = Math.floor(minDamage * 48 / defender.maxHP());

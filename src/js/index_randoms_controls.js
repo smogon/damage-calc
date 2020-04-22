@@ -47,7 +47,7 @@ function performCalculations() {
 	for (var i = 0; i < 4; i++) {
 		// P1
 		result = damageResults[0][i];
-		maxDamage = result.damage[result.damage.length - 1] * p1.moves[i].hits;
+		maxDamage = getMinMaxDamage(result.damage)[1] * p1.moves[i].hits;
 		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && p1field.defenderSide.isProtected && p1.moves[i].isZ) {
 			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			zProtectAlerted = true;
@@ -61,7 +61,7 @@ function performCalculations() {
 
 		// P2
 		result = damageResults[1][i];
-		maxDamage = result.damage[result.damage.length - 1] * p2.moves[i].hits;
+		maxDamage = getMinMaxDamage(result.damage)[1] * p2.moves[i].hits;
 		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && p2field.defenderSide.isProtected && p2.moves[i].isZ) {
 			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
 			zProtectAlerted = true;
@@ -104,10 +104,23 @@ $(".result-move").change(function () {
 			var desc = result.fullDesc(notation, false);
 			if (desc.indexOf('--') === -1) desc += ' -- possibly the worst move ever';
 			$("#mainResult").text(desc);
-			$("#damageValues").text("Possible damage amounts: (" + result.damage.join(", ") + ")");
+			$("#damageValues").text("Possible damage amounts: (" + displayDamageHits(result.damage) + ")");
 		}
 	}
 });
+
+function displayDamageHits(damage) {
+	// Fixed Damage
+	if (typeof damage === 'number') return damage;
+	// Standard Damage
+	if (damage.length > 2) return damage.join(', ');
+	// Fixed Parental Bond Damage
+	if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+		return '1st Hit: ' + damage[0] + '; 2nd Hit: ' + damage[1];
+	}
+	// Parental Bond Damage
+	return '1st Hit: ' + damage[0].join(', ') + '; 2nd Hit: ' + damage[1].join(', ');
+}
 
 function findDamageResult(resultMoveObj) {
 	var selector = "#" + resultMoveObj.attr("id");

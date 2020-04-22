@@ -39,17 +39,14 @@ export function calculateADV(
     defenderName: defender.name,
   };
 
-  const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, desc);
+  const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
   if (move.bp === 0) {
-    damage.push(0);
     return result;
   }
 
   if (field.defenderSide.isProtected) {
     desc.isProtected = true;
-    damage.push(0);
     return result;
   }
 
@@ -77,7 +74,6 @@ export function calculateADV(
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0) {
-    damage.push(0);
     return result;
   }
 
@@ -89,7 +85,6 @@ export function calculateADV(
       (defender.hasAbility('Soundproof') && move.isSound)
   ) {
     desc.defenderAbility = defender.ability;
-    damage.push(0);
     return result;
   }
 
@@ -97,7 +92,7 @@ export function calculateADV(
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
-    damage.push(fixedDamage);
+    result.damage = fixedDamage;
     return result;
   }
 
@@ -282,8 +277,9 @@ export function calculateADV(
   }
 
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
+  result.damage = [];
   for (let i = 85; i <= 100; i++) {
-    damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
+    result.damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
   }
 
   return result;

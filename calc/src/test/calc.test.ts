@@ -30,7 +30,7 @@ describe('calc', () => {
         const vulpix = Pokemon('Vulpix');
         for (const move of [Move('Seismic Toss'), Move('Night Shade')]) {
           const result = calculate(mew, vulpix, move);
-          expect(result.damage).toBeRange(50, 50);
+          expect(result.damage).toBe(50);
           expect(result.desc()).toBe(
             gen < 3
               ? `Mew ${move.name} vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO`
@@ -117,7 +117,79 @@ describe('calc', () => {
         }
       });
     });
+
+    inGens(6, 8, ({gen, calculate, Pokemon, Move}) => {
+      test(`Parental Bond (gen ${gen})`, () => {
+        let result = calculate(
+          Pokemon('Kangaskhan-Mega', {evs: {atk: 152}}),
+          Pokemon('Amoonguss', {nature: 'Bold', evs: {hp: 252, def: 152}}),
+          Move('Frustration')
+        );
+
+        // TODO: Add Night Shade Test, Power Up Punch etc
+
+        if (gen === 6) {
+          expect(result.damage).toEqual([
+            [153, 154, 156, 157, 159, 162, 163, 165, 166, 168, 171, 172, 174, 175, 177, 180],
+            [76, 76, 78, 78, 79, 81, 81, 82, 82, 84, 85, 85, 87, 87, 88, 90],
+          ]);
+          expect(result.desc()).toBe(
+            '152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 229-270 (53 - 62.5%) -- approx. 2HKO'
+          );
+        } else {
+          expect(result.damage).toEqual([
+            [153, 154, 156, 157, 159, 162, 163, 165, 166, 168, 171, 172, 174, 175, 177, 180],
+            [37, 37, 39, 39, 39, 40, 40, 40, 40, 42, 42, 42, 43, 43, 43, 45],
+          ]);
+          expect(result.desc()).toBe(
+            '152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 190-225 (43.9 - 52%) -- approx. 6.6% chance to 2HKO'
+          );
+        }
+
+        result = calculate(
+          Pokemon('Kangaskhan-Mega', {level: 88}),
+          Pokemon('Amoonguss'),
+          Move('Seismic Toss')
+        );
+        expect(result.damage).toEqual([88, 88]);
+        expect(result.desc()).toBe(
+          'Parental Bond Kangaskhan-Mega Seismic Toss vs. 0 HP Amoonguss: 176-176 (47.6 - 47.6%) -- guaranteed 3HKO'
+        );
+
+        result = calculate(
+          Pokemon('Kangaskhan-Mega', {evs: {atk: 252}}),
+          Pokemon('Aggron', {level: 72}),
+          Move('Power-Up Punch')
+        );
+        if (gen === 6) {
+          expect(result.desc()).toBe(
+            '252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. 0 HP / 0 Def Aggron: 248-296 (120.9 - 144.3%) -- guaranteed OHKO'
+          );
+        } else {
+          expect(result.desc()).toBe(
+            '252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. 0 HP / 0 Def Aggron: 196-236 (95.6 - 115.1%) -- 78.9% chance to OHKO'
+          );
+        }
+
+        if (gen === 6) return;
+
+        result = calculate(
+          Pokemon('Kangaskhan-Mega', {evs: {atk: 252}}),
+          Pokemon('Lunala'),
+          Move('Crunch')
+        );
+
+        expect(result.damage).toEqual([
+          [188, 190, 192, 194, 196, 198, 202, 204, 206, 208, 210, 212, 214, 216, 218, 222],
+          [92, 96, 96, 96, 96, 100, 100, 100, 104, 104, 104, 104, 108, 108, 108, 112],
+        ]);
+        expect(result.desc()).toBe(
+          '252 Atk Parental Bond Kangaskhan-Mega Crunch vs. 0 HP / 0 Def Shadow Shield Lunala: 280-334 (67.4 - 80.4%) -- approx. 2HKO'
+        );
+      });
+    });
   });
+
 
   describe('Gen 1', () => {
     inGen(1, ({calculate, Pokemon, Move}) => {
@@ -220,7 +292,7 @@ describe('calc', () => {
 
         cacturne.ability = 'Water Absorb' as AbilityName;
         result = calculate(blastoise, cacturne, surf);
-        expect(result.damage).toBeRange(0, 0);
+        expect(result.damage).toBe(0);
       });
 
       describe('Spread Moves', () => {
@@ -294,7 +366,7 @@ describe('calc', () => {
         const earthquake = Move('Earthquake');
 
         let result = calculate(pinsir, gengar, earthquake);
-        expect(result.damage).toBeRange(0, 0);
+        expect(result.damage).toBe(0);
 
         pinsir.ability = 'Mold Breaker' as AbilityName;
         result = calculate(pinsir, gengar, earthquake);
@@ -407,7 +479,7 @@ describe('calc', () => {
         );
       });
 
-      test('Empty Field', () => {
+      test('Recoil & Recovery', () => {
         let result = calculate(abomasnow, hoopa, Move('Wood Hammer'));
         expect(result.damage).toBeRange(234, 276);
         expect(result.desc()).toBe(
@@ -423,8 +495,8 @@ describe('calc', () => {
           '224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO'
         );
         const recovery = result.recovery();
-        expect(recovery.recovery).toBeRange(160, 160);
-        expect(recovery.text).toBe('51.9 - 51.9% recovered');
+        expect(recovery.recovery).toBeRange(161, 161);
+        expect(recovery.text).toBe('52.1 - 52.1% recovered');
       });
 
       test('Loaded Field', () => {
@@ -479,7 +551,7 @@ describe('calc', () => {
         const earthquake = Move('Earthquake');
 
         let result = calculate(pinsir, gengar, earthquake);
-        expect(result.damage).toBeRange(0, 0);
+        expect(result.damage).toBe(0);
 
         pinsir.ability = 'Mold Breaker' as AbilityName;
         result = calculate(pinsir, gengar, earthquake);
@@ -535,7 +607,7 @@ describe('calc', () => {
       const cometPunch = new Move(gen, 'Comet Punch');
       const hyperBeam = new Move(gen, 'Hyper Beam');
       let result = calculate(gen, snorlax, vulpix, barrier);
-      expect(result.damage).toBeRange(0, 0);
+      expect(result.damage).toBe(0);
       expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
       result = calculate(gen, snorlax, vulpix, cometPunch);
       if (gen < 3) {
@@ -555,7 +627,7 @@ describe('calc', () => {
         );
       }
       result = calculate(gen, snorlax, gengar, hyperBeam);
-      expect(result.damage).toBeRange(0, 0);
+      expect(result.damage).toBe(0);
     }
     const field = new Field({
       defenderSide: {

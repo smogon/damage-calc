@@ -27,17 +27,14 @@ export function calculateRBYGSC(
     defenderName: defender.name,
   };
 
-  const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, desc);
+  const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
   if (move.bp === 0) {
-    damage.push(0);
     return result;
   }
 
   if (field.defenderSide.isProtected) {
     desc.isProtected = true;
-    damage.push(0);
     return result;
   }
 
@@ -45,7 +42,7 @@ export function calculateRBYGSC(
   if (gen.num === 1) {
     const fixedDamage = handleFixedDamageMoves(attacker, move);
     if (fixedDamage) {
-      damage.push(fixedDamage);
+      result.damage = fixedDamage;
       return result;
     }
   }
@@ -58,14 +55,13 @@ export function calculateRBYGSC(
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0) {
-    damage.push(0);
     return result;
   }
 
   if (gen.num === 2) {
     const fixedDamage = handleFixedDamageMoves(attacker, move);
     if (fixedDamage) {
-      damage.push(fixedDamage);
+      result.damage = fixedDamage;
       return result;
     }
   }
@@ -203,12 +199,13 @@ export function calculateRBYGSC(
 
   // Flail and Reversal don't use random factor
   if (move.named('Flail', 'Reversal')) {
-    damage.push(baseDamage);
+    result.damage = baseDamage;
     return result;
   }
 
+  result.damage = [];
   for (let i = 217; i <= 255; i++) {
-    damage[i - 217] = Math.floor((baseDamage * i) / 255);
+    result.damage[i - 217] = Math.floor((baseDamage * i) / 255);
   }
 
   return result;

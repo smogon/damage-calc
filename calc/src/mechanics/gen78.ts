@@ -24,6 +24,7 @@ import {
   checkIntimidate,
   checkIntrepidSword,
   checkKlutz,
+  checkMultihitBoost,
   checkSeedBoost,
   computeFinalStats,
   countBoosts,
@@ -80,17 +81,14 @@ export function calculateSMSS(
     isDefenderDynamaxed: defender.isDynamaxed,
   };
 
-  const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, desc);
+  const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
   if (move.bp === 0) {
-    damage.push(0);
     return result;
   }
 
   if (field.defenderSide.isProtected && !move.bypassesProtect && !move.isZ) {
     desc.isProtected = true;
-    damage.push(0);
     return result;
   }
 
@@ -246,7 +244,6 @@ export function calculateSMSS(
   }
 
   if (typeEffectiveness === 0) {
-    damage.push(0);
     return result;
   }
 
@@ -256,7 +253,6 @@ export function calculateSMSS(
         (!attacker.type2 || !defender.hasType(attacker.type2))) ||
       (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose')))
   ) {
-    damage.push(0);
     return result;
   }
 
@@ -273,7 +269,6 @@ export function calculateSMSS(
       (move.hasPriority && defender.hasAbility('Queenly Majesty', 'Dazzling'))
   ) {
     desc.defenderAbility = defender.ability;
-    damage.push(0);
     return result;
   }
 
@@ -286,13 +281,11 @@ export function calculateSMSS(
   if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
       !field.isGravity && defender.hasItem('Air Balloon')) {
     desc.defenderItem = defender.item;
-    damage.push(0);
     return result;
   }
 
   if (move.hasPriority && field.hasTerrain('Psychic') && isGrounded(defender, field)) {
     desc.terrain = field.terrain;
-    damage.push(0);
     return result;
   }
 
@@ -300,12 +293,17 @@ export function calculateSMSS(
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
-    damage.push(fixedDamage);
+    if (attacker.hasAbility('Parental Bond')) {
+      result.damage = [fixedDamage, fixedDamage];
+      desc.attackerAbility = attacker.ability;
+    } else {
+      result.damage = fixedDamage;
+    }
     return result;
   }
 
   if (move.named('Final Gambit')) {
-    damage.push(attacker.curHP());
+    result.damage = attacker.curHP();
     return result;
   }
 
@@ -314,13 +312,13 @@ export function calculateSMSS(
     if (field.defenderSide.isProtected && attacker.item && attacker.item.includes(' Z')) {
       zLostHP = Math.ceil(zLostHP / 4 - 0.5);
     }
-    damage.push(zLostHP);
+    result.damage = zLostHP;
     return result;
   }
 
   if (move.named("Nature's Madness")) {
     const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP() / 2);
-    damage.push(lostHP);
+    result.damage = lostHP;
     return result;
   }
 
@@ -396,6 +394,10 @@ export function calculateSMSS(
   case 'Acrobatics':
     basePower = attacker.hasItem('Flying Gem') || !attacker.item ? 110 : 55;
     desc.moveBP = basePower;
+    break;
+  case 'Assurance':
+    basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
+    // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
     break;
   case 'Wake-Up Slap':
     // Wake-Up Slap deals double damage to Pokemon with Comatose (ih8ih8sn0w)
@@ -833,10 +835,17 @@ export function calculateSMSS(
   // #region Damage
 
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
+
+  // FIXME: apply OF32 before pokeRound everywhere in this section
+
   if (field.gameType !== 'Singles' && move.isSpread) {
     baseDamage = pokeRound((baseDamage * 0xc00) / 0x1000);
   }
-  // TODO: apply Parent Bond modifier here
+
+  if (attacker.hasAbility('Parental Bond (Child)')) {
+    baseDamage = pokeRound((baseDamage * 0x400) / 0x1000);
+  }
+
   if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
     baseDamage = pokeRound((baseDamage * 0x1800) / 0x1000);
@@ -851,7 +860,6 @@ export function calculateSMSS(
     (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
     (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
   ) {
-    damage.push(0);
     return result;
   }
 
@@ -924,8 +932,11 @@ export function calculateSMSS(
     finalMods.push(0x2000);
   }
 
-  if (defender.hasAbility('Multiscale', 'Shadow Shield') && defender.curHP() === defender.maxHP() &&
-      !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying'))) {
+  if (defender.hasAbility('Multiscale', 'Shadow Shield') &&
+      defender.curHP() === defender.maxHP() &&
+      !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
+      !attacker.hasAbility('Parental Bond (Child)')
+  ) {
     finalMods.push(0x800);
     desc.defenderAbility = defender.ability;
   }
@@ -991,17 +1002,20 @@ export function calculateSMSS(
 
   const finalMod = chainMods(finalMods);
 
+  let childDamage: number[] | undefined;
+  if (attacker.hasAbility('Parental Bond') && move.hits === 1 &&
+      (field.gameType === 'Singles' || !move.isSpread)) {
+    const child = attacker.clone();
+    child.ability = 'Parental Bond (Child)' as AbilityName;
+    checkMultihitBoost(gen, child, defender, move, field);
+    childDamage = calculateSMSS(gen, child, defender, move, field).damage as number[];
+    desc.attackerAbility = attacker.ability;
+  }
+
+  let damage = [];
   for (let i = 0; i < 16; i++) {
     damage[i] =
       getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod, protect);
-    // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier
-    // until I know the specifics
-    if (attacker.hasAbility('Parental Bond') && move.hits === 1 &&
-        (field.gameType === 'Singles' || !move.isSpread)) {
-      const bondFactor = 5 / 4; // in gen 7, 2nd hit was reduced from 50% to 25%
-      damage[i] = Math.floor(damage[i] * bondFactor);
-      desc.attackerAbility = attacker.ability;
-    }
   }
 
   if (move.dropsStats && move.timesUsed! > 1) {
@@ -1017,7 +1031,7 @@ export function calculateSMSS(
     for (let times = 0; times < move.timesUsed!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
-      result.damage = damage.map(affectedAmount => {
+      damage = damage.map(affectedAmount => {
         if (times) {
           const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
           const newFinalDamage = getFinalDamage(
@@ -1056,6 +1070,8 @@ export function calculateSMSS(
 
   desc.attackBoost =
     move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+
+  result.damage = childDamage ? [damage, childDamage] : damage;
 
   // #endregion
 

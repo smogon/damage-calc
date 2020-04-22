@@ -708,6 +708,20 @@ function createPokemon(pokeInfo) {
 	}
 }
 
+function getMinMaxDamage(damage) {
+  // Fixed Damage
+  if (typeof damage === 'number') return [damage, damage];
+  // Standard Damage
+  if (damage.length > 2) return [damage[0], damage[damage.length - 1]];
+  // Fixed Parental Bond Damage
+  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+    return [[damage[0], damage[1]], [damage[0], damage[1]]];
+  }
+  // Parental Bond Damage
+  const d = damage;
+  return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
+}
+
 function getGender(gender) {
 	if (!gender || gender === 'genderless' || gender === 'N') return 'N';
 	if (gender.toLowerCase() === 'male' || gender === 'M') return 'M';

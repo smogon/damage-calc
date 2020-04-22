@@ -3,6 +3,7 @@ import {Field, Side} from './field';
 import {isGrounded} from './mechanics/util';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
+import {Damage} from './result';
 import {error} from './util';
 
 export interface RawDesc {
@@ -38,25 +39,60 @@ export interface RawDesc {
   isDefenderDynamaxed?: boolean;
 }
 
+function minMaxDamage(damage: Damage): [number, number] | [[number, number], [number, number]] {
+  // Fixed Damage
+  if (typeof damage === 'number') return [damage, damage];
+  // Standard Damage
+  if (damage.length > 2) return [damage[0] as number, damage[damage.length - 1] as number];
+  // Fixed Parental Bond Damage
+  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+    return [[damage[0], damage[1]], [damage[0], damage[1]]];
+  }
+  // Parental Bond Damage
+  const d = damage as [number[], number[]];
+  return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
+}
+
+function combine(damage: Damage) {
+  // Fixed Damage
+  if (typeof damage === 'number') return [damage];
+  // Standard Damage
+  if (damage.length > 2) return damage as number[];
+  // Fixed Parental Bond Damage
+  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+    return [damage[0] + damage[1]];
+  }
+  // Parental Bond Damage
+  const d = damage as [number[], number[]];
+  const combined = [];
+  for (let i = 0; i < d[0].length; i++) {
+    for (let j = 0; j < d[1].length; j++) {
+      combined.push(d[0][i] + d[1][j]);
+    }
+  }
+  return combined.sort();
+}
+
 export function display(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
   field: Field,
-  damage: number[],
+  damage: Damage,
   rawDesc: RawDesc,
   notation = '%',
   err = true
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
+  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
 
-  const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
-  const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
+  const minDisplay = toDisplay(notation, min, defender.maxHP());
+  const maxDisplay = toDisplay(notation, max, defender.maxHP());
 
   const desc = buildDescription(rawDesc);
-  const damageText = `${minDamage}-${maxDamage} (${minDisplay} - ${maxDisplay}${notation})`;
+  const damageText = `${min}-${max} (${minDisplay} - ${maxDisplay}${notation})`;
 
   if (move.bp === 0) return `${desc}: ${damageText}`;
   const koChanceText = getKOChance(gen, attacker, defender, move, field, damage, err).text;
@@ -68,14 +104,15 @@ export function displayMove(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
-  damage: number[],
+  damage: Damage,
   notation = '%'
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
+  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
 
-  const minDisplay = toDisplay(notation, minDamage, defender.maxHP());
-  const maxDisplay = toDisplay(notation, maxDamage, defender.maxHP());
+  const minDisplay = toDisplay(notation, min, defender.maxHP());
+  const maxDisplay = toDisplay(notation, max, defender.maxHP());
 
   const recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
@@ -89,11 +126,12 @@ export function getRecovery(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
-  damage: number[],
+  damage: Damage,
   notation = '%'
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const minD = typeof minDamage === 'number' ? [minDamage] : minDamage;
+  const maxD = typeof maxDamage === 'number' ? [maxDamage] : maxDamage;
 
   const recovery = [0, 0];
   let text = '';
@@ -101,24 +139,25 @@ export function getRecovery(
   const ignoresShellBell =
     gen.num === 3 && move.named('Doom Desire', 'Future Sight');
   if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
-    const max = defender.maxHP() / 8;
-    recovery[0] += Math.min(minDamage / 8, max);
-    recovery[1] += Math.min(maxDamage / 8, max);
+    const max = Math.round(defender.maxHP() / 8);
+    for (let i = 0; i < minD.length; i++) {
+      recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
+      recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+    }
   }
 
   if (move.givesHealth) {
-    const max = defender.maxHP() * move.percentHealed!;
-    recovery[0] += Math.min(minDamage * move.percentHealed!, max);
-    recovery[1] += Math.min(maxDamage * move.percentHealed!, max);
+    const max = Math.round(defender.maxHP() * move.percentHealed!);
+    for (let i = 0; i < minD.length; i++) {
+      recovery[0] += Math.min(Math.round(minD[i] * move.hits * move.percentHealed!), max);
+      recovery[1] += Math.min(Math.round(maxD[i] * move.hits * move.percentHealed!), max);
+    }
   }
 
   if (recovery[1] === 0) return {recovery, text};
 
   const minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
   const maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
-
-  recovery[0] = Math.floor(recovery[0]);
-  recovery[1] = Math.floor(recovery[1]);
 
   text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`;
   return {recovery, text};
@@ -130,11 +169,12 @@ export function getRecoil(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
-  damage: number[],
+  damage: Damage,
   notation = '%'
 ) {
-  const minDamage = damage[0] * move.hits;
-  const maxDamage = damage[damage.length - 1] * move.hits;
+  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
+  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
 
   let recoil: [number, number] | number = [0, 0];
   let text = '';
@@ -149,9 +189,9 @@ export function getRecoil(
         toDisplay(notation, defender.curHP() * move.hasRecoil, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
-        notation, Math.min(minDamage, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
+        notation, Math.min(min, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(
-        notation, Math.min(maxDamage, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
+        notation, Math.min(max, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
     }
     if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
@@ -168,9 +208,9 @@ export function getRecoil(
         toDisplay(notation, defender.curHP() * genMultiplier, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
-        notation,  Math.min(minDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
+        notation,  Math.min(min, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(
-        notation, Math.min(maxDamage, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
+        notation, Math.min(max, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100);
     }
 
     recoil = [minRecoilDamage, maxRecoilDamage];
@@ -217,9 +257,10 @@ export function getKOChance(
   defender: Pokemon,
   move: Move,
   field: Field,
-  damage: number[],
+  damage: Damage,
   err = true
 ) {
+  damage = combine(damage);
   if (isNaN(damage[0])) {
     error(err, 'damage[0] must be a number.');
     return {chance: 0, n: 0, text: ''};
@@ -268,18 +309,21 @@ export function getKOChance(
       };
     }
 
+    // Parental Bond's combined first + second hit only is accurate for chance to OHKO, for
+    // multihit KOs its only approximated. We should be doing squashMultihit here instead of
+    // pretending we ar emore accurate than we are, but just throwing on an qualifer should be
+    // sufficient.
+    if (damage.length === 256) {
+      qualifier = 'approx. ';
+      // damage = squashMultihit(gen, damage, move.hits, err);
+    }
+
     for (let i = 2; i <= 4; i++) {
       const chance = computeKOChance(
-        damage,
-        defender.curHP() - hazards.damage,
-        eot.damage,
-        i,
-        1,
-        defender.maxHP(),
-        toxicCounter
+        damage, defender.curHP() - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter
       );
       if (chance === 1) {
-        return {chance, n: i, text: `guaranteed ${i}HKO${afterText}`};
+        return {chance, n: i, text: `${qualifier || 'guaranteed '}${i}HKO${afterText}`};
       } else if (chance > 0) {
         return {
           chance,
@@ -294,18 +338,17 @@ export function getKOChance(
         predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
         defender.curHP() - hazards.damage
       ) {
-        return {chance: 1, n: i, text: `guaranteed ${i}HKO${afterText}`};
+        return {chance: 1, n: i, text: `${qualifier || 'guaranteed '}${i}HKO${afterText}`};
       } else if (
         predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
         defender.curHP() - hazards.damage
       ) {
-        return {n: i, text: `possible ${i}HKO${afterText}`};
+        return {n: i, text: qualifier + `possible ${i}HKO${afterText}`};
       }
     }
   } else {
     const chance = computeKOChance(
-      damage,
-      defender.maxHP() - hazards.damage,
+      damage, defender.maxHP() - hazards.damage,
       eot.damage,
       move.hits || 1,
       move.timesUsed || 1,
@@ -316,7 +359,7 @@ export function getKOChance(
       return {
         chance,
         n: move.timesUsed,
-        text: `guaranteed KO in ${move.timesUsed} turns${afterText}`,
+        text: `${qualifier || 'guaranteed '}KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (chance > 0) {
       return {
@@ -336,7 +379,7 @@ export function getKOChance(
       return {
         chance: 1,
         n: move.timesUsed,
-        text: `guaranteed KO in ${move.timesUsed} turns${afterText}`,
+        text: `${qualifier || 'guaranteed '}KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (
       predictTotal(
@@ -349,9 +392,12 @@ export function getKOChance(
       ) >=
       defender.curHP() - hazards.damage
     ) {
-      return {n: move.timesUsed, text: `possible KO in ${move.timesUsed} turns${afterText}`};
+      return {
+        n: move.timesUsed,
+        text: qualifier + `possible KO in ${move.timesUsed} turns${afterText}`
+      };
     }
-    return {n: move.timesUsed, text: 'not a KO'};
+    return {n: move.timesUsed, text: qualifier + 'not a KO'};
   }
 
   return {chance: 0, n: 0, text: ''};
@@ -559,19 +605,13 @@ function computeKOChance(
   toxicCounter: number
 ) {
   const n = damage.length;
-  const minDamage = damage[0];
-  const maxDamage = damage[n - 1];
   if (hits === 1) {
     for (let i = 0; i < n; i++) {
+      if (damage[n - 1] < hp) return 0;
       if (damage[i] >= hp) {
         return (n - i) / n;
       }
     }
-  }
-  if (predictTotal(maxDamage, eot, hits, timesUsed, toxicCounter, maxHP) < hp) {
-    return 0;
-  } else if (predictTotal(minDamage, eot, hits, timesUsed, toxicCounter, maxHP) >= hp) {
-    return 1;
   }
   let toxicDamage = 0;
   if (toxicCounter > 0) {
@@ -579,14 +619,29 @@ function computeKOChance(
     toxicCounter++;
   }
   let sum = 0;
-  for (let i = 0; i < n; i++) { const c = computeKOChance(
-      damage, hp - damage[i] + eot - toxicDamage, eot, hits - 1, timesUsed, maxHP, toxicCounter);
+  let lastc = 0;
+  for (let i = 0; i < n; i++) {
+    let c;
+    if (i === 0 || damage[i] !== damage[i-1]) {
+      c = computeKOChance(
+        damage,
+        hp - damage[i] + eot - toxicDamage,
+        eot,
+        hits - 1,
+        timesUsed,
+        maxHP,
+        toxicCounter
+      );
+    } else {
+      c = lastc;
+    }
     if (c === 1) {
       sum += n - i;
       break;
     } else {
       sum += c;
     }
+    lastc = c;
   }
   return sum / n;
 }
@@ -689,6 +744,20 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
         error(err, `Unexpected # of hits: ${hits}`);
         return d;
     }
+  } else if (d.length === 256) {
+    if (hits > 1) {
+      error(err, `Unexpected # of hits for Parental Bond: ${hits}`);
+    }
+    // FIXME: Come up with a better Parental Bond approximation
+    const r: number[] = [];
+    for (let i = 0; i < 16; i++) {
+      let val = 0;
+      for (let j = 0; j < 16; j++) {
+        val += d[i + j];
+      }
+      r[i] = Math.round(val / 16);
+    }
+    return r;
   } else {
     error(err, `Unexpected # of possible damage values: ${d.length}`);
     return d;

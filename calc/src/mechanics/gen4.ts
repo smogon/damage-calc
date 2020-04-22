@@ -47,17 +47,14 @@ export function calculateDPP(
     defenderName: defender.name,
   };
 
-  const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, desc);
+  const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
   if (move.bp === 0) {
-    damage.push(0);
     return result;
   }
 
   if (field.defenderSide.isProtected && !move.bypassesProtect) {
     desc.isProtected = true;
-    damage.push(0);
     return result;
   }
 
@@ -114,7 +111,6 @@ export function calculateDPP(
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0) {
-    damage.push(0);
     return result;
   }
 
@@ -127,7 +123,6 @@ export function calculateDPP(
       (move.isSound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;
-    damage.push(0);
     return result;
   }
 
@@ -135,7 +130,7 @@ export function calculateDPP(
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
-    damage.push(fixedDamage);
+    result.damage = fixedDamage;
     return result;
   }
 
@@ -480,6 +475,7 @@ export function calculateDPP(
     desc.defenderItem = defender.item;
   }
 
+  const damage: number[] = [];
   for (let i = 0; i < 16; i++) {
     damage[i] = Math.floor((baseDamage * (85 + i)) / 100);
     damage[i] = Math.floor(damage[i] * stabMod);
@@ -491,6 +487,7 @@ export function calculateDPP(
     damage[i] = Math.floor(damage[i] * berryMod);
     damage[i] = Math.max(1, damage[i]);
   }
+  result.damage = damage;
 
   // #endregion
 

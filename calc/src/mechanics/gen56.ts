@@ -20,6 +20,7 @@ import {
   checkInfiltrator,
   checkIntimidate,
   checkKlutz,
+  checkMultihitBoost,
   checkSeedBoost,
   computeFinalStats,
   countBoosts,
@@ -71,17 +72,14 @@ export function calculateBWXY(
     defenderName: defender.name,
   };
 
-  const damage: number[] = [];
-  const result = new Result(gen, attacker, defender, move, field, damage, desc);
+  const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
   if (move.bp === 0) {
-    damage.push(0);
     return result;
   }
 
   if (field.defenderSide.isProtected && !move.bypassesProtect) {
     desc.isProtected = true;
-    damage.push(0);
     return result;
   }
 
@@ -137,7 +135,7 @@ export function calculateBWXY(
       move.type = 'Fairy';
     } else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
       move.type = 'Ice';
-    } else if ((isNormalize = attacker.hasAbility('Normalize') && !!move.type)) { // FIXME ???
+    } else if ((isNormalize = attacker.hasAbility('Normalize'))) {
       move.type = 'Normal';
     }
     if (isPixilate || isRefrigerate || isAerilate || isNormalize) {
@@ -185,7 +183,6 @@ export function calculateBWXY(
   }
 
   if (typeEffectiveness === 0) {
-    damage.push(0);
     return result;
   }
 
@@ -195,7 +192,6 @@ export function calculateBWXY(
         (!attacker.type2 || !defender.hasType(attacker.type2))) ||
       (move.named('Dream Eater') && !defender.hasStatus('slp'))
   ) {
-    damage.push(0);
     return result;
   }
 
@@ -211,7 +207,6 @@ export function calculateBWXY(
       (move.isSound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;
-    damage.push(0);
     return result;
   }
 
@@ -224,13 +219,11 @@ export function calculateBWXY(
   if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
       !field.isGravity && defender.hasItem('Air Balloon')) {
     desc.defenderItem = defender.item;
-    damage.push(0);
     return result;
   }
 
   if (move.hasPriority && field.hasTerrain('Psychic') && isGrounded(defender, field)) {
     desc.terrain = field.terrain;
-    damage.push(0);
     return result;
   }
 
@@ -238,12 +231,17 @@ export function calculateBWXY(
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
-    damage.push(fixedDamage);
+    if (attacker.hasAbility('Parental Bond')) {
+      result.damage = [fixedDamage, fixedDamage];
+      desc.attackerAbility = attacker.ability;
+    } else {
+      result.damage = fixedDamage;
+    }
     return result;
   }
 
   if (move.named('Final Gambit')) {
-    damage.push(attacker.curHP());
+    result.damage = attacker.curHP();
     return result;
   }
 
@@ -302,6 +300,10 @@ export function calculateBWXY(
   case 'Acrobatics':
     basePower = attacker.hasItem('Flying Gem') || !attacker.item ? 110 : 55;
     desc.moveBP = basePower;
+    break;
+  case 'Assurance':
+    basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
+    // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
     break;
   case 'Wake-Up Slap':
     basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
@@ -662,8 +664,15 @@ export function calculateBWXY(
   // #region Damage
 
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
+
+  // FIXME: apply OF32 before pokeRound everywhere in this section
+
   if (field.gameType !== 'Singles' && move.isSpread) {
     baseDamage = pokeRound((baseDamage * 0xc00) / 0x1000);
+  }
+
+  if (attacker.hasAbility('Parental Bond (Child)')) {
+    baseDamage = pokeRound((baseDamage * 0x800) / 0x1000);
   }
 
   if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
@@ -680,10 +689,11 @@ export function calculateBWXY(
     (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
     (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
   ) {
-    damage.push(0);
     return result;
   }
 
+  // It's not actually clear if the terrain modifiers are base damage mods like weather or are
+  // base power mods like in Gen 7+, but the research doesn't exist for this yet so ¯\_(ツ)_/¯
   if (isGrounded(attacker, field)) {
     if (field.hasTerrain('Electric') && move.hasType('Electric')) {
       baseDamage = pokeRound((baseDamage * 0x14cd) / 0x1000);
@@ -744,7 +754,8 @@ export function calculateBWXY(
   }
 
   if (defender.hasAbility('Multiscale') && defender.curHP() === defender.maxHP() &&
-      !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying'))) {
+      !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
+      !attacker.hasAbility('Parental Bond (Child)')) {
     finalMods.push(0x800);
     desc.defenderAbility = defender.ability;
   }
@@ -801,16 +812,20 @@ export function calculateBWXY(
 
   const finalMod = chainMods(finalMods);
 
+  let childDamage: number[] | undefined;
+  if (attacker.hasAbility('Parental Bond') && move.hits === 1 &&
+      (field.gameType === 'Singles' || !move.isSpread)) {
+    const child = attacker.clone();
+    child.ability = 'Parental Bond (Child)' as AbilityName;
+    checkMultihitBoost(gen, child, defender, move, field);
+    childDamage = calculateBWXY(gen, child, defender, move, field).damage as number[];
+    desc.attackerAbility = attacker.ability;
+  }
+
+  let damage: number[] = [];
   for (let i = 0; i < 16; i++) {
-    damage[i] = getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
-    // is 2nd hit half BP? half attack? half damage range? keeping it as a flat multiplier
-    // until I know the specifics
-    if (attacker.hasAbility('Parental Bond') && move.hits === 1 &&
-        (field.gameType === 'Singles' || !move.isSpread)) {
-      const bondFactor = 3 / 2;
-      damage[i] = Math.floor(damage[i] * bondFactor);
-      desc.attackerAbility = attacker.ability;
-    }
+    damage[i] =
+      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
   }
 
   if (move.dropsStats && (move.timesUsed || 0) > 1) {
@@ -826,7 +841,7 @@ export function calculateBWXY(
     for (let times = 0; times < move.timesUsed!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
-      result.damage = damage.map(affectedAmount => {
+      damage = damage.map(affectedAmount => {
         if (times) {
           const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
           const newFinalDamage = getFinalDamage(
@@ -864,6 +879,8 @@ export function calculateBWXY(
 
   desc.attackBoost =
     move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+
+  result.damage = childDamage ? [damage, childDamage] : damage;
 
   // #endregion
 

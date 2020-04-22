@@ -4,13 +4,15 @@ import {Field} from './field';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
 
+export type Damage = number | number[] | [number, number] | [number[], number[]];
+
 export class Result {
   gen: Generation;
   attacker: Pokemon;
   defender: Pokemon;
   move: Move;
   field: Field;
-  damage: number[];
+  damage: number | number[] | [number[], number[]];
   rawDesc: RawDesc;
 
   constructor(
@@ -19,8 +21,8 @@ export class Result {
     defender: Pokemon,
     move: Move,
     field: Field,
-    damage: number[],
-    rawDesc: RawDesc
+    damage: Damage,
+    rawDesc: RawDesc,
   ) {
     this.gen = gen;
     this.attacker = attacker;
