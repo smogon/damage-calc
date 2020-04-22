@@ -1,5 +1,5 @@
 import * as I from '../data/interface';
-import {toID, extend} from '../util';
+import {toID, DeepPartial, extend} from '../util';
 
 export interface MoveData {
   readonly name?: string;
@@ -33,10 +33,8 @@ export interface MoveData {
   readonly isTwoHit?: boolean;
 }
 
-const RBY: {
-  [name: string]: MoveData;
-} = {
-  // TODO: Unsorted
+const RBY: {[name: string]: MoveData} = {
+  /* // TODO: Unsorted
   Absorb: {
     bp: 20,
     type: 'Grass',
@@ -81,11 +79,6 @@ const RBY: {
     bp: 15,
     type: 'Normal',
     category: 'Physical',
-  },
-  'Dragon Rage': {
-    bp: 1,
-    type: 'Dragon',
-    category: 'Special',
   },
   Fissure: {
     bp: 0,
@@ -154,11 +147,6 @@ const RBY: {
   },
   'Razor Wind': {
     bp: 80,
-    type: 'Normal',
-    category: 'Physical',
-  },
-  'Sonic Boom': {
-    bp: 0,
     type: 'Normal',
     category: 'Physical',
   },
@@ -332,7 +320,7 @@ const RBY: {
     type: 'Water',
     category: 'Status',
   },
-  // Sorted
+  */ // Sorted
   '(No Move)': {
     bp: 0,
     type: 'Normal',
@@ -472,6 +460,11 @@ const RBY: {
   'Double Team': {
     bp: 0,
     type: 'Normal',
+  },
+  'Dragon Rage': {
+    bp: 1,
+    type: 'Dragon',
+    category: 'Special',
   },
   'Dream Eater': {
     bp: 100,
@@ -825,6 +818,11 @@ const RBY: {
     bp: 0,
     type: 'Normal',
   },
+  'Sonic Boom': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Physical',
+  },
   Spore: {
     bp: 0,
     type: 'Grass',
@@ -986,10 +984,8 @@ const RBY: {
   },
 };
 
-const GSC: {
-  [name: string]: MoveData;
-} = extend(true, {}, RBY, {
-  // TODO Unsorted
+const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  /* // TODO Unsorted
   Acid: {
     bp: 40,
     type: 'Poison',
@@ -1140,7 +1136,7 @@ const GSC: {
     type: 'Fighting',
     category: 'Physical',
   },
-  // Sorted
+  */ // Sorted
   Aeroblast: {
     bp: 100,
     type: 'Flying',
@@ -1539,7 +1535,7 @@ const GSC: {
     makesContact: true,
     isMultiHit: true,
     zp: 100,
-    MaxPower: 90,
+    maxPower: 90,
   },
   'Sacred Fire': {
     bp: 100,
@@ -1660,12 +1656,12 @@ const GSC: {
     isBullet: true,
     maxPower: 140,
   },
-});
+};
 
-const ADV: {
-  [name: string]: MoveData;
-} = extend(true, {}, GSC, {
-  // TODO Unsorted
+const GSC: {[name: string]: MoveData} = extend(true, {}, RBY, GSC_PATCH);
+
+const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  /* // TODO Unsorted
   'Arm Thrust': {
     bp: 15,
     type: 'Fighting',
@@ -1796,7 +1792,7 @@ const ADV: {
     type: 'Ghost',
     category: 'Status',
   },
-  // Sorted
+  */ // Sorted
   'Aerial Ace': {
     bp: 60,
     type: 'Flying',
@@ -2293,12 +2289,12 @@ const ADV: {
     bp: 0,
     type: 'Normal',
   },
-});
+};
 
-const DPP: {
-  [name: string]: MoveData;
-} = extend(true, {}, ADV, {
-  // TODO Unsorted
+const ADV: {[name: string]: MoveData} = extend(true, {}, GSC, ADV_PATCH);
+
+const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  /* // TODO Unsorted
   Embargo: {
     bp: 0,
     type: 'Dark',
@@ -2369,7 +2365,7 @@ const DPP: {
     type: 'Psychic',
     category: 'Status',
   },
-  // Sorted
+  */ // Sorted
   Acupressure: {
     bp: 0,
     type: 'Normal',
@@ -3107,12 +3103,12 @@ const DPP: {
     hasSecondaryEffect: true,
     maxPower: 130,
   },
-});
+};
 
-const BW: {
-  [name: string]: MoveData;
-} = extend(true, {}, DPP, {
-  // TODO Unsorted
+const DPP: {[name: string]: MoveData} = extend(true, {}, ADV, DPP_PATCH);
+
+const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  /* // TODO Unsorted
   Bestow: {
     bp: 0,
     type: 'Normal',
@@ -3168,7 +3164,7 @@ const BW: {
     type: 'Psychic',
     category: 'Status',
   },
-  // Sorted
+  */ // Sorted
   'Acid Spray': {
     bp: 40,
     type: 'Poison',
@@ -3802,14 +3798,14 @@ const BW: {
     bp: 0,
     type: 'Normal',
   },
-});
+};
+
+const BW: {[name: string]: MoveData} = extend(true, {}, DPP, BW_PATCH);
 
 delete BW['Faint Attack'];
 
-const XY: {
-  [name: string]: MoveData;
-} = extend(true, {}, BW, {
-  // TODO Unsorted
+const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  /* // TODO Unsorted
   'Misty Terrain': {
     bp: 0,
     type: 'Fairy',
@@ -3915,7 +3911,7 @@ const XY: {
     type: 'Poison',
     category: 'Status',
   },
-  // Sorted
+  */ // Sorted
   'Air Cutter': {
     bp: 60,
     maxPower: 110,
@@ -3989,7 +3985,7 @@ const XY: {
     isSound: true,
     maxPower: 90,
   },
-  'Draco Meteor': {bp: '130'},
+  'Draco Meteor': {bp: 130},
   'Dragon Ascent': {
     bp: 120,
     type: 'Flying',
@@ -4012,7 +4008,7 @@ const XY: {
   },
   'Electric Terrain': {
     bp: 0,
-    type: 'Electic',
+    type: 'Electric',
   },
   'Energy Ball': {
     bp: 90,
@@ -4343,7 +4339,7 @@ const XY: {
     bp: 120,
     type: 'Ground',
     category: 'Physical',
-    isSpread: 'true',
+    isSpread: true,
     maxPower: 140,
   },
   'Rock Tomb': {
@@ -4398,14 +4394,14 @@ const XY: {
     bp: 90,
     type: 'Ground',
     category: 'Physical',
-    isSpread: 'true',
+    isSpread: true,
     maxPower: 130,
   },
   'Thousand Waves': {
     bp: 90,
     type: 'Ground',
     category: 'Physical',
-    isSpread: 'true',
+    isSpread: true,
     maxPower: 130,
   },
   Thunder: {
@@ -4435,12 +4431,12 @@ const XY: {
     isMultiHit: true,
     maxPower: 90,
   },
-});
+};
 
-const SM: {
-  [name: string]: MoveData;
-} = extend(true, {}, XY, {
-  // TODO Unsorted
+const XY: {[name: string]: MoveData} = extend(true, {}, BW, XY_PATCH);
+
+const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  /* // TODO Unsorted
   'Baddy Bad': {
     bp: 90,
     type: 'Dark',
@@ -4561,7 +4557,7 @@ const SM: {
     type: 'Normal',
     category: 'Physical',
   },
-  // Sorted
+  */ // Sorted
   '10,000,000 Volt Thunderbolt': {
     bp: 195,
     type: 'Electric',
@@ -5006,7 +5002,7 @@ const SM: {
   Facade: {zp: 140},
   Feint: {zp: 100},
   'Feint Attack': {zp: 120},
-  'Fell Stinger': {bp: '50', zp: 100},
+  'Fell Stinger': {bp: 50, zp: 100},
   'Fiery Dance': {zp: 160},
   'Final Gambit': {zp: 180},
   'Fire Blast': {zp: 185},
@@ -6417,11 +6413,11 @@ const SM: {
     zp: 160,
     maxPower: 130,
   },
-});
+};
 
-const SS: {
-  [name: string]: MoveData;
-} = extend(true, {}, SM, {
+const SM: {[name: string]: MoveData} = extend(true, {}, XY, SM_PATCH);
+
+const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Apple Acid': {
     bp: 80,
     type: 'Grass',
@@ -6994,7 +6990,9 @@ const SS: {
   'Wring Out': {
     maxPower: 140,
   },
-});
+};
+
+const SS: {[name: string]: MoveData} = extend(true, {}, SM, SS_PATCH);
 
 const LGPE_MOVES = [
   'Baddy Bad',
