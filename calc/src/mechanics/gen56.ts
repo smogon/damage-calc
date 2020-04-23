@@ -486,6 +486,30 @@ export function calculateBWXY(
     }
   }
 
+  // It's not actually clear if the terrain modifiers are base damage mods like weather or are
+  // base power mods like in Gen 7+, but the research doesn't exist for this yet so we match PS here
+  if (isGrounded(attacker, field)) {
+    if (field.hasTerrain('Electric') && move.hasType('Electric')) {
+      bpMods.push(0x1800);
+      desc.terrain = field.terrain;
+    } else if (field.hasTerrain('Grassy') && move.hasType('Grass')) {
+      bpMods.push(0x1800);
+      desc.terrain = field.terrain;
+    } else if (field.hasTerrain('Psychic') && move.hasType('Psychic')) {
+      bpMods.push(0x1800);
+      desc.terrain = field.terrain;
+    }
+  }
+  if (isGrounded(defender, field)) {
+    if (field.hasTerrain('Misty') && move.hasType('Dragon')) {
+      bpMods.push(0x800);
+      desc.terrain = field.terrain;
+    } else if (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake')) {
+      bpMods.push(0x800);
+      desc.terrain = field.terrain;
+    }
+  }
+
   basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000)));
 
   // #endregion
@@ -688,30 +712,6 @@ export function calculateBWXY(
     (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
   ) {
     return result;
-  }
-
-  // It's not actually clear if the terrain modifiers are base damage mods like weather or are
-  // base power mods like in Gen 7+, but the research doesn't exist for this yet so ¯\_(ツ)_/¯
-  if (isGrounded(attacker, field)) {
-    if (field.hasTerrain('Electric') && move.hasType('Electric')) {
-      baseDamage = pokeRound(OF32(baseDamage * 0x14cd) / 0x1000);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Grassy') && move.hasType('Grass')) {
-      baseDamage = pokeRound(OF32(baseDamage * 0x14cd) / 0x1000);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Psychic') && move.hasType('Psychic')) {
-      baseDamage = pokeRound(OF32(baseDamage * 0x14cd) / 0x1000);
-      desc.terrain = field.terrain;
-    }
-  }
-  if (isGrounded(defender, field)) {
-    if (field.hasTerrain('Misty') && move.hasType('Dragon')) {
-      baseDamage = pokeRound(OF32(baseDamage * 0x800) / 0x1000);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake')) {
-      baseDamage = pokeRound(OF32(baseDamage * 0x800) / 0x1000);
-      desc.terrain = field.terrain;
-    }
   }
 
   if (isCritical) {
