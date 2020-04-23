@@ -637,7 +637,7 @@ describe('calc', () => {
 
         expect(calculate(kyogre, wynaut, waterSpout, field).range()).toEqual([55, 66]);
 
-        kyogre = Pokemon('Kyogre', {...kyogre, curHP: 340, overrides: {t1: 'Normal'}});
+        kyogre = Pokemon('Kyogre', {...kyogre, overrides: {t1: 'Normal'}});
         expect(calculate(kyogre, wynaut, waterSpout, field).range()).toEqual([37, 44]);
       });
     });

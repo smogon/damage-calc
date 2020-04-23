@@ -1,6 +1,6 @@
 import * as I from './data/interface';
 import {State} from './state';
-import {toID, DeepPartial, extend} from './util';
+import {toID, extend} from './util';
 
 export class Move implements State.Move {
   gen: I.Generation;
@@ -45,7 +45,7 @@ export class Move implements State.Move {
   constructor(
     gen: I.Generation,
     name: string,
-    options: DeepPartial<State.Move> & {
+    options: Partial<State.Move> & {
       ability?: I.AbilityName;
       item?: I.ItemName;
       species?: I.SpeciesName;

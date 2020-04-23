@@ -1,9 +1,9 @@
 import * as I from './data/interface';
 import {STATS, Stats} from './stats';
-import {toID, DeepPartial, extend} from './util';
+import {toID, extend} from './util';
 import {State} from './state';
 
-export class Pokemon implements Omit<State.Pokemon, 'curHP'> {
+export class Pokemon implements State.Pokemon {
   gen: I.Generation;
   name: I.SpeciesName;
   species: I.Specie;
@@ -26,17 +26,16 @@ export class Pokemon implements Omit<State.Pokemon, 'curHP'> {
   rawStats: I.StatsTable;
   stats: I.StatsTable;
 
+  originalCurHP: number;
   status: I.StatusName | '';
   toxicCounter: number;
 
   moves: I.MoveName[];
 
-  private originalCurHP: number;
-
   constructor(
     gen: I.Generation,
     name: string,
-    options: DeepPartial<State.Pokemon> = {}
+    options: Partial<State.Pokemon> & {curHP?: number} = {}
   ) {
     this.species = extend(true, {}, gen.species.get(toID(name)), options.overrides);
 
@@ -77,8 +76,8 @@ export class Pokemon implements Omit<State.Pokemon, 'curHP'> {
       this.stats[stat] = val;
     }
 
-    this.originalCurHP =
-      options.curHP && options.curHP <= this.rawStats.hp ? options.curHP : this.rawStats.hp;
+    const curHP = options.curHP || options.originalCurHP;
+    this.originalCurHP = curHP && curHP <= this.rawStats.hp ? curHP : this.rawStats.hp;
     this.status = options.status || '';
     this.toxicCounter = options.toxicCounter || 0;
     this.moves = options.moves || [];
@@ -133,7 +132,7 @@ export class Pokemon implements Omit<State.Pokemon, 'curHP'> {
       ivs: extend(true, {}, this.ivs),
       evs: extend(true, {}, this.evs),
       boosts: extend(true, {}, this.boosts),
-      curHP: this.originalCurHP,
+      originalCurHP: this.originalCurHP,
       status: this.status,
       toxicCounter: this.toxicCounter,
       moves: this.moves.slice(),

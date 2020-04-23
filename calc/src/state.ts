@@ -13,7 +13,7 @@ export namespace State {
     ivs?: Partial<I.StatsTable>;
     evs?: Partial<I.StatsTable>;
     boosts?: Partial<I.StatsTable>;
-    curHP?: number;
+    originalCurHP?: number;
     status?: I.StatusName | '';
     toxicCounter?: number;
     moves?: I.MoveName[];

@@ -1,6 +1,5 @@
 import * as I from '../data/interface';
 import {calculate, Pokemon, Move} from '../index';
-import {DeepPartial} from '../util';
 import {State} from '../state';
 import {Field, Side} from '../field';
 
@@ -13,7 +12,7 @@ const calc = (gen: I.GenerationNum) => (
 
 const move = (gen: I.GenerationNum) => (
   name: string,
-  options: DeepPartial<Omit<State.Move, 'ability' | 'item' | 'species'>> & {
+  options: Partial<Omit<State.Move, 'ability' | 'item' | 'species'>> & {
     ability?: string;
     item?: string;
     species?: string;
@@ -22,17 +21,18 @@ const move = (gen: I.GenerationNum) => (
 
 const pokemon = (gen: I.GenerationNum) => (
   name: string,
-  options: DeepPartial<Omit<State.Pokemon, 'ability' | 'item' | 'nature' | 'moves'>> & {
+  options: Partial<Omit<State.Pokemon, 'ability' | 'item' | 'nature' | 'moves'>> & {
     ability?: string;
     item?: string;
     nature?: string;
     moves?: string[];
+    curHP?: number;
   } = {}
 ) => new Pokemon(gen, name, options as any);
 
-const field = (field: DeepPartial<State.Field> = {}) => new Field(field);
+const field = (field: Partial<State.Field> = {}) => new Field(field);
 
-const side = (side: DeepPartial<State.Side> = {}) => new Side(side);
+const side = (side: State.Side = {}) => new Side(side);
 
 interface Gen {
   gen: I.GenerationNum;

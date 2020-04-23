@@ -1,5 +1,4 @@
 import {State} from './state';
-import {DeepPartial} from './util';
 import {GameType, Weather, Terrain} from './data/interface';
 
 export class Field implements State.Field {
@@ -10,7 +9,7 @@ export class Field implements State.Field {
   attackerSide: Side;
   defenderSide: Side;
 
-  constructor(field: DeepPartial<State.Field> = {}) {
+  constructor(field: Partial<State.Field> = {}) {
     this.gameType = field.gameType || 'Singles';
     this.terrain = field.terrain;
     this.weather = field.weather;
@@ -61,7 +60,7 @@ export class Side implements State.Side {
   isBattery: boolean;
   isSwitching?: 'out' | 'in';
 
-  constructor(side: DeepPartial<State.Side> = {}) {
+  constructor(side: State.Side = {}) {
     this.spikes = side.spikes || 0;
     this.steelsurge = !!side.steelsurge;
     this.isSR = !!side.isSR;

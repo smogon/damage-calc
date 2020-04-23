@@ -44,7 +44,6 @@
 // that the correct loading order being followed.
 
 import {Generations} from './data';
-import {DeepPartial} from './util';
 import {State} from './state';
 import * as I from './data/interface';
 import * as A from './adaptable';
@@ -78,7 +77,7 @@ export class Move extends A.Move {
   constructor(
     gen: I.GenerationNum | I.Generation,
     name: string,
-    options: DeepPartial<Omit<State.Move, 'ability' | 'item' | 'species'>> & {
+    options: Partial<Omit<State.Move, 'ability' | 'item' | 'species'>> & {
       ability?: string;
       item?: string;
       species?: string;
@@ -92,11 +91,12 @@ export class Pokemon extends A.Pokemon {
   constructor(
     gen: I.GenerationNum | I.Generation,
     name: string,
-    options: DeepPartial<Omit<State.Pokemon, 'ability' | 'item' | 'nature' | 'moves'>> & {
+    options: Partial<Omit<State.Pokemon, 'ability' | 'item' | 'nature' | 'moves'>> & {
       ability?: string;
       item?: string;
       nature?: string;
       moves?: string[];
+      curHP?: number;
     } = {}
   ) {
     super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options as any);
@@ -142,6 +142,7 @@ export {Result} from './result';
 export {GenerationNum, StatsTable, Stat} from './data/interface';
 export {Generations} from './data/index';
 export {toID} from './util';
+export {State} from './state';
 
 export {ABILITIES} from './data/abilities';
 export {ITEMS, MEGA_STONES} from './data/items';
