@@ -201,7 +201,6 @@ function importRandomOptionsForPokemon(
   let moves = RANDOM_MOVES[gen][toID(pokemon)];
   if (!moves) return undefined;
   const stats = usage.data[toForme(pokemon)];
-
   if (!stats) return undefined;
 
   const best = {spread: '', usage: 0};

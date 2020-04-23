@@ -4,15 +4,15 @@
   "author": "Kirk Scheibelhut <pre@smogon.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^13.9.8",
-    "@pokemon-showdown/sets": "^0.3.0",
+    "@types/node": "^13.13.2",
+    "@pokemon-showdown/sets": "^0.3.1",
     "calc": "file:../calc",
     "smogon": "^0.4.2",
-    "source-map-support": "^0.5.16"
+    "source-map-support": "^0.5.18"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.2.3",
-    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint": "^6.8.0",

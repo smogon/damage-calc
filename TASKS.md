@@ -9,7 +9,7 @@ A member of the `@pokemon-showdown` org on npm should update the `@pokemon-showd
     * run `npm install` and `node build`
 2. Ensure your `pokemon-showdown` and `damage-calc` branches are fully up to date, make sure to have run `node build` in the `pokemon-showdown` directory after syncing.
 3. `cd import/` and run [`ncu -u`](https://www.npmjs.com/package/npm-check-updates) to update to the latest `@pokemon-showdown/sets` package (or manually update the version `package.json`).
-4. `npm install` from within `import/` - this should automatically run `npm run compile` after as part of the `postinstall`.
+4. `npm install` from within `import/`, then run `npm run compile`.
 5. Run `./ps-import` to pull in tiers and random data from `pokemon-showdown`
 6. Extract the random battle usage statistics somewhere: `tar xvzf randomstats.tar.gz`
 7. Run `./import ../src/js/data /path/to/randomstats`
