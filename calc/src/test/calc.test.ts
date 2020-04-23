@@ -33,8 +33,8 @@ describe('calc', () => {
           expect(result.damage).toBe(50);
           expect(result.desc()).toBe(
             gen < 3
-              ? `Mew ${move.name} vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO`
-              : `Mew ${move.name} vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO`
+              ? `Lvl 50 Mew ${move.name} vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO`
+              : `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO`
           );
         }
       });
@@ -187,7 +187,7 @@ describe('calc', () => {
         );
         expect(result.damage).toEqual([88, 88]);
         expect(result.desc()).toBe(
-          'Parental Bond Kangaskhan-Mega Seismic Toss vs. 0 HP Amoonguss: 176-176 (47.6 - 47.6%) -- guaranteed 3HKO'
+          'Lvl 88 Parental Bond Kangaskhan-Mega Seismic Toss vs. 0 HP Amoonguss: 176-176 (47.6 - 47.6%) -- guaranteed 3HKO'
         );
 
         result = calculate(
@@ -197,11 +197,11 @@ describe('calc', () => {
         );
         if (gen === 6) {
           expect(result.desc()).toBe(
-            '252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. 0 HP / 0 Def Aggron: 248-296 (120.9 - 144.3%) -- guaranteed OHKO'
+            '252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. Lvl 72 0 HP / 0 Def Aggron: 248-296 (120.9 - 144.3%) -- guaranteed OHKO'
           );
         } else {
           expect(result.desc()).toBe(
-            '252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. 0 HP / 0 Def Aggron: 196-236 (95.6 - 115.1%) -- 78.9% chance to OHKO'
+            '252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. Lvl 72 0 HP / 0 Def Aggron: 196-236 (95.6 - 115.1%) -- 78.9% chance to OHKO'
           );
         }
 
@@ -278,7 +278,7 @@ describe('calc', () => {
         const result = calculate(attacker, defender, move, field);
         expect(result.range()).toEqual([125, 147]);
         expect(result.desc()).toBe(
-          '-6 burned Togepi Present vs. +6 Umbreon through Reflect: 125-147 (31.8 - 37.4%) -- 89.1% chance to 3HKO'
+          '-6 Lvl 5 burned Togepi Present vs. +6 Umbreon through Reflect: 125-147 (31.8 - 37.4%) -- 89.1% chance to 3HKO'
         );
       });
 

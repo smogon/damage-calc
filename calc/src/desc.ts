@@ -57,7 +57,7 @@ export function display(
   const minDisplay = toDisplay(notation, min, defender.maxHP());
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
 
-  const desc = buildDescription(rawDesc);
+  const desc = buildDescription(rawDesc, attacker, defender);
   const damageText = `${min}-${max} (${minDisplay} - ${maxDisplay}${notation})`;
 
   if (move.bp === 0) return `${desc}: ${damageText}`;
@@ -753,7 +753,8 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
   }
 }
 
-function buildDescription(description: RawDesc) {
+function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pokemon) {
+  const [attackerLevel, defenderLevel] = getDescriptionLevels(attacker, defender);
   let output = '';
   if (description.attackBoost) {
     if (description.attackBoost > 0) {
@@ -761,6 +762,7 @@ function buildDescription(description: RawDesc) {
     }
     output += description.attackBoost + ' ';
   }
+  output = appendIfSet(output, attackerLevel);
   output = appendIfSet(output, description.attackEVs);
   output = appendIfSet(output, description.attackerItem);
   output = appendIfSet(output, description.attackerAbility);
@@ -797,6 +799,7 @@ function buildDescription(description: RawDesc) {
     }
     output += description.defenseBoost + ' ';
   }
+  output = appendIfSet(output, defenderLevel);
   output = appendIfSet(output, description.HPEVs);
   if (description.defenseEVs) {
     output += '/ ' + description.defenseEVs + ' ';
@@ -832,6 +835,20 @@ function buildDescription(description: RawDesc) {
     output += ' on a critical hit';
   }
   return output;
+}
+
+function getDescriptionLevels(attacker: Pokemon, defender: Pokemon) {
+  if (attacker.level !== defender.level) {
+    return [
+      attacker.level === 100 ? '' : `Lvl ${attacker.level}`,
+      defender.level === 100 ? '' : `Lvl ${defender.level}`
+    ];
+  }
+  // There's an argument for showing any level thats not 100, but VGC and LC players
+  // probably would rather not see level cruft in their calcs
+  const elide = [100, 50, 5].includes(attacker.level);
+  const level = elide ? '' : `Lvl ${attacker.level}`;
+  return [level, level];
 }
 
 function serializeText(arr: string[]) {
