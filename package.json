@@ -39,7 +39,7 @@
     "compile": "subpkg run compile && node build view",
     "bundle": "subpkg run bundle",
     "build": "subpkg run build && node build view",
-    "test": "subpkg run test && npm run build",
+    "test": "subpkg run test && npm run build && eslint --cache src/**/*.js",
     "postinstall": "subpkg install"
   },
   "subPackages": [

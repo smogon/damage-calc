@@ -40,6 +40,7 @@
         "RANDOM_XY": false,
         "RANDOM_SM": false,
         "RANDOM_SS": false,
+        "getMinMaxDamage": false,
         "getSelectedTiers": false,
         "stickyMoves": false,
         "allPokemon": false,
