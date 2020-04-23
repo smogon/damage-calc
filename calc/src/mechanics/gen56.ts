@@ -815,7 +815,9 @@ export function calculateBWXY(
       (field.gameType === 'Singles' || !move.isSpread)) {
     const child = attacker.clone();
     child.ability = 'Parental Bond (Child)' as AbilityName;
-    checkMultihitBoost(gen, child, defender, move, field);
+    if (checkMultihitBoost(gen, child, defender, move, field)) {
+      desc.defenderAbility = defender.ability;
+    }
     childDamage = calculateBWXY(gen, child, defender, move, field).damage as number[];
     desc.attackerAbility = attacker.ability;
   }

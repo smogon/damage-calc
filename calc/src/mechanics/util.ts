@@ -252,6 +252,7 @@ export function checkMultihitBoost(
       defender.boosts.spe += 2;
       defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
     }
+    return true;
   }
 
   // Gyro Ball (etc) makes contact into Gooey (etc) whenever its inflicting multiple hits because
@@ -261,7 +262,10 @@ export function checkMultihitBoost(
     // this goes far behind what we care to implement (especially once Gluttony is considered) now
     attacker.boosts.spe--;
     defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
+    return true;
   }
+
+  return false;
 }
 
 export function chainMods(mods: number[]) {
