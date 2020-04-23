@@ -3,7 +3,7 @@ import {Field, Side} from './field';
 import {isGrounded} from './mechanics/util';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
-import {Damage} from './result';
+import {Damage, damageRange} from './result';
 import {error} from './util';
 
 export interface RawDesc {
@@ -39,40 +39,6 @@ export interface RawDesc {
   isDefenderDynamaxed?: boolean;
 }
 
-function minMaxDamage(damage: Damage): [number, number] | [[number, number], [number, number]] {
-  // Fixed Damage
-  if (typeof damage === 'number') return [damage, damage];
-  // Standard Damage
-  if (damage.length > 2) return [damage[0] as number, damage[damage.length - 1] as number];
-  // Fixed Parental Bond Damage
-  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-    return [[damage[0], damage[1]], [damage[0], damage[1]]];
-  }
-  // Parental Bond Damage
-  const d = damage as [number[], number[]];
-  return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
-}
-
-function combine(damage: Damage) {
-  // Fixed Damage
-  if (typeof damage === 'number') return [damage];
-  // Standard Damage
-  if (damage.length > 2) return damage as number[];
-  // Fixed Parental Bond Damage
-  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-    return [damage[0] + damage[1]];
-  }
-  // Parental Bond Damage
-  const d = damage as [number[], number[]];
-  const combined = [];
-  for (let i = 0; i < d[0].length; i++) {
-    for (let j = 0; j < d[1].length; j++) {
-      combined.push(d[0][i] + d[1][j]);
-    }
-  }
-  return combined.sort();
-}
-
 export function display(
   gen: Generation,
   attacker: Pokemon,
@@ -84,7 +50,7 @@ export function display(
   notation = '%',
   err = true
 ) {
-  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const [minDamage, maxDamage] = damageRange(damage);
   const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
   const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
 
@@ -107,7 +73,7 @@ export function displayMove(
   damage: Damage,
   notation = '%'
 ) {
-  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const [minDamage, maxDamage] = damageRange(damage);
   const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
   const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
 
@@ -129,7 +95,7 @@ export function getRecovery(
   damage: Damage,
   notation = '%'
 ) {
-  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const [minDamage, maxDamage] = damageRange(damage);
   const minD = typeof minDamage === 'number' ? [minDamage] : minDamage;
   const maxD = typeof maxDamage === 'number' ? [maxDamage] : maxDamage;
 
@@ -172,7 +138,7 @@ export function getRecoil(
   damage: Damage,
   notation = '%'
 ) {
-  const [minDamage, maxDamage] = minMaxDamage(damage);
+  const [minDamage, maxDamage] = damageRange(damage);
   const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
   const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
 
@@ -401,6 +367,29 @@ export function getKOChance(
   }
 
   return {chance: 0, n: 0, text: ''};
+}
+
+function combine(damage: Damage) {
+  // Fixed Damage
+  if (typeof damage === 'number') return [damage];
+  // Standard Damage
+  if (damage.length > 2) {
+    if (damage[0] > damage[damage.length - 1]) damage = damage.slice().sort() as number[];
+    return damage as number[];
+  }
+  // Fixed Parental Bond Damage
+  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+    return [damage[0] + damage[1]];
+  }
+  // Parental Bond Damage
+  const d = damage as [number[], number[]];
+  const combined = [];
+  for (let i = 0; i < d[0].length; i++) {
+    for (let j = 0; j < d[1].length; j++) {
+      combined.push(d[0][i] + d[1][j]);
+    }
+  }
+  return combined.sort();
 }
 
 const TRAPPING =

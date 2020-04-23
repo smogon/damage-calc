@@ -96,7 +96,7 @@ function performCalculations() {
 				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
 					result = damageResults[n];
-					minMaxDamage = getMinMaxDamage(result.damage);
+					minMaxDamage = result.range();
 					minDamage = minMaxDamage[0] * attacker.moves[n].hits;
 					maxDamage = minMaxDamage[1] * attacker.moves[n].hits;
 					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP()) / 10;

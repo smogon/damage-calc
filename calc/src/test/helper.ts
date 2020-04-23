@@ -4,34 +4,6 @@ import {DeepPartial} from '../util';
 import {State} from '../state';
 import {Field, Side} from '../field';
 
-declare global {
-  namespace jest {
-    interface Matchers<R, T> {
-      toBeRange(a: number, b: number): R;
-    }
-  }
-}
-
-/* global expect */
-expect.extend({
-  toBeRange(received: number[], floor: number, ceiling: number) {
-    const a = received[0];
-    const b = received[received.length - 1];
-    const pass = a === floor && b === ceiling;
-    if (pass) {
-      return {
-        message: () => `expected range (${a}, ${b}) not to be within range (${floor}, ${ceiling})`,
-        pass,
-      };
-    } else {
-      return {
-        message: () => `expected range (${a}, ${b}) to be within range (${floor}, ${ceiling})`,
-        pass,
-      };
-    }
-  },
-});
-
 const calc = (gen: I.GenerationNum) => (
   attacker: Pokemon,
   defender: Pokemon,

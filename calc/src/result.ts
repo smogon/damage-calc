@@ -37,6 +37,13 @@ export class Result {
     return this.fullDesc();
   }
 
+  range() {
+    const range = damageRange(this.damage);
+    if (typeof range[0] === 'number') return range;
+    const d = range as [number[], number[]];
+    return [d[0][0] + d[0][1], d[1][0] + d[1][1]];
+  }
+
   fullDesc(notation = '%', err = true) {
     return display(
       this.gen,
@@ -74,4 +81,26 @@ export class Result {
       err
     );
   }
+}
+
+export function damageRange(
+    damage: Damage
+): [number, number] | [[number, number], [number, number]] {
+  // Fixed Damage
+  if (typeof damage === 'number') return [damage, damage];
+  // Standard Damage
+  if (damage.length > 2) {
+    const d = damage as number[];
+    if (d[0] > d[d.length - 1]) return [Math.min(...d), Math.max(...d)];
+    return [d[0], d[d.length - 1]];
+  }
+  // Fixed Parental Bond Damage
+  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
+    return [[damage[0], damage[1]], [damage[0], damage[1]]];
+  }
+  // Parental Bond Damage
+  const d = damage as [number[], number[]];
+  if (d[0][0] > d[0][d[0].length - 1]) d[0] = d[0].slice().sort();
+  if (d[1][0] > d[1][d[1].length - 1]) d[1] = d[1].slice().sort();
+  return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
 }
