@@ -395,6 +395,10 @@ export function calculateSMSS(
     basePower = attacker.hasItem('Flying Gem') || !attacker.item ? 110 : 55;
     desc.moveBP = basePower;
     break;
+  case 'Grav Apple':
+    basePower = move.bp * (field.isGravity ? 1.5 : 1);
+    desc.moveBP = basePower;
+    break;
   case 'Assurance':
     basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
     // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
