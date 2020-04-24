@@ -143,14 +143,13 @@ export async function importSets(dir: string, randomDir?: string) {
       }
     }
 
-    const comment = '/* AUTOMATICALLY GENERATED FROM @pokemon-showdown/sets, DO NOT EDIT! */';
-    const sets = JSON.stringify(setsByPokemon);
-    const options = JSON.stringify(randomOptionsByPokemon);
-    const js =
-      `${comment}\n` +
-      `var SETDEX_${GENS[gen - 1]} = ${sets};\n` +
-      `var RANDOM_${GENS[gen - 1]} = ${options};`;
-    fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`), js);
+    const comment = (from: string) => `/* AUTOMATICALLY GENERATED FROM ${from}, DO NOT EDIT! */`;
+    fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`),
+      `${comment('@pokemon-showdown/sets')}\n` +
+      `var SETDEX_${GENS[gen - 1]} = ${JSON.stringify(setsByPokemon)};\n`);
+    fs.writeFileSync(path.resolve(dir, `randoms/gen${gen}.js`),
+      `${comment('POKEMON SHOWDOWN')}\n` +
+      `var RANDOM_${GENS[gen - 1]} = ${JSON.stringify(randomOptionsByPokemon)};\n`);
   }
 }
 

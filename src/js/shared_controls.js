@@ -823,8 +823,28 @@ var GENERATION = {
 	'8': 8, 'ss': 8
 };
 
-var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
-var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RANDOM_XY, RANDOM_SM, RANDOM_SS];
+var SETDEX = [
+	{},
+	typeof SETDEX_RBY === 'undefined' ? {} : SETDEX_RBY,
+	typeof SETDEX_GSC === 'undefined' ? {} : SETDEX_GSC,
+	typeof SETDEX_ADV === 'undefined' ? {} : SETDEX_ADV,
+	typeof SETDEX_DPP === 'undefined' ? {} : SETDEX_DPP,
+	typeof SETDEX_BW === 'undefined' ? {} : SETDEX_BW,
+	typeof SETDEX_XY === 'undefined' ? {} : SETDEX_XY,
+	typeof SETDEX_SM === 'undefined' ? {} : SETDEX_SM,
+	typeof SETDEX_SS === 'undefined' ? {} : SETDEX_SS,
+];
+var RANDDEX = [
+	{},
+	typeof RANDOM_RBY === 'undefined' ? {} : RANDOM_RBY,
+	typeof RANDOM_GSC === 'undefined' ? {} : RANDOM_GSC,
+	typeof RANDOM_ADV === 'undefined' ? {} : RANDOM_ADV,
+	typeof RANDOM_DPP === 'undefined' ? {} : RANDOM_DPP,
+	typeof RANDOM_BW === 'undefined' ? {} : RANDOM_BW,
+	typeof RANDOM_XY === 'undefined' ? {} : RANDOM_XY,
+	typeof RANDOM_SM === 'undefined' ? {} : RANDOM_SM,
+	typeof RANDOM_SS === 'undefined' ? {} : RANDOM_SS,
+];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {
 	/*eslint-disable */
