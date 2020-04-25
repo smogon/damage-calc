@@ -14,6 +14,7 @@ import {Field, Side} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
 import {STATS, Stats} from '../stats';
+import {RawDesc} from '../desc';
 
 const EV_ITEMS = [
   'Macho Brace',
@@ -231,41 +232,89 @@ export function checkSeedBoost(pokemon: Pokemon, field: Field) {
   }
 }
 
-// Note: We only need to handle guaranteed, damage-relevant boosts here for multi-hit accuracy
+// NOTE: We only need to handle guaranteed, damage-relevant boosts here for multi-hit accuracy
 export function checkMultihitBoost(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
-  field: Field
+  field: Field,
+  desc: RawDesc,
+  usedWhiteHerb = false
 ) {
-  if (move.named('Power-Up Punch')) {
-    attacker.boosts.atk++;
+  // NOTE: attacker.ability must be Parental Bond for these moves to be multi-hit
+  if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
+    // Gyro Ball (etc) makes contact into Gooey (etc) whenever its inflicting multiple hits because
+    // this can only happen if the attacker ability is Parental Bond (and thus can't be Long Reach)
+    if (attacker.hasItem('White Herb') && !usedWhiteHerb) {
+      desc.attackerItem = attacker.item;
+      usedWhiteHerb = true;
+    } else {
+      attacker.boosts.spe = Math.max(attacker.boosts.spe - 1, -6);
+      attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+      desc.defenderAbility = defender.ability;
+    }
+    // BUG: Technically Sitrus/Figy Berry + Unburden can also affect the defender's speed, but
+    // this goes far beyond what we care to implement (especially once Gluttony is considered) now
+  } else if (move.named('Power-Up Punch')) {
+    attacker.boosts.atk = Math.min(attacker.boosts.atk + 1, 6);
     attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
   }
-  const stamina = defender.hasAbility('Stamina');
-  const weakarmor = defender.hasAbility('Weak Armor');
-  if (stamina || weakarmor) {
-    defender.boosts.def = defender.boosts.def + (stamina ? 1 : -1);
-    defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
-    if (weakarmor) {
-      defender.boosts.spe += 2;
-      defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
+
+  if (defender.hasAbility('Stamina')) {
+    if (attacker.hasAbility('Unaware')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      defender.boosts.def = Math.min(defender.boosts.def + 1, 6);
+      defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+      desc.defenderAbility = defender.ability;
     }
-    return true;
-  }
-
-  // Gyro Ball (etc) makes contact into Gooey (etc) whenever its inflicting multiple hits because
-  // this can only happen if the attacker ability is Parental Bond (and thus can't be Long Reach)
-  if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
-    // BUG: Technically Sitrus/Figy Berry + Unburden can also affect the defender's speed, but
-    // this goes far behind what we care to implement (especially once Gluttony is considered) now
-    attacker.boosts.spe--;
+  } else if (defender.hasAbility('Weak Armor')) {
+    if (attacker.hasAbility('Unaware')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      if (defender.hasItem('White Herb') && !usedWhiteHerb) {
+        desc.defenderItem = defender.item;
+        usedWhiteHerb = true;
+      } else {
+        defender.boosts.def = Math.max(defender.boosts.def - 1, -6);
+        defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+      }
+    }
+    defender.boosts.spe += Math.min(defender.boosts.spe + 2, 6);
     defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
-    return true;
+    desc.defenderAbility = defender.ability;
   }
 
-  return false;
+  const simple = attacker.hasAbility('Simple') ? 2 : 1;
+  if (move.dropsStats) {
+    if (attacker.hasAbility('Unaware')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      // No move with dropsStats has fancy logic regarding category here
+      const stat = move.category === 'Special' ? 'spa' : 'atk';
+
+      let boosts = attacker.boosts[stat];
+      if (attacker.hasAbility('Contrary')) {
+        boosts = Math.min(6, boosts + move.dropsStats);
+        desc.attackerAbility = attacker.ability;
+      } else {
+        boosts = Math.max(-6, boosts - move.dropsStats * simple);
+        if (simple > 1) desc.attackerAbility = attacker.ability;
+      }
+
+      if (attacker.hasItem('White Herb') && attacker.boosts[stat] < 0 && !usedWhiteHerb) {
+        boosts += move.dropsStats * simple;
+        desc.attackerItem = attacker.item;
+        usedWhiteHerb = true;
+      }
+
+      attacker.boosts[stat] = boosts;
+      attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat], defender.boosts[stat], gen);
+    }
+  }
+
+  return usedWhiteHerb;
 }
 
 export function chainMods(mods: number[]) {

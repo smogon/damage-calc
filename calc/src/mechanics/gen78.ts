@@ -1009,9 +1009,7 @@ export function calculateSMSS(
       (field.gameType === 'Singles' || !move.isSpread)) {
     const child = attacker.clone();
     child.ability = 'Parental Bond (Child)' as AbilityName;
-    if (checkMultihitBoost(gen, child, defender, move, field)) {
-      desc.defenderAbility = defender.ability;
-    }
+    checkMultihitBoost(gen, child, defender, move, field, desc);
     childDamage = calculateSMSS(gen, child, defender, move, field).damage as number[];
     desc.attackerAbility = attacker.ability;
   }
@@ -1023,10 +1021,7 @@ export function calculateSMSS(
   }
 
   if (move.dropsStats && move.timesUsed! > 1) {
-    let simpleMultiplier = 1;
-    if (attacker.hasAbility('Simple')) {
-      simpleMultiplier = 2;
-    }
+    const simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
 
     desc.moveTurns = `over ${move.timesUsed} turns`;
     const hasWhiteHerb = attacker.hasItem('White Herb');
