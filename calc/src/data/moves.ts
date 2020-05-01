@@ -27,8 +27,7 @@ export interface MoveData {
   readonly isMax?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
-  readonly isMultiHit?: boolean;
-  readonly isTwoHit?: boolean;
+  readonly multihit?: number | number[];
 }
 
 const RBY: {[name: string]: MoveData} = {
@@ -37,16 +36,16 @@ const RBY: {[name: string]: MoveData} = {
   Acid: {bp: 40, type: 'Poison'},
   Amnesia: {bp: 0, category: 'Status', type: 'Psychic'},
   'Aurora Beam': {bp: 65, type: 'Ice'},
-  Barrage: {bp: 15, type: 'Normal', isMultiHit: true},
+  Barrage: {bp: 15, type: 'Normal', multihit: [2, 5]},
   Bide: {bp: 0, type: '???'},
   Bind: {bp: 15, type: 'Normal'},
   Bite: {bp: 60, type: 'Normal'},
   Blizzard: {bp: 120, type: 'Ice'},
-  Bonemerang: {bp: 50, type: 'Ground', isTwoHit: true},
+  Bonemerang: {bp: 50, type: 'Ground', multihit: 2},
   Bubble: {bp: 20, type: 'Water'},
   'Bubble Beam': {bp: 65, type: 'Water'},
   Clamp: {bp: 35, type: 'Water'},
-  'Comet Punch': {bp: 18, type: 'Normal', isMultiHit: true},
+  'Comet Punch': {bp: 18, type: 'Normal', multihit: [2, 5]},
   Constrict: {bp: 10, type: 'Normal'},
   Conversion: {bp: 0, category: 'Status', type: 'Normal'},
   Counter: {bp: 0, type: 'Fighting'},
@@ -56,8 +55,8 @@ const RBY: {[name: string]: MoveData} = {
   Disable: {bp: 0, category: 'Status', type: 'Normal'},
   'Dizzy Punch': {bp: 70, type: 'Normal'},
   'Double-Edge': {bp: 100, type: 'Normal', hasRecoil: 25},
-  'Double Kick': {bp: 30, type: 'Fighting', isTwoHit: true},
-  'Double Slap': {bp: 15, type: 'Normal', isMultiHit: true},
+  'Double Kick': {bp: 30, type: 'Fighting', multihit: 2},
+  'Double Slap': {bp: 15, type: 'Normal', multihit: [2, 5]},
   'Dragon Rage': {bp: 1, type: 'Dragon'},
   'Dream Eater': {
     bp: 100,
@@ -72,8 +71,8 @@ const RBY: {[name: string]: MoveData} = {
   Fissure: {bp: 0, type: 'Ground'},
   Fly: {bp: 70, type: 'Flying'},
   'Focus Energy': {bp: 0, category: 'Status', type: 'Normal'},
-  'Fury Attack': {bp: 15, type: 'Normal', isMultiHit: true},
-  'Fury Swipes': {bp: 18, type: 'Normal', isMultiHit: true},
+  'Fury Attack': {bp: 15, type: 'Normal', multihit: [2, 5]},
+  'Fury Swipes': {bp: 18, type: 'Normal', multihit: [2, 5]},
   Glare: {bp: 0, category: 'Status', type: 'Normal'},
   Growth: {bp: 0, category: 'Status', type: 'Normal'},
   Guillotine: {bp: 0, type: 'Normal'},
@@ -93,7 +92,7 @@ const RBY: {[name: string]: MoveData} = {
   Mist: {bp: 0, category: 'Status', type: 'Ice'},
   'Night Shade': {bp: 1, type: 'Ghost'},
   'Petal Dance': {bp: 70, type: 'Grass'},
-  'Pin Missile': {bp: 14, type: 'Bug', isMultiHit: true},
+  'Pin Missile': {bp: 14, type: 'Bug', multihit: [2, 5]},
   'Poison Sting': {bp: 15, type: 'Poison'},
   Psychic: {bp: 90, type: 'Psychic'},
   Psywave: {bp: 1, type: 'Psychic'},
@@ -115,7 +114,7 @@ const RBY: {[name: string]: MoveData} = {
   'Soft-Boiled': {bp: 0, category: 'Status', type: 'Normal'},
   'Solar Beam': {bp: 120, type: 'Grass'},
   'Sonic Boom': {bp: 0, type: 'Normal'},
-  'Spike Cannon': {bp: 20, type: 'Normal', isMultiHit: true},
+  'Spike Cannon': {bp: 20, type: 'Normal', multihit: [2, 5]},
   Stomp: {bp: 65, type: 'Normal'},
   Struggle: {bp: 50, type: 'Normal', hasRecoil: 50},
   'Stun Spore': {bp: 0, category: 'Status', type: 'Grass'},
@@ -129,7 +128,7 @@ const RBY: {[name: string]: MoveData} = {
   'Thunder Wave': {bp: 0, category: 'Status', type: 'Electric'},
   Transform: {bp: 0, category: 'Status', type: 'Normal'},
   'Tri Attack': {bp: 80, type: 'Normal'},
-  Twineedle: {bp: 25, type: 'Bug', isTwoHit: true},
+  Twineedle: {bp: 25, type: 'Bug', multihit: 2},
   Whirlwind: {bp: 0, category: 'Status', type: 'Normal'},
   'Wing Attack': {bp: 35, type: 'Flying'},
   Wrap: {bp: 15, type: 'Normal'},
@@ -265,10 +264,10 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Sweet Scent': {bp: 0, category: 'Status', type: 'Normal'},
   Synthesis: {bp: 0, category: 'Status', type: 'Grass'},
   Thief: {bp: 40, type: 'Dark'},
-  'Triple Kick': {bp: 10, type: 'Fighting', isMultiHit: true},
+  'Triple Kick': {bp: 10, type: 'Fighting', multihit: [1, 3]},
   Twister: {bp: 40, type: 'Dragon'},
   'Ancient Power': {bp: 60, type: 'Rock'},
-  'Bone Rush': {bp: 25, type: 'Ground', isMultiHit: true},
+  'Bone Rush': {bp: 25, type: 'Ground', multihit: [2, 5]},
   Crunch: {bp: 80, type: 'Dark'},
   'Feint Attack': {bp: 60, type: 'Dark'},
   'Giga Drain': {bp: 60, type: 'Grass', givesHealth: true, percentHealed: 0.5},
@@ -366,7 +365,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Surf: {isSpread: true},
   Thief: {makesContact: true},
   Thrash: {makesContact: true},
-  'Triple Kick': {makesContact: true},
+  'Triple Kick': {makesContact: true, multihit: 3},
   'Vine Whip': {makesContact: true},
   Waterfall: {makesContact: true},
   Wrap: {makesContact: true},
@@ -447,14 +446,14 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Arm Thrust': {
     bp: 15,
     type: 'Fighting',
-    isMultiHit: true,
+    multihit: [2, 5],
     makesContact: true,
   },
   Assist: {bp: 0, category: 'Status', type: 'Normal'},
   Astonish: {bp: 30, type: 'Ghost', makesContact: true},
   Block: {bp: 0, category: 'Status', type: 'Normal'},
   Bounce: {bp: 85, type: 'Flying', makesContact: true},
-  'Bullet Seed': {bp: 10, type: 'Grass', isMultiHit: true},
+  'Bullet Seed': {bp: 10, type: 'Grass', multihit: [2, 5]},
   Camouflage: {bp: 0, category: 'Status', type: 'Normal'},
   Charge: {bp: 0, category: 'Status', type: 'Electric'},
   Covet: {bp: 40, type: 'Normal'},
@@ -464,7 +463,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Fake Out': {bp: 40, type: 'Normal', hasPriority: true},
   'Follow Me': {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
   Hail: {bp: 0, category: 'Status', type: 'Ice'},
-  'Icicle Spear': {bp: 10, type: 'Ice', isMultiHit: true},
+  'Icicle Spear': {bp: 10, type: 'Ice', multihit: [2, 5]},
   Ingrain: {bp: 0, category: 'Status', type: 'Grass'},
   'Knock Off': {bp: 20, type: 'Dark', makesContact: true},
   'Leaf Blade': {bp: 70, type: 'Grass', makesContact: true},
@@ -475,7 +474,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Odor Sleuth': {bp: 0, category: 'Status', type: 'Normal'},
   Overheat: {bp: 140, type: 'Fire', dropsStats: 2, makesContact: true},
   Revenge: {bp: 60, type: 'Fighting', makesContact: true},
-  'Rock Blast': {bp: 25, type: 'Rock', isMultiHit: true},
+  'Rock Blast': {bp: 25, type: 'Rock', multihit: [2, 5]},
   'Role Play': {bp: 0, category: 'Status', type: 'Psychic'},
   'Sand Tomb': {bp: 15, type: 'Ground'},
   'Skill Swap': {bp: 0, category: 'Status', type: 'Psychic'},
@@ -830,7 +829,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Double Hit': {
     bp: 35,
     type: 'Normal',
-    isTwoHit: true,
+    multihit: 2,
     makesContact: true,
     category: 'Physical',
   },
@@ -1511,7 +1510,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Dual Chop': {
     bp: 40,
     type: 'Dragon',
-    isTwoHit: true,
+    multihit: 2,
     makesContact: true,
     category: 'Physical',
   },
@@ -1546,7 +1545,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Gear Grind': {
     bp: 50,
     type: 'Steel',
-    isTwoHit: true,
+    multihit: 2,
     makesContact: true,
     category: 'Physical',
   },
@@ -1636,7 +1635,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Tail Slap': {
     bp: 25,
     type: 'Normal',
-    isMultiHit: true,
+    multihit: [2, 5],
     makesContact: true,
     category: 'Physical',
   },
@@ -1818,7 +1817,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Water Shuriken': {
     bp: 15,
     type: 'Water',
-    isMultiHit: true,
+    multihit: [2, 5],
     hasPriority: true,
     category: 'Physical',
   },
@@ -2431,7 +2430,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Double Iron Bash': {
     bp: 60,
     type: 'Steel',
-    isTwoHit: true,
+    multihit: 2,
     makesContact: true,
     isPunch: true,
     category: 'Physical',
@@ -2891,7 +2890,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Dragon Darts': {
     bp: 50,
     type: 'Dragon',
-    isTwoHit: true,
+    multihit: 2,
     category: 'Physical',
     zp: 100,
     maxPower: 130,
@@ -3982,8 +3981,7 @@ class Move implements I.Move {
   readonly isMax?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
-  readonly isMultiHit?: boolean;
-  readonly isTwoHit?: boolean;
+  readonly multihit?: number | number[];
 
   constructor(name: string, data: MoveData, gen: number) {
     this.kind = 'Move';

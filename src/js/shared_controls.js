@@ -353,7 +353,7 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.willCrit === true);
-	if (move.isMultiHit) {
+	if (Array.isArray(move.multihit)) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");

@@ -55,6 +55,7 @@ export class Move implements State.Move {
     this.originalName = name;
     let data: I.Move = extend(true, {name}, gen.moves.get(toID(name)), options.overrides);
 
+    this.hits = 1;
     // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useMax && 'maxPower' in data) {
       const maxMoveName: string = getMaxMoveName(
@@ -68,7 +69,6 @@ export class Move implements State.Move {
         bp: maxMove!.bp === 10 ? getMaxMoveBasePower(data) : maxMove!.bp,
         category: data.category,
       });
-      this.hits = 1;
     }
     if (options.useZ && 'zp' in data) {
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
@@ -78,13 +78,18 @@ export class Move implements State.Move {
         bp: zMove!.bp === 1 ? data.zp : zMove!.bp,
         category: data.category,
       });
-      this.hits = 1;
     } else {
-      this.hits = data.isMultiHit
-        ? options.hits || (options.ability === 'Skill Link' || options.item === 'Grip Claw' ? 5 : 3)
-        : data.isTwoHit
-        ? 2
-        : 1;
+      if (data.multihit) {
+        if (typeof data.multihit === 'number') {
+          this.hits = data.multihit;
+        } else if (options.hits) {
+          this.hits = options.hits;
+        } else {
+          this.hits = (options.ability === 'Skill Link' || options.item === 'Grip Claw')
+            ? data.multihit[1]
+            : data.multihit[0] + 1;
+        }
+      }
       this.timesUsedWithMetronome = options.timesUsedWithMetronome;
     }
     this.timesUsed = (data.dropsStats && options.timesUsed) || 1;
@@ -98,7 +103,7 @@ export class Move implements State.Move {
     this.overrides = options.overrides;
 
     this.bp = data.bp;
-    // These moves have a type, but the damage they deal is typeless so we override it here
+    // These moves have a type type of these moves exists, but the damage they deal is typeless so we override it
     const typelessDamage = gen.num >= 2 && gen.num <= 4 &&
       ['futuresight', 'doomdesire', 'struggle'].includes(data.id);
     this.type = typelessDamage ? '???' : data.type;

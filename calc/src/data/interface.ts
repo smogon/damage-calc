@@ -106,8 +106,7 @@ export interface Move extends Data<MoveName> {
   readonly isMax?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
-  readonly isMultiHit?: boolean;
-  readonly isTwoHit?: boolean;
+  readonly multihit?: number | number[];
 }
 
 export interface Species {
