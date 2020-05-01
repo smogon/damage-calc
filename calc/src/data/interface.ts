@@ -101,7 +101,7 @@ export interface Move extends Data<MoveName> {
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
-  readonly hasPriority?: boolean;
+  readonly priority?: number;
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: MoveCategory;

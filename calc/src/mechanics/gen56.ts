@@ -144,7 +144,7 @@ export function calculateBWXY(
   }
 
   if (attacker.hasAbility('Gale Wings') && move.hasType('Flying')) {
-    move.hasPriority = true;
+    move.priority = 1;
     desc.attackerAbility = attacker.ability;
   }
 
@@ -222,7 +222,7 @@ export function calculateBWXY(
     return result;
   }
 
-  if (move.hasPriority && field.hasTerrain('Psychic') && isGrounded(defender, field)) {
+  if (move.priority > 0 && field.hasTerrain('Psychic') && isGrounded(defender, field)) {
     desc.terrain = field.terrain;
     return result;
   }

@@ -17,7 +17,7 @@ export interface MoveData {
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
-  readonly hasPriority?: boolean;
+  readonly priority?: number;
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;
@@ -186,7 +186,7 @@ const RBY: {[name: string]: MoveData} = {
   Peck: {bp: 35, type: 'Flying'},
   Pound: {bp: 40, type: 'Normal'},
   Psybeam: {bp: 65, type: 'Psychic'},
-  'Quick Attack': {bp: 40, type: 'Normal', hasPriority: true},
+  'Quick Attack': {bp: 40, type: 'Normal', priority: 1},
   Scratch: {bp: 40, type: 'Normal'},
   'Shadow Strike': {bp: 80, type: 'Ghost'},
   Slam: {bp: 80, type: 'Normal'},
@@ -225,9 +225,9 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Cross Chop': {bp: 100, type: 'Fighting'},
   Curse: {bp: 0, category: 'Status', type: '???'},
   'Destiny Bond': {bp: 0, category: 'Status', type: 'Ghost'},
-  Detect: {bp: 0, category: 'Status', type: 'Fighting', hasPriority: true},
+  Detect: {bp: 0, category: 'Status', type: 'Fighting', priority: 2},
   Encore: {bp: 0, category: 'Status', type: 'Normal'},
-  Endure: {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
+  Endure: {bp: 0, category: 'Status', type: 'Normal', priority: 2},
   Flail: {bp: 0, type: 'Normal'},
   Foresight: {bp: 0, category: 'Status', type: 'Normal'},
   'Future Sight': {bp: 80, type: 'Psychic'},
@@ -242,7 +242,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Outrage: {bp: 90, type: 'Dragon'},
   'Powder Snow': {bp: 40, type: 'Ice'},
   Present: {bp: 0, type: 'Normal'},
-  Protect: {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
+  Protect: {bp: 0, category: 'Status', type: 'Normal', priority: 2},
   'Psych Up': {bp: 0, category: 'Status', type: 'Normal'},
   Pursuit: {bp: 40, type: 'Dark'},
   'Rain Dance': {bp: 0, category: 'Status', type: 'Water'},
@@ -273,7 +273,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Whirlpool: {bp: 15, type: 'Water'},
   'Zap Cannon': {bp: 100, type: 'Electric'},
   'Cotton Spore': {bp: 0, category: 'Status', type: 'Grass'},
-  'Extreme Speed': {bp: 80, type: 'Normal', hasPriority: true},
+  'Extreme Speed': {bp: 80, type: 'Normal', priority: 1},
   'Fury Cutter': {bp: 10, type: 'Bug'},
   Magnitude: {bp: 0, type: 'Ground'},
   'Milk Drink': {bp: 0, category: 'Status', type: 'Normal'},
@@ -308,7 +308,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'False Swipe': {bp: 40, type: 'Normal'},
   'Flame Wheel': {bp: 60, type: 'Fire'},
   'Iron Tail': {bp: 100, type: 'Steel'},
-  'Mach Punch': {bp: 40, type: 'Fighting', hasPriority: true},
+  'Mach Punch': {bp: 40, type: 'Fighting', priority: 1},
   Megahorn: {bp: 120, type: 'Bug'},
   'Metal Claw': {bp: 50, type: 'Steel'},
   'Mud-Slap': {bp: 20, type: 'Ground'},
@@ -333,6 +333,9 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Comet Punch': {makesContact: true},
   Counter: {makesContact: true},
   Crunch: {makesContact: true},
+  Detect: {priority: 3},
+  Endure: {priority: 4},
+  Protect: {priority: 3},
   Dig: {makesContact: true},
   'Double Kick': {makesContact: true},
   'Double Slap': {makesContact: true},
@@ -454,14 +457,14 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Dive: {bp: 60, type: 'Water', makesContact: true},
   'Doom Desire': {bp: 120, type: 'Steel'},
   Extrasensory: {bp: 80, type: 'Psychic'},
-  'Fake Out': {bp: 40, type: 'Normal', hasPriority: true},
-  'Follow Me': {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
+  'Fake Out': {bp: 40, type: 'Normal', priority: 1},
+  'Follow Me': {bp: 0, category: 'Status', type: 'Normal', priority: 3},
   Hail: {bp: 0, category: 'Status', type: 'Ice'},
   'Icicle Spear': {bp: 10, type: 'Ice', multihit: [2, 5]},
   Ingrain: {bp: 0, category: 'Status', type: 'Grass'},
   'Knock Off': {bp: 20, type: 'Dark', makesContact: true},
   'Leaf Blade': {bp: 70, type: 'Grass', makesContact: true},
-  'Magic Coat': {bp: 0, category: 'Status', type: 'Psychic', hasPriority: true},
+  'Magic Coat': {bp: 0, category: 'Status', type: 'Psychic', priority: 4},
   Memento: {bp: 0, category: 'Status', type: 'Dark'},
   'Nature Power': {bp: 0, category: 'Status', type: 'Normal'},
   'Needle Arm': {bp: 60, type: 'Grass', makesContact: true},
@@ -493,7 +496,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Secret Power': {bp: 70, type: 'Normal'},
   'Sky Uppercut': {bp: 85, type: 'Fighting', makesContact: true},
   'Slack Off': {bp: 0, category: 'Status', type: 'Normal'},
-  Snatch: {bp: 0, category: 'Status', type: 'Dark', hasPriority: true},
+  Snatch: {bp: 0, category: 'Status', type: 'Dark', priority: 4},
   'Tail Glow': {bp: 0, category: 'Status', type: 'Bug'},
   Torment: {bp: 0, category: 'Status', type: 'Dark'},
   'Water Sport': {bp: 0, category: 'Status', type: 'Water'},
@@ -533,7 +536,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Flatter: {bp: 0, category: 'Status', type: 'Dark'},
   'Frenzy Plant': {bp: 150, type: 'Grass'},
   Grudge: {bp: 0, category: 'Status', type: 'Ghost'},
-  'Helping Hand': {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
+  'Helping Hand': {bp: 0, category: 'Status', type: 'Normal', priority: 5},
   'Hydro Cannon': {bp: 150, type: 'Water'},
   'Iron Defense': {bp: 0, category: 'Status', type: 'Steel'},
   'Magical Leaf': {bp: 60, type: 'Grass'},
@@ -554,7 +557,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Arm Thrust': {category: 'Physical'},
   Barrage: {category: 'Physical'},
   'Beat Up': {category: 'Physical'},
-  Bide: {hasPriority: true, category: 'Physical'},
+  Bide: {priority: 1, category: 'Physical'},
   Bind: {category: 'Physical'},
   'Bone Rush': {category: 'Physical'},
   Bonemerang: {category: 'Physical'},
@@ -839,7 +842,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Feint: {
     bp: 50,
     type: 'Normal',
-    hasPriority: true,
+    priority: 2,
     bypassesProtect: true,
     category: 'Physical',
   },
@@ -901,7 +904,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Sucker Punch': {
     bp: 80,
     type: 'Dark',
-    hasPriority: true,
+    priority: 1,
     makesContact: true,
     category: 'Physical',
   },
@@ -1003,7 +1006,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Aqua Jet': {
     bp: 40,
     type: 'Water',
-    hasPriority: true,
+    priority: 1,
     makesContact: true,
     category: 'Physical',
   },
@@ -1018,7 +1021,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Bullet Punch': {
     bp: 40,
     type: 'Steel',
-    hasPriority: true,
+    priority: 1,
     makesContact: true,
     isPunch: true,
     category: 'Physical',
@@ -1074,7 +1077,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBite: true,
     category: 'Physical',
   },
-  'Ice Shard': {bp: 40, type: 'Ice', hasPriority: true, category: 'Physical'},
+  'Ice Shard': {bp: 40, type: 'Ice', priority: 1, category: 'Physical'},
   'Iron Head': {
     bp: 80,
     type: 'Steel',
@@ -1120,7 +1123,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Shadow Sneak': {
     bp: 40,
     type: 'Ghost',
-    hasPriority: true,
+    priority: 1,
     makesContact: true,
     category: 'Physical',
   },
@@ -1135,7 +1138,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Vacuum Wave': {
     bp: 40,
     type: 'Fighting',
-    hasPriority: true,
+    priority: 1,
     category: 'Special',
   },
   'X-Scissor': {
@@ -1168,6 +1171,8 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Energy Ball': {hasSecondaryEffect: true},
   Extrasensory: {hasSecondaryEffect: true},
   Feint: {bp: 30},
+  Detect: {priority: 4},
+  Protect: {priority: 4},
   'Fire Blast': {hasSecondaryEffect: true},
   'Fire Spin': {bp: 35},
   Flamethrower: {hasSecondaryEffect: true},
@@ -1235,8 +1240,9 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Dragon Breath': {hasSecondaryEffect: true},
   'Dynamic Punch': {hasSecondaryEffect: true},
   'Earth Power': {hasSecondaryEffect: true},
+  'Extreme Speed': {priority: 2},
   Ember: {hasSecondaryEffect: true},
-  'Fake Out': {hasSecondaryEffect: true},
+  'Fake Out': {hasSecondaryEffect: true, priority: 3},
   'Fire Fang': {hasSecondaryEffect: true},
   'Fire Punch': {hasSecondaryEffect: true},
   'Flame Wheel': {hasSecondaryEffect: true},
@@ -1328,8 +1334,8 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     hasSecondaryEffect: true,
   },
   'Magic Room': {bp: 0, type: 'Psychic'},
-  'Quick Guard': {bp: 0, type: 'Fighting', hasPriority: true},
-  'Rage Powder': {bp: 0, type: 'Bug', hasPriority: true},
+  'Quick Guard': {bp: 0, type: 'Fighting', priority: 3},
+  'Rage Powder': {bp: 0, type: 'Bug', priority: 3},
   'Relic Song': {
     bp: 75,
     type: 'Normal',
@@ -1398,9 +1404,9 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Techno Blast': {bp: 85, type: 'Normal', category: 'Special'},
   Telekinesis: {bp: 0, type: 'Psychic'},
   'Water Pledge': {bp: 50, type: 'Water', category: 'Special'},
-  'Wide Guard': {bp: 0, type: 'Rock', hasPriority: true},
+  'Wide Guard': {bp: 0, type: 'Rock', priority: 3},
   'Wonder Room': {bp: 0, type: 'Psychic'},
-  'Ally Switch': {bp: 0, type: 'Psychic', hasPriority: true},
+  'Ally Switch': {bp: 0, type: 'Psychic', priority: 1},
   'Flame Burst': {bp: 70, type: 'Fire', category: 'Special'},
   'Heavy Slam': {
     bp: 0,
@@ -1660,6 +1666,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Bubble: {bp: 40},
   Chatter: {bp: 65},
   'Egg Bomb': {isBullet: true},
+  'Follow Me': {priority: 2},
   Hurricane: {bp: 110},
   'Hidden Power': {bp: 60},
   'Hidden Power Bug': {bp: 60},
@@ -1729,6 +1736,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Overheat: {bp: 130},
   'Pin Missile': {bp: 25},
   'Power Gem': {bp: 80},
+  'Rage Powder': {priority: 2},
   'Rock Tomb': {bp: 60},
   'Rock Wrecker': {isBullet: true},
   'Seed Bomb': {isBullet: true},
@@ -1778,7 +1786,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bypassesProtect: true,
     category: 'Special',
   },
-  "King's Shield": {bp: 0, type: 'Steel', hasPriority: true},
+  "King's Shield": {bp: 0, type: 'Steel', priority: 4},
   'Misty Terrain': {bp: 0, type: 'Fairy'},
   'Mystical Fire': {
     bp: 65,
@@ -1801,15 +1809,15 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     category: 'Physical',
   },
-  Powder: {bp: 0, type: 'Bug', hasPriority: true},
-  'Spiky Shield': {bp: 0, type: 'Grass', hasPriority: true},
+  Powder: {bp: 0, type: 'Bug', priority: 1},
+  'Spiky Shield': {bp: 0, type: 'Grass', priority: 4},
   'Thousand Arrows': {bp: 90, type: 'Ground', target: 'allAdjacentFoes', category: 'Physical'},
   'Thousand Waves': {bp: 90, type: 'Ground', target: 'allAdjacentFoes', category: 'Physical'},
   'Water Shuriken': {
     bp: 15,
     type: 'Water',
     multihit: [2, 5],
-    hasPriority: true,
+    priority: 1,
     category: 'Physical',
   },
   'Dragon Ascent': {
@@ -1821,7 +1829,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Electric Terrain': {bp: 0, type: 'Electric'},
   Geomancy: {bp: 0, type: 'Fairy'},
   'Grassy Terrain': {bp: 0, type: 'Grass'},
-  'Ion Deluge': {bp: 0, type: 'Electric', hasPriority: true},
+  'Ion Deluge': {bp: 0, type: 'Electric', priority: 1},
   "Land's Wrath": {bp: 90, type: 'Ground', target: 'allAdjacentFoes', category: 'Physical'},
   'Light of Ruin': {bp: 140, type: 'Fairy', hasRecoil: 50, category: 'Special'},
   'Oblivion Wing': {
@@ -1851,7 +1859,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     hasSecondaryEffect: true,
   },
   'Aromatic Mist': {bp: 0, type: 'Fairy'},
-  'Baby-Doll Eyes': {bp: 0, type: 'Fairy', hasPriority: true},
+  'Baby-Doll Eyes': {bp: 0, type: 'Fairy', priority: 1},
   Belch: {bp: 120, type: 'Poison', category: 'Special'},
   Boomburst: {
     bp: 140,
@@ -1862,7 +1870,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   Celebrate: {bp: 0, type: 'Normal'},
   Confide: {bp: 0, type: 'Normal', isSound: true},
-  'Crafty Shield': {bp: 0, type: 'Fairy', hasPriority: true},
+  'Crafty Shield': {bp: 0, type: 'Fairy', priority: 3},
   'Dazzling Gleam': {bp: 80, type: 'Fairy', target: 'allAdjacentFoes', category: 'Special'},
   'Disarming Voice': {
     bp: 40,
@@ -1946,6 +1954,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 const XY: {[name: string]: MoveData} = extend(true, {}, BW, XY_PATCH);
 
 const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  'Ally Switch': {priority: 2},
   Aeroblast: {zp: 180},
   Barrage: {zp: 100},
   Bide: {zp: 100},
@@ -2364,7 +2373,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Acid Downpour': {bp: 1, type: 'Poison', category: 'Physical', isZ: true},
   'All-Out Pummeling': {bp: 1, type: 'Fighting', category: 'Physical', isZ: true},
   'Baddy Bad': {bp: 90, type: 'Dark', category: 'Special', zp: 175},
-  'Baneful Bunker': {bp: 0, type: 'Poison', hasPriority: true},
+  'Baneful Bunker': {bp: 0, type: 'Poison', priority: 4},
   'Beak Blast': {
     bp: 100,
     type: 'Flying',
@@ -2554,7 +2563,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Sparkly Swirl': {bp: 90, type: 'Fairy', category: 'Special', zp: 175},
   'Splintered Stormshards': {bp: 190, type: 'Rock', category: 'Physical', isZ: true},
-  Spotlight: {bp: 0, type: 'Normal', hasPriority: true},
+  Spotlight: {bp: 0, type: 'Normal', priority: 3},
   'Stoked Sparksurfer': {
     bp: 175,
     type: 'Electric',
@@ -2579,7 +2588,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 50,
     type: 'Electric',
     willCrit: true,
-    hasPriority: true,
+    priority: 2,
     makesContact: true,
     category: 'Physical',
     zp: 100,
@@ -2587,7 +2596,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Accelerock: {
     bp: 40,
     type: 'Rock',
-    hasPriority: true,
+    priority: 1,
     makesContact: true,
     category: 'Physical',
     zp: 100,
@@ -2637,7 +2646,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'First Impression': {
     bp: 90,
     type: 'Bug',
-    hasPriority: true,
+    priority: 2,
     makesContact: true,
     category: 'Physical',
     zp: 175,
@@ -3220,7 +3229,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isMax: true,
     maxPower: 90,
   },
-  'Max Guard': {bp: 0, type: 'Normal', hasPriority: true, isMax: true},
+  'Max Guard': {bp: 0, type: 'Normal', priority: 4, isMax: true},
   'Max Hailstorm': {
     bp: 10,
     type: 'Ice',
@@ -3346,7 +3355,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 100,
   },
   'No Retreat': {bp: 0, type: 'Fighting'},
-  Obstruct: {bp: 0, type: 'Dark', hasPriority: true},
+  Obstruct: {bp: 0, type: 'Dark', priority: 4},
   Octolock: {bp: 0, type: 'Fighting'},
   Overdrive: {
     bp: 80,
@@ -3959,7 +3968,7 @@ class Move implements I.Move {
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
-  readonly hasPriority?: boolean;
+  readonly priority?: number;
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;

@@ -33,7 +33,7 @@ export class Move implements State.Move {
   isBullet: boolean;
   isSound: boolean;
   isPulse: boolean;
-  hasPriority: boolean;
+  priority: number;
   dropsStats?: number;
   ignoreDefensive: boolean;
   defensiveCategory: I.MoveCategory;
@@ -124,7 +124,8 @@ export class Move implements State.Move {
     this.isBullet = !!data.isBullet;
     this.isSound = !!data.isSound;
     this.isPulse = !!data.isPulse;
-    this.hasPriority = !!data.hasPriority;
+    // The calc doesn't currently care about negative priority moves so we simply default to 0
+    this.priority = data.priority || 0;
     this.dropsStats = data.dropsStats;
     this.ignoreDefensive = !!data.ignoreDefensive;
     this.defensiveCategory = data.defensiveCategory || this.category;

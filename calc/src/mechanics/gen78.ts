@@ -203,7 +203,7 @@ export function calculateSMSS(
       (attacker.hasAbility('Gale Wings') &&
        move.hasType('Flying') &&
        attacker.curHP() === attacker.maxHP())) {
-    move.hasPriority = true;
+    move.priority = 1;
     desc.attackerAbility = attacker.ability;
   }
 
@@ -267,7 +267,7 @@ export function calculateSMSS(
         !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
       (move.isBullet && defender.hasAbility('Bulletproof')) ||
       (move.isSound && defender.hasAbility('Soundproof')) ||
-      (move.hasPriority && defender.hasAbility('Queenly Majesty', 'Dazzling'))
+      (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -285,7 +285,7 @@ export function calculateSMSS(
     return result;
   }
 
-  if (move.hasPriority && field.hasTerrain('Psychic') && isGrounded(defender, field)) {
+  if (move.priority > 0 && field.hasTerrain('Psychic') && isGrounded(defender, field)) {
     desc.terrain = field.terrain;
     return result;
   }
