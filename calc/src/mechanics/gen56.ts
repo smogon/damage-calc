@@ -521,9 +521,6 @@ export function calculateBWXY(
 
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.usesHighestAttackStat) {
-    move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
-  }
   const attackStat = move.category === 'Special' ? 'spa' : 'atk';
   desc.attackEVs =
     move.named('Foul Play')
@@ -742,7 +739,7 @@ export function calculateBWXY(
     attacker.hasStatus('brn') &&
     move.category === 'Physical' &&
     !attacker.hasAbility('Guts') &&
-    !move.ignoresBurn;
+    !(move.named('Facade') && gen.num === 6);
   desc.isBurned = applyBurn;
 
   const finalMods = [];

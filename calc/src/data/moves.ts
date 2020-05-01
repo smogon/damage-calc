@@ -13,7 +13,6 @@ export interface MoveData {
   readonly alwaysCrit?: boolean;
   readonly givesHealth?: boolean;
   readonly percentHealed?: number;
-  readonly ignoresBurn?: boolean;
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;
@@ -26,7 +25,6 @@ export interface MoveData {
   readonly bypassesProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
-  readonly usesHighestAttackStat?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
   readonly isMultiHit?: boolean;
@@ -1720,7 +1718,6 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Dragon Pulse': {bp: 85, isPulse: true},
   'Electro Ball': {isBullet: true},
   'Energy Ball': {bp: 90, isBullet: true},
-  Facade: {ignoresBurn: true},
   'Final Gambit': {makesContact: false},
   'Fire Blast': {bp: 110},
   'Fire Pledge': {bp: 80},
@@ -2496,7 +2493,6 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Psychic',
     category: 'Special',
     isZ: true,
-    usesHighestAttackStat: true,
   },
   'Malicious Moonsault': {
     bp: 180,
@@ -2704,7 +2700,6 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Psychic',
     category: 'Special',
     zp: 180,
-    usesHighestAttackStat: true,
   },
   'Pika Papow': {bp: 102, type: 'Electric', category: 'Special', zp: 100},
   'Plasma Fists': {
@@ -3978,7 +3973,6 @@ class Move implements I.Move {
   readonly alwaysCrit?: boolean;
   readonly givesHealth?: boolean;
   readonly percentHealed?: number;
-  readonly ignoresBurn?: boolean;
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;
@@ -3991,7 +3985,6 @@ class Move implements I.Move {
   readonly bypassesProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
-  readonly usesHighestAttackStat?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
   readonly isMultiHit?: boolean;

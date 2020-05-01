@@ -92,7 +92,6 @@ export interface Move extends Data<MoveName> {
   readonly alwaysCrit?: boolean;
   readonly givesHealth?: boolean;
   readonly percentHealed?: number;
-  readonly ignoresBurn?: boolean;
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;
@@ -105,7 +104,6 @@ export interface Move extends Data<MoveName> {
   readonly bypassesProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
-  readonly usesHighestAttackStat?: boolean;
   readonly zp?: number;
   readonly maxPower?: number;
   readonly isMultiHit?: boolean;

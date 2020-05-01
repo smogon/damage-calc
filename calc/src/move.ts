@@ -29,7 +29,6 @@ export class Move implements State.Move {
   isCrit: boolean;
   givesHealth: boolean;
   percentHealed?: number;
-  ignoresBurn: boolean;
   isPunch: boolean;
   isBite: boolean;
   isBullet: boolean;
@@ -42,7 +41,6 @@ export class Move implements State.Move {
   bypassesProtect: boolean;
   isZ: boolean;
   isMax: boolean;
-  usesHighestAttackStat: boolean;
 
   constructor(
     gen: I.Generation,
@@ -110,7 +108,6 @@ export class Move implements State.Move {
     this.isCrit = !!options.isCrit || !!data.alwaysCrit;
     this.givesHealth = !!data.givesHealth;
     this.percentHealed = data.percentHealed;
-    this.ignoresBurn = !!data.ignoresBurn;
     this.isPunch = !!data.isPunch;
     this.isBite = !!data.isBite;
     this.isBullet = !!data.isBullet;
@@ -123,7 +120,6 @@ export class Move implements State.Move {
     this.bypassesProtect = !!data.bypassesProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
-    this.usesHighestAttackStat = !!data.usesHighestAttackStat;
   }
 
   named(...names: string[]) {

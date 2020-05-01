@@ -658,7 +658,7 @@ export function calculateSMSS(
 
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.usesHighestAttackStat) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
@@ -901,7 +901,7 @@ export function calculateSMSS(
     attacker.hasStatus('brn') &&
     move.category === 'Physical' &&
     !attacker.hasAbility('Guts') &&
-    !move.ignoresBurn;
+    !move.named('Facade');
   desc.isBurned = applyBurn;
   const finalMods = [];
 
