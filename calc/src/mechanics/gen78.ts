@@ -198,7 +198,8 @@ export function calculateSMSS(
     }
   }
 
-  if ((attacker.hasAbility('Triage') && move.givesHealth) ||
+  // FIXME: this is incorrect, should be move.flags.heal, not move.drain
+  if ((attacker.hasAbility('Triage') && move.drain) ||
       (attacker.hasAbility('Gale Wings') &&
        move.hasType('Flying') &&
        attacker.curHP() === attacker.maxHP())) {

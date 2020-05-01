@@ -11,8 +11,7 @@ export interface MoveData {
   readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
   readonly willCrit?: boolean;
-  readonly givesHealth?: boolean;
-  readonly percentHealed?: number;
+  readonly drain?: [number, number];
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;
@@ -32,7 +31,7 @@ export interface MoveData {
 
 const RBY: {[name: string]: MoveData} = {
   '(No Move)': {bp: 0, category: 'Status', type: 'Normal'},
-  Absorb: {bp: 20, type: 'Grass', givesHealth: true, percentHealed: 0.5},
+  Absorb: {bp: 20, type: 'Grass', drain: [1, 2]},
   Acid: {bp: 40, type: 'Poison'},
   Amnesia: {bp: 0, category: 'Status', type: 'Psychic'},
   'Aurora Beam': {bp: 65, type: 'Ice'},
@@ -58,12 +57,7 @@ const RBY: {[name: string]: MoveData} = {
   'Double Kick': {bp: 30, type: 'Fighting', multihit: 2},
   'Double Slap': {bp: 15, type: 'Normal', multihit: [2, 5]},
   'Dragon Rage': {bp: 1, type: 'Dragon'},
-  'Dream Eater': {
-    bp: 100,
-    type: 'Psychic',
-    givesHealth: true,
-    percentHealed: 0.5,
-  },
+  'Dream Eater': {bp: 100, type: 'Psychic', drain: [1, 2]},
   Earthquake: {bp: 100, type: 'Ground'},
   Explosion: {bp: 170, type: 'Normal'},
   'Fire Blast': {bp: 120, type: 'Fire'},
@@ -144,8 +138,8 @@ const RBY: {[name: string]: MoveData} = {
   Toxic: {bp: 0, category: 'Status', type: 'Poison'},
   Flash: {bp: 0, category: 'Status', type: 'Normal'},
   Hypnosis: {bp: 0, category: 'Status', type: 'Psychic'},
-  'Leech Life': {bp: 20, type: 'Bug', givesHealth: true, percentHealed: 0.5},
-  'Mega Drain': {bp: 40, type: 'Grass', givesHealth: true, percentHealed: 0.5},
+  'Leech Life': {bp: 20, type: 'Bug', drain: [1, 2]},
+  'Mega Drain': {bp: 40, type: 'Grass', drain: [1, 2]},
   'Vine Whip': {bp: 35, type: 'Grass'},
   Waterfall: {bp: 80, type: 'Water'},
   Tackle: {bp: 35, type: 'Normal'},
@@ -270,7 +264,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Bone Rush': {bp: 25, type: 'Ground', multihit: [2, 5]},
   Crunch: {bp: 80, type: 'Dark'},
   'Feint Attack': {bp: 60, type: 'Dark'},
-  'Giga Drain': {bp: 60, type: 'Grass', givesHealth: true, percentHealed: 0.5},
+  'Giga Drain': {bp: 60, type: 'Grass', drain: [1, 2]},
   'Hidden Power': {bp: 0, type: 'Normal'},
   'Mean Look': {bp: 0, category: 'Status', type: 'Normal'},
   'Rapid Spin': {bp: 20, type: 'Normal'},
@@ -836,8 +830,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Drain Punch': {
     bp: 60,
     type: 'Fighting',
-    givesHealth: true,
-    percentHealed: 0.5,
+    drain: [1, 2],
     makesContact: true,
     isPunch: true,
     category: 'Physical',
@@ -1316,8 +1309,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Horn Leech': {
     bp: 75,
     type: 'Grass',
-    givesHealth: true,
-    percentHealed: 0.5,
+    drain: [1, 2],
     makesContact: true,
     category: 'Physical',
   },
@@ -1797,8 +1789,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Parabolic Charge': {
     bp: 50,
     type: 'Electric',
-    givesHealth: true,
-    percentHealed: 0.5,
+    drain: [1, 2],
     isSpread: 'allAdjacent',
     category: 'Special',
   },
@@ -1836,8 +1827,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Oblivion Wing': {
     bp: 80,
     type: 'Flying',
-    givesHealth: true,
-    percentHealed: 0.75,
+    drain: [3, 4],
     category: 'Special',
   },
   'Origin Pulse': {
@@ -1884,8 +1874,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Draining Kiss': {
     bp: 50,
     type: 'Fairy',
-    givesHealth: true,
-    percentHealed: 0.75,
+    drain: [3, 4],
     makesContact: true,
     category: 'Special',
   },
@@ -2388,8 +2377,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Bouncy Bubble': {
     bp: 90,
     type: 'Water',
-    givesHealth: true,
-    percentHealed: 0.5,
+    drain: [1, 2],
     category: 'Special',
     zp: 175,
   },
@@ -3965,8 +3953,7 @@ class Move implements I.Move {
   readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
   readonly willCrit?: boolean;
-  readonly givesHealth?: boolean;
-  readonly percentHealed?: number;
+  readonly drain?: [number, number];
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;

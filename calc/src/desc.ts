@@ -112,11 +112,12 @@ export function getRecovery(
     }
   }
 
-  if (move.givesHealth) {
-    const max = Math.round(defender.maxHP() * move.percentHealed!);
+  if (move.drain) {
+    const percentHealed = move.drain[0] / move.drain[1];
+    const max = Math.round(defender.maxHP() * percentHealed);
     for (let i = 0; i < minD.length; i++) {
-      recovery[0] += Math.min(Math.round(minD[i] * move.hits * move.percentHealed!), max);
-      recovery[1] += Math.min(Math.round(maxD[i] * move.hits * move.percentHealed!), max);
+      recovery[0] += Math.min(Math.round(minD[i] * move.hits * percentHealed), max);
+      recovery[1] += Math.min(Math.round(maxD[i] * move.hits * percentHealed), max);
     }
   }
 

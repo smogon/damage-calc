@@ -90,8 +90,7 @@ export interface Move extends Data<MoveName> {
   readonly makesContact?: boolean;
   readonly hasRecoil?: MoveRecoil;
   readonly willCrit?: boolean;
-  readonly givesHealth?: boolean;
-  readonly percentHealed?: number;
+  readonly drain?: [number, number];
   readonly isPunch?: boolean;
   readonly isBite?: boolean;
   readonly isBullet?: boolean;
