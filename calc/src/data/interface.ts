@@ -159,6 +159,6 @@ export interface Natures {
 
 export interface Nature extends Data<NatureName> {
   readonly kind: 'Nature';
-  readonly plus: StatName;
-  readonly minus: StatName;
+  readonly plus?: StatName;
+  readonly minus?: StatName;
 }

@@ -103,19 +103,14 @@ export const Stats = new (class {
         const nat = natures.get(toID(nature));
         mods = [nat?.plus, nat?.minus];
       }
-      let n: number;
-      if (mods) {
-        n =
-          mods[0] === stat && mods[1] === stat
-            ? 1
-            : mods[0] === stat
-            ? 1.1
-            : mods[1] === stat
-            ? 0.9
-            : 1;
-      } else {
-        n = 1;
-      }
+      const n =
+        mods[0] === stat && mods[1] === stat
+          ? 1
+          : mods[0] === stat
+          ? 1.1
+          : mods[1] === stat
+          ? 0.9
+          : 1;
 
       return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
     }

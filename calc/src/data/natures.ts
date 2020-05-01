@@ -45,8 +45,8 @@ class Nature implements I.Nature {
   readonly kind: 'Nature';
   readonly id: I.ID;
   readonly name: I.NatureName;
-  readonly plus: I.StatName;
-  readonly minus: I.StatName;
+  readonly plus?: I.StatName;
+  readonly minus?: I.StatName;
 
   constructor(name: string, [plus, minus]: [I.StatName, I.StatName]) {
     this.kind = 'Nature';
