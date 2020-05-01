@@ -148,7 +148,6 @@ export type TypeEffectiveness = 0 | 0.5 | 1 | 2;
 
 export interface Type extends Data<TypeName> {
   readonly kind: 'Type';
-  readonly category?: MoveCategory;
   readonly effectiveness: Readonly<{[type in TypeName]?: TypeEffectiveness}>;
 }
 

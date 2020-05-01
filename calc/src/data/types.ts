@@ -2,12 +2,11 @@ import * as I from './interface';
 import {toID, extend} from '../util';
 
 export type TypeChart = {
-  [type in I.TypeName]?: {[type in I.TypeName]?: number} & {category: I.MoveCategory};
+  [type in I.TypeName]?: {[type in I.TypeName]?: number};
 };
 
 const RBY: TypeChart = {
   '???': {
-    category: 'Physical',
     Normal: 1,
     Grass: 1,
     Fire: 1,
@@ -25,7 +24,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Normal: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 1,
@@ -44,7 +42,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Grass: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 0.5,
@@ -63,7 +60,6 @@ const RBY: TypeChart = {
     Dragon: 0.5,
   },
   Fire: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 2,
@@ -82,7 +78,6 @@ const RBY: TypeChart = {
     Dragon: 0.5,
   },
   Water: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 0.5,
@@ -101,7 +96,6 @@ const RBY: TypeChart = {
     Dragon: 0.5,
   },
   Electric: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 0.5,
@@ -120,7 +114,6 @@ const RBY: TypeChart = {
     Dragon: 0.5,
   },
   Ice: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 2,
@@ -139,7 +132,6 @@ const RBY: TypeChart = {
     Dragon: 2,
   },
   Flying: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 2,
@@ -158,7 +150,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Bug: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 2,
@@ -177,7 +168,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Poison: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 2,
@@ -196,7 +186,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Ground: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 0.5,
@@ -215,7 +204,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Rock: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 1,
@@ -234,7 +222,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Fighting: {
-    category: 'Physical',
     '???': 1,
     Normal: 2,
     Grass: 1,
@@ -253,7 +240,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Psychic: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 1,
@@ -272,7 +258,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Ghost: {
-    category: 'Physical',
     '???': 1,
     Normal: 0,
     Grass: 1,
@@ -291,7 +276,6 @@ const RBY: TypeChart = {
     Dragon: 1,
   },
   Dragon: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 1,
@@ -329,7 +313,6 @@ const GSC: TypeChart = extend(true, {}, RBY, {
   Ghost: {Psychic: 2, Dark: 0.5, Steel: 0.5},
   Dragon: {Dark: 1, Steel: 0.5},
   Dark: {
-    category: 'Special',
     '???': 1,
     Normal: 1,
     Grass: 1,
@@ -350,7 +333,6 @@ const GSC: TypeChart = extend(true, {}, RBY, {
     Steel: 0.5,
   },
   Steel: {
-    category: 'Physical',
     '???': 1,
     Normal: 1,
     Grass: 1,
@@ -449,15 +431,12 @@ class Type implements I.Type {
   readonly kind: 'Type';
   readonly id: I.ID;
   readonly name: I.TypeName;
-  readonly category: I.MoveCategory;
   readonly effectiveness: Readonly<{[type in I.TypeName]?: I.TypeEffectiveness}>;
 
   constructor(name: string, effectiveness: TypeChart[I.TypeName]) {
     this.kind = 'Type';
     this.id = toID(name);
     this.name = name as I.TypeName;
-    this.category = effectiveness!.category;
-    delete effectiveness!.category;
     this.effectiveness = effectiveness! as {[type in I.TypeName]?: I.TypeEffectiveness};
   }
 }

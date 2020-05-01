@@ -2,6 +2,8 @@ import * as I from './data/interface';
 import {State} from './state';
 import {toID, extend} from './util';
 
+const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
+
 export class Move implements State.Move {
   gen: I.Generation;
   name: I.MoveName;
@@ -99,8 +101,8 @@ export class Move implements State.Move {
 
     this.bp = data.bp;
     this.type = data.type;
-    this.category =
-      data.category || (gen.num < 4 ? gen.types.get(toID(data.type))!.category! : 'Status');
+    this.category = data.category ||
+      (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
     this.hasSecondaryEffect = !!data.hasSecondaryEffect;
     this.isSpread = data.isSpread === 'allAdjacent' ? data.isSpread : !!data.isSpread;
     this.makesContact = !!data.makesContact;
