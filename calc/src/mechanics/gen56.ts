@@ -690,7 +690,9 @@ export function calculateBWXY(
 
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
 
-  if (field.gameType !== 'Singles' && move.isSpread) {
+  const isSpread = field.gameType !== 'Singles' &&
+    ['allAdjacent', 'allAdjacentFoes', 'adjacentFoe'].includes(move.target);
+  if (isSpread) {
     baseDamage = pokeRound(OF32(baseDamage * 0xc00) / 0x1000);
   }
 
@@ -812,8 +814,7 @@ export function calculateBWXY(
   const finalMod = chainMods(finalMods);
 
   let childDamage: number[] | undefined;
-  if (attacker.hasAbility('Parental Bond') && move.hits === 1 &&
-      (field.gameType === 'Singles' || !move.isSpread)) {
+  if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
     const child = attacker.clone();
     child.ability = 'Parental Bond (Child)' as AbilityName;
     checkMultihitBoost(gen, child, defender, move, field, desc);

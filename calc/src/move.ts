@@ -23,7 +23,7 @@ export class Move implements State.Move {
   type: I.TypeName;
   category: I.MoveCategory;
   hasSecondaryEffect: boolean;
-  isSpread: boolean | 'allAdjacent';
+  target: I.MoveTarget;;
   makesContact: boolean;
   hasRecoil?: I.MoveRecoil;
   isCrit: boolean;
@@ -109,7 +109,10 @@ export class Move implements State.Move {
     this.category = data.category ||
       (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
     this.hasSecondaryEffect = !!data.hasSecondaryEffect;
-    this.isSpread = data.isSpread === 'allAdjacent' ? data.isSpread : !!data.isSpread;
+    // For the purposes of the damage formula only 'allAdjacent', 'allAdjacentFoes', and
+    // 'adjacentFoe' matter, so we simply default to 'any' for the others even though they may not
+    // actually be 'any'-target moves
+    this.target = data.target || 'any';
     this.makesContact = !!data.makesContact;
     this.hasRecoil = data.hasRecoil;
     this.isCrit = !!options.isCrit || !!data.willCrit ||

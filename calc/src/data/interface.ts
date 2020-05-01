@@ -32,6 +32,11 @@ export type TypeName =
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 export type MoveRecoil = boolean | number | 'crash' | 'Struggle';
 
+export type MoveTarget =
+  'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' |
+  'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' |
+  'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
+
 export interface Generations {
   get(gen: GenerationNum): Generation;
 }
@@ -86,7 +91,7 @@ export interface Move extends Data<MoveName> {
   readonly type: TypeName;
   readonly category?: MoveCategory;
   readonly hasSecondaryEffect?: boolean;
-  readonly isSpread?: boolean | 'allAdjacent';
+  readonly target?: MoveTarget;
   readonly makesContact?: boolean;
   readonly hasRecoil?: MoveRecoil;
   readonly willCrit?: boolean;
