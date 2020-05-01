@@ -98,8 +98,8 @@ export interface Move extends Data<MoveName> {
   readonly isPulse?: boolean;
   readonly hasPriority?: boolean;
   readonly dropsStats?: number;
-  readonly ignoresDefenseBoosts?: boolean;
-  readonly dealsPhysicalDamage?: boolean;
+  readonly ignoreDefensive?: boolean;
+  readonly defensiveCategory?: MoveCategory;
   readonly bypassesProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;

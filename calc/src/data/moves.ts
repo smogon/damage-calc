@@ -19,8 +19,8 @@ export interface MoveData {
   readonly isPulse?: boolean;
   readonly hasPriority?: boolean;
   readonly dropsStats?: number;
-  readonly ignoresDefenseBoosts?: boolean;
-  readonly dealsPhysicalDamage?: boolean;
+  readonly ignoreDefensive?: boolean;
+  readonly defensiveCategory?: I.MoveCategory;
   readonly bypassesProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
@@ -1344,7 +1344,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Fighting',
     makesContact: true,
     category: 'Physical',
-    ignoresDefenseBoosts: true,
+    ignoreDefensive: true,
   },
   Scald: {
     bp: 80,
@@ -1415,7 +1415,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Normal',
     makesContact: true,
     category: 'Physical',
-    ignoresDefenseBoosts: true,
+    ignoreDefensive: true,
   },
   'Fiery Dance': {
     bp: 80,
@@ -1585,13 +1585,13 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 80,
     type: 'Psychic',
     category: 'Special',
-    dealsPhysicalDamage: true,
+    defensiveCategory: 'Physical',
   },
   Psystrike: {
     bp: 100,
     type: 'Psychic',
     category: 'Special',
-    dealsPhysicalDamage: true,
+    defensiveCategory: 'Physical',
   },
   'Quiver Dance': {bp: 0, type: 'Bug'},
   'Razor Shell': {
@@ -1611,7 +1611,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 85,
     type: 'Fighting',
     category: 'Special',
-    dealsPhysicalDamage: true,
+    defensiveCategory: 'Physical',
   },
   'Shell Smash': {bp: 0, type: 'Normal'},
   'Shift Gear': {bp: 0, type: 'Steel'},
@@ -2623,7 +2623,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Dark',
     makesContact: true,
     category: 'Physical',
-    ignoresDefenseBoosts: true,
+    ignoreDefensive: true,
     zp: 160,
   },
   'Fire Lash': {
@@ -3961,8 +3961,8 @@ class Move implements I.Move {
   readonly isPulse?: boolean;
   readonly hasPriority?: boolean;
   readonly dropsStats?: number;
-  readonly ignoresDefenseBoosts?: boolean;
-  readonly dealsPhysicalDamage?: boolean;
+  readonly ignoreDefensive?: boolean;
+  readonly defensiveCategory?: I.MoveCategory;
   readonly bypassesProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;

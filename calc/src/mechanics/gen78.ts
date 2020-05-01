@@ -779,12 +779,12 @@ export function calculateSMSS(
   // #region (Special) Defense
 
   let defense: number;
-  const hitsPhysical = move.category === 'Physical' || move.dealsPhysicalDamage;
+  const hitsPhysical = move.defensiveCategory === 'Physical';
   const defenseStat = hitsPhysical ? 'def' : 'spd';
   desc.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
   if (defender.boosts[defenseStat] === 0 ||
       (isCritical && defender.boosts[defenseStat] > 0) ||
-      move.ignoresDefenseBoosts) {
+      move.ignoreDefensive) {
     defense = defender.rawStats[defenseStat];
   } else if (attacker.hasAbility('Unaware')) {
     defense = defender.rawStats[defenseStat];

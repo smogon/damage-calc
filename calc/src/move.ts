@@ -35,8 +35,8 @@ export class Move implements State.Move {
   isPulse: boolean;
   hasPriority: boolean;
   dropsStats?: number;
-  ignoresDefenseBoosts: boolean;
-  dealsPhysicalDamage: boolean;
+  ignoreDefensive: boolean;
+  defensiveCategory: I.MoveCategory;
   bypassesProtect: boolean;
   isZ: boolean;
   isMax: boolean;
@@ -123,8 +123,8 @@ export class Move implements State.Move {
     this.isPulse = !!data.isPulse;
     this.hasPriority = !!data.hasPriority;
     this.dropsStats = data.dropsStats;
-    this.ignoresDefenseBoosts = !!data.ignoresDefenseBoosts;
-    this.dealsPhysicalDamage = !!data.dealsPhysicalDamage;
+    this.ignoreDefensive = !!data.ignoreDefensive;
+    this.defensiveCategory = data.defensiveCategory || this.category;
     this.bypassesProtect = !!data.bypassesProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
