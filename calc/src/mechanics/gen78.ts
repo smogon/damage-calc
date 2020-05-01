@@ -87,7 +87,7 @@ export function calculateSMSS(
     return result;
   }
 
-  if (field.defenderSide.isProtected && !move.bypassesProtect && !move.isZ) {
+  if (field.defenderSide.isProtected && !move.breaksProtect && !move.isZ) {
     desc.isProtected = true;
     return result;
   }

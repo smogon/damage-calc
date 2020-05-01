@@ -21,7 +21,7 @@ export interface MoveData {
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;
-  readonly bypassesProtect?: boolean;
+  readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
   readonly zp?: number;
@@ -843,7 +843,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 50,
     type: 'Normal',
     priority: 2,
-    bypassesProtect: true,
+    breaksProtect: true,
     category: 'Physical',
   },
   'Fire Fang': {
@@ -963,7 +963,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Shadow Force': {
     bp: 120,
     type: 'Ghost',
-    bypassesProtect: true,
+    breaksProtect: true,
     makesContact: true,
     category: 'Physical',
   },
@@ -1777,13 +1777,13 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Hyperspace Fury': {
     bp: 100,
     type: 'Dark',
-    bypassesProtect: true,
+    breaksProtect: true,
     category: 'Physical',
   },
   'Hyperspace Hole': {
     bp: 80,
     type: 'Psychic',
-    bypassesProtect: true,
+    breaksProtect: true,
     category: 'Special',
   },
   "King's Shield": {bp: 0, type: 'Steel', priority: 4},
@@ -1805,7 +1805,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Phantom Force': {
     bp: 90,
     type: 'Ghost',
-    bypassesProtect: true,
+    breaksProtect: true,
     makesContact: true,
     category: 'Physical',
   },
@@ -3972,7 +3972,7 @@ class Move implements I.Move {
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;
-  readonly bypassesProtect?: boolean;
+  readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
   readonly zp?: number;

@@ -37,7 +37,7 @@ export class Move implements State.Move {
   dropsStats?: number;
   ignoreDefensive: boolean;
   defensiveCategory: I.MoveCategory;
-  bypassesProtect: boolean;
+  breaksProtect: boolean;
   isZ: boolean;
   isMax: boolean;
 
@@ -129,7 +129,7 @@ export class Move implements State.Move {
     this.dropsStats = data.dropsStats;
     this.ignoreDefensive = !!data.ignoreDefensive;
     this.defensiveCategory = data.defensiveCategory || this.category;
-    this.bypassesProtect = !!data.bypassesProtect;
+    this.breaksProtect = !!data.breaksProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
 

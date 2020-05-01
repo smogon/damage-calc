@@ -105,7 +105,7 @@ export interface Move extends Data<MoveName> {
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: MoveCategory;
-  readonly bypassesProtect?: boolean;
+  readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
   readonly zp?: number;

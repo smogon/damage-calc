@@ -78,7 +78,7 @@ export function calculateBWXY(
     return result;
   }
 
-  if (field.defenderSide.isProtected && !move.bypassesProtect) {
+  if (field.defenderSide.isProtected && !move.breaksProtect) {
     desc.isProtected = true;
     return result;
   }
