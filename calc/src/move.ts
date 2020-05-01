@@ -99,7 +99,8 @@ export class Move implements State.Move {
 
     this.bp = data.bp;
     this.type = data.type;
-    this.category = data.category || 'Status';
+    this.category =
+      data.category || (gen.num < 4 ? gen.types.get(toID(data.type))!.category! : 'Status');
     this.hasSecondaryEffect = !!data.hasSecondaryEffect;
     this.isSpread = data.isSpread === 'allAdjacent' ? data.isSpread : !!data.isSpread;
     this.makesContact = !!data.makesContact;

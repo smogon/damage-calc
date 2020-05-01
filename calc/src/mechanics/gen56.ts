@@ -74,7 +74,7 @@ export function calculateBWXY(
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
-  if (move.bp === 0) {
+  if (move.category === 'Status' && !move.named('Nature Power')) {
     return result;
   }
 
@@ -100,7 +100,7 @@ export function calculateBWXY(
       : 'Normal';
     desc.weather = field.weather;
     desc.moveType = move.type;
-  } else if (move.named('Judgement') && attacker.item && attacker.item.includes('Plate')) {
+  } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     move.type = getItemBoostType(attacker.item)!;
   } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
     move.type = getTechnoBlast(attacker.item)!;
@@ -125,7 +125,7 @@ export function calculateBWXY(
   let isRefrigerate = false;
   let isNormalize = false;
   const noTypeChange =
-    move.named('Judgement', 'Nature Power', 'Techo Blast', 'Natural Gift', 'Weather Ball');
+    move.named('Judgment', 'Nature Power', 'Techo Blast', 'Natural Gift', 'Weather Ball');
 
   if (!move.isZ && !noTypeChange) {
     const normal = move.hasType('Normal');
@@ -349,6 +349,10 @@ export function calculateBWXY(
     basePower = move.bp;
   }
 
+  if (basePower === 0) {
+    return result;
+  }
+
   const bpMods = [];
   if ((attacker.hasAbility('Technician') && basePower <= 60) ||
       (attacker.hasAbility('Flare Boost') &&
@@ -433,14 +437,14 @@ export function calculateBWXY(
       (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
       (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))) {
     bpMods.push(0x2000);
-    desc.moveBP = move.bp * 2;
+    desc.moveBP = basePower * 2;
   } else if (move.named('Solar Beam') && field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
     bpMods.push(0x800);
-    desc.moveBP = move.bp / 2;
+    desc.moveBP = basePower / 2;
     desc.weather = field.weather;
   } else if (gen.num > 5 && move.named('Knock Off') && !resistedKnockOffDamage) {
     bpMods.push(0x1800);
-    desc.moveBP = move.bp * 1.5;
+    desc.moveBP = basePower * 1.5;
   }
 
   if (field.attackerSide.isHelpingHand) {

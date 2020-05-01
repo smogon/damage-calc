@@ -83,7 +83,7 @@ export function calculateSMSS(
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
-  if (move.bp === 0) {
+  if (move.category === 'Status' && !move.named('Nature Power')) {
     return result;
   }
 
@@ -132,7 +132,7 @@ export function calculateSMSS(
       : 'Normal';
     desc.weather = field.weather;
     desc.moveType = move.type;
-  } else if (move.named('Judgement') && attacker.item && attacker.item.includes('Plate')) {
+  } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     move.type = getItemBoostType(attacker.item)!;
   } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
     move.type = getTechnoBlast(attacker.item)!;
@@ -170,7 +170,7 @@ export function calculateSMSS(
   let isNormalize = false;
   const noTypeChange = move.named(
     'Revelation Dance',
-    'Judgement',
+    'Judgment',
     'Nature Power',
     'Techo Blast',
     'Multi Attack',
@@ -448,6 +448,10 @@ export function calculateSMSS(
     basePower = move.bp;
   }
 
+  if (basePower === 0) {
+    return result;
+  }
+
   const bpMods = [];
 
   // Research from DaWoblefet and Anubis show that the Technician modifier is calculated at the
@@ -594,11 +598,11 @@ export function calculateSMSS(
   if (move.named('Solar Beam', 'Solar Blade') &&
       field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
     bpMods.push(0x800);
-    desc.moveBP = move.bp / 2;
+    desc.moveBP = basePower / 2;
     desc.weather = field.weather;
   } else if (move.named('Knock Off') && !resistedKnockOffDamage) {
     bpMods.push(0x1800);
-    desc.moveBP = move.bp * 1.5;
+    desc.moveBP = basePower * 1.5;
   }
 
   if (field.attackerSide.isHelpingHand) {
@@ -611,7 +615,7 @@ export function calculateSMSS(
       (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))
   ) {
     bpMods.push(0x2000);
-    desc.moveBP = move.bp * 2;
+    desc.moveBP = basePower * 2;
   }
 
   const terrainMultiplier = gen.num > 7 ? 0x14cd : 0x1800;

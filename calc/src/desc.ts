@@ -60,7 +60,7 @@ export function display(
   const desc = buildDescription(rawDesc, attacker, defender);
   const damageText = `${min}-${max} (${minDisplay} - ${maxDisplay}${notation})`;
 
-  if (move.bp === 0) return `${desc}: ${damageText}`;
+  if (move.category === 'Status' && !move.named('Nature Power')) return `${desc}: ${damageText}`;
   const koChanceText = getKOChance(gen, attacker, defender, move, field, damage, err).text;
   return koChanceText ? `${desc}: ${damageText} -- ${koChanceText}` : `${desc}: ${damageText}`;
 }

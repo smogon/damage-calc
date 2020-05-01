@@ -1,5 +1,4 @@
 import {Generation} from '../data/interface';
-import {toID} from '../util';
 import {getItemBoostType} from '../items';
 import {RawDesc} from '../desc';
 import {Field} from '../field';
@@ -29,7 +28,7 @@ export function calculateRBYGSC(
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
-  if (move.bp === 0) {
+  if (move.category === 'Status') {
     return result;
   }
 
@@ -76,9 +75,15 @@ export function calculateRBYGSC(
     const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = move.bp;
+  } else if (move.named('Present')) {
+    move.bp = 40;
   }
 
-  const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
+  if (move.bp === 0) {
+    return result;
+  }
+
+  const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : (gen.num === 1 ? 'spc' : 'spa');
   const defenseStat = isPhysical ? 'def' : (gen.num === 1 ? 'spc' : 'spd');
   let at = attacker.stats[attackStat]!;

@@ -1,5 +1,4 @@
 import {Generation} from '../data/interface';
-import {toID} from '../util';
 import {getItemBoostType} from '../items';
 import {RawDesc} from '../desc';
 import {Pokemon} from '../pokemon';
@@ -41,7 +40,7 @@ export function calculateADV(
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
-  if (move.bp === 0) {
+  if (move.category === 'Status' && !move.named('Nature Power')) {
     return result;
   }
 
@@ -122,7 +121,13 @@ export function calculateADV(
     bp = move.bp;
   }
 
-  const isPhysical = gen.types.get(toID(move.type))!.category === 'Physical';
+  if (bp === 0) {
+    console.log(move);
+
+    return result;
+  }
+
+  const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
   desc.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
   const defenseStat = isPhysical ? 'def' : 'spd';
@@ -264,7 +269,7 @@ export function calculateADV(
 
   if (move.named('Weather Ball') && field.weather) {
     baseDamage *= 2;
-    desc.moveBP = move.bp * 2;
+    desc.moveBP = bp * 2;
   }
 
   if (field.attackerSide.isHelpingHand) {

@@ -49,7 +49,7 @@ export function calculateDPP(
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
-  if (move.bp === 0) {
+  if (move.category === 'Status' && !move.named('Nature Power')) {
     return result;
   }
 
@@ -86,7 +86,7 @@ export function calculateDPP(
     desc.weather = field.weather;
     desc.moveType = move.type;
     desc.moveBP = basePower;
-  } else if (move.named('Judgement') && attacker.item && attacker.item.includes('Plate')) {
+  } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     move.type = getItemBoostType(attacker.item)!;
   } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
@@ -207,6 +207,10 @@ export function calculateDPP(
     break;
   default:
     basePower = move.bp;
+  }
+
+  if (basePower === 0) {
+    return result;
   }
 
   if (field.attackerSide.isHelpingHand) {

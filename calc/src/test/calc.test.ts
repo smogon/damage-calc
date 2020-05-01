@@ -15,11 +15,11 @@ describe('calc', () => {
         const result = calculate(
           Pokemon('Arceus', {item: 'Meadow Plate'}),
           Pokemon('Blastoise'),
-          Move('Judgement')
+          Move('Judgment')
         );
         expect(result.range()).toEqual([194, 230]);
         expect(result.desc()).toBe(
-          '0 SpA Meadow Plate Arceus Judgement vs. 0 HP / 0 SpD Blastoise: 194-230 (64.8 - 76.9%) -- guaranteed 2HKO'
+          '0 SpA Meadow Plate Arceus Judgment vs. 0 HP / 0 SpD Blastoise: 194-230 (64.8 - 76.9%) -- guaranteed 2HKO'
         );
       });
     });
