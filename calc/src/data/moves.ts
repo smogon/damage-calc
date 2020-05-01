@@ -4003,7 +4003,7 @@ class Move implements I.Move {
     this.name = name as I.MoveName;
     Object.assign(this, data);
     if (!this.makesContact) delete (this as any).makesContact;
-    if (!this.category && gen > 4) this.category = 'Status';
+    if (!this.category && gen >= 4) this.category = 'Status';
   }
 }
 
@@ -4011,7 +4011,6 @@ const MOVES_BY_ID: Array<{[id: string]: Move}> = [];
 
 let gen = 0;
 for (const moves of MOVES) {
-  gen++;
   const map: {[id: string]: Move} = {};
   for (const move in moves) {
     const data = moves[move];
@@ -4019,4 +4018,5 @@ for (const moves of MOVES) {
     map[m.id] = m;
   }
   MOVES_BY_ID.push(map);
+  gen++;
 }

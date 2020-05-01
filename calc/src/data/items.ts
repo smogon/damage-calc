@@ -599,11 +599,11 @@ const ITEMS_BY_ID: Array<{[id: string]: Item}> = [];
 
 let gen = 0;
 for (const items of ITEMS) {
-  gen++;
   const map: {[id: string]: Item} = {};
   for (const item of items) {
     const i = new Item(item, gen);
     map[i.id] = i;
   }
   ITEMS_BY_ID.push(map);
+  gen++;
 }
