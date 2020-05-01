@@ -10,7 +10,7 @@ export interface MoveData {
   readonly isSpread?: boolean | 'allAdjacent';
   readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
-  readonly alwaysCrit?: boolean;
+  readonly willCrit?: boolean;
   readonly givesHealth?: boolean;
   readonly percentHealed?: number;
   readonly isPunch?: boolean;
@@ -50,7 +50,7 @@ const RBY: {[name: string]: MoveData} = {
   Constrict: {bp: 10, type: 'Normal'},
   Conversion: {bp: 0, category: 'Status', type: 'Normal'},
   Counter: {bp: 0, type: 'Fighting'},
-  Crabhammer: {bp: 90, type: 'Water', alwaysCrit: true},
+  Crabhammer: {bp: 90, type: 'Water'},
   'Defense Curl': {bp: 0, category: 'Status', type: 'Normal'},
   Dig: {bp: 100, type: 'Ground'},
   Disable: {bp: 0, category: 'Status', type: 'Normal'},
@@ -98,7 +98,7 @@ const RBY: {[name: string]: MoveData} = {
   Psychic: {bp: 90, type: 'Psychic'},
   Psywave: {bp: 1, type: 'Psychic'},
   Rage: {bp: 20, type: 'Normal'},
-  'Razor Leaf': {bp: 55, type: 'Grass', alwaysCrit: true},
+  'Razor Leaf': {bp: 55, type: 'Grass'},
   'Razor Wind': {bp: 80, type: 'Normal'},
   Recover: {bp: 0, category: 'Status', type: 'Normal'},
   Reflect: {bp: 0, category: 'Status', type: 'Psychic'},
@@ -110,7 +110,7 @@ const RBY: {[name: string]: MoveData} = {
   'Seismic Toss': {bp: 1, type: 'Fighting'},
   'Self-Destruct': {bp: 130, type: 'Normal'},
   'Skull Bash': {bp: 100, type: 'Normal'},
-  Slash: {bp: 70, type: 'Normal', alwaysCrit: true},
+  Slash: {bp: 70, type: 'Normal'},
   Sludge: {bp: 65, type: 'Poison'},
   'Soft-Boiled': {bp: 0, category: 'Status', type: 'Normal'},
   'Solar Beam': {bp: 120, type: 'Grass'},
@@ -209,17 +209,14 @@ const RBY: {[name: string]: MoveData} = {
 
 const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Bide: {type: 'Normal'},
-  Crabhammer: {alwaysCrit: false},
   Dig: {bp: 60},
   'Double-Edge': {bp: 120},
   Explosion: {bp: 250},
   Gust: {type: 'Flying'},
   'Karate Chop': {type: 'Fighting'},
   Psywave: {bp: 0},
-  'Razor Leaf': {alwaysCrit: false},
   'Self-Destruct': {bp: 200},
-  Slash: {alwaysCrit: false},
-  Struggle: {type: '???', hasRecoil: 25},
+  Struggle: {hasRecoil: 25},
   'Dragon Rage': {bp: 0},
   Bite: {type: 'Dark'},
   'Night Shade': {bp: 0},
@@ -240,7 +237,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Endure: {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
   Flail: {bp: 0, type: 'Normal'},
   Foresight: {bp: 0, category: 'Status', type: 'Normal'},
-  'Future Sight': {bp: 80, type: '???'},
+  'Future Sight': {bp: 80, type: 'Psychic'},
   'Heal Bell': {bp: 0, category: 'Status', type: 'Normal'},
   'Icy Wind': {bp: 55, type: 'Ice'},
   'Lock-On': {bp: 0, category: 'Status', type: 'Normal'},
@@ -309,8 +306,8 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Snore: {bp: 40, type: 'Normal'},
   'Sweet Kiss': {bp: 0, category: 'Status', type: 'Normal'},
   Rollout: {bp: 30, type: 'Rock'},
-  Frustration: {bp: 102, type: 'Normal'},
-  Return: {bp: 102, type: 'Normal'},
+  Frustration: {bp: 0, type: 'Normal'},
+  Return: {bp: 0, type: 'Normal'},
   'Sacred Fire': {bp: 100, type: 'Fire'},
   'Baton Pass': {bp: 0, category: 'Status', type: 'Normal'},
   'Dragon Breath': {bp: 60, type: 'Dragon'},
@@ -462,7 +459,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Charge: {bp: 0, category: 'Status', type: 'Electric'},
   Covet: {bp: 40, type: 'Normal'},
   Dive: {bp: 60, type: 'Water', makesContact: true},
-  'Doom Desire': {bp: 120, type: '???'},
+  'Doom Desire': {bp: 120, type: 'Steel'},
   Extrasensory: {bp: 80, type: 'Psychic'},
   'Fake Out': {bp: 40, type: 'Normal', hasPriority: true},
   'Follow Me': {bp: 0, category: 'Status', type: 'Normal', hasPriority: true},
@@ -473,7 +470,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Leaf Blade': {bp: 70, type: 'Grass', makesContact: true},
   'Magic Coat': {bp: 0, category: 'Status', type: 'Psychic', hasPriority: true},
   Memento: {bp: 0, category: 'Status', type: 'Dark'},
-  'Nature Power': {bp: 80, category: 'Status', type: 'Normal'},
+  'Nature Power': {bp: 0, category: 'Status', type: 'Normal'},
   'Needle Arm': {bp: 60, type: 'Grass', makesContact: true},
   'Odor Sleuth': {bp: 0, category: 'Status', type: 'Normal'},
   Overheat: {bp: 140, type: 'Fire', dropsStats: 2, makesContact: true},
@@ -1191,7 +1188,6 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Lick: {hasSecondaryEffect: true},
   'Meteor Mash': {hasSecondaryEffect: true},
   'Muddy Water': {hasSecondaryEffect: true},
-  'Nature Power': {hasSecondaryEffect: true},
   Overheat: {},
   'Poison Fang': {hasSecondaryEffect: true},
   'Poison Gas': {isSpread: true},
@@ -1206,7 +1202,6 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Uproar: {bp: 90},
   Whirlpool: {bp: 35},
   'Petal Dance': {bp: 120},
-  Struggle: {type: 'Normal'},
   Tackle: {bp: 50},
   Thrash: {bp: 120},
   'Bone Club': {hasSecondaryEffect: true},
@@ -1244,7 +1239,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Curse: {type: 'Ghost'},
   'Dark Pulse': {hasSecondaryEffect: true},
   Discharge: {hasSecondaryEffect: true},
-  'Doom Desire': {bp: 140, type: 'Steel'},
+  'Doom Desire': {bp: 140},
   'Dragon Breath': {hasSecondaryEffect: true},
   'Dynamic Punch': {hasSecondaryEffect: true},
   'Earth Power': {hasSecondaryEffect: true},
@@ -1309,7 +1304,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
   },
   'Fire Pledge': {bp: 50, type: 'Fire', category: 'Special'},
-  'Frost Breath': {bp: 40, type: 'Ice', alwaysCrit: true, category: 'Special'},
+  'Frost Breath': {bp: 40, type: 'Ice', willCrit: true, category: 'Special'},
   'Grass Pledge': {bp: 50, type: 'Grass', category: 'Special'},
   'Heal Pulse': {bp: 0, type: 'Psychic'},
   'Heat Crash': {
@@ -1392,7 +1387,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Storm Throw': {
     bp: 40,
     type: 'Fighting',
-    alwaysCrit: true,
+    willCrit: true,
     makesContact: true,
     category: 'Physical',
   },
@@ -2596,7 +2591,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Zippy Zap': {
     bp: 50,
     type: 'Electric',
-    alwaysCrit: true,
+    willCrit: true,
     hasPriority: true,
     makesContact: true,
     category: 'Physical',
@@ -2701,7 +2696,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 180,
   },
-  'Pika Papow': {bp: 102, type: 'Electric', category: 'Special', zp: 100},
+  'Pika Papow': {bp: 0, type: 'Electric', category: 'Special', zp: 100},
   'Plasma Fists': {
     bp: 100,
     type: 'Electric',
@@ -2805,7 +2800,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 140,
   },
   'Veevee Volley': {
-    bp: 102,
+    bp: 0,
     type: 'Normal',
     makesContact: true,
     category: 'Physical',
@@ -3970,7 +3965,7 @@ class Move implements I.Move {
   readonly isSpread?: boolean | 'allAdjacent';
   readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
-  readonly alwaysCrit?: boolean;
+  readonly willCrit?: boolean;
   readonly givesHealth?: boolean;
   readonly percentHealed?: number;
   readonly isPunch?: boolean;

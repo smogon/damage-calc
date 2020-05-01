@@ -98,14 +98,19 @@ export class Move implements State.Move {
     this.overrides = options.overrides;
 
     this.bp = data.bp;
-    this.type = data.type;
+    // These moves have a type, but the damage they deal is typeless so we override it here
+    const typelessDamage = gen.num >= 2 && gen.num <= 4 &&
+      ['futuresight', 'doomdesire', 'struggle'].includes(data.id);
+    this.type = typelessDamage ? '???' : data.type;
     this.category = data.category ||
       (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
     this.hasSecondaryEffect = !!data.hasSecondaryEffect;
     this.isSpread = data.isSpread === 'allAdjacent' ? data.isSpread : !!data.isSpread;
     this.makesContact = !!data.makesContact;
     this.hasRecoil = data.hasRecoil;
-    this.isCrit = !!options.isCrit || !!data.alwaysCrit;
+    this.isCrit = !!options.isCrit || !!data.willCrit ||
+      // These don't *always* crit (255/256 chance), but for the purposes of the calc they do
+      gen.num === 1 && ['crabhammer', 'razorleaf', 'slash'].includes(data.id);
     this.givesHealth = !!data.givesHealth;
     this.percentHealed = data.percentHealed;
     this.isPunch = !!data.isPunch;
@@ -120,6 +125,17 @@ export class Move implements State.Move {
     this.bypassesProtect = !!data.bypassesProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
+
+    if (!this.bp) {
+      // Assume max happiness for these moves because the calc doesn't support happiness
+      if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(data.id)) {
+        this.bp = 102;
+      } else if (data.id === 'naturepower') {
+        // Assume the 'Wi-Fi' default of Tri Attack
+        this.bp = 80;
+        if (gen.num >= 5) this.hasSecondaryEffect = true;
+      }
+    }
   }
 
   named(...names: string[]) {
