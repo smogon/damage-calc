@@ -113,7 +113,7 @@ export function calculateADV(
     desc.moveBP = bp;
     break;
   case 'Low Kick':
-    const w = defender.weight;
+    const w = defender.weightkg;
     bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
     desc.moveBP = bp;
     break;

@@ -132,7 +132,7 @@ export interface Specie extends Data<SpeciesName> {
     sp: number;
     sl?: number;
   }>; // baseStats
-  readonly w: number; // weight
+  readonly weightkg: number; // weight
   readonly canEvolve?: boolean;
   readonly gender?: GenderName;
   readonly formes?: SpeciesName[];

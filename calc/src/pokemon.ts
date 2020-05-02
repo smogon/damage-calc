@@ -10,7 +10,7 @@ export class Pokemon implements State.Pokemon {
 
   type1: I.TypeName;
   type2?: I.TypeName;
-  weight: number;
+  weightkg: number;
 
   level: number;
   gender?: I.GenderName;
@@ -43,7 +43,7 @@ export class Pokemon implements State.Pokemon {
     this.name = options.name || name as I.SpeciesName;
     this.type1 = this.species.t1;
     this.type2 = this.species.t2;
-    this.weight = this.species.w;
+    this.weightkg = this.species.weightkg;
 
     this.level = options.level || 100;
     this.gender = options.gender || this.species.gender || 'M';

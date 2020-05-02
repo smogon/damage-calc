@@ -249,7 +249,7 @@ export function calculateSMSS(
   }
 
   if ((move.named('Sky Drop') &&
-        (defender.hasType('Flying') || defender.weight >= 200 || field.isGravity)) ||
+        (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
       (move.named('Synchronoise') && !defender.hasType(attacker.type1) &&
         (!attacker.type2 || !defender.hasType(attacker.type2))) ||
       (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose')))
@@ -370,7 +370,7 @@ export function calculateSMSS(
     break;
   case 'Low Kick':
   case 'Grass Knot':
-    const w = defender.weight * getWeightFactor(defender);
+    const w = defender.weightkg * getWeightFactor(defender);
     basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -382,8 +382,8 @@ export function calculateSMSS(
   case 'Heavy Slam':
   case 'Heat Crash':
     const wr =
-        (attacker.weight * getWeightFactor(attacker)) /
-        (defender.weight * getWeightFactor(defender));
+        (attacker.weightkg * getWeightFactor(attacker)) /
+        (defender.weightkg * getWeightFactor(defender));
     basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
     desc.moveBP = basePower;
     break;
