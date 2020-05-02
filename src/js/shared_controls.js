@@ -441,7 +441,7 @@ $(".set-selector").change(function () {
 					(set.dvs && set.dvs[LEGACY_STATS[gen][i]] !== undefined) ? set.dvs[LEGACY_STATS[gen][i]] : 15);
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
-			var abilityFallback = (pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
+			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
 			if ($("#randoms").prop("checked")) {
 				setSelectValueIfValid(abilityObj, randset.abilities && randset.abilities[0], abilityFallback);
 				setSelectValueIfValid(itemObj, randset.items && randset.items[0], "");
