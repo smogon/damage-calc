@@ -497,21 +497,7 @@ $(".set-selector").change(function () {
 		itemObj.prop("disabled", false);
 		var baseForme;
 		if (pokemon.baseSpecies !== pokemon.name) {
-			// try to find the base forme name by chopping off everything after the last dash
-			var baseFormeName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
-			// special case: -Mega-X and -Mega-Y
-			if (baseFormeName.substring(baseFormeName.lastIndexOf('-')) === '-Mega') {
-				baseFormeName = baseFormeName.substring(0, baseFormeName.lastIndexOf('-'));
-			}
-			// more special cases: Pokemon that have forme names containing dashes (Necrozma-Dawn-Wings, Oricorio-Pom-Pom)
-			var basePokemonWithDashedFormes = ['Necrozma', 'Oricorio'];
-			for (i = 0; i < basePokemonWithDashedFormes.length; i++) {
-				if (baseFormeName.startsWith(basePokemonWithDashedFormes[i])) {
-					baseFormeName = basePokemonWithDashedFormes[i];
-					break;
-				}
-			}
-			baseForme = pokedex[baseFormeName];
+			baseForme = pokedex[pokemon.baseSpecies];
 		}
 		if (pokemon.formes) {
 			showFormes(formeObj, setName, pokemonName, pokemon);
