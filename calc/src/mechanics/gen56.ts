@@ -666,7 +666,7 @@ export function calculateBWXY(
 
   if ((!hitsPhysical && defender.hasItem('Soul Dew') &&
        defender.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega')) ||
-      (defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.canEvolve) ||
+      (defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.nfe) ||
       (!hitsPhysical && defender.hasItem('Assault Vest'))) {
     dfMods.push(0x1800);
     desc.defenderItem = defender.item;

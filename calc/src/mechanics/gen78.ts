@@ -826,7 +826,7 @@ export function calculateSMSS(
     desc.defenderAbility = defender.ability;
   }
 
-  if ((defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.canEvolve) ||
+  if ((defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.nfe) ||
       (!hitsPhysical && defender.hasItem('Assault Vest'))) {
     dfMods.push(0x1800);
     desc.defenderItem = defender.item;
