@@ -702,7 +702,7 @@ function createPokemon(pokeInfo) {
 				bs: baseStats,
 				t1: pokeInfo.find(".type1").val(),
 				t2: pokeInfo.find(".type2").val(),
-				w: +pokeInfo.find(".weight").val()
+				weightkg: +pokeInfo.find(".weight").val()
 			}
 		});
 	}
