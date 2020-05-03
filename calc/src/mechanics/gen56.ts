@@ -389,7 +389,7 @@ export function calculateBWXY(
     desc.defenderAbility = defender.ability;
   }
 
-  if (attacker.hasAbility('Sheer Force') && move.hasSecondaryEffect) {
+  if (attacker.hasAbility('Sheer Force') && move.secondaries) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   }

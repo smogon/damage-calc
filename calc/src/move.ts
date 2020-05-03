@@ -23,7 +23,7 @@ export class Move implements State.Move {
   type: I.TypeName;
   category: I.MoveCategory;
   flags: I.MoveFlags;
-  hasSecondaryEffect: boolean;
+  secondaries: any;
   target: I.MoveTarget;;
   recoil?: [number, number];
   hasCrashDamage: boolean;
@@ -109,7 +109,7 @@ export class Move implements State.Move {
       this.dropsStats = Math.abs(data.self.boosts[stat]!);
     }
     this.timesUsed = (this.dropsStats && options.timesUsed) || 1;
-    this.hasSecondaryEffect = !!data.hasSecondaryEffect;
+    this.secondaries = data.secondaries;
     // For the purposes of the damage formula only 'allAdjacent', 'allAdjacentFoes', and
     // 'adjacentFoe' matter, so we simply default to 'any' for the others even though they may not
     // actually be 'any'-target moves
@@ -139,7 +139,7 @@ export class Move implements State.Move {
       } else if (data.id === 'naturepower') {
         // Assume the 'Wi-Fi' default of Tri Attack
         this.bp = 80;
-        if (gen.num >= 5) this.hasSecondaryEffect = true;
+        if (gen.num >= 5) this.secondaries = true;
       }
     }
   }

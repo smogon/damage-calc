@@ -104,7 +104,7 @@ export interface Move extends Data<MoveName> {
   readonly type: TypeName;
   readonly category?: MoveCategory;
   readonly flags: MoveFlags;
-  readonly hasSecondaryEffect?: boolean;
+  readonly secondaries?: any;
   readonly target?: MoveTarget;
   readonly recoil?: [number, number];
   readonly hasCrashDamage?: boolean;
