@@ -490,8 +490,7 @@ export function calculateSMSS(
     bpMods.push(0x1333);
     desc.attackerAbility = attacker.ability;
   } else if (
-    (attacker.hasAbility('Reckless') &&
-      (typeof move.hasRecoil === 'number' || move.hasRecoil === 'crash')) ||
+    (attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
     (attacker.hasAbility('Iron Fist') && move.flags.punch)
   ) {
     bpMods.push(0x1333);

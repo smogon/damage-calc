@@ -374,8 +374,7 @@ export function calculateBWXY(
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
   } else if (
-    (attacker.hasAbility('Reckless') &&
-      (typeof move.hasRecoil === 'number' || move.hasRecoil === 'crash')) ||
+    (attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
     (attacker.hasAbility('Iron Fist') && move.flags.punch)
   ) {
     bpMods.push(0x1333);

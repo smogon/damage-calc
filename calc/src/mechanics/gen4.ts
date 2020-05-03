@@ -238,7 +238,7 @@ export function calculateDPP(
     desc.attackerItem = attacker.item;
   }
 
-  if ((attacker.hasAbility('Reckless') && move.hasRecoil) ||
+  if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
       (attacker.hasAbility('Iron Fist') && move.flags.punch)) {
     basePower = Math.floor(basePower * 1.2);
     desc.attackerAbility = attacker.ability;

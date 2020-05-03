@@ -25,7 +25,10 @@ export class Move implements State.Move {
   flags: I.MoveFlags;
   hasSecondaryEffect: boolean;
   target: I.MoveTarget;;
-  hasRecoil?: I.MoveRecoil;
+  recoil?: [number, number];
+  hasCrashDamage: boolean;
+  mindBlownRecoil: boolean;
+  struggleRecoil: boolean;
   isCrit: boolean;
   drain?: [number, number];
   priority: number;
@@ -108,7 +111,10 @@ export class Move implements State.Move {
     // 'adjacentFoe' matter, so we simply default to 'any' for the others even though they may not
     // actually be 'any'-target moves
     this.target = data.target || 'any';
-    this.hasRecoil = data.hasRecoil;
+    this.recoil = data.recoil;
+    this.hasCrashDamage = !!data.hasCrashDamage;
+    this.mindBlownRecoil = !!data.mindBlownRecoil;
+    this.struggleRecoil = !!data.struggleRecoil;
     this.isCrit = !!options.isCrit || !!data.willCrit ||
       // These don't *always* crit (255/256 chance), but for the purposes of the calc they do
       gen.num === 1 && ['crabhammer', 'razorleaf', 'slash'].includes(data.id);

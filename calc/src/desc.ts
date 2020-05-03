@@ -147,24 +147,25 @@ export function getRecoil(
   let text = '';
 
   const damageOverflow = minDamage > defender.curHP() || maxDamage > defender.curHP();
-  if (typeof move.hasRecoil === 'number') {
+  if (move.recoil) {
+    const mod = (move.recoil[0] / move.recoil[1]) * 100;
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow) {
       minRecoilDamage =
-        toDisplay(notation, defender.curHP() * move.hasRecoil, attacker.maxHP(), 100);
+        toDisplay(notation, defender.curHP() * mod, attacker.maxHP(), 100);
       maxRecoilDamage =
-        toDisplay(notation, defender.curHP() * move.hasRecoil, attacker.maxHP(), 100);
+        toDisplay(notation, defender.curHP() * mod, attacker.maxHP(), 100);
     } else {
       minRecoilDamage = toDisplay(
-        notation, Math.min(min, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
+        notation, Math.min(min, defender.curHP()) * mod, attacker.maxHP(), 100);
       maxRecoilDamage = toDisplay(
-        notation, Math.min(max, defender.curHP()) * move.hasRecoil, attacker.maxHP(), 100);
+        notation, Math.min(max, defender.curHP()) * mod, attacker.maxHP(), 100);
     }
     if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
       text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
-  } else if (move.hasRecoil === 'crash') {
+  } else if (move.hasCrashDamage) {
     const genMultiplier = gen.num === 2 ? 12.5 : gen.num >= 3 ? 50 : 1;
 
     let minRecoilDamage, maxRecoilDamage;
@@ -207,10 +208,10 @@ export function getRecoil(
         recoil = notation === '%' ? 24 : 50;
         text = '50% crash damage';
     }
-  } else if (move.hasRecoil === 'Struggle') {
+  } else if (move.struggleRecoil) {
     recoil = notation === '%' ? 12 : 25;
     text = '25% struggle damage';
-  } else if (move.hasRecoil) {
+  } else if (move.mindBlownRecoil) {
     recoil = notation === '%' ? 24 : 50;
     text = '50% recoil damage';
   }

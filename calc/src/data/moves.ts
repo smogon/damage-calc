@@ -9,7 +9,10 @@ export interface MoveData {
   // readonly flags?: I.MoveFlags;
   readonly hasSecondaryEffect?: boolean;
   readonly target?: I.MoveTarget;
-  readonly hasRecoil?: I.MoveRecoil;
+  readonly recoil?: [number, number];
+  readonly hasCrashDamage?: boolean;
+  readonly mindBlownRecoil?: boolean;
+  readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
   readonly priority?: number;
@@ -56,7 +59,7 @@ const RBY: {[name: string]: MoveData} = {
   Dig: {bp: 100, type: 'Ground'},
   Disable: {bp: 0, category: 'Status', type: 'Normal'},
   'Dizzy Punch': {bp: 70, type: 'Normal'},
-  'Double-Edge': {bp: 100, type: 'Normal', hasRecoil: 25},
+  'Double-Edge': {bp: 100, type: 'Normal', recoil: [25, 100]},
   'Double Kick': {bp: 30, type: 'Fighting', multihit: 2},
   'Double Slap': {bp: 15, type: 'Normal', multihit: [2, 5]},
   'Dragon Rage': {bp: 1, type: 'Dragon'},
@@ -75,10 +78,10 @@ const RBY: {[name: string]: MoveData} = {
   Guillotine: {bp: 0, type: 'Normal'},
   Gust: {bp: 40, type: 'Normal'},
   Haze: {bp: 0, category: 'Status', type: 'Ice'},
-  'High Jump Kick': {bp: 85, type: 'Fighting', hasRecoil: 'crash'},
+  'High Jump Kick': {bp: 85, type: 'Fighting', hasCrashDamage: true},
   'Horn Drill': {bp: 0, type: 'Normal'},
   'Hyper Beam': {bp: 150, type: 'Normal'},
-  'Jump Kick': {bp: 70, type: 'Fighting', hasRecoil: 'crash'},
+  'Jump Kick': {bp: 70, type: 'Fighting', hasCrashDamage: true},
   'Karate Chop': {bp: 50, type: 'Normal'},
   'Leech Seed': {bp: 0, category: 'Status', type: 'Grass'},
   'Light Screen': {bp: 0, category: 'Status', type: 'Psychic'},
@@ -113,13 +116,13 @@ const RBY: {[name: string]: MoveData} = {
   'Sonic Boom': {bp: 0, type: 'Normal'},
   'Spike Cannon': {bp: 20, type: 'Normal', multihit: [2, 5]},
   Stomp: {bp: 65, type: 'Normal'},
-  Struggle: {bp: 50, type: 'Normal', hasRecoil: 50},
+  Struggle: {bp: 50, type: 'Normal', recoil: [1, 2]},
   'Stun Spore': {bp: 0, category: 'Status', type: 'Grass'},
-  Submission: {bp: 80, type: 'Fighting', hasRecoil: 25},
+  Submission: {bp: 80, type: 'Fighting', recoil: [1, 4]},
   Substitute: {bp: 0, category: 'Status', type: 'Normal'},
   'Super Fang': {bp: 1, type: 'Normal'},
   Swift: {bp: 60, type: 'Normal'},
-  'Take Down': {bp: 90, type: 'Normal', hasRecoil: 25},
+  'Take Down': {bp: 90, type: 'Normal', recoil: [1, 4]},
   Thrash: {bp: 90, type: 'Normal'},
   Thunder: {bp: 120, type: 'Electric'},
   'Thunder Wave': {bp: 0, category: 'Status', type: 'Electric'},
@@ -212,7 +215,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Karate Chop': {type: 'Fighting'},
   Psywave: {bp: 0},
   'Self-Destruct': {bp: 200},
-  Struggle: {hasRecoil: 25},
+  Struggle: {recoil: [1, 4]},
   'Dragon Rage': {bp: 0},
   Bite: {type: 'Dark'},
   'Night Shade': {bp: 0},
@@ -370,7 +373,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Waterfall: {makesContact: true},
   Wrap: {makesContact: true},
   Crabhammer: {makesContact: true},
-  'Double-Edge': {hasRecoil: 33, makesContact: true},
+  'Double-Edge': {recoil: [1, 3], makesContact: true},
   Earthquake: {target: 'allAdjacent'},
   'Extreme Speed': {makesContact: true},
   'Fury Cutter': {makesContact: true},
@@ -487,7 +490,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Tickle: {bp: 0, category: 'Status', type: 'Normal'},
   Trick: {bp: 0, category: 'Status', type: 'Psychic'},
   Uproar: {bp: 50, type: 'Normal', isSound: true},
-  'Volt Tackle': {bp: 120, type: 'Electric', hasRecoil: 33, makesContact: true},
+  'Volt Tackle': {bp: 120, type: 'Electric', recoil: [1, 3], makesContact: true},
   'Weather Ball': {bp: 50, type: 'Normal'},
   Aromatherapy: {bp: 0, category: 'Status', type: 'Grass'},
   'Brick Break': {bp: 75, type: 'Fighting', makesContact: true},
@@ -621,7 +624,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Spike Cannon': {category: 'Physical'},
   'Spit Up': {category: 'Special'},
   Stomp: {category: 'Physical'},
-  Struggle: {hasRecoil: 'Struggle', category: 'Physical'},
+  Struggle: {category: 'Physical', struggleRecoil: true},
   Submission: {category: 'Physical'},
   Surf: {target: 'allAdjacent', category: 'Special'},
   Tackle: {category: 'Physical'},
@@ -807,7 +810,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Brave Bird': {
     bp: 120,
     type: 'Flying',
-    hasRecoil: 33,
+    recoil: [1, 3],
     makesContact: true,
     category: 'Physical',
   },
@@ -859,7 +862,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Flare Blitz': {
     bp: 120,
     type: 'Fire',
-    hasRecoil: 33,
+    recoil: [1, 3],
     makesContact: true,
     category: 'Physical',
   },
@@ -868,7 +871,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Head Smash': {
     bp: 150,
     type: 'Rock',
-    hasRecoil: 50,
+    recoil: [1, 2],
     makesContact: true,
     category: 'Physical',
   },
@@ -930,7 +933,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Wood Hammer': {
     bp: 120,
     type: 'Grass',
-    hasRecoil: 33,
+    recoil: [1, 3],
     makesContact: true,
     category: 'Physical',
   },
@@ -1166,6 +1169,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Body Slam': {hasSecondaryEffect: true},
   Bounce: {hasSecondaryEffect: true},
   Bubble: {hasSecondaryEffect: true},
+  'Brave Bird': {recoil: [33, 100]},
   'Bug Buzz': {hasSecondaryEffect: true},
   Chatter: {hasSecondaryEffect: true},
   Covet: {bp: 60},
@@ -1175,6 +1179,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Extrasensory: {hasSecondaryEffect: true},
   Feint: {bp: 30},
   Detect: {priority: 4},
+  'Double-Edge': {recoil: [33, 100]},
   Protect: {priority: 4},
   'Fire Blast': {hasSecondaryEffect: true},
   'Fire Spin': {bp: 35},
@@ -1249,7 +1254,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Fire Fang': {hasSecondaryEffect: true},
   'Fire Punch': {hasSecondaryEffect: true},
   'Flame Wheel': {hasSecondaryEffect: true},
-  'Flare Blitz': {hasSecondaryEffect: true},
+  'Flare Blitz': {hasSecondaryEffect: true, recoil: [33, 100]},
   'Flash Cannon': {hasSecondaryEffect: true},
   'Focus Blast': {hasSecondaryEffect: true},
   'Force Palm': {hasSecondaryEffect: true},
@@ -1288,7 +1293,8 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Thunder Shock': {hasSecondaryEffect: true},
   'Tri Attack': {hasSecondaryEffect: true},
   Twister: {hasSecondaryEffect: true},
-  'Volt Tackle': {hasSecondaryEffect: true},
+  'Volt Tackle': {hasSecondaryEffect: true, recoil: [33, 100]},
+  'Wood Hammer': {recoil: [33, 100]},
   Waterfall: {hasSecondaryEffect: true},
   'Water Pulse': {hasSecondaryEffect: true},
   'Zap Cannon': {hasSecondaryEffect: true},
@@ -1435,7 +1441,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Head Charge': {
     bp: 120,
     type: 'Normal',
-    hasRecoil: 25,
+    recoil: [1, 4],
     makesContact: true,
     category: 'Physical',
   },
@@ -1650,7 +1656,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Wild Charge': {
     bp: 90,
     type: 'Electric',
-    hasRecoil: 25,
+    recoil: [1, 4],
     makesContact: true,
     category: 'Physical',
   },
@@ -1834,7 +1840,7 @@ const XY_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Grassy Terrain': {bp: 0, type: 'Grass'},
   'Ion Deluge': {bp: 0, type: 'Electric', priority: 1},
   "Land's Wrath": {bp: 90, type: 'Ground', target: 'allAdjacentFoes', category: 'Physical'},
-  'Light of Ruin': {bp: 140, type: 'Fairy', hasRecoil: 50, category: 'Special'},
+  'Light of Ruin': {bp: 140, type: 'Fairy', recoil: [1, 2], category: 'Special'},
   'Oblivion Wing': {
     bp: 80,
     type: 'Flying',
@@ -2499,7 +2505,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Mind Blown': {
     bp: 150,
     type: 'Fire',
-    hasRecoil: true,
+    mindBlownRecoil: true,
     target: 'allAdjacent',
     category: 'Special',
     zp: 200,
@@ -3405,7 +3411,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Steel Beam': {
     bp: 140,
     type: 'Steel',
-    hasRecoil: true,
+    mindBlownRecoil: true,
     category: 'Special',
     zp: 200,
     maxPower: 140,
@@ -3971,7 +3977,10 @@ class Move implements I.Move {
   readonly flags: I.MoveFlags;
   readonly hasSecondaryEffect?: boolean;
   readonly target?: I.MoveTarget;
-  readonly hasRecoil?: I.MoveRecoil;
+  readonly recoil?: [number, number];
+  readonly hasCrashDamage?: boolean;
+  readonly mindBlownRecoil?: boolean;
+  readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
   readonly priority?: number;
@@ -4011,6 +4020,7 @@ class Move implements I.Move {
     assignWithout(this, data, Move.FLAGS);
 
     if (!this.category && gen >= 4) this.category = 'Status';
+    if (this.struggleRecoil) delete (this as any).recoil;
   }
 }
 

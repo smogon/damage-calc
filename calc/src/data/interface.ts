@@ -30,7 +30,6 @@ export type TypeName =
   'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
-export type MoveRecoil = boolean | number | 'crash' | 'Struggle';
 
 export type MoveTarget =
   'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' |
@@ -103,7 +102,10 @@ export interface Move extends Data<MoveName> {
   readonly flags: MoveFlags;
   readonly hasSecondaryEffect?: boolean;
   readonly target?: MoveTarget;
-  readonly hasRecoil?: MoveRecoil;
+  readonly recoil?: [number, number];
+  readonly hasCrashDamage?: boolean;
+  readonly mindBlownRecoil?: boolean;
+  readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
   readonly priority?: number;
