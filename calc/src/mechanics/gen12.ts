@@ -47,9 +47,9 @@ export function calculateRBYGSC(
   }
 
   const type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.type1, field.defenderSide.isForesight);
-  const type2Effectiveness = defender.type2
-    ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight)
+    getMoveEffectiveness(gen, move, defender.types[0], field.defenderSide.isForesight);
+  const type2Effectiveness = defender.types[1]
+    ? getMoveEffectiveness(gen, move, defender.types[1], field.defenderSide.isForesight)
     : 1;
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
@@ -147,8 +147,8 @@ export function calculateRBYGSC(
     };
 
     at = 10;
-    df = Math.max(lookup[attacker.type2 ? attacker.type2 : attacker.type1], 1);
-    lv = Math.max(lookup[defender.type2 ? defender.type2 : defender.type1], 1);
+    df = Math.max(lookup[attacker.types[1] ? attacker.types[1] : attacker.types[0]], 1);
+    lv = Math.max(lookup[defender.types[1] ? defender.types[1] : defender.types[0]], 1);
   }
 
   if (defender.named('Ditto') && defender.hasItem('Metal Powder')) {
@@ -196,7 +196,7 @@ export function calculateRBYGSC(
     desc.weather = field.weather;
   }
 
-  if (move.hasType(attacker.type1, attacker.type2)) {
+  if (move.hasType(...attacker.types)) {
     baseDamage = Math.floor(baseDamage * 1.5);
   }
 

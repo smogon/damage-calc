@@ -146,19 +146,18 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
     switch (weather) {
     case 'Sun':
     case 'Harsh Sunshine':
-      pokemon.type1 = 'Fire';
+      pokemon.types = ['Fire'];
       break;
     case 'Rain':
     case 'Heavy Rain':
-      pokemon.type1 = 'Water';
+      pokemon.types = ['Water'];
       break;
     case 'Hail':
-      pokemon.type1 = 'Ice';
+      pokemon.types = ['Ice'];
       break;
     default:
-      pokemon.type1 = 'Normal';
+      pokemon.types = ['Normal'];
     }
-    pokemon.type2 = undefined;
   }
 }
 

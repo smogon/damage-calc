@@ -396,8 +396,8 @@ $(".set-selector").change(function () {
 			stickyMoves.clearStickyMove();
 		}
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
-		pokeObj.find(".type1").val(pokemon.t1);
-		pokeObj.find(".type2").val(pokemon.t2);
+		pokeObj.find(".type1").val(pokemon.types[0]);
+		pokeObj.find(".type2").val(pokemon.types[1]);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);
 		var i;
 		for (i = 0; i < LEGACY_STATS[gen].length; i++) {
@@ -580,8 +580,8 @@ $(".forme").change(function () {
 		pokemonName = fullSetName.substring(0, fullSetName.indexOf(" (")),
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
-	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(altForme.t2 ? altForme.t2 : "");
+	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
+	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
 	var pokeSTATS = ["hp", "at", "df", "sa", "sd", "sp"];
 	for (var i = 0; i < pokeSTATS.length; i++) {
@@ -678,6 +678,8 @@ function createPokemon(pokeInfo) {
 		var curHP = ~~pokeInfo.find(".current-hp").val();
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
 		if (isDynamaxed) curHP = Math.floor(curHP / 2);
+		var types = [pokeInfo.find(".type1").val()];
+		if (pokeInfo.find(".type2").val()) types.push(pokeInfo.find(".type2").val());
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
 			ability: ability,
@@ -700,8 +702,7 @@ function createPokemon(pokeInfo) {
 			],
 			overrides: {
 				bs: baseStats,
-				t1: pokeInfo.find(".type1").val(),
-				t2: pokeInfo.find(".type2").val(),
+				types: types,
 				weightkg: +pokeInfo.find(".weight").val()
 			}
 		});

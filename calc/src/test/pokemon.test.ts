@@ -6,8 +6,7 @@ describe('Pokemon', () => {
     const p = new Pokemon(7, 'Gengar');
 
     expect(p.name).toBe('Gengar');
-    expect(p.type1).toBe('Ghost');
-    expect(p.type2).toBe('Poison');
+    expect(p.types).toEqual(['Ghost', 'Poison']);
     expect(p.weightkg).toBe(40.5);
     expect(p.level).toBe(100);
     expect(p.gender).toBe('M');
@@ -46,8 +45,7 @@ describe('Pokemon', () => {
     });
 
     expect(p.name).toBe('Suicune');
-    expect(p.type1).toBe('Water');
-    expect(p.type2).toBeUndefined();
+    expect(p.types).toEqual(['Water']);
     expect(p.weightkg).toBe(187.0);
     expect(p.level).toBe(50);
     expect(p.gender).toBe('N');

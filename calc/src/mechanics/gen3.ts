@@ -64,11 +64,11 @@ export function calculateADV(
   const type1Effectiveness = getMoveEffectiveness(
     gen,
     move,
-    defender.type1,
+    defender.types[0],
     field.defenderSide.isForesight
   );
-  const type2Effectiveness = defender.type2
-    ? getMoveEffectiveness(gen, move, defender.type2, field.defenderSide.isForesight)
+  const type2Effectiveness = defender.types[1]
+    ? getMoveEffectiveness(gen, move, defender.types[1], field.defenderSide.isForesight)
     : 1;
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
@@ -277,7 +277,7 @@ export function calculateADV(
     desc.isHelpingHand = true;
   }
 
-  if (move.hasType(attacker.type1, attacker.type2)) {
+  if (move.hasType(...attacker.types)) {
     baseDamage = Math.floor(baseDamage * 1.5);
   }
 

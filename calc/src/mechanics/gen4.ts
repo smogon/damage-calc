@@ -104,9 +104,9 @@ export function calculateDPP(
 
   const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
   const type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.type1, isGhostRevealed, field.isGravity);
-  const type2Effectiveness = defender.type2
-    ? getMoveEffectiveness(gen, move, defender.type2, isGhostRevealed, field.isGravity)
+    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity);
+  const type2Effectiveness = defender.types[1]
+    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
     : 1;
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
@@ -449,7 +449,7 @@ export function calculateDPP(
   // the random factor is applied between the LO mod and the STAB mod, so don't apply anything
   // below this until we're inside the loop
   let stabMod = 1;
-  if (move.hasType(attacker.type1, attacker.type2)) {
+  if (move.hasType(...attacker.types)) {
     if (attacker.hasAbility('Adaptability')) {
       stabMod = 2;
       desc.attackerAbility = attacker.ability;

@@ -8,8 +8,7 @@ export class Pokemon implements State.Pokemon {
   name: I.SpeciesName;
   species: I.Specie;
 
-  type1: I.TypeName;
-  type2?: I.TypeName;
+  types: [I.TypeName] | [I.TypeName, I.TypeName];
   weightkg: number;
 
   level: number;
@@ -41,8 +40,7 @@ export class Pokemon implements State.Pokemon {
 
     this.gen = gen;
     this.name = options.name || name as I.SpeciesName;
-    this.type1 = this.species.t1;
-    this.type2 = this.species.t2;
+    this.types = this.species.types;
     this.weightkg = this.species.weightkg;
 
     this.level = options.level || 100;
@@ -111,7 +109,7 @@ export class Pokemon implements State.Pokemon {
 
   hasType(...types: I.TypeName[]) {
     for (const type of types) {
-      if (this.type1 === type || this.type2 === type) return true;
+      if (this.types.includes(type)) return true;
     }
     return false;
   }

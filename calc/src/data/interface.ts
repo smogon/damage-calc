@@ -121,8 +121,7 @@ export interface Species {
 // TODO: rename these fields to be readable
 export interface Specie extends Data<SpeciesName> {
   readonly kind: 'Species';
-  readonly t1: TypeName; // type1
-  readonly t2?: TypeName; // type2
+  readonly types: [TypeName] | [TypeName, TypeName];
   readonly bs: Readonly<{
     hp: number;
     at: number;

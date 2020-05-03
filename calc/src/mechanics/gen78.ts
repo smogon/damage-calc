@@ -153,7 +153,7 @@ export function calculateSMSS(
       : field.hasTerrain('Psychic') ? 'Psychic'
       : 'Normal';
   } else if (move.named('Revelation Dance')) {
-    move.type = attacker.type1;
+    move.type = attacker.types[0];
   } else if (move.named('Aura Wheel')) {
     if (attacker.named('Morpeko')) {
       move.type = 'Electric';
@@ -209,9 +209,9 @@ export function calculateSMSS(
 
   const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
   const type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.type1, isGhostRevealed, field.isGravity);
-  const type2Effectiveness = defender.type2
-    ? getMoveEffectiveness(gen, move, defender.type2, isGhostRevealed, field.isGravity)
+    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity);
+  const type2Effectiveness = defender.types[1]
+    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
@@ -237,9 +237,9 @@ export function calculateSMSS(
     typeEffectiveness = 1;
   } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
     const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
-    if (effectiveness[defender.type1]! === 0) {
+    if (effectiveness[defender.types[0]]! === 0) {
       typeEffectiveness = type2Effectiveness;
-    } else if (defender.type2 && effectiveness[defender.type2]! === 0) {
+    } else if (defender.types[1] && effectiveness[defender.types[1]]! === 0) {
       typeEffectiveness = type1Effectiveness;
     }
   }
@@ -250,8 +250,8 @@ export function calculateSMSS(
 
   if ((move.named('Sky Drop') &&
         (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
-      (move.named('Synchronoise') && !defender.hasType(attacker.type1) &&
-        (!attacker.type2 || !defender.hasType(attacker.type2))) ||
+      (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
+        (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
       (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose')))
   ) {
     return result;
