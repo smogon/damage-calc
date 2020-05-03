@@ -492,7 +492,7 @@ $(".set-selector").change(function () {
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
 		var baseForme;
-		if (pokemon.isAlternateForme) {
+		if (pokemon.baseSpecies !== pokemon.name) {
 			// try to find the base forme name by chopping off everything after the last dash
 			var baseFormeName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
 			// special case: -Mega-X and -Mega-Y
@@ -655,7 +655,7 @@ function createPokemon(pokeInfo) {
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
 			var species = pokedex[pokemonName];
-			name = (species.formes || species.isAlternateForme) ? pokeInfo.find(".forme").val() : pokemonName;
+			name = (species.formes || species.baseSpecies !== pokemonName) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
 		var baseStats = {};
