@@ -353,13 +353,17 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.willCrit === true);
+
+	var stat = move.category === 'Special' ? 'spa' : 'atk';
+	var dropsStats =
+		move.self && move.self.boosts && move.self.boosts[stat] && move.self.boosts[stat] < 0;
 	if (Array.isArray(move.multihit)) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
 		var moveHits = (pokemon.find(".ability").val() === 'Skill Link' || pokemon.find(".item").val() === 'Grip Claw') ? 5 : 3;
 		moveGroupObj.children(".move-hits").val(moveHits);
-	} else if (move.dropsStats) {
+	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").show();
 	} else {

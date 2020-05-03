@@ -16,7 +16,7 @@ export interface MoveData {
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
   readonly priority?: number;
-  readonly dropsStats?: number;
+  readonly self?: I.SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;
   readonly breaksProtect?: boolean;
@@ -475,7 +475,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Nature Power': {bp: 0, category: 'Status', type: 'Normal'},
   'Needle Arm': {bp: 60, type: 'Grass', makesContact: true},
   'Odor Sleuth': {bp: 0, category: 'Status', type: 'Normal'},
-  Overheat: {bp: 140, type: 'Fire', dropsStats: 2, makesContact: true},
+  Overheat: {bp: 140, type: 'Fire', self: {boosts: {spa: -2}}, makesContact: true},
   Revenge: {bp: 60, type: 'Fighting', makesContact: true},
   'Rock Blast': {bp: 25, type: 'Rock', multihit: [2, 5]},
   'Role Play': {bp: 0, category: 'Status', type: 'Psychic'},
@@ -523,7 +523,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Howl: {bp: 0, category: 'Status', type: 'Normal'},
   'Luster Purge': {bp: 70, type: 'Psychic'},
   'Mist Ball': {bp: 70, type: 'Psychic'},
-  'Psycho Boost': {bp: 140, type: 'Psychic', dropsStats: 2},
+  'Psycho Boost': {bp: 140, type: 'Psychic', self: {boosts: {spa: -2}}},
   Refresh: {bp: 0, category: 'Status', type: 'Normal'},
   'Signal Beam': {bp: 75, type: 'Bug'},
   'Silver Wind': {bp: 60, type: 'Bug'},
@@ -550,7 +550,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Poison Tail': {bp: 50, type: 'Poison', makesContact: true},
   'Shadow Punch': {bp: 60, type: 'Ghost', makesContact: true},
   'Shock Wave': {bp: 60, type: 'Electric'},
-  Superpower: {bp: 120, type: 'Fighting', dropsStats: 1, makesContact: true},
+  Superpower: {bp: 120, type: 'Fighting', self: {boosts: {atk: -1, def: -1}}, makesContact: true},
   'Water Pulse': {bp: 60, type: 'Water'},
   'Water Spout': {bp: 150, type: 'Water', target: 'allAdjacentFoes'},
   Yawn: {bp: 0, category: 'Status', type: 'Normal'},
@@ -947,7 +947,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Air Slash': {bp: 75, type: 'Flying', category: 'Special'},
   'Aura Sphere': {bp: 90, type: 'Fighting', category: 'Special'},
   'Bug Buzz': {bp: 90, type: 'Bug', isSound: true, category: 'Special'},
-  'Draco Meteor': {bp: 140, type: 'Dragon', dropsStats: 2, category: 'Special'},
+  'Draco Meteor': {bp: 140, type: 'Dragon', self: {boosts: {spa: -2}}, category: 'Special'},
   'Dragon Pulse': {bp: 90, type: 'Dragon', category: 'Special'},
   'Dragon Rush': {
     bp: 100,
@@ -963,7 +963,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     category: 'Physical',
   },
-  'Leaf Storm': {bp: 140, type: 'Grass', dropsStats: 2, category: 'Special'},
+  'Leaf Storm': {bp: 140, type: 'Grass', self: {boosts: {spa: -2}}, category: 'Special'},
   'Power Gem': {bp: 70, type: 'Rock', category: 'Special'},
   'Psycho Shift': {bp: 0, type: 'Psychic'},
   'Shadow Force': {
@@ -2454,7 +2454,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Fleur Cannon': {
     bp: 130,
     type: 'Fairy',
-    dropsStats: 2,
+    self: {boosts: {spa: -2}},
     category: 'Special',
     zp: 195,
   },
@@ -3984,7 +3984,7 @@ class Move implements I.Move {
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
   readonly priority?: number;
-  readonly dropsStats?: number;
+  readonly self?: I.SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: I.MoveCategory;
   readonly breaksProtect?: boolean;

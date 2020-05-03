@@ -89,8 +89,6 @@ export class Move implements State.Move {
       }
       this.timesUsedWithMetronome = options.timesUsedWithMetronome;
     }
-    this.timesUsed = (data.dropsStats && options.timesUsed) || 1;
-
     this.gen = gen;
     this.name = data.name;
     this.ability = options.ability;
@@ -106,6 +104,11 @@ export class Move implements State.Move {
     this.type = typelessDamage ? '???' : data.type;
     this.category = data.category ||
       (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
+    const stat = this.category === 'Special' ? 'spa' : 'atk';
+    if (data.self?.boosts && data.self.boosts[stat] && data.self.boosts[stat]! < 0) {
+      this.dropsStats = Math.abs(data.self.boosts[stat]!);
+    }
+    this.timesUsed = (this.dropsStats && options.timesUsed) || 1;
     this.hasSecondaryEffect = !!data.hasSecondaryEffect;
     // For the purposes of the damage formula only 'allAdjacent', 'allAdjacentFoes', and
     // 'adjacentFoe' matter, so we simply default to 'any' for the others even though they may not
@@ -122,7 +125,7 @@ export class Move implements State.Move {
     this.flags = data.flags;
     // The calc doesn't currently care about negative priority moves so we simply default to 0
     this.priority = data.priority || 0;
-    this.dropsStats = data.dropsStats;
+
     this.ignoreDefensive = !!data.ignoreDefensive;
     this.defensiveCategory = data.defensiveCategory || this.category;
     this.breaksProtect = !!data.breaksProtect;

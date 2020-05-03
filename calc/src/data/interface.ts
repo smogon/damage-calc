@@ -94,6 +94,10 @@ export interface MoveFlags {
   pulse?: 1 | 0;
 }
 
+export interface SelfOrSecondaryEffect {
+  boosts?: Partial<StatsTable>;
+}
+
 export interface Move extends Data<MoveName> {
   readonly kind: 'Move';
   readonly bp: number;
@@ -109,7 +113,7 @@ export interface Move extends Data<MoveName> {
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
   readonly priority?: number;
-  readonly dropsStats?: number;
+  readonly self?: SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: MoveCategory;
   readonly breaksProtect?: boolean;
