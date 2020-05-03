@@ -120,7 +120,7 @@ export function calculateDPP(
       (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||
       (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') && !field.isGravity && defender.hasAbility('Levitate')) ||
-      (move.isSound && defender.hasAbility('Soundproof'))
+      (move.flags.sound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -239,7 +239,7 @@ export function calculateDPP(
   }
 
   if ((attacker.hasAbility('Reckless') && move.hasRecoil) ||
-      (attacker.hasAbility('Iron Fist') && move.isPunch)) {
+      (attacker.hasAbility('Iron Fist') && move.flags.punch)) {
     basePower = Math.floor(basePower * 1.2);
     desc.attackerAbility = attacker.ability;
   } else if ((attacker.curHP() <= attacker.maxHP() / 3 &&

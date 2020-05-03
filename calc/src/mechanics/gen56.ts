@@ -203,8 +203,8 @@ export function calculateBWXY(
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
         !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
-      (move.isBullet && defender.hasAbility('Bulletproof')) ||
-      (move.isSound && defender.hasAbility('Soundproof'))
+      (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
+      (move.flags.sound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -376,7 +376,7 @@ export function calculateBWXY(
   } else if (
     (attacker.hasAbility('Reckless') &&
       (typeof move.hasRecoil === 'number' || move.hasRecoil === 'crash')) ||
-    (attacker.hasAbility('Iron Fist') && move.isPunch)
+    (attacker.hasAbility('Iron Fist') && move.flags.punch)
   ) {
     bpMods.push(0x1333);
     desc.attackerAbility = attacker.ability;
@@ -461,12 +461,12 @@ export function calculateBWXY(
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   } else if (
-    (attacker.hasAbility('Mega Launcher') && move.isPulse) ||
-    (attacker.hasAbility('Strong Jaw') && move.isBite)
+    (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+    (attacker.hasAbility('Strong Jaw') && move.flags.bite)
   ) {
     bpMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Tough Claws') && move.makesContact) {
+  } else if (attacker.hasAbility('Tough Claws') && move.flags.contact) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   }

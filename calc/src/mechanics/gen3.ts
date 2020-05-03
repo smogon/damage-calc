@@ -81,7 +81,7 @@ export function calculateADV(
       (defender.hasAbility('Volt Absorb') && move.hasType('Electric')) ||
       (defender.hasAbility('Water Absorb') && move.hasType('Water')) ||
       (defender.hasAbility('Wonder Guard') && !move.hasType('???') && typeEffectiveness <= 1) ||
-      (defender.hasAbility('Soundproof') && move.isSound)
+      (defender.hasAbility('Soundproof') && move.flags.sound)
   ) {
     desc.defenderAbility = defender.ability;
     return result;

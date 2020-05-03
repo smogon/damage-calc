@@ -85,22 +85,27 @@ export interface Moves {
   [Symbol.iterator](): IterableIterator<Move>;
 }
 
+export interface MoveFlags {
+  contact?: 1 | 0;
+  bite?: 1 | 0;
+  sound?: 1 | 0;
+  // TODO: heal?: 1 | 0;
+  punch?: 1 | 0;
+  bullet?: 1 | 0;
+  pulse?: 1 | 0;
+}
+
 export interface Move extends Data<MoveName> {
   readonly kind: 'Move';
   readonly bp: number;
   readonly type: TypeName;
   readonly category?: MoveCategory;
+  readonly flags: MoveFlags;
   readonly hasSecondaryEffect?: boolean;
   readonly target?: MoveTarget;
-  readonly makesContact?: boolean;
   readonly hasRecoil?: MoveRecoil;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
-  readonly isPunch?: boolean;
-  readonly isBite?: boolean;
-  readonly isBullet?: boolean;
-  readonly isSound?: boolean;
-  readonly isPulse?: boolean;
   readonly priority?: number;
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;

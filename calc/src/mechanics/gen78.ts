@@ -184,7 +184,7 @@ export function calculateSMSS(
       move.type = 'Flying';
     } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
       move.type = 'Electric';
-    } else if ((isLiquidVoice = attacker.hasAbility('Liquid Voice') && move.isSound)) {
+    } else if ((isLiquidVoice = attacker.hasAbility('Liquid Voice') && !!move.flags.sound)) {
       move.type = 'Water';
     } else if ((isPixilate = attacker.hasAbility('Pixilate') && normal)) {
       move.type = 'Fairy';
@@ -265,8 +265,8 @@ export function calculateSMSS(
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
         !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
-      (move.isBullet && defender.hasAbility('Bulletproof')) ||
-      (move.isSound && defender.hasAbility('Soundproof')) ||
+      (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
+      (move.flags.sound && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
   ) {
     desc.defenderAbility = defender.ability;
@@ -492,7 +492,7 @@ export function calculateSMSS(
   } else if (
     (attacker.hasAbility('Reckless') &&
       (typeof move.hasRecoil === 'number' || move.hasRecoil === 'crash')) ||
-    (attacker.hasAbility('Iron Fist') && move.isPunch)
+    (attacker.hasAbility('Iron Fist') && move.flags.punch)
   ) {
     bpMods.push(0x1333);
     desc.attackerAbility = attacker.ability;
@@ -518,7 +518,7 @@ export function calculateSMSS(
   } else if (attacker.hasAbility('Analytic') && turnOrder !== 'first') {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Tough Claws') && move.makesContact) {
+  } else if (attacker.hasAbility('Tough Claws') && move.flags.contact) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   }
@@ -551,8 +551,8 @@ export function calculateSMSS(
        attacker.hasStatus('brn') && move.category === 'Special') ||
       (attacker.hasAbility('Toxic Boost') &&
        attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
-      (attacker.hasAbility('Mega Launcher') && move.isPulse) ||
-      (attacker.hasAbility('Strong Jaw') && move.isBite)
+      (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+      (attacker.hasAbility('Strong Jaw') && move.flags.bite)
   ) {
     bpMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
@@ -950,18 +950,18 @@ export function calculateSMSS(
     desc.defenderAbility = defender.ability;
   }
 
-  if (defender.hasAbility('Fluffy') && move.makesContact && !attacker.hasAbility('Long Reach')) {
+  if (defender.hasAbility('Fluffy') && move.flags.contact && !attacker.hasAbility('Long Reach')) {
     finalMods.push(0x800);
     desc.defenderAbility = defender.ability;
   } else if (
-    (defender.hasAbility('Punk Rock') && move.isSound) ||
+    (defender.hasAbility('Punk Rock') && move.flags.sound) ||
     (defender.hasAbility('Ice Scales') && move.category === 'Special')
   ) {
     finalMods.push(0x800);
     desc.defenderAbility = defender.ability;
   }
 
-  if (move.isSound && attacker.hasAbility('Punk Rock')) {
+  if (move.flags.sound && attacker.hasAbility('Punk Rock')) {
     finalMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   }

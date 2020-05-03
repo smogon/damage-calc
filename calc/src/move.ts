@@ -22,17 +22,12 @@ export class Move implements State.Move {
   bp: number;
   type: I.TypeName;
   category: I.MoveCategory;
+  flags: I.MoveFlags;
   hasSecondaryEffect: boolean;
   target: I.MoveTarget;;
-  makesContact: boolean;
   hasRecoil?: I.MoveRecoil;
   isCrit: boolean;
   drain?: [number, number];
-  isPunch: boolean;
-  isBite: boolean;
-  isBullet: boolean;
-  isSound: boolean;
-  isPulse: boolean;
   priority: number;
   dropsStats?: number;
   ignoreDefensive: boolean;
@@ -113,17 +108,12 @@ export class Move implements State.Move {
     // 'adjacentFoe' matter, so we simply default to 'any' for the others even though they may not
     // actually be 'any'-target moves
     this.target = data.target || 'any';
-    this.makesContact = !!data.makesContact;
     this.hasRecoil = data.hasRecoil;
     this.isCrit = !!options.isCrit || !!data.willCrit ||
       // These don't *always* crit (255/256 chance), but for the purposes of the calc they do
       gen.num === 1 && ['crabhammer', 'razorleaf', 'slash'].includes(data.id);
     this.drain = data.drain;
-    this.isPunch = !!data.isPunch;
-    this.isBite = !!data.isBite;
-    this.isBullet = !!data.isBullet;
-    this.isSound = !!data.isSound;
-    this.isPulse = !!data.isPulse;
+    this.flags = data.flags;
     // The calc doesn't currently care about negative priority moves so we simply default to 0
     this.priority = data.priority || 0;
     this.dropsStats = data.dropsStats;

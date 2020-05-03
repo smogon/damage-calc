@@ -6,17 +6,12 @@ export interface MoveData {
   readonly bp: number;
   readonly type: I.TypeName;
   readonly category?: I.MoveCategory;
+  // readonly flags?: I.MoveFlags;
   readonly hasSecondaryEffect?: boolean;
   readonly target?: I.MoveTarget;
-  readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
-  readonly isPunch?: boolean;
-  readonly isBite?: boolean;
-  readonly isBullet?: boolean;
-  readonly isSound?: boolean;
-  readonly isPulse?: boolean;
   readonly priority?: number;
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
@@ -27,6 +22,14 @@ export interface MoveData {
   readonly zp?: number;
   readonly maxPower?: number;
   readonly multihit?: number | number[];
+
+  // FIXME: migrate these to flags (above) instead
+  readonly makesContact?: boolean;
+  readonly isPunch?: boolean;
+  readonly isBite?: boolean;
+  readonly isBullet?: boolean;
+  readonly isSound?: boolean;
+  readonly isPulse?: boolean;
 }
 
 const RBY: {[name: string]: MoveData} = {
@@ -3950,6 +3953,14 @@ export class Moves implements I.Moves {
   }
 }
 
+function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
+  for (const key in b) {
+    if (Object.prototype.hasOwnProperty.call(b, key) && !exclude.has(key)) {
+      a[key] = b[key];
+    }
+  }
+}
+
 class Move implements I.Move {
   readonly kind: 'Move';
   readonly id: I.ID;
@@ -3957,17 +3968,12 @@ class Move implements I.Move {
   readonly bp!: number;
   readonly type!: I.TypeName;
   readonly category?: I.MoveCategory;
+  readonly flags: I.MoveFlags;
   readonly hasSecondaryEffect?: boolean;
   readonly target?: I.MoveTarget;
-  readonly makesContact?: boolean;
   readonly hasRecoil?: I.MoveRecoil;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
-  readonly isPunch?: boolean;
-  readonly isBite?: boolean;
-  readonly isBullet?: boolean;
-  readonly isSound?: boolean;
-  readonly isPulse?: boolean;
   readonly priority?: number;
   readonly dropsStats?: number;
   readonly ignoreDefensive?: boolean;
@@ -3979,12 +3985,31 @@ class Move implements I.Move {
   readonly maxPower?: number;
   readonly multihit?: number | number[];
 
+  private static readonly FLAGS = new Set([
+    'makesContact',
+    'isPunch',
+    'isBite',
+    'isBullet',
+    'isSound',
+    'isPulse',
+  ]);
+
   constructor(name: string, data: MoveData, gen: number) {
     this.kind = 'Move';
     this.id = toID(name);
     this.name = name as I.MoveName;
-    Object.assign(this, data);
-    if (!this.makesContact) delete (this as any).makesContact;
+
+    // TODO: remove this once MoveData is migrated to flags and Object.assign just handles this
+    this.flags = {};
+    if (data.makesContact) this.flags.contact = 1;
+    if (data.isPunch) this.flags.punch = 1;
+    if (data.isBite) this.flags.bite = 1;
+    if (data.isBullet) this.flags.bullet = 1;
+    if (data.isSound) this.flags.sound = 1;
+    if (data.isPulse) this.flags.pulse = 1;
+
+    assignWithout(this, data, Move.FLAGS);
+
     if (!this.category && gen >= 4) this.category = 'Status';
   }
 }
