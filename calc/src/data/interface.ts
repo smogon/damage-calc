@@ -145,7 +145,7 @@ export interface Specie extends Data<SpeciesName> {
   readonly weightkg: number; // weight
   readonly nfe?: boolean;
   readonly gender?: GenderName;
-  readonly formes?: SpeciesName[];
+  readonly otherFormes?: SpeciesName[];
   readonly baseSpecies?: SpeciesName;
   readonly abilities?: {0: AbilityName}; // ability
 }

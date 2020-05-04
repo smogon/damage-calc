@@ -499,10 +499,10 @@ $(".set-selector").change(function () {
 		if (pokemon.baseSpecies !== pokemon.name) {
 			baseForme = pokedex[pokemon.baseSpecies];
 		}
-		if (pokemon.formes) {
-			showFormes(formeObj, setName, pokemonName, pokemon);
-		} else if (baseForme && baseForme.formes) {
-			showFormes(formeObj, setName, pokemonName, baseForme);
+		if (pokemon.otherFormes) {
+			showFormes(formeObj, pokemonName, pokemon, pokemonName);
+		} else if (baseForme && baseForme.otherFormes) {
+			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
 		} else {
 			formeObj.hide();
 		}
@@ -550,11 +550,14 @@ function selectMovesFromRandomOptions(moves) {
 	return selected;
 }
 
-function showFormes(formeObj, setName, pokemonName, pokemon) {
-	var defaultForme = pokemon.formes.indexOf(pokemonName);
+function showFormes(formeObj, pokemonName, pokemon, baseFormeName) {
+	var formes = pokemon.otherFormes.slice();
+	formes.unshift(baseFormeName);
+
+	var defaultForme = formes.indexOf(pokemonName);
 	if (defaultForme < 0) defaultForme = 0;
 
-	var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
+	var formeOptions = getSelectOptions(formes, false, defaultForme);
 	formeObj.children("select").find("option").remove().end().append(formeOptions).change();
 	formeObj.show();
 }
@@ -645,7 +648,7 @@ function createPokemon(pokeInfo) {
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
 			var species = pokedex[pokemonName];
-			name = (species.formes || species.baseSpecies !== pokemonName) ? pokeInfo.find(".forme").val() : pokemonName;
+			name = (species.otherFormes || species.baseSpecies !== pokemonName) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
 		var baseStats = {};
