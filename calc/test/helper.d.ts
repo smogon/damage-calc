@@ -3,12 +3,12 @@ import { Pokemon, Move } from '../index';
 import { State } from '../state';
 import { Field, Side } from '../field';
 declare const calc: (gen: I.GenerationNum) => (attacker: Pokemon, defender: Pokemon, move: Move, field?: Field | undefined) => import("..").Result;
-declare const move: (gen: I.GenerationNum) => (name: string, options?: Partial<Pick<State.Move, "name" | "overrides" | "useZ" | "useMax" | "isCrit" | "hits" | "timesUsed" | "timesUsedWithMetronome">> & {
+declare const move: (gen: I.GenerationNum) => (name: string, options?: Partial<Pick<State.Move, "name" | "useZ" | "useMax" | "isCrit" | "hits" | "timesUsed" | "timesUsedWithMetronome" | "overrides">> & {
     ability?: string | undefined;
     item?: string | undefined;
     species?: string | undefined;
 }) => Move;
-declare const pokemon: (gen: I.GenerationNum) => (name: string, options?: Partial<Pick<State.Pokemon, "name" | "level" | "abilityOn" | "isDynamaxed" | "gender" | "ivs" | "evs" | "boosts" | "originalCurHP" | "status" | "toxicCounter" | "overrides">> & {
+declare const pokemon: (gen: I.GenerationNum) => (name: string, options?: Partial<Pick<State.Pokemon, "name" | "overrides" | "level" | "abilityOn" | "isDynamaxed" | "gender" | "ivs" | "evs" | "boosts" | "originalCurHP" | "status" | "toxicCounter">> & {
     ability?: string | undefined;
     item?: string | undefined;
     nature?: string | undefined;
