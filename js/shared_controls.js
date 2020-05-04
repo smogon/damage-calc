@@ -349,7 +349,7 @@ $(".move-selector").change(function () {
 	var moveName = $(this).val();
 	var move = moves[moveName] || moves['(No Move)'];
 	var moveGroupObj = $(this).parent();
-	moveGroupObj.children(".move-bp").val(move.bp);
+	moveGroupObj.children(".move-bp").val(moveName === 'Present' ? 40 : move.bp);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.willCrit === true);

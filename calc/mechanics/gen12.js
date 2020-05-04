@@ -49,7 +49,7 @@ function calculateRBYGSC(gen, attacker, defender, move, field) {
         move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
         desc.moveBP = move.bp;
     }
-    else if (move.named('Present')) {
+    else if (move.named('Present') && !move.bp) {
         move.bp = 40;
     }
     if (move.bp === 0) {
