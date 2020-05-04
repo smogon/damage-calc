@@ -27,6 +27,9 @@ const pokemon = (gen: I.GenerationNum) => (
     nature?: string;
     moves?: string[];
     curHP?: number;
+    ivs?: Partial<I.StatsTable> & {spc?: number};
+    evs?: Partial<I.StatsTable> & {spc?: number};
+    boosts?: Partial<I.StatsTable> & {spc?: number};
   } = {}
 ) => new Pokemon(gen, name, options as any);
 

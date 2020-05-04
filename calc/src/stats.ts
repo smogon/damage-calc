@@ -1,19 +1,20 @@
-import {Natures, Generation, Stat} from './data/interface';
+import {Natures, Generation, StatName} from './data/interface';
 import {toID} from './util';
 
-const RBY: Stat[] = ['hp', 'atk', 'def', 'spc', 'spe'];
-const GSC: Stat[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
-const ADV: Stat[] = GSC;
-const DPP: Stat[] = GSC;
-const BW: Stat[] = GSC;
-const XY: Stat[] = GSC;
-const SM: Stat[] = GSC;
-const SS: Stat[] = GSC;
+const RBY: Array<StatName | 'spc'> = ['hp', 'atk', 'def', 'spc', 'spe'];
+const GSC: StatName[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
+const ADV: StatName[] = GSC;
+const DPP: StatName[] = GSC;
+const BW: StatName[] = GSC;
+const XY: StatName[] = GSC;
+const SM: StatName[] = GSC;
+const SS: StatName[] = GSC;
 
-export const STATS: Stat[][] = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+export const STATS: Array<Array<StatName | 'spc'> | StatName[]> =
+  [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 
 export const Stats = new (class {
-  displayStat(stat: Stat) {
+  displayStat(stat: StatName | 'spc') {
     switch (stat) {
       case 'hp':
         return 'HP';
@@ -34,7 +35,7 @@ export const Stats = new (class {
     }
   }
 
-  shortForm(stat: Stat) {
+  shortForm(stat: StatName | 'spc') {
     switch (stat) {
       case 'hp':
         return 'hp';
@@ -72,7 +73,7 @@ export const Stats = new (class {
 
   calcStat(
     gen: Generation,
-    stat: Stat,
+    stat: StatName,
     base: number,
     iv: number,
     ev: number,
@@ -86,7 +87,7 @@ export const Stats = new (class {
 
   calcStatADV(
     natures: Natures,
-    stat: Stat,
+    stat: StatName,
     base: number,
     iv: number,
     ev: number,
@@ -98,7 +99,7 @@ export const Stats = new (class {
         ? base
         : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
     } else {
-      let mods: [Stat?, Stat?] = [undefined, undefined];
+      let mods: [StatName?, StatName?] = [undefined, undefined];
       if (nature) {
         const nat = natures.get(toID(nature));
         mods = [nat?.plus, nat?.minus];
@@ -116,11 +117,11 @@ export const Stats = new (class {
     }
   }
 
-  calcStatRBY(stat: Stat, base: number, iv: number, level: number) {
+  calcStatRBY(stat: StatName, base: number, iv: number, level: number) {
     return this.calcStatRBYFromDV(stat, base, this.IVToDV(iv), level);
   }
 
-  calcStatRBYFromDV(stat: Stat, base: number, dv: number, level: number) {
+  calcStatRBYFromDV(stat: StatName, base: number, dv: number, level: number) {
     if (stat === 'hp') {
       return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
     } else {

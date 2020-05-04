@@ -1,9 +1,9 @@
 ﻿import * as I from './interface';
-import {toID, extend, DeepPartial} from '../util';
+import {toID, extend, DeepPartial, assignWithout} from '../util';
 
-// TODO: rename these fields to be readable
 export interface SpeciesData {
   readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
+  // TODO: replace with baseStats
   readonly bs: {
     hp: number;
     at: number;
@@ -12,7 +12,7 @@ export interface SpeciesData {
     sd?: number;
     sp: number;
     sl?: number;
-  }; // baseStats
+  };
   readonly weightkg: number; // weight
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
@@ -8462,15 +8462,7 @@ class Specie implements I.Specie {
   readonly id: I.ID;
   readonly name: I.SpeciesName;
   readonly types!: [I.TypeName] | [I.TypeName, I.TypeName];
-  readonly bs!: {
-    hp: number;
-    at: number;
-    df: number;
-    sa: number;
-    sd: number;
-    sp: number;
-    sl?: number;
-  }; // baseStats
+  readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg!: number; // weight
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
@@ -8478,11 +8470,23 @@ class Specie implements I.Specie {
   readonly baseSpecies?: I.SpeciesName;
   readonly abilities?: {0: I.AbilityName}; // ability
 
+  private static readonly EXCLUDE = new Set(['bs']);
+
   constructor(name: string, data: SpeciesData) {
     this.kind = 'Species';
     this.id = toID(name);
     this.name = name as I.SpeciesName;
-    extend(this, data);
+
+    const baseStats: Partial<I.StatsTable> = {};
+    baseStats.hp = data.bs.hp;
+    baseStats.atk = data.bs.at;
+    baseStats.def = data.bs.df;
+    baseStats.spa = gen >= 2 ? data.bs.sa : data.bs.sl;
+    baseStats.spd = gen >= 2 ? data.bs.sd : data.bs.sl;
+    baseStats.spe = data.bs.sp;
+    this.baseStats = baseStats as I.StatsTable;
+
+    assignWithout(this, data, Specie.EXCLUDE);
   }
 }
 const SPECIES_BY_ID: Array<{[id: string]: Specie}> = [];

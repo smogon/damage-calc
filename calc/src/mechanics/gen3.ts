@@ -122,8 +122,6 @@ export function calculateADV(
   }
 
   if (bp === 0) {
-    console.log(move);
-
     return result;
   }
 

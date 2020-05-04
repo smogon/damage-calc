@@ -576,10 +576,9 @@ $(".forme").change(function () {
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
 	$(this).parent().siblings().find(".weight").val(altForme.w);
-	var pokeSTATS = ["hp", "at", "df", "sa", "sd", "sp"];
-	for (var i = 0; i < pokeSTATS.length; i++) {
-		var baseStat = container.find("." + pokeSTATS[i]).find(".base");
-		baseStat.val(altForme.bs[pokeSTATS[i]]);
+	for (var i = 0; i < LEGACY_STATS[8].length; i++) {
+		var baseStat = container.find("." + LEGACY_STATS[8][i]).find(".base");
+		baseStat.val(altForme.bs[LEGACY_STATS[8][i]]);
 		baseStat.keyup();
 	}
 	var isRandoms = $("#randoms").prop("checked");
@@ -657,11 +656,12 @@ function createPokemon(pokeInfo) {
 		var boosts = {};
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
-			baseStats[LEGACY_STATS[gen][i]] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
+			baseStats[stat === 'spc' ? 'spa' : stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
 			ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
 			evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
 			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 		}
+		if (gen === 1) baseStats.spd = baseStats.spa;
 
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
@@ -694,7 +694,7 @@ function createPokemon(pokeInfo) {
 				getMoveDetails(pokeInfo.find(".move4"), ability, item, isDynamaxed)
 			],
 			overrides: {
-				bs: baseStats,
+				baseStats: baseStats,
 				types: types,
 				weightkg: +pokeInfo.find(".weight").val()
 			}

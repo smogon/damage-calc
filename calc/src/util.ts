@@ -19,6 +19,14 @@ export function error(err: boolean, msg: string) {
   }
 }
 
+export function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
+  for (const key in b) {
+    if (Object.prototype.hasOwnProperty.call(b, key) && !exclude.has(key)) {
+      a[key] = b[key];
+    }
+  }
+}
+
 // jQuery JavaScript Library v2.0.3
 // Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
 const class2Type: {[c: string]: string} = {

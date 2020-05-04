@@ -1,7 +1,11 @@
 import * as I from './data/interface';
-import {STATS, Stats} from './stats';
-import {toID, extend} from './util';
+import {Stats} from './stats';
+import {toID, extend, assignWithout} from './util';
 import {State} from './state';
+
+const STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'] as I.StatName[];
+const SPC = new Set(['spc']);
+
 
 export class Pokemon implements State.Pokemon {
   gen: I.Generation;
@@ -34,7 +38,12 @@ export class Pokemon implements State.Pokemon {
   constructor(
     gen: I.Generation,
     name: string,
-    options: Partial<State.Pokemon> & {curHP?: number} = {}
+    options: Partial<State.Pokemon> & {
+      curHP?: number;
+      ivs?: Partial<I.StatsTable> & {spc?: number};
+      evs?: Partial<I.StatsTable> & {spc?: number};
+      boosts?: Partial<I.StatsTable> & {spc?: number};
+    } = {}
   ) {
     this.species = extend(true, {}, gen.species.get(toID(name)), options.overrides);
 
@@ -61,14 +70,14 @@ export class Pokemon implements State.Pokemon {
           atk: this.ivs.atk,
           def: this.ivs.def,
           spe: this.ivs.spe,
-          spc: typeof this.ivs.spc === 'undefined' ? this.ivs.spa : this.ivs.spc,
+          spc: this.ivs.spa,
         })
       );
     }
 
     this.rawStats = {} as I.StatsTable;
     this.stats = {} as I.StatsTable;
-    for (const stat of STATS[gen.num]) {
+    for (const stat of STATS) {
       const val = this.calcStat(gen, stat);
       this.rawStats[stat] = val;
       this.stats[stat] = val;
@@ -83,14 +92,14 @@ export class Pokemon implements State.Pokemon {
 
   maxHP(original = false) {
     // Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
-    return !original && this.isDynamaxed && this.species.bs.hp !== 1
+    return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
       ? this.rawStats.hp * 2
       : this.rawStats.hp;
   }
 
   curHP(original = false) {
     // Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
-    return !original && this.isDynamaxed && this.species.bs.hp !== 1
+    return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
       ? this.originalCurHP * 2
       : this.originalCurHP;
   }
@@ -138,11 +147,11 @@ export class Pokemon implements State.Pokemon {
     });
   }
 
-  private calcStat(gen: I.Generation, stat: I.Stat) {
+  private calcStat(gen: I.Generation, stat: I.StatName) {
     return Stats.calcStat(
       gen,
       stat,
-      this.species.bs[Stats.shortForm(stat)]!,
+      this.species.baseStats[stat],
       this.ivs[stat]!,
       this.evs[stat]!,
       this.level,
@@ -180,15 +189,20 @@ export class Pokemon implements State.Pokemon {
 
   private static withDefault(
     gen: I.Generation,
-    current: Partial<I.StatsTable> | undefined,
+    current: Partial<I.StatsTable> & {spc?: number} | undefined,
     val: number
   ) {
-    return extend(
-      true,
-      {},
-      {hp: val, atk: val, def: val, spe: val},
-      gen.num < 2 ? {spc: val} : {spa: val, spd: val},
-      current
-    );
+    let cur: Partial<I.StatsTable> = {};
+    if (current) {
+      assignWithout(cur, current, SPC);
+      if (current.spc) {
+        cur.spa = current.spc;
+        cur.spd = current.spc;
+      }
+      if (gen.num <= 2 && current.spa !== current.spd) {
+        throw new Error('Special Attack and Special Defense must match before Gen 3');
+      }
+    }
+    return Object.assign({hp: val, atk: val, def: val, spa: val, spd: val, spe: val}, cur);
   }
 }

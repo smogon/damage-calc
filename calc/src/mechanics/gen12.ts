@@ -14,11 +14,7 @@ export function calculateRBYGSC(
   move: Move,
   field: Field
 ) {
-  if (gen.num === 1) {
-    computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spc', 'spe');
-  } else {
-    computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
-  }
+  computeFinalStats(gen, attacker, defender, field, 'atk', 'def', 'spa', 'spd', 'spe');
 
   const desc: RawDesc = {
     attackerName: attacker.name,
@@ -84,8 +80,8 @@ export function calculateRBYGSC(
   }
 
   const isPhysical = move.category === 'Physical';
-  const attackStat = isPhysical ? 'atk' : (gen.num === 1 ? 'spc' : 'spa');
-  const defenseStat = isPhysical ? 'def' : (gen.num === 1 ? 'spc' : 'spd');
+  const attackStat = isPhysical ? 'atk' : 'spa';
+  const defenseStat = isPhysical ? 'def' : 'spd';
   let at = attacker.stats[attackStat]!;
   let df = defender.stats[defenseStat]!;
 

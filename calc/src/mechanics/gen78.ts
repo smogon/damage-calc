@@ -1,4 +1,4 @@
-﻿import {Generation, AbilityName, Stat, Terrain} from '../data/interface';
+﻿import {Generation, AbilityName, StatName, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
   getBerryResistType,
@@ -324,7 +324,7 @@ export function calculateSMSS(
   }
 
   if (move.named('Spectral Thief')) {
-    let stat: Stat;
+    let stat: StatName;
     for (stat in defender.boosts) {
       if (defender.boosts[stat]) {
         attacker.boosts[stat] +=

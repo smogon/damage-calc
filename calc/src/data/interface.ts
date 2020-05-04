@@ -3,8 +3,7 @@ export type ID = string & As<'ID'>;
 export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type GenderName = 'M' | 'F' | 'N';
 export type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
-export type Stat = StatName | 'spc';
-export type StatsTable<T = number> = {[stat in StatName]: T} & {spc?: T};
+export type StatsTable<T = number> = {[stat in StatName]: T};
 
 export type AbilityName = string & As<'AbilityName'>;
 export type ItemName = string & As<'ItemName'>;
@@ -129,25 +128,16 @@ export interface Species {
   [Symbol.iterator](): IterableIterator<Specie>;
 }
 
-// TODO: rename these fields to be readable
 export interface Specie extends Data<SpeciesName> {
   readonly kind: 'Species';
   readonly types: [TypeName] | [TypeName, TypeName];
-  readonly bs: Readonly<{
-    hp: number;
-    at: number;
-    df: number;
-    sa: number;
-    sd: number;
-    sp: number;
-    sl?: number;
-  }>; // baseStats
-  readonly weightkg: number; // weight
+  readonly baseStats: Readonly<StatsTable>;
+  readonly weightkg: number;
   readonly nfe?: boolean;
   readonly gender?: GenderName;
   readonly otherFormes?: SpeciesName[];
   readonly baseSpecies?: SpeciesName;
-  readonly abilities?: {0: AbilityName}; // ability
+  readonly abilities?: {0: AbilityName};
 }
 
 export interface Types {

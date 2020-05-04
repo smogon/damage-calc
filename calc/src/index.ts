@@ -97,6 +97,9 @@ export class Pokemon extends A.Pokemon {
       nature?: string;
       moves?: string[];
       curHP?: number;
+      ivs?: Partial<I.StatsTable> & {spc?: number};
+      evs?: Partial<I.StatsTable> & {spc?: number};
+      boosts?: Partial<I.StatsTable> & {spc?: number};
     } = {}
   ) {
     super(typeof gen === 'number' ? Generations.get(gen) : gen, name, options as any);
@@ -119,7 +122,7 @@ export class Pokemon extends A.Pokemon {
 
 export function calcStat(
   gen: I.GenerationNum | I.Generation,
-  stat: I.Stat,
+  stat: I.StatName | 'spc',
   base: number,
   iv: number,
   ev: number,
@@ -128,7 +131,7 @@ export function calcStat(
 ) {
   return A.Stats.calcStat(
     typeof gen === 'number' ? Generations.get(gen) : gen,
-    stat,
+    stat === 'spc' ? 'spa' : stat,
     base,
     iv,
     ev,
@@ -139,7 +142,7 @@ export function calcStat(
 
 export {Field, Side} from './field';
 export {Result} from './result';
-export {GenerationNum, StatsTable, Stat} from './data/interface';
+export {GenerationNum, StatsTable, StatName} from './data/interface';
 export {Generations} from './data/index';
 export {toID} from './util';
 export {State} from './state';

@@ -13,7 +13,7 @@ import {toID} from '../util';
 import {Field, Side} from '../field';
 import {Move} from '../move';
 import {Pokemon} from '../pokemon';
-import {STATS, Stats} from '../stats';
+import {Stats} from '../stats';
 import {RawDesc} from '../desc';
 
 const EV_ITEMS = [
@@ -59,7 +59,7 @@ export function computeFinalStats(
   attacker: Pokemon,
   defender: Pokemon,
   field: Field,
-  ...stats: Array<StatName | 'spc'>
+  ...stats: StatName[]
 ) {
   const sides: Array<[Pokemon, Side]> =
     [[attacker, field.attackerSide], [defender, field.defenderSide]];
@@ -362,10 +362,14 @@ export function getWeightFactor(pokemon: Pokemon) {
 
 export function countBoosts(gen: Generation, boosts: StatsTable) {
   let sum = 0;
-  // NOTE: starting from 1 because HP is not boostable
-  for (let i = 1; i < STATS[gen.num].length; i++) {
+
+  const STATS: StatName[] = gen.num === 1
+    ? ['atk', 'def', 'spa', 'spe']
+    : ['atk', 'def', 'spa', 'spd', 'spe'];
+
+  for (let i = 1; i < STATS.length; i++) {
     // Only positive boosts are counted
-    const boost = boosts[STATS[gen.num][i]];
+    const boost = boosts[STATS[i]];
     if (boost && boost > 0) sum += boost;
   }
   return sum;
