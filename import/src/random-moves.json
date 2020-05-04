@@ -1625,42 +1625,6 @@
       "Hidden Power Electric",
       "Hidden Power Grass"
     ],
-    "charizard": [
-      "Fire Blast",
-      "Belly Drum",
-      "Swords Dance",
-      "Earthquake",
-      "Rock Slide",
-      "Hidden Power Grass",
-      "Hidden Power Ice",
-      "Crunch",
-      "Counter",
-      "Sunny Day",
-      "Rest",
-      "Sleep Talk"
-    ],
-    "machamp": [
-      "Curse",
-      "Cross Chop",
-      "Earthquake",
-      "Rock Slide",
-      "Fire Blast",
-      "Hidden Power Bug",
-      "Body Slam",
-      "Light Screen",
-      "Counter",
-      "Rest",
-      "Sleep Talk"
-    ],
-    "kingler": [
-      "Swords Dance",
-      "Hidden Power Ground",
-      "Hidden Power Rock",
-      "Hidden Power Flying",
-      "Hidden Power Bug",
-      "Return",
-      "Surf"
-    ],
     "weezing": [
       "Sludge Bomb",
       "Explosion",
@@ -1669,34 +1633,6 @@
       "Thunderbolt",
       "Fire Blast",
       "Curse"
-    ],
-    "lapras": [
-      "Rest",
-      "Thunder",
-      "Thunderbolt",
-      "Sleep Talk",
-      "Ice Beam",
-      "Hydro Pump",
-      "Surf",
-      "Sing",
-      "Confuse Ray",
-      "Reflect"
-    ],
-    "snorlax": [
-      "Curse",
-      "Body Slam",
-      "Return",
-      "Double-Edge",
-      "Rest",
-      "Earthquake",
-      "Sleep Talk",
-      "Lovely Kiss",
-      "Rock Slide",
-      "Fire Blast",
-      "Surf",
-      "Counter",
-      "Self-Destruct",
-      "Belly Drum"
     ],
     "venusaur": [
       "Leech Seed",
@@ -1714,6 +1650,20 @@
       "Ancient Power",
       "Growth",
       "Hidden Power Water"
+    ],
+    "charizard": [
+      "Fire Blast",
+      "Belly Drum",
+      "Swords Dance",
+      "Earthquake",
+      "Rock Slide",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
+      "Crunch",
+      "Counter",
+      "Sunny Day",
+      "Rest",
+      "Sleep Talk"
     ],
     "blastoise": [
       "Rest",
@@ -1845,6 +1795,19 @@
       "Reflect",
       "Sleep Talk"
     ],
+    "machamp": [
+      "Curse",
+      "Cross Chop",
+      "Earthquake",
+      "Rock Slide",
+      "Fire Blast",
+      "Hidden Power Bug",
+      "Body Slam",
+      "Light Screen",
+      "Counter",
+      "Rest",
+      "Sleep Talk"
+    ],
     "tentacruel": [
       "Swords Dance",
       "Surf",
@@ -1938,6 +1901,15 @@
       "Sleep Talk",
       "Curse",
       "Body Slam"
+    ],
+    "kingler": [
+      "Swords Dance",
+      "Hidden Power Ground",
+      "Hidden Power Rock",
+      "Hidden Power Flying",
+      "Hidden Power Bug",
+      "Return",
+      "Surf"
     ],
     "marowak": [
       "Swords Dance",
@@ -2145,6 +2117,18 @@
       "Curse",
       "Sleep Talk"
     ],
+    "lapras": [
+      "Rest",
+      "Thunder",
+      "Thunderbolt",
+      "Sleep Talk",
+      "Ice Beam",
+      "Hydro Pump",
+      "Surf",
+      "Sing",
+      "Confuse Ray",
+      "Reflect"
+    ],
     "ditto": [
       "Transform"
     ],
@@ -2223,6 +2207,22 @@
       "Hidden Power Rock",
       "Wing Attack",
       "Curse"
+    ],
+    "snorlax": [
+      "Curse",
+      "Body Slam",
+      "Return",
+      "Double-Edge",
+      "Rest",
+      "Earthquake",
+      "Sleep Talk",
+      "Lovely Kiss",
+      "Rock Slide",
+      "Fire Blast",
+      "Surf",
+      "Counter",
+      "Self-Destruct",
+      "Belly Drum"
     ],
     "dragonite": [
       "Ice Beam",
@@ -3433,37 +3433,6 @@
       "Calm Mind",
       "Hypnosis"
     ],
-    "charizard": [
-      "Substitute",
-      "Hidden Power Grass",
-      "Fire Blast",
-      "Flamethrower",
-      "Earthquake",
-      "Belly Drum",
-      "Focus Punch",
-      "Dragon Dance",
-      "Aerial Ace"
-    ],
-    "machamp": [
-      "Cross Chop",
-      "Earthquake",
-      "Bulk Up",
-      "Hidden Power Ghost",
-      "Rock Slide",
-      "Rest",
-      "Sleep Talk"
-    ],
-    "kingler": [
-      "Double-Edge",
-      "Return",
-      "Body Slam",
-      "Hidden Power Ghost",
-      "Mud Shot",
-      "Swords Dance",
-      "Endure",
-      "Flail",
-      "Surf"
-    ],
     "weezing": [
       "Sludge Bomb",
       "Haze",
@@ -3474,24 +3443,6 @@
       "Thunderbolt",
       "Shadow Ball",
       "Toxic"
-    ],
-    "lapras": [
-      "Rest",
-      "Sleep Talk",
-      "Ice Beam",
-      "Hydro Pump",
-      "Thunderbolt",
-      "Heal Bell"
-    ],
-    "snorlax": [
-      "Earthquake",
-      "Body Slam",
-      "Shadow Ball",
-      "Return",
-      "Self-Destruct",
-      "Curse",
-      "Rest",
-      "Sleep Talk"
     ],
     "flygon": [
       "Earthquake",
@@ -3512,6 +3463,17 @@
       "Hidden Power Fire",
       "Hidden Power Ice",
       "Giga Drain"
+    ],
+    "charizard": [
+      "Substitute",
+      "Hidden Power Grass",
+      "Fire Blast",
+      "Flamethrower",
+      "Earthquake",
+      "Belly Drum",
+      "Focus Punch",
+      "Dragon Dance",
+      "Aerial Ace"
     ],
     "blastoise": [
       "Surf",
@@ -3619,6 +3581,15 @@
       "Toxic",
       "Roar"
     ],
+    "machamp": [
+      "Cross Chop",
+      "Earthquake",
+      "Bulk Up",
+      "Hidden Power Ghost",
+      "Rock Slide",
+      "Rest",
+      "Sleep Talk"
+    ],
     "tentacruel": [
       "Ice Beam",
       "Rapid Spin",
@@ -3697,6 +3668,17 @@
       "Wish",
       "Protect",
       "Toxic"
+    ],
+    "kingler": [
+      "Double-Edge",
+      "Return",
+      "Body Slam",
+      "Hidden Power Ghost",
+      "Mud Shot",
+      "Swords Dance",
+      "Endure",
+      "Flail",
+      "Surf"
     ],
     "marowak": [
       "Earthquake",
@@ -3843,6 +3825,14 @@
       "Dragon Dance",
       "Taunt"
     ],
+    "lapras": [
+      "Rest",
+      "Sleep Talk",
+      "Ice Beam",
+      "Hydro Pump",
+      "Thunderbolt",
+      "Heal Bell"
+    ],
     "ditto": [
       "Transform"
     ],
@@ -3899,6 +3889,16 @@
       "Substitute",
       "Taunt",
       "Toxic"
+    ],
+    "snorlax": [
+      "Earthquake",
+      "Body Slam",
+      "Shadow Ball",
+      "Return",
+      "Self-Destruct",
+      "Curse",
+      "Rest",
+      "Sleep Talk"
     ],
     "dragonite": [
       "Hidden Power Flying",
@@ -5713,31 +5713,6 @@
       "Will-O-Wisp",
       "Refresh"
     ],
-    "charizard": [
-      "Fire Blast",
-      "Flamethrower",
-      "Air Slash",
-      "Dragon Pulse",
-      "Hidden Power Grass",
-      "Roost"
-    ],
-    "machamp": [
-      "Dynamic Punch",
-      "Payback",
-      "Bulk Up",
-      "Ice Punch",
-      "Stone Edge",
-      "Bullet Punch",
-      "Substitute"
-    ],
-    "kingler": [
-      "Crabhammer",
-      "Return",
-      "Swords Dance",
-      "Agility",
-      "X-Scissor",
-      "Superpower"
-    ],
     "weezing": [
       "Rest",
       "Sleep Talk",
@@ -5746,27 +5721,6 @@
       "Pain Split",
       "Fire Blast",
       "Thunderbolt"
-    ],
-    "lapras": [
-      "Surf",
-      "Hydro Pump",
-      "Ice Beam",
-      "Thunderbolt",
-      "Heal Bell",
-      "Toxic"
-    ],
-    "snorlax": [
-      "Rest",
-      "Curse",
-      "Sleep Talk",
-      "Body Slam",
-      "Earthquake",
-      "Return",
-      "Fire Punch",
-      "Crunch",
-      "Self-Destruct",
-      "Pursuit",
-      "Whirlwind"
     ],
     "flygon": [
       "Earthquake",
@@ -5817,6 +5771,14 @@
       "Earthquake",
       "Synthesis",
       "Leech Seed"
+    ],
+    "charizard": [
+      "Fire Blast",
+      "Flamethrower",
+      "Air Slash",
+      "Dragon Pulse",
+      "Hidden Power Grass",
+      "Roost"
     ],
     "blastoise": [
       "Surf",
@@ -5914,6 +5876,15 @@
       "Will-O-Wisp",
       "Toxic"
     ],
+    "machamp": [
+      "Dynamic Punch",
+      "Payback",
+      "Bulk Up",
+      "Ice Punch",
+      "Stone Edge",
+      "Bullet Punch",
+      "Substitute"
+    ],
     "tentacruel": [
       "Toxic Spikes",
       "Rapid Spin",
@@ -5975,6 +5946,14 @@
       "Seismic Toss",
       "Thunder Wave",
       "Toxic"
+    ],
+    "kingler": [
+      "Crabhammer",
+      "Return",
+      "Swords Dance",
+      "Agility",
+      "X-Scissor",
+      "Superpower"
     ],
     "marowak": [
       "Substitute",
@@ -6072,6 +6051,14 @@
       "Stone Edge",
       "Ice Fang"
     ],
+    "lapras": [
+      "Surf",
+      "Hydro Pump",
+      "Ice Beam",
+      "Thunderbolt",
+      "Heal Bell",
+      "Toxic"
+    ],
     "ditto": [
       "Transform"
     ],
@@ -6126,6 +6113,19 @@
       "Rock Slide",
       "Earthquake",
       "Roost"
+    ],
+    "snorlax": [
+      "Rest",
+      "Curse",
+      "Sleep Talk",
+      "Body Slam",
+      "Earthquake",
+      "Return",
+      "Fire Punch",
+      "Crunch",
+      "Self-Destruct",
+      "Pursuit",
+      "Whirlwind"
     ],
     "dragonite": [
       "Dragon Dance",
@@ -8406,32 +8406,6 @@
       "Reflect",
       "Toxic"
     ],
-    "charizard": [
-      "Air Slash",
-      "Dragon Pulse",
-      "Fire Blast",
-      "Hidden Power Grass",
-      "Roost",
-      "Substitute"
-    ],
-    "machamp": [
-      "Bullet Punch",
-      "Bulk Up",
-      "Dynamic Punch",
-      "Ice Punch",
-      "Payback",
-      "Stone Edge",
-      "Substitute"
-    ],
-    "kingler": [
-      "Agility",
-      "Crabhammer",
-      "Return",
-      "Substitute",
-      "Superpower",
-      "Swords Dance",
-      "X-Scissor"
-    ],
     "weezing": [
       "Fire Blast",
       "Haze",
@@ -8439,24 +8413,6 @@
       "Sludge Bomb",
       "Thunderbolt",
       "Will-O-Wisp"
-    ],
-    "lapras": [
-      "Heal Bell",
-      "Hydro Pump",
-      "Ice Beam",
-      "Substitute",
-      "Thunderbolt",
-      "Toxic"
-    ],
-    "snorlax": [
-      "Body Slam",
-      "Crunch",
-      "Curse",
-      "Earthquake",
-      "Fire Punch",
-      "Pursuit",
-      "Rest",
-      "Self-Destruct"
     ],
     "flygon": [
       "Earthquake",
@@ -8491,12 +8447,6 @@
       "Swords Dance",
       "Trick"
     ],
-    "garbodor": [
-      "Clear Smog",
-      "Explosion",
-      "Spikes",
-      "Toxic Spikes"
-    ],
     "venusaur": [
       "Earthquake",
       "Giga Drain",
@@ -8508,6 +8458,14 @@
       "Sludge Bomb",
       "Swords Dance",
       "Synthesis"
+    ],
+    "charizard": [
+      "Air Slash",
+      "Dragon Pulse",
+      "Fire Blast",
+      "Hidden Power Grass",
+      "Roost",
+      "Substitute"
     ],
     "blastoise": [
       "Dragon Tail",
@@ -8605,6 +8563,15 @@
       "Wild Charge",
       "Will-O-Wisp"
     ],
+    "machamp": [
+      "Bullet Punch",
+      "Bulk Up",
+      "Dynamic Punch",
+      "Ice Punch",
+      "Payback",
+      "Stone Edge",
+      "Substitute"
+    ],
     "tentacruel": [
       "Giga Drain",
       "Ice Beam",
@@ -8670,6 +8637,15 @@
       "Thunder Wave",
       "Toxic",
       "Wish"
+    ],
+    "kingler": [
+      "Agility",
+      "Crabhammer",
+      "Return",
+      "Substitute",
+      "Superpower",
+      "Swords Dance",
+      "X-Scissor"
     ],
     "marowak": [
       "Bonemerang",
@@ -8785,6 +8761,14 @@
       "Substitute",
       "Waterfall"
     ],
+    "lapras": [
+      "Heal Bell",
+      "Hydro Pump",
+      "Ice Beam",
+      "Substitute",
+      "Thunderbolt",
+      "Toxic"
+    ],
     "ditto": [
       "Transform"
     ],
@@ -8836,6 +8820,16 @@
       "Stealth Rock",
       "Stone Edge",
       "Taunt"
+    ],
+    "snorlax": [
+      "Body Slam",
+      "Crunch",
+      "Curse",
+      "Earthquake",
+      "Fire Punch",
+      "Pursuit",
+      "Rest",
+      "Self-Destruct"
     ],
     "dragonair": [
       "Dragon Dance",
@@ -10381,6 +10375,12 @@
       "Stone Edge",
       "U-turn"
     ],
+    "garbodor": [
+      "Clear Smog",
+      "Explosion",
+      "Spikes",
+      "Toxic Spikes"
+    ],
     "zoroark": [
       "Dark Pulse",
       "Flamethrower",
@@ -11286,48 +11286,6 @@
       "Extreme Speed",
       "Stone Edge"
     ],
-    "charizard": [
-      "Fire Blast",
-      "Air Slash",
-      "Roost",
-      "Swords Dance",
-      "Flare Blitz",
-      "Acrobatics",
-      "Earthquake",
-      "Will-O-Wisp"
-    ],
-    "butterfree": [
-      "Sleep Powder",
-      "Quiver Dance",
-      "Bug Buzz",
-      "Psychic",
-      "Energy Ball"
-    ],
-    "pikachu": [
-      "Volt Tackle",
-      "Volt Switch",
-      "Grass Knot",
-      "Hidden Power Ice",
-      "Knock Off",
-      "Iron Tail"
-    ],
-    "machamp": [
-      "Dynamic Punch",
-      "Ice Punch",
-      "Stone Edge",
-      "Bullet Punch",
-      "Knock Off",
-      "Substitute"
-    ],
-    "kingler": [
-      "Crabhammer",
-      "X-Scissor",
-      "Rock Slide",
-      "Swords Dance",
-      "Agility",
-      "Superpower",
-      "Knock Off"
-    ],
     "weezing": [
       "Pain Split",
       "Sludge Bomb",
@@ -11335,26 +11293,6 @@
       "Fire Blast",
       "Protect",
       "Toxic Spikes"
-    ],
-    "lapras": [
-      "Ice Beam",
-      "Thunderbolt",
-      "Heal Bell",
-      "Toxic",
-      "Hydro Pump",
-      "Substitute"
-    ],
-    "snorlax": [
-      "Rest",
-      "Curse",
-      "Sleep Talk",
-      "Body Slam",
-      "Earthquake",
-      "Return",
-      "Fire Punch",
-      "Crunch",
-      "Pursuit",
-      "Whirlwind"
     ],
     "gardevoir": [
       "Psychic",
@@ -11412,15 +11350,6 @@
       "Protect",
       "Toxic",
       "Roar"
-    ],
-    "garbodor": [
-      "Spikes",
-      "Toxic Spikes",
-      "Gunk Shot",
-      "Haze",
-      "Pain Split",
-      "Toxic",
-      "Drain Punch"
     ],
     "aegislashshield": [
       "Flash Cannon",
@@ -11493,6 +11422,16 @@
       "Leech Seed",
       "Earthquake"
     ],
+    "charizard": [
+      "Fire Blast",
+      "Air Slash",
+      "Roost",
+      "Swords Dance",
+      "Flare Blitz",
+      "Acrobatics",
+      "Earthquake",
+      "Will-O-Wisp"
+    ],
     "charizardmegay": [
       "Fire Blast",
       "Air Slash",
@@ -11517,6 +11456,13 @@
       "Dragon Tail",
       "Dark Pulse",
       "Aura Sphere"
+    ],
+    "butterfree": [
+      "Sleep Powder",
+      "Quiver Dance",
+      "Bug Buzz",
+      "Psychic",
+      "Energy Ball"
     ],
     "beedrill": [
       "Toxic Spikes",
@@ -11564,6 +11510,14 @@
       "U-turn",
       "Pursuit",
       "Drill Run"
+    ],
+    "pikachu": [
+      "Volt Tackle",
+      "Volt Switch",
+      "Grass Knot",
+      "Hidden Power Ice",
+      "Knock Off",
+      "Iron Tail"
     ],
     "raichu": [
       "Nasty Plot",
@@ -11699,6 +11653,14 @@
       "Hidden Power Ice",
       "Hidden Power Fire"
     ],
+    "machamp": [
+      "Dynamic Punch",
+      "Ice Punch",
+      "Stone Edge",
+      "Bullet Punch",
+      "Knock Off",
+      "Substitute"
+    ],
     "victreebel": [
       "Sleep Powder",
       "Sunny Day",
@@ -11796,6 +11758,15 @@
       "Protect",
       "Thunder Wave",
       "Toxic"
+    ],
+    "kingler": [
+      "Crabhammer",
+      "X-Scissor",
+      "Rock Slide",
+      "Swords Dance",
+      "Agility",
+      "Superpower",
+      "Knock Off"
     ],
     "marowak": [
       "Bonemerang",
@@ -11935,6 +11906,14 @@
       "Ice Fang",
       "Crunch"
     ],
+    "lapras": [
+      "Ice Beam",
+      "Thunderbolt",
+      "Heal Bell",
+      "Toxic",
+      "Hydro Pump",
+      "Substitute"
+    ],
     "ditto": [
       "Transform"
     ],
@@ -11995,6 +11974,18 @@
       "Earthquake",
       "Fire Fang",
       "Roost"
+    ],
+    "snorlax": [
+      "Rest",
+      "Curse",
+      "Sleep Talk",
+      "Body Slam",
+      "Earthquake",
+      "Return",
+      "Fire Punch",
+      "Crunch",
+      "Pursuit",
+      "Whirlwind"
     ],
     "articuno": [
       "Ice Beam",
@@ -14139,6 +14130,15 @@
       "U-turn",
       "Endeavor"
     ],
+    "garbodor": [
+      "Spikes",
+      "Toxic Spikes",
+      "Gunk Shot",
+      "Haze",
+      "Pain Split",
+      "Toxic",
+      "Drain Punch"
+    ],
     "zoroark": [
       "Sucker Punch",
       "Dark Pulse",
@@ -14900,54 +14900,6 @@
     ]
   },
   "7": {
-    "charizard": [
-      "Hold Hands",
-      "Fire Blast",
-      "Air Slash",
-      "Earthquake",
-      "Roost"
-    ],
-    "butterfree": [
-      "Sleep Powder",
-      "Quiver Dance",
-      "Bug Buzz",
-      "Air Slash",
-      "Energy Ball"
-    ],
-    "pikachu": [
-      "Volt Tackle",
-      "Volt Switch",
-      "Grass Knot",
-      "Hidden Power Ice",
-      "Knock Off",
-      "Iron Tail"
-    ],
-    "machamp": [
-      "Dynamic Punch",
-      "Ice Punch",
-      "Stone Edge",
-      "Bullet Punch",
-      "Knock Off",
-      "Substitute"
-    ],
-    "gengar": [
-      "Shadow Ball",
-      "Sludge Wave",
-      "Focus Blast",
-      "Substitute",
-      "Disable",
-      "Pain Split",
-      "Will-O-Wisp"
-    ],
-    "kingler": [
-      "Liquidation",
-      "X-Scissor",
-      "Rock Slide",
-      "Swords Dance",
-      "Agility",
-      "Superpower",
-      "Knock Off"
-    ],
     "weezing": [
       "Pain Split",
       "Sludge Bomb",
@@ -14955,26 +14907,6 @@
       "Fire Blast",
       "Protect",
       "Toxic Spikes"
-    ],
-    "lapras": [
-      "Ice Beam",
-      "Thunderbolt",
-      "Heal Bell",
-      "Toxic",
-      "Hydro Pump",
-      "Substitute"
-    ],
-    "snorlax": [
-      "Rest",
-      "Curse",
-      "Sleep Talk",
-      "Body Slam",
-      "Earthquake",
-      "Return",
-      "Fire Punch",
-      "Crunch",
-      "Pursuit",
-      "Whirlwind"
     ],
     "gardevoir": [
       "Psychic",
@@ -15031,15 +14963,6 @@
       "Protect",
       "Toxic",
       "Roar"
-    ],
-    "garbodor": [
-      "Spikes",
-      "Toxic Spikes",
-      "Gunk Shot",
-      "Haze",
-      "Pain Split",
-      "Toxic",
-      "Drain Punch"
     ],
     "aegislashshield": [
       "Flash Cannon",
@@ -15153,6 +15076,13 @@
       "Leech Seed",
       "Earthquake"
     ],
+    "charizard": [
+      "Hold Hands",
+      "Fire Blast",
+      "Air Slash",
+      "Earthquake",
+      "Roost"
+    ],
     "charizardmegax": [
       "Dragon Dance",
       "Flare Blitz",
@@ -15185,6 +15115,13 @@
       "Dragon Tail",
       "Dark Pulse",
       "Aura Sphere"
+    ],
+    "butterfree": [
+      "Sleep Powder",
+      "Quiver Dance",
+      "Bug Buzz",
+      "Air Slash",
+      "Energy Ball"
     ],
     "beedrill": [
       "Toxic Spikes",
@@ -15247,6 +15184,14 @@
       "Aqua Tail",
       "Earthquake",
       "Rest"
+    ],
+    "pikachu": [
+      "Volt Tackle",
+      "Volt Switch",
+      "Grass Knot",
+      "Hidden Power Ice",
+      "Knock Off",
+      "Iron Tail"
     ],
     "raichu": [
       "Nasty Plot",
@@ -15441,6 +15386,14 @@
       "Encore",
       "Substitute"
     ],
+    "machamp": [
+      "Dynamic Punch",
+      "Ice Punch",
+      "Stone Edge",
+      "Bullet Punch",
+      "Knock Off",
+      "Substitute"
+    ],
     "victreebel": [
       "Sleep Powder",
       "Sludge Bomb",
@@ -15552,6 +15505,15 @@
       "Spikes",
       "Rapid Spin"
     ],
+    "gengar": [
+      "Shadow Ball",
+      "Sludge Wave",
+      "Focus Blast",
+      "Substitute",
+      "Disable",
+      "Pain Split",
+      "Will-O-Wisp"
+    ],
     "gengarmega": [
       "Shadow Ball",
       "Sludge Wave",
@@ -15570,6 +15532,15 @@
       "Protect",
       "Thunder Wave",
       "Toxic"
+    ],
+    "kingler": [
+      "Liquidation",
+      "X-Scissor",
+      "Rock Slide",
+      "Swords Dance",
+      "Agility",
+      "Superpower",
+      "Knock Off"
     ],
     "electrode": [
       "Volt Switch",
@@ -15738,6 +15709,14 @@
       "Ice Fang",
       "Crunch"
     ],
+    "lapras": [
+      "Ice Beam",
+      "Thunderbolt",
+      "Heal Bell",
+      "Toxic",
+      "Hydro Pump",
+      "Substitute"
+    ],
     "ditto": [
       "Transform"
     ],
@@ -15798,6 +15777,18 @@
       "Earthquake",
       "Fire Fang",
       "Roost"
+    ],
+    "snorlax": [
+      "Rest",
+      "Curse",
+      "Sleep Talk",
+      "Body Slam",
+      "Earthquake",
+      "Return",
+      "Fire Punch",
+      "Crunch",
+      "Pursuit",
+      "Whirlwind"
     ],
     "articuno": [
       "Ice Beam",
@@ -18342,6 +18333,15 @@
       "U-turn",
       "Endeavor"
     ],
+    "garbodor": [
+      "Spikes",
+      "Toxic Spikes",
+      "Gunk Shot",
+      "Haze",
+      "Pain Split",
+      "Toxic",
+      "Drain Punch"
+    ],
     "zoroark": [
       "Sucker Punch",
       "Dark Pulse",
@@ -19776,9 +19776,9 @@
     ],
     "raichualola": [
       "Focus Blast",
+      "Grass Knot",
       "Nasty Plot",
-      "Psychic",
-      "Surf",
+      "Psyshock",
       "Thunderbolt",
       "Volt Switch"
     ],
@@ -20019,12 +20019,18 @@
       "Quick Attack",
       "Superpower"
     ],
+    "snorlax": [
+      "Darkest Lariat",
+      "Double-Edge",
+      "Earthquake",
+      "Facade",
+      "Heat Crash"
+    ],
     "snorlaxgmax": [
       "Body Slam",
       "Curse",
       "Darkest Lariat",
       "Earthquake",
-      "Fire Punch",
       "Rest"
     ],
     "articuno": [
@@ -20036,10 +20042,10 @@
     ],
     "zapdos": [
       "Defog",
+      "Discharge",
       "Heat Wave",
       "Hurricane",
-      "Roost",
-      "Volt Switch"
+      "Roost"
     ],
     "moltres": [
       "Air Slash",
@@ -20317,7 +20323,6 @@
       "Defog",
       "Hurricane",
       "Hydro Pump",
-      "Knock Off",
       "Roost",
       "Scald",
       "U-turn"
