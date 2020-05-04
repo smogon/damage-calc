@@ -71,7 +71,9 @@ export function calculateRBYGSC(
     const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     move.bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = move.bp;
-  } else if (move.named('Present')) {
+  } else if (move.named('Present') && !move.bp) {
+    // Present is technically 0 BP so we default to 40 in that case, but the UI may override the
+    // base power in order to simulate the scenarios where it is 80 or 120 BP.
     move.bp = 40;
   }
 
