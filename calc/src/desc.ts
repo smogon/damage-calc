@@ -211,6 +211,9 @@ export function getRecoil(
   } else if (move.struggleRecoil) {
     recoil = notation === '%' ? 12 : 25;
     text = '25% struggle damage';
+    // Struggle recoil is actually rounded down in Gen 4 per DaWoblefet's research, but until we
+    // return recoil damage as exact HP the best we can do is add some more text to this effect
+    if (gen.num === 4) text += ' (rounded down)';
   } else if (move.mindBlownRecoil) {
     recoil = notation === '%' ? 24 : 50;
     text = '50% recoil damage';
