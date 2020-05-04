@@ -114,8 +114,8 @@ function performCalculations() {
 						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || 'possibly the worst move ever'));
 					}
 				}
-				data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-				data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
+				data.push((mode === "one-vs-all") ? defender.types[0] : attacker.types[0]);
+				data.push(((mode === "one-vs-all") ? defender.types[1] : attacker.types[1]) || "");
 				data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
 				data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 				dataSet.push(data);

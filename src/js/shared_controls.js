@@ -407,7 +407,6 @@ $(".set-selector").change(function () {
 		for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 			pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 		}
-		pokeObj.find(".weight").val(pokemon.w);
 		pokeObj.find(".boost").val(0);
 		pokeObj.find(".percent-hp").val(100);
 		pokeObj.find(".status").val("Healthy");
@@ -496,7 +495,7 @@ $(".set-selector").change(function () {
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
 		var baseForme;
-		if (pokemon.baseSpecies !== pokemon.name) {
+		if (pokemon.baseSpecies && pokemon.baseSpecies !== pokemon.name) {
 			baseForme = pokedex[pokemon.baseSpecies];
 		}
 		if (pokemon.otherFormes) {
@@ -575,7 +574,6 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
-	$(this).parent().siblings().find(".weight").val(altForme.w);
 	for (var i = 0; i < LEGACY_STATS[8].length; i++) {
 		var baseStat = container.find("." + LEGACY_STATS[8][i]).find(".base");
 		baseStat.val(altForme.bs[LEGACY_STATS[8][i]]);
@@ -647,7 +645,7 @@ function createPokemon(pokeInfo) {
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
 			var species = pokedex[pokemonName];
-			name = (species.otherFormes || species.baseSpecies !== pokemonName) ? pokeInfo.find(".forme").val() : pokemonName;
+			name = (species.otherFormes || (species.baseSpecies && species.baseSpecies !== pokemonName)) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
 		var baseStats = {};
@@ -695,8 +693,7 @@ function createPokemon(pokeInfo) {
 			],
 			overrides: {
 				baseStats: baseStats,
-				types: types,
-				weightkg: +pokeInfo.find(".weight").val()
+				types: types
 			}
 		});
 	}
@@ -717,9 +714,9 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
 	var overrides = {
 		bp: +moveInfo.find(".move-bp").val(),
-		type: moveInfo.find(".move-type").val(),
-		category: moveInfo.find(".move-cat").val()
+		type: moveInfo.find(".move-type").val()
 	};
+	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
 		timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax
