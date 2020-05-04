@@ -46,60 +46,75 @@ function getModifiedStat(stat, mod, gen) {
     return stat;
 }
 exports.getModifiedStat = getModifiedStat;
+function computeFinalStats(gen, attacker, defender, field) {
+    var stats = [];
+    for (var _i = 4; _i < arguments.length; _i++) {
+        stats[_i - 4] = arguments[_i];
+    }
+    var sides = [[attacker, field.attackerSide], [defender, field.defenderSide]];
+    for (var _a = 0, sides_1 = sides; _a < sides_1.length; _a++) {
+        var _b = sides_1[_a], pokemon = _b[0], side = _b[1];
+        for (var _c = 0, stats_2 = stats; _c < stats_2.length; _c++) {
+            var stat = stats_2[_c];
+            if (stat === 'spe') {
+                pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side);
+            }
+            else {
+                pokemon.stats[stat] = getModifiedStat(pokemon.rawStats[stat], pokemon.boosts[stat], gen);
+            }
+        }
+    }
+}
+exports.computeFinalStats = computeFinalStats;
 function getFinalSpeed(gen, pokemon, field, side) {
     var weather = field.weather || '';
     var terrain = field.terrain;
     var speed = getModifiedStat(pokemon.rawStats.spe, pokemon.boosts.spe, gen);
+    var mods = 1;
     if (pokemon.hasItem('Choice Scarf')) {
-        speed = pokeRound(speed * 1.5);
+        mods *= 1.5;
     }
     else if (pokemon.hasItem.apply(pokemon, __spreadArrays(['Iron Ball'], EV_ITEMS))) {
-        speed = pokeRound(speed / 2);
+        mods *= 0.5;
     }
     else if (pokemon.hasItem('Quick Powder') && pokemon.named('Ditto')) {
-        speed *= 2;
+        mods *= 2;
     }
-    if ((pokemon.hasAbility('Chlorophyll') && weather.indexOf('Sun') !== -1) ||
+    if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
+        (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
         (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
-        (pokemon.hasAbility('Swift Swim') && weather.indexOf('Rain') !== -1) ||
-        (pokemon.hasAbility('Slush Rush') && weather === 'Hail')) {
+        (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
+        (pokemon.hasAbility('Slush Rush') && weather === 'Hail') ||
+        (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')) {
         speed *= 2;
     }
-    else if (pokemon.hasAbility('Quick Feet') && !pokemon.hasStatus('Healthy')) {
-        speed = pokeRound(speed * 1.5);
+    else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
+        mods *= 1.5;
     }
     else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
-        speed = pokeRound(speed / 2);
-    }
-    else if ((pokemon.hasAbility('Surge Surfer') && terrain === 'Electric') ||
-        (pokemon.hasAbility('Unburden') && pokemon.abilityOn)) {
-        speed *= 2;
+        mods *= 0.5;
     }
     if (side.isTailwind)
-        speed *= 2;
-    if (pokemon.hasStatus('Paralyzed') && !pokemon.hasAbility('Quick Feet')) {
-        speed = pokeRound(speed * (gen.num < 7 ? 0.25 : 0.5));
+        mods *= 2;
+    speed = pokeRound(speed * mods);
+    if (pokemon.hasStatus('par') && !pokemon.hasAbility('Quick Feet')) {
+        speed = Math.floor(speed * (gen.num < 7 ? 0.25 : 0.5));
     }
-    if (gen.num <= 2)
-        speed = Math.min(999, speed);
+    speed = Math.min(gen.num <= 2 ? 999 : 10000, speed);
     return Math.max(1, speed);
 }
 exports.getFinalSpeed = getFinalSpeed;
-function pokeRound(num) {
-    return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
-}
-exports.pokeRound = pokeRound;
 function getMoveEffectiveness(gen, move, type, isGhostRevealed, isGravity) {
-    if (isGhostRevealed && type === 'Ghost' && ['Normal', 'Fighting'].indexOf(move.type) !== -1) {
+    if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
         return 1;
     }
-    else if (isGravity && type === 'Flying' && move.type === 'Ground') {
+    else if (isGravity && type === 'Flying' && move.hasType('Ground')) {
         return 1;
     }
-    else if (move.name === 'Freeze-Dry' && type === 'Water') {
+    else if (move.named('Freeze-Dry') && type === 'Water') {
         return 2;
     }
-    else if (move.name === 'Flying Press') {
+    else if (move.named('Flying Press')) {
         return (gen.types.get('fighting').effectiveness[type] *
             gen.types.get('flying').effectiveness[type]);
     }
@@ -119,19 +134,18 @@ function checkForecast(pokemon, weather) {
         switch (weather) {
             case 'Sun':
             case 'Harsh Sunshine':
-                pokemon.type1 = 'Fire';
+                pokemon.types = ['Fire'];
                 break;
             case 'Rain':
             case 'Heavy Rain':
-                pokemon.type1 = 'Water';
+                pokemon.types = ['Water'];
                 break;
             case 'Hail':
-                pokemon.type1 = 'Ice';
+                pokemon.types = ['Ice'];
                 break;
             default:
-                pokemon.type1 = 'Normal';
+                pokemon.types = ['Normal'];
         }
-        pokemon.type2 = undefined;
     }
 }
 exports.checkForecast = checkForecast;
@@ -141,10 +155,10 @@ function checkKlutz(pokemon) {
     }
 }
 exports.checkKlutz = checkKlutz;
-function checkIntimidate(source, target) {
-    if (source.ability === 'Intimidate' &&
-        source.abilityOn &&
-        !target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body')) {
+function checkIntimidate(gen, source, target) {
+    var blocked = target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body') ||
+        (gen.num === 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy'));
+    if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
         if (target.hasAbility('Contrary', 'Defiant')) {
             target.boosts.atk = Math.min(6, target.boosts.atk + 1);
         }
@@ -174,6 +188,12 @@ function checkIntrepidSword(source) {
     }
 }
 exports.checkIntrepidSword = checkIntrepidSword;
+function checkDauntlessShield(source) {
+    if (source.hasAbility('Dauntless Shield')) {
+        source.boosts.def = Math.min(6, source.boosts.def + 1);
+    }
+}
+exports.checkDauntlessShield = checkDauntlessShield;
 function checkInfiltrator(pokemon, affectedSide) {
     if (pokemon.hasAbility('Infiltrator')) {
         affectedSide.isReflect = false;
@@ -185,9 +205,9 @@ exports.checkInfiltrator = checkInfiltrator;
 function checkSeedBoost(pokemon, field) {
     if (!pokemon.item)
         return;
-    if (field.terrain && pokemon.item.indexOf('Seed') !== -1) {
+    if (field.terrain && pokemon.item.includes('Seed')) {
         var terrainSeed = pokemon.item.substring(0, pokemon.item.indexOf(' '));
-        if (terrainSeed === field.terrain) {
+        if (field.hasTerrain(terrainSeed)) {
             if (terrainSeed === 'Grassy' || terrainSeed === 'Electric') {
                 pokemon.boosts.def = pokemon.hasAbility('Contrary')
                     ? Math.max(-6, pokemon.boosts.def - 1)
@@ -202,27 +222,105 @@ function checkSeedBoost(pokemon, field) {
     }
 }
 exports.checkSeedBoost = checkSeedBoost;
+function checkMultihitBoost(gen, attacker, defender, move, field, desc, usedWhiteHerb) {
+    if (usedWhiteHerb === void 0) { usedWhiteHerb = false; }
+    if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
+        if (attacker.hasItem('White Herb') && !usedWhiteHerb) {
+            desc.attackerItem = attacker.item;
+            usedWhiteHerb = true;
+        }
+        else {
+            attacker.boosts.spe = Math.max(attacker.boosts.spe - 1, -6);
+            attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
+            desc.defenderAbility = defender.ability;
+        }
+    }
+    else if (move.named('Power-Up Punch')) {
+        attacker.boosts.atk = Math.min(attacker.boosts.atk + 1, 6);
+        attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
+    }
+    if (defender.hasAbility('Stamina')) {
+        if (attacker.hasAbility('Unaware')) {
+            desc.attackerAbility = attacker.ability;
+        }
+        else {
+            defender.boosts.def = Math.min(defender.boosts.def + 1, 6);
+            defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+            desc.defenderAbility = defender.ability;
+        }
+    }
+    else if (defender.hasAbility('Weak Armor')) {
+        if (attacker.hasAbility('Unaware')) {
+            desc.attackerAbility = attacker.ability;
+        }
+        else {
+            if (defender.hasItem('White Herb') && !usedWhiteHerb) {
+                desc.defenderItem = defender.item;
+                usedWhiteHerb = true;
+            }
+            else {
+                defender.boosts.def = Math.max(defender.boosts.def - 1, -6);
+                defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+            }
+        }
+        defender.boosts.spe += Math.min(defender.boosts.spe + 2, 6);
+        defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
+        desc.defenderAbility = defender.ability;
+    }
+    var simple = attacker.hasAbility('Simple') ? 2 : 1;
+    if (move.dropsStats) {
+        if (attacker.hasAbility('Unaware')) {
+            desc.attackerAbility = attacker.ability;
+        }
+        else {
+            var stat = move.category === 'Special' ? 'spa' : 'atk';
+            var boosts = attacker.boosts[stat];
+            if (attacker.hasAbility('Contrary')) {
+                boosts = Math.min(6, boosts + move.dropsStats);
+                desc.attackerAbility = attacker.ability;
+            }
+            else {
+                boosts = Math.max(-6, boosts - move.dropsStats * simple);
+                if (simple > 1)
+                    desc.attackerAbility = attacker.ability;
+            }
+            if (attacker.hasItem('White Herb') && attacker.boosts[stat] < 0 && !usedWhiteHerb) {
+                boosts += move.dropsStats * simple;
+                desc.attackerItem = attacker.item;
+                usedWhiteHerb = true;
+            }
+            attacker.boosts[stat] = boosts;
+            attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat], defender.boosts[stat], gen);
+        }
+    }
+    return usedWhiteHerb;
+}
+exports.checkMultihitBoost = checkMultihitBoost;
 function chainMods(mods) {
     var M = 0x1000;
-    for (var i = 0; i < mods.length; i++) {
-        if (mods[i] !== 0x1000) {
-            M = (M * mods[i] + 0x800) >> 12;
+    for (var _i = 0, mods_1 = mods; _i < mods_1.length; _i++) {
+        var mod = mods_1[_i];
+        if (mod !== 0x1000) {
+            M = (M * mod + 0x800) >> 12;
         }
     }
     return M;
 }
 exports.chainMods = chainMods;
 function getBaseDamage(level, basePower, attack, defense) {
-    return Math.floor(Math.floor((Math.floor((2 * level) / 5 + 2) * basePower * attack) / defense) / 50 + 2);
+    return Math.floor(OF32(Math.floor(OF32(OF32(Math.floor((2 * level) / 5 + 2) * basePower) * attack) / defense) / 50 + 2));
 }
 exports.getBaseDamage = getBaseDamage;
 function getFinalDamage(baseAmount, i, effectiveness, isBurned, stabMod, finalMod, protect) {
-    var damageAmount = Math.floor(pokeRound((Math.floor((baseAmount * (85 + i)) / 100) * stabMod) / 0x1000) * effectiveness);
+    var damageAmount = Math.floor(OF32(baseAmount * (85 + i)) / 100);
+    if (stabMod !== 0x1000)
+        damageAmount = OF32(damageAmount * stabMod) / 0x1000;
+    damageAmount = Math.floor(OF32(pokeRound(damageAmount) * effectiveness));
     if (isBurned)
         damageAmount = Math.floor(damageAmount / 2);
     if (protect)
-        damageAmount = pokeRound((damageAmount * 0x400) / 0x1000);
-    return pokeRound(Math.max(1, (damageAmount * finalMod) / 0x1000));
+        damageAmount = pokeRound(OF32(damageAmount * 0x400) / 0x1000);
+    return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 0x1000)));
 }
 exports.getFinalDamage = getFinalDamage;
 function getWeightFactor(pokemon) {
@@ -231,8 +329,11 @@ function getWeightFactor(pokemon) {
 exports.getWeightFactor = getWeightFactor;
 function countBoosts(gen, boosts) {
     var sum = 0;
-    for (var i = 1; i < stats_1.STATS[gen.num].length; i++) {
-        var boost = boosts[stats_1.STATS[gen.num][i]];
+    var STATS = gen.num === 1
+        ? ['atk', 'def', 'spa', 'spe']
+        : ['atk', 'def', 'spa', 'spd', 'spe'];
+    for (var i = 1; i < STATS.length; i++) {
+        var boost = boosts[STATS[i]];
         if (boost && boost > 0)
             sum += boost;
     }
@@ -242,15 +343,36 @@ exports.countBoosts = countBoosts;
 function getEVDescriptionText(gen, pokemon, stat, natureName) {
     var nature = gen.natures.get(util_1.toID(natureName));
     return (pokemon.evs[stat] +
-        (nature.plus === nature.minus
-            ? ''
-            : nature.plus === stat
-                ? '+'
-                : nature.minus === stat
-                    ? '-'
-                    : '') +
-        ' ' +
+        (nature.plus === nature.minus ? ''
+            : nature.plus === stat ? '+'
+                : nature.minus === stat ? '-'
+                    : '') + ' ' +
         stats_1.Stats.displayStat(stat));
 }
 exports.getEVDescriptionText = getEVDescriptionText;
+function handleFixedDamageMoves(attacker, move) {
+    if (move.named('Seismic Toss', 'Night Shade')) {
+        return attacker.level;
+    }
+    else if (move.named('Dragon Rage')) {
+        return 40;
+    }
+    else if (move.named('Sonic Boom')) {
+        return 20;
+    }
+    return 0;
+}
+exports.handleFixedDamageMoves = handleFixedDamageMoves;
+function pokeRound(num) {
+    return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
+}
+exports.pokeRound = pokeRound;
+function OF16(n) {
+    return n > 0xFFFF ? n % 0x10000 : n;
+}
+exports.OF16 = OF16;
+function OF32(n) {
+    return n > 0xFFFFFFFF ? n % 0x100000000 : n;
+}
+exports.OF32 = OF32;
 //# sourceMappingURL=util.js.map

@@ -123,7 +123,6 @@ var ADV = GSC.filter(function (i) { return !GSC_ONLY.includes(i); }).concat([
     'Apicot Berry',
     'Aspear Berry',
     'Belue Berry',
-    'Berry Juice',
     'Bluk Berry',
     'Cheri Berry',
     'Chesto Berry',
@@ -191,7 +190,6 @@ var DPP = ADV.concat([
     'Adamant Orb',
     'Armor Fossil',
     'Babiri Berry',
-    'Berry Juice',
     'Big Root',
     'Black Sludge',
     'Charti Berry',
@@ -625,7 +623,6 @@ var ITEMS_BY_ID = [];
 var gen = 0;
 for (var _i = 0, ITEMS_1 = exports.ITEMS; _i < ITEMS_1.length; _i++) {
     var items = ITEMS_1[_i];
-    gen++;
     var map = {};
     for (var _a = 0, items_1 = items; _a < items_1.length; _a++) {
         var item = items_1[_a];
@@ -633,5 +630,6 @@ for (var _i = 0, ITEMS_1 = exports.ITEMS; _i < ITEMS_1.length; _i++) {
         map[i.id] = i;
     }
     ITEMS_BY_ID.push(map);
+    gen++;
 }
 //# sourceMappingURL=items.js.map

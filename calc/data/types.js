@@ -30,7 +30,6 @@ exports.__esModule = true;
 var util_1 = require("../util");
 var RBY = {
     '???': {
-        category: 'Physical',
         Normal: 1,
         Grass: 1,
         Fire: 1,
@@ -48,7 +47,6 @@ var RBY = {
         Dragon: 1
     },
     Normal: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -67,7 +65,6 @@ var RBY = {
         Dragon: 1
     },
     Grass: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 0.5,
@@ -86,7 +83,6 @@ var RBY = {
         Dragon: 0.5
     },
     Fire: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 2,
@@ -105,7 +101,6 @@ var RBY = {
         Dragon: 0.5
     },
     Water: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 0.5,
@@ -124,7 +119,6 @@ var RBY = {
         Dragon: 0.5
     },
     Electric: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 0.5,
@@ -143,7 +137,6 @@ var RBY = {
         Dragon: 0.5
     },
     Ice: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 2,
@@ -162,7 +155,6 @@ var RBY = {
         Dragon: 2
     },
     Flying: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 2,
@@ -181,7 +173,6 @@ var RBY = {
         Dragon: 1
     },
     Bug: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 2,
@@ -200,7 +191,6 @@ var RBY = {
         Dragon: 1
     },
     Poison: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 2,
@@ -219,7 +209,6 @@ var RBY = {
         Dragon: 1
     },
     Ground: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 0.5,
@@ -238,7 +227,6 @@ var RBY = {
         Dragon: 1
     },
     Rock: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -257,7 +245,6 @@ var RBY = {
         Dragon: 1
     },
     Fighting: {
-        category: 'Physical',
         '???': 1,
         Normal: 2,
         Grass: 1,
@@ -276,7 +263,6 @@ var RBY = {
         Dragon: 1
     },
     Psychic: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -295,7 +281,6 @@ var RBY = {
         Dragon: 1
     },
     Ghost: {
-        category: 'Physical',
         '???': 1,
         Normal: 0,
         Grass: 1,
@@ -314,7 +299,6 @@ var RBY = {
         Dragon: 1
     },
     Dragon: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -351,7 +335,6 @@ var GSC = util_1.extend(true, {}, RBY, {
     Ghost: { Psychic: 2, Dark: 0.5, Steel: 0.5 },
     Dragon: { Dark: 1, Steel: 0.5 },
     Dark: {
-        category: 'Special',
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -372,7 +355,6 @@ var GSC = util_1.extend(true, {}, RBY, {
         Steel: 0.5
     },
     Steel: {
-        category: 'Physical',
         '???': 1,
         Normal: 1,
         Grass: 1,
@@ -479,8 +461,6 @@ var Type = (function () {
         this.kind = 'Type';
         this.id = util_1.toID(name);
         this.name = name;
-        this.category = effectiveness.category;
-        delete effectiveness.category;
         this.effectiveness = effectiveness;
     }
     return Type;

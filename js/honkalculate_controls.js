@@ -91,13 +91,14 @@ function performCalculations() {
 				var damageResults = calculateMovesOfAttacker(gen, attacker, defender, field);
 				attacker = damageResults[0].attacker;
 				defender = damageResults[0].defender;
-				var result, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
+				var result, minMaxDamage, minDamage, maxDamage, minPercentage, maxPercentage, minPixels, maxPixels;
 				var highestDamage = -1;
 				var data = [setOptions[i].id];
 				for (var n = 0; n < 4; n++) {
 					result = damageResults[n];
-					minDamage = result.damage[0] * attacker.moves[n].hits;
-					maxDamage = result.damage[result.damage.length - 1] * attacker.moves[n].hits;
+					minMaxDamage = result.range();
+					minDamage = minMaxDamage[0] * attacker.moves[n].hits;
+					maxDamage = minMaxDamage[1] * attacker.moves[n].hits;
 					minPercentage = Math.floor(minDamage * 1000 / defender.maxHP()) / 10;
 					maxPercentage = Math.floor(maxDamage * 1000 / defender.maxHP()) / 10;
 					minPixels = Math.floor(minDamage * 48 / defender.maxHP());
@@ -113,8 +114,8 @@ function performCalculations() {
 						data.push(attacker.moves[n].bp === 0 ? 'nice move' : (result.kochance(false).text || 'possibly the worst move ever'));
 					}
 				}
-				data.push((mode === "one-vs-all") ? defender.type1 : attacker.type1);
-				data.push(((mode === "one-vs-all") ? defender.type2 : attacker.type2) || "");
+				data.push((mode === "one-vs-all") ? defender.types[0] : attacker.types[0]);
+				data.push(((mode === "one-vs-all") ? defender.types[1] : attacker.types[1]) || "");
 				data.push(((mode === "one-vs-all") ? defender.ability : attacker.ability) || "");
 				data.push(((mode === "one-vs-all") ? defender.item : attacker.item) || "");
 				dataSet.push(data);

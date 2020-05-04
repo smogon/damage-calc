@@ -82,20 +82,13 @@ exports.Stats = new ((function () {
                 var nat = natures.get(util_1.toID(nature));
                 mods = [nat === null || nat === void 0 ? void 0 : nat.plus, nat === null || nat === void 0 ? void 0 : nat.minus];
             }
-            var n = void 0;
-            if (mods) {
-                n =
-                    mods[0] === stat && mods[1] === stat
-                        ? 1
-                        : mods[0] === stat
-                            ? 1.1
-                            : mods[1] === stat
-                                ? 0.9
-                                : 1;
-            }
-            else {
-                n = 1;
-            }
+            var n = mods[0] === stat && mods[1] === stat
+                ? 1
+                : mods[0] === stat
+                    ? 1.1
+                    : mods[1] === stat
+                        ? 0.9
+                        : 1;
             return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
         }
     };

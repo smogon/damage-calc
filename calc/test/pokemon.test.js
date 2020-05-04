@@ -5,17 +5,17 @@ describe('Pokemon', function () {
     test('defaults', function () {
         var p = new index_1.Pokemon(7, 'Gengar');
         expect(p.name).toBe('Gengar');
-        expect(p.type1).toBe('Ghost');
-        expect(p.type2).toBe('Poison');
-        expect(p.weight).toBe(40.5);
+        expect(p.types).toEqual(['Ghost', 'Poison']);
+        expect(p.weightkg).toBe(40.5);
         expect(p.level).toBe(100);
         expect(p.gender).toBe('M');
-        expect(p.item).toBe(undefined);
+        expect(p.item).toBeUndefined();
         expect(p.ability).toBe('Cursed Body');
         expect(p.nature).toBe('Serious');
-        expect(p.status).toBe('Healthy');
+        expect(p.status).toBe('');
+        expect(p.hasStatus()).toBe(false);
         expect(p.toxicCounter).toBe(0);
-        expect(p.curHP).toBe(p.stats.hp);
+        expect(p.curHP()).toBe(p.stats.hp);
         var stat;
         for (stat in p.ivs) {
             expect(p.ivs[stat]).toBe(31);
@@ -34,22 +34,21 @@ describe('Pokemon', function () {
             evs: { spd: 4, def: 252, hp: 252 },
             boosts: { atk: -1, spa: 2, spd: 1 },
             curHP: 60,
-            status: 'Badly Poisoned',
+            status: 'tox',
             toxicCounter: 2,
             moves: ['Surf', 'Rest', 'Curse', 'Sleep Talk']
         });
         expect(p.name).toBe('Suicune');
-        expect(p.type1).toBe('Water');
-        expect(p.type2).toBe(undefined);
-        expect(p.weight).toBe(187.0);
+        expect(p.types).toEqual(['Water']);
+        expect(p.weightkg).toBe(187.0);
         expect(p.level).toBe(50);
         expect(p.gender).toBe('N');
         expect(p.item).toBe('Leftovers');
         expect(p.ability).toBe('Inner Focus');
         expect(p.nature).toBe('Bold');
-        expect(p.status).toBe('Badly Poisoned');
+        expect(p.status).toBe('tox');
         expect(p.toxicCounter).toBe(2);
-        expect(p.curHP).toBe(60);
+        expect(p.curHP()).toBe(60);
         expect(p.ivs).toEqual({ hp: 31, atk: 31, def: 31, spa: 30, spd: 31, spe: 31 });
         expect(p.evs).toEqual({ hp: 252, atk: 0, def: 252, spa: 0, spd: 4, spe: 0 });
         expect(p.boosts).toEqual({ hp: 0, atk: -1, def: 0, spa: 2, spd: 1, spe: 0 });
@@ -63,10 +62,10 @@ describe('Pokemon', function () {
             evs: { atk: 200 },
             curHP: 500
         });
-        expect(p.ivs).toEqual({ hp: 21, atk: 31, def: 16, spc: 20, spe: 31 });
-        expect(p.evs).toEqual({ hp: 252, atk: 200, def: 252, spc: 252, spe: 252 });
-        expect(p.stats).toEqual({ hp: 343, atk: 298, def: 274, spc: 228, spe: 318 });
-        expect(p.curHP).toBe(p.maxHP());
+        expect(p.ivs).toEqual({ hp: 21, atk: 31, def: 16, spa: 20, spd: 20, spe: 31 });
+        expect(p.evs).toEqual({ hp: 252, atk: 200, def: 252, spa: 252, spd: 252, spe: 252 });
+        expect(p.stats).toEqual({ hp: 343, atk: 298, def: 274, spa: 228, spd: 228, spe: 318 });
+        expect(p.curHP()).toBe(p.maxHP());
     });
     test('getForme', function () {
         expect(index_1.Pokemon.getForme(1, 'Gengar')).toBe('Gengar');

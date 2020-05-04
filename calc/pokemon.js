@@ -2,18 +2,19 @@
 exports.__esModule = true;
 var stats_1 = require("./stats");
 var util_1 = require("./util");
+var STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
+var SPC = new Set(['spc']);
 var Pokemon = (function () {
     function Pokemon(gen, name, options) {
         if (options === void 0) { options = {}; }
         this.species = util_1.extend(true, {}, gen.species.get(util_1.toID(name)), options.overrides);
         this.gen = gen;
-        this.name = name;
-        this.type1 = this.species.t1;
-        this.type2 = this.species.t2;
-        this.weight = this.species.w;
+        this.name = options.name || name;
+        this.types = this.species.types;
+        this.weightkg = this.species.weightkg;
         this.level = options.level || 100;
         this.gender = options.gender || this.species.gender || 'M';
-        this.ability = options.ability || this.species.ab;
+        this.ability = options.ability || (this.species.abilities && this.species.abilities[0]);
         this.abilityOn = !!options.abilityOn;
         this.isDynamaxed = !!options.isDynamaxed;
         this.item = options.item;
@@ -26,45 +27,55 @@ var Pokemon = (function () {
                 atk: this.ivs.atk,
                 def: this.ivs.def,
                 spe: this.ivs.spe,
-                spc: typeof this.ivs.spc === 'undefined' ? this.ivs.spa : this.ivs.spc
+                spc: this.ivs.spa
             }));
         }
         this.rawStats = {};
         this.stats = {};
-        for (var _i = 0, _a = stats_1.STATS[gen.num]; _i < _a.length; _i++) {
-            var stat = _a[_i];
+        for (var _i = 0, STATS_1 = STATS; _i < STATS_1.length; _i++) {
+            var stat = STATS_1[_i];
             var val = this.calcStat(gen, stat);
             this.rawStats[stat] = val;
             this.stats[stat] = val;
         }
-        this.curHP = options.curHP && options.curHP <= this.maxHP() ? options.curHP : this.maxHP();
-        this.status = options.status || 'Healthy';
+        var curHP = options.curHP || options.originalCurHP;
+        this.originalCurHP = curHP && curHP <= this.rawStats.hp ? curHP : this.rawStats.hp;
+        this.status = options.status || '';
         this.toxicCounter = options.toxicCounter || 0;
         this.moves = options.moves || [];
     }
-    Pokemon.prototype.maxHP = function () {
-        return this.isDynamaxed ? this.rawStats.hp * 2 : this.rawStats.hp;
+    Pokemon.prototype.maxHP = function (original) {
+        if (original === void 0) { original = false; }
+        return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
+            ? this.rawStats.hp * 2
+            : this.rawStats.hp;
+    };
+    Pokemon.prototype.curHP = function (original) {
+        if (original === void 0) { original = false; }
+        return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
+            ? this.originalCurHP * 2
+            : this.originalCurHP;
     };
     Pokemon.prototype.hasAbility = function () {
         var abilities = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             abilities[_i] = arguments[_i];
         }
-        return this.ability && abilities.indexOf(this.ability) !== -1;
+        return !!(this.ability && abilities.includes(this.ability));
     };
     Pokemon.prototype.hasItem = function () {
         var items = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             items[_i] = arguments[_i];
         }
-        return this.item && items.indexOf(this.item) !== -1;
+        return !!(this.item && items.includes(this.item));
     };
     Pokemon.prototype.hasStatus = function () {
         var statuses = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             statuses[_i] = arguments[_i];
         }
-        return statuses.indexOf(this.status) !== -1;
+        return !!(this.status && statuses.includes(this.status));
     };
     Pokemon.prototype.hasType = function () {
         var types = [];
@@ -73,7 +84,7 @@ var Pokemon = (function () {
         }
         for (var _a = 0, types_1 = types; _a < types_1.length; _a++) {
             var type = types_1[_a];
-            if (this.type1 === type || this.type2 === type)
+            if (this.types.includes(type))
                 return true;
         }
         return false;
@@ -83,7 +94,7 @@ var Pokemon = (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             names[_i] = arguments[_i];
         }
-        return names.indexOf(this.name) !== -1;
+        return names.includes(this.name);
     };
     Pokemon.prototype.clone = function () {
         return new Pokemon(this.gen, this.name, {
@@ -97,7 +108,7 @@ var Pokemon = (function () {
             ivs: util_1.extend(true, {}, this.ivs),
             evs: util_1.extend(true, {}, this.evs),
             boosts: util_1.extend(true, {}, this.boosts),
-            curHP: this.curHP,
+            originalCurHP: this.originalCurHP,
             status: this.status,
             toxicCounter: this.toxicCounter,
             moves: this.moves.slice(),
@@ -105,11 +116,11 @@ var Pokemon = (function () {
         });
     };
     Pokemon.prototype.calcStat = function (gen, stat) {
-        return stats_1.Stats.calcStat(gen, stat, this.species.bs[stats_1.Stats.shortForm(stat)], this.ivs[stat], this.evs[stat], this.level, this.nature);
+        return stats_1.Stats.calcStat(gen, stat, this.species.baseStats[stat], this.ivs[stat], this.evs[stat], this.level, this.nature);
     };
     Pokemon.getForme = function (gen, speciesName, item, moveName) {
         var species = gen.species.get(util_1.toID(speciesName));
-        if (!species || !species.formes) {
+        if (!species || !species.otherFormes) {
             return speciesName;
         }
         var i = 0;
@@ -124,10 +135,21 @@ var Pokemon = (function () {
         else if (item && item.indexOf('ite Y') !== -1) {
             i = 2;
         }
-        return species.formes[i];
+        return i ? species.otherFormes[i - 1] : species.name;
     };
     Pokemon.withDefault = function (gen, current, val) {
-        return util_1.extend(true, {}, { hp: val, atk: val, def: val, spe: val }, gen.num < 2 ? { spc: val } : { spa: val, spd: val }, current);
+        var cur = {};
+        if (current) {
+            util_1.assignWithout(cur, current, SPC);
+            if (current.spc) {
+                cur.spa = current.spc;
+                cur.spd = current.spc;
+            }
+            if (gen.num <= 2 && current.spa !== current.spd) {
+                throw new Error('Special Attack and Special Defense must match before Gen 3');
+            }
+        }
+        return Object.assign({ hp: val, atk: val, def: val, spa: val, spd: val, spe: val }, cur);
     };
     return Pokemon;
 }());

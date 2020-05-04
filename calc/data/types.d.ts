@@ -2,8 +2,6 @@ import * as I from './interface';
 export declare type TypeChart = {
     [type in I.TypeName]?: {
         [type in I.TypeName]?: number;
-    } & {
-        category: I.MoveCategory;
     };
 };
 export declare const TYPE_CHART: TypeChart[];
@@ -17,7 +15,6 @@ declare class Type implements I.Type {
     readonly kind: 'Type';
     readonly id: I.ID;
     readonly name: I.TypeName;
-    readonly category: I.MoveCategory;
     readonly effectiveness: Readonly<{
         [type in I.TypeName]?: I.TypeEffectiveness;
     }>;

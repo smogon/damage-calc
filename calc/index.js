@@ -12,9 +12,16 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 exports.__esModule = true;
 var data_1 = require("./data");
-var A = require("./adaptable");
+var A = __importStar(require("./adaptable"));
 var Acalculate = exports.calculate;
 function calculate(gen, attacker, defender, move, field) {
     return (Acalculate || A.calculate)(typeof gen === 'number' ? data_1.Generations.get(gen) : gen, attacker, defender, move, field);
@@ -42,7 +49,7 @@ var Pokemon = (function (_super) {
 }(A.Pokemon));
 exports.Pokemon = Pokemon;
 function calcStat(gen, stat, base, iv, ev, level, nature) {
-    return A.Stats.calcStat(typeof gen === 'number' ? data_1.Generations.get(gen) : gen, stat, base, iv, ev, level, nature);
+    return A.Stats.calcStat(typeof gen === 'number' ? data_1.Generations.get(gen) : gen, stat === 'spc' ? 'spa' : stat, base, iv, ev, level, nature);
 }
 exports.calcStat = calcStat;
 var field_1 = require("./field");

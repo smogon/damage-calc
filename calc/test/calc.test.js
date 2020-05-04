@@ -1,360 +1,526 @@
 "use strict";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 exports.__esModule = true;
-var index_1 = require("../index");
-expect.extend({
-    toBeRange: function (received, floor, ceiling) {
-        var a = received[0];
-        var b = received[received.length - 1];
-        var pass = a === floor && b === ceiling;
-        if (pass) {
-            return {
-                message: function () { return "expected range (" + a + ", " + b + ") not to be within range (" + floor + ", " + ceiling + ")"; },
-                pass: pass
-            };
-        }
-        else {
-            return {
-                message: function () { return "expected range (" + a + ", " + b + ") to be within range (" + floor + ", " + ceiling + ")"; },
-                pass: pass
-            };
-        }
-    }
-});
-var ABOMASNOW = new index_1.Pokemon(7, 'Abomasnow', {
-    item: 'Icy Rock',
-    ability: 'Snow Warning',
-    nature: 'Hasty',
-    evs: { atk: 252, spd: 4, spe: 252 }
-});
-var HOOPA = new index_1.Pokemon(7, 'Hoopa-Unbound', {
-    item: 'Choice Band',
-    ability: 'Magician',
-    nature: 'Jolly',
-    evs: { hp: 32, atk: 224, spe: 252 }
-});
+var helper_1 = require("./helper");
 describe('calc', function () {
-    describe('gen', function () {
-        test('1', function () {
-            var result = index_1.calculate(1, new index_1.Pokemon(1, 'Gengar'), new index_1.Pokemon(1, 'Chansey'), new index_1.Move(1, 'Thunderbolt'));
-            expect(result.damage).toBeRange(79, 94);
-            expect(result.desc()).toBe('Gengar Thunderbolt vs. Chansey: 79-94 (11.2 - 13.3%) -- possible 8HKO');
+    describe('Multi-Gen', function () {
+        helper_1.inGens(4, 7, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Grass Knot (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Groudon'), Pokemon('Groudon'), Move('Grass Knot'));
+                expect(result.range()).toEqual([190, 224]);
+            });
         });
-        test('2', function () {
-            var result = index_1.calculate(2, new index_1.Pokemon(2, 'Gengar'), new index_1.Pokemon(2, 'Chansey', { item: 'Leftovers' }), new index_1.Move(2, 'Dynamic Punch'));
-            expect(result.damage).toBeRange(304, 358);
-            expect(result.desc()).toBe('Gengar Dynamic Punch vs. Chansey: 304-358 (43.2 - 50.9%) -- guaranteed 3HKO after Leftovers recovery');
+        helper_1.inGens(4, 7, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Arceus Plate (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Arceus', { item: 'Meadow Plate' }), Pokemon('Blastoise'), Move('Judgment'));
+                expect(result.range()).toEqual([194, 230]);
+                expect(result.desc()).toBe('0 SpA Meadow Plate Arceus Judgment vs. 0 HP / 0 SpD Blastoise: 194-230 (64.8 - 76.9%) -- guaranteed 2HKO');
+            });
         });
-        test('3', function () {
-            var result = index_1.calculate(3, new index_1.Pokemon(3, 'Gengar', {
-                nature: 'Mild',
-                evs: { atk: 100 }
-            }), new index_1.Pokemon(3, 'Chansey', {
-                item: 'Leftovers',
-                nature: 'Bold',
-                evs: { hp: 252, def: 252 }
-            }), new index_1.Move(3, 'Focus Punch'));
-            expect(result.damage).toBeRange(346, 408);
-            expect(result.desc()).toBe('100 Atk Gengar Focus Punch vs. 252 HP / 252+ Def Chansey: 346-408 (49.1 - 57.9%) -- 59% chance to 2HKO after Leftovers recovery');
-        });
-        test('4', function () {
-            var result = index_1.calculate(4, new index_1.Pokemon(4, 'Gengar', {
-                item: 'Choice Specs',
-                nature: 'Timid',
-                evs: { spa: 252 },
-                boosts: { spa: 1 }
-            }), new index_1.Pokemon(4, 'Chansey', {
-                item: 'Leftovers',
-                nature: 'Calm',
-                evs: { hp: 252, spd: 252 }
-            }), new index_1.Move(4, 'Focus Blast'));
-            expect(result.damage).toBeRange(408, 482);
-            expect(result.desc()).toBe('+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Chansey: 408-482 (57.9 - 68.4%) -- guaranteed 2HKO after Leftovers recovery');
-        });
-        test('5', function () {
-            var result = index_1.calculate(5, new index_1.Pokemon(5, 'Gengar', {
-                item: 'Choice Specs',
-                nature: 'Timid',
-                evs: { spa: 252 },
-                boosts: { spa: 1 }
-            }), new index_1.Pokemon(5, 'Chansey', {
-                item: 'Eviolite',
-                nature: 'Calm',
-                evs: { hp: 252, spd: 252 }
-            }), new index_1.Move(5, 'Focus Blast'));
-            expect(result.damage).toBeRange(274, 324);
-            expect(result.fullDesc('px')).toBe('+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Eviolite Chansey: 274-324 (18 - 22px) -- guaranteed 3HKO');
-        });
-        test('6', function () {
-            var result = index_1.calculate(6, new index_1.Pokemon(6, 'Gengar', {
-                item: 'Life Orb',
-                nature: 'Modest',
-                evs: { spa: 252 }
-            }), new index_1.Pokemon(6, 'Chansey', {
-                item: 'Eviolite',
-                nature: 'Bold',
-                evs: { hp: 252, def: 252 }
-            }), new index_1.Move(6, 'Sludge Bomb'));
-            expect(result.damage).toBeRange(134, 160);
-            expect(result.desc()).toBe('252+ SpA Life Orb Gengar Sludge Bomb vs. 252 HP / 0 SpD Eviolite Chansey: 134-160 (19 - 22.7%) -- possible 5HKO');
-        });
-        test('7', function () {
-            var result = index_1.calculate(7, new index_1.Pokemon(7, 'Gengar', {
-                item: 'Life Orb',
-                nature: 'Modest',
-                evs: { spa: 252 },
-                boosts: { spa: 3 }
-            }), new index_1.Pokemon(7, 'Chansey', {
-                item: 'Eviolite',
-                nature: 'Bold',
-                evs: { hp: 100, spd: 100 },
-                boosts: { spd: 1 }
-            }), new index_1.Move(7, 'Sludge Bomb'));
-            expect(result.damage).toBeRange(204, 242);
-            expect(result.desc()).toBe('+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO');
-        });
-        test('8', function () {
-            var result = index_1.calculate(8, new index_1.Pokemon(8, 'Gengar', {
-                item: 'Life Orb',
-                nature: 'Modest',
-                evs: { spa: 252 },
-                boosts: { spa: 3 }
-            }), new index_1.Pokemon(8, 'Chansey', {
-                item: 'Eviolite',
-                nature: 'Bold',
-                evs: { hp: 100, spd: 100 },
-                boosts: { spd: 1 }
-            }), new index_1.Move(8, 'Sludge Bomb'));
-            expect(result.damage).toBeRange(204, 242);
-            expect(result.desc()).toBe('+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO');
-        });
-    });
-    describe('field', function () {
-        test('none', function () {
-            var result = index_1.calculate(7, ABOMASNOW, HOOPA, new index_1.Move(7, 'Wood Hammer'));
-            expect(result.damage).toBeRange(234, 276);
-            expect(result.desc()).toBe('252 Atk Abomasnow Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO');
-            var recoil = result.recoil();
-            expect(recoil.recoil).toBeRange(24, 28.3);
-            expect(recoil.text).toBe('24 - 28.3% recoil damage');
-            result = index_1.calculate(7, HOOPA, ABOMASNOW, new index_1.Move(7, 'Drain Punch'));
-            expect(result.damage).toBeRange(398, 470);
-            expect(result.desc()).toBe('224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO');
-            var recovery = result.recovery();
-            expect(recovery.recovery).toBeRange(160, 160);
-            expect(recovery.text).toBe('51.9 - 51.9% recovered');
-        });
-        test('none', function () {
-            var field = new index_1.Field({
-                gameType: 'Doubles',
-                terrain: 'Grassy',
-                weather: 'Hail',
-                defenderSide: {
-                    isSR: true,
-                    spikes: 1,
-                    isLightScreen: true,
-                    isSeeded: true,
-                    isFriendGuard: true
-                },
-                attackerSide: {
-                    isHelpingHand: true,
-                    isTailwind: true
+        helper_1.inGens(1, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Night Shade / Seismic Toss (gen " + gen + ")", function () {
+                var mew = Pokemon('Mew', { level: 50 });
+                var vulpix = Pokemon('Vulpix');
+                for (var _i = 0, _a = [Move('Seismic Toss'), Move('Night Shade')]; _i < _a.length; _i++) {
+                    var move = _a[_i];
+                    var result = calculate(mew, vulpix, move);
+                    expect(result.damage).toBe(50);
+                    expect(result.desc()).toBe(gen < 3
+                        ? "Lvl 50 Mew " + move.name + " vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO"
+                        : "Lvl 50 Mew " + move.name + " vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO");
                 }
             });
-            var result = index_1.calculate(7, ABOMASNOW, HOOPA, new index_1.Move(7, 'Blizzard'), field);
-            expect(result.damage).toBeRange(50, 59);
-            expect(result.desc()).toBe("0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally's Friend Guard: 50-59 (16.1 - 19%)" +
-                ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery');
         });
-    });
-    describe('mechanics', function () {
-        test('gen 2 DVs', function () {
-            var aerodactyl = new index_1.Pokemon(2, 'Aerodactyl');
-            var zapdos = new index_1.Pokemon(2, 'Zapdos', { ivs: { atk: 29, def: 27 }, item: 'Leftovers' });
-            expect(zapdos.ivs.hp).toBe(15);
-            var move = new index_1.Move(2, 'Ancient Power');
-            var result = index_1.calculate(2, aerodactyl, zapdos, move);
-            expect(result.damage).toBeRange(153, 180);
-            expect(result.desc()).toBe('Aerodactyl Ancient Power vs. Zapdos: 153-180 (41.6 - 49%) -- guaranteed 3HKO after Leftovers recovery');
-        });
-        test('gen 2 struggle', function () {
-            var attacker = new index_1.Pokemon(2, 'Skarmory', { boosts: { atk: 6, def: 6 } });
-            var defender = new index_1.Pokemon(2, 'Skarmory', { boosts: { atk: 6, def: 6 } });
-            var move = new index_1.Move(2, 'Struggle');
-            var result = index_1.calculate(2, attacker, defender, move);
-            expect(result.damage).toBeRange(37, 44);
-            expect(result.desc()).toBe('+6 Skarmory Struggle vs. +6 Skarmory: 37-44 (11.1 - 13.2%) -- possible 8HKO');
-        });
-        test('gen 2 present', function () {
-            var attacker = new index_1.Pokemon(2, 'Togepi', { level: 5, boosts: { atk: -6 }, status: 'Burned' });
-            var defender = new index_1.Pokemon(2, 'Umbreon', { boosts: { def: 6 } });
-            var move = new index_1.Move(2, 'Present');
-            var field = new index_1.Field({ defenderSide: { isReflect: true } });
-            var result = index_1.calculate(2, attacker, defender, move, field);
-            expect(result.damage).toBeRange(125, 147);
-            expect(result.desc()).toBe('-6 burned Togepi Present vs. +6 Umbreon through Reflect: 125-147 (31.8 - 37.4%) -- 89.1% chance to 3HKO');
-        });
-        test('zmove criticals', function () {
-            var zMove = new index_1.Move(7, 'Wood Hammer', { useZ: true, isCrit: true });
-            var result = index_1.calculate(7, ABOMASNOW, HOOPA, zMove);
-            expect(result.damage).toBeRange(555, 654);
-            expect(result.desc()).toBe('252 Atk Abomasnow Bloom Doom (190 BP) vs. 32 HP / 0 Def Hoopa-Unbound on a critical hit: 555-654 (179.6 - 211.6%) -- guaranteed OHKO');
-        });
-        test('grass knot', function () {
-            var result = index_1.calculate(7, new index_1.Pokemon(7, 'Groudon'), new index_1.Pokemon(7, 'Groudon'), new index_1.Move(7, 'Grass Knot'));
-            expect(result.damage).toBeRange(190, 224);
-            result = index_1.calculate(4, new index_1.Pokemon(4, 'Groudon'), new index_1.Pokemon(4, 'Groudon'), new index_1.Move(4, 'Grass Knot'));
-            expect(result.damage).toBeRange(190, 224);
-        });
-        test('Night Shade and Seismic Toss', function () {
-            var mew = new index_1.Pokemon(1, 'Mew', { level: 50 });
-            var vulpix = new index_1.Pokemon(1, 'Vulpix', { level: 100 });
-            var nightshade = new index_1.Move(1, 'Night Shade');
-            var stoss = new index_1.Move(1, 'Seismic Toss');
-            var result = index_1.calculate(1, mew, vulpix, stoss);
-            expect(result.damage).toBeRange(50, 50);
-            expect(result.desc()).toBe('Mew Seismic Toss vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO');
-            result = index_1.calculate(1, mew, vulpix, nightshade);
-            expect(result.damage).toBeRange(50, 50);
-        });
-        test('Critical hits should ignore attack decreasers', function () {
-            var field = new index_1.Field({
-                defenderSide: {
-                    isReflect: true
+        helper_1.inGens(1, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Mulihit (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'));
+                if (gen < 3) {
+                    expect(result.range()).toEqual([36, 43]);
+                    expect(result.desc()).toBe('Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- approx. 3HKO');
+                }
+                else if (gen === 3) {
+                    expect(result.range()).toEqual([44, 52]);
+                    expect(result.desc()).toBe('0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 132-156 (60.8 - 71.8%) -- approx. 2HKO');
+                }
+                else {
+                    expect(result.range()).toEqual([43, 52]);
+                    expect(result.desc()).toBe('0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 129-156 (59.4 - 71.8%) -- approx. 2HKO');
                 }
             });
-            var mew = new index_1.Pokemon(1, 'Mew', { level: 100, status: 'Burned' });
-            var vulpix = new index_1.Pokemon(1, 'Vulpix', { level: 100 });
-            var Explosion = new index_1.Move(1, 'Explosion', { isCrit: true });
-            var result = index_1.calculate(1, mew, vulpix, Explosion, field);
-            mew.boosts.atk = 2;
-            vulpix.boosts.def = 2;
-            expect(result.damage).toBeRange(799, 939);
-            expect(result.desc()).toBe('Mew Explosion vs. Vulpix on a critical hit: 799-939 (286.3 - 336.5%) -- guaranteed OHKO');
-            Explosion.isCrit = false;
-            result = index_1.calculate(1, mew, vulpix, Explosion, field);
-            expect(result.damage).toBeRange(102, 120);
         });
-        test('Damage should be 0 when applicable', function () {
-            var field = new index_1.Field({
-                defenderSide: {
-                    isLightScreen: true
+        helper_1.inGens(1, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Immunity (gen " + gen + ")", function () {
+                expect(calculate(Pokemon('Snorlax'), Pokemon('Gengar'), Move('Hyper Beam')).damage).toBe(0);
+            });
+        });
+        helper_1.inGens(1, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Non-damaging (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Barrier'));
+                expect(result.damage).toBe(0);
+                expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
+            });
+        });
+        helper_1.inGens(1, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
+            test("Critical hits ignore attack decreases (gen " + gen + ")", function () {
+                var field = Field({ defenderSide: { isReflect: true } });
+                var mew = Pokemon('Mew', { status: 'brn' });
+                var vulpix = Pokemon('Vulpix');
+                var explosion = Move('Explosion', { isCrit: true });
+                var result = calculate(mew, vulpix, explosion, field);
+                mew.boosts.atk = 2;
+                vulpix.boosts.def = 2;
+                if (gen < 2) {
+                    expect(result.range()).toEqual([799, 939]);
+                    expect(result.desc()).toBe('Mew Explosion vs. Vulpix on a critical hit: 799-939 (286.3 - 336.5%) -- guaranteed OHKO');
+                }
+                else if (gen < 5 && gen > 2) {
+                    expect(result.range()).toEqual([729, 858]);
+                    expect(result.desc()).toBe('0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 729-858 (335.9 - 395.3%) -- guaranteed OHKO');
+                }
+                else if (gen === 5) {
+                    expect(result.range()).toEqual([364, 429]);
+                    expect(result.desc()).toBe('0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 364-429 (167.7 - 197.6%) -- guaranteed OHKO');
+                }
+                else if (gen >= 6) {
+                    expect(result.range()).toEqual([273, 321]);
+                    expect(result.desc()).toBe('0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 273-321 (125.8 - 147.9%) -- guaranteed OHKO');
+                }
+                explosion.isCrit = false;
+                result = calculate(mew, vulpix, explosion, field);
+                if (gen === 1) {
+                    expect(result.range()).toEqual([102, 120]);
+                }
+                else if (gen === 2) {
+                    expect(result.range()).toEqual([149, 176]);
+                }
+                else if (gen > 2 && gen < 5) {
+                    expect(result.range()).toEqual([182, 215]);
+                }
+                else {
+                    expect(result.range()).toEqual([91, 107]);
                 }
             });
-            var snorlax = new index_1.Pokemon(1, 'Snorlax', { level: 100 });
-            var vulpix = new index_1.Pokemon(1, 'Vulpix', { level: 100 });
-            var gengar = new index_1.Pokemon(1, 'Vulpix', { level: 100 });
-            var barrier = new index_1.Move(1, 'Barrier');
-            var cometPunch = new index_1.Move(1, 'Comet Punch');
-            var hyperBeam = new index_1.Move(1, 'Hyper Beam');
-            var result = index_1.calculate(1, snorlax, vulpix, barrier, field);
-            expect(result.damage).toBeRange(0, 0);
-            expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
-            result = index_1.calculate(1, snorlax, vulpix, cometPunch, field);
-            expect(result.damage).toBeRange(36, 43);
-            expect(result.desc()).toBe('Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- guaranteed 3HKO');
         });
-        test('wring out', function () {
-            var smeargle = new index_1.Pokemon(7, 'Smeargle', { level: 50, ability: 'Technician' });
-            var blissey = new index_1.Pokemon(7, 'Blissey', { level: 50, evs: { hp: 252 }, curHP: 184 });
-            var result = index_1.calculate(7, smeargle, blissey, new index_1.Move(7, 'Wring Out'));
-            expect(result.damage).toBeRange(15, 18);
-            expect(result.desc()).toBe('0 SpA Technician Smeargle Wring Out (60 BP) vs. 252 HP / 0 SpD Blissey: 15-18 (4.1 - 4.9%)');
+        helper_1.inGens(7, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
+            test("Psychic Terrain (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Mewtwo', {
+                    nature: 'Timid',
+                    evs: { spa: 252 },
+                    boosts: { spa: 2 }
+                }), Pokemon('Milotic', {
+                    item: 'Flame Orb',
+                    nature: 'Bold',
+                    ability: 'Marvel Scale',
+                    evs: { hp: 248, def: 184 },
+                    status: 'brn',
+                    boosts: { spd: 1 }
+                }), Move('Psystrike'), Field({ terrain: 'Psychic' }));
+                if (gen < 8) {
+                    expect(result.range()).toEqual([331, 391]);
+                    expect(result.desc()).toBe('+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 331-391 (84.2 - 99.4%) -- guaranteed 2HKO after burn damage');
+                }
+                else {
+                    expect(result.range()).toEqual([288, 339]);
+                    expect(result.desc()).toBe('+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 288-339 (73.2 - 86.2%) -- guaranteed 2HKO after burn damage');
+                }
+            });
+        });
+        helper_1.inGens(6, 8, function (_a) {
+            var gen = _a.gen, calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test("Parental Bond (gen " + gen + ")", function () {
+                var result = calculate(Pokemon('Kangaskhan-Mega', { evs: { atk: 152 } }), Pokemon('Amoonguss', { nature: 'Bold', evs: { hp: 252, def: 152 } }), Move('Frustration'));
+                if (gen === 6) {
+                    expect(result.damage).toEqual([
+                        [153, 154, 156, 157, 159, 162, 163, 165, 166, 168, 171, 172, 174, 175, 177, 180],
+                        [76, 76, 78, 78, 79, 81, 81, 82, 82, 84, 85, 85, 87, 87, 88, 90],
+                    ]);
+                    expect(result.desc()).toBe('152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 229-270 (53 - 62.5%) -- approx. 2HKO');
+                }
+                else {
+                    expect(result.damage).toEqual([
+                        [153, 154, 156, 157, 159, 162, 163, 165, 166, 168, 171, 172, 174, 175, 177, 180],
+                        [37, 37, 39, 39, 39, 40, 40, 40, 40, 42, 42, 42, 43, 43, 43, 45],
+                    ]);
+                    expect(result.desc()).toBe('152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 190-225 (43.9 - 52%) -- approx. 6.6% chance to 2HKO');
+                }
+                result = calculate(Pokemon('Kangaskhan-Mega', { level: 88 }), Pokemon('Amoonguss'), Move('Seismic Toss'));
+                expect(result.damage).toEqual([88, 88]);
+                expect(result.desc()).toBe('Lvl 88 Parental Bond Kangaskhan-Mega Seismic Toss vs. 0 HP Amoonguss: 176-176 (47.6 - 47.6%) -- guaranteed 3HKO');
+                result = calculate(Pokemon('Kangaskhan-Mega', { evs: { atk: 252 } }), Pokemon('Aggron', { level: 72 }), Move('Power-Up Punch'));
+                if (gen === 6) {
+                    expect(result.desc()).toBe('252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. Lvl 72 0 HP / 0 Def Aggron: 248-296 (120.9 - 144.3%) -- guaranteed OHKO');
+                }
+                else {
+                    expect(result.desc()).toBe('252 Atk Parental Bond Kangaskhan-Mega Power-Up Punch vs. Lvl 72 0 HP / 0 Def Aggron: 196-236 (95.6 - 115.1%) -- 78.9% chance to OHKO');
+                }
+                if (gen === 6)
+                    return;
+                result = calculate(Pokemon('Kangaskhan-Mega', { evs: { atk: 252 } }), Pokemon('Lunala'), Move('Crunch'));
+                expect(result.damage).toEqual([
+                    [188, 190, 192, 194, 196, 198, 202, 204, 206, 208, 210, 212, 214, 216, 218, 222],
+                    [92, 96, 96, 96, 96, 100, 100, 100, 104, 104, 104, 104, 108, 108, 108, 112],
+                ]);
+                expect(result.desc()).toBe('252 Atk Parental Bond Kangaskhan-Mega Crunch vs. 0 HP / 0 Def Shadow Shield Lunala: 280-334 (67.4 - 80.4%) -- approx. 2HKO');
+            });
         });
     });
-    describe('gen 3 spread', function () {
-        test('allAdjacent', function () {
-            var gengar = new index_1.Pokemon(3, 'Gengar', { nature: 'Mild', evs: { atk: 100 } });
-            var blissey = new index_1.Pokemon(3, 'Chansey', {
-                item: 'Leftovers',
-                nature: 'Bold',
-                evs: { hp: 252, def: 252 }
+    describe('Gen 1', function () {
+        helper_1.inGen(1, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar'), Pokemon('Chansey'), Move('Thunderbolt'));
+                expect(result.range()).toEqual([79, 94]);
+                expect(result.desc()).toBe('Gengar Thunderbolt vs. Chansey: 79-94 (11.2 - 13.3%) -- possible 8HKO');
             });
-            var field = new index_1.Field({ gameType: 'Doubles' });
-            var result = index_1.calculate(3, gengar, blissey, new index_1.Move(3, 'Explosion'), field);
-            expect(result.damage).toBeRange(578, 681);
-            expect(result.desc()).toBe('100 Atk Gengar Explosion vs. 252 HP / 252+ Def Chansey: 578-681 (82.1 - 96.7%) -- guaranteed 2HKO after Leftovers recovery');
-        });
-        test('allAdjacentFoes', function () {
-            var gengar = new index_1.Pokemon(3, 'Gengar', { nature: 'Modest', evs: { spa: 252 } });
-            var blissey = new index_1.Pokemon(3, 'Chansey', {
-                item: 'Leftovers',
-                nature: 'Bold',
-                evs: { hp: 252, def: 252 }
+            test('Light Screen', function () {
+                var field = Field({ defenderSide: { isLightScreen: true } });
+                var result = calculate(Pokemon('Gengar'), Pokemon('Vulpix'), Move('Surf'), field);
+                expect(result.desc()).toBe('Gengar Surf vs. Vulpix through Light Screen: 108-128 (38.7 - 45.8%) -- guaranteed 3HKO');
             });
-            var field = new index_1.Field({ gameType: 'Doubles' });
-            var result = index_1.calculate(3, gengar, blissey, new index_1.Move(3, 'Blizzard'), field);
-            expect(result.damage).toBeRange(69, 82);
-            expect(result.desc()).toBe('252+ SpA Gengar Blizzard vs. 252 HP / 0 SpD Chansey: 69-82 (9.8 - 11.6%)');
         });
     });
-    describe('water absorb', function () {
-        test('gen 3', function () {
-            var cacturne = new index_1.Pokemon(3, 'Cacturne', {
-                ability: 'Sand Veil'
+    describe('Gen 2', function () {
+        helper_1.inGen(2, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar'), Pokemon('Chansey', { item: 'Leftovers' }), Move('Dynamic Punch'));
+                expect(result.range()).toEqual([304, 358]);
+                expect(result.desc()).toBe('Gengar Dynamic Punch vs. Chansey: 304-358 (43.2 - 50.9%) -- guaranteed 3HKO after Leftovers recovery');
             });
-            var blastoise = new index_1.Pokemon(3, 'Blastoise', {
-                evs: { spa: 252 }
+            test('Struggle', function () {
+                var attacker = Pokemon('Skarmory', { boosts: { atk: 6, def: 6 } });
+                var defender = Pokemon('Skarmory', { boosts: { atk: 6, def: 6 } });
+                var move = Move('Struggle');
+                var result = calculate(attacker, defender, move);
+                expect(result.range()).toEqual([37, 44]);
+                expect(result.desc()).toBe('+6 Skarmory Struggle vs. +6 Skarmory: 37-44 (11.1 - 13.2%) -- possible 8HKO');
             });
-            var surf = new index_1.Move(3, 'Surf');
-            var result = index_1.calculate(3, blastoise, cacturne, surf);
-            expect(result.damage).toBeRange(88, 104);
-            expect(result.desc()).toBe('252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (31.3 - 37%) -- 76.6% chance to 3HKO');
-            cacturne.ability = 'Water Absorb';
-            result = index_1.calculate(3, blastoise, cacturne, surf);
-            expect(result.damage).toBeRange(0, 0);
+            test('Present', function () {
+                var attacker = Pokemon('Togepi', { level: 5, boosts: { atk: -6 }, status: 'brn' });
+                var defender = Pokemon('Umbreon', { boosts: { def: 6 } });
+                var move = Move('Present');
+                var field = Field({ defenderSide: { isReflect: true } });
+                var result = calculate(attacker, defender, move, field);
+                expect(result.range()).toEqual([125, 147]);
+                expect(result.desc()).toBe('-6 Lvl 5 burned Togepi Present vs. +6 Umbreon through Reflect: 125-147 (31.8 - 37.4%) -- 89.1% chance to 3HKO');
+            });
+            test('DVs', function () {
+                var aerodactyl = Pokemon('Aerodactyl');
+                var zapdos = Pokemon('Zapdos', { ivs: { atk: 29, def: 27 }, item: 'Leftovers' });
+                expect(zapdos.ivs.hp).toBe(15);
+                var move = Move('Ancient Power');
+                var result = calculate(aerodactyl, zapdos, move);
+                expect(result.range()).toEqual([153, 180]);
+                expect(result.desc()).toBe('Aerodactyl Ancient Power vs. Zapdos: 153-180 (41.6 - 49%) -- guaranteed 3HKO after Leftovers recovery');
+            });
         });
     });
-    describe('mold breaker', function () {
-        test('gen 4', function () {
-            var pinsir = new index_1.Pokemon(4, 'Pinsir', {
+    describe('Gen 3', function () {
+        helper_1.inGen(3, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar', {
+                    nature: 'Mild',
+                    evs: { atk: 100 }
+                }), Pokemon('Chansey', {
+                    item: 'Leftovers',
+                    nature: 'Bold',
+                    evs: { hp: 252, def: 252 }
+                }), Move('Focus Punch'));
+                expect(result.range()).toEqual([346, 408]);
+                expect(result.desc()).toBe('100 Atk Gengar Focus Punch vs. 252 HP / 252+ Def Chansey: 346-408 (49.1 - 57.9%) -- 59% chance to 2HKO after Leftovers recovery');
+            });
+            test('Water Absorb', function () {
+                var cacturne = Pokemon('Cacturne', {
+                    ability: 'Sand Veil'
+                });
+                var blastoise = Pokemon('Blastoise', {
+                    evs: { spa: 252 }
+                });
+                var surf = Move('Surf');
+                var result = calculate(blastoise, cacturne, surf);
+                expect(result.range()).toEqual([88, 104]);
+                expect(result.desc()).toBe('252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (31.3 - 37%) -- 76.6% chance to 3HKO');
+                cacturne.ability = 'Water Absorb';
+                result = calculate(blastoise, cacturne, surf);
+                expect(result.damage).toBe(0);
+            });
+            describe('Spread Moves', function () {
+                test('allAdjacent', function () {
+                    var gengar = Pokemon('Gengar', { nature: 'Mild', evs: { atk: 100 } });
+                    var blissey = Pokemon('Chansey', {
+                        item: 'Leftovers',
+                        nature: 'Bold',
+                        evs: { hp: 252, def: 252 }
+                    });
+                    var field = Field({ gameType: 'Doubles' });
+                    var result = calculate(gengar, blissey, Move('Explosion'), field);
+                    expect(result.range()).toEqual([578, 681]);
+                    expect(result.desc()).toBe('100 Atk Gengar Explosion vs. 252 HP / 252+ Def Chansey: 578-681 (82.1 - 96.7%) -- guaranteed 2HKO after Leftovers recovery');
+                });
+                test('allAdjacentFoes', function () {
+                    var gengar = Pokemon('Gengar', { nature: 'Modest', evs: { spa: 252 } });
+                    var blissey = Pokemon('Chansey', {
+                        item: 'Leftovers',
+                        nature: 'Bold',
+                        evs: { hp: 252, def: 252 }
+                    });
+                    var field = Field({ gameType: 'Doubles' });
+                    var result = calculate(gengar, blissey, Move('Blizzard'), field);
+                    expect(result.range()).toEqual([69, 82]);
+                    expect(result.desc()).toBe('252+ SpA Gengar Blizzard vs. 252 HP / 0 SpD Chansey: 69-82 (9.8 - 11.6%)');
+                });
+            });
+        });
+    });
+    describe('Gen 4', function () {
+        helper_1.inGen(4, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar', {
+                    item: 'Choice Specs',
+                    nature: 'Timid',
+                    evs: { spa: 252 },
+                    boosts: { spa: 1 }
+                }), Pokemon('Chansey', {
+                    item: 'Leftovers',
+                    nature: 'Calm',
+                    evs: { hp: 252, spd: 252 }
+                }), Move('Focus Blast'));
+                expect(result.range()).toEqual([408, 482]);
+                expect(result.desc()).toBe('+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Chansey: 408-482 (57.9 - 68.4%) -- guaranteed 2HKO after Leftovers recovery');
+            });
+            test('Mold Breaker', function () {
+                var pinsir = Pokemon('Pinsir', {
+                    item: 'Choice Band',
+                    nature: 'Adamant',
+                    ability: 'Hyper Cutter',
+                    evs: { atk: 252 }
+                });
+                var gengar = Pokemon('Gengar', {
+                    item: 'Choice Specs',
+                    nature: 'Timid',
+                    evs: { spa: 252 },
+                    boosts: { spa: 1 }
+                });
+                var earthquake = Move('Earthquake');
+                var result = calculate(pinsir, gengar, earthquake);
+                expect(result.damage).toBe(0);
+                pinsir.ability = 'Mold Breaker';
+                result = calculate(pinsir, gengar, earthquake);
+                expect(result.range()).toEqual([528, 622]);
+                expect(result.desc()).toBe('252+ Atk Choice Band Mold Breaker Pinsir Earthquake vs. 0 HP / 0 Def Gengar: 528-622 (202.2 - 238.3%) -- guaranteed OHKO');
+                pinsir.boosts.atk = 2;
+                gengar.ability = 'Unaware';
+                result = calculate(pinsir, gengar, earthquake);
+                expect(result.range()).toEqual([1054, 1240]);
+            });
+        });
+    });
+    describe('Gen 5', function () {
+        helper_1.inGen(5, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar', {
+                    item: 'Choice Specs',
+                    nature: 'Timid',
+                    evs: { spa: 252 },
+                    boosts: { spa: 1 }
+                }), Pokemon('Chansey', {
+                    item: 'Eviolite',
+                    nature: 'Calm',
+                    evs: { hp: 252, spd: 252 }
+                }), Move('Focus Blast'));
+                expect(result.range()).toEqual([274, 324]);
+                expect(result.fullDesc('px')).toBe('+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Eviolite Chansey: 274-324 (18 - 22px) -- guaranteed 3HKO');
+            });
+        });
+    });
+    describe('Gen 6', function () {
+        helper_1.inGen(6, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar', {
+                    item: 'Life Orb',
+                    nature: 'Modest',
+                    evs: { spa: 252 }
+                }), Pokemon('Chansey', {
+                    item: 'Eviolite',
+                    nature: 'Bold',
+                    evs: { hp: 252, def: 252 }
+                }), Move('Sludge Bomb'));
+                expect(result.range()).toEqual([134, 160]);
+                expect(result.desc()).toBe('252+ SpA Life Orb Gengar Sludge Bomb vs. 252 HP / 0 SpD Eviolite Chansey: 134-160 (19 - 22.7%) -- possible 5HKO');
+            });
+        });
+    });
+    describe('Gen 7', function () {
+        helper_1.inGen(7, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move, Field = _a.Field;
+            var abomasnow = Pokemon('Abomasnow', {
+                item: 'Icy Rock',
+                ability: 'Snow Warning',
+                nature: 'Hasty',
+                evs: { atk: 252, spd: 4, spe: 252 }
+            });
+            var hoopa = Pokemon('Hoopa-Unbound', {
                 item: 'Choice Band',
-                nature: 'Adamant',
-                ability: 'Hyper Cutter',
-                evs: { atk: 252 }
+                ability: 'Magician',
+                nature: 'Jolly',
+                evs: { hp: 32, atk: 224, spe: 252 }
             });
-            var gengar = new index_1.Pokemon(4, 'Gengar', {
-                item: 'Choice Specs',
-                nature: 'Timid',
-                evs: { spa: 252 },
-                boosts: { spa: 1 }
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar', {
+                    item: 'Life Orb',
+                    nature: 'Modest',
+                    evs: { spa: 252 },
+                    boosts: { spa: 3 }
+                }), Pokemon('Chansey', {
+                    item: 'Eviolite',
+                    nature: 'Bold',
+                    evs: { hp: 100, spd: 100 },
+                    boosts: { spd: 1 }
+                }), Move('Sludge Bomb'));
+                expect(result.range()).toEqual([204, 242]);
+                expect(result.desc()).toBe('+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO');
             });
-            var earthquake = new index_1.Move(4, 'Earthquake');
-            var result = index_1.calculate(4, pinsir, gengar, earthquake);
-            expect(result.damage).toBeRange(0, 0);
-            pinsir.ability = 'Mold Breaker';
-            result = index_1.calculate(4, pinsir, gengar, earthquake);
-            expect(result.damage).toBeRange(528, 622);
-            expect(result.desc()).toBe('252+ Atk Choice Band Mold Breaker Pinsir Earthquake vs. 0 HP / 0 Def Gengar: 528-622 (202.2 - 238.3%) -- guaranteed OHKO');
-            pinsir.boosts.atk = 2;
-            gengar.ability = 'Unaware';
-            result = index_1.calculate(4, pinsir, gengar, earthquake);
-            expect(result.damage).toBeRange(1054, 1240);
+            test('Z-Move critical hits', function () {
+                var zMove = Move('Wood Hammer', { useZ: true, isCrit: true });
+                var result = calculate(abomasnow, hoopa, zMove);
+                expect(result.range()).toEqual([555, 654]);
+                expect(result.desc()).toBe('252 Atk Abomasnow Bloom Doom (190 BP) vs. 32 HP / 0 Def Hoopa-Unbound on a critical hit: 555-654 (179.6 - 211.6%) -- guaranteed OHKO');
+            });
+            test('Recoil & Recovery', function () {
+                var result = calculate(abomasnow, hoopa, Move('Wood Hammer'));
+                expect(result.range()).toEqual([234, 276]);
+                expect(result.desc()).toBe('252 Atk Abomasnow Wood Hammer vs. 32 HP / 0 Def Hoopa-Unbound: 234-276 (75.7 - 89.3%) -- guaranteed 2HKO');
+                var recoil = result.recoil();
+                expect(recoil.recoil).toEqual([24, 28.3]);
+                expect(recoil.text).toBe('24 - 28.3% recoil damage');
+                result = calculate(hoopa, abomasnow, Move('Drain Punch'));
+                expect(result.range()).toEqual([398, 470]);
+                expect(result.desc()).toBe('224 Atk Choice Band Hoopa-Unbound Drain Punch vs. 0 HP / 0- Def Abomasnow: 398-470 (123.9 - 146.4%) -- guaranteed OHKO');
+                var recovery = result.recovery();
+                expect(recovery.recovery).toEqual([161, 161]);
+                expect(recovery.text).toBe('52.1 - 52.1% recovered');
+            });
+            test('Loaded Field', function () {
+                var field = Field({
+                    gameType: 'Doubles',
+                    terrain: 'Grassy',
+                    weather: 'Hail',
+                    defenderSide: {
+                        isSR: true,
+                        spikes: 1,
+                        isLightScreen: true,
+                        isSeeded: true,
+                        isFriendGuard: true
+                    },
+                    attackerSide: {
+                        isHelpingHand: true,
+                        isTailwind: true
+                    }
+                });
+                var result = calculate(abomasnow, hoopa, Move('Blizzard'), field);
+                expect(result.range()).toEqual([50, 59]);
+                expect(result.desc()).toBe("0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally's Friend Guard: 50-59 (16.1 - 19%)" +
+                    ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery');
+            });
+            test('Wring Out', function () {
+                var smeargle = Pokemon('Smeargle', { level: 50, ability: 'Technician' });
+                var blissey = Pokemon('Blissey', { level: 50, evs: { hp: 252 }, curHP: 184 });
+                var result = calculate(smeargle, blissey, Move('Wring Out'));
+                expect(result.range()).toEqual([15, 18]);
+                expect(result.desc()).toBe('0 SpA Technician Smeargle Wring Out (60 BP) vs. 252 HP / 0 SpD Blissey: 15-18 (4.1 - 4.9%)');
+            });
+            test('Mold Breaker', function () {
+                var pinsir = Pokemon('Pinsir', {
+                    item: 'Choice Band',
+                    nature: 'Adamant',
+                    ability: 'Hyper Cutter',
+                    evs: { atk: 252 }
+                });
+                var gengar = Pokemon('Gengar', {
+                    item: 'Choice Specs',
+                    nature: 'Timid',
+                    ability: 'Levitate',
+                    evs: { spa: 252 },
+                    boosts: { spa: 1 }
+                });
+                var earthquake = Move('Earthquake');
+                var result = calculate(pinsir, gengar, earthquake);
+                expect(result.damage).toBe(0);
+                pinsir.ability = 'Mold Breaker';
+                result = calculate(pinsir, gengar, earthquake);
+                expect(result.range()).toEqual([528, 622]);
+                expect(result.desc()).toBe('252+ Atk Choice Band Mold Breaker Pinsir Earthquake vs. 0 HP / 0 Def Gengar: 528-622 (202.2 - 238.3%) -- guaranteed OHKO');
+                pinsir.boosts.atk = 2;
+                gengar.ability = 'Unaware';
+                result = calculate(pinsir, gengar, earthquake);
+                expect(result.range()).toEqual([1054, 1240]);
+            });
+            test('16-bit Overflow', function () {
+                var result = calculate(Pokemon('Mewtwo-Mega-Y', { evs: { spa: 196 } }), Pokemon('Wynaut', { level: 1, boosts: { spd: -6 } }), Move('Fire Blast'), Field({ attackerSide: { isHelpingHand: true } }));
+                expect(result.damage).toEqual([
+                    55725, 56380, 57036, 57691,
+                    58347, 59003, 59658, 60314,
+                    60969, 61625, 62281, 62936,
+                    63592, 64247, 64903, 23,
+                ]);
+            });
+            test('32-bit Overflow', function () {
+                var kyogre = Pokemon('Kyogre', {
+                    ability: 'Water Bubble',
+                    item: 'Choice Specs',
+                    curHP: 340,
+                    ivs: { spa: 6 },
+                    boosts: { spa: 6 }
+                });
+                var wynaut = Pokemon('Wynaut', { level: 1, boosts: { spd: -6 } });
+                var waterSpout = Move('Water Spout');
+                var field = Field({ weather: 'Rain', attackerSide: { isHelpingHand: true } });
+                expect(calculate(kyogre, wynaut, waterSpout, field).range()).toEqual([55, 66]);
+                kyogre = Pokemon('Kyogre', __assign(__assign({}, kyogre), { overrides: { types: ['Normal'] } }));
+                expect(calculate(kyogre, wynaut, waterSpout, field).range()).toEqual([37, 44]);
+            });
         });
-        test('gen 7', function () {
-            var pinsir = new index_1.Pokemon(7, 'Pinsir', {
-                item: 'Choice Band',
-                nature: 'Adamant',
-                ability: 'Hyper Cutter',
-                evs: { atk: 252 }
+    });
+    describe('Gen 8', function () {
+        helper_1.inGen(8, function (_a) {
+            var calculate = _a.calculate, Pokemon = _a.Pokemon, Move = _a.Move;
+            test('Basic: Gengar vs. Chansey', function () {
+                var result = calculate(Pokemon('Gengar', {
+                    item: 'Life Orb',
+                    nature: 'Modest',
+                    evs: { spa: 252 },
+                    boosts: { spa: 3 }
+                }), Pokemon('Chansey', {
+                    item: 'Eviolite',
+                    nature: 'Bold',
+                    evs: { hp: 100, spd: 100 },
+                    boosts: { spd: 1 }
+                }), Move('Sludge Bomb'));
+                expect(result.range()).toEqual([204, 242]);
+                expect(result.desc()).toBe('+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO');
             });
-            var gengar = new index_1.Pokemon(7, 'Gengar', {
-                item: 'Choice Specs',
-                nature: 'Timid',
-                ability: 'Levitate',
-                evs: { spa: 252 },
-                boosts: { spa: 1 }
-            });
-            var earthquake = new index_1.Move(7, 'Earthquake');
-            var result = index_1.calculate(7, pinsir, gengar, earthquake);
-            expect(result.damage).toBeRange(0, 0);
-            pinsir.ability = 'Mold Breaker';
-            result = index_1.calculate(7, pinsir, gengar, earthquake);
-            expect(result.damage).toBeRange(528, 622);
-            expect(result.desc()).toBe('252+ Atk Choice Band Mold Breaker Pinsir Earthquake vs. 0 HP / 0 Def Gengar: 528-622 (202.2 - 238.3%) -- guaranteed OHKO');
-            pinsir.boosts.atk = 2;
-            gengar.ability = 'Unaware';
-            result = index_1.calculate(7, pinsir, gengar, earthquake);
-            expect(result.damage).toBeRange(1054, 1240);
         });
     });
 });

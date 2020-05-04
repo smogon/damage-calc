@@ -35,6 +35,16 @@ var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
 var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
 
+var CALC_STATUS = {
+	'Healthy': '',
+	'Paralyzed': 'par',
+	'Poisoned': 'psn',
+	'Badly Poisoned': 'tox',
+	'Burned': 'brn',
+	'Asleep': 'slp',
+	'Frozen': 'frz'
+};
+
 function legacyStatToStat(st) {
 	switch (st) {
 	case 'hp':
@@ -342,14 +352,18 @@ $(".move-selector").change(function () {
 	moveGroupObj.children(".move-bp").val(move.bp);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
-	moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
-	if (move.isMultiHit) {
+	moveGroupObj.children(".move-crit").prop("checked", move.willCrit === true);
+
+	var stat = move.category === 'Special' ? 'spa' : 'atk';
+	var dropsStats =
+		move.self && move.self.boosts && move.self.boosts[stat] && move.self.boosts[stat] < 0;
+	if (Array.isArray(move.multihit)) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
 		var moveHits = (pokemon.find(".ability").val() === 'Skill Link' || pokemon.find(".item").val() === 'Grip Claw') ? 5 : 3;
 		moveGroupObj.children(".move-hits").val(moveHits);
-	} else if (move.dropsStats) {
+	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").show();
 	} else {
@@ -386,14 +400,13 @@ $(".set-selector").change(function () {
 			stickyMoves.clearStickyMove();
 		}
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
-		pokeObj.find(".type1").val(pokemon.t1);
-		pokeObj.find(".type2").val(pokemon.t2);
+		pokeObj.find(".type1").val(pokemon.types[0]);
+		pokeObj.find(".type2").val(pokemon.types[1]);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);
 		var i;
 		for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 			pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 		}
-		pokeObj.find(".weight").val(pokemon.w);
 		pokeObj.find(".boost").val(0);
 		pokeObj.find(".percent-hp").val(100);
 		pokeObj.find(".status").val("Healthy");
@@ -431,7 +444,7 @@ $(".set-selector").change(function () {
 					(set.dvs && set.dvs[LEGACY_STATS[gen][i]] !== undefined) ? set.dvs[LEGACY_STATS[gen][i]] : 15);
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
-			var abilityFallback = (pokemon.ab && typeof pokemon.ab !== "undefined") ? pokemon.ab : "";
+			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
 			if ($("#randoms").prop("checked")) {
 				setSelectValueIfValid(abilityObj, randset.abilities && randset.abilities[0], abilityFallback);
 				setSelectValueIfValid(itemObj, randset.items && randset.items[0], "");
@@ -482,27 +495,13 @@ $(".set-selector").change(function () {
 		var formeObj = $(this).siblings().find(".forme").parent();
 		itemObj.prop("disabled", false);
 		var baseForme;
-		if (pokemon.isAlternateForme) {
-			// try to find the base forme name by chopping off everything after the last dash
-			var baseFormeName = pokemonName.substring(0, pokemonName.lastIndexOf('-'));
-			// special case: -Mega-X and -Mega-Y
-			if (baseFormeName.substring(baseFormeName.lastIndexOf('-')) === '-Mega') {
-				baseFormeName = baseFormeName.substring(0, baseFormeName.lastIndexOf('-'));
-			}
-			// more special cases: Pokemon that have forme names containing dashes (Necrozma-Dawn-Wings, Oricorio-Pom-Pom)
-			var basePokemonWithDashedFormes = ['Necrozma', 'Oricorio'];
-			for (i = 0; i < basePokemonWithDashedFormes.length; i++) {
-				if (baseFormeName.startsWith(basePokemonWithDashedFormes[i])) {
-					baseFormeName = basePokemonWithDashedFormes[i];
-					break;
-				}
-			}
-			baseForme = pokedex[baseFormeName];
+		if (pokemon.baseSpecies && pokemon.baseSpecies !== pokemon.name) {
+			baseForme = pokedex[pokemon.baseSpecies];
 		}
-		if (pokemon.formes) {
-			showFormes(formeObj, setName, pokemonName, pokemon);
-		} else if (baseForme && baseForme.formes) {
-			showFormes(formeObj, setName, pokemonName, baseForme);
+		if (pokemon.otherFormes) {
+			showFormes(formeObj, pokemonName, pokemon, pokemonName);
+		} else if (baseForme && baseForme.otherFormes) {
+			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
 		} else {
 			formeObj.hide();
 		}
@@ -550,11 +549,14 @@ function selectMovesFromRandomOptions(moves) {
 	return selected;
 }
 
-function showFormes(formeObj, setName, pokemonName, pokemon) {
-	var defaultForme = pokemon.formes.indexOf(pokemonName);
+function showFormes(formeObj, pokemonName, pokemon, baseFormeName) {
+	var formes = pokemon.otherFormes.slice();
+	formes.unshift(baseFormeName);
+
+	var defaultForme = formes.indexOf(pokemonName);
 	if (defaultForme < 0) defaultForme = 0;
 
-	var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
+	var formeOptions = getSelectOptions(formes, false, defaultForme);
 	formeObj.children("select").find("option").remove().end().append(formeOptions).change();
 	formeObj.show();
 }
@@ -570,13 +572,11 @@ $(".forme").change(function () {
 		pokemonName = fullSetName.substring(0, fullSetName.indexOf(" (")),
 		setName = fullSetName.substring(fullSetName.indexOf("(") + 1, fullSetName.lastIndexOf(")"));
 
-	$(this).parent().siblings().find(".type1").val(altForme.t1);
-	$(this).parent().siblings().find(".type2").val(altForme.t2 ? altForme.t2 : "");
-	$(this).parent().siblings().find(".weight").val(altForme.w);
-	var pokeSTATS = ["hp", "at", "df", "sa", "sd", "sp"];
-	for (var i = 0; i < pokeSTATS.length; i++) {
-		var baseStat = container.find("." + pokeSTATS[i]).find(".base");
-		baseStat.val(altForme.bs[pokeSTATS[i]]);
+	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
+	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
+	for (var i = 0; i < LEGACY_STATS[8].length; i++) {
+		var baseStat = container.find("." + LEGACY_STATS[8][i]).find(".base");
+		baseStat.val(altForme.bs[LEGACY_STATS[8][i]]);
 		baseStat.keyup();
 	}
 	var isRandoms = $("#randoms").prop("checked");
@@ -645,7 +645,7 @@ function createPokemon(pokeInfo) {
 		} else {
 			var pokemonName = setName.substring(0, setName.indexOf(" ("));
 			var species = pokedex[pokemonName];
-			name = (species.formes || species.isAlternateForme) ? pokeInfo.find(".forme").val() : pokemonName;
+			name = (species.otherFormes || (species.baseSpecies && species.baseSpecies !== pokemonName)) ? pokeInfo.find(".forme").val() : pokemonName;
 		}
 
 		var baseStats = {};
@@ -654,17 +654,23 @@ function createPokemon(pokeInfo) {
 		var boosts = {};
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
-			baseStats[LEGACY_STATS[gen][i]] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
+			baseStats[stat === 'spc' ? 'spa' : stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
 			ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
 			evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
 			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 		}
+		if (gen === 1) baseStats.spd = baseStats.spa;
 
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
+		var curHP = ~~pokeInfo.find(".current-hp").val();
+		// FIXME the Pokemon constructor expects non-dynamaxed HP
+		if (isDynamaxed) curHP = Math.floor(curHP / 2);
+		var types = [pokeInfo.find(".type1").val()];
+		if (pokeInfo.find(".type2").val()) types.push(pokeInfo.find(".type2").val());
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
 			ability: ability,
@@ -676,8 +682,8 @@ function createPokemon(pokeInfo) {
 			evs: evs,
 			isDynamaxed: isDynamaxed,
 			boosts: boosts,
-			curHP: ~~pokeInfo.find(".current-hp").val(),
-			status: pokeInfo.find(".status").val(),
+			curHP: curHP,
+			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
 				getMoveDetails(pokeInfo.find(".move1"), ability, item, isDynamaxed),
@@ -686,10 +692,8 @@ function createPokemon(pokeInfo) {
 				getMoveDetails(pokeInfo.find(".move4"), ability, item, isDynamaxed)
 			],
 			overrides: {
-				bs: baseStats,
-				t1: pokeInfo.find(".type1").val(),
-				t2: pokeInfo.find(".type2").val(),
-				w: +pokeInfo.find(".weight").val()
+				baseStats: baseStats,
+				types: types
 			}
 		});
 	}
@@ -706,16 +710,16 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
-	var usedTimes = +moveInfo.find(".stat-drops").val();
-	var metronomeCount = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
+	var timesUsed = +moveInfo.find(".stat-drops").val();
+	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
 	var overrides = {
 		bp: +moveInfo.find(".move-bp").val(),
-		type: moveInfo.find(".move-type").val(),
-		category: moveInfo.find(".move-cat").val()
+		type: moveInfo.find(".move-type").val()
 	};
+	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
-		usedTimes: usedTimes, metronomeCount: metronomeCount, overrides: overrides, useMax: useMax
+		timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax
 	});
 }
 
@@ -744,14 +748,15 @@ function createField() {
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
-	var isSwitching = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
+	// TODO: support switching in as well!
+	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
 
 	var createSide = function (i) {
 		return new calc.Side({
 			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitching[i]
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
 		});
 	};
 	return new calc.Field({
@@ -789,8 +794,9 @@ function calcStat(poke, statName) {
 		evs = ~~stat.find(".evs").val();
 		if (statName !== "hp") nature = poke.find(".nature").val();
 	}
+	// Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
 	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
-	if (statName === "hp" && poke.isDynamaxed) {
+	if (statName === "hp" && poke.isDynamaxed && total !== 1) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);
@@ -808,8 +814,28 @@ var GENERATION = {
 	'8': 8, 'ss': 8
 };
 
-var SETDEX = [[], SETDEX_RBY, SETDEX_GSC, SETDEX_ADV, SETDEX_DPP, SETDEX_BW, SETDEX_XY, SETDEX_SM, SETDEX_SS];
-var RANDDEX = [[], RANDOM_RBY, RANDOM_GSC, RANDOM_ADV, RANDOM_DPP, RANDOM_BW, RANDOM_XY, RANDOM_SM, RANDOM_SS];
+var SETDEX = [
+	{},
+	typeof SETDEX_RBY === 'undefined' ? {} : SETDEX_RBY,
+	typeof SETDEX_GSC === 'undefined' ? {} : SETDEX_GSC,
+	typeof SETDEX_ADV === 'undefined' ? {} : SETDEX_ADV,
+	typeof SETDEX_DPP === 'undefined' ? {} : SETDEX_DPP,
+	typeof SETDEX_BW === 'undefined' ? {} : SETDEX_BW,
+	typeof SETDEX_XY === 'undefined' ? {} : SETDEX_XY,
+	typeof SETDEX_SM === 'undefined' ? {} : SETDEX_SM,
+	typeof SETDEX_SS === 'undefined' ? {} : SETDEX_SS,
+];
+var RANDDEX = [
+	{},
+	typeof RANDOM_RBY === 'undefined' ? {} : RANDOM_RBY,
+	typeof RANDOM_GSC === 'undefined' ? {} : RANDOM_GSC,
+	typeof RANDOM_ADV === 'undefined' ? {} : RANDOM_ADV,
+	typeof RANDOM_DPP === 'undefined' ? {} : RANDOM_DPP,
+	typeof RANDOM_BW === 'undefined' ? {} : RANDOM_BW,
+	typeof RANDOM_XY === 'undefined' ? {} : RANDOM_XY,
+	typeof RANDOM_SM === 'undefined' ? {} : RANDOM_SM,
+	typeof RANDOM_SS === 'undefined' ? {} : RANDOM_SS,
+];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {
 	/*eslint-disable */

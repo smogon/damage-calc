@@ -1,7 +1,6 @@
 import * as I from './interface';
-import { Stat } from '../stats';
 export declare const NATURES: {
-    [name: string]: [Stat, Stat];
+    [name: string]: [I.StatName, I.StatName];
 };
 export declare class Natures implements I.Natures {
     get(id: I.ID): Nature;
@@ -11,8 +10,8 @@ declare class Nature implements I.Nature {
     readonly kind: 'Nature';
     readonly id: I.ID;
     readonly name: I.NatureName;
-    readonly plus: I.StatName;
-    readonly minus: I.StatName;
+    readonly plus?: I.StatName;
+    readonly minus?: I.StatName;
     constructor(name: string, [plus, minus]: [I.StatName, I.StatName]);
 }
 export {};

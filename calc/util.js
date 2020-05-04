@@ -13,6 +13,14 @@ function error(err, msg) {
     }
 }
 exports.error = error;
+function assignWithout(a, b, exclude) {
+    for (var key in b) {
+        if (Object.prototype.hasOwnProperty.call(b, key) && !exclude.has(key)) {
+            a[key] = b[key];
+        }
+    }
+}
+exports.assignWithout = assignWithout;
 var class2Type = {
     '[object Boolean]': 'boolean',
     '[object Number]': 'number',

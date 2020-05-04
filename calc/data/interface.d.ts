@@ -1,18 +1,25 @@
-export declare type As<T> = {
+export interface As<T> {
     __brand: T;
-};
+}
 export declare type ID = string & As<'ID'>;
 export declare type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export declare type GenderName = 'M' | 'F' | 'N';
 export declare type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
+export declare type StatsTable<T = number> = {
+    [stat in StatName]: T;
+};
 export declare type AbilityName = string & As<'AbilityName'>;
 export declare type ItemName = string & As<'ItemName'>;
 export declare type MoveName = string & As<'MoveName'>;
 export declare type SpeciesName = string & As<'SpeciesName'>;
-export declare type TypeName = '???' | 'Normal' | 'Grass' | 'Fire' | 'Water' | 'Electric' | 'Ice' | 'Flying' | 'Bug' | 'Poison' | 'Ground' | 'Rock' | 'Fighting' | 'Psychic' | 'Ghost' | 'Dragon' | 'Dark' | 'Steel' | 'Fairy';
+export declare type StatusName = 'slp' | 'psn' | 'brn' | 'frz' | 'par' | 'tox';
+export declare type GameType = 'Singles' | 'Doubles';
+export declare type Terrain = 'Electric' | 'Grassy' | 'Psychic' | 'Misty';
+export declare type Weather = 'Sand' | 'Sun' | 'Rain' | 'Hail' | 'Harsh Sunshine' | 'Heavy Rain' | 'Strong Winds';
 export declare type NatureName = 'Adamant' | 'Bashful' | 'Bold' | 'Brave' | 'Calm' | 'Careful' | 'Docile' | 'Gentle' | 'Hardy' | 'Hasty' | 'Impish' | 'Jolly' | 'Lax' | 'Lonely' | 'Mild' | 'Modest' | 'Naive' | 'Naughty' | 'Quiet' | 'Quirky' | 'Rash' | 'Relaxed' | 'Sassy' | 'Serious' | 'Timid';
+export declare type TypeName = 'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' | 'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
 export declare type MoveCategory = 'Physical' | 'Special' | 'Status';
-export declare type MoveRecoil = boolean | number | 'crash' | 'Struggle';
+export declare type MoveTarget = 'adjacentAlly' | 'adjacentAllyOrSelf' | 'adjacentFoe' | 'all' | 'allAdjacent' | 'allAdjacentFoes' | 'allies' | 'allySide' | 'allyTeam' | 'any' | 'foeSide' | 'normal' | 'randomNormal' | 'scripted' | 'self';
 export interface Generations {
     get(gen: GenerationNum): Generation;
 }
@@ -55,36 +62,41 @@ export interface Moves {
     get(id: ID): Move | undefined;
     [Symbol.iterator](): IterableIterator<Move>;
 }
+export interface MoveFlags {
+    contact?: 1 | 0;
+    bite?: 1 | 0;
+    sound?: 1 | 0;
+    punch?: 1 | 0;
+    bullet?: 1 | 0;
+    pulse?: 1 | 0;
+}
+export interface SelfOrSecondaryEffect {
+    boosts?: Partial<StatsTable>;
+}
 export interface Move extends Data<MoveName> {
     readonly kind: 'Move';
     readonly bp: number;
     readonly type: TypeName;
     readonly category?: MoveCategory;
-    readonly hasSecondaryEffect?: boolean;
-    readonly isSpread?: boolean | 'allAdjacent';
-    readonly makesContact?: boolean;
-    readonly hasRecoil?: MoveRecoil;
-    readonly alwaysCrit?: boolean;
-    readonly givesHealth?: boolean;
-    readonly percentHealed?: number;
-    readonly ignoresBurn?: boolean;
-    readonly isPunch?: boolean;
-    readonly isBite?: boolean;
-    readonly isBullet?: boolean;
-    readonly isSound?: boolean;
-    readonly isPulse?: boolean;
-    readonly hasPriority?: boolean;
-    readonly dropsStats?: number;
-    readonly ignoresDefenseBoosts?: boolean;
-    readonly dealsPhysicalDamage?: boolean;
-    readonly bypassesProtect?: boolean;
+    readonly flags: MoveFlags;
+    readonly secondaries?: any;
+    readonly target?: MoveTarget;
+    readonly recoil?: [number, number];
+    readonly hasCrashDamage?: boolean;
+    readonly mindBlownRecoil?: boolean;
+    readonly struggleRecoil?: boolean;
+    readonly willCrit?: boolean;
+    readonly drain?: [number, number];
+    readonly priority?: number;
+    readonly self?: SelfOrSecondaryEffect | null;
+    readonly ignoreDefensive?: boolean;
+    readonly defensiveCategory?: MoveCategory;
+    readonly breaksProtect?: boolean;
     readonly isZ?: boolean;
     readonly isMax?: boolean;
-    readonly usesHighestAttackStat?: boolean;
     readonly zp?: number;
     readonly maxPower?: number;
-    readonly isMultiHit?: boolean;
-    readonly isTwoHit?: boolean;
+    readonly multihit?: number | number[];
 }
 export interface Species {
     get(id: ID): Specie | undefined;
@@ -92,23 +104,16 @@ export interface Species {
 }
 export interface Specie extends Data<SpeciesName> {
     readonly kind: 'Species';
-    readonly t1: TypeName;
-    readonly t2?: TypeName;
-    readonly bs: Readonly<{
-        hp: number;
-        at: number;
-        df: number;
-        sa: number;
-        sd: number;
-        sp: number;
-        sl?: number;
-    }>;
-    readonly w: number;
-    readonly canEvolve?: boolean;
+    readonly types: [TypeName] | [TypeName, TypeName];
+    readonly baseStats: Readonly<StatsTable>;
+    readonly weightkg: number;
+    readonly nfe?: boolean;
     readonly gender?: GenderName;
-    readonly formes?: SpeciesName[];
-    readonly isAlternateForme?: boolean;
-    readonly ab?: AbilityName;
+    readonly otherFormes?: SpeciesName[];
+    readonly baseSpecies?: SpeciesName;
+    readonly abilities?: {
+        0: AbilityName;
+    };
 }
 export interface Types {
     get(id: ID): Type | undefined;
@@ -117,7 +122,6 @@ export interface Types {
 export declare type TypeEffectiveness = 0 | 0.5 | 1 | 2;
 export interface Type extends Data<TypeName> {
     readonly kind: 'Type';
-    readonly category?: MoveCategory;
     readonly effectiveness: Readonly<{
         [type in TypeName]?: TypeEffectiveness;
     }>;
@@ -128,6 +132,6 @@ export interface Natures {
 }
 export interface Nature extends Data<NatureName> {
     readonly kind: 'Nature';
-    readonly plus: StatName;
-    readonly minus: StatName;
+    readonly plus?: StatName;
+    readonly minus?: StatName;
 }

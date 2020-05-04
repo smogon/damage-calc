@@ -1,0 +1,2006 @@
+{
+  "program": {
+    "fileInfos": {
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "b42eddba1a53c9d27279cfe7fc0416c10a81489826ad47e39013b9d340fc0cc7",
+        "signature": "b42eddba1a53c9d27279cfe7fc0416c10a81489826ad47e39013b9d340fc0cc7"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96",
+        "signature": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1",
+        "signature": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743",
+        "signature": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.d.ts": {
+        "version": "9c67dcc7ca897b61f58d57d487bc9f07950546e5ac8701cbc41a8a4fec48b091",
+        "signature": "9c67dcc7ca897b61f58d57d487bc9f07950546e5ac8701cbc41a8a4fec48b091"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "f2039e0dbc31f69183f6377b368c033802dfdcf77e5fd214def06c1fd7b225ed",
+        "signature": "f2039e0dbc31f69183f6377b368c033802dfdcf77e5fd214def06c1fd7b225ed"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "734ddc145e147fbcd55f07d034f50ccff1086f5a880107665ec326fb368876f6",
+        "signature": "734ddc145e147fbcd55f07d034f50ccff1086f5a880107665ec326fb368876f6"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "4a0862a21f4700de873db3b916f70e41570e2f558da77d2087c9490f5a0615d8",
+        "signature": "4a0862a21f4700de873db3b916f70e41570e2f558da77d2087c9490f5a0615d8"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "765e0e9c9d74cf4d031ca8b0bdb269a853e7d81eda6354c8510218d03db12122",
+        "signature": "765e0e9c9d74cf4d031ca8b0bdb269a853e7d81eda6354c8510218d03db12122"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "285958e7699f1babd76d595830207f18d719662a0c30fac7baca7df7162a9210",
+        "signature": "285958e7699f1babd76d595830207f18d719662a0c30fac7baca7df7162a9210"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "d4deaafbb18680e3143e8b471acd650ed6f72a408a33137f0a0dd104fbe7f8ca",
+        "signature": "d4deaafbb18680e3143e8b471acd650ed6f72a408a33137f0a0dd104fbe7f8ca"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe",
+        "signature": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976",
+        "signature": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230",
+        "signature": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
+        "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0",
+        "signature": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "c2d60b2e558d44384e4704b00e6b3d154334721a911f094d3133c35f0917b408",
+        "signature": "c2d60b2e558d44384e4704b00e6b3d154334721a911f094d3133c35f0917b408"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f",
+        "signature": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c",
+        "signature": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6",
+        "signature": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46",
+        "signature": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": {
+        "version": "2958de3d25bfb0b5cdace0244e11c9637e5988920b99024db705a720ce6348e7",
+        "signature": "2958de3d25bfb0b5cdace0244e11c9637e5988920b99024db705a720ce6348e7"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": {
+        "version": "85085a0783532dc04b66894748dc4a49983b2fbccb0679b81356947021d7a215",
+        "signature": "85085a0783532dc04b66894748dc4a49983b2fbccb0679b81356947021d7a215"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.intl.d.ts": {
+        "version": "5494f46d3a8a0329d13ddc37f8759d5288760febb51c92336608d1c06bb18d29",
+        "signature": "5494f46d3a8a0329d13ddc37f8759d5288760febb51c92336608d1c06bb18d29"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.promise.d.ts": {
+        "version": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62",
+        "signature": "efe049114bad1035b0aa9a4a0359f50ab776e3897c411521e51d3013079cbd62"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.regexp.d.ts": {
+        "version": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8",
+        "signature": "e7780d04cd4120ee554c665829db2bbdd6b947cbaa3c150b7d9ea74df3beb2e8"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2020.bigint.d.ts": {
+        "version": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255",
+        "signature": "0c9ea8c2028047f39a3f66752682604f543c08be8806258c3d95c93e75a43255"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.esnext.intl.d.ts": {
+        "version": "1377923021927244ea19433873b997ad8585533b0a56d5de29cda497f7842756",
+        "signature": "1377923021927244ea19433873b997ad8585533b0a56d5de29cda497f7842756"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@pokemon-showdown/sets/0.3.1/node_modules/@pokemon-showdown/sets/index.d.ts": {
+        "version": "05ba533c1ff2c42dc862b170f74946993a03cb2139620fa7f973e86b8696e1f7",
+        "signature": "05ba533c1ff2c42dc862b170f74946993a03cb2139620fa7f973e86b8696e1f7"
+      },
+      "../calc/dist/data/interface.d.ts": {
+        "version": "3706fe499e9ccd2f816bba0fb6221d861bb4d9a9d7f3618dc432a3e259296648",
+        "signature": "3706fe499e9ccd2f816bba0fb6221d861bb4d9a9d7f3618dc432a3e259296648"
+      },
+      "../calc/dist/state.d.ts": {
+        "version": "27fde1131b3a001f572af8042a5b260daf5fddda67d315e5f394653ffba2b32a",
+        "signature": "27fde1131b3a001f572af8042a5b260daf5fddda67d315e5f394653ffba2b32a"
+      },
+      "../calc/dist/field.d.ts": {
+        "version": "fa8830f7745967985fc0564da02cdf1ba99eff929a1956ed469a93f8b1e142de",
+        "signature": "fa8830f7745967985fc0564da02cdf1ba99eff929a1956ed469a93f8b1e142de"
+      },
+      "../calc/dist/move.d.ts": {
+        "version": "e7b59bdd4c7bef18afc3bdc75633f614122de8bea91986a143d089ddb6c10317",
+        "signature": "e7b59bdd4c7bef18afc3bdc75633f614122de8bea91986a143d089ddb6c10317"
+      },
+      "../calc/dist/pokemon.d.ts": {
+        "version": "84e37189b9a025c9f23212694f6c95f3a3a80bb7c90ab410643627f52afa0658",
+        "signature": "84e37189b9a025c9f23212694f6c95f3a3a80bb7c90ab410643627f52afa0658"
+      },
+      "../calc/dist/desc.d.ts": {
+        "version": "ac1c97685368f6d1d0827c32098be6560660534209827e38be54f4015b294e74",
+        "signature": "ac1c97685368f6d1d0827c32098be6560660534209827e38be54f4015b294e74"
+      },
+      "../calc/dist/result.d.ts": {
+        "version": "20dbbf03cfdeef3d6df52be7f7f357c2f9940045a258c8f0bb7a3ce1666ea785",
+        "signature": "20dbbf03cfdeef3d6df52be7f7f357c2f9940045a258c8f0bb7a3ce1666ea785"
+      },
+      "../calc/dist/calc.d.ts": {
+        "version": "b906836774c90f337711913a04869aa1857be01e94394d9ae99446abfd2ff81b",
+        "signature": "b906836774c90f337711913a04869aa1857be01e94394d9ae99446abfd2ff81b"
+      },
+      "../calc/dist/stats.d.ts": {
+        "version": "e93afb0895219c736118c109777da8a6987914b74b3b07267320c580d40a788e",
+        "signature": "e93afb0895219c736118c109777da8a6987914b74b3b07267320c580d40a788e"
+      },
+      "../calc/dist/adaptable.d.ts": {
+        "version": "6bc0346b07a3a7f3f14d27c767bb9c232ac3ebfba774d808dc180850680e31eb",
+        "signature": "6bc0346b07a3a7f3f14d27c767bb9c232ac3ebfba774d808dc180850680e31eb"
+      },
+      "../calc/dist/data/index.d.ts": {
+        "version": "aa2a4e093221d20cbe6e9d3a19158d63bc8f4f56d6a996f62c87adf4c76ce52a",
+        "signature": "aa2a4e093221d20cbe6e9d3a19158d63bc8f4f56d6a996f62c87adf4c76ce52a"
+      },
+      "../calc/dist/util.d.ts": {
+        "version": "753cd4c45211b1cf62625963571794109f07326a22354a0f85e5cae980f07631",
+        "signature": "753cd4c45211b1cf62625963571794109f07326a22354a0f85e5cae980f07631"
+      },
+      "../calc/dist/data/abilities.d.ts": {
+        "version": "b2707a19eb9186706058dd05bcbaf75e2ce94189c3b9a3aca271f323381069ae",
+        "signature": "b2707a19eb9186706058dd05bcbaf75e2ce94189c3b9a3aca271f323381069ae"
+      },
+      "../calc/dist/data/items.d.ts": {
+        "version": "c302428ffe32468779436b7dfad6630de398d2df837d3a3676ffe5ec8fb3d594",
+        "signature": "c302428ffe32468779436b7dfad6630de398d2df837d3a3676ffe5ec8fb3d594"
+      },
+      "../calc/dist/data/moves.d.ts": {
+        "version": "952f38f8d8249637359d28e2e9a3d2e13b3a59662754f5cd436d575109450df6",
+        "signature": "952f38f8d8249637359d28e2e9a3d2e13b3a59662754f5cd436d575109450df6"
+      },
+      "../calc/dist/data/species.d.ts": {
+        "version": "4b9a039f609c9dd57559d29f366fb1e72c3768281223e2b106f45befb7ca1ac4",
+        "signature": "4b9a039f609c9dd57559d29f366fb1e72c3768281223e2b106f45befb7ca1ac4"
+      },
+      "../calc/dist/data/natures.d.ts": {
+        "version": "0de32c2c458b6b5cce6ecb0f0cb3892960c0979c2236d92c94e170c1ec959430",
+        "signature": "0de32c2c458b6b5cce6ecb0f0cb3892960c0979c2236d92c94e170c1ec959430"
+      },
+      "../calc/dist/data/types.d.ts": {
+        "version": "bdf680209d6d60ab10612c7e70d8b01958ac3b90e95b8086ba0f1472cc137f42",
+        "signature": "bdf680209d6d60ab10612c7e70d8b01958ac3b90e95b8086ba0f1472cc137f42"
+      },
+      "../calc/dist/index.d.ts": {
+        "version": "ebfab80606d5f6c3baadc89153f6a4cc31963d92b0a286123732becd09f3f161",
+        "signature": "ebfab80606d5f6c3baadc89153f6a4cc31963d92b0a286123732becd09f3f161"
+      },
+      "./src/tiers.json": {
+        "version": "79832a8f1e3c815db7c3d8104ab577b3d9c955633861cbda73f1c6a7d8a7317e",
+        "signature": "d7abe0a0b41d96137d5e89c97990905d7b9817ce0977da37a45be0ce418f1350"
+      },
+      "./src/random-levels.json": {
+        "version": "bd364cce325aa30f13b1763ead6ec8668b189b0f21939a68ea3d07792abc7364",
+        "signature": "00299e8811bc6e21215f9b7a82353dbf0b86dd237f84eca5e9e5302a47a025d3"
+      },
+      "./src/random-moves.json": {
+        "version": "8c469d8ea1764e9c8108e46dcec70388ec78d37d8fab17682e3da0218d20921c",
+        "signature": "75767f59ab77c1e2b34c336f03b06b1ce0c4f9ca66b7c428976eb792515d45d1"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/smogon/0.4.2/node_modules/smogon/dist/index.d.ts": {
+        "version": "4471cc09ded5c78d0874467aabd5c22a0933b73036f1cc670565f40dfefbb2bd",
+        "signature": "4471cc09ded5c78d0874467aabd5c22a0933b73036f1cc670565f40dfefbb2bd"
+      },
+      "./src/sets.ts": {
+        "version": "54c42f236b90aa762febd318a2c76c33638c046286b95782c7183b17cb88da5d",
+        "signature": "5988ab8bcf169d4fc32a3d43e5832f690389e266bfa6d187015c8903d51c33df"
+      },
+      "./src/index.ts": {
+        "version": "c9e8e4c242446b75a3d42e1aca3c81d550d83c8e900aedc68710b8fdf0d6698e",
+        "signature": "c9e8e4c242446b75a3d42e1aca3c81d550d83c8e900aedc68710b8fdf0d6698e"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts": {
+        "version": "9d0b32c595a2e0d320a56b3d0e8f0a317e4149239ec913aa8f11eeb73edc92be",
+        "signature": "9d0b32c595a2e0d320a56b3d0e8f0a317e4149239ec913aa8f11eeb73edc92be"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts": {
+        "version": "96e547b51f95ee76bdb25731c92420fa6f93b59c3f38f23d505be36e2de394ee",
+        "signature": "96e547b51f95ee76bdb25731c92420fa6f93b59c3f38f23d505be36e2de394ee"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/buffer.d.ts": {
+        "version": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878",
+        "signature": "61215c1a376bbe8f51cab4cc4ddbf3746387015113c37a84d981d4738c21b878"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts": {
+        "version": "3ca89ecb953fe3b63dae41e5bb986506e812754dde0369c5fe61de26eff47dbe",
+        "signature": "3ca89ecb953fe3b63dae41e5bb986506e812754dde0369c5fe61de26eff47dbe"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/cluster.d.ts": {
+        "version": "123ec69e4b3a686eb49afd94ebe3292a5c84a867ecbcb6bb84bdd720a12af803",
+        "signature": "123ec69e4b3a686eb49afd94ebe3292a5c84a867ecbcb6bb84bdd720a12af803"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/console.d.ts": {
+        "version": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d",
+        "signature": "525c8fc510d9632d2a0a9de2d41c3ac1cdd79ff44d3b45c6d81cacabb683528d"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/constants.d.ts": {
+        "version": "90c85ddbb8de82cd19198bda062065fc51b7407c0f206f2e399e65a52e979720",
+        "signature": "90c85ddbb8de82cd19198bda062065fc51b7407c0f206f2e399e65a52e979720"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts": {
+        "version": "d56c93b6bf66e602869e926ddc8b1b4630d1ff397909291767d18d4ffc22d33f",
+        "signature": "d56c93b6bf66e602869e926ddc8b1b4630d1ff397909291767d18d4ffc22d33f"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dgram.d.ts": {
+        "version": "7ecfe97b43aa6c8b8f90caa599d5648bb559962e74e6f038f73a77320569dd78",
+        "signature": "7ecfe97b43aa6c8b8f90caa599d5648bb559962e74e6f038f73a77320569dd78"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts": {
+        "version": "aad3237c3f99480041cad7ca04d64307c98933996f822342b7c0ee4a78553346",
+        "signature": "aad3237c3f99480041cad7ca04d64307c98933996f822342b7c0ee4a78553346"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/domain.d.ts": {
+        "version": "4d4c83f77ac21a72252785baa5328a5612b0b6598d512f68b8cb14f7966d059e",
+        "signature": "4d4c83f77ac21a72252785baa5328a5612b0b6598d512f68b8cb14f7966d059e"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts": {
+        "version": "5ffa4219ee64e130980a4231392cbc628544df137ccf650ae8d76e0a1744fd2b",
+        "signature": "5ffa4219ee64e130980a4231392cbc628544df137ccf650ae8d76e0a1744fd2b"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts": {
+        "version": "e1a12c7e7951b9762cfbcc43c72eb5611120967706a7c3142ad303c6b7ee767f",
+        "signature": "e1a12c7e7951b9762cfbcc43c72eb5611120967706a7c3142ad303c6b7ee767f"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts": {
+        "version": "b5fd0a137bd6d0afe291d465e99c7469b082b66b3ee89273b3b22801b6c2948e",
+        "signature": "b5fd0a137bd6d0afe291d465e99c7469b082b66b3ee89273b3b22801b6c2948e"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http2.d.ts": {
+        "version": "873da589b78a1f1fa7d623483bd2c2730a02e0852259fb8fdcfe5221ac51d18a",
+        "signature": "873da589b78a1f1fa7d623483bd2c2730a02e0852259fb8fdcfe5221ac51d18a"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/https.d.ts": {
+        "version": "c969bf4c7cdfe4d5dd28aa09432f99d09ad1d8d8b839959646579521d0467d1a",
+        "signature": "c969bf4c7cdfe4d5dd28aa09432f99d09ad1d8d8b839959646579521d0467d1a"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/inspector.d.ts": {
+        "version": "4218ced3933a31eed1278d350dd63c5900df0f0904f57d61c054d7a4b83dbe4c",
+        "signature": "4218ced3933a31eed1278d350dd63c5900df0f0904f57d61c054d7a4b83dbe4c"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/module.d.ts": {
+        "version": "a376e245f494b58365a4391a2568e6dd9da372c3453f4732eb6e15ebb9038451",
+        "signature": "a376e245f494b58365a4391a2568e6dd9da372c3453f4732eb6e15ebb9038451"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts": {
+        "version": "ffe8912b7c45288810c870b768190c6c097459930a587dd6ef0d900a5529a811",
+        "signature": "ffe8912b7c45288810c870b768190c6c097459930a587dd6ef0d900a5529a811"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts": {
+        "version": "f53678bdb9f25445c8cdf021f2b003b74fd638e69bb1959dde8e370e8cc1e4fa",
+        "signature": "f53678bdb9f25445c8cdf021f2b003b74fd638e69bb1959dde8e370e8cc1e4fa"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts": {
+        "version": "84044697c8b3e08ef24e4b32cfe6440143d07e469a5e34bda0635276d32d9f35",
+        "signature": "84044697c8b3e08ef24e4b32cfe6440143d07e469a5e34bda0635276d32d9f35"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/perf_hooks.d.ts": {
+        "version": "0b6098fedb648cab8091cca2b022a5c729b6ef18da923852033f495907cb1a45",
+        "signature": "0b6098fedb648cab8091cca2b022a5c729b6ef18da923852033f495907cb1a45"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/process.d.ts": {
+        "version": "0e0d58f5e90c0a270dac052b9c5ad8ccdfc8271118c2105b361063218d528d6e",
+        "signature": "0e0d58f5e90c0a270dac052b9c5ad8ccdfc8271118c2105b361063218d528d6e"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/punycode.d.ts": {
+        "version": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1",
+        "signature": "30ec6f9c683b988c3cfaa0c4690692049c4e7ed7dc6f6e94f56194c06b86f5e1"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts": {
+        "version": "9f633ecf3e065ff82c19eccab35c8aa1d6d5d1a49af282dc29ef5a64cca34164",
+        "signature": "9f633ecf3e065ff82c19eccab35c8aa1d6d5d1a49af282dc29ef5a64cca34164"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts": {
+        "version": "6b2bb67b0942bcfce93e1d6fad5f70afd54940a2b13df7f311201fba54b2cbe9",
+        "signature": "6b2bb67b0942bcfce93e1d6fad5f70afd54940a2b13df7f311201fba54b2cbe9"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/repl.d.ts": {
+        "version": "dd3706b25d06fe23c73d16079e8c66ac775831ef419da00716bf2aee530a04a4",
+        "signature": "dd3706b25d06fe23c73d16079e8c66ac775831ef419da00716bf2aee530a04a4"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts": {
+        "version": "d74b8e644da7415e3757a17a42b7f284597b577e3c87b80f4b3ba0cc2db1184f",
+        "signature": "d74b8e644da7415e3757a17a42b7f284597b577e3c87b80f4b3ba0cc2db1184f"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/string_decoder.d.ts": {
+        "version": "7e62aac2cc9c0710d772047ad89e8d7117f52592c791eb995ce1f865fedab432",
+        "signature": "7e62aac2cc9c0710d772047ad89e8d7117f52592c791eb995ce1f865fedab432"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/timers.d.ts": {
+        "version": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9",
+        "signature": "b40652bf8ce4a18133b31349086523b219724dca8df3448c1a0742528e7ad5b9"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts": {
+        "version": "424bc64b2794d9280c1e1f4a3518ba9d285385a16d84753a6427bb469e582eca",
+        "signature": "424bc64b2794d9280c1e1f4a3518ba9d285385a16d84753a6427bb469e582eca"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/trace_events.d.ts": {
+        "version": "a77fdb357c78b70142b2fdbbfb72958d69e8f765fd2a3c69946c1018e89d4638",
+        "signature": "a77fdb357c78b70142b2fdbbfb72958d69e8f765fd2a3c69946c1018e89d4638"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts": {
+        "version": "3c2ac350c3baa61fd2b1925844109e098f4376d0768a4643abc82754fd752748",
+        "signature": "3c2ac350c3baa61fd2b1925844109e098f4376d0768a4643abc82754fd752748"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts": {
+        "version": "826d48e49c905cedb906cbde6ccaf758827ff5867d4daa006b5a79e0fb489357",
+        "signature": "826d48e49c905cedb906cbde6ccaf758827ff5867d4daa006b5a79e0fb489357"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts": {
+        "version": "893d1b5dd98f1c01a0ec4122dfd7f774e0fa1560e1aa19e509c96ed543c6244e",
+        "signature": "893d1b5dd98f1c01a0ec4122dfd7f774e0fa1560e1aa19e509c96ed543c6244e"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/v8.d.ts": {
+        "version": "289be113bad7ee27ee7fa5b1e373c964c9789a5e9ed7db5ddcb631371120b953",
+        "signature": "289be113bad7ee27ee7fa5b1e373c964c9789a5e9ed7db5ddcb631371120b953"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts": {
+        "version": "e4abb8eaa8a7d78236be0f8342404aab076668d20590209e32fdeb924588531e",
+        "signature": "e4abb8eaa8a7d78236be0f8342404aab076668d20590209e32fdeb924588531e"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/worker_threads.d.ts": {
+        "version": "1b4db6ed54916341a48bb81cfd9f910999b3bcd6b71c6a4c7416532a6908775d",
+        "signature": "1b4db6ed54916341a48bb81cfd9f910999b3bcd6b71c6a4c7416532a6908775d"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/zlib.d.ts": {
+        "version": "f409183966a1dd93d3a9cd1d54fbeb85c73101e87cd5b19467c5e37b252f3fd8",
+        "signature": "f409183966a1dd93d3a9cd1d54fbeb85c73101e87cd5b19467c5e37b252f3fd8"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/base.d.ts": {
+        "version": "5ff4ecfd544d596de3c8011a6d44c59443c85e1f99065095e556b15237eb39ac",
+        "signature": "5ff4ecfd544d596de3c8011a6d44c59443c85e1f99065095e556b15237eb39ac"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts": {
+        "version": "12b2608d6074167c331c9c3c6994a57819f6ff934c7fd4527e23aabf56d4c8d1",
+        "signature": "12b2608d6074167c331c9c3c6994a57819f6ff934c7fd4527e23aabf56d4c8d1"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts": {
+        "version": "ffc1cd688606ad1ddb59a40e8f3defbde907af2a3402d1d9ddf69accb2903f07",
+        "signature": "ffc1cd688606ad1ddb59a40e8f3defbde907af2a3402d1d9ddf69accb2903f07"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/globals.d.ts": {
+        "version": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1",
+        "signature": "4926e99d2ad39c0bbd36f2d37cc8f52756bc7a5661ad7b12815df871a4b07ba1"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/base.d.ts": {
+        "version": "8a70903bbbdad1d58e3936ca90b3ad993e54827ea324e20f2f63cef4e14e9d55",
+        "signature": "8a70903bbbdad1d58e3936ca90b3ad993e54827ea324e20f2f63cef4e14e9d55"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/assert.d.ts": {
+        "version": "f61a4062a627acbe5c4a9650319132ec8fa7fe2f276a7f40a056e59c2a877e04",
+        "signature": "f61a4062a627acbe5c4a9650319132ec8fa7fe2f276a7f40a056e59c2a877e04"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/index.d.ts": {
+        "version": "9522f3e35b412f2f17974b1431a1b18d06e0a8f614a0700c37220a4afb04afa8",
+        "signature": "9522f3e35b412f2f17974b1431a1b18d06e0a8f614a0700c37220a4afb04afa8"
+      }
+    },
+    "options": {
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "declaration": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "incremental": true,
+      "lib": [
+        "lib.es2016.d.ts",
+        "lib.dom.d.ts"
+      ],
+      "module": 1,
+      "noEmitOnError": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitReturns": true,
+      "sourceMap": true,
+      "strict": true,
+      "target": 2,
+      "removeComments": true,
+      "rootDir": "./src",
+      "outDir": "./dist",
+      "resolveJsonModule": true,
+      "tsBuildInfoFile": "./.tsbuildinfo",
+      "project": "./",
+      "configFilePath": "./tsconfig.json"
+    },
+    "referencedMap": {
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es5.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.dom.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2020.bigint.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@pokemon-showdown/sets/0.3.1/node_modules/@pokemon-showdown/sets/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/interface.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/state.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/field.d.ts": [
+        "../calc/dist/state.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/move.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/state.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/pokemon.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/state.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/desc.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "../calc/dist/result.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/result.d.ts": [
+        "../calc/dist/desc.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/calc.d.ts": [
+        "../calc/dist/field.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "../calc/dist/result.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/stats.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/adaptable.d.ts": [
+        "../calc/dist/calc.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/result.d.ts",
+        "../calc/dist/stats.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/index.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/util.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/abilities.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/items.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/moves.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/species.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/natures.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/types.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/index.d.ts": [
+        "../calc/dist/state.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/adaptable.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/result.d.ts",
+        "../calc/dist/data/index.d.ts",
+        "../calc/dist/util.d.ts",
+        "../calc/dist/data/abilities.d.ts",
+        "../calc/dist/data/items.d.ts",
+        "../calc/dist/data/moves.d.ts",
+        "../calc/dist/data/species.d.ts",
+        "../calc/dist/data/natures.d.ts",
+        "../calc/dist/data/types.d.ts",
+        "../calc/dist/stats.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/tiers.json": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/random-levels.json": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/random-moves.json": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/smogon/0.4.2/node_modules/smogon/dist/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/sets.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@pokemon-showdown/sets/0.3.1/node_modules/@pokemon-showdown/sets/index.d.ts",
+        "../calc/dist/index.d.ts",
+        "./src/tiers.json",
+        "./src/random-levels.json",
+        "./src/random-moves.json",
+        "./node_modules/.pnpm/registry.npmjs.org/smogon/0.4.2/node_modules/smogon/dist/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/index.ts": [
+        "./src/sets.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/buffer.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/cluster.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/console.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/constants.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dgram.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/domain.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http2.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/https.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/inspector.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/module.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/perf_hooks.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/process.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/punycode.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/repl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/string_decoder.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/timers.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/trace_events.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/v8.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/worker_threads.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/zlib.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/base.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/buffer.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/cluster.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/console.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/constants.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dgram.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/domain.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http2.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/https.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/inspector.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/module.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/perf_hooks.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/process.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/punycode.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/repl.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/string_decoder.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/timers.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/trace_events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/v8.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/worker_threads.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/zlib.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/globals.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/base.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/base.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/globals.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/assert.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/base.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/assert.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ]
+    },
+    "exportedModulesMap": {
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es5.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.dom.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.intl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.promise.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.regexp.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2020.bigint.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.esnext.intl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@pokemon-showdown/sets/0.3.1/node_modules/@pokemon-showdown/sets/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/interface.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/state.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/field.d.ts": [
+        "../calc/dist/state.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/move.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/state.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/pokemon.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/state.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/desc.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "../calc/dist/result.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/result.d.ts": [
+        "../calc/dist/desc.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/calc.d.ts": [
+        "../calc/dist/field.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "../calc/dist/result.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/stats.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/adaptable.d.ts": [
+        "../calc/dist/calc.d.ts",
+        "../calc/dist/pokemon.d.ts",
+        "../calc/dist/move.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/result.d.ts",
+        "../calc/dist/stats.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/index.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/util.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/abilities.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/items.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/moves.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/species.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/natures.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/data/types.d.ts": [
+        "../calc/dist/data/interface.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../calc/dist/index.d.ts": [
+        "../calc/dist/state.d.ts",
+        "../calc/dist/data/interface.d.ts",
+        "../calc/dist/adaptable.d.ts",
+        "../calc/dist/field.d.ts",
+        "../calc/dist/result.d.ts",
+        "../calc/dist/data/index.d.ts",
+        "../calc/dist/util.d.ts",
+        "../calc/dist/data/abilities.d.ts",
+        "../calc/dist/data/items.d.ts",
+        "../calc/dist/data/moves.d.ts",
+        "../calc/dist/data/species.d.ts",
+        "../calc/dist/data/natures.d.ts",
+        "../calc/dist/data/types.d.ts",
+        "../calc/dist/stats.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/smogon/0.4.2/node_modules/smogon/dist/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.11.1/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/index.ts": [
+        "./src/sets.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/buffer.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/cluster.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/console.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/constants.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dgram.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/domain.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http2.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/https.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/inspector.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/module.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/perf_hooks.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/process.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/punycode.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/repl.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/string_decoder.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/timers.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/trace_events.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/v8.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/worker_threads.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/zlib.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/base.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/buffer.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/cluster.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/console.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/constants.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dgram.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/domain.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http2.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/https.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/inspector.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/module.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/perf_hooks.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/process.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/punycode.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/repl.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/string_decoder.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/timers.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/trace_events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/v8.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/worker_threads.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/zlib.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/globals.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/base.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/base.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/globals.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/assert.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/base.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/assert.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts"
+      ]
+    },
+    "semanticDiagnosticsPerFile": [
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es5.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.dom.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.es2020.bigint.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/typescript/3.8.3/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@pokemon-showdown/sets/0.3.1/node_modules/@pokemon-showdown/sets/index.d.ts",
+      "./src/tiers.json",
+      "./src/random-levels.json",
+      "./src/random-moves.json",
+      "./node_modules/.pnpm/registry.npmjs.org/smogon/0.4.2/node_modules/smogon/dist/index.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/globals.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/async_hooks.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/buffer.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/child_process.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/cluster.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/console.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/constants.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/crypto.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dgram.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/dns.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/domain.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/events.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/fs.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/http2.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/https.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/inspector.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/module.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/net.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/os.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/path.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/perf_hooks.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/process.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/punycode.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/querystring.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/readline.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/repl.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/stream.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/string_decoder.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/timers.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tls.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/trace_events.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/tty.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/url.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/util.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/v8.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/vm.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/worker_threads.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/zlib.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/base.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/fs.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/util.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/globals.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/base.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/assert.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.2/node_modules/@types/node/ts3.2/index.d.ts",
+      "../calc/dist/data/interface.d.ts",
+      "../calc/dist/data/types.d.ts",
+      "../calc/dist/data/natures.d.ts",
+      "../calc/dist/data/species.d.ts",
+      "../calc/dist/data/moves.d.ts",
+      "../calc/dist/data/items.d.ts",
+      "../calc/dist/data/abilities.d.ts",
+      "../calc/dist/util.d.ts",
+      "../calc/dist/data/index.d.ts",
+      "../calc/dist/stats.d.ts",
+      "../calc/dist/pokemon.d.ts",
+      "../calc/dist/move.d.ts",
+      "../calc/dist/field.d.ts",
+      "../calc/dist/state.d.ts",
+      "./src/sets.ts",
+      "../calc/dist/desc.d.ts",
+      "../calc/dist/result.d.ts",
+      "../calc/dist/calc.d.ts",
+      "../calc/dist/adaptable.d.ts",
+      "../calc/dist/index.d.ts",
+      "./src/index.ts"
+    ]
+  },
+  "version": "3.8.3"
+}

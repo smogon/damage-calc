@@ -138,7 +138,7 @@ function calculateModern(gen, attacker, defender, move, field) {
     var isNormalize = false;
     var noTypeChange = [
         'Revelation Dance',
-        'Judgement',
+        'Judgment',
         'Nature Power',
         'Techo Blast',
         'Multi Attack',

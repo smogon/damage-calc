@@ -1,11 +1,15 @@
 "use strict";
 exports.__esModule = true;
 var util_1 = require("./util");
+var SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
 var Move = (function () {
     function Move(gen, name, options) {
         if (options === void 0) { options = {}; }
+        var _a;
+        name = options.name || name;
         this.originalName = name;
         var data = util_1.extend(true, { name: name }, gen.moves.get(util_1.toID(name)), options.overrides);
+        this.hits = 1;
         if (options.useMax && 'maxPower' in data) {
             var maxMoveName = getMaxMoveName(data.type, options.species, !!(data.category === 'Status'));
             var maxMove = gen.moves.get(util_1.toID(maxMoveName));
@@ -14,7 +18,6 @@ var Move = (function () {
                 bp: maxMove.bp === 10 ? getMaxMoveBasePower(data) : maxMove.bp,
                 category: data.category
             });
-            this.hits = 1;
         }
         if (options.useZ && 'zp' in data) {
             var zMoveName = getZMoveName(data.name, data.type, options.item);
@@ -24,17 +27,23 @@ var Move = (function () {
                 bp: zMove.bp === 1 ? data.zp : zMove.bp,
                 category: data.category
             });
-            this.hits = 1;
         }
         else {
-            this.hits = data.isMultiHit
-                ? options.hits || (options.ability === 'Skill Link' || options.item === 'Grip Claw' ? 5 : 3)
-                : data.isTwoHit
-                    ? 2
-                    : 1;
-            this.metronomeCount = options.metronomeCount;
+            if (data.multihit) {
+                if (typeof data.multihit === 'number') {
+                    this.hits = data.multihit;
+                }
+                else if (options.hits) {
+                    this.hits = options.hits;
+                }
+                else {
+                    this.hits = (options.ability === 'Skill Link' || options.item === 'Grip Claw')
+                        ? data.multihit[1]
+                        : data.multihit[0] + 1;
+                }
+            }
+            this.timesUsedWithMetronome = options.timesUsedWithMetronome;
         }
-        this.usedTimes = (data.dropsStats && options.usedTimes) || 1;
         this.gen = gen;
         this.name = data.name;
         this.ability = options.ability;
@@ -43,30 +52,58 @@ var Move = (function () {
         this.useMax = options.useMax;
         this.overrides = options.overrides;
         this.bp = data.bp;
-        this.type = data.type;
-        this.category = data.category || 'Status';
-        this.hasSecondaryEffect = !!data.hasSecondaryEffect;
-        this.isSpread = data.isSpread === 'allAdjacent' ? data.isSpread : !!data.isSpread;
-        this.makesContact = !!data.makesContact;
-        this.hasRecoil = data.hasRecoil;
-        this.isCrit = !!options.isCrit || !!data.alwaysCrit;
-        this.givesHealth = !!data.givesHealth;
-        this.percentHealed = data.percentHealed;
-        this.ignoresBurn = !!data.ignoresBurn;
-        this.isPunch = !!data.isPunch;
-        this.isBite = !!data.isBite;
-        this.isBullet = !!data.isBullet;
-        this.isSound = !!data.isSound;
-        this.isPulse = !!data.isPulse;
-        this.hasPriority = !!data.hasPriority;
-        this.dropsStats = data.dropsStats;
-        this.ignoresDefenseBoosts = !!data.ignoresDefenseBoosts;
-        this.dealsPhysicalDamage = !!data.dealsPhysicalDamage;
-        this.bypassesProtect = !!data.bypassesProtect;
+        var typelessDamage = gen.num >= 2 && gen.num <= 4 &&
+            ['futuresight', 'doomdesire', 'struggle'].includes(data.id);
+        this.type = typelessDamage ? '???' : data.type;
+        this.category = data.category ||
+            (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
+        var stat = this.category === 'Special' ? 'spa' : 'atk';
+        if (((_a = data.self) === null || _a === void 0 ? void 0 : _a.boosts) && data.self.boosts[stat] && data.self.boosts[stat] < 0) {
+            this.dropsStats = Math.abs(data.self.boosts[stat]);
+        }
+        this.timesUsed = (this.dropsStats && options.timesUsed) || 1;
+        this.secondaries = data.secondaries;
+        this.target = data.target || 'any';
+        this.recoil = data.recoil;
+        this.hasCrashDamage = !!data.hasCrashDamage;
+        this.mindBlownRecoil = !!data.mindBlownRecoil;
+        this.struggleRecoil = !!data.struggleRecoil;
+        this.isCrit = !!options.isCrit || !!data.willCrit ||
+            gen.num === 1 && ['crabhammer', 'razorleaf', 'slash'].includes(data.id);
+        this.drain = data.drain;
+        this.flags = data.flags;
+        this.priority = data.priority || 0;
+        this.ignoreDefensive = !!data.ignoreDefensive;
+        this.defensiveCategory = data.defensiveCategory || this.category;
+        this.breaksProtect = !!data.breaksProtect;
         this.isZ = !!data.isZ;
         this.isMax = !!data.isMax;
-        this.usesHighestAttackStat = !!data.usesHighestAttackStat;
+        if (!this.bp) {
+            if (['return', 'frustration', 'pikapapow', 'veeveevolley'].includes(data.id)) {
+                this.bp = 102;
+            }
+            else if (data.id === 'naturepower') {
+                this.bp = 80;
+                if (gen.num >= 5)
+                    this.secondaries = true;
+            }
+        }
     }
+    ;
+    Move.prototype.named = function () {
+        var names = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            names[_i] = arguments[_i];
+        }
+        return names.includes(this.name);
+    };
+    Move.prototype.hasType = function () {
+        var types = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            types[_i] = arguments[_i];
+        }
+        return types.includes(this.type);
+    };
     Move.prototype.clone = function () {
         return new Move(this.gen, this.originalName, {
             ability: this.ability,
@@ -76,8 +113,8 @@ var Move = (function () {
             useMax: this.useMax,
             isCrit: this.isCrit,
             hits: this.hits,
-            usedTimes: this.usedTimes,
-            metronomeCount: this.metronomeCount,
+            timesUsed: this.timesUsed,
+            timesUsedWithMetronome: this.timesUsedWithMetronome,
             overrides: this.overrides
         });
     };
