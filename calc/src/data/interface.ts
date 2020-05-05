@@ -116,10 +116,14 @@ export interface Move extends Data<MoveName> {
   readonly ignoreDefensive?: boolean;
   readonly defensiveCategory?: MoveCategory;
   readonly breaksProtect?: boolean;
-  readonly isZ?: boolean;
-  readonly isMax?: boolean;
-  readonly zp?: number;
-  readonly maxPower?: number;
+  readonly isZ?: boolean | string;
+  readonly zMove?: {
+    basePower?: number;
+  };
+  readonly isMax?: boolean | string;
+  readonly maxMove?: {
+    basePower: number;
+  };
   readonly multihit?: number | number[];
 }
 

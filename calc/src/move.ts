@@ -54,7 +54,7 @@ export class Move implements State.Move {
 
     this.hits = 1;
     // If isZMove but there isn't a corresponding z-move, use the original move
-    if (options.useMax && 'maxPower' in data) {
+    if (options.useMax && data.maxMove) {
       const maxMoveName: string = getMaxMoveName(
         data.type,
         options.species,
@@ -63,16 +63,16 @@ export class Move implements State.Move {
       const maxMove = gen.moves.get(toID(maxMoveName));
       data = extend(true, {}, maxMove, {
         name: maxMoveName,
-        bp: maxMove!.bp === 10 ? getMaxMoveBasePower(data) : maxMove!.bp,
+        bp: maxMove!.bp === 10 ? data.maxMove.basePower : maxMove!.bp,
         category: data.category,
       });
     }
-    if (options.useZ && 'zp' in data) {
+    if (options.useZ && data.zMove?.basePower) {
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
       const zMove = gen.moves.get(toID(zMoveName));
       data = extend(true, {}, zMove, {
         name: zMoveName,
-        bp: zMove!.bp === 1 ? data.zp : zMove!.bp,
+        bp: zMove!.bp === 1 ? data.zMove.basePower : zMove!.bp,
         category: data.category,
       });
     } else {
@@ -286,46 +286,3 @@ const MAXMOVES_TYPING: {
   Steel: 'Steelspike',
   Water: 'Geyser',
 };
-
-function getMaxMoveBasePower(move: I.Move) {
-  let movePower = 10;
-  if (move.maxPower) movePower = move.maxPower;
-  if (!move.maxPower && move.category !== 'Status') {
-    if (!move.bp) {
-      movePower = 100;
-    } else if (move.type === 'Fighting' || move.type === 'Poison') {
-      if (move.bp >= 150) {
-        movePower = 100;
-      } else if (move.bp >= 110) {
-        movePower = 95;
-      } else if (move.bp >= 75) {
-        movePower = 90;
-      } else if (move.bp >= 65) {
-        movePower = 85;
-      } else if (move.bp >= 55) {
-        movePower = 80;
-      } else if (move.bp >= 45) {
-        movePower = 75;
-      } else {
-        movePower = 70;
-      }
-    } else {
-      if (move.bp >= 150) {
-        movePower = 150;
-      } else if (move.bp >= 110) {
-        movePower = 140;
-      } else if (move.bp >= 75) {
-        movePower = 130;
-      } else if (move.bp >= 65) {
-        movePower = 120;
-      } else if (move.bp >= 55) {
-        movePower = 110;
-      } else if (move.bp >= 45) {
-        movePower = 100;
-      } else {
-        movePower = 90;
-      }
-    }
-  }
-  return movePower;
-}
