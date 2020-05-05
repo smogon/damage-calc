@@ -1,5 +1,5 @@
 export interface As<T> {__brand: T}
-export type ID = string & As<'ID'>;
+export type ID = (string & As<'ID'>) | (string & { __isID: true }) | '';
 export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type GenderName = 'M' | 'F' | 'N';
 export type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
@@ -99,7 +99,7 @@ export interface SelfOrSecondaryEffect {
 
 export interface Move extends Data<MoveName> {
   readonly kind: 'Move';
-  readonly bp: number;
+  readonly basePower: number;
   readonly type: TypeName;
   readonly category?: MoveCategory;
   readonly flags: MoveFlags;
@@ -141,7 +141,7 @@ export interface Specie extends Data<SpeciesName> {
   readonly gender?: GenderName;
   readonly otherFormes?: SpeciesName[];
   readonly baseSpecies?: SpeciesName;
-  readonly abilities?: {0: AbilityName};
+  readonly abilities?: {0: AbilityName | ''};
 }
 
 export interface Types {

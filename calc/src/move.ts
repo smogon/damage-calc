@@ -63,7 +63,7 @@ export class Move implements State.Move {
       const maxMove = gen.moves.get(toID(maxMoveName));
       data = extend(true, {}, maxMove, {
         name: maxMoveName,
-        bp: maxMove!.bp === 10 ? data.maxMove.basePower : maxMove!.bp,
+        basePower: maxMove!.basePower === 10 ? data.maxMove.basePower : maxMove!.basePower,
         category: data.category,
       });
     }
@@ -72,7 +72,7 @@ export class Move implements State.Move {
       const zMove = gen.moves.get(toID(zMoveName));
       data = extend(true, {}, zMove, {
         name: zMoveName,
-        bp: zMove!.bp === 1 ? data.zMove.basePower : zMove!.bp,
+        basePower: zMove!.basePower === 1 ? data.zMove.basePower : zMove!.basePower,
         category: data.category,
       });
     } else {
@@ -97,7 +97,7 @@ export class Move implements State.Move {
     this.useMax = options.useMax;
     this.overrides = options.overrides;
 
-    this.bp = data.bp;
+    this.bp = data.basePower;
     // These moves have a type type of these moves exists, but the damage they deal is typeless so we override it
     const typelessDamage = gen.num >= 2 && gen.num <= 4 &&
       ['futuresight', 'doomdesire', 'struggle'].includes(data.id);

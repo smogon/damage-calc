@@ -3,7 +3,7 @@ import {toID, DeepPartial, assignWithout, extend} from '../util';
 
 export interface MoveData {
   readonly name?: string;
-  readonly bp: number;
+
   readonly type: I.TypeName;
   readonly category?: I.MoveCategory;
   // readonly flags?: I.MoveFlags;
@@ -24,8 +24,7 @@ export interface MoveData {
   readonly isMax?: boolean;
   readonly multihit?: number | number[];
 
-  // {zMove: {basePower: N}} and {maxMove: {basePower: N}} take up
-  // more space, so not worth migrating these (at least until flags is migrated)
+  readonly bp: number;
   readonly zp?: number;
   readonly maxPower?: number;
 
@@ -3920,7 +3919,7 @@ class Move implements I.Move {
   readonly kind: 'Move';
   readonly id: I.ID;
   readonly name: I.MoveName;
-  readonly bp!: number;
+  readonly basePower!: number;
   readonly type!: I.TypeName;
   readonly category?: I.MoveCategory;
   readonly flags: I.MoveFlags;
@@ -3950,6 +3949,7 @@ class Move implements I.Move {
   readonly multihit?: number | number[];
 
   private static readonly FLAGS = new Set([
+    'bp',
     'makesContact',
     'isPunch',
     'isBite',
@@ -3976,6 +3976,7 @@ class Move implements I.Move {
 
     assignWithout(this, data, Move.FLAGS);
 
+    this.basePower = data.bp;
     if (data.zp) this.zMove = {basePower: data.zp};
     if (data.maxPower) this.maxMove = {basePower: data.maxPower};
 
