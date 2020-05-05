@@ -1,7 +1,9 @@
 export interface As<T> {
     __brand: T;
 }
-export declare type ID = string & As<'ID'>;
+export declare type ID = (string & As<'ID'>) | (string & {
+    __isID: true;
+}) | '';
 export declare type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export declare type GenderName = 'M' | 'F' | 'N';
 export declare type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
@@ -75,7 +77,7 @@ export interface SelfOrSecondaryEffect {
 }
 export interface Move extends Data<MoveName> {
     readonly kind: 'Move';
-    readonly bp: number;
+    readonly basePower: number;
     readonly type: TypeName;
     readonly category?: MoveCategory;
     readonly flags: MoveFlags;
@@ -92,10 +94,14 @@ export interface Move extends Data<MoveName> {
     readonly ignoreDefensive?: boolean;
     readonly defensiveCategory?: MoveCategory;
     readonly breaksProtect?: boolean;
-    readonly isZ?: boolean;
-    readonly isMax?: boolean;
-    readonly zp?: number;
-    readonly maxPower?: number;
+    readonly isZ?: boolean | string;
+    readonly zMove?: {
+        basePower?: number;
+    };
+    readonly isMax?: boolean | string;
+    readonly maxMove?: {
+        basePower: number;
+    };
     readonly multihit?: number | number[];
 }
 export interface Species {
@@ -112,7 +118,7 @@ export interface Specie extends Data<SpeciesName> {
     readonly otherFormes?: SpeciesName[];
     readonly baseSpecies?: SpeciesName;
     readonly abilities?: {
-        0: AbilityName;
+        0: AbilityName | '';
     };
 }
 export interface Types {

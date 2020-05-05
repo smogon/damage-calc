@@ -1,7 +1,6 @@
 import * as I from '../data/interface';
 export interface MoveData {
     readonly name?: string;
-    readonly bp: number;
     readonly type: I.TypeName;
     readonly category?: I.MoveCategory;
     readonly secondaries?: boolean;
@@ -19,9 +18,10 @@ export interface MoveData {
     readonly breaksProtect?: boolean;
     readonly isZ?: boolean;
     readonly isMax?: boolean;
+    readonly multihit?: number | number[];
+    readonly bp: number;
     readonly zp?: number;
     readonly maxPower?: number;
-    readonly multihit?: number | number[];
     readonly makesContact?: boolean;
     readonly isPunch?: boolean;
     readonly isBite?: boolean;
@@ -42,7 +42,7 @@ declare class Move implements I.Move {
     readonly kind: 'Move';
     readonly id: I.ID;
     readonly name: I.MoveName;
-    readonly bp: number;
+    readonly basePower: number;
     readonly type: I.TypeName;
     readonly category?: I.MoveCategory;
     readonly flags: I.MoveFlags;
@@ -60,7 +60,13 @@ declare class Move implements I.Move {
     readonly defensiveCategory?: I.MoveCategory;
     readonly breaksProtect?: boolean;
     readonly isZ?: boolean;
+    readonly zMove?: {
+        basePower?: number;
+    };
     readonly isMax?: boolean;
+    readonly maxMove?: {
+        basePower: number;
+    };
     readonly zp?: number;
     readonly maxPower?: number;
     readonly multihit?: number | number[];

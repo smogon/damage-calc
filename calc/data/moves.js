@@ -2314,7 +2314,6 @@ var SM_PATCH = {
     'Stored Power': { zp: 160 },
     'Storm Throw': { zp: 120 },
     Strength: { zp: 160 },
-    Struggle: { zp: 1 },
     'Struggle Bug': { zp: 100 },
     Submission: { zp: 160 },
     'Sucker Punch': { bp: 70, zp: 140 },
@@ -2924,234 +2923,208 @@ var SS_PATCH = {
         type: 'Bug',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Centiferno': {
         bp: 10,
         type: 'Fire',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Chi Strike': {
         bp: 10,
         type: 'Fighting',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 70
+        maxPower: 1
     },
     'G-Max Cuddle': {
         bp: 10,
         type: 'Normal',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Depletion': {
         bp: 10,
         type: 'Dragon',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Finale': {
         bp: 10,
         type: 'Fairy',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Foam Burst': {
         bp: 10,
         type: 'Water',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Gold Rush': {
         bp: 10,
         type: 'Normal',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Gravitas': {
         bp: 10,
         type: 'Psychic',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Malodor': {
         bp: 10,
         type: 'Poison',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 70
+        maxPower: 1
     },
     'G-Max Meltdown': {
         bp: 10,
         type: 'Steel',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Replenish': {
         bp: 10,
         type: 'Normal',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Resonance': {
         bp: 10,
         type: 'Ice',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Sandblast': {
         bp: 10,
         type: 'Ground',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Smite': {
         bp: 10,
         type: 'Fairy',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Snooze': {
         bp: 10,
         type: 'Dark',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Steelsurge': {
         bp: 10,
         type: 'Steel',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Stonesurge': {
         bp: 10,
         type: 'Water',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Stun Shock': {
         bp: 10,
         type: 'Electric',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Sweetness': {
         bp: 10,
         type: 'Grass',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Tartness': {
         bp: 10,
         type: 'Grass',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Terror': {
         bp: 10,
         type: 'Ghost',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Volcalith': {
         bp: 10,
         type: 'Rock',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Volt Crash': {
         bp: 10,
         type: 'Electric',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Wildfire': {
         bp: 10,
         type: 'Fire',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'G-Max Wind Rage': {
         bp: 10,
         type: 'Flying',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Grav Apple': {
         bp: 80,
@@ -3177,45 +3150,40 @@ var SS_PATCH = {
         type: 'Flying',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Darkness': {
         bp: 10,
         type: 'Dark',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Flare': {
         bp: 100,
         type: 'Fire',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 180,
         isMax: true,
-        maxPower: 130
+        maxPower: 1
     },
     'Max Flutterby': {
         bp: 10,
         type: 'Bug',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Geyser': {
         bp: 10,
         type: 'Water',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Guard': { bp: 0, type: 'Normal', priority: 4, isMax: true },
     'Max Hailstorm': {
@@ -3223,117 +3191,104 @@ var SS_PATCH = {
         type: 'Ice',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Knuckle': {
         bp: 10,
         type: 'Fighting',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 70
+        maxPower: 1
     },
     'Max Lightning': {
         bp: 10,
         type: 'Electric',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Mindstorm': {
         bp: 10,
         type: 'Psychic',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Ooze': {
         bp: 10,
         type: 'Poison',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 70
+        maxPower: 1
     },
     'Max Overgrowth': {
         bp: 10,
         type: 'Grass',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Phantasm': {
         bp: 10,
         type: 'Ghost',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Quake': {
         bp: 10,
         type: 'Ground',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Rockfall': {
         bp: 10,
         type: 'Rock',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Starfall': {
         bp: 10,
         type: 'Fairy',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Steelspike': {
         bp: 10,
         type: 'Steel',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Strike': {
         bp: 10,
         type: 'Normal',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Max Wyrmwind': {
         bp: 10,
         type: 'Dragon',
         target: 'adjacentFoe',
         category: 'Physical',
-        zp: 100,
         isMax: true,
-        maxPower: 90
+        maxPower: 1
     },
     'Meteor Assault': {
         bp: 150,
@@ -3406,18 +3361,18 @@ var SS_PATCH = {
     'Stuff Cheeks': { bp: 0, type: 'Normal' },
     'Tar Shot': { bp: 0, type: 'Rock' },
     Teatime: { bp: 0, type: 'Normal' },
-    '10,000,000 Volt Thunderbolt': { maxPower: 150 },
+    '10,000,000 Volt Thunderbolt': { maxPower: 1 },
     Absorb: { maxPower: 90 },
     Accelerock: { maxPower: 90 },
     Acid: { maxPower: 70 },
-    'Acid Downpour': { maxPower: 70 },
+    'Acid Downpour': { maxPower: 1 },
     'Acid Spray': { maxPower: 70 },
     Acrobatics: { maxPower: 110 },
     'Aerial Ace': { maxPower: 110 },
     Aeroblast: { maxPower: 130 },
     'Air Cutter': { maxPower: 110 },
     'Air Slash': { maxPower: 130 },
-    'All-Out Pummeling': { maxPower: 70 },
+    'All-Out Pummeling': { maxPower: 1 },
     'Anchor Shot': { maxPower: 130 },
     'Ancient Power': { maxPower: 110 },
     'Aqua Jet': { maxPower: 90 },
@@ -3436,11 +3391,11 @@ var SS_PATCH = {
     Bide: { maxPower: 100 },
     Bind: { maxPower: 90 },
     Bite: { maxPower: 110 },
-    'Black Hole Eclipse': { maxPower: 90 },
+    'Black Hole Eclipse': { maxPower: 1 },
     'Blast Burn': { maxPower: 150 },
     'Blaze Kick': { maxPower: 130 },
     Blizzard: { maxPower: 140 },
-    'Bloom Doom': { maxPower: 90 },
+    'Bloom Doom': { maxPower: 1 },
     'Blue Flare': { maxPower: 140 },
     'Body Slam': { maxPower: 130 },
     'Bolt Strike': { maxPower: 140 },
@@ -3450,7 +3405,7 @@ var SS_PATCH = {
     Boomburst: { maxPower: 140 },
     Bounce: { maxPower: 130 },
     'Brave Bird': { maxPower: 140 },
-    'Breakneck Blitz': { maxPower: 90 },
+    'Breakneck Blitz': { maxPower: 1 },
     'Brick Break': { maxPower: 90 },
     Brine: { maxPower: 120 },
     'Brutal Swing': { maxPower: 110 },
@@ -3462,22 +3417,22 @@ var SS_PATCH = {
     'Bullet Punch': { maxPower: 90 },
     'Bullet Seed': { maxPower: 130 },
     'Burn Up': { maxPower: 140 },
-    Catastropika: { maxPower: 150 },
+    Catastropika: { maxPower: 1 },
     'Charge Beam': { maxPower: 100 },
     Chatter: { maxPower: 120 },
     'Chip Away': { maxPower: 120 },
     'Circle Throw': { maxPower: 80 },
     Clamp: { maxPower: 90 },
     'Clanging Scales': { maxPower: 140 },
-    'Clangorous Soulblaze': { maxPower: 150 },
+    'Clangorous Soulblaze': { maxPower: 1 },
     'Clear Smog': { maxPower: 75 },
     'Close Combat': { maxPower: 95 },
     'Comet Punch': { maxPower: 100 },
     Confusion: { maxPower: 100 },
     Constrict: { maxPower: 90 },
-    'Continental Crush': { maxPower: 90 },
+    'Continental Crush': { maxPower: 1 },
     'Core Enforcer': { maxPower: 130 },
-    'Corkscrew Crash': { maxPower: 90 },
+    'Corkscrew Crash': { maxPower: 1 },
     Counter: { maxPower: 75 },
     Covet: { maxPower: 110 },
     Crabhammer: { maxPower: 130 },
@@ -3490,7 +3445,7 @@ var SS_PATCH = {
     'Darkest Lariat': { maxPower: 130 },
     'Dark Pulse': { maxPower: 130 },
     'Dazzling Gleam': { maxPower: 130 },
-    'Devastating Drake': { maxPower: 90 },
+    'Devastating Drake': { maxPower: 1 },
     'Diamond Storm': { maxPower: 130 },
     Dig: { maxPower: 130 },
     'Disarming Voice': { maxPower: 90 },
@@ -3576,14 +3531,14 @@ var SS_PATCH = {
     'Fusion Flare': { maxPower: 130 },
     'Future Sight': { maxPower: 140 },
     'Gear Grind': { maxPower: 130 },
-    'Genesis Supernova': { maxPower: 150 },
+    'Genesis Supernova': { maxPower: 1 },
     'Giga Drain': { maxPower: 130 },
     'Giga Impact': { maxPower: 150 },
-    'Gigavolt Havoc': { maxPower: 90 },
+    'Gigavolt Havoc': { maxPower: 1 },
     Glaciate: { maxPower: 120 },
     'Grass Knot': { maxPower: 130 },
     'Grass Pledge': { maxPower: 130 },
-    'Guardian of Alola': { maxPower: 100 },
+    'Guardian of Alola': { maxPower: 1 },
     Guillotine: { maxPower: 130 },
     'Gunk Shot': { maxPower: 95 },
     Gust: { maxPower: 90 },
@@ -3623,7 +3578,7 @@ var SS_PATCH = {
     Hurricane: { maxPower: 140 },
     'Hydro Cannon': { maxPower: 150 },
     'Hydro Pump': { maxPower: 140 },
-    'Hydro Vortex': { maxPower: 90 },
+    'Hydro Vortex': { maxPower: 1 },
     'Hyper Beam': { maxPower: 150 },
     'Hyper Fang': { maxPower: 130 },
     'Hyperspace Fury': { maxPower: 130 },
@@ -3641,7 +3596,7 @@ var SS_PATCH = {
     'Icy Wind': { maxPower: 110 },
     Incinerate: { maxPower: 110 },
     Inferno: { maxPower: 130 },
-    'Inferno Overdrive': { maxPower: 90 },
+    'Inferno Overdrive': { maxPower: 1 },
     Infestation: { maxPower: 90 },
     'Iron Head': { maxPower: 130 },
     'Iron Tail': { maxPower: 130 },
@@ -3657,10 +3612,10 @@ var SS_PATCH = {
     'Leaf Storm': { maxPower: 140 },
     'Leaf Tornado': { maxPower: 120 },
     'Leech Life': { maxPower: 130 },
-    "Let's Snuggle Forever": { maxPower: 150 },
+    "Let's Snuggle Forever": { maxPower: 1 },
     Lick: { maxPower: 90 },
     'Light of Ruin': { maxPower: 140 },
-    'Light That Burns the Sky': { maxPower: 150 },
+    'Light That Burns the Sky': { maxPower: 1 },
     Liquidation: { maxPower: 130 },
     'Low Kick': { maxPower: 100 },
     'Low Sweep': { maxPower: 85 },
@@ -3671,12 +3626,12 @@ var SS_PATCH = {
     'Magma Storm': { maxPower: 130 },
     'Magnet Bomb': { maxPower: 110 },
     Magnitude: { maxPower: 140 },
-    'Malicious Moonsault': { maxPower: 150 },
+    'Malicious Moonsault': { maxPower: 1 },
     'Mega Drain': { maxPower: 90 },
     Megahorn: { maxPower: 140 },
     'Mega Kick': { maxPower: 140 },
     'Mega Punch': { maxPower: 130 },
-    'Menacing Moonraze Maelstrom': { maxPower: 150 },
+    'Menacing Moonraze Maelstrom': { maxPower: 1 },
     'Metal Burst': { maxPower: 100 },
     'Metal Claw': { maxPower: 100 },
     'Meteor Mash': { maxPower: 130 },
@@ -3695,13 +3650,13 @@ var SS_PATCH = {
     'Natural Gift': { maxPower: 130 },
     "Nature's Madness": { maxPower: 100 },
     'Needle Arm': { maxPower: 110 },
-    'Never-Ending Nightmare': { maxPower: 90 },
+    'Never-Ending Nightmare': { maxPower: 1 },
     'Night Daze': { maxPower: 130 },
     'Night Shade': { maxPower: 100 },
     'Night Slash': { maxPower: 120 },
     Nuzzle: { maxPower: 90 },
     'Oblivion Wing': { maxPower: 130 },
-    'Oceanic Operetta': { maxPower: 150 },
+    'Oceanic Operetta': { maxPower: 1 },
     Octazooka: { maxPower: 120 },
     'Ominous Wind': { maxPower: 110 },
     'Origin Pulse': { maxPower: 140 },
@@ -3742,7 +3697,7 @@ var SS_PATCH = {
     Psyshock: { maxPower: 130 },
     Psystrike: { maxPower: 130 },
     Psywave: { maxPower: 100 },
-    'Pulverizing Pancake': { maxPower: 150 },
+    'Pulverizing Pancake': { maxPower: 1 },
     Punishment: { maxPower: 130 },
     Pursuit: { maxPower: 90 },
     'Quick Attack': { maxPower: 90 },
@@ -3771,11 +3726,11 @@ var SS_PATCH = {
     'Sacred Fire': { maxPower: 130 },
     'Sacred Sword': { maxPower: 90 },
     'Sand Tomb': { maxPower: 90 },
-    'Savage Spin-Out': { maxPower: 90 },
+    'Savage Spin-Out': { maxPower: 1 },
     Scald: { maxPower: 130 },
     Scratch: { maxPower: 90 },
     'Searing Shot': { maxPower: 130 },
-    'Searing Sunraze Smash': { maxPower: 150 },
+    'Searing Sunraze Smash': { maxPower: 1 },
     'Secret Power': { maxPower: 120 },
     'Secret Sword': { maxPower: 90 },
     'Seed Bomb': { maxPower: 130 },
@@ -3789,13 +3744,13 @@ var SS_PATCH = {
     'Shadow Punch': { maxPower: 110 },
     'Shadow Sneak': { maxPower: 90 },
     'Shadow Strike': { maxPower: 130 },
-    'Shattered Psyche': { maxPower: 90 },
+    'Shattered Psyche': { maxPower: 1 },
     'Sheer Cold': { maxPower: 130 },
     'Shell Trap': { maxPower: 150 },
     'Shock Wave': { maxPower: 110 },
     'Signal Beam': { maxPower: 130 },
     'Silver Wind': { maxPower: 110 },
-    'Sinister Arrow Raid': { maxPower: 150 },
+    'Sinister Arrow Raid': { maxPower: 1 },
     'Skull Bash': { maxPower: 140 },
     'Sky Attack': { maxPower: 140 },
     'Sky Drop': { maxPower: 110 },
@@ -3814,7 +3769,7 @@ var SS_PATCH = {
     'Solar Beam': { maxPower: 140 },
     'Solar Blade': { maxPower: 140 },
     'Sonic Boom': { maxPower: 100 },
-    'Soul-Stealing 7-Star Strike': { maxPower: 150 },
+    'Soul-Stealing 7-Star Strike': { maxPower: 1 },
     'Spacial Rend': { maxPower: 130 },
     Spark: { maxPower: 120 },
     'Sparkling Aria': { maxPower: 130 },
@@ -3822,26 +3777,25 @@ var SS_PATCH = {
     'Spike Cannon': { maxPower: 120 },
     'Spirit Shackle': { maxPower: 130 },
     'Spit Up': { maxPower: 100 },
-    'Splintered Stormshards': { maxPower: 150 },
+    'Splintered Stormshards': { maxPower: 1 },
     'Steam Eruption': { maxPower: 140 },
     Steamroller: { maxPower: 120 },
     'Steel Wing': { maxPower: 120 },
-    'Stoked Sparksurfer': { maxPower: 150 },
+    'Stoked Sparksurfer': { maxPower: 1 },
     Stomp: { maxPower: 120 },
     'Stomping Tantrum': { maxPower: 130 },
     'Stone Edge': { maxPower: 130 },
     'Stored Power': { maxPower: 130 },
     'Storm Throw': { maxPower: 80 },
     Strength: { maxPower: 130 },
-    Struggle: { maxPower: 100 },
     'Struggle Bug': { maxPower: 100 },
     Submission: { maxPower: 90 },
-    'Subzero Slammer': { maxPower: 90 },
+    'Subzero Slammer': { maxPower: 1 },
     'Sucker Punch': { maxPower: 120 },
     'Sunsteel Strike': { maxPower: 130 },
     'Super Fang': { maxPower: 100 },
     Superpower: { maxPower: 95 },
-    'Supersonic Skystrike': { maxPower: 90 },
+    'Supersonic Skystrike': { maxPower: 1 },
     Surf: { maxPower: 130 },
     Swift: { maxPower: 110 },
     Synchronoise: { maxPower: 140 },
@@ -3849,7 +3803,7 @@ var SS_PATCH = {
     'Tail Slap': { maxPower: 130 },
     'Take Down': { maxPower: 130 },
     'Techno Blast': { maxPower: 140 },
-    'Tectonic Rage': { maxPower: 90 },
+    'Tectonic Rage': { maxPower: 1 },
     Thief: { maxPower: 110 },
     'Thousand Arrows': { maxPower: 130 },
     'Thousand Waves': { maxPower: 130 },
@@ -3865,7 +3819,7 @@ var SS_PATCH = {
     'Trop Kick': { maxPower: 120 },
     'Trump Card': { maxPower: 130 },
     Twineedle: { maxPower: 100 },
-    'Twinkle Tackle': { maxPower: 90 },
+    'Twinkle Tackle': { maxPower: 1 },
     Twister: { maxPower: 90 },
     'U-turn': { maxPower: 120 },
     Uproar: { maxPower: 130 },
@@ -3970,18 +3924,26 @@ var Move = (function () {
         if (data.isPulse)
             this.flags.pulse = 1;
         util_1.assignWithout(this, data, Move.FLAGS);
+        this.basePower = data.bp;
+        if (data.zp)
+            this.zMove = { basePower: data.zp };
+        if (data.maxPower)
+            this.maxMove = { basePower: data.maxPower };
         if (!this.category && gen >= 4)
             this.category = 'Status';
         if (this.struggleRecoil)
             delete this.recoil;
     }
     Move.FLAGS = new Set([
+        'bp',
         'makesContact',
         'isPunch',
         'isBite',
         'isBullet',
         'isSound',
         'isPulse',
+        'zp',
+        'maxPower',
     ]);
     return Move;
 }());

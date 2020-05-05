@@ -5,26 +5,26 @@ var SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', '
 var Move = (function () {
     function Move(gen, name, options) {
         if (options === void 0) { options = {}; }
-        var _a;
+        var _a, _b;
         name = options.name || name;
         this.originalName = name;
         var data = util_1.extend(true, { name: name }, gen.moves.get(util_1.toID(name)), options.overrides);
         this.hits = 1;
-        if (options.useMax && 'maxPower' in data) {
+        if (options.useMax && data.maxMove) {
             var maxMoveName = getMaxMoveName(data.type, options.species, !!(data.category === 'Status'));
             var maxMove = gen.moves.get(util_1.toID(maxMoveName));
             data = util_1.extend(true, {}, maxMove, {
                 name: maxMoveName,
-                bp: maxMove.bp === 10 ? getMaxMoveBasePower(data) : maxMove.bp,
+                basePower: maxMove.basePower === 10 ? data.maxMove.basePower : maxMove.basePower,
                 category: data.category
             });
         }
-        if (options.useZ && 'zp' in data) {
+        if (options.useZ && ((_a = data.zMove) === null || _a === void 0 ? void 0 : _a.basePower)) {
             var zMoveName = getZMoveName(data.name, data.type, options.item);
             var zMove = gen.moves.get(util_1.toID(zMoveName));
             data = util_1.extend(true, {}, zMove, {
                 name: zMoveName,
-                bp: zMove.bp === 1 ? data.zp : zMove.bp,
+                basePower: zMove.basePower === 1 ? data.zMove.basePower : zMove.basePower,
                 category: data.category
             });
         }
@@ -51,14 +51,14 @@ var Move = (function () {
         this.useZ = options.useZ;
         this.useMax = options.useMax;
         this.overrides = options.overrides;
-        this.bp = data.bp;
+        this.bp = data.basePower;
         var typelessDamage = gen.num >= 2 && gen.num <= 4 &&
             ['futuresight', 'doomdesire', 'struggle'].includes(data.id);
         this.type = typelessDamage ? '???' : data.type;
         this.category = data.category ||
             (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
         var stat = this.category === 'Special' ? 'spa' : 'atk';
-        if (((_a = data.self) === null || _a === void 0 ? void 0 : _a.boosts) && data.self.boosts[stat] && data.self.boosts[stat] < 0) {
+        if (((_b = data.self) === null || _b === void 0 ? void 0 : _b.boosts) && data.self.boosts[stat] && data.self.boosts[stat] < 0) {
             this.dropsStats = Math.abs(data.self.boosts[stat]);
         }
         this.timesUsed = (this.dropsStats && options.timesUsed) || 1;
@@ -274,61 +274,4 @@ var MAXMOVES_TYPING = {
     Steel: 'Steelspike',
     Water: 'Geyser'
 };
-function getMaxMoveBasePower(move) {
-    var movePower = 10;
-    if (move.maxPower)
-        movePower = move.maxPower;
-    if (!move.maxPower && move.category !== 'Status') {
-        if (!move.bp) {
-            movePower = 100;
-        }
-        else if (move.type === 'Fighting' || move.type === 'Poison') {
-            if (move.bp >= 150) {
-                movePower = 100;
-            }
-            else if (move.bp >= 110) {
-                movePower = 95;
-            }
-            else if (move.bp >= 75) {
-                movePower = 90;
-            }
-            else if (move.bp >= 65) {
-                movePower = 85;
-            }
-            else if (move.bp >= 55) {
-                movePower = 80;
-            }
-            else if (move.bp >= 45) {
-                movePower = 75;
-            }
-            else {
-                movePower = 70;
-            }
-        }
-        else {
-            if (move.bp >= 150) {
-                movePower = 150;
-            }
-            else if (move.bp >= 110) {
-                movePower = 140;
-            }
-            else if (move.bp >= 75) {
-                movePower = 130;
-            }
-            else if (move.bp >= 65) {
-                movePower = 120;
-            }
-            else if (move.bp >= 55) {
-                movePower = 110;
-            }
-            else if (move.bp >= 45) {
-                movePower = 100;
-            }
-            else {
-                movePower = 90;
-            }
-        }
-    }
-    return movePower;
-}
 //# sourceMappingURL=move.js.map
