@@ -713,7 +713,7 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 	var timesUsed = +moveInfo.find(".stat-drops").val();
 	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
 	var overrides = {
-		bp: +moveInfo.find(".move-bp").val(),
+		basePower: +moveInfo.find(".move-bp").val(),
 		type: moveInfo.find(".move-type").val()
 	};
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
