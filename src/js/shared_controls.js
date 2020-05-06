@@ -669,8 +669,7 @@ function createPokemon(pokeInfo) {
 		var curHP = ~~pokeInfo.find(".current-hp").val();
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
 		if (isDynamaxed) curHP = Math.floor(curHP / 2);
-		var types = [pokeInfo.find(".type1").val()];
-		if (pokeInfo.find(".type2").val()) types.push(pokeInfo.find(".type2").val());
+		var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
 			ability: ability,
