@@ -63,7 +63,10 @@ export class Move implements State.Move {
       const maxMove = gen.moves.get(toID(maxMoveName));
       data = extend(true, {}, maxMove, {
         name: maxMoveName,
-        basePower: maxMove!.basePower === 10 ? data.maxMove.basePower : maxMove!.basePower,
+        // TODO: checking basePower === 10 is fragile (what if the maxMove's basePower is
+        // overridden?) and also fails for Max Flare, which is strangely 100 BP in the game data
+        basePower: maxMove!.basePower === 10 || maxMoveName === 'Max Flare'
+          ? data.maxMove.basePower : maxMove!.basePower,
         category: data.category,
       });
     }
