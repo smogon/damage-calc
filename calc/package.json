@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "unpkg": "dist/production.min.js",
   "description": "Pokémon battle calculator",
   "repository": "github:smogon/damage-calc",
   "contributors": [
@@ -28,7 +29,8 @@
     "lint": "eslint --cache src/**/*.ts",
     "fix": "eslint --fix src/**/*.ts",
     "compile": "tsc -p .",
-    "build": "npm run compile",
+    "bundle": "node bundle",
+    "build": "npm run compile && npm run bundle",
     "test": "jest",
     "coverage": "jest --coverage",
     "prepare": "npm run build",

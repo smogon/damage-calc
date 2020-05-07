@@ -17,7 +17,7 @@
 //   - pokemon.js
 //   - field.js
 //   - move.js
-//   - item.ts
+//   - items.js
 //
 //   - mechanics/util.js
 //   - mechanics/gen78.js

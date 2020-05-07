@@ -1,10 +1,11 @@
 import {Generation, Weather, Terrain, TypeName, ID} from './data/interface';
 import {Field, Side} from './field';
-import {isGrounded} from './mechanics/util';
 import {Move} from './move';
 import {Pokemon} from './pokemon';
 import {Damage, damageRange} from './result';
 import {error} from './util';
+// NOTE: This needs to come last to simplify bundling
+import {isGrounded} from './mechanics/util';
 
 export interface RawDesc {
   HPEVs?: string;
