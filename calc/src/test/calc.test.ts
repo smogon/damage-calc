@@ -77,6 +77,13 @@ describe('calc', () => {
     });
 
     inGens(1, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Protect (gen ${gen})`, () => {
+        const field = Field({defenderSide: {isProtected: true}});
+        expect(calculate(Pokemon('Snorlax'), Pokemon('Chansey'), Move('Hyper Beam'), field).damage).toBe(0);
+      });
+    });
+
+    inGens(1, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Critical hits ignore attack decreases (gen ${gen})`, () => {
         const field = Field({defenderSide: {isReflect: true}});
 
@@ -121,25 +128,158 @@ describe('calc', () => {
       });
     });
 
+    inGens(3, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Weather Ball should change type depending on the weather (gen ${gen})`, () => {
+        let field = Field({weather: 'Sun'});
+
+        const castform = Pokemon('Castform');
+        const bulbasaur = Pokemon('Bulbasaur');
+        const weatherBall = Move('Weather Ball');
+        let result = calculate(castform, bulbasaur, weatherBall, field);
+        
+        if (gen === 3) {
+          expect(result.range()).toEqual([428, 504]);
+          expect(result.desc()).toBe(
+            '0 Atk Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 Def Bulbasaur in Sun: 428-504 (185.2 - 218.1%) -- guaranteed OHKO'
+          );
+        } else if (gen === 4) {
+          expect(result.range()).toEqual([170, 204]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 170-204 (73.5 - 88.3%) -- guaranteed 2HKO'
+          );
+        } else if (gen > 4) {
+          expect(result.range()).toEqual([344, 408]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 344-408 (148.9 - 176.6%) -- guaranteed OHKO'
+          );
+        }
+        field = Field({weather: 'Rain'});
+        result = calculate(castform, bulbasaur, weatherBall, field);
+        if (gen === 3) {
+          expect(result.range()).toEqual([107, 126]);
+          expect(result.desc()).toBe(
+            '0 Atk Castform Weather Ball (100 BP Water) vs. 0 HP / 0 Def Bulbasaur in Rain: 107-126 (46.3 - 54.5%) -- 57.8% chance to 2HKO'
+          );
+        } else if (gen === 4) {
+          expect(result.range()).toEqual([42, 51]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Water) vs. 0 HP / 0 SpD Bulbasaur in Rain: 42-51 (18.1 - 22%) -- possible 5HKO'
+          );
+        } else if (gen > 4) {
+          expect(result.range()).toEqual([86, 102]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Water) vs. 0 HP / 0 SpD Bulbasaur in Rain: 86-102 (37.2 - 44.1%) -- guaranteed 3HKO'
+          );
+        }
+        field = Field({weather: 'Sand'});
+        result = calculate(castform, bulbasaur, weatherBall, field);
+        if (gen === 3) {
+          expect(result.range()).toEqual([96, 114]);
+          expect(result.desc()).toBe(
+            '0 Atk Castform Weather Ball (100 BP Rock) vs. 0 HP / 0 Def Bulbasaur in Sand: 96-114 (41.5 - 49.3%) -- 20.7% chance to 2HKO after sandstorm damage'
+          );
+        } else if (gen === 4) {
+          expect(result.range()).toEqual([39, 46]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Rock) vs. 0 HP / 0 SpD Bulbasaur in Sand: 39-46 (16.8 - 19.9%) -- guaranteed 5HKO after sandstorm damage'
+          );
+        } else if (gen > 4) {
+          expect(result.range()).toEqual([77, 91]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Rock) vs. 0 HP / 0 SpD Bulbasaur in Sand: 77-91 (33.3 - 39.3%) -- guaranteed 3HKO after sandstorm damage'
+          );
+        }
+        field = Field({weather: 'Hail'});
+        result = calculate(castform, bulbasaur, weatherBall, field);
+        if (gen === 3) {
+          expect(result.range()).toEqual([290, 342]);
+          expect(result.desc()).toBe(
+            '0 Atk Castform Weather Ball (100 BP Ice) vs. 0 HP / 0 Def Bulbasaur in Hail: 290-342 (125.5 - 148%) -- guaranteed OHKO'
+          );
+        } else if (gen === 4) {
+          expect(result.range()).toEqual([116, 138]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Ice) vs. 0 HP / 0 SpD Bulbasaur in Hail: 116-138 (50.2 - 59.7%) -- guaranteed 2HKO after hail damage'
+          );
+        } else if (gen > 4) {
+          expect(result.range()).toEqual([230, 272]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Ice) vs. 0 HP / 0 SpD Bulbasaur in Hail: 230-272 (99.5 - 117.7%) -- 93.8% chance to OHKO after hail damage'
+          );
+        }
+      });
+    });
+
+    /*inGens(3, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Moves should change type with applicable abilities (gen ${gen})`, () => {
+        let field = Field({weather: 'Sun'});
+
+        //const arceus = Pokemon('Arceus', {item: 'Flame Plate'});
+        const castform = Pokemon('Castform');
+        const bulbasaur = Pokemon('Bulbasaur');
+        const genesect = Pokemon('Genesect', {item: 'Fighting Drive'});
+        const typeNull = Pokemon('Type: Null', {item: 'Water Memory'})
+        const judgment = Move('Judgment');
+        //const multiAttack = Move('Multi-Attack');
+        //const technoBlast = Move('Techno Blast');
+        const weatherBall = Move('Weather Ball');
+        let result = calculate(castform, bulbasaur, weatherBall, field);
+        
+        if (gen === 3) {
+          expect(result.range()).toEqual([428, 504]);
+          expect(result.desc()).toBe(
+            '0 Atk Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 Def Bulbasaur in Sun: 428-504 (185.2 - 218.1%) -- guaranteed OHKO'
+          );
+        } else if (gen === 4) {
+          expect(result.range()).toEqual([170, 204]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 170-204 (73.5 - 88.3%) -- guaranteed 2HKO'
+          );
+        } else if (gen > 4) {
+          expect(result.range()).toEqual([344, 408]);
+          expect(result.desc()).toBe(
+            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 344-408 (148.9 - 176.6%) -- guaranteed OHKO'
+          );
+        } 
+      });
+    });*/
+
+    inGens(6, 8, ({gen, calculate, Pokemon, Move}) => {
+      test(`Thousand Arrows and Ring Target Should negate damage nullfiers (gen ${gen})`, () => {
+
+        const zygarde = Pokemon('Zygarde');
+        //const golem = Pokemon('Golem'); 
+        const swellow = Pokemon('Swellow');
+        //const rotom = Pokemon('Rotom-Fan', {item: 'Ring Target'}); ring target doesn't seem to work properly, TODO
+        const tArrows = Move('Thousand Arrows');
+        const earthquake = Move('Earthquake');
+        let result = calculate(zygarde, swellow, tArrows);
+        expect(result.range()).toEqual([147, 174]);
+        expect(result.desc()).toBe(
+          '0 Atk Zygarde Thousand Arrows vs. 0 HP / 0 Def Swellow: 147-174 (56.3 - 66.6%) -- guaranteed 2HKO'
+        );
+      });
+    });
+
     inGens(7, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Psychic Terrain (gen ${gen})`, () => {
-        const result = calculate(
-          Pokemon('Mewtwo', {
-            nature: 'Timid',
-            evs: {spa: 252},
-            boosts: {spa: 2},
-          }),
-          Pokemon('Milotic', {
-            item: 'Flame Orb',
-            nature: 'Bold',
-            ability: 'Marvel Scale',
-            evs: {hp: 248, def: 184},
-            status: 'brn',
-            boosts: {spd: 1},
-          }),
-          Move('Psystrike'),
-          Field({terrain: 'Psychic'})
-        );
+        const field = Field({terrain: 'Psychic'})
+        const Mewtwo = Pokemon('Mewtwo', {
+          nature: 'Timid',
+          evs: {spa: 252},
+          boosts: {spa: 2},
+        });
+        const Milotic = Pokemon('Milotic', {
+          item: 'Flame Orb',
+          nature: 'Bold',
+          ability: 'Marvel Scale',
+          evs: {hp: 248, def: 184},
+          status: 'brn',
+          boosts: {spd: 1},
+        });
+        const Psystrike = Move('Psystrike');
+        const sPunch = Move('Sucker Punch');
+        let result = calculate(Mewtwo, Milotic, Psystrike, field);
         if (gen < 8) {
           expect(result.range()).toEqual([331, 391]);
           expect(result.desc()).toBe(
@@ -151,6 +291,8 @@ describe('calc', () => {
             '+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 288-339 (73.2 - 86.2%) -- guaranteed 2HKO after burn damage'
           );
         }
+        result = calculate(Mewtwo, Milotic, sPunch, field);
+        expect(result.range()).toEqual([0, 0]);
       });
     });
 
