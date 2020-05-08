@@ -79,7 +79,9 @@ describe('calc', () => {
     inGens(1, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Protect (gen ${gen})`, () => {
         const field = Field({defenderSide: {isProtected: true}});
-        expect(calculate(Pokemon('Snorlax'), Pokemon('Chansey'), Move('Hyper Beam'), field).damage).toBe(0);
+        const snorlax = Pokemon('Snorlax');
+        const chansey = Pokemon('Chansey');
+        expect(calculate(snorlax, chansey, Move('Hyper Beam'), field).damage).toBe(0);
       });
     });
 
@@ -136,7 +138,6 @@ describe('calc', () => {
         const bulbasaur = Pokemon('Bulbasaur');
         const weatherBall = Move('Weather Ball');
         let result = calculate(castform, bulbasaur, weatherBall, field);
-        
         if (gen === 3) {
           expect(result.range()).toEqual([428, 504]);
           expect(result.desc()).toBe(
@@ -210,50 +211,14 @@ describe('calc', () => {
       });
     });
 
-    /*inGens(3, 8, ({gen, calculate, Pokemon, Move, Field}) => {
-      test(`Moves should change type with applicable abilities (gen ${gen})`, () => {
-        let field = Field({weather: 'Sun'});
-
-        //const arceus = Pokemon('Arceus', {item: 'Flame Plate'});
-        const castform = Pokemon('Castform');
-        const bulbasaur = Pokemon('Bulbasaur');
-        const genesect = Pokemon('Genesect', {item: 'Fighting Drive'});
-        const typeNull = Pokemon('Type: Null', {item: 'Water Memory'})
-        const judgment = Move('Judgment');
-        //const multiAttack = Move('Multi-Attack');
-        //const technoBlast = Move('Techno Blast');
-        const weatherBall = Move('Weather Ball');
-        let result = calculate(castform, bulbasaur, weatherBall, field);
-        
-        if (gen === 3) {
-          expect(result.range()).toEqual([428, 504]);
-          expect(result.desc()).toBe(
-            '0 Atk Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 Def Bulbasaur in Sun: 428-504 (185.2 - 218.1%) -- guaranteed OHKO'
-          );
-        } else if (gen === 4) {
-          expect(result.range()).toEqual([170, 204]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 170-204 (73.5 - 88.3%) -- guaranteed 2HKO'
-          );
-        } else if (gen > 4) {
-          expect(result.range()).toEqual([344, 408]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 344-408 (148.9 - 176.6%) -- guaranteed OHKO'
-          );
-        } 
-      });
-    });*/
-
     inGens(6, 8, ({gen, calculate, Pokemon, Move}) => {
       test(`Thousand Arrows and Ring Target Should negate damage nullfiers (gen ${gen})`, () => {
-
         const zygarde = Pokemon('Zygarde');
-        //const golem = Pokemon('Golem'); 
+        // const golem = Pokemon('Golem');
         const swellow = Pokemon('Swellow');
-        //const rotom = Pokemon('Rotom-Fan', {item: 'Ring Target'}); ring target doesn't seem to work properly, TODO
+        // const rotom = Pokemon('Rotom-Fan', {item: 'Ring Target'}); ring target doesn't seem to work properly, TODO
         const tArrows = Move('Thousand Arrows');
-        const earthquake = Move('Earthquake');
-        let result = calculate(zygarde, swellow, tArrows);
+        const result = calculate(zygarde, swellow, tArrows);
         expect(result.range()).toEqual([147, 174]);
         expect(result.desc()).toBe(
           '0 Atk Zygarde Thousand Arrows vs. 0 HP / 0 Def Swellow: 147-174 (56.3 - 66.6%) -- guaranteed 2HKO'
@@ -261,9 +226,16 @@ describe('calc', () => {
       });
     });
 
+    inGen(8, ({gen, Pokemon}) => {
+      test(`Pokemon should double their HP stat when dynamaxing (gen ${gen})`, () => {
+        const munchlax = Pokemon('Munchlax', {isDynamaxed: true});
+        expect(munchlax.curHP()).toBe(822);
+      });
+    });
+
     inGens(7, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Psychic Terrain (gen ${gen})`, () => {
-        const field = Field({terrain: 'Psychic'})
+        const field = Field({terrain: 'Psychic'});
         const Mewtwo = Pokemon('Mewtwo', {
           nature: 'Timid',
           evs: {spa: 252},
