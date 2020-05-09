@@ -1,4 +1,4 @@
-import {AbilityName} from '../data/interface';
+import {AbilityName, Weather} from '../data/interface';
 import {inGen, inGens} from './helper';
 
 describe('calc', () => {
@@ -132,80 +132,68 @@ describe('calc', () => {
 
     inGens(3, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Weather Ball should change type depending on the weather (gen ${gen})`, () => {
-        let field = Field({weather: 'Sun'});
+        const weathers = [
+          {
+            weather: 'Sun', type: 'Fire', damage: {
+              adv: {range: [346, 408], desc: '(149.7 - 176.6%) -- guaranteed OHKO'},
+              dpp: {range: [170, 204], desc: '(73.5 - 88.3%) -- guaranteed 2HKO'},
+              modern: {range: [344, 408], desc: '(148.9 - 176.6%) -- guaranteed OHKO'},
+            },
+          },
+          {
+            weather: 'Rain', type: 'Water', damage: {
+              adv: {range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO'},
+              dpp: {range: [42, 51], desc: '(18.1 - 22%) -- possible 5HKO'},
+              modern: {range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO'},
+            },
+          },
+          {
+            weather: 'Sand', type: 'Rock', damage: {
+              adv: {
+                range: [96, 114],
+                desc: '(41.5 - 49.3%) -- 20.7% chance to 2HKO after sandstorm damage',
+              },
+              dpp: {
+                range: [39, 46],
+                desc: '(16.8 - 19.9%) -- guaranteed 5HKO after sandstorm damage',
+              },
+              modern: {
+                range: [77, 91],
+                desc: '(33.3 - 39.3%) -- guaranteed 3HKO after sandstorm damage',
+              },
+            },
+          },
+          {
+            weather: 'Hail', type: 'Ice', damage: {
+              adv: {
+                range: [234, 276],
+                desc: '(101.2 - 119.4%) -- guaranteed OHKO',
+              },
+              dpp: {
+                range: [116, 138],
+                desc: '(50.2 - 59.7%) -- guaranteed 2HKO after hail damage',
+              },
+              modern: {
+                range: [230, 272],
+                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO after hail damage',
+              },
+            },
+          },
+        ];
 
-        const castform = Pokemon('Castform');
-        const bulbasaur = Pokemon('Bulbasaur');
-        const weatherBall = Move('Weather Ball');
-        let result = calculate(castform, bulbasaur, weatherBall, field);
-        if (gen === 3) {
-          expect(result.range()).toEqual([428, 504]);
-          expect(result.desc()).toBe(
-            '0 Atk Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 Def Bulbasaur in Sun: 428-504 (185.2 - 218.1%) -- guaranteed OHKO'
+        for (const {weather, type, damage} of weathers) {
+          const dmg = gen === 3 ? damage.adv : gen === 4 ? damage.dpp : damage.modern;
+          const [atk, def] = gen === 3 && type === 'Rock' ? ['Atk', 'Def'] : ['SpA', 'SpD'];
+
+          const result = calculate(
+            Pokemon('Castform'),
+            Pokemon('Bulbasaur'),
+            Move('Weather Ball'),
+            Field({weather: weather as Weather})
           );
-        } else if (gen === 4) {
-          expect(result.range()).toEqual([170, 204]);
+          expect(result.range()).toEqual(dmg.range);
           expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 170-204 (73.5 - 88.3%) -- guaranteed 2HKO'
-          );
-        } else if (gen > 4) {
-          expect(result.range()).toEqual([344, 408]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Fire) vs. 0 HP / 0 SpD Bulbasaur in Sun: 344-408 (148.9 - 176.6%) -- guaranteed OHKO'
-          );
-        }
-        field = Field({weather: 'Rain'});
-        result = calculate(castform, bulbasaur, weatherBall, field);
-        if (gen === 3) {
-          expect(result.range()).toEqual([107, 126]);
-          expect(result.desc()).toBe(
-            '0 Atk Castform Weather Ball (100 BP Water) vs. 0 HP / 0 Def Bulbasaur in Rain: 107-126 (46.3 - 54.5%) -- 57.8% chance to 2HKO'
-          );
-        } else if (gen === 4) {
-          expect(result.range()).toEqual([42, 51]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Water) vs. 0 HP / 0 SpD Bulbasaur in Rain: 42-51 (18.1 - 22%) -- possible 5HKO'
-          );
-        } else if (gen > 4) {
-          expect(result.range()).toEqual([86, 102]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Water) vs. 0 HP / 0 SpD Bulbasaur in Rain: 86-102 (37.2 - 44.1%) -- guaranteed 3HKO'
-          );
-        }
-        field = Field({weather: 'Sand'});
-        result = calculate(castform, bulbasaur, weatherBall, field);
-        if (gen === 3) {
-          expect(result.range()).toEqual([96, 114]);
-          expect(result.desc()).toBe(
-            '0 Atk Castform Weather Ball (100 BP Rock) vs. 0 HP / 0 Def Bulbasaur in Sand: 96-114 (41.5 - 49.3%) -- 20.7% chance to 2HKO after sandstorm damage'
-          );
-        } else if (gen === 4) {
-          expect(result.range()).toEqual([39, 46]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Rock) vs. 0 HP / 0 SpD Bulbasaur in Sand: 39-46 (16.8 - 19.9%) -- guaranteed 5HKO after sandstorm damage'
-          );
-        } else if (gen > 4) {
-          expect(result.range()).toEqual([77, 91]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Rock) vs. 0 HP / 0 SpD Bulbasaur in Sand: 77-91 (33.3 - 39.3%) -- guaranteed 3HKO after sandstorm damage'
-          );
-        }
-        field = Field({weather: 'Hail'});
-        result = calculate(castform, bulbasaur, weatherBall, field);
-        if (gen === 3) {
-          expect(result.range()).toEqual([290, 342]);
-          expect(result.desc()).toBe(
-            '0 Atk Castform Weather Ball (100 BP Ice) vs. 0 HP / 0 Def Bulbasaur in Hail: 290-342 (125.5 - 148%) -- guaranteed OHKO'
-          );
-        } else if (gen === 4) {
-          expect(result.range()).toEqual([116, 138]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Ice) vs. 0 HP / 0 SpD Bulbasaur in Hail: 116-138 (50.2 - 59.7%) -- guaranteed 2HKO after hail damage'
-          );
-        } else if (gen > 4) {
-          expect(result.range()).toEqual([230, 272]);
-          expect(result.desc()).toBe(
-            '0 SpA Castform Weather Ball (100 BP Ice) vs. 0 HP / 0 SpD Bulbasaur in Hail: 230-272 (99.5 - 117.7%) -- 93.8% chance to OHKO after hail damage'
+            `0 ${atk} Castform Weather Ball (100 BP ${type}) vs. 0 HP / 0 ${def} Bulbasaur in ${weather}: ${dmg.range[0]}-${dmg.range[1]} ${dmg.desc}`
           );
         }
       });
@@ -213,12 +201,7 @@ describe('calc', () => {
 
     inGens(6, 8, ({gen, calculate, Pokemon, Move}) => {
       test(`Thousand Arrows and Ring Target Should negate damage nullfiers (gen ${gen})`, () => {
-        const zygarde = Pokemon('Zygarde');
-        // const golem = Pokemon('Golem');
-        const swellow = Pokemon('Swellow');
-        // const rotom = Pokemon('Rotom-Fan', {item: 'Ring Target'}); ring target doesn't seem to work properly, TODO
-        const tArrows = Move('Thousand Arrows');
-        const result = calculate(zygarde, swellow, tArrows);
+        const result = calculate(Pokemon('Zygarde'), Pokemon('Swellow'), Move('Thousand Arrows'));
         expect(result.range()).toEqual([147, 174]);
         expect(result.desc()).toBe(
           '0 Atk Zygarde Thousand Arrows vs. 0 HP / 0 Def Swellow: 147-174 (56.3 - 66.6%) -- guaranteed 2HKO'
