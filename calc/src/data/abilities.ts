@@ -170,7 +170,6 @@ const BW = DPP.concat([
   'Sand Rush',
   'Sap Sipper',
   'Sheer Force',
-  'Storm Drain',
   'Telepathy',
   'Teravolt',
   'Toxic Boost',
