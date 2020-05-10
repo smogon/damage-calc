@@ -367,7 +367,7 @@ export function countBoosts(gen: Generation, boosts: StatsTable) {
     ? ['atk', 'def', 'spa', 'spe']
     : ['atk', 'def', 'spa', 'spd', 'spe'];
 
-  for (let i = 1; i < STATS.length; i++) {
+  for (let i = 0; i < STATS.length; i++) {
     // Only positive boosts are counted
     const boost = boosts[STATS[i]];
     if (boost && boost > 0) sum += boost;
