@@ -63,7 +63,7 @@ export class Pokemon implements State.Pokemon {
     this.nature = options.nature || ('Serious' as I.NatureName);
     this.ivs = Pokemon.withDefault(gen, options.ivs, 31);
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
-    this.boosts = Pokemon.withDefault(gen, options.boosts, 0);
+    this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
 
     if (gen.num < 3) {
       this.ivs.hp = Stats.DVToIV(
@@ -191,7 +191,8 @@ export class Pokemon implements State.Pokemon {
   private static withDefault(
     gen: I.Generation,
     current: Partial<I.StatsTable> & {spc?: number} | undefined,
-    val: number
+    val: number,
+    match = true,
   ) {
     let cur: Partial<I.StatsTable> = {};
     if (current) {
@@ -200,7 +201,7 @@ export class Pokemon implements State.Pokemon {
         cur.spa = current.spc;
         cur.spd = current.spc;
       }
-      if (gen.num <= 2 && current.spa !== current.spd) {
+      if (match && gen.num <= 2 && current.spa !== current.spd) {
         throw new Error('Special Attack and Special Defense must match before Gen 3');
       }
     }
