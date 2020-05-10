@@ -769,7 +769,8 @@ function calcHP(poke) {
 	var $maxHP = poke.find(".max-hp");
 
 	var prevMaxHP = Number($maxHP.attr('data-prev')) || total;
-	var prevCurrentHP = Math.min(Number(poke.find(".current-hp").val()), prevMaxHP);
+	var $currentHP = poke.find(".current-hp");
+	var prevCurrentHP = $currentHP.attr('data-set') ? Math.min(Number($currentHP.val()), prevMaxHP) : prevMaxHP;
 	// NOTE: poke.find(".percent-hp").val() is a rounded value!
 	var prevPercentHP = 100 * prevCurrentHP / prevMaxHP;
 
@@ -778,6 +779,8 @@ function calcHP(poke) {
 
 	var newCurrentHP = calcCurrentHP(poke, total, prevPercentHP);
 	calcPercentHP(poke, total, newCurrentHP);
+
+	$currentHP.attr('data-set', true);
 }
 
 function calcStat(poke, statName) {
