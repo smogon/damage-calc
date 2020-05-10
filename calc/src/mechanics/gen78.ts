@@ -87,7 +87,7 @@ export function calculateSMSS(
     return result;
   }
 
-  if (field.defenderSide.isProtected && !move.breaksProtect && !move.isZ) {
+  if (field.defenderSide.isProtected && !move.breaksProtect && !move.isZ && !attacker.isDynamaxed) {
     desc.isProtected = true;
     return result;
   }
@@ -1003,7 +1003,8 @@ export function calculateSMSS(
   }
 
   let protect = false;
-  if (field.defenderSide.isProtected && move.isZ && attacker.item && attacker.item.includes(' Z')) {
+  if (field.defenderSide.isProtected &&
+    (attacker.isDynamaxed || (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
     protect = true;
     desc.isProtected = true;
   }
