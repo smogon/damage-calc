@@ -175,7 +175,7 @@ describe('calc', () => {
               },
               modern: {
                 range: [230, 272],
-                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO after hail damage',
+                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO',
               },
             },
           },
@@ -741,7 +741,7 @@ describe('calc', () => {
   });
 
   describe('Gen 8', () => {
-    inGen(8, ({calculate, Pokemon, Move}) => {
+    inGen(8, ({calculate, Pokemon, Move, Field}) => {
       test('Basic: Gengar vs. Chansey', () => {
         const result = calculate(
           Pokemon('Gengar', {
@@ -761,6 +761,27 @@ describe('calc', () => {
         expect(result.range()).toEqual([204, 242]);
         expect(result.desc()).toBe(
           '+3 252+ SpA Life Orb Gengar Sludge Bomb vs. +1 100 HP / 100 SpD Eviolite Chansey: 204-242 (30.6 - 36.3%) -- 52.9% chance to 3HKO'
+        );
+      });
+
+      test('% chance to OHKO', () => {
+        const abomasnow = Pokemon('Abomasnow', {
+          level: 55,
+          item: 'Choice Specs',
+          evs: {spa: 252},
+        });
+        const deerling = Pokemon('Deerling', {evs: {hp: 36}});
+        const blizzard = Move('Blizzard');
+        const hail = Field({weather: 'Hail'});
+        let result = calculate(abomasnow, deerling, blizzard, hail);
+        expect(result.desc()).toBe(
+          'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 56.3% chance to OHKO after hail damage'
+        );
+        // When Abomasnow is faster than Deerling it should instead no longer consider end-of-turn damage
+        abomasnow.boosts.spe = 6;
+        result = calculate(abomasnow, deerling, blizzard, hail);
+        expect(result.desc()).toBe(
+          'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 25% chance to OHKO'
         );
       });
     });

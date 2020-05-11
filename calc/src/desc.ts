@@ -263,6 +263,9 @@ export function getKOChance(
     damage = squashMultihit(gen, damage, move.hits, err);
   }
 
+  const hazardsText = hazards.texts.length > 0
+    ? ' after ' + serializeText(hazards.texts)
+    : '';
   const afterText =
     hazards.texts.length > 0 || eot.texts.length > 0
       ? ' after ' + serializeText(hazards.texts.concat(eot.texts))
@@ -272,13 +275,38 @@ export function getKOChance(
     const chance = computeKOChance(
       damage, defender.curHP() - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter);
     if (chance === 1) {
-      return {chance, n: 1, text: `guaranteed OHKO${afterText}`};
+      return {chance, n: 1, text: `guaranteed OHKO${hazardsText}`}; // eot wasn't considered
     } else if (chance > 0) {
-      return {
-        chance,
-        n: 1,
-        text: qualifier + Math.round(chance * 1000) / 10 + `% chance to OHKO${afterText}`,
-      };
+      // We didn't actually consider eot.damage above - in the event that the attacker is faster it
+      // is more interesting to figure out what the raw % chance to OHKO is before the defender has
+      // a chance to retaliate, otherwise we recompute the KO chance taking into account eot.damage
+      // and report on that.
+      if (attacker.stats.spe > defender.stats.spe) {
+        return {
+          chance,
+          n: 1,
+          text: qualifier + Math.round(chance * 1000) / 10 + `% chance to OHKO${hazardsText}`,
+        };
+      } else {
+        const chance = computeKOChance(
+          damage,
+          defender.curHP() + eot.damage - hazards.damage,
+          0,
+          1,
+          1,
+          defender.maxHP(),
+          toxicCounter)
+        ;
+        if (chance === 1) {
+          return {chance, n: 1, text: `guaranteed OHKO${afterText}`};
+        } else {
+          return {
+            chance,
+            n: 1,
+            text: qualifier + Math.round(chance * 1000) / 10 + `% chance to OHKO${afterText}`,
+          };
+        }
+      }
     }
 
     // Parental Bond's combined first + second hit only is accurate for chance to OHKO, for
