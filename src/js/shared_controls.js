@@ -350,6 +350,27 @@ $(".move-selector").change(function () {
 	var move = moves[moveName] || moves['(No Move)'];
 	var moveGroupObj = $(this).parent();
 	moveGroupObj.children(".move-bp").val(moveName === 'Present' ? 40 : move.bp);
+	var m = moveName.match(/Hidden Power (\w*)/);
+	if (m) {
+		var pokeObj = $(this).closest(".poke-info");
+		var pokemon = createPokemon(pokeObj);
+		var actual = calc.Stats.getHiddenPower(GENERATION, pokemon.ivs);
+		if (actual.type !== m[1]) {
+			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
+			if (hpIVs && gen < 7) {
+				for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+					var legacyStat = LEGACY_STATS[gen][i];
+					var stat = legacyStatToStat(legacyStat);
+					pokeObj.find("." + legacyStat + " .ivs").val(hpIVs[stat] !== undefined ? hpIVs[stat] : 31);
+					pokeObj.find("." + legacyStat + " .dvs").val(hpIVs[stat] !== undefined ? calc.Stats.IVToDV(hpIVs[stat]) : 15);
+				}
+				pokeObj.change();
+				moveGroupObj.children(".move-bp").val(gen >= 6 ? 60 : 70);
+			}
+		} else {
+			moveGroupObj.children(".move-bp").val(actual.power);
+		}
+	}
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.willCrit === true);
@@ -429,7 +450,7 @@ $(".set-selector").change(function () {
 			$(this).closest('.poke-info').find(".item-pool").hide();
 		}
 		if (regSets || randset) {
-			var set = regSets ? setdex[pokemonName][setName] : randset;
+			var set = regSets ? correctHiddenPower(setdex[pokemonName][setName]) : randset;
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -603,6 +624,52 @@ $(".forme").change(function () {
 		container.find(".item").prop("disabled", false);
 	}
 });
+
+function correctHiddenPower(pokemon) {
+	// After Gen 7 bottlecaps means you can have a HP without perfect IVs
+	if (gen >= 7 && pokemon.level >= 100) return pokemon;
+
+	// Convert the legacy stats table to a useful one, and also figure out if all are maxed
+	var ivs = {};
+	var maxed = false;
+	for (var i = 0; i <= LEGACY_STATS[8].length; i++) {
+		var s = LEGACY_STATS[8][i];
+		var iv = ivs[calc.Stats.shortForm(s)] = s || 31;
+		if (iv !== 31) maxed = false;
+	}
+
+	var expected = calc.Stats.getHiddenPower(GENERATION, ivs);
+	for (var i = 0; i < pokemon.moves.length; i++) {
+		var m = pokemon.moves[i].match(/Hidden Power (\w*)/);
+		if (!m) continue;
+		// The Pokemon has Hidden Power and is not maxed but the types don't match we don't
+		// want to attempt to reconcile the user's IVs so instead just correct the HP type
+		if (!maxed && expected.type !== m[1]) {
+			pokemon.moves[i] = "Hidden Power " + expected.type;
+		} else {
+			// Otherwise, use the default preset hidden power IVs that PS would use
+			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
+			if (!hpIVs) continue; // some impossible type was specified, ignore
+
+			pokemon.ivs = pokemon.ivs || {hp: 31, at: 31, df: 31, sa: 31, sd: 31, sp: 31};
+			pokemon.dvs = pokemon.dvs || {hp: 15, at: 15, df: 15, sa: 15, sd: 15, sp: 15};
+			for (var stat in hpIVs) {
+				pokemon.ivs[calc.Stats.shortForm(stat)] = hpIVs[stat];
+				pokemon.dvs[calc.Stats.shortForm(stat)] = calc.Stats.IVToDV(hpIVs[stat]);
+			}
+			if (gen < 3) {
+				pokemon.dvs.hp = calc.Stats.getHPDV({
+					atk: pokemon.ivs.at,
+					def: pokemon.ivs.df,
+					spe: pokemon.ivs.sp,
+					spc: pokemon.ivs.sa
+				});
+				pokemon.ivs.hp = calc.Stats.DVToIV(pokemon.dvs.hp);
+			}
+		}
+	}
+	return pokemon;
+}
 
 function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)

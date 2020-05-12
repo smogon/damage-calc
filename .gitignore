@@ -4,5 +4,6 @@ eslint-cache/
 .eslintcache
 .DS_Store
 Thumbs.db
-p?npm-debug.log
+pnpm-debug.log
+npm-debug.log
 package-lock.json

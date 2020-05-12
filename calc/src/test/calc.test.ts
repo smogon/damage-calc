@@ -382,7 +382,7 @@ describe('calc', () => {
       test('DVs', () => {
         const aerodactyl = Pokemon('Aerodactyl');
         const zapdos = Pokemon('Zapdos', {ivs: {atk: 29, def: 27}, item: 'Leftovers'});
-        expect(zapdos.ivs.hp).toBe(15);
+        expect(zapdos.ivs.hp).toBe(14);
 
         const move = Move('Ancient Power');
         const result = calculate(aerodactyl, zapdos, move);

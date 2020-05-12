@@ -1,4 +1,4 @@
-import {Natures, Generation, StatName} from './data/interface';
+import {Natures, Generation, TypeName, StatName, StatsTable} from './data/interface';
 import {toID} from './util';
 
 const RBY: Array<StatName | 'spc'> = ['hp', 'atk', 'def', 'spc', 'spe'];
@@ -12,6 +12,32 @@ const SS: StatName[] = GSC;
 
 export const STATS: Array<Array<StatName | 'spc'> | StatName[]> =
   [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+
+type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | '???'>;
+
+const HP_TYPES = [
+  'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
+  'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
+];
+
+const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>, dvs: Partial<StatsTable>}} = {
+  Bug: 	{ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
+  Dark: {ivs: {}, dvs: {}},
+  Dragon: {ivs: {atk: 30}, dvs: {def: 14}},
+  Electric: {ivs: {spa: 30}, dvs: {atk: 14}},
+  Fighting: {ivs: {def: 30, spa: 30, spd: 30, spe: 30}, dvs: {atk: 12, def: 12}},
+  Fire: {ivs: {atk: 30, spa: 30, spe: 30}, dvs: {atk: 14, def: 12}},
+  Flying: {ivs: {hp: 30, atk: 30, def: 30, spa: 30, spd: 30}, dvs: {atk: 12, def: 13}},
+  Ghost: {ivs: {def: 30, spd: 30}, dvs: {atk: 13, def: 14}},
+  Grass: {ivs: {atk: 30, spa: 30}, dvs: {atk: 14, def: 14}},
+  Ground: {ivs: {spa: 30, spd: 30}, dvs: {atk: 12}},
+  Ice: {ivs: {atk: 30, def: 30}, dvs: {def: 13}},
+  Poison: {ivs: {def: 30, spa: 30, spd: 30}, dvs: {atk: 12, def: 14}},
+  Psychic: {ivs: {atk: 30, spe: 30}, dvs: {def: 12}},
+  Rock: {ivs: {def: 30, spd: 30, spe: 30}, dvs: {atk: 13, def: 12}},
+  Steel: {ivs: {spd: 30}, dvs: {atk: 13}},
+  Water: {ivs: {atk: 30, def: 30, spa: 30}, dvs: {atk: 14, def: 13}},
+};
 
 export const Stats = new (class {
   displayStat(stat: StatName | 'spc') {
@@ -68,7 +94,16 @@ export const Stats = new (class {
   }
 
   DVToIV(dv: number) {
-    return dv * 2 + 1;
+    return dv * 2;
+  }
+
+  DVsToIVs(dvs: Readonly<Partial<StatsTable>>) {
+    const ivs: Partial<StatsTable> = {};
+    let dv: StatName;
+    for (dv in dvs) {
+      ivs[dv] = Stats.DVToIV(dvs[dv]!);
+    }
+    return ivs;
   }
 
   calcStat(
@@ -126,6 +161,52 @@ export const Stats = new (class {
       return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
     } else {
       return Math.floor((((base + dv) * 2 + 63) * level) / 100) + 5;
+    }
+  }
+
+  getHiddenPowerIVs(gen: Generation, hpType: HPTypeName) {
+    const hp = HP[hpType];
+    if (!hp) return undefined;
+    return gen.num === 2 ? Stats.DVsToIVs(hp.dvs) : hp.ivs;
+  }
+
+  getHiddenPower(gen: Generation, ivs: StatsTable) {
+    const tr = (num: number, bits = 0) => {
+      if (bits) return (num >>> 0) % (2 ** bits);
+      return num >>> 0;
+    };
+    const stats = {hp: 31, atk: 31, def: 31, spe: 31, spa: 31, spd: 31};
+    if (gen.num <= 2) {
+      // Gen 2 specific Hidden Power check. IVs are still treated 0-31 so we get them 0-15
+      const atkDV = tr(ivs.atk / 2);
+      const defDV = tr(ivs.def / 2);
+      const speDV = tr(ivs.spe / 2);
+      const spcDV = tr(ivs.spa / 2);
+      return {
+        type: HP_TYPES[4 * (atkDV % 4) + (defDV % 4)] as TypeName,
+        power: tr(
+          (5 * ((spcDV >> 3) +
+            (2 * (speDV >> 3)) +
+            (4 * (defDV >> 3)) +
+            (8 * (atkDV >> 3))) +
+            (spcDV % 4)) / 2 + 31
+        ),
+      };
+    } else {
+      // Hidden Power check for Gen 3 onwards
+      let hpTypeX = 0;
+      let hpPowerX = 0;
+      let i = 1;
+      for (const s in stats) {
+        hpTypeX += i * (ivs[s as StatName] % 2);
+        hpPowerX += i * (tr(ivs[s as StatName] / 2) % 2);
+        i *= 2;
+      }
+      return {
+        type: HP_TYPES[tr(hpTypeX * 15 / 63)] as TypeName,
+        // After Gen 6, Hidden Power is always 60 base power
+        power: (gen.num && gen.num < 6) ? tr(hpPowerX * 40 / 63) + 30 : 60,
+      };
     }
   }
 })();

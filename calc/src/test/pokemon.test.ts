@@ -73,7 +73,7 @@ describe('Pokemon', () => {
     });
 
     // HP DV should be derived
-    expect(p.ivs).toEqual({hp: 21, atk: 31, def: 16, spa: 20, spd: 20, spe: 31});
+    expect(p.ivs).toEqual({hp: 20, atk: 31, def: 16, spa: 20, spd: 20, spe: 31});
     expect(p.evs).toEqual({hp: 252, atk: 200, def: 252, spa: 252, spd: 252, spe: 252});
     expect(p.stats).toEqual({hp: 343, atk: 298, def: 274, spa: 228, spd: 228, spe: 318});
 
