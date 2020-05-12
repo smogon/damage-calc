@@ -615,6 +615,11 @@ function getEndOfTurn(
     texts.push('Sea of Fire damage');
   }
 
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') && field.defenderSide.wildfire) {
+    damage -= Math.floor(defender.maxHP() / 6);
+    texts.push('Wildfire damage');
+  }
+
   return {damage, texts};
 }
 
