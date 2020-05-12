@@ -34,6 +34,7 @@ function startsWith(string, target) {
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
 var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
+var HIDDEN_POWER_REGEX = /Hidden Power (\w*)/;
 
 var CALC_STATUS = {
 	'Healthy': '',
@@ -350,7 +351,7 @@ $(".move-selector").change(function () {
 	var move = moves[moveName] || moves['(No Move)'];
 	var moveGroupObj = $(this).parent();
 	moveGroupObj.children(".move-bp").val(moveName === 'Present' ? 40 : move.bp);
-	var m = moveName.match(/Hidden Power (\w*)/);
+	var m = moveName.match(HIDDEN_POWER_REGEX);
 	if (m) {
 		var pokeObj = $(this).closest(".poke-info");
 		var pokemon = createPokemon(pokeObj);
@@ -370,7 +371,16 @@ $(".move-selector").change(function () {
 		} else {
 			moveGroupObj.children(".move-bp").val(actual.power);
 		}
+	} else if (gen >= 2 && gen <= 6 && HIDDEN_POWER_REGEX.test($(this).attr('data-prev'))) {
+		// If this selector was previously Hidden Power but now isn't, reset all IVs/DVs to max.
+		var pokeObj = $(this).closest(".poke-info");
+		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+			var legacyStat = LEGACY_STATS[gen][i];
+			pokeObj.find("." + legacyStat + " .ivs").val(31);
+			pokeObj.find("." + legacyStat + " .dvs").val(15);
+		}
 	}
+	$(this).attr('data-prev', moveName);
 	moveGroupObj.children(".move-type").val(move.type);
 	moveGroupObj.children(".move-cat").val(move.category);
 	moveGroupObj.children(".move-crit").prop("checked", move.willCrit === true);
@@ -476,6 +486,7 @@ $(".set-selector").change(function () {
 			var moves = randset ? selectMovesFromRandomOptions(randset.moves) : set.moves;
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
+				moveObj.attr('data-prev', moveObj.val());
 				setSelectValueIfValid(moveObj, moves[i], "(No Move)");
 				moveObj.change();
 			}
@@ -498,6 +509,7 @@ $(".set-selector").change(function () {
 			itemObj.val("");
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
+				moveObj.attr('data-prev', moveObj.val());
 				moveObj.val("(No Move)");
 				moveObj.change();
 			}
@@ -640,7 +652,7 @@ function correctHiddenPower(pokemon) {
 
 	var expected = calc.Stats.getHiddenPower(GENERATION, ivs);
 	for (var i = 0; i < pokemon.moves.length; i++) {
-		var m = pokemon.moves[i].match(/Hidden Power (\w*)/);
+		var m = pokemon.moves[i].match(HIDDEN_POWER_REGEX);
 		if (!m) continue;
 		// The Pokemon has Hidden Power and is not maxed but the types don't match we don't
 		// want to attempt to reconcile the user's IVs so instead just correct the HP type
