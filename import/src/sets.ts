@@ -276,6 +276,7 @@ const FORMES: {[name: string]: string} = {
 // TODO handle Gmax
 function toForme(pokemon: string) {
   if (pokemon.endsWith('-Totem')) return pokemon.slice(0, -6);
+  if (pokemon.endsWith('-Gmax')) return pokemon.slice(0, -5);
   return FORMES[pokemon] || pokemon;
 }
 

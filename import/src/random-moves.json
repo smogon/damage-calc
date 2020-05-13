@@ -2782,2144 +2782,1878 @@
   },
   "3": {
     "milotic": [
-      "Surf",
       "Ice Beam",
       "Mirror Coat",
-      "Toxic",
-      "Hypnosis",
       "Recover",
       "Rest",
       "Sleep Talk",
-      "Hidden Power Grass"
+      "Surf",
+      "Toxic"
     ],
     "butterfree": [
+      "Giga Drain",
+      "Hidden Power Fire",
+      "Morning Sun",
+      "Psychic",
       "Sleep Powder",
       "Stun Spore",
-      "Morning Sun",
-      "Substitute",
-      "Whirlwind",
-      "Psychic",
-      "Hidden Power Fire",
-      "Giga Drain"
+      "Toxic"
     ],
     "beedrill": [
-      "Sludge Bomb",
-      "Hidden Power Bug",
       "Brick Break",
       "Double-Edge",
-      "Swords Dance",
-      "Substitute"
+      "Endure",
+      "Hidden Power Bug",
+      "Sludge Bomb",
+      "Swords Dance"
     ],
     "pidgeot": [
       "Aerial Ace",
-      "Return",
       "Hidden Power Ground",
       "Quick Attack",
+      "Return",
       "Substitute",
       "Toxic"
     ],
-    "raichu": [
+    "pikachu": [
       "Hidden Power Ice",
-      "Thunderbolt",
-      "Focus Punch",
       "Substitute",
-      "Encore",
       "Surf",
-      "Volt Tackle"
+      "Thunderbolt"
+    ],
+    "raichu": [
+      "Encore",
+      "Focus Punch",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
+      "Substitute",
+      "Surf",
+      "Thunderbolt"
     ],
     "nidoqueen": [
       "Earthquake",
-      "Ice Beam",
       "Fire Blast",
-      "Thunderbolt",
+      "Ice Beam",
       "Shadow Ball",
-      "Superpower",
-      "Sludge Bomb"
+      "Sludge Bomb",
+      "Superpower"
     ],
     "nidoking": [
       "Earthquake",
-      "Sludge Bomb",
-      "Ice Beam",
-      "Thunderbolt",
-      "Substitute",
-      "Megahorn",
-      "Focus Punch",
       "Fire Blast",
-      "Shadow Ball"
+      "Ice Beam",
+      "Megahorn",
+      "Shadow Ball",
+      "Sludge Bomb",
+      "Thunderbolt"
     ],
     "clefable": [
-      "Thunderbolt",
-      "Ice Beam",
-      "Flamethrower",
-      "Double-Edge",
-      "Return",
-      "Meteor Mash",
-      "Shadow Ball",
       "Calm Mind",
-      "Belly Drum",
-      "Soft-Boiled",
-      "Wish",
-      "Protect",
-      "Encore"
+      "Counter",
+      "Ice Beam",
+      "Thunderbolt",
+      "Return",
+      "Shadow Ball",
+      "Soft-Boiled"
     ],
     "wigglytuff": [
-      "Wish",
-      "Protect",
-      "Toxic",
-      "Double-Edge",
+      "Fire Blast",
       "Ice Beam",
+      "Protect",
+      "Return",
       "Thunderbolt",
-      "Fire Blast"
+      "Toxic",
+      "Wish"
     ],
     "vileplume": [
-      "Sunny Day",
-      "Solar Beam",
-      "Synthesis",
-      "Sludge Bomb",
-      "Giga Drain",
+      "Aromatherapy",
       "Hidden Power Fire",
-      "Leech Seed",
-      "Toxic",
       "Sleep Powder",
-      "Aromatherapy"
+      "Sludge Bomb",
+      "Solar Beam",
+      "Sunny Day",
+      "Synthesis"
     ],
     "poliwrath": [
-      "Hydro Pump",
-      "Ice Beam",
-      "Bulk Up",
       "Brick Break",
-      "Toxic",
-      "Substitute",
+      "Bulk Up",
       "Hidden Power Ghost",
-      "Hypnosis"
+      "Hydro Pump",
+      "Hypnosis",
+      "Ice Beam",
+      "Substitute"
     ],
     "alakazam": [
-      "Fire Punch",
-      "Ice Punch",
-      "Thunder Punch",
-      "Psychic",
       "Calm Mind",
       "Encore",
-      "Thunder Wave",
+      "Fire Punch",
+      "Psychic",
+      "Recover",
       "Substitute",
-      "Recover"
+      "Thunder Punch"
     ],
     "victreebel": [
+      "Hidden Power Fire",
       "Sleep Powder",
       "Sludge Bomb",
-      "Synthesis",
-      "Sunny Day",
       "Solar Beam",
-      "Giga Drain",
-      "Hidden Power Fire",
-      "Hidden Power Ground",
-      "Swords Dance"
+      "Sunny Day"
     ],
     "golem": [
-      "Earthquake",
-      "Rock Slide",
       "Double-Edge",
+      "Earthquake",
       "Explosion",
-      "Counter"
+      "Hidden Power Bug",
+      "Rock Blast",
+      "Toxic"
     ],
     "mrmime": [
-      "Substitute",
-      "Thunderbolt",
-      "Psychic",
-      "Fire Punch",
-      "Ice Punch",
-      "Hypnosis",
-      "Reflect",
+      "Barrier",
+      "Baton Pass",
       "Calm Mind",
       "Encore",
-      "Baton Pass"
+      "Fire Punch",
+      "Hypnosis",
+      "Psychic",
+      "Substitute",
+      "Thunderbolt"
     ],
     "articuno": [
-      "Ice Beam",
-      "Toxic",
-      "Roar",
-      "Reflect",
       "Heal Bell",
+      "Hidden Power Fire",
+      "Ice Beam",
+      "Protect",
       "Rest",
+      "Roar",
       "Sleep Talk",
-      "Haze",
-      "Hidden Power Electric",
-      "Substitute",
-      "Agility"
+      "Toxic"
     ],
     "zapdos": [
       "Agility",
       "Baton Pass",
-      "Thunderbolt",
       "Hidden Power Ice",
-      "Toxic",
       "Substitute",
-      "Thunder Wave"
+      "Thunderbolt",
+      "Thunder Wave",
+      "Toxic"
     ],
     "moltres": [
       "Fire Blast",
       "Flamethrower",
       "Hidden Power Grass",
-      "Double-Edge",
       "Morning Sun",
+      "Substitute",
       "Toxic",
-      "Agility",
-      "Will-O-Wisp",
-      "Substitute"
+      "Will-O-Wisp"
     ],
     "meganium": [
-      "Razor Leaf",
-      "Hidden Power Fire",
-      "Hidden Power Ice",
       "Counter",
-      "Synthesis",
+      "Hidden Power Grass",
       "Leech Seed",
-      "Toxic",
-      "Light Screen"
+      "Light Screen",
+      "Reflect",
+      "Synthesis",
+      "Toxic"
     ],
     "typhlosion": [
       "Fire Blast",
       "Flamethrower",
-      "Earthquake",
-      "Thunder Punch",
-      "Hidden Power Ice",
+      "Focus Punch",
       "Hidden Power Grass",
-      "Substitute"
+      "Hidden Power Ice",
+      "Substitute",
+      "Thunder Punch"
     ],
     "feraligatr": [
       "Earthquake",
+      "Hidden Power Flying",
+      "Hydro Pump",
       "Rock Slide",
-      "Focus Punch",
-      "Substitute",
-      "Swords Dance",
-      "Hydro Pump"
+      "Swords Dance"
     ],
     "togetic": [
+      "Charm",
+      "Encore",
+      "Flamethrower",
       "Seismic Toss",
-      "Toxic",
       "Soft-Boiled",
-      "Baton Pass",
-      "Encore",
-      "Wish",
-      "Flamethrower",
-      "Body Slam"
-    ],
-    "ampharos": [
-      "Thunderbolt",
-      "Hidden Power Ice",
-      "Fire Punch",
-      "Focus Punch",
-      "Substitute",
-      "Thunder Wave",
-      "Heal Bell",
-      "Light Screen"
-    ],
-    "bellossom": [
-      "Sleep Powder",
-      "Stun Spore",
-      "Leech Seed",
-      "Moonlight",
-      "Giga Drain",
-      "Sludge Bomb",
-      "Magical Leaf",
-      "Sunny Day",
-      "Solar Beam",
-      "Hidden Power Fire"
-    ],
-    "azumarill": [
-      "Focus Punch",
-      "Body Slam",
-      "Hydro Pump",
-      "Surf",
-      "Substitute",
-      "Encore",
-      "Return",
-      "Double-Edge",
-      "Hidden Power Ghost"
-    ],
-    "jumpluff": [
-      "Hidden Power Flying",
-      "Leech Seed",
-      "Encore",
-      "Sleep Powder",
-      "Synthesis",
-      "Toxic",
-      "Substitute"
-    ],
-    "granbull": [
-      "Return",
-      "Double-Edge",
-      "Body Slam",
-      "Earthquake",
-      "Shadow Ball",
-      "Focus Punch",
-      "Overheat",
-      "Bulk Up",
-      "Substitute",
-      "Heal Bell",
-      "Thunder Wave",
-      "Counter"
-    ],
-    "raikou": [
-      "Thunderbolt",
-      "Hidden Power Ice",
-      "Calm Mind",
-      "Hidden Power Grass",
-      "Crunch",
-      "Substitute",
-      "Roar",
-      "Rest",
-      "Sleep Talk"
-    ],
-    "entei": [
-      "Calm Mind",
-      "Fire Blast",
-      "Flamethrower",
-      "Hidden Power Grass",
-      "Hidden Power Ice",
-      "Double-Edge",
-      "Return",
-      "Sunny Day",
-      "Solar Beam",
-      "Substitute"
-    ],
-    "suicune": [
-      "Hydro Pump",
-      "Surf",
-      "Ice Beam",
-      "Hidden Power Grass",
-      "Calm Mind",
-      "Toxic",
-      "Roar",
-      "Substitute",
-      "Rest",
-      "Sleep Talk"
-    ],
-    "beautifly": [
-      "Toxic",
-      "Stun Spore",
-      "Morning Sun",
-      "Aerial Ace",
-      "Giga Drain",
-      "Silver Wind",
-      "Hidden Power Fire"
-    ],
-    "gardevoir": [
-      "Psychic",
-      "Thunderbolt",
-      "Fire Punch",
-      "Ice Punch",
-      "Calm Mind",
-      "Memento",
-      "Taunt",
-      "Hypnosis",
-      "Will-O-Wisp",
-      "Destiny Bond",
-      "Substitute",
-      "Reflect",
-      "Wish",
-      "Protect"
-    ],
-    "exploud": [
-      "Double-Edge",
-      "Return",
-      "Body Slam",
-      "Earthquake",
-      "Shadow Ball",
-      "Fire Blast",
-      "Flamethrower",
-      "Substitute",
-      "Ice Beam",
-      "Toxic"
-    ],
-    "mawile": [
-      "Swords Dance",
-      "Baton Pass",
-      "Substitute",
-      "Brick Break",
-      "Hidden Power Steel",
-      "Focus Punch",
-      "Toxic"
-    ],
-    "plusle": [
-      "Thunderbolt",
-      "Hidden Power Grass",
-      "Encore",
-      "Baton Pass",
-      "Agility",
-      "Substitute"
-    ],
-    "minun": [
-      "Thunderbolt",
-      "Hidden Power Grass",
-      "Encore",
-      "Baton Pass",
-      "Agility",
-      "Substitute"
-    ],
-    "kecleon": [
-      "Return",
-      "Shadow Ball",
-      "Brick Break",
-      "Trick",
-      "Iron Tail",
       "Thunder Wave"
     ],
-    "dusclops": [
-      "Night Shade",
-      "Shadow Ball",
-      "Ice Beam",
-      "Earthquake",
-      "Rest",
-      "Pain Split",
-      "Will-O-Wisp",
-      "Sleep Talk"
-    ],
-    "regirock": [
-      "Rock Slide",
-      "Earthquake",
-      "Explosion",
-      "Superpower",
-      "Thunder Wave",
-      "Counter",
-      "Curse",
-      "Rest",
-      "Sleep Talk"
-    ],
-    "regice": [
-      "Ice Beam",
+    "ampharos": [
+      "Fire Punch",
+      "Heal Bell",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
       "Thunderbolt",
+      "Thunder Wave"
+    ],
+    "bellossom": [
       "Hidden Power Fire",
-      "Explosion",
+      "Hidden Power Grass",
+      "Moonlight",
+      "Sleep Powder",
+      "Sludge Bomb",
+      "Solar Beam",
+      "Stun Spore",
+      "Sunny Day"
+    ],
+    "azumarill": [
+      "Encore",
+      "Focus Punch",
+      "Hidden Power Ghost",
+      "Hydro Pump",
+      "Return",
+      "Substitute"
+    ],
+    "jumpluff": [
+      "Encore",
+      "Hidden Power Flying",
+      "Leech Seed",
+      "Sleep Powder",
+      "Substitute",
+      "Toxic"
+    ],
+    "granbull": [
+      "Bulk Up",
+      "Earthquake",
+      "Heal Bell",
+      "Overheat",
+      "Rest",
+      "Return",
+      "Shadow Ball",
+      "Thunder Wave"
+    ],
+    "raikou": [
+      "Calm Mind",
+      "Crunch",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
       "Rest",
       "Sleep Talk",
+      "Substitute",
+      "Thunderbolt"
+    ],
+    "entei": [
+      "Body Slam",
+      "Calm Mind",
+      "Fire Blast",
+      "Flamethrower",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
+      "Solar Beam",
+      "Substitute",
+      "Sunny Day"
+    ],
+    "suicune": [
+      "Calm Mind",
+      "Hydro Pump",
+      "Ice Beam",
+      "Rest",
+      "Sleep Talk",
+      "Substitute",
+      "Surf",
+      "Toxic"
+    ],
+    "beautifly": [
+      "Hidden Power Bug",
+      "Hidden Power Flying",
+      "Morning Sun",
+      "Stun Spore",
+      "Substitute"
+    ],
+    "gardevoir": [
+      "Calm Mind",
+      "Destiny Bond",
+      "Fire Punch",
+      "Hypnosis",
+      "Psychic",
+      "Substitute",
+      "Thunderbolt",
+      "Will-O-Wisp"
+    ],
+    "exploud": [
+      "Earthquake",
+      "Fire Blast",
+      "Flamethrower",
+      "Ice Beam",
+      "Return",
+      "Shadow Ball",
+      "Substitute"
+    ],
+    "mawile": [
+      "Baton Pass",
+      "Brick Break",
+      "Focus Punch",
+      "Hidden Power Steel",
+      "Rock Slide",
+      "Substitute",
+      "Swords Dance"
+    ],
+    "plusle": [
+      "Agility",
+      "Baton Pass",
+      "Encore",
+      "Hidden Power Grass",
+      "Substitute",
+      "Thunderbolt"
+    ],
+    "minun": [
+      "Baton Pass",
+      "Encore",
+      "Light Screen",
+      "Substitute",
+      "Thunderbolt",
+      "Wish"
+    ],
+    "kecleon": [
+      "Brick Break",
+      "Return",
+      "Shadow Ball",
+      "Thunder Wave",
+      "Trick"
+    ],
+    "dusclops": [
+      "Focus Punch",
+      "Ice Beam",
+      "Pain Split",
+      "Rest",
+      "Shadow Ball",
+      "Sleep Talk",
+      "Will-O-Wisp"
+    ],
+    "regirock": [
+      "Curse",
+      "Earthquake",
+      "Explosion",
+      "Rest",
+      "Rock Slide",
+      "Superpower",
+      "Thunder Wave"
+    ],
+    "regice": [
+      "Explosion",
+      "Ice Beam",
+      "Rest",
+      "Sleep Talk",
+      "Thunderbolt",
       "Thunder Wave"
     ],
     "registeel": [
-      "Seismic Toss",
-      "Protect",
       "Counter",
+      "Protect",
       "Rest",
+      "Seismic Toss",
       "Sleep Talk",
-      "Toxic",
-      "Thunder Wave"
+      "Toxic"
     ],
     "arbok": [
-      "Sludge Bomb",
       "Earthquake",
-      "Rock Slide",
       "Hidden Power Fire",
       "Rest",
-      "Sleep Talk"
+      "Rock Slide",
+      "Sleep Talk",
+      "Sludge Bomb"
     ],
     "dugtrio": [
-      "Earthquake",
-      "Rock Slide",
-      "Hidden Power Bug",
       "Aerial Ace",
+      "Earthquake",
+      "Hidden Power Bug",
+      "Rock Slide",
       "Substitute"
     ],
     "farfetchd": [
-      "Swords Dance",
       "Agility",
-      "Slash",
-      "Hidden Power Ground",
-      "Aerial Ace",
-      "Substitute",
-      "Flail",
       "Baton Pass",
-      "Knock Off"
+      "Hidden Power Flying",
+      "Slash",
+      "Swords Dance"
     ],
     "dodrio": [
-      "Double-Edge",
-      "Return",
       "Drill Peck",
-      "Quick Attack",
       "Flail",
       "Hidden Power Ground",
-      "Substitute",
-      "Endure",
-      "Baton Pass"
-    ],
-    "gengar": [
-      "Thunderbolt",
-      "Ice Punch",
-      "Fire Punch",
-      "Explosion",
-      "Will-O-Wisp",
-      "Destiny Bond",
-      "Taunt",
-      "Substitute",
-      "Hypnosis",
-      "Psychic",
-      "Shadow Ball"
-    ],
-    "electrode": [
-      "Thunderbolt",
-      "Hidden Power Grass",
-      "Hidden Power Ice",
-      "Explosion",
-      "Toxic",
-      "Taunt",
-      "Thunder Wave",
+      "Quick Attack",
+      "Return",
       "Substitute"
     ],
-    "exeggutor": [
-      "Solar Beam",
-      "Giga Drain",
-      "Psychic",
-      "Hidden Power Ice",
-      "Hidden Power Fire",
+    "gengar": [
+      "Destiny Bond",
       "Explosion",
-      "Sunny Day",
+      "Fire Punch",
+      "Hypnosis",
+      "Ice Punch",
+      "Substitute",
+      "Thunderbolt",
+      "Will-O-Wisp"
+    ],
+    "electrode": [
+      "Explosion",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
+      "Substitute",
+      "Thunderbolt",
+      "Thunder Wave"
+    ],
+    "exeggutor": [
+      "Explosion",
+      "Giga Drain",
+      "Hidden Power Fire",
+      "Hidden Power Ice",
+      "Leech Seed",
+      "Psychic",
       "Sleep Powder",
-      "Stun Spore",
-      "Synthesis",
-      "Leech Seed"
+      "Solar Beam",
+      "Sunny Day"
     ],
     "noctowl": [
+      "Hypnosis",
       "Psychic",
-      "Toxic",
-      "Whirlwind",
       "Reflect",
-      "Hypnosis"
+      "Toxic",
+      "Whirlwind"
     ],
     "ariados": [
-      "Night Shade",
-      "Sludge Bomb",
-      "Signal Beam",
-      "Spider Web",
+      "Agility",
       "Baton Pass",
-      "Substitute",
-      "Agility"
+      "Signal Beam",
+      "Sludge Bomb",
+      "Spider Web"
     ],
     "qwilfish": [
-      "Spikes",
-      "Surf",
-      "Hydro Pump",
-      "Sludge Bomb",
-      "Self-Destruct",
       "Destiny Bond",
-      "Swords Dance",
+      "Hydro Pump",
+      "Self-Destruct",
       "Shadow Ball",
-      "Hidden Power Ground"
+      "Sludge Bomb",
+      "Spikes",
+      "Swords Dance"
     ],
     "magcargo": [
-      "Rest",
-      "Sleep Talk",
+      "Fire Blast",
       "Flamethrower",
       "Hidden Power Grass",
-      "Toxic"
+      "Rest",
+      "Sleep Talk",
+      "Toxic",
+      "Yawn"
     ],
     "corsola": [
       "Calm Mind",
+      "Confuse Ray",
+      "Ice Beam",
       "Recover",
       "Surf",
-      "Toxic",
-      "Reflect",
-      "Ice Beam"
+      "Toxic"
     ],
     "mantine": [
-      "Surf",
-      "Hydro Pump",
-      "Ice Beam",
-      "Hidden Power Grass",
-      "Toxic",
       "Haze",
+      "Hidden Power Grass",
+      "Ice Beam",
+      "Surf",
       "Rain Dance",
       "Rest",
-      "Sleep Talk"
+      "Sleep Talk",
+      "Toxic"
     ],
     "swellow": [
-      "Double-Edge",
-      "Return",
       "Aerial Ace",
-      "Hidden Power Ground",
+      "Double-Edge",
       "Hidden Power Fighting",
+      "Hidden Power Ground",
       "Quick Attack",
-      "Steel Wing"
+      "Return"
     ],
     "pelipper": [
+      "Ice Beam",
+      "Protect",
       "Rest",
       "Sleep Talk",
       "Surf",
-      "Ice Beam",
-      "Hidden Power Electric",
       "Toxic"
     ],
     "masquerain": [
-      "Double-Edge",
       "Hydro Pump",
       "Ice Beam",
       "Stun Spore",
-      "Toxic",
-      "Substitute"
+      "Substitute",
+      "Toxic"
     ],
     "delcatty": [
-      "Calm Mind",
       "Baton Pass",
-      "Thunderbolt",
-      "Ice Beam",
-      "Substitute"
+      "Double-Edge",
+      "Heal Bell",
+      "Thunder Wave",
+      "Wish"
     ],
     "volbeat": [
-      "Tail Glow",
-      "Thunderbolt",
+      "Baton Pass",
       "Ice Punch",
-      "Baton Pass"
+      "Tail Glow",
+      "Thunderbolt"
     ],
     "illumise": [
-      "Thunderbolt",
-      "Ice Punch",
-      "Encore",
-      "Substitute",
       "Baton Pass",
+      "Encore",
+      "Ice Punch",
+      "Substitute",
+      "Thunder Wave",
       "Wish"
     ],
     "torkoal": [
+      "Amnesia",
+      "Explosion",
       "Fire Blast",
       "Flamethrower",
       "Hidden Power Grass",
-      "Rock Slide",
-      "Explosion",
-      "Yawn",
       "Rest",
-      "Sleep Talk"
+      "Toxic",
+      "Yawn"
     ],
     "lunatone": [
-      "Psychic",
-      "Ice Beam",
-      "Explosion",
-      "Calm Mind",
       "Baton Pass",
-      "Hypnosis"
+      "Calm Mind",
+      "Explosion",
+      "Hypnosis",
+      "Ice Beam",
+      "Psychic"
     ],
     "solrock": [
-      "Rock Slide",
       "Earthquake",
-      "Shadow Ball",
-      "Body Slam",
       "Explosion",
       "Overheat",
-      "Light Screen"
+      "Reflect",
+      "Rock Slide",
+      "Shadow Ball"
     ],
     "castform": [
-      "Ice Beam",
-      "Thunderbolt",
       "Flamethrower",
+      "Ice Beam",
       "Substitute",
+      "Thunderbolt",
       "Thunder Wave"
     ],
-    "castformsunny": [
-      "Sunny Day",
-      "Thunderbolt",
-      "Ice Beam",
-      "Flamethrower",
-      "Solar Beam"
-    ],
-    "castformrainy": [
-      "Rain Dance",
-      "Thunder",
-      "Weather Ball",
-      "Ice Beam"
-    ],
     "chimecho": [
-      "Psychic",
-      "Hidden Power Fire",
-      "Heal Bell",
-      "Taunt",
-      "Toxic",
-      "Reflect",
       "Calm Mind",
-      "Hypnosis"
+      "Heal Bell",
+      "Hidden Power Fire",
+      "Light Screen",
+      "Psychic",
+      "Reflect",
+      "Toxic",
+      "Yawn"
     ],
     "weezing": [
-      "Sludge Bomb",
-      "Haze",
-      "Flamethrower",
       "Explosion",
+      "Fire Blast",
+      "Flamethrower",
+      "Haze",
       "Pain Split",
-      "Will-O-Wisp",
-      "Thunderbolt",
-      "Shadow Ball",
-      "Toxic"
+      "Sludge Bomb",
+      "Will-O-Wisp"
     ],
     "flygon": [
-      "Earthquake",
-      "Rock Slide",
-      "Hidden Power Flying",
-      "Fire Blast",
       "Dragon Claw",
+      "Earthquake",
+      "Fire Blast",
+      "Hidden Power Bug",
+      "Rock Slide",
       "Toxic"
     ],
     "venusaur": [
+      "Curse",
+      "Earthquake",
+      "Hidden Power Rock",
+      "Leech Seed",
       "Sleep Powder",
       "Sludge Bomb",
-      "Leech Seed",
-      "Earthquake",
-      "Curse",
       "Swords Dance",
-      "Synthesis",
-      "Hidden Power Fire",
-      "Hidden Power Ice",
-      "Giga Drain"
+      "Synthesis"
     ],
     "charizard": [
-      "Substitute",
-      "Hidden Power Grass",
-      "Fire Blast",
-      "Flamethrower",
-      "Earthquake",
       "Belly Drum",
-      "Focus Punch",
       "Dragon Dance",
-      "Aerial Ace"
+      "Earthquake",
+      "Fire Blast",
+      "Hidden Power Flying",
+      "Substitute"
     ],
     "blastoise": [
-      "Surf",
-      "Ice Beam",
       "Earthquake",
-      "Rapid Spin",
+      "Ice Beam",
+      "Mirror Coat",
       "Rest",
-      "Sleep Talk",
       "Roar",
-      "Toxic",
-      "Counter",
-      "Mirror Coat"
+      "Sleep Talk",
+      "Surf",
+      "Toxic"
     ],
     "raticate": [
-      "Return",
-      "Shadow Ball",
-      "Super Fang",
       "Endeavor",
-      "Substitute",
+      "Hidden Power Ground",
       "Quick Attack",
-      "Hidden Power Fighting"
+      "Return",
+      "Reversal",
+      "Shadow Ball",
+      "Substitute"
     ],
     "fearow": [
-      "Return",
-      "Double-Edge",
-      "Quick Attack",
+      "Agility",
+      "Baton Pass",
       "Drill Peck",
       "Hidden Power Ground",
-      "Hidden Power Fighting",
-      "Agility",
-      "Substitute",
-      "Baton Pass"
+      "Quick Attack",
+      "Return",
+      "Substitute"
     ],
     "sandslash": [
       "Earthquake",
-      "Rapid Spin",
-      "Swords Dance",
-      "Rock Slide",
-      "Counter",
       "Hidden Power Bug",
-      "Toxic",
-      "Body Slam"
+      "Rapid Spin",
+      "Rock Slide",
+      "Swords Dance",
+      "Toxic"
     ],
     "ninetales": [
       "Fire Blast",
       "Flamethrower",
       "Hidden Power Grass",
-      "Will-O-Wisp",
       "Hypnosis",
-      "Substitute"
+      "Substitute",
+      "Will-O-Wisp"
     ],
     "parasect": [
-      "Swords Dance",
-      "Spore",
-      "Return",
-      "Hidden Power Ground",
-      "Sludge Bomb",
       "Aromatherapy",
       "Giga Drain",
-      "Hidden Power Bug"
+      "Hidden Power Bug",
+      "Return",
+      "Spore",
+      "Swords Dance"
     ],
     "venomoth": [
-      "Signal Beam",
-      "Sludge Bomb",
-      "Hidden Power Ground",
-      "Substitute",
       "Baton Pass",
-      "Sleep Powder"
-    ],
-    "persian": [
-      "Fake Out",
-      "Return",
-      "Shadow Ball",
-      "Hidden Power Fighting",
-      "Thunderbolt",
-      "Hypnosis"
-    ],
-    "golduck": [
-      "Surf",
-      "Hydro Pump",
-      "Ice Beam",
-      "Hidden Power Grass",
-      "Calm Mind",
-      "Hypnosis",
+      "Hidden Power Ground",
+      "Signal Beam",
+      "Sleep Powder",
+      "Sludge Bomb",
       "Substitute"
     ],
+    "persian": [
+      "Hidden Power Ground",
+      "Hypnosis",
+      "Iron Tail",
+      "Return",
+      "Shadow Ball",
+      "Substitute"
+    ],
+    "golduck": [
+      "Calm Mind",
+      "Hidden Power Grass",
+      "Hydro Pump",
+      "Hypnosis",
+      "Ice Beam",
+      "Substitute",
+      "Surf"
+    ],
     "primeape": [
+      "Bulk Up",
       "Cross Chop",
       "Earthquake",
-      "Rock Slide",
       "Hidden Power Ghost",
-      "Bulk Up",
-      "Substitute",
-      "Endure",
-      "Reversal"
+      "Reversal",
+      "Rock Slide",
+      "Substitute"
     ],
     "arcanine": [
       "Fire Blast",
       "Flamethrower",
       "Extreme Speed",
-      "Hidden Power Ground",
       "Hidden Power Grass",
       "Rest",
       "Sleep Talk",
-      "Toxic",
-      "Roar"
+      "Toxic"
     ],
     "machamp": [
+      "Bulk Up",
       "Cross Chop",
       "Earthquake",
-      "Bulk Up",
       "Hidden Power Ghost",
-      "Rock Slide",
       "Rest",
+      "Rock Slide",
       "Sleep Talk"
     ],
     "tentacruel": [
+      "Giga Drain",
+      "Haze",
+      "Hydro Pump",
       "Ice Beam",
       "Rapid Spin",
-      "Hydro Pump",
-      "Giga Drain",
-      "Toxic",
-      "Haze"
+      "Surf",
+      "Toxic"
     ],
     "rapidash": [
-      "Fire Blast",
       "Agility",
-      "Substitute",
       "Baton Pass",
-      "Toxic",
+      "Fire Blast",
+      "Flamethrower",
       "Hidden Power Grass",
       "Hypnosis",
-      "Sunny Day",
-      "Solar Beam"
+      "Solar Beam",
+      "Substitute",
+      "Sunny Day"
     ],
     "slowbro": [
       "Calm Mind",
-      "Thunder Wave",
-      "Fire Blast",
       "Ice Beam",
-      "Surf",
+      "Psychic",
       "Rest",
       "Sleep Talk",
-      "Psychic"
+      "Surf",
+      "Thunder Wave"
     ],
     "magneton": [
-      "Thunderbolt",
+      "Hidden Power Grass",
       "Hidden Power Ice",
       "Rest",
       "Sleep Talk",
+      "Substitute",
+      "Thunderbolt",
       "Thunder Wave",
-      "Toxic",
-      "Substitute"
+      "Toxic"
     ],
     "dewgong": [
+      "Encore",
+      "Hidden Power Grass",
+      "Ice Beam",
       "Rest",
       "Sleep Talk",
-      "Ice Beam",
       "Surf",
-      "Toxic",
-      "Hidden Power Electric",
-      "Encore"
+      "Toxic"
     ],
     "muk": [
-      "Sludge Bomb",
-      "Hidden Power Ground",
       "Curse",
-      "Fire Blast",
-      "Rest",
-      "Sleep Talk",
-      "Substitute",
-      "Shadow Punch",
+      "Explosion",
       "Focus Punch",
-      "Explosion"
+      "Hidden Power Ghost",
+      "Rest",
+      "Sludge Bomb",
+      "Substitute"
     ],
     "cloyster": [
-      "Surf",
-      "Ice Beam",
-      "Spikes",
-      "Rapid Spin",
       "Explosion",
+      "Ice Beam",
+      "Surf",
+      "Rapid Spin",
+      "Spikes",
       "Toxic"
     ],
     "hypno": [
-      "Psychic",
-      "Hypnosis",
-      "Fire Punch",
-      "Ice Punch",
-      "Thunder Punch",
-      "Calm Mind",
       "Baton Pass",
-      "Wish",
+      "Calm Mind",
+      "Fire Punch",
+      "Hypnosis",
       "Protect",
-      "Toxic"
+      "Psychic",
+      "Toxic",
+      "Wish"
     ],
     "kingler": [
-      "Double-Edge",
-      "Return",
-      "Body Slam",
-      "Hidden Power Ghost",
-      "Mud Shot",
-      "Swords Dance",
       "Endure",
       "Flail",
-      "Surf"
+      "Hidden Power Ghost",
+      "Hidden Power Ground",
+      "Surf",
+      "Swords Dance"
     ],
     "marowak": [
-      "Earthquake",
       "Bonemerang",
-      "Rock Slide",
       "Double-Edge",
+      "Earthquake",
+      "Rock Slide",
       "Swords Dance"
     ],
     "hitmonlee": [
-      "Brick Break",
-      "High Jump Kick",
-      "Rock Slide",
-      "Earthquake",
-      "Mach Punch",
-      "Focus Punch",
-      "Reversal",
-      "Substitute",
-      "Endure",
       "Bulk Up",
-      "Hidden Power Ghost"
+      "Earthquake",
+      "Hidden Power Ghost",
+      "High Jump Kick",
+      "Mach Punch",
+      "Reversal",
+      "Rock Slide",
+      "Substitute"
     ],
     "hitmonchan": [
       "Bulk Up",
-      "Sky Uppercut",
-      "Rapid Spin",
-      "Mach Punch",
-      "Hidden Power Ghost",
       "Earthquake",
-      "Rock Slide",
-      "Substitute",
-      "Focus Punch"
+      "Hidden Power Ghost",
+      "Mach Punch",
+      "Rapid Spin",
+      "Sky Uppercut",
+      "Toxic"
     ],
     "lickitung": [
-      "Wish",
-      "Protect",
       "Heal Bell",
+      "Protect",
+      "Return",
       "Seismic Toss",
-      "Body Slam",
-      "Toxic"
-    ],
-    "rhydon": [
-      "Earthquake",
-      "Hidden Power Rock",
-      "Megahorn",
-      "Double-Edge",
-      "Focus Punch",
-      "Substitute",
-      "Toxic"
-    ],
-    "tangela": [
-      "Sunny Day",
-      "Solar Beam",
-      "Hidden Power Fire",
-      "Sleep Powder",
-      "Giga Drain",
-      "Stun Spore",
-      "Leech Seed",
-      "Morning Sun"
-    ],
-    "kangaskhan": [
-      "Fake Out",
-      "Body Slam",
-      "Double-Edge",
-      "Earthquake",
-      "Rock Slide",
-      "Brick Break",
-      "Shadow Ball",
+      "Toxic",
       "Wish"
     ],
+    "rhydon": [
+      "Double-Edge",
+      "Earthquake",
+      "Megahorn",
+      "Rock Blast",
+      "Substitute",
+      "Swords Dance"
+    ],
+    "tangela": [
+      "Hidden Power Fire",
+      "Hidden Power Grass",
+      "Leech Seed",
+      "Morning Sun",
+      "Sleep Powder",
+      "Solar Beam",
+      "Stun Spore",
+      "Sunny Day"
+    ],
+    "kangaskhan": [
+      "Earthquake",
+      "Fake Out",
+      "Focus Punch",
+      "Rest",
+      "Return",
+      "Shadow Ball",
+      "Substitute"
+    ],
     "seaking": [
+      "Hidden Power Grass",
       "Hydro Pump",
       "Ice Beam",
-      "Hidden Power Grass",
       "Megahorn",
       "Rain Dance"
     ],
     "starmie": [
-      "Surf",
-      "Thunderbolt",
+      "Hydro Pump",
       "Ice Beam",
       "Psychic",
-      "Rapid Spin",
       "Recover",
-      "Hydro Pump"
+      "Surf",
+      "Thunderbolt"
     ],
     "scyther": [
-      "Swords Dance",
       "Aerial Ace",
-      "Silver Wind",
-      "Hidden Power Ground",
-      "Quick Attack",
       "Baton Pass",
-      "Morning Sun"
+      "Hidden Power Rock",
+      "Quick Attack",
+      "Silver Wind",
+      "Swords Dance"
     ],
     "jynx": [
-      "Ice Beam",
-      "Psychic",
-      "Hidden Power Fire",
-      "Lovely Kiss",
       "Calm Mind",
+      "Hidden Power Fire",
+      "Ice Beam",
+      "Lovely Kiss",
+      "Psychic",
       "Substitute"
     ],
     "electabuzz": [
-      "Thunderbolt",
-      "Ice Punch",
-      "Fire Punch",
       "Cross Chop",
-      "Focus Punch",
+      "Fire Punch",
+      "Hidden Power Grass",
+      "Ice Punch",
       "Substitute",
-      "Hidden Power Grass"
+      "Thunderbolt"
     ],
     "magmar": [
       "Cross Chop",
       "Fire Blast",
+      "Flamethrower",
+      "Hidden Power Grass",
       "Psychic",
-      "Thunder Punch",
-      "Focus Punch",
-      "Substitute",
-      "Hidden Power Grass"
+      "Thunder Punch"
     ],
     "pinsir": [
-      "Swords Dance",
+      "Earthquake",
       "Hidden Power Bug",
-      "Rock Slide",
-      "Brick Break",
       "Return",
-      "Earthquake"
+      "Rock Slide",
+      "Swords Dance"
     ],
     "tauros": [
-      "Body Slam",
       "Double-Edge",
-      "Return",
       "Earthquake",
-      "Hidden Power Rock",
       "Hidden Power Ghost",
-      "Iron Tail"
+      "Hidden Power Rock",
+      "Return"
     ],
     "gyarados": [
-      "Hidden Power Flying",
-      "Earthquake",
       "Double-Edge",
-      "Hydro Pump",
-      "Substitute",
       "Dragon Dance",
+      "Earthquake",
+      "Hidden Power Flying",
+      "Hydro Pump",
       "Taunt"
     ],
     "lapras": [
+      "Heal Bell",
+      "Hydro Pump",
+      "Ice Beam",
       "Rest",
       "Sleep Talk",
-      "Ice Beam",
-      "Hydro Pump",
       "Thunderbolt",
-      "Heal Bell"
+      "Toxic"
     ],
     "ditto": [
       "Transform"
     ],
     "vaporeon": [
-      "Hydro Pump",
-      "Surf",
       "Ice Beam",
-      "Wish",
-      "Toxic",
       "Protect",
-      "Roar"
+      "Roar",
+      "Surf",
+      "Toxic",
+      "Wish"
     ],
     "jolteon": [
-      "Thunderbolt",
+      "Baton Pass",
       "Hidden Power Ice",
       "Substitute",
-      "Baton Pass",
+      "Thunderbolt",
       "Toxic",
       "Wish"
     ],
     "flareon": [
-      "Return",
-      "Body Slam",
-      "Quick Attack",
-      "Shadow Ball",
+      "Double-Edge",
       "Fire Blast",
       "Hidden Power Grass",
-      "Wish",
       "Protect",
-      "Toxic"
+      "Shadow Ball",
+      "Toxic",
+      "Wish"
     ],
     "omastar": [
-      "Rain Dance",
+      "Hidden Power Grass",
       "Hydro Pump",
       "Ice Beam",
+      "Rain Dance",
       "Spikes",
-      "Surf",
-      "Hidden Power Grass"
-    ],
-    "kabutops": [
-      "Return",
-      "Brick Break",
-      "Rock Slide",
-      "Swords Dance",
-      "Rapid Spin",
-      "Hidden Power Ground",
       "Surf"
     ],
-    "aerodactyl": [
+    "kabutops": [
+      "Brick Break",
+      "Double-Edge",
+      "Hidden Power Ground",
       "Rock Slide",
+      "Surf",
+      "Swords Dance"
+    ],
+    "aerodactyl": [
+      "Double-Edge",
       "Earthquake",
       "Hidden Power Flying",
-      "Double-Edge",
-      "Substitute",
-      "Taunt",
-      "Toxic"
+      "Rock Slide",
+      "Substitute"
     ],
     "snorlax": [
-      "Earthquake",
       "Body Slam",
-      "Shadow Ball",
-      "Return",
-      "Self-Destruct",
       "Curse",
+      "Earthquake",
+      "Return",
       "Rest",
+      "Self-Destruct",
+      "Shadow Ball",
       "Sleep Talk"
     ],
     "dragonite": [
-      "Hidden Power Flying",
-      "Earthquake",
+      "Double-Edge",
       "Dragon Dance",
-      "Fire Blast",
+      "Earthquake",
       "Flamethrower",
-      "Ice Beam",
-      "Thunderbolt",
-      "Thunder Wave",
       "Heal Bell",
-      "Substitute",
-      "Focus Punch"
+      "Hidden Power Flying",
+      "Ice Beam"
     ],
     "mewtwo": [
       "Calm Mind",
-      "Psychic",
-      "Ice Beam",
-      "Thunderbolt",
       "Flamethrower",
+      "Ice Beam",
+      "Psychic",
       "Recover",
-      "Taunt",
-      "Self-Destruct"
+      "Self-Destruct",
+      "Substitute",
+      "Thunderbolt"
     ],
     "mew": [
-      "Soft-Boiled",
       "Calm Mind",
-      "Psychic",
-      "Ice Beam",
-      "Thunderbolt",
+      "Explosion",
       "Flamethrower",
-      "Hypnosis",
-      "Transform",
-      "Explosion"
+      "Ice Beam",
+      "Psychic",
+      "Soft-Boiled",
+      "Thunderbolt",
+      "Thunder Wave",
+      "Transform"
     ],
     "furret": [
-      "Return",
       "Double-Edge",
-      "Shadow Ball",
-      "Brick Break",
-      "Hidden Power Ground",
       "Quick Attack",
-      "Surf",
-      "Flamethrower",
+      "Return",
+      "Reversal",
+      "Shadow Ball",
+      "Substitute",
       "Trick"
     ],
     "ledian": [
-      "Swords Dance",
-      "Substitute",
-      "Baton Pass",
       "Agility",
+      "Baton Pass",
+      "Light Screen",
       "Reflect",
-      "Silver Wind"
+      "Silver Wind",
+      "Swords Dance"
     ],
     "crobat": [
-      "Sludge Bomb",
       "Aerial Ace",
+      "Haze",
       "Hidden Power Ground",
-      "Hidden Power Fighting",
       "Shadow Ball",
-      "Giga Drain",
-      "Taunt"
+      "Sludge Bomb",
+      "Toxic"
     ],
     "lanturn": [
-      "Surf",
-      "Hydro Pump",
-      "Thunderbolt",
+      "Confuse Ray",
       "Ice Beam",
-      "Thunder Wave",
-      "Toxic",
       "Rest",
-      "Sleep Talk"
+      "Sleep Talk",
+      "Surf",
+      "Thunderbolt",
+      "Thunder Wave"
     ],
     "xatu": [
-      "Psychic",
-      "Hidden Power Fire",
-      "Calm Mind",
-      "Wish",
-      "Substitute",
       "Baton Pass",
+      "Calm Mind",
+      "Hidden Power Fire",
+      "Psychic",
       "Reflect",
-      "Rest",
-      "Sleep Talk"
+      "Wish"
     ],
     "sudowoodo": [
-      "Rock Slide",
+      "Brick Break",
+      "Double-Edge",
       "Earthquake",
       "Explosion",
-      "Double-Edge",
-      "Brick Break",
-      "Focus Punch",
-      "Rest",
-      "Sleep Talk"
+      "Rock Slide",
+      "Toxic"
     ],
     "politoed": [
-      "Hydro Pump",
-      "Surf",
-      "Ice Beam",
+      "Counter",
       "Hidden Power Grass",
-      "Toxic",
       "Hypnosis",
-      "Counter"
+      "Ice Beam",
+      "Surf",
+      "Toxic"
     ],
     "aipom": [
-      "Taunt",
-      "Double-Edge",
-      "Shadow Ball",
       "Baton Pass",
+      "Double-Edge",
       "Focus Punch",
-      "Thunder Wave",
-      "Substitute"
+      "Shadow Ball",
+      "Substitute",
+      "Thunder Wave"
     ],
     "sunflora": [
-      "Synthesis",
-      "Growth",
-      "Giga Drain",
-      "Razor Leaf",
-      "Hidden Power Ice",
-      "Leech Seed",
       "Hidden Power Fire",
+      "Leech Seed",
+      "Razor Leaf",
+      "Solar Beam",
       "Sunny Day",
-      "Solar Beam"
+      "Synthesis"
     ],
     "yanma": [
-      "Aerial Ace",
-      "Signal Beam",
-      "Hidden Power Ground",
+      "Hidden Power Flying",
       "Hypnosis",
-      "Substitute",
-      "Reversal"
+      "Reversal",
+      "Shadow Ball",
+      "Substitute"
     ],
     "quagsire": [
-      "Earthquake",
-      "Surf",
-      "Ice Beam",
-      "Toxic",
-      "Rest",
-      "Hidden Power Rock",
+      "Counter",
       "Curse",
-      "Counter"
+      "Earthquake",
+      "Hidden Power Rock",
+      "Ice Beam",
+      "Rest",
+      "Surf",
+      "Toxic"
     ],
     "espeon": [
-      "Psychic",
-      "Morning Sun",
-      "Calm Mind",
-      "Substitute",
-      "Wish",
-      "Protect",
       "Baton Pass",
-      "Reflect",
-      "Hidden Power Fire"
+      "Calm Mind",
+      "Hidden Power Fire",
+      "Morning Sun",
+      "Psychic",
+      "Reflect"
     ],
     "umbreon": [
-      "Psychic",
-      "Mean Look",
-      "Charm",
-      "Curse",
-      "Substitute",
-      "Wish",
-      "Protect",
       "Baton Pass",
-      "Taunt",
+      "Hidden Power Dark",
+      "Mean Look",
+      "Moonlight",
+      "Protect",
       "Toxic",
-      "Moonlight"
+      "Wish"
     ],
     "murkrow": [
+      "Double-Edge",
       "Drill Peck",
-      "Shadow Ball",
       "Hidden Power Fighting",
-      "Feint Attack",
+      "Hidden Power Ground",
       "Mean Look",
       "Perish Song",
-      "Substitute",
       "Protect",
-      "Double-Edge"
+      "Shadow Ball",
+      "Substitute"
     ],
     "slowking": [
-      "Surf",
-      "Psychic",
-      "Fire Blast",
+      "Calm Mind",
       "Flamethrower",
       "Ice Beam",
-      "Calm Mind",
-      "Thunder Wave",
-      "Counter",
+      "Psychic",
+      "Surf",
       "Rest",
-      "Sleep Talk"
+      "Sleep Talk",
+      "Thunder Wave"
     ],
     "misdreavus": [
       "Calm Mind",
-      "Thunderbolt",
       "Hidden Power Ice",
       "Mean Look",
       "Perish Song",
+      "Protect",
       "Substitute",
-      "Protect"
+      "Thunderbolt"
     ],
     "unown": [
       "Hidden Power Psychic"
     ],
     "wobbuffet": [
       "Counter",
-      "Mirror Coat",
+      "Destiny Bond",
       "Encore",
-      "Safeguard"
+      "Mirror Coat"
     ],
     "girafarig": [
-      "Psychic",
-      "Thunderbolt",
-      "Calm Mind",
       "Agility",
-      "Substitute",
       "Baton Pass",
-      "Crunch",
-      "Wish",
-      "Reflect"
+      "Calm Mind",
+      "Psychic",
+      "Substitute",
+      "Thunderbolt",
+      "Wish"
     ],
     "forretress": [
-      "Hidden Power Bug",
-      "Earthquake",
       "Counter",
       "Explosion",
+      "Hidden Power Bug",
       "Rapid Spin",
       "Spikes",
       "Toxic"
     ],
     "dunsparce": [
-      "Headbutt",
-      "Thunder Wave",
-      "Rock Slide",
-      "Shadow Ball",
+      "Body Slam",
       "Curse",
+      "Headbutt",
+      "Rock Slide",
       "Rest",
-      "Sleep Talk",
-      "Body Slam"
+      "Shadow Ball",
+      "Thunder Wave"
     ],
     "gligar": [
       "Earthquake",
       "Hidden Power Flying",
-      "Rock Slide",
       "Iron Tail",
       "Quick Attack",
-      "Swords Dance",
-      "Substitute"
+      "Rock Slide",
+      "Substitute",
+      "Swords Dance"
     ],
     "steelix": [
+      "Double-Edge",
       "Earthquake",
+      "Explosion",
       "Hidden Power Rock",
       "Iron Tail",
-      "Roar",
-      "Toxic",
       "Rest",
-      "Explosion",
-      "Double-Edge"
+      "Roar",
+      "Toxic"
     ],
     "scizor": [
-      "Steel Wing",
-      "Silver Wind",
-      "Hidden Power Rock",
-      "Morning Sun",
-      "Swords Dance",
       "Agility",
       "Baton Pass",
-      "Hidden Power Ground"
+      "Hidden Power Ground",
+      "Hidden Power Rock",
+      "Morning Sun",
+      "Silver Wind",
+      "Steel Wing",
+      "Swords Dance"
     ],
     "shuckle": [
-      "Toxic",
-      "Protect",
       "Encore",
+      "Protect",
       "Rest",
       "Sleep Talk",
+      "Toxic",
       "Wrap"
     ],
     "heracross": [
-      "Megahorn",
       "Brick Break",
-      "Rock Slide",
-      "Swords Dance",
-      "Substitute",
-      "Focus Punch",
-      "Endure",
-      "Reversal",
+      "Facade",
+      "Megahorn",
       "Rest",
-      "Sleep Talk"
+      "Reversal",
+      "Rock Slide",
+      "Sleep Talk",
+      "Substitute",
+      "Swords Dance"
     ],
     "sneasel": [
       "Brick Break",
-      "Shadow Ball",
       "Double-Edge",
-      "Return",
-      "Quick Attack",
-      "Focus Punch",
-      "Substitute",
-      "Swords Dance",
-      "Fake Out",
-      "Ice Beam"
+      "Hidden Power Flying",
+      "Shadow Ball",
+      "Swords Dance"
     ],
     "ursaring": [
-      "Return",
-      "Body Slam",
       "Earthquake",
       "Focus Punch",
-      "Swords Dance",
-      "Hidden Power Ghost"
+      "Hidden Power Ghost",
+      "Return",
+      "Swords Dance"
     ],
     "piloswine": [
-      "Earthquake",
-      "Rock Slide",
-      "Toxic",
-      "Ice Beam",
       "Double-Edge",
-      "Rest",
-      "Sleep Talk"
+      "Earthquake",
+      "Ice Beam",
+      "Protect",
+      "Rock Slide",
+      "Toxic"
     ],
     "octillery": [
+      "Fire Blast",
+      "Hidden Power Grass",
       "Ice Beam",
       "Rock Blast",
       "Surf",
-      "Hidden Power Grass",
-      "Thunder Wave",
-      "Flamethrower",
-      "Fire Blast"
+      "Thunder Wave"
     ],
     "delibird": [
       "Aerial Ace",
       "Focus Punch",
-      "Ice Beam",
-      "Quick Attack",
       "Hidden Power Ground",
-      "Rapid Spin"
+      "Ice Beam",
+      "Quick Attack"
     ],
     "skarmory": [
       "Drill Peck",
-      "Whirlwind",
-      "Spikes",
-      "Toxic",
       "Protect",
       "Rest",
-      "Sleep Talk"
+      "Sleep Talk",
+      "Spikes",
+      "Toxic",
+      "Whirlwind"
     ],
     "houndoom": [
-      "Pursuit",
+      "Crunch",
       "Fire Blast",
       "Flamethrower",
-      "Will-O-Wisp",
-      "Crunch",
-      "Hidden Power Grass"
+      "Hidden Power Grass",
+      "Pursuit",
+      "Will-O-Wisp"
     ],
     "kingdra": [
-      "Hydro Pump",
-      "Surf",
-      "Ice Beam",
       "Hidden Power Grass",
-      "Dragon Breath",
+      "Hydro Pump",
+      "Ice Beam",
       "Rain Dance",
-      "Rest",
-      "Sleep Talk"
+      "Substitute",
+      "Surf"
     ],
     "donphan": [
       "Earthquake",
-      "Rock Slide",
-      "Body Slam",
+      "Hidden Power Bug",
       "Rapid Spin",
-      "Counter",
-      "Toxic",
-      "Roar",
       "Rest",
-      "Sleep Talk"
+      "Roar",
+      "Rock Slide",
+      "Sleep Talk",
+      "Toxic"
     ],
     "porygon2": [
-      "Thunderbolt",
       "Ice Beam",
-      "Return",
-      "Shadow Ball",
       "Recover",
-      "Toxic",
-      "Thunder Wave"
+      "Return",
+      "Thunderbolt",
+      "Thunder Wave",
+      "Toxic"
     ],
     "stantler": [
-      "Return",
       "Earthquake",
-      "Double-Edge",
       "Hypnosis",
+      "Return",
       "Shadow Ball",
       "Thunderbolt"
     ],
     "smeargle": [
+      "Baton Pass",
       "Encore",
       "Explosion",
-      "Spore",
-      "Spikes",
-      "Substitute",
-      "Perish Song",
       "Spider Web",
-      "Baton Pass"
+      "Spikes",
+      "Spore",
+      "Substitute"
     ],
     "hitmontop": [
-      "Brick Break",
-      "High Jump Kick",
-      "Rock Slide",
-      "Earthquake",
-      "Mach Punch",
-      "Endeavor",
-      "Substitute",
-      "Endure",
       "Bulk Up",
-      "Rapid Spin",
-      "Counter",
-      "Hidden Power Ghost"
+      "Earthquake",
+      "Endeavor",
+      "Endure",
+      "Hidden Power Ghost",
+      "High Jump Kick",
+      "Mach Punch",
+      "Rock Slide"
     ],
     "miltank": [
-      "Return",
       "Body Slam",
-      "Earthquake",
-      "Shadow Ball",
-      "Counter",
       "Curse",
-      "Milk Drink",
+      "Earthquake",
       "Heal Bell",
-      "Toxic",
-      "Thunder Wave"
+      "Milk Drink",
+      "Toxic"
     ],
     "blissey": [
-      "Ice Beam",
-      "Thunderbolt",
-      "Flamethrower",
-      "Seismic Toss",
-      "Toxic",
-      "Thunder Wave",
-      "Wish",
-      "Protect",
-      "Soft-Boiled",
+      "Aromatherapy",
       "Calm Mind",
-      "Counter"
+      "Ice Beam",
+      "Seismic Toss",
+      "Soft-Boiled",
+      "Thunderbolt",
+      "Thunder Wave",
+      "Toxic"
     ],
     "tyranitar": [
-      "Rock Slide",
-      "Earthquake",
-      "Pursuit",
-      "Fire Blast",
-      "Ice Beam",
-      "Hidden Power Grass",
       "Dragon Dance",
-      "Substitute",
+      "Earthquake",
+      "Fire Blast",
       "Focus Punch",
-      "Crunch"
+      "Hidden Power Bug",
+      "Ice Beam",
+      "Pursuit",
+      "Rock Slide",
+      "Substitute"
     ],
     "lugia": [
-      "Recover",
-      "Ice Beam",
-      "Calm Mind",
       "Aeroblast",
+      "Calm Mind",
       "Earthquake",
-      "Toxic",
-      "Whirlwind",
-      "Reflect",
-      "Psychic",
-      "Thunderbolt"
+      "Ice Beam",
+      "Recover",
+      "Substitute",
+      "Thunderbolt",
+      "Toxic"
     ],
     "hooh": [
-      "Sacred Fire",
-      "Hidden Power Flying",
-      "Thunderbolt",
-      "Earthquake",
-      "Recover",
-      "Whirlwind",
-      "Reflect",
-      "Substitute",
       "Calm Mind",
+      "Earthquake",
+      "Hidden Power Rock",
+      "Sacred Fire",
+      "Shadow Ball",
+      "Thunderbolt",
+      "Recover",
+      "Substitute",
       "Toxic"
     ],
     "celebi": [
-      "Psychic",
-      "Hidden Power Grass",
-      "Recover",
-      "Calm Mind",
       "Baton Pass",
-      "Reflect",
+      "Calm Mind",
       "Heal Bell",
-      "Toxic",
-      "Leech Seed"
+      "Hidden Power Grass",
+      "Leech Seed",
+      "Psychic",
+      "Recover"
     ],
     "sceptile": [
-      "Leaf Blade",
-      "Dragon Claw",
-      "Hidden Power Fire",
+      "Focus Punch",
       "Hidden Power Ice",
-      "Crunch",
-      "Thunder Punch",
+      "Leaf Blade",
       "Leech Seed",
-      "Substitute"
+      "Substitute",
+      "Thunder Punch"
     ],
     "blaziken": [
-      "Flamethrower",
+      "Endure",
       "Fire Blast",
-      "Brick Break",
-      "Thunder Punch",
+      "Hidden Power Ice",
       "Rock Slide",
       "Sky Uppercut",
       "Swords Dance",
-      "Hidden Power Grass",
-      "Substitute",
-      "Focus Punch"
+      "Thunder Punch"
     ],
     "swampert": [
       "Earthquake",
       "Hydro Pump",
       "Ice Beam",
-      "Rock Slide",
-      "Toxic",
       "Protect",
-      "Surf",
       "Rest",
+      "Rock Slide",
       "Sleep Talk",
-      "Curse"
+      "Surf",
+      "Toxic"
     ],
     "mightyena": [
-      "Shadow Ball",
+      "Crunch",
+      "Double-Edge",
+      "Heal Bell",
       "Hidden Power Fighting",
-      "Body Slam",
-      "Iron Tail",
-      "Toxic",
-      "Heal Bell"
+      "Protect",
+      "Shadow Ball",
+      "Toxic"
     ],
     "linoone": [
       "Belly Drum",
       "Extreme Speed",
-      "Shadow Ball",
       "Flail",
-      "Substitute",
-      "Hidden Power Fighting"
+      "Hidden Power Ground",
+      "Shadow Ball",
+      "Substitute"
     ],
     "dustox": [
-      "Sludge Bomb",
-      "Hidden Power Fire",
-      "Moonlight",
-      "Toxic",
+      "Hidden Power Ground",
       "Light Screen",
+      "Moonlight",
+      "Sludge Bomb",
+      "Toxic",
       "Whirlwind"
     ],
     "ludicolo": [
-      "Hydro Pump",
-      "Surf",
-      "Leech Seed",
+      "Hidden Power Grass",
       "Ice Beam",
+      "Leech Seed",
       "Rain Dance",
-      "Thunder Punch",
-      "Giga Drain"
+      "Substitute",
+      "Surf"
     ],
     "shiftry": [
-      "Feint Attack",
       "Brick Break",
-      "Fake Out",
-      "Sunny Day",
-      "Solar Beam",
+      "Explosion",
       "Hidden Power Fire",
-      "Hidden Power Ice",
-      "Synthesis",
-      "Explosion"
+      "Quick Attack",
+      "Shadow Ball",
+      "Solar Beam",
+      "Sunny Day",
+      "Swords Dance"
     ],
     "breloom": [
-      "Swords Dance",
-      "Hidden Power Rock",
-      "Sky Uppercut",
-      "Mach Punch",
       "Focus Punch",
-      "Substitute",
+      "Hidden Power Ghost",
+      "Hidden Power Rock",
       "Leech Seed",
+      "Mach Punch",
       "Spore",
-      "Hidden Power Ghost"
+      "Substitute",
+      "Swords Dance"
     ],
     "vigoroth": [
+      "Bulk Up",
+      "Earthquake",
+      "Focus Punch",
       "Return",
       "Shadow Ball",
-      "Earthquake",
-      "Bulk Up",
-      "Encore",
       "Slack Off"
     ],
     "slaking": [
-      "Return",
       "Double-Edge",
       "Earthquake",
-      "Shadow Ball",
+      "Fire Blast",
       "Focus Punch",
-      "Fire Blast"
+      "Return",
+      "Shadow Ball"
     ],
     "ninjask": [
-      "Silver Wind",
       "Aerial Ace",
+      "Baton Pass",
       "Hidden Power Rock",
-      "Swords Dance",
-      "Substitute",
       "Protect",
-      "Baton Pass"
+      "Silver Wind",
+      "Substitute",
+      "Swords Dance"
     ],
     "shedinja": [
+      "Agility",
+      "Baton Pass",
+      "Hidden Power Ground",
       "Shadow Ball",
       "Silver Wind",
-      "Hidden Power Ground",
-      "Hidden Power Fighting",
-      "Hidden Power Rock",
-      "Protect",
-      "Toxic",
-      "Agility",
-      "Baton Pass"
+      "Toxic"
     ],
     "hariyama": [
-      "Cross Chop",
-      "Rock Slide",
-      "Hidden Power Ghost",
-      "Substitute",
-      "Focus Punch",
-      "Fake Out",
       "Bulk Up",
-      "Whirlwind",
+      "Cross Chop",
+      "Fake Out",
+      "Focus Punch",
+      "Hidden Power Ghost",
+      "Rock Slide",
+      "Substitute",
       "Rest",
       "Sleep Talk"
     ],
     "nosepass": [
-      "Thunderbolt",
-      "Fire Punch",
       "Earthquake",
       "Explosion",
-      "Taunt",
+      "Rock Slide",
+      "Thunderbolt",
       "Thunder Wave",
       "Toxic"
     ],
     "sableye": [
+      "Knock Off",
+      "Recover",
       "Seismic Toss",
       "Shadow Ball",
-      "Knock Off",
-      "Toxic",
-      "Recover"
+      "Toxic"
     ],
     "aggron": [
-      "Earthquake",
-      "Rock Slide",
-      "Iron Tail",
-      "Focus Punch",
+      "Counter",
       "Double-Edge",
-      "Substitute",
-      "Thunder Wave",
-      "Counter"
-    ],
-    "medicham": [
-      "Brick Break",
-      "High Jump Kick",
-      "Fake Out",
-      "Rock Slide",
+      "Earthquake",
       "Focus Punch",
-      "Substitute",
-      "Shadow Ball",
-      "Recover"
-    ],
-    "manectric": [
-      "Thunderbolt",
-      "Hidden Power Ice",
-      "Crunch",
-      "Hidden Power Grass",
+      "Iron Tail",
+      "Rock Slide",
       "Substitute",
       "Thunder Wave"
     ],
+    "medicham": [
+      "Brick Break",
+      "Bulk Up",
+      "Fake Out",
+      "Recover",
+      "Reversal",
+      "Rock Slide",
+      "Shadow Ball",
+      "Substitute"
+    ],
+    "manectric": [
+      "Crunch",
+      "Hidden Power Grass",
+      "Hidden Power Ice",
+      "Substitute",
+      "Thunderbolt",
+      "Thunder Wave"
+    ],
     "roselia": [
-      "Hidden Power Fire",
-      "Giga Drain",
       "Aromatherapy",
-      "Leech Seed",
-      "Synthesis",
-      "Spikes"
+      "Giga Drain",
+      "Hidden Power Fire",
+      "Spikes",
+      "Stun Spore",
+      "Synthesis"
     ],
     "swalot": [
-      "Sludge Bomb",
+      "Encore",
       "Explosion",
-      "Fire Punch",
-      "Giga Drain",
-      "Thunder Punch",
-      "Ice Beam",
-      "Counter",
+      "Hidden Power Ground",
+      "Sludge Bomb",
+      "Toxic",
       "Yawn"
     ],
     "sharpedo": [
-      "Earthquake",
-      "Hydro Pump",
       "Crunch",
-      "Ice Beam",
-      "Hidden Power Electric",
-      "Substitute"
+      "Earthquake",
+      "Endure",
+      "Frustration",
+      "Hidden Power Flying",
+      "Hydro Pump",
+      "Ice Beam"
     ],
     "wailord": [
-      "Rest",
-      "Sleep Talk",
-      "Body Slam",
-      "Self-Destruct",
+      "Hidden Power Grass",
       "Hydro Pump",
-      "Surf",
       "Ice Beam",
-      "Toxic",
-      "Hidden Power Grass"
+      "Rest",
+      "Self-Destruct",
+      "Sleep Talk",
+      "Surf",
+      "Toxic"
     ],
     "camerupt": [
-      "Fire Blast",
       "Earthquake",
-      "Rock Slide",
       "Explosion",
-      "Toxic",
-      "Rest",
-      "Sleep Talk",
-      "Roar"
-    ],
-    "grumpig": [
-      "Psychic",
-      "Fire Punch",
-      "Icy Wind",
-      "Calm Mind",
-      "Taunt",
-      "Substitute"
-    ],
-    "spinda": [
-      "Double-Edge",
-      "Return",
-      "Body Slam",
-      "Shadow Ball",
-      "Focus Punch",
-      "Brick Break",
-      "Seismic Toss",
-      "Encore",
-      "Hypnosis",
-      "Teeter Dance",
-      "Trick",
-      "Substitute",
-      "Baton Pass"
-    ],
-    "cacturne": [
-      "Spikes",
-      "Giga Drain",
-      "Feint Attack",
-      "Thunder Punch",
-      "Substitute",
-      "Focus Punch",
-      "Hidden Power Ice"
-    ],
-    "altaria": [
-      "Dragon Dance",
-      "Earthquake",
-      "Hidden Power Flying",
       "Fire Blast",
-      "Dragon Claw",
       "Rest",
-      "Toxic",
-      "Heal Bell",
-      "Haze"
-    ],
-    "zangoose": [
-      "Double-Edge",
-      "Return",
-      "Shadow Ball",
-      "Brick Break",
-      "Quick Attack",
-      "Focus Punch",
-      "Swords Dance"
-    ],
-    "seviper": [
-      "Sludge Bomb",
-      "Flamethrower",
-      "Giga Drain",
-      "Earthquake",
-      "Crunch",
-      "Substitute"
-    ],
-    "whiscash": [
-      "Earthquake",
       "Rock Slide",
-      "Surf",
-      "Ice Beam",
-      "Hidden Power Bug",
-      "Spark",
-      "Rest",
       "Sleep Talk",
       "Toxic"
     ],
-    "crawdaunt": [
-      "Surf",
-      "Ice Beam",
-      "Crunch",
-      "Hidden Power Grass",
+    "grumpig": [
+      "Calm Mind",
+      "Fire Punch",
+      "Icy Wind",
+      "Psychic",
+      "Substitute",
+      "Taunt"
+    ],
+    "spinda": [
+      "Body Slam",
+      "Encore",
+      "Focus Punch",
+      "Shadow Ball",
+      "Substitute",
+      "Teeter Dance"
+    ],
+    "cacturne": [
+      "Focus Punch",
+      "Hidden Power Dark",
+      "Leech Seed",
+      "Needle Arm",
+      "Spikes",
+      "Substitute",
+      "Thunder Punch"
+    ],
+    "altaria": [
+      "Dragon Claw",
+      "Dragon Dance",
+      "Earthquake",
+      "Fire Blast",
+      "Flamethrower",
+      "Haze",
+      "Hidden Power Flying",
+      "Rest",
+      "Toxic"
+    ],
+    "zangoose": [
       "Brick Break",
-      "Return"
+      "Quick Attack",
+      "Return",
+      "Shadow Ball",
+      "Swords Dance"
+    ],
+    "seviper": [
+      "Crunch",
+      "Double-Edge",
+      "Earthquake",
+      "Flamethrower",
+      "Hidden Power Grass",
+      "Sludge Bomb"
+    ],
+    "whiscash": [
+      "Earthquake",
+      "Hidden Power Bug",
+      "Ice Beam",
+      "Rock Slide",
+      "Rest",
+      "Sleep Talk",
+      "Spark",
+      "Surf",
+      "Toxic"
+    ],
+    "crawdaunt": [
+      "Brick Break",
+      "Crunch",
+      "Double-Edge",
+      "Hidden Power Ghost",
+      "Ice Beam",
+      "Surf"
     ],
     "claydol": [
       "Earthquake",
+      "Explosion",
       "Ice Beam",
       "Psychic",
-      "Explosion",
       "Rapid Spin",
       "Toxic"
     ],
     "cradily": [
-      "Earthquake",
-      "Rock Slide",
-      "Giga Drain",
-      "Hidden Power Fire",
       "Barrier",
-      "Amnesia",
-      "Mirror Coat",
-      "Toxic",
-      "Recover"
-    ],
-    "armaldo": [
-      "Rock Slide",
-      "Earthquake",
-      "Hidden Power Bug",
-      "Knock Off",
-      "Rapid Spin",
-      "Swords Dance"
-    ],
-    "castformsnowy": [
-      "Hail",
-      "Thunderbolt",
-      "Flamethrower",
-      "Blizzard"
-    ],
-    "banette": [
-      "Shadow Ball",
-      "Hidden Power Fighting",
-      "Knock Off",
-      "Will-O-Wisp",
-      "Thunder Wave",
-      "Destiny Bond"
-    ],
-    "tropius": [
-      "Sunny Day",
-      "Solar Beam",
-      "Synthesis",
-      "Hidden Power Fire",
-      "Swords Dance",
-      "Aerial Ace",
-      "Earthquake"
-    ],
-    "absol": [
-      "Swords Dance",
-      "Shadow Ball",
-      "Hidden Power Fighting",
-      "Aerial Ace",
-      "Baton Pass"
-    ],
-    "glalie": [
-      "Ice Beam",
-      "Earthquake",
-      "Explosion",
-      "Toxic",
-      "Spikes"
-    ],
-    "walrein": [
-      "Ice Beam",
-      "Surf",
       "Earthquake",
       "Hidden Power Grass",
-      "Toxic",
+      "Mirror Coat",
+      "Recover",
+      "Rock Slide",
+      "Toxic"
+    ],
+    "armaldo": [
+      "Double-Edge",
+      "Earthquake",
+      "Hidden Power Bug",
+      "Rock Slide",
+      "Swords Dance"
+    ],
+    "banette": [
+      "Destiny Bond",
+      "Endure",
+      "Hidden Power Fighting",
+      "Knock Off",
+      "Shadow Ball",
+      "Will-O-Wisp"
+    ],
+    "tropius": [
+      "Earthquake",
+      "Hidden Power Fire",
+      "Solar Beam",
+      "Sunny Day",
+      "Synthesis"
+    ],
+    "absol": [
+      "Baton Pass",
+      "Hidden Power Fighting",
+      "Quick Attack",
+      "Shadow Ball",
+      "Swords Dance"
+    ],
+    "glalie": [
+      "Earthquake",
+      "Explosion",
+      "Ice Beam",
+      "Spikes",
+      "Toxic"
+    ],
+    "walrein": [
+      "Encore",
+      "Hidden Power Grass",
+      "Ice Beam",
       "Rest",
       "Sleep Talk",
-      "Encore",
-      "Roar",
-      "Yawn"
+      "Surf",
+      "Toxic"
     ],
     "huntail": [
       "Double-Edge",
-      "Surf",
+      "Hidden Power Grass",
       "Hydro Pump",
       "Ice Beam",
-      "Crunch",
-      "Hidden Power Grass",
-      "Rain Dance"
+      "Rain Dance",
+      "Surf"
     ],
     "gorebyss": [
-      "Surf",
+      "Hidden Power Electric",
+      "Hidden Power Grass",
       "Hydro Pump",
       "Ice Beam",
-      "Hidden Power Grass",
       "Rain Dance",
-      "Hidden Power Electric"
+      "Surf"
     ],
     "relicanth": [
-      "Rock Slide",
-      "Earthquake",
       "Double-Edge",
-      "Yawn",
+      "Earthquake",
+      "Hidden Power Flying",
       "Rest",
-      "Sleep Talk"
+      "Rock Slide",
+      "Sleep Talk",
+      "Toxic"
     ],
     "luvdisc": [
-      "Surf",
       "Ice Beam",
-      "Sweet Kiss",
-      "Toxic",
       "Protect",
-      "Substitute"
+      "Surf",
+      "Sweet Kiss",
+      "Toxic"
     ],
     "salamence": [
-      "Dragon Dance",
-      "Hidden Power Flying",
-      "Earthquake",
       "Brick Break",
-      "Rock Slide",
+      "Dragon Dance",
+      "Earthquake",
       "Fire Blast",
-      "Hydro Pump",
-      "Dragon Claw"
+      "Hidden Power Flying",
+      "Rock Slide"
     ],
     "metagross": [
-      "Meteor Mash",
-      "Earthquake",
-      "Rock Slide",
-      "Shadow Ball",
-      "Explosion",
-      "Psychic",
-      "Ice Punch",
       "Agility",
-      "Rest",
-      "Sleep Talk"
+      "Earthquake",
+      "Explosion",
+      "Meteor Mash",
+      "Psychic",
+      "Rock Slide"
     ],
     "latias": [
-      "Dragon Claw",
-      "Ice Beam",
-      "Thunderbolt",
-      "Recover",
       "Calm Mind",
-      "Toxic",
-      "Reflect",
-      "Roar"
-    ],
-    "latios": [
       "Dragon Claw",
-      "Ice Beam",
-      "Thunderbolt",
       "Hidden Power Fire",
       "Recover",
+      "Refresh",
+      "Toxic"
+    ],
+    "latios": [
       "Calm Mind",
-      "Psychic"
+      "Dragon Claw",
+      "Hidden Power Fire",
+      "Recover",
+      "Refresh",
+      "Thunderbolt"
     ],
     "kyogre": [
-      "Surf",
-      "Hydro Pump",
-      "Ice Beam",
-      "Thunder",
-      "Water Spout",
-      "Sleep Talk",
       "Calm Mind",
-      "Rest"
+      "Ice Beam",
+      "Rest",
+      "Sleep Talk",
+      "Surf",
+      "Thunder",
+      "Water Spout"
     ],
     "groudon": [
       "Earthquake",
-      "Rock Slide",
-      "Swords Dance",
+      "Hidden Power Ghost",
       "Overheat",
-      "Roar",
-      "Substitute"
+      "Rock Slide",
+      "Substitute",
+      "Swords Dance",
+      "Thunder Wave"
     ],
     "rayquaza": [
       "Dragon Dance",
       "Earthquake",
       "Extreme Speed",
-      "Rock Slide",
-      "Hidden Power Flying",
-      "Dragon Claw",
-      "Ice Beam",
-      "Fire Blast",
-      "Thunderbolt",
-      "Surf"
+      "Hidden Power Ghost",
+      "Overheat"
     ],
     "jirachi": [
-      "Psychic",
-      "Thunderbolt",
-      "Fire Punch",
-      "Ice Punch",
-      "Calm Mind",
       "Body Slam",
-      "Toxic",
-      "Reflect",
+      "Calm Mind",
+      "Fire Punch",
+      "Protect",
+      "Psychic",
       "Substitute",
-      "Wish",
-      "Protect"
+      "Thunderbolt",
+      "Wish"
     ],
     "deoxys": [
-      "Superpower",
-      "Shadow Ball",
-      "Psycho Boost",
       "Extreme Speed",
       "Fire Punch",
-      "Thunderbolt",
       "Ice Beam",
-      "Spikes"
+      "Psycho Boost",
+      "Shadow Ball",
+      "Superpower"
     ],
     "deoxysattack": [
-      "Superpower",
-      "Shadow Ball",
       "Extreme Speed",
-      "Fire Punch"
+      "Fire Punch",
+      "Shadow Ball",
+      "Superpower"
     ],
     "deoxysdefense": [
+      "Night Shade",
       "Recover",
       "Spikes",
       "Taunt",
-      "Toxic",
-      "Night Shade",
-      "Magic Coat",
-      "Knock Off"
+      "Toxic"
     ],
     "deoxysspeed": [
-      "Shadow Ball",
-      "Superpower",
-      "Ice Beam",
-      "Thunderbolt",
-      "Fire Punch",
-      "Psychic",
-      "Knock Off",
-      "Spikes",
-      "Taunt",
-      "Toxic",
-      "Recover",
       "Calm Mind",
-      "Reflect"
+      "Ice Beam",
+      "Psychic",
+      "Recover",
+      "Shadow Ball",
+      "Spikes",
+      "Superpower",
+      "Taunt",
+      "Toxic"
     ]
   },
   "4": {
@@ -10777,6 +10511,14 @@
       "Earthquake",
       "Rest"
     ],
+    "pikachu": [
+      "Volt Tackle",
+      "Volt Switch",
+      "Grass Knot",
+      "Hidden Power Ice",
+      "Knock Off",
+      "Iron Tail"
+    ],
     "dugtrio": [
       "Earthquake",
       "Stone Edge",
@@ -11510,14 +11252,6 @@
       "U-turn",
       "Pursuit",
       "Drill Run"
-    ],
-    "pikachu": [
-      "Volt Tackle",
-      "Volt Switch",
-      "Grass Knot",
-      "Hidden Power Ice",
-      "Knock Off",
-      "Iron Tail"
     ],
     "raichu": [
       "Nasty Plot",
