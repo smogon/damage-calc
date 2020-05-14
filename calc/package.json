@@ -23,7 +23,7 @@
     "eslint-plugin-jest": "^23.9.0",
     "jest": "^26.0.0",
     "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "typescript": "<3.9"
   },
   "scripts": {
     "lint": "eslint --cache src/**/*.ts",
