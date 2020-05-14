@@ -26,7 +26,7 @@ const config = {
     ['@babel/plugin-transform-template-literals', {'loose': true}],
     '@babel/plugin-transform-member-expression-literals',
     '@babel/plugin-transform-property-literals'
-],
+  ],
 }
 
 class Bundler {
