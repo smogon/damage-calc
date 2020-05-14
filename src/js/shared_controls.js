@@ -643,10 +643,10 @@ function correctHiddenPower(pokemon) {
 
 	// Convert the legacy stats table to a useful one, and also figure out if all are maxed
 	var ivs = {};
-	var maxed = false;
+	var maxed = true;
 	for (var i = 0; i <= LEGACY_STATS[8].length; i++) {
 		var s = LEGACY_STATS[8][i];
-		var iv = ivs[calc.Stats.shortForm(s)] = s || 31;
+		var iv = ivs[legacyStatToStat(s)] = (pokemon.ivs && pokemon.ivs[s]) || 31;
 		if (iv !== 31) maxed = false;
 	}
 
