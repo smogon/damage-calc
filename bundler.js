@@ -37,9 +37,9 @@ class Bundler {
   read(f, b = 0, e = 0) {
     try {
       const data = fs.readFileSync(path.join(this.built, f), 'utf8');
-      if (e) return data.split('\n').slice(b, -e).join('\n');
-      if (b) return data.split('\n').slice(b).join('\n');
-      return data;
+      if (e) return data.split('\n').slice(b, -e).join('\n') + '\n';
+      if (b) return data.split('\n').slice(b).join('\n') + '\n';
+      return data + '\n';
     } catch (err) {
       if (err.code === 'ENOENT') {
         console.error(`Missing file 'dist/${f}' - did you run \`npm run compile\`?`);
