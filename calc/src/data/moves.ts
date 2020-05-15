@@ -890,7 +890,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Lunar Dance': {bp: 0, type: 'Psychic'},
   'Magma Storm': {bp: 120, type: 'Fire', category: 'Special'},
   'Magnet Rise': {bp: 0, type: 'Electric'},
-  'Me First': {bp: 0, type: 'Normal', target: 'adjacentFoe'},
+  'Me First': {bp: 0, type: 'Normal'},
   'Metal Burst': {bp: 0, type: 'Steel', category: 'Physical'},
   'Miracle Eye': {bp: 0, type: 'Psychic'},
   'Natural Gift': {bp: 0, type: 'Normal', category: 'Physical'},
@@ -2944,7 +2944,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Befuddle': {
     bp: 10,
     type: 'Bug',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2952,7 +2951,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Centiferno': {
     bp: 10,
     type: 'Fire',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2960,7 +2958,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Chi Strike': {
     bp: 10,
     type: 'Fighting',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2968,7 +2965,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Cuddle': {
     bp: 10,
     type: 'Normal',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2976,7 +2972,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Depletion': {
     bp: 10,
     type: 'Dragon',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2984,7 +2979,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Finale': {
     bp: 10,
     type: 'Fairy',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2992,7 +2986,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Foam Burst': {
     bp: 10,
     type: 'Water',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3000,7 +2993,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Gold Rush': {
     bp: 10,
     type: 'Normal',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3008,7 +3000,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Gravitas': {
     bp: 10,
     type: 'Psychic',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3016,7 +3007,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Malodor': {
     bp: 10,
     type: 'Poison',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3024,7 +3014,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Meltdown': {
     bp: 10,
     type: 'Steel',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3032,7 +3021,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Replenish': {
     bp: 10,
     type: 'Normal',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3040,7 +3028,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Resonance': {
     bp: 10,
     type: 'Ice',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3048,7 +3035,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Sandblast': {
     bp: 10,
     type: 'Ground',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3056,7 +3042,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Smite': {
     bp: 10,
     type: 'Fairy',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3064,7 +3049,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Snooze': {
     bp: 10,
     type: 'Dark',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3072,7 +3056,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Steelsurge': {
     bp: 10,
     type: 'Steel',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3080,7 +3063,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Stonesurge': {
     bp: 10,
     type: 'Water',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3088,7 +3070,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Stun Shock': {
     bp: 10,
     type: 'Electric',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3096,7 +3077,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Sweetness': {
     bp: 10,
     type: 'Grass',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3104,7 +3084,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Tartness': {
     bp: 10,
     type: 'Grass',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3112,7 +3091,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Terror': {
     bp: 10,
     type: 'Ghost',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3120,7 +3098,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Volcalith': {
     bp: 10,
     type: 'Rock',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3128,7 +3105,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Volt Crash': {
     bp: 10,
     type: 'Electric',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3136,7 +3112,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Wildfire': {
     bp: 10,
     type: 'Fire',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3144,7 +3119,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Wind Rage': {
     bp: 10,
     type: 'Flying',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3171,7 +3145,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Airstream': {
     bp: 10,
     type: 'Flying',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3179,7 +3152,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Darkness': {
     bp: 10,
     type: 'Dark',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3187,7 +3159,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Flare': {
     bp: 100,
     type: 'Fire',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3195,7 +3166,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Flutterby': {
     bp: 10,
     type: 'Bug',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3203,7 +3173,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Geyser': {
     bp: 10,
     type: 'Water',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3212,7 +3181,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Hailstorm': {
     bp: 10,
     type: 'Ice',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3220,7 +3188,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Knuckle': {
     bp: 10,
     type: 'Fighting',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3228,7 +3195,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Lightning': {
     bp: 10,
     type: 'Electric',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3236,7 +3202,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Mindstorm': {
     bp: 10,
     type: 'Psychic',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3244,7 +3209,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Ooze': {
     bp: 10,
     type: 'Poison',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3252,7 +3216,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Overgrowth': {
     bp: 10,
     type: 'Grass',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3260,7 +3223,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Phantasm': {
     bp: 10,
     type: 'Ghost',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3268,7 +3230,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Quake': {
     bp: 10,
     type: 'Ground',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3276,7 +3237,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Rockfall': {
     bp: 10,
     type: 'Rock',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3284,7 +3244,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Starfall': {
     bp: 10,
     type: 'Fairy',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3292,7 +3251,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Steelspike': {
     bp: 10,
     type: 'Steel',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3300,7 +3258,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Strike': {
     bp: 10,
     type: 'Normal',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3308,7 +3265,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Max Wyrmwind': {
     bp: 10,
     type: 'Dragon',
-    target: 'adjacentFoe',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
