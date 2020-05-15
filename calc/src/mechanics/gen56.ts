@@ -690,7 +690,7 @@ export function calculateBWXY(
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
 
   const isSpread = field.gameType !== 'Singles' &&
-    ['allAdjacent', 'allAdjacentFoes', 'adjacentFoe'].includes(move.target);
+    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
   if (isSpread) {
     baseDamage = pokeRound(OF32(baseDamage * 0xc00) / 0x1000);
   }

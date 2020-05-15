@@ -397,7 +397,7 @@ export function calculateDPP(
   }
 
   if (field.gameType !== 'Singles' &&
-      ['allAdjacent', 'allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
+      ['allAdjacent', 'allAdjacentFoes'].includes(move.target)) {
     baseDamage = Math.floor((baseDamage * 3) / 4);
   }
 

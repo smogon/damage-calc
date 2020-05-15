@@ -211,7 +211,7 @@ class Move implements I.Move {
       if (move.flags.contact) this.flags.contact = move.flags.contact;
       if (move.flags.sound) this.flags.sound = move.flags.sound;
 
-      if (['allAdjacent', 'allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
+      if (['allAdjacent', 'allAdjacentFoes'].includes(move.target)) {
         this.target = move.target;
       }
     }

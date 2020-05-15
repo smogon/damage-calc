@@ -114,9 +114,8 @@ export class Move implements State.Move {
     }
     this.timesUsed = (this.dropsStats && options.timesUsed) || 1;
     this.secondaries = data.secondaries;
-    // For the purposes of the damage formula only 'allAdjacent', 'allAdjacentFoes', and
-    // 'adjacentFoe' matter, so we simply default to 'any' for the others even though they may not
-    // actually be 'any'-target moves
+    // For the purposes of the damage formula only 'allAdjacent' and 'allAdjacentFoes' matter, so we
+    // simply default to 'any' for the others even though they may not actually be 'any'-target moves
     this.target = data.target || 'any';
     this.recoil = data.recoil;
     this.hasCrashDamage = !!data.hasCrashDamage;

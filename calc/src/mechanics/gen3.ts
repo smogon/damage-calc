@@ -237,7 +237,7 @@ export function calculateADV(
     desc.isSwitching = 'out';
   }
 
-  if (field.gameType !== 'Singles' && ['allAdjacentFoes', 'adjacentFoe'].includes(move.target)) {
+  if (field.gameType !== 'Singles' && move.target === 'allAdjacentFoes') {
     baseDamage = Math.floor(baseDamage / 2);
   }
 
