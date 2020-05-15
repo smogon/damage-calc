@@ -172,7 +172,7 @@ This project was originally created by Honko and is primarly maintained by Austi
 - Gens 1-5 was originally implemented by Honko.
 - The Gen 6 update was by gamut-was-taken and Austin.
 - The Gen 7 update was done by Austin.
-- The Gen 8 update was done by Austin and Kris.
+- The Gen 8 update was done by Austin.
 - Some CSS styling was contributed by Zarel to match the Pokémon Showdown! theme.
 - The calculator was rewritten in TypeScript, modularized and corrected by pre.
 
