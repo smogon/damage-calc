@@ -169,8 +169,8 @@ how to programmatically update sets.
 
 This project was originally created by Honko and is primarly maintained by Austin and pre.
 
-- Gens 1-5 was originally implemented by Honko.
-- The Gen 6 update was by gamut-was-taken and Austin.
+- Gens 1-6 were originally implemented by Honko.
+- The Omega Ruby / Alpha Sapphire update was done by gamut-was-taken and Austin.
 - The Gen 7 update was done by Austin.
 - The Gen 8 update was done by Austin.
 - Some CSS styling was contributed by Zarel to match the Pokémon Showdown! theme.
