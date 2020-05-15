@@ -725,8 +725,7 @@ export function calculateSMSS(
     atMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
   } else if (
-    attacker.hasAbility('Stakeout') && attacker.abilityOn && move.category === 'Physical'
-  ) {
+    attacker.hasAbility('Stakeout') && attacker.abilityOn) {
     atMods.push(0x2000);
     desc.attackerAbility = attacker.ability;
   } else if (
