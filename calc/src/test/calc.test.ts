@@ -1,5 +1,7 @@
+/* eslint-disable max-len */
+
 import {AbilityName, Weather} from '../data/interface';
-import {inGen, inGens} from './helper';
+import {inGen, inGens, tests} from './helper';
 
 describe('calc', () => {
   describe('Multi-Gen', () => {
@@ -40,25 +42,11 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
-      test(`Mulihit (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'));
-        if (gen < 3) {
-          expect(result.range()).toEqual([36, 43]);
-          expect(result.desc()).toBe(
-            'Snorlax Comet Punch (3 hits) vs. Vulpix: 108-129 (38.7 - 46.2%) -- approx. 3HKO'
-          );
-        } else if (gen === 3) {
-          expect(result.range()).toEqual([44, 52]);
-          expect(result.desc()).toBe(
-            '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 132-156 (60.8 - 71.8%) -- approx. 2HKO'
-          );
-        } else {
-          expect(result.range()).toEqual([43, 52]);
-          expect(result.desc()).toBe(
-            '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix: 129-156 (59.4 - 71.8%) -- approx. 2HKO'
-          );
-        }
+    tests('Comet Punch', ({gen, calculate, Pokemon, Move}) => {
+      expect(calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'))).toMatch(gen, {
+        1: {range: [36, 43], desc: 'Snorlax Comet Punch (3 hits) vs. Vulpix', result: '(38.7 - 46.2%) -- approx. 3HKO'},
+        3: {range: [44, 52], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(60.8 - 71.8%) -- approx. 2HKO'},
+        4: {range: [43, 52], result: '(59.4 - 71.8%) -- approx. 2HKO'},
       });
     });
 

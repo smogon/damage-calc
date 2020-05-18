@@ -458,7 +458,7 @@ export function calculateSMSS(
 
   // Research from DaWoblefet and Anubis show that the Technician modifier is calculated at the
   // very beginning in Gen 8 as opposed to later on after several mods have been applied like Gen 7
-  // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
+  // https://smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
   if (gen.num === 8 && attacker.hasAbility('Technician') && basePower <= 60) {
     bpMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
