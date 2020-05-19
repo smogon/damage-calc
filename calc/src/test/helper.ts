@@ -65,28 +65,52 @@ export function inGens(from: I.GenerationNum, to: I.GenerationNum, fn: (gen: Gen
   }
 }
 
-export function tests(name: string, fn: (gen: Gen) => void): void;
-export function tests(name: string, from: I.GenerationNum, fn: (gen: Gen) => void): void;
-export function tests(
-  name: string, from: I.GenerationNum, to: I.GenerationNum, fn: (gen: Gen) => void): void;
+export function tests(name: string, fn: (gen: Gen) => void, type?: 'skip' | 'only'): void;
 export function tests(
   name: string,
-  from: I.GenerationNum | ((gen: Gen) => void),
-  to?: I.GenerationNum | ((gen: Gen) => void),
-  fn?: (gen: Gen) => void
-) {
-  if (typeof from !== 'number') {
-    fn = from;
+  from: I.GenerationNum,
+  fn: (gen: Gen) => void,
+  type?: 'skip' | 'only'
+): void;
+export function tests(
+  name: string,
+  from: I.GenerationNum,
+  to: I.GenerationNum,
+  fn: (gen: Gen) => void,
+  type?: 'skip' | 'only'
+): void;
+export function tests(...args: any[]) {
+  const name = args[0];
+  let from: I.GenerationNum;
+  let to: I.GenerationNum;
+  let fn: (gen: Gen) => void;
+  let type: 'skip' | 'only' | undefined = undefined;
+  if (typeof args[1] !== 'number') {
     from = 1;
     to = 8;
-  } else if (typeof to !== 'number') {
-    fn = to;
+    fn = args[1];
+    type = args[2];
+  } else if (typeof args[2] !== 'number') {
+    from = args[1] as I.GenerationNum ?? 1;
     to = 8;
+    fn = args[2];
+    type = args[3];
+  } else {
+    from = args[1] as I.GenerationNum ?? 1;
+    to = args[2] as I.GenerationNum ?? 8;
+    fn = args[3];
+    type = args[4];
   }
+
   inGens(from, to, gen => {
-    test(`${name} (gen ${gen.gen})`, () => {
-      fn!(gen);
-    });
+    const n = `${name} (gen ${gen.gen})`;
+    if (type === 'skip') {
+      test.skip(n, () => fn!(gen));
+    } else if (type === 'only') {
+      test.only(n, () => fn!(gen));
+    } else {
+      test(n, () => fn!(gen));
+    }
   });
 }
 
