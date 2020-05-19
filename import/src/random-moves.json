@@ -4056,10 +4056,10 @@
       "Drill Peck",
       "Protect",
       "Rest",
+      "Roar",
       "Sleep Talk",
       "Spikes",
-      "Toxic",
-      "Whirlwind"
+      "Toxic"
     ],
     "houndoom": [
       "Crunch",
@@ -4192,6 +4192,7 @@
       "Endure",
       "Fire Blast",
       "Hidden Power Ice",
+      "Reversal",
       "Rock Slide",
       "Sky Uppercut",
       "Swords Dance",
@@ -19588,6 +19589,14 @@
       "Nasty Plot",
       "Power Gem",
       "Thunderbolt"
+    ],
+    "golduck": [
+      "Calm Mind",
+      "Focus Blast",
+      "Ice Beam",
+      "Psyshock",
+      "Scald",
+      "Substitute"
     ],
     "arcanine": [
       "Close Combat",

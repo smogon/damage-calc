@@ -45,20 +45,19 @@
   },
   "3": {
     "level": {
-      "LC": 87,
-      "NFE": 85,
-      "NU": 83,
-      "NUBL": 81,
-      "UU": 79,
-      "UUBL": 77,
-      "OU": 75,
-      "Uber": 71
+      "NFE": 90,
+      "NU": 88,
+      "NUBL": 86,
+      "UU": 84,
+      "UUBL": 82,
+      "OU": 80,
+      "Uber": 76
     },
     "custom": {
       "Ditto": 99,
       "Unown": 99
     },
-    "default": 75
+    "default": 80
   },
   "4": {
     "level": {
