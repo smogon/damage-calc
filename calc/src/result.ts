@@ -37,9 +37,9 @@ export class Result {
     return this.fullDesc();
   }
 
-  range() {
+  range(): [number, number] {
     const range = damageRange(this.damage);
-    if (typeof range[0] === 'number') return range;
+    if (typeof range[0] === 'number') return range as [number, number];
     const d = range as [number[], number[]];
     return [d[0][0] + d[0][1], d[1][0] + d[1][1]];
   }

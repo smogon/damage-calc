@@ -100,7 +100,7 @@ export function getRecovery(
   const minD = typeof minDamage === 'number' ? [minDamage] : minDamage;
   const maxD = typeof maxDamage === 'number' ? [maxDamage] : maxDamage;
 
-  const recovery = [0, 0];
+  const recovery = [0, 0] as [number, number];
   let text = '';
 
   const ignoresShellBell =
