@@ -2951,7 +2951,6 @@
       "Hidden Power Grass",
       "Leech Seed",
       "Light Screen",
-      "Reflect",
       "Synthesis",
       "Toxic"
     ],
@@ -3073,9 +3072,9 @@
     ],
     "exploud": [
       "Earthquake",
-      "Fire Blast",
       "Flamethrower",
       "Ice Beam",
+      "Overheat",
       "Return",
       "Shadow Ball",
       "Substitute"
@@ -3119,6 +3118,7 @@
       "Rest",
       "Shadow Ball",
       "Sleep Talk",
+      "Substitute",
       "Will-O-Wisp"
     ],
     "regirock": [
@@ -3147,6 +3147,7 @@
       "Toxic"
     ],
     "arbok": [
+      "Double-Edge",
       "Earthquake",
       "Hidden Power Fire",
       "Rest",
@@ -3557,6 +3558,7 @@
       "Wish"
     ],
     "kingler": [
+      "Double-Edge",
       "Endure",
       "Flail",
       "Hidden Power Ghost",
@@ -3643,6 +3645,7 @@
     "scyther": [
       "Aerial Ace",
       "Baton Pass",
+      "Hidden Power Ground",
       "Hidden Power Rock",
       "Quick Attack",
       "Silver Wind",
@@ -4273,7 +4276,6 @@
     "slaking": [
       "Double-Edge",
       "Earthquake",
-      "Fire Blast",
       "Focus Punch",
       "Return",
       "Shadow Ball"
@@ -4369,10 +4371,10 @@
       "Crunch",
       "Earthquake",
       "Endure",
-      "Frustration",
       "Hidden Power Flying",
       "Hydro Pump",
-      "Ice Beam"
+      "Ice Beam",
+      "Return"
     ],
     "wailord": [
       "Hidden Power Grass",
@@ -4612,7 +4614,8 @@
       "Earthquake",
       "Extreme Speed",
       "Hidden Power Ghost",
-      "Overheat"
+      "Overheat",
+      "Rock Slide"
     ],
     "jirachi": [
       "Body Slam",
@@ -4635,6 +4638,7 @@
     "deoxysattack": [
       "Extreme Speed",
       "Fire Punch",
+      "Psycho Boost",
       "Shadow Ball",
       "Superpower"
     ],
@@ -19805,11 +19809,12 @@
       "Recover"
     ],
     "mew": [
-      "Brave Bird",
-      "Close Combat",
-      "Flare Blitz",
-      "Psychic Fangs",
-      "Swords Dance"
+      "Fire Blast",
+      "Knock Off",
+      "Psychic",
+      "Roost",
+      "Stealth Rock",
+      "Toxic Spikes"
     ],
     "noctowl": [
       "Air Slash",
@@ -19852,12 +19857,11 @@
       "Strength Sap"
     ],
     "azumarill": [
-      "Aqua Jet",
-      "Belly Drum",
-      "Knock Off",
-      "Liquidation",
-      "Play Rough",
-      "Superpower"
+      "Perish Song",
+      "Protect",
+      "Rest",
+      "Toxic",
+      "Whirlpool"
     ],
     "sudowoodo": [
       "Earthquake",
@@ -19899,8 +19903,8 @@
       "Trick Room"
     ],
     "wobbuffet": [
+      "Charm",
       "Counter",
-      "Destiny Bond",
       "Encore",
       "Mirror Coat"
     ],
@@ -19921,7 +19925,6 @@
     ],
     "shuckle": [
       "Encore",
-      "Infestation",
       "Knock Off",
       "Stealth Rock",
       "Sticky Web",
@@ -20148,8 +20151,8 @@
       "Earthquake",
       "Explosion",
       "Morning Sun",
-      "Rock Slide",
       "Stealth Rock",
+      "Stone Edge",
       "Swords Dance",
       "Will-O-Wisp",
       "Zen Headbutt"
@@ -20225,8 +20228,10 @@
       "Thunderbolt"
     ],
     "registeel": [
-      "Body Press",
       "Protect",
+      "Rest",
+      "Seismic Toss",
+      "Sleep Talk",
       "Stealth Rock",
       "Toxic"
     ],
@@ -20634,7 +20639,7 @@
       "Swords Dance"
     ],
     "conkeldurr": [
-      "Bulk Up",
+      "Close Combat",
       "Drain Punch",
       "Facade",
       "Knock Off",
@@ -20870,11 +20875,11 @@
       "Stealth Rock"
     ],
     "stunfiskgalar": [
-      "Curse",
       "Earthquake",
       "Pain Split",
-      "Rock Slide",
-      "Stealth Rock"
+      "Stealth Rock",
+      "Stone Edge",
+      "Thunder Wave"
     ],
     "golurk": [
       "Drain Punch",
@@ -21050,6 +21055,7 @@
       "Darkest Lariat",
       "Gunk Shot",
       "Ice Punch",
+      "Knock Off",
       "Parting Shot"
     ],
     "meowstic": [
@@ -21689,10 +21695,12 @@
     ],
     "orbeetle": [
       "Body Press",
-      "Hypnosis",
+      "Bug Buzz",
+      "Calm Mind",
       "Psychic",
       "Recover",
       "Sticky Web",
+      "Stored Power",
       "U-turn"
     ],
     "thievul": [
@@ -21925,8 +21933,8 @@
       "Belly Drum",
       "Icicle Crash",
       "Liquidation",
-      "Substitute",
-      "Zen Headbutt"
+      "Reversal",
+      "Substitute"
     ],
     "indeedee": [
       "Calm Mind",

@@ -4,6 +4,8 @@ const Dex = require('../../pokemon-showdown/.sim-dist/dex').Dex;
 const fs = require('fs');
 const path = require('path');
 
+const LEVELS = require('./src/random-levels.json');
+
 const TIERS = {};
 const MOVES = {};
 
@@ -40,6 +42,7 @@ for (let gen = 1; gen <= 8; gen++) {
 		if (val.exclusiveMoves) val.exclusiveMoves.forEach(m => moves.add(m));
 		if (val.comboMoves) val.comboMoves.forEach(m => moves.add(m));
 		if (val.randomBattleMoves) val.randomBattleMoves.forEach(m => moves.add(m));
+		if (val.randomBattleLevel) LEVELS[gen].custom[val.name] = val.randomBattleLevel;
 		if (val.randomSets) {
 			for (const set of val.randomSets) {
  				for (let i = 1; i <= 4; i++) {
@@ -56,3 +59,4 @@ for (let gen = 1; gen <= 8; gen++) {
 const src = path.resolve(__dirname, 'src');
 fs.writeFileSync(path.join(src, 'tiers.json'), JSON.stringify(TIERS, null, 2));
 fs.writeFileSync(path.join(src, 'random-moves.json'), JSON.stringify(MOVES, null, 2));
+fs.writeFileSync(path.join(src, 'random-levels.json'), JSON.stringify(LEVELS, null, 2));

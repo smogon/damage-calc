@@ -233,7 +233,6 @@ function importRandomOptionsForPokemon(
   const generation = calc.Generations.get(gen);
 
   let level = r.custom[pokemon] || r.level[tier] || r.default;
-  if (gen === 8 && tier === 'Illegal' && TO_TIER[7][toID(f)]) level = 72;
   if (gen === 6 && level === r.default && !generation.species.get(toID(pokemon))?.nfe) {
     level = 80;
   }
