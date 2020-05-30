@@ -113,6 +113,10 @@ export function getRecovery(
     }
   }
 
+  if (move.named('G-Max Finale')) {
+    recovery[0] = recovery[1] = Math.round(attacker.maxHP() / 6);
+  }
+
   if (move.drain) {
     const percentHealed = move.drain[0] / move.drain[1];
     const max = Math.round(defender.maxHP() * percentHealed);
