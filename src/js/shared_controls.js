@@ -815,6 +815,8 @@ function createField() {
 		spikes = [~~$("input:radio[name='spikesL']:checked").val(), ~~$("input:radio[name='spikesR']:checked").val()];
 	}
 	var steelsurge = [$("#steelsurgeL").prop("checked"), $("#steelsurgeR").prop("checked")];
+	var wildfire = [$("#wildfireL").prop("checked"), $("#wildfireR").prop("checked")];
+	var volcalith = [$("#volcalithL").prop("checked"), $("#volcalithR").prop("checked")];
 	var terrain = ($("input:checkbox[name='terrain']:checked").val()) ? $("input:checkbox[name='terrain']:checked").val() : "";
 	var isReflect = [$("#reflectL").prop("checked"), $("#reflectR").prop("checked")];
 	var isLightScreen = [$("#lightScreenL").prop("checked"), $("#lightScreenR").prop("checked")];
@@ -831,7 +833,8 @@ function createField() {
 
 	var createSide = function (i) {
 		return new calc.Side({
-			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], isReflect: isReflect[i], isLightScreen: isLightScreen[i],
+			spikes: spikes[i], isSR: isSR[i], steelsurge: steelsurge[i], wildfire: wildfire[i], volcalith: volcalith[i],
+			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
 			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
@@ -993,6 +996,10 @@ function clearField() {
 	$("#gscSpikesR").prop("checked", false);
 	$("#steelsurgeL").prop("checked", false);
 	$("#steelsurgeR").prop("checked", false);
+	$("#wildfireL").prop("checked", false);
+	$("#wildfireR").prop("checked", false);
+	$("#volcalithL").prop("checked", false);
+	$("#volcalithR").prop("checked", false);
 	$("#reflectL").prop("checked", false);
 	$("#reflectR").prop("checked", false);
 	$("#lightScreenL").prop("checked", false);

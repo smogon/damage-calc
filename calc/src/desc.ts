@@ -113,6 +113,10 @@ export function getRecovery(
     }
   }
 
+  if (move.named('G-Max Finale')) {
+    recovery[0] = recovery[1] = Math.round(attacker.maxHP() / 6);
+  }
+
   if (move.drain) {
     const percentHealed = move.drain[0] / move.drain[1];
     const max = Math.round(defender.maxHP() * percentHealed);
@@ -427,7 +431,7 @@ function combine(damage: Damage) {
 }
 
 const TRAPPING =
-  ['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'];
+  ['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap', 'G-Max Sandblast', 'G-Max Centiferno'];
 
 function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   let damage = 0;
@@ -613,6 +617,16 @@ function getEndOfTurn(
       (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
     damage -= Math.floor(defender.maxHP() / 8);
     texts.push('Sea of Fire damage');
+  }
+
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') && (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
+    damage -= Math.floor(defender.maxHP() / 6);
+    texts.push('Wildfire damage');
+  }
+
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Rock') && (field.defenderSide.volcalith || move.named('G-Max Volcalith'))) {
+    damage -= Math.floor(defender.maxHP() / 6);
+    texts.push('Volcalith damage');
   }
 
   return {damage, texts};
