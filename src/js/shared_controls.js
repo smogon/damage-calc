@@ -764,10 +764,10 @@ function createPokemon(pokeInfo) {
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
-				getMoveDetails(pokeInfo.find(".move1"), ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move2"), ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move3"), ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move4"), ability, item, isDynamaxed)
+				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
+				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
+				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed),
+				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed)
 			],
 			overrides: {
 				baseStats: baseStats,
@@ -783,7 +783,7 @@ function getGender(gender) {
 	return 'F';
 }
 
-function getMoveDetails(moveInfo, ability, item, useMax) {
+function getMoveDetails(moveInfo, species, ability, item, useMax) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
@@ -796,7 +796,7 @@ function getMoveDetails(moveInfo, ability, item, useMax) {
 	};
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
-		ability: ability, item: item, useZ: isZMove, isCrit: isCrit, hits: hits,
+		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits,
 		timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax
 	});
 }
