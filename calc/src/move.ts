@@ -99,6 +99,7 @@ export class Move implements State.Move {
     this.useZ = options.useZ;
     this.useMax = options.useMax;
     this.overrides = options.overrides;
+    this.species = options.species;
 
     this.bp = data.basePower;
     // These moves have a type type of these moves exists, but the damage they deal is typeless so we override it
