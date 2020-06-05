@@ -126,7 +126,8 @@ use an alternative data layer such as [`@pkmn/data`][9]. You must load your data
 ## UI
 
 The [UI layer][2] is currently is written in vanilla JavaScript and HTML. To view the UI locally you
-first must install dependencies by running `npm install` at the top level and without `calc/`. This should create a `node_modules/` folder under both the root directory and under `calc/`:
+first must install dependencies by running `npm install` at the top level and without `calc/`. This
+should create a `node_modules/` folder under both the root directory and under `calc/`:
 
 ```sh
 $ npm install

@@ -1,4 +1,4 @@
-import {Generation, TypeName, StatName, ID} from './data/interface';
+import {Generation, TypeName, StatName} from './data/interface';
 import {toID} from './util';
 
 export const SEED_BOOSTED_STAT: {[item: string]: StatName} = {
@@ -10,110 +10,110 @@ export const SEED_BOOSTED_STAT: {[item: string]: StatName} = {
 
 export function getItemBoostType(item: string | undefined) {
   switch (item) {
-    case 'Draco Plate':
-    case 'Dragon Fang':
-      return 'Dragon';
-    case 'Dread Plate':
-    case 'Black Glasses':
-      return 'Dark';
-    case 'Earth Plate':
-    case 'Soft Sand':
-      return 'Ground';
-    case 'Fist Plate':
-    case 'Black Belt':
-      return 'Fighting';
-    case 'Flame Plate':
-    case 'Charcoal':
-      return 'Fire';
-    case 'Icicle Plate':
-    case 'Never-Melt Ice':
-      return 'Ice';
-    case 'Insect Plate':
-    case 'SilverPowder':
-      return 'Bug';
-    case 'Iron Plate':
-    case 'Metal Coat':
-      return 'Steel';
-    case 'Meadow Plate':
-    case 'Rose Incense':
-    case 'Miracle Seed':
-      return 'Grass';
-    case 'Mind Plate':
-    case 'Odd Incense':
-    case 'Twisted Spoon':
-      return 'Psychic';
-    case 'Pixie Plate':
-      return 'Fairy';
-    case 'Sky Plate':
-    case 'Sharp Beak':
-      return 'Flying';
-    case 'Splash Plate':
-    case 'Sea Incense':
-    case 'Wave Incense':
-    case 'Mystic Water':
-      return 'Water';
-    case 'Spooky Plate':
-    case 'Spell Tag':
-      return 'Ghost';
-    case 'Stone Plate':
-    case 'Rock Incense':
-    case 'Hard Stone':
-      return 'Rock';
-    case 'Toxic Plate':
-    case 'Poison Barb':
-      return 'Poison';
-    case 'Zap Plate':
-    case 'Magnet':
-      return 'Electric';
-    case 'Silk Scarf':
-    case 'Pink Bow':
-    case 'Polkadot Bow':
-      return 'Normal';
-    default:
-      return undefined;
+  case 'Draco Plate':
+  case 'Dragon Fang':
+    return 'Dragon';
+  case 'Dread Plate':
+  case 'Black Glasses':
+    return 'Dark';
+  case 'Earth Plate':
+  case 'Soft Sand':
+    return 'Ground';
+  case 'Fist Plate':
+  case 'Black Belt':
+    return 'Fighting';
+  case 'Flame Plate':
+  case 'Charcoal':
+    return 'Fire';
+  case 'Icicle Plate':
+  case 'Never-Melt Ice':
+    return 'Ice';
+  case 'Insect Plate':
+  case 'SilverPowder':
+    return 'Bug';
+  case 'Iron Plate':
+  case 'Metal Coat':
+    return 'Steel';
+  case 'Meadow Plate':
+  case 'Rose Incense':
+  case 'Miracle Seed':
+    return 'Grass';
+  case 'Mind Plate':
+  case 'Odd Incense':
+  case 'Twisted Spoon':
+    return 'Psychic';
+  case 'Pixie Plate':
+    return 'Fairy';
+  case 'Sky Plate':
+  case 'Sharp Beak':
+    return 'Flying';
+  case 'Splash Plate':
+  case 'Sea Incense':
+  case 'Wave Incense':
+  case 'Mystic Water':
+    return 'Water';
+  case 'Spooky Plate':
+  case 'Spell Tag':
+    return 'Ghost';
+  case 'Stone Plate':
+  case 'Rock Incense':
+  case 'Hard Stone':
+    return 'Rock';
+  case 'Toxic Plate':
+  case 'Poison Barb':
+    return 'Poison';
+  case 'Zap Plate':
+  case 'Magnet':
+    return 'Electric';
+  case 'Silk Scarf':
+  case 'Pink Bow':
+  case 'Polkadot Bow':
+    return 'Normal';
+  default:
+    return undefined;
   }
 }
 
 export function getBerryResistType(berry: string | undefined) {
   switch (berry) {
-    case 'Chilan Berry':
-      return 'Normal';
-    case 'Occa Berry':
-      return 'Fire';
-    case 'Passho Berry':
-      return 'Water';
-    case 'Wacan Berry':
-      return 'Electric';
-    case 'Rindo Berry':
-      return 'Grass';
-    case 'Yache Berry':
-      return 'Ice';
-    case 'Chople Berry':
-      return 'Fighting';
-    case 'Kebia Berry':
-      return 'Poison';
-    case 'Shuca Berry':
-      return 'Ground';
-    case 'Coba Berry':
-      return 'Flying';
-    case 'Payapa Berry':
-      return 'Psychic';
-    case 'Tanga Berry':
-      return 'Bug';
-    case 'Charti Berry':
-      return 'Rock';
-    case 'Kasib Berry':
-      return 'Ghost';
-    case 'Haban Berry':
-      return 'Dragon';
-    case 'Colbur Berry':
-      return 'Dark';
-    case 'Babiri Berry':
-      return 'Steel';
-    case 'Roseli Berry':
-      return 'Fairy';
-    default:
-      return undefined;
+  case 'Chilan Berry':
+    return 'Normal';
+  case 'Occa Berry':
+    return 'Fire';
+  case 'Passho Berry':
+    return 'Water';
+  case 'Wacan Berry':
+    return 'Electric';
+  case 'Rindo Berry':
+    return 'Grass';
+  case 'Yache Berry':
+    return 'Ice';
+  case 'Chople Berry':
+    return 'Fighting';
+  case 'Kebia Berry':
+    return 'Poison';
+  case 'Shuca Berry':
+    return 'Ground';
+  case 'Coba Berry':
+    return 'Flying';
+  case 'Payapa Berry':
+    return 'Psychic';
+  case 'Tanga Berry':
+    return 'Bug';
+  case 'Charti Berry':
+    return 'Rock';
+  case 'Kasib Berry':
+    return 'Ghost';
+  case 'Haban Berry':
+    return 'Dragon';
+  case 'Colbur Berry':
+    return 'Dark';
+  case 'Babiri Berry':
+    return 'Steel';
+  case 'Roseli Berry':
+    return 'Fairy';
+  default:
+    return undefined;
   }
 }
 
@@ -251,7 +251,7 @@ const FLING_30 = new Set([
   'Charcoal',
   'Deep Sea Scale',
   'Flame Orb',
-  "King's Rock",
+  'King\'s Rock',
   'Life Orb',
   'Light Ball',
   'Light Clay',
@@ -376,21 +376,21 @@ const FLING_10 = new Set([
 // TODO: move this data to the data files instead.
 export function getFlingPower(item?: string) {
   if (!item) return 0;
-  if (['Iron Ball', 'TR43', 'TR71'].indexOf(item) !== -1) return 130;
+  if (['Iron Ball', 'TR43', 'TR71'].includes(item)) return 130;
   if (FLING_120.has(item)) return 85;
-  if (['TR03', 'TR06', 'TR09', 'TR15', 'TR89'].indexOf(item) !== -1) return 110;
+  if (['TR03', 'TR06', 'TR09', 'TR15', 'TR89'].includes(item)) return 110;
   if (FLING_100.has(item)) return 100;
-  if (['TR36', 'TR78', 'TR81', 'TR94'].indexOf(item) !== -1) return 95;
-  if (item.indexOf('Plate') !== -1 || FLING_90.has(item)) return 90;
+  if (['TR36', 'TR78', 'TR81', 'TR94'].includes(item)) return 95;
+  if (item.includes('Plate') || FLING_90.has(item)) return 90;
   if (FLING_85.has(item)) return 85;
   if (FLING_80.has(item)) return 80;
   if (FLING_70.has(item)) return 70;
   if (FLING_60.has(item)) return 60;
-  if (['Eject Pack', 'Sharp Beak', 'Dubious Disc'].indexOf(item) !== -1) return 50;
-  if (['Icy Rock', 'Eviolite', 'Lucky Punch'].indexOf(item) !== -1) return 40;
+  if (['Eject Pack', 'Sharp Beak', 'Dubious Disc'].includes(item)) return 50;
+  if (['Icy Rock', 'Eviolite', 'Lucky Punch'].includes(item)) return 40;
   if (FLING_30.has(item)) return 30;
   if (item === 'TR82') return 20;
-  if (item.indexOf('Berry') !== -1 || FLING_10.has(item)) return 10;
+  if (item.includes('Berry') || FLING_10.has(item)) return 10;
   return 0;
 }
 
@@ -401,21 +401,21 @@ export function getNaturalGift(gen: Generation, item: string) {
 
 export function getTechnoBlast(item: string) {
   switch (item) {
-    case 'Burn Drive':
-      return 'Fire';
-    case 'Chill Drive':
-      return 'Ice';
-    case 'Douse Drive':
-      return 'Water';
-    case 'Shock Drive':
-      return 'Electric';
-    default:
-      return undefined;
+  case 'Burn Drive':
+    return 'Fire';
+  case 'Chill Drive':
+    return 'Ice';
+  case 'Douse Drive':
+    return 'Water';
+  case 'Shock Drive':
+    return 'Electric';
+  default:
+    return undefined;
   }
 }
 
 export function getMultiAttack(item: string) {
-  if (item.indexOf('Memory') !== -1) {
+  if (item.includes('Memory')) {
     return item.substring(0, item.indexOf(' ')) as TypeName;
   }
   return undefined;

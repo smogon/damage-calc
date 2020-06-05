@@ -4,5 +4,6 @@
   "rules": {
     "no-shadow": 0,
     "jest/no-standalone-expect": "off",
+    "@typescript-eslint/restrict-template-expressions": "off"
   }
 }

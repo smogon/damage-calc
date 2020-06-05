@@ -646,7 +646,7 @@ describe('calc', () => {
         const result = calculate(abomasnow, hoopa, Move('Blizzard'), field);
         expect(result.range()).toEqual([50, 59]);
         expect(result.desc()).toBe(
-          "0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally's Friend Guard: 50-59 (16.1 - 19%)" +
+          '0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally\'s Friend Guard: 50-59 (16.1 - 19%)' +
             ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery'
         );
       });

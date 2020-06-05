@@ -20638,6 +20638,13 @@
       "Rock Slide",
       "Swords Dance"
     ],
+    "gurdurr": [
+      "Bulk Up",
+      "Defog",
+      "Drain Punch",
+      "Knock Off",
+      "Mach Punch"
+    ],
     "conkeldurr": [
       "Close Combat",
       "Drain Punch",
@@ -21269,9 +21276,9 @@
       "Sparkling Aria"
     ],
     "vikavolt": [
-      "Agility",
       "Bug Buzz",
       "Energy Ball",
+      "Roost",
       "Sticky Web",
       "Thunderbolt",
       "Volt Switch"

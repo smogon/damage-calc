@@ -24,7 +24,7 @@ export class Move implements State.Move {
   category: I.MoveCategory;
   flags: I.MoveFlags;
   secondaries: any;
-  target: I.MoveTarget;;
+  target: I.MoveTarget;
   recoil?: [number, number];
   hasCrashDamage: boolean;
   mindBlownRecoil: boolean;
@@ -102,7 +102,8 @@ export class Move implements State.Move {
     this.species = options.species;
 
     this.bp = data.basePower;
-    // These moves have a type type of these moves exists, but the damage they deal is typeless so we override it
+    // These moves have a type type of these moves exists, but the damage they deal is typeless so
+    // we override it
     const typelessDamage = gen.num >= 2 && gen.num <= 4 &&
       ['futuresight', 'doomdesire', 'struggle'].includes(data.id);
     this.type = typelessDamage ? '???' : data.type;
@@ -116,7 +117,7 @@ export class Move implements State.Move {
     this.timesUsed = (this.dropsStats && options.timesUsed) || 1;
     this.secondaries = data.secondaries;
     // For the purposes of the damage formula only 'allAdjacent' and 'allAdjacentFoes' matter, so we
-    // simply default to 'any' for the others even though they may not actually be 'any'-target moves
+    // simply default to 'any' for the others even though they may not actually be 'any'-target
     this.target = data.target || 'any';
     this.recoil = data.recoil;
     this.hasCrashDamage = !!data.hasCrashDamage;
@@ -174,7 +175,7 @@ export class Move implements State.Move {
 
 export function getZMoveName(moveName: string, moveType: I.TypeName, item?: string) {
   item = item || '';
-  if (moveName.indexOf('Hidden Power') !== -1) return 'Breakneck Blitz';
+  if (moveName.includes('Hidden Power')) return 'Breakneck Blitz';
   if (moveName === 'Clanging Scales' && item === 'Kommonium Z') return 'Clangorous Soulblaze';
   if (moveName === 'Darkest Lariat' && item === 'Incinium Z') return 'Malicious Moonsault';
   if (moveName === 'Giga Impact' && item === 'Snorlium Z') return 'Pulverizing Pancake';
@@ -182,7 +183,7 @@ export function getZMoveName(moveName: string, moveType: I.TypeName, item?: stri
   if (moveName === 'Photon Geyser' && item === 'Ultranecrozium Z') {
     return 'Light That Burns the Sky';
   }
-  if (moveName === 'Play Rough' && item === 'Mimikium Z') return "Let's Snuggle Forever";
+  if (moveName === 'Play Rough' && item === 'Mimikium Z') return 'Let\'s Snuggle Forever';
   if (moveName === 'Psychic' && item === 'Mewnium Z') return 'Genesis Supernova';
   if (moveName === 'Sparkling Aria' && item === 'Primarium Z') return 'Oceanic Operetta';
   if (moveName === 'Spectral Thief' && item === 'Marshadium Z') {
@@ -192,7 +193,7 @@ export function getZMoveName(moveName: string, moveType: I.TypeName, item?: stri
   if (moveName === 'Stone Edge' && item === 'Lycanium Z') return 'Splintered Stormshards';
   if (moveName === 'Sunsteel Strike' && item === 'Solganium Z') return 'Searing Sunraze Smash';
   if (moveName === 'Volt Tackle' && item === 'Pikanium Z') return 'Catastropika';
-  if (moveName === "Nature's Madness" && item === 'Tapunium Z') return 'Guardian of Alola';
+  if (moveName === 'Nature\'s Madness' && item === 'Tapunium Z') return 'Guardian of Alola';
   if (moveName === 'Thunderbolt') {
     if (item === 'Aloraichium Z') return 'Stoked Sparksurfer';
     if (item === 'Pikashunium Z') return '10,000,000 Volt Thunderbolt';

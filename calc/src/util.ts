@@ -1,11 +1,5 @@
+/* eslint-disable eqeqeq, @typescript-eslint/unbound-method, @typescript-eslint/ban-types */
 import {ID} from './data/interface';
-
-type Primitive = string | number | boolean | bigint | symbol | undefined | null;
-export type DeepPartial<T> =
-  T extends Primitive ? T
-  : T extends Array<infer U> ? Array<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
-  : Partial<T>;
 
 export function toID(text: any): ID {
   return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
@@ -19,13 +13,41 @@ export function error(err: boolean, msg: string) {
   }
 }
 
-export function assignWithout(a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>) {
+export function assignWithout(
+  a: {[key: string]: any}, b: {[key: string]: any}, exclude: Set<string>
+) {
   for (const key in b) {
     if (Object.prototype.hasOwnProperty.call(b, key) && !exclude.has(key)) {
       a[key] = b[key];
     }
   }
 }
+
+// https://github.com/krzkaczor/ts-essentials v6.0.5
+// MIT License Copyright 2018-2019 Chris Kaczor
+export type Primitive = string | number | boolean | bigint | symbol | undefined | null;
+export type Builtin = Primitive | Function | Date | Error | RegExp;
+
+export type IsTuple<T> =
+  T extends [infer A] ? T
+  : T extends [infer A, infer B] ? T
+  : T extends [infer A, infer B, infer C] ? T
+  : T extends [infer A, infer B, infer C, infer D] ? T
+  : T extends [infer A, infer B, infer C, infer D, infer E] ? T
+  : never;
+
+export type DeepPartial<T> =
+  T extends Builtin ? T
+  : T extends Map<infer K, infer V> ? Map<DeepPartial<K>, DeepPartial<V>>
+  : T extends ReadonlyMap<infer K, infer V> ? ReadonlyMap<DeepPartial<K>, DeepPartial<V>>
+  : T extends Set<infer U> ? Set<DeepPartial<U>>
+  : T extends ReadonlySet<infer U> ? ReadonlySet<DeepPartial<U>>
+  : T extends Array<infer U> ? T extends IsTuple<T>
+    ? { [K in keyof T]?: DeepPartial<T[K]> }
+    : Array<DeepPartial<U>>
+  : T extends Promise<infer U> ? Promise<DeepPartial<U>>
+  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+  : Partial<T>;
 
 // jQuery JavaScript Library v2.0.3
 // Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors

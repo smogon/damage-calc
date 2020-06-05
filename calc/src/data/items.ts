@@ -25,7 +25,7 @@ const GSC = [
   'Hard Stone',
   'Heavy Ball',
   'Ice Berry',
-  "King's Rock",
+  'King\'s Rock',
   'Leaf Stone',
   'Leftovers',
   'Level Ball',

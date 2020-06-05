@@ -206,7 +206,7 @@ const RBY: {[name: string]: SpeciesData} = {
     bs: {hp: 95, at: 95, df: 85, sp: 55, sl: 125},
     weightkg: 120,
   },
-  "Farfetch'd": {
+  'Farfetch\u2019d': {
     types: ['Normal', 'Flying'],
     bs: {hp: 52, at: 65, df: 55, sp: 60, sl: 58},
     weightkg: 15,
@@ -835,7 +835,7 @@ const GSC_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Electrode: {bs: {sa: 80, sd: 80}, gender: 'N'},
   Exeggcute: {bs: {sa: 60, sd: 45}},
   Exeggutor: {bs: {sa: 125, sd: 65}},
-  "Farfetch'd": {bs: {sa: 58, sd: 62}},
+  'Farfetch\u2019d': {bs: {sa: 58, sd: 62}},
   Fearow: {bs: {sa: 61, sd: 61}},
   Flareon: {bs: {sa: 95, sd: 110}},
   Gastly: {bs: {sa: 100, sd: 35}},
@@ -1521,7 +1521,7 @@ const ADV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Electrode: {abilities: {0: 'Soundproof'}},
   Exeggcute: {abilities: {0: 'Chlorophyll'}},
   Exeggutor: {abilities: {0: 'Chlorophyll'}},
-  "Farfetch'd": {abilities: {0: 'Keen Eye'}},
+  'Farfetch\u2019d': {abilities: {0: 'Keen Eye'}},
   Fearow: {abilities: {0: 'Keen Eye'}},
   Flareon: {abilities: {0: 'Flash Fire'}},
   Gastly: {abilities: {0: 'Levitate'}},
@@ -6161,7 +6161,7 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Eevee: {otherFormes: ['Eevee-Starter']},
   Electrode: {bs: {sp: 150}},
   Exeggutor: {bs: {sd: 75}, otherFormes: ['Exeggutor-Alola']},
-  "Farfetch'd": {bs: {at: 90}},
+  'Farfetch\u2019d': {bs: {at: 90}},
   Gengar: {abilities: {0: 'Cursed Body'}},
   Geodude: {otherFormes: ['Geodude-Alola']},
   Golem: {otherFormes: ['Golem-Alola']},
@@ -6794,9 +6794,9 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 75, at: 70, df: 70, sa: 98, sd: 70, sp: 93},
     weightkg: 3.4,
     abilities: {0: 'Dancer'},
-    otherFormes: ["Oricorio-Pa'u", 'Oricorio-Pom-Pom', 'Oricorio-Sensu'],
+    otherFormes: ['Oricorio-Pa\'u', 'Oricorio-Pom-Pom', 'Oricorio-Sensu'],
   },
-  "Oricorio-Pa'u": {
+  'Oricorio-Pa\'u': {
     types: ['Psychic', 'Flying'],
     bs: {hp: 75, at: 70, df: 70, sa: 98, sd: 70, sp: 93},
     weightkg: 3.4,
@@ -7459,7 +7459,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Darumaka: {otherFormes: ['Darumaka-Galar']},
   Eevee: {otherFormes: ['Eevee-Gmax']},
-  "Farfetch'd": {otherFormes: ["Farfetch'd-Galar"]},
+  'Farfetch\u2019d': {otherFormes: ['Farfetch\u2019d-Galar']},
   Garbodor: {otherFormes: ['Garbodor-Gmax']},
   Gengar: {otherFormes: ['Gengar-Gmax', 'Gengar-Mega']},
   Kingler: {otherFormes: ['Kingler-Gmax']},
@@ -7864,13 +7864,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Battle Armor'},
     gender: 'N',
   },
-  "Farfetch'd-Galar": {
+  'Farfetch\u2019d-Galar': {
     types: ['Fighting'],
     bs: {hp: 52, at: 95, df: 55, sa: 58, sd: 62, sp: 55},
     weightkg: 15,
     abilities: {0: 'Steadfast'},
     nfe: true,
-    baseSpecies: "Farfetch'd",
+    baseSpecies: 'Farfetch\u2019d',
   },
   Flapple: {
     types: ['Grass', 'Dragon'],
@@ -8252,7 +8252,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Sinistea',
     gender: 'N',
   },
-  "Sirfetch'd": {
+  'Sirfetch\u2019d': {
     types: ['Fighting'],
     bs: {hp: 62, at: 135, df: 95, sa: 68, sd: 82, sp: 65},
     weightkg: 117,

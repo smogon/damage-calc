@@ -20,8 +20,8 @@ const HP_TYPES = [
   'Fire', 'Water', 'Grass', 'Electric', 'Psychic', 'Ice', 'Dragon', 'Dark',
 ];
 
-const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>, dvs: Partial<StatsTable>}} = {
-  Bug: 	{ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
+const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>; dvs: Partial<StatsTable>}} = {
+  Bug: {ivs: {atk: 30, def: 30, spd: 30}, dvs: {atk: 13, def: 13}},
   Dark: {ivs: {}, dvs: {}},
   Dragon: {ivs: {atk: 30}, dvs: {def: 14}},
   Electric: {ivs: {spa: 30}, dvs: {atk: 14}},
@@ -42,41 +42,41 @@ const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>, dvs: Partial<StatsTa
 export const Stats = new (class {
   displayStat(stat: StatName | 'spc') {
     switch (stat) {
-      case 'hp':
-        return 'HP';
-      case 'atk':
-        return 'Atk';
-      case 'def':
-        return 'Def';
-      case 'spa':
-        return 'SpA';
-      case 'spd':
-        return 'SpD';
-      case 'spe':
-        return 'Spe';
-      case 'spc':
-        return 'Spc';
-      default:
-        throw new Error(`unknown stat ${stat}`);
+    case 'hp':
+      return 'HP';
+    case 'atk':
+      return 'Atk';
+    case 'def':
+      return 'Def';
+    case 'spa':
+      return 'SpA';
+    case 'spd':
+      return 'SpD';
+    case 'spe':
+      return 'Spe';
+    case 'spc':
+      return 'Spc';
+    default:
+      throw new Error(`unknown stat ${stat}`);
     }
   }
 
   shortForm(stat: StatName | 'spc') {
     switch (stat) {
-      case 'hp':
-        return 'hp';
-      case 'atk':
-        return 'at';
-      case 'def':
-        return 'df';
-      case 'spa':
-        return 'sa';
-      case 'spd':
-        return 'sd';
-      case 'spe':
-        return 'sp';
-      case 'spc':
-        return 'sl';
+    case 'hp':
+      return 'hp';
+    case 'atk':
+      return 'at';
+    case 'def':
+      return 'df';
+    case 'spa':
+      return 'sa';
+    case 'spd':
+      return 'sd';
+    case 'spe':
+      return 'sp';
+    case 'spc':
+      return 'sl';
     }
   }
 
@@ -143,10 +143,10 @@ export const Stats = new (class {
         mods[0] === stat && mods[1] === stat
           ? 1
           : mods[0] === stat
-          ? 1.1
-          : mods[1] === stat
-          ? 0.9
-          : 1;
+            ? 1.1
+            : mods[1] === stat
+              ? 0.9
+              : 1;
 
       return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
     }

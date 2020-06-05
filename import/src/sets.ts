@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as fs from 'fs';
 
-import * as ps from '@pokemon-showdown/sets';
+import * as ps from '@smogon/sets';
 import * as calc from 'calc';
 import * as tiers from './tiers.json';
 import * as randLevels from './random-levels.json';
@@ -98,7 +98,7 @@ const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
 
 export async function importSets(dir: string, randomDir?: string) {
   for (let g = 1; g <= 8; g++) {
-    const gen = g as ps.Generation;
+    const gen = g as ps.GenerationNum;
     const setsByPokemon: PokemonSets = {};
     const randomOptionsByPokemon: {[pokemon: string]: RandomPokemonOptions} = {};
     let stats: UsageStatistics | null = null;
@@ -145,7 +145,7 @@ export async function importSets(dir: string, randomDir?: string) {
 
     const comment = (from: string) => `/* AUTOMATICALLY GENERATED FROM ${from}, DO NOT EDIT! */`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`),
-      `${comment('@pokemon-showdown/sets')}\n` +
+      `${comment('@smogon/sets')}\n` +
       `var SETDEX_${GENS[gen - 1]} = ${JSON.stringify(setsByPokemon)};\n`);
     fs.writeFileSync(path.resolve(dir, `randoms/gen${gen}.js`),
       `${comment('POKEMON SHOWDOWN')}\n` +
@@ -155,14 +155,14 @@ export async function importSets(dir: string, randomDir?: string) {
 
 async function importSetsForPokemon(
   pokemon: string,
-  gen: ps.Generation,
+  gen: ps.GenerationNum,
   setsByPokemon: PokemonSets
 ) {
   for (const format in FORMATS) {
     const data = await ps.forFormat(`gen${gen}${FORMATS[format]}`);
     if (!data || (gen < 7 && RECENT_ONLY.includes(format as Format))) continue;
     const forme = toForme(pokemon);
-    const smogon = data['smogon.com/dex'];
+    const smogon = data['dex'];
     if (smogon?.[forme]) {
       setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
       for (const name in smogon[forme]) {
@@ -178,7 +178,7 @@ async function importSetsForPokemon(
 
       if (!eligible) continue;
 
-      const usage = data['smogon.com/stats'];
+      const usage = data['stats'];
       if (usage?.[forme]) {
         setsByPokemon[pokemon] = setsByPokemon[pokemon] || {};
         for (const name in usage[forme]) {
@@ -193,7 +193,7 @@ async function importSetsForPokemon(
 
 function importRandomOptionsForPokemon(
   pokemon: string,
-  gen: ps.Generation,
+  gen: ps.GenerationNum,
   usage: UsageStatistics
 ): RandomPokemonOptions | undefined {
   if (toID(pokemon) === 'aegislash') pokemon = 'Aegislash-Shield';

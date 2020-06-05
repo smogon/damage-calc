@@ -84,7 +84,7 @@ export class Result {
 }
 
 export function damageRange(
-    damage: Damage
+  damage: Damage
 ): [number, number] | [[number, number], [number, number]] {
   // Fixed Damage
   if (typeof damage === 'number') return [damage, damage];

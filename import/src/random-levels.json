@@ -381,7 +381,7 @@
       "Meowstic-F": 88,
       "Doublade": 82,
       "Aegislash": 80,
-      "Aegislash-Blade": 72,
+      "Aegislash-Blade": 80,
       "Aromatisse": 84,
       "Slurpuff": 84,
       "Malamar": 86,
@@ -511,7 +511,8 @@
       "Zacian-Crowned": 72,
       "Zamazenta": 72,
       "Zamazenta-Crowned": 72,
-      "Eternatus": 72
+      "Eternatus": 72,
+      "Gurdurr": 84
     },
     "default": 80
   }

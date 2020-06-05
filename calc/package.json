@@ -1,6 +1,6 @@
 {
   "name": "@smogon/calc",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "dist/production.min.js",
@@ -12,23 +12,23 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^13.13.4"
+    "@types/node": "^14.0.11"
   },
   "devDependencies": {
-    "@pkmn/eslint-config": "^0.2.3",
-     "@pkmn/dex": "^0.0.1",
-    "@types/jest": "^25.2.1",
-    "@typescript-eslint/eslint-plugin": "^2.31.0",
-    "eslint": "^6.8.0",
+    "@pkmn/eslint-config": "^0.4.2",
+    "@pkmn/dex": "^0.0.4",
+    "@types/jest": "^25.2.3",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "eslint": "^7.1.0",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.9.0",
-    "jest": "^26.0.0",
-    "ts-jest": "^25.4.0",
+    "eslint-plugin-jest": "^23.13.2",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
     "typescript": "<3.9"
   },
   "scripts": {
-    "lint": "eslint --cache src/**/*.ts",
-    "fix": "eslint --fix src/**/*.ts",
+    "lint": "eslint --cache src --ext ts",
+    "fix": "eslint --fix src --ext ts",
     "compile": "tsc -p .",
     "bundle": "node bundle",
     "build": "npm run compile && npm run bundle",

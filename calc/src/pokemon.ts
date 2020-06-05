@@ -174,14 +174,14 @@ export class Pokemon implements State.Pokemon {
     let i = 0;
     if (
       (item &&
-        ((item.indexOf('ite') !== -1 && item.indexOf('ite Y') === -1) ||
+        ((item.includes('ite') && !item.includes('ite Y')) ||
           (speciesName === 'Groudon' && item === 'Red Orb') ||
           (speciesName === 'Kyogre' && item === 'Blue Orb'))) ||
       (moveName && speciesName === 'Meloetta' && moveName === 'Relic Song') ||
       (speciesName === 'Rayquaza' && moveName === 'Dragon Ascent')
     ) {
       i = 1;
-    } else if (item && item.indexOf('ite Y') !== -1) {
+    } else if (item?.includes('ite Y')) {
       i = 2;
     }
 
@@ -194,7 +194,7 @@ export class Pokemon implements State.Pokemon {
     val: number,
     match = true,
   ) {
-    let cur: Partial<I.StatsTable> = {};
+    const cur: Partial<I.StatsTable> = {};
     if (current) {
       assignWithout(cur, current, SPC);
       if (current.spc) {
