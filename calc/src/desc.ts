@@ -427,7 +427,7 @@ function combine(damage: Damage) {
 }
 
 const TRAPPING =
-  ['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap'];
+  ['Bind', 'Clamp', 'Fire Spin', 'Infestation', 'Magma Storm', 'Sand Tomb', 'Whirlpool', 'Wrap', 'G-Max Sandblast', 'G-Max Centiferno'];
 
 function getHazards(gen: Generation, defender: Pokemon, defenderSide: Side) {
   let damage = 0;
@@ -615,9 +615,14 @@ function getEndOfTurn(
     texts.push('Sea of Fire damage');
   }
 
-  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') && field.defenderSide.wildfire) {
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') && (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
     damage -= Math.floor(defender.maxHP() / 6);
     texts.push('Wildfire damage');
+  }
+
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Rock') && (field.defenderSide.volcalith || move.named('G-Max Volcalith'))) {
+    damage -= Math.floor(defender.maxHP() / 6);
+    texts.push('Volcalith damage');
   }
 
   return {damage, texts};

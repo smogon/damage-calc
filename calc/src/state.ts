@@ -44,6 +44,7 @@ export namespace State {
     spikes?: number;
     steelsurge?: boolean;
     wildfire?: boolean;
+    volcalith?: boolean;
     isSR?: boolean;
     isReflect?: boolean;
     isLightScreen?: boolean;
