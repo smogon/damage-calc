@@ -704,7 +704,8 @@ export function calculateSMSS(
      field.hasWeather('Sun', 'Harsh Sunshine') &&
      move.category === 'Physical') ||
     // Gorilla Tactics has no effect during Dynamax (Anubis)
-    (attacker.hasAbility('Gorilla Tactics') && !attacker.isDynamaxed)) {
+    (attacker.hasAbility('Gorilla Tactics') && move.category === 'Physical' &&
+     !attacker.isDynamaxed)) {
     atMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
