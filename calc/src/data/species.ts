@@ -7545,6 +7545,12 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Swift Swim'},
     nfe: true,
   },
+  Astrolotl: {
+    types: ['Fire', 'Dragon'],
+    bs: {hp: 108, at: 108, df: 74, sa: 92, sd: 64, sp: 114},
+    weightkg: 50,
+    abilities: {0: 'Regenerator'},
+  },
   Barraskewda: {
     types: ['Water'],
     bs: {hp: 61, at: 123, df: 60, sa: 60, sd: 50, sp: 136},
