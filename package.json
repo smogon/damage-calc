@@ -7,8 +7,8 @@
     "calc": "file:calc"
   },
   "devDependencies": {
-    "eslint": "^7.1.0",
-    "subpkg": "^3.0.2"
+    "eslint": "^7.2.0",
+    "subpkg": "^3.0.3"
   },
   "optionalDependencies": {
     "@babel/core": "^7.10.2",

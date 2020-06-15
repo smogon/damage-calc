@@ -4901,19 +4901,6 @@ const BW_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 46,
     abilities: {0: 'Flame Body'},
   },
-  Volkraken: {
-    types: ['Water', 'Fire'],
-    bs: {hp: 100, at: 45, df: 80, sa: 135, sd: 100, sp: 95},
-    weightkg: 44.5,
-    abilities: {0: 'Analytic'},
-  },
-  Volkritter: {
-    types: ['Water', 'Fire'],
-    bs: {hp: 60, at: 30, df: 50, sa: 80, sd: 60, sp: 70},
-    weightkg: 15,
-    nfe: true,
-    abilities: {0: 'Anticipation'},
-  },
   Vullaby: {
     types: ['Dark', 'Flying'],
     bs: {hp: 70, at: 55, df: 75, sa: 45, sd: 65, sp: 60},
@@ -6115,6 +6102,19 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 195,
     gender: 'N',
     abilities: {0: 'Water Absorb'},
+  },
+  Volkraken: {
+    types: ['Water', 'Fire'],
+    bs: {hp: 100, at: 45, df: 80, sa: 135, sd: 100, sp: 95},
+    weightkg: 44.5,
+    abilities: {0: 'Analytic'},
+  },
+  Volkritter: {
+    types: ['Water', 'Fire'],
+    bs: {hp: 60, at: 30, df: 50, sa: 80, sd: 60, sp: 70},
+    weightkg: 15,
+    nfe: true,
+    abilities: {0: 'Anticipation'},
   },
   Xerneas: {
     types: ['Fairy'],

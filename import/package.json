@@ -4,7 +4,7 @@
   "author": "Kirk Scheibelhut <pre@smogon.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.0.11",
+    "@types/node": "^14.0.13",
     "@smogon/sets": "^1.0.0",
     "calc": "file:../calc",
     "smogon": "^1.0.0",
@@ -12,10 +12,10 @@
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.4.2",
-    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
     "eslint-plugin-jest": "^23.13.2",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint": "^7.1.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint": "^7.2.0",
     "typescript": "^3.9.5"
   },
   "scripts": {

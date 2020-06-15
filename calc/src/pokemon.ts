@@ -54,8 +54,7 @@ export class Pokemon implements State.Pokemon {
 
     this.level = options.level || 100;
     this.gender = options.gender || this.species.gender || 'M';
-    this.ability =
-      options.ability || (this.species.abilities && this.species.abilities[0]) || undefined;
+    this.ability = options.ability || this.species.abilities?.[0] || undefined;
     this.abilityOn = !!options.abilityOn;
     this.isDynamaxed = !!options.isDynamaxed;
     this.item = options.item;
