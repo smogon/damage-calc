@@ -2851,10 +2851,11 @@
       "Calm Mind",
       "Counter",
       "Ice Beam",
-      "Thunderbolt",
       "Return",
+      "Thunderbolt",
       "Shadow Ball",
-      "Soft-Boiled"
+      "Soft-Boiled",
+      "Thunder Wave"
     ],
     "wigglytuff": [
       "Fire Blast",
@@ -2976,7 +2977,8 @@
       "Flamethrower",
       "Seismic Toss",
       "Soft-Boiled",
-      "Thunder Wave"
+      "Thunder Wave",
+      "Toxic"
     ],
     "ampharos": [
       "Fire Punch",
@@ -3058,7 +3060,8 @@
       "Hidden Power Flying",
       "Morning Sun",
       "Stun Spore",
-      "Substitute"
+      "Substitute",
+      "Toxic"
     ],
     "gardevoir": [
       "Calm Mind",
@@ -3136,7 +3139,8 @@
       "Rest",
       "Sleep Talk",
       "Thunderbolt",
-      "Thunder Wave"
+      "Thunder Wave",
+      "Toxic"
     ],
     "registeel": [
       "Counter",
@@ -3193,7 +3197,8 @@
       "Hidden Power Ice",
       "Substitute",
       "Thunderbolt",
-      "Thunder Wave"
+      "Thunder Wave",
+      "Toxic"
     ],
     "exeggutor": [
       "Explosion",
@@ -3492,7 +3497,6 @@
       "Toxic"
     ],
     "rapidash": [
-      "Agility",
       "Baton Pass",
       "Fire Blast",
       "Flamethrower",
@@ -3604,7 +3608,7 @@
       "Double-Edge",
       "Earthquake",
       "Megahorn",
-      "Rock Blast",
+      "Rock Slide",
       "Substitute",
       "Swords Dance"
     ],
@@ -3625,7 +3629,8 @@
       "Rest",
       "Return",
       "Shadow Ball",
-      "Substitute"
+      "Substitute",
+      "Toxic"
     ],
     "seaking": [
       "Hidden Power Grass",
@@ -3662,6 +3667,7 @@
     "electabuzz": [
       "Cross Chop",
       "Fire Punch",
+      "Focus Punch",
       "Hidden Power Grass",
       "Ice Punch",
       "Substitute",
@@ -3774,7 +3780,8 @@
       "Flamethrower",
       "Heal Bell",
       "Hidden Power Flying",
-      "Ice Beam"
+      "Ice Beam",
+      "Substitute"
     ],
     "mewtwo": [
       "Calm Mind",
@@ -3820,6 +3827,7 @@
       "Hidden Power Ground",
       "Shadow Ball",
       "Sludge Bomb",
+      "Taunt",
       "Toxic"
     ],
     "lanturn": [
@@ -4023,6 +4031,7 @@
       "Double-Edge",
       "Hidden Power Flying",
       "Shadow Ball",
+      "Substitute",
       "Swords Dance"
     ],
     "ursaring": [
@@ -4122,7 +4131,8 @@
       "Hidden Power Ghost",
       "High Jump Kick",
       "Mach Punch",
-      "Rock Slide"
+      "Rock Slide",
+      "Toxic"
     ],
     "miltank": [
       "Body Slam",
@@ -4363,6 +4373,7 @@
       "Encore",
       "Explosion",
       "Hidden Power Ground",
+      "Ice Beam",
       "Sludge Bomb",
       "Toxic",
       "Yawn"
@@ -4613,7 +4624,7 @@
       "Dragon Dance",
       "Earthquake",
       "Extreme Speed",
-      "Hidden Power Ghost",
+      "Hidden Power Flying",
       "Overheat",
       "Rock Slide"
     ],
@@ -7256,8 +7267,8 @@
       "Agility",
       "Baton Pass",
       "Endeavor",
-      "Swords Dance",
       "Poison Jab",
+      "Swords Dance",
       "Toxic Spikes",
       "U-turn"
     ],
@@ -7272,8 +7283,8 @@
     ],
     "pikachu": [
       "Extreme Speed",
-      "Grass Knot",
       "Focus Punch",
+      "Grass Knot",
       "Hidden Power Ice",
       "Substitute",
       "Thunderbolt"
@@ -7313,7 +7324,6 @@
       "Thunderbolt"
     ],
     "wigglytuff": [
-      "Counter",
       "Double-Edge",
       "Fire Blast",
       "Heal Bell",
@@ -7358,7 +7368,6 @@
       "Sludge Bomb",
       "Sucker Punch",
       "Sunny Day",
-      "Swords Dance",
       "Weather Ball"
     ],
     "golem": [
@@ -7434,8 +7443,8 @@
     "ampharos": [
       "Focus Blast",
       "Heal Bell",
-      "Hidden Power Ice",
       "Hidden Power Grass",
+      "Hidden Power Ice",
       "Thunderbolt",
       "Toxic",
       "Volt Switch"
@@ -7502,7 +7511,6 @@
       "Hidden Power Ground",
       "Psychic",
       "Quiver Dance",
-      "Roost",
       "Substitute"
     ],
     "gardevoir": [
@@ -7733,12 +7741,13 @@
       "Trick"
     ],
     "ferrothorn": [
+      "Gyro Ball",
       "Leech Seed",
       "Power Whip",
       "Protect",
       "Spikes",
       "Stealth Rock",
-      "Thunder Wave"
+      "Toxic"
     ],
     "chandelure": [
       "Energy Ball",
@@ -8132,10 +8141,10 @@
     ],
     "beartic": [
       "Aqua Jet",
+      "Encore",
       "Icicle Crash",
       "Stone Edge",
-      "Superpower",
-      "Taunt"
+      "Superpower"
     ],
     "cryogonal": [
       "Hidden Power Fire",
@@ -8181,10 +8190,10 @@
       "Close Combat",
       "Drain Punch",
       "Night Slash",
-      "Psycho Cut",
       "Substitute",
       "Swords Dance",
-      "Trick"
+      "Trick",
+      "Zen Headbutt"
     ],
     "venusaur": [
       "Earthquake",
@@ -8215,6 +8224,7 @@
       "Toxic"
     ],
     "raticate": [
+      "Crunch",
       "Facade",
       "Flame Wheel",
       "Sucker Punch",
@@ -8272,7 +8282,6 @@
       "Fake Out",
       "Hypnosis",
       "Return",
-      "Switcheroo",
       "Taunt",
       "U-turn",
       "Water Pulse"
@@ -8283,7 +8292,7 @@
       "Hidden Power Grass",
       "Hydro Pump",
       "Ice Beam",
-      "Surf"
+      "Scald"
     ],
     "primeape": [
       "Close Combat",
@@ -8303,8 +8312,8 @@
       "Will-O-Wisp"
     ],
     "machamp": [
-      "Bullet Punch",
       "Bulk Up",
+      "Bullet Punch",
       "Dynamic Punch",
       "Ice Punch",
       "Payback",
@@ -8423,7 +8432,6 @@
     ],
     "chansey": [
       "Aromatherapy",
-      "Counter",
       "Protect",
       "Seismic Toss",
       "Soft-Boiled",
@@ -8512,13 +8520,12 @@
       "Transform"
     ],
     "vaporeon": [
-      "Wish",
-      "Protect",
-      "Scald",
-      "Roar",
       "Ice Beam",
+      "Protect",
+      "Roar",
+      "Scald",
       "Toxic",
-      "Hydro Pump"
+      "Wish"
     ],
     "jolteon": [
       "Baton Pass",
@@ -8613,8 +8620,8 @@
     ],
     "furret": [
       "Aqua Tail",
-      "Fire Punch",
       "Double-Edge",
+      "Fire Punch",
       "Shadow Claw",
       "Trick",
       "U-turn"
@@ -8667,7 +8674,6 @@
       "Encore",
       "Focus Blast",
       "Hidden Power Grass",
-      "Hydro Pump",
       "Hypnosis",
       "Ice Beam",
       "Perish Song",
@@ -8786,8 +8792,7 @@
       "Facade",
       "Earthquake",
       "Megahorn",
-      "Stone Edge",
-      "Substitute"
+      "Stone Edge"
     ],
     "ursaring": [
       "Close Combat",
@@ -8888,8 +8893,7 @@
       "Soft-Boiled",
       "Stealth Rock",
       "Thunder Wave",
-      "Toxic",
-      "Wish"
+      "Toxic"
     ],
     "tyranitar": [
       "Crunch",
@@ -8900,8 +8904,8 @@
       "Superpower"
     ],
     "lugia": [
-      "Dragon Tail",
-      "Ice Beam",
+      "Aeroblast",
+      "Earthquake",
       "Roost",
       "Substitute",
       "Toxic",
@@ -8965,8 +8969,7 @@
       "Belly Drum",
       "Extreme Speed",
       "Seed Bomb",
-      "Shadow Claw",
-      "Substitute"
+      "Shadow Claw"
     ],
     "dustox": [
       "Bug Buzz",
@@ -9026,7 +9029,7 @@
     ],
     "shedinja": [
       "Shadow Claw",
-      "Sucker Punch",
+      "Shadow Sneak",
       "Swords Dance",
       "Will-O-Wisp",
       "X-Scissor"
@@ -9058,9 +9061,9 @@
       "Bullet Punch",
       "High Jump Kick",
       "Ice Punch",
-      "Psycho Cut",
       "Thunder Punch",
-      "Trick"
+      "Trick",
+      "Zen Headbutt"
     ],
     "manectric": [
       "Flamethrower",
@@ -9095,7 +9098,6 @@
     ],
     "camerupt": [
       "Earth Power",
-      "Eruption",
       "Hidden Power Grass",
       "Lava Plume",
       "Roar",
@@ -9328,7 +9330,7 @@
       "Wish"
     ],
     "deoxys": [
-      "Fire Punch",
+      "Hidden Power Fire",
       "Ice Beam",
       "Light Screen",
       "Psycho Boost",
@@ -9615,9 +9617,9 @@
     "lumineon": [
       "Ice Beam",
       "Protect",
+      "Scald",
       "Toxic",
-      "U-turn",
-      "Waterfall"
+      "U-turn"
     ],
     "abomasnow": [
       "Blizzard",
@@ -9779,7 +9781,6 @@
     ],
     "rotomfan": [
       "Air Slash",
-      "Hidden Power Grass",
       "Pain Split",
       "Substitute",
       "Thunderbolt",
@@ -9887,9 +9888,8 @@
       "Toxic"
     ],
     "phione": [
+      "Heal Bell",
       "Ice Beam",
-      "Rain Dance",
-      "Rest",
       "Scald",
       "Toxic",
       "U-turn"
@@ -10191,7 +10191,7 @@
       "Scald",
       "Shadow Ball",
       "Toxic",
-      "Water Spout"
+      "Will-O-Wisp"
     ],
     "alomomola": [
       "Protect",
@@ -10290,8 +10290,7 @@
       "Night Slash",
       "Substitute",
       "Sucker Punch",
-      "Swords Dance",
-      "Taunt"
+      "Swords Dance"
     ],
     "bouffalant": [
       "Earthquake",
@@ -10353,11 +10352,11 @@
     ],
     "terrakion": [
       "Close Combat",
+      "Earthquake",
       "Quick Attack",
       "Stealth Rock",
       "Stone Edge",
-      "Swords Dance",
-      "X-Scissor"
+      "Swords Dance"
     ],
     "virizion": [
       "Calm Mind",
@@ -10483,10 +10482,10 @@
     ],
     "meloettapirouette": [
       "Close Combat",
-      "Hidden Power Ice",
-      "Psychic",
+      "Ice Punch",
       "Relic Song",
-      "Shadow Ball"
+      "Return",
+      "Shadow Claw"
     ],
     "genesect": [
       "Blaze Kick",
@@ -19612,6 +19611,12 @@
       "Wild Charge",
       "Will-O-Wisp"
     ],
+    "poliwrath": [
+      "Close Combat",
+      "Darkest Lariat",
+      "Liquidation",
+      "Rain Dance"
+    ],
     "machamp": [
       "Bullet Punch",
       "Close Combat",
@@ -19673,6 +19678,20 @@
       "Swords Dance",
       "X-Scissor"
     ],
+    "exeggutor": [
+      "Giga Drain",
+      "Leech Seed",
+      "Psychic",
+      "Sleep Powder",
+      "Substitute"
+    ],
+    "exeggutoralola": [
+      "Draco Meteor",
+      "Flamethrower",
+      "Giga Drain",
+      "Leaf Storm",
+      "Trick Room"
+    ],
     "hitmonlee": [
       "Fake Out",
       "High Jump Kick",
@@ -19706,12 +19725,33 @@
       "Toxic Spikes",
       "Will-O-Wisp"
     ],
+    "chansey": [
+      "Heal Bell",
+      "Seismic Toss",
+      "Soft-Boiled",
+      "Stealth Rock",
+      "Toxic"
+    ],
+    "kangaskhan": [
+      "Double-Edge",
+      "Earthquake",
+      "Fake Out",
+      "Hammer Arm",
+      "Sucker Punch"
+    ],
     "seaking": [
       "Drill Run",
       "Knock Off",
       "Megahorn",
       "Swords Dance",
       "Waterfall"
+    ],
+    "starmie": [
+      "Psyshock",
+      "Rapid Spin",
+      "Recover",
+      "Scald",
+      "Toxic"
     ],
     "mrmime": [
       "Dazzling Gleam",
@@ -19726,6 +19766,13 @@
       "Nasty Plot",
       "Psychic",
       "Rapid Spin"
+    ],
+    "tauros": [
+      "Body Slam",
+      "Close Combat",
+      "Rock Slide",
+      "Substitute",
+      "Zen Headbutt"
     ],
     "gyarados": [
       "Bounce",
@@ -19801,6 +19848,14 @@
       "Roost",
       "U-turn"
     ],
+    "dragonite": [
+      "Dragon Dance",
+      "Earthquake",
+      "Extreme Speed",
+      "Fire Punch",
+      "Outrage",
+      "Roost"
+    ],
     "mewtwo": [
       "Aura Sphere",
       "Ice Beam",
@@ -19870,6 +19925,14 @@
       "Sucker Punch",
       "Wood Hammer"
     ],
+    "politoed": [
+      "Encore",
+      "Hypnosis",
+      "Protect",
+      "Rest",
+      "Scald",
+      "Toxic"
+    ],
     "quagsire": [
       "Earthquake",
       "Encore",
@@ -19923,6 +19986,14 @@
       "Toxic Spikes",
       "Waterfall"
     ],
+    "scizor": [
+      "Bullet Punch",
+      "Knock Off",
+      "Roost",
+      "Superpower",
+      "Swords Dance",
+      "U-turn"
+    ],
     "shuckle": [
       "Encore",
       "Knock Off",
@@ -19965,6 +20036,14 @@
       "Scald",
       "Toxic"
     ],
+    "skarmory": [
+      "Brave Bird",
+      "Defog",
+      "Roost",
+      "Spikes",
+      "Stealth Rock",
+      "Whirlwind"
+    ],
     "kingdra": [
       "Draco Meteor",
       "Hurricane",
@@ -19982,10 +20061,10 @@
     ],
     "blissey": [
       "Heal Bell",
+      "Protect",
       "Seismic Toss",
-      "Soft-Boiled",
-      "Stealth Rock",
-      "Toxic"
+      "Toxic",
+      "Wish"
     ],
     "raikou": [
       "Aura Sphere",
@@ -20095,6 +20174,13 @@
       "Will-O-Wisp",
       "X-Scissor"
     ],
+    "exploud": [
+      "Boomburst",
+      "Fire Blast",
+      "Focus Blast",
+      "Surf",
+      "Work Up"
+    ],
     "sableye": [
       "Encore",
       "Foul Play",
@@ -20109,6 +20195,14 @@
       "Stealth Rock",
       "Sucker Punch",
       "Swords Dance"
+    ],
+    "aggron": [
+      "Body Press",
+      "Earthquake",
+      "Head Smash",
+      "Heavy Slam",
+      "Rock Polish",
+      "Stealth Rock"
     ],
     "manectric": [
       "Flamethrower",
@@ -20137,6 +20231,15 @@
       "Fire Punch",
       "Outrage",
       "U-turn"
+    ],
+    "altaria": [
+      "Defog",
+      "Dragon Dance",
+      "Dragon Pulse",
+      "Earthquake",
+      "Outrage",
+      "Roost",
+      "Toxic"
     ],
     "lunatone": [
       "Earth Power",
@@ -20188,6 +20291,13 @@
       "Scald",
       "Sleep Talk"
     ],
+    "absol": [
+      "Close Combat",
+      "Knock Off",
+      "Play Rough",
+      "Sucker Punch",
+      "Swords Dance"
+    ],
     "glalie": [
       "Disable",
       "Earthquake",
@@ -20200,6 +20310,14 @@
       "Protect",
       "Surf",
       "Toxic"
+    ],
+    "relicanth": [
+      "Body Press",
+      "Earthquake",
+      "Head Smash",
+      "Liquidation",
+      "Stealth Rock",
+      "Yawn"
     ],
     "metagross": [
       "Agility",
@@ -20282,6 +20400,13 @@
       "Toxic",
       "Trick",
       "U-turn"
+    ],
+    "luxray": [
+      "Agility",
+      "Facade",
+      "Superpower",
+      "Volt Switch",
+      "Wild Charge"
     ],
     "roserade": [
       "Leaf Storm",
@@ -20410,6 +20535,14 @@
       "Stealth Rock",
       "Stone Edge"
     ],
+    "tangrowth": [
+      "Focus Blast",
+      "Earthquake",
+      "Giga Drain",
+      "Knock Off",
+      "Sleep Powder",
+      "Toxic"
+    ],
     "electivire": [
       "Cross Chop",
       "Earthquake",
@@ -20417,6 +20550,13 @@
       "Ice Punch",
       "Volt Switch",
       "Wild Charge"
+    ],
+    "magmortar": [
+      "Earthquake",
+      "Fire Blast",
+      "Focus Blast",
+      "Taunt",
+      "Thunderbolt"
     ],
     "togekiss": [
       "Air Slash",
@@ -20698,6 +20838,13 @@
       "Liquidation",
       "Psychic Fangs"
     ],
+    "krookodile": [
+      "Close Combat",
+      "Earthquake",
+      "Knock Off",
+      "Stealth Rock",
+      "Stone Edge"
+    ],
     "darmanitan": [
       "Earthquake",
       "Flare Blitz",
@@ -20764,6 +20911,13 @@
       "Spikes",
       "Toxic Spikes"
     ],
+    "zoroark": [
+      "Flamethrower",
+      "Knock Off",
+      "Low Kick",
+      "Sucker Punch",
+      "Swords Dance"
+    ],
     "cinccino": [
       "Bullet Seed",
       "Knock Off",
@@ -20792,6 +20946,15 @@
       "Explosion",
       "Flash Cannon",
       "Freeze-Dry"
+    ],
+    "emolga": [
+      "Air Slash",
+      "Encore",
+      "Knock Off",
+      "Roost",
+      "Thunderbolt",
+      "Toxic",
+      "U-turn"
     ],
     "escavalier": [
       "Close Combat",
@@ -20888,6 +21051,22 @@
       "Stone Edge",
       "Thunder Wave"
     ],
+    "mienshao": [
+      "Close Combat",
+      "Fake Out",
+      "Knock Off",
+      "Poison Jab",
+      "Swords Dance",
+      "U-turn"
+    ],
+    "druddigon": [
+      "Earthquake",
+      "Glare",
+      "Outrage",
+      "Stealth Rock",
+      "Sucker Punch",
+      "Superpower"
+    ],
     "golurk": [
       "Drain Punch",
       "Earthquake",
@@ -20900,6 +21079,14 @@
       "Knock Off",
       "Stealth Rock",
       "Sucker Punch",
+      "Swords Dance"
+    ],
+    "bouffalant": [
+      "Body Slam",
+      "Close Combat",
+      "Earthquake",
+      "Megahorn",
+      "Substitute",
       "Swords Dance"
     ],
     "braviary": [
@@ -21130,6 +21317,14 @@
       "Shell Smash",
       "Stone Edge"
     ],
+    "dragalge": [
+      "Draco Meteor",
+      "Dragon Pulse",
+      "Focus Blast",
+      "Scald",
+      "Sludge Wave",
+      "Toxic Spikes"
+    ],
     "heliolisk": [
       "Focus Blast",
       "Grass Knot",
@@ -21332,6 +21527,13 @@
       "Mirror Coat",
       "Sticky Web",
       "Toxic"
+    ],
+    "lurantis": [
+      "Defog",
+      "Knock Off",
+      "Leaf Storm",
+      "Superpower",
+      "Synthesis"
     ],
     "shiinotic": [
       "Energy Ball",

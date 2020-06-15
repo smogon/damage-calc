@@ -197,6 +197,7 @@ function importRandomOptionsForPokemon(
   usage: UsageStatistics
 ): RandomPokemonOptions | undefined {
   if (toID(pokemon) === 'aegislash') pokemon = 'Aegislash-Shield';
+  if (gen === 8 && toID(pokemon) === 'keldeo') pokemon = 'Keldeo-Resolute';
   let moves = RANDOM_MOVES[gen][toID(pokemon)];
   if (!moves) return undefined;
   const stats = usage.data[toForme(pokemon)];
@@ -270,6 +271,9 @@ const FORMES: {[name: string]: string} = {
   'Aegislash-Shield': 'Aegislash',
   'Wishiwashi-School': 'Wishiwashi',
   'Minior-Meteor': 'Minior',
+  'Darmanitan-Galar-Zen': 'Darmanitan-Galar',
+  'Sirfetch’d': 'Sirfetch\'d',
+  'Keldeo-Resolute': 'Keldeo',
 };
 
 // TODO handle Gmax
