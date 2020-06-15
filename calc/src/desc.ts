@@ -283,37 +283,12 @@ export function getKOChance(
     if (chance === 1) {
       return {chance, n: 1, text: `guaranteed OHKO${hazardsText}`}; // eot wasn't considered
     } else if (chance > 0) {
-      // We didn't actually consider eot.damage above - in the event that the attacker is faster it
-      // is more interesting to figure out what the raw % chance to OHKO is before the defender has
-      // a chance to retaliate, otherwise we recompute the KO chance taking into account eot.damage
-      // and report on that.
-      if (attacker.stats.spe > defender.stats.spe) {
-        return {
-          chance,
-          n: 1,
-          text: qualifier + Math.round(chance * 1000) / 10 + `% chance to OHKO${hazardsText}`,
-        };
-      } else {
-        const chance = computeKOChance(
-          damage,
-          defender.curHP() + eot.damage - hazards.damage,
-          0,
-          1,
-          1,
-          defender.maxHP(),
-          toxicCounter
-        )
-        ;
-        if (chance === 1) {
-          return {chance, n: 1, text: `guaranteed OHKO${afterText}`};
-        } else {
-          return {
-            chance,
-            n: 1,
-            text: qualifier + Math.round(chance * 1000) / 10 + `% chance to OHKO${afterText}`,
-          };
-        }
-      }
+      // note: still not accounting for EOT due to poor eot damage handling
+      return {
+        chance,
+        n: 1,
+        text: qualifier + Math.round(chance * 1000) / 10 + `% chance to OHKO${hazardsText}`,
+      };
     }
 
     // Parental Bond's combined first + second hit only is accurate for chance to OHKO, for

@@ -761,15 +761,23 @@ describe('calc', () => {
         const deerling = Pokemon('Deerling', {evs: {hp: 36}});
         const blizzard = Move('Blizzard');
         const hail = Field({weather: 'Hail'});
-        let result = calculate(abomasnow, deerling, blizzard, hail);
-        expect(result.desc()).toBe(
-          'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 56.3% chance to OHKO after hail damage'
-        );
-        // When Abomasnow is faster than Deerling it should instead no longer consider end-of-turn damage
-        abomasnow.boosts.spe = 6;
-        result = calculate(abomasnow, deerling, blizzard, hail);
+        const result = calculate(abomasnow, deerling, blizzard, hail);
         expect(result.desc()).toBe(
           'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 25% chance to OHKO'
+        );
+      });
+
+      test('% chance to OHKO with Leftovers', () => {
+        const kyurem = Pokemon('Kyurem', {
+          level: 100,
+          item: 'Choice Specs',
+          evs: {spa: 252},
+        });
+        const jirachi = Pokemon('Jirachi', {item: 'Leftovers'});
+        const earthpower = Move('Earth Power');
+        const result = calculate(kyurem, jirachi, earthpower);
+        expect(result.desc()).toBe(
+          '252 SpA Choice Specs Kyurem Earth Power vs. 0 HP / 0 SpD Jirachi: 294-348 (86.2 - 102%) -- 12.5% chance to OHKO'
         );
       });
     });
