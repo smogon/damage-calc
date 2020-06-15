@@ -56,8 +56,6 @@ type RandomPokemonOptions = Exclude<PokemonSet, 'ability' | 'item'> & {
   items?: string[];
 };
 
-type Format = keyof typeof FORMATS;
-
 const FORMATS: {[format: string]: string} = {
   OU: 'ou',
   UU: 'uu',
@@ -77,6 +75,8 @@ const FORMATS: {[format: string]: string} = {
   CAP: 'cap',
   '1v1': '1v1',
 };
+
+type Format = keyof typeof FORMATS;
 
 const TO_FORMAT: {[tier in Tier]?: Format} = {
   Uber: 'Ubers',
@@ -291,10 +291,10 @@ function toCalc(set: ps.DeepPartial<ps.PokemonSet>): PokemonSet {
   };
 }
 
-function toStatsTable(stats: ps.DeepPartial<ps.StatsTable<number>>): StatsTable {
+function toStatsTable(stats: ps.DeepPartial<ps.StatsTable>): StatsTable {
   const s: Partial<StatsTable> = {};
 
-  let stat: keyof ps.StatsTable<number>;
+  let stat: keyof ps.StatsTable;
   for (stat in stats) {
     const val = stats[stat];
     s[shortForm(stat)] = val;
@@ -303,7 +303,7 @@ function toStatsTable(stats: ps.DeepPartial<ps.StatsTable<number>>): StatsTable 
   return s;
 }
 
-function shortForm(stat: keyof ps.StatsTable<number>) {
+function shortForm(stat: keyof ps.StatsTable) {
   switch (stat) {
   case 'hp':
     return 'hp';
