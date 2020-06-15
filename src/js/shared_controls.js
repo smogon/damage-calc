@@ -365,6 +365,16 @@ $(".move-selector").change(function () {
 					pokeObj.find("." + legacyStat + " .ivs").val(hpIVs[stat] !== undefined ? hpIVs[stat] : 31);
 					pokeObj.find("." + legacyStat + " .dvs").val(hpIVs[stat] !== undefined ? calc.Stats.IVToDV(hpIVs[stat]) : 15);
 				}
+				if (gen < 3) {
+					var hpDV = calc.Stats.getHPDV({
+						atk: pokemon.ivs.atk,
+						def: pokemon.ivs.def,
+						spe: pokemon.ivs.spe,
+						spc: pokemon.ivs.spa
+					});
+					pokeObj.find(".hp .ivs").val(calc.Stats.DVToIV(hpDV));
+					pokeObj.find(".hp .dvs").val(hpDV);
+				}
 				pokeObj.change();
 				moveGroupObj.children(".move-bp").val(gen >= 6 ? 60 : 70);
 			}
