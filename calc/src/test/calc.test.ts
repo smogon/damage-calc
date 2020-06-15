@@ -752,6 +752,16 @@ describe('calc', () => {
         );
       });
 
+      test('Knock Off vs. Silvally', () => {
+        const sawk = Pokemon('Sawk', {ability: 'Mold Breaker', evs: {atk: 252}});
+        const silvally = Pokemon('Silvally-Dark', {item: 'Dark Memory'});
+        const knockoff = Move('Knock Off');
+        const result = calculate(sawk, silvally, knockoff);
+        expect(result.desc()).toBe(
+          '252 Atk Mold Breaker Sawk Knock Off vs. 0 HP / 0 Def Silvally-Dark: 36-43 (10.8 - 12.9%) -- possible 8HKO'
+        );
+      });
+
       test('% chance to OHKO', () => {
         const abomasnow = Pokemon('Abomasnow', {
           level: 55,
