@@ -372,7 +372,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Expanding Force':
-    basePower = move.bp * (isGrounded(attacker, field) && field.hasTerrain("Psychic") ? 2 : 1);
+    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? 2 : 1);
     move.target = (isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? "allAdjacentFoes" : "normal";
     desc.moveBP = basePower;
     break;
