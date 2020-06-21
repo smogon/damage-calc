@@ -49,9 +49,6 @@ describe('Generations', () => {
 
       expect(p).toHaveLength(c.size);
       for (const move of p) {
-        // FIXME: workaround for incorrect PS data snapshotted by @pkmn/dex v0.0.8
-        if (move.id === 'terrainpulse') move.flags.pulse = 1;
-
         expect(move).toEqual(c.get(move.id));
         c.delete(move.id);
       }
@@ -66,9 +63,6 @@ describe('Generations', () => {
       for (const specie of calc.Generations.get(gen).species) c.set(specie.id, specie);
       expect(p).toHaveLength(c.size);
       for (const specie of p) {
-        // FIXME: workaround for incorrect PS data snapshotted by @pkmn/dex v0.0.8
-        if (specie.id === 'kubfu') (specie.baseStats as I.StatsTable).spe = 72;
-
         expect(specie).toEqual(c.get(specie.id));
         c.delete(specie.id);
       }
