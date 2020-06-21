@@ -445,7 +445,7 @@ export function calculateSMSS(
     basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
     desc.moveBP = basePower;
     break;
-  case 'Weather Ball':
+  case 'Terrain Pulse':
     basePower = field.terrain ? 100 : 50;
     desc.moveBP = basePower;
     break;
