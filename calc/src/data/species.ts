@@ -8451,7 +8451,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Urshifu',
   },
   'Venusaur-Gmax': {
-    types: ['Poison', 'Fairy'],
+    types: ['Grass', 'Poison'],
     bs: {hp: 80, at: 82, df: 83, sa: 100, sd: 100, sp: 80},
     weightkg: 0,
     abilities: {0: 'Overgrow'},
