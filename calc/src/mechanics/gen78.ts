@@ -526,7 +526,7 @@ export function calculateSMSS(
     desc.attackerAbility = attacker.ability;
   }
 
-  if (!move.isZ && !move.isMax &&
+  if (!move.isZ && !move.isMax && !move.named('Terrain Pulse') &&
       (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize)) {
     bpMods.push(0x1333);
     desc.attackerAbility = attacker.ability;
@@ -544,7 +544,8 @@ export function calculateSMSS(
   }
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
-  if (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax && !move.named('Steel Roller')) {
+  if (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax
+      && !move.named('Steel Roller')) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   } else if (
