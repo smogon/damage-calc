@@ -88,7 +88,7 @@ export function calculateSMSS(
   }
 
   const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed
-  || attacker.hasAbility('Unseen Fist');
+  || (attacker.hasAbility('Unseen Fist') && move.flags.contact);
 
   if (field.defenderSide.isProtected && !breaksProtect) {
     desc.isProtected = true;
@@ -372,8 +372,8 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Expanding Force':
-    basePower = move.bp * (field.hasTerrain("Psychic") ? 2 : 1);
-    move.target = field.hasTerrain("Psychic") ? "allAdjacentFoes" : "normal";
+    basePower = move.bp * (isGrounded(attacker, field) && field.hasTerrain("Psychic") ? 2 : 1);
+    move.target = (isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? "allAdjacentFoes" : "normal";
     desc.moveBP = basePower;
     break;
   case 'Misty Explosion':

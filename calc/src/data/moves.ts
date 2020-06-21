@@ -2901,12 +2901,12 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Clangorous Soul': {bp: 0, type: 'Dragon', isSound: true},
   'Coaching': {
     bp: 0,
-    type: 'Normal',
+    type: 'Fighting',
     category: 'Status',
   },
   'Corrosive Gas': {
     bp: 0,
-    type: 'Normal',
+    type: 'Poison',
     category: 'Status',
   },
   'Court Change': {bp: 0, type: 'Normal'},
@@ -3234,7 +3234,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Jungle Healing': {
     bp: 0,
-    type: 'Normal',
+    type: 'Grass',
     category: 'Status',
   },
   'Lash Out': {
@@ -3491,13 +3491,14 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Water',
     category: 'Physical',
     makesContact: true,
+    willCrit: true,
     multihit: 3,
   },
   'Terrain Pulse': {
     bp: 50,
     type: 'Normal',
     category: 'Special',
-    makesContact: true,
+    isPulse: true,
     zp: 160,
     maxPower: 130,
   },
