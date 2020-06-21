@@ -9,6 +9,7 @@ const pkmn = {Generations: new Generations(Dex)};
 
 const gens = [1, 2, 3, 4, 5, 6, 7, 8] as I.GenerationNum[];
 
+// TODO: reverse expectations everywhere - p should expected and c should be received!
 describe('Generations', () => {
   it('abilities', () => {
     for (const gen of gens) {
@@ -48,6 +49,9 @@ describe('Generations', () => {
 
       expect(p).toHaveLength(c.size);
       for (const move of p) {
+        // FIXME: workaround for incorrect PS data snapshotted by @pkmn/dex v0.0.8
+        if (move.id === 'terrainpulse') move.flags.pulse = 1;
+
         expect(move).toEqual(c.get(move.id));
         c.delete(move.id);
       }
@@ -60,9 +64,11 @@ describe('Generations', () => {
       const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();
       for (const specie of calc.Generations.get(gen).species) c.set(specie.id, specie);
-
       expect(p).toHaveLength(c.size);
       for (const specie of p) {
+        // FIXME: workaround for incorrect PS data snapshotted by @pkmn/dex v0.0.8
+        if (specie.id === 'kubfu') (specie.baseStats as I.StatsTable).spe = 72;
+
         expect(specie).toEqual(c.get(specie.id));
         c.delete(specie.id);
       }

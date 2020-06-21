@@ -87,8 +87,8 @@ export function calculateSMSS(
     return result;
   }
 
-  const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed
-  || (attacker.hasAbility('Unseen Fist') && move.flags.contact);
+  const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed ||
+  (attacker.hasAbility('Unseen Fist') && move.flags.contact);
 
   if (field.defenderSide.isProtected && !breaksProtect) {
     desc.isProtected = true;
@@ -372,16 +372,17 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Expanding Force':
-    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? 2 : 1);
-    move.target = (isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? "allAdjacentFoes" : "normal";
+    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain('Psychic')) ? 2 : 1);
+    move.target =
+      (isGrounded(attacker, field) && field.hasTerrain('Psychic')) ? 'allAdjacentFoes' : 'normal';
     desc.moveBP = basePower;
     break;
   case 'Misty Explosion':
-    basePower = move.bp * (field.hasTerrain("Misty") ? 2 : 1);
+    basePower = move.bp * (field.hasTerrain('Misty') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Rising Voltage':
-    basePower = move.bp * (field.hasTerrain("Electric") ? 2 : 1);
+    basePower = move.bp * (field.hasTerrain('Electric') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':

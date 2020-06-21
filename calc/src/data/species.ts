@@ -8031,7 +8031,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Water'],
     bs: {hp: 70, at: 85, df: 65, sa: 125, sd: 65, sp: 120},
     weightkg: 0,
-    abilities: {0: 'Torent'},
+    abilities: {0: 'Torrent'},
     baseSpecies: 'Inteleon',
   },
   'Kingler-Gmax': {
@@ -8042,9 +8042,10 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Kingler',
   },
   'Kubfu': {
-    types: ["Fighting"],
-    bs: {hp: 60, at: 90, df: 60, sa: 53, sd: 50, sp: 72},
+    types: ['Fighting'],
+    bs: {hp: 60, at: 90, df: 60, sa: 53, sd: 50, sp: 72}, // FIXME should be 72
     weightkg: 12,
+    nfe: true,
     abilities: {0: 'Inner Focus'},
   },
   'Lapras-Gmax': {
@@ -8061,6 +8062,15 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Pickup'},
     nfe: true,
     baseSpecies: 'Linoone',
+  },
+  Magearna: {otherFormes: ['Magearna-Original']},
+  'Magearna-Original': {
+    baseSpecies: 'Magearna',
+    types: ['Steel', 'Fairy'],
+    bs: {hp: 80, at: 95, df: 115, sa: 130, sd: 115, sp: 65},
+    weightkg: 80.5,
+    gender: 'N',
+    abilities: {0: 'Soul-Heart'},
   },
   'Machamp-Gmax': {
     types: ['Fighting'],
@@ -8236,8 +8246,8 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Rillaboom-Gmax': {
     types: ['Grass'],
     bs: {hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85},
-    weightkg: 80,
-    abilities: {0: 'Run Away'},
+    weightkg: 0,
+    abilities: {0: 'Overgrow'},
     baseSpecies: 'Rillaboom',
   },
   Rolycoly: {
@@ -8337,6 +8347,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Psychic'],
     bs: {hp: 90, at: 65, df: 65, sa: 40, sd: 40, sp: 15},
     weightkg: 36,
+    nfe: true,
     abilities: {0: 'Gluttony'},
     baseSpecies: 'Slowpoke',
   },
@@ -8424,9 +8435,9 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Urshifu: {
     types: ['Fighting', 'Dark'],
-    bs: {hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75},
-    weightkg: 40,
-    abilities: {0: 'Punk Rock'},
+    bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
+    weightkg: 105,
+    abilities: {0: 'Unseen Fist'},
     otherFormes: ['Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax'],
   },
   'Urshifu-Rapid-Strike': {
@@ -8451,10 +8462,10 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Urshifu',
   },
   'Venusaur-Gmax': {
-    types: ['Poison', 'Fairy'],
+    types: ['Grass', 'Poison'],
     bs: {hp: 80, at: 82, df: 83, sa: 100, sd: 100, sp: 80},
     weightkg: 0,
-    abilities: {0: 'Levitate'},
+    abilities: {0: 'Overgrow'},
     baseSpecies: 'Venusaur',
   },
   'Weezing-Galar': {
@@ -8518,22 +8529,23 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Zamazenta',
     gender: 'N',
   },
-  Zarude: {
-    types: ['Dark', 'Grass'],
-    bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
-    weightkg: 70,
-    abilities: {0: 'Leaf Guard'},
-    gender: 'N',
-    otherFormes: ['Zarude-Dada'],
-  },
-  'Zarude-Dada': {
-    types: ['Dark', 'Grass'],
-    bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
-    weightkg: 70,
-    abilities: {0: 'Leaf Guard'},
-    baseSpecies: 'Zarude',
-    gender: 'N',
-  },
+  // Unreleased
+  // Zarude: {
+  //   types: ['Dark', 'Grass'],
+  //   bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
+  //   weightkg: 70,
+  //   abilities: {0: 'Leaf Guard'},
+  //   gender: 'N',
+  //   otherFormes: ['Zarude-Dada'],
+  // },
+  // 'Zarude-Dada': {
+  //   types: ['Dark', 'Grass'],
+  //   bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
+  //   weightkg: 70,
+  //   abilities: {0: 'Leaf Guard'},
+  //   baseSpecies: 'Zarude',
+  //   gender: 'N',
+  // },
   'Zigzagoon-Galar': {
     types: ['Dark', 'Normal'],
     bs: {hp: 38, at: 30, df: 41, sa: 30, sd: 41, sp: 60},
