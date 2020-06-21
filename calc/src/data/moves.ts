@@ -2891,7 +2891,24 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 120,
     maxPower: 110,
   },
+  'Burning Jealousy': {
+    bp: 70,
+    type: 'Dragon',
+    target: 'allAdjacentFoes',
+    category: 'Special',
+    secondaries: true,
+  },
   'Clangorous Soul': {bp: 0, type: 'Dragon', isSound: true},
+  'Coaching': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Corrosive Gas': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
   'Court Change': {bp: 0, type: 'Normal'},
   Decorate: {bp: 0, type: 'Fairy'},
   'Dragon Darts': {
@@ -2910,6 +2927,14 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 130,
   },
+  'Dual Wingbeat': {
+    bp: 40,
+    type: 'Flying',
+    category: 'Physical',
+    makesContact: true,
+    multihit: 2,
+    maxPower: 130,
+  },
   'Dynamax Cannon': {
     bp: 100,
     type: 'Dragon',
@@ -2923,6 +2948,11 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 200,
     maxPower: 150,
+  },
+  'Expanding Force': {
+    bp: 80,
+    type: 'Psychic',
+    category: 'Special',
   },
   'False Surrender': {
     bp: 80,
@@ -2941,6 +2971,11 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 130,
   },
+  'Flip Turn': {
+    bp: 60,
+    type: 'Water',
+    category: 'Physical',
+  },
   'G-Max Befuddle': {
     bp: 10,
     type: 'Bug',
@@ -2951,6 +2986,13 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Centiferno': {
     bp: 10,
     type: 'Fire',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
+  'G-Max Cannonade': {
+    bp: 10,
+    type: 'Water',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -2972,6 +3014,20 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Depletion': {
     bp: 10,
     type: 'Dragon',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
+  'G-Max Drum Solo': {
+    bp: 10,
+    type: 'Grass',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
+  'G-Max Fire Ball': {
+    bp: 10,
+    type: 'Fire',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3004,6 +3060,13 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isMax: true,
     maxPower: 1,
   },
+  'G-Max Hydrosnipe': {
+    bp: 10,
+    type: 'Water',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
   'G-Max Malodor': {
     bp: 10,
     type: 'Poison',
@@ -3014,6 +3077,20 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'G-Max Meltdown': {
     bp: 10,
     type: 'Steel',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
+  'G-Max One Blow': {
+    bp: 10,
+    type: 'Dark',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
+  'G-Max Rapid Flow': {
+    bp: 10,
+    type: 'Water',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
@@ -3095,6 +3172,13 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isMax: true,
     maxPower: 1,
   },
+  'G-Max Vine Lash': {
+    bp: 10,
+    type: 'Grass',
+    category: 'Physical',
+    isMax: true,
+    maxPower: 1,
+  },
   'G-Max Volcalith': {
     bp: 10,
     type: 'Rock',
@@ -3123,6 +3207,14 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isMax: true,
     maxPower: 1,
   },
+  'Grassy Glide': {
+    bp: 70,
+    type: 'Grass',
+    category: 'Physical',
+    makesContact: true,
+    zp: 160,
+    maxPower: 130,
+  },
   'Grav Apple': {
     bp: 80,
     type: 'Grass',
@@ -3139,6 +3231,17 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 160,
     maxPower: 130,
+  },
+  'Jungle Healing': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Lash Out': {
+    bp: 75,
+    type: 'Dark',
+    makesContact: true,
+    category: 'Physical',
   },
   'Life Dew': {bp: 0, type: 'Water'},
   'Magic Powder': {bp: 0, type: 'Psychic'},
@@ -3276,6 +3379,16 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 200,
     maxPower: 100,
   },
+  'Meteor Beam': {
+    bp: 120,
+    type: 'Rock',
+    category: 'Special',
+  },
+  'Misty Explosion': {
+    bp: 100,
+    type: 'Fairy',
+    category: 'Special',
+  },
   'No Retreat': {bp: 0, type: 'Fighting'},
   Obstruct: {bp: 0, type: 'Dark', priority: 4},
   Octolock: {bp: 0, type: 'Fighting'},
@@ -3288,6 +3401,11 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 130,
   },
+  Poltergeist: {
+    bp: 80,
+    type: 'Dark',
+    category: 'Physical',
+  },
   'Pyro Ball': {
     bp: 120,
     type: 'Fire',
@@ -3296,6 +3414,19 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isBullet: true,
     zp: 190,
     maxPower: 140,
+  },
+  'Rising Voltage': {
+    bp: 70,
+    type: 'Electric',
+    category: 'Special',
+  },
+  'Scale Shot': {
+    bp: 25,
+    type: 'Dragon',
+    category: 'Physical',
+    multihit: 5,
+    zp: 140,
+    maxPower: 130,
   },
   'Snap Trap': {
     bp: 35,
@@ -3311,6 +3442,19 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 160,
     maxPower: 130,
+  },
+  'Scorching Sands': {
+    bp: 70,
+    type: 'Ground',
+    category: 'Special',
+    secondaries: true,
+  },
+  'Skitter Smack': {
+    bp: 70,
+    type: 'Bug',
+    category: 'Physical',
+    makesContact: true,
+    secondaries: true,
   },
   'Spirit Break': {
     bp: 75,
@@ -3329,6 +3473,11 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 200,
     maxPower: 140,
   },
+  'Steel Roller': {
+    bp: 130,
+    type: 'Steel',
+    category: 'Physical',
+  },
   'Strange Steam': {
     bp: 90,
     type: 'Fairy',
@@ -3336,6 +3485,36 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     secondaries: true,
     zp: 175,
     maxPower: 130,
+  },
+  'Surging Strikes': {
+    bp: 25,
+    type: 'Water',
+    category: 'Physical',
+    makesContact: true,
+    multihit: 3,
+  },
+  'Terrain Pulse': {
+    bp: 50,
+    type: 'Normal',
+    category: 'Special',
+    makesContact: true,
+    zp: 160,
+    maxPower: 130,
+  },
+  'Triple Axel': {
+    bp: 20,
+    type: 'Ice',
+    category: 'Physical',
+    makesContact: true,
+    multihit: 3,
+    maxPower: 130,
+  },
+  'Wicked Blow': {
+    bp: 80,
+    type: 'Dark',
+    category: 'Physical',
+    makesContact: true,
+    willCrit: true,
   },
   'Stuff Cheeks': {bp: 0, type: 'Normal'},
   'Tar Shot': {bp: 0, type: 'Rock'},

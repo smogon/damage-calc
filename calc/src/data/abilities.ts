@@ -275,12 +275,14 @@ const SS = SM.concat([
   'Power Spot',
   'Propeller Tail',
   'Punk Rock',
+  'Quick Draw',
   'Ripen',
   'Sand Spit',
   'Screen Cleaner',
   'Stalwart',
   'Steam Engine',
   'Steely Spirit',
+  'Unseen Fist',
   'Wandering Spirit',
 ]);
 
