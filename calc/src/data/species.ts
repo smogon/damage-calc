@@ -8236,7 +8236,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Rillaboom-Gmax': {
     types: ['Grass'],
     bs: {hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85},
-    weightkg: 80,
+    weightkg: 0,
     abilities: {0: 'Overgrow'},
     baseSpecies: 'Rillaboom',
   },
@@ -8439,7 +8439,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Urshifu-Rapid-Strike-Gmax': {
     types: ['Fighting', 'Water'],
     bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
-    weightkg: 105,
+    weightkg: 0,
     abilities: {0: 'Unseen Fist'},
     baseSpecies: 'Urshifu',
   },
