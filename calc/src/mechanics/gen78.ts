@@ -277,7 +277,7 @@ export function calculateSMSS(
       (move.hasType('Ground') &&
         !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
-      (move.flags.sound && defender.hasAbility('Soundproof')) ||
+      (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
   ) {
     desc.defenderAbility = defender.ability;
@@ -544,8 +544,8 @@ export function calculateSMSS(
   }
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
-  if (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax
-      && !move.named('Steel Roller')) {
+  if (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax &&
+      !move.named('Steel Roller')) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   } else if (
