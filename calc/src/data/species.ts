@@ -8031,7 +8031,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Water'],
     bs: {hp: 70, at: 85, df: 65, sa: 125, sd: 65, sp: 120},
     weightkg: 0,
-    abilities: {0: 'Torent'},
+    abilities: {0: 'Torrent'},
     baseSpecies: 'Inteleon',
   },
   'Kingler-Gmax': {
@@ -8237,7 +8237,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Grass'],
     bs: {hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85},
     weightkg: 80,
-    abilities: {0: 'Run Away'},
+    abilities: {0: 'Overgrow'},
     baseSpecies: 'Rillaboom',
   },
   Rolycoly: {
@@ -8426,7 +8426,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Fighting', 'Dark'],
     bs: {hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75},
     weightkg: 40,
-    abilities: {0: 'Punk Rock'},
+    abilities: {0: 'Unseen Fist'},
     otherFormes: ['Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax'],
   },
   'Urshifu-Rapid-Strike': {
@@ -8454,7 +8454,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Poison', 'Fairy'],
     bs: {hp: 80, at: 82, df: 83, sa: 100, sd: 100, sp: 80},
     weightkg: 0,
-    abilities: {0: 'Levitate'},
+    abilities: {0: 'Overgrow'},
     baseSpecies: 'Venusaur',
   },
   'Weezing-Galar': {
