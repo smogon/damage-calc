@@ -87,7 +87,10 @@ export function calculateSMSS(
     return result;
   }
 
-  if (field.defenderSide.isProtected && !move.breaksProtect && !move.isZ && !attacker.isDynamaxed) {
+  const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed
+  || (attacker.hasAbility('Unseen Fist') && move.flags.contact);
+
+  if (field.defenderSide.isProtected && !breaksProtect) {
     desc.isProtected = true;
     return result;
   }
@@ -160,6 +163,13 @@ export function calculateSMSS(
       move.type = 'Electric';
     } else if (attacker.named('Morpeko-Hangry')) {
       move.type = 'Dark';
+    } else if (move.named('Terrain Pulse')) {
+      move.type =
+      field.hasTerrain('Electric') ? 'Electric'
+      : field.hasTerrain('Grassy') ? 'Grass'
+      : field.hasTerrain('Misty') ? 'Fairy'
+      : field.hasTerrain('Psychic') ? 'Psychic'
+      : 'Normal';
     }
   }
 
@@ -361,8 +371,25 @@ export function calculateSMSS(
     basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
     desc.moveBP = basePower;
     break;
+  case 'Expanding Force':
+    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? 2 : 1);
+    move.target = (isGrounded(attacker, field) && field.hasTerrain("Psychic")) ? "allAdjacentFoes" : "normal";
+    desc.moveBP = basePower;
+    break;
+  case 'Misty Explosion':
+    basePower = move.bp * (field.hasTerrain("Misty") ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
+  case 'Rising Voltage':
+    basePower = move.bp * (field.hasTerrain("Electric") ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
   case 'Gyro Ball':
     basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
+    desc.moveBP = basePower;
+    break;
+  case 'Poltergeist':
+    basePower = move.bp * (!defender.hasItem ? 0 : 1);
     desc.moveBP = basePower;
     break;
   case 'Punishment':
@@ -401,6 +428,10 @@ export function calculateSMSS(
     basePower = move.bp * (field.isGravity ? 1.5 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Steel Roller':
+    basePower = move.bp * (field.terrain ? 1 : 0);
+    desc.moveBP = basePower;
+    break;
   case 'Assurance':
     basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
     // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
@@ -412,6 +443,10 @@ export function calculateSMSS(
     break;
   case 'Weather Ball':
     basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
+    desc.moveBP = basePower;
+    break;
+  case 'Terrain Pulse':
+    basePower = field.terrain ? 100 : 50;
     desc.moveBP = basePower;
     break;
   case 'Fling':
@@ -438,6 +473,10 @@ export function calculateSMSS(
     break;
   case 'Water Shuriken':
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
+    desc.moveBP = basePower;
+    break;
+  case 'Lash Out':
+    basePower = move.bp * (countBoosts(gen, attacker.boosts) < 0 ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Crush Grip':
