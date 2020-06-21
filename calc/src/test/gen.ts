@@ -474,7 +474,7 @@ function exists(val: D.Ability| D.Item | D.Move | D.Species, gen: I.GenerationNu
   if (!val.exists || val.id === 'noability') return false;
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
   if (gen === 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;
-  if (gen === 8 && ['eternatuseternamax', 'slowpoke'].includes(val.id)) return true; // sigh
+  if (gen === 8 && ['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id)) return true;
   if (val.isNonstandard && !['CAP', 'Unobtainable'].includes(val.isNonstandard)) return false;
   return !('tier' in val && ['Illegal', 'Unreleased'].includes(val.tier));
 }
