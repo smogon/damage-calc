@@ -149,7 +149,7 @@ export function calculateSMSS(
     desc.attackerItem = attacker.item;
     desc.moveBP = move.bp;
     desc.moveType = move.type;
-  } else if (move.named('Nature Power')) {
+  } else if (move.named('Nature Power', 'Terrain Pulse')) {
     move.type =
       field.hasTerrain('Electric') ? 'Electric'
       : field.hasTerrain('Grassy') ? 'Grass'
@@ -163,13 +163,6 @@ export function calculateSMSS(
       move.type = 'Electric';
     } else if (attacker.named('Morpeko-Hangry')) {
       move.type = 'Dark';
-    } else if (move.named('Terrain Pulse')) {
-      move.type =
-      field.hasTerrain('Electric') ? 'Electric'
-      : field.hasTerrain('Grassy') ? 'Grass'
-      : field.hasTerrain('Misty') ? 'Fairy'
-      : field.hasTerrain('Psychic') ? 'Psychic'
-      : 'Normal';
     }
   }
 
