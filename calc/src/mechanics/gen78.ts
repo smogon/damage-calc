@@ -891,18 +891,20 @@ export function calculateSMSS(
   if (attacker.hasAbility('Parental Bond (Child)')) {
     baseDamage = pokeRound(OF32(baseDamage * 0x400) / 0x1000);
   }
-
-  if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+  
+  const noWeatherBoost = defender.hasItem('Utility Umbrella');
+  if (!noWeatherBoost && (field.hasWeather('Sun', 'Harsh Sunshine') && 
+       move.hasType('Fire')) ||
       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
     baseDamage = pokeRound(OF32(baseDamage * 0x1800) / 0x1000);
     desc.weather = field.weather;
-  } else if (
+  } else if (!noWeatherBoost &&
     (field.hasWeather('Sun') && move.hasType('Water')) ||
     (field.hasWeather('Rain') && move.hasType('Fire'))
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 0x800) / 0x1000);
     desc.weather = field.weather;
-  } else if (
+  } else if (!noWeatherBoost &&
     (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
     (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
   ) {
