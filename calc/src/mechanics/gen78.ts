@@ -373,7 +373,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Misty Explosion':
-    basePower = move.bp * (field.hasTerrain('Misty') ? 2 : 1);
+    basePower = move.bp * (field.hasTerrain('Misty') ? 1.5 : 1);
     desc.moveBP = basePower;
     break;
   case 'Rising Voltage':
