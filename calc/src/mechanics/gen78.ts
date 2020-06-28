@@ -367,7 +367,7 @@ export function calculateSMSS(
     break;
   case 'Expanding Force':
     const isTerrainBoosted =
-      isGrounded(attacker, field) && field.hasTerrain("Psychic");
+      isGrounded(attacker, field) && field.hasTerrain('Psychic');
     basePower = move.bp * (isTerrainBoosted ? 1.5 : 1);
     move.target = isTerrainBoosted ? 'allAdjacentFoes' : 'normal';
     desc.moveBP = basePower;
