@@ -471,7 +471,7 @@ export function calculateSMSS(
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
     desc.moveBP = basePower;
     break;
-  // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack but should work
+  // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
   case 'Triple Axel':
     basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
     desc.moveBP = basePower;
@@ -544,6 +544,8 @@ export function calculateSMSS(
   }
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
+  const analyticBoost = attacker.hasAbility('Analytic') &&
+        (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out');
   if (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
@@ -555,7 +557,7 @@ export function calculateSMSS(
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
-  } else if (attacker.hasAbility('Analytic') && turnOrder !== 'first') {
+  } else if (analyticBoost) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Tough Claws') && move.flags.contact) {
