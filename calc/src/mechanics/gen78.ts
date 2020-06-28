@@ -1,4 +1,4 @@
-import {Generation, AbilityName, StatName, Terrain} from '../data/interface';
+﻿import {Generation, AbilityName, StatName, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
   getBerryResistType,
@@ -442,7 +442,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
-    basePower = field.terrain ? 100 : 50;
+    basePower = move.bp * (field.terrain ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Fling':
