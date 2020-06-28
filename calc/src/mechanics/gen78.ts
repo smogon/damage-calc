@@ -473,7 +473,7 @@ export function calculateSMSS(
     break;
   // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
   case 'Triple Axel':
-    basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
+    basePower = move.hits === 2 ? 40 : move.hits === 3 ? 60 : 20;
     desc.moveBP = basePower;
     break;
   case 'Lash Out':
