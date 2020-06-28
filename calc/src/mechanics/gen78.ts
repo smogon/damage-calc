@@ -366,13 +366,14 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Expanding Force':
-    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain('Psychic')) ? 2 : 1);
-    move.target =
-      (isGrounded(attacker, field) && field.hasTerrain('Psychic')) ? 'allAdjacentFoes' : 'normal';
+    const isTerrainBoosted =
+      isGrounded(attacker, field) && field.hasTerrain('Psychic');
+    basePower = move.bp * (isTerrainBoosted ? 1.5 : 1);
+    move.target = isTerrainBoosted ? 'allAdjacentFoes' : 'normal';
     desc.moveBP = basePower;
     break;
   case 'Misty Explosion':
-    basePower = move.bp * (field.hasTerrain('Misty') ? 2 : 1);
+    basePower = move.bp * (field.hasTerrain('Misty') ? 1.5 : 1);
     desc.moveBP = basePower;
     break;
   case 'Rising Voltage':
@@ -441,7 +442,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
-    basePower = field.terrain ? 100 : 50;
+    basePower = move.bp * (field.terrain ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Fling':
