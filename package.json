@@ -7,7 +7,7 @@
     "calc": "file:calc"
   },
   "devDependencies": {
-    "eslint": "^7.3.0",
+    "eslint": "^7.3.1",
     "subpkg": "^3.0.3"
   },
   "optionalDependencies": {
