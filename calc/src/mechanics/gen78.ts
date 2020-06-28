@@ -1,4 +1,4 @@
-﻿import {Generation, AbilityName, StatName, Terrain} from '../data/interface';
+import {Generation, AbilityName, StatName, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
   getBerryResistType,
@@ -366,9 +366,10 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Expanding Force':
-    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain('Psychic')) ? 2 : 1);
-    move.target =
-      (isGrounded(attacker, field) && field.hasTerrain('Psychic')) ? 'allAdjacentFoes' : 'normal';
+    const isTerrainBoosted =
+      isGrounded(attacker, field) && field.hasTerrain("Psychic");
+    basePower = move.bp * (isTerrainBoosted ? 1.5 : 1);
+    move.target = isTerrainBoosted ? 'allAdjacentFoes' : 'normal';
     desc.moveBP = basePower;
     break;
   case 'Misty Explosion':
