@@ -47,7 +47,9 @@ export class Field implements State.Field {
 export class Side implements State.Side {
   spikes: number;
   steelsurge: boolean;
+  vinelash: boolean;
   wildfire: boolean;
+  cannonade: boolean;
   volcalith: boolean;
   isSR: boolean;
   isReflect: boolean;
@@ -65,7 +67,9 @@ export class Side implements State.Side {
   constructor(side: State.Side = {}) {
     this.spikes = side.spikes || 0;
     this.steelsurge = !!side.steelsurge;
+    this.vinelash = !!side.vinelash;
     this.wildfire = !!side.wildfire;
+    this.cannonade = !!side.cannonade;
     this.volcalith = !!side.volcalith;
     this.isSR = !!side.isSR;
     this.isReflect = !!side.isReflect;

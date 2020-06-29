@@ -68,7 +68,7 @@ export class Move implements State.Move {
         // TODO: checking basePower === 10 is fragile (what if the maxMove's basePower is
         // overridden?) and also fails for Max Flare, which is strangely 100 BP in the game data
         if (maxMove!.basePower === 10 || maxMoveName === 'Max Flare') {
-          return data.maxMove.basePower;
+          return data.maxMove!.basePower;
         }
         return maxMove!.basePower;
       };
@@ -254,7 +254,7 @@ export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, is
   }
   if (moveType === 'Electric') {
     if (pokemonSpecies === 'Pikachu-Gmax') return 'G-Max Volt Crash';
-    if (pokemonSpecies.startsWith('Toxtricity') && pokemonSpecies.endsWith('Gmax')) return 'G-Max Stun Shock';
+    if (pokemonSpecies?.startsWith('Toxtricity') && pokemonSpecies?.endsWith('Gmax')) return 'G-Max Stun Shock';
   }
   if (moveType === 'Grass') {
     if (pokemonSpecies === 'Appletun-Gmax') return 'G-Max Sweetness';
