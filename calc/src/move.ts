@@ -254,7 +254,8 @@ export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, is
   }
   if (moveType === 'Electric') {
     if (pokemonSpecies === 'Pikachu-Gmax') return 'G-Max Volt Crash';
-    if (pokemonSpecies?.startsWith('Toxtricity') && pokemonSpecies?.endsWith('Gmax')) return 'G-Max Stun Shock';
+    if (pokemonSpecies?.startsWith('Toxtricity') &&
+      pokemonSpecies?.endsWith('Gmax')) return 'G-Max Stun Shock';
   }
   if (moveType === 'Grass') {
     if (pokemonSpecies === 'Appletun-Gmax') return 'G-Max Sweetness';

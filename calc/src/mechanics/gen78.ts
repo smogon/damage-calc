@@ -443,7 +443,8 @@ export function calculateSMSS(
     break;
   case 'Weather Ball':
     basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
-    if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') && attacker.hasItem('Utility Umbrella')) basePower = 50;
+    if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
+      attacker.hasItem('Utility Umbrella')) basePower = 50;
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
