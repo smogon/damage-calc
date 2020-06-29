@@ -104,6 +104,9 @@ export function calculateSMSS(
 
   const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze');
   const moveIgnoresAbility = move.named(
+    'G-Max Drum Solo',
+    'G-Max Fire Ball',
+    'G-Max Hydrosnipe',
     'Light That Burns the Sky',
     'Menacing Moonraze Maelstrom',
     'Moongeist Beam',
@@ -128,9 +131,10 @@ export function calculateSMSS(
     move.timesUsed === 1;
 
   if (move.named('Weather Ball')) {
+    const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     move.type =
-      field.hasWeather('Sun', 'Harsh Sunshine') ? 'Fire'
-      : field.hasWeather('Rain', 'Heavy Rain') ? 'Water'
+      field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
+      : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
       : field.hasWeather('Sand') ? 'Rock'
       : field.hasWeather('Hail') ? 'Ice'
       : 'Normal';
@@ -434,11 +438,12 @@ export function calculateSMSS(
     break;
   case 'Wake-Up Slap':
     // Wake-Up Slap deals double damage to Pokemon with Comatose (ih8ih8sn0w)
-    basePower = move.bp * (defender.hasStatus('slp' || defender.hasAbility('Comatose')) ? 2 : 1);
+    basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Weather Ball':
     basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
+    if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') && attacker.hasItem('Utility Umbrella')) basePower = 50;
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
