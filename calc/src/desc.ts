@@ -605,10 +605,22 @@ function getEndOfTurn(
     texts.push('Sea of Fire damage');
   }
 
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Grass') &&
+      (field.defenderSide.vinelash || move.named('G-Max Vine Lash'))) {
+    damage -= Math.floor(defender.maxHP() / 6);
+    texts.push('Vine Lash damage');
+  }
+
   if (!defender.hasAbility('Magic Guard') && !defender.hasType('Fire') &&
       (field.defenderSide.wildfire || move.named('G-Max Wildfire'))) {
     damage -= Math.floor(defender.maxHP() / 6);
     texts.push('Wildfire damage');
+  }
+
+  if (!defender.hasAbility('Magic Guard') && !defender.hasType('Water') &&
+      (field.defenderSide.cannonade || move.named('G-Max Cannonade'))) {
+    damage -= Math.floor(defender.maxHP() / 6);
+    texts.push('Cannonade damage');
   }
 
   if (!defender.hasAbility('Magic Guard') && !defender.hasType('Rock') &&

@@ -43,7 +43,9 @@ export namespace State {
   export interface Side {
     spikes?: number;
     steelsurge?: boolean;
+    vinelash?: boolean;
     wildfire?: boolean;
+    cannonade?: boolean;
     volcalith?: boolean;
     isSR?: boolean;
     isReflect?: boolean;
