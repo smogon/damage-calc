@@ -389,7 +389,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Poltergeist':
-    basePower = move.bp * (!defender.hasItem ? 0 : 1);
+    basePower = move.bp * (!defender.item ? 0 : 1);
     desc.moveBP = basePower;
     break;
   case 'Punishment':
