@@ -12,18 +12,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.0.13"
+    "@types/node": "^14.0.14"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^0.4.2",
     "@pkmn/dex": "^0.0.9",
-    "@types/jest": "^26.0.0",
-    "@typescript-eslint/eslint-plugin": "^3.3.0",
-    "eslint": "^7.3.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^23.16.0",
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0",
+    "@types/jest": "^26.0.3",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "eslint": "^7.3.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.17.1",
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
     "typescript": "<3.9"
   },
   "scripts": {
