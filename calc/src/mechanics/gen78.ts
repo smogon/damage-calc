@@ -299,6 +299,11 @@ export function calculateSMSS(
     return result;
   }
 
+  const weightBasedMove = move.named('Heat Crash', 'Heavy Slam', 'Low Kick', 'Grass Knot');
+  if (defender.isDynamaxed && weightBasedMove) {
+    return result;
+  }
+
   desc.HPEVs = `${defender.evs.hp} HP`;
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
