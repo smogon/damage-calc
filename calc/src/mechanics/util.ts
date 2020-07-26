@@ -2,6 +2,7 @@ import {
   Generation,
   ID,
   ItemName,
+  MoveCategory,
   NatureName,
   StatName,
   StatsTable,
@@ -354,6 +355,34 @@ export function getFinalDamage(
   if (isBurned) damageAmount = Math.floor(damageAmount / 2);
   if (protect) damageAmount = pokeRound(OF32(damageAmount * 0x400) / 0x1000);
   return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 0x1000)));
+}
+
+/**
+ * Determines which move category Shell Side Arm should behave as. Applications
+ * that consume this library may want to import this function to show users move
+ * category information.
+ *
+ * Notes:
+ * 1. As far as I can tell, research hasn't been tone on whether it's the larger
+ * ratio (atk / def) or the difference (atk - def) which decides the move
+ * category.
+ * Ratio seems more likely to me, since the pokemon damage formula is
+ * dependent on the ratio and not the difference of attack and defense stats.
+ *
+ * 2. in game, when stats are equal, category is random.  For damage, it won't
+ * matter most of the time (items like assault vest aren't included in this
+ * decision though, so *may* take effect).
+ *
+ * {@link https://www.reddit.com/r/VGC/comments/hcfe4k/galarian_slowbro_shell_side_arm_breakdown/}
+ *
+ * @param source Attacking pokemon (after stat modifications)
+ * @param target Target pokemon (after stat modifications)
+ * @returns 'Physical' | 'Special'
+ */
+export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveCategory  {
+  const physicalDamage = source.stats.atk / target.stats.def;
+  const specialDamage = source.stats.spa / target.stats.spd;
+  return physicalDamage > specialDamage ? 'Physical' : 'Special'
 }
 
 export function getWeightFactor(pokemon: Pokemon) {
