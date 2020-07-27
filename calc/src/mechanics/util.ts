@@ -360,17 +360,10 @@ export function getFinalDamage(
 /**
  * Determines which move category Shell Side Arm should behave as.
  *
- * Notes:
- * 1. As far as I can tell, research hasn't been tone on whether it's the larger
- * ratio (atk / def) or the difference (atk - def) which decides the move
- * category.
- * Ratio seems more likely to me, since the pokemon damage formula is
- * dependent on the ratio and not the difference of attack and defense stats.
- *
- * 2. In game, when stats are equal, category is random.  For damage, it won't
- * matter most of the time (items like assault vest aren't included in this
- * decision though, so *may* take effect). This implementation defaults to
- * 'Special'.
+ * A simplified formula can be used here compared to what the research 
+ * suggests as we do not want to implement the random tiebreak element of
+ * move - instead we simply default to 'Special' and allow the user to override
+ * this by manually adjusting the move's category.
  *
  * See also:
  * {@link https://github.com/smogon/pokemon-showdown/commit/65d2bb5d}
