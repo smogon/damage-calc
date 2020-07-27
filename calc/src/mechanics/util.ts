@@ -360,7 +360,7 @@ export function getFinalDamage(
 /**
  * Determines which move category Shell Side Arm should behave as.
  *
- * A simplified formula can be used here compared to what the research 
+ * A simplified formula can be used here compared to what the research
  * suggests as we do not want to implement the random tiebreak element of
  * move - instead we simply default to 'Special' and allow the user to override
  * this by manually adjusting the move's category.
