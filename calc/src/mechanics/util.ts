@@ -373,7 +373,7 @@ export function getFinalDamage(
  * 'Special'.
  *
  * See also:
- * {@link https://github.com/smogon/pokemon-showdown/commit/65d2bb5d0c36b61a2577382cc30aa861521113fd#diff-706ad2c9c5d1920e4245d5debe9e3c11}
+ * {@link https://github.com/smogon/pokemon-showdown/commit/65d2bb5d}
  *
  * @param source Attacking pokemon (after stat modifications)
  * @param target Target pokemon (after stat modifications)

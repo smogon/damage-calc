@@ -2,7 +2,6 @@
   "root": true,
   "extends": "@pkmn",
   "rules": {
-    "max-len": ["error", { "code": 100, "ignoreUrls": true }],
     "no-shadow": 0,
     "jest/no-standalone-expect": "off",
     "@typescript-eslint/restrict-template-expressions": "off"
