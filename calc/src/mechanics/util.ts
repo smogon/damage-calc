@@ -379,10 +379,10 @@ export function getFinalDamage(
  * @param target Target pokemon (after stat modifications)
  * @returns 'Physical' | 'Special'
  */
-export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveCategory  {
+export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveCategory {
   const physicalDamage = source.stats.atk / target.stats.def;
   const specialDamage = source.stats.spa / target.stats.spd;
-  return physicalDamage > specialDamage ? 'Physical' : 'Special'
+  return physicalDamage > specialDamage ? 'Physical' : 'Special';
 }
 
 export function getWeightFactor(pokemon: Pokemon) {

@@ -717,14 +717,14 @@ export function calculateSMSS(
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
-    move.named("Shell Side Arm") &&
-    getShellSideArmCategory(attacker, defender) === "Physical"
-      ? "atk"
-      : move.named("Body Press")
-      ? "def"
-      : move.category === "Special"
-      ? "spa"
-      : "atk";
+    move.named('Shell Side Arm') &&
+    getShellSideArmCategory(attacker, defender) === 'Physical'
+      ? 'atk'
+      : move.named('Body Press')
+        ? 'def'
+        : move.category === 'Special'
+          ? 'spa'
+          : 'atk';
   desc.attackEVs =
     move.named('Foul Play')
       ? getEVDescriptionText(gen, defender, attackStat, defender.nature)
