@@ -358,9 +358,7 @@ export function getFinalDamage(
 }
 
 /**
- * Determines which move category Shell Side Arm should behave as. Applications
- * that consume this library may want to import this function to show users move
- * category information.
+ * Determines which move category Shell Side Arm should behave as.
  *
  * Notes:
  * 1. As far as I can tell, research hasn't been tone on whether it's the larger
@@ -369,11 +367,13 @@ export function getFinalDamage(
  * Ratio seems more likely to me, since the pokemon damage formula is
  * dependent on the ratio and not the difference of attack and defense stats.
  *
- * 2. in game, when stats are equal, category is random.  For damage, it won't
+ * 2. In game, when stats are equal, category is random.  For damage, it won't
  * matter most of the time (items like assault vest aren't included in this
- * decision though, so *may* take effect).
+ * decision though, so *may* take effect). This implementation defaults to
+ * 'Special'.
  *
- * {@link https://www.reddit.com/r/VGC/comments/hcfe4k/galarian_slowbro_shell_side_arm_breakdown/}
+ * See also:
+ * {@link https://github.com/smogon/pokemon-showdown/commit/65d2bb5d0c36b61a2577382cc30aa861521113fd#diff-706ad2c9c5d1920e4245d5debe9e3c11}
  *
  * @param source Attacking pokemon (after stat modifications)
  * @param target Target pokemon (after stat modifications)
