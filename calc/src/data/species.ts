@@ -3237,7 +3237,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Blaze'},
   },
   Kitsunoh: {
-    types: ['Steel', 'Ghost'],
+    types: ['Ghost', 'Steel'],
     bs: {hp: 80, at: 103, df: 85, sa: 55, sd: 80, sp: 110},
     weightkg: 51,
     abilities: {0: 'Frisk'},
@@ -6511,6 +6511,14 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     abilities: {0: 'Bulletproof'},
   },
+  Justyke: {
+    types: ['Steel', 'Ground'],
+    bs: {hp: 72, at: 70, df: 56, sa: 83, sd: 68, sp: 30},
+    weightkg: 36.5,
+    nfe: true,
+    abilities: {0: 'Levitate'},
+    gender: 'N',
+  },
   Jumbao: {
     types: ['Grass', 'Fairy'],
     bs: {hp: 92, at: 63, df: 97, sa: 124, sd: 104, sp: 96},
@@ -7480,7 +7488,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       'Pikachu-Partner',
       'Pikachu-Sinnoh',
       'Pikachu-Unova',
-      'Pikachu-World',
+      // 'Pikachu-World',
     ],
   },
   Ponyta: {otherFormes: ['Ponyta-Galar']},
@@ -8185,13 +8193,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Static'},
     baseSpecies: 'Pikachu',
   },
-  'Pikachu-World': {
-    types: ['Electric'],
-    bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90},
-    weightkg: 6,
-    abilities: {0: 'Static'},
-    baseSpecies: 'Pikachu',
-  },
+  // Unreleased
+  // 'Pikachu-World': {
+  //   types: ['Electric'],
+  //   bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90},
+  //   weightkg: 6,
+  //   abilities: {0: 'Static'},
+  //   baseSpecies: 'Pikachu',
+  // },
   Pincurchin: {
     types: ['Electric'],
     bs: {hp: 48, at: 101, df: 95, sa: 91, sd: 85, sp: 15},
@@ -8337,7 +8346,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
   },
   'Slowbro-Galar': {
-    types: ['Psychic', 'Poison'],
+    types: ['Poison', 'Psychic'],
     bs: {hp: 95, at: 100, df: 95, sa: 100, sd: 70, sp: 30},
     weightkg: 70.5,
     abilities: {0: 'Quick Draw'},
@@ -8350,6 +8359,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     abilities: {0: 'Gluttony'},
     baseSpecies: 'Slowpoke',
+  },
+  Solotl: {
+    types: ['Fire', 'Dragon'],
+    bs: {hp: 68, at: 48, df: 34, sa: 72, sd: 24, sp: 84},
+    weightkg: 11.8,
+    nfe: true,
+    abilities: {0: 'Regenerator'},
   },
   Snom: {
     types: ['Ice', 'Bug'],

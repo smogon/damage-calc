@@ -3028,14 +3028,14 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 1,
   },
   'G-Max Drum Solo': {
-    bp: 10,
+    bp: 160,
     type: 'Grass',
     category: 'Physical',
     isMax: true,
     maxPower: 1,
   },
-  'G-Max Fire Ball': {
-    bp: 10,
+  'G-Max Fireball': {
+    bp: 160,
     type: 'Fire',
     category: 'Physical',
     isMax: true,
@@ -3070,7 +3070,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 1,
   },
   'G-Max Hydrosnipe': {
-    bp: 10,
+    bp: 160,
     type: 'Water',
     category: 'Physical',
     isMax: true,
@@ -3530,8 +3530,8 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     willCrit: true,
     multihit: 3,
-    zp: 100,
-    maxPower: 90,
+    zp: 140,
+    maxPower: 130,
   },
   'Terrain Pulse': {
     bp: 50,
@@ -3847,7 +3847,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Mud Shot': {maxPower: 110},
   'Mud-Slap': {maxPower: 90},
   'Muddy Water': {maxPower: 130},
-  'Multi-Attack': {bp: 120, maxPower: 140},
+  'Multi-Attack': {bp: 120, maxPower: 95},
   'Mystical Fire': {maxPower: 130},
   'Natural Gift': {maxPower: 130},
   'Nature\'s Madness': {maxPower: 100},

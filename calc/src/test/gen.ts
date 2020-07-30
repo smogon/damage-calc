@@ -317,16 +317,28 @@ class Specie implements I.Specie {
         this.baseSpecies = 'Aegislash-Blade' as I.SpeciesName;
       }
     } else if (species.id === 'toxtricity') {
-      this.otherFormes = ['Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax',
+      this.otherFormes = [
+        'Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax',
       ] as I.SpeciesName[];
     } else if (species.id === 'toxtricitylowkey') {
       this.baseSpecies = 'Toxtricity' as I.SpeciesName;
+    } else if (species.id === 'urshifu') {
+      this.otherFormes = [
+        'Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax',
+      ] as I.SpeciesName[];
     } else if (species.id === 'eternatus') {
       this.otherFormes = ['Eternatus-Eternamax'] as I.SpeciesName[];
     } else if (formes?.length) {
       this.otherFormes = [...formes].sort() as I.SpeciesName[];
     } else if (species.baseSpecies !== this.name) {
       this.baseSpecies = species.baseSpecies as I.SpeciesName;
+    }
+    // TODO: clean this up with proper Gigantamax support
+    if (dex.gen === 8 && species.canGigantamax &&
+        !(species.id.startsWith('toxtricity') || species.id.startsWith('urshifu'))) {
+      const formes = this.otherFormes || [];
+      const gmax = dex.getSpecies(`${species.name}-Gmax`);
+      if (exists(gmax, dex.gen)) this.otherFormes = [...formes, gmax.name].sort();
     }
 
     if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
@@ -475,6 +487,9 @@ function exists(val: D.Ability| D.Item | D.Move | D.Species, gen: I.GenerationNu
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
   if (gen === 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;
   if (gen === 8 && ['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id)) return true;
-  if (val.isNonstandard && !['CAP', 'Unobtainable'].includes(val.isNonstandard)) return false;
+  // TODO: clean this up with proper Gigantamax support
+  if (val.isNonstandard && !['CAP', 'Unobtainable', 'Gigantamax'].includes(val.isNonstandard)) {
+    return false;
+  }
   return !('tier' in val && ['Illegal', 'Unreleased'].includes(val.tier));
 }
