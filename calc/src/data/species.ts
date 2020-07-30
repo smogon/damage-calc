@@ -7503,7 +7503,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Alcremie-Gmax': {
     types: ['Fairy'],
     bs: {hp: 65, at: 60, df: 75, sa: 110, sd: 121, sp: 64},
-    weightkg: 0,
+    weightkg: 0.5,
     abilities: {0: 'Sweet Veil'},
     baseSpecies: 'Alcremie',
   },
@@ -7517,7 +7517,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Appletun-Gmax': {
     types: ['Grass', 'Dragon'],
     bs: {hp: 110, at: 85, df: 80, sa: 100, sd: 80, sp: 30},
-    weightkg: 0,
+    weightkg: 13,
     abilities: {0: 'Ripen'},
     baseSpecies: 'Appletun',
   },
@@ -7564,7 +7564,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Blastoise-Gmax': {
     types: ['Water'],
     bs: {hp: 79, at: 83, df: 100, sa: 85, sd: 105, sp: 78},
-    weightkg: 0,
+    weightkg: 85.5,
     abilities: {0: 'Torrent'},
     baseSpecies: 'Blastoise',
   },
@@ -7584,7 +7584,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Butterfree-Gmax': {
     types: ['Bug', 'Flying'],
     bs: {hp: 60, at: 45, df: 50, sa: 90, sd: 80, sp: 70},
-    weightkg: 0,
+    weightkg: 32,
     abilities: {0: 'Compound Eyes'},
     baseSpecies: 'Butterfree',
   },
@@ -7605,14 +7605,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Centiskorch-Gmax': {
     types: ['Fire', 'Bug'],
     bs: {hp: 100, at: 115, df: 65, sa: 90, sd: 90, sp: 65},
-    weightkg: 0,
+    weightkg: 120,
     abilities: {0: 'Flash Fire'},
     baseSpecies: 'Centiskorch',
   },
   'Charizard-Gmax': {
     types: ['Fire', 'Flying'],
     bs: {hp: 78, at: 84, df: 78, sa: 109, sd: 85, sp: 100},
-    weightkg: 0,
+    weightkg: 90.5,
     abilities: {0: 'Blaze'},
     baseSpecies: 'Charizard',
   },
@@ -7633,7 +7633,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Cinderace-Gmax': {
     types: ['Fire'],
     bs: {hp: 80, at: 116, df: 75, sa: 65, sd: 75, sp: 119},
-    weightkg: 0,
+    weightkg: 33,
     abilities: {0: 'Blaze'},
     baseSpecies: 'Cinderace',
   },
@@ -7654,7 +7654,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Coalossal-Gmax': {
     types: ['Rock', 'Fire'],
     bs: {hp: 110, at: 80, df: 120, sa: 80, sd: 90, sp: 30},
-    weightkg: 0,
+    weightkg: 310.5,
     abilities: {0: 'Steam Engine'},
     baseSpecies: 'Coalossal',
   },
@@ -7668,7 +7668,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Copperajah-Gmax': {
     types: ['Steel'],
     bs: {hp: 122, at: 130, df: 69, sa: 80, sd: 69, sp: 30},
-    weightkg: 0,
+    weightkg: 650,
     abilities: {0: 'Sheer Force'},
     baseSpecies: 'Copperajah',
   },
@@ -7690,7 +7690,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Corviknight-Gmax': {
     types: ['Flying', 'Steel'],
     bs: {hp: 98, at: 87, df: 105, sa: 53, sd: 85, sp: 67},
-    weightkg: 0,
+    weightkg: 75,
     abilities: {0: 'Pressure'},
     baseSpecies: 'Corviknight',
   },
@@ -7801,7 +7801,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Drednaw-Gmax': {
     types: ['Water', 'Rock'],
     bs: {hp: 90, at: 115, df: 90, sa: 48, sd: 68, sp: 74},
-    weightkg: 0,
+    weightkg: 115.5,
     abilities: {0: 'Strong Jaw'},
     baseSpecies: 'Drednaw',
   },
@@ -7835,14 +7835,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Duraludon-Gmax': {
     types: ['Steel', 'Dragon'],
     bs: {hp: 70, at: 95, df: 115, sa: 120, sd: 50, sp: 85},
-    weightkg: 0,
+    weightkg: 40,
     abilities: {0: 'Light Metal'},
     baseSpecies: 'Duraludon',
   },
   'Eevee-Gmax': {
     types: ['Normal'],
     bs: {hp: 55, at: 55, df: 50, sa: 45, sd: 65, sp: 55},
-    weightkg: 0,
+    weightkg: 6.5,
     abilities: {0: 'Run Away'},
     baseSpecies: 'Eevee',
   },
@@ -7907,7 +7907,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Flapple-Gmax': {
     types: ['Grass', 'Dragon'],
     bs: {hp: 70, at: 110, df: 80, sa: 95, sd: 60, sp: 70},
-    weightkg: 0,
+    weightkg: 1,
     abilities: {0: 'Ripen'},
     baseSpecies: 'Flapple',
   },
@@ -7920,14 +7920,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Garbodor-Gmax': {
     types: ['Poison'],
     bs: {hp: 80, at: 95, df: 82, sa: 60, sd: 82, sp: 75},
-    weightkg: 0,
+    weightkg: 107.3,
     abilities: {0: 'Stench'},
     baseSpecies: 'Garbodor',
   },
   'Gengar-Gmax': {
     types: ['Ghost', 'Poison'],
     bs: {hp: 60, at: 65, df: 60, sa: 130, sd: 75, sp: 110},
-    weightkg: 0,
+    weightkg: 40.5,
     abilities: {0: 'Cursed Body'},
     baseSpecies: 'Gengar',
   },
@@ -7960,7 +7960,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Grimmsnarl-Gmax': {
     types: ['Dark', 'Fairy'],
     bs: {hp: 95, at: 120, df: 65, sa: 95, sd: 75, sp: 60},
-    weightkg: 0,
+    weightkg: 61,
     abilities: {0: 'Prankster'},
     baseSpecies: 'Grimmsnarl',
   },
@@ -7988,7 +7988,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Hatterene-Gmax': {
     types: ['Psychic', 'Fairy'],
     bs: {hp: 57, at: 90, df: 95, sa: 136, sd: 103, sp: 29},
-    weightkg: 0,
+    weightkg: 5.1,
     abilities: {0: 'Healer'},
     baseSpecies: 'Hatterene',
   },
@@ -8030,14 +8030,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Inteleon-Gmax': {
     types: ['Water'],
     bs: {hp: 70, at: 85, df: 65, sa: 125, sd: 65, sp: 120},
-    weightkg: 0,
+    weightkg: 45.2,
     abilities: {0: 'Torrent'},
     baseSpecies: 'Inteleon',
   },
   'Kingler-Gmax': {
     types: ['Water'],
     bs: {hp: 55, at: 130, df: 115, sa: 50, sd: 50, sp: 75},
-    weightkg: 0,
+    weightkg: 60,
     abilities: {0: 'Hyper Cutter'},
     baseSpecies: 'Kingler',
   },
@@ -8051,7 +8051,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Lapras-Gmax': {
     types: ['Water', 'Ice'],
     bs: {hp: 130, at: 85, df: 80, sa: 85, sd: 95, sp: 60},
-    weightkg: 0,
+    weightkg: 220,
     abilities: {0: 'Water Absorb'},
     baseSpecies: 'Lapras',
   },
@@ -8075,7 +8075,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Machamp-Gmax': {
     types: ['Fighting'],
     bs: {hp: 90, at: 130, df: 80, sa: 65, sd: 85, sp: 55},
-    weightkg: 0,
+    weightkg: 130,
     abilities: {0: 'Guts'},
     baseSpecies: 'Machamp',
   },
@@ -8083,7 +8083,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   // 'Melmetal-Gmax': {
   //   types: ['Steel'],
   //   bs: {hp: 135, at: 143, df: 143, sa: 80, sd: 65, sp: 34},
-  //   weightkg: 0,
+  //   weightkg: 800,
   //   abilities: {0: 'Iron Fist'},
   //   baseSpecies: 'Melmetal',
   //   gender: 'N',
@@ -8099,7 +8099,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Meowth-Gmax': {
     types: ['Normal'],
     bs: {hp: 40, at: 45, df: 35, sa: 40, sd: 40, sp: 90},
-    weightkg: 0,
+    weightkg: 4.2,
     abilities: {0: 'Pickup'},
     baseSpecies: 'Meowth',
   },
@@ -8168,7 +8168,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Orbeetle-Gmax': {
     types: ['Bug', 'Psychic'],
     bs: {hp: 60, at: 45, df: 110, sa: 80, sd: 120, sp: 90},
-    weightkg: 0,
+    weightkg: 40.8,
     abilities: {0: 'Swarm'},
     baseSpecies: 'Orbeetle',
   },
@@ -8181,7 +8181,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Pikachu-Gmax': {
     types: ['Electric'],
     bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90},
-    weightkg: 0,
+    weightkg: 6,
     abilities: {0: 'Static'},
     baseSpecies: 'Pikachu',
   },
@@ -8246,7 +8246,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Rillaboom-Gmax': {
     types: ['Grass'],
     bs: {hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85},
-    weightkg: 0,
+    weightkg: 90,
     abilities: {0: 'Overgrow'},
     baseSpecies: 'Rillaboom',
   },
@@ -8280,7 +8280,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Sandaconda-Gmax': {
     types: ['Ground'],
     bs: {hp: 72, at: 107, df: 125, sa: 65, sd: 70, sp: 71},
-    weightkg: 0,
+    weightkg: 65.5,
     abilities: {0: 'Sand Spit'},
     baseSpecies: 'Sandaconda',
   },
@@ -8361,7 +8361,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Snorlax-Gmax': {
     types: ['Normal'],
     bs: {hp: 160, at: 110, df: 65, sa: 65, sd: 110, sp: 30},
-    weightkg: 0,
+    weightkg: 460,
     abilities: {0: 'Immunity'},
     baseSpecies: 'Snorlax',
   },
@@ -8415,7 +8415,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Toxtricity-Gmax': {
     types: ['Electric', 'Poison'],
     bs: {hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75},
-    weightkg: 0,
+    weightkg: 40,
     abilities: {0: 'Punk Rock'},
     baseSpecies: 'Toxtricity',
   },
@@ -8429,7 +8429,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Toxtricity-Low-Key-Gmax': {
     types: ['Electric', 'Poison'],
     bs: {hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75},
-    weightkg: 0,
+    weightkg: 40,
     abilities: {0: 'Punk Rock'},
     baseSpecies: 'Toxtricity',
   },
@@ -8457,14 +8457,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Urshifu-Gmax': {
     types: ['Fighting', 'Dark'],
     bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
-    weightkg: 0,
+    weightkg: 105,
     abilities: {0: 'Unseen Fist'},
     baseSpecies: 'Urshifu',
   },
   'Venusaur-Gmax': {
     types: ['Grass', 'Poison'],
     bs: {hp: 80, at: 82, df: 83, sa: 100, sd: 100, sp: 80},
-    weightkg: 0,
+    weightkg: 100,
     abilities: {0: 'Overgrow'},
     baseSpecies: 'Venusaur',
   },
