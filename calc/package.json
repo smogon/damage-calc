@@ -1,6 +1,6 @@
 {
   "name": "@smogon/calc",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "dist/production.min.js",
