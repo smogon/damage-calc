@@ -71,6 +71,7 @@ const FORMATS: {[format: string]: string} = {
   VGC18: 'vgc2018',
   'Battle Spot Singles': 'battlespotsingles',
   'Battle Spot Doubles': 'battlespotdoubles',
+  'Battle Stadium Singles': 'battlestadiumsingles',
   BH: 'balancedhackmons',
   CAP: 'cap',
   '1v1': '1v1',
