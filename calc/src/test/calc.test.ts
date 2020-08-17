@@ -118,6 +118,17 @@ describe('calc', () => {
       });
     });
 
+    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+      test(`Struggle vs. Ghost (gen ${gen})`, () => {
+        const result = calculate(Pokemon('Mew'), Pokemon('Gengar'), Move('Struggle'));
+        if (gen < 2) {
+          expect(result.range()[1]).toEqual(0);
+        } else {
+          expect(result.range()[1]).toBeGreaterThan(0);
+        }
+      });
+    });
+
     inGens(3, 8, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Weather Ball should change type depending on the weather (gen ${gen})`, () => {
         const weathers = [
