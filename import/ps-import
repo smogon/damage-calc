@@ -23,7 +23,7 @@ for (let gen = 1; gen <= 8; gen++) {
 		const id = val.id === 'aegislash' ? 'aegislashshield' : val.id;
 		let tier = val.tier;
 		if (tier === 'Illegal' && gen === 8 && TIERS[7][id] !== 'Illegal') {
-			switch (Dex.getId(TIERS[7][id])) {
+			switch (Dex.toID(TIERS[7][id])) {
 				case 'uubl': case 'uu':
 					tier = 'OU';
 					break;

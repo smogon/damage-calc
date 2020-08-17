@@ -118,24 +118,24 @@ export async function importSets(dir: string, randomDir?: string) {
         await importSetsForPokemon(pokemon, 7, setsByPokemon);
         sets = setsByPokemon[pokemon];
       }
-      if (!sets) continue;
+      if (sets) {
+        const sorted = Object.keys(sets);
+        const tier = TO_TIER[gen][toID(pokemon)];
+        const format = TO_FORMAT[tier] || tier;
+        if (format) {
+          sorted.sort((a: string, b: string) => {
+            const formatA = a.split('|')[0] === format;
+            const formatB = b.split('|')[0] === format;
+            if (formatA === formatB) return 0;
+            if (formatA) return -1;
+            return formatB ? 1 : 0;
+          });
+        }
 
-      const sorted = Object.keys(sets);
-      const tier = TO_TIER[gen][toID(pokemon)];
-      const format = TO_FORMAT[tier] || tier;
-      if (format) {
-        sorted.sort((a: string, b: string) => {
-          const formatA = a.split('|')[0] === format;
-          const formatB = b.split('|')[0] === format;
-          if (formatA === formatB) return 0;
-          if (formatA) return -1;
-          return formatB ? 1 : 0;
-        });
-      }
-
-      setsByPokemon[pokemon] = {};
-      for (const name of sorted) {
-        setsByPokemon[pokemon][name.slice(name.indexOf('|') + 1)] = sets[name];
+        setsByPokemon[pokemon] = {};
+        for (const name of sorted) {
+          setsByPokemon[pokemon][name.slice(name.indexOf('|') + 1)] = sets[name];
+        }
       }
 
       if (stats) {
