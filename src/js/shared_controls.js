@@ -367,10 +367,10 @@ $(".move-selector").change(function () {
 				}
 				if (gen < 3) {
 					var hpDV = calc.Stats.getHPDV({
-						atk: pokemon.ivs.atk,
-						def: pokemon.ivs.def,
-						spe: pokemon.ivs.spe,
-						spc: pokemon.ivs.spa
+						atk: pokeObj.find(".at .ivs").val(),
+						def: pokeObj.find(".df .ivs").val(),
+						spe: pokeObj.find(".sp .ivs").val(),
+						spc: pokeObj.find(".sa .ivs").val()
 					});
 					pokeObj.find(".hp .ivs").val(calc.Stats.DVToIV(hpDV));
 					pokeObj.find(".hp .dvs").val(hpDV);
