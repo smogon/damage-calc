@@ -49,9 +49,9 @@ class Bundler {
     }
   }
 
-  bundle(bundled, output = 'production.min.js') {
+  async bundle(bundled, output = 'production.min.js') {
     bundled = babel.transformSync(bundled, config).code;
-    bundled = terser.minify(bundled).code;
+    bundled = (await terser.minify(bundled)).code;
     fs.writeFileSync(path.join(this.built, output), bundled);
   }
 }

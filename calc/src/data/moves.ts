@@ -3440,7 +3440,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Electric',
     category: 'Special',
     zp: 140,
-    maxPower: 120,
+    maxPower: 140,
   },
   'Scale Shot': {
     bp: 25,
