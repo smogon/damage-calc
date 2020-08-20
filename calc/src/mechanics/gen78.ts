@@ -387,7 +387,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     break;
   case 'Rising Voltage':
-    basePower = isGrounded(defender, field) && field.hasTerrain('Electric') ? move.bp * 2 : move.bp * 1);
+    basePower = isGrounded(defender, field) && field.hasTerrain('Electric') ? move.bp * 2 : move.bp * 1;
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':
