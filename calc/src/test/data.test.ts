@@ -10,7 +10,7 @@ const pkmn = {Generations: new Generations(Dex)};
 const gens = [1, 2, 3, 4, 5, 6, 7, 8] as I.GenerationNum[];
 
 describe('Generations', () => {
-  it('abilities', () => {
+  test('abilities', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).abilities);
       const c = new Map<I.ID, I.Ability>();
@@ -25,7 +25,7 @@ describe('Generations', () => {
     }
   });
 
-  it('items', () => {
+  test('items', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).items);
       const c = new Map<I.ID, I.Item>();
@@ -40,7 +40,7 @@ describe('Generations', () => {
     }
   });
 
-  it('moves', () => {
+  test('moves', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).moves);
       const c = new Map<I.ID, I.Move>();
@@ -55,7 +55,7 @@ describe('Generations', () => {
     }
   });
 
-  it('species', () => {
+  test('species', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();
@@ -69,7 +69,7 @@ describe('Generations', () => {
     }
   });
 
-  it('types', () => {
+  test('types', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).types);
       const c = new Map<I.ID, I.Type>();
@@ -84,7 +84,7 @@ describe('Generations', () => {
     }
   });
 
-  it('natures', () => {
+  test('natures', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).natures);
       const c = new Map<I.ID, I.Nature>();
@@ -101,7 +101,7 @@ describe('Generations', () => {
 });
 
 describe('Adaptable', () => {
-  it('usage', () => {
+  test('usage', () => {
     const gen = pkmn.Generations.get(5);
     const result = calculate(
       gen,
