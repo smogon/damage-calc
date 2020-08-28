@@ -11,21 +11,21 @@ let bundled = `(() => {
 'use strict';
 const exports = {};
 `;
-bundled += bundler.read('util.js', 2, 1);
+bundled += bundler.read('util.js', 3, 1);
 const species = bundler.read('data/species.js').split('\n');
 bundled += species.slice(1, 39).join('\n'); // generator + iterator polyfill
 bundled += '\nvar e_1, _a, e_2, _b;\nvar util_1 = exports;\n';
-bundled += species.slice(42, -2).join('\n');
+bundled += species.slice(43, -2).join('\n');
 
-bundled += bundler.read('data/types.js', 41 , 1);
+bundled += bundler.read('data/types.js', 43 , 1);
 const natures = bundler.read('data/natures.js').split('\n');
 bundled += natures.slice(28, 44).join('\n'); // __read polyfill
-bundled += natures.slice(46, -2).join('\n');
-bundled += bundler.read('data/abilities.js', 42, 1);
-bundled += bundler.read('data/moves.js', 42, 1);
+bundled += natures.slice(47, -2).join('\n');
+bundled += bundler.read('data/abilities.js', 43, 1);
+bundled += bundler.read('data/moves.js', 43, 1);
 const items = bundler.read('data/items.js').split('\n');
 bundled += items.slice(44, 48).join('\n'); // spreadArray polyfill
-bundled += items.slice(62, -2).join('\n');
+bundled += items.slice(63, -2).join('\n');
 bundled += `
 var abilities_1 = exports;
 var items_1 = exports;
@@ -34,7 +34,7 @@ var species_1 = exports;
 var types_1 = exports;
 var natures_1 = exports;
 `;
-bundled += bundler.read('data/index.js', 8, 1);
+bundled += bundler.read('data/index.js', 9, 1);
 bundled += `
 // EXPORTS
 window.calc = Object.assign(window.calc || {}, {
@@ -55,29 +55,31 @@ bundled = `(() => {
   'use strict';
   const exports = {};
   `;
-bundled += bundler.read('util.js', 2, 1);
+bundled += bundler.read('util.js', 3, 1);
 bundled += '\nvar util_1 = exports;\n';
-bundled += bundler.read('stats.js', 3, 1);
+bundled += bundler.read('stats.js', 4, 1);
 bundled += '\nvar stats_1 = exports;\n';
 const pokemon = bundler.read('pokemon.js').split('\n');
 bundled += pokemon.slice(1, 12).join('\n'); // iterator polyfill
-bundled += pokemon.slice(15, -2).join('\n');
-bundled += bundler.read('field.js', 1, 1);
-bundled += bundler.read('move.js', 3, 1);
-bundled += bundler.read('items.js', 3, 1);
+bundled += pokemon.slice(16, -2).join('\n');
+const field = bundler.read('field.js').split('\n');
+bundled += field.slice(1, 17).join('\n'); // __read polyfill
+bundled += field.slice(19, -2).join('\n');
+bundled += bundler.read('move.js', 4, 1);
+bundled += bundler.read('items.js', 4, 1);
 const utils = bundler.read('mechanics/util.js').split('\n');
 bundled += utils.slice(28, 32).join('\n'); // spreadArray polyfill
-bundled += utils.slice(35, -2).join('\n');
-bundled += bundler.read('result.js', 23, 1);
+bundled += utils.slice(36, -2).join('\n');
+bundled += bundler.read('result.js', 24, 1);
 bundled += '\nvar result_1 = exports;\nvar util_2 = exports;\n';
-bundled += bundler.read('desc.js', 21, 1);
+bundled += bundler.read('desc.js', 22, 1);
 bundled += '\nvar desc_1 = exports;\nvar items_1 = exports;\n';
-bundled += bundler.read('mechanics/gen78.js', 6, 1);
-bundled += bundler.read('mechanics/gen56.js', 6, 1);
-bundled += bundler.read('mechanics/gen4.js', 25, 1);
+bundled += bundler.read('mechanics/gen78.js', 7, 1);
+bundled += bundler.read('mechanics/gen56.js', 7, 1);
+bundled += bundler.read('mechanics/gen4.js', 26, 1);
 // // These don't require 'util', so 'mecchanics/util' gets the util_1 name.
-bundled += bundler.read('mechanics/gen3.js', 25, 1).replace(/util_1/g, 'util_2');
-bundled += bundler.read('mechanics/gen12.js', 25, 1).replace(/util_1/g, 'util_2');
+bundled += bundler.read('mechanics/gen3.js', 26, 1).replace(/util_1/g, 'util_2');
+bundled += bundler.read('mechanics/gen12.js', 26, 1).replace(/util_1/g, 'util_2');
 bundled += `
 var field_1 = exports;
 var gen12_1 = exports;
@@ -86,7 +88,7 @@ var gen4_1 = exports;
 var gen56_1 = exports;
 var gen78_1 = exports;
 `;
-bundled += bundler.read('calc.js', 8, 1);
+bundled += bundler.read('calc.js', 9, 1);
 
 bundled += `
 // EXPORTS

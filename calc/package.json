@@ -1,6 +1,6 @@
 {
   "name": "@smogon/calc",
-  "version": "0.4.5",
+  "version": "0.5.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "dist/production.min.js",
@@ -12,19 +12,19 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.0.27"
+    "@types/node": "^14.6.1"
   },
   "devDependencies": {
-    "@pkmn/eslint-config": "^0.4.3",
-    "@pkmn/dex": "^0.1.1",
+    "@pkmn/eslint-config": "^0.5.0",
+    "@pkmn/dex": "^0.1.3",
     "@types/jest": "^26.0.10",
-    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
     "eslint": "^7.7.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.20.0",
-    "jest": "^26.4.0",
-    "ts-jest": "^26.2.0",
-    "typescript": "<3.9"
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
   },
   "scripts": {
     "lint": "eslint --cache src --ext ts",
