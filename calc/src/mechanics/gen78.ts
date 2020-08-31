@@ -875,9 +875,8 @@ export function calculateSMSS(
     dfMods.push(0x1800);
     desc.defenderAbility = defender.ability;
     desc.weather = field.weather;
-    // TODO: where is Dauntless shield applied in the modifier order?
   } else if (
-    defender.hasAbility('Grass Pelt', 'Dauntless Shield') &&
+    defender.hasAbility('Grass Pelt') &&
     field.hasTerrain('Grassy') &&
     hitsPhysical
   ) {
