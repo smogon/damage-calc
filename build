@@ -17,7 +17,7 @@ function makeCachebuster(template, output) {
 		let hash = Math.random(); // just in case creating the hash fails
 		try {
 			const filename = c.replace('//play.pokemonshowdown.com/', '../../play.pokemonshowdown.com/');
-			const fstr = fs.readFileSync(path.resolve(rootDir, 'dist', filename), {encoding: 'utf8'});
+			const fstr = fs.readFileSync(path.resolve(rootDir, 'dist', filename), 'utf8');
 			hash = crypto.createHash('md5').update(fstr).digest('hex').substr(0, 8);
 		} catch (e) {}
 
@@ -35,7 +35,6 @@ function cpdir(src, dest) {
 	} catch(e) {
 		if (e.code != 'EEXIST') throw e;
 	}
-	const copies = [];
 	for (const file of fs.readdirSync(src)) {
 		var current = fs.lstatSync(path.join(src, file));
 		if (current.isDirectory()) {
@@ -43,28 +42,21 @@ function cpdir(src, dest) {
 		} else if (current.isSymbolicLink()) {
 			var symlink = fs.readlinkSync(path.join(src, file));
 			fs.symlinkSync(symlink, path.join(dest, file));
+		} else if (file.endsWith('.js')) {
+			const contents = fs.readFileSync(path.join(src, file), 'utf8').replace(/^exports.* = void 0;$/gm, '');
+			fs.writeFileSync(path.join(dest, file), contents);
 		} else {
-			const from = path.join(src, file);
-			const to = path.join(dest, file);
-			const writeableStream = fs.createWriteStream(to);
-			fs.createReadStream(from).pipe(writeableStream);
-			copies.push(new Promise(function (resolve, reject) {
-				writeableStream.on('error', reject);
-				writeableStream.on('finish', resolve);
-			}));
+			fs.copyFileSync(path.join(src, file),path.join(dest, file));
 		}
 	}
-	return Promise.all(copies);
 }
 
 if (process.argv[2] !== 'view') {
 	require('child_process').execSync('npm --prefix calc/ run compile', {stdio: 'inherit'});
 }
 
-cpdir('src', 'dist').then(function () {
-	cpdir('calc/dist', 'dist/calc').then(function () {
-		makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
-		makeCachebuster('dist/index.template.html', 'dist/index.html');
-		makeCachebuster('dist/randoms.template.html', 'dist/randoms.html');
-	});
-});
+cpdir('src', 'dist');
+cpdir('calc/dist', 'dist/calc');
+makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
+makeCachebuster('dist/index.template.html', 'dist/index.html');
+makeCachebuster('dist/randoms.template.html', 'dist/randoms.html');
