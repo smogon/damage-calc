@@ -459,7 +459,7 @@
       "Zeraora": 80,
       "Melmetal": 76,
       "Rillaboom": 80,
-      "Cinderace": 80,
+      "Cinderace": 76,
       "Inteleon": 84,
       "Greedent": 88,
       "Corviknight": 80,
@@ -509,8 +509,8 @@
       "Dragapult": 80,
       "Zacian": 72,
       "Zacian-Crowned": 72,
-      "Zamazenta": 72,
-      "Zamazenta-Crowned": 72,
+      "Zamazenta": 74,
+      "Zamazenta-Crowned": 74,
       "Eternatus": 72,
       "Gurdurr": 86,
       "Poliwrath": 84,
@@ -592,8 +592,8 @@
       "Lycanroc-Dusk": 82,
       "Comfey": 84,
       "Palossand": 86,
-      "Magearna": 80,
-      "Magearna-Original": 80,
+      "Magearna": 76,
+      "Magearna-Original": 76,
       "Urshifu": 80,
       "Urshifu-Rapid-Strike": 80,
       "Urshifu-Gmax": 80,
@@ -608,7 +608,8 @@
       "Naganadel": 76,
       "Stakataka": 82,
       "Blacephalon": 80,
-      "Zarude": 80
+      "Zarude": 80,
+      "Rillaboom-Gmax": 80
     },
     "default": 80
   }

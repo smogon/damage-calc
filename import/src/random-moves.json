@@ -19575,7 +19575,7 @@
       "Nasty Plot",
       "Scorching Sands",
       "Solar Beam",
-      "Substitute"
+      "Toxic"
     ],
     "ninetalesalola": [
       "Aurora Veil",
@@ -19657,7 +19657,6 @@
       "Focus Blast",
       "Nasty Plot",
       "Psychic",
-      "Psyshock",
       "Shadow Ball"
     ],
     "machamp": [
@@ -19931,12 +19930,12 @@
       "Swords Dance"
     ],
     "aerodactyl": [
-      "Dragon Dance",
+      "Aqua Tail",
+      "Dual Wingbeat",
       "Earthquake",
-      "Psychic Fangs",
+      "Hone Claws",
       "Roost",
-      "Stone Edge",
-      "Taunt"
+      "Stone Edge"
     ],
     "snorlax": [
       "Darkest Lariat",
@@ -20484,12 +20483,11 @@
       "Swords Dance"
     ],
     "milotic": [
-      "Dragon Tail",
+      "Haze",
       "Ice Beam",
       "Recover",
-      "Rest",
       "Scald",
-      "Sleep Talk"
+      "Toxic"
     ],
     "absol": [
       "Close Combat",
@@ -20852,7 +20850,7 @@
     "froslass": [
       "Destiny Bond",
       "Ice Beam",
-      "Shadow Ball",
+      "Poltergeist",
       "Spikes",
       "Taunt",
       "Will-O-Wisp"
@@ -21199,10 +21197,10 @@
       "Superpower"
     ],
     "archeops": [
+      "Dual Wingbeat",
       "Earthquake",
-      "Stealth Rock",
+      "Roost",
       "Stone Edge",
-      "Taunt",
       "U-turn"
     ],
     "garbodorgmax": [
@@ -21250,9 +21248,8 @@
       "Freeze-Dry"
     ],
     "emolga": [
-      "Air Slash",
       "Encore",
-      "Knock Off",
+      "Energy Ball",
       "Roost",
       "Thunderbolt",
       "Toxic",
@@ -21681,7 +21678,6 @@
       "Focus Blast",
       "Grass Knot",
       "Hyper Voice",
-      "Surf",
       "Thunderbolt",
       "Volt Switch"
     ],
@@ -22371,13 +22367,18 @@
       "Thunder Punch"
     ],
     "rillaboom": [
+      "Grassy Glide",
+      "High Horsepower",
+      "Knock Off",
+      "U-turn",
+      "Wood Hammer"
+    ],
+    "rillaboomgmax": [
       "Acrobatics",
       "Grassy Glide",
       "High Horsepower",
       "Knock Off",
-      "Swords Dance",
-      "U-turn",
-      "Wood Hammer"
+      "Swords Dance"
     ],
     "cinderace": [
       "Court Change",
