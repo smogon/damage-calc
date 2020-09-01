@@ -7,11 +7,11 @@
     "calc": "file:calc"
   },
   "devDependencies": {
-    "eslint": "^7.7.0",
+    "eslint": "^7.8.1",
     "subpkg": "^3.0.3"
   },
   "optionalDependencies": {
-    "@babel/core": "^7.11.4",
+    "@babel/core": "^7.11.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-proposal-optional-catch-binding": "^7.10.4",
@@ -30,7 +30,7 @@
     "@babel/plugin-transform-spread": "^7.11.0",
     "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/plugin-transform-typescript": "^7.11.0",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
     "terser": "^5.2.1"
   },
   "scripts": {
