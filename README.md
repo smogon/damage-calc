@@ -175,7 +175,6 @@ This project was originally created by Honko and is primarly maintained by Austi
 - The Gen 7 update was done by Austin.
 - The Gen 8 update was done by Austin.
 - Some CSS styling was contributed by Zarel to match the Pokémon Showdown! theme.
-- The calculator was rewritten in TypeScript, modularized and corrected by pre.
 
 A number of other contributors have added features or contributed bug fixes, please see the
 [full list of contributors](https://github.com/smogon/damage-cDalc/graphs/contributors).

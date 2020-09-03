@@ -7,7 +7,6 @@
   "description": "Pokémon battle calculator",
   "repository": "github:smogon/damage-calc",
   "contributors": [
-    "Kirk Scheibelhut <pre@smogon.com>",
     "Austin Couturier <austincouturier@icloud.com>"
   ],
   "license": "MIT",
