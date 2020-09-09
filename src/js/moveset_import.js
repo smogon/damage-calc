@@ -15,6 +15,7 @@ function ExportPokemon(pokeInfo) {
 	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
+	finalText += pokemon.isGigantamaxed ? "Gigantamax: Yes\n" : "";
 	if (gen > 2) {
 		finalText += "EVs: ";
 		var EVs_Array = [];
@@ -298,6 +299,9 @@ function checkExeptions(poke) {
 	case 'Florges-Yellow':
 		poke = "Florges";
 		break;
+	}
+	if (poke.endsWith('-Gmax')) {
+		return poke.slice(0, -5);
 	}
 	return poke;
 

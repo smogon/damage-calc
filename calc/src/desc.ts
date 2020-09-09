@@ -37,7 +37,7 @@ export interface RawDesc {
   rivalry?: 'buffed' | 'nerfed';
   terrain?: Terrain;
   weather?: Weather;
-  isDefenderDynamaxed?: boolean;
+  isDefenderDynamaxed?: 'gmax' | boolean;
 }
 
 export function display(
@@ -858,7 +858,7 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += 'protected ';
   }
   if (description.isDefenderDynamaxed) {
-    output += 'Dynamax ';
+    output += description.isDefenderDynamaxed === 'gmax' ? 'Gigantamax ' : 'Dynamax ';
   }
   output += description.defenderName;
   if (description.weather && description.terrain) {

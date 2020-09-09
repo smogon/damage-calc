@@ -115,7 +115,7 @@ describe('Pokemon', () => {
 
   test('Gigantamx weights', () => {
     expect(new Pokemon(8, 'Venusaur-Gmax').weightkg).toBe(100);
-    expect(new Pokemon(8, 'Venusaur-Gmax', {isDynamaxed: true}).weightkg).toBe(0);
+    expect(new Pokemon(8, 'Venusaur', {isDynamaxed: 'gmax'}).weightkg).toBe(0);
     expect(new Pokemon(8, 'Venusaur-Gmax', {overrides: {weightkg: 50}}).weightkg).toBe(50);
   });
 });
