@@ -19,7 +19,7 @@ export class Pokemon implements State.Pokemon {
   gender?: I.GenderName;
   ability?: I.AbilityName;
   abilityOn?: boolean;
-  isDynamaxed?: boolean;
+  isDynamaxed?: 'gmax' | boolean;
   isSaltCure?: boolean;
   alliesFainted?: number;
   item?: I.ItemName;
