@@ -379,7 +379,8 @@ export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveC
 }
 
 export function getWeightFactor(pokemon: Pokemon) {
-  return pokemon.hasAbility('Heavy Metal') ? 2 : pokemon.hasAbility('Light Metal') ? 0.5 : 1;
+  return pokemon.hasAbility('Heavy Metal') ? 2
+  : (pokemon.hasAbility('Light Metal') || pokemon.hasItem('Float Stone')) ? 0.5 : 1;
 }
 
 export function countBoosts(gen: Generation, boosts: StatsTable) {
