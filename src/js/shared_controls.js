@@ -753,11 +753,14 @@ function createPokemon(pokeInfo) {
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		var isGigantamaxed = isDynamaxed && pokeInfo.find(".gmax").prop("checked");
 		pokeInfo.isDynamaxed = isDynamaxed;
+		pokeInfo.isGigantamaxed = isGigantamaxed;
+		if (pokeInfo.isGigantamaxed) pokeInfo.isDynamaxed = true;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
-		if (isDynamaxed) curHP = Math.floor(curHP / 2);
+		if (isDynamaxed || isGigantamaxed) curHP = Math.floor(curHP / 2);
 		var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
@@ -768,16 +771,16 @@ function createPokemon(pokeInfo) {
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
-			isDynamaxed: isDynamaxed,
+			isDynamaxed: isGigantamaxed ? 'gmax' : !!isDynamaxed,
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
-				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed)
+				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed, isGigantamaxed),
+				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed, isGigantamaxed),
+				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed, isGigantamaxed),
+				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed, isGigantamaxed)
 			],
 			overrides: {
 				baseStats: baseStats,
@@ -793,7 +796,7 @@ function getGender(gender) {
 	return 'F';
 }
 
-function getMoveDetails(moveInfo, species, ability, item, useMax) {
+function getMoveDetails(moveInfo, species, ability, item, useMax, isGmax) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
@@ -806,8 +809,8 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 	};
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
-		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits,
-		timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax
+		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits, timesUsed: timesUsed,
+		timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax, isGmax: isGmax
 	});
 }
 
@@ -893,7 +896,7 @@ function calcStat(poke, statName) {
 	}
 	// Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
 	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
-	if (gen > 7 && statName === "hp" && poke.isDynamaxed && total !== 1) {
+	if (gen > 7 && statName === "hp" && (poke.isDynamaxed || poke.isGigantamaxed) && total !== 1) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);

@@ -228,8 +228,7 @@ function importRandomOptionsForPokemon(
     // Otherwise it should be 85, and any other value is due to stupid rounding from usage stats
   }
 
-  const f = pokemon.endsWith('-Gmax') ? toForme(pokemon.slice(0, -5)) : pokemon;
-  const tier = TO_TIER[gen][toID(f)];
+  const tier = TO_TIER[gen][toID(pokemon)];
   const r = RANDOM_LEVELS[gen];
 
   const generation = calc.Generations.get(gen);
@@ -277,10 +276,8 @@ const FORMES: {[name: string]: string} = {
   'Keldeo-Resolute': 'Keldeo',
 };
 
-// TODO handle Gmax
 function toForme(pokemon: string) {
   if (pokemon.endsWith('-Totem')) return pokemon.slice(0, -6);
-  if (pokemon.endsWith('-Gmax')) return pokemon.slice(0, -5);
   return FORMES[pokemon] || pokemon;
 }
 

@@ -19,7 +19,7 @@ export class Pokemon implements State.Pokemon {
   gender?: I.GenderName;
   ability?: I.AbilityName;
   abilityOn?: boolean;
-  isDynamaxed?: boolean;
+  isDynamaxed?: 'gmax' | boolean;
   item?: I.ItemName;
 
   nature: I.NatureName;
@@ -52,11 +52,6 @@ export class Pokemon implements State.Pokemon {
     this.types = this.species.types;
     this.isDynamaxed = !!options.isDynamaxed;
     this.weightkg = this.species.weightkg;
-    // Gigantamax 'forms' inherit weight from their base species when not dynamaxed
-    // TODO: clean this up with proper Gigantamax support
-    if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
-      this.weightkg = gen.species.get(toID(this.species.baseSpecies))!.weightkg;
-    }
 
     this.level = options.level || 100;
     this.gender = options.gender || this.species.gender || 'M';

@@ -6,7 +6,7 @@ export namespace State {
     level?: number;
     ability?: I.AbilityName;
     abilityOn?: boolean;
-    isDynamaxed?: boolean;
+    isDynamaxed?: 'gmax' | boolean;
     item?: I.ItemName;
     gender?: I.GenderName;
     nature?: I.NatureName;
@@ -24,6 +24,7 @@ export namespace State {
     name: I.MoveName;
     useZ?: boolean;
     useMax?: boolean;
+    isGmax?: boolean;
     isCrit?: boolean;
     hits?: number;
     timesUsed?: number;
