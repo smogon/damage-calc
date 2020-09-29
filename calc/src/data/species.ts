@@ -6393,7 +6393,7 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Equilibra: {
     types: ['Steel', 'Ground'],
-    bs: {hp: 102, at: 50, df: 96, sa: 121, sd: 118, sp: 60},
+    bs: {hp: 102, at: 50, df: 96, sa: 133, sd: 118, sp: 60},
     weightkg: 51.3,
     gender: 'N',
     abilities: {0: 'Levitate'},
@@ -7468,6 +7468,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Darumaka: {otherFormes: ['Darumaka-Galar']},
   Eevee: {otherFormes: ['Eevee-Gmax']},
+  Equilibra: {bs: {sa: 121}},
   'Farfetch\u2019d': {otherFormes: ['Farfetch\u2019d-Galar']},
   Garbodor: {otherFormes: ['Garbodor-Gmax']},
   Gengar: {otherFormes: ['Gengar-Gmax', 'Gengar-Mega']},
