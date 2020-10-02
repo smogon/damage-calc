@@ -32,7 +32,7 @@
     "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/plugin-transform-typescript": "^7.11.0",
     "@babel/preset-env": "^7.11.5",
-    "terser": "^5.3.3"
+    "terser": "^5.3.4"
   },
   "scripts": {
     "lint": "subpkg run lint && eslint --cache src --ext js",
