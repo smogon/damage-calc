@@ -21086,8 +21086,8 @@
     "scolipede": [
       "Earthquake",
       "Megahorn",
+      "Poison Jab",
       "Protect",
-      "Rock Slide",
       "Spikes",
       "Swords Dance",
       "Toxic Spikes"
@@ -21993,7 +21993,7 @@
     ],
     "palossand": [
       "Earth Power",
-      "Protect",
+      "Scorching Sands",
       "Shadow Ball",
       "Shore Up",
       "Stealth Rock",
@@ -22396,6 +22396,12 @@
       "Scald",
       "U-turn"
     ],
+    "inteleongmax": [
+      "Air Slash",
+      "Focus Energy",
+      "Ice Beam",
+      "Surf"
+    ],
     "greedent": [
       "Body Slam",
       "Earthquake",
@@ -22766,6 +22772,7 @@
     "urshifu": [
       "Close Combat",
       "Iron Head",
+      "Sucker Punch",
       "U-turn",
       "Wicked Blow"
     ],
