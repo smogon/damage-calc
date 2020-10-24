@@ -7564,9 +7564,10 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Articuno-Galar': {
     types: ['Psychic', 'Flying'],
-    bs: {hp: 99, at: 85, df: 85, sa: 125, sd: 100, sp: 95},
+    bs: {hp: 90, at: 85, df: 85, sa: 125, sd: 100, sp: 95},
     weightkg: 50.9,
     abilities: {0: 'Competitive'},
+    gender: 'N',
     baseSpecies: 'Articuno',
   },
   Astrolotl: {
@@ -7613,6 +7614,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 80, df: 80, sa: 80, sd: 80, sp: 80},
     weightkg: 7.7,
     abilities: {0: 'Unnerve'},
+    gender: 'N',
     otherFormes: ['Calyrex-Ice', 'Calyrex-Shadow'],
   },
   'Calyrex-Ice': {
@@ -7620,6 +7622,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 165, df: 150, sa: 85, sd: 130, sp: 50},
     weightkg: 809.1,
     abilities: {0: 'As One (Glastrier)'},
+    gender: 'N',
     baseSpecies: 'Calyrex',
   },
   'Calyrex-Shadow': {
@@ -7627,6 +7630,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 85, df: 80, sa: 165, sd: 100, sp: 150},
     weightkg: 53.6,
     abilities: {0: 'As One (Spectrier)'},
+    gender: 'N',
     baseSpecies: 'Calyrex',
   },
   Carkol: {
@@ -7977,6 +7981,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 145, df: 130, sa: 65, sd: 110, sp: 30},
     weightkg: 800,
     abilities: {0: 'Chilling Neigh'},
+    gender: 'N',
   },
   Gossifleur: {
     types: ['Grass'],
@@ -8168,6 +8173,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 90, at: 85, df: 90, sa: 100, sd: 125, sp: 90},
     weightkg: 66,
     abilities: {0: 'Berserk'},
+    gender: 'N',
     baseSpecies: 'Moltres',
   },
   Morgrem: {
@@ -8302,12 +8308,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 200, at: 100, df: 50, sa: 100, sd: 50, sp: 80},
     weightkg: 200,
     abilities: {0: 'Dragon\'s Maw'},
+    gender: 'N',
   },
   Regieleki: {
     types: ['Electric'],
     bs: {hp: 80, at: 100, df: 50, sa: 100, sd: 50, sp: 200},
     weightkg: 145,
     abilities: {0: 'Transistor'},
+    gender: 'N',
   },
   Rillaboom: {
     types: ['Grass'],
@@ -8464,6 +8472,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 65, df: 60, sa: 145, sd: 80, sp: 130},
     weightkg: 44.5,
     abilities: {0: 'Grim Neigh'},
+    gender: 'N',
   },
   Stonjourner: {
     types: ['Rock'],
@@ -8625,8 +8634,9 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Zapdos-Galar': {
     types: ['Fighting', 'Flying'],
     bs: {hp: 90, at: 125, df: 90, sa: 85, sd: 90, sp: 100},
-    weightkg: 66,
+    weightkg: 58.2,
     abilities: {0: 'Defiant'},
+    gender: 'N',
     baseSpecies: 'Zapdos',
   },
   Zarude: {

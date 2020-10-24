@@ -301,7 +301,7 @@ class Specie implements I.Specie {
     this.kind = 'Species';
     this.id = (species.id === 'aegislash' ? 'aegislashshield' : species.id) as I.ID;
     this.name = (species.name === 'Aegislash' ? 'Aegislash-Shield' : species.name) as I.SpeciesName;
-    this.types = species.types as [I.TypeName] | [I.TypeName, I.TypeName];
+    this.types = species.types;
     this.baseStats = species.baseStats;
     this.weightkg = species.weightkg;
 
