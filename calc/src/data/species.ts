@@ -8413,14 +8413,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Poison', 'Psychic'],
     bs: {hp: 95, at: 100, df: 95, sa: 100, sd: 70, sp: 30},
     weightkg: 70.5,
-    abilities: {0: 'Regenerator'},
+    abilities: {0: 'Quick Draw'},
     baseSpecies: 'Slowbro',
   },
   'Slowking-Galar': {
     types: ['Poison', 'Psychic'],
     bs: {hp: 95, at: 65, df: 80, sa: 110, sd: 110, sp: 30},
     weightkg: 79.5,
-    abilities: {0: 'Regenerator'},
+    abilities: {0: 'Curious Medicine'},
     baseSpecies: 'Slowking',
   },
   'Slowpoke-Galar': {
@@ -8428,7 +8428,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 90, at: 65, df: 65, sa: 40, sd: 40, sp: 15},
     weightkg: 36,
     nfe: true,
-    abilities: {0: 'Regenerator'},
+    abilities: {0: 'Gluttony'},
     baseSpecies: 'Slowpoke',
   },
   Solotl: {
