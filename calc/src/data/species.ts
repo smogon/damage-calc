@@ -8297,6 +8297,18 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Run Away'},
     baseSpecies: 'Rapidash',
   },
+  Regidrago: {
+    types: ['Dragon'],
+    bs: {hp: 200, at: 100, df: 50, sa: 100, sd: 50, sp: 80},
+    weightkg: 200,
+    abilities: {0: 'Dragon\'s Maw'},
+  },
+  Regieleki: {
+    types: ['Electric'],
+    bs: {hp: 80, at: 100, df: 50, sa: 100, sd: 50, sp: 200},
+    weightkg: 145,
+    abilities: {0: 'Transistor'},
+  },
   Rillaboom: {
     types: ['Grass'],
     bs: {hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85},
