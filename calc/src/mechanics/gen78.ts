@@ -462,6 +462,7 @@ export function calculateSMSS(
     desc.moveBP = basePower;
     desc.attackerItem = attacker.item;
     break;
+  case 'Dragon Energy':
   case 'Eruption':
   case 'Water Spout':
     basePower = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
@@ -784,11 +785,14 @@ export function calculateSMSS(
   } else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
     atMods.push(0x1800);
     desc.attackerAbility = 'Flash Fire';
-  } else if (attacker.hasAbility('Steelworker') && move.hasType('Steel')) {
+  } else if (
+    (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
+    (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
+    (attacker.hasAbility('Transistor') && move.hasType('Electric'))
+  ) {
     atMods.push(0x1800);
     desc.attackerAbility = attacker.ability;
-  } else if (
-    attacker.hasAbility('Stakeout') && attacker.abilityOn) {
+  } else if (attacker.hasAbility('Stakeout') && attacker.abilityOn) {
     atMods.push(0x2000);
     desc.attackerAbility = attacker.ability;
   } else if (
@@ -1061,7 +1065,8 @@ export function calculateSMSS(
   }
 
   if (move.hasType(getBerryResistType(defender.item)) &&
-      (typeEffectiveness > 1 || move.hasType('Normal')) && !attacker.hasAbility('Unnerve')) {
+      (typeEffectiveness > 1 || move.hasType('Normal')) &&
+      !attacker.hasAbility('Unnerve', 'As One (Glastrier)', 'As One (Spectrier)')) {
     finalMods.push(0x800);
     desc.defenderItem = defender.item;
   }
