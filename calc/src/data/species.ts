@@ -7459,6 +7459,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Aegislash-Blade': {bs: {at: 140, sa: 140}},
   'Aegislash-Both': {bs: {at: 140, df: 140, sa: 140, sd: 140}},
   'Aegislash-Shield': {bs: {df: 140, sd: 140}},
+  Articuno: {otherFormes: ['Articuno-Galar']},
   Blastoise: {otherFormes: ['Blastoise-Gmax', 'Blastoise-Mega']},
   Butterfree: {otherFormes: ['Butterfree-Gmax']},
   Charizard: {otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y']},
@@ -7478,6 +7479,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Machamp: {otherFormes: ['Machamp-Gmax']},
   // Melmetal: {otherFormes: ['Melmetal-Gmax']},
   Meowth: {otherFormes: ['Meowth-Alola', 'Meowth-Galar', 'Meowth-Gmax']},
+  Moltres: {otherFormes: ['Moltres-Galar']},
   'Mr. Mime': {otherFormes: ['Mr. Mime-Galar']},
   Pikachu: {
     otherFormes: [
@@ -7495,12 +7497,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Ponyta: {otherFormes: ['Ponyta-Galar']},
   Rapidash: {otherFormes: ['Rapidash-Galar']},
   Slowbro: {otherFormes: ['Slowbro-Galar', 'Slowbro-Mega']},
+  Slowking: {otherFormes: ['Slowking-Galar']},
   Slowpoke: {otherFormes: ['Slowpoke-Galar']},
   Snorlax: {otherFormes: ['Snorlax-Gmax']},
   Stunfisk: {otherFormes: ['Stunfisk-Galar']},
   Venusaur: {otherFormes: ['Venusaur-Gmax', 'Venusaur-Mega']},
   Weezing: {otherFormes: ['Weezing-Galar']},
   Yamask: {otherFormes: ['Yamask-Galar']},
+  Zapdos: {otherFormes: ['Zapdos-Galar']},
   Zigzagoon: {otherFormes: ['Zigzagoon-Galar']},
   Alcremie: {
     types: ['Fairy'],
@@ -7558,6 +7562,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Swift Swim'},
     nfe: true,
   },
+  'Articuno-Galar': {
+    types: ['Psychic', 'Flying'],
+    bs: {hp: 99, at: 85, df: 85, sa: 125, sd: 100, sp: 95},
+    weightkg: 50.9,
+    abilities: {0: 'Competitive'},
+    baseSpecies: 'Articuno',
+  },
   Astrolotl: {
     types: ['Fire', 'Dragon'],
     bs: {hp: 108, at: 108, df: 74, sa: 92, sd: 64, sp: 114},
@@ -7596,6 +7607,27 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0,
     abilities: {0: 'Compound Eyes'},
     baseSpecies: 'Butterfree',
+  },
+  Calyrex: {
+    types: ['Psychic', 'Grass'],
+    bs: {hp: 100, at: 80, df: 80, sa: 80, sd: 80, sp: 80},
+    weightkg: 7.7,
+    abilities: {0: 'Unnerve'},
+    otherFormes: ['Calyrex-Ice', 'Calyrex-Shadow'],
+  },
+  'Calyrex-Ice': {
+    types: ['Psychic', 'Ice'],
+    bs: {hp: 100, at: 165, df: 150, sa: 85, sd: 130, sp: 50},
+    weightkg: 809.1,
+    abilities: {0: 'As One (Glastrier)'},
+    baseSpecies: 'Calyrex',
+  },
+  'Calyrex-Shadow': {
+    types: ['Psychic', 'Ghost'],
+    bs: {hp: 100, at: 85, df: 80, sa: 165, sd: 100, sp: 150},
+    weightkg: 53.6,
+    abilities: {0: 'As One (Spectrier)'},
+    baseSpecies: 'Calyrex',
   },
   Carkol: {
     types: ['Rock', 'Fire'],
@@ -7940,6 +7972,12 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Cursed Body'},
     baseSpecies: 'Gengar',
   },
+  Glastrier: {
+    types: ['Ice'],
+    bs: {hp: 100, at: 145, df: 130, sa: 65, sd: 110, sp: 30},
+    weightkg: 800,
+    abilities: {0: 'Chilling Neigh'},
+  },
   Gossifleur: {
     types: ['Grass'],
     bs: {hp: 40, at: 40, df: 60, sa: 40, sd: 60, sp: 10},
@@ -8112,12 +8150,25 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Pickup'},
     baseSpecies: 'Meowth',
   },
+  Miasmaw: {
+    types: ['Bug', 'Dragon'],
+    bs: {hp: 85, at: 135, df: 60, sa: 115, sd: 85, sp: 89},
+    weightkg: 57,
+    abilities: {0: 'Neutralizing Gas'},
+  },
   Milcery: {
     types: ['Fairy'],
     bs: {hp: 45, at: 40, df: 40, sa: 50, sd: 61, sp: 34},
     weightkg: 0.3,
     abilities: {0: 'Sweet Veil'},
     nfe: true,
+  },
+  'Moltres-Galar': {
+    types: ['Dark', 'Flying'],
+    bs: {hp: 90, at: 85, df: 90, sa: 100, sd: 125, sp: 90},
+    weightkg: 66,
+    abilities: {0: 'Berserk'},
+    baseSpecies: 'Moltres',
   },
   Morgrem: {
     types: ['Dark', 'Fairy'],
@@ -8350,15 +8401,22 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Poison', 'Psychic'],
     bs: {hp: 95, at: 100, df: 95, sa: 100, sd: 70, sp: 30},
     weightkg: 70.5,
-    abilities: {0: 'Quick Draw'},
+    abilities: {0: 'Regenerator'},
     baseSpecies: 'Slowbro',
+  },
+  'Slowking-Galar': {
+    types: ['Poison', 'Psychic'],
+    bs: {hp: 95, at: 65, df: 80, sa: 110, sd: 110, sp: 30},
+    weightkg: 79.5,
+    abilities: {0: 'Regenerator'},
+    baseSpecies: 'Slowking',
   },
   'Slowpoke-Galar': {
     types: ['Psychic'],
     bs: {hp: 90, at: 65, df: 65, sa: 40, sd: 40, sp: 15},
     weightkg: 36,
     nfe: true,
-    abilities: {0: 'Gluttony'},
+    abilities: {0: 'Regenerator'},
     baseSpecies: 'Slowpoke',
   },
   Solotl: {
@@ -8388,6 +8446,12 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 4,
     abilities: {0: 'Torrent'},
     nfe: true,
+  },
+  Spectrier: {
+    types: ['Ghost'],
+    bs: {hp: 100, at: 65, df: 60, sa: 145, sd: 80, sp: 130},
+    weightkg: 44.5,
+    abilities: {0: 'Grim Neigh'},
   },
   Stonjourner: {
     types: ['Rock'],
@@ -8545,6 +8609,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Dauntless Shield'},
     baseSpecies: 'Zamazenta',
     gender: 'N',
+  },
+  'Zapdos-Galar': {
+    types: ['Fighting', 'Flying'],
+    bs: {hp: 90, at: 125, df: 90, sa: 85, sd: 90, sp: 100},
+    weightkg: 66,
+    abilities: {0: 'Defiant'},
+    baseSpecies: 'Zapdos',
   },
   Zarude: {
     types: ['Dark', 'Grass'],
