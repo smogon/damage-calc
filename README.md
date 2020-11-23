@@ -111,10 +111,10 @@ The recommended way of using `@smogon/calc` in a web browser is to **configure y
 ([Webpack][6], [Rollup][7], [Parcel][8], etc) to minimize it and package it with the rest of your
 application. If you do not use a bundler, a convenience `production.min.js` is included in the
 package. You simply need to depend on `./node_modules/@smogon/calc/production.min.js` in a `script`
-tag (which is what the unpackage shortcut above is doing), after which **`calc` will be
+tag (which is what the unpkg shortcut above is doing), after which **`calc` will be
 accessible as a global.** You must also have a `Generations` implementation provided, you can either
 depend on the calculator's data layer by depending on
-`./node_modules/@smogon/calc/data/production.min.js` (or `@smogon/calc/data` via unpackage), or you can
+`./node_modules/@smogon/calc/data/production.min.js` (or `@smogon/calc/data` via unpkg), or you can
 use an alternative data layer such as [`@pkmn/data`][9]. You must load your data layer
 **before** loading the calc:
 
