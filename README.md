@@ -81,7 +81,7 @@ argument required by `calculate`, `Pokemon`, `Move` can instead simply be the ge
 the data layer it ships with.
 
 **The data in `calc/data` must be kept in sync with Pokémon Showdown. If there is an issue with the
-calc's data, please first fix it in the simulator.** In general, you should probably not be
+calc's data, please fix it in the simulator first.** In general, you should probably not be
 making manual edits to any of the data files, and in the future, they are likely to be generated
 programmatically.
 
@@ -149,7 +149,7 @@ $ open dist/index.html # open works on macOS, simply double-clicking the file on
 **If you make changes to anything in `calc/`, you must run `node build` from the top level to
 compile the files and copy them into `dist/` again. If you make changes to the HTML or JavaScript in
 `src/`you must run `node build view` before the changes will become visible in your browser**
-(`node build` also works but is slower as it will compile `calc/` as well, which is
+(`node build` also works, but it is slower, as it will compile `calc/` as well, which is
 unnecessary if you did not make any changes to that directory).
 
 Before opening up a Pull Request, please ensure `npm test` passes:
@@ -177,7 +177,7 @@ This project was created by Honko and is primarily maintained by Austin and pre.
 - Some CSS styling was contributed by Zarel to match the Pokémon Showdown! theme.
 
 Many other contributors have added features or contributed bug fixes, please see the
-[full list of contributors](https://github.com/smogon/damage-cDalc/graphs/contributors).
+[full list of contributors](https://github.com/smogon/damage-calc/graphs/contributors).
 
 ## License
 
