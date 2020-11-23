@@ -41,9 +41,13 @@ be used instead, see below.*
 `@smogon/calc` exports all of the data types required to perform a calculation. The `calculate`
 methods require:
 
-- a `Generation` which contains information about which damage formula mechanics to apply and where all of the data about the generation can be found.
-- attacker and defender `Pokemon` (note: only relevant attributes are required, everything else should have sensible defaults). The `Pokemon` constructor also requires a `Generation` to provide the Pokémon's data for the generation.
-- the `Move` being used by the attacker (which also requires a `Generation` argument to scope the move data to the particular generation).
+- a `Generation` that contains information about which damage formula mechanics to apply and where
+  all of the data about the generation can be found.
+- attacker and defender `Pokemon` (note: only relevant attributes are required, everything else
+  should have sensible defaults). The `Pokemon` constructor also requires a `Generation` to provide
+  the Pokémon's data for the generation.
+- the `Move` being used by the attacker (which also requires a `Generation` argument to scope the
+  move data to the particular generation).
 - (optionally) a `Field` object containing information about the state of each `Side`.
 
 `calculate` returns a `Result` object that contains methods for fetching damage rolls, ranges,
