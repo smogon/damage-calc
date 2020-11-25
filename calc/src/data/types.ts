@@ -446,7 +446,7 @@ const TYPES_BY_ID: Array<{[id: string]: Type}> = [];
 for (const typeChart of TYPE_CHART) {
   const map: {[id: string]: Type} = {};
   for (const type in typeChart) {
-    const t = new Type(type, Object.assign({}, typeChart[type as I.TypeName]!));
+    const t = new Type(type, {...typeChart[type as I.TypeName]!});
     map[t.id] = t;
   }
   TYPES_BY_ID.push(map);

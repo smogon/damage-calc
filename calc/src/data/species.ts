@@ -7477,7 +7477,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Lapras: {otherFormes: ['Lapras-Gmax']},
   Linoone: {otherFormes: ['Linoone-Galar']},
   Machamp: {otherFormes: ['Machamp-Gmax']},
-  // Melmetal: {otherFormes: ['Melmetal-Gmax']},
+  Melmetal: {otherFormes: ['Melmetal-Gmax']},
   Meowth: {otherFormes: ['Meowth-Alola', 'Meowth-Galar', 'Meowth-Gmax']},
   Moltres: {otherFormes: ['Moltres-Galar']},
   'Mr. Mime': {otherFormes: ['Mr. Mime-Galar']},
@@ -7491,7 +7491,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       'Pikachu-Partner',
       'Pikachu-Sinnoh',
       'Pikachu-Unova',
-      // 'Pikachu-World',
+      'Pikachu-World',
     ],
   },
   Ponyta: {otherFormes: ['Ponyta-Galar']},
@@ -8095,7 +8095,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Kubfu': {
     types: ['Fighting'],
-    bs: {hp: 60, at: 90, df: 60, sa: 53, sd: 50, sp: 72}, // FIXME should be 72
+    bs: {hp: 60, at: 90, df: 60, sa: 53, sd: 50, sp: 72},
     weightkg: 12,
     nfe: true,
     abilities: {0: 'Inner Focus'},
@@ -8131,15 +8131,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Guts'},
     baseSpecies: 'Machamp',
   },
-  // Unreleased
-  // 'Melmetal-Gmax': {
-  //   types: ['Steel'],
-  //   bs: {hp: 135, at: 143, df: 143, sa: 80, sd: 65, sp: 34},
-  //   weightkg: 0,
-  //   abilities: {0: 'Iron Fist'},
-  //   baseSpecies: 'Melmetal',
-  //   gender: 'N',
-  // },
+  'Melmetal-Gmax': {
+    types: ['Steel'],
+    bs: {hp: 135, at: 143, df: 143, sa: 80, sd: 65, sp: 34},
+    weightkg: 0,
+    abilities: {0: 'Iron Fist'},
+    baseSpecies: 'Melmetal',
+    gender: 'N',
+  },
   'Meowth-Galar': {
     types: ['Steel'],
     bs: {hp: 50, at: 65, df: 55, sa: 40, sd: 40, sp: 40},
@@ -8251,14 +8250,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Static'},
     baseSpecies: 'Pikachu',
   },
-  // Unreleased
-  // 'Pikachu-World': {
-  //   types: ['Electric'],
-  //   bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90},
-  //   weightkg: 6,
-  //   abilities: {0: 'Static'},
-  //   baseSpecies: 'Pikachu',
-  // },
+  'Pikachu-World': {
+    types: ['Electric'],
+    bs: {hp: 35, at: 55, df: 40, sa: 50, sd: 50, sp: 90},
+    weightkg: 6,
+    abilities: {0: 'Static'},
+    baseSpecies: 'Pikachu',
+  },
   Pincurchin: {
     types: ['Electric'],
     bs: {hp: 48, at: 101, df: 95, sa: 91, sd: 85, sp: 15},

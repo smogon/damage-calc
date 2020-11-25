@@ -55,7 +55,7 @@ const RBY: {[name: string]: MoveData} = {
   'Comet Punch': {bp: 18, type: 'Normal', multihit: [2, 5]},
   Constrict: {bp: 10, type: 'Normal'},
   Conversion: {bp: 0, category: 'Status', type: 'Normal'},
-  Counter: {bp: 0, type: 'Fighting'},
+  Counter: {bp: 1, type: 'Fighting'},
   Crabhammer: {bp: 90, type: 'Water'},
   'Defense Curl': {bp: 0, category: 'Status', type: 'Normal'},
   Dig: {bp: 100, type: 'Ground'},
@@ -210,6 +210,7 @@ const RBY: {[name: string]: MoveData} = {
 
 const GSC_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Bide: {type: 'Normal'},
+  Counter: {bp: 0},
   Dig: {bp: 60},
   'Double-Edge': {bp: 120},
   Explosion: {bp: 250},
@@ -2967,6 +2968,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Psychic',
     category: 'Special',
     isSound: true,
+    secondaries: true,
     zp: 160,
     maxPower: 130,
   },

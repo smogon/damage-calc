@@ -446,6 +446,7 @@ const SS = SM.concat([
   'Fossilized Drake',
   'Fossilized Fish',
   'Galarica Cuff',
+  'Galarica Wreath',
   'Heavy-Duty Boots',
   'Leek',
   'Love Sweet',
