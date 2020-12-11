@@ -451,6 +451,19 @@ export function calculateBWXY(
     desc.isHelpingHand = true;
   }
 
+  if (field.attackerSide.isPowerTrick) {
+    var oldAttack = attacker.rawStats.atk;
+    attacker.rawStats.atk = attacker.rawStats.def;
+    attacker.rawStats.def = oldAttack;
+    desc.isPowerTrick = true;
+  }
+
+  if (field.defenderSide.isPowerTrick) {
+    var oldDefense = defender.rawStats.atk;
+    defender.rawStats.atk = defender.rawStats.def;
+    defender.rawStats.def = oldDefense;
+  }
+
   if (field.attackerSide.isBattery && move.category === 'Special') {
     bpMods.push(0x14cc);
     desc.isBattery = true;

@@ -666,6 +666,19 @@ export function calculateSMSS(
     desc.isHelpingHand = true;
   }
 
+  if (field.attackerSide.isPowerTrick) {
+    var oldAttack = attacker.rawStats.atk;
+    attacker.rawStats.atk = attacker.rawStats.def;
+    attacker.rawStats.def = oldAttack;
+    desc.isPowerTrick = true;
+  }
+
+  if (field.defenderSide.isPowerTrick) {
+    var oldDefense = defender.rawStats.atk;
+    defender.rawStats.atk = defender.rawStats.def;
+    defender.rawStats.def = oldDefense;
+  }
+
   if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
       (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
       (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))

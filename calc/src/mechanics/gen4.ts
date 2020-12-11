@@ -218,6 +218,19 @@ export function calculateDPP(
     desc.isHelpingHand = true;
   }
 
+  if (field.attackerSide.isPowerTrick) {
+    var oldAttack = attacker.rawStats.atk;
+    attacker.rawStats.atk = attacker.rawStats.def;
+    attacker.rawStats.def = oldAttack;
+    desc.isPowerTrick = true;
+  }
+
+  if (field.defenderSide.isPowerTrick) {
+    var oldDefense = defender.rawStats.atk;
+    defender.rawStats.atk = defender.rawStats.def;
+    defender.rawStats.def = oldDefense;
+  }
+
   const isPhysical = move.category === 'Physical';
   if ((attacker.hasItem('Muscle Band') && isPhysical) ||
       (attacker.hasItem('Wise Glasses') && !isPhysical)) {

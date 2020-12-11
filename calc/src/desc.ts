@@ -23,6 +23,7 @@ export interface RawDesc {
   isAuroraVeil?: boolean;
   isFriendGuard?: boolean;
   isHelpingHand?: boolean;
+  isPowerTrick?: boolean;
   isCritical?: boolean;
   isLightScreen?: boolean;
   isBurned?: boolean;
@@ -821,6 +822,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   output += description.attackerName + ' ';
   if (description.isHelpingHand) {
     output += 'Helping Hand ';
+  }
+  if (description.isPowerTrick) {
+    output += 'Power Trick ';
   }
   if (description.isBattery) {
     output += ' Battery boosted ';
