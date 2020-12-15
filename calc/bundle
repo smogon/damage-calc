@@ -17,7 +17,9 @@ bundled += species.slice(1, 39).join('\n'); // generator + iterator polyfill
 bundled += '\nvar e_1, _a, e_2, _b;\nvar util_1 = exports;\n';
 bundled += species.slice(43, -2).join('\n');
 
-bundled += bundler.read('data/types.js', 43 , 1);
+const types = bundler.read('data/types.js').split('\n');
+bundled += types.slice(1, 12).join('\n'); // __assign polyfill
+bundled += types.slice(54, -2).join('\n')
 const natures = bundler.read('data/natures.js').split('\n');
 bundled += natures.slice(28, 44).join('\n'); // __read polyfill
 bundled += natures.slice(47, -2).join('\n');
@@ -60,8 +62,8 @@ bundled += '\nvar util_1 = exports;\n';
 bundled += bundler.read('stats.js', 4, 1);
 bundled += '\nvar stats_1 = exports;\n';
 const pokemon = bundler.read('pokemon.js').split('\n');
-bundled += pokemon.slice(1, 12).join('\n'); // iterator polyfill
-bundled += pokemon.slice(16, -2).join('\n');
+bundled += pokemon.slice(1, 23).join('\n'); // __assign + iterator polyfill
+bundled += pokemon.slice(27, -2).join('\n');
 const field = bundler.read('field.js').split('\n');
 bundled += field.slice(1, 17).join('\n'); // __read polyfill
 bundled += field.slice(19, -2).join('\n');
@@ -77,7 +79,7 @@ bundled += '\nvar desc_1 = exports;\nvar items_1 = exports;\n';
 bundled += bundler.read('mechanics/gen78.js', 7, 1);
 bundled += bundler.read('mechanics/gen56.js', 7, 1);
 bundled += bundler.read('mechanics/gen4.js', 26, 1);
-// // These don't require 'util', so 'mecchanics/util' gets the util_1 name.
+// These don't require 'util', so 'mechanics/util' gets the util_1 name.
 bundled += bundler.read('mechanics/gen3.js', 26, 1).replace(/util_1/g, 'util_2');
 bundled += bundler.read('mechanics/gen12.js', 26, 1).replace(/util_1/g, 'util_2');
 bundled += `

@@ -209,6 +209,6 @@ export class Pokemon implements State.Pokemon {
         throw new Error('Special Attack and Special Defense must match before Gen 3');
       }
     }
-    return {...{hp: val, atk: val, def: val, spa: val, spd: val, spe: val}, ...cur};
+    return {hp: val, atk: val, def: val, spa: val, spd: val, spe: val, ...cur};
   }
 }
