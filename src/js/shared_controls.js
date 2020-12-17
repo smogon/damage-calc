@@ -924,14 +924,14 @@ var SETDEX = [
 ];
 var RANDDEX = [
 	{},
-	typeof RANDOM_RBY === 'undefined' ? {} : RANDOM_RBY,
-	typeof RANDOM_GSC === 'undefined' ? {} : RANDOM_GSC,
-	typeof RANDOM_ADV === 'undefined' ? {} : RANDOM_ADV,
-	typeof RANDOM_DPP === 'undefined' ? {} : RANDOM_DPP,
-	typeof RANDOM_BW === 'undefined' ? {} : RANDOM_BW,
-	typeof RANDOM_XY === 'undefined' ? {} : RANDOM_XY,
-	typeof RANDOM_SM === 'undefined' ? {} : RANDOM_SM,
-	typeof RANDOM_SS === 'undefined' ? {} : RANDOM_SS,
+	typeof GEN1RANDOMBATTLE === 'undefined' ? {} : GEN1RANDOMBATTLE,
+	typeof GEN2RANDOMBATTLE === 'undefined' ? {} : GEN2RANDOMBATTLE,
+	typeof GEN3RANDOMBATTLE === 'undefined' ? {} : GEN3RANDOMBATTLE,
+	typeof GEN4RANDOMBATTLE === 'undefined' ? {} : GEN4RANDOMBATTLE,
+	typeof GEN5RANDOMBATTLE === 'undefined' ? {} : GEN5RANDOMBATTLE,
+	typeof GEN6RANDOMBATTLE === 'undefined' ? {} : GEN6RANDOMBATTLE,
+	typeof GEN7RANDOMBATTLE === 'undefined' ? {} : GEN7RANDOMBATTLE,
+	typeof GEN8RANDOMBATTLE === 'undefined' ? {} : GEN8RANDOMBATTLE,
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {

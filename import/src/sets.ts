@@ -4,9 +4,6 @@ import * as fs from 'fs';
 import * as ps from '@smogon/sets';
 import * as calc from 'calc';
 import * as tiers from './tiers.json';
-import * as randLevels from './random-levels.json';
-import * as randMoves from './random-moves.json';
-import {Statistics, UsageStatistics} from 'smogon';
 const toID = calc.toID;
 
 // prettier-ignore
@@ -17,19 +14,6 @@ const TIERS = [
 type Tier = typeof TIERS[number];
 
 const TO_TIER = tiers as {[gen: number]: {[id: string]: Tier}};
-const RANDOM_LEVELS = (randLevels as unknown) as {
-  [gen: number]: {
-    level: {[id in Tier]?: number};
-    custom: {[pokemon: string]: number};
-    default: number;
-  };
-};
-
-const RANDOM_MOVES = randMoves as {
-  [gen: number]: {
-    [pokemon: string]: string[];
-  };
-};
 
 const STATS = ['hp', 'at', 'df', 'sa', 'sd', 'sp'] as const;
 type Stat = typeof STATS[number];
@@ -97,18 +81,10 @@ const RECENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
 const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
 
-export async function importSets(dir: string, randomDir?: string) {
+export async function importSets(dir: string) {
   for (let g = 1; g <= 8; g++) {
     const gen = g as ps.GenerationNum;
     const setsByPokemon: PokemonSets = {};
-    const randomOptionsByPokemon: {[pokemon: string]: RandomPokemonOptions} = {};
-    let stats: UsageStatistics | null = null;
-    if (randomDir) {
-      // TODO: support randomdoublesbattle as well?
-      const format = `gen${gen}randombattle`;
-      const json = fs.readFileSync(path.resolve(randomDir, `${format}-0.json`), 'utf8');
-      stats = Statistics.process(json);
-    }
 
     for (const pokemon of Object.keys(calc.SPECIES[gen]).sort()) {
       await importSetsForPokemon(pokemon, gen, setsByPokemon);
@@ -137,20 +113,12 @@ export async function importSets(dir: string, randomDir?: string) {
           setsByPokemon[pokemon][name.slice(name.indexOf('|') + 1)] = sets[name];
         }
       }
-
-      if (stats) {
-        const options = importRandomOptionsForPokemon(pokemon, gen, stats);
-        if (options) randomOptionsByPokemon[pokemon] = options;
-      }
     }
 
     const comment = (from: string) => `/* AUTOMATICALLY GENERATED FROM ${from}, DO NOT EDIT! */`;
     fs.writeFileSync(path.resolve(dir, `sets/gen${gen}.js`),
       `${comment('@smogon/sets')}\n` +
       `var SETDEX_${GENS[gen - 1]} = ${JSON.stringify(setsByPokemon)};\n`);
-    fs.writeFileSync(path.resolve(dir, `randoms/gen${gen}.js`),
-      `${comment('POKEMON SHOWDOWN')}\n` +
-      `var RANDOM_${GENS[gen - 1]} = ${JSON.stringify(randomOptionsByPokemon)};\n`);
   }
 }
 
@@ -190,81 +158,6 @@ async function importSetsForPokemon(
       }
     }
   }
-}
-
-function importRandomOptionsForPokemon(
-  pokemon: string,
-  gen: ps.GenerationNum,
-  usage: UsageStatistics
-): RandomPokemonOptions | undefined {
-  if (toID(pokemon) === 'aegislash') pokemon = 'Aegislash-Shield';
-  if (gen === 8 && toID(pokemon) === 'keldeo') pokemon = 'Keldeo-Resolute';
-  let moves = RANDOM_MOVES[gen][toID(pokemon)];
-  if (!moves) return undefined;
-  const stats = usage.data[toForme(pokemon)];
-  if (!stats) return undefined;
-
-  const best = {spread: '', usage: 0};
-  for (const s in stats.Spreads) {
-    if (stats.Spreads[s] > best.usage) {
-      best.spread = s;
-      best.usage = stats.Spreads[s];
-    }
-  }
-  const [nature, evstring] = best.spread.split(':');
-  const ivs: Partial<StatsTable> = {};
-  const evs: Partial<StatsTable> = {};
-  for (const [i, ev] of evstring.split('/').entries()) {
-    const val = Number(ev);
-    const stat = STATS[i];
-    if (stat === 'hp' && val < 84) {
-      // HP can be arbitrarily set, but we want to round down to the nearest bucket of 4
-      evs[stat] = Math.floor(val / 4) * 4;
-    } else if ((stat === 'at' || stat === 'sp') && val === 0) {
-      // Atttack and Speed can only ever be 85 or 0 - if its 0 IVs need to be set to 0 as well
-      ivs[stat] = val;
-      evs[stat] = val;
-    }
-    // Otherwise it should be 85, and any other value is due to stupid rounding from usage stats
-  }
-
-  const f = pokemon.endsWith('-Gmax') ? toForme(pokemon.slice(0, -5)) : pokemon;
-  const tier = TO_TIER[gen][toID(f)];
-  const r = RANDOM_LEVELS[gen];
-
-  const generation = calc.Generations.get(gen);
-
-  let level = r.custom[pokemon] || r.level[tier] || r.default;
-  if (gen === 6 && level === r.default && !generation.species.get(toID(pokemon))?.nfe) {
-    level = 80;
-  }
-
-  const abilities = Object.keys(stats.Abilities)
-    .map(a => generation.abilities.get(toID(a))?.name as string)
-    .filter(a => a);
-  const items = Object.keys(stats.Items)
-    .map(i => generation.items.get(toID(i))?.name as string)
-    .filter(i => i);
-
-  const moveIDs: {[id: string]: string} = {};
-  for (const m of moves) {
-    moveIDs[toID(m)] = m;
-  }
-
-  const statsMoves = Object.keys(stats.Moves)
-    .map(m => moveIDs[m])
-    .filter(m => m);
-  // Sort the actual moves by how often they appear in usage stats
-  moves = [...statsMoves, ...moves.filter(m => !statsMoves.includes(m))];
-  return {
-    level,
-    abilities: abilities.length ? abilities : undefined,
-    items: items.length ? items : undefined,
-    nature,
-    ivs,
-    evs,
-    moves,
-  };
 }
 
 const FORMES: {[name: string]: string} = {
