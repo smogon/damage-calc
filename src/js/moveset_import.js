@@ -155,14 +155,14 @@ function getMoves(currentPoke, rows, offset) {
 function addToDex(poke) {
 	var dexObject = {};
 	if ($("#randoms").prop("checked")) {
-		if (RANDOM_SS[poke.name] == undefined) RANDOM_SS[poke.name] = {};
-		if (RANDOM_SM[poke.name] == undefined) RANDOM_SM[poke.name] = {};
-		if (RANDOM_XY[poke.name] == undefined) RANDOM_XY[poke.name] = {};
-		if (RANDOM_BW[poke.name] == undefined) RANDOM_BW[poke.name] = {};
-		if (RANDOM_DPP[poke.name] == undefined) RANDOM_DPP[poke.name] = {};
-		if (RANDOM_ADV[poke.name] == undefined) RANDOM_ADV[poke.name] = {};
-		if (RANDOM_GSC[poke.name] == undefined) RANDOM_GSC[poke.name] = {};
-		if (RANDOM_RBY[poke.name] == undefined) RANDOM_RBY[poke.name] = {};
+		if (GEN8RANDOMBATTLE[poke.name] == undefined) GEN8RANDOMBATTLE[poke.name] = {};
+		if (GEN7RANDOMBATTLE[poke.name] == undefined) GEN7RANDOMBATTLE[poke.name] = {};
+		if (GEN6RANDOMBATTLE[poke.name] == undefined) GEN6RANDOMBATTLE[poke.name] = {};
+		if (GEN5RANDOMBATTLE[poke.name] == undefined) GEN5RANDOMBATTLE[poke.name] = {};
+		if (GEN4RANDOMBATTLE[poke.name] == undefined) GEN4RANDOMBATTLE[poke.name] = {};
+		if (GEN3RANDOMBATTLE[poke.name] == undefined) GEN3RANDOMBATTLE[poke.name] = {};
+		if (GEN2RANDOMBATTLE[poke.name] == undefined) GEN2RANDOMBATTLE[poke.name] = {};
+		if (GEN1RANDOMBATTLE[poke.name] == undefined) GEN1RANDOMBATTLE[poke.name] = {};
 	} else {
 		if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
 		if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
