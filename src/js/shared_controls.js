@@ -569,7 +569,7 @@ function formatMovePool(moves) {
 
 function isKnownDamagingMove(move) {
 	var m = GENERATION.moves.get(calc.toID(move));
-	return m && m.bp;
+	return m && m.basePower;
 }
 
 function selectMovesFromRandomOptions(moves) {
@@ -714,6 +714,12 @@ function createPokemon(pokeInfo) {
 		for (var i = 0; i < 4; i++) {
 			var moveName = set.moves[i];
 			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item}));
+		}
+
+		if (isRandoms) {
+			pokemonMoves = pokemonMoves.filter(function (move) {
+				return move.category !== "Status";
+			});
 		}
 
 		return new calc.Pokemon(gen, name, {
