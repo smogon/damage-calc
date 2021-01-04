@@ -992,7 +992,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Mud Bomb': {bp: 65, type: 'Ground', category: 'Special'},
   'Ominous Wind': {bp: 60, type: 'Ghost', category: 'Special'},
   Punishment: {
-    bp: 0,
+    bp: 60,
     type: 'Dark',
     makesContact: true,
     category: 'Physical',
