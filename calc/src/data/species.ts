@@ -8156,9 +8156,16 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Miasmaw: {
     types: ['Bug', 'Dragon'],
-    bs: {hp: 85, at: 135, df: 60, sa: 115, sd: 85, sp: 89},
+    bs: {hp: 85, at: 135, df: 60, sa: 115, sd: 85, sp: 92},
     weightkg: 57,
     abilities: {0: 'Neutralizing Gas'},
+  },
+  Miasmite: {
+    types: ['Bug', 'Dragon'],
+    bs: {hp: 40, at: 85, df: 60, sa: 52, sd: 52, sp: 44},
+    weightkg: 10.1,
+    abilities: {0: 'Neutralizing Gas'},
+    nfe: true,
   },
   Milcery: {
     types: ['Fairy'],
