@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@smogon/calc": "^0.6.0",
-    "calc": "file:calc",
+    "calc": "file:calc"
   },
   "devDependencies": {
     "eslint": "^7.17.0",
