@@ -28,7 +28,7 @@ function ExportPokemon(pokeInfo) {
 		finalText += serialize(EVs_Array, " / ");
 		finalText += "\n";
 	}
-	
+
 	finalText += "IVs: ";
 	var IVs_Array = [];
 	for (var stat in pokemon.ivs) {
