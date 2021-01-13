@@ -13,21 +13,31 @@ function ExportPokemon(pokeInfo) {
 	var EV_counter = 0;
 	var finalText = "";
 	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	finalText += "Level: " + pokemon.level + "\n";
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (gen > 2) {
 		finalText += "EVs: ";
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
-			if (pokemon.evs[stat]) {
-				EVs_Array.push(pokemon.evs[stat] + " " + calc.Stats.displayStat(stat));
-				EV_counter += pokemon.evs[stat];
-				if (EV_counter > 510) break;
-			}
+			var ev = pokemon.evs[stat] ? pokemon.evs[stat] : 0;
+			EVs_Array.push(ev + " " + calc.Stats.displayStat(stat));
+			EV_counter += ev;
+			if (EV_counter > 510) break;
 		}
 		finalText += serialize(EVs_Array, " / ");
 		finalText += "\n";
 	}
+	
+	finalText += "IVs: ";
+	var IVs_Array = [];
+	for (var stat in pokemon.ivs) {
+		var iv = pokemon.ivs[stat] ? pokemon.ivs[stat] : 0;
+		IVs_Array.push(iv + " " + calc.Stats.displayStat(stat));
+	}
+	finalText += serialize(IVs_Array, " / ");
+	finalText += "\n";
+
 	for (var i = 0; i < 4; i++) {
 		var moveName = pokemon.moves[i].name;
 		if (moveName !== "(No Move)") {
@@ -84,6 +94,7 @@ function getStats(currentPoke, rows, offset) {
 	currentPoke.nature = "Serious";
 	var currentEV;
 	var currentIV;
+	var currentAbility;
 	var currentNature;
 	currentPoke.level = 100;
 	for (var x = offset; x < offset + 8; x++) {
@@ -115,6 +126,11 @@ function getStats(currentPoke, rows, offset) {
 			break;
 
 		}
+		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
+		if (currentAbility[0] == "Ability") {
+			currentPoke.ability = currentAbility[1].trim();
+		}
+
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
 		if (currentNature[1] == "Nature") {
 			currentPoke.nature = currentNature[0];
