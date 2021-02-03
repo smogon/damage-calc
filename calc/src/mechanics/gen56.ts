@@ -601,7 +601,7 @@ export function calculateBWXY(
       (attacker.hasItem('Deep Sea Tooth') &&
        attacker.named('Clamperl') &&
        move.category === 'Special') ||
-      (attacker.hasItem('Light Ball') && attacker.named('Pikachu') && !move.isZ)
+      (attacker.hasItem('Light Ball') && attacker.name.startsWith('Pikachu') && !move.isZ)
   ) {
     atMods.push(0x2000);
     desc.attackerItem = attacker.item;
