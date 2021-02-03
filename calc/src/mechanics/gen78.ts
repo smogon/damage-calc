@@ -115,7 +115,7 @@ export function calculateSMSS(
     'Searing Sunraze Smash',
     'Sunsteel Strike'
   );
-  if (!defenderIgnoresAbility) {
+  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal')) {
     if (attackerIgnoresAbility) {
       defender.ability = '' as AbilityName;
       desc.attackerAbility = attacker.ability;
