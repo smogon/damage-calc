@@ -11,13 +11,13 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^14.14.22"
+    "@types/node": "^14.14.25"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.3.13",
+    "@pkmn/dex": "^0.3.15",
     "@pkmn/eslint-config": "^1.1.0",
     "@types/jest": "^26.0.20",
-    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
     "eslint": "^7.19.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.3",
