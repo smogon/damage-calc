@@ -4,7 +4,8 @@ function placeBsBtn() {
 
 	$("#import.bs-btn").click(function () {
 		var pokes = document.getElementsByClassName("import-team-text")[0].value;
-		addSets(pokes);
+		var name = document.getElementsByClassName("import-name-text")[0].value.trim() === "" ? "Custom Set" : document.getElementsByClassName("import-name-text")[0].value;
+		addSets(pokes, name);
 	});
 }
 
@@ -242,7 +243,7 @@ function updateDex(customsets) {
 	localStorage.customsets = JSON.stringify(customsets);
 }
 
-function addSets(pokes) {
+function addSets(pokes, name) {
 	var rows = pokes.split("\n");
 	var currentRow;
 	var currentPoke;
@@ -258,7 +259,7 @@ function addSets(pokes) {
 				if (j === 1 && currentRow[0].trim()) {
 					currentPoke.nameProp = currentRow[0].trim();
 				} else {
-					currentPoke.nameProp = "Custom Set";
+					currentPoke.nameProp = name;
 				}
 				currentPoke.isCustomSet = true;
 				currentPoke.ability = getAbility(rows[i + 1].split(":"));
