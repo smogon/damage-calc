@@ -188,11 +188,8 @@ export function calculateDPP(
     }
     break;
   case 'Punishment':
-    const boostCount = countBoosts(gen, defender.boosts);
-    if (boostCount > 0) {
-      basePower = Math.min(200, basePower + 20 * boostCount);
-      desc.moveBP = basePower;
-    }
+    basePower = Math.min(200, 60 + 20 * countBoosts(gen, defender.boosts));
+    desc.moveBP = basePower;
     break;
   case 'Wake-Up Slap':
     if (defender.hasStatus('slp')) {

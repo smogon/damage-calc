@@ -431,6 +431,13 @@ table.field {
     resize: vertical;
 }
 
+.import-name-text {
+	min-width: 26.3em;
+    min-height: 1em;
+    overflow: auto;
+    display: inline;
+}
+
 .hpbar {
     height: 4px;
     border-style: solid;

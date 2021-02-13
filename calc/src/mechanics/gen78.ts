@@ -115,7 +115,7 @@ export function calculateSMSS(
     'Searing Sunraze Smash',
     'Sunsteel Strike'
   );
-  if (!defenderIgnoresAbility) {
+  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal')) {
     if (attackerIgnoresAbility) {
       defender.ability = '' as AbilityName;
       desc.attackerAbility = attacker.ability;
@@ -520,8 +520,12 @@ export function calculateSMSS(
   const aura = `${move.type} Aura`;
   const isAttackerAura = attacker.hasAbility(aura);
   const isDefenderAura = defender.hasAbility(aura);
-  const auraActive = isAttackerAura || isDefenderAura;
-  const auraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
+  const isUserAuraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
+  const isFieldAuraBreak = field.isAuraBreak;
+  const isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
+  const isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
+  const auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
+  const auraBreak = isFieldAuraBreak || isUserAuraBreak;
   if (auraActive && auraBreak) {
     bpMods.push(0x0c00);
     desc.attackerAbility = attacker.ability;
@@ -825,7 +829,7 @@ export function calculateSMSS(
       (attacker.hasItem('Deep Sea Tooth') &&
        attacker.named('Clamperl') &&
        move.category === 'Special') ||
-      (attacker.hasItem('Light Ball') && attacker.named('Pikachu') && !move.isZ)
+      (attacker.hasItem('Light Ball') && attacker.name.includes('Pikachu') && !move.isZ)
   ) {
     atMods.push(0x2000);
     desc.attackerItem = attacker.item;
