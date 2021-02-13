@@ -520,8 +520,12 @@ export function calculateSMSS(
   const aura = `${move.type} Aura`;
   const isAttackerAura = attacker.hasAbility(aura);
   const isDefenderAura = defender.hasAbility(aura);
-  const auraActive = isAttackerAura || isDefenderAura;
-  const auraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
+  const isUserAuraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
+  const isFieldAuraBreak = field.isAuraBreak;
+  const isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
+  const isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
+  const auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
+  const auraBreak = isFieldAuraBreak || isUserAuraBreak;
   if (auraActive && auraBreak) {
     bpMods.push(0x0c00);
     desc.attackerAbility = attacker.ability;

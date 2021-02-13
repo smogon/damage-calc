@@ -473,8 +473,12 @@ export function calculateBWXY(
   const aura = `${move.type} Aura`;
   const isAttackerAura = attacker.hasAbility(aura);
   const isDefenderAura = defender.hasAbility(aura);
-  if (isAttackerAura || isDefenderAura) {
-    if (attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break')) {
+  const isUserAuraBreak = attacker.hasAbility('Aura Break') || defender.hasAbility('Aura Break');
+  const isFieldAuraBreak = field.isAuraBreak;
+  const isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
+  const isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
+  if (isFieldFairyAura || isFieldDarkAura || isAttackerAura || isDefenderAura) {
+    if (isFieldAuraBreak || isUserAuraBreak) {
       bpMods.push(0x0c00);
       desc.attackerAbility = attacker.ability;
       desc.defenderAbility = defender.ability;

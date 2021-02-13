@@ -6,6 +6,9 @@ export class Field implements State.Field {
   weather?: Weather;
   terrain?: Terrain;
   isGravity: boolean;
+  isAuraBreak?: boolean;
+  isFairyAura?: boolean;
+  isDarkAura?: boolean;
   attackerSide: Side;
   defenderSide: Side;
 
@@ -14,6 +17,9 @@ export class Field implements State.Field {
     this.terrain = field.terrain;
     this.weather = field.weather;
     this.isGravity = !!field.isGravity;
+    this.isAuraBreak = field.isAuraBreak || false;
+    this.isFairyAura = field.isFairyAura || false;
+    this.isDarkAura = field.isDarkAura || false;
 
     this.attackerSide = new Side(field.attackerSide || {});
     this.defenderSide = new Side(field.defenderSide || {});
@@ -40,6 +46,9 @@ export class Field implements State.Field {
       isGravity: this.isGravity,
       attackerSide: this.attackerSide,
       defenderSide: this.defenderSide,
+      isAuraBreak: this.isAuraBreak,
+      isDarkAura: this.isDarkAura,
+      isFairyAura: this.isFairyAura,
     });
   }
 }
