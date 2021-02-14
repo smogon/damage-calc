@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "eslint": "^7.19.0",
+    "express": "^4.17.1",
     "subpkg": "^4.1.0"
   },
   "optionalDependencies": {
