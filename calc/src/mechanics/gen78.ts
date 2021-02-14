@@ -225,24 +225,6 @@ export function calculateSMSS(
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
-  let resistedKnockOffDamage =
-    !defender.item ||
-    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
-    (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
-    (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
-    (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
-    (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
-    (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
-    defender.item.includes(' Z') ||
-    (defender.named('Zacian') && defender.hasItem('Rusted Sword'));
-
-  // The last case only applies when the Pokemon is holding the Mega Stone that matches its species
-  // (or when it's already a Mega-Evolution)
-  if (!resistedKnockOffDamage && defender.item) {
-    const item = gen.items.get(toID(defender.item))!;
-    resistedKnockOffDamage = !!item.megaEvolves && defender.name.includes(item.megaEvolves);
-  }
-
   if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
     typeEffectiveness = 1;
   } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
@@ -357,6 +339,218 @@ export function calculateSMSS(
 
   // #endregion
   // #region Base Power
+
+  const basePower = calculateBasePowerSMSS(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc,
+    isAerilate, isPixilate, isRefrigerate, isGalvanize, isNormalize
+  );
+  if (basePower === 0) {
+    return result;
+  }
+
+  // #endregion
+  // #region (Special) Attack
+  const attack = calculateAttackSMSS(gen, attacker, defender, move, field, desc, isCritical);
+  const attackSource = move.named('Foul Play') ? defender : attacker;
+  if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
+    move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
+  }
+  const attackStat =
+    move.named('Shell Side Arm') &&
+    getShellSideArmCategory(attacker, defender) === 'Physical'
+      ? 'atk'
+      : move.named('Body Press')
+        ? 'def'
+        : move.category === 'Special'
+          ? 'spa'
+          : 'atk';
+  // #endregion
+  // #region (Special) Defense
+
+  const defense = calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCritical);
+  const hitsPhysical = move.defensiveCategory === 'Physical' ||
+    (move.named('Shell Side Arm') && getShellSideArmCategory(attacker, defender) === 'Physical');
+  const defenseStat = hitsPhysical ? 'def' : 'spd';
+
+  // #endregion
+  // #region Damage
+
+  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
+
+  const isSpread = field.gameType !== 'Singles' &&
+     ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
+  if (isSpread) {
+    baseDamage = pokeRound(OF32(baseDamage * 0xc00) / 0x1000);
+  }
+
+  if (attacker.hasAbility('Parental Bond (Child)')) {
+    baseDamage = pokeRound(OF32(baseDamage * 0x400) / 0x1000);
+  }
+
+  const noWeatherBoost = defender.hasItem('Utility Umbrella');
+  if (!noWeatherBoost && (field.hasWeather('Sun', 'Harsh Sunshine') &&
+        move.hasType('Fire')) ||
+       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
+    baseDamage = pokeRound(OF32(baseDamage * 0x1800) / 0x1000);
+    desc.weather = field.weather;
+  } else if (!noWeatherBoost &&
+    (field.hasWeather('Sun') && move.hasType('Water')) ||
+    (field.hasWeather('Rain') && move.hasType('Fire'))
+  ) {
+    baseDamage = pokeRound(OF32(baseDamage * 0x800) / 0x1000);
+    desc.weather = field.weather;
+  } else if (!noWeatherBoost &&
+    (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
+    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
+  ) {
+    return result;
+  }
+
+  if (hasTerrainSeed(defender) &&
+    field.hasTerrain(defender.item!.substring(0, defender.item!.indexOf(' ')) as Terrain) &&
+    SEED_BOOSTED_STAT[defender.item!] === defenseStat) {
+    // Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome
+    // (like Grassy Seed when being hit by a special move)
+    desc.defenderItem = defender.item;
+  }
+
+  if (isCritical) {
+    baseDamage = Math.floor(OF32(baseDamage * 1.5));
+    desc.isCritical = isCritical;
+  }
+
+  // the random factor is applied between the crit mod and the stab mod, so don't apply anything
+  // below this until we're inside the loop
+  let stabMod = 0x1000;
+  if (attacker.hasType(move.type)) {
+    if (attacker.hasAbility('Adaptability')) {
+      stabMod = 0x2000;
+      desc.attackerAbility = attacker.ability;
+    } else {
+      stabMod = 0x1800;
+    }
+  } else if (attacker.hasAbility('Protean', 'Libero')) {
+    stabMod = 0x1800;
+    desc.attackerAbility = attacker.ability;
+  }
+
+  const applyBurn =
+    attacker.hasStatus('brn') &&
+    move.category === 'Physical' &&
+    !attacker.hasAbility('Guts') &&
+    !move.named('Facade');
+  desc.isBurned = applyBurn;
+  const finalMods = calculateFinalModsSMSS(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc,
+    isCritical,
+    typeEffectiveness
+  );
+
+  let protect = false;
+  if (field.defenderSide.isProtected &&
+    (attacker.isDynamaxed || (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
+    protect = true;
+    desc.isProtected = true;
+  }
+
+  const finalMod = chainMods(finalMods);
+
+  let childDamage: number[] | undefined;
+  if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
+    const child = attacker.clone();
+    child.ability = 'Parental Bond (Child)' as AbilityName;
+    checkMultihitBoost(gen, child, defender, move, field, desc);
+    childDamage = calculateSMSS(gen, child, defender, move, field).damage as number[];
+    desc.attackerAbility = attacker.ability;
+  }
+
+  let damage = [];
+  for (let i = 0; i < 16; i++) {
+    damage[i] =
+      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod, protect);
+  }
+
+  if (move.dropsStats && move.timesUsed! > 1) {
+    const simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
+
+    desc.moveTurns = `over ${move.timesUsed} turns`;
+    const hasWhiteHerb = attacker.hasItem('White Herb');
+    let usedWhiteHerb = false;
+    let dropCount = attacker.boosts[attackStat];
+    for (let times = 0; times < move.timesUsed!; times++) {
+      const newAttack = getModifiedStat(attack, dropCount);
+      let damageMultiplier = 0;
+      damage = damage.map(affectedAmount => {
+        if (times) {
+          const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
+          const newFinalDamage = getFinalDamage(
+            newBaseDamage,
+            damageMultiplier,
+            typeEffectiveness,
+            applyBurn,
+            stabMod,
+            finalMod,
+            protect
+          );
+          damageMultiplier++;
+          return affectedAmount + newFinalDamage;
+        }
+        return affectedAmount;
+      });
+
+      if (attacker.hasAbility('Contrary')) {
+        dropCount = Math.min(6, dropCount + move.dropsStats);
+        desc.attackerAbility = attacker.ability;
+      } else {
+        dropCount = Math.max(-6, dropCount - move.dropsStats * simpleMultiplier);
+        if (attacker.hasAbility('Simple')) {
+          desc.attackerAbility = attacker.ability;
+        }
+      }
+
+      // the Pokémon hits THEN the stat rises / lowers
+      if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
+        dropCount += move.dropsStats * simpleMultiplier;
+        usedWhiteHerb = true;
+        desc.attackerItem = attacker.item;
+      }
+    }
+  }
+
+  desc.attackBoost =
+    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+
+  result.damage = childDamage ? [damage, childDamage] : damage;
+
+  // #endregion
+
+  return result;
+}
+
+export function calculateBasePowerSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isAerilate = false,
+  isPixilate = false,
+  isGalvanize = false,
+  isRefrigerate = false,
+  isNormalize = false
+) {
+  const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
 
   let basePower: number;
 
@@ -502,9 +696,67 @@ export function calculateSMSS(
   default:
     basePower = move.bp;
   }
-
   if (basePower === 0) {
-    return result;
+    return 0;
+  }
+  if (move.named(
+    'Breakneck Blitz', 'Bloom Doom', 'Inferno Overdrive', 'Hydro Vortex', 'Gigavolt Havoc',
+    'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage',
+    'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare',
+    'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle'
+  )) {
+    // show z-move power in description
+    desc.moveBP = move.bp;
+  }
+  const bpMods = calculateBPModsSMSS(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc,
+    basePower,
+    turnOrder,
+    isAerilate,
+    isPixilate,
+    isRefrigerate,
+    isNormalize
+  );
+  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000)));
+  return basePower;
+}
+
+export function calculateBPModsSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  basePower: number,
+  turnOrder: string,
+  isAerilate = false,
+  isPixilate = false,
+  isGalvanize = false,
+  isRefrigerate = false,
+  isNormalize = false
+) {
+  let resistedKnockOffDamage =
+    !defender.item ||
+    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
+    (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
+    (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
+    (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
+    (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
+    (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
+    defender.item.includes(' Z') ||
+    (defender.named('Zacian') && defender.hasItem('Rusted Sword'));
+
+  // The last case only applies when the Pokemon has the Mega Stone that matches its species
+  // (or when it's already a Mega-Evolution)
+  if (!resistedKnockOffDamage && defender.item) {
+    const item = gen.items.get(toID(defender.item))!;
+    resistedKnockOffDamage = !!item.megaEvolves && defender.name.includes(item.megaEvolves);
   }
 
   const bpMods = [];
@@ -700,22 +952,18 @@ export function calculateSMSS(
       desc.terrain = field.terrain;
     }
   }
+  return bpMods;
+}
 
-  if (move.named(
-    'Breakneck Blitz', 'Bloom Doom', 'Inferno Overdrive', 'Hydro Vortex', 'Gigavolt Havoc',
-    'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage',
-    'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare',
-    'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle'
-  )) {
-    // show z-move power in description
-    desc.moveBP = move.bp;
-  }
-
-  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000)));
-
-  // #endregion
-  // #region (Special) Attack
-
+export function calculateAttackSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false
+) {
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
   if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
@@ -751,7 +999,19 @@ export function calculateSMSS(
     attack = pokeRound((attack * 3) / 2);
     desc.attackerAbility = attacker.ability;
   }
+  const atMods = calculateAtModsSMSS(gen, attacker, defender, move, field, desc);
+  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods)) / 0x1000)));
+  return attack;
+}
 
+export function calculateAtModsSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc
+) {
   const atMods = [];
 
   // Slow Start also halves damage with special Z-moves
@@ -841,12 +1101,18 @@ export function calculateSMSS(
     atMods.push(0x1800);
     desc.attackerItem = attacker.item;
   }
+  return atMods;
+}
 
-  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods)) / 0x1000)));
-
-  // #endregion
-  // #region (Special) Defense
-
+export function calculateDefenseSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false
+) {
   let defense: number;
   const hitsPhysical = move.defensiveCategory === 'Physical' ||
     (move.named('Shell Side Arm') && getShellSideArmCategory(attacker, defender) === 'Physical');
@@ -870,6 +1136,30 @@ export function calculateSMSS(
     desc.weather = field.weather;
   }
 
+  const dfMods = calculateDfModsSMSS(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc,
+    isCritical,
+    hitsPhysical
+  );
+
+  return OF16(Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000)));
+}
+
+export function calculateDfModsSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false,
+  hitsPhysical = false
+) {
   const dfMods = [];
   if (defender.hasAbility('Marvel Scale') && defender.status && hitsPhysical) {
     dfMods.push(0x1800);
@@ -906,77 +1196,19 @@ export function calculateSMSS(
     dfMods.push(0x2000);
     desc.defenderItem = defender.item;
   }
+  return dfMods;
+}
 
-  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods)) / 0x1000)));
-
-  // #endregion
-  // #region Damage
-
-  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
-
-  const isSpread = field.gameType !== 'Singles' &&
-    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
-  if (isSpread) {
-    baseDamage = pokeRound(OF32(baseDamage * 0xc00) / 0x1000);
-  }
-
-  if (attacker.hasAbility('Parental Bond (Child)')) {
-    baseDamage = pokeRound(OF32(baseDamage * 0x400) / 0x1000);
-  }
-
-  const noWeatherBoost = defender.hasItem('Utility Umbrella');
-  if (!noWeatherBoost && (field.hasWeather('Sun', 'Harsh Sunshine') &&
-       move.hasType('Fire')) ||
-      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
-    baseDamage = pokeRound(OF32(baseDamage * 0x1800) / 0x1000);
-    desc.weather = field.weather;
-  } else if (!noWeatherBoost &&
-    (field.hasWeather('Sun') && move.hasType('Water')) ||
-    (field.hasWeather('Rain') && move.hasType('Fire'))
-  ) {
-    baseDamage = pokeRound(OF32(baseDamage * 0x800) / 0x1000);
-    desc.weather = field.weather;
-  } else if (!noWeatherBoost &&
-    (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
-    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
-  ) {
-    return result;
-  }
-
-  if (hasTerrainSeed(defender) &&
-      field.hasTerrain(defender.item!.substring(0, defender.item!.indexOf(' ')) as Terrain) &&
-      SEED_BOOSTED_STAT[defender.item!] === defenseStat) {
-    // Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome
-    // (like Grassy Seed when being hit by a special move)
-    desc.defenderItem = defender.item;
-  }
-
-  if (isCritical) {
-    baseDamage = Math.floor(OF32(baseDamage * 1.5));
-    desc.isCritical = isCritical;
-  }
-
-  // the random factor is applied between the crit mod and the stab mod, so don't apply anything
-  // below this until we're inside the loop
-  let stabMod = 0x1000;
-  if (attacker.hasType(move.type)) {
-    if (attacker.hasAbility('Adaptability')) {
-      stabMod = 0x2000;
-      desc.attackerAbility = attacker.ability;
-    } else {
-      stabMod = 0x1800;
-    }
-  } else if (attacker.hasAbility('Protean', 'Libero')) {
-    stabMod = 0x1800;
-    desc.attackerAbility = attacker.ability;
-  }
-
-  const applyBurn =
-    attacker.hasStatus('brn') &&
-    move.category === 'Physical' &&
-    !attacker.hasAbility('Guts') &&
-    !move.named('Facade');
-  desc.isBurned = applyBurn;
+export function calculateFinalModsSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false,
+  typeEffectiveness: number
+) {
   const finalMods = [];
 
   if (field.defenderSide.isReflect && move.category === 'Physical' &&
@@ -998,7 +1230,7 @@ export function calculateSMSS(
   }
 
   if (attacker.hasAbility('Neuroforce') && typeEffectiveness > 1) {
-    bpMods.push(0x1400);
+    finalMods.push(0x1400);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Sniper') && isCritical) {
     finalMods.push(0x1800);
@@ -1075,85 +1307,7 @@ export function calculateSMSS(
     desc.defenderItem = defender.item;
   }
 
-  let protect = false;
-  if (field.defenderSide.isProtected &&
-    (attacker.isDynamaxed || (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
-    protect = true;
-    desc.isProtected = true;
-  }
-
-  const finalMod = chainMods(finalMods);
-
-  let childDamage: number[] | undefined;
-  if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
-    const child = attacker.clone();
-    child.ability = 'Parental Bond (Child)' as AbilityName;
-    checkMultihitBoost(gen, child, defender, move, field, desc);
-    childDamage = calculateSMSS(gen, child, defender, move, field).damage as number[];
-    desc.attackerAbility = attacker.ability;
-  }
-
-  let damage = [];
-  for (let i = 0; i < 16; i++) {
-    damage[i] =
-      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod, protect);
-  }
-
-  if (move.dropsStats && move.timesUsed! > 1) {
-    const simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
-
-    desc.moveTurns = `over ${move.timesUsed} turns`;
-    const hasWhiteHerb = attacker.hasItem('White Herb');
-    let usedWhiteHerb = false;
-    let dropCount = attacker.boosts[attackStat];
-    for (let times = 0; times < move.timesUsed!; times++) {
-      const newAttack = getModifiedStat(attack, dropCount);
-      let damageMultiplier = 0;
-      damage = damage.map(affectedAmount => {
-        if (times) {
-          const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
-          const newFinalDamage = getFinalDamage(
-            newBaseDamage,
-            damageMultiplier,
-            typeEffectiveness,
-            applyBurn,
-            stabMod,
-            finalMod,
-            protect
-          );
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
-      });
-
-      if (attacker.hasAbility('Contrary')) {
-        dropCount = Math.min(6, dropCount + move.dropsStats);
-        desc.attackerAbility = attacker.ability;
-      } else {
-        dropCount = Math.max(-6, dropCount - move.dropsStats * simpleMultiplier);
-        if (attacker.hasAbility('Simple')) {
-          desc.attackerAbility = attacker.ability;
-        }
-      }
-
-      // the Pokémon hits THEN the stat rises / lowers
-      if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
-        dropCount += move.dropsStats * simpleMultiplier;
-        usedWhiteHerb = true;
-        desc.attackerItem = attacker.item;
-      }
-    }
-  }
-
-  desc.attackBoost =
-    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
-
-  result.damage = childDamage ? [damage, childDamage] : damage;
-
-  // #endregion
-
-  return result;
+  return finalMods;
 }
 
 function hasTerrainSeed(pokemon: Pokemon) {
