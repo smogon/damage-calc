@@ -812,6 +812,11 @@ export function calculateBPModsSMSS(
     desc.isBattery = true;
   }
 
+  if (field.attackerSide.isPowerSpot) {
+    bpMods.push(0x14CD);
+    desc.isPowerSpot = true;
+  }
+
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
   const analyticBoost = attacker.hasAbility('Analytic') &&
         (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out');

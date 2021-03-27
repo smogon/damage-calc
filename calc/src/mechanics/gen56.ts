@@ -456,6 +456,11 @@ export function calculateBWXY(
     desc.isBattery = true;
   }
 
+  if (field.attackerSide.isPowerSpot) {
+    bpMods.push(0x14cc);
+    desc.isPowerSpot = true;
+  }
+
   if (isAerilate || isPixilate || isRefrigerate || isNormalize) {
     bpMods.push(0x14cd);
     desc.attackerAbility = attacker.ability;
