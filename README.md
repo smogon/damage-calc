@@ -135,7 +135,7 @@ $ cd calc && npm install
 ```
 
 Next, run `node build` from the root directory of your clone of this repository. This should
-run `npm run compile` in the `calc/` subdirectory to compile the `@smoogon/calc` package from
+run `npm run compile` in the `calc/` subdirectory to compile the `@smogon/calc` package from
 TypeScript to JavaScript that can be run in the browser, and then compile the 'templated' HTML
 and copy everything into the top-level `dist/` folder. To then view the UI, open `dist/index.html` -
 simply double-clicking on the file from your operating system's file manager UI should open it in
