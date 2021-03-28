@@ -180,6 +180,8 @@ export function calculateBWXY(
     } else if (defender.types[1] && effectiveness[defender.types[1]]! === 0) {
       typeEffectiveness = type1Effectiveness;
     }
+  } else if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('Iron Ball')) {
+    typeEffectiveness = 1;
   }
 
   if (typeEffectiveness === 0) {
@@ -202,7 +204,8 @@ export function calculateBWXY(
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
-        !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
+        !field.isGravity && !defender.hasItem('Iron Ball') &&
+        !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && defender.hasAbility('Soundproof'))
   ) {
