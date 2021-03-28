@@ -58,6 +58,8 @@ export function calculateSMSS(
   checkKlutz(defender);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
+  checkDauntlessShield(attacker);
+  checkDauntlessShield(defender);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
@@ -67,8 +69,6 @@ export function calculateSMSS(
   checkDownload(defender, attacker);
   checkIntrepidSword(attacker);
   checkIntrepidSword(defender);
-  checkDauntlessShield(attacker);
-  checkDauntlessShield(defender);
 
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 
