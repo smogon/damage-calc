@@ -130,8 +130,7 @@ export function calculateSMSS(
   const isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor') &&
     (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
     move.timesUsed === 1;
-
-  if (move.named('Weather Ball')) {
+  if (move.named('Weather Ball') || move.originalName === 'Weather Ball') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     move.type =
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
@@ -154,7 +153,8 @@ export function calculateSMSS(
     desc.attackerItem = attacker.item;
     desc.moveBP = move.bp;
     desc.moveType = move.type;
-  } else if (move.named('Nature Power') || (move.named('Terrain Pulse') && isGrounded(attacker, field))) {
+  } else if (move.named('Nature Power') ||  move.originalName === 'Nature Power' || 
+    ((move.named('Terrain Pulse') ||  move.originalName === 'Terrain Pulse') && isGrounded(attacker, field))) {
     move.type =
       field.hasTerrain('Electric') ? 'Electric'
       : field.hasTerrain('Grassy') ? 'Grass'
