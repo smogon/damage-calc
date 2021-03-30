@@ -131,82 +131,14 @@ export function calculateSMSS(
     (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
     move.timesUsed === 1;
 
-  if (move.named('Weather Ball')) {
-    const holdingUmbrella = attacker.hasItem('Utility Umbrella');
-    move.type =
-      field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
-      : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
-      : field.hasWeather('Sand') ? 'Rock'
-      : field.hasWeather('Hail') ? 'Ice'
-      : 'Normal';
-    desc.weather = field.weather;
-    desc.moveType = move.type;
-  } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
-    move.type = getItemBoostType(attacker.item)!;
-  } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
-    move.type = getTechnoBlast(attacker.item)!;
-  } else if (move.named('Multi-Attack') && attacker.item && attacker.item.includes('Memory')) {
-    move.type = getMultiAttack(attacker.item)!;
-  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
-    const gift = getNaturalGift(gen, attacker.item)!;
-    move.type = gift.t;
-    move.bp = gift.p;
-    desc.attackerItem = attacker.item;
-    desc.moveBP = move.bp;
-    desc.moveType = move.type;
-  } else if (move.named('Nature Power', 'Terrain Pulse')) {
-    move.type =
-      field.hasTerrain('Electric') ? 'Electric'
-      : field.hasTerrain('Grassy') ? 'Grass'
-      : field.hasTerrain('Misty') ? 'Fairy'
-      : field.hasTerrain('Psychic') ? 'Psychic'
-      : 'Normal';
-  } else if (move.named('Revelation Dance')) {
-    move.type = attacker.types[0];
-  } else if (move.named('Aura Wheel')) {
-    if (attacker.named('Morpeko')) {
-      move.type = 'Electric';
-    } else if (attacker.named('Morpeko-Hangry')) {
-      move.type = 'Dark';
-    }
-  }
-
-  let isAerilate = false;
-  let isPixilate = false;
-  let isRefrigerate = false;
-  let isGalvanize = false;
-  let isLiquidVoice = false;
-  let isNormalize = false;
-  const noTypeChange = move.named(
-    'Revelation Dance',
-    'Judgment',
-    'Nature Power',
-    'Techno Blast',
-    'Multi Attack',
-    'Natural Gift',
-    'Weather Ball',
-    'Terrain Pulse',
+  move.type = getMoveTypeSMSS(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc
   );
-
-  if (!move.isZ && !noTypeChange) {
-    const normal = move.hasType('Normal');
-    if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
-      move.type = 'Flying';
-    } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
-      move.type = 'Electric';
-    } else if ((isLiquidVoice = attacker.hasAbility('Liquid Voice') && !!move.flags.sound)) {
-      move.type = 'Water';
-    } else if ((isPixilate = attacker.hasAbility('Pixilate') && normal)) {
-      move.type = 'Fairy';
-    } else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
-      move.type = 'Ice';
-    } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
-      move.type = 'Normal';
-    }
-    if (isGalvanize || isLiquidVoice || isPixilate || isRefrigerate || isAerilate || isNormalize) {
-      desc.attackerAbility = attacker.ability;
-    }
-  }
 
   // FIXME: this is incorrect, should be move.flags.heal, not move.drain
   if ((attacker.hasAbility('Triage') && move.drain) ||
@@ -226,6 +158,8 @@ export function calculateSMSS(
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
+    typeEffectiveness = 1;
+  } else if (typeEffectiveness === 0 && move.hasType("Ground") && defender.hasItem("Iron Ball") && !defender.hasAbility("Klutz")) {
     typeEffectiveness = 1;
   } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
     const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
@@ -256,7 +190,7 @@ export function calculateSMSS(
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
-        !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
+        !field.isGravity && !move.named('Thousand Arrows') && !defender.hasItem("Iron Ball") && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
@@ -346,8 +280,7 @@ export function calculateSMSS(
     defender,
     move,
     field,
-    desc,
-    isAerilate, isPixilate, isRefrigerate, isGalvanize, isNormalize
+    desc
   );
   if (basePower === 0) {
     return result;
@@ -537,18 +470,100 @@ export function calculateSMSS(
   return result;
 }
 
+export function getMoveTypeSMSS(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc
+) {
+  let type = move.type;
+  if (move.named('Weather Ball')) {
+    const holdingUmbrella = attacker.hasItem('Utility Umbrella');
+    type =
+      field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
+      : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
+      : field.hasWeather('Sand') ? 'Rock'
+      : field.hasWeather('Hail') ? 'Ice'
+      : 'Normal';
+    desc.weather = field.weather;
+    desc.moveType = type;
+  } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
+    type = getItemBoostType(attacker.item)!;
+  } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
+    type = getTechnoBlast(attacker.item)!;
+  } else if (move.named('Multi-Attack') && attacker.item && attacker.item.includes('Memory')) {
+    type = getMultiAttack(attacker.item)!;
+  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
+    const gift = getNaturalGift(gen, attacker.item)!;
+    type = gift.t;
+    desc.moveType = type;
+    desc.attackerItem = attacker.item;
+  } else if (move.named('Nature Power', 'Terrain Pulse')) {
+    type =
+      field.hasTerrain('Electric') ? 'Electric'
+      : field.hasTerrain('Grassy') ? 'Grass'
+      : field.hasTerrain('Misty') ? 'Fairy'
+      : field.hasTerrain('Psychic') ? 'Psychic'
+      : 'Normal';
+  } else if (move.named('Revelation Dance')) {
+    type = attacker.types[0];
+  } else if (move.named('Aura Wheel')) {
+    if (attacker.named('Morpeko')) {
+      type = 'Electric';
+    } else if (attacker.named('Morpeko-Hangry')) {
+      type = 'Dark';
+    }
+  }
+
+  let isAerilate = false;
+  let isPixilate = false;
+  let isRefrigerate = false;
+  let isGalvanize = false;
+  let isLiquidVoice = false;
+  let isNormalize = false;
+  const noTypeChange = move.named(
+    'Revelation Dance',
+    'Judgment',
+    'Nature Power',
+    'Techno Blast',
+    'Multi Attack',
+    'Natural Gift',
+    'Weather Ball',
+    'Terrain Pulse',
+  );
+
+  if (!move.isZ && !noTypeChange) {
+    const normal = move.hasType('Normal');
+    if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
+      type = 'Flying';
+    } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
+      type = 'Electric';
+    } else if ((isLiquidVoice = attacker.hasAbility('Liquid Voice') && !!move.flags.sound)) {
+      type = 'Water';
+    } else if ((isPixilate = attacker.hasAbility('Pixilate') && normal)) {
+      type = 'Fairy';
+    } else if ((isRefrigerate = attacker.hasAbility('Refrigerate') && normal)) {
+      type = 'Ice';
+    } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
+      type = 'Normal';
+    }
+    if (isGalvanize || isLiquidVoice || isPixilate || isRefrigerate || isAerilate || isNormalize) {
+      desc.attackerAbility = attacker.ability;
+    }
+  }
+
+  return type;
+}
+
 export function calculateBasePowerSMSS(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
   field: Field,
-  desc: RawDesc,
-  isAerilate = false,
-  isPixilate = false,
-  isGalvanize = false,
-  isRefrigerate = false,
-  isNormalize = false
+  desc: RawDesc
 ) {
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
 
@@ -668,6 +683,16 @@ export function calculateBasePowerSMSS(
     basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
     desc.moveBP = basePower;
     break;
+  case 'Natural Gift':
+    if(attacker.item && attacker.item.includes('Berry')){
+      const gift = getNaturalGift(gen, attacker.item)!;
+      basePower = gift.p;
+      desc.attackerItem = attacker.item;
+      desc.moveBP = move.bp;
+    } else {
+      basePower = move.bp;
+    }
+    break;
   case 'Nature Power':
     basePower =
         field.terrain && field.hasTerrain('Electric', 'Grassy', 'Psychic') ? 90
@@ -716,11 +741,7 @@ export function calculateBasePowerSMSS(
     field,
     desc,
     basePower,
-    turnOrder,
-    isAerilate,
-    isPixilate,
-    isRefrigerate,
-    isNormalize
+    turnOrder
   );
   basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 0x1000)));
   return basePower;
@@ -734,12 +755,7 @@ export function calculateBPModsSMSS(
   field: Field,
   desc: RawDesc,
   basePower: number,
-  turnOrder: string,
-  isAerilate = false,
-  isPixilate = false,
-  isGalvanize = false,
-  isRefrigerate = false,
-  isNormalize = false
+  turnOrder: string
 ) {
   let resistedKnockOffDamage =
     !defender.item ||
@@ -795,10 +811,28 @@ export function calculateBPModsSMSS(
     desc.attackerAbility = attacker.ability;
   }
 
-  if (!move.isZ && !move.isMax &&
-      (isAerilate || isPixilate || isRefrigerate || isGalvanize || isNormalize)) {
-    bpMods.push(0x1333);
-    desc.attackerAbility = attacker.ability;
+  const noTypeChange = move.named(
+    'Revelation Dance',
+    'Judgment',
+    'Nature Power',
+    'Techno Blast',
+    'Multi Attack',
+    'Natural Gift',
+    'Weather Ball',
+    'Terrain Pulse',
+  );
+
+  if(!move.isZ && !move.isMax && !noTypeChange){
+    const normal = move.hasType('Normal');
+    if(attacker.hasAbility('Aerilate') && normal ||
+      attacker.hasAbility('Galvanize') && normal ||
+      attacker.hasAbility('Pixilate') && normal ||
+      attacker.hasAbility('Refrigerate') && normal ||
+      attacker.hasAbility('Normalize')
+    ) {
+      bpMods.push(0x1333);
+      desc.attackerAbility = attacker.ability;
+    }
   } else if (
     (attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
     (attacker.hasAbility('Iron Fist') && move.flags.punch)

@@ -208,6 +208,34 @@ describe('calc', () => {
       });
     });
 
+    inGens(4, 8, ({gen, calculate, Pokemon, Move}) => {
+      const zapdos = Pokemon('Zapdos', {item: "Iron Ball"});
+      if(gen == 4){
+        test(`Iron Ball negates ground immunities (gen ${gen})`, () => {
+          const result = calculate(Pokemon('Vibrava'), zapdos, Move('Earthquake'));
+          expect(result.range()).toEqual([186, 218]);
+          expect(result.desc()).toBe(
+            '0 Atk Vibrava Earthquake vs. 0 HP / 0 Def Zapdos: 186-218 (57.9 - 67.9%) -- guaranteed 2HKO'
+          );
+        });
+      } else {
+        test(`Iron Ball Should negate damage nullifiers (gen ${gen})`, () => {
+          const result = calculate(Pokemon('Vibrava'), zapdos, Move('Earthquake'));
+          expect(result.range()).toEqual([93, 109]);
+          expect(result.desc()).toBe(
+            '0 Atk Vibrava Earthquake vs. 0 HP / 0 Def Zapdos: 93-109 (28.9 - 33.9%) -- 1.2% chance to 3HKO'
+          );
+        });
+      }
+      test(`Iron Ball negates levitate (gen ${gen})`, () => {
+        const result = calculate(Pokemon('Poliwrath'), Pokemon('Mismagius', {item: "Iron Ball"}), Move('Mud Shot'));
+        expect(result.range()).toEqual([29, 35]);
+        expect(result.desc()).toBe(
+          '0 SpA Poliwrath Mud Shot vs. 0 HP / 0 SpD Mismagius: 29-35 (11.1 - 13.4%) -- possible 8HKO'
+        );
+      });
+    });
+
     inGen(8, ({gen, Pokemon}) => {
       test(`Pokemon should double their HP stat when dynamaxing (gen ${gen})`, () => {
         const munchlax = Pokemon('Munchlax', {isDynamaxed: true});
