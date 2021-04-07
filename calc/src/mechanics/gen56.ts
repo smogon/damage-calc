@@ -399,7 +399,7 @@ export function calculateBWXY(
       bpMods.push(0x1400);
       desc.rivalry = 'buffed';
     } else {
-      bpMods.push(0xccd);
+      bpMods.push(0xc00);
       desc.rivalry = 'nerfed';
     }
     desc.attackerAbility = attacker.ability;
