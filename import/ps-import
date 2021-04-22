@@ -10,8 +10,7 @@ for (let gen = 1; gen <= 8; gen++) {
 	TIERS[gen] = {};
 
 	const dex = Dex.forFormat('gen' + gen + 'ou');
-	for (const k in dex.data.Pokedex) {
-		const val = dex.getSpecies(k);
+	for (const val of dex.species.all()) {
 		if (!val || (typeof val.exists === 'boolean' && !val.exists) || val.gen > gen) continue;
 		if (val.tier === 'Unreleased') continue;
 		if (val.tier.startsWith('CAP') && gen < 4) continue;
