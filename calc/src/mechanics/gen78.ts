@@ -58,6 +58,8 @@ export function calculateSMSS(
   checkKlutz(defender);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
+  checkDauntlessShield(attacker);
+  checkDauntlessShield(defender);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
@@ -67,8 +69,6 @@ export function calculateSMSS(
   checkDownload(defender, attacker);
   checkIntrepidSword(attacker);
   checkIntrepidSword(defender);
-  checkDauntlessShield(attacker);
-  checkDauntlessShield(defender);
 
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 
@@ -130,8 +130,7 @@ export function calculateSMSS(
   const isCritical = !defender.hasAbility('Battle Armor', 'Shell Armor') &&
     (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
     move.timesUsed === 1;
-
-  if (move.named('Weather Ball')) {
+  if (move.named('Weather Ball') || move.originalName === 'Weather Ball') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     move.type =
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
@@ -154,7 +153,8 @@ export function calculateSMSS(
     desc.attackerItem = attacker.item;
     desc.moveBP = move.bp;
     desc.moveType = move.type;
-  } else if (move.named('Nature Power', 'Terrain Pulse')) {
+  } else if (move.named('Nature Power') ||  move.originalName === 'Nature Power' || 
+    ((move.named('Terrain Pulse') ||  move.originalName === 'Terrain Pulse') && isGrounded(attacker, field))) {
     move.type =
       field.hasTerrain('Electric') ? 'Electric'
       : field.hasTerrain('Grassy') ? 'Grass'
@@ -234,6 +234,8 @@ export function calculateSMSS(
     } else if (defender.types[1] && effectiveness[defender.types[1]]! === 0) {
       typeEffectiveness = type1Effectiveness;
     }
+  } else if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('Iron Ball')) {
+    typeEffectiveness = 1;
   }
 
   if (typeEffectiveness === 0) {
@@ -256,7 +258,8 @@ export function calculateSMSS(
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
-        !field.isGravity && !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
+        !field.isGravity && !defender.hasItem('Iron Ball') &&
+        !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
@@ -648,7 +651,7 @@ export function calculateBasePowerSMSS(
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
-    basePower = move.bp * (field.terrain ? 2 : 1);
+    basePower = move.bp * (field.terrain && isGrounded(attacker, field) ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Fling':
@@ -810,6 +813,11 @@ export function calculateBPModsSMSS(
   if (field.attackerSide.isBattery && move.category === 'Special') {
     bpMods.push(0x14CD);
     desc.isBattery = true;
+  }
+
+  if (field.attackerSide.isPowerSpot) {
+    bpMods.push(0x14CD);
+    desc.isPowerSpot = true;
   }
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
