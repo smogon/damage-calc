@@ -181,7 +181,7 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
     } else {
       target.boosts.atk = Math.max(-6, target.boosts.atk - 1);
     }
-    if(target.hasAbility('Competitive')) {
+    if (target.hasAbility('Competitive')) {
       target.boosts.spa = Math.min(6, target.boosts.spa + 2);
     }
   }

@@ -7668,6 +7668,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Strong Jaw'},
     nfe: true,
   },
+  Chromera: {
+    types: ['Dark', 'Poison'],
+    bs: {hp: 85, at: 85, df: 115, sa: 115, sd: 100, sp: 100},
+    weightkg: 215,
+    abilities: {0: 'Color Change'},
+    gender: 'N',
+  },
   Cinderace: {
     types: ['Fire'],
     bs: {hp: 80, at: 116, df: 75, sa: 65, sd: 75, sp: 119},

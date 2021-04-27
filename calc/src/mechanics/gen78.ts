@@ -153,8 +153,9 @@ export function calculateSMSS(
     desc.attackerItem = attacker.item;
     desc.moveBP = move.bp;
     desc.moveType = move.type;
-  } else if (move.named('Nature Power') ||  move.originalName === 'Nature Power' || 
-    ((move.named('Terrain Pulse') ||  move.originalName === 'Terrain Pulse') && isGrounded(attacker, field))) {
+  } else if (move.named('Nature Power') || move.originalName === 'Nature Power' ||
+    ((move.named('Terrain Pulse') || move.originalName === 'Terrain Pulse') &&
+    isGrounded(attacker, field))) {
     move.type =
       field.hasTerrain('Electric') ? 'Electric'
       : field.hasTerrain('Grassy') ? 'Grass'

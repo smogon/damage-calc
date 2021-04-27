@@ -100,7 +100,7 @@ export function calculateADV(
     desc.hits = move.hits;
   }
 
-  let bp;
+  let bp = move.bp;
   switch (move.name) {
   case 'Flail':
   case 'Reversal':

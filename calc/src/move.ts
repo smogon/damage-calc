@@ -233,7 +233,12 @@ const ZMOVES_TYPING: {
   Water: 'Hydro Vortex',
 };
 
-export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, isStatus?: boolean, pokemonAbility?: string) {
+export function getMaxMoveName(
+  moveType: I.TypeName,
+  pokemonSpecies?: string,
+  isStatus?: boolean,
+  pokemonAbility?: string
+) {
   if (isStatus) return 'Max Guard';
   if (pokemonAbility === 'Normalize') return 'Max Strike';
   if (moveType === 'Fire') {

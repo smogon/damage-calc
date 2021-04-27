@@ -8,7 +8,7 @@
     "calc": "file:calc"
   },
   "devDependencies": {
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "express": "^4.17.1",
     "subpkg": "^4.1.0"
   },
@@ -33,7 +33,7 @@
     "@babel/plugin-transform-template-literals": "^7.13.0",
     "@babel/plugin-transform-typescript": "^7.13.0",
     "@babel/preset-env": "^7.13.15",
-    "terser": "^5.6.1"
+    "terser": "^5.7.0"
   },
   "scripts": {
     "lint": "subpkg run lint && eslint --cache src --ext js",
