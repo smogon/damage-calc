@@ -111,11 +111,11 @@ export function calculateDPP(
 
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
-  if(typeEffectiveness === 0 && move.hasType("Ground") && defender.hasItem("Iron Ball")) { //Iron Ball ignores klutz in generation 4
-    if(type1Effectiveness === 0){
+  // Iron Ball ignores Klutz in generation 4
+  if (typeEffectiveness === 0 && move.hasType("Ground") && defender.hasItem("Iron Ball")) {
+    if (type1Effectiveness === 0) {
       type1Effectiveness = 1;
-    }
-    else if(defender.types[1] && type2Effectiveness === 0){
+    } else if (defender.types[1] && type2Effectiveness === 0) {
       type2Effectiveness = 1;
     }
     typeEffectiveness = type1Effectiveness * type2Effectiveness;
