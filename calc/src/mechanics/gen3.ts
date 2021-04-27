@@ -118,6 +118,12 @@ export function calculateADV(
     bp = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
     desc.moveBP = bp;
     break;
+  case 'Facade':
+    if (attacker.hasStatus('par', 'psn', 'tox', 'brn')) {
+      bp = move.bp * 2;
+      desc.moveBP = bp;
+    }
+    break;
   default:
     bp = move.bp;
   }
