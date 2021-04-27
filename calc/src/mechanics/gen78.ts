@@ -786,10 +786,10 @@ export function calculateBPModsSMSS(
 
   if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
     if (attacker.gender === defender.gender) {
-      bpMods.push(0xC00);
+      bpMods.push(0x1400);
       desc.rivalry = 'buffed';
     } else {
-      bpMods.push(0xCCD);
+      bpMods.push(0xC00);
       desc.rivalry = 'nerfed';
     }
     desc.attackerAbility = attacker.ability;
