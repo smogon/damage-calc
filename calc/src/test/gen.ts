@@ -53,7 +53,7 @@ class Abilities implements I.Abilities {
   }
 
   get(name: string) {
-    const ability = this.dex.getAbility(name);
+    const ability = this.dex.abilities.get(name);
     if (ability.isNonstandard === 'CAP' && this.dex.gen < 4) return undefined;
     return exists(ability, this.dex.gen) ? new Ability(ability) : undefined;
   }
@@ -87,11 +87,11 @@ class Items implements I.Items {
 
   get(name: string) {
     if (this.dex.gen < 2) return undefined;
-    let item = this.dex.getItem(name);
+    let item = this.dex.items.get(name);
     // Enigma Berry is Unobtainable in Gen 3, but the damage calc supports Unobtainable data and
     // needs the naturalGift data which is only defined in Gen 4.
     if (this.dex.gen === 3 && item.id === 'enigmaberry') {
-      item = this.dex.forGen(4).getItem('enigmaberry');
+      item = this.dex.forGen(4).items.get('enigmaberry');
     }
     return exists(item, this.dex.gen) ? new Item(item, this.dex.gen) : undefined;
   }
@@ -133,7 +133,7 @@ class Moves implements I.Moves {
   }
 
   get(name: string) {
-    const move = this.dex.getMove(name);
+    const move = this.dex.moves.get(name);
     return exists(move, this.dex.gen) ? new Move(move, this.dex) : undefined;
   }
 
@@ -252,7 +252,7 @@ class Species implements I.Species {
   }
 
   get(name: string) {
-    const species = this.dex.getSpecies(name);
+    const species = this.dex.species.get(name);
     if (this.dex.gen >= 6 && species.id === 'aegislashboth') return AegislashBoth(this.dex);
     return exists(species, this.dex.gen) ? new Specie(species, this.dex) : undefined;
   }
@@ -305,11 +305,11 @@ class Specie implements I.Specie {
     this.baseStats = species.baseStats;
     this.weightkg = species.weightkg;
 
-    const nfe = !!species.evos?.some(s => exists(dex.getSpecies(s), dex.gen));
+    const nfe = !!species.evos?.some(s => exists(dex.species.get(s), dex.gen));
     if (nfe) this.nfe = nfe;
     if (species.gender === 'N' && dex.gen > 1) this.gender = species.gender;
 
-    const formes = species.otherFormes?.filter(s => exists(dex.getSpecies(s), dex.gen));
+    const formes = species.otherFormes?.filter(s => exists(dex.species.get(s), dex.gen));
     if (species.id.startsWith('aegislash')) {
       if (species.id === 'aegislashblade') {
         this.otherFormes = ['Aegislash-Shield', 'Aegislash-Both'] as I.SpeciesName[];
@@ -337,7 +337,7 @@ class Specie implements I.Specie {
     if (dex.gen === 8 && species.canGigantamax &&
         !(species.id.startsWith('toxtricity') || species.id.startsWith('urshifu'))) {
       const formes = this.otherFormes || [];
-      const gmax = dex.getSpecies(`${species.name}-Gmax`);
+      const gmax = dex.species.get(`${species.name}-Gmax`);
       if (exists(gmax, dex.gen)) this.otherFormes = [...formes, gmax.name].sort();
     }
 
@@ -347,8 +347,8 @@ class Specie implements I.Specie {
 
 // Custom Aegislash forme
 function AegislashBoth(dex: D.ModdedDex) {
-  const shield = dex.getSpecies('aegislash')!;
-  const blade = dex.getSpecies('aegislashblade')!;
+  const shield = dex.species.get('aegislash')!;
+  const blade = dex.species.get('aegislashblade')!;
   const baseStats = {
     hp: shield.baseStats.hp,
     atk: blade.baseStats.atk,
@@ -382,18 +382,19 @@ export class Types implements I.Types {
     } as I.Type;
 
     this.byID = {};
-    for (const t1 in this.dex.data.Types) {
-      const id = toID(t1);
-      const name = t1 as Exclude<I.TypeName, '???'>;
+    for (const id in this.dex.data.Types) {
+      if (!exists(this.dex.types.get(id), this.dex.gen)) continue;
+      const name = id[0].toUpperCase() + id.slice(1) as Exclude<I.TypeName, '???'>;
 
       const effectiveness = {'???': 1} as {[type in I.TypeName]: I.TypeEffectiveness};
-      for (const t2 in this.dex.data.Types) {
-        const t = t2 as Exclude<I.TypeName, '???'>;
-        effectiveness[t] = DAMAGE_TAKEN[this.dex.data.Types[t].damageTaken[name]!];
+      for (const t2ID in this.dex.data.Types) {
+        if (!exists(this.dex.types.get(t2ID), this.dex.gen)) continue;
+        const t = t2ID[0].toUpperCase() + t2ID.slice(1) as Exclude<I.TypeName, '???'>;
+        effectiveness[t] = DAMAGE_TAKEN[this.dex.data.Types[t2ID].damageTaken[name]!];
       }
       (unknown.effectiveness as any)[name] = 1;
 
-      this.byID[id] = {kind: 'Type', id, name, effectiveness};
+      this.byID[id] = {kind: 'Type', id: id as I.ID, name, effectiveness};
     }
     this.byID[unknown.id] = unknown;
   }
@@ -418,7 +419,7 @@ export class Natures implements I.Natures {
   }
 
   get(name: string) {
-    const nature = this.dex.getNature(name);
+    const nature = this.dex.natures.get(name);
     return nature.exists ? new Nature(nature) : undefined;
   }
 
@@ -482,7 +483,7 @@ const NATDEX_BANNED = [
   'Magearna-Original',
 ];
 
-function exists(val: D.Ability| D.Item | D.Move | D.Species, gen: I.GenerationNum) {
+function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.GenerationNum) {
   if (!val.exists || val.id === 'noability') return false;
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
   if (gen === 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;

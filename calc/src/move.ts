@@ -58,7 +58,8 @@ export class Move implements State.Move {
       const maxMoveName: string = getMaxMoveName(
         data.type,
         options.species,
-        !!(data.category === 'Status')
+        !!(data.category === 'Status'),
+        options.ability
       );
       const maxMove = gen.moves.get(toID(maxMoveName));
       const maxPower = () => {
@@ -232,8 +233,14 @@ const ZMOVES_TYPING: {
   Water: 'Hydro Vortex',
 };
 
-export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, isStatus?: boolean) {
+export function getMaxMoveName(
+  moveType: I.TypeName,
+  pokemonSpecies?: string,
+  isStatus?: boolean,
+  pokemonAbility?: string
+) {
   if (isStatus) return 'Max Guard';
+  if (pokemonAbility === 'Normalize') return 'Max Strike';
   if (moveType === 'Fire') {
     if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
     if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
@@ -243,6 +250,10 @@ export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, is
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
     if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
     if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
+    if (pokemonAbility === 'Pixilate') return 'Max Starfall';
+    if (pokemonAbility === 'Aerilate') return 'Max Airstream';
+    if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
+    if (pokemonAbility === 'Galvanize') return 'Max Lightning';
   }
   if (moveType === 'Fairy') {
     if (pokemonSpecies === 'Alcremie-Gmax') return 'G-Max Finale';

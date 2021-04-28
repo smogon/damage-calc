@@ -18,26 +18,34 @@ function ExportPokemon(pokeInfo) {
 	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (gen > 2) {
-		finalText += "EVs: ";
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
 			var ev = pokemon.evs[stat] ? pokemon.evs[stat] : 0;
-			EVs_Array.push(ev + " " + calc.Stats.displayStat(stat));
+			if (ev > 0) {
+				EVs_Array.push(ev + " " + calc.Stats.displayStat(stat));
+			}
 			EV_counter += ev;
 			if (EV_counter > 510) break;
 		}
-		finalText += serialize(EVs_Array, " / ");
-		finalText += "\n";
+		if (EVs_Array.length > 0) {
+			finalText += "EVs: ";
+			finalText += serialize(EVs_Array, " / ");
+			finalText += "\n";
+		}
 	}
 
-	finalText += "IVs: ";
 	var IVs_Array = [];
 	for (var stat in pokemon.ivs) {
 		var iv = pokemon.ivs[stat] ? pokemon.ivs[stat] : 0;
-		IVs_Array.push(iv + " " + calc.Stats.displayStat(stat));
+		if (iv < 31) {
+			IVs_Array.push(iv + " " + calc.Stats.displayStat(stat));
+		}
 	}
-	finalText += serialize(IVs_Array, " / ");
-	finalText += "\n";
+	if (IVs_Array.length > 0) {
+		finalText += "IVs: ";
+		finalText += serialize(IVs_Array, " / ");
+		finalText += "\n";
+	}
 
 	for (var i = 0; i < 4; i++) {
 		var moveName = pokemon.moves[i].name;

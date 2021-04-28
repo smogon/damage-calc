@@ -28,7 +28,7 @@ const EV_ITEMS = [
 ];
 
 export function isGrounded(pokemon: Pokemon, field: Field) {
-  return (field.isGravity ||
+  return (field.isGravity || pokemon.hasItem('Iron Ball') ||
     (!pokemon.hasType('Flying') &&
       !pokemon.hasAbility('Levitate') &&
       !pokemon.hasItem('Air Balloon')));
@@ -180,6 +180,9 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
       target.boosts.atk = Math.max(-6, target.boosts.atk - 2);
     } else {
       target.boosts.atk = Math.max(-6, target.boosts.atk - 1);
+    }
+    if (target.hasAbility('Competitive')) {
+      target.boosts.spa = Math.min(6, target.boosts.spa + 2);
     }
   }
 }

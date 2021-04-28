@@ -61,6 +61,7 @@ export namespace State {
     isFriendGuard?: boolean;
     isAuroraVeil?: boolean;
     isBattery?: boolean;
+    isPowerSpot?: boolean;
     isSwitching?: 'out' | 'in';
   }
 }
