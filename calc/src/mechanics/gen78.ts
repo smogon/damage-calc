@@ -183,6 +183,12 @@ export function calculateSMSS(
     return result;
   }
 
+  if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
+      gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1) {
+    typeEffectiveness /= 2;
+    desc.weather = field.weather;
+  }
+
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
@@ -197,12 +203,6 @@ export function calculateSMSS(
   ) {
     desc.defenderAbility = defender.ability;
     return result;
-  }
-
-  if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
-      gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1) {
-    typeEffectiveness /= 2;
-    desc.weather = field.weather;
   }
 
   if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
