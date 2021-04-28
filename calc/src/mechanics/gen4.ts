@@ -112,7 +112,7 @@ export function calculateDPP(
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   // Iron Ball ignores Klutz in generation 4
-  if (typeEffectiveness === 0 && move.hasType("Ground") && defender.hasItem("Iron Ball")) {
+  if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('Iron Ball')) {
     if (type1Effectiveness === 0) {
       type1Effectiveness = 1;
     } else if (defender.types[1] && type2Effectiveness === 0) {
@@ -130,7 +130,8 @@ export function calculateDPP(
       (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
       (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||
       (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb')) ||
-      (move.hasType('Ground') && !field.isGravity && !defender.hasItem("Iron Ball") && defender.hasAbility('Levitate')) ||
+      (move.hasType('Ground') && !field.isGravity &&
+        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
       (move.flags.sound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;

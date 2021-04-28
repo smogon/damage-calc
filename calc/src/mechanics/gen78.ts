@@ -159,7 +159,8 @@ export function calculateSMSS(
 
   if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
     typeEffectiveness = 1;
-  } else if (typeEffectiveness === 0 && move.hasType("Ground") && defender.hasItem("Iron Ball") && !defender.hasAbility("Klutz")) {
+  } else if (typeEffectiveness === 0 && move.hasType('Ground') &&
+    defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
     typeEffectiveness = 1;
   } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
     const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
@@ -196,7 +197,8 @@ export function calculateSMSS(
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
-        !field.isGravity && !move.named('Thousand Arrows') && !defender.hasItem("Iron Ball") && defender.hasAbility('Levitate')) ||
+        !field.isGravity && !move.named('Thousand Arrows') &&
+        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
@@ -684,7 +686,7 @@ export function calculateBasePowerSMSS(
     desc.moveBP = basePower;
     break;
   case 'Natural Gift':
-    if(attacker.item && attacker.item.includes('Berry')){
+    if (attacker.item?.includes('Berry')) {
       const gift = getNaturalGift(gen, attacker.item)!;
       basePower = gift.p;
       desc.attackerItem = attacker.item;
@@ -822,9 +824,9 @@ export function calculateBPModsSMSS(
     'Terrain Pulse',
   );
 
-  if(!move.isZ && !move.isMax && !noTypeChange){
+  if (!move.isZ && !move.isMax && !noTypeChange) {
     const normal = move.hasType('Normal');
-    if(attacker.hasAbility('Aerilate') && normal ||
+    if (attacker.hasAbility('Aerilate') && normal ||
       attacker.hasAbility('Galvanize') && normal ||
       attacker.hasAbility('Pixilate') && normal ||
       attacker.hasAbility('Refrigerate') && normal ||

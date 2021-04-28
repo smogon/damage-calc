@@ -209,8 +209,8 @@ describe('calc', () => {
     });
 
     inGens(4, 8, ({gen, calculate, Pokemon, Move}) => {
-      const zapdos = Pokemon('Zapdos', {item: "Iron Ball"});
-      if(gen == 4){
+      const zapdos = Pokemon('Zapdos', {item: 'Iron Ball'});
+      if (gen === 4) {
         test(`Iron Ball negates ground immunities (gen ${gen})`, () => {
           const result = calculate(Pokemon('Vibrava'), zapdos, Move('Earthquake'));
           expect(result.range()).toEqual([186, 218]);
@@ -228,7 +228,7 @@ describe('calc', () => {
         });
       }
       test(`Iron Ball negates levitate (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Poliwrath'), Pokemon('Mismagius', {item: "Iron Ball"}), Move('Mud Shot'));
+        const result = calculate(Pokemon('Poliwrath'), Pokemon('Mismagius', {item: 'Iron Ball'}), Move('Mud Shot'));
         expect(result.range()).toEqual([29, 35]);
         expect(result.desc()).toBe(
           '0 SpA Poliwrath Mud Shot vs. 0 HP / 0 SpD Mismagius: 29-35 (11.1 - 13.4%) -- possible 8HKO'
