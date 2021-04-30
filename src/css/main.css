@@ -178,6 +178,21 @@ th {
     font-size: 1.1em;
     margin: 0.5em 0;
 }
+.big-text #mainResult:hover {  /* indicates the presence of click-to-copy function */
+    cursor: pointer;
+    opacity: 0.7;
+}
+#tooltipText {
+    font-size: 0.8em;
+    visibility: hidden;
+    border-radius: 5px;
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+}
 .small-text {
     font-size: 0.8em;
 }

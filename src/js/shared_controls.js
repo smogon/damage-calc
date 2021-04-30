@@ -1302,3 +1302,13 @@ $(document).ready(function () {
 	$(".set-selector").change();
 	$(".terrain-trigger").bind("change keyup", getTerrainEffects);
 });
+
+/* Click-to-copy function */
+$("#mainResult").click(function () {
+	navigator.clipboard.writeText($("#mainResult").text()).then(function () {
+		document.getElementById('tooltipText').style.visibility = 'visible';
+		setTimeout(function () {
+			document.getElementById('tooltipText').style.visibility = 'hidden';
+		}, 2000);
+	});
+});
