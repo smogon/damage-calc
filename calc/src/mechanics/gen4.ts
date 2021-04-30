@@ -103,12 +103,23 @@ export function calculateDPP(
   }
 
   const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
-  const type1Effectiveness =
+  let type1Effectiveness =
     getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity);
-  const type2Effectiveness = defender.types[1]
+  let type2Effectiveness = defender.types[1]
     ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
     : 1;
-  const typeEffectiveness = type1Effectiveness * type2Effectiveness;
+
+  let typeEffectiveness = type1Effectiveness * type2Effectiveness;
+
+  // Iron Ball ignores Klutz in generation 4
+  if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('Iron Ball')) {
+    if (type1Effectiveness === 0) {
+      type1Effectiveness = 1;
+    } else if (defender.types[1] && type2Effectiveness === 0) {
+      type2Effectiveness = 1;
+    }
+    typeEffectiveness = type1Effectiveness * type2Effectiveness;
+  }
 
   if (typeEffectiveness === 0) {
     return result;
@@ -119,7 +130,8 @@ export function calculateDPP(
       (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
       (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Water Absorb')) ||
       (move.hasType('Electric') && defender.hasAbility('Motor Drive', 'Volt Absorb')) ||
-      (move.hasType('Ground') && !field.isGravity && defender.hasAbility('Levitate')) ||
+      (move.hasType('Ground') && !field.isGravity &&
+        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
       (move.flags.sound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;
@@ -162,8 +174,8 @@ export function calculateDPP(
     break;
   case 'Flail':
   case 'Reversal':
-    const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
-    basePower = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
+    const p = Math.floor((64 * attacker.curHP()) / attacker.maxHP());
+    basePower = p <= 1 ? 200 : p <= 5 ? 150 : p <= 12 ? 100 : p <= 21 ? 80 : p <= 42 ? 40 : 20;
     desc.moveBP = basePower;
     break;
   case 'Fling':

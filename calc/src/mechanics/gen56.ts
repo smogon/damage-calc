@@ -173,6 +173,9 @@ export function calculateBWXY(
 
   if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
     typeEffectiveness = 1;
+  } else if (typeEffectiveness === 0 && move.hasType('Ground') &&
+    defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
+    typeEffectiveness = 1;
   } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
     const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
     if (effectiveness[defender.types[0]]! === 0) {
@@ -180,8 +183,6 @@ export function calculateBWXY(
     } else if (defender.types[1] && effectiveness[defender.types[1]]! === 0) {
       typeEffectiveness = type1Effectiveness;
     }
-  } else if (typeEffectiveness === 0 && move.hasType('Ground') && defender.hasItem('Iron Ball')) {
-    typeEffectiveness = 1;
   }
 
   if (typeEffectiveness === 0) {
@@ -197,6 +198,12 @@ export function calculateBWXY(
     return result;
   }
 
+  if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
+      gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1) {
+    typeEffectiveness /= 2;
+    desc.weather = field.weather;
+  }
+
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
@@ -204,19 +211,13 @@ export function calculateBWXY(
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
-        !field.isGravity && !defender.hasItem('Iron Ball') &&
-        !move.named('Thousand Arrows') && defender.hasAbility('Levitate')) ||
+        !field.isGravity && !move.named('Thousand Arrows') &&
+        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && defender.hasAbility('Soundproof'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
-  }
-
-  if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
-      gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1) {
-    typeEffectiveness /= 2;
-    desc.weather = field.weather;
   }
 
   if (move.hasType('Ground') && !move.named('Thousand Arrows') &&
