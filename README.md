@@ -28,7 +28,7 @@ Alternatively, as [detailed below](#browser), if you are using `@smogon/calc` in
 a convenient way to get started, simply depend on a transpiled and minified version via [unpkg][5]:
 
 ```html
-<script src="https://unpkg.com/@smogon/calc/data/production.min.js"></script>
+<script src="https://unpkg.com/@smogon/calc/dist/data/production.min.js"></script>
 <script src="https://unpkg.com/@smogon/calc"></script>
 ```
 
