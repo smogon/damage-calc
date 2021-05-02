@@ -321,10 +321,10 @@ export function checkMultihitBoost(
 }
 
 export function chainMods(mods: number[]) {
-  let M = 0x1000;
+  let M = 4096;
   for (const mod of mods) {
-    if (mod !== 0x1000) {
-      M = (M * mod + 0x800) >> 12;
+    if (mod !== 4096) {
+      M = (M * mod + 2048) >> 12;
     }
   }
   return M;
@@ -352,12 +352,12 @@ export function getFinalDamage(
   let damageAmount = Math.floor(OF32(baseAmount * (85 + i)) / 100);
   // If the stabMod would not accomplish anything we avoid applying it because it could cause
   // us to calculate damage overflow incorrectly (DaWoblefet)
-  if (stabMod !== 0x1000) damageAmount = OF32(damageAmount * stabMod) / 0x1000;
+  if (stabMod !== 4096) damageAmount = OF32(damageAmount * stabMod) / 4096;
   damageAmount = Math.floor(OF32(pokeRound(damageAmount) * effectiveness));
 
   if (isBurned) damageAmount = Math.floor(damageAmount / 2);
-  if (protect) damageAmount = pokeRound(OF32(damageAmount * 0x400) / 0x1000);
-  return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 0x1000)));
+  if (protect) damageAmount = pokeRound(OF32(damageAmount * 1024) / 4096);
+  return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 4096)));
 }
 
 /**
@@ -434,10 +434,10 @@ export function pokeRound(num: number) {
 
 // 16-bit Overflow
 export function OF16(n: number) {
-  return n > 0xFFFF ? n % 0x10000 : n;
+  return n > 65535 ? n % 65536 : n;
 }
 
 // 32-bit Overflow
 export function OF32(n: number) {
-  return n > 0xFFFFFFFF ? n % 0x100000000 : n;
+  return n > 4294967295 ? n % 4294967296 : n;
 }
