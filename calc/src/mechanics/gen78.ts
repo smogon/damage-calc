@@ -825,17 +825,20 @@ export function calculateBPModsSMSS(
   );
 
   if (!move.isZ && !move.isMax && !noTypeChange) {
-    const normal = move.hasType('Normal');
-    if (attacker.hasAbility('Aerilate') && normal ||
-      attacker.hasAbility('Galvanize') && normal ||
-      attacker.hasAbility('Pixilate') && normal ||
-      attacker.hasAbility('Refrigerate') && normal ||
-      attacker.hasAbility('Normalize')
+    // The -ate abilities already changed move typing earlier
+    const normal = new Move(gen, move.originalName).hasType('Normal');
+    if (attacker.hasAbility('Normalize') ||
+      (normal && (attacker.hasAbility('Aerilate') ||
+      attacker.hasAbility('Galvanize') ||
+      attacker.hasAbility('Pixilate') ||
+      attacker.hasAbility('Refrigerate')))
     ) {
       bpMods.push(4915);
       desc.attackerAbility = attacker.ability;
     }
-  } else if (
+  }
+  
+  if (
     (attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
     (attacker.hasAbility('Iron Fist') && move.flags.punch)
   ) {
