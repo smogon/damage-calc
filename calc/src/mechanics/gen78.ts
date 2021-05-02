@@ -320,7 +320,8 @@ export function calculateSMSS(
   const isSpread = field.gameType !== 'Singles' &&
      ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
   if (isSpread) {
-    baseDamage = pokeRound(OF32(baseDamage * 3072) / 4096);
+    const spreadModifier = field.gameType === 'Doubles' ? 3072 : 2048;
+    baseDamage = pokeRound(OF32(baseDamage * spreadModifier) / 4096);
   }
 
   if (attacker.hasAbility('Parental Bond (Child)')) {

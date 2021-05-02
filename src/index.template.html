@@ -631,12 +631,15 @@
         <div aria-label="Field information" role="region">
             <fieldset class="field-info">
                 <legend align="center">Field</legend>
-                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8" role="radiogroup" style="margin: 0 auto 5px;" title="Select the battle format.">
                     <span class="visually-hidden" id="selectBattleFormatInstruction">Select the battle format.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
                     <label class="btn btn-left" for="singles-format">Singles</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Doubles" id="doubles-format" />
-                    <label class="btn btn-right" for="doubles-format">Doubles</label>
+                    <label class="btn btn-right gen-specific g3 g4 g5 g6 g7" for="doubles-format">Doubles</label>
+                    <label class="btn btn-mid gen-specific g8" for="doubles-format">Doubles</label>
+                    <input class="visually-hidden calc-trigger gen-specific g8" type="radio" name="format" value="FFA" id="ffa-format" />
+                    <label class="btn btn-right gen-specific g8" for="ffa-format" style = "width: auto;">Free-For-All</label>
                 </div>
                 <div aria-labelledby="selectTerrainInstruction" class="gen-specific g6 g7 g8" role="group" title="Select the current terrain.">
                     <span class="visually-hidden" id="selectTerrainInstruction">Select the current terrain.</span>
