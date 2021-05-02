@@ -801,6 +801,16 @@ describe('calc', () => {
         );
       });
 
+      test('-ate Abilities', () => {
+        const sylveon = Pokemon('Sylveon', {ability: 'Pixilate', evs: {spa: 252}});
+        const silvally = Pokemon('Silvally');
+        const hypervoice = Move('Hyper Voice');
+        const result = calculate(sylveon, silvally, hypervoice);
+        expect(result.desc()).toBe(
+          '252 SpA Pixilate Sylveon Hyper Voice vs. 0 HP / 0 SpD Silvally: 165-195 (49.8 - 58.9%) -- 99.6% chance to 2HKO'
+        );
+      });
+
       test('% chance to OHKO', () => {
         const abomasnow = Pokemon('Abomasnow', {
           level: 55,
