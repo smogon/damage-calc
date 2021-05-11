@@ -748,7 +748,6 @@ export function calculateBPModsSMSS(
   hasAteAbilityTypeChange: boolean,
   turnOrder: string
 ) {
-  
   const bpMods = [];
 
   // Move effects
@@ -790,7 +789,7 @@ export function calculateBPModsSMSS(
     bpMods.push(2048);
     desc.moveBP = basePower / 2;
     desc.weather = field.weather;
-  } 
+  }
 
   if (field.attackerSide.isHelpingHand) {
     bpMods.push(6144);
@@ -810,7 +809,7 @@ export function calculateBPModsSMSS(
     }
   }
   if (isGrounded(defender, field)) {
-    if ((field.hasTerrain('Misty') && move.hasType('Dragon')) || 
+    if ((field.hasTerrain('Misty') && move.hasType('Dragon')) ||
         (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake'))
     ) {
       bpMods.push(2048);
@@ -851,13 +850,13 @@ export function calculateBPModsSMSS(
       if (isAttackerAura) desc.attackerAbility = attacker.ability;
       if (isDefenderAura) desc.defenderAbility = defender.ability;
     }
-  } 
+  }
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
   if ((attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) ||
       (attacker.hasAbility('Sand Force') && field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
       (attacker.hasAbility('Analytic') && (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
-      (attacker.hasAbility('Tough Claws') && move.flags.contact) || 
+      (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
       (attacker.hasAbility('Punk Rock') && move.flags.sound)
   ) {
     bpMods.push(5325);
