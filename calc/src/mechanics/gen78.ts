@@ -163,6 +163,8 @@ export function calculateSMSS(
       : field.hasTerrain('Misty') ? 'Fairy'
       : field.hasTerrain('Psychic') ? 'Psychic'
       : 'Normal';
+    desc.terrain = field.terrain;
+    desc.moveType = type;
   } else if (move.named('Revelation Dance')) {
     type = attacker.types[0];
   } else if (move.named('Aura Wheel')) {
@@ -254,7 +256,9 @@ export function calculateSMSS(
         (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
       (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
         (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
-      (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose')))
+      (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose'))) ||
+      (move.named('Steel Roller') && !field.terrain) ||
+      (move.named('Poltergeist') && !defender.item)
   ) {
     return result;
   }
@@ -563,7 +567,7 @@ export function calculateBasePowerSMSS(
 
   switch (move.name) {
   case 'Payback':
-    basePower = turnOrder === 'last' ? 100 : 50;
+    basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Bolt Beak':
@@ -571,32 +575,19 @@ export function calculateBasePowerSMSS(
     basePower = move.bp * (turnOrder !== 'last' ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Pursuit':
+    const switching = field.defenderSide.isSwitching === 'out';
+    basePower = move.bp * (switching ? 2 : 1);
+    if (switching) desc.isSwitching = 'out';
+    desc.moveBP = basePower;
+    break;
   case 'Electro Ball':
     const r = Math.floor(attacker.stats.spe / defender.stats.spe);
     basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
     desc.moveBP = basePower;
     break;
-  case 'Expanding Force':
-    const isTerrainBoosted =
-      isGrounded(attacker, field) && field.hasTerrain('Psychic');
-    basePower = move.bp * (isTerrainBoosted ? 1.5 : 1);
-    move.target = isTerrainBoosted ? 'allAdjacentFoes' : 'normal';
-    desc.moveBP = basePower;
-    break;
-  case 'Misty Explosion':
-    basePower = move.bp * (field.hasTerrain('Misty') ? 1.5 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Rising Voltage':
-    basePower = isGrounded(defender, field) && field.hasTerrain('Electric') ? move.bp * 2 : move.bp;
-    desc.moveBP = basePower;
-    break;
   case 'Gyro Ball':
-    basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
-    desc.moveBP = basePower;
-    break;
-  case 'Poltergeist':
-    basePower = move.bp * (!defender.item ? 0 : 1);
+    basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
     desc.moveBP = basePower;
     break;
   case 'Punishment':
@@ -628,15 +619,11 @@ export function calculateBasePowerSMSS(
     desc.moveBP = basePower;
     break;
   case 'Acrobatics':
-    basePower = attacker.hasItem('Flying Gem') || !attacker.item ? 110 : 55;
+    basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Grav Apple':
     basePower = move.bp * (field.isGravity ? 1.5 : 1);
-    desc.moveBP = basePower;
-    break;
-  case 'Steel Roller':
-    basePower = move.bp * (field.terrain ? 1 : 0);
     desc.moveBP = basePower;
     break;
   case 'Assurance':
@@ -648,10 +635,14 @@ export function calculateBasePowerSMSS(
     basePower = move.bp * (defender.hasStatus('slp') || defender.hasAbility('Comatose') ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Smelling Salts':
+    basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
   case 'Weather Ball':
-    basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
+    basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
     if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
-      attacker.hasItem('Utility Umbrella')) basePower = 50;
+      attacker.hasItem('Utility Umbrella')) basePower = move.bp;
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
@@ -689,7 +680,8 @@ export function calculateBasePowerSMSS(
     basePower =
         field.terrain && field.hasTerrain('Electric', 'Grassy', 'Psychic') ? 90
         : field.hasTerrain('Misty') ? 95
-        : 80;
+        : 80; // Tri Attack
+    desc.moveBP = basePower;
     break;
   case 'Water Shuriken':
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
@@ -698,6 +690,11 @@ export function calculateBasePowerSMSS(
   // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
   case 'Triple Axel':
     basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
+    desc.moveBP = basePower;
+    break;
+    // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
+  case 'Triple Kick':
+    basePower = move.hits === 2 ? 15 : move.hits === 3 ? 30 : 10;
     desc.moveBP = basePower;
     break;
   case 'Lash Out':
@@ -751,6 +748,11 @@ export function calculateBPModsSMSS(
   hasAteAbilityTypeChange: boolean,
   turnOrder: string
 ) {
+  
+  const bpMods = [];
+
+  // Move effects
+
   let resistedKnockOffDamage =
     !defender.item ||
     (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
@@ -760,7 +762,8 @@ export function calculateBPModsSMSS(
     (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb')) ||
     (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
     defender.item.includes(' Z') ||
-    (defender.named('Zacian') && defender.hasItem('Rusted Sword'));
+    (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
+    (defender.named('Zamazenta') && defender.hasItem('Rusted Shield'));
 
   // The last case only applies when the Pokemon has the Mega Stone that matches its species
   // (or when it's already a Mega-Evolution)
@@ -769,12 +772,62 @@ export function calculateBPModsSMSS(
     resistedKnockOffDamage = !!item.megaEvolves && defender.name.includes(item.megaEvolves);
   }
 
-  const bpMods = [];
+  if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
+      (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
+      (move.named('Venoshock') && defender.hasStatus('psn', 'tox')) ||
+      (move.named('Rising Voltage') && isGrounded(defender, field) && field.hasTerrain('Electric'))
+  ) {
+    bpMods.push(8192);
+    desc.moveBP = basePower * 2;
+  } else if ((move.named('Knock Off') && !resistedKnockOffDamage) ||
+             (move.named('Expanding Force') && isGrounded(attacker, field) && field.hasTerrain('Psychic')) ||
+             (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty'))
+  ) {
+    bpMods.push(6144);
+    desc.moveBP = basePower * 1.5;
+  } else if (move.named('Solar Beam', 'Solar Blade') &&
+      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
+    bpMods.push(2048);
+    desc.moveBP = basePower / 2;
+    desc.weather = field.weather;
+  } 
 
-  // Research from DaWoblefet and Anubis show that the Technician modifier is calculated at the
-  // very beginning in Gen 8 as opposed to later on after several mods have been applied like Gen 7
-  // https://smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8433978
-  if (gen.num === 8 && attacker.hasAbility('Technician') && basePower <= 60) {
+  if (field.attackerSide.isHelpingHand) {
+    bpMods.push(6144);
+    desc.isHelpingHand = true;
+  }
+
+  // Field effects
+
+  const terrainMultiplier = gen.num > 7 ? 5325 : 6144;
+  if (isGrounded(attacker, field)) {
+    if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
+        (field.hasTerrain('Grassy') && move.hasType('Grass')) ||
+        (field.hasTerrain('Psychic') && move.hasType('Psychic'))
+    ) {
+      bpMods.push(terrainMultiplier);
+      desc.terrain = field.terrain;
+    }
+  }
+  if (isGrounded(defender, field)) {
+    if ((field.hasTerrain('Misty') && move.hasType('Dragon')) || 
+        (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake'))
+    ) {
+      bpMods.push(2048);
+      desc.terrain = field.terrain;
+    }
+  }
+
+  // Abilities
+
+  // Technician looks at the move's original BP, not the BP up to this point
+  if ((attacker.hasAbility('Technician') && move.bp <= 60) ||
+      (attacker.hasAbility('Flare Boost') && attacker.hasStatus('brn') && move.category === 'Special') ||
+      (attacker.hasAbility('Toxic Boost') && attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
+      (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+      (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
+      (attacker.hasAbility('Steely Spirit') && move.hasType('Steel'))
+  ) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
   }
@@ -788,44 +841,26 @@ export function calculateBPModsSMSS(
   const isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
   const auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
   const auraBreak = isFieldAuraBreak || isUserAuraBreak;
-  if (auraActive && auraBreak) {
-    bpMods.push(3072);
-    desc.attackerAbility = attacker.ability;
-    desc.defenderAbility = defender.ability;
-  }
-
-  if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
-    if (attacker.gender === defender.gender) {
-      bpMods.push(5120);
-      desc.rivalry = 'buffed';
-    } else {
+  if (auraActive) {
+    if (auraBreak) {
       bpMods.push(3072);
-      desc.rivalry = 'nerfed';
+      desc.attackerAbility = attacker.ability;
+      desc.defenderAbility = defender.ability;
+    } else {
+      bpMods.push(5448);
+      if (isAttackerAura) desc.attackerAbility = attacker.ability;
+      if (isDefenderAura) desc.defenderAbility = defender.ability;
     }
-    desc.attackerAbility = attacker.ability;
-  }
+  } 
 
-  const noTypeChange = move.named(
-    'Revelation Dance',
-    'Judgment',
-    'Nature Power',
-    'Techno Blast',
-    'Multi Attack',
-    'Natural Gift',
-    'Weather Ball',
-    'Terrain Pulse',
-  );
-
-  if (!move.isZ && !move.isMax && !noTypeChange && hasAteAbilityTypeChange) {
-    // The -ate abilities already changed move typing earlier, so desc is already set
-    bpMods.push(4915);
-  }
-
-  if (
-    (attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
-    (attacker.hasAbility('Iron Fist') && move.flags.punch)
+  // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
+  if ((attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) ||
+      (attacker.hasAbility('Sand Force') && field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
+      (attacker.hasAbility('Analytic') && (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
+      (attacker.hasAbility('Tough Claws') && move.flags.contact) || 
+      (attacker.hasAbility('Punk Rock') && move.flags.sound)
   ) {
-    bpMods.push(4915);
+    bpMods.push(5325);
     desc.attackerAbility = attacker.ability;
   }
 
@@ -839,60 +874,27 @@ export function calculateBPModsSMSS(
     desc.isPowerSpot = true;
   }
 
-  // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
-  const analyticBoost = attacker.hasAbility('Analytic') &&
-        (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out');
-  if (attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) {
-    bpMods.push(5325);
+  if (attacker.hasAbility('Rivalry') && ![attacker.gender, defender.gender].includes('N')) {
+    if (attacker.gender === defender.gender) {
+      bpMods.push(5120);
+      desc.rivalry = 'buffed';
+    } else {
+      bpMods.push(3072);
+      desc.rivalry = 'nerfed';
+    }
     desc.attackerAbility = attacker.ability;
-  } else if (
-    attacker.hasAbility('Sand Force') &&
-    field.hasWeather('Sand') &&
-    move.hasType('Rock', 'Ground', 'Steel')
+  }
+
+  // The -ate abilities already changed move typing earlier, so most checks are done and desc is set
+  // However, Max Moves also don't boost -ate Abilities
+  if (!move.isMax && hasAteAbilityTypeChange) {
+    bpMods.push(4915);
+  }
+
+  if ((attacker.hasAbility('Reckless') && (move.recoil || move.hasCrashDamage)) ||
+      (attacker.hasAbility('Iron Fist') && move.flags.punch)
   ) {
-    bpMods.push(5325);
-    desc.attackerAbility = attacker.ability;
-    desc.weather = field.weather;
-  } else if (analyticBoost) {
-    bpMods.push(5325);
-    desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Tough Claws') && move.flags.contact) {
-    bpMods.push(5325);
-    desc.attackerAbility = attacker.ability;
-  }
-
-  if (auraActive && !auraBreak) {
-    bpMods.push(5448);
-    if (isAttackerAura) {
-      desc.attackerAbility = attacker.ability;
-    }
-    if (isDefenderAura) {
-      desc.defenderAbility = defender.ability;
-    }
-  }
-
-  if (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) {
-    bpMods.push(6144);
-    desc.attackerAbility = attacker.ability;
-  }
-
-  if (gen.num === 7) {
-    // Apply bpMods to determine whether the base power at this point in time triggers Technician
-    const bp = pokeRound((basePower * chainMods(bpMods)) / 4096);
-    if (attacker.hasAbility('Technician') && bp <= 60) {
-      bpMods.push(6144);
-      desc.attackerAbility = attacker.ability;
-    }
-  }
-
-  if ((attacker.hasAbility('Flare Boost') &&
-       attacker.hasStatus('brn') && move.category === 'Special') ||
-      (attacker.hasAbility('Toxic Boost') &&
-       attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
-      (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
-      (attacker.hasAbility('Strong Jaw') && move.flags.bite)
-  ) {
-    bpMods.push(6144);
+    bpMods.push(4915);
     desc.attackerAbility = attacker.ability;
   }
 
@@ -904,14 +906,10 @@ export function calculateBPModsSMSS(
     desc.defenderAbility = defender.ability;
   }
 
-  if (attacker.item && move.hasType(getItemBoostType(attacker.item))) {
-    bpMods.push(4915);
-    desc.attackerItem = attacker.item;
-  } else if (
-    (attacker.hasItem('Muscle Band') && move.category === 'Physical') ||
-    (attacker.hasItem('Wise Glasses') && move.category === 'Special')
-  ) {
-    bpMods.push(4505);
+  // Items
+
+  if (attacker.hasItem(`${move.type} Gem`)) {
+    bpMods.push(5325);
     desc.attackerItem = attacker.item;
   } else if (
     (attacker.hasItem('Adamant Orb') &&
@@ -925,59 +923,17 @@ export function calculateBPModsSMSS(
      move.hasType('Ghost', 'Dragon')) ||
     (attacker.hasItem('Soul Dew') &&
      attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
-     move.hasType('Psychic', 'Dragon'))
+     move.hasType('Psychic', 'Dragon')) ||
+     attacker.item && move.hasType(getItemBoostType(attacker.item))
   ) {
     bpMods.push(4915);
     desc.attackerItem = attacker.item;
-  } else if (attacker.hasItem(`${move.type} Gem`)) {
-    bpMods.push(5325);
-    desc.attackerItem = attacker.item;
-  }
-
-  if (move.named('Solar Beam', 'Solar Blade') &&
-      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
-    bpMods.push(2048);
-    desc.moveBP = basePower / 2;
-    desc.weather = field.weather;
-  } else if (move.named('Knock Off') && !resistedKnockOffDamage) {
-    bpMods.push(6144);
-    desc.moveBP = basePower * 1.5;
-  }
-
-  if (field.attackerSide.isHelpingHand) {
-    bpMods.push(6144);
-    desc.isHelpingHand = true;
-  }
-
-  if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
-      (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
-      (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))
+  } else if (
+    (attacker.hasItem('Muscle Band') && move.category === 'Physical') ||
+    (attacker.hasItem('Wise Glasses') && move.category === 'Special')
   ) {
-    bpMods.push(8192);
-    desc.moveBP = basePower * 2;
-  }
-
-  const terrainMultiplier = gen.num > 7 ? 5325 : 6144;
-  if (isGrounded(attacker, field)) {
-    if (field.hasTerrain('Electric') && move.hasType('Electric')) {
-      bpMods.push(terrainMultiplier);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Grassy') && move.hasType('Grass')) {
-      bpMods.push(terrainMultiplier);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Psychic') && move.hasType('Psychic')) {
-      bpMods.push(terrainMultiplier);
-      desc.terrain = field.terrain;
-    }
-  }
-  if (isGrounded(defender, field)) {
-    if (field.hasTerrain('Misty') && move.hasType('Dragon')) {
-      bpMods.push(2048);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake')) {
-      bpMods.push(2048);
-      desc.terrain = field.terrain;
-    }
+    bpMods.push(4505);
+    desc.attackerItem = attacker.item;
   }
   return bpMods;
 }
@@ -1098,16 +1054,6 @@ export function calculateAtModsSMSS(
       (defender.hasAbility('Water Bubble') && move.hasType('Fire'))) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
-  }
-
-  if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
-  // technician negates switching boost, thanks DaWoblefet
-    if (attacker.hasAbility('Technician')) {
-      atMods.push(4096);
-    } else {
-      atMods.push(8192);
-      desc.isSwitching = 'out';
-    }
   }
 
   if ((attacker.hasItem('Thick Club') &&
@@ -1289,11 +1235,6 @@ export function calculateFinalModsSMSS(
   ) {
     finalMods.push(2048);
     desc.defenderAbility = defender.ability;
-  }
-
-  if (move.flags.sound && attacker.hasAbility('Punk Rock')) {
-    finalMods.push(5325);
-    desc.attackerAbility = attacker.ability;
   }
 
   if (defender.hasAbility('Solid Rock', 'Filter', 'Prism Armor') && typeEffectiveness > 1) {
