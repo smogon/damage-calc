@@ -256,7 +256,8 @@ export function calculateSMSS(
         (defender.hasType('Flying') || defender.weightkg >= 200 || field.isGravity)) ||
       (move.named('Synchronoise') && !defender.hasType(attacker.types[0]) &&
         (!attacker.types[1] || !defender.hasType(attacker.types[1]))) ||
-      (move.named('Dream Eater') && !(defender.hasStatus('slp') || defender.hasAbility('Comatose'))) ||
+      (move.named('Dream Eater') &&
+        (!(defender.hasStatus('slp') || defender.hasAbility('Comatose')))) ||
       (move.named('Steel Roller') && !field.terrain) ||
       (move.named('Poltergeist') && !defender.item)
   ) {
@@ -772,15 +773,15 @@ export function calculateBPModsSMSS(
   }
 
   if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
-      (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
-      (move.named('Venoshock') && defender.hasStatus('psn', 'tox')) ||
-      (move.named('Rising Voltage') && isGrounded(defender, field) && field.hasTerrain('Electric'))
+    (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
+    (move.named('Venoshock') && defender.hasStatus('psn', 'tox')) ||
+    (move.named('Rising Voltage') && isGrounded(defender, field) && field.hasTerrain('Electric'))
   ) {
     bpMods.push(8192);
     desc.moveBP = basePower * 2;
   } else if ((move.named('Knock Off') && !resistedKnockOffDamage) ||
-             (move.named('Expanding Force') && isGrounded(attacker, field) && field.hasTerrain('Psychic')) ||
-             (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty'))
+    (move.named('Expanding Force') && isGrounded(attacker, field) && field.hasTerrain('Psychic')) ||
+    (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty'))
   ) {
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
@@ -821,11 +822,13 @@ export function calculateBPModsSMSS(
 
   // Technician looks at the move's original BP, not the BP up to this point
   if ((attacker.hasAbility('Technician') && move.bp <= 60) ||
-      (attacker.hasAbility('Flare Boost') && attacker.hasStatus('brn') && move.category === 'Special') ||
-      (attacker.hasAbility('Toxic Boost') && attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
-      (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
-      (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
-      (attacker.hasAbility('Steely Spirit') && move.hasType('Steel'))
+    (attacker.hasAbility('Flare Boost') &&
+      attacker.hasStatus('brn') && move.category === 'Special') ||
+    (attacker.hasAbility('Toxic Boost') &&
+      attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
+    (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
+    (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
+    (attacker.hasAbility('Steely Spirit') && move.hasType('Steel'))
   ) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -854,8 +857,10 @@ export function calculateBPModsSMSS(
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
   if ((attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) ||
-      (attacker.hasAbility('Sand Force') && field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
-      (attacker.hasAbility('Analytic') && (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
+      (attacker.hasAbility('Sand Force') &&
+        field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
+      (attacker.hasAbility('Analytic') &&
+        (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
       (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
       (attacker.hasAbility('Punk Rock') && move.flags.sound)
   ) {
