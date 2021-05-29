@@ -623,10 +623,6 @@ export function calculateBasePowerSMSS(
     basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
     desc.moveBP = basePower;
     break;
-  case 'Grav Apple':
-    basePower = move.bp * (field.isGravity ? 1.5 : 1);
-    desc.moveBP = basePower;
-    break;
   case 'Assurance':
     basePower = move.bp * (defender.hasAbility('Parental Bond (Child)') ? 2 : 1);
     // NOTE: desc.attackerAbility = 'Parental Bond' will already reflect this boost
@@ -648,6 +644,10 @@ export function calculateBasePowerSMSS(
     break;
   case 'Terrain Pulse':
     basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
+  case 'Rising Voltage':
+    basePower = move.bp * ((isGrounded(defender, field) && field.hasTerrain('Electric')) ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Fling':
@@ -696,10 +696,6 @@ export function calculateBasePowerSMSS(
   // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
   case 'Triple Kick':
     basePower = move.hits === 2 ? 15 : move.hits === 3 ? 30 : 10;
-    desc.moveBP = basePower;
-    break;
-  case 'Lash Out':
-    basePower = move.bp * (countBoosts(gen, attacker.boosts) < 0 ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Crush Grip':
@@ -775,13 +771,14 @@ export function calculateBPModsSMSS(
   if ((move.named('Facade') && attacker.hasStatus('brn', 'par', 'psn', 'tox')) ||
     (move.named('Brine') && defender.curHP() <= defender.maxHP() / 2) ||
     (move.named('Venoshock') && defender.hasStatus('psn', 'tox')) ||
-    (move.named('Rising Voltage') && isGrounded(defender, field) && field.hasTerrain('Electric'))
+    (move.named('Lash Out') && (countBoosts(gen, attacker.boosts) < 0))
   ) {
     bpMods.push(8192);
     desc.moveBP = basePower * 2;
   } else if ((move.named('Knock Off') && !resistedKnockOffDamage) ||
     (move.named('Expanding Force') && isGrounded(attacker, field) && field.hasTerrain('Psychic')) ||
-    (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty'))
+    (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty')) ||
+    (move.named('Grav Apple') && field.isGravity)
   ) {
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
