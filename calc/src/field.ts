@@ -5,6 +5,8 @@ export class Field implements State.Field {
   gameType: GameType;
   weather?: Weather;
   terrain?: Terrain;
+  isMagicRoom: boolean;
+  isWonderRoom: boolean;
   isGravity: boolean;
   isAuraBreak?: boolean;
   isFairyAura?: boolean;
@@ -16,6 +18,8 @@ export class Field implements State.Field {
     this.gameType = field.gameType || 'Singles';
     this.terrain = field.terrain;
     this.weather = field.weather;
+    this.isMagicRoom = !!field.isMagicRoom;
+    this.isWonderRoom = !!field.isWonderRoom;
     this.isGravity = !!field.isGravity;
     this.isAuraBreak = field.isAuraBreak || false;
     this.isFairyAura = field.isFairyAura || false;
@@ -43,6 +47,8 @@ export class Field implements State.Field {
       gameType: this.gameType,
       weather: this.weather,
       terrain: this.terrain,
+      isMagicRoom: this.isMagicRoom,
+      isWonderRoom: this.isWonderRoom,
       isGravity: this.isGravity,
       attackerSide: this.attackerSide,
       defenderSide: this.defenderSide,

@@ -19,9 +19,10 @@ import {
   checkForecast,
   checkInfiltrator,
   checkIntimidate,
-  checkKlutz,
+  checkItem,
   checkMultihitBoost,
   checkSeedBoost,
+  checkWonderRoom,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -49,8 +50,10 @@ export function calculateBWXY(
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
-  checkKlutz(attacker);
-  checkKlutz(defender);
+  checkItem(attacker, field.isMagicRoom);
+  checkItem(defender, field.isMagicRoom);
+  checkWonderRoom(attacker, field.isWonderRoom);
+  checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 

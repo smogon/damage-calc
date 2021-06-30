@@ -162,9 +162,18 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
   }
 }
 
-export function checkKlutz(pokemon: Pokemon) {
-  if (pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!)) {
+export function checkItem(pokemon: Pokemon, magicRoomActive: boolean) {
+  if (
+      pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!) ||
+      magicRoomActive
+  ) {
     pokemon.item = '' as ItemName;
+  }
+}
+
+export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive: boolean) {
+  if (wonderRoomActive) {
+    [pokemon.rawStats.def, pokemon.rawStats.spd] = [pokemon.rawStats.spd, pokemon.rawStats.def];
   }
 }
 
