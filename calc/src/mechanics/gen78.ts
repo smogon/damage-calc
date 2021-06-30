@@ -51,14 +51,14 @@ export function calculateSMSS(
 ) {
   // #region Initial
 
+  checkWonderRoom(attacker, field.isWonderRoom);
+  checkWonderRoom(defender, field.isWonderRoom);
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
-  checkWonderRoom(attacker, field.isWonderRoom);
-  checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 
@@ -66,8 +66,8 @@ export function calculateSMSS(
 
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
-  checkDownload(attacker, defender);
-  checkDownload(defender, attacker);
+  checkDownload(attacker, defender, field.isWonderRoom);
+  checkDownload(defender, attacker, field.isWonderRoom);
   checkIntrepidSword(attacker);
   checkIntrepidSword(defender);
   checkDauntlessShield(attacker);

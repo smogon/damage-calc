@@ -32,8 +32,8 @@ export function calculateDPP(
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
-  checkItem(attacker, field.isMagicRoom);
-  checkItem(defender, field.isMagicRoom);
+  checkItem(attacker);
+  checkItem(defender);
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
   checkDownload(attacker, defender);
