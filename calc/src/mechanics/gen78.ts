@@ -153,7 +153,10 @@ export function calculateSMSS(
     type = gift.t;
     desc.moveType = type;
     desc.attackerItem = attacker.item;
-  } else if (move.named('Nature Power', 'Terrain Pulse')) {
+  } else if (
+    move.named('Nature Power') ||
+    (move.named('Terrain Pulse') && isGrounded(attacker, field))
+  ) {
     type =
       field.hasTerrain('Electric') ? 'Electric'
       : field.hasTerrain('Grassy') ? 'Grass'
@@ -652,7 +655,7 @@ export function calculateBasePowerSMSS(
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
-    basePower = move.bp * (field.terrain ? 2 : 1);
+    basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Fling':
