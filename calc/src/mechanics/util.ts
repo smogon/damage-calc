@@ -167,7 +167,7 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
 
 export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
   if (
-      pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!) ||
+    pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!) ||
       magicRoomActive
   ) {
     pokemon.item = '' as ItemName;
