@@ -26,7 +26,6 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
-  checkWonderRoom,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -51,8 +50,6 @@ export function calculateSMSS(
 ) {
   // #region Initial
 
-  checkWonderRoom(attacker, field.isWonderRoom);
-  checkWonderRoom(defender, field.isWonderRoom);
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);

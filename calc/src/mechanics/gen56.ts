@@ -22,7 +22,6 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
-  checkWonderRoom,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -52,8 +51,6 @@ export function calculateBWXY(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
-  checkWonderRoom(attacker, field.isWonderRoom);
-  checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 

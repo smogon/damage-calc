@@ -65,6 +65,9 @@ export function computeFinalStats(
   const sides: Array<[Pokemon, Side]> =
     [[attacker, field.attackerSide], [defender, field.defenderSide]];
   for (const [pokemon, side] of sides) {
+    if (field.isWonderRoom) {
+      [pokemon.rawStats.def, pokemon.rawStats.spd] = [pokemon.rawStats.spd, pokemon.rawStats.def];
+    }
     for (const stat of stats) {
       if (stat === 'spe') {
         pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side);
@@ -168,12 +171,6 @@ export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
       magicRoomActive
   ) {
     pokemon.item = '' as ItemName;
-  }
-}
-
-export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive: boolean) {
-  if (wonderRoomActive) {
-    [pokemon.rawStats.def, pokemon.rawStats.spd] = [pokemon.rawStats.spd, pokemon.rawStats.def];
   }
 }
 
