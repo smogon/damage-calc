@@ -819,6 +819,8 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 
 function createField() {
 	var gameType = $("input:radio[name='format']:checked").val();
+	var isMagicRoom = $("#magicroom").prop("checked");
+	var isWonderRoom = $("#wonderroom").prop("checked");
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
@@ -861,7 +863,7 @@ function createField() {
 		});
 	};
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain, isGravity: isGravity,
+		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
 		attackerSide: createSide(0), defenderSide: createSide(1)
 	});
 }

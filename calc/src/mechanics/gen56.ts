@@ -19,7 +19,7 @@ import {
   checkForecast,
   checkInfiltrator,
   checkIntimidate,
-  checkKlutz,
+  checkItem,
   checkMultihitBoost,
   checkSeedBoost,
   computeFinalStats,
@@ -49,8 +49,8 @@ export function calculateBWXY(
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
-  checkKlutz(attacker);
-  checkKlutz(defender);
+  checkItem(attacker, field.isMagicRoom);
+  checkItem(defender, field.isMagicRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 
@@ -58,8 +58,8 @@ export function calculateBWXY(
 
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
-  checkDownload(attacker, defender);
-  checkDownload(defender, attacker);
+  checkDownload(attacker, defender, field.isWonderRoom);
+  checkDownload(defender, attacker, field.isWonderRoom);
 
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 

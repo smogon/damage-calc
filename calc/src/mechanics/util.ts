@@ -65,6 +65,9 @@ export function computeFinalStats(
   const sides: Array<[Pokemon, Side]> =
     [[attacker, field.attackerSide], [defender, field.defenderSide]];
   for (const [pokemon, side] of sides) {
+    if (field.isWonderRoom) {
+      [pokemon.rawStats.def, pokemon.rawStats.spd] = [pokemon.rawStats.spd, pokemon.rawStats.def];
+    }
     for (const stat of stats) {
       if (stat === 'spe') {
         pokemon.stats.spe = getFinalSpeed(gen, pokemon, field, side);
@@ -162,8 +165,11 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
   }
 }
 
-export function checkKlutz(pokemon: Pokemon) {
-  if (pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!)) {
+export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
+  if (
+    pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!) ||
+      magicRoomActive
+  ) {
     pokemon.item = '' as ItemName;
   }
 }
@@ -187,9 +193,13 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
   }
 }
 
-export function checkDownload(source: Pokemon, target: Pokemon) {
+export function checkDownload(source: Pokemon, target: Pokemon, wonderRoomActive?: boolean) {
   if (source.hasAbility('Download')) {
-    if (target.stats.spd <= target.stats.def) {
+    let def = target.stats.def;
+    let spd = target.stats.spd;
+    // We swap the defense stats again here since Download ignores Wonder Room
+    if (wonderRoomActive) [def, spd] = [spd, def];
+    if (spd <= def) {
       source.boosts.spa = Math.min(6, source.boosts.spa + 1);
     } else {
       source.boosts.atk = Math.min(6, source.boosts.atk + 1);

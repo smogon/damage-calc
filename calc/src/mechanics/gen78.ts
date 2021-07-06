@@ -23,7 +23,7 @@ import {
   checkInfiltrator,
   checkIntimidate,
   checkIntrepidSword,
-  checkKlutz,
+  checkItem,
   checkMultihitBoost,
   checkSeedBoost,
   computeFinalStats,
@@ -54,8 +54,8 @@ export function calculateSMSS(
   checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
-  checkKlutz(attacker);
-  checkKlutz(defender);
+  checkItem(attacker, field.isMagicRoom);
+  checkItem(defender, field.isMagicRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
   checkDauntlessShield(attacker);
@@ -65,8 +65,8 @@ export function calculateSMSS(
 
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
-  checkDownload(attacker, defender);
-  checkDownload(defender, attacker);
+  checkDownload(attacker, defender, field.isWonderRoom);
+  checkDownload(defender, attacker, field.isWonderRoom);
   checkIntrepidSword(attacker);
   checkIntrepidSword(defender);
 
