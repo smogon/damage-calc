@@ -294,7 +294,7 @@ export function checkMultihitBoost(
         defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
       }
     }
-    defender.boosts.spe += Math.min(defender.boosts.spe + 2, 6);
+    defender.boosts.spe = Math.min(defender.boosts.spe + 2, 6);
     defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
     desc.defenderAbility = defender.ability;
   }
