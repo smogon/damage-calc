@@ -52,10 +52,10 @@ export function calculateBWXY(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
-  checkSeedBoost(attacker, field);
-  checkSeedBoost(defender, field);
   checkWonderRoom(attacker, field.isWonderRoom);
   checkWonderRoom(defender, field.isWonderRoom);
+  checkSeedBoost(attacker, field);
+  checkSeedBoost(defender, field);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 

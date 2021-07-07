@@ -57,12 +57,12 @@ export function calculateSMSS(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
+  checkWonderRoom(attacker, field.isWonderRoom);
+  checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
   checkDauntlessShield(attacker);
   checkDauntlessShield(defender);
-  checkWonderRoom(attacker, field.isWonderRoom);
-  checkWonderRoom(defender, field.isWonderRoom);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
