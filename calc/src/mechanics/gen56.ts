@@ -262,7 +262,13 @@ export function calculateBWXY(
 
   switch (move.name) {
   case 'Payback':
-    basePower = turnOrder === 'last' ? 100 : 50;
+    basePower = move.bp * (turnOrder === 'last' ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
+  case 'Pursuit':
+    const switching = field.defenderSide.isSwitching === 'out';
+    basePower = move.bp * (switching ? 2 : 1);
+    if (switching) desc.isSwitching = 'out';
     desc.moveBP = basePower;
     break;
   case 'Electro Ball':
@@ -271,7 +277,7 @@ export function calculateBWXY(
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':
-    basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe));
+    basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
     desc.moveBP = basePower;
     break;
   case 'Punishment':
@@ -302,7 +308,7 @@ export function calculateBWXY(
     desc.moveBP = basePower;
     break;
   case 'Acrobatics':
-    basePower = attacker.hasItem('Flying Gem') || !attacker.item ? 110 : 55;
+    basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Assurance':
@@ -313,8 +319,12 @@ export function calculateBWXY(
     basePower = move.bp * (defender.hasStatus('slp') ? 2 : 1);
     desc.moveBP = basePower;
     break;
+  case 'Smelling Salts':
+    basePower = move.bp * (defender.hasStatus('par') ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
   case 'Weather Ball':
-    basePower = field.weather && !field.hasWeather('Strong Winds') ? 100 : 50;
+    basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Fling':
@@ -335,12 +345,13 @@ export function calculateBWXY(
     break;
   case 'Nature Power':
     basePower =
-        field.terrain && field.hasTerrain('Electric', 'Grassy', 'Psychic') ? 90
+        field.terrain && field.hasTerrain('Electric', 'Grassy') ? 90
         : field.hasTerrain('Misty') ? 95
-        : 80;
+        : 80; // Tri Attack
     break;
-  case 'Water Shuriken':
-    basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
+  // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
+  case 'Triple Kick':
+    basePower = move.hits === 2 ? 15 : move.hits === 3 ? 30 : 10;
     desc.moveBP = basePower;
     break;
   case 'Crush Grip':
@@ -358,7 +369,8 @@ export function calculateBWXY(
   }
 
   const bpMods = [];
-  if ((attacker.hasAbility('Technician') && basePower <= 60) ||
+
+  if ((attacker.hasAbility('Technician') && move.bp <= 60) ||
       (attacker.hasAbility('Flare Boost') &&
        attacker.hasStatus('brn') && move.category === 'Special') ||
       (attacker.hasAbility('Toxic Boost') &&
@@ -441,28 +453,18 @@ export function calculateBWXY(
       (move.named('Venoshock') && defender.hasStatus('psn', 'tox'))) {
     bpMods.push(8192);
     desc.moveBP = basePower * 2;
+  } else if (gen.num > 5 && move.named('Knock Off') && !resistedKnockOffDamage) {
+    bpMods.push(6144);
+    desc.moveBP = basePower * 1.5;
   } else if (move.named('Solar Beam') && field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
     bpMods.push(2048);
     desc.moveBP = basePower / 2;
     desc.weather = field.weather;
-  } else if (gen.num > 5 && move.named('Knock Off') && !resistedKnockOffDamage) {
-    bpMods.push(6144);
-    desc.moveBP = basePower * 1.5;
   }
 
   if (field.attackerSide.isHelpingHand) {
     bpMods.push(6144);
     desc.isHelpingHand = true;
-  }
-
-  if (field.attackerSide.isBattery && move.category === 'Special') {
-    bpMods.push(5324);
-    desc.isBattery = true;
-  }
-
-  if (field.attackerSide.isPowerSpot) {
-    bpMods.push(5324);
-    desc.isPowerSpot = true;
   }
 
   if (isAerilate || isPixilate || isRefrigerate || isNormalize) {
@@ -486,41 +488,34 @@ export function calculateBWXY(
   const isFieldAuraBreak = field.isAuraBreak;
   const isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
   const isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
-  if (isFieldFairyAura || isFieldDarkAura || isAttackerAura || isDefenderAura) {
-    if (isFieldAuraBreak || isUserAuraBreak) {
+  const auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
+  const auraBreak = isFieldAuraBreak || isUserAuraBreak;
+  if (auraActive) {
+    if (auraBreak) {
       bpMods.push(3072);
       desc.attackerAbility = attacker.ability;
       desc.defenderAbility = defender.ability;
     } else {
       bpMods.push(5448);
-      if (isAttackerAura) {
-        desc.attackerAbility = attacker.ability;
-      }
-      if (isDefenderAura) {
-        desc.defenderAbility = defender.ability;
-      }
+      if (isAttackerAura) desc.attackerAbility = attacker.ability;
+      if (isDefenderAura) desc.defenderAbility = defender.ability;
     }
   }
 
   // It's not actually clear if the terrain modifiers are base damage mods like weather or are
   // base power mods like in Gen 7+, but the research doesn't exist for this yet so we match PS here
   if (isGrounded(attacker, field)) {
-    if (field.hasTerrain('Electric') && move.hasType('Electric')) {
-      bpMods.push(6144);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Grassy') && move.hasType('Grass')) {
-      bpMods.push(6144);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Psychic') && move.hasType('Psychic')) {
+    if ((field.hasTerrain('Electric') && move.hasType('Electric')) ||
+        (field.hasTerrain('Grassy') && move.hasType('Grass'))
+    ) {
       bpMods.push(6144);
       desc.terrain = field.terrain;
     }
   }
   if (isGrounded(defender, field)) {
-    if (field.hasTerrain('Misty') && move.hasType('Dragon')) {
-      bpMods.push(2048);
-      desc.terrain = field.terrain;
-    } else if (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake')) {
+    if ((field.hasTerrain('Misty') && move.hasType('Dragon')) ||
+        (field.hasTerrain('Grassy') && move.named('Bulldoze', 'Earthquake'))
+    ) {
       bpMods.push(2048);
       desc.terrain = field.terrain;
     }
@@ -560,16 +555,6 @@ export function calculateBWXY(
   if (defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
-  }
-
-  if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
-    // technician negates switching boost, thanks DaWoblefet
-    if (attacker.hasAbility('Technician')) {
-      atMods.push(4096);
-    } else {
-      atMods.push(8192);
-      desc.isSwitching = 'out';
-    }
   }
 
   if ((attacker.hasAbility('Guts') && attacker.status && move.category === 'Physical') ||
