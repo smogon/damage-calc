@@ -22,6 +22,7 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
+  checkWonderRoom,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -53,6 +54,8 @@ export function calculateBWXY(
   checkItem(defender, field.isMagicRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
+  checkWonderRoom(attacker, field.isWonderRoom);
+  checkWonderRoom(defender, field.isWonderRoom);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
