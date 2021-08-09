@@ -125,7 +125,7 @@ export function calculateADV(
     }
     break;
   case 'Nature Power':
-    move.category = 'Special';
+    move.category = 'Physical';
     bp = 60;
     desc.moveName = 'Swift';
     break;
