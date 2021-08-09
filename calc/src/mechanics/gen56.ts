@@ -354,6 +354,7 @@ export function calculateBWXY(
       desc.moveName = 'Earthquake';
     } else {
       move.category = 'Special';
+      move.secondaries = true;
       switch (field.terrain) {
       case 'Electric':
         basePower = 90;

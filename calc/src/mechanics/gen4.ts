@@ -211,6 +211,7 @@ export function calculateDPP(
     break;
   case 'Nature Power':
     move.category = 'Special';
+    move.secondaries = true;
     basePower = 80;
     desc.moveName = 'Tri Attack';
     break;

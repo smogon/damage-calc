@@ -679,6 +679,7 @@ export function calculateBasePowerSMSS(
     break;
   case 'Nature Power':
     move.category = 'Special';
+    move.secondaries = true;
     switch (field.terrain) {
     case 'Electric':
       basePower = 90;
