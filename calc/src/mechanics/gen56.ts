@@ -112,12 +112,16 @@ export function calculateBWXY(
     desc.moveBP = move.bp;
     desc.moveType = move.type;
   } else if (move.named('Nature Power')) {
-    move.type =
-      field.hasTerrain('Electric') ? 'Electric'
-      : field.hasTerrain('Grassy') ? 'Grass'
-      : field.hasTerrain('Misty') ? 'Fairy'
-      : field.hasTerrain('Psychic') ? 'Psychic'
-      : 'Normal';
+    if (gen.num === 5) {
+      move.type = 'Ground';
+    } else {
+      move.type =
+        field.hasTerrain('Electric') ? 'Electric'
+        : field.hasTerrain('Grassy') ? 'Grass'
+        : field.hasTerrain('Misty') ? 'Fairy'
+        : field.hasTerrain('Psychic') ? 'Psychic'
+        : 'Normal';
+    }
   }
 
   let isAerilate = false;
@@ -344,10 +348,34 @@ export function calculateBWXY(
     desc.moveBP = basePower;
     break;
   case 'Nature Power':
-    basePower =
-        field.terrain && field.hasTerrain('Electric', 'Grassy') ? 90
-        : field.hasTerrain('Misty') ? 95
-        : 80; // Tri Attack
+    if (gen.num === 5) {
+      move.category = 'Physical';
+      basePower = 100;
+      desc.moveName = 'Earthquake';
+    } else {
+      move.category = 'Special';
+      switch (field.terrain) {
+      case 'Electric':
+        basePower = 90;
+        desc.moveName = 'Thunderbolt';
+        break;
+      case 'Grassy':
+        basePower = 90;
+        desc.moveName = 'Energy Ball';
+        break;
+      case 'Misty':
+        basePower = 95;
+        desc.moveName = 'Moonblast';
+        break;
+      case 'Psychic':
+        basePower = 90;
+        desc.moveName = 'Psychic';
+        break;
+      default:
+        basePower = 80;
+        desc.moveName = 'Tri Attack';
+      }
+    }
     break;
   // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
   case 'Triple Kick':

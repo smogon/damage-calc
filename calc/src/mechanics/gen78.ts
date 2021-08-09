@@ -678,11 +678,28 @@ export function calculateBasePowerSMSS(
     }
     break;
   case 'Nature Power':
-    basePower =
-        field.terrain && field.hasTerrain('Electric', 'Grassy', 'Psychic') ? 90
-        : field.hasTerrain('Misty') ? 95
-        : 80; // Tri Attack
-    desc.moveBP = basePower;
+    move.category = 'Special';
+    switch (field.terrain) {
+    case 'Electric':
+      basePower = 90;
+      desc.moveName = 'Thunderbolt';
+      break;
+    case 'Grassy':
+      basePower = 90;
+      desc.moveName = 'Energy Ball';
+      break;
+    case 'Misty':
+      basePower = 95;
+      desc.moveName = 'Moonblast';
+      break;
+    case 'Psychic':
+      basePower = 90;
+      desc.moveName = 'Psychic';
+      break;
+    default:
+      basePower = 80;
+      desc.moveName = 'Tri Attack';
+    }
     break;
   case 'Water Shuriken':
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;

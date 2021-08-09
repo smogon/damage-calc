@@ -124,6 +124,11 @@ export function calculateADV(
       desc.moveBP = bp;
     }
     break;
+  case 'Nature Power':
+    move.category = 'Special';
+    bp = 60;
+    desc.moveName = 'Swift';
+    break;
   default:
     bp = move.bp;
   }
