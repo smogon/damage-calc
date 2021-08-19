@@ -429,6 +429,10 @@ $(".move-selector").change(function () {
 		move.self && move.self.boosts && move.self.boosts[stat] && move.self.boosts[stat] < 0;
 	if (Array.isArray(move.multihit)) {
 		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".move-hits").empty();
+		for (var i = move.multihit[0]; i <= move.multihit[1]; i++) {
+			moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
+		}
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
 		var moveHits = (pokemon.find(".ability").val() === 'Skill Link') ? 5 : 3;
