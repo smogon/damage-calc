@@ -161,7 +161,7 @@ export function calculateADV(
     bp = 60;
     desc.moveName = 'Swift';
     break;
-  // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
+  // Triple Kick's damage increases by 10 after each consecutive hit (10, 20, 30), this is a hack
   case 'Triple Kick':
     bp = move.hits === 2 ? 15 : move.hits === 3 ? 20 : 10;
     desc.moveBP = bp;
