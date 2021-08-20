@@ -22,6 +22,7 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
+  checkWonderRoom,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -51,6 +52,8 @@ export function calculateBWXY(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
+  checkWonderRoom(attacker, field.isWonderRoom);
+  checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 
@@ -70,6 +73,7 @@ export function calculateBWXY(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
+    isWonderRoom: field.isWonderRoom,
   };
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);

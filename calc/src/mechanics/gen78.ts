@@ -26,6 +26,7 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
+  checkWonderRoom,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -56,6 +57,8 @@ export function calculateSMSS(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
+  checkWonderRoom(attacker, field.isWonderRoom);
+  checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
   checkDauntlessShield(attacker);
@@ -80,6 +83,7 @@ export function calculateSMSS(
     moveName: move.name,
     defenderName: defender.name,
     isDefenderDynamaxed: defender.isDynamaxed,
+    isWonderRoom: field.isWonderRoom,
   };
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);

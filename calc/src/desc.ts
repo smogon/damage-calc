@@ -30,6 +30,7 @@ export interface RawDesc {
   isReflect?: boolean;
   isBattery?: boolean;
   isPowerSpot?: boolean;
+  isWonderRoom?: boolean;
   isSwitching?: 'out' | 'in';
   moveBP?: number;
   moveName: string;
@@ -885,6 +886,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   if (description.isCritical) {
     output += ' on a critical hit';
+  }
+  if (description.isWonderRoom) {
+    output += ' in Wonder Room';
   }
   return output;
 }
