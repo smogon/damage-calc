@@ -83,6 +83,7 @@ export function calculateSMSS(
     moveName: move.name,
     defenderName: defender.name,
     isDefenderDynamaxed: defender.isDynamaxed,
+    isWonderRoom: field.isWonderRoom,
   };
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);

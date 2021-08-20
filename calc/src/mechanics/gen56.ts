@@ -73,6 +73,7 @@ export function calculateBWXY(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
+    isWonderRoom: field.isWonderRoom,
   };
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
