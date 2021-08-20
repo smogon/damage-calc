@@ -368,10 +368,6 @@ export function calculateBWXY(
         basePower = 95;
         desc.moveName = 'Moonblast';
         break;
-      case 'Psychic':
-        basePower = 90;
-        desc.moveName = 'Psychic';
-        break;
       default:
         basePower = 80;
         desc.moveName = 'Tri Attack';
