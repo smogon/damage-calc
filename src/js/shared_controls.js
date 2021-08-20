@@ -427,11 +427,17 @@ $(".move-selector").change(function () {
 	var stat = move.category === 'Special' ? 'spa' : 'atk';
 	var dropsStats =
 		move.self && move.self.boosts && move.self.boosts[stat] && move.self.boosts[stat] < 0;
-	if (Array.isArray(move.multihit)) {
+	if (Array.isArray(move.multihit) || (!isNaN(move.multihit) && move.multiaccuracy)) {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").empty();
-		for (var i = move.multihit[0]; i <= move.multihit[1]; i++) {
-			moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
+		if (!isNaN(move.multihit)) {
+			for (var i = 1; i <= move.multihit; i++) {
+				moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
+			}
+		} else {
+			for (var i = move.multihit[0]; i <= move.multihit[1]; i++) {
+				moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
+			}
 		}
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
