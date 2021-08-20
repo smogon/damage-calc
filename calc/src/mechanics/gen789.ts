@@ -783,7 +783,7 @@ export function calculateBasePowerSMSSSV(
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
     desc.moveBP = basePower;
     break;
-  // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
+  // Triple Axel's damage increases by 20 after each consecutive hit (20, 40, 60), this is a hack
   case 'Triple Axel':
     basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
     desc.moveBP = basePower;
