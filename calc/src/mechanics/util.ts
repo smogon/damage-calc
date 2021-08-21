@@ -61,9 +61,10 @@ export function getModifiedStat(stat: number, mod: number, gen?: Generation) {
     [5, 2],
     [6, 2],
     [7, 2],
-    [8, 2]
-  ]
-  stat = Math.floor(OF16(stat * modernGenBoostTable[6 + mod][numerator]) / modernGenBoostTable[6 + mod][denominator]);
+    [8, 2],
+  ];
+  stat = OF16(stat * modernGenBoostTable[6 + mod][numerator]);
+  stat = Math.floor(stat / modernGenBoostTable[6 + mod][denominator]);
 
   return stat;
 }

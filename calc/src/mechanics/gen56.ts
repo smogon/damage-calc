@@ -272,13 +272,13 @@ export function calculateBWXY(
     desc.moveBP = basePower;
     break;
   case 'Electro Ball':
-    if (defender.stats.spe === 0) defender.stats.spe = 1; 
+    if (defender.stats.spe === 0) defender.stats.spe = 1;
     const r = Math.floor(attacker.stats.spe / defender.stats.spe);
     basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':
-    if (attacker.stats.spe === 0) attacker.stats.spe = 1; 
+    if (attacker.stats.spe === 0) attacker.stats.spe = 1;
     basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
     desc.moveBP = basePower;
     break;

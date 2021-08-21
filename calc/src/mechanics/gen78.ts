@@ -585,12 +585,12 @@ export function calculateBasePowerSMSS(
   case 'Electro Ball':
     const r = Math.floor(attacker.stats.spe / defender.stats.spe);
     basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
-    if (defender.stats.spe === 0) basePower = 40; 
+    if (defender.stats.spe === 0) basePower = 40;
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':
     basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
-    if (attacker.stats.spe === 0) basePower = 1; 
+    if (attacker.stats.spe === 0) basePower = 1;
     desc.moveBP = basePower;
     break;
   case 'Punishment':
