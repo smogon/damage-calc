@@ -302,6 +302,10 @@ export function calculateDPP(
     attack = Math.floor(attack * 1.5);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
+  } else if (field.attackerSide.isFlowerGift && field.hasWeather('Sun') && isPhysical) {
+    attack = Math.floor(attack * 1.5);
+    desc.weather = field.weather;
+    desc.isFlowerGiftAttacker = true;
   } else if (
     (isPhysical &&
       (attacker.hasAbility('Hustle') || (attacker.hasAbility('Guts') && attacker.status)) ||
@@ -356,6 +360,10 @@ export function calculateDPP(
     defense = Math.floor(defense * 1.5);
     desc.defenderAbility = defender.ability;
     desc.weather = field.weather;
+  } else if (field.defenderSide.isFlowerGift && field.hasWeather('Sun') && !isPhysical) {
+    defense = Math.floor(defense * 1.5);
+    desc.weather = field.weather;
+    desc.isFlowerGiftDefender = true;
   }
 
   if (defender.hasItem('Soul Dew') && defender.named('Latios', 'Latias') && !isPhysical) {

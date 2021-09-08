@@ -21,6 +21,8 @@ export interface RawDesc {
   defenseEVs?: string;
   hits?: number;
   isAuroraVeil?: boolean;
+  isFlowerGiftAttacker?: boolean;
+  isFlowerGiftDefender?: boolean;
   isFriendGuard?: boolean;
   isHelpingHand?: boolean;
   isCritical?: boolean;
@@ -824,6 +826,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   if (description.isHelpingHand) {
     output += 'Helping Hand ';
   }
+  if (description.isFlowerGiftAttacker) {
+    output += ' with an ally\'s Flower Gift ';
+  }
   if (description.isBattery) {
     output += ' Battery boosted ';
   }
@@ -877,6 +882,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += ' through Reflect';
   } else if (description.isLightScreen) {
     output += ' through Light Screen';
+  }
+  if (description.isFlowerGiftDefender) {
+    output += ' with an ally\'s Flower Gift';
   }
   if (description.isFriendGuard) {
     output += ' with an ally\'s Friend Guard';
