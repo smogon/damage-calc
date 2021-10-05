@@ -1,4 +1,4 @@
-﻿import * as I from './interface';
+import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -3048,6 +3048,13 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Pressure'},
   },
+  Dorsoil: {
+    types: ['Ground'],
+    bs: {hp: 103, at: 72, df: 52, sa: 61, sd: 52, sp: 65},
+    weightkg: 145,
+    nfe: true,
+    abilities: {0: 'Oblivious'},
+  },
   Drapion: {
     types: ['Poison', 'Dark'],
     bs: {hp: 70, at: 90, df: 110, sa: 60, sd: 75, sp: 95},
@@ -3066,6 +3073,13 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 1.2,
     nfe: true,
     abilities: {0: 'Aftermath'},
+  },
+  Duohm: {
+    types: ['Electric', 'Dragon'],
+    bs: {hp: 88, at: 40, df: 103, sa: 77, sd: 60, sp: 60},
+    weightkg: 19.2,
+    nfe: true,
+    abilities: {0: 'Shield Dust'},
   },
   Dusknoir: {
     types: ['Ghost'],
@@ -3364,6 +3378,13 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     abilities: {0: 'Blaze'},
   },
+  Monohm: {
+    types: ['Electric'],
+    bs: {hp: 53, at: 40, df: 58, sa: 67, sd: 55, sp: 55},
+    weightkg: 4.1,
+    nfe: true,
+    abilities: {0: 'Shield Dust'},
+  },
   Mothim: {
     types: ['Bug', 'Flying'],
     bs: {hp: 70, at: 94, df: 50, sa: 94, sd: 50, sp: 66},
@@ -3376,6 +3397,13 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 105,
     nfe: true,
     abilities: {0: 'Pickup'},
+  },
+  Nohface: {
+    types: ['Ghost'],
+    bs: {hp: 50, at: 73, df: 50, sa: 30, sd: 50, sp: 80},
+    weightkg: 5.9,
+    nfe: true,
+    abilities: {0: 'Frisk'},
   },
   Pachirisu: {
     types: ['Electric'],
@@ -3437,6 +3465,13 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 60, at: 55, df: 145, sa: 75, sd: 150, sp: 40},
     weightkg: 340,
     abilities: {0: 'Sturdy'},
+  },
+  Protowatt: {
+    types: ['Electric', 'Water'],
+    bs: {hp: 51, at: 44, df: 33, sa: 43, sd: 34, sp: 65},
+    weightkg: 0.1,
+    nfe: true,
+    abilities: {0: 'Trace'},
   },
   Purugly: {
     types: ['Normal'],
