@@ -346,6 +346,8 @@ export function calculateSMSS(
       if (defender.boosts[stat]) {
         attacker.boosts[stat] +=
           attacker.hasAbility('Contrary') ? -defender.boosts[stat]! : defender.boosts[stat]!;
+        if (attacker.boosts[stat] > 6) attacker.boosts[stat] = 6;
+        if (attacker.boosts[stat] < -6) attacker.boosts[stat] = -6;
         attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat]!, attacker.boosts[stat]!);
       }
     }
