@@ -34,7 +34,10 @@ export class Move implements State.Move {
   priority: number;
   dropsStats?: number;
   ignoreDefensive: boolean;
-  defensiveCategory: I.MoveCategory;
+  overrideOffensiveStat?: I.StatIDExceptHP;
+  overrideDefensiveStat?: I.StatIDExceptHP;
+  overrideOffensivePokemon?: 'target' | 'source';
+  overrideDefensivePokemon?: 'target' | 'source';
   breaksProtect: boolean;
   isZ: boolean;
   isMax: boolean;
@@ -141,7 +144,10 @@ export class Move implements State.Move {
     this.priority = data.priority || 0;
 
     this.ignoreDefensive = !!data.ignoreDefensive;
-    this.defensiveCategory = data.defensiveCategory || this.category;
+    this.overrideOffensiveStat = data.overrideOffensiveStat;
+    this.overrideDefensiveStat = data.overrideDefensiveStat;
+    this.overrideOffensivePokemon = data.overrideOffensivePokemon;
+    this.overrideDefensivePokemon = data.overrideDefensivePokemon;
     this.breaksProtect = !!data.breaksProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;

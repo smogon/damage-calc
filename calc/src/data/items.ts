@@ -466,7 +466,7 @@ for (let i = 0; i < 100; i++) {
 }
 
 // Added after the TR's to maintain sort order
-SS.push('Utility Umbrella');
+SS.push('Utility Umbrella', 'Vile Vial');
 // Because we support National Dex all Past items are added back in
 SS.push(...GSC_ONLY, 'Old Amber');
 

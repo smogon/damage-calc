@@ -624,8 +624,8 @@ export function calculateBWXY(
   // #region (Special) Defense
 
   let defense: number;
-  const hitsPhysical = move.defensiveCategory === 'Physical';
-  const defenseStat = hitsPhysical ? 'def' : 'spd';
+  const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
+  const hitsPhysical = defenseStat === 'def';
   desc.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
   if (defender.boosts[defenseStat] === 0 ||
     (isCritical && defender.boosts[defenseStat] > 0) ||

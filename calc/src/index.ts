@@ -122,7 +122,7 @@ export class Pokemon extends A.Pokemon {
 
 export function calcStat(
   gen: I.GenerationNum | I.Generation,
-  stat: I.StatName | 'spc',
+  stat: I.StatID | 'spc',
   base: number,
   iv: number,
   ev: number,
@@ -142,7 +142,7 @@ export function calcStat(
 
 export {Field, Side} from './field';
 export {Result} from './result';
-export {GenerationNum, StatsTable, StatName} from './data/interface';
+export {GenerationNum, StatsTable, StatID} from './data/interface';
 export {Generations} from './data/index';
 export {toID} from './util';
 export {State} from './state';

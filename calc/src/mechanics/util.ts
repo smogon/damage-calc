@@ -4,7 +4,7 @@ import {
   ItemName,
   MoveCategory,
   NatureName,
-  StatName,
+  StatID,
   StatsTable,
   Terrain,
   TypeName,
@@ -60,7 +60,7 @@ export function computeFinalStats(
   attacker: Pokemon,
   defender: Pokemon,
   field: Field,
-  ...stats: StatName[]
+  ...stats: StatID[]
 ) {
   const sides: Array<[Pokemon, Side]> =
     [[attacker, field.attackerSide], [defender, field.defenderSide]];
@@ -402,7 +402,7 @@ export function getWeightFactor(pokemon: Pokemon) {
 export function countBoosts(gen: Generation, boosts: StatsTable) {
   let sum = 0;
 
-  const STATS: StatName[] = gen.num === 1
+  const STATS: StatID[] = gen.num === 1
     ? ['atk', 'def', 'spa', 'spe']
     : ['atk', 'def', 'spa', 'spd', 'spe'];
 

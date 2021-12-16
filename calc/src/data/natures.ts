@@ -1,7 +1,7 @@
 import * as I from './interface';
 import {toID} from '../util';
 
-export const NATURES: {[name: string]: [I.StatName, I.StatName]} = {
+export const NATURES: {[name: string]: [I.StatID, I.StatID]} = {
   Adamant: ['atk', 'spa'],
   Bashful: ['spa', 'spa'],
   Bold: ['def', 'atk'],
@@ -45,10 +45,10 @@ class Nature implements I.Nature {
   readonly kind: 'Nature';
   readonly id: I.ID;
   readonly name: I.NatureName;
-  readonly plus?: I.StatName;
-  readonly minus?: I.StatName;
+  readonly plus?: I.StatID;
+  readonly minus?: I.StatID;
 
-  constructor(name: string, [plus, minus]: [I.StatName, I.StatName]) {
+  constructor(name: string, [plus, minus]: [I.StatID, I.StatID]) {
     this.kind = 'Nature';
     this.id = toID(name);
     this.name = name as I.NatureName;
@@ -60,6 +60,6 @@ class Nature implements I.Nature {
 const NATURES_BY_ID: {[id: string]: Nature} = {};
 
 for (const nature in NATURES) {
-  const n = new Nature(nature, NATURES[nature] as [I.StatName, I.StatName]);
+  const n = new Nature(nature, NATURES[nature] as [I.StatID, I.StatID]);
   NATURES_BY_ID[n.id] = n;
 }

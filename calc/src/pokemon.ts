@@ -3,7 +3,7 @@ import {Stats} from './stats';
 import {toID, extend, assignWithout} from './util';
 import {State} from './state';
 
-const STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'] as I.StatName[];
+const STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'] as I.StatID[];
 const SPC = new Set(['spc']);
 
 
@@ -152,7 +152,7 @@ export class Pokemon implements State.Pokemon {
     });
   }
 
-  private calcStat(gen: I.Generation, stat: I.StatName) {
+  private calcStat(gen: I.Generation, stat: I.StatID) {
     return Stats.calcStat(
       gen,
       stat,

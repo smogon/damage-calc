@@ -1,7 +1,7 @@
-import {Generation, TypeName, StatName} from './data/interface';
+import {Generation, TypeName, StatID} from './data/interface';
 import {toID} from './util';
 
-export const SEED_BOOSTED_STAT: {[item: string]: StatName} = {
+export const SEED_BOOSTED_STAT: {[item: string]: StatID} = {
   'Electric Seed': 'def',
   'Grassy Seed': 'def',
   'Misty Seed': 'spd',

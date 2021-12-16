@@ -18,7 +18,10 @@ export interface MoveData {
   readonly priority?: number;
   readonly self?: I.SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
-  readonly defensiveCategory?: I.MoveCategory;
+  readonly overrideOffensiveStat?: I.StatIDExceptHP;
+  readonly overrideDefensiveStat?: I.StatIDExceptHP;
+  readonly overrideOffensivePokemon?: 'target' | 'source';
+  readonly overrideDefensivePokemon?: 'target' | 'source';
   readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly isMax?: boolean;
@@ -1543,6 +1546,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Dark',
     makesContact: true,
     category: 'Physical',
+    overrideOffensivePokemon: 'target',
   },
   'Freeze Shock': {
     bp: 140,
@@ -1603,13 +1607,13 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 80,
     type: 'Psychic',
     category: 'Special',
-    defensiveCategory: 'Physical',
+    overrideDefensiveStat: 'def',
   },
   Psystrike: {
     bp: 100,
     type: 'Psychic',
     category: 'Special',
-    defensiveCategory: 'Physical',
+    overrideDefensiveStat: 'def',
   },
   'Quiver Dance': {bp: 0, type: 'Bug'},
   'Razor Shell': {
@@ -1629,7 +1633,7 @@ const BW_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 85,
     type: 'Fighting',
     category: 'Special',
-    defensiveCategory: 'Physical',
+    overrideDefensiveStat: 'def',
   },
   'Shell Smash': {bp: 0, type: 'Normal'},
   'Shift Gear': {bp: 0, type: 'Steel'},
@@ -2871,6 +2875,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Fighting',
     makesContact: true,
     category: 'Physical',
+    overrideOffensiveStat: 'def',
     zp: 160,
     maxPower: 90,
   },
@@ -4180,7 +4185,10 @@ class Move implements I.Move {
   readonly priority?: number;
   readonly self?: I.SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
-  readonly defensiveCategory?: I.MoveCategory;
+  readonly overrideOffensiveStat?: I.StatIDExceptHP;
+  readonly overrideDefensiveStat?: I.StatIDExceptHP;
+  readonly overrideOffensivePokemon?: 'target' | 'source';
+  readonly overrideDefensivePokemon?: 'target' | 'source';
   readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly zMove?: {

@@ -122,7 +122,7 @@ describe('calc', () => {
       test(`Struggle vs. Ghost (gen ${gen})`, () => {
         const result = calculate(Pokemon('Mew'), Pokemon('Gengar'), Move('Struggle'));
         if (gen < 2) {
-          expect(result.range()[1]).toEqual(0);
+          expect(result.range()[1]).toBe(0);
         } else {
           expect(result.range()[1]).toBeGreaterThan(0);
         }

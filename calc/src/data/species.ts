@@ -1,4 +1,4 @@
-import * as I from './interface';
+﻿import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -2996,7 +2996,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
   },
   Colossoil: {
-    types: ['Dark', 'Ground'],
+    types: ['Ground', 'Dark'],
     bs: {hp: 133, at: 122, df: 72, sa: 71, sd: 72, sp: 95},
     weightkg: 683.6,
     abilities: {0: 'Rebound'},
@@ -8610,6 +8610,22 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0,
     abilities: {0: 'Unseen Fist'},
     baseSpecies: 'Urshifu',
+  },
+  Venomicon: {
+    types: ['Poison', 'Flying'],
+    bs: {hp: 85, at: 70, df: 113, sa: 118, sd: 90, sp: 64},
+    weightkg: 11.5,
+    abilities: {0: 'Stamina'},
+    otherFormes: ['Venomicon-Epilogue'],
+    gender: 'N',
+  },
+  'Venomicon-Epilogue': {
+    types: ['Poison', 'Flying'],
+    bs: {hp: 85, at: 110, df: 85, sa: 55, sd: 85, sp: 120},
+    weightkg: 12.4,
+    abilities: {0: 'Tinted Lens'},
+    baseSpecies: 'Venomicon',
+    gender: 'N',
   },
   'Venusaur-Gmax': {
     types: ['Grass', 'Poison'],

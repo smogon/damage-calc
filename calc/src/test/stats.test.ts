@@ -1,5 +1,5 @@
 import {Generations} from '../data';
-import {GenerationNum, StatsTable, StatName} from '../data/interface';
+import {GenerationNum, StatsTable, StatID} from '../data/interface';
 import {Stats} from '../stats';
 import {getModifiedStat} from '../mechanics/util';
 
@@ -26,7 +26,7 @@ describe('Stats', () => {
     const ADV: StatsTable = {hp: 404, atk: 328, def: 299, spa: 269, spd: 299, spe: 299};
     for (let gen = 1; gen <= 8; gen++) {
       for (const s in ADV) {
-        const stat = s as StatName;
+        const stat = s as StatID;
         const val = Stats.calcStat(
           Generations.get(gen as GenerationNum),
           stat,

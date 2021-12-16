@@ -165,7 +165,10 @@ class Move implements I.Move {
   readonly priority?: number;
   readonly self?: I.SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
-  readonly defensiveCategory?: I.MoveCategory;
+  readonly overrideOffensiveStat?: I.StatIDExceptHP;
+  readonly overrideDefensiveStat?: I.StatIDExceptHP;
+  readonly overrideOffensivePokemon?: 'target' | 'source';
+  readonly overrideDefensivePokemon?: 'target' | 'source';
   readonly breaksProtect?: boolean;
   readonly isZ?: boolean;
   readonly zMove?: {
@@ -183,6 +186,10 @@ class Move implements I.Move {
     this.name = move.name as I.MoveName;
     this.basePower = move.basePower;
     this.type = move.type;
+    this.overrideOffensiveStat = move.overrideOffensiveStat;
+    this.overrideDefensiveStat = move.overrideDefensiveStat;
+    this.overrideOffensivePokemon = move.overrideOffensivePokemon;
+    this.overrideDefensivePokemon = move.overrideDefensivePokemon;
 
     if (move.category === 'Status' || dex.gen >= 4) {
       this.category = move.category;
@@ -221,9 +228,6 @@ class Move implements I.Move {
     }
     if (dex.gen >= 5) {
       if (move.ignoreDefensive) this.ignoreDefensive = move.ignoreDefensive;
-      if (move.defensiveCategory && move.defensiveCategory !== move.category) {
-        this.defensiveCategory = move.defensiveCategory;
-      }
 
       if ('secondaries' in move && move.secondaries?.length) {
         this.secondaries = true;
@@ -435,8 +439,8 @@ class Nature implements I.Nature {
   readonly kind: 'Nature';
   readonly id: I.ID;
   readonly name: I.NatureName;
-  readonly plus: I.StatName;
-  readonly minus: I.StatName;
+  readonly plus: I.StatID;
+  readonly minus: I.StatID;
 
   constructor(nature: D.Nature) {
     this.kind = 'Nature';
