@@ -119,7 +119,6 @@ export function calculateBWXY(
         field.hasTerrain('Electric') ? 'Electric'
         : field.hasTerrain('Grassy') ? 'Grass'
         : field.hasTerrain('Misty') ? 'Fairy'
-        : field.hasTerrain('Psychic') ? 'Psychic'
         : 'Normal';
     }
   }
@@ -350,6 +349,7 @@ export function calculateBWXY(
   case 'Nature Power':
     if (gen.num === 5) {
       move.category = 'Physical';
+      move.target = 'allAdjacent';
       basePower = 100;
       desc.moveName = 'Earthquake';
     } else {
