@@ -99,7 +99,7 @@ import {calculate, Pokemon, Move, Field} from '@smogon/calc/adaptable';
 const gen = Generations.get(1);
 const result = calculate(
   new Pokemon(gen, 'Gengar'),
-  new Pokemon(gen. 'Vulpix'),
+  new Pokemon(gen, 'Vulpix'),
   new Move(gen, 'Surf'),
   new Field({defenderSide: {isLightScreen: true}})
 );
