@@ -782,8 +782,11 @@ export function calculateBPModsSMSS(
   ) {
     bpMods.push(8192);
     desc.moveBP = basePower * 2;
+  } else if (move.named('Expanding Force') && isGrounded(attacker, field) && field.hasTerrain('Psychic')) {
+    move.target = 'allAdjacentFoes';
+    bpMods.push(6144);
+    desc.moveBP = basePower * 1.5;
   } else if ((move.named('Knock Off') && !resistedKnockOffDamage) ||
-    (move.named('Expanding Force') && isGrounded(attacker, field) && field.hasTerrain('Psychic')) ||
     (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty')) ||
     (move.named('Grav Apple') && field.isGravity)
   ) {
