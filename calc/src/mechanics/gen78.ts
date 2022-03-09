@@ -1287,7 +1287,11 @@ export function calculateFinalModsSMSS(
   if (move.hasType(getBerryResistType(defender.item)) &&
       (typeEffectiveness > 1 || move.hasType('Normal')) &&
       !attacker.hasAbility('Unnerve', 'As One (Glastrier)', 'As One (Spectrier)')) {
-    finalMods.push(2048);
+    if (defender.hasAbility('Ripen')) {
+      finalMods.push(1024);
+    } else {
+      finalMods.push(2048);
+    }
     desc.defenderItem = defender.item;
   }
 
