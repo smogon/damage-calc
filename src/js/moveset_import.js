@@ -9,6 +9,10 @@ function placeBsBtn() {
 	});
 }
 
+function makeManyCalcs(){
+		performCalculations();
+}
+
 function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
@@ -251,6 +255,22 @@ function updateDex(customsets) {
 	localStorage.customsets = JSON.stringify(customsets);
 }
 
+async function runCalcsWithAllCustom(){
+	let pokeID = $(this).parent().parent().prop("id");
+	let filtered_list = getSetOptions().filter((a) => a.isCustom===true);
+	let needs_changing = $("#" + pokeID + " .set-selector");
+	console.log(needs_changing);
+	let output = $('.export-team-text');
+	let mainResult = $('#mainResult');
+	output.text('');
+	filtered_list.forEach((set) => {
+		needs_changing.val((set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id))
+			.trigger('change');
+		performCalculations();
+		output.text(output.text() + mainResult.text() + "\n");
+	});
+}
+
 function addSets(pokes, name) {
 	var rows = pokes.split("\n");
 	var currentRow;
@@ -357,4 +377,5 @@ $(document).ready(function () {
 	} else {
 		loadDefaultLists();
 	}
+	$(".runCalcsWithAllCustom").click(runCalcsWithAllCustom);
 });

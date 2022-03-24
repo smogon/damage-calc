@@ -188,7 +188,7 @@ th {
 .poke-info {
     width: 30em;
 }
-.field-info, .poke-import {
+.field-info, .poke-import, .poke-export {
     text-align: center;
     width: 27.5em;
 }
@@ -425,7 +425,7 @@ table.field {
   clear: right;
 }
 
-.import-team-text {
+.import-team-text .export-team-text {
     min-width: 27em;
     min-height: 10em;
     resize: vertical;
