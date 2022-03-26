@@ -9,10 +9,6 @@ function placeBsBtn() {
 	});
 }
 
-function makeManyCalcs(){
-		performCalculations();
-}
-
 function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
@@ -258,17 +254,24 @@ function updateDex(customsets) {
 async function runCalcsWithAllCustom(){
 	let pokeID = $(this).parent().parent().prop("id");
 	let filtered_list = getSetOptions().filter((a) => a.isCustom===true);
-	let needs_changing = $("#" + pokeID + " .set-selector");
-	console.log(needs_changing);
+	let needsChanging = $("#" + pokeID + " .set-selector");
 	let output = $('.export-team-text');
-	let mainResult = $('#mainResult');
+	let mainResult = $('.left-result');
+	let currentValue = needsChanging.select2('data');
+	console.log(currentValue);
 	output.text('');
 	filtered_list.forEach((set) => {
-		needs_changing.val((set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id))
-			.trigger('change');
+		needsChanging.val((set.nickname ? set.pokemon + " (" + set.nickname + ")" : set.id));
+		needsChanging.trigger('change');
 		performCalculations();
-		output.text(output.text() + mainResult.text() + "\n");
+		damageResults[0].forEach((ele) =>
+			{
+				if(ele.damage)
+						output.text(output.text() + ele.fullDesc(notation,false) + "\n\n")
+			});
 	});
+	needsChanging.val(currentValue.text);
+	needsChanging.trigger('change');
 }
 
 function addSets(pokes, name) {
