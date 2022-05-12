@@ -3313,10 +3313,10 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Rivalry'},
   },
   Luxray: {
-    types: ['Electric', 'Dark'],
-    bs: {hp: 80, at: 120, df: 79, sa: 95, sd: 79, sp: 82},
+    types: ['Electric'],
+    bs: {hp: 80, at: 120, df: 79, sa: 95, sd: 79, sp: 70},
     weightkg: 42,
-    abilities: {0: 'Guts'},
+    abilities: {0: 'Rivalry'},
   },
   Magmortar: {
     types: ['Fire'],
