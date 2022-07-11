@@ -474,11 +474,11 @@ export function calculateSMSS(
     !attacker.hasAbility('Guts') &&
     !move.named('Facade');
   desc.isBurned = applyBurn;
-  const applyFreeze =
+  const applyFrostbite =
     attacker.hasStatus('frz') &&
     move.category === 'Special' &&
     !move.named('Facade');
-  desc.isFrozen = applyFreeze;
+  desc.isFrostbitten = applyFrostbite;
   const finalMods = calculateFinalModsSMSS(
     gen,
     attacker,
@@ -517,7 +517,7 @@ export function calculateSMSS(
   let damage = [];
   for (let i = 0; i < 16; i++) {
     damage[i] =
-      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, applyFreeze, stabMod, finalMod, protect);
+      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, applyFrostbite, stabMod, finalMod, protect);
   }
 
   if (move.dropsStats && move.timesUsed! > 1) {
@@ -538,7 +538,7 @@ export function calculateSMSS(
             damageMultiplier,
             typeEffectiveness,
             applyBurn,
-            applyFreeze,
+            applyFrostbite,
             stabMod,
             finalMod,
             protect

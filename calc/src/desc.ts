@@ -26,7 +26,7 @@ export interface RawDesc {
   isCritical?: boolean;
   isLightScreen?: boolean;
   isBurned?: boolean;
-  isFrozen?: boolean;
+  isFrostbitten?: boolean;
   isProtected?: boolean;
   isReflect?: boolean;
   isBattery?: boolean;
@@ -828,8 +828,8 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   output = appendIfSet(output, description.rivalry);
   if (description.isBurned) {
     output += 'burned ';
-  } else if (description.isFrozen) {
-    output += 'frozen ';
+  } else if (description.isFrostbitten) {
+    output += 'frostbitten ';
   }
   output += description.attackerName + ' ';
   if (description.isHelpingHand) {
