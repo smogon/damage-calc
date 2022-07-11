@@ -53,8 +53,8 @@
         </span>
         <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
             <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of function.</span>
-            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" checked="checked" /><label class="btn btn-left" for="one-vs-one">One vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="hardcore" /><label class="btn btn-mid" for="hardcore">Hardcore Mode</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-left" for="one-vs-one">One vs One</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="hardcore" checked="checked" /><label class="btn btn-mid" for="hardcore">Hardcore Mode</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-right" for="randoms">Random Battles</label>
         </span>
     </div>
@@ -639,7 +639,7 @@
                 <hr class="gen-specific g6 g7 g8" />
                 <div aria-labelledby="selectWeatherInstruction" role="radiogroup">
                     <span class="visually-hidden" id="selectWeatherInstruction">Select the current weather condition.</span>
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                    <div  class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
                         <label class="btn btn-small btn-left" for="clear">None</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
@@ -670,14 +670,6 @@
                     <label class="btn btn-small btn-mid" for="gscRain">Rain</label>
                     <input class="visually-hidden calc-trigger" type="radio" name="gscWeather" value="Sand" id="gscSand" />
                     <label class="btn btn-small btn-right" for="gscSand">Sand</label>
-                </div>
-                <div class="gen-specific g5 g6 g7 g8" style="width: 22.2em; margin: 5px auto; display: inline-block;">
-                    <span hidden id="magicRoomInstruction">Is Magic Room in effect?</span>
-                    <span hidden id="wonderRoomInstruction">Is Wonder Room in effect?</span>
-                    <input aria-describedby="magicRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="magicroom" />
-                    <label class="btn btn-xxxwide btn-left" for="magicroom">Magic Room</label>
-                    <input aria-describedby="wonderRoomInstruction" class="visually-hidden calc-trigger" type="checkbox" id="wonderroom" />
-                    <label class="btn btn-xxxwide btn-right" for="wonderroom">Wonder Room</label>
                 </div>
                 <div class="gen-specific g4 g5 g6 g7 g8" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
                     <span hidden id="gravityInstruction">Is gravity in effect?</span>
@@ -1413,8 +1405,7 @@
     <script type="text/javascript" src="./calc/util.js?"></script>
     <script type="text/javascript" src="./calc/stats.js?"></script>
     <script type="text/javascript" src="./calc/data/species.js?"></script>
-    <!--script type="text/javascript" src="./js/data/sets/gen8.js?"></script-->
-    <script type="text/javascript" src="./js/data/sets/rr.js?"></script>
+    <script type="text/javascript" src="./js/data/sets/hardcore.js"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen5.js?"></script>

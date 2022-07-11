@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Pok&eacute;mon Damage Calculator</title>
+    <title>Pok&eacute;mon Radical Red Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
@@ -28,30 +28,23 @@
 <nav><div class="header"><div class="header-inner">
     <ul class="nav">
         <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
-        <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>
+        <li><a class="button" href="//dex.radicalred.net">Pok&eacute;dex</a></li>
         <li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>
         <li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>
         <li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
     </ul>
     <ul class="nav nav-play">
-        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+        <li><a class="button greenbutton nav-first nav-last" href="//play.radicalred.net">Play</a></li>
     </ul>
     <div style="clear:both"></div>
 </div></div></nav>
 <div class="wrapper">
 
     <div aria-label="Settings" role="region">
-        <span class="title-text">Pok&eacute;mon Damage Calculator</span>
+        <span class="title-text" style="margin-right: 22em;">Pok&eacute;mon Radical Red Damage Calculator</span>
         <span class="genSelection" aria-labelledby="selectGenInstruction" role="radiogroup" title="Select the generation.">
             <span class="visually-hidden" id="selectGenInstruction">Select the generation.</span>
-            <input class="gen visually-hidden" type="radio" name="gen" value="1" id="gen1" /><label class="btn btn-small btn-left" for="gen1">RBY</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="2" id="gen2" /><label class="btn btn-small btn-mid" for="gen2">GSC</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="3" id="gen3" /><label class="btn btn-small btn-mid" for="gen3">ADV</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="4" id="gen4" /><label class="btn btn-small btn-mid" for="gen4">DPP</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-mid" for="gen5">B/W</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">X/Y</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">S/M</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
+            <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" />
         </span>
         <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation.">
             <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
@@ -61,8 +54,7 @@
         <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
             <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of function.</span>
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-left" for="one-vs-one">One vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-mid" for="one-vs-all">One vs All</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-mid" for="all-vs-one">All vs One</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="hardcore" /><label class="btn btn-mid" for="hardcore">Hardcore Mode</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="randoms" checked="checked" /><label class="btn btn-right" for="randoms">Random Battles</label>
         </span>
     </div>
@@ -137,7 +129,6 @@
                     <label>Type</label>
                     <select aria-label="type1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="type2" class="type2 terrain-trigger calc-trigger"></select>
-                    <small class="right">(<a class="analysis" target="_blank" href="">Smogon&nbsp;analysis</a>)</small>
                 </div>
                 <div class="hide">
                     <label>Forme</label>
@@ -727,17 +718,6 @@
                                 <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g8">
-                            <div hidden id="selectSteelsurgeInstruction">Is Steelsurge affecting this side of the field?</div>
-                            <td><div class="left" title="Is Steelsurge affecting this side of the field?">
-                                <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeL" />
-                                <label class="btn btn-xwide" for="steelsurgeL">Steelsurge</label>
-                            </div></td>
-                            <td><div class="right" title="Is Steelsurge affecting this side of the field?">
-                                <input aria-describedby="selectSteelsurgeInstruction" class="visually-hidden calc-trigger" type="checkbox" id="steelsurgeR" />
-                                <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
-                            </div></td>
-                        </tr>
                         <tr class="gen-specific g3 g4 g5 g6 g7 g8">
                             <div hidden id="selectSpikeInstruction">Are there Spikes on this side of the field?</div>
                             <td><div aria-labelledby="selectSpikeInstruction" class="left" role="radiogroup" title="Are there Spikes on this side of the field?">
@@ -921,7 +901,6 @@
                     <label>Type</label>
                     <select aria-label="Type 1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="Type 2" class="type2 terrain-trigger calc-trigger"></select>
-                    <small class="right">(<a class="analysis" target="_blank" href="">Smogon&nbsp;analysis</a>)</small>
                 </div>
                 <div class="hide">
                     <label>Forme</label>
@@ -1439,7 +1418,7 @@
     <script type="text/javascript" src="./calc/util.js?"></script>
     <script type="text/javascript" src="./calc/stats.js?"></script>
     <script type="text/javascript" src="./calc/data/species.js?"></script>
-    <script type="text/javascript" src="https://pkmn.github.io/randbats/data/gen8randombattle.js?"></script>
+    <script type="text/javascript" src="https://radicalredshowdown.github.io/randbats/data/gen8randombattle.js?"></script>
     <script type="text/javascript" src="https://pkmn.github.io/randbats/data/gen7randombattle.js?"></script>
     <script type="text/javascript" src="https://pkmn.github.io/randbats/data/gen6randombattle.js?"></script>
     <script type="text/javascript" src="https://pkmn.github.io/randbats/data/gen5randombattle.js?"></script>
@@ -1473,10 +1452,10 @@
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
 </div>
 
-<div class="credits">Created by Honko, maintained by Austin and Kris
-    <ul><li><a href="https://github.com/smogon/damage-calc/contributors" target="_blank">Contributors</a></li>
-    <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" target="_blank">Bug Reports</a></li>
-    <li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul>
+<div class="credits">Original is created by Honko and maintained by Austin and Kris. Edited by Karthik.
+    <ul><li><a href="https://github.com/RadicalRedShowdown/calc/contributors" target="_blank">Contributors</a></li>
+    <li><a href="https://github.com/RadicalRedShowdown/calc/issues" target="_blank">Bug Reports</a></li>
+    <li><a href="https://github.com/RadicalRedShowdown/calc" target="_blank">GitHub repository</a></li></ul>
 </div>
 
 </body>

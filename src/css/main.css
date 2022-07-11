@@ -136,6 +136,9 @@ html, body {
     padding: 0;
     min-width: 100em;
 }
+a {
+    color: #58a6ff;
+}
 .wrapper {
     padding: 0 1em;
     max-width: 1285px;
@@ -153,7 +156,7 @@ div.wrapper > div > span {
 fieldset {
     float: left;
     background-color: #F1F4F9;
-    border: 1px solid #AAAAAA;
+    border: 1px solid #AAA;
 }
 legend {
     font-weight: bold;
@@ -402,6 +405,7 @@ table.field {
 /* select2 overrides */
 .select2-container .select2-choice > .select2-chosen {
     width: 100%;
+    max-width: 372px;
 }
 .small-select.select2-container .select2-choice {
     font-size: 0.9em;

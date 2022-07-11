@@ -97,8 +97,10 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
       (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
   ) {
     speed *= 2;
+  } else if (pokemon.named('Cherrim') && pokemon.hasAbility('Flower Gift') && weather.includes('Sun')) {
+    speed *= 1.5;
   } else if (pokemon.hasAbility('Quick Feet') && pokemon.status) {
-    mods *= 1.5;
+    mods *= 2;
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     mods *= 0.5;
   }
@@ -358,6 +360,7 @@ export function getFinalDamage(
   i: number,
   effectiveness: number,
   isBurned: boolean,
+  isFrozen: boolean,
   stabMod: number,
   finalMod: number,
   protect?: boolean
@@ -368,7 +371,7 @@ export function getFinalDamage(
   if (stabMod !== 4096) damageAmount = OF32(damageAmount * stabMod) / 4096;
   damageAmount = Math.floor(OF32(pokeRound(damageAmount) * effectiveness));
 
-  if (isBurned) damageAmount = Math.floor(damageAmount / 2);
+  if (isBurned || isFrozen) damageAmount = Math.floor(damageAmount / 2);
   if (protect) damageAmount = pokeRound(OF32(damageAmount * 1024) / 4096);
   return OF16(pokeRound(Math.max(1, OF32(damageAmount * finalMod) / 4096)));
 }

@@ -293,7 +293,27 @@ const SS = SM.concat([
   'Wandering Spirit',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+const RR = SS.concat([
+  'Bad Company',
+  'Blademaster',
+  'Blazing Soul',
+  'Blubber Defense',
+  'Bone Zone',
+  'Bull Rush',
+  'Fatal Precision',
+  'Feline Prowess',
+  'Mountaineer',
+  'ORAORAORAORA',
+  'Parasitic Waste',
+  'Primal Armor',
+  'Quill Rush',
+  'Sage Power',
+  'Self Sufficient',
+  'Striker',
+  'Surprise!',
+]);
+
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, RR];
 
 export class Abilities implements I.Abilities {
   private readonly gen: I.GenerationNum;
