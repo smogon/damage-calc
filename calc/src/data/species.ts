@@ -9477,14 +9477,14 @@ delete SS['Eevee-Starter'];
 var gmaxes = ["Alcremie", "Appletun", "Blastoise", "Butterfree", "Centiskorch", "Charizard", "Cinderace", "Coalossal", "Copperajah", "Corviknight", "Drednaw", "Duraludon", "Eevee", "Flapple", "Garbodor", "Gengar", "Grimmsnarl", "Hatterene", "Inteleon", "Kingler", "Lapras", "Machamp", "Melmetal", "Meowth", "Orbeetle", "Pikachu", "Rillaboom", "Sandaconda", "Snorlax", "Toxtricity", "Urshifu", "Venusaur"]
 gmaxes.forEach(function(p) {
   var i = SS[p].otherFormes?.indexOf(`${p}-Gmax`)
-  if (i != undefined) SS[p].otherFormes?.splice(i, 1)
+  if (i != undefined && i != -1) SS[p].otherFormes?.splice(i, 1)
   delete SS[`${p}-Gmax`]
 })
 var i = SS['Toxtricity'].otherFormes?.indexOf('Toxtricity-Low-Key-Gmax')
-if (i != undefined) SS['Toxtricity'].otherFormes?.splice(i, 1)
+if (i != undefined && i != -1) SS['Toxtricity'].otherFormes?.splice(i, 1)
 delete SS['Toxtricity-Low-Key-Gmax']
 var i = SS['Urshifu'].otherFormes?.indexOf('Urshifu-Rapid-Strike-Gmax')
-if (i != undefined) SS['Urshifu'].otherFormes?.splice(i, 1)
+if (i != undefined && i != -1) SS['Urshifu'].otherFormes?.splice(i, 1)
 delete SS['Urshifu-Rapid-Strike-Gmax']
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
