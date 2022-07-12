@@ -29,3 +29,4 @@ jobs:
       with:
         folder: dist
         commit-message: "Deploy ${{ steps.vars.outputs.sha_short }}"
+        clean-exclude: favicon.ico
