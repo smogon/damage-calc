@@ -4301,7 +4301,7 @@ const RR_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   'Draco Barrage': {
     bp: 100,
-    type: 'Psychic',
+    type: 'Dragon',
     category: 'Special',
     recoil: [33, 100],
     zp: 180,
