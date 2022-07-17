@@ -9192,7 +9192,7 @@ const RR_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 74, at: 115, df: 70, sa: 135, sd: 80, sp: 106},
     weightkg: 48,
     abilities: {0: 'Healer'},
-    otherFormes: ['Landorus-Therian'],
+    otherFormes: ['Enamorus-Therian'],
   },
   'Enamorus-Therian': {
     types: ['Fairy', 'Flying'],
