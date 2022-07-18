@@ -300,6 +300,7 @@ const RR = SS.concat([
   'Blubber Defense',
   'Bone Zone',
   'Bull Rush',
+  'Cash Splash',
   'Fatal Precision',
   'Feline Prowess',
   'Mountaineer',

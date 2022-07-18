@@ -1081,7 +1081,7 @@ export function calculateAtModsSMSS(
     atMods.push(8192);
     desc.attackerAbility = attacker.ability;
   } else if (
-    (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
+    (attacker.hasAbility('Water Bubble', 'Cash Splash') && move.hasType('Water')) ||
     (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical') ||
     (attacker.hasAbility('Feline Prowess') && move.category === 'Special')
   ) {
@@ -1090,7 +1090,7 @@ export function calculateAtModsSMSS(
   }
 
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
-      (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
+      (defender.hasAbility('Water Bubble', 'Cash Splash') && move.hasType('Fire')) ||
       (defender.hasAbility('Water Compaction') && move.hasType('Water'))) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;

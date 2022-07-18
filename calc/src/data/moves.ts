@@ -4306,6 +4306,13 @@ const RR_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     recoil: [33, 100],
     zp: 180,
   },
+  'Esper Wing': {
+    bp: 40,
+    type: 'Psychic',
+    priority: 1,
+    secondaries: true,
+    category: 'Special',
+  },
   'Headlong Rush': {
     bp: 120,
     type: 'Ground',
