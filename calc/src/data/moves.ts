@@ -4277,7 +4277,7 @@ const RR_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 120,
   },
   'Ceaseless Edge': {
-    bp: 70,
+    bp: 65,
     type: 'Dark',
     category: 'Physical',
     makesContact: true,
@@ -4343,7 +4343,7 @@ const RR_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 130,
   },
   'Stone Axe': {
-    bp: 70,
+    bp: 65,
     type: 'Rock',
     category: 'Physical',
     makesContact: true,
