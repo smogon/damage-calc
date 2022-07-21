@@ -4355,6 +4355,7 @@ const RR_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 60,
     type: 'Fighting',
     category: 'Physical',
+    secondaries: true,
     makesContact: true,
     isKick: true,
     zp: 160,
