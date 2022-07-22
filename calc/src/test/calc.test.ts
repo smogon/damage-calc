@@ -571,6 +571,22 @@ describe('calc', () => {
           '+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Eviolite Chansey: 274-324 (18 - 22px) -- guaranteed 3HKO'
         );
       });
+      test('Technician with Low Kick', () => {
+          const ambipom = Pokemon('Ambipom', {level: 50, ability: 'Technician'});
+          const blissey = Pokemon('Blissey', {level: 50, evs: {hp: 252}});
+          let result = calculate(ambipom, blissey, Move('Low Kick'));
+          expect(result.range()).toEqual([272, 320]);
+          expect(result.desc()).toBe(
+            '0 Atk Technician Ambipom Low Kick (60 BP) vs. 252 HP / 0 Def Blissey: 272-320 (75.1 - 88.3%) -- guaranteed 2HKO'
+          );
+
+          const aggron = Pokemon('Aggron', {level: 50, evs: {hp: 252}});
+          result = calculate(ambipom, aggron, Move('Low Kick'));
+          expect(result.range()).toEqual([112, 132]);
+          expect(result.desc()).toBe(
+            '0 Atk Ambipom Low Kick (120 BP) vs. 252 HP / 0 Def Aggron: 112-132 (63.2 - 74.5%) -- guaranteed 2HKO'
+          );
+      });
     });
   });
 
@@ -839,6 +855,23 @@ describe('calc', () => {
           '252 SpA Choice Specs Kyurem Earth Power vs. 0 HP / 0 SpD Jirachi: 294-348 (86.2 - 102%) -- 12.5% chance to OHKO'
         );
       });
+
+      test('Technician with Low Kick', () => {
+        const ambipom = Pokemon('Ambipom', {level: 50, ability: 'Technician'});
+        const blissey = Pokemon('Blissey', {level: 50, evs: {hp: 252}});
+        let result = calculate(ambipom, blissey, Move('Low Kick'));
+        expect(result.range()).toEqual([272, 320]);
+        expect(result.desc()).toBe(
+          '0 Atk Technician Ambipom Low Kick (60 BP) vs. 252 HP / 0 Def Blissey: 272-320 (75.1 - 88.3%) -- guaranteed 2HKO'
+        );
+
+        const aggron = Pokemon('Aggron', {level: 50, evs: {hp: 252}});
+        result = calculate(ambipom, aggron, Move('Low Kick'));
+        expect(result.range()).toEqual([112, 132]);
+        expect(result.desc()).toBe(
+          '0 Atk Ambipom Low Kick (120 BP) vs. 252 HP / 0 Def Aggron: 112-132 (63.2 - 74.5%) -- guaranteed 2HKO'
+        );
+    });
     });
   });
 });
