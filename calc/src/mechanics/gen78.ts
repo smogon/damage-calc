@@ -829,8 +829,8 @@ export function calculateBPModsSMSS(
 
   // Abilities
 
-  // Technician looks at the move's original BP, not the BP up to this point
-  if ((attacker.hasAbility('Technician') && move.bp <= 60) ||
+  // Use BasePower after moves with custom BP to determine if Technician should boost
+  if ((attacker.hasAbility('Technician') && basePower <= 60) ||
     (attacker.hasAbility('Flare Boost') &&
       attacker.hasStatus('brn') && move.category === 'Special') ||
     (attacker.hasAbility('Toxic Boost') &&
