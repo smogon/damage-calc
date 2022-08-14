@@ -17,6 +17,10 @@ jobs:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
     - uses: actions/checkout@v2
     - name: Install Node.js
@@ -35,4 +39,4 @@ jobs:
     - uses: actions/configure-pages@v1
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@main
+      uses: actions/deploy-pages@v1
