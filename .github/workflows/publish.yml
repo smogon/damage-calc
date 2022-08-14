@@ -17,7 +17,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/configure-pages@v1
     - name: Install Node.js
       uses: Zarel/setup-node@patch-1
       with:
@@ -31,6 +30,7 @@ jobs:
       with:
         # Upload entire repository
         path: 'dist'
+    - uses: actions/configure-pages@v1
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@main
