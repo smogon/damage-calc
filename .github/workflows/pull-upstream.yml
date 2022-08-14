@@ -1,0 +1,22 @@
+name: Update from Smogon
+
+on:
+  schedule:
+    - cron: '0 * * * *' # hourly
+
+jobs:
+  fetch-upstream:
+    name: Fetch updates from @smogon
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+      - name: Rebase against @smogon
+        uses: zxaos/patchup@v1
+        with:
+          local_branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upstream_repo: "smogon/damage-calc"
+          target_tag: start_nightlydmg_changes
