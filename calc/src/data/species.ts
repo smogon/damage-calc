@@ -7530,6 +7530,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     ],
   },
   Ponyta: {otherFormes: ['Ponyta-Galar']},
+  Pyroak: {bs: {sa: 70, sd: 65}},
   Rapidash: {otherFormes: ['Rapidash-Galar']},
   Slowbro: {otherFormes: ['Slowbro-Galar', 'Slowbro-Mega']},
   Slowking: {otherFormes: ['Slowking-Galar']},
@@ -8399,6 +8400,12 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 66.6,
     abilities: {0: 'Wandering Spirit'},
   },
+  Saharaja: {
+    types: ['Ground'],
+    bs: {hp: 70, at: 120, df: 105, sa: 65, sd: 130, sp: 90},
+    weightkg: 303.9,
+    abilities: {0: 'Water Absorb'},
+  },
   Sandaconda: {
     types: ['Ground'],
     bs: {hp: 72, at: 107, df: 125, sa: 65, sd: 70, sp: 71},
@@ -8621,7 +8628,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Venomicon-Epilogue': {
     types: ['Poison', 'Flying'],
-    bs: {hp: 85, at: 110, df: 85, sa: 55, sd: 85, sp: 120},
+    bs: {hp: 85, at: 102, df: 85, sa: 63, sd: 85, sp: 120},
     weightkg: 12.4,
     abilities: {0: 'Tinted Lens'},
     baseSpecies: 'Venomicon',
