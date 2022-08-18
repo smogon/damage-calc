@@ -3,7 +3,6 @@ name: Update from Smogon
 on:
   schedule:
     - cron: '0 * * * *' # hourly
-  workflow-dispatch:
 
 jobs:
   fetch-upstream:
