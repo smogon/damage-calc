@@ -13,6 +13,7 @@ jobs:
         with:
           persist-credentials: true
           fetch-depth: 0
+      - run: git branch -D master
       - name: Rebase against @smogon
         uses: zxaos/patchup@v1
         with:
@@ -20,3 +21,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           upstream_repo: "smogon/damage-calc"
           target_tag: start_nightlydmg_changes
+      - run: git push origin master --force
