@@ -1,5 +1,5 @@
 import {Pokemon} from '../index';
-import {StatID, MoveName} from '../data/interface';
+import {StatName, MoveName} from '../data/interface';
 
 describe('Pokemon', () => {
   test('defaults', () => {
@@ -18,7 +18,7 @@ describe('Pokemon', () => {
     expect(p.toxicCounter).toBe(0);
     expect(p.curHP()).toBe(p.stats.hp);
 
-    let stat: StatID;
+    let stat: StatName;
     // tslint:disable-next-line:forin
     for (stat in p.ivs) {
       expect(p.ivs[stat]).toBe(31);

@@ -2,9 +2,8 @@ export interface As<T> {__brand: T}
 export type ID = (string & As<'ID'>) | (string & { __isID: true }) | '';
 export type GenerationNum = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type GenderName = 'M' | 'F' | 'N';
-export type StatID = 'hp' | StatIDExceptHP;
-export type StatIDExceptHP = 'atk' | 'def' | 'spa' | 'spd' | 'spe';
-export type StatsTable<T = number> = {[stat in StatID]: T};
+export type StatName = 'hp' | 'atk' | 'def' | 'spa' | 'spd' | 'spe';
+export type StatsTable<T = number> = {[stat in StatName]: T};
 
 export type AbilityName = string & As<'AbilityName'>;
 export type ItemName = string & As<'ItemName'>;
@@ -115,10 +114,7 @@ export interface Move extends Data<MoveName> {
   readonly priority?: number;
   readonly self?: SelfOrSecondaryEffect | null;
   readonly ignoreDefensive?: boolean;
-  readonly overrideOffensiveStat?: StatIDExceptHP;
-  readonly overrideDefensiveStat?: StatIDExceptHP;
-  readonly overrideOffensivePokemon?: 'target' | 'source';
-  readonly overrideDefensivePokemon?: 'target' | 'source';
+  readonly defensiveCategory?: MoveCategory;
   readonly breaksProtect?: boolean;
   readonly isZ?: boolean | string;
   readonly zMove?: {
@@ -167,6 +163,6 @@ export interface Natures {
 
 export interface Nature extends Data<NatureName> {
   readonly kind: 'Nature';
-  readonly plus?: StatID;
-  readonly minus?: StatID;
+  readonly plus?: StatName;
+  readonly minus?: StatName;
 }

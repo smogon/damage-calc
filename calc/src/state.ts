@@ -35,12 +35,7 @@ export namespace State {
     gameType: I.GameType;
     weather?: I.Weather;
     terrain?: I.Terrain;
-    isMagicRoom?: boolean;
-    isWonderRoom?: boolean;
     isGravity?: boolean;
-    isAuraBreak?: boolean;
-    isFairyAura?: boolean;
-    isDarkAura?: boolean;
     attackerSide: Side;
     defenderSide: Side;
   }
@@ -60,10 +55,13 @@ export namespace State {
     isForesight?: boolean;
     isTailwind?: boolean;
     isHelpingHand?: boolean;
+	isBadgeAtk?: boolean;
+	isBadgeDef?: boolean;
+	isBadgeSpeed?: boolean;
+	isBadgeSpec?: boolean;
     isFriendGuard?: boolean;
     isAuroraVeil?: boolean;
     isBattery?: boolean;
-    isPowerSpot?: boolean;
     isSwitching?: 'out' | 'in';
   }
 }

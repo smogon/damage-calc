@@ -100,17 +100,12 @@ export function calculateADV(
     desc.hits = move.hits;
   }
 
-  let bp = move.bp;
+  let bp;
   switch (move.name) {
   case 'Flail':
   case 'Reversal':
     const p = Math.floor((48 * attacker.curHP()) / attacker.maxHP());
     bp = p <= 1 ? 200 : p <= 4 ? 150 : p <= 9 ? 100 : p <= 16 ? 80 : p <= 32 ? 40 : 20;
-    desc.moveBP = bp;
-    break;
-  case 'Eruption':
-  case 'Water Spout':
-    bp = Math.max(1, Math.floor((150 * attacker.curHP()) / attacker.maxHP()));
     desc.moveBP = bp;
     break;
   case 'Low Kick':
@@ -120,7 +115,11 @@ export function calculateADV(
     break;
   case 'Facade':
     if (attacker.hasStatus('par', 'psn', 'tox', 'brn')) {
-      bp = move.bp * 2;
+      bp = 140;
+      desc.moveBP = bp;
+    }
+    else{
+      bp = 70;
       desc.moveBP = bp;
     }
     break;
@@ -145,7 +144,30 @@ export function calculateADV(
     at *= 2;
     desc.attackerAbility = attacker.ability;
   }
-
+  if (field.attackerSide.isBadgeAtk) {
+	if ((move.hasType('Normal', 'Fighting','Flying', 'Ground', 'Rock', 'Bug', 'Ghost', 'Poison', 'Steel'))){  
+    at = Math.floor(at * 1.1);
+    desc.isBadgeAtk = true;
+	}
+  }
+    if (field.attackerSide.isBadgeSpec) {
+	if ((move.hasType('Water', 'Grass','Fire', 'Ice', 'Electric', 'Psychic', 'Dragon', 'Dark'))){  
+    at = Math.floor(at * 1.1);
+    desc.isBadgeSpec = true;
+	}
+  }  
+      if (field.defenderSide.isBadgeSpec)
+  {
+	  if(!isPhysical){
+	   df = Math.floor(df * 1.1);
+	  }
+  }
+    if (field.defenderSide.isBadgeDef)
+  {
+	  if(isPhysical){
+	   df = Math.floor(df * 1.1);
+	  }
+  }
   if (!attacker.hasItem('Sea Incense') && move.hasType(getItemBoostType(attacker.item))) {
     at = Math.floor(at * 1.1);
     desc.attackerItem = attacker.item;
@@ -205,7 +227,6 @@ export function calculateADV(
   if (move.named('Explosion', 'Self-Destruct')) {
     df = Math.floor(df / 2);
   }
-
   const isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
 
   const attackBoost = attacker.boosts[attackStat];

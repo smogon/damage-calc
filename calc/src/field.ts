@@ -5,12 +5,7 @@ export class Field implements State.Field {
   gameType: GameType;
   weather?: Weather;
   terrain?: Terrain;
-  isMagicRoom: boolean;
-  isWonderRoom: boolean;
   isGravity: boolean;
-  isAuraBreak?: boolean;
-  isFairyAura?: boolean;
-  isDarkAura?: boolean;
   attackerSide: Side;
   defenderSide: Side;
 
@@ -18,12 +13,7 @@ export class Field implements State.Field {
     this.gameType = field.gameType || 'Singles';
     this.terrain = field.terrain;
     this.weather = field.weather;
-    this.isMagicRoom = !!field.isMagicRoom;
-    this.isWonderRoom = !!field.isWonderRoom;
     this.isGravity = !!field.isGravity;
-    this.isAuraBreak = field.isAuraBreak || false;
-    this.isFairyAura = field.isFairyAura || false;
-    this.isDarkAura = field.isDarkAura || false;
 
     this.attackerSide = new Side(field.attackerSide || {});
     this.defenderSide = new Side(field.defenderSide || {});
@@ -47,14 +37,9 @@ export class Field implements State.Field {
       gameType: this.gameType,
       weather: this.weather,
       terrain: this.terrain,
-      isMagicRoom: this.isMagicRoom,
-      isWonderRoom: this.isWonderRoom,
       isGravity: this.isGravity,
       attackerSide: this.attackerSide,
       defenderSide: this.defenderSide,
-      isAuraBreak: this.isAuraBreak,
-      isDarkAura: this.isDarkAura,
-      isFairyAura: this.isFairyAura,
     });
   }
 }
@@ -75,9 +60,12 @@ export class Side implements State.Side {
   isTailwind: boolean;
   isHelpingHand: boolean;
   isFriendGuard: boolean;
+  isBadgeAtk: boolean;
+  isBadgeDef: boolean;
+  isBadgeSpeed: boolean;
+  isBadgeSpec: boolean;
   isAuroraVeil: boolean;
   isBattery: boolean;
-  isPowerSpot: boolean;
   isSwitching?: 'out' | 'in';
 
   constructor(side: State.Side = {}) {
@@ -95,10 +83,13 @@ export class Side implements State.Side {
     this.isForesight = !!side.isForesight;
     this.isTailwind = !!side.isTailwind;
     this.isHelpingHand = !!side.isHelpingHand;
+	this.isBadgeAtk = !!side.isBadgeAtk;
+	this.isBadgeDef = !!side.isBadgeDef;
+	this.isBadgeSpeed = !!side.isBadgeSpeed;
+	this.isBadgeSpec = !!side.isBadgeSpec;
     this.isFriendGuard = !!side.isFriendGuard;
     this.isAuroraVeil = !!side.isAuroraVeil;
     this.isBattery = !!side.isBattery;
-    this.isPowerSpot = !!side.isPowerSpot;
     this.isSwitching = side.isSwitching;
   }
 

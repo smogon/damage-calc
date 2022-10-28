@@ -1,16 +1,16 @@
-import {Natures, Generation, TypeName, StatID, StatsTable} from './data/interface';
+import {Natures, Generation, TypeName, StatName, StatsTable} from './data/interface';
 import {toID} from './util';
 
-const RBY: Array<StatID | 'spc'> = ['hp', 'atk', 'def', 'spc', 'spe'];
-const GSC: StatID[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
-const ADV: StatID[] = GSC;
-const DPP: StatID[] = GSC;
-const BW: StatID[] = GSC;
-const XY: StatID[] = GSC;
-const SM: StatID[] = GSC;
-const SS: StatID[] = GSC;
+const RBY: Array<StatName | 'spc'> = ['hp', 'atk', 'def', 'spc', 'spe'];
+const GSC: StatName[] = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
+const ADV: StatName[] = GSC;
+const DPP: StatName[] = GSC;
+const BW: StatName[] = GSC;
+const XY: StatName[] = GSC;
+const SM: StatName[] = GSC;
+const SS: StatName[] = GSC;
 
-export const STATS: Array<Array<StatID | 'spc'> | StatID[]> =
+export const STATS: Array<Array<StatName | 'spc'> | StatName[]> =
   [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
 
 type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | '???'>;
@@ -40,7 +40,7 @@ const HP: {[type in HPTypeName]: {ivs: Partial<StatsTable>; dvs: Partial<StatsTa
 };
 
 export const Stats = new (class {
-  displayStat(stat: StatID | 'spc') {
+  displayStat(stat: StatName | 'spc') {
     switch (stat) {
     case 'hp':
       return 'HP';
@@ -61,7 +61,7 @@ export const Stats = new (class {
     }
   }
 
-  shortForm(stat: StatID | 'spc') {
+  shortForm(stat: StatName | 'spc') {
     switch (stat) {
     case 'hp':
       return 'hp';
@@ -99,7 +99,7 @@ export const Stats = new (class {
 
   DVsToIVs(dvs: Readonly<Partial<StatsTable>>) {
     const ivs: Partial<StatsTable> = {};
-    let dv: StatID;
+    let dv: StatName;
     for (dv in dvs) {
       ivs[dv] = Stats.DVToIV(dvs[dv]!);
     }
@@ -108,7 +108,7 @@ export const Stats = new (class {
 
   calcStat(
     gen: Generation,
-    stat: StatID,
+    stat: StatName,
     base: number,
     iv: number,
     ev: number,
@@ -122,7 +122,7 @@ export const Stats = new (class {
 
   calcStatADV(
     natures: Natures,
-    stat: StatID,
+    stat: StatName,
     base: number,
     iv: number,
     ev: number,
@@ -134,7 +134,7 @@ export const Stats = new (class {
         ? base
         : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
     } else {
-      let mods: [StatID?, StatID?] = [undefined, undefined];
+      let mods: [StatName?, StatName?] = [undefined, undefined];
       if (nature) {
         const nat = natures.get(toID(nature));
         mods = [nat?.plus, nat?.minus];
@@ -152,11 +152,11 @@ export const Stats = new (class {
     }
   }
 
-  calcStatRBY(stat: StatID, base: number, iv: number, level: number) {
+  calcStatRBY(stat: StatName, base: number, iv: number, level: number) {
     return this.calcStatRBYFromDV(stat, base, this.IVToDV(iv), level);
   }
 
-  calcStatRBYFromDV(stat: StatID, base: number, dv: number, level: number) {
+  calcStatRBYFromDV(stat: StatName, base: number, dv: number, level: number) {
     if (stat === 'hp') {
       return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
     } else {
@@ -198,8 +198,8 @@ export const Stats = new (class {
       let hpPowerX = 0;
       let i = 1;
       for (const s in stats) {
-        hpTypeX += i * (ivs[s as StatID] % 2);
-        hpPowerX += i * (tr(ivs[s as StatID] / 2) % 2);
+        hpTypeX += i * (ivs[s as StatName] % 2);
+        hpPowerX += i * (tr(ivs[s as StatName] / 2) % 2);
         i *= 2;
       }
       return {

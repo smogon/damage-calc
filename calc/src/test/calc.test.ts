@@ -122,7 +122,7 @@ describe('calc', () => {
       test(`Struggle vs. Ghost (gen ${gen})`, () => {
         const result = calculate(Pokemon('Mew'), Pokemon('Gengar'), Move('Struggle'));
         if (gen < 2) {
-          expect(result.range()[1]).toBe(0);
+          expect(result.range()[1]).toEqual(0);
         } else {
           expect(result.range()[1]).toBeGreaterThan(0);
         }
@@ -204,34 +204,6 @@ describe('calc', () => {
         expect(result.range()).toEqual([147, 174]);
         expect(result.desc()).toBe(
           '0 Atk Zygarde Thousand Arrows vs. 0 HP / 0 Def Swellow: 147-174 (56.3 - 66.6%) -- guaranteed 2HKO'
-        );
-      });
-    });
-
-    inGens(4, 8, ({gen, calculate, Pokemon, Move}) => {
-      const zapdos = Pokemon('Zapdos', {item: 'Iron Ball'});
-      if (gen === 4) {
-        test(`Iron Ball negates ground immunities (gen ${gen})`, () => {
-          const result = calculate(Pokemon('Vibrava'), zapdos, Move('Earthquake'));
-          expect(result.range()).toEqual([186, 218]);
-          expect(result.desc()).toBe(
-            '0 Atk Vibrava Earthquake vs. 0 HP / 0 Def Zapdos: 186-218 (57.9 - 67.9%) -- guaranteed 2HKO'
-          );
-        });
-      } else {
-        test(`Iron Ball Should negate damage nullifiers (gen ${gen})`, () => {
-          const result = calculate(Pokemon('Vibrava'), zapdos, Move('Earthquake'));
-          expect(result.range()).toEqual([93, 109]);
-          expect(result.desc()).toBe(
-            '0 Atk Vibrava Earthquake vs. 0 HP / 0 Def Zapdos: 93-109 (28.9 - 33.9%) -- 1.2% chance to 3HKO'
-          );
-        });
-      }
-      test(`Iron Ball negates levitate (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Poliwrath'), Pokemon('Mismagius', {item: 'Iron Ball'}), Move('Mud Shot'));
-        expect(result.range()).toEqual([29, 35]);
-        expect(result.desc()).toBe(
-          '0 SpA Poliwrath Mud Shot vs. 0 HP / 0 SpD Mismagius: 29-35 (11.1 - 13.4%) -- possible 8HKO'
         );
       });
     });
@@ -571,22 +543,6 @@ describe('calc', () => {
           '+1 252 SpA Choice Specs Gengar Focus Blast vs. 252 HP / 252+ SpD Eviolite Chansey: 274-324 (18 - 22px) -- guaranteed 3HKO'
         );
       });
-      test('Technician with Low Kick', () => {
-        const ambipom = Pokemon('Ambipom', {level: 50, ability: 'Technician'});
-        const blissey = Pokemon('Blissey', {level: 50, evs: {hp: 252}});
-        let result = calculate(ambipom, blissey, Move('Low Kick'));
-        expect(result.range()).toEqual([272, 320]);
-        expect(result.desc()).toBe(
-          '0 Atk Technician Ambipom Low Kick (60 BP) vs. 252 HP / 0 Def Blissey: 272-320 (75.1 - 88.3%) -- guaranteed 2HKO'
-        );
-
-        const aggron = Pokemon('Aggron', {level: 50, evs: {hp: 252}});
-        result = calculate(ambipom, aggron, Move('Low Kick'));
-        expect(result.range()).toEqual([112, 132]);
-        expect(result.desc()).toBe(
-          '0 Atk Ambipom Low Kick (120 BP) vs. 252 HP / 0 Def Aggron: 112-132 (63.2 - 74.5%) -- guaranteed 2HKO'
-        );
-      });
     });
   });
 
@@ -817,16 +773,6 @@ describe('calc', () => {
         );
       });
 
-      test('-ate Abilities', () => {
-        const sylveon = Pokemon('Sylveon', {ability: 'Pixilate', evs: {spa: 252}});
-        const silvally = Pokemon('Silvally');
-        const hypervoice = Move('Hyper Voice');
-        const result = calculate(sylveon, silvally, hypervoice);
-        expect(result.desc()).toBe(
-          '252 SpA Pixilate Sylveon Hyper Voice vs. 0 HP / 0 SpD Silvally: 165-195 (49.8 - 58.9%) -- 99.6% chance to 2HKO'
-        );
-      });
-
       test('% chance to OHKO', () => {
         const abomasnow = Pokemon('Abomasnow', {
           level: 55,
@@ -853,23 +799,6 @@ describe('calc', () => {
         const result = calculate(kyurem, jirachi, earthpower);
         expect(result.desc()).toBe(
           '252 SpA Choice Specs Kyurem Earth Power vs. 0 HP / 0 SpD Jirachi: 294-348 (86.2 - 102%) -- 12.5% chance to OHKO'
-        );
-      });
-
-      test('Technician with Low Kick', () => {
-        const ambipom = Pokemon('Ambipom', {level: 50, ability: 'Technician'});
-        const blissey = Pokemon('Blissey', {level: 50, evs: {hp: 252}});
-        let result = calculate(ambipom, blissey, Move('Low Kick'));
-        expect(result.range()).toEqual([272, 320]);
-        expect(result.desc()).toBe(
-          '0 Atk Technician Ambipom Low Kick (60 BP) vs. 252 HP / 0 Def Blissey: 272-320 (75.1 - 88.3%) -- guaranteed 2HKO'
-        );
-
-        const aggron = Pokemon('Aggron', {level: 50, evs: {hp: 252}});
-        result = calculate(ambipom, aggron, Move('Low Kick'));
-        expect(result.range()).toEqual([112, 132]);
-        expect(result.desc()).toBe(
-          '0 Atk Ambipom Low Kick (120 BP) vs. 252 HP / 0 Def Aggron: 112-132 (63.2 - 74.5%) -- guaranteed 2HKO'
         );
       });
     });

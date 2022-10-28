@@ -28,7 +28,7 @@ Alternatively, as [detailed below](#browser), if you are using `@smogon/calc` in
 a convenient way to get started, simply depend on a transpiled and minified version via [unpkg][5]:
 
 ```html
-<script src="https://unpkg.com/@smogon/calc/dist/data/production.min.js"></script>
+<script src="https://unpkg.com/@smogon/calc/data/production.min.js"></script>
 <script src="https://unpkg.com/@smogon/calc"></script>
 ```
 
@@ -99,7 +99,7 @@ import {calculate, Pokemon, Move, Field} from '@smogon/calc/adaptable';
 const gen = Generations.get(1);
 const result = calculate(
   new Pokemon(gen, 'Gengar'),
-  new Pokemon(gen, 'Vulpix'),
+  new Pokemon(gen. 'Vulpix'),
   new Move(gen, 'Surf'),
   new Field({defenderSide: {isLightScreen: true}})
 );
@@ -135,7 +135,7 @@ $ cd calc && npm install
 ```
 
 Next, run `node build` from the root directory of your clone of this repository. This should
-run `npm run compile` in the `calc/` subdirectory to compile the `@smogon/calc` package from
+run `npm run compile` in the `calc/` subdirectory to compile the `@smoogon/calc` package from
 TypeScript to JavaScript that can be run in the browser, and then compile the 'templated' HTML
 and copy everything into the top-level `dist/` folder. To then view the UI, open `dist/index.html` -
 simply double-clicking on the file from your operating system's file manager UI should open it in
