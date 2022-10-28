@@ -117,6 +117,7 @@ export function extend(this: any, ...args: any[]) {
   }
 
   if (length === i) {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
     target = this;
     --i;
   }
