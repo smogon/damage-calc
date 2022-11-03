@@ -8734,6 +8734,170 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     baseSpecies: 'Zigzagoon',
   },
+
+  // legends: arceus additions
+  'Arcanine-Hisui': {
+    types: ['Fire', "Rock"],
+    bs: {hp: 95, at: 115, df: 80, sa: 95, sd: 80, sp: 90},
+    weightkg: 168,
+    abilities: {0: 'Intimidate'},
+    baseSpecies: 'Arcanine',
+  },
+  'Avalugg-Hisui': {
+    types: ['Ice', 'Rock'],
+    bs: {hp: 95, at: 127, df: 184, sa: 34, sd: 36, sp: 38},
+    weightkg: 262.4,
+    abilities: {0: 'Strong Jaw'},
+    baseSpecies: 'Avalugg',
+  },
+  'Basculegion': {
+    types: ['Water', 'Ghost'],
+    bs: {hp: 120, at: 112, df: 65, sa: 80, sd: 75, sp: 78},
+    weightkg: 110,
+    abilities: {0: 'Rattled'},
+  },
+  'Braviary-Hisui': {
+    types: ['Psychic', 'Flying'],
+    bs: {hp: 110, at: 83, df: 70, sa: 112, sd: 70, sp: 65},
+    weightkg: 43.4,
+    abilities: {0: 'Keen Eye'},
+    baseSpecies: 'Braviary',
+  },
+  'Decidueye-Hisui': {
+    types: ['Grass', 'Fighting'],
+    bs: {hp: 88, at: 112, df: 80, sa: 95, sd: 95, sp: 60},
+    weightkg: 37,
+    abilities: {0: 'Overgrow'},
+    baseSpecies: 'Decidueye',
+  },
+  'Electrode-Hisui': {
+    types: ['Electric', 'Grass'],
+    bs: {hp: 60, at: 50, df: 70, sa: 80, sd: 80, sp: 150},
+    weightkg: 71,
+    abilities: {0: 'Soundproof'},
+    baseSpecies: 'Electrode',
+  },
+  'Enamorus': {
+    types: ['Fairy', 'Flying'],
+    bs: {hp: 75, at: 115, df: 70, sa: 135, sd: 80, sp: 106},
+    weightkg: 48,
+    abilities: {0: 'Healer'},
+    otherFormes: ['Enamorus-Therian'],
+  },
+  'Enamorus-Therian': {
+    types: ['Fairy', 'Flying'],
+    bs: {hp: 74, at: 115, df: 110, sa: 135, sd: 100, sp: 46},
+    weightkg: 48,
+    abilities: {0: 'Overcoat'},
+    baseSpecies: 'Enamorus',
+  },
+  'Goodra-Hisui': {
+    types: ['Dragon', 'Steel'],
+    bs: {hp: 80, at: 100, df: 100, sa: 110, sd: 150, sp: 60},
+    weightkg: 334.1,
+    abilities: {0: 'Sap Sipper'},
+    baseSpecies: 'Goodra',
+  },
+  'Growlithe-Hisui': {
+    types: ['Fire', 'Rock'],
+    bs: {hp: 60, at: 75, df: 45, sa: 65, sd: 50, sp: 55},
+    weightkg: 22.7,
+    abilities: {0: 'Intimidate'},
+    baseSpecies: 'Growlithe',
+  },
+  'Kleavor': {
+    types: ['Bug', 'Rock'],
+    bs: {hp: 70, at: 135, df: 95, sa: 45, sd: 70, sp: 85},
+    weightkg: 89,
+    abilities: {0: 'Swarm'},
+  },
+  'Lilligant-Hisui': {
+    types: ['Grass', 'Fighting'],
+    bs: {hp: 70, at: 105, df: 75, sa: 50, sd: 75, sp: 105},
+    weightkg: 19.2,
+    abilities: {0: 'Chlorophyll'},
+    baseSpecies: 'Lilligant',
+  },
+  'Overqwil': {
+    types: ['Dark', 'Poison'],
+    bs: {hp: 85, at: 115, df: 95, sa: 65, sd: 65, sp: 85},
+    weightkg: 60.5,
+    abilities: {0: 'Poison Point'},
+  },
+  'Qwilfish-Hisui': {
+    types: ['Dark', 'Poison'],
+    bs: {hp: 65, at: 95, df: 85, sa: 55, sd: 55, sp: 85},
+    weightkg: 3.9,
+    abilities: {0: 'Poison Point'},
+    baseSpecies: 'Qwilfish',
+  },
+  'Samurott-Hisui': {
+    types: ['Water', 'Dark'],
+    bs: {hp: 90, at: 108, df: 80, sa: 100, sd: 65, sp: 85},
+    weightkg: 58.2,
+    abilities: {0: 'Torrent'},
+    baseSpecies: 'Samurott',
+  },
+  'Sliggoo-Hisui': {
+    types: ['Dragon', 'Steel'],
+    bs: {hp: 58, at: 75, df: 83, sa: 83, sd: 113, sp: 40},
+    weightkg: 68.5,
+    abilities: {0: 'Sap Sipper'},
+    baseSpecies: 'Sliggoo',
+  },
+  'Sneasel-Hisui': {
+    types: ['Poison', 'Fighting'],
+    bs: {hp: 55, at: 95, df: 55, sa: 35, sd: 75, sp: 115},
+    weightkg: 27,
+    abilities: {0: 'Inner Focus'},
+    baseSpecies: 'Sneasel',
+  },
+  'Sneasler': {
+    types: ['Poison', 'Fighting'],
+    bs: {hp: 80, at: 130, df: 60, sa: 40, sd: 80, sp: 120},
+    weightkg: 43,
+    abilities: {0: 'Pressure'},
+  },
+  'Typhlosion-Hisui': {
+    types: ['Fire', 'Ghost'],
+    bs: {hp: 73, at: 84, df: 78, sa: 119, sd: 85, sp: 95},
+    weightkg: 69.8,
+    abilities: {0: 'Blaze'},
+    baseSpecies: 'Typhlosion',
+  },
+  'Ursaluna': {
+    types: ['Ground', 'Normal'],
+    bs: {hp: 130, at: 140, df: 105, sa: 45, sd: 80, sp: 50},
+    weightkg: 290,
+    abilities: {0: 'Guts'},
+  },
+  'Voltorb-Hisui': {
+    types: ['Electric', 'Grass'],
+    bs: {hp: 40, at: 30, df: 50, sa: 55, sd: 55, sp: 100},
+    weightkg: 13,
+    abilities: {0: 'Soundproof'},
+    baseSpecies: 'Voltorb',
+  },
+  'Wyrdeer': {
+    types: ['Normal', 'Psychic'],
+    bs: {hp: 103, at: 105, df: 72, sa: 105, sd: 75, sp: 65},
+    weightkg: 95.1,
+    abilities: {0: 'Intimidate'},
+  },
+  'Zoroark-Hisui': {
+    types: ['Normal', 'Ghost'],
+    bs: {hp: 55, at: 100, df: 60, sa: 125, sd: 60, sp: 110},
+    weightkg: 73,
+    abilities: {0: 'Illusion'},
+    baseSpecies: 'Zoroark',
+  },
+  'Zorua-Hisui': {
+    types: ['Normal', 'Ghost'],
+    bs: {hp: 35, at: 60, df: 40, sa: 85, sd: 40, sp: 70},
+    weightkg: 12.5,
+    abilities: {0: 'Illusion'},
+    baseSpecies: 'Zorua',
+  },
 };
 
 const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, SS_PATCH);
@@ -9360,6 +9524,11 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH);
 
+for (const species in SV) {
+  if (/-Gmax$/.test(species)) {
+    delete SV[species]
+  }
+}
 
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
