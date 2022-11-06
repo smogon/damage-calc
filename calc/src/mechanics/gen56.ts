@@ -596,6 +596,13 @@ export function calculateBWXY(
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
   } else if (
+    field.attackerSide.isFlowerGift &&
+    field.hasWeather('Sun', 'Harsh Sunshine') &&
+    move.category === 'Physical') {
+    atMods.push(6144);
+    desc.weather = field.weather;
+    desc.isFlowerGiftAttacker = true;
+  } else if (
     (attacker.hasAbility('Defeatist') && attacker.curHP() <= attacker.maxHP() / 2) ||
     (attacker.hasAbility('Slow Start') && attacker.abilityOn && move.category === 'Physical')
   ) {
@@ -667,6 +674,13 @@ export function calculateBWXY(
     dfMods.push(6144);
     desc.defenderAbility = defender.ability;
     desc.weather = field.weather;
+  } else if (
+    field.defenderSide.isFlowerGift &&
+    field.hasWeather('Sun', 'Harsh Sunshine') &&
+    !hitsPhysical) {
+    dfMods.push(6144);
+    desc.weather = field.weather;
+    desc.isFlowerGiftDefender = true;
   }
 
   if (field.hasTerrain('Grassy') && defender.hasAbility('Grass Pelt') && hitsPhysical) {
