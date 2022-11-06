@@ -6557,8 +6557,8 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Jumbao: {
     types: ['Grass', 'Fairy'],
     bs: {hp: 92, at: 63, df: 97, sa: 124, sd: 104, sp: 96},
-    weightkg: 600,
-    abilities: {0: 'Drought'},
+    weightkg: 200,
+    abilities: {0: 'Trace'},
   },
   Kartana: {
     types: ['Grass', 'Steel'],
@@ -6769,9 +6769,9 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Mumbao: {
     types: ['Grass', 'Fairy'],
     bs: {hp: 55, at: 30, df: 64, sa: 87, sd: 73, sp: 66},
-    weightkg: 250,
+    weightkg: 83,
     nfe: true,
-    abilities: {0: 'Solar Power'},
+    abilities: {0: 'Trace'},
   },
   Naganadel: {
     types: ['Poison', 'Dragon'],
@@ -7504,7 +7504,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Darumaka: {otherFormes: ['Darumaka-Galar']},
   Eevee: {otherFormes: ['Eevee-Gmax']},
-  Equilibra: {bs: {sa: 121}},
+  Equilibra: {bs: {sa: 133}},
   'Farfetch\u2019d': {otherFormes: ['Farfetch\u2019d-Galar']},
   Garbodor: {otherFormes: ['Garbodor-Gmax']},
   Gengar: {otherFormes: ['Gengar-Gmax', 'Gengar-Mega']},
@@ -7706,7 +7706,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
   },
   Chromera: {
-    types: ['Dark', 'Poison'],
+    types: ['Dark', 'Normal'],
     bs: {hp: 85, at: 85, df: 115, sa: 115, sd: 100, sp: 100},
     weightkg: 215,
     abilities: {0: 'Color Change'},
@@ -8200,7 +8200,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Miasmaw: {
     types: ['Bug', 'Dragon'],
-    bs: {hp: 85, at: 135, df: 60, sa: 115, sd: 85, sp: 92},
+    bs: {hp: 85, at: 135, df: 60, sa: 88, sd: 105, sp: 99},
     weightkg: 57,
     abilities: {0: 'Neutralizing Gas'},
   },
@@ -8402,7 +8402,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Saharaja: {
     types: ['Ground'],
-    bs: {hp: 70, at: 120, df: 105, sa: 65, sd: 130, sp: 90},
+    bs: {hp: 70, at: 112, df: 105, sa: 65, sd: 123, sp: 78},
     weightkg: 303.9,
     abilities: {0: 'Water Absorb'},
   },
@@ -8620,7 +8620,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Venomicon: {
     types: ['Poison', 'Flying'],
-    bs: {hp: 85, at: 70, df: 113, sa: 118, sd: 90, sp: 64},
+    bs: {hp: 85, at: 50, df: 113, sa: 118, sd: 90, sp: 64},
     weightkg: 11.5,
     abilities: {0: 'Stamina'},
     otherFormes: ['Venomicon-Epilogue'],
@@ -8628,7 +8628,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Venomicon-Epilogue': {
     types: ['Poison', 'Flying'],
-    bs: {hp: 85, at: 102, df: 85, sa: 63, sd: 85, sp: 120},
+    bs: {hp: 85, at: 102, df: 85, sa: 62, sd: 85, sp: 101},
     weightkg: 12.4,
     abilities: {0: 'Tinted Lens'},
     baseSpecies: 'Venomicon',
