@@ -489,7 +489,7 @@ export function calculateSMSS(
     desc.isProtected = true;
   }
 
-  const finalMod = chainMods(finalMods);
+  const finalMod = chainMods(finalMods, 41, 131072);
 
   let childDamage: number[] | undefined;
   if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
@@ -595,10 +595,12 @@ export function calculateBasePowerSMSS(
   case 'Electro Ball':
     const r = Math.floor(attacker.stats.spe / defender.stats.spe);
     basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
+    if (defender.stats.spe === 0) basePower = 40;
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':
     basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
+    if (attacker.stats.spe === 0) basePower = 1;
     desc.moveBP = basePower;
     break;
   case 'Punishment':
@@ -740,7 +742,7 @@ export function calculateBasePowerSMSS(
     hasAteAbilityTypeChange,
     turnOrder
   );
-  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096)));
+  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
   return basePower;
 }
 
@@ -1003,7 +1005,7 @@ export function calculateAttackSMSS(
     desc.attackerAbility = attacker.ability;
   }
   const atMods = calculateAtModsSMSS(gen, attacker, defender, move, field, desc);
-  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods)) / 4096)));
+  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods, 410, 131072)) / 4096)));
   return attack;
 }
 
@@ -1147,7 +1149,7 @@ export function calculateDefenseSMSS(
     hitsPhysical
   );
 
-  return OF16(Math.max(1, pokeRound((defense * chainMods(dfMods)) / 4096)));
+  return OF16(Math.max(1, pokeRound((defense * chainMods(dfMods, 410, 131072)) / 4096)));
 }
 
 export function calculateDfModsSMSS(

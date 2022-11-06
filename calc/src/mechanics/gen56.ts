@@ -284,11 +284,13 @@ export function calculateBWXY(
     desc.moveBP = basePower;
     break;
   case 'Electro Ball':
+    if (defender.stats.spe === 0) defender.stats.spe = 1;
     const r = Math.floor(attacker.stats.spe / defender.stats.spe);
     basePower = r >= 4 ? 150 : r >= 3 ? 120 : r >= 2 ? 80 : r >= 1 ? 60 : 40;
     desc.moveBP = basePower;
     break;
   case 'Gyro Ball':
+    if (attacker.stats.spe === 0) attacker.stats.spe = 1;
     basePower = Math.min(150, Math.floor((25 * defender.stats.spe) / attacker.stats.spe) + 1);
     desc.moveBP = basePower;
     break;
@@ -534,7 +536,7 @@ export function calculateBWXY(
     }
   }
 
-  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods)) / 4096)));
+  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
 
   // #endregion
   // #region (Special) Attack
@@ -634,7 +636,7 @@ export function calculateBWXY(
     desc.attackerItem = attacker.item;
   }
 
-  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods)) / 4096)));
+  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods, 410, 131072)) / 4096)));
 
   // #endregion
   // #region (Special) Defense
@@ -707,7 +709,7 @@ export function calculateBWXY(
     desc.defenderAbility = defender.ability;
   }
 
-  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods)) / 4096)));
+  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods, 410, 131072)) / 4096)));
 
   // #endregion
   // #region Damage
@@ -830,7 +832,7 @@ export function calculateBWXY(
     desc.isProtected = true;
   }
 
-  const finalMod = chainMods(finalMods);
+  const finalMod = chainMods(finalMods, 41, 131072);
 
   let childDamage: number[] | undefined;
   if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
