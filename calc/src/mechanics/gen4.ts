@@ -209,6 +209,12 @@ export function calculateDPP(
       desc.moveBP = basePower;
     }
     break;
+  case 'Nature Power':
+    move.category = 'Special';
+    move.secondaries = true;
+    basePower = 80;
+    desc.moveName = 'Tri Attack';
+    break;
   case 'Crush Grip':
   case 'Wring Out':
     basePower = Math.floor((defender.curHP() * 120) / defender.maxHP()) + 1;
