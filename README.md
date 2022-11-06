@@ -93,11 +93,15 @@ with the adaptable entry point for applications which want to avoid having two s
 same data shipped to users.
 
 ```ts
+import {Dex} from '@pkmn/dex';
 import {Generations} from '@pkmn/data';
 import {calculate, Pokemon, Move, Field} from '@smogon/calc/adaptable';
 
-const gen = Generations.get(1);
+const gens = new Generations(Dex);
+
+const gen = gens.get(1);
 const result = calculate(
+  gen,
   new Pokemon(gen, 'Gengar'),
   new Pokemon(gen, 'Vulpix'),
   new Move(gen, 'Surf'),
