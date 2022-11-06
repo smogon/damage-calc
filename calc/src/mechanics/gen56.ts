@@ -202,6 +202,14 @@ export function calculateBWXY(
     return result;
   }
 
+  if (
+    (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
+    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
+  ) {
+    desc.weather = field.weather;
+    return result;
+  }
+
   if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
       gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1) {
     typeEffectiveness /= 2;
@@ -712,11 +720,6 @@ export function calculateBWXY(
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
     desc.weather = field.weather;
-  } else if (
-    (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
-    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
-  ) {
-    return result;
   }
 
   if (isCritical) {

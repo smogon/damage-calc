@@ -268,6 +268,14 @@ export function calculateSMSS(
     return result;
   }
 
+  if (
+    (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
+    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
+  ) {
+    desc.weather = field.weather;
+    return result;
+  }
+
   if (field.hasWeather('Strong Winds') && defender.hasType('Flying') &&
       gen.types.get(toID(move.type))!.effectiveness['Flying']! > 1) {
     typeEffectiveness /= 2;
@@ -415,22 +423,18 @@ export function calculateSMSS(
   }
 
   const noWeatherBoost = defender.hasItem('Utility Umbrella');
-  if (!noWeatherBoost && (field.hasWeather('Sun', 'Harsh Sunshine') &&
-        move.hasType('Fire')) ||
-       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
+  if (!noWeatherBoost &&
+    ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+    (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water')))
+  ) {
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
     desc.weather = field.weather;
   } else if (!noWeatherBoost &&
-    (field.hasWeather('Sun') && move.hasType('Water')) ||
-    (field.hasWeather('Rain') && move.hasType('Fire'))
+    ((field.hasWeather('Sun') && move.hasType('Water')) ||
+    (field.hasWeather('Rain') && move.hasType('Fire')))
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
     desc.weather = field.weather;
-  } else if (!noWeatherBoost &&
-    (field.hasWeather('Harsh Sunshine') && move.hasType('Water')) ||
-    (field.hasWeather('Heavy Rain') && move.hasType('Fire'))
-  ) {
-    return result;
   }
 
   if (hasTerrainSeed(defender) &&
