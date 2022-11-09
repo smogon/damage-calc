@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -28,3 +28,29 @@ jobs:
     - run: npm run test
       env:
         CI: true
+
+  publish:
+    if: ${{ github.repository == 'smogon/damage-calc' && github.event_name == 'push' }}
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: node build
+    - name: Upload artifact for GitHub Pages
+      uses: actions/upload-pages-artifact@v1
+      with:
+        # Upload entire repository
+        path: 'dist'
+    - uses: actions/configure-pages@v1
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
