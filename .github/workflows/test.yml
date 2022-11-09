@@ -43,6 +43,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - run: npm install
     - name: Build
       run: node build
     - name: Upload artifact for GitHub Pages
