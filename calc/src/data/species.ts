@@ -8736,6 +8736,8 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
 
   // legends: arceus additions
+  Stantler: {nfe: true},
+  Ursaring: {nfe: true},
   'Arcanine-Hisui': {
     types: ['Fire', "Rock"],
     bs: {hp: 95, at: 115, df: 80, sa: 95, sd: 80, sp: 90},
@@ -8755,6 +8757,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 120, at: 112, df: 65, sa: 80, sd: 75, sp: 78},
     weightkg: 110,
     abilities: {0: 'Rattled'},
+  },
+  'Basculin-White-Striped': {
+    types: ['Water'],
+    bs: {hp: 70, at: 92, df: 65, sa: 80, sd: 55, sp: 98},
+    weightkg: 18,
+    abilities: {0: 'Rattled'},
+    baseSpecies: 'Basculin',
+    nfe: true,
   },
   'Braviary-Hisui': {
     types: ['Psychic', 'Flying'],
@@ -8804,6 +8814,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 22.7,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Growlithe',
+    nfe: true,
   },
   'Kleavor': {
     types: ['Bug', 'Rock'],
@@ -8830,6 +8841,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 3.9,
     abilities: {0: 'Poison Point'},
     baseSpecies: 'Qwilfish',
+    nfe: true,
   },
   'Samurott-Hisui': {
     types: ['Water', 'Dark'],
@@ -8844,6 +8856,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 68.5,
     abilities: {0: 'Sap Sipper'},
     baseSpecies: 'Sliggoo',
+    nfe: true,
   },
   'Sneasel-Hisui': {
     types: ['Poison', 'Fighting'],
@@ -8851,6 +8864,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 27,
     abilities: {0: 'Inner Focus'},
     baseSpecies: 'Sneasel',
+    nfe: true,
   },
   'Sneasler': {
     types: ['Poison', 'Fighting'],
@@ -8877,6 +8891,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 13,
     abilities: {0: 'Soundproof'},
     baseSpecies: 'Voltorb',
+    nfe: true,
   },
   'Wyrdeer': {
     types: ['Normal', 'Psychic'],
@@ -8897,6 +8912,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 12.5,
     abilities: {0: 'Illusion'},
     baseSpecies: 'Zorua',
+    nfe: true,
   },
 };
 
