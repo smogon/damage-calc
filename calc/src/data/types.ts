@@ -406,7 +406,9 @@ const SM = XY;
 
 const SS = SM;
 
-export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+const SV = SS;
+
+export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Types implements I.Types {
   private readonly gen: I.GenerationNum;
