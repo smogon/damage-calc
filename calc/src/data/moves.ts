@@ -4263,21 +4263,21 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Flower Trick': {
     bp: 70,
     type: 'Grass',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 140,
     maxPower: 130,
   },
   'Gigaton Hammer': {
     bp: 160,
     type: 'Steel',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 200,
     maxPower: 150,
   },
   'Glaive Rush': {
     bp: 120,
     type: 'Dragon',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 190,
     maxPower: 140,
     makesContact: true,
@@ -4285,7 +4285,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Hyper Drill': {
     bp: 100,
     type: 'Normal',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 180,
     maxPower: 130,
     makesContact: true,
@@ -4294,7 +4294,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Ice Spinner': {
     bp: 80,
     type: 'Ice',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 160,
     maxPower: 130,
     makesContact: true,
@@ -4302,7 +4302,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Jet Punch': {
     bp: 60,
     type: 'Water',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 120,
     maxPower: 110,
     makesContact: true,
@@ -4312,7 +4312,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Kowtow Cleave': {
     bp: 85,
     type: 'Dark',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 160,
     maxPower: 130,
     makesContact: true,
@@ -4320,7 +4320,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Last Respects': {
     bp: 50,
     type: 'Ghost',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 100,
   },
@@ -4336,7 +4336,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Magical Torque': {
     bp: 100,
     type: 'Fairy',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 180,
     maxPower: 130,
     hasSecondaryEffect: true,
@@ -4352,7 +4352,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Mortal Spin': {
     bp: 30,
     type: 'Poison',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 70,
     makesContact: true,
@@ -4362,7 +4362,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Noxious Torque': {
     bp: 100,
     type: 'Poison',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 180,
     maxPower: 90,
     hasSecondaryEffect: true,
@@ -4370,7 +4370,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Order Up': {
     bp: 80,
     type: 'Dragon',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 160,
     maxPower: 130,
     isPulse: true,
@@ -4378,7 +4378,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Population Bomb': {
     bp: 20,
     type: 'Normal',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 90,
     makesContact: true,
@@ -4387,7 +4387,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Pounce: {
     bp: 50,
     type: 'Bug',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 100,
     makesContact: true,
@@ -4396,7 +4396,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Rage Fist': {
     bp: 50,
     type: 'Ghost',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 100,
     makesContact: true,
@@ -4405,7 +4405,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Raging Bull': {
     bp: 90,
     type: 'Normal',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 175,
     maxPower: 130,
     makesContact: true,
@@ -4425,14 +4425,14 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Salt Cure': {
     bp: 40,
     type: 'Rock',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 90,
   },
   'Spin Out': {
     bp: 100,
     type: 'Steel',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 180,
     maxPower: 130,
     makesContact: true,
@@ -4462,7 +4462,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   Trailblaze: {
     bp: 50,
     type: 'Grass',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 100,
     hasSecondaryEffect: true,
@@ -4472,7 +4472,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Triple Dive': {
     bp: 30,
     type: 'Water',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 100,
     maxPower: 90,
     makesContact: true,
@@ -4489,7 +4489,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Wicked Torque': {
     bp: 80,
     type: 'Dark',
-    category: 'Phsyical',
+    category: 'Physical',
     zp: 160,
     maxPower: 130,
     hasSecondaryEffect: true,
