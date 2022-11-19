@@ -425,7 +425,7 @@ $(".item").change(function () {
 });
 
 function smogonAnalysis(pokemonName) {
-	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss"][gen - 1];
+	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss", "sv"][gen - 1];
 	return "https://smogon.com/dex/" + generation + "/pokemon/" + pokemonName.toLowerCase() + "/";
 }
 
@@ -931,6 +931,7 @@ var SETDEX = [
 	typeof SETDEX_XY === 'undefined' ? {} : SETDEX_XY,
 	typeof SETDEX_SM === 'undefined' ? {} : SETDEX_SM,
 	typeof SETDEX_SS === 'undefined' ? {} : SETDEX_SS,
+	typeof SETDEX_SV === 'undefined' ? {} : SETDEX_SV,
 ];
 var RANDDEX = [
 	{},
@@ -942,14 +943,15 @@ var RANDDEX = [
 	typeof GEN6RANDOMBATTLE === 'undefined' ? {} : GEN6RANDOMBATTLE,
 	typeof GEN7RANDOMBATTLE === 'undefined' ? {} : GEN7RANDOMBATTLE,
 	typeof GEN8RANDOMBATTLE === 'undefined' ? {} : GEN8RANDOMBATTLE,
+	typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 8;
+	gen = ~~$(this).val() || 9;
 	GENERATION = calc.Generations.get(gen);
 	var params = new URLSearchParams(window.location.search);
-	if (gen === 8) {
+	if (gen === 9) {
 		params.delete('gen');
 		params = '' + params;
 		if (window.history && window.history.replaceState) {
@@ -1288,7 +1290,7 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 8;
+	var g = GENERATION[params.get('gen')] || 9;
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
