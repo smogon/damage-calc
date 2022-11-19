@@ -200,7 +200,7 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
     // More abilities now block Intimidate in Gen 8 (DaWoblefet, Cloudy Mistral)
     (gen.num === 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy'));
   if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
-    if (target.hasAbility('Contrary', 'Defiant')) {
+    if (target.hasAbility('Contrary', 'Defiant', 'Guard Dog')) {
       target.boosts.atk = Math.min(6, target.boosts.atk + 1);
     } else if (target.hasAbility('Simple')) {
       target.boosts.atk = Math.max(-6, target.boosts.atk - 2);

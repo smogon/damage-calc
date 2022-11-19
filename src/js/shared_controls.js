@@ -33,7 +33,7 @@ function startsWith(string, target) {
 
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
-var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
+var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
 var HIDDEN_POWER_REGEX = /Hidden Power (\w*)/;
 
 var CALC_STATUS = {
@@ -252,6 +252,7 @@ function autosetWeather(ability, i) {
 		$("#hail").prop("checked", true);
 		break;
 	case "Desolate Land":
+	case "Orichalcum Pulse":
 		lastAutoWeather[i] = "Harsh Sunshine";
 		$("#harsh-sunshine").prop("checked", true);
 		break;
@@ -283,6 +284,7 @@ function autosetTerrain(ability, i) {
 	$("input:checkbox[name='terrain']:checked").prop("checked", false);
 	switch (ability) {
 	case "Electric Surge":
+	case "Hadron Engine":
 		lastAutoTerrain[i] = "Electric";
 		$("#electric").prop("checked", true);
 		break;
@@ -425,7 +427,7 @@ $(".item").change(function () {
 });
 
 function smogonAnalysis(pokemonName) {
-	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss"][gen - 1];
+	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss", "sv"][gen - 1];
 	return "https://smogon.com/dex/" + generation + "/pokemon/" + pokemonName.toLowerCase() + "/";
 }
 
@@ -617,9 +619,9 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
-	for (var i = 0; i < LEGACY_STATS[8].length; i++) {
-		var baseStat = container.find("." + LEGACY_STATS[8][i]).find(".base");
-		baseStat.val(altForme.bs[LEGACY_STATS[8][i]]);
+	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
+		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
+		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
 	var isRandoms = $("#randoms").prop("checked");
@@ -654,8 +656,8 @@ function correctHiddenPower(pokemon) {
 	// Convert the legacy stats table to a useful one, and also figure out if all are maxed
 	var ivs = {};
 	var maxed = true;
-	for (var i = 0; i <= LEGACY_STATS[8].length; i++) {
-		var s = LEGACY_STATS[8][i];
+	for (var i = 0; i <= LEGACY_STATS[9].length; i++) {
+		var s = LEGACY_STATS[9][i];
 		var iv = ivs[legacyStatToStat(s)] = (pokemon.ivs && pokemon.ivs[s]) || 31;
 		if (iv !== 31) maxed = false;
 	}
@@ -918,7 +920,8 @@ var GENERATION = {
 	'5': 5, 'bw': 5, 'bw2': 5, 'b2w2': 5,
 	'6': 6, 'xy': 6, 'oras': 6,
 	'7': 7, 'sm': 7, 'usm': 7, 'usum': 7,
-	'8': 8, 'ss': 8
+	'8': 8, 'ss': 8,
+	'9': 9, 'sv': 9
 };
 
 var SETDEX = [
@@ -931,6 +934,7 @@ var SETDEX = [
 	typeof SETDEX_XY === 'undefined' ? {} : SETDEX_XY,
 	typeof SETDEX_SM === 'undefined' ? {} : SETDEX_SM,
 	typeof SETDEX_SS === 'undefined' ? {} : SETDEX_SS,
+	typeof SETDEX_SV === 'undefined' ? {} : SETDEX_SV,
 ];
 var RANDDEX = [
 	{},
@@ -942,14 +946,15 @@ var RANDDEX = [
 	typeof GEN6RANDOMBATTLE === 'undefined' ? {} : GEN6RANDOMBATTLE,
 	typeof GEN7RANDOMBATTLE === 'undefined' ? {} : GEN7RANDOMBATTLE,
 	typeof GEN8RANDOMBATTLE === 'undefined' ? {} : GEN8RANDOMBATTLE,
+	typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 8;
+	gen = ~~$(this).val() || 9;
 	GENERATION = calc.Generations.get(gen);
 	var params = new URLSearchParams(window.location.search);
-	if (gen === 8) {
+	if (gen === 9) {
 		params.delete('gen');
 		params = '' + params;
 		if (window.history && window.history.replaceState) {
@@ -1288,7 +1293,7 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 8;
+	var g = GENERATION[params.get('gen')] || 9;
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);

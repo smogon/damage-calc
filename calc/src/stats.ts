@@ -9,9 +9,10 @@ const BW: StatID[] = GSC;
 const XY: StatID[] = GSC;
 const SM: StatID[] = GSC;
 const SS: StatID[] = GSC;
+const SV: StatID[] = GSC;
 
 export const STATS: Array<Array<StatID | 'spc'> | StatID[]> =
-  [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+  [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | '???'>;
 
@@ -115,7 +116,7 @@ export const Stats = new (class {
     level: number,
     nature?: string
   ) {
-    if (gen.num < 1 || gen.num > 8) throw new Error(`Invalid generation ${gen.num}`);
+    if (gen.num < 1 || gen.num > 9) throw new Error(`Invalid generation ${gen.num}`);
     if (gen.num < 3) return this.calcStatRBY(stat, base, iv, level);
     return this.calcStatADV(gen.natures, stat, base, iv, ev, level, nature);
   }

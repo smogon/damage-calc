@@ -9,7 +9,7 @@ app.listen(3000, () => {
 app.use(express.json())
 
 app.get("/calculate",(req, res, next) => {
-	const gen = calc.Generations.get((typeof req.body.gen === 'undefined') ? 8 : req.body.gen);
+	const gen = calc.Generations.get((typeof req.body.gen === 'undefined') ? 9 : req.body.gen);
 	let error = "";
 	if(typeof req.body.attackingPokemon === 'undefined')
 		error += "attackingPokemon must exist and have a valid pokemon name\n";

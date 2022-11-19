@@ -293,7 +293,41 @@ const SS = SM.concat([
   'Wandering Spirit',
 ]);
 
-export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+const SV = SS.concat([
+  'Anger Shell',
+  'Armor Tail',
+  'Beads of Ruin',
+  'Commander',
+  'Costar',
+  'Cud Chew',
+  'Earth Eater',
+  'Electromorphosis',
+  'Good as Gold',
+  'Guard Dog',
+  'Hadron Engine',
+  'Lingering Aroma',
+  'Mycelium Might',
+  'Opportunist',
+  'Orichalcum Pulse',
+  'Protosynthesis',
+  'Purifying Salt',
+  'Quark Drive',
+  'Rocky Payload',
+  'Seed Sower',
+  'Sharpness',
+  'Supreme Overlord',
+  'Sword of Ruin',
+  'Tablets of Ruin',
+  'Thermal Exchange',
+  'Toxic Debris',
+  'Vessel of Ruin',
+  'Well-Baked Body',
+  'Wind Power',
+  'Wind Rider',
+  'Zero to Hero',
+]);
+
+export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Abilities implements I.Abilities {
   private readonly gen: I.GenerationNum;

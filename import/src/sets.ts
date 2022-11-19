@@ -78,11 +78,11 @@ const TO_FORMAT: {[tier in Tier]?: Format} = {
 
 const RECENT_ONLY: Format[] = ['Monotype', 'BH', 'CAP', '1v1'];
 
-const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS'];
+const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS', 'SV'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
 
 export async function importSets(dir: string) {
-  for (let g = 1; g <= 8; g++) {
+  for (let g = 1; g <= 9; g++) {
     const gen = g as ps.GenerationNum;
     const setsByPokemon: PokemonSets = {};
 
@@ -90,7 +90,7 @@ export async function importSets(dir: string) {
       await importSetsForPokemon(pokemon, gen, setsByPokemon);
       let sets = setsByPokemon[pokemon];
       // If we can't find any sets for Gen 8 yet, just copy the Gen 7 sets instead...
-      if (!sets && gen === 8) {
+      if (!sets && gen === 9) {
         await importSetsForPokemon(pokemon, 7, setsByPokemon);
         sets = setsByPokemon[pokemon];
       }
@@ -143,7 +143,7 @@ async function importSetsForPokemon(
       const eligible =
         (gen <= 3 && format === 'UU') ||
         (gen >= 2 && gen <= 4 && format === 'NU') ||
-        (gen === 8 && USAGE.includes(format));
+        (gen === 9 && USAGE.includes(format));
 
       if (!eligible) continue;
 

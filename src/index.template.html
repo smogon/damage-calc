@@ -51,7 +51,8 @@
             <input class="gen visually-hidden" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-mid" for="gen5">B/W</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">X/Y</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">S/M</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
+			   <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" /><label class="btn btn-small btn-mid" for="gen8">S/S</label>
+            <input class="gen visually-hidden" type="radio" name="gen" value="9" id="gen9" checked="checked" /><label class="btn btn-small btn-right" for="gen9">S/V</label>
         </span>
         <span class="notationSelection" aria-labelledby="selectNotationInstruction" role="radiogroup" title="Select the output notation.">
             <span class="visually-hidden" id="selectNotationInstruction">Select the output notation.</span>
@@ -162,8 +163,8 @@
                         <tr>
                             <th></th>
                             <th scope="col">Base</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8" scope="col">IVs</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8" scope="col">EVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">IVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">EVs</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -177,10 +178,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -197,10 +198,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -233,10 +234,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -262,17 +263,17 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
                                 <label>Sp. Atk</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -298,17 +299,17 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
                                 <label>Sp. Def</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -371,10 +372,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -406,7 +407,7 @@
                 </table>
             </div>
             <div class="info-group info-selectors">
-                <div class="gen-specific g3 g4 g5 g6 g7 g8">
+                <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                     <label for="natureL1">Nature</label>
                     <select class="nature calc-trigger" id="natureL1">
                         <option value="Adamant">Adamant (+Atk, -SpA)</option>
@@ -436,12 +437,12 @@
                         <option value="Timid">Timid (+Spe, -Atk)</option>
                     </select>
                 </div>
-                <div class="gen-specific g3 g4 g5 g6 g7 g8">
+                <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                     <label for="abilityL1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityL1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
                 </div>
-                <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                     <label for="itemL1">Item</label>
                     <select class="item terrain-trigger calc-trigger" id="itemL1"></select>
                 </div>
@@ -631,7 +632,7 @@
         <div aria-label="Field information" role="region">
             <fieldset class="field-info">
                 <legend align="center">Field</legend>
-                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                <div aria-labelledby="selectBattleFormatInstruction" class="gen-specific g3 g4 g5 g6 g7 g8 g9" role="radiogroup" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
                     <span class="visually-hidden" id="selectBattleFormatInstruction">Select the battle format.</span>
                     <input class="visually-hidden calc-trigger" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
                     <label class="btn btn-left" for="singles-format">Singles</label>
@@ -648,7 +649,7 @@
                 <hr class="gen-specific g6 g7 g8" />
                 <div aria-labelledby="selectWeatherInstruction" role="radiogroup">
                     <span class="visually-hidden" id="selectWeatherInstruction">Select the current weather condition.</span>
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
                         <label class="btn btn-small btn-left" for="clear">None</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
@@ -693,7 +694,7 @@
                     <input aria-describedby="gravityInstruction" class="visually-hidden calc-trigger" type="checkbox" id="gravity" />
                     <label class="btn" for="gravity">Gravity</label>
                 </div>
-                <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8" />
+                <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9" />
                 <table class="field">
                     <thead>
                         <tr>
@@ -754,7 +755,7 @@
                                 <label class="btn btn-wide btn-right" for="cannonadeR">Cannonade</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g3 g4 g5 g6 g7 g8">
+                        <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                             <div hidden id="selectSpikeInstruction">Are there Spikes on this side of the field?</div>
                             <td><div aria-labelledby="selectSpikeInstruction" class="left" role="radiogroup" title="Are there Spikes on this side of the field?">
                                 <input class="visually-hidden calc-trigger" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
@@ -802,7 +803,7 @@
                                 <label class="btn btn-right" for="reflectR">Reflect</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <td><div class="left" title="Is this Pok&eacute;mon protected?">
                                 <div hidden id="selectProtectInstruction">Is this Pok&eacute;mon protected?</div>
                                 <input aria-describedby="selectProtectInstruction" class="visually-hidden calc-trigger" type="checkbox" id="protectL" />
@@ -824,7 +825,7 @@
                                 <label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <td><div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                                 <div hidden id="selectRevealInstruction">Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?</div>
                                 <input aria-describedby="selectRevealInstruction" class="visually-hidden calc-trigger" type="checkbox" id="foresightL" />
@@ -835,7 +836,7 @@
                                 <label class="btn btn-wide" for="foresightR">Foresight</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g3 g4 g5 g6 g7 g8">
+                        <tr class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                             <td><div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                                 <div hidden id="selectHelpingHandInstruction">Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?</div>
                                 <input aria-describedby="selectHelpingHandInstruction" class="visually-hidden calc-trigger" type="checkbox" id="helpingHandL" />
@@ -923,7 +924,7 @@
                                 <label class="btn btn-xxwide" for="powerSpotR">Power Spot</label>
                             </div></td>
                         </tr>
-                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <td><div class="left" title="Is the defending Pok&eacute;mon switching out?">
                               <div hidden id="selectSwitchingInstruction">Is the defending Pok&eacute;mon switching out?</div>
                                 <input aria-describedby="selectSwitchingInstruction" class="visually-hidden calc-trigger" type="checkbox" id="switchingL" />
@@ -997,8 +998,8 @@
                         <tr>
                             <th></th>
                             <th scope="col">Base</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8" scope="col">IVs</th>
-                            <th class="gen-specific g3 g4 g5 g6 g7 g8" scope="col">EVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">IVs</th>
+                            <th class="gen-specific g3 g4 g5 g6 g7 g8 g9" scope="col">EVs</th>
                             <th class="gen-specific g1 g2 hide" scope="col">DVs</th>
                             <th></th>
                             <th></th>
@@ -1012,10 +1013,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1032,10 +1033,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1068,10 +1069,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1097,17 +1098,17 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
                                 <label>Sp. Atk</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1133,17 +1134,17 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <th scope="row">
                                 <label>Sp. Def</label>
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1206,10 +1207,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="ivs calc-trigger" value="31" />
                             </td>
-                            <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                 <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
@@ -1241,7 +1242,7 @@
                 </table>
             </div>
             <div class="info-group info-selectors">
-                <div class="gen-specific g3 g4 g5 g6 g7 g8">
+                <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                     <label for="natureR1">Nature</label>
                     <select class="nature calc-trigger" id="natureR1">
                         <option value="Adamant">Adamant (+Atk, -SpA)</option>
@@ -1271,12 +1272,12 @@
                         <option value="Timid">Timid (+Spe, -Atk)</option>
                     </select>
                 </div>
-                <div class="gen-specific g3 g4 g5 g6 g7 g8">
+                <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                     <label for="abilityR1">Ability</label>
                     <select class="ability terrain-trigger calc-trigger" id="abilityR1"></select>
                     <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle calc-trigger">
                 </div>
-                <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                     <label for="itemR1">Item</label>
                     <select class="item terrain-trigger calc-trigger" id="itemR1"></select>
                 </div>
@@ -1475,6 +1476,7 @@
     <script type="text/javascript" src="./calc/util.js?"></script>
     <script type="text/javascript" src="./calc/stats.js?"></script>
     <script type="text/javascript" src="./calc/data/species.js?"></script>
+	 <script type="text/javascript" src="./js/data/sets/gen9.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?"></script>
@@ -1509,7 +1511,7 @@
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
 </div>
 
-<div class="credits">Created by Honko, maintained by Austin and Kris
+<div class="credits">Created by Honko, maintained by Austin
     <ul><li><a href="https://github.com/smogon/damage-calc/contributors" target="_blank">Contributors</a></li>
     <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" target="_blank">Bug Reports</a></li>
     <li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul>
