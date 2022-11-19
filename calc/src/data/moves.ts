@@ -4158,7 +4158,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 80,
     type: 'Water',
     category: 'Physical',
-    hasSecondaryEffect: true,
+    secondaries: true,
     zp: 160,
     maxPower: 130,
     self: {boosts: {spe: +1}},
@@ -4177,7 +4177,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 190,
     maxPower: 95,
-    hasSecondaryEffect: true,
+    secondaries: true,
     recoil: [1, 2],
     makesContact: true,
   },
@@ -4195,7 +4195,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 160,
     maxPower: 130,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
   'Chilling Water': {
     bp: 50,
@@ -4203,7 +4203,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 100,
     maxPower: 100,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
   'Chilly Reception': {
     bp: 0,
@@ -4224,7 +4224,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 180,
     maxPower: 90,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
   Comeuppance: {
     bp: 1,
@@ -4289,7 +4289,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 180,
     maxPower: 130,
     makesContact: true,
-    bypassesProtect: true,
+    breaksProtect: true,
   },
   'Ice Spinner': {
     bp: 80,
@@ -4307,7 +4307,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 110,
     makesContact: true,
     isPunch: true, 
-    hasPriority: true,
+    priority: 1,
   },
   'Kowtow Cleave': {
     bp: 85,
@@ -4330,7 +4330,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 160,
     maxPower: 130,
-    hasSecondaryEffect: true,
+    secondaries: true,
     self: {boosts: {spd: -2}},
   },
   'Magical Torque': {
@@ -4339,7 +4339,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 180,
     maxPower: 130,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
   'Make It Rain': {
     bp: 120,
@@ -4356,7 +4356,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 100,
     maxPower: 70,
     makesContact: true,
-    hasSecondaryEffect: true,
+    secondaries: true,
     target: 'allAdjacentFoes',
   },
   'Noxious Torque': {
@@ -4365,7 +4365,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 180,
     maxPower: 90,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
   'Order Up': {
     bp: 80,
@@ -4382,7 +4382,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 100,
     maxPower: 90,
     makesContact: true,
-    isMultiHit: true,
+    multihit: 10,
   },
   Pounce: {
     bp: 50,
@@ -4391,7 +4391,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 100,
     maxPower: 100,
     makesContact: true,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
   'Rage Fist': {
     bp: 50,
@@ -4456,7 +4456,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 160,
     maxPower: 130,
-    hasSecondaryEffect: true,
+    secondaries: true,
     isSound: true,
   },
   Trailblaze: {
@@ -4465,7 +4465,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 100,
     maxPower: 100,
-    hasSecondaryEffect: true,
+    secondaries: true,
     makesContact: true,
     self: {boosts: {spe: +1}},
   },
@@ -4476,7 +4476,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 100,
     maxPower: 90,
     makesContact: true,
-    isMultiHit: true,
+    multihit: 3,
   },
   'Twin Beam': {
     bp: 40,
@@ -4484,7 +4484,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 100,
     maxPower: 90,
-    isMultiHit: true,
+    multihit: 2,
   },
   'Wicked Torque': {
     bp: 80,
@@ -4492,7 +4492,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 160,
     maxPower: 130,
-    hasSecondaryEffect: true,
+    secondaries: true,
   },
 };
 
