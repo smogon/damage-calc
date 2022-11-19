@@ -9,6 +9,7 @@ const BW: StatID[] = GSC;
 const XY: StatID[] = GSC;
 const SM: StatID[] = GSC;
 const SS: StatID[] = GSC;
+const SV: StatID[] = GSC;
 
 export const STATS: Array<Array<StatID | 'spc'> | StatID[]> =
   [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
