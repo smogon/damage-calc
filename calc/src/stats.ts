@@ -11,7 +11,7 @@ const SM: StatID[] = GSC;
 const SS: StatID[] = GSC;
 
 export const STATS: Array<Array<StatID | 'spc'> | StatID[]> =
-  [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+  [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | '???'>;
 
