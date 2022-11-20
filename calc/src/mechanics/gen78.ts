@@ -455,15 +455,17 @@ export function calculateSMSS(
   // below this until we're inside the loop
   let stabMod = 4096;
   if (attacker.hasType(move.type)) {
-    if (attacker.hasAbility('Adaptability')) {
-      stabMod = 8192;
-      desc.attackerAbility = attacker.ability;
-    } else {
-      stabMod = 6144;
-    }
+    stabMod += 2048;
   } else if (attacker.hasAbility('Protean', 'Libero')) {
-    stabMod = 6144;
+    stabMod += 2048;
     desc.attackerAbility = attacker.ability;
+  }
+  if (attacker.teraType === move.type) {
+    stabMod += 2048;
+    // TODO: add terastal type to desc
+  }
+  if (attacker.hasAbility('Adaptability') && stabMod > 4096) {
+    stabMod += 2048;
   }
 
   const applyBurn =
