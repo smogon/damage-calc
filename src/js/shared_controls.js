@@ -252,6 +252,7 @@ function autosetWeather(ability, i) {
 		$("#hail").prop("checked", true);
 		break;
 	case "Desolate Land":
+	case "Orichalcum Pulse":
 		lastAutoWeather[i] = "Harsh Sunshine";
 		$("#harsh-sunshine").prop("checked", true);
 		break;
@@ -283,6 +284,7 @@ function autosetTerrain(ability, i) {
 	$("input:checkbox[name='terrain']:checked").prop("checked", false);
 	switch (ability) {
 	case "Electric Surge":
+	case "Hadron Engine":
 		lastAutoTerrain[i] = "Electric";
 		$("#electric").prop("checked", true);
 		break;
