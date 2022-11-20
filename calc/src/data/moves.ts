@@ -4187,7 +4187,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 175,
     maxPower: 130,
-    makesContact: true, //TODO add recovery [50%]
+    makesContact: true, // TODO add recovery [50%]
   },
   'Blazing Torque': {
     bp: 80,
@@ -4216,7 +4216,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 180,
     maxPower: 90,
-    makesContact: true, //Deals 1.3x on super effective
+    makesContact: true, // Deals 1.3x on super effective
   },
   'Combat Torque': {
     bp: 100,
@@ -4253,7 +4253,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 180,
     maxPower: 130,
-    makesContact: true, //deals 1.3x on super effective
+    makesContact: true, // deals 1.3x on super effective
   },
   'Fillet Away': {
     bp: 0,
