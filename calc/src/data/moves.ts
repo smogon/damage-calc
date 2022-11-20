@@ -38,6 +38,7 @@ export interface MoveData {
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
+  readonly isSlicing?: boolean;
 }
 
 const RBY: {[name: string]: MoveData} = {
@@ -4147,12 +4148,24 @@ for (const m of LGPE_MOVES) {
 }
 
 const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  'Aerial Ace': {isSlicing: true},
+  'Air Cutter': {isSlicing: true},
+  'Air Slash': {isSlicing: true},
+  'Fury Cuttter': {isSlicing: true},
+  'Leaf Blade': {isSlicing: true},
+  'Night Slash': {isSlicing: true},
+  'Psycho Cut': {isSlicing: true},
+  'Razor Shell': {isSlicing: true},
+  'Sacred Sword': {isSlicing: true},
+  Slash: {isSlicing: true},
+  'X-Scissor': {isSlicing: true},
   'Aqua Cutter': {
     bp: 70,
     type: 'Water',
     category: 'Physical',
     zp: 140,
     maxPower: 120,
+    isSlicing: true,
   },
   'Aqua Step': {
     bp: 80,
