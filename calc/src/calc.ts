@@ -20,6 +20,7 @@ const MECHANICS = [
   calculateBWXY,
   calculateSMSS,
   calculateSMSS,
+  calculateSMSS
 ];
 
 export function calculate(
