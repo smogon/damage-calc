@@ -26,7 +26,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Night Shade / Seismic Toss (gen ${gen})`, () => {
         const mew = Pokemon('Mew', {level: 50});
         const vulpix = Pokemon('Vulpix');
@@ -50,13 +50,13 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Immunity (gen ${gen})`, () => {
         expect(calculate(Pokemon('Snorlax'), Pokemon('Gengar'), Move('Hyper Beam')).damage).toBe(0);
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Non-damaging (gen ${gen})`, () => {
         const result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Barrier'));
         expect(result.damage).toBe(0);
@@ -64,7 +64,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens(1, 9, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Protect (gen ${gen})`, () => {
         const field = Field({defenderSide: {isProtected: true}});
         const snorlax = Pokemon('Snorlax');
@@ -73,7 +73,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens(1, 9, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Critical hits ignore attack decreases (gen ${gen})`, () => {
         const field = Field({defenderSide: {isReflect: true}});
 
@@ -118,7 +118,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Struggle vs. Ghost (gen ${gen})`, () => {
         const result = calculate(Pokemon('Mew'), Pokemon('Gengar'), Move('Struggle'));
         if (gen < 2) {
@@ -129,7 +129,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(3, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens(3, 9, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Weather Ball should change type depending on the weather (gen ${gen})`, () => {
         const weathers = [
           {
@@ -198,7 +198,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Thousand Arrows and Ring Target Should negate damage nullfiers (gen ${gen})`, () => {
         const result = calculate(Pokemon('Zygarde'), Pokemon('Swellow'), Move('Thousand Arrows'));
         expect(result.range()).toEqual([147, 174]);
@@ -208,7 +208,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(4, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(4, 9, ({gen, calculate, Pokemon, Move}) => {
       const zapdos = Pokemon('Zapdos', {item: 'Iron Ball'});
       if (gen === 4) {
         test(`Iron Ball negates ground immunities (gen ${gen})`, () => {
@@ -243,7 +243,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(7, 8, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens(7, 9, ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Psychic Terrain (gen ${gen})`, () => {
         const field = Field({terrain: 'Psychic'});
         const Mewtwo = Pokemon('Mewtwo', {
@@ -278,7 +278,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 8, ({gen, calculate, Pokemon, Move}) => {
+    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Parental Bond (gen ${gen})`, () => {
         let result = calculate(
           Pokemon('Kangaskhan-Mega', {evs: {atk: 152}}),
