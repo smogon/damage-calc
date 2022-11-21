@@ -116,7 +116,7 @@ export const Stats = new (class {
     level: number,
     nature?: string
   ) {
-    if (gen.num < 1 || gen.num > 8) throw new Error(`Invalid generation ${gen.num}`);
+    if (gen.num < 1 || gen.num > 9) throw new Error(`Invalid generation ${gen.num}`);
     if (gen.num < 3) return this.calcStatRBY(stat, base, iv, level);
     return this.calcStatADV(gen.natures, stat, base, iv, ev, level, nature);
   }
