@@ -4577,6 +4577,7 @@ class Move implements I.Move {
     'isPulse',
     'zp',
     'maxPower',
+    'isSlicing',
   ]);
 
   constructor(name: string, data: MoveData, gen: number) {
@@ -4592,6 +4593,7 @@ class Move implements I.Move {
     if (data.isBullet) this.flags.bullet = 1;
     if (data.isSound) this.flags.sound = 1;
     if (data.isPulse) this.flags.pulse = 1;
+    if (data.isSlicing) this.flags.slicing = 1;
 
     assignWithout(this, data, Move.FLAGS);
 
