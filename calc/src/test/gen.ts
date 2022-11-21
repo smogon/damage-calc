@@ -245,9 +245,6 @@ class Move implements I.Move {
       if (move.isMax) this.isMax = true;
       if (move.maxMove) this.maxMove = {basePower: move.maxMove.basePower};
     }
-    if (dex.gen >= 9) {
-      if (move.flags.slicing) this.flags.slicing = move.flags.slicing;
-    }
   }
 }
 
