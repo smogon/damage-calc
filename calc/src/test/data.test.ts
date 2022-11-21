@@ -7,7 +7,7 @@ import {Generations} from './gen';
 
 const pkmn = {Generations: new Generations(Dex)};
 
-const gens = [1, 2, 3, 4, 5, 6, 7, 8] as I.GenerationNum[];
+const gens = [1, 2, 3, 4, 5, 6, 7, 8, 9] as I.GenerationNum[];
 
 describe('Generations', () => {
   test('abilities', () => {
