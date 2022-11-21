@@ -33,7 +33,7 @@ function startsWith(string, target) {
 
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
-var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
+var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
 var HIDDEN_POWER_REGEX = /Hidden Power (\w*)/;
 
 var CALC_STATUS = {
@@ -619,9 +619,9 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
-	for (var i = 0; i < LEGACY_STATS[8].length; i++) {
-		var baseStat = container.find("." + LEGACY_STATS[8][i]).find(".base");
-		baseStat.val(altForme.bs[LEGACY_STATS[8][i]]);
+	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
+		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
+		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
 	var isRandoms = $("#randoms").prop("checked");
@@ -656,8 +656,8 @@ function correctHiddenPower(pokemon) {
 	// Convert the legacy stats table to a useful one, and also figure out if all are maxed
 	var ivs = {};
 	var maxed = true;
-	for (var i = 0; i <= LEGACY_STATS[8].length; i++) {
-		var s = LEGACY_STATS[8][i];
+	for (var i = 0; i <= LEGACY_STATS[9].length; i++) {
+		var s = LEGACY_STATS[9][i];
 		var iv = ivs[legacyStatToStat(s)] = (pokemon.ivs && pokemon.ivs[s]) || 31;
 		if (iv !== 31) maxed = false;
 	}
