@@ -9,7 +9,7 @@ const pkmn = {Generations: new Generations(Dex)};
 
 const gens = [1, 2, 3, 4, 5, 6, 7, 8, 9] as I.GenerationNum[];
 
-describe('Generations', () => {
+describe.skip('Generations', () => {
   test('abilities', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).abilities);
