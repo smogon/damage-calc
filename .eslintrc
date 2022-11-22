@@ -41,6 +41,7 @@
         "GEN6RANDOMBATTLE": false,
         "GEN7RANDOMBATTLE": false,
         "GEN8RANDOMBATTLE": false,
+        "GEN9RANDOMBATTLE": false,
         "getSelectedTiers": false,
         "stickyMoves": false,
         "allPokemon": false,
