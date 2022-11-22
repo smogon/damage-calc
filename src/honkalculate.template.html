@@ -430,7 +430,7 @@
                         <label>Current HP</label>
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
-						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
                         <br />
                         <br />
                         Health <div class="hpbar"></div>
@@ -586,15 +586,15 @@
                         <input class="visually-hidden" type="radio" name="format" value="Doubles" id="doubles-format" />
                         <label class="btn btn-right" for="doubles-format">Doubles</label>
                     </div>
-                    <div class="gen-specific g6 g7 g8" title="Select the current terrain.">
+                    <div class="gen-specific g6 g7 g8 g9" title="Select the current terrain.">
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-xxxwide btn-left" for="electric">Electric Terrain</label>
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">Grassy Terrain</label>
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">Misty Terrain</label>
                     </div>
-                    <div class="gen-specific g7 g8" title="Select the current terrain.">
+                    <div class="gen-specific g7 g8 g9" title="Select the current terrain.">
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-xxxwide btn-mid" for="psychic">Psychic Terrain</label>
                     </div>
-                    <hr class="gen-specific g6 g7 g8" />
+                    <hr class="gen-specific g6 g7 g8 g9" />
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="" id="clear" checked="checked" />
                         <label class="btn btn-small btn-left" for="clear">None</label>
@@ -607,7 +607,7 @@
                         <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
                         <label class="btn btn-small btn-right" for="hail">Hail</label>
                     </div>
-                    <div class="gen-specific g6 g7 g8" title="Select the current weather condition.">
+                    <div class="gen-specific g6 g7 g8 g9" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
                         <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
                         <input class="visually-hidden" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
@@ -625,7 +625,7 @@
                         <input class="visually-hidden" type="radio" name="gscWeather" value="Sand" id="gscSand" />
                         <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                     </div>
-                    <div class="gen-specific g4 g5 g6 g7 g8" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                    <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
                         <input class="visually-hidden" type="checkbox" id="gravity" />
                         <label class="btn" for="gravity">Gravity</label>
                     </div>
@@ -640,7 +640,7 @@
                             <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                         </div>
                     </div>
-						 <div class="btn-group gen-specific g8">
+						 <div class="btn-group gen-specific g8 g9">
                         <div class="left" title="Is Steelsurge affecting this side of the field?">
                             <input class="visually-hidden" type="checkbox" id="steelsurgeL" />
                             <label class="btn btn-xwide" for="steelsurgeL">Steelsurge</label>
@@ -736,7 +736,7 @@
                             <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
                             <input class="visually-hidden" type="checkbox" id="tailwindL" />
                             <label class="btn btn-xxwide" for="tailwindL">Tailwind</label>
@@ -746,7 +746,7 @@
                             <label class="btn btn-xxwide" for="tailwindR">Tailwind</label>
                         </div>
                     </div>
-                    <tr class="gen-specific g4 g5 g6 g7 g8">
+                    <tr class="gen-specific g4 g5 g6 g7 g8 g9">
                         <td><div class="left" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
                             <div hidden id="selectFlowerGiftInstruction">Is the Pok&eacute;mon affected by an ally's Flower Gift?</div>
                             <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftL" />
@@ -757,7 +757,7 @@
                             <label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
                         </div></td>
                     </tr>
-                    <div class="btn-group gen-specific g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g5 g6 g7 g8 g9">
                         <div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
                             <input class="visually-hidden" type="checkbox" id="friendGuardL" />
                             <label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
@@ -767,7 +767,7 @@
                             <label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g7 g8">
+                    <div class="btn-group gen-specific g7 g8 g9">
                         <div class="left" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
                             <input class="visually-hidden" type="checkbox" id="auroraVeilL" />
                             <label class="btn btn-xxwide" for="auroraVeilL">Aurora Veil</label>
@@ -777,7 +777,7 @@
                             <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g7 g8">
+                    <div class="btn-group gen-specific g7 g8 g9">
                         <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Battery ability?">
                             <input class="visually-hidden" type="checkbox" id="batteryL" />
                             <label class="btn btn-xxwide" for="batteryL">Battery</label>
@@ -786,7 +786,7 @@
                             <input class="visually-hidden" type="checkbox" id="batteryR" />
                             <label class="btn btn-xxwide" for="batteryR">Battery</label>
                         </div>
-                        <div class="btn-group gen-specific g8">
+                        <div class="btn-group gen-specific g8 g9">
                             <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Power Spot ability?">
                                 <input class="visually-hidden" type="checkbox" id="powerSpotL" />
                                 <label class="btn btn-xxwide" for="powerSpotL">Power Spot</label>
