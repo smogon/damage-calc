@@ -8926,7 +8926,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     weightkg: 12.2,
     abilities: {0: 'Protean'},
     nfe: true,
-    baseSpecies: "Sprigatito",
+    baseSpecies: 'Sprigatito',
   },
   'Flutter Mane': {
     types: ['Ghost', 'Fairy'],
@@ -9261,7 +9261,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
   Tadbulb: {
     types: ['Electric'],
     bs: {hp: 61, at: 31, df: 41, sa: 59, sd: 35, sp: 45},
-    weightkg: .4,
+    weightkg: 0.4,
     abilities: {0: 'Static'},
   },
   Tandemaus: {
