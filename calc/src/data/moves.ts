@@ -4319,7 +4319,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 120,
     maxPower: 110,
     makesContact: true,
-    isPunch: true, 
+    isPunch: true,
     priority: 1,
   },
   'Kowtow Cleave': {
