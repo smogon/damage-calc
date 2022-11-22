@@ -9,9 +9,10 @@ const pkmn = {Generations: new Generations(Dex)};
 
 const gens = [1, 2, 3, 4, 5, 6, 7, 8, 9] as I.GenerationNum[];
 
-describe.skip('Generations', () => {
+describe('Generations', () => {
   test('abilities', () => {
     for (const gen of gens) {
+      if (gen === 9) continue; // TODO fix gen 9 data to match PS data
       const p = Array.from(pkmn.Generations.get(gen).abilities);
       const c = new Map<I.ID, I.Ability>();
       for (const ability of calc.Generations.get(gen).abilities) c.set(ability.id, ability);
@@ -27,6 +28,7 @@ describe.skip('Generations', () => {
 
   test('items', () => {
     for (const gen of gens) {
+      if (gen === 9) continue; // TODO fix gen 9 data to match PS data
       const p = Array.from(pkmn.Generations.get(gen).items);
       const c = new Map<I.ID, I.Item>();
       for (const item of calc.Generations.get(gen).items) c.set(item.id, item);
@@ -42,6 +44,7 @@ describe.skip('Generations', () => {
 
   test('moves', () => {
     for (const gen of gens) {
+      if (gen === 9) continue; // TODO fix gen 9 data to match PS data
       const p = Array.from(pkmn.Generations.get(gen).moves);
       const c = new Map<I.ID, I.Move>();
       for (const move of calc.Generations.get(gen).moves) c.set(move.id, move);
@@ -57,6 +60,7 @@ describe.skip('Generations', () => {
 
   test('species', () => {
     for (const gen of gens) {
+      if (gen === 9) continue; // TODO fix gen 9 data to match PS data
       const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();
       for (const specie of calc.Generations.get(gen).species) c.set(specie.id, specie);
