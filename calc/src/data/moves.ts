@@ -38,6 +38,7 @@ export interface MoveData {
   readonly isBullet?: boolean;
   readonly isSound?: boolean;
   readonly isPulse?: boolean;
+  readonly isSlicing?: boolean;
 }
 
 const RBY: {[name: string]: MoveData} = {
@@ -4146,7 +4147,371 @@ for (const m of LGPE_MOVES) {
   delete SS[m];
 }
 
-export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  'Aerial Ace': {isSlicing: true},
+  'Air Cutter': {isSlicing: true},
+  'Air Slash': {isSlicing: true},
+  'Fury Cuttter': {isSlicing: true},
+  'Leaf Blade': {isSlicing: true},
+  'Night Slash': {isSlicing: true},
+  'Psycho Cut': {isSlicing: true},
+  'Razor Shell': {isSlicing: true},
+  'Sacred Sword': {isSlicing: true},
+  Slash: {isSlicing: true},
+  'X-Scissor': {isSlicing: true},
+  'Aqua Cutter': {
+    bp: 70,
+    type: 'Water',
+    category: 'Physical',
+    zp: 140,
+    maxPower: 120,
+    isSlicing: true,
+  },
+  'Aqua Step': {
+    bp: 80,
+    type: 'Water',
+    category: 'Physical',
+    secondaries: true,
+    zp: 160,
+    maxPower: 130,
+    self: {boosts: {spe: +1}},
+  },
+  'Armor Cannon': {
+    bp: 120,
+    type: 'Fire',
+    category: 'Special',
+    zp: 190,
+    maxPower: 140,
+    self: {boosts: {def: -1, spd: -1}},
+  },
+  'Axe Kick': {
+    bp: 120,
+    type: 'Fighting',
+    category: 'Physical',
+    zp: 190,
+    maxPower: 95,
+    secondaries: true,
+    recoil: [1, 2],
+    makesContact: true,
+  },
+  'Bitter Blade': {
+    bp: 90,
+    type: 'Fire',
+    category: 'Physical',
+    zp: 175,
+    maxPower: 130,
+    makesContact: true, // TODO add recovery [50%]
+  },
+  'Blazing Torque': {
+    bp: 80,
+    type: 'Fire',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    secondaries: true,
+  },
+  'Chilling Water': {
+    bp: 50,
+    type: 'Water',
+    category: 'Special',
+    zp: 100,
+    maxPower: 100,
+    secondaries: true,
+  },
+  'Chilly Reception': {
+    bp: 0,
+    type: 'Ice',
+    category: 'Status',
+  },
+  'Collision Course': {
+    bp: 100,
+    type: 'Fighting',
+    category: 'Physical',
+    zp: 180,
+    maxPower: 90,
+    makesContact: true, // Deals 1.3x on super effective
+  },
+  'Combat Torque': {
+    bp: 100,
+    type: 'Fighting',
+    category: 'Physical',
+    zp: 180,
+    maxPower: 90,
+    secondaries: true,
+  },
+  Comeuppance: {
+    bp: 1,
+    type: 'Fighting',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 100,
+    makesContact: true,
+  },
+  Doodle: {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Double Shock': {
+    bp: 120,
+    type: 'Electric',
+    category: 'Physical',
+    zp: 190,
+    maxPower: 140,
+    makesContact: true,
+  },
+  'Electro Drift': {
+    bp: 100,
+    type: 'Electric',
+    category: 'Special',
+    zp: 180,
+    maxPower: 130,
+    makesContact: true, // deals 1.3x on super effective
+  },
+  'Fillet Away': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Flower Trick': {
+    bp: 70,
+    type: 'Grass',
+    category: 'Physical',
+    zp: 140,
+    maxPower: 130,
+  },
+  'Gigaton Hammer': {
+    bp: 160,
+    type: 'Steel',
+    category: 'Physical',
+    zp: 200,
+    maxPower: 150,
+  },
+  'Glaive Rush': {
+    bp: 120,
+    type: 'Dragon',
+    category: 'Physical',
+    zp: 190,
+    maxPower: 140,
+    makesContact: true,
+  },
+  'Hyper Drill': {
+    bp: 100,
+    type: 'Normal',
+    category: 'Physical',
+    zp: 180,
+    maxPower: 130,
+    makesContact: true,
+    breaksProtect: true,
+  },
+  'Ice Spinner': {
+    bp: 80,
+    type: 'Ice',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    makesContact: true,
+  },
+  'Jet Punch': {
+    bp: 60,
+    type: 'Water',
+    category: 'Physical',
+    zp: 120,
+    maxPower: 110,
+    makesContact: true,
+    isPunch: true,
+    priority: 1,
+  },
+  'Kowtow Cleave': {
+    bp: 85,
+    type: 'Dark',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    makesContact: true,
+  },
+  'Last Respects': {
+    bp: 50,
+    type: 'Ghost',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 100,
+  },
+  'Lumina Crash': {
+    bp: 80,
+    type: 'Psychic',
+    category: 'Special',
+    zp: 160,
+    maxPower: 130,
+    secondaries: true,
+    self: {boosts: {spd: -2}},
+  },
+  'Magical Torque': {
+    bp: 100,
+    type: 'Fairy',
+    category: 'Physical',
+    zp: 180,
+    maxPower: 130,
+    secondaries: true,
+  },
+  'Make It Rain': {
+    bp: 120,
+    type: 'Steel',
+    category: 'Special',
+    zp: 190,
+    maxPower: 140,
+    target: 'allAdjacentFoes',
+  },
+  'Mortal Spin': {
+    bp: 30,
+    type: 'Poison',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 70,
+    makesContact: true,
+    secondaries: true,
+    target: 'allAdjacentFoes',
+  },
+  'Noxious Torque': {
+    bp: 100,
+    type: 'Poison',
+    category: 'Physical',
+    zp: 180,
+    maxPower: 90,
+    secondaries: true,
+  },
+  'Order Up': {
+    bp: 80,
+    type: 'Dragon',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    isPulse: true,
+  },
+  'Population Bomb': {
+    bp: 20,
+    type: 'Normal',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 90,
+    makesContact: true,
+    multihit: 10,
+  },
+  Pounce: {
+    bp: 50,
+    type: 'Bug',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 100,
+    makesContact: true,
+    secondaries: true,
+  },
+  'Rage Fist': {
+    bp: 50,
+    type: 'Ghost',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 100,
+    makesContact: true,
+    isPunch: true,
+  },
+  'Raging Bull': {
+    bp: 90,
+    type: 'Normal',
+    category: 'Physical',
+    zp: 175,
+    maxPower: 130,
+    makesContact: true,
+  },
+  'Revival Blessing': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  Ruination: {
+    bp: 1,
+    type: 'Dark',
+    category: 'Special',
+    zp: 100,
+    maxPower: 100,
+  },
+  'Salt Cure': {
+    bp: 40,
+    type: 'Rock',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 90,
+  },
+  'Spin Out': {
+    bp: 100,
+    type: 'Steel',
+    category: 'Physical',
+    zp: 180,
+    maxPower: 130,
+    makesContact: true,
+    self: {boosts: {spe: -2}},
+  },
+  'Tera Blast': {
+    bp: 80,
+    type: 'Normal',
+    category: 'Special',
+    zp: 160,
+    maxPower: 130,
+  },
+  'Tidy Up': {
+    bp: 0,
+    type: 'Normal',
+    category: 'Status',
+  },
+  'Torch Song': {
+    bp: 80,
+    type: 'Fire',
+    category: 'Special',
+    zp: 160,
+    maxPower: 130,
+    secondaries: true,
+    isSound: true,
+  },
+  Trailblaze: {
+    bp: 50,
+    type: 'Grass',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 100,
+    secondaries: true,
+    makesContact: true,
+    self: {boosts: {spe: +1}},
+  },
+  'Triple Dive': {
+    bp: 30,
+    type: 'Water',
+    category: 'Physical',
+    zp: 100,
+    maxPower: 90,
+    makesContact: true,
+    multihit: 3,
+  },
+  'Twin Beam': {
+    bp: 40,
+    type: 'Psychic',
+    category: 'Special',
+    zp: 100,
+    maxPower: 90,
+    multihit: 2,
+  },
+  'Wicked Torque': {
+    bp: 80,
+    type: 'Dark',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    secondaries: true,
+  },
+};
+
+const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
+
+export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Moves implements I.Moves {
   private readonly gen: I.GenerationNum;
@@ -4212,6 +4577,7 @@ class Move implements I.Move {
     'isPulse',
     'zp',
     'maxPower',
+    'isSlicing',
   ]);
 
   constructor(name: string, data: MoveData, gen: number) {
@@ -4227,6 +4593,7 @@ class Move implements I.Move {
     if (data.isBullet) this.flags.bullet = 1;
     if (data.isSound) this.flags.sound = 1;
     if (data.isPulse) this.flags.pulse = 1;
+    if (data.isSlicing) this.flags.slicing = 1;
 
     assignWithout(this, data, Move.FLAGS);
 

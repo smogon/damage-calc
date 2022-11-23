@@ -284,7 +284,7 @@ export function calculateSMSS(
 
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
-      (move.hasType('Fire') && defender.hasAbility('Flash Fire')) ||
+      (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
       (move.hasType('Water') && defender.hasAbility('Dry Skin', 'Storm Drain', 'Water Absorb')) ||
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
@@ -293,7 +293,8 @@ export function calculateSMSS(
         !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
-      (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling'))
+      (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
+      (move.hasType('Ground') && defender.hasAbility('Earth Eater'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -1082,7 +1083,9 @@ export function calculateAtModsSMSS(
   } else if (
     (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
-    (attacker.hasAbility('Transistor') && move.hasType('Electric'))
+    (attacker.hasAbility('Transistor') && move.hasType('Electric')) ||
+    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock')) ||
+    (attacker.hasAbility('Sharpness') && move.flags.slicing)
   ) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1098,7 +1101,8 @@ export function calculateAtModsSMSS(
   }
 
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
-      (defender.hasAbility('Water Bubble') && move.hasType('Fire'))) {
+      (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
+     (defender.hasAbility('Purifying Salt') && move.hasType('Ghost'))) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
   }

@@ -461,6 +461,16 @@ const SS = SM.concat([
   'Throat Spray',
 ]);
 
+const SV = SM.concat([
+  'Ability Shield',
+  'Booster Energy',
+  'Clear Amulet',
+  'Covert Cloak',
+  'Loaded Dice',
+  'Mirror Herb',
+  'Punching Glove',
+]);
+
 for (let i = 0; i < 100; i++) {
   SS.push(`TR${i < 10 ? `0${i}` : i}`);
 }
@@ -550,7 +560,7 @@ const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Yache Berry': {t: 'Ice', p: 80},
 };
 
-export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];
+export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Items implements I.Items {
   private readonly gen: I.GenerationNum;

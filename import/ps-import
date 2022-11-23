@@ -6,7 +6,7 @@ const path = require('path');
 
 const TIERS = {};
 
-for (let gen = 1; gen <= 8; gen++) {
+for (let gen = 1; gen <= 9; gen++) {
 	TIERS[gen] = {};
 
 	const dex = Dex.forFormat('gen' + gen + 'ou');

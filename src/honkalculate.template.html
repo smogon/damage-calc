@@ -52,7 +52,8 @@
             <input class="gen visually-hidden" type="radio" name="gen" value="5" id="gen5" /><label class="btn btn-small btn-mid" for="gen5">B/W</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="6" id="gen6" /><label class="btn btn-small btn-mid" for="gen6">X/Y</label>
             <input class="gen visually-hidden" type="radio" name="gen" value="7" id="gen7" /><label class="btn btn-small btn-mid" for="gen7">S/M</label>
-            <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" checked="checked" /><label class="btn btn-small btn-right" for="gen8">S/S</label>
+			   <input class="gen visually-hidden" type="radio" name="gen" value="8" id="gen8" /><label class="btn btn-small btn-mid" for="gen8">S/S</label>
+			   <input class="gen visually-hidden" type="radio" name="gen" value="9" id="gen9" checked="checked" /><label class="btn btn-small btn-right gen-specific g9" for="gen9">S/V</label>
         </span>
         <span class="modeSelection" aria-labelledby="selectModeInstruction" role="radiogroup" title="Select the calculator's mode of function.">
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" /><label class="btn btn-left" for="one-vs-one">One vs One</label>
@@ -66,11 +67,11 @@
         <span class="title-text">Tier(s)/Format: </span>
         <span class="tiers" title="Select the tier(s)/format.">
             <input class="visually-hidden" type="radio" name="tier" id="VGC17" /><label class="btn btn-left gen-specific g7" for="VGC19">VGC 19</label>
-            <input class="visually-hidden" type="radio" name="tier" id="Doubles" /><label class="btn btn-mid gen-specific g5 g6 g7 g8" for="Doubles">Doubles</label>
-            <input class="visually-hidden" type="radio" name="tier" id="LC" /><label class="btn btn-mid gen-specific g4 g5 g6 g7 g8" for="LC">LC</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="PU" /><label class="btn btn-mid gen-specific g6 g7 g8" for="PU">PU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="NU" /><label class="btn btn-mid gen-specific g3 g4 g5 g6 g7 g8" for="NU">NU</label>
-            <input class="visually-hidden" type="checkbox" name="tier" id="RU" /><label class="btn btn-mid gen-specific g5 g6 g7 g8" for="RU">RU</label>
+            <input class="visually-hidden" type="radio" name="tier" id="Doubles" /><label class="btn btn-mid gen-specific g5 g6 g7 g8 g9" for="Doubles">Doubles</label>
+            <input class="visually-hidden" type="radio" name="tier" id="LC" /><label class="btn btn-mid gen-specific g4 g5 g6 g7 g8 g9" for="LC">LC</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="PU" /><label class="btn btn-mid gen-specific g6 g7 g8 g9" for="PU">PU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="NU" /><label class="btn btn-mid gen-specific g3 g4 g5 g6 g7 g8 g9" for="NU">NU</label>
+            <input class="visually-hidden" type="checkbox" name="tier" id="RU" /><label class="btn btn-mid gen-specific g5 g6 g7 g8 g9" for="RU">RU</label>
             <input class="visually-hidden" type="checkbox" name="tier" id="UU" /><label class="btn btn-mid" for="UU">UU</label>
             <input class="visually-hidden" type="checkbox" name="tier" id="OU" /><label class="btn btn-mid" for="OU">OU</label>
             <input class="visually-hidden" type="checkbox" name="tier" id="Uber" /><label class="btn btn-right" for="Uber">Uber</label>
@@ -115,8 +116,8 @@
                             <tr>
                                 <th></th>
                                 <th>Base</th>
-                                <th class="gen-specific g3 g4 g5 g6 g7 g8">IVs</th>
-                                <th class="gen-specific g3 g4 g5 g6 g7 g8">EVs</th>
+                                <th class="gen-specific g3 g4 g5 g6 g7 g8 g9">IVs</th>
+                                <th class="gen-specific g3 g4 g5 g6 g7 g8 g9">EVs</th>
                                 <th class="gen-specific g1 g2 hide">DVs</th>
                                 <th></th>
                                 <th></th>
@@ -128,10 +129,10 @@
                                 <td>
                                     <input class="base" value="100" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="ivs" value="31" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="evs" type="number" min="0" max="252" step="4" value="0" />
                                 </td>
                                 <td class="gen-specific g1 g2 hide">
@@ -148,10 +149,10 @@
                                 <td>
                                     <input class="base" value="100" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="ivs" value="31" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="evs" type="number" min="0" max="252" step="4" value="0" />
                                 </td>
                                 <td class="gen-specific g1 g2 hide">
@@ -184,10 +185,10 @@
                                 <td>
                                     <input class="base" value="100" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="ivs" value="31" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="evs" type="number" min="0" max="252" step="4" value="0" />
                                 </td>
                                 <td class="gen-specific g1 g2 hide">
@@ -213,17 +214,17 @@
                                     </select>
                                 </td>
                             </tr>
-                            <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8">
+                            <tr class="sa gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                                 <td>
                                     <label>Sp. Atk</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="ivs" value="31" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="evs" type="number" min="0" max="252" step="4" value="0" />
                                 </td>
                                 <td class="gen-specific g1 g2 hide">
@@ -249,17 +250,17 @@
                                     </select>
                                 </td>
                             </tr>
-                            <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8">
+                            <tr class="sd gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                                 <td>
                                     <label>Sp. Def</label>
                                 </td>
                                 <td>
                                     <input class="base" value="100" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="ivs" value="31" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="evs" type="number" min="0" max="252" step="4" value="0" />
                                 </td>
                                 <td class="gen-specific g1 g2 hide">
@@ -322,10 +323,10 @@
                                 <td>
                                     <input class="base" value="100" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="ivs" value="31" />
                                 </td>
-                                <td class="gen-specific g3 g4 g5 g6 g7 g8">
+                                <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                                     <input class="evs" type="number" min="0" max="252" step="4" value="0" />
                                 </td>
                                 <td class="gen-specific g1 g2 hide">
@@ -356,7 +357,7 @@
                         </table>
                     </div>
                     <div class="info-group info-selectors">
-                        <div class="gen-specific g3 g4 g5 g6 g7 g8">
+                        <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                             <label>Nature</label>
                             <select class="nature">
                                 <option value="Adamant">Adamant (+Atk, -SpA)</option>
@@ -386,12 +387,12 @@
                                 <option value="Timid">Timid (+Spe, -Atk)</option>
                             </select>
                         </div>
-                        <div class="gen-specific g3 g4 g5 g6 g7 g8">
+                        <div class="gen-specific g3 g4 g5 g6 g7 g8 g9">
                             <label>Ability</label>
                             <select class="ability terrain-trigger"></select>
                             <input hidden type="checkbox" title= "Is this ability active?" class="abilityToggle">
                         </div>
-                        <div class="gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <div class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <label>Item</label>
                             <select class="item terrain-trigger"></select>
                         </div>
@@ -429,7 +430,7 @@
                         <label>Current HP</label>
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
-						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
                         <br />
                         <br />
                         Health <div class="hpbar"></div>
@@ -438,7 +439,7 @@
                         <select class="move-selector small-select"></select>
                         <input class="move-bp" value="50" />
                         <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
+                        <select class="move-cat gen-specific g4 g5 g6 g7 g8 g9">
                             <option value="Physical">Physical</option>
                             <option value="Special">Special</option>
                         </select>
@@ -472,7 +473,7 @@
                         <select class="move-selector small-select"></select>
                         <input class="move-bp" value="0" />
                         <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
+                        <select class="move-cat gen-specific g4 g5 g6 g7 g8 g9">
                             <option value="Physical">Physical</option>
                             <option value="Special">Special</option>
                         </select>
@@ -506,7 +507,7 @@
                         <select class="move-selector small-select"></select>
                         <input class="move-bp" value="0" />
                         <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
+                        <select class="move-cat gen-specific g4 g5 g6 g7 g8 g9">
                             <option value="Physical">Physical</option>
                             <option value="Special">Special</option>
                         </select>
@@ -540,7 +541,7 @@
                         <select class="move-selector small-select"></select>
                         <input class="move-bp" value="0" />
                         <select class="move-type"></select>
-                        <select class="move-cat gen-specific g4 g5 g6 g7 g8">
+                        <select class="move-cat gen-specific g4 g5 g6 g7 g8 g9">
                             <option value="Physical">Physical</option>
                             <option value="Special">Special</option>
                         </select>
@@ -579,22 +580,22 @@
             </legend>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
+                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
                         <input class="visually-hidden" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
                         <label class="btn btn-left" for="singles-format">Singles</label>
                         <input class="visually-hidden" type="radio" name="format" value="Doubles" id="doubles-format" />
                         <label class="btn btn-right" for="doubles-format">Doubles</label>
                     </div>
-                    <div class="gen-specific g6 g7 g8" title="Select the current terrain.">
+                    <div class="gen-specific g6 g7 g8 g9" title="Select the current terrain.">
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Electric" id="electric" /><label class="btn btn-xxxwide btn-left" for="electric">Electric Terrain</label>
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Grassy" id="grassy" /><label class="btn btn-xxxwide btn-mid" for="grassy">Grassy Terrain</label>
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Misty" id="misty" /><label class="btn btn-xxxwide btn-right" for="misty">Misty Terrain</label>
                     </div>
-                    <div class="gen-specific g7 g8" title="Select the current terrain.">
+                    <div class="gen-specific g7 g8 g9" title="Select the current terrain.">
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-xxxwide btn-mid" for="psychic">Psychic Terrain</label>
                     </div>
-                    <hr class="gen-specific g6 g7 g8" />
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                    <hr class="gen-specific g6 g7 g8 g9" />
+                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="" id="clear" checked="checked" />
                         <label class="btn btn-small btn-left" for="clear">None</label>
                         <input class="visually-hidden" type="radio" name="weather" value="Sun" id="sun" />
@@ -606,7 +607,7 @@
                         <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
                         <label class="btn btn-small btn-right" for="hail">Hail</label>
                     </div>
-                    <div class="gen-specific g6 g7 g8" title="Select the current weather condition.">
+                    <div class="gen-specific g6 g7 g8 g9" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
                         <label class="btn btn-xxxwide btn-left" for="harsh-sunshine">Harsh Sunshine</label>
                         <input class="visually-hidden" type="radio" name="weather" value="Heavy Rain" id="heavy-rain" />
@@ -624,11 +625,11 @@
                         <input class="visually-hidden" type="radio" name="gscWeather" value="Sand" id="gscSand" />
                         <label class="btn btn-small btn-right" for="gscSand">Sand</label>
                     </div>
-                    <div class="gen-specific g4 g5 g6 g7 g8" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
+                    <div class="gen-specific g4 g5 g6 g7 g8 g9" style="width: 5.3em; margin: 5px auto;" title="Is gravity in effect?">
                         <input class="visually-hidden" type="checkbox" id="gravity" />
                         <label class="btn" for="gravity">Gravity</label>
                     </div>
-                    <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8" />
+                    <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9" />
                     <div class="btn-group gen-specific g4 g5 g6 g7 g8">
                         <div class="left" title="Is Stealth Rock affecting this side of the field?">
                             <input class="visually-hidden" type="checkbox" id="srL" />
@@ -639,7 +640,7 @@
                             <label class="btn btn-xwide" for="srR">Stealth Rock</label>
                         </div>
                     </div>
-						 <div class="btn-group gen-specific g8">
+						 <div class="btn-group gen-specific g8 g9">
                         <div class="left" title="Is Steelsurge affecting this side of the field?">
                             <input class="visually-hidden" type="checkbox" id="steelsurgeL" />
                             <label class="btn btn-xwide" for="steelsurgeL">Steelsurge</label>
@@ -649,7 +650,7 @@
                             <label class="btn btn-xwide" for="steelsurgeR">Steelsurge</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Are there Spikes on this side of the field?">
                             <input class="visually-hidden" type="radio" name="spikesL" value="0" id="spikesL0" checked="checked" />
                             <label class="btn btn-xsmall btn-left" for="spikesL0">0</label>
@@ -695,7 +696,7 @@
                             <label class="btn btn-right" for="reflectR">Reflect</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Is this Pok&eacute;mon protected?">
                             <input class="visually-hidden" type="checkbox" id="protectL" />
                             <label class="btn btn-wide" for="protectL">Protect</label>
@@ -715,7 +716,7 @@
                             <label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Has this Pok&eacute;mon been revealed with Foresight or Odor Sleuth?">
                             <input class="visually-hidden" type="checkbox" id="foresightL" />
                             <label class="btn btn-wide" for="foresightL">Foresight</label>
@@ -725,7 +726,7 @@
                             <label class="btn btn-wide" for="foresightR">Foresight</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g3 g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Helping Hand?">
                             <input class="visually-hidden" type="checkbox" id="helpingHandL" />
                             <label class="btn btn-xxwide" for="helpingHandL">Helping Hand</label>
@@ -735,7 +736,7 @@
                             <label class="btn btn-xxwide" for="helpingHandR">Helping Hand</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Has this Pok&eacute;mon's speed been boosted by Tailwind?">
                             <input class="visually-hidden" type="checkbox" id="tailwindL" />
                             <label class="btn btn-xxwide" for="tailwindL">Tailwind</label>
@@ -745,7 +746,7 @@
                             <label class="btn btn-xxwide" for="tailwindR">Tailwind</label>
                         </div>
                     </div>
-                    <tr class="gen-specific g4 g5 g6 g7 g8">
+                    <tr class="gen-specific g4 g5 g6 g7 g8 g9">
                         <td><div class="left" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
                             <div hidden id="selectFlowerGiftInstruction">Is the Pok&eacute;mon affected by an ally's Flower Gift?</div>
                             <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftL" />
@@ -756,7 +757,7 @@
                             <label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
                         </div></td>
                     </tr>
-                    <div class="btn-group gen-specific g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g5 g6 g7 g8 g9">
                         <div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
                             <input class="visually-hidden" type="checkbox" id="friendGuardL" />
                             <label class="btn btn-xxwide" for="friendGuardL">Friend Guard</label>
@@ -766,7 +767,7 @@
                             <label class="btn btn-xxwide" for="friendGuardR">Friend Guard</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g7 g8">
+                    <div class="btn-group gen-specific g7 g8 g9">
                         <div class="left" title="Is the Pok&eacute;mon protected by an ally's Aurora Veil?">
                             <input class="visually-hidden" type="checkbox" id="auroraVeilL" />
                             <label class="btn btn-xxwide" for="auroraVeilL">Aurora Veil</label>
@@ -776,7 +777,7 @@
                             <label class="btn btn-xxwide" for="auroraVeilR">Aurora Veil</label>
                         </div>
                     </div>
-                    <div class="btn-group gen-specific g7 g8">
+                    <div class="btn-group gen-specific g7 g8 g9">
                         <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Battery ability?">
                             <input class="visually-hidden" type="checkbox" id="batteryL" />
                             <label class="btn btn-xxwide" for="batteryL">Battery</label>
@@ -785,7 +786,7 @@
                             <input class="visually-hidden" type="checkbox" id="batteryR" />
                             <label class="btn btn-xxwide" for="batteryR">Battery</label>
                         </div>
-                        <div class="btn-group gen-specific g8">
+                        <div class="btn-group gen-specific g8 g9">
                             <div class="left" title="Has this Pok&eacute;mon's power been boosted by an ally's Power Spot ability?">
                                 <input class="visually-hidden" type="checkbox" id="powerSpotL" />
                                 <label class="btn btn-xxwide" for="powerSpotL">Power Spot</label>
@@ -795,7 +796,7 @@
                                 <label class="btn btn-xxwide" for="powerSpotR">Power Spot</label>
                             </div>
                         </div>
-                        <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8">
+                        <div class="btn-group gen-specific g2 g3 g4 g5 g6 g7 g8 g9">
                             <div class="left" title="Is the defending Pok&eacute;mon switching out?">
                                 <input class="visually-hidden" type="checkbox" id="switchingL" />
                                 <label class="btn btn-xxwide" for="switchingL">Switching out</label>
@@ -882,7 +883,7 @@
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/honkalculate_controls.js?"></script>
 
-    <div style="clear:both;padding:20px;text-align:left">Created by Honko, maintained by Austin and Kris
+    <div style="clear:both;padding:20px;text-align:left">Created by Honko, maintained by Austin
         <ul><li><a href="https://github.com/smogon/damage-calc/contributors" target="_blank">Contributors</a></li>
         <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" target="_blank">Bug Reports</a></li>
         <li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul>

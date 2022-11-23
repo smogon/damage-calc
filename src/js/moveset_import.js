@@ -79,7 +79,7 @@ function serialize(array, separator) {
 
 function getAbility(row) {
 	var ability = row[1] ? row[1].trim() : '';
-	if (calc.ABILITIES[8].indexOf(ability) !== -1) return ability;
+	if (calc.ABILITIES[9].indexOf(ability) !== -1) return ability;
 }
 
 function statToLegacyStat(stat) {
@@ -106,7 +106,7 @@ function getStats(currentPoke, rows, offset) {
 	var currentAbility;
 	var currentNature;
 	currentPoke.level = 100;
-	for (var x = offset; x < offset + 8; x++) {
+	for (var x = offset; x < offset + 9; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
@@ -151,7 +151,7 @@ function getStats(currentPoke, rows, offset) {
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
-		if (calc.ITEMS[8].indexOf(item) != -1) {
+		if (calc.ITEMS[9].indexOf(item) != -1) {
 			return item;
 		}
 	}
@@ -180,6 +180,7 @@ function getMoves(currentPoke, rows, offset) {
 function addToDex(poke) {
 	var dexObject = {};
 	if ($("#randoms").prop("checked")) {
+		if (GEN9RANDOMBATTLE[poke.name] == undefined) GEN9RANDOMBATTLE[poke.name] = {};
 		if (GEN8RANDOMBATTLE[poke.name] == undefined) GEN8RANDOMBATTLE[poke.name] = {};
 		if (GEN7RANDOMBATTLE[poke.name] == undefined) GEN7RANDOMBATTLE[poke.name] = {};
 		if (GEN6RANDOMBATTLE[poke.name] == undefined) GEN6RANDOMBATTLE[poke.name] = {};
@@ -189,6 +190,7 @@ function addToDex(poke) {
 		if (GEN2RANDOMBATTLE[poke.name] == undefined) GEN2RANDOMBATTLE[poke.name] = {};
 		if (GEN1RANDOMBATTLE[poke.name] == undefined) GEN1RANDOMBATTLE[poke.name] = {};
 	} else {
+		if (SETDEX_SV[poke.name] == undefined) SETDEX_SV[poke.name] = {};
 		if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
 		if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
 		if (SETDEX_XY[poke.name] == undefined) SETDEX_XY[poke.name] = {};
@@ -230,6 +232,8 @@ function addToDex(poke) {
 function updateDex(customsets) {
 	for (var pokemon in customsets) {
 		for (var moveset in customsets[pokemon]) {
+			if (!SETDEX_SV[pokemon]) SETDEX_SV[pokemon] = {};
+			SETDEX_SV[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SS[pokemon]) SETDEX_SS[pokemon] = {};
 			SETDEX_SS[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SM[pokemon]) SETDEX_SM[pokemon] = {};
@@ -260,7 +264,7 @@ function addSets(pokes, name) {
 		currentRow = rows[i].split(/[()@]/);
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
-			if (calc.SPECIES[8][currentRow[j].trim()] !== undefined) {
+			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
 				currentPoke = calc.SPECIES[8][currentRow[j].trim()];
 				currentPoke.name = currentRow[j].trim();
 				currentPoke.item = getItem(currentRow, j + 1);

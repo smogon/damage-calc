@@ -171,7 +171,7 @@ export class Pokemon implements State.Pokemon {
     moveName?: I.MoveName
   ) {
     const species = gen.species.get(toID(speciesName));
-    if (!species || !species.otherFormes) {
+    if (!species?.otherFormes) {
       return speciesName;
     }
 
