@@ -219,6 +219,11 @@ export function calculateSMSS(
       desc.attackerAbility = attacker.ability;
     }
   }
+
+  if (move.named('Tera Blast') && attacker.teraType != null) {
+    type = attacker.teraType;
+  }
+
   move.type = type;
 
   // FIXME: this is incorrect, should be move.flags.heal, not move.drain
@@ -410,7 +415,7 @@ export function calculateSMSS(
   // #region (Special) Attack
   const attack = calculateAttackSMSS(gen, attacker, defender, move, field, desc, isCritical);
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky', 'Tera Blast')) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
@@ -1014,7 +1019,7 @@ export function calculateAttackSMSS(
 ) {
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky', 'Tera Blast')) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
