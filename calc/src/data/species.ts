@@ -8896,7 +8896,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 125, at: 100, df: 80, sa: 85, sd: 75, sp: 55},
     weightkg: 47.4,
     abilities: {0: 'Serene Grace'},
-    baseSpecies: 'Dudunsparce'
+    baseSpecies: 'Dudunsparce',
   },
   Espathra: {
     types: ['Psychic'],
@@ -9111,7 +9111,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     abilities: {0: 'Friend Guard'},
     otherFormes: ['Maushold-Four'],
   },
-  "Maushold-Four": {
+  'Maushold-Four': {
     types: ['Normal'],
     bs: {hp: 74, at: 75, df: 70, sa: 65, sd: 75, sp: 111},
     weightkg: 2.3,
@@ -9155,14 +9155,14 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 110, at: 100, df: 75, sa: 59, sd: 80, sp: 65},
     weightkg: 120,
     abilities: {0: 'Lingering Aroma'},
-    otherFormes: ['Oinkologne-F']
+    otherFormes: ['Oinkologne-F'],
   },
   'Oinkologne-F': {
     types: ['Normal'],
     bs: {hp: 115, at: 90, df: 70, sa: 59, sd: 90, sp: 65},
     weightkg: 120,
     abilities: {0: 'Aroma Veil'},
-    baseForme: 'Oinkologne'
+    baseForme: 'Oinkologne',
   },
   Orthworm: {
     types: ['Steel'],
@@ -9307,7 +9307,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92},
     weightkg: 2.4,
     abilities: {0: 'Intimidate'},
-    otherFormes: ['Squawkabilly-Blue', 'Squawkabilly-White', 'Squawkabilly-Yellow']
+    otherFormes: ['Squawkabilly-Blue', 'Squawkabilly-White', 'Squawkabilly-Yellow'],
   },
   'Squawkabilly-Blue': {
     types: ['Normal', 'Flying'],
