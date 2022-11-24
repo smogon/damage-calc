@@ -4277,6 +4277,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 70,
     type: 'Grass',
     category: 'Physical',
+    willCrit: true,
     zp: 140,
     maxPower: 130,
   },
