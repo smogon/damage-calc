@@ -230,17 +230,39 @@ export function calculateSMSS(
     desc.attackerAbility = attacker.ability;
   }
 
-  const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
-  const isRingTarget = defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
-  const type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity, isRingTarget);
+  const isGhostRevealed =
+    attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+  const isRingTarget =
+    defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+  const type1Effectiveness = getMoveEffectiveness(
+    gen,
+    move,
+    defender.types[0],
+    isGhostRevealed,
+    field.isGravity,
+    isRingTarget
+  );
   const type2Effectiveness = defender.types[1]
-    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity, isRingTarget)
+    ? getMoveEffectiveness(
+      gen,
+      move,
+      defender.types[1],
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    )
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (defender.teraType) {
-    typeEffectiveness = getMoveEffectiveness(gen, move, defender.teraType, isGhostRevealed, field.isGravity, isRingTarget);
+    typeEffectiveness = getMoveEffectiveness(
+      gen,
+      move,
+      defender.teraType,
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    );
   }
 
   if (typeEffectiveness === 0 && move.hasType('Ground') &&
