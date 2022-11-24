@@ -415,7 +415,8 @@ export function calculateSMSS(
   // #region (Special) Attack
   const attack = calculateAttackSMSS(gen, attacker, defender, move, field, desc, isCritical);
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky', 'Tera Blast')) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
+      (move.named('Tera Blast') && attackSource.teraType)) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
@@ -1019,7 +1020,8 @@ export function calculateAttackSMSS(
 ) {
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky', 'Tera Blast')) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
+      (move.named('Tera Blast') && attackSource.teraType)) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
