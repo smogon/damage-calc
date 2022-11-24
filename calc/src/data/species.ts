@@ -8884,6 +8884,20 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     weightkg: 220,
     abilities: {0: 'Unaware'},
   },
+  Dudunsparce: {
+    types: ['Normal'],
+    bs: {hp: 125, at: 100, df: 80, sa: 85, sd: 75, sp: 55},
+    weightkg: 39.2,
+    abilities: {0: 'Serene Grace'},
+    otherFormes: ['Dudunsparce-Three-Segment'],
+  },
+  'Dudunsparce-Three-Segment': {
+    types: ['Normal'],
+    bs: {hp: 125, at: 100, df: 80, sa: 85, sd: 75, sp: 55},
+    weightkg: 47.4,
+    abilities: {0: 'Serene Grace'},
+    baseSpecies: 'Dudunsparce'
+  },
   Espathra: {
     types: ['Psychic'],
     bs: {hp: 95, at: 60, df: 60, sa: 101, sd: 60, sp: 105},
@@ -9090,6 +9104,20 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     weightkg: 16,
     abilities: {0: 'Intimidate'},
   },
+  Maushold: {
+    types: ['Normal'],
+    bs: {hp: 74, at: 75, df: 70, sa: 65, sd: 75, sp: 111},
+    weightkg: 2.3,
+    abilities: {0: 'Friend Guard'},
+    otherFormes: ['Maushold-Four'],
+  },
+  "Maushold-Four": {
+    types: ['Normal'],
+    bs: {hp: 74, at: 75, df: 70, sa: 65, sd: 75, sp: 111},
+    weightkg: 2.3,
+    abilities: {0: 'Friend Guard'},
+    baseSpecies: 'Maushold',
+  },
   Meowscarada: {
     types: ['Grass', 'Dark'],
     bs: {hp: 76, at: 110, df: 70, sa: 81, sd: 70, sp: 123},
@@ -9126,13 +9154,35 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     types: ['Normal'],
     bs: {hp: 110, at: 100, df: 75, sa: 59, sd: 80, sp: 65},
     weightkg: 120,
-    abilities: {0: 'Thick Fat'},
+    abilities: {0: 'Lingering Aroma'},
+    otherFormes: ['Oinkologne-F']
+  },
+  'Oinkologne-F': {
+    types: ['Normal'],
+    bs: {hp: 115, at: 90, df: 70, sa: 59, sd: 90, sp: 65},
+    weightkg: 120,
+    abilities: {0: 'Aroma Veil'},
+    baseForme: 'Oinkologne'
   },
   Orthworm: {
     types: ['Steel'],
     bs: {hp: 70, at: 85, df: 145, sa: 60, sd: 55, sp: 65},
     weightkg: 310,
     abilities: {0: 'Earth Eater'},
+  },
+  Palafin: {
+    types: ['Water'],
+    bs: {hp: 100, at: 70, df: 72, sa: 53, sd: 62, sp: 100},
+    weightkg: 60.2,
+    abilities: {0: 'Zero to Hero'},
+    otherFormes: ['Palafin-Hero'],
+  },
+  'Palafin-Hero': {
+    types: ['Water'],
+    bs: {hp: 100, at: 160, df: 97, sa: 106, sd: 87, sp: 100},
+    weightkg: 97.4,
+    abilities: {0: 'Zero to Hero'},
+    otherFormes: ['Palafin-Hero'],
   },
   Pawmi: {
     types: ['Electric'],
@@ -9256,7 +9306,29 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     types: ['Normal', 'Flying'],
     bs: {hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92},
     weightkg: 2.4,
-    abilities: {0: 'Guts'},
+    abilities: {0: 'Intimidate'},
+    otherFormes: ['Squawkabilly-Blue', 'Squawkabilly-White', 'Squawkabilly-Yellow']
+  },
+  'Squawkabilly-Blue': {
+    types: ['Normal', 'Flying'],
+    bs: {hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92},
+    weightkg: 2.4,
+    abilities: {0: 'Intimidate'},
+    baseForme: 'Squawkabilly',
+  },
+  'Squawkabilly-White': {
+    types: ['Normal', 'Flying'],
+    bs: {hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92},
+    weightkg: 2.4,
+    abilities: {0: 'Intimidate'},
+    baseForme: 'Squawkabilly',
+  },
+  'Squawkabilly-Yellow': {
+    types: ['Normal', 'Flying'],
+    bs: {hp: 82, at: 96, df: 51, sa: 45, sd: 51, sp: 92},
+    weightkg: 2.4,
+    abilities: {0: 'Intimidate'},
+    baseForme: 'Squawkabilly',
   },
   Tadbulb: {
     types: ['Electric'],
@@ -9281,6 +9353,27 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 68, at: 50, df: 60, sa: 120, sd: 95, sp: 82},
     weightkg: 8,
     abilities: {0: 'Storm Drain'},
+  },
+  'Tauros-Paldea': {
+    types: ['Fighting'],
+    bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
+    weightkg: 115,
+    abilities: {0: 'Intimidate'},
+    baseForme: 'Tauros',
+  },
+  'Tauros-Paldea-Fire': {
+    types: ['Fighting', 'Fire'],
+    bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
+    weightkg: 85,
+    abilities: {0: 'Intimidate'},
+    baseForme: 'Tauros',
+  },
+  'Tauros-Paldea-Water': {
+    types: ['Fighting', 'Water'],
+    bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
+    weightkg: 110,
+    abilities: {0: 'Intimidate'},
+    baseForme: 'Tauros',
   },
   'Ting-Lu': {
     types: ['Dark', 'Ground'],
@@ -9349,6 +9442,13 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 85, at: 85, df: 100, sa: 95, sd: 135, sp: 70},
     weightkg: 74.2,
     abilities: {0: 'Tablets of Ruin'},
+  },
+  'Wooper-Paldea': {
+    types: ['Poison', 'Ground'],
+    bs: {hp: 55, at: 45, df: 45, sa: 25, sd: 25, sp: 15},
+    weightkg: 11,
+    abilities: {0: 'Poison Point'},
+    baseForme: 'Wooper',
   },
   Wugtrio: {
     types: ['Water'],
