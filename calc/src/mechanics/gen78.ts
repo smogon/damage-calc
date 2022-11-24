@@ -220,7 +220,7 @@ export function calculateSMSS(
     }
   }
 
-  if (move.named('Tera Blast') && attacker.teraType != null) {
+  if (move.named('Tera Blast') && attacker.teraType) {
     type = attacker.teraType;
   }
 
