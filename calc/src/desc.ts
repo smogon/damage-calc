@@ -750,6 +750,13 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
         d[8] + d[9] + d[9] + d[9] + d[9], d[9] + d[9] + d[9] + d[9] + d[10],
         d[9] + d[10] + d[10] + d[10] + d[10], d[10] + d[10] + d[11] + d[11] + d[11], 5 * d[15],
       ];
+    case 10:
+      return [
+        10 * d[0], 10 * d[4], 3 * d[4] + 7 * d[5], 5 * d[5] + 5 * d[6], 10 * d[6],
+        5 * d[6] + 5 * d[7], 10 * d[7], 7 * d[7] + 3 * d[8], 3 * d[7] + 7 * d[8], 10 * d[8],
+        5 * d[8] + 5 * d[9], 4 * d[9], 5 * d[9] + 5 * d[10], 7 * d[10] + 3 * d[11], 10 * d[11],
+        10 * d[15],
+      ];
     default:
       error(err, `Unexpected # of hits: ${hits}`);
       return d;
@@ -780,6 +787,12 @@ function squashMultihit(gen: Generation, d: number[], hits: number, err = true) 
         5 * d[0], 5 * d[11], 5 * d[13], 5 * d[15], 5 * d[16], 5 * d[17],
         5 * d[18], 5 * d[19], 5 * d[19], 5 * d[20], 5 * d[21], 5 * d[22],
         5 * d[23], 5 * d[25], 5 * d[27], 5 * d[38],
+      ];
+    case 10:
+      return [
+        10 * d[0], 10 * d[11], 10 * d[13], 10 * d[15], 10 * d[16], 10 * d[17],
+        10 * d[18], 10 * d[19], 10 * d[19], 10 * d[20], 10 * d[21], 10 * d[22],
+        10 * d[23], 10 * d[25], 10 * d[27], 10 * d[38],
       ];
     default:
       error(err, `Unexpected # of hits: ${hits}`);

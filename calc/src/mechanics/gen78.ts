@@ -177,6 +177,14 @@ export function calculateSMSS(
     } else if (attacker.named('Morpeko-Hangry')) {
       type = 'Dark';
     }
+  } else if (move.named('Raging Bull')) {
+    if (attacker.named('Tauros-Paldea')) {
+      type = 'Fighting';
+    } else if (attacker.named('Tauros-Paldea-Fire')) {
+      type = 'Fire';
+    } else if (attacker.named('Tauros-Paldea-Water')) {
+      type = 'Water';
+    }
   }
 
   let hasAteAbilityTypeChange = false;
