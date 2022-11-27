@@ -8905,7 +8905,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     abilities: {0: 'Speed Boost'},
   },
   Farigiraf: {
-    types: ['Normal', 'Psyhcic'],
+    types: ['Normal', 'Psychic'],
     bs: {hp: 120, at: 90, df: 70, sa: 110, sd: 70, sp: 60},
     weightkg: 160,
     abilities: {0: 'Sap Sipper'},
