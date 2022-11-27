@@ -8775,7 +8775,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     abilities: {0: 'Thermal Exchange'},
   },
   Bellibolt: {
-    types: ['Electic'],
+    types: ['Electric'],
     bs: {hp: 109, at: 64, df: 91, sa: 103, sd: 83, sp: 45},
     weightkg: 113,
     abilities: {0: 'Electromorphosis'},
