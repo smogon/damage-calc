@@ -33,6 +33,7 @@ import {
   getEVDescriptionText,
   getFinalDamage,
   getModifiedStat,
+  getMostProficientStat,
   getMoveEffectiveness,
   getShellSideArmCategory,
   getWeightFactor,
@@ -1107,6 +1108,21 @@ export function calculateAtModsSMSS(
     desc.defenderAbility = defender.ability;
   }
 
+  if (
+    (attacker.hasAbility('Protosynthesis') &&
+      (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
+    (attacker.hasAbility('Quark Drive') &&
+      (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
+  ) {
+    if (
+      (move.category === 'Physical' &&
+        getMostProficientStat(attacker) === 'atk') ||
+      (move.category === 'Special' && getMostProficientStat(attacker) === 'spa')
+    ) {
+      atMods.push(5324);
+    }
+  }
+
   if ((attacker.hasItem('Thick Club') &&
        attacker.named('Cubone', 'Marowak', 'Marowak-Alola', 'Marowak-Alola-Totem') &&
        move.category === 'Physical') ||
@@ -1214,6 +1230,20 @@ export function calculateDfModsSMSS(
   } else if (defender.hasAbility('Fur Coat') && hitsPhysical) {
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
+  }
+
+  if (
+    (attacker.hasAbility('Protosynthesis') &&
+    (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
+    (attacker.hasAbility('Quark Drive') &&
+    (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
+  ) {
+    if (
+      (hitsPhysical && getMostProficientStat(attacker) === 'def') ||
+      (!hitsPhysical && getMostProficientStat(attacker) === 'spd')
+    ) {
+      dfMods.push(5324);
+    }
   }
 
   if ((defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.nfe) ||
