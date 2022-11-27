@@ -4277,6 +4277,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 70,
     type: 'Grass',
     category: 'Physical',
+    willCrit: true,
     zp: 140,
     maxPower: 130,
   },
@@ -4498,6 +4499,15 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 100,
     maxPower: 90,
     multihit: 2,
+  },
+  'Wave Crash': {
+    bp: 120,
+    type: 'Water',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    makesContact: true,
+    recoil: [33, 100],
   },
   'Wicked Torque': {
     bp: 80,
