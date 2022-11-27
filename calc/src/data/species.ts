@@ -8743,7 +8743,7 @@ delete SS['Eevee-Starter'];
 
 const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
   Annihilape: {
-    types: ['Fight', 'Ghost'],
+    types: ['Fighting', 'Ghost'],
     bs: {hp: 110, at: 115, df: 80, sa: 50, sd: 90, sp: 90},
     weightkg: 56,
     abilities: {0: 'Defiant'},
@@ -9021,7 +9021,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     abilities: {0: 'Quark Drive'},
   },
   'Iron Hands': {
-    types: ['Fight', 'Electric'],
+    types: ['Fighting', 'Electric'],
     bs: {hp: 154, at: 140, df: 108, sa: 50, sd: 68, sp: 50},
     weightkg: 380.7,
     abilities: {0: 'Quark Drive'},
