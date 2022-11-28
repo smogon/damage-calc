@@ -1251,14 +1251,14 @@ export function calculateDfModsSMSS(
   }
 
   if (
-    (attacker.hasAbility('Protosynthesis') &&
+    (defender.hasAbility('Protosynthesis') &&
     (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
-    (attacker.hasAbility('Quark Drive') &&
+    (defender.hasAbility('Quark Drive') &&
     (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
   ) {
     if (
-      (hitsPhysical && getMostProficientStat(attacker) === 'def') ||
-      (!hitsPhysical && getMostProficientStat(attacker) === 'spd')
+      (hitsPhysical && getMostProficientStat(defender) === 'def') ||
+      (!hitsPhysical && getMostProficientStat(defender) === 'spd')
     ) {
       dfMods.push(5324);
     }
