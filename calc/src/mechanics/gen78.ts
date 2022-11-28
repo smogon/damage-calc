@@ -228,6 +228,11 @@ export function calculateSMSS(
       desc.attackerAbility = attacker.ability;
     }
   }
+
+  if (move.named('Tera Blast') && attacker.teraType) {
+    type = attacker.teraType;
+  }
+
   move.type = type;
 
   // FIXME: this is incorrect, should be move.flags.heal, not move.drain
@@ -239,26 +244,48 @@ export function calculateSMSS(
     desc.attackerAbility = attacker.ability;
   }
 
-  const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
-  const type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity);
+  const isGhostRevealed =
+    attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+  const isRingTarget =
+    defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+  const type1Effectiveness = getMoveEffectiveness(
+    gen,
+    move,
+    defender.types[0],
+    isGhostRevealed,
+    field.isGravity,
+    isRingTarget
+  );
   const type2Effectiveness = defender.types[1]
-    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
+    ? getMoveEffectiveness(
+      gen,
+      move,
+      defender.types[1],
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    )
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
-  if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
-    typeEffectiveness = 1;
-  } else if (typeEffectiveness === 0 && move.hasType('Ground') &&
+  if (defender.teraType) {
+    typeEffectiveness = getMoveEffectiveness(
+      gen,
+      move,
+      defender.teraType,
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    );
+  }
+
+  if (typeEffectiveness === 0 && move.hasType('Ground') &&
     defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
     typeEffectiveness = 1;
-  } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
-    const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
-    if (effectiveness[defender.types[0]]! === 0) {
-      typeEffectiveness = type2Effectiveness;
-    } else if (defender.types[1] && effectiveness[defender.types[1]]! === 0) {
-      typeEffectiveness = type1Effectiveness;
-    }
+  }
+
+  if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
+    typeEffectiveness = 1;
   }
 
   if (typeEffectiveness === 0) {
@@ -397,7 +424,8 @@ export function calculateSMSS(
   // #region (Special) Attack
   const attack = calculateAttackSMSS(gen, attacker, defender, move, field, desc, isCritical);
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
+      (move.named('Tera Blast') && attackSource.teraType)) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =
@@ -464,15 +492,17 @@ export function calculateSMSS(
   // below this until we're inside the loop
   let stabMod = 4096;
   if (attacker.hasType(move.type)) {
-    if (attacker.hasAbility('Adaptability')) {
-      stabMod = 8192;
-      desc.attackerAbility = attacker.ability;
-    } else {
-      stabMod = 6144;
-    }
+    stabMod += 2048;
   } else if (attacker.hasAbility('Protean', 'Libero')) {
-    stabMod = 6144;
+    stabMod += 2048;
     desc.attackerAbility = attacker.ability;
+  }
+  if (attacker.teraType === move.type) {
+    stabMod += 2048;
+    // TODO: add terastal type to desc
+  }
+  if (attacker.hasAbility('Adaptability') && stabMod > 4096) {
+    stabMod += 2048;
   }
 
   const applyBurn =
@@ -999,7 +1029,8 @@ export function calculateAttackSMSS(
 ) {
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
-  if (move.named('Photon Geyser', 'Light That Burns The Sky')) {
+  if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
+      (move.named('Tera Blast') && attackSource.teraType)) {
     move.category = attackSource.stats.atk > attackSource.stats.spa ? 'Physical' : 'Special';
   }
   const attackStat =

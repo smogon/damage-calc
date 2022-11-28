@@ -143,11 +143,12 @@ export function getMoveEffectiveness(
   move: Move,
   type: TypeName,
   isGhostRevealed?: boolean,
-  isGravity?: boolean
+  isGravity?: boolean,
+  isRingTarget?: boolean,
 ) {
-  if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
+  if ((isRingTarget || isGhostRevealed) && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
     return 1;
-  } else if (isGravity && type === 'Flying' && move.hasType('Ground')) {
+  } else if ((isRingTarget || isGravity) && type === 'Flying' && move.hasType('Ground')) {
     return 1;
   } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;

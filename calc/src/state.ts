@@ -15,6 +15,7 @@ export namespace State {
     boosts?: Partial<I.StatsTable>;
     originalCurHP?: number;
     status?: I.StatusName | '';
+    teraType?: I.TypeName;
     toxicCounter?: number;
     moves?: I.MoveName[];
     overrides?: Partial<I.Specie>;
