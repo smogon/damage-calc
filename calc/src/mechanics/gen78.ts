@@ -1175,6 +1175,10 @@ export function calculateDefenseSMSS(
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
+  if (gen.num >= 9 && field.hasWeather('Hail') && defender.hasType('Ice') && hitsPhysical) {
+    defense = pokeRound((defense * 3) / 2);
+    desc.weather = field.weather;
+  }
 
   const dfMods = calculateDfModsSMSS(
     gen,
