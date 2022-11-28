@@ -1109,6 +1109,13 @@ export function calculateAtModsSMSS(
   }
 
   if (
+    (field.isTabletsOfRuin && move.category === 'Physical') ||
+    (field.isVesselOfRuin && move.category === 'Special')
+  ) {
+    atMods.push(3072);
+  }
+
+  if (
     (attacker.hasAbility('Protosynthesis') &&
       (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
     (attacker.hasAbility('Quark Drive') &&
@@ -1234,6 +1241,13 @@ export function calculateDfModsSMSS(
   } else if (defender.hasAbility('Fur Coat') && hitsPhysical) {
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
+  }
+
+  if (
+    (field.isSwordOfRuin && hitsPhysical) ||
+    (field.isBeadsOfRuin && !hitsPhysical)
+  ) {
+    dfMods.push(3072);
   }
 
   if (
