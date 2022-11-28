@@ -111,6 +111,14 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
     speedMods.push(6144);
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     speedMods.push(2048);
+  } else if (
+    getMostProficientStat(pokemon, gen) === 'spe' &&
+    ((pokemon.hasAbility('Protosynthesis') &&
+      (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
+      (pokemon.hasAbility('Quark Drive') &&
+        (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))))
+  ) {
+    speedMods.push(6144);
   }
 
   if (pokemon.hasItem('Choice Scarf')) {
@@ -368,6 +376,33 @@ export function getBaseDamage(level: number, basePower: number, attack: number, 
       ) / 50 + 2
     )
   );
+}
+
+/**
+ * Get a pokemon's "most proficient stat".  This is useful for computing the
+ * stat which will be modified by the abilities Protosynthesis and Quark Drive.
+ *
+ * In the case that two stats have equal value, stat choices will be prioritized
+ * in the following order:
+ * Attack, Defense, Special Attack, Special Defense, and Speed
+ *
+ * @param modifiedStats
+ * @returns
+ */
+export function getMostProficientStat(
+  pokemon: Pokemon,
+  gen?: Generation
+): StatID {
+  let bestStat: StatID = 'atk';
+  for (const stat of ['def', 'spa', 'spd', 'spe'] as StatID[]) {
+    if (
+      getModifiedStat(pokemon.rawStats[stat], pokemon.boosts[stat], gen) >
+      getModifiedStat(pokemon.rawStats[bestStat], pokemon.boosts[bestStat], gen)
+    ) {
+      bestStat = stat;
+    }
+  }
+  return bestStat;
 }
 
 export function getFinalDamage(

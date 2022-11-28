@@ -11,6 +11,10 @@ export class Field implements State.Field {
   isAuraBreak?: boolean;
   isFairyAura?: boolean;
   isDarkAura?: boolean;
+  isBeadsOfRuin?: boolean;
+  isSwordOfRuin?: boolean;
+  isTabletsOfRuin?: boolean;
+  isVesselOfRuin?: boolean;
   attackerSide: Side;
   defenderSide: Side;
 
@@ -24,6 +28,10 @@ export class Field implements State.Field {
     this.isAuraBreak = field.isAuraBreak || false;
     this.isFairyAura = field.isFairyAura || false;
     this.isDarkAura = field.isDarkAura || false;
+    this.isBeadsOfRuin = field.isBeadsOfRuin || false;
+    this.isSwordOfRuin = field.isSwordOfRuin || false;
+    this.isTabletsOfRuin = field.isTabletsOfRuin || false;
+    this.isVesselOfRuin = field.isVesselOfRuin || false;
 
     this.attackerSide = new Side(field.attackerSide || {});
     this.defenderSide = new Side(field.defenderSide || {});
@@ -55,6 +63,10 @@ export class Field implements State.Field {
       isAuraBreak: this.isAuraBreak,
       isDarkAura: this.isDarkAura,
       isFairyAura: this.isFairyAura,
+      isBeadsOfRuin: this.isBeadsOfRuin,
+      isSwordOfRuin: this.isSwordOfRuin,
+      isTabletsOfRuin: this.isTabletsOfRuin,
+      isVesselOfRuin: this.isVesselOfRuin,
     });
   }
 }

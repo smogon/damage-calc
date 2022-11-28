@@ -33,6 +33,7 @@ import {
   getEVDescriptionText,
   getFinalDamage,
   getModifiedStat,
+  getMostProficientStat,
   getMoveEffectiveness,
   getShellSideArmCategory,
   getWeightFactor,
@@ -1115,6 +1116,28 @@ export function calculateAtModsSMSS(
     desc.defenderAbility = defender.ability;
   }
 
+  if (
+    (field.isTabletsOfRuin && move.category === 'Physical') ||
+    (field.isVesselOfRuin && move.category === 'Special')
+  ) {
+    atMods.push(3072);
+  }
+
+  if (
+    (attacker.hasAbility('Protosynthesis') &&
+      (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
+    (attacker.hasAbility('Quark Drive') &&
+      (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
+  ) {
+    if (
+      (move.category === 'Physical' &&
+        getMostProficientStat(attacker) === 'atk') ||
+      (move.category === 'Special' && getMostProficientStat(attacker) === 'spa')
+    ) {
+      atMods.push(5324);
+    }
+  }
+
   if ((attacker.hasItem('Thick Club') &&
        attacker.named('Cubone', 'Marowak', 'Marowak-Alola', 'Marowak-Alola-Totem') &&
        move.category === 'Physical') ||
@@ -1164,6 +1187,10 @@ export function calculateDefenseSMSS(
 
   // unlike all other defense modifiers, Sandstorm SpD boost gets applied directly
   if (field.hasWeather('Sand') && defender.hasType('Rock') && !hitsPhysical) {
+    defense = pokeRound((defense * 3) / 2);
+    desc.weather = field.weather;
+  }
+  if (gen.num >= 9 && field.hasWeather('Hail') && defender.hasType('Ice') && hitsPhysical) {
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
@@ -1222,6 +1249,27 @@ export function calculateDfModsSMSS(
   } else if (defender.hasAbility('Fur Coat') && hitsPhysical) {
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
+  }
+
+  if (
+    (field.isSwordOfRuin && hitsPhysical) ||
+    (field.isBeadsOfRuin && !hitsPhysical)
+  ) {
+    dfMods.push(3072);
+  }
+
+  if (
+    (defender.hasAbility('Protosynthesis') &&
+    (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
+    (defender.hasAbility('Quark Drive') &&
+    (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
+  ) {
+    if (
+      (hitsPhysical && getMostProficientStat(defender) === 'def') ||
+      (!hitsPhysical && getMostProficientStat(defender) === 'spd')
+    ) {
+      dfMods.push(5324);
+    }
   }
 
   if ((defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.nfe) ||
