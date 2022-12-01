@@ -86,6 +86,15 @@ function validate(obj, min, max) {
 	obj.val(Math.max(min, Math.min(max, ~~obj.val())));
 }
 
+$("input:radio[name='format']").change(function () {
+	var gameType = $("input:radio[name='format']:checked").val();
+	if (gameType === 'Singles') {
+		$("input:checkbox[name='ruin']:checked").prop("checked", false);
+	}
+	$(".format-specific." + gameType.toLowerCase()).show();
+	$(".format-specific").not("." + gameType.toLowerCase()).hide();
+});
+
 // auto-calc stats and current HP on change
 $(".level").keyup(function () {
 	var poke = $(this).closest(".poke-info");
@@ -888,6 +897,10 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 
 function createField() {
 	var gameType = $("input:radio[name='format']:checked").val();
+	var isBeadsOfRuin = $("#beads").prop("checked");
+	var isTabletsOfRuin = $("#tablets").prop("checked");
+	var isSwordOfRuin = $("#sword").prop("checked");
+	var isVesselOfRuin = $("#vessel").prop("checked");
 	var isMagicRoom = $("#magicroom").prop("checked");
 	var isWonderRoom = $("#wonderroom").prop("checked");
 	var isGravity = $("#gravity").prop("checked");
@@ -933,7 +946,10 @@ function createField() {
 		});
 	};
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
+		gameType: gameType, weather: weather, terrain: terrain,
+		isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
+		isBeadsOfRuin: isBeadsOfRuin, isTabletsOfRuin: isTabletsOfRuin,
+		isSwordOfRuin: isSwordOfRuin, isVesselOfRuin: isVesselOfRuin,
 		attackerSide: createSide(0), defenderSide: createSide(1)
 	});
 }
@@ -1016,6 +1032,7 @@ var RANDDEX = [
 	typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
+
 $(".gen").change(function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 9;
@@ -1368,6 +1385,8 @@ $(document).ready(function () {
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
+	$("#singles-format").prop("checked", true);
+	$("#singles-format").change();
 	loadDefaultLists();
 	$(".move-selector").select2({
 		dropdownAutoWidth: true,

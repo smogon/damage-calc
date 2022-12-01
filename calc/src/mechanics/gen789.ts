@@ -1203,10 +1203,17 @@ export function calculateAtModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
 
+  const isTabletsOfRuinActive = defender.hasAbility('Tablets of Ruin') || field.isTabletsOfRuin;
+  const isVesselOfRuinActive = defender.hasAbility('Vessel of Ruin') || field.isVesselOfRuin;
   if (
-    (field.isTabletsOfRuin && move.category === 'Physical') ||
-    (field.isVesselOfRuin && move.category === 'Special')
+    (isTabletsOfRuinActive && move.category === 'Physical') ||
+    (isVesselOfRuinActive && move.category === 'Special')
   ) {
+    if (defender.hasAbility('Tablets of Ruin') || defender.hasAbility('Vessel of Ruin')) {
+      desc.defenderAbility = defender.ability;
+    } else {
+      desc[move.category === 'Special' ? 'isVesselOfRuin' : 'isTabletsOfRuin'] = true;
+    }
     atMods.push(3072);
   }
 
@@ -1222,6 +1229,7 @@ export function calculateAtModsSMSSSV(
       (move.category === 'Special' && getMostProficientStat(attacker) === 'spa')
     ) {
       atMods.push(5325);
+      desc.attackerAbility = attacker.ability;
     }
   }
 
@@ -1348,10 +1356,17 @@ export function calculateDfModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
 
+  const isSwordOfRuinActive = attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin;
+  const isBeadsOfRuinActive = attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin;
   if (
-    (field.isSwordOfRuin && hitsPhysical) ||
-    (field.isBeadsOfRuin && !hitsPhysical)
+    (isSwordOfRuinActive && hitsPhysical) ||
+    (isBeadsOfRuinActive && !hitsPhysical)
   ) {
+    if (attacker.hasAbility('Sword of Ruin') || attacker.hasAbility('Beads of Ruin')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      desc[hitsPhysical ? 'isSwordOfRuin' : 'isBeadsOfRuin'] = true;
+    }
     dfMods.push(3072);
   }
 
@@ -1365,6 +1380,7 @@ export function calculateDfModsSMSSSV(
       (hitsPhysical && getMostProficientStat(defender) === 'def') ||
       (!hitsPhysical && getMostProficientStat(defender) === 'spd')
     ) {
+      desc.defenderAbility = defender.ability;
       dfMods.push(5324);
     }
   }

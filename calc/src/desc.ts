@@ -23,6 +23,10 @@ export interface RawDesc {
   defenseEVs?: string;
   hits?: number;
   alliesFainted?: number;
+  isBeadsOfRuin?: boolean;
+  isSwordOfRuin?: boolean;
+  isTabletsOfRuin?: boolean;
+  isVesselOfRuin?: boolean;
   isAuroraVeil?: boolean;
   isFlowerGiftAttacker?: boolean;
   isFlowerGiftDefender?: boolean;
@@ -851,6 +855,11 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   if (description.attackerTera) {
     output += `Tera ${description.attackerTera} `;
+  if (description.isBeadsOfRuin) {
+    output += 'Beads of Ruin ';
+  }
+  if (description.isSwordOfRuin) {
+    output += 'Sword of Ruin ';
   }
   output += description.attackerName + ' ';
   if (description.isHelpingHand) {
@@ -894,6 +903,12 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   output = appendIfSet(output, description.defenderItem);
   output = appendIfSet(output, description.defenderAbility);
+  if (description.isTabletsOfRuin) {
+    output += 'Tablets of Ruin ';
+  }
+  if (description.isVesselOfRuin) {
+    output += 'Vessel of Ruin ';
+  }
   if (description.isProtected) {
     output += 'protected ';
   }
