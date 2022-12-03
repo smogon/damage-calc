@@ -4296,6 +4296,14 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 140,
     makesContact: true,
   },
+  'Headlong Rush': {
+    bp: 120,
+    type: 'Ground',
+    category: 'Physical',
+    zp: 190,
+    maxPower: 140,
+    makesContact: true,
+  },
   'Hyper Drill': {
     bp: 100,
     type: 'Normal',
