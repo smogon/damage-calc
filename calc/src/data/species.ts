@@ -5340,7 +5340,7 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     abilities: {0: 'Flower Veil'},
   },
-  Floette-Eternal': {
+  'Floette-Eternal': {
     types: ['Fairy'],
     bs: {hp: 74, at: 65, df: 67, sa: 125, sd: 128, sp: 92},
     weightkg: 0.9,
