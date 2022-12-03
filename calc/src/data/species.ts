@@ -5338,6 +5338,7 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 54, at: 45, df: 47, sa: 75, sd: 98, sp: 52},
     weightkg: 0.9,
     nfe: true,
+    otherFormes: ['Floette-Eternal'],
     abilities: {0: 'Flower Veil'},
   },
   'Floette-Eternal': {
@@ -5345,6 +5346,7 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 74, at: 65, df: 67, sa: 125, sd: 128, sp: 92},
     weightkg: 0.9,
     abilities: {0: 'Flower Veil'},
+    baseSpecies: 'Floette',
   },
   Florges: {
     types: ['Fairy'],
