@@ -492,6 +492,7 @@ function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.Gen
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
   if (gen === 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;
   if (gen === 8 && ['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id)) return true;
+  if (gen >= 6 && ['floetteeternal'].includes(val.id)) return true;
   // TODO: clean this up with proper Gigantamax support
   if (val.isNonstandard && !['CAP', 'Unobtainable', 'Gigantamax'].includes(val.isNonstandard)) {
     return false;
