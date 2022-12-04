@@ -8756,7 +8756,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Water', 'Ghost'],
     bs: {hp: 120, at: 112, df: 65, sa: 80, sd: 75, sp: 78},
     weightkg: 110,
-    abilities: {0: 'Rattled'},
+    abilities: {0: 'Swift Swim'},
+  },
+  'Basculegion-F': {
+    types: ['Water', 'Ghost'],
+    bs: {hp: 120, at: 92, df: 65, sa: 100, sd: 75, sp: 78},
+    weightkg: 110,
+    abilities: {0: 'Swift Swim'},
   },
   'Basculin-White-Striped': {
     types: ['Water'],
