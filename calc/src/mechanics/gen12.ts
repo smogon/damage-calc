@@ -198,7 +198,14 @@ export function calculateRBYGSC(
     baseDamage = Math.floor(baseDamage * 1.5);
   }
 
-  baseDamage = Math.floor(baseDamage * typeEffectiveness);
+  if (gen.num === 1) {
+    baseDamage = Math.floor(baseDamage * type1Effectiveness);
+    baseDamage = Math.floor(baseDamage * type2Effectiveness);
+  }
+
+  if (gen.num === 2) {
+    baseDamage = Math.floor(baseDamage * typeEffectiveness);
+  }
 
   // Flail and Reversal don't use random factor
   if (move.named('Flail', 'Reversal')) {
