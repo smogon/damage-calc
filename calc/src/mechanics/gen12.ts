@@ -201,9 +201,7 @@ export function calculateRBYGSC(
   if (gen.num === 1) {
     baseDamage = Math.floor(baseDamage * type1Effectiveness);
     baseDamage = Math.floor(baseDamage * type2Effectiveness);
-  }
-
-  if (gen.num === 2) {
+  } else {
     baseDamage = Math.floor(baseDamage * typeEffectiveness);
   }
 
