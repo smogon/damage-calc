@@ -8742,12 +8742,10 @@ delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
 
 const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
-  // pokemon with new eveolutions
   Bisharp: {nfe: true},
   Dunsparce: {nfe: true},
   Girafarig: {nfe: true},
   Primeape: {nfe: true},
-
   Annihilape: {
     types: ['Fighting', 'Ghost'],
     bs: {hp: 110, at: 115, df: 80, sa: 50, sd: 90, sp: 90},
