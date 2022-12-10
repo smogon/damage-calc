@@ -8742,6 +8742,10 @@ delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
 
 const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
+  Bisharp: {nfe: true},
+  Dunsparce: {nfe: true},
+  Girafarig: {nfe: true},
+  Primeape: {nfe: true},
   Annihilape: {
     types: ['Fighting', 'Ghost'],
     bs: {hp: 110, at: 115, df: 80, sa: 50, sd: 90, sp: 90},
@@ -8797,6 +8801,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 40, at: 65, df: 30, sa: 45, sd: 35, sp: 60},
     weightkg: 0.6,
     abilities: {0: 'Wind Rider'},
+    nfe: true,
   },
   'Brute Bonnet': {
     types: ['Grass', 'Dark'],
@@ -8809,6 +8814,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 52, at: 62, df: 40, sa: 62, sd: 40, sp: 50},
     weightkg: 3,
     abilities: {0: 'Chlorophyll'},
+    nfe: true,
   },
   Ceruledge: {
     types: ['Fire', 'Ghost'],
@@ -8827,12 +8833,14 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 108, at: 68, df: 45, sa: 30, sd: 40, sp: 43},
     weightkg: 45,
     abilities: {0: 'Slush Rush'},
+    nfe: true,
   },
   Charcadet: {
     types: ['Fire'],
     bs: {hp: 40, at: 50, df: 40, sa: 50, sd: 40, sp: 30},
     weightkg: 10.5,
     abilities: {0: 'Flash Fire'},
+    nfe: true,
   },
   'Chi-Yu': {
     types: ['Dark', 'Fire'],
@@ -8877,6 +8885,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 52, at: 53, df: 60, sa: 78, sd: 78, sp: 33},
     weightkg: 11.9,
     abilities: {0: 'Early Bird'},
+    nfe: true,
   },
   Dondozo: {
     types: ['Water'],
@@ -8915,6 +8924,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 37, at: 55, df: 70, sa: 30, sd: 55, sp: 65},
     weightkg: 10.9,
     abilities: {0: 'Own Tempo'},
+    nfe: true,
   },
   Finizen: {
     types: ['Water'],
@@ -8933,6 +8943,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 30, at: 35, df: 30, sa: 55, sd: 40, sp: 75},
     weightkg: 1.5,
     abilities: {0: 'Speed Boost'},
+    nfe: true,
   },
   Floragato: {
     types: ['Grass'],
@@ -8953,12 +8964,14 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 65, at: 75, df: 45, sa: 35, sd: 45, sp: 55},
     weightkg: 17,
     abilities: {0: 'Thermal Exchange'},
+    nfe: true,
   },
   Fuecoco: {
     types: ['Fire'],
     bs: {hp: 67, at: 45, df: 59, sa: 63, sd: 40, sp: 36},
     weightkg: 9.8,
     abilities: {0: 'Blaze'},
+    nfe: true,
   },
   Garganacl: {
     types: ['Rock'],
@@ -8977,12 +8990,14 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 45, at: 30, df: 70, sa: 75, sd: 70, sp: 10},
     weightkg: 5,
     abilities: {0: 'Rattled'},
+    nfe: true,
   },
   Glimmet: {
     types: ['Rock', 'Poison'],
     bs: {hp: 48, at: 35, df: 42, sa: 105, sd: 60, sp: 60},
     weightkg: 8,
     abilities: {0: 'Toxic Debris'},
+    nfe: true,
   },
   Glimmora: {
     types: ['Rock', 'Poison'],
@@ -9007,6 +9022,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 50, at: 61, df: 60, sa: 30, sd: 55, sp: 34},
     weightkg: 35,
     abilities: {0: 'Fluffy'},
+    nfe: true,
   },
   Houndstone: {
     types: ['Ghost'],
@@ -9085,6 +9101,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 54, at: 45, df: 40, sa: 35, sd: 45, sp: 35},
     weightkg: 10.2,
     abilities: {0: 'Thick Fat'},
+    nfe: true,
   },
   Lokix: {
     types: ['Bug', 'Dark'],
@@ -9103,6 +9120,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 60, at: 78, df: 60, sa: 40, sd: 51, sp: 51},
     weightkg: 16,
     abilities: {0: 'Intimidate'},
+    nfe: true,
   },
   Maushold: {
     types: ['Normal'],
@@ -9135,6 +9153,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 55, at: 55, df: 75, sa: 35, sd: 35, sp: 25},
     weightkg: 16,
     abilities: {0: 'Sturdy'},
+    nfe: true,
   },
   Naclstack: {
     types: ['Rock'],
@@ -9149,6 +9168,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 33, at: 46, df: 40, sa: 21, sd: 25, sp: 45},
     weightkg: 1,
     abilities: {0: 'Swarm'},
+    nfe: true,
   },
   Oinkologne: {
     types: ['Normal'],
@@ -9189,6 +9209,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 45, at: 50, df: 20, sa: 40, sd: 25, sp: 60},
     weightkg: 2.5,
     abilities: {0: 'Static'},
+    nfe: true,
   },
   Pawmo: {
     types: ['Electric', 'Fighting'],
@@ -9215,6 +9236,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 55, at: 65, df: 45, sa: 50, sd: 45, sp: 50},
     weightkg: 6.1,
     abilities: {0: 'Torrent'},
+    nfe: true,
   },
   Quaxwell: {
     types: ['Water'],
@@ -9235,6 +9257,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 41, at: 50, df: 60, sa: 31, sd: 58, sp: 30},
     weightkg: 1,
     abilities: {0: 'Compound Eyes'},
+    nfe: true,
   },
   Revavroom: {
     types: ['Steel', 'Poison'],
@@ -9254,7 +9277,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     weightkg: 60,
     abilities: {0: 'Protosynthesis'},
   },
-  'Scovillain': {
+  Scovillain: {
     types: ['Grass', 'Fire'],
     bs: {hp: 65, at: 108, df: 65, sa: 108, sd: 65, sp: 75},
     weightkg: 15,
@@ -9271,6 +9294,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 40, at: 65, df: 35, sa: 40, sd: 35, sp: 75},
     weightkg: 0.7,
     abilities: {0: 'Prankster'},
+    nfe: true,
   },
   Skeledirge: {
     types: ['Fire', 'Ghost'],
@@ -9289,6 +9313,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 41, at: 35, df: 45, sa: 58, sd: 51, sp: 30},
     weightkg: 6.5,
     abilities: {0: 'Early Bird'},
+    nfe: true,
   },
   Spidops: {
     types: ['Bug'],
@@ -9301,6 +9326,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 40, at: 61, df: 54, sa: 45, sd: 45, sp: 65},
     weightkg: 4.1,
     abilities: {0: 'Overgrow'},
+    nfe: true,
   },
   Squawkabilly: {
     types: ['Normal', 'Flying'],
@@ -9335,18 +9361,21 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 61, at: 31, df: 41, sa: 59, sd: 35, sp: 45},
     weightkg: 0.4,
     abilities: {0: 'Static'},
+    nfe: true,
   },
   Tandemaus: {
     types: ['Normal'],
     bs: {hp: 50, at: 50, df: 45, sa: 40, sd: 45, sp: 75},
     weightkg: 1.8,
     abilities: {0: 'Pickup'},
+    nfe: true,
   },
   Tarountula: {
     types: ['Bug'],
     bs: {hp: 35, at: 41, df: 45, sa: 29, sd: 40, sp: 20},
     weightkg: 4,
     abilities: {0: 'Stakeout'},
+    nfe: true,
   },
   Tatsugiri: {
     types: ['Dragon', 'Water'],
@@ -9386,6 +9415,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 50, at: 45, df: 45, sa: 35, sd: 64, sp: 58},
     weightkg: 8.9,
     abilities: {0: 'Mold Breaker'},
+    nfe: true,
   },
   Tinkaton: {
     types: ['Fairy', 'Steel'],
@@ -9406,6 +9436,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 40, at: 40, df: 35, sa: 50, sd: 100, sp: 70},
     weightkg: 33,
     abilities: {0: 'Mycelium Might'},
+    nfe: true,
   },
   Toedscruel: {
     types: ['Ground', 'Grass'],
@@ -9418,6 +9449,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 45, at: 70, df: 63, sa: 30, sd: 45, sp: 47},
     weightkg: 35,
     abilities: {0: 'Overcoat'},
+    nfe: true,
   },
   Veluza: {
     types: ['Water', 'Psychic'],
@@ -9430,12 +9462,14 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     bs: {hp: 40, at: 40, df: 35, sa: 55, sd: 40, sp: 70},
     weightkg: 3.6,
     abilities: {0: 'Volt Absorb'},
+    nfe: true,
   },
   Wiglett: {
     types: ['Water'],
     bs: {hp: 10, at: 55, df: 25, sa: 35, sd: 25, sp: 95},
     weightkg: 1.8,
     abilities: {0: 'Rattled'},
+    nfe: true,
   },
   'Wo-Chien': {
     types: ['Dark', 'Grass'],
@@ -9449,6 +9483,7 @@ const SV_PATCH: {[name: string]: SpeciesData} = extend(true, {}, SS, {
     weightkg: 11,
     abilities: {0: 'Poison Point'},
     baseSpecies: 'Wooper',
+    nfe: true,
   },
   Wugtrio: {
     types: ['Water'],
