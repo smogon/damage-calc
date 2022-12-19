@@ -1173,7 +1173,6 @@ function getTerrainEffects() {
 	case "teraType":
 	case "teraToggle":
 	case "item":
-		console.log(className);
 		var id = $(this).closest(".poke-info").prop("id");
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
 		if (terrainValue === "Electric") {
