@@ -8407,6 +8407,13 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 303.9,
     abilities: {0: 'Water Absorb'},
   },
+  Saharascal: {
+    types: ['Ground'],
+    bs: {hp: 50, at: 80, df: 65, sa: 45, sd: 90, sp: 70},
+    weightkg: 48,
+    abilities: {0: 'Water Absorb'},
+    nfe: true,
+  },
   Sandaconda: {
     types: ['Ground'],
     bs: {hp: 72, at: 107, df: 125, sa: 65, sd: 70, sp: 71},
