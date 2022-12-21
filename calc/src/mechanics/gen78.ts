@@ -81,8 +81,10 @@ export function calculateSMSS(
 
   const desc: RawDesc = {
     attackerName: attacker.name,
+    attackerTera: attacker.teraType,
     moveName: move.name,
     defenderName: defender.name,
+    defenderTera: defender.teraType,
     isDefenderDynamaxed: defender.isDynamaxed,
     isWonderRoom: field.isWonderRoom,
   };

@@ -14,9 +14,11 @@ export interface RawDesc {
   attackerAbility?: string;
   attackerItem?: string;
   attackerName: string;
+  attackerTera?: string;
   defenderAbility?: string;
   defenderItem?: string;
   defenderName: string;
+  defenderTera?: string;
   defenseBoost?: number;
   defenseEVs?: string;
   hits?: number;
@@ -835,6 +837,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   if (description.isBurned) {
     output += 'burned ';
   }
+  if (description.attackerTera) {
+    output += `Tera ${description.attackerTera} `;
+  }
   output += description.attackerName + ' ';
   if (description.isHelpingHand) {
     output += 'Helping Hand ';
@@ -882,6 +887,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   if (description.isDefenderDynamaxed) {
     output += 'Dynamax ';
+  }
+  if (description.defenderTera) {
+    output += `Tera ${description.defenderTera} `;
   }
   output += description.defenderName;
   if (description.weather && description.terrain) {
