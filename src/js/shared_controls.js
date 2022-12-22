@@ -445,6 +445,7 @@ $(".set-selector").change(function () {
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);
+		pokeObj.find(".teraType").val(pokemon.teraType || pokemon.types[0]);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);
 		var i;
 		for (i = 0; i < LEGACY_STATS[gen].length; i++) {
@@ -619,6 +620,7 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
+	$(this).parent().siblings().find(".teraType").val(altForme.types[0]);
 	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
 		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
@@ -761,6 +763,7 @@ function createPokemon(pokeInfo) {
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
@@ -777,6 +780,7 @@ function createPokemon(pokeInfo) {
 			ivs: ivs,
 			evs: evs,
 			isDynamaxed: isDynamaxed,
+			teraType: teraType,
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
@@ -986,6 +990,7 @@ $(".gen").change(function () {
 	$(".gen-specific").not(".g" + gen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));
 	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
+	$("select.teraType").find("option").remove().end().append(getSelectOptions(Object.keys(typeChart).slice(1)));
 	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
 	var moveOptions = getSelectOptions(Object.keys(moves), true);
 	$("select.move-selector").find("option").remove().end().append(moveOptions);
@@ -1150,9 +1155,10 @@ var stickyMoves = (function () {
 })();
 
 function isPokeInfoGrounded(pokeInfo) {
+	var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 	return $("#gravity").prop("checked") || (
-		pokeInfo.find(".type1").val() !== "Flying" &&
-        pokeInfo.find(".type2").val() !== "Flying" &&
+		  teraType ? teraType !== "Flying" : pokeInfo.find(".type1").val() !== "Flying" &&
+        teraType ? teraType !== "Flying" : pokeInfo.find(".type2").val() !== "Flying" &&
         pokeInfo.find(".ability").val() !== "Levitate" &&
         pokeInfo.find(".item").val() !== "Air Balloon"
 	);
@@ -1164,6 +1170,8 @@ function getTerrainEffects() {
 	switch (className) {
 	case "type1":
 	case "type2":
+	case "teraType":
+	case "teraToggle":
 	case "item":
 		var id = $(this).closest(".poke-info").prop("id");
 		var terrainValue = $("input:checkbox[name='terrain']:checked").val();
