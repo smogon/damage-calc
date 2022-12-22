@@ -76,7 +76,7 @@ bundled += bundler.read('result.js', 29, 1);
 bundled += '\nvar result_1 = exports;\nvar util_2 = exports;\n';
 bundled += bundler.read('desc.js', 22, 1);
 bundled += '\nvar desc_1 = exports;\nvar items_1 = exports;\n';
-bundled += bundler.read('mechanics/gen78.js', 7, 1);
+bundled += bundler.read('mechanics/gen789.js', 7, 1);
 bundled += bundler.read('mechanics/gen56.js', 7, 1);
 bundled += bundler.read('mechanics/gen4.js', 31, 1);
 // These don't require 'util', so 'mechanics/util' gets the util_1 name.
