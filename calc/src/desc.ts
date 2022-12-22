@@ -508,14 +508,15 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / (gen.num === 2 ? 8 : 16));
       texts.push('sandstorm damage');
     }
-  } else if (field.hasWeather('Hail')) {
+  } else if (field.hasWeather('Hail', 'Snow')) {
     if (defender.hasAbility('Ice Body')) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Ice Body recovery');
     } else if (
       !defender.hasType('Ice') &&
       !defender.hasAbility('Magic Guard', 'Overcoat', 'Snow Cloak') &&
-      !defender.hasItem('Safety Goggles')
+      !defender.hasItem('Safety Goggles') &&
+      field.hasWeather('Hail')
     ) {
       damage -= Math.floor(defender.maxHP() / 16);
       texts.push('hail damage');

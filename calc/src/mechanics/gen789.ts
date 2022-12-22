@@ -43,7 +43,7 @@ import {
   pokeRound,
 } from './util';
 
-export function calculateSMSS(
+export function calculateSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -145,7 +145,7 @@ export function calculateSMSS(
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
       : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
       : field.hasWeather('Sand') ? 'Rock'
-      : field.hasWeather('Hail') ? 'Ice'
+      : field.hasWeather('Hail', 'Snow') ? 'Ice'
       : 'Normal';
     desc.weather = field.weather;
     desc.moveType = type;
@@ -409,7 +409,7 @@ export function calculateSMSS(
   // #endregion
   // #region Base Power
 
-  const basePower = calculateBasePowerSMSS(
+  const basePower = calculateBasePowerSMSSSV(
     gen,
     attacker,
     defender,
@@ -424,7 +424,7 @@ export function calculateSMSS(
 
   // #endregion
   // #region (Special) Attack
-  const attack = calculateAttackSMSS(gen, attacker, defender, move, field, desc, isCritical);
+  const attack = calculateAttackSMSSSV(gen, attacker, defender, move, field, desc, isCritical);
   const attackSource = move.named('Foul Play') ? defender : attacker;
   if (move.named('Photon Geyser', 'Light That Burns The Sky') ||
       (move.named('Tera Blast') && attackSource.teraType)) {
@@ -442,7 +442,7 @@ export function calculateSMSS(
   // #endregion
   // #region (Special) Defense
 
-  const defense = calculateDefenseSMSS(gen, attacker, defender, move, field, desc, isCritical);
+  const defense = calculateDefenseSMSSSV(gen, attacker, defender, move, field, desc, isCritical);
   const hitsPhysical = move.overrideDefensiveStat === 'def' || move.category === 'Physical' ||
     (move.named('Shell Side Arm') && getShellSideArmCategory(attacker, defender) === 'Physical');
   const defenseStat = hitsPhysical ? 'def' : 'spd';
@@ -513,7 +513,7 @@ export function calculateSMSS(
     !attacker.hasAbility('Guts') &&
     !move.named('Facade');
   desc.isBurned = applyBurn;
-  const finalMods = calculateFinalModsSMSS(
+  const finalMods = calculateFinalModsSMSSSV(
     gen,
     attacker,
     defender,
@@ -538,7 +538,7 @@ export function calculateSMSS(
     const child = attacker.clone();
     child.ability = 'Parental Bond (Child)' as AbilityName;
     checkMultihitBoost(gen, child, defender, move, field, desc);
-    childDamage = calculateSMSS(gen, child, defender, move, field).damage as number[];
+    childDamage = calculateSMSSSV(gen, child, defender, move, field).damage as number[];
     desc.attackerAbility = attacker.ability;
   }
 
@@ -605,7 +605,7 @@ export function calculateSMSS(
   return result;
 }
 
-export function calculateBasePowerSMSS(
+export function calculateBasePowerSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -791,7 +791,7 @@ export function calculateBasePowerSMSS(
     // show z-move power in description
     desc.moveBP = move.bp;
   }
-  const bpMods = calculateBPModsSMSS(
+  const bpMods = calculateBPModsSMSSSV(
     gen,
     attacker,
     defender,
@@ -806,7 +806,7 @@ export function calculateBasePowerSMSS(
   return basePower;
 }
 
-export function calculateBPModsSMSS(
+export function calculateBPModsSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -861,10 +861,35 @@ export function calculateBPModsSMSS(
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
   } else if (move.named('Solar Beam', 'Solar Blade') &&
-      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail')) {
+      field.hasWeather('Rain', 'Heavy Rain', 'Sand', 'Hail', 'Snow')) {
     bpMods.push(2048);
     desc.moveBP = basePower / 2;
     desc.weather = field.weather;
+  } else if (move.named('Collision Course', 'Electro Drift')) {
+    const isGhostRevealed =
+      attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+    const isRingTarget =
+      defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+    const type1Effectiveness = getMoveEffectiveness(
+      gen,
+      move,
+      defender.types[0],
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    );
+    const type2Effectiveness = defender.types[1] ? getMoveEffectiveness(
+      gen,
+      move,
+      defender.types[0],
+      isGhostRevealed,
+      field.isGravity,
+      isRingTarget
+    ) : 1;
+    if (type1Effectiveness * type2Effectiveness >= 2) {
+      bpMods.push(5461);
+      desc.moveBP = basePower * (5461 / 4096);
+    }
   }
 
   if (field.attackerSide.isHelpingHand) {
@@ -1020,7 +1045,7 @@ export function calculateBPModsSMSS(
   return bpMods;
 }
 
-export function calculateAttackSMSS(
+export function calculateAttackSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -1065,12 +1090,12 @@ export function calculateAttackSMSS(
     attack = pokeRound((attack * 3) / 2);
     desc.attackerAbility = attacker.ability;
   }
-  const atMods = calculateAtModsSMSS(gen, attacker, defender, move, field, desc);
+  const atMods = calculateAtModsSMSSSV(gen, attacker, defender, move, field, desc);
   attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods, 410, 131072)) / 4096)));
   return attack;
 }
 
-export function calculateAtModsSMSS(
+export function calculateAtModsSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -1167,8 +1192,18 @@ export function calculateAtModsSMSS(
         getMostProficientStat(attacker) === 'atk') ||
       (move.category === 'Special' && getMostProficientStat(attacker) === 'spa')
     ) {
-      atMods.push(5324);
+      atMods.push(5325);
     }
+  }
+
+  if (
+    (attacker.hasAbility('Hadron Engine') && move.category === 'Special' &&
+      field.hasTerrain('Electric') && isGrounded(attacker, field)) ||
+    (attacker.hasAbility('Orichalcum Pulse') && move.category === 'Physical' &&
+      field.hasWeather('Sun') && !attacker.hasAbility('Utility Umbrella'))
+  ) {
+    atMods.push(5461);
+    desc.attackerAbility = attacker.ability;
   }
 
   if ((attacker.hasItem('Thick Club') &&
@@ -1192,7 +1227,7 @@ export function calculateAtModsSMSS(
   return atMods;
 }
 
-export function calculateDefenseSMSS(
+export function calculateDefenseSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -1223,12 +1258,12 @@ export function calculateDefenseSMSS(
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
-  if (gen.num >= 9 && field.hasWeather('Hail') && defender.hasType('Ice') && hitsPhysical) {
+  if (field.hasWeather('Snow') && defender.hasType('Ice') && hitsPhysical) {
     defense = pokeRound((defense * 3) / 2);
     desc.weather = field.weather;
   }
 
-  const dfMods = calculateDfModsSMSS(
+  const dfMods = calculateDfModsSMSSSV(
     gen,
     attacker,
     defender,
@@ -1242,7 +1277,7 @@ export function calculateDefenseSMSS(
   return OF16(Math.max(1, pokeRound((defense * chainMods(dfMods, 410, 131072)) / 4096)));
 }
 
-export function calculateDfModsSMSS(
+export function calculateDfModsSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -1319,7 +1354,7 @@ export function calculateDfModsSMSS(
   return dfMods;
 }
 
-export function calculateFinalModsSMSS(
+export function calculateFinalModsSMSSSV(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,

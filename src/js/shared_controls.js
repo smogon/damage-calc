@@ -248,8 +248,13 @@ function autosetWeather(ability, i) {
 		$("#sand").prop("checked", true);
 		break;
 	case "Snow Warning":
-		lastAutoWeather[i] = "Hail";
-		$("#hail").prop("checked", true);
+		if (gen >= 9) {
+			lastAutoWeather[i] = "Snow";
+			$("#snow").prop("checked", true);
+		} else {
+			lastAutoWeather[i] = "Hail";
+			$("#hail").prop("checked", true);
+		}
 		break;
 	case "Desolate Land":
 	case "Orichalcum Pulse":
@@ -468,9 +473,29 @@ $(".set-selector").change(function () {
 			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
 			if (gen >= 2) $(this).closest('.poke-info').find(".item-pool").show();
 			$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
+			if (gen >= 9) {
+				$(this).closest('.poke-info').find(".role-pool").show();
+				$(this).closest('.poke-info').find(".tera-type-pool").show();
+			}
+			var listRoles = randdex[pokemonName].roles ? Object.keys(randdex[pokemonName].roles) : [];
+			$(this).closest('.poke-info').find(".extraSetRoles").text(listRoles.join(', '));
+			var listTeraTypes = [];
+			if (randdex[pokemonName].roles) {
+				for (var roleName in randdex[pokemonName].roles) {
+					var role = randdex[pokemonName].roles[roleName];
+					for (var q = 0; q < role.teraTypes.length; q++) {
+						if (listTeraTypes.indexOf(role.teraTypes[q]) === -1) {
+							listTeraTypes.push(role.teraTypes[q]);
+						}
+					}
+				}
+			}
+			$(this).closest('.poke-info').find(".extraSetTeraTypes").text(listTeraTypes.join(', '));
 		} else {
 			$(this).closest('.poke-info').find(".ability-pool").hide();
 			$(this).closest('.poke-info').find(".item-pool").hide();
+			$(this).closest('.poke-info').find(".role-pool").hide();
+			$(this).closest('.poke-info').find(".tera-type-pool").hide();
 		}
 		if (regSets || randset) {
 			var set = regSets ? correctHiddenPower(setdex[pokemonName][setName]) : randset;
@@ -496,7 +521,21 @@ $(".set-selector").change(function () {
 				setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
 				setSelectValueIfValid(itemObj, set.item, "");
 			}
-			var moves = randset ? selectMovesFromRandomOptions(randset.moves) : set.moves;
+			var setMoves = set.moves;
+			if (randset) {
+				if (gen < 9) {
+					setMoves = randset.moves;
+				} else {
+					setMoves = [];
+					for (var role in randset.roles) {
+						for (var q = 0; q < randset.roles[role].moves.length; q++) {
+							var moveName = randset.roles[role].moves[q];
+							if (setMoves.indexOf(moveName) === -1) setMoves.push(moveName);
+						}
+					}
+				}
+			}
+			var moves = selectMovesFromRandomOptions(setMoves);
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				moveObj.attr('data-prev', moveObj.val());
@@ -505,7 +544,7 @@ $(".set-selector").change(function () {
 			}
 			if (randset) {
 				$(this).closest('.poke-info').find(".move-pool").show();
-				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(randset.moves));
+				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(setMoves));
 			}
 		} else {
 			pokeObj.find(".level").val(100);
@@ -713,10 +752,20 @@ function createPokemon(pokeInfo) {
 			ivs[stat] = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
 			evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
 		}
+		var moveNames = set.moves;
+		if (isRandoms && gen >= 9) {
+			moveNames = [];
+			for (var role in set.roles) {
+				for (var q = 0; q < set.roles[role].moves.length; q++) {
+					var moveName = set.roles[role].moves[q];
+					if (moveNames.indexOf(moveName) === -1) moveNames.push(moveName);
+				}
+			}
+		}
 
 		var pokemonMoves = [];
 		for (var i = 0; i < 4; i++) {
-			var moveName = set.moves[i];
+			var moveName = moveNames[i];
 			pokemonMoves.push(new calc.Move(gen, moves[moveName] ? moveName : "(No Move)", {ability: ability, item: item}));
 		}
 
@@ -1078,12 +1127,11 @@ function getSetOptions(sets) {
 		});
 		if ($("#randoms").prop("checked")) {
 			if (pokeName in randdex) {
-				var setNames = Object.keys(randdex[pokeName]);
 				setOptions.push({
 					pokemon: pokeName,
 					set: 'Randoms Set',
-					text: pokeName + " (" + "Randoms" + ")",
-					id: pokeName + " (" + "Randoms" + ")"
+					text: pokeName + " (Randoms)",
+					id: pokeName + " (Randoms)"
 				});
 			}
 		} else {
