@@ -42,6 +42,7 @@ describe('Generations', () => {
     }
   });
 
+  // Figure out Z-Move issue
   test.skip('moves', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).moves);

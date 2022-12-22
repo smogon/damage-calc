@@ -245,6 +245,10 @@ class Move implements I.Move {
       if (move.isMax) this.isMax = true;
       if (move.maxMove) this.maxMove = {basePower: move.maxMove.basePower};
     }
+    if (dex.gen >= 9) {
+      if (move.flags.wind) this.flags.wind = move.flags.wind;
+      if (move.flags.slicing) this.flags.slicing = move.flags.slicing;
+    }
   }
 }
 
@@ -309,11 +313,11 @@ class Specie implements I.Specie {
     this.baseStats = species.baseStats;
     this.weightkg = species.weightkg;
 
-    const nfe = !!species.evos?.some(s => exists(dex.species.get(s), dex.gen));
+    const nfe = !!species.evos?.some((s: string) => exists(dex.species.get(s), dex.gen));
     if (nfe) this.nfe = nfe;
     if (species.gender === 'N' && dex.gen > 1) this.gender = species.gender;
 
-    const formes = species.otherFormes?.filter(s => exists(dex.species.get(s), dex.gen));
+    const formes = species.otherFormes?.filter((s: string) => exists(dex.species.get(s), dex.gen));
     if (species.id.startsWith('aegislash')) {
       if (species.id === 'aegislashblade') {
         this.otherFormes = ['Aegislash-Shield', 'Aegislash-Both'] as I.SpeciesName[];

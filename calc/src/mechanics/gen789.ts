@@ -332,7 +332,8 @@ export function calculateSMSSSV(
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
-      (move.hasType('Ground') && defender.hasAbility('Earth Eater'))
+      (move.hasType('Ground') && defender.hasAbility('Earth Eater')) ||
+      (move.flags.wind && defender.hasAbility('Wind Rider'))
   ) {
     desc.defenderAbility = defender.ability;
     return result;
@@ -656,8 +657,13 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Hex':
+  case 'Infernal Parade':
     // Hex deals double damage to Pokemon with Comatose (ih8ih8sn0w)
     basePower = move.bp * (defender.status || defender.hasAbility('Comatose') ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
+  case 'Barb Barrage':
+    basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Heavy Slam':
@@ -928,7 +934,8 @@ export function calculateBPModsSMSSSV(
       attacker.hasStatus('psn', 'tox') && move.category === 'Physical') ||
     (attacker.hasAbility('Mega Launcher') && move.flags.pulse) ||
     (attacker.hasAbility('Strong Jaw') && move.flags.bite) ||
-    (attacker.hasAbility('Steely Spirit') && move.hasType('Steel'))
+    (attacker.hasAbility('Steely Spirit') && move.hasType('Steel')) ||
+    (attacker.hasAbility('Sharpness') && move.flags.slicing)
   ) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1151,8 +1158,7 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
     (attacker.hasAbility('Transistor') && move.hasType('Electric')) ||
-    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock')) ||
-    (attacker.hasAbility('Sharpness') && move.flags.slicing)
+    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock'))
   ) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;
@@ -1200,7 +1206,7 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Hadron Engine') && move.category === 'Special' &&
       field.hasTerrain('Electric') && isGrounded(attacker, field)) ||
     (attacker.hasAbility('Orichalcum Pulse') && move.category === 'Physical' &&
-      field.hasWeather('Sun') && !attacker.hasAbility('Utility Umbrella'))
+      field.hasWeather('Sun') && !attacker.hasItem('Utility Umbrella'))
   ) {
     atMods.push(5461);
     desc.attackerAbility = attacker.ability;
