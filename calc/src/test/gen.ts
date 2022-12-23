@@ -494,9 +494,12 @@ const NATDEX_BANNED = [
 function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.GenerationNum) {
   if (!val.exists || val.id === 'noability') return false;
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
-  if (gen === 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;
+  if (gen >= 8 &&
+    (('isMax' in val && val.isMax) || val.isNonstandard === 'Gigantamax')) return true;
+  if (gen >= 8 && val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;
   if (gen === 8 && ['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id)) return true;
   if (gen >= 6 && ['floetteeternal'].includes(val.id)) return true;
+  if (gen > 8 && 'isZ' in val && val.isZ) return false;
   // TODO: clean this up with proper Gigantamax support
   if (val.isNonstandard && !['CAP', 'Unobtainable', 'Gigantamax'].includes(val.isNonstandard)) {
     return false;

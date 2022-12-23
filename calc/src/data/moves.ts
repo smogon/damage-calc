@@ -4145,27 +4145,7 @@ const LGPE_MOVES = [
   'Splishy Splash',
   'Veevee Volley',
 ];
-const GENERIC_Z_MOVES = [
-  'Acid Downpour',
-  'All-Out Pummeling',
-  'Black Hole Eclipse',
-  'Bloom Doom',
-  'Breakneck Blitz',
-  'Continental Crush',
-  'Corkscrew Crash',
-  'Devastating Drake',
-  'Gigavolt Havoc',
-  'Hydro Vortex',
-  'Inferno Overdrive',
-  'Never-Ending Nightmare',
-  'Savage Spin-Out',
-  'Shattered Psyche',
-  'Subzero Slammer',
-  'Supersonic Skystrike',
-  'Tectonic Rage',
-  'Twinkle Tackle',
-];
-for (const m of [...GENERIC_Z_MOVES, ...LGPE_MOVES]) {
+for (const m of LGPE_MOVES) {
   delete SS[m];
 }
 
@@ -4173,9 +4153,14 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Aerial Ace': {isSlicing: true},
   'Air Cutter': {isSlicing: true, isWind: true},
   'Air Slash': {isSlicing: true},
+  'Behemoth Blade': {isSlicing: true},
   Blizzard: {isWind: true},
+  'Cross Poison': {isSlicing: true},
+  Cut: {isSlicing: true},
   'Fairy Wind': {isWind: true},
-  'Fury Cuttter': {isSlicing: true},
+  'Fury Cutter': {isSlicing: true},
+  'Glacial Lance': {bp: 120, zp: 190},
+  'Grassy Glide': {bp: 60, zp: 120, maxPower: 110},
   Gust: {isWind: true},
   'Heat Wave': {isWind: true},
   Hurricane: {isWind: true},
@@ -4184,13 +4169,16 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Night Slash': {isSlicing: true},
   'Petal Blizzard': {isWind: true},
   'Psycho Cut': {isSlicing: true},
+  'Razor Leaf': {isSlicing: true},
   'Razor Shell': {isSlicing: true},
   'Sacred Sword': {isSlicing: true},
   Sandstorm: {isWind: true},
   Slash: {isSlicing: true},
+  'Solar Blade': {isSlicing: true},
   Tailwind: {isWind: true},
   Twister: {isWind: true},
   Whirlwind: {isWind: true},
+  'Wicked Blow': {bp: 75, zp: 140},
   'X-Scissor': {isSlicing: true},
   'Aqua Cutter': {
     bp: 70,
@@ -4204,10 +4192,10 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 80,
     type: 'Water',
     category: 'Physical',
-    secondaries: true,
     zp: 160,
     maxPower: 130,
-    self: {boosts: {spe: +1}},
+    secondaries: true,
+    makesContact: true,
   },
   'Armor Cannon': {
     bp: 120,
@@ -4215,7 +4203,6 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 190,
     maxPower: 140,
-    self: {boosts: {def: -1, spd: -1}},
   },
   'Axe Kick': {
     bp: 120,
@@ -4241,8 +4228,9 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 175,
     maxPower: 130,
-    makesContact: true, // TODO add recovery [50%]
+    makesContact: true,
     isSlicing: true,
+    drain: [1, 2],
   },
   'Bitter Malice': {
     bp: 75,
@@ -4297,7 +4285,6 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 150,
     type: 'Grass',
     mindBlownRecoil: true,
-    target: 'allAdjacent',
     category: 'Special',
     zp: 200,
     maxPower: 150,
@@ -4319,8 +4306,8 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     secondaries: true,
   },
   Comeuppance: {
-    bp: 1,
-    type: 'Fighting',
+    bp: 0,
+    type: 'Dark',
     category: 'Physical',
     zp: 100,
     maxPower: 100,
@@ -4375,7 +4362,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     willCrit: true,
     zp: 140,
-    maxPower: 130,
+    maxPower: 120,
   },
   'Gigaton Hammer': {
     bp: 160,
@@ -4399,7 +4386,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 190,
     maxPower: 140,
     makesContact: true,
-    self: {boosts: {def: -1, spd: -1}},
+    isPunch: true,
   },
   'Hyper Drill': {
     bp: 100,
@@ -4435,7 +4422,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     isPunch: true,
     priority: 1,
-    secondaries: true, // Gets boosted by Sheer Force
+    // Sheer Force boost implemented in gen789.ts
   },
   'Kowtow Cleave': {
     bp: 85,
@@ -4444,6 +4431,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 130,
     makesContact: true,
+    isSlicing: true,
   },
   'Last Respects': {
     bp: 50,
@@ -4523,7 +4511,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 160,
     maxPower: 130,
     isPulse: true,
-    secondaries: true,
+    // Sheer Force boost implemented in gen789.ts
   },
   'Population Bomb': {
     bp: 20,
@@ -4532,6 +4520,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 100,
     maxPower: 90,
     makesContact: true,
+    isSlicing: true,
     multihit: 10,
   },
   Pounce: {
@@ -4587,7 +4576,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Status',
   },
   Ruination: {
-    bp: 1,
+    bp: 0,
     type: 'Dark',
     category: 'Special',
     zp: 100,
@@ -4599,6 +4588,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 100,
     maxPower: 90,
+    secondaries: true,
   },
   'Sandsear Storm': {
     bp: 100,
@@ -4643,7 +4633,6 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 180,
     maxPower: 130,
     makesContact: true,
-    self: {boosts: {spe: -2}},
   },
   'Springtide Storm': {
     bp: 100,
@@ -4664,6 +4653,11 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     isSlicing: true,
     secondaries: true,
+  },
+  'Take Heart': {
+    bp: 0,
+    type: 'Psychic',
+    category: 'Status',
   },
   'Tera Blast': {
     bp: 80,
@@ -4694,7 +4688,6 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 100,
     secondaries: true,
     makesContact: true,
-    self: {boosts: {spe: 1}},
   },
   'Triple Arrows': {
     bp: 90,
@@ -4730,8 +4723,8 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 120,
     type: 'Water',
     category: 'Physical',
-    zp: 160,
-    maxPower: 130,
+    zp: 190,
+    maxPower: 140,
     makesContact: true,
     recoil: [33, 100],
   },
@@ -4756,10 +4749,6 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 };
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
-
-for (const moveName in SV) {
-  if (SV[moveName].isMax) delete SV[moveName];
-}
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
@@ -4828,6 +4817,7 @@ class Move implements I.Move {
     'zp',
     'maxPower',
     'isSlicing',
+    'isWind',
   ]);
 
   constructor(name: string, data: MoveData, gen: number) {
@@ -4844,6 +4834,7 @@ class Move implements I.Move {
     if (data.isSound) this.flags.sound = 1;
     if (data.isPulse) this.flags.pulse = 1;
     if (data.isSlicing) this.flags.slicing = 1;
+    if (data.isWind) this.flags.wind = 1;
 
     assignWithout(this, data, Move.FLAGS);
 

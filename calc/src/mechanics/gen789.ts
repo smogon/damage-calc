@@ -963,13 +963,15 @@ export function calculateBPModsSMSSSV(
   }
 
   // Sheer Force does not power up max moves or remove the effects (SadisticMystic)
-  if ((attacker.hasAbility('Sheer Force') && move.secondaries && !move.isMax) ||
-      (attacker.hasAbility('Sand Force') &&
-        field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
-      (attacker.hasAbility('Analytic') &&
-        (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
-      (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
-      (attacker.hasAbility('Punk Rock') && move.flags.sound)
+  if (
+    (attacker.hasAbility('Sheer Force') &&
+      (move.secondaries || move.named('Jet Punch', 'Order Up')) && !move.isMax) ||
+    (attacker.hasAbility('Sand Force') &&
+      field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
+    (attacker.hasAbility('Analytic') &&
+      (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
+    (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
+    (attacker.hasAbility('Punk Rock') && move.flags.sound)
   ) {
     bpMods.push(5325);
     desc.attackerAbility = attacker.ability;
