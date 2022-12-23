@@ -57,7 +57,6 @@ describe('Generations', () => {
 
   test('species', () => {
     for (const gen of gens) {
-      if (gen === 9) continue;
       const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();
       for (const specie of calc.Generations.get(gen).species) c.set(specie.id, specie);

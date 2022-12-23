@@ -497,6 +497,7 @@ function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.Gen
     if (gen === 8) {
       if (('isMax' in val && val.isMax) || val.isNonstandard === 'Gigantamax') return true;
       if (['eternatuseternamax', 'zarude', 'zarudedada'].includes(val.id)) return true;
+      if (val.isNonstandard === 'Future') return false;
     }
     if (val.isNonstandard === 'Past' && !NATDEX_BANNED.includes(val.name)) return true;
     if (gen > 8 && 'isZ' in val && val.isZ) return false;
