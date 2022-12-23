@@ -461,24 +461,27 @@ const SS = SM.concat([
   'Throat Spray',
 ]);
 
-const SV = SM.concat([
+for (let i = 0; i < 100; i++) {
+  SS.push(`TR${i < 10 ? `0${i}` : i}`);
+}
+
+// Added after the TRs to maintain sort order
+SS.push('Utility Umbrella', 'Vile Vial');
+
+// Because we support National Dex all Past items are added back in
+SS.push(...GSC_ONLY, 'Old Amber');
+
+const SV = SS.concat([
+  'Auspicious Armor',
   'Ability Shield',
   'Booster Energy',
   'Clear Amulet',
   'Covert Cloak',
   'Loaded Dice',
+  'Malicious Armor',
   'Mirror Herb',
   'Punching Glove',
 ]);
-
-for (let i = 0; i < 100; i++) {
-  SS.push(`TR${i < 10 ? `0${i}` : i}`);
-}
-
-// Added after the TR's to maintain sort order
-SS.push('Utility Umbrella', 'Vile Vial');
-// Because we support National Dex all Past items are added back in
-SS.push(...GSC_ONLY, 'Old Amber');
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
