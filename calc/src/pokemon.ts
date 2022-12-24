@@ -20,6 +20,7 @@ export class Pokemon implements State.Pokemon {
   ability?: I.AbilityName;
   abilityOn?: boolean;
   isDynamaxed?: boolean;
+  isSaltCure?: boolean;
   item?: I.ItemName;
   teraType?: I.TypeName;
 
@@ -59,6 +60,7 @@ export class Pokemon implements State.Pokemon {
     this.abilityOn = !!options.abilityOn;
 
     this.isDynamaxed = !!options.isDynamaxed;
+    this.isSaltCure = !!options.isSaltCure;
     this.teraType = options.teraType;
     this.item = options.item;
     this.nature = options.nature || ('Serious' as I.NatureName);
@@ -141,6 +143,7 @@ export class Pokemon implements State.Pokemon {
       ability: this.ability,
       abilityOn: this.abilityOn,
       isDynamaxed: this.isDynamaxed,
+      isSaltCure: this.isSaltCure,
       item: this.item,
       gender: this.gender,
       nature: this.nature,

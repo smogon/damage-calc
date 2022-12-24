@@ -206,7 +206,7 @@ export function calculateSMSSSV(
     'Natural Gift',
     'Weather Ball',
     'Terrain Pulse',
-  );
+  ) || (move.named('Tera Blast') && attacker.teraType);
 
   if (!move.isZ && !noTypeChange) {
     const normal = move.hasType('Normal');
@@ -496,16 +496,18 @@ export function calculateSMSSSV(
   let stabMod = 4096;
   if (attacker.hasType(move.type)) {
     stabMod += 2048;
-  } else if (attacker.hasAbility('Protean', 'Libero')) {
+  } else if (attacker.hasAbility('Protean', 'Libero') && !attacker.teraType) {
     stabMod += 2048;
     desc.attackerAbility = attacker.ability;
   }
-  if (attacker.teraType === move.type) {
+  const teraType = attacker.teraType;
+  if (teraType === move.type) {
     stabMod += 2048;
-    // TODO: add terastal type to desc
+    desc.attackerTera = teraType;
   }
   if (attacker.hasAbility('Adaptability') && stabMod > 4096) {
-    stabMod += 2048;
+    stabMod += teraType && attacker.hasType(teraType) ? 1024 : 2048;
+    desc.attackerAbility = attacker.ability;
   }
 
   const applyBurn =
@@ -809,6 +811,13 @@ export function calculateBasePowerSMSSSV(
     turnOrder
   );
   basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
+  if (
+    attacker.teraType && move.type === attacker.teraType &&
+    attacker.hasType(attacker.teraType) && !move.hits &&
+    move.priority <= 0 && basePower <= 60 && gen.num >= 9
+  ) {
+    basePower = 60;
+  }
   return basePower;
 }
 

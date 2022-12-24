@@ -236,6 +236,7 @@ function autosetWeather(ability, i) {
 	}
 	switch (ability) {
 	case "Drought":
+	case "Orichalcum Pulse":
 		lastAutoWeather[i] = "Sun";
 		$("#sun").prop("checked", true);
 		break;
@@ -257,7 +258,6 @@ function autosetWeather(ability, i) {
 		}
 		break;
 	case "Desolate Land":
-	case "Orichalcum Pulse":
 		lastAutoWeather[i] = "Harsh Sunshine";
 		$("#harsh-sunshine").prop("checked", true);
 		break;
@@ -829,6 +829,7 @@ function createPokemon(pokeInfo) {
 			ivs: ivs,
 			evs: evs,
 			isDynamaxed: isDynamaxed,
+			isSaltCure: pokeInfo.find(".saltcure").is(":checked"),
 			teraType: teraType,
 			boosts: boosts,
 			curHP: curHP,

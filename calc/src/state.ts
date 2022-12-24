@@ -7,6 +7,7 @@ export namespace State {
     ability?: I.AbilityName;
     abilityOn?: boolean;
     isDynamaxed?: boolean;
+    isSaltCure?: boolean;
     item?: I.ItemName;
     gender?: I.GenderName;
     nature?: I.NatureName;

@@ -178,7 +178,7 @@ This project was created by Honko and is primarily maintained by Austin.
 - The Omega Ruby / Alpha Sapphire update was done by gamut-was-taken and Austin.
 - The Gen 7 update was done by Austin.
 - The Gen 8 update was done by Austin and Kris.
-- The Gen 9 update was done by Austin.
+- The Gen 9 update was done by Austin and Kris.
 - Some CSS styling was contributed by Zarel to match the Pokémon Showdown! theme.
 
 Many other contributors have added features or contributed bug fixes, please see the

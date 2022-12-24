@@ -606,6 +606,12 @@ function getEndOfTurn(
       texts.push('trapping damage');
     }
   }
+  if (defender.isSaltCure && !defender.hasAbility('Magic Guard')) {
+    const isWaterOrSteel = defender.hasType('Water', 'Steel') ||
+      (defender.teraType && ['Water', 'Steel'].includes(defender.teraType));
+    damage -= Math.floor(defender.maxHP() / (isWaterOrSteel ? 4 : 8));
+    texts.push('Salt Cure');
+  }
   if (!defender.hasType('Fire') && !defender.hasAbility('Magic Guard') &&
       (move.named('Fire Pledge (Grass Pledge Boosted)', 'Grass Pledge (Fire Pledge Boosted)'))) {
     damage -= Math.floor(defender.maxHP() / 8);
