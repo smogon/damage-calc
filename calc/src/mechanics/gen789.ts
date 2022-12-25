@@ -1021,7 +1021,7 @@ export function calculateBPModsSMSSSV(
   }
 
   if (attacker.hasItem('Punching Glove') && move.flags.punch) {
-    bpMods.push(4505);
+    bpMods.push(4506);
     desc.attackerItem = attacker.item;
   }
 
