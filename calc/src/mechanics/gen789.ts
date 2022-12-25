@@ -62,8 +62,8 @@ export function calculateSMSSSV(
   checkWonderRoom(defender, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
-  checkDauntlessShield(attacker);
-  checkDauntlessShield(defender);
+  checkDauntlessShield(attacker, gen);
+  checkDauntlessShield(defender, gen);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
@@ -71,8 +71,8 @@ export function calculateSMSSSV(
   checkIntimidate(gen, defender, attacker);
   checkDownload(attacker, defender, field.isWonderRoom);
   checkDownload(defender, attacker, field.isWonderRoom);
-  checkIntrepidSword(attacker);
-  checkIntrepidSword(defender);
+  checkIntrepidSword(attacker, gen);
+  checkIntrepidSword(defender, gen);
 
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 
@@ -1018,6 +1018,11 @@ export function calculateBPModsSMSSSV(
   ) {
     bpMods.push(4915);
     desc.attackerAbility = attacker.ability;
+  }
+
+  if (attacker.hasItem('Punching Glove') && move.flags.punch) {
+    bpMods.push(4505);
+    desc.attackerItem = attacker.item;
   }
 
   if (defender.hasAbility('Heatproof') && move.hasType('Fire')) {

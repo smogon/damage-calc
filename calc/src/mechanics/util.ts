@@ -208,7 +208,8 @@ export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemo
   const blocked =
     target.hasAbility('Clear Body', 'White Smoke', 'Hyper Cutter', 'Full Metal Body') ||
     // More abilities now block Intimidate in Gen 8 (DaWoblefet, Cloudy Mistral)
-    (gen.num === 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy'));
+    (gen.num === 8 && target.hasAbility('Inner Focus', 'Own Tempo', 'Oblivious', 'Scrappy')) ||
+    target.hasItem('Clear Amulet');
   if (source.hasAbility('Intimidate') && source.abilityOn && !blocked) {
     if (target.hasAbility('Contrary', 'Defiant', 'Guard Dog')) {
       target.boosts.atk = Math.min(6, target.boosts.atk + 1);
@@ -237,14 +238,14 @@ export function checkDownload(source: Pokemon, target: Pokemon, wonderRoomActive
   }
 }
 
-export function checkIntrepidSword(source: Pokemon) {
-  if (source.hasAbility('Intrepid Sword')) {
+export function checkIntrepidSword(source: Pokemon, gen: Generation) {
+  if (source.hasAbility('Intrepid Sword') && gen.num < 9) {
     source.boosts.atk = Math.min(6, source.boosts.atk + 1);
   }
 }
 
-export function checkDauntlessShield(source: Pokemon) {
-  if (source.hasAbility('Dauntless Shield')) {
+export function checkDauntlessShield(source: Pokemon, gen: Generation) {
+  if (source.hasAbility('Dauntless Shield') && gen.num < 9) {
     source.boosts.def = Math.min(6, source.boosts.def + 1);
   }
 }
