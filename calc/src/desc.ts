@@ -855,6 +855,7 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   if (description.attackerTera) {
     output += `Tera ${description.attackerTera} `;
+  }
   if (description.isBeadsOfRuin) {
     output += 'Beads of Ruin ';
   }
