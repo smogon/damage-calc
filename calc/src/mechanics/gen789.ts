@@ -1,4 +1,4 @@
-﻿import {Generation, AbilityName, StatID, Terrain} from '../data/interface';
+import {Generation, AbilityName, StatID, Terrain} from '../data/interface';
 import {toID} from '../util';
 import {
   getBerryResistType,
@@ -494,7 +494,7 @@ export function calculateSMSSSV(
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
   // below this until we're inside the loop
   let stabMod = 4096;
-  if (attacker.hasType(move.type)) {
+  if (attacker.hasOriginalType(move.type)) {
     stabMod += 2048;
   } else if (attacker.hasAbility('Protean', 'Libero') && !attacker.teraType) {
     stabMod += 2048;
