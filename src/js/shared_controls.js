@@ -447,6 +447,7 @@ $(".set-selector").change(function () {
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
 			stickyMoves.clearStickyMove();
 		}
+		pokeObj.find(".teraToggle").prop("checked", false);
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);
