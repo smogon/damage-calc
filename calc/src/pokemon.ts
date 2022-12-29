@@ -133,6 +133,14 @@ export class Pokemon implements State.Pokemon {
     return false;
   }
 
+  /** Ignores Tera type */
+  hasOriginalType(...types: I.TypeName[]) {
+    for (const type of types) {
+      if (this.types.includes(type)) return true;
+    }
+    return false;
+  }
+
   named(...names: string[]) {
     return names.includes(this.name);
   }
