@@ -1229,7 +1229,7 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Hadron Engine') && move.category === 'Special' &&
       field.hasTerrain('Electric') && isGrounded(attacker, field)) ||
     (attacker.hasAbility('Orichalcum Pulse') && move.category === 'Physical' &&
-      field.hasWeather('Sun') && !attacker.hasItem('Utility Umbrella'))
+      field.hasWeather('Sun', 'Harsh Sunshine') && !attacker.hasItem('Utility Umbrella'))
   ) {
     atMods.push(5461);
     desc.attackerAbility = attacker.ability;
