@@ -8,6 +8,7 @@ export namespace State {
     abilityOn?: boolean;
     isDynamaxed?: boolean;
     isSaltCure?: boolean;
+    alliesFainted?: number;
     item?: I.ItemName;
     gender?: I.GenderName;
     nature?: I.NatureName;

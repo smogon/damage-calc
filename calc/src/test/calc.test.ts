@@ -873,5 +873,31 @@ describe('calc', () => {
         );
       });
     });
+
+    describe('Gen 9', () => {
+      inGen(9, ({calculate, Pokemon, Move}) => {
+        test('Supreme Overlord', () => {
+          const kingambit = Pokemon('Kingambit', {level: 100, ability: 'Supreme Overlord', alliesFainted: 0});
+          const aggron = Pokemon('Aggron', {level: 100});
+          let result = calculate(kingambit, aggron, Move('Iron Head'));
+          expect(result.range()).toEqual([67, 79]);
+          expect(result.desc()).toBe(
+            '0 Atk Kingambit Iron Head vs. 0 HP / 0 Def Aggron: 67-79 (23.8 - 28.1%) -- 91.2% chance to 4HKO'
+          );
+          kingambit.alliesFainted = 5;
+          result = calculate(kingambit, aggron, Move('Iron Head'));
+          expect(result.range()).toEqual([100, 118]);
+          expect(result.desc()).toBe(
+            '0 Atk Supreme Overlord 5 allies fainted Kingambit Iron Head vs. 0 HP / 0 Def Aggron: 100-118 (35.5 - 41.9%) -- guaranteed 3HKO'
+          );
+          kingambit.alliesFainted = 10;
+          result = calculate(kingambit, aggron, Move('Iron Head'));
+          expect(result.range()).toEqual([100, 118]);
+          expect(result.desc()).toBe(
+            '0 Atk Supreme Overlord 5 allies fainted Kingambit Iron Head vs. 0 HP / 0 Def Aggron: 100-118 (35.5 - 41.9%) -- guaranteed 3HKO'
+          );
+        });
+      });
+    });
   });
 });

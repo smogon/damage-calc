@@ -22,6 +22,7 @@ export interface RawDesc {
   defenseBoost?: number;
   defenseEVs?: string;
   hits?: number;
+  alliesFainted?: number;
   isAuroraVeil?: boolean;
   isFlowerGiftAttacker?: boolean;
   isFlowerGiftDefender?: boolean;
@@ -843,6 +844,10 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   output = appendIfSet(output, description.rivalry);
   if (description.isBurned) {
     output += 'burned ';
+  }
+  if (description.alliesFainted) {
+    output += Math.min(5, description.alliesFainted) +
+      ` ${description.alliesFainted === 1 ? 'ally' : 'allies'} fainted `;
   }
   if (description.attackerTera) {
     output += `Tera ${description.attackerTera} `;

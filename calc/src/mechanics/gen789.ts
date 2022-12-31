@@ -1033,6 +1033,13 @@ export function calculateBPModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
 
+  if (attacker.hasAbility('Supreme Overlord') && attacker.alliesFainted) {
+    const powMod = [4096, 4506, 4915, 5325, 5734, 6144];
+    bpMods.push(powMod[Math.min(5, attacker.alliesFainted)]);
+    desc.attackerAbility = attacker.ability;
+    desc.alliesFainted = attacker.alliesFainted;
+  }
+
   // Items
 
   if (attacker.hasItem(`${move.type} Gem`)) {

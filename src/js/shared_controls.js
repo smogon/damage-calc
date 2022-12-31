@@ -219,6 +219,14 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
+
+	if (ability === "Supreme Overlord") {
+		$(this).closest(".poke-info").find(".alliesFainted").show();
+	} else {
+		$(this).closest(".poke-info").find(".alliesFainted").val('0');
+		$(this).closest(".poke-info").find(".alliesFainted").hide();
+
+	}
 });
 
 $("#p1 .ability").bind("keyup change", function () {
@@ -831,6 +839,7 @@ function createPokemon(pokeInfo) {
 			evs: evs,
 			isDynamaxed: isDynamaxed,
 			isSaltCure: pokeInfo.find(".saltcure").is(":checked"),
+			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
 			teraType: teraType,
 			boosts: boosts,
 			curHP: curHP,
