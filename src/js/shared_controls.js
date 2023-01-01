@@ -91,7 +91,7 @@ $("input:radio[name='format']").change(function () {
 	if (gameType === 'Singles') {
 		$("input:checkbox[name='ruin']:checked").prop("checked", false);
 	}
-	$(".format-specific." + gameType.toLowerCase()).each(function (){
+	$(".format-specific." + gameType.toLowerCase()).each(function () {
 		if ($(this).hasClass("gen-specific") && !$(this).hasClass("g" + gen)) {
 			return;
 		}
