@@ -26,6 +26,7 @@ interface PokemonSet {
   ability?: string;
   item?: string;
   nature?: string;
+  teraType?: string;
   ivs?: Partial<StatsTable>;
   evs?: Partial<StatsTable>;
   moves: string[];
@@ -183,6 +184,8 @@ function toCalc(set: ps.DeepPartial<ps.PokemonSet>): PokemonSet {
     ability: set.ability, // TODO fixed?
     item: set.item,
     nature: set.nature,
+    // @ts-ignore - npm pkg not updated yet
+    teraType: set.teraType,
     ivs: set.ivs && toStatsTable(set.ivs),
     evs: set.evs && toStatsTable(set.evs),
     moves: set.moves || [],
