@@ -459,7 +459,6 @@ $(".set-selector").change(function () {
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);
-		pokeObj.find(".teraType").val(pokemon.teraType || pokemon.types[0]);
 		pokeObj.find(".hp .base").val(pokemon.bs.hp);
 		var i;
 		for (i = 0; i < LEGACY_STATS[gen].length; i++) {
@@ -499,6 +498,7 @@ $(".set-selector").change(function () {
 					}
 				}
 			}
+			pokeObj.find(".teraType").val(listTeraTypes[0] || pokemon.types[0]);
 			$(this).closest('.poke-info').find(".extraSetTeraTypes").text(listTeraTypes.join(', '));
 		} else {
 			$(this).closest('.poke-info').find(".ability-pool").hide();
@@ -508,6 +508,9 @@ $(".set-selector").change(function () {
 		}
 		if (regSets || randset) {
 			var set = regSets ? correctHiddenPower(setdex[pokemonName][setName]) : randset;
+			if (regSets) {
+				pokeObj.find(".teraType").val(set.teraType || pokemon.types[0]);
+			}
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
 			pokeObj.find(".hp .ivs").val((set.ivs && set.ivs.hp !== undefined) ? set.ivs.hp : 31);
@@ -556,6 +559,7 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(setMoves));
 			}
 		} else {
+			pokeObj.find(".teraType").val(pokemon.types[0]);
 			pokeObj.find(".level").val(100);
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
@@ -668,7 +672,6 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
-	$(this).parent().siblings().find(".teraType").val(altForme.types[0]);
 	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
 		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
