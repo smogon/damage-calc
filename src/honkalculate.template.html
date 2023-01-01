@@ -589,7 +589,7 @@
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 10.6em; margin: 0 auto 5px;" title="Select the battle format.">
-                        <input class="visually-hidden" type="radio" name="format" value="Singles" id="singles-format" checked="checked" />
+                        <input class="visually-hidden" type="radio" name="format" value="Singles" id="singles-format" />
                         <label class="btn btn-left" for="singles-format">Singles</label>
                         <input class="visually-hidden" type="radio" name="format" value="Doubles" id="doubles-format" />
                         <label class="btn btn-right" for="doubles-format">Doubles</label>
@@ -602,6 +602,17 @@
                     <div class="gen-specific g7 g8 g9" title="Select the current terrain.">
                         <input class="visually-hidden terrain-trigger calc-trigger" type="checkbox" name="terrain" value="Psychic" id="psychic" /><label class="btn btn-xxxwide btn-mid" for="psychic">Psychic Terrain</label>
                     </div>
+						  <div aria-labelledby="selectRuinInstruction" class="gen-specific g9 format-specific doubles" role="group" style="margin: 5px auto auto;" title="Select the ruin abilities from other Pok&eacute;mon on the field.">
+								<span class="visually-hidden" id="selectRuinInstruction">Select the active Ruin abilities from other Poke&eacute;mon on the field.</span>
+								<input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Beads" id="beads" />
+								<label class="btn btn-xxxwide btn-left" for="beads">Beads of Ruin</label>
+								<input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Tablets" id="tablets" />
+								<label class="btn btn-xxxwide btn-mid" for="tablets">Tablets of Ruin</label>
+								<input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Sword" id="sword" />
+								<label class="btn btn-xxxwide btn-right" for="sword">Sword of Ruin</label>
+								<input class="visually-hidden calc-trigger" type="checkbox" name="ruin" value="Vessel" id="vessel" />
+								<label class="btn btn-xxxwide btn-mid" for="vessel">Vessel of Ruin</label>
+						  </div>
                     <hr class="gen-specific g6 g7 g8 g9" />
                     <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="" id="clear" checked="checked" />
@@ -859,6 +870,7 @@
     <script type="text/javascript" src="./calc/util.js?"></script>
     <script type="text/javascript" src="./calc/stats.js?"></script>
     <script type="text/javascript" src="./calc/data/species.js?"></script>
+    <script type="text/javascript" src="./js/data/sets/gen9.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen8.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen7.js?"></script>
     <script type="text/javascript" src="./js/data/sets/gen6.js?"></script>
