@@ -524,7 +524,11 @@ function getEndOfTurn(
       field.hasWeather('Hail')
     ) {
       damage -= Math.floor(defender.maxHP() / 16);
-      texts.push('hail damage');
+      if (gen.num === 9) {
+        texts.push('snow damage');
+      } else {
+        texts.push('hail damage');
+      }
     }
   }
 
