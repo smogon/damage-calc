@@ -431,7 +431,7 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
-		var moveHits = (pokemon.find(".ability").val() === 'Skill Link' || pokemon.find(".item").val() === 'Grip Claw') ? 5 : 3;
+		var moveHits = (pokemon.find(".ability").val() === 'Skill Link') ? 5 : 3;
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
