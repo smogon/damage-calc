@@ -26,8 +26,7 @@ export namespace State {
   export interface Move {
     name: I.MoveName;
     useZ?: boolean;
-    useMax?: boolean;
-    isGmax?: boolean;
+    useMax?: 'gmax' | boolean;
     isCrit?: boolean;
     hits?: number;
     timesUsed?: number;

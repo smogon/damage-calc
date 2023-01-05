@@ -13,7 +13,7 @@ export class Move implements State.Move {
   item?: I.ItemName;
   species?: I.SpeciesName;
   useZ?: boolean;
-  useMax?: boolean;
+  useMax?: 'gmax' | boolean;
   isGmax?: boolean;
   overrides?: Partial<I.Move>;
 
@@ -64,7 +64,7 @@ export class Move implements State.Move {
         options.species,
         !!(data.category === 'Status'),
         options.ability,
-        options.isGmax
+        !!(options.useMax === 'gmax')
       );
       const maxMove = gen.moves.get(toID(maxMoveName));
       const maxPower = () => {
@@ -112,7 +112,6 @@ export class Move implements State.Move {
     this.item = options.item;
     this.useZ = options.useZ;
     this.useMax = options.useMax;
-    this.isGmax = options.useMax;
     this.overrides = options.overrides;
     this.species = options.species;
 
@@ -178,7 +177,6 @@ export class Move implements State.Move {
       species: this.species,
       useZ: this.useZ,
       useMax: this.useMax,
-      isGmax: this.isGmax,
       isCrit: this.isCrit,
       hits: this.hits,
       timesUsed: this.timesUsed,
@@ -272,8 +270,7 @@ export function getMaxMoveName(
   }
   if (moveType === 'Electric') {
     if (pokemonSpecies === 'Pikachu' && isGmax) return 'G-Max Volt Crash';
-    if (pokemonSpecies?.startsWith('Toxtricity') &&
-      pokemonSpecies?.endsWith('Gmax')) return 'G-Max Stun Shock';
+    if (pokemonSpecies?.startsWith('Toxtricity') && isGmax) return 'G-Max Stun Shock';
   }
   if (moveType === 'Grass') {
     if (pokemonSpecies === 'Appletun' && isGmax) return 'G-Max Sweetness';

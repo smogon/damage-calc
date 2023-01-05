@@ -438,15 +438,20 @@
                         <label>Current HP</label>
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
-<<<<<<< HEAD
-						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
-=======
-                        <br />
-                        <input class="max calc-trigger btn-input" type="checkbox" id="maxL" />
-                        <label class="btn btn-wide gen-specific g8" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
-                        <input class="gmax calc-trigger btn-input" type="checkbox" id="gmaxL" />
-                        <label class="btn btn-xwide gen-specific g8" for="gmaxL" title="Use the G-Max forme instead?">Gigantamax</label>
->>>>>>> Implement Gigantamaxing properly
+                        <div class="dynamaxOnly">
+                            <br />
+                            <br />
+                            <input class="visually-hidden max calc-trigger" type="checkbox" id="maxL" />
+                            <label class="btn btn-wide gen-specific g8 hide" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+                        </div>
+                        <div class="dynamaxAndGigantamax">
+                            <br />
+                            <br />
+                            <input class="visually-hidden max calc-trigger" type="checkbox" id="maxL" />
+                            <label class="btn btn-wide gen-specific g8 hide" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+                            <input class="gmax calc-trigger" type="checkbox" id="gmaxL" />
+                            <label class="gen-specific g8 hide" for="gmaxL" title="Use the G-Max forme instead?">Gigantamax</label>
+                        </div>
                         <br />
                         <br />
                         Health <div class="hpbar"></div>

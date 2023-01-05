@@ -301,6 +301,7 @@ class Specie implements I.Specie {
   readonly weightkg: number;
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
+  readonly canGigantamax?: I.MoveName;
   readonly otherFormes?: I.SpeciesName[];
   readonly baseSpecies?: I.SpeciesName;
   readonly abilities?: {0: I.AbilityName};
@@ -329,6 +330,7 @@ class Specie implements I.Specie {
     } else if (species.baseSpecies !== this.name) {
       this.baseSpecies = species.baseSpecies as I.SpeciesName;
     }
+    if (species.canGigantamax) this.canGigantamax = species.canGigantamax;
 
     if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
   }

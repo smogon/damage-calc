@@ -7513,6 +7513,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Kingler: {canGigantamax: "G-Max Foam Burst"},
   Lapras: {canGigantamax: "G-Max Resonance"},
   Linoone: {otherFormes: ['Linoone-Galar']},
+  Machamp: {canGigantamax: "G-Max Chi-Strike"},
   Magearna: {otherFormes: ["Magearna-Original"]},
   Melmetal: {canGigantamax: "G-Max Meltdown"},
   Meowth: {canGigantamax: "G-Max Gold Rush", otherFormes: ['Meowth-Alola', 'Meowth-Galar']},
@@ -8510,6 +8511,12 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 };
 
 const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, SS_PATCH);
+
+for (const speciesName in SS) {
+  if (SS[speciesName].canGigantamax) {
+    SS[speciesName + '-Gmax'] = SS[speciesName];
+  }
+}
 
 delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
@@ -9520,6 +9527,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
+for (const speciesName in SV) {
+  if (SV[speciesName].canGigantamax) {
+    // @ts-ignore readonly
+    delete SV[speciesName].canGigantamax;
+  }
+}
+
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Species implements I.Species {
@@ -9550,10 +9564,11 @@ class Specie implements I.Specie {
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
   readonly otherFormes?: I.SpeciesName[];
+  readonly canGigantamax?: I.MoveName;
   readonly baseSpecies?: I.SpeciesName;
   readonly abilities?: {0: I.AbilityName}; // ability
 
-  private static readonly EXCLUDE = new Set(['bs', 'otherFormes']);
+  private static readonly EXCLUDE = new Set(['bs']);
 
   constructor(name: string, data: SpeciesData) {
     this.kind = 'Species';
@@ -9568,15 +9583,6 @@ class Specie implements I.Specie {
     baseStats.spd = gen >= 2 ? data.bs.sd : data.bs.sl;
     baseStats.spe = data.bs.sp;
     this.baseStats = baseStats as I.StatsTable;
-    // Hack for getting Gmax pokemon out of existence in Gen 9+
-    if (data.otherFormes) {
-      this.otherFormes = data.otherFormes as I.SpeciesName[];
-      if (gen >= 9 && !['toxtricity', 'urshifu'].includes(this.id)) {
-        this.otherFormes = this.otherFormes.filter(f => !f.endsWith('-Gmax'));
-        if (!this.otherFormes.length) this.otherFormes = undefined;
-        if (this.otherFormes) this.otherFormes = [...new Set(this.otherFormes)];
-      }
-    }
 
     assignWithout(this, data, Specie.EXCLUDE);
   }
