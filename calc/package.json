@@ -14,7 +14,7 @@
     "@types/node": "^18.11.9"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.7.12",
+    "@pkmn/dex": "^0.7.13",
     "@pkmn/eslint-config": "^2.12.0",
     "@types/jest": "^29.2.3",
     "@typescript-eslint/eslint-plugin": "^5.43.0",

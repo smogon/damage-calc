@@ -15,7 +15,6 @@ const GSC = [
   'Charcoal',
   'Dragon Fang',
   'Dragon Scale',
-  'Energy Powder',
   'Fast Ball',
   'Fire Stone',
   'Focus Band',
@@ -472,6 +471,7 @@ SS.push('Utility Umbrella', 'Vile Vial');
 SS.push(...GSC_ONLY, 'Old Amber');
 
 const SV = SS.concat([
+  'Adamant Crystal',
   'Auspicious Armor',
   'Ability Shield',
   'Booster Energy',
@@ -481,6 +481,9 @@ const SV = SS.concat([
   'Malicious Armor',
   'Mirror Herb',
   'Punching Glove',
+  'Lustrous Globe',
+  'Griseous Core',
+  'Strange Ball',
 ]);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
