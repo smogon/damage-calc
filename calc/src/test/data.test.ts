@@ -49,9 +49,10 @@ describe('Generations', () => {
       expect(Array.from(c.values()).map(s => s.name).sort()).toEqual(p.map(s => s.name).sort());
       for (const move of p) {
         // Formerly toEqual, relax a bit so the calc can have properties aren't in pkmn/dex.
-        for (let [k, v] of Object.entries(move)) {
-          if (v === undefined)
+        for (const [k, v] of Object.entries(move)) {
+          if (v === undefined) {
             delete (move as any)[k];
+          }
         }
         expect(c.get(move.id)).toMatchObject(move);
         c.delete(move.id);
