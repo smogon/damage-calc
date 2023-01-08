@@ -198,3 +198,13 @@ $(document).ready(function () {
 	});
 	performCalculations();
 });
+
+/* Click-to-copy function */
+$("#mainResult").click(function () {
+	navigator.clipboard.writeText($("#mainResult").text()).then(function () {
+		document.getElementById('tooltipText').style.visibility = 'visible';
+		setTimeout(function () {
+			document.getElementById('tooltipText').style.visibility = 'hidden';
+		}, 2000);
+	});
+});
