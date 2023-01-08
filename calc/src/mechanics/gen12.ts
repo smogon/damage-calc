@@ -213,10 +213,14 @@ export function calculateRBYGSC(
 
   result.damage = [];
   for (let i = 217; i <= 255; i++) {
-    if (baseDamage === 1) {
-      result.damage[i - 217] = 1;
+    if (gen.num === 2) {
+      result.damage[i - 217] = Math.max(1, Math.floor((baseDamage * i) / 255));
     } else {
-      result.damage[i - 217] = Math.floor((baseDamage * i) / 255);
+      if (baseDamage === 1) {
+        result.damage[i - 217] = 1;
+      } else {
+        result.damage[i - 217] = Math.floor((baseDamage * i) / 255);
+      }
     }
   }
 
