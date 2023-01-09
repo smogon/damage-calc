@@ -213,7 +213,15 @@ export function calculateRBYGSC(
 
   result.damage = [];
   for (let i = 217; i <= 255; i++) {
-    result.damage[i - 217] = Math.floor((baseDamage * i) / 255);
+    if (gen.num === 2) { // in gen 2 damage is always rounded up to 1. TODO ADD TESTS
+      result.damage[i - 217] = Math.max(1, Math.floor((baseDamage * i) / 255));
+    } else {
+      if (baseDamage === 1) { // in gen 1 the random factor multiplication is skipped if damage = 1
+        result.damage[i - 217] = 1;
+      } else {
+        result.damage[i - 217] = Math.floor((baseDamage * i) / 255);
+      }
+    }
   }
 
   return result;
