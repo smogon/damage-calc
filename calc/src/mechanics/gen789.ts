@@ -814,7 +814,7 @@ export function calculateBasePowerSMSSSV(
   if (
     attacker.teraType && move.type === attacker.teraType &&
     attacker.hasType(attacker.teraType) && move.hits === 1 &&
-    move.priority <= 0 && move.bp > 0 && move.named("Dragon Energy", "Eruption", "Water Spout") &&
+    move.priority <= 0 && move.bp > 0 && !move.named('Dragon Energy', 'Eruption', 'Water Spout') &&
     basePower < 60 && gen.num >= 9
   ) {
     basePower = 60;
