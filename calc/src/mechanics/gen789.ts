@@ -505,8 +505,8 @@ export function calculateSMSSSV(
     stabMod += 2048;
     desc.attackerTera = teraType;
   }
-  if (attacker.hasAbility('Adaptability') && stabMod > 4096) {
-    stabMod += teraType && attacker.hasType(teraType) ? 1024 : 2048;
+  if (attacker.hasAbility('Adaptability') && attacker.hasType(move.type)) {
+    stabMod += teraType && attacker.hasOriginalType(teraType) ? 1024 : 2048;
     desc.attackerAbility = attacker.ability;
   }
 
