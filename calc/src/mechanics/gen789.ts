@@ -840,7 +840,10 @@ export function calculateBPModsSMSSSV(
 
   let resistedKnockOffDamage =
     !defender.item ||
-    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
+    (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal'))
+    (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe'))
+    // Griseous Core for gen 9, Griseous Orb otherwise
+    (defender.name.includes('Giratina-Origin') && defender.item.includes('Griseous')) ||
     (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
     (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
     (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
