@@ -890,23 +890,18 @@ export function calculateBPModsSMSSSV(
       attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
     const isRingTarget =
       defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
-    const type1Effectiveness = getMoveEffectiveness(
-      gen,
-      move,
-      defender.types[0],
-      isGhostRevealed,
-      field.isGravity,
-      isRingTarget
-    );
-    const type2Effectiveness = defender.types[1] ? getMoveEffectiveness(
-      gen,
-      move,
-      defender.types[0],
-      isGhostRevealed,
-      field.isGravity,
-      isRingTarget
-    ) : 1;
-    if (type1Effectiveness * type2Effectiveness >= 2) {
+    let effectiveness = 1;
+    for (const type of defender.teraType ? [defender.teraType] : defender.types) {
+      effectiveness *= getMoveEffectiveness(
+        gen,
+        move,
+        type,
+        isGhostRevealed,
+        field.isGravity,
+        isRingTarget
+      );
+    }
+    if (effectiveness >= 2) {
       bpMods.push(5461);
       desc.moveBP = basePower * (5461 / 4096);
     }
