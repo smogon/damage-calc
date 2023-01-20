@@ -840,7 +840,10 @@ export function calculateBPModsSMSSSV(
 
   let resistedKnockOffDamage =
     !defender.item ||
-    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
+    (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal')) ||
+    (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe')) ||
+    // Griseous Core for gen 9, Griseous Orb otherwise
+    (defender.name.includes('Giratina-Origin') && defender.item.includes('Griseous')) ||
     (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
     (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
     (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
@@ -1048,14 +1051,15 @@ export function calculateBPModsSMSSSV(
     bpMods.push(5325);
     desc.attackerItem = attacker.item;
   } else if (
-    (attacker.hasItem('Adamant Orb') &&
-     attacker.named('Dialga') &&
+    ((attacker.hasItem('Adamant Crystal') && attacker.named('Dialga-Origin')) ||
+      (attacker.hasItem('Adamant Orb') && attacker.named('Dialga')) &&
      move.hasType('Steel', 'Dragon')) ||
-    (attacker.hasItem('Lustrous Orb') &&
-     attacker.named('Palkia') &&
+    ((attacker.hasItem('Lustrous Orb') &&
+     attacker.named('Palkia')) ||
+      (attacker.hasItem('Lustrous Globe') && attacker.named('Palkia-Origin')) &&
      move.hasType('Water', 'Dragon')) ||
-    (attacker.hasItem('Griseous Orb') &&
-     attacker.named('Giratina-Origin') &&
+    ((attacker.hasItem('Griseous Orb') || attacker.hasItem('Griseous Core')) &&
+     (attacker.named('Giratina-Origin') || attacker.named('Giratina')) &&
      move.hasType('Ghost', 'Dragon')) ||
     (attacker.hasItem('Vile Vial') &&
      attacker.named('Venomicon-Epilogue') &&
