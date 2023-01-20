@@ -125,7 +125,11 @@ export function calculateSMSSSV(
   if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal') &&
     (attackerIgnoresAbility || moveIgnoresAbility)) {
     if (attackerIgnoresAbility) desc.attackerAbility = attacker.ability;
-    defender.ability = '' as AbilityName;
+    if (defender.hasItem('Ability Shield')) {
+      desc.defenderItem = defender.item;
+    } else {
+      defender.ability = '' as AbilityName;
+    }
   }
 
   // Merciless does not ignore Shell Armor, damage dealt to a poisoned Pokemon with Shell Armor
