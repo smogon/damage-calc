@@ -902,7 +902,7 @@ export function calculateBPModsSMSSSV(
     const type2Effectiveness = types[1] ? getMoveEffectiveness(
       gen,
       move,
-      types[0],
+      types[1],
       isGhostRevealed,
       field.isGravity,
       isRingTarget
