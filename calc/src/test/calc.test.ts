@@ -927,6 +927,30 @@ describe('calc', () => {
             '0 Atk Supreme Overlord 5 allies fainted Kingambit Iron Head vs. 0 HP / 0 Def Aggron: 100-118 (35.5 - 41.9%) -- guaranteed 3HKO'
           );
         });
+        test('Electro Drift/Collision Course boost on Super Effective hits', () => {
+          const attacker = Pokemon('Arceus'); // same stats in each offense, does not get stab on fighting or electric
+          let defender = Pokemon('Mew'); // neutral to both
+          const calc = (move = Move('Electro Drift')) => calculate(attacker, defender, move).range();
+          // 1x effectiveness should be identical to just using a 100 BP move
+          const neutral = calc();
+          const fusionBolt = Move('Fusion Bolt');
+          expect(calc(fusionBolt)).toEqual(neutral);
+          // 2x effectiveness
+          defender = Pokemon('Manaphy');
+          const se = calc();
+          // expect some sort of boost compared to the control
+          expect(calc(fusionBolt)).not.toEqual(se);
+          // tera should be able to revoke the boost
+          defender.teraType = 'Normal';
+          expect(calc()).toEqual(neutral);
+          // check if secondary type resist is handled
+          const cc = Move('Collision Course'); // Fighting type
+          defender = Pokemon('Jirachi'); // Steel / Psychic is neutral to fighting, so no boost
+          expect(calc(cc)).toEqual(neutral);
+          // tera should cause the boost to be applied
+          defender.teraType = 'Normal';
+          expect(calc(cc)).toEqual(se);
+        });
       });
     });
   });
