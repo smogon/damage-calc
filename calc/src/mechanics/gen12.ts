@@ -66,11 +66,11 @@ export function calculateRBYGSC(
   let secondDefenderType = defender.types[1];
 
   if (secondDefenderType && firstDefenderType !== secondDefenderType && gen.num === 2) {
-      const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
-      const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
+    const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
+    const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
 
-      if (firstTypePrecedence > secondTypePrecedence) {
-        [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
+    if (firstTypePrecedence > secondTypePrecedence) {
+      [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
     }
   }
 
