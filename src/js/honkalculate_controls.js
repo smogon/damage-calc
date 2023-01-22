@@ -238,12 +238,12 @@ function placeBsBtn() {
 }
 
 $(".mode").change(function () {
-	if ($("#one-vs-one").prop("checked")) {
+	if ($("#one-vs-one").prop("selected")) {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');
 		params = '' + params;
 		window.location.replace('index' + linkExtension + (params.length ? '?' + params : ''));
-	} else if ($("#randoms").prop("checked")) {
+	} else if ($("#randoms").prop("selected")) {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');
 		params = '' + params;
@@ -322,7 +322,7 @@ $(document).ready(function () {
 		window.mode = "one-vs-all";
 	}
 
-	$("#" + mode).prop("checked", true);
+	$("#" + mode).prop("selected", true);
 	$("#holder-2 th:first").text((mode === "one-vs-all") ? "Defender" : "Attacker");
 	$("#holder-2").show();
 

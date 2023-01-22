@@ -485,7 +485,7 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var randset = $("#randoms").prop("checked") ? randdex[pokemonName] : undefined;
+		var randset = $("#randoms").prop("selected") ? randdex[pokemonName] : undefined;
 		var regSets = pokemonName in setdex && setName in setdex[pokemonName];
 
 		if (randset) {
@@ -532,7 +532,7 @@ $(".set-selector").change(function () {
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
 					(set.evs && set.evs[LEGACY_STATS[gen][i]] !== undefined) ?
-						set.evs[LEGACY_STATS[gen][i]] : ($("#randoms").prop("checked") ? 84 : 0));
+						set.evs[LEGACY_STATS[gen][i]] : ($("#randoms").prop("selected") ? 84 : 0));
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[LEGACY_STATS[gen][i]] !== undefined) ? set.ivs[LEGACY_STATS[gen][i]] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
@@ -540,7 +540,7 @@ $(".set-selector").change(function () {
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
-			if ($("#randoms").prop("checked")) {
+			if ($("#randoms").prop("selected")) {
 				setSelectValueIfValid(abilityObj, randset.abilities && randset.abilities[0], abilityFallback);
 				setSelectValueIfValid(itemObj, randset.items && randset.items[0], "");
 			} else {
@@ -592,7 +592,7 @@ $(".set-selector").change(function () {
 				moveObj.val("(No Move)");
 				moveObj.change();
 			}
-			if ($("#randoms").prop("checked")) {
+			if ($("#randoms").prop("selected")) {
 				$(this).closest('.poke-info').find(".move-pool").hide();
 			}
 		}
@@ -691,7 +691,7 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
-	var isRandoms = $("#randoms").prop("checked");
+	var isRandoms = $("#randoms").prop("selected");
 	var pokemonSets = isRandoms ? randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
@@ -766,7 +766,7 @@ function createPokemon(pokeInfo) {
 	if (typeof pokeInfo === "string") { // in this case, pokeInfo is the id of an individual setOptions value whose moveset's tier matches the selected tier(s)
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
-		var isRandoms = $("#randoms").prop("checked");
+		var isRandoms = $("#randoms").prop("selected");
 		var set = isRandoms ? randdex[name] : setdex[name][setName];
 
 		var ivs = {};
@@ -1161,7 +1161,7 @@ function getSetOptions(sets) {
 			pokemon: pokeName,
 			text: pokeName
 		});
-		if ($("#randoms").prop("checked")) {
+		if ($("#randoms").prop("selected")) {
 			if (pokeName in randdex) {
 				setOptions.push({
 					pokemon: pokeName,
@@ -1307,7 +1307,7 @@ function getTerrainEffects() {
 function loadDefaultLists() {
 	$(".set-selector").select2({
 		formatResult: function (object) {
-			if ($("#randoms").prop("checked")) {
+			if ($("#randoms").prop("selected")) {
 				return object.pokemon;
 			} else {
 				return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
@@ -1323,7 +1323,7 @@ function loadDefaultLists() {
 				if (!query.term || query.term.toUpperCase().split(" ").every(function (term) {
 					return pokeName.indexOf(term) === 0 || pokeName.indexOf("-" + term) >= 0 || pokeName.indexOf(" " + term) >= 0;
 				})) {
-					if ($("#randoms").prop("checked")) {
+					if ($("#randoms").prop("selected")) {
 						if (option.id) results.push(option);
 					} else {
 						results.push(option);

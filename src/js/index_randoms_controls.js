@@ -182,7 +182,7 @@ $(document).ready(function () {
 		if (m !== 'one-vs-one' && m !== 'randoms') {
 			window.location.replace('honkalculate' + linkExtension + '?' + params);
 		} else {
-			if ($('#randoms').prop('checked')) {
+			if ($('#randoms').prop('selected')) {
 				if (m === 'one-vs-one') {
 					window.location.replace('index' + linkExtension + '?' + params);
 				}
