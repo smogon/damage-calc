@@ -236,6 +236,36 @@ describe('calc', () => {
       });
     });
 
+    inGens(5, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      const dragonite = Pokemon('Dragonite', {ability: 'Multiscale'});
+      const dragonite1 = Pokemon('Dragonite', {ability: 'Multiscale', curHP: 69});
+      const dragonite2 = Pokemon('Dragonite', {ability: 'Shadow Shield', item: 'Heavy-Duty Boots'});
+      if (gen > 7) {
+        test(`Multiscale and Shadow Shield halves damage even if there are hazzards if holding Heavy-Duty Boots (gen ${gen})`, () => {
+          const field = Field({defenderSide: {isSR: true}});
+          const result = calculate(Pokemon('Abomasnow'), dragonite2, Move('Blizzard'), field);
+          expect(result.range()).toEqual([222, 264]);
+          expect(result.desc()).toBe(
+            '0 SpA Abomasnow Blizzard vs. 0 HP / 0 SpD Shadow Shield Dragonite: 222-264 (68.7 - 81.7%) -- guaranteed 2HKO'
+          );
+        });
+      }
+      test(`Multiscale and Shadow Shield should not halve damage if less than 100% HP (gen ${gen})`, () => {
+        const result = calculate(Pokemon('Abomasnow'), dragonite1, Move('Ice Shard'));
+        expect(result.range()).toEqual([168, 204]);
+        expect(result.desc()).toBe(
+          '0 Atk Abomasnow Ice Shard vs. 0 HP / 0 Def Dragonite: 168-204 (52 - 63.1%) -- guaranteed OHKO'
+        );
+      });
+      test(`Multiscale and Shadow Shield Should halve damage taken (gen ${gen})`, () => {
+        const result = calculate(Pokemon('Abomasnow'), dragonite, Move('Ice Shard'));
+        expect(result.range()).toEqual([84, 102]);
+        expect(result.desc()).toBe(
+          '0 Atk Abomasnow Ice Shard vs. 0 HP / 0 Def Multiscale Dragonite: 84-102 (26 - 31.5%) -- guaranteed 4HKO'
+        );
+      });
+    });
+
     inGen(8, ({gen, Pokemon}) => {
       test(`Pokemon should double their HP stat when dynamaxing (gen ${gen})`, () => {
         const munchlax = Pokemon('Munchlax', {isDynamaxed: true});
