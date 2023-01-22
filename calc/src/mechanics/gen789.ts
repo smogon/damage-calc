@@ -1452,8 +1452,8 @@ export function calculateFinalModsSMSSSV(
 
   if (defender.hasAbility('Multiscale', 'Shadow Shield') &&
       defender.curHP() === defender.maxHP() &&
-      !field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) &&
-      !attacker.hasAbility('Parental Bond (Child)')
+      (!field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) ||
+      defender.hasItem('Heavy-Duty Boots')) && !attacker.hasAbility('Parental Bond (Child)')
   ) {
     finalMods.push(2048);
     desc.defenderAbility = defender.ability;
