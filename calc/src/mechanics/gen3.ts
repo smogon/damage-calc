@@ -62,14 +62,46 @@ export function calculateADV(
     desc.moveBP = move.bp;
   }
 
+  const typeEffectivenessPrecedenceRules = [
+    'Normal',
+    'Fire',
+    'Water',
+    'Electric',
+    'Grass',
+    'Ice',
+    'Fighting',
+    'Poison',
+    'Ground',
+    'Flying',
+    'Psychic',
+    'Bug',
+    'Rock',
+    'Ghost',
+    'Dragon',
+    'Dark',
+    'Steel',
+  ];
+
+  let firstDefenderType = defender.types[0];
+  let secondDefenderType = defender.types[1];
+
+  if (secondDefenderType && firstDefenderType !== secondDefenderType) {
+    const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
+    const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
+
+    if (firstTypePrecedence > secondTypePrecedence) {
+      [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
+    }
+  }
+
   const type1Effectiveness = getMoveEffectiveness(
     gen,
     move,
-    defender.types[0],
+    firstDefenderType,
     field.defenderSide.isForesight
   );
-  const type2Effectiveness = defender.types[1]
-    ? getMoveEffectiveness(gen, move, defender.types[1], field.defenderSide.isForesight)
+  const type2Effectiveness = secondDefenderType
+    ? getMoveEffectiveness(gen, move, secondDefenderType, field.defenderSide.isForesight)
     : 1;
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 

@@ -103,10 +103,43 @@ export function calculateDPP(
   }
 
   const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+
+  const typeEffectivenessPrecedenceRules = [
+    'Normal',
+    'Fire',
+    'Water',
+    'Electric',
+    'Grass',
+    'Ice',
+    'Fighting',
+    'Poison',
+    'Ground',
+    'Flying',
+    'Psychic',
+    'Bug',
+    'Rock',
+    'Ghost',
+    'Dragon',
+    'Dark',
+    'Steel',
+  ];
+
+  let firstDefenderType = defender.types[0];
+  let secondDefenderType = defender.types[1];
+
+  if (secondDefenderType && firstDefenderType !== secondDefenderType) {
+    const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
+    const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
+
+    if (firstTypePrecedence > secondTypePrecedence) {
+      [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
+    }
+  }
+
   let type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity);
-  let type2Effectiveness = defender.types[1]
-    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
+    getMoveEffectiveness(gen, move, firstDefenderType, isGhostRevealed, field.isGravity);
+  let type2Effectiveness = secondDefenderType
+    ? getMoveEffectiveness(gen, move, secondDefenderType, isGhostRevealed, field.isGravity)
     : 1;
 
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
