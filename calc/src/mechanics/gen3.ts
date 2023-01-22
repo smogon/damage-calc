@@ -86,12 +86,6 @@ export function calculateADV(
   let secondDefenderType = defender.types[1];
 
   if (secondDefenderType && firstDefenderType !== secondDefenderType) {
-    if (move.type === 'Ice' && (firstDefenderType === 'Fire' || secondDefenderType === 'Fire')) {
-      if (firstDefenderType === 'Fire') {
-        firstDefenderType = secondDefenderType;
-        secondDefenderType = 'Fire';
-      }
-    } else {
       const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
       const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
 
