@@ -7,6 +7,7 @@ export namespace State {
     ability?: I.AbilityName;
     abilityOn?: boolean;
     isDynamaxed?: boolean;
+    dynamaxLevel?: number;
     isSaltCure?: boolean;
     alliesFainted?: number;
     item?: I.ItemName;
