@@ -122,12 +122,12 @@ export function calculateSMSSSV(
     'Searing Sunraze Smash',
     'Sunsteel Strike'
   );
-  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal')) {
-    if (attackerIgnoresAbility) {
-      defender.ability = '' as AbilityName;
-      desc.attackerAbility = attacker.ability;
-    }
-    if (moveIgnoresAbility) {
+  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal') &&
+    (attackerIgnoresAbility || moveIgnoresAbility)) {
+    if (attackerIgnoresAbility) desc.attackerAbility = attacker.ability;
+    if (defender.hasItem('Ability Shield')) {
+      desc.defenderItem = defender.item;
+    } else {
       defender.ability = '' as AbilityName;
     }
   }
