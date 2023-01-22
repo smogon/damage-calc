@@ -66,18 +66,11 @@ export function calculateRBYGSC(
   let secondDefenderType = defender.types[1];
 
   if (secondDefenderType && firstDefenderType !== secondDefenderType && gen.num === 2) {
-    if (move.type === 'Ice' && (firstDefenderType === 'Fire' || secondDefenderType === 'Fire')) {
-      if (firstDefenderType === 'Fire') {
-        firstDefenderType = secondDefenderType;
-        secondDefenderType = 'Fire';
-      }
-    } else {
       const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
       const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
 
       if (firstTypePrecedence > secondTypePrecedence) {
         [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
-      }
     }
   }
 
