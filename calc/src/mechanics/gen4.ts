@@ -130,6 +130,7 @@ export function calculateDPP(
   if (secondDefenderType && firstDefenderType !== secondDefenderType) {
     const firstTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(firstDefenderType);
     const secondTypePrecedence = typeEffectivenessPrecedenceRules.indexOf(secondDefenderType);
+
     if (firstTypePrecedence > secondTypePrecedence) {
       [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
     }
