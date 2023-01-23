@@ -558,11 +558,13 @@ function getEndOfTurn(
   }
 
   if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
+    let recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
+    if (defender.hasItem('Big Root')) recovery = Math.trunc(recovery * 5324 / 4096);
     if (attacker.hasAbility('Liquid Ooze')) {
-      damage -= Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
+      damage -= recovery;
       texts.push('Liquid Ooze damage');
     } else {
-      damage += Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
+      damage += recovery;
       texts.push('Leech Seed recovery');
     }
   }
