@@ -62,8 +62,8 @@ export class Pokemon implements State.Pokemon {
     this.abilityOn = !!options.abilityOn;
 
     this.isDynamaxed = !!options.isDynamaxed;
-    this.dynamaxLevel = this.isDynamaxed ?
-      (options.dynamaxLevel === undefined ? 10 : options.dynamaxLevel) : undefined;
+    this.dynamaxLevel = this.isDynamaxed
+      ? (options.dynamaxLevel === undefined ? 10 : options.dynamaxLevel) : undefined;
     this.isSaltCure = !!options.isSaltCure;
     this.alliesFainted = options.alliesFainted;
     this.teraType = options.teraType;
