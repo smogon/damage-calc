@@ -132,8 +132,12 @@ export function getRecovery(
     const percentHealed = move.drain[0] / move.drain[1];
     const max = Math.round(defender.maxHP() * percentHealed);
     for (let i = 0; i < minD.length; i++) {
-      recovery[0] += Math.min(Math.round(minD[i] * move.hits * percentHealed), max);
-      recovery[1] += Math.min(Math.round(maxD[i] * move.hits * percentHealed), max);
+      const range = [minD[i], maxD[i]];
+      for (const j in recovery) {
+        let drained = Math.round(range[j] * percentHealed);
+        if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 5324 / 4096);
+        recovery[j] += Math.min(drained * move.hits, max);
+      }
     }
   }
 
