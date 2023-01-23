@@ -890,18 +890,19 @@ export function calculateBPModsSMSSSV(
       attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
     const isRingTarget =
       defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
+    const types = defender.teraType ? [defender.teraType] : defender.types;
     const type1Effectiveness = getMoveEffectiveness(
       gen,
       move,
-      defender.types[0],
+      types[0],
       isGhostRevealed,
       field.isGravity,
       isRingTarget
     );
-    const type2Effectiveness = defender.types[1] ? getMoveEffectiveness(
+    const type2Effectiveness = types[1] ? getMoveEffectiveness(
       gen,
       move,
-      defender.types[0],
+      types[1],
       isGhostRevealed,
       field.isGravity,
       isRingTarget
