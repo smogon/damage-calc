@@ -710,7 +710,12 @@ describe('calc', () => {
         expect(recovery.recovery).toEqual([161, 161]);
         expect(recovery.text).toBe('52.1 - 52.1% recovered');
       });
-
+      test('Big Root', () => {
+        const bigRoot = Pokemon('Blissey', {item: 'Big Root'});
+        const result = calculate(bigRoot, abomasnow, Move('Drain Punch'));
+        expect(result.range()).toEqual([38, 46]);
+        expect(result.recovery().recovery).toEqual([24, 29]);
+      });
       test('Loaded Field', () => {
         const field = Field({
           gameType: 'Doubles',
