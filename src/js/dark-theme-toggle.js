@@ -8,7 +8,7 @@
 * render.
 */
 
-let prefersDarkTheme = localStorage.getItem('darkTheme');
+var prefersDarkTheme = localStorage.getItem('darkTheme');
 
 /*
 * localStorage will only store strings
@@ -22,35 +22,34 @@ if (prefersDarkTheme == 'true') {
 	prefersDarkTheme = false;
 }
 
-const darkThemeButton = document.getElementById('dark-theme-toggle');
-darkThemeButton.innerText =
-		`Click for ${prefersDarkTheme ? 'Light' : 'Dark'} Theme!`
+var darkThemeButton = document.getElementById('dark-theme-toggle');
+darkThemeButton.innerText = prefersDarkTheme ? 'Click for Light Theme' : 'Click for Dark Theme';
 
 /*
 * Function that toggles light and dark mode
 * Doesn't use jQuery, probably could with some modification
 */
 function toggleTheme() {
-	prefersDarkTheme = !prefersDarkTheme
+	prefersDarkTheme = !prefersDarkTheme;
 
 	// Toggle for all elements
-	const elements = document.getElementsByTagName('*')
-	for (let element of elements) {
-		element.classList.toggle('dark-theme')
+	var elements = document.getElementsByTagName('*');
+	for (var index = 0; index < elements.length; index++) {
+		var element = elements[index];
+		element.classList.toggle('dark-theme');
 	}
 
-	localStorage.setItem('darkTheme', prefersDarkTheme)
-	darkThemeButton.innerText =
-		`Click for ${prefersDarkTheme ? 'Light' : 'Dark'} Theme!`
+	localStorage.setItem('darkTheme', prefersDarkTheme);
+	darkThemeButton.innerText = prefersDarkTheme ? 'Click for Light Theme' : 'Click for Dark Theme';
 }
 
-darkThemeButton.addEventListener('click', () => {
+darkThemeButton.addEventListener('click', function () {
 	// Idk why this can't be directly called, but oh well
-	toggleTheme()
-})
+	toggleTheme();
+});
 
 // Loads dark mode if user prefers it from beginning
 if (prefersDarkTheme) {
-	prefersDarkTheme = false
+	prefersDarkTheme = false;
 	toggleTheme();
 }
