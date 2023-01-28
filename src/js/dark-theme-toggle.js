@@ -1,14 +1,11 @@
 /*
 * Dark mode toggle
 *
-* In its current state, it will cause a FOIT.
-* Based on Internet research, the only way to
-* prevent this is to have a server-side language
-* insert the dark-theme class before it begins to
-* render.
+* In its current state, it will cause a minor FOIT.
+* Basically, the background behind the panels will
+* briefly flash white before turning dark. It's
+* better than before, but not perfect.
 */
-
-var prefersDarkTheme = localStorage.getItem('darkTheme');
 
 /*
 * localStorage will only store strings
@@ -16,11 +13,7 @@ var prefersDarkTheme = localStorage.getItem('darkTheme');
 * It will be truey and incorrectly cause the
 * dark theme to load.
 */
-if (prefersDarkTheme == 'true') {
-	prefersDarkTheme = true;
-} else {
-	prefersDarkTheme = false;
-}
+var prefersDarkTheme = localStorage.getItem('darkTheme') === 'true';
 
 var darkThemeButton = document.getElementById('dark-theme-toggle');
 darkThemeButton.innerText = prefersDarkTheme ? 'Click for Light Theme' : 'Click for Dark Theme';
@@ -32,24 +25,11 @@ darkThemeButton.innerText = prefersDarkTheme ? 'Click for Light Theme' : 'Click 
 function toggleTheme() {
 	prefersDarkTheme = !prefersDarkTheme;
 
-	// Toggle for all elements
-	var elements = document.getElementsByTagName('*');
-	for (var index = 0; index < elements.length; index++) {
-		var element = elements[index];
-		element.classList.toggle('dark-theme');
-	}
+	var darkStyles = document.getElementById('dark-theme-styles');
+	darkStyles.disabled = !darkStyles.disabled;
 
 	localStorage.setItem('darkTheme', prefersDarkTheme);
 	darkThemeButton.innerText = prefersDarkTheme ? 'Click for Light Theme' : 'Click for Dark Theme';
 }
 
-darkThemeButton.addEventListener('click', function () {
-	// Idk why this can't be directly called, but oh well
-	toggleTheme();
-});
-
-// Loads dark mode if user prefers it from beginning
-if (prefersDarkTheme) {
-	prefersDarkTheme = false;
-	toggleTheme();
-}
+darkThemeButton.addEventListener('click', toggleTheme);
