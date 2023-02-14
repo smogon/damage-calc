@@ -37,8 +37,8 @@
     "compile": "subpkg run compile && node build view",
     "bundle": "subpkg run bundle",
     "build": "subpkg run build && node build view",
-    "test": "subpkg run test && npm run build && eslint --cache src --ext js"
-
+    "test": "subpkg run test && npm run build && eslint --cache src --ext js",
+    "postinstall": "subpkg install"
   },
   "subPackages": [
     "calc"
