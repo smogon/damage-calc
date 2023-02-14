@@ -3,9 +3,6 @@
   "homepage": "https://calc.pokemonshowdown.com/",
   "repository": "github:smogon/damage-calc",
   "license": "MIT",
-  "dependencies": {
-    "@smogon/calc": "file:calc"
-  },
   "devDependencies": {
     "eslint": "^8.27.0",
     "express": "^4.18.2",
@@ -40,8 +37,8 @@
     "compile": "subpkg run compile && node build view",
     "bundle": "subpkg run bundle",
     "build": "subpkg run build && node build view",
-    "test": "subpkg run test && npm run build && eslint --cache src --ext js",
-    "postinstall": "subpkg install"
+    "test": "subpkg run test && npm run build && eslint --cache src --ext js"
+
   },
   "subPackages": [
     "calc"
