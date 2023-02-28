@@ -9297,6 +9297,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Quark Drive'},
   },
+  'Iron Leaves': {
+    types: ['Grass', 'Psychic'],
+    bs: {hp:90, at: 130, df: 88, sa: 70, sd: 108, sp: 104},
+    weightkg: 125,
+    abilities: {0: 'Quark Drive'},
+  },
   'Iron Moth': {
     types: ['Fire', 'Poison'],
     bs: {hp: 80, at: 70, df: 60, sa: 140, sd: 110, sp: 110},
@@ -9715,6 +9721,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 90, at: 102, df: 73, sa: 78, sd: 65, sp: 70},
     weightkg: 90,
     abilities: {0: 'Mold Breaker'},
+  },
+  'Walking Wake': {
+    types: ['Water', 'Dragon'],
+    bs: {hp: 99, at: 83, df: 91, sa: 125, sd: 83, sp: 109},
+    weightkg: 280,
+    abilities: {0: 'Protosynthesis'},
   },
   Wattrel: {
     types: ['Electric', 'Flying'],
