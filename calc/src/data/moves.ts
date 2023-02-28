@@ -4388,6 +4388,13 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     isPunch: true,
   },
+  'Hydro Steam': {
+    bp: 80,
+    type: 'Water',
+    category: 'Special',
+    zp: 160,
+    maxPower: 130,
+  },
   'Hyper Drill': {
     bp: 100,
     type: 'Normal',
@@ -4536,6 +4543,15 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 0,
     type: 'Normal',
     category: 'Status',
+  },
+  Psyblade: {
+    bp: 80,
+    type: 'Psychic',
+    category: 'Physical',
+    zp: 160,
+    maxPower: 130,
+    makesContact: true,
+    isSlicing: true,
   },
   'Psyshield Bash': {
     bp: 70,
