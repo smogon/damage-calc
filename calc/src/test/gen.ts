@@ -301,6 +301,7 @@ class Specie implements I.Specie {
   readonly weightkg: number;
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
+  readonly canGigantamax?: I.MoveName;
   readonly otherFormes?: I.SpeciesName[];
   readonly baseSpecies?: I.SpeciesName;
   readonly abilities?: {0: I.AbilityName};
@@ -324,30 +325,12 @@ class Specie implements I.Specie {
       } else {
         this.baseSpecies = 'Aegislash-Blade' as I.SpeciesName;
       }
-    } else if (species.id === 'toxtricity') {
-      this.otherFormes = [
-        'Toxtricity-Gmax', 'Toxtricity-Low-Key', 'Toxtricity-Low-Key-Gmax',
-      ] as I.SpeciesName[];
-    } else if (species.id === 'toxtricitylowkey') {
-      this.baseSpecies = 'Toxtricity' as I.SpeciesName;
-    } else if (species.id === 'urshifu') {
-      this.otherFormes = [
-        'Urshifu-Gmax', 'Urshifu-Rapid-Strike', 'Urshifu-Rapid-Strike-Gmax',
-      ] as I.SpeciesName[];
-    } else if (species.id === 'eternatus') {
-      this.otherFormes = ['Eternatus-Eternamax'] as I.SpeciesName[];
     } else if (formes?.length) {
       this.otherFormes = [...formes].sort() as I.SpeciesName[];
     } else if (species.baseSpecies !== this.name) {
       this.baseSpecies = species.baseSpecies as I.SpeciesName;
     }
-    // TODO: clean this up with proper Gigantamax support
-    if (dex.gen === 8 && species.canGigantamax &&
-        !(species.id.startsWith('toxtricity') || species.id.startsWith('urshifu'))) {
-      const formes = this.otherFormes || [];
-      const gmax = dex.species.get(`${species.name}-Gmax`);
-      if (exists(gmax, dex.gen)) this.otherFormes = [...formes, gmax.name].sort();
-    }
+    if (species.canGigantamax) this.canGigantamax = species.canGigantamax;
 
     if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
   }
@@ -505,7 +488,7 @@ function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.Gen
   }
   if (gen >= 6 && ['floetteeternal'].includes(val.id)) return true;
   // TODO: clean this up with proper Gigantamax support
-  if (val.isNonstandard && !['CAP', 'Unobtainable', 'Gigantamax'].includes(val.isNonstandard)) {
+  if (val.isNonstandard && !['CAP', 'Unobtainable'].includes(val.isNonstandard)) {
     return false;
   }
   return !('tier' in val && ['Illegal', 'Unreleased'].includes(val.tier));

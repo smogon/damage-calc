@@ -19,7 +19,7 @@ export class Pokemon implements State.Pokemon {
   gender?: I.GenderName;
   ability?: I.AbilityName;
   abilityOn?: boolean;
-  isDynamaxed?: boolean;
+  isDynamaxed?: 'gmax' | boolean;
   isSaltCure?: boolean;
   alliesFainted?: number;
   item?: I.ItemName;
@@ -53,7 +53,6 @@ export class Pokemon implements State.Pokemon {
     this.gen = gen;
     this.name = options.name || name as I.SpeciesName;
     this.types = this.species.types;
-    this.weightkg = this.species.weightkg;
 
     this.level = options.level || 100;
     this.gender = options.gender || this.species.gender || 'M';
@@ -61,6 +60,7 @@ export class Pokemon implements State.Pokemon {
     this.abilityOn = !!options.abilityOn;
 
     this.isDynamaxed = !!options.isDynamaxed;
+    this.weightkg = this.isDynamaxed ? 0 : this.species.weightkg;
     this.isSaltCure = !!options.isSaltCure;
     this.alliesFainted = options.alliesFainted;
     this.teraType = options.teraType;
@@ -69,12 +69,6 @@ export class Pokemon implements State.Pokemon {
     this.ivs = Pokemon.withDefault(gen, options.ivs, 31);
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
-
-    // Gigantamax 'forms' inherit weight from their base species when not dynamaxed
-    // TODO: clean this up with proper Gigantamax support
-    if (this.weightkg === 0 && !this.isDynamaxed && this.species.baseSpecies) {
-      this.weightkg = gen.species.get(toID(this.species.baseSpecies))!.weightkg;
-    }
 
     if (gen.num < 3) {
       this.ivs.hp = Stats.DVToIV(

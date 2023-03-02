@@ -617,6 +617,18 @@ $(".set-selector").change(function () {
 		} else {
 			formeObj.hide();
 		}
+		if (gen === 8) {
+			if (pokemon.canGigantamax) {
+				$(this).closest('.poke-info').find('.dynamaxOnly').hide();
+				$(this).closest('.poke-info').find('.dynamaxAndGigantamax').show();
+			} else {
+				$(this).closest('.poke-info').find('.dynamaxOnly').show();
+				$(this).closest('.poke-info').find('.dynamaxAndGigantamax').hide();
+			}
+		} else {
+			$(this).closest('.poke-info').find('.dynamaxOnly').hide();
+			$(this).closest('.poke-info').find('.dynamaxAndGigantamax').hide();
+		}
 		calcHP(pokeObj);
 		calcStats(pokeObj);
 		abilityObj.change();
@@ -838,12 +850,17 @@ function createPokemon(pokeInfo) {
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		var isGigantamaxed = pokeInfo.find(".gmax").prop("checked");
+		if (isGigantamaxed) {
+			pokeInfo.find(".max").prop("checked", true);
+			isDynamaxed = pokeInfo.find(".max").prop("checked");
+		}
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
-		pokeInfo.isDynamaxed = isDynamaxed;
+		pokeInfo.isDynamaxed = isGigantamaxed ? 'gmax' : !!isDynamaxed;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
-		if (isDynamaxed) curHP = Math.floor(curHP / 2);
+		if (pokeInfo.isDynamaxed) curHP = Math.floor(curHP / 2);
 		var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
@@ -854,7 +871,7 @@ function createPokemon(pokeInfo) {
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
-			isDynamaxed: isDynamaxed,
+			isDynamaxed: isGigantamaxed ? 'gmax' : !!isDynamaxed,
 			isSaltCure: pokeInfo.find(".saltcure").is(":checked"),
 			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
 			teraType: teraType,
@@ -895,8 +912,8 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 	};
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
-		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits,
-		timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax
+		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits, timesUsed: timesUsed,
+		timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax,
 	});
 }
 
