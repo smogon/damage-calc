@@ -8960,7 +8960,7 @@ const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Zoroark-Hisui': {
     types: ['Normal', 'Ghost'],
-    bs: {hp: 60, at: 105, df: 60, sa: 120, sd: 60, sp: 105},
+    bs: {hp: 55, at: 100, df: 60, sa: 125, sd: 60, sp: 110},
     weightkg: 73,
     abilities: {0: 'Illusion'},
     baseSpecies: 'Zoroark',
@@ -8981,7 +8981,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dunsparce: {nfe: true},
   Girafarig: {nfe: true},
   Primeape: {nfe: true},
-  Tauros: {otherFormes: ['Tauros-Paldea', 'Tauros-Paldea-Fire', 'Tauros-Paldea-Water']},
+  Tauros: {otherFormes: ['Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Combat']},
   Wooper: {otherFormes: ['Wooper-Paldea']},
   Zacian: {bs: {at: 120}},
   'Zacian-Crowned': {bs: {at: 150}},
@@ -9183,7 +9183,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Flittle: {
     types: ['Psychic'],
-    bs: {hp: 30, at: 35, df: 30, sa: 55, sd: 40, sp: 75},
+    bs: {hp: 30, at: 35, df: 30, sa: 55, sd: 30, sp: 75},
     weightkg: 1.5,
     abilities: {0: 'Anticipation'},
     nfe: true,
@@ -9236,6 +9236,16 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Rattled'},
     nfe: true,
+    otherFormes: ['Gimmighoul-Roaming'],
+  },
+  'Gimmighoul-Roaming': {
+    types: ['Ghost'],
+    bs: {hp: 45, at: 30, df: 25, sa: 75, sd: 45, sp: 80},
+    weightkg: 0.1,
+    gender: 'N',
+    abilities: {0: 'Run Away'},
+    nfe: true,
+    baseSpecies: 'Gimmighoul',
   },
   Glimmet: {
     types: ['Rock', 'Poison'],
@@ -9294,6 +9304,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Dark', 'Flying'],
     bs: {hp: 94, at: 80, df: 86, sa: 122, sd: 80, sp: 108},
     weightkg: 111,
+    gender: 'N',
+    abilities: {0: 'Quark Drive'},
+  },
+  'Iron Leaves': {
+    types: ['Grass', 'Psychic'],
+    bs: {hp: 90, at: 130, df: 88, sa: 70, sd: 108, sp: 104},
+    weightkg: 125,
     gender: 'N',
     abilities: {0: 'Quark Drive'},
   },
@@ -9642,22 +9659,22 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 8,
     abilities: {0: 'Commander'},
   },
-  'Tauros-Paldea': {
-    types: ['Fighting'],
+  'Tauros-Paldea-Aqua': {
+    types: ['Fighting', 'Water'],
     bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
     weightkg: 88.4,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Tauros',
   },
-  'Tauros-Paldea-Fire': {
+  'Tauros-Paldea-Blaze': {
     types: ['Fighting', 'Fire'],
     bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
     weightkg: 88.4,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Tauros',
   },
-  'Tauros-Paldea-Water': {
-    types: ['Fighting', 'Water'],
+  'Tauros-Paldea-Combat': {
+    types: ['Fighting'],
     bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
     weightkg: 88.4,
     abilities: {0: 'Intimidate'},
@@ -9715,6 +9732,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 90, at: 102, df: 73, sa: 78, sd: 65, sp: 70},
     weightkg: 90,
     abilities: {0: 'Mold Breaker'},
+  },
+  'Walking Wake': {
+    types: ['Water', 'Dragon'],
+    bs: {hp: 99, at: 83, df: 91, sa: 125, sd: 83, sp: 109},
+    weightkg: 280,
+    gender: 'N',
+    abilities: {0: 'Protosynthesis'},
   },
   Wattrel: {
     types: ['Electric', 'Flying'],

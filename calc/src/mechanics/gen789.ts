@@ -181,11 +181,11 @@ export function calculateSMSSSV(
       type = 'Dark';
     }
   } else if (move.named('Raging Bull')) {
-    if (attacker.named('Tauros-Paldea')) {
+    if (attacker.named('Tauros-Paldea-Combat')) {
       type = 'Fighting';
-    } else if (attacker.named('Tauros-Paldea-Fire')) {
+    } else if (attacker.named('Tauros-Paldea-Blaze')) {
       type = 'Fire';
-    } else if (attacker.named('Tauros-Paldea-Water')) {
+    } else if (attacker.named('Tauros-Paldea-Aqua')) {
       type = 'Water';
     }
   }
@@ -471,7 +471,7 @@ export function calculateSMSSSV(
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
     desc.weather = field.weather;
   } else if (!noWeatherBoost &&
-    ((field.hasWeather('Sun') && move.hasType('Water')) ||
+    ((field.hasWeather('Sun') && move.hasType('Water') && !move.named('Hydro Steam')) ||
     (field.hasWeather('Rain') && move.hasType('Fire')))
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
@@ -704,6 +704,13 @@ export function calculateBasePowerSMSSSV(
       attacker.hasItem('Utility Umbrella')) basePower = move.bp;
     desc.moveBP = basePower;
     break;
+  case 'Hydro Steam':
+    basePower = move.bp * (field.hasWeather('Sun') ? 1.5 : 1);
+    if (field.hasWeather('Sun') && !attacker.hasItem('Utility Umbrella')) {
+      desc.moveBP = basePower;
+      desc.weather = field.weather;
+    }
+    break;
   case 'Terrain Pulse':
     basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
     desc.moveBP = basePower;
@@ -711,6 +718,14 @@ export function calculateBasePowerSMSSSV(
   case 'Rising Voltage':
     basePower = move.bp * ((isGrounded(defender, field) && field.hasTerrain('Electric')) ? 2 : 1);
     desc.moveBP = basePower;
+    break;
+  case 'Psyblade':
+    // TODO check how being grounded interacts
+    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain('Electric')) ? 1.5 : 1);
+    if (field.hasTerrain('Electric') && isGrounded(attacker, field)) {
+      desc.moveBP = basePower;
+      desc.terrain = field.terrain;
+    }
     break;
   case 'Fling':
     basePower = getFlingPower(attacker.item);
