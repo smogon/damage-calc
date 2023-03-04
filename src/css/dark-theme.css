@@ -1,74 +1,76 @@
 /* Dark mode styles */
 
-body.dark-theme {
+body {
     color: white;
     background-color: black;
 }
 
-.btn.dark-theme {
+.btn {
     background-color: #161616;
     color: #B7B7B7;
 }
 
-.btn.dark-theme:hover {
+
+
+.btn:hover {
     z-index: 10;
     border-color: #888888;
     background: black;
 }
 
-.visually-hidden:focus + .btn.dark-theme,
-.btn.dark-theme:hover {
+.visually-hidden:focus + .btn,
+.btn:hover {
     z-index: 10;
     border-color: #888888;
     background: black;
 }
 
-.visually-hidden:checked + .btn.dark-theme {
+.visually-hidden:checked + .btn {
     font-weight: bold;
     color: white;
     background: #000042;
 }
 
-.visually-hidden:disabled + .btn.dark-theme {
+.visually-hidden:disabled + .btn {
     color: black;
 }
 
-fieldset.dark-theme {
+fieldset {
     background-color: #222222;
 }
 
-select.dark-theme {
+select {
     background-color: black;
     color: white;
 }
 
-a.links-lighten.dark-theme {
+a.links-lighten {
     color: #7A9CFF;
 }
 
-a.links-lighten.dark-theme:hover {
+a.links-lighten:hover {
     color: #C2D0FF;
 }
 
-a.links-lighten.dark-theme:visited {
+a.links-lighten:visited {
     color: #BC8BEA;
 }
 
-a.links-lighten.dark-theme:visited:hover {
+a.links-lighten:visited:hover {
     color: #DACAF7;
 }
 
-input.dark-theme {
+input {
     background-color: black;
     color: white;
 }
 
-textarea.dark-theme {
+textarea {
     background-color: black;
     color: white;
 }
 
-.wrapper.dark-theme {
+.wrapper {
     background-color: black;
     color: white;
 }
