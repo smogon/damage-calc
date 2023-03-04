@@ -10,8 +10,6 @@ body {
     color: #B7B7B7;
 }
 
-
-
 .btn:hover {
     z-index: 10;
     border-color: #888888;
@@ -73,4 +71,41 @@ textarea {
 .wrapper {
     background-color: black;
     color: white;
+}
+
+a.collapsible-link {
+    color: white;
+}
+
+.bs-btn {
+    background-color: #161616;
+    color: #B7B7B7;
+}
+
+.bs-btn:hover {
+    z-index: 10;
+    border-color: #888888;
+    background: black;
+}
+
+.popover-content {
+    background-color: #161616;
+    color: #B7B7B7;
+}
+
+.dataTables_info {
+    color: #B7B7B7 !important; /* I know, don't use !important, but w/e */
+}
+
+.search-label {
+    color: #B7B7B7;
+}
+
+tr.odd, tr.even {
+    background-color: rgb(0 0 0) !important;
+}
+
+
+td.sorting_1 {
+    background-color: rgb(25 25 25) !important;
 }
