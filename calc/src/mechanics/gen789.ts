@@ -463,7 +463,9 @@ export function calculateSMSSSV(
     baseDamage = pokeRound(OF32(baseDamage * 1024) / 4096);
   }
 
-  if (field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')) {
+  if (
+    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
+  ) {
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
     desc.weather = field.weather;
   } else if (!defender.hasItem('Utility Umbrella')) {
