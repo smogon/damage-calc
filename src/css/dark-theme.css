@@ -109,3 +109,8 @@ tr.odd, tr.even {
 td.sorting_1 {
     background-color: rgb(25 25 25) !important;
 }
+
+
+label:not(.btn) {
+    color: white;
+}
