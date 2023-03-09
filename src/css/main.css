@@ -172,6 +172,9 @@ th {
     position: relative;
     top: -5px;
 }
+.main-title-text {
+    top: -10px;
+}
 .big-text {
     text-align: left;
     font-weight: bold;
@@ -308,7 +311,7 @@ th {
     background: #ffff99;
 }
 
-.genSelection, .notationSelection {
+.genSelection, .notationSelection, .modeSelection {
     display: inline-block;
     position: relative;
     top: -8px;
