@@ -20,6 +20,7 @@ export class Pokemon implements State.Pokemon {
   ability?: I.AbilityName;
   abilityOn?: boolean;
   isDynamaxed?: boolean;
+  dynamaxLevel?: number;
   isSaltCure?: boolean;
   alliesFainted?: number;
   item?: I.ItemName;
@@ -61,6 +62,8 @@ export class Pokemon implements State.Pokemon {
     this.abilityOn = !!options.abilityOn;
 
     this.isDynamaxed = !!options.isDynamaxed;
+    this.dynamaxLevel = this.isDynamaxed
+      ? (options.dynamaxLevel === undefined ? 10 : options.dynamaxLevel) : undefined;
     this.isSaltCure = !!options.isSaltCure;
     this.alliesFainted = options.alliesFainted;
     this.teraType = options.teraType;
@@ -104,16 +107,20 @@ export class Pokemon implements State.Pokemon {
 
   maxHP(original = false) {
     // Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
-    return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
-      ? this.rawStats.hp * 2
-      : this.rawStats.hp;
+    if (!original && this.isDynamaxed && this.species.baseStats.hp !== 1) {
+      return Math.floor((this.rawStats.hp * (150 + 5 * this.dynamaxLevel!)) / 100);
+    }
+
+    return this.rawStats.hp;
   }
 
   curHP(original = false) {
     // Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
-    return !original && this.isDynamaxed && this.species.baseStats.hp !== 1
-      ? this.originalCurHP * 2
-      : this.originalCurHP;
+    if (!original && this.isDynamaxed && this.species.baseStats.hp !== 1) {
+      return Math.ceil((this.originalCurHP * (150 + 5 * this.dynamaxLevel!)) / 100);
+    }
+
+    return this.originalCurHP;
   }
 
   hasAbility(...abilities: string[]) {
@@ -153,6 +160,7 @@ export class Pokemon implements State.Pokemon {
       ability: this.ability,
       abilityOn: this.abilityOn,
       isDynamaxed: this.isDynamaxed,
+      dynamaxLevel: this.dynamaxLevel,
       isSaltCure: this.isSaltCure,
       alliesFainted: this.alliesFainted,
       item: this.item,

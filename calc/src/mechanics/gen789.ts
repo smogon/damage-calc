@@ -463,19 +463,25 @@ export function calculateSMSSSV(
     baseDamage = pokeRound(OF32(baseDamage * 1024) / 4096);
   }
 
-  const noWeatherBoost = defender.hasItem('Utility Umbrella');
-  if (!noWeatherBoost &&
-    ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
-    (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water')))
+  if (
+    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
     desc.weather = field.weather;
-  } else if (!noWeatherBoost &&
-    ((field.hasWeather('Sun') && move.hasType('Water') && !move.named('Hydro Steam')) ||
-    (field.hasWeather('Rain') && move.hasType('Fire')))
-  ) {
-    baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
-    desc.weather = field.weather;
+  } else if (!defender.hasItem('Utility Umbrella')) {
+    if (
+      (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
+    ) {
+      baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
+      desc.weather = field.weather;
+    } else if (
+      (field.hasWeather('Sun') && move.hasType('Water')) ||
+      (field.hasWeather('Rain') && move.hasType('Fire'))
+    ) {
+      baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
+      desc.weather = field.weather;
+    }
   }
 
   if (hasTerrainSeed(defender) &&
@@ -704,13 +710,6 @@ export function calculateBasePowerSMSSSV(
       attacker.hasItem('Utility Umbrella')) basePower = move.bp;
     desc.moveBP = basePower;
     break;
-  case 'Hydro Steam':
-    basePower = move.bp * (field.hasWeather('Sun') ? 1.5 : 1);
-    if (field.hasWeather('Sun') && !attacker.hasItem('Utility Umbrella')) {
-      desc.moveBP = basePower;
-      desc.weather = field.weather;
-    }
-    break;
   case 'Terrain Pulse':
     basePower = move.bp * (isGrounded(attacker, field) && field.terrain ? 2 : 1);
     desc.moveBP = basePower;
@@ -720,9 +719,8 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Psyblade':
-    // TODO check how being grounded interacts
-    basePower = move.bp * ((isGrounded(attacker, field) && field.hasTerrain('Electric')) ? 1.5 : 1);
-    if (field.hasTerrain('Electric') && isGrounded(attacker, field)) {
+    basePower = move.bp * (field.hasTerrain('Electric') ? 1.5 : 1);
+    if (field.hasTerrain('Electric')) {
       desc.moveBP = basePower;
       desc.terrain = field.terrain;
     }
