@@ -552,7 +552,7 @@ export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveC
   return physicalDamage > specialDamage ? 'Physical' : 'Special';
 }
 
-export function getWeight(pokemon: Pokemon, desc: RawDesc, isDefender: boolean) {
+export function getWeight(pokemon: Pokemon, desc: RawDesc, role: 'defender' | 'attacker') {
   let factor = 1;
 
   let abilityUsed = true;
@@ -560,14 +560,12 @@ export function getWeight(pokemon: Pokemon, desc: RawDesc, isDefender: boolean) 
   else if (pokemon.hasAbility('Light Metal')) factor *= 0.5;
   else abilityUsed = false;
   if (abilityUsed) {
-    if (isDefender) desc.defenderAbility = pokemon.ability;
-    else desc.attackerAbility = pokemon.ability;
+    desc[`${role}Ability`] = pokemon.ability;
   }
 
   if (pokemon.hasItem('Float Stone')) {
     factor *= 0.5;
-    if (isDefender) desc.defenderItem = pokemon.item;
-    else desc.attackerItem = pokemon.item;
+    desc[`${role}Item`] = pokemon.item;
   }
 
   return Math.max(Math.trunc(factor * pokemon.weightkg * 10), 1) / 10;
