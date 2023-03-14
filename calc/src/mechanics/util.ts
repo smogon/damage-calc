@@ -570,7 +570,7 @@ export function getWeight(pokemon: Pokemon, desc: RawDesc, isDefender: boolean) 
     else desc.attackerItem = pokemon.item;
   }
 
-  return factor * pokemon.weightkg;
+  return Math.max(Math.trunc(factor * pokemon.weightkg * 10), 1) / 10;
 }
 
 export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
