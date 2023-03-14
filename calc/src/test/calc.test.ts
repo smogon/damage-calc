@@ -264,6 +264,41 @@ describe('calc', () => {
           '0 Atk Abomasnow Ice Shard vs. 0 HP / 0 Def Multiscale Dragonite: 84-102 (26 - 31.5%) -- guaranteed 4HKO'
         );
       });
+      describe('Weight', function () {
+        describe('Heavy Metal', () => {
+          function testBP(ability: string) {
+            return calculate(
+              Pokemon('Simisage', {ability}),
+              Pokemon('Simisear', {ability: 'Heavy Metal'}),
+              Move('Grass Knot')
+            ).rawDesc.moveBP;
+          }
+          it('should double the weight of a Pokemon', () => expect(testBP('Gluttony')).toBe(80));
+          it('should be negated by Mold Breaker', () => expect(testBP('Mold Breaker')).toBe(60));
+        });
+        describe('Light Metal', () => {
+          function testBP(ability: string) {
+            return calculate(
+              Pokemon('Simisage', {ability}),
+              Pokemon('Registeel', {ability: 'Light Metal'}),
+              Move('Grass Knot')
+            ).rawDesc.moveBP;
+          }
+          it('should halve the weight of a Pokemon', () => expect(testBP('Gluttony')).toBe(100));
+          it('should be negated by Mold Breaker', () => expect(testBP('Mold Breaker')).toBe(120));
+        });
+        describe('Float Stone', () => {
+          function testBP(ability?: string) {
+            return calculate(
+              Pokemon('Simisage', {ability: 'Gluttony'}),
+              Pokemon('Registeel', {ability, item: 'Float Stone'}),
+              Move('Grass Knot')
+            ).rawDesc.moveBP;
+          }
+          it('should halve the weight of a Pokemon', () => expect(testBP()).toBe(100));
+          it('should stack with Light Metal', () => expect(testBP('Light Metal')).toBe(80));
+        });
+      });
     });
 
     inGen(8, ({gen, Pokemon}) => {
