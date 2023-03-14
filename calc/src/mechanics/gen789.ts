@@ -81,6 +81,8 @@ export function calculateSMSSSV(
   checkIntrepidSword(attacker, gen);
   checkIntrepidSword(defender, gen);
 
+  if (move.named('Meteor Beam') && attacker.boosts.spa < 6) attacker.boosts.spa++;
+
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 
   checkInfiltrator(attacker, field.defenderSide);
