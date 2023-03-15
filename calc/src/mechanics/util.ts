@@ -553,22 +553,26 @@ export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveC
 }
 
 export function getWeight(pokemon: Pokemon, desc: RawDesc, role: 'defender' | 'attacker') {
-  let factor = 1;
+  let weightHG = pokemon.weightkg * 10;
+  function modifyWeight(factor: number) {
+    weightHG = Math.max(Math.trunc(weightHG * factor), 1);
+  }
 
-  let abilityUsed = true;
-  if (pokemon.hasAbility('Heavy Metal')) factor *= 2;
-  else if (pokemon.hasAbility('Light Metal')) factor *= 0.5;
-  else abilityUsed = false;
-  if (abilityUsed) {
+  const abilityFactor = pokemon.hasAbility('Heavy Metal') ? 2
+    : pokemon.hasAbility('Light Metal') ? 0.5
+    : 1;
+  if (abilityFactor !== 1) {
+    modifyWeight(abilityFactor);
     desc[`${role}Ability`] = pokemon.ability;
   }
 
   if (pokemon.hasItem('Float Stone')) {
-    factor *= 0.5;
+    modifyWeight(0.5);
     desc[`${role}Item`] = pokemon.item;
   }
 
-  return Math.max(Math.trunc(factor * pokemon.weightkg * 10), 1) / 10;
+  // convert back to kg
+  return weightHG / 10;
 }
 
 export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
