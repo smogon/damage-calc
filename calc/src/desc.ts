@@ -300,7 +300,7 @@ export function getKOChance(
     let text = chance === undefined ? qualifier + 'possible '
       : chance === 1 ? qualifier || 'guaranteed '
       // prevent displaying misleading 100% or 0% chances
-      : `${qualifier}${Math.round(chance * 1000) / 10}% chance to `;
+      : `${qualifier}${Math.max(Math.min(Math.round(chance * 1000), 999), 1) / 10}% chance to `;
     // using the number of hits we can determine the type of KO we are checking for
     text += n === 1 ? 'OHKO' + hazardsText
       : (multipleTurns ? `KO in ${n} turns` : `${n}HKO`) + afterText;

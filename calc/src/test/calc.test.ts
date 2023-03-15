@@ -958,5 +958,17 @@ describe('calc', () => {
         });
       });
     });
+    describe('Descriptions', () => {
+      inGen(9, ({gen, calculate, Pokemon, Move}) => {
+        test('displayed chances should not round to 100%', () => {
+          const result = calculate(
+            Pokemon('Xerneas', {item: 'Choice Band', nature: 'Adamant', evs: {atk: 252}}),
+            Pokemon('Necrozma-Dusk-Mane', {nature: 'Impish', evs: {hp: 252, def: 252}}),
+            Move('Close Combat')
+          );
+          expect(result.kochance().text).toBe('99.9% chance to 3HKO');
+        });
+      });
+    });
   });
 });
