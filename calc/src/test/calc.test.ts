@@ -956,6 +956,21 @@ describe('calc', () => {
           defender.teraType = 'Normal';
           expect(calc(cc)).toEqual(se);
         });
+        test('Quark Drive should not take into account boosted stats', () => {
+          // highest stat = attack
+          const attacker = Pokemon('Iron Leaves', {boosts: {spa: 6}, item: 'Booster Energy'});
+          // highest stat = defense
+          const defender = Pokemon('Iron Treads', {boosts: {spd: 6}, item: 'Booster Energy'});
+
+          // spa/spd not boosted despite being +6
+          let result = calculate(attacker, defender, Move('Leaf Storm')).rawDesc;
+          expect(result.attackerAbility).toBeUndefined();
+          expect(result.defenderAbility).toBeUndefined();
+          // atk/def boosted on physical move
+          result = calculate(attacker, defender, Move('Psyblade')).rawDesc;
+          expect(result.attackerAbility).toBe('Quark Drive');
+          expect(result.defenderAbility).toBe('Quark Drive');
+        });
       });
     });
   });
