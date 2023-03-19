@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import {AbilityName, Weather} from '../data/interface';
+import {AbilityName, Terrain, Weather} from '../data/interface';
 import {inGen, inGens, tests} from './helper';
 
 describe('calc', () => {
@@ -910,7 +910,7 @@ describe('calc', () => {
     });
 
     describe('Gen 9', () => {
-      inGen(9, ({calculate, Pokemon, Move}) => {
+      inGen(9, ({calculate, Pokemon, Move, Field}) => {
         test('Supreme Overlord', () => {
           const kingambit = Pokemon('Kingambit', {level: 100, ability: 'Supreme Overlord', alliesFainted: 0});
           const aggron = Pokemon('Aggron', {level: 100});
@@ -956,21 +956,24 @@ describe('calc', () => {
           defender.teraType = 'Normal';
           expect(calc(cc)).toEqual(se);
         });
-        test('Quark Drive should not take into account boosted stats', () => {
-          // highest stat = attack
-          const attacker = Pokemon('Iron Leaves', {boosts: {spa: 6}, item: 'Booster Energy'});
-          // highest stat = defense
-          const defender = Pokemon('Iron Treads', {boosts: {spd: 6}, item: 'Booster Energy'});
+        function testQP(ability: string, field?: {weather?: Weather; terrain?: Terrain}) {
+          test(`${ability} should not take into account boosted stats`, () => {
+            const attacker = Pokemon('Iron Leaves', {ability, boosts: {spa: 6}});
+            // highest stat = defense
+            const defender = Pokemon('Iron Treads', {ability, boosts: {spd: 6}});
 
-          // spa/spd not boosted despite being +6
-          let result = calculate(attacker, defender, Move('Leaf Storm')).rawDesc;
-          expect(result.attackerAbility).toBeUndefined();
-          expect(result.defenderAbility).toBeUndefined();
-          // atk/def boosted on physical move
-          result = calculate(attacker, defender, Move('Psyblade')).rawDesc;
-          expect(result.attackerAbility).toBe('Quark Drive');
-          expect(result.defenderAbility).toBe('Quark Drive');
-        });
+            // spa/spd not boosted despite being +6
+            let result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
+            expect(result.attackerAbility).toBeUndefined();
+            expect(result.defenderAbility).toBeUndefined();
+            // atk/def boosted on physical move
+            result = calculate(attacker, defender, Move('Psyblade'), Field(field)).rawDesc;
+            expect(result.attackerAbility).toBe(ability);
+            expect(result.defenderAbility).toBe(ability);
+          });
+        }
+        testQP('Quark Drive', {terrain: 'Electric'});
+        testQP('Protosynthesis', {weather: 'Sun'});
       });
     });
   });
