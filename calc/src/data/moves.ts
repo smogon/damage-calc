@@ -4531,6 +4531,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     makesContact: true,
     isSlicing: true,
     multihit: 10,
+    multiaccuracy: true,
   },
   Pounce: {
     bp: 50,
