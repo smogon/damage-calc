@@ -1,0 +1,116 @@
+/* Dark mode styles */
+
+body {
+    color: white;
+    background-color: black;
+}
+
+.btn {
+    background-color: #161616;
+    color: #B7B7B7;
+}
+
+.btn:hover {
+    z-index: 10;
+    border-color: #888888;
+    background: black;
+}
+
+.visually-hidden:focus + .btn,
+.btn:hover {
+    z-index: 10;
+    border-color: #888888;
+    background: black;
+}
+
+.visually-hidden:checked + .btn {
+    font-weight: bold;
+    color: white;
+    background: #000042;
+}
+
+.visually-hidden:disabled + .btn {
+    color: black;
+}
+
+fieldset {
+    background-color: #222222;
+}
+
+select {
+    background-color: black;
+    color: white;
+}
+
+a.links-lighten {
+    color: #7A9CFF;
+}
+
+a.links-lighten:hover {
+    color: #C2D0FF;
+}
+
+a.links-lighten:visited {
+    color: #BC8BEA;
+}
+
+a.links-lighten:visited:hover {
+    color: #DACAF7;
+}
+
+input {
+    background-color: black;
+    color: white;
+}
+
+textarea {
+    background-color: black;
+    color: white;
+}
+
+.wrapper {
+    background-color: black;
+    color: white;
+}
+
+a.collapsible-link {
+    color: white;
+}
+
+.bs-btn {
+    background-color: #161616;
+    color: #B7B7B7;
+}
+
+.bs-btn:hover {
+    z-index: 10;
+    border-color: #888888;
+    background: black;
+}
+
+.popover-content {
+    background-color: #161616;
+    color: #B7B7B7;
+}
+
+.dataTables_info {
+    color: #B7B7B7 !important; /* I know, don't use !important, but w/e */
+}
+
+.search-label {
+    color: #B7B7B7;
+}
+
+tr.odd, tr.even {
+    background-color: rgb(0 0 0) !important;
+}
+
+
+td.sorting_1 {
+    background-color: rgb(25 25 25) !important;
+}
+
+
+label:not(.btn) {
+    color: white;
+}

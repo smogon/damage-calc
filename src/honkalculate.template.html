@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/colvis/1.1.1/css/dataTables.colVis.css" />
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?" />
+    <link type="text/css" rel="stylesheet" href="./css/dark-theme.css" id="dark-theme-styles">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
     <script>
@@ -23,9 +24,21 @@
             return false;
         };
     </script>
+    <!-- Immediately loads the dark theme in order to reduce FOIT -->
+    <script>
+        /*
+        * localStorage will only store strings
+        * This means that if it has the value 'false',
+        * It will be truey and incorrectly cause the
+        * dark theme to load.
+        */
+        if (localStorage.getItem('darkTheme') !== 'true') {
+            document.getElementById('dark-theme-styles').disabled = true;
+        }
+    </script>
 </head>
 
-<body>
+<body class="dark-theme">
 
 <div class="header"><div class="header-inner">
     <ul class="nav">
@@ -85,7 +98,7 @@
     <div class="panel-group" id="accordion">
         <fieldset class="panel panel-default poke-info" id="p1">
             <legend class="panel-heading panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">>  Pokemon</a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsible-link">>  Pokemon</a>
             </legend>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -586,7 +599,7 @@
         </fieldset>
         <fieldset class="panel panel-default field-info">
             <legend class="panel-heading panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">>  Field</a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsible-link">>  Field</a>
             </legend>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
@@ -906,9 +919,11 @@
     <script type="text/javascript" src="./js/honkalculate_controls.js?"></script>
 
     <div style="clear:both;padding:20px;text-align:left">Created by Honko, maintained by Austin and Kris
-        <ul><li><a href="https://github.com/smogon/damage-calc/contributors" target="_blank">Contributors</a></li>
-        <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" target="_blank">Bug Reports</a></li>
-        <li><a href="https://github.com/smogon/damage-calc" target="_blank">GitHub repository</a></li></ul>
+        <ul><li><a href="https://github.com/smogon/damage-calc/contributors" class="links-lighten" target="_blank">Contributors</a></li>
+        <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
+        <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
+        <button type="button" id="dark-theme-toggle"></button>
+        <script type="text/javascript" src="./js/dark-theme-toggle.js?"></script>
     </div>
 
 </body>
