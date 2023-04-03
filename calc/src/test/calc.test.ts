@@ -971,8 +971,25 @@ describe('calc', () => {
             expect(result.defenderAbility).toBeUndefined();
           });
         }
+        function testQPOverride(ability: string, field?: {weather?: Weather; terrain?: Terrain}) {
+          test(`${ability} should be able to be overridden with boostedStat`, () => {
+            const attacker = Pokemon('Flutter Mane', {ability, boostedStat: 'atk', boosts: {spa: 6}});
+            // highest stat = defense
+            const defender = Pokemon('Walking Wake', {ability, boostedStat: 'def', boosts: {spd: 6}});
+
+            let result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
+            expect(result.attackerAbility).toBeUndefined();
+            expect(result.defenderAbility).toBeUndefined();
+
+            result = calculate(attacker, defender, Move('Psyblade'), Field(field)).rawDesc;
+            expect(result.attackerAbility).toBe(ability);
+            expect(result.defenderAbility).toBe(ability);
+          });
+        }
         testQP('Quark Drive', {terrain: 'Electric'});
         testQP('Protosynthesis', {weather: 'Sun'});
+        testQPOverride('Quark Drive', {terrain: 'Electric'});
+        testQPOverride('Protosynthesis', {weather: 'Sun'});
       });
     });
   });
