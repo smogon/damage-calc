@@ -396,6 +396,7 @@ export function getMostProficientStat(
   pokemon: Pokemon,
   gen?: Generation
 ): StatID {
+  if (pokemon.boostedStat) return pokemon.boostedStat; // override.
   let bestStat: StatID = 'atk';
   for (const stat of ['def', 'spa', 'spd', 'spe'] as StatID[]) {
     if (

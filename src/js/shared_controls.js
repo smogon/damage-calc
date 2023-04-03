@@ -234,6 +234,13 @@ $(".ability").bind("keyup change", function () {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
 
+	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
+	if (['Protosythesis', 'Quark Drive'].indexOf(ability) >= 0) {
+		boostedStat.show();
+	} else {
+		boostedStat.hide();
+	}
+
 	if (ability === "Supreme Overlord") {
 		$(this).closest(".poke-info").find(".alliesFainted").show();
 	} else {
@@ -857,6 +864,7 @@ function createPokemon(pokeInfo) {
 			isDynamaxed: isDynamaxed,
 			isSaltCure: pokeInfo.find(".saltcure").is(":checked"),
 			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
+			boostedStat: pokeInfo.find(".boostedStat").val() || undefined,
 			teraType: teraType,
 			boosts: boosts,
 			curHP: curHP,
