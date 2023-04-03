@@ -400,8 +400,8 @@ export function getMostProficientStat(
   for (const stat of ['def', 'spa', 'spd', 'spe'] as StatID[]) {
     if (
       // proto/quark ignore boosts when considering their boost
-      getModifiedStat(pokemon.rawStats[stat], 0, gen) >
-      getModifiedStat(pokemon.rawStats[bestStat], 0, gen)
+      getModifiedStat(pokemon.rawStats[stat], pokemon.boosts[stat], gen) >
+      getModifiedStat(pokemon.rawStats[bestStat], pokemon.boosts[bestStat], gen)
     ) {
       bestStat = stat;
     }

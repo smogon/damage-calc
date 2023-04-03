@@ -957,19 +957,18 @@ describe('calc', () => {
           expect(calc(cc)).toEqual(se);
         });
         function testQP(ability: string, field?: {weather?: Weather; terrain?: Terrain}) {
-          test(`${ability} should not take into account boosted stats`, () => {
+          test(`${ability} should take into account boosted stats by default`, () => {
             const attacker = Pokemon('Iron Leaves', {ability, boosts: {spa: 6}});
             // highest stat = defense
             const defender = Pokemon('Iron Treads', {ability, boosts: {spd: 6}});
 
-            // spa/spd not boosted despite being +6
             let result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
-            expect(result.attackerAbility).toBeUndefined();
-            expect(result.defenderAbility).toBeUndefined();
-            // atk/def boosted on physical move
-            result = calculate(attacker, defender, Move('Psyblade'), Field(field)).rawDesc;
             expect(result.attackerAbility).toBe(ability);
             expect(result.defenderAbility).toBe(ability);
+
+            result = calculate(attacker, defender, Move('Psyblade'), Field(field)).rawDesc;
+            expect(result.attackerAbility).toBeUndefined();
+            expect(result.defenderAbility).toBeUndefined();
           });
         }
         testQP('Quark Drive', {terrain: 'Electric'});
