@@ -431,6 +431,18 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
+
+		// hide any numbers not in the range
+		moveGroupObj.children(".move-hits").children().prop('disabled', true).hide()
+		var min = move.multihit[0];
+		var max = move.multihit[1];
+		var $moveHits = moveGroupObj.children(".move-hits");
+		// create inclusive range and show hit values in range
+		[...Array(max - min + 1).keys()].forEach(i => {
+			$moveHits.children(`option[value="${i + min}"]`).prop('disabled', false).show();
+		});
+
+		// automatically select 5 if the pokemon's ability is Skill Link
 		var moveHits = (pokemon.find(".ability").val() === 'Skill Link') ? 5 : 3;
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (dropsStats) {
