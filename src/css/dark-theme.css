@@ -9,6 +9,8 @@
     --button-hover: black;
     --button-selected: #232e51;
     --fieldset-color: #222;
+
+    --column-1: #2a2a2a;
 }
 
 body {
@@ -111,7 +113,7 @@ tr.odd, tr.even {
 
 
 td.sorting_1 {
-    background-color: #2a2a2a !important;
+    background-color: var(--column-1) !important;
 }
 
 
