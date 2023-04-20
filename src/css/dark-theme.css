@@ -97,11 +97,6 @@ a.collapsible-link {
     color: var(--text);
 }
 
-.popover-content {
-    background-color: var(--background);
-    color: var(--text);
-}
-
 .dataTables_info {
     color: var(--text) !important; /* I know, don't use !important, but w/e */
 }
