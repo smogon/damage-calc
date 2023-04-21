@@ -8,7 +8,7 @@
 
     --button-hover: black;
     --button-selected: #232e51;
-    --fieldset-color: #222;
+    --fieldset-color: #2a2a2a;
 
     --column-1: #2a2a2a;
 }
@@ -49,7 +49,7 @@ fieldset {
 }
 
 select {
-    background-color: var(--background2);
+    background-color: var(--background);
     color: var(--text);
 }
 
@@ -70,12 +70,12 @@ a.links-lighten:visited:hover {
 }
 
 input {
-    background-color: var(--background2);
+    background-color: var(--background);
     color: var(--text);
 }
 
 textarea {
-    background-color: var(--background2);
+    background-color: var(--background);
     color: var(--text);
 }
 
