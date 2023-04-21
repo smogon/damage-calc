@@ -57,8 +57,6 @@ const FORMATS: {[format: string]: string} = {
   'Battle Spot Singles': 'battlespotsingles',
   'Battle Spot Doubles': 'battlespotdoubles',
   'Battle Stadium Singles': 'battlestadiumsingles',
-  'Battle Stadium Singles Series 1': 'battlestadiumsingles',
-  'Battle Stadium Singles Series 2': 'battlestadiumsingles',
   BH: 'balancedhackmons',
   CAP: 'cap',
   '1v1': '1v1',
