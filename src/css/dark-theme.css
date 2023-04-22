@@ -1,45 +1,55 @@
 /* Dark mode styles */
 
+:root {
+    /* Should make it easier to change colors in the future */
+    --text: #e4e4e4;
+    --background: #1b1b1b;
+
+    --button-hover: black;
+    --button-selected: #232e51;
+    --fieldset-color: #2a2a2a;
+
+    --column-1: #2a2a2a;
+}
+
 body {
-    color: white;
-    background-color: black;
+    color: var(--text);
+    background-color: var(--background);
 }
 
 .btn {
-    background-color: #161616;
-    color: #B7B7B7;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .btn:hover {
     z-index: 10;
-    border-color: #888888;
-    background: black;
+    background: var(--button-hover);
 }
 
 .visually-hidden:focus + .btn,
 .btn:hover {
     z-index: 10;
-    border-color: #888888;
-    background: black;
+    background: var(--button-hover);
 }
 
 .visually-hidden:checked + .btn {
     font-weight: bold;
-    color: white;
-    background: #000042;
+    color: var(--text);
+    background: var(--button-selected);
 }
 
 .visually-hidden:disabled + .btn {
-    color: black;
+    color: var(--button-hover);
 }
 
 fieldset {
-    background-color: #222222;
+    background-color: var(--fieldset-color);
 }
 
 select {
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 a.links-lighten {
@@ -59,60 +69,55 @@ a.links-lighten:visited:hover {
 }
 
 input {
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 textarea {
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .wrapper {
-    background-color: black;
-    color: white;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 a.collapsible-link {
-    color: white;
+    color: var(--text);
 }
 
 .bs-btn {
-    background-color: #161616;
-    color: #B7B7B7;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .bs-btn:hover {
     z-index: 10;
-    border-color: #888888;
-    background: black;
-}
-
-.popover-content {
-    background-color: #161616;
-    color: #B7B7B7;
+    background: var(--button-hover);
+    color: var(--text);
 }
 
 .dataTables_info {
-    color: #B7B7B7 !important; /* I know, don't use !important, but w/e */
+    color: var(--text) !important; /* I know, don't use !important, but w/e */
 }
 
 .search-label {
-    color: #B7B7B7;
+    color: var(--text);
 }
 
 tr.odd, tr.even {
-    background-color: rgb(0 0 0) !important;
+    background-color: var(--background) !important;
 }
 
 
 td.sorting_1 {
-    background-color: rgb(25 25 25) !important;
+    background-color: var(--column-1) !important;
 }
 
 
 label:not(.btn) {
-    color: white;
+    color: var(--text);
 }
 
 input.select2-input {
