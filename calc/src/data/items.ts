@@ -83,7 +83,6 @@ const GSC_ONLY = [
   'Pink Bow',
   'Polkadot Bow',
   'PSN Cure Berry',
-  'Enigma Berry',
 ];
 
 const ADV = GSC.filter(i => !GSC_ONLY.includes(i)).concat([
