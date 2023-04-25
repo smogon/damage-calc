@@ -137,11 +137,17 @@ label:not(.btn) {
 .select2-dropdown-open .select2-choice {
     -webkit-box-shadow: 0 1px 0 var(--background) inset;
     box-shadow: 0 1px 0 var(--background) inset;
+    background-image: none;
 }
 
 .select2-drop {
     background-color: var(--background);
     color: var(--text);
+}
+
+.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-dropdown-open.select2-drop-above .select2-choices {
+    background-image: none;
 }
 
 input.select2-input {
