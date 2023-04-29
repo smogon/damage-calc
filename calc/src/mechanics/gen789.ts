@@ -33,7 +33,7 @@ import {
   getEVDescriptionText,
   getFinalDamage,
   getModifiedStat,
-  getMostProficientStat,
+  getQPBoostedStat,
   getMoveEffectiveness,
   getShellSideArmCategory,
   getWeightFactor,
@@ -1245,8 +1245,8 @@ export function calculateAtModsSMSSSV(
   ) {
     if (
       (move.category === 'Physical' &&
-        getMostProficientStat(attacker) === 'atk') ||
-      (move.category === 'Special' && getMostProficientStat(attacker) === 'spa')
+        getQPBoostedStat(attacker) === 'atk') ||
+      (move.category === 'Special' && getQPBoostedStat(attacker) === 'spa')
     ) {
       atMods.push(5325);
       desc.attackerAbility = attacker.ability;
@@ -1397,8 +1397,8 @@ export function calculateDfModsSMSSSV(
     (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
   ) {
     if (
-      (hitsPhysical && getMostProficientStat(defender) === 'def') ||
-      (!hitsPhysical && getMostProficientStat(defender) === 'spd')
+      (hitsPhysical && getQPBoostedStat(defender) === 'def') ||
+      (!hitsPhysical && getQPBoostedStat(defender) === 'spd')
     ) {
       desc.defenderAbility = defender.ability;
       dfMods.push(5324);
