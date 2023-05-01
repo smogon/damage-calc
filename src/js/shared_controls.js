@@ -235,7 +235,7 @@ $(".ability").bind("keyup change", function () {
 	}
 
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
-	if (['Protosythesis', 'Quark Drive'].indexOf(ability) >= 0) {
+	if (['Protosynthesis', 'Quark Drive'].indexOf(ability) >= 0) {
 		boostedStat.show();
 	} else {
 		boostedStat.hide();
