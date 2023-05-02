@@ -477,6 +477,7 @@ $(".set-selector").change(function () {
 			stickyMoves.clearStickyMove();
 		}
 		pokeObj.find(".teraToggle").prop("checked", false);
+		pokeObj.find(".boostedStat").val("Auto-Select");
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);
