@@ -235,6 +235,7 @@ $(".ability").bind("keyup change", function () {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
+
 	if (ability === "Protosynthesis" || ability === "Quark Drive") {
 		boostedStat.show();
 		autosetQP(item, ability, boostedStat);
