@@ -225,6 +225,7 @@ $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
+	var item = $(this).closest(".poke-info").find(".item").val();
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
 
@@ -233,10 +234,10 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
-
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
-	if (['Protosynthesis', 'Quark Drive'].indexOf(ability) >= 0) {
+	if (ability === "Protosynthesis" || ability === "Quark Drive") {
 		boostedStat.show();
+		autosetQP(item, ability, boostedStat);
 	} else {
 		boostedStat.hide();
 	}
@@ -250,9 +251,35 @@ $(".ability").bind("keyup change", function () {
 	}
 });
 
+function autosetQP(item, ability, boostedStat) {
+	var currentWeather = $("input:radio[name='weather']:checked").val();
+	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
+	if (!boostedStat.val() || boostedStat.val() === "auto") {
+		if (
+			(item === "Booster Energy") || 
+			(ability === "Protosynthesis" && currentWeather === "Sun") || 
+			(ability === "Quark Drive" && currentTerrain === "Electric")
+		) {
+			boostedStat.val("auto");
+		} else {
+			boostedStat.val("");
+		}
+	}
+}
+
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autosetTerrain($(this).val(), 0);
+});
+
+$("input[name='weather']").change(function () {
+	var allPokemon = $('.poke-info');
+	allPokemon.each(function () {
+		autosetQP($(this).find(".item").val(), 
+			$(this).find(".ability").val(), 
+			$(this).find(".boostedStat")
+		);
+	});
 });
 
 var lastManualWeather = "";
@@ -305,6 +332,16 @@ function autosetWeather(ability, i) {
 		break;
 	}
 }
+
+$("input[name='terrain']").change(function () {
+	var allPokemon = $('.poke-info');
+	allPokemon.each(function () {
+		autosetQP($(this).find(".item").val(), 
+			$(this).find(".ability").val(), 
+			$(this).find(".boostedStat")
+		);
+	});
+});
 
 var lastManualTerrain = "";
 var lastAutoTerrain = ["", ""];
@@ -458,6 +495,7 @@ $(".item").change(function () {
 	} else {
 		$metronomeControl.hide();
 	}
+	autosetQP(itemName, $(this).closest('.poke-info').find('.ability'), $(this).closest('.poke-info').find('.boostedStat'))
 });
 
 function smogonAnalysis(pokemonName) {
@@ -477,6 +515,7 @@ $(".set-selector").change(function () {
 			stickyMoves.clearStickyMove();
 		}
 		pokeObj.find(".teraToggle").prop("checked", false);
+		pokeObj.find(".boostedStat").val("");
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);

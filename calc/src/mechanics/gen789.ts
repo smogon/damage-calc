@@ -41,6 +41,7 @@ import {
   isGrounded,
   OF16, OF32,
   pokeRound,
+  isQPActive,
 } from './util';
 
 export function calculateSMSSSV(
@@ -1238,14 +1239,10 @@ export function calculateAtModsSMSSSV(
   }
 
   if (
-    (attacker.hasAbility('Protosynthesis') &&
-      (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
-    (attacker.hasAbility('Quark Drive') &&
-      (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
+    (isQPActive(attacker, field))
   ) {
     if (
-      (move.category === 'Physical' &&
-        getQPBoostedStat(attacker) === 'atk') ||
+      (move.category === 'Physical' && getQPBoostedStat(attacker) === 'atk') ||
       (move.category === 'Special' && getQPBoostedStat(attacker) === 'spa')
     ) {
       atMods.push(5325);
@@ -1391,10 +1388,7 @@ export function calculateDfModsSMSSSV(
   }
 
   if (
-    (defender.hasAbility('Protosynthesis') &&
-    (field.hasWeather('Sun') || attacker.hasItem('Booster Energy'))) ||
-    (defender.hasAbility('Quark Drive') &&
-    (field.hasTerrain('Electric') || attacker.hasItem('Booster Energy')))
+    (isQPActive(defender, field))
   ) {
     if (
       (hitsPhysical && getQPBoostedStat(defender) === 'def') ||
