@@ -391,7 +391,7 @@ export function getQPBoostedStat(
 ): StatID {
   if (pokemon.boostedStat && pokemon.boostedStat !== 'auto') {
     return pokemon.boostedStat; // override.
-  } 
+  }
   let bestStat: StatID = 'atk';
   for (const stat of ['def', 'spa', 'spd', 'spe'] as StatID[]) {
     if (
@@ -416,11 +416,11 @@ export function isQPActive(
   const weather = field.weather || '';
   const terrain = field.terrain;
   if (
-    (pokemon.hasAbility('Protosynthesis') && 
+    (pokemon.hasAbility('Protosynthesis') &&
       (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
     (pokemon.hasAbility('Quark Drive') &&
       (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))) ||
-    (pokemon.boostedStat !== "auto")
+    (pokemon.boostedStat !== 'auto')
   ) {
     return true;
   }

@@ -225,7 +225,6 @@ $(".ability").bind("keyup change", function () {
 	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
-	var item = $(this).closest(".poke-info").find(".item").val();
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout'];
 
@@ -237,7 +236,7 @@ $(".ability").bind("keyup change", function () {
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 	if (ability === "Protosynthesis" || ability === "Quark Drive") {
 		boostedStat.show();
-		autosetQP(item, ability, boostedStat);
+		autosetQP($(this).closest(".poke-info"));
 	} else {
 		boostedStat.hide();
 	}
@@ -251,18 +250,23 @@ $(".ability").bind("keyup change", function () {
 	}
 });
 
-function autosetQP(item, ability, boostedStat) {
+function autosetQP(pokemon) {
 	var currentWeather = $("input:radio[name='weather']:checked").val();
 	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
-	if (!boostedStat.val() || boostedStat.val() === "auto") {
+
+	var item = pokemon.find(".item").val();
+	var ability = pokemon.find(".ability").val();
+	var boostedStat = pokemon.find(".boostedStat").val();
+
+	if (!boostedStat || boostedStat === "auto") {
 		if (
-			(item === "Booster Energy") || 
-			(ability === "Protosynthesis" && currentWeather === "Sun") || 
+			(item === "Booster Energy") ||
+			(ability === "Protosynthesis" && currentWeather === "Sun") ||
 			(ability === "Quark Drive" && currentTerrain === "Electric")
 		) {
-			boostedStat.val("auto");
+			pokemon.find(".boostedStat").val("auto");
 		} else {
-			boostedStat.val("");
+			pokemon.find(".boostedStat").val("");
 		}
 	}
 }
@@ -270,15 +274,13 @@ function autosetQP(item, ability, boostedStat) {
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autosetTerrain($(this).val(), 0);
+	autosetQP($(this).closest(".poke-info"));
 });
 
 $("input[name='weather']").change(function () {
 	var allPokemon = $('.poke-info');
 	allPokemon.each(function () {
-		autosetQP($(this).find(".item").val(), 
-			$(this).find(".ability").val(), 
-			$(this).find(".boostedStat")
-		);
+		autosetQP($(this));
 	});
 });
 
@@ -336,10 +338,7 @@ function autosetWeather(ability, i) {
 $("input[name='terrain']").change(function () {
 	var allPokemon = $('.poke-info');
 	allPokemon.each(function () {
-		autosetQP($(this).find(".item").val(), 
-			$(this).find(".ability").val(), 
-			$(this).find(".boostedStat")
-		);
+		autosetQP($(this));
 	});
 });
 
@@ -495,7 +494,7 @@ $(".item").change(function () {
 	} else {
 		$metronomeControl.hide();
 	}
-	autosetQP(itemName, $(this).closest('.poke-info').find('.ability'), $(this).closest('.poke-info').find('.boostedStat'))
+	autosetQP($(this).closest(".poke-info"));
 });
 
 function smogonAnalysis(pokemonName) {
