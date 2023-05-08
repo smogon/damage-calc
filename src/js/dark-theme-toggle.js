@@ -18,6 +18,9 @@ var darkThemeButton = document.getElementById('dark-theme-toggle');
 darkThemeButton.innerText = prefersDarkTheme ? 'Click for Light Theme' : 'Click for Dark Theme';
 if (prefersDarkTheme) {
 	var darkStyles = document.getElementById('dark-theme-styles');
+	if (darkStyles.disabled) {
+		darkStyles.disabled = !darkStyles.disabled;
+	}
 }
 
 /*
