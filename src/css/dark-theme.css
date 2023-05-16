@@ -15,6 +15,7 @@
 body {
     color: var(--text);
     background-color: var(--background);
+    color-scheme: dark;
 }
 
 .btn {
