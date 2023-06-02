@@ -1376,8 +1376,8 @@ export function calculateDfModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
   //"-of Ruin" Pokemon are immune to their own "-of Ruin" effect
-  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin)&&!attacker.hasAbility('Sword of Ruin');
-  const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin)&&!attacker.hasAbility('Beads of Ruin');
+  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin)&&!defender.hasAbility('Sword of Ruin');
+  const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin)&&!defender.hasAbility('Beads of Ruin');
   if (
     (isSwordOfRuinActive && hitsPhysical) ||
     (isBeadsOfRuinActive && !hitsPhysical)
