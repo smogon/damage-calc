@@ -97,6 +97,11 @@ export async function importSets(dir: string) {
       if (!sets && gen === 9) {
         await importSetsForPokemon(pokemon, 8, setsByPokemon);
         sets = setsByPokemon[pokemon];
+        // It might have been dexited from Gen 8, so try Gen 7
+        if (!sets) {
+          await importSetsForPokemon(pokemon, 7, setsByPokemon);
+          sets = setsByPokemon[pokemon];
+        }
       }
       if (sets) {
         const sorted = Object.keys(sets);
