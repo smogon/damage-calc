@@ -79,7 +79,7 @@ const TO_FORMAT: {[tier in Tier]?: Format} = {
   '(OU)': 'OU',
 };
 
-const RECENT_ONLY: Format[] = ['Monotype', 'BH'];
+const RECENT_ONLY: Format[] = []; // Now unused, seems to confuse people
 
 const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS', 'SV'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
