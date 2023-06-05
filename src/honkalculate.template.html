@@ -109,6 +109,11 @@
                             <select class="type1 terrain-trigger"></select>
                             <select class="type2 terrain-trigger"></select>
                         </div>
+                        <div class="gen-specific g9">
+                            <label>Tera Type</label>
+                            <select class="teraType terrain-trigger calc-trigger"></select>
+                            <input type="checkbox" title= "Has this Pok&eacute;mon terastalized?" class="teraToggle terrain-trigger calc-trigger">
+                        </div>
                         <div class="hide">
                             <label>Forme</label>
                             <select class="forme calc-trigger"></select>
@@ -647,8 +652,14 @@
                         <label class="btn btn-small btn-mid" for="rain">Rain</label>
                         <input class="visually-hidden" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">Sand</label>
-                        <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
-                        <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        <span class="gen-specific g3 g4 g5 g6 g7 g8">
+                            <input class="visually-hidden" type="radio" name="weather" value="Hail" id="hail" />
+                            <label class="btn btn-small btn-right" for="hail">Hail</label>
+                        </span>
+                        <span class="gen-specific g9">
+                            <input class="visually-hidden" type="radio" name="weather" value="Snow" id="snow" />
+                            <label class="btn btn-small btn-right" for="snow">Snow</label>
+                        </span>
                     </div>
                     <div class="gen-specific g6 g7 g8 g9" title="Select the current weather condition.">
                         <input class="visually-hidden" type="radio" name="weather" value="Harsh Sunshine" id="harsh-sunshine" />
@@ -673,7 +684,7 @@
                         <label class="btn" for="gravity">Gravity</label>
                     </div>
                     <hr class="gen-specific g2 g3 g4 g5 g6 g7 g8 g9" />
-                    <div class="btn-group gen-specific g4 g5 g6 g7 g8">
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
                         <div class="left" title="Is Stealth Rock affecting this side of the field?">
                             <input class="visually-hidden" type="checkbox" id="srL" />
                             <label class="btn btn-xwide" for="srL">Stealth Rock</label>
