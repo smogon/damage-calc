@@ -59,6 +59,7 @@ const FORMATS: {[format: string]: string} = {
   'Battle Stadium Singles': 'battlestadiumsingles',
   'Battle Stadium Singles Series 2': 'battlestadiumsinglesseries2',
   'Battle Stadium Singles Regulation C': 'battlestadiumsinglesregulationc',
+  AAA: 'almostanyability',
   BH: 'balancedhackmons',
   'National Dex': 'nationaldex',
   'National Dex Monotype': 'nationaldexmonotype',
