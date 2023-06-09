@@ -63,6 +63,7 @@ const FORMATS: {[format: string]: string} = {
   BH: 'balancedhackmons',
   'National Dex': 'nationaldex',
   'National Dex Monotype': 'nationaldexmonotype',
+  'National Dex Ubers': 'nationaldexubers',
   CAP: 'cap',
   '1v1': '1v1',
 };
