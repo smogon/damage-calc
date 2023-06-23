@@ -9280,6 +9280,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Pickup'},
     nfe: true,
   },
+  Hemogoblin: {
+    types: ['Fairy', 'Fire'],
+    bs: {hp: 90, at: 99, df: 89, sa: 99, sd: 97, sp: 55},
+    weightkg: 85,
+    abilities: {0: 'Pixilate'},
+  },
   Houndstone: {
     types: ['Ghost'],
     bs: {hp: 72, at: 101, df: 100, sa: 50, sd: 97, sp: 68},
