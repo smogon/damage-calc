@@ -1222,9 +1222,11 @@ export function calculateAtModsSMSSSV(
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
   }
-  //Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin ability"
-  const isTabletsOfRuinActive = (defender.hasAbility('Tablets of Ruin') || field.isTabletsOfRuin)&&!attacker.hasAbility('Tablets of Ruin');
-  const isVesselOfRuinActive = (defender.hasAbility('Vessel of Ruin') || field.isVesselOfRuin)&&!attacker.hasAbility('Vessel of Ruin');
+  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
+  const isTabletsOfRuinActive = (defender.hasAbility('Tablets of Ruin') || field.isTabletsOfRuin) &&
+    !attacker.hasAbility('Tablets of Ruin');
+  const isVesselOfRuinActive = (defender.hasAbility('Vessel of Ruin') || field.isVesselOfRuin) &&
+    !attacker.hasAbility('Vessel of Ruin');
   if (
     (isTabletsOfRuinActive && move.category === 'Physical') ||
     (isVesselOfRuinActive && move.category === 'Special')
@@ -1375,9 +1377,11 @@ export function calculateDfModsSMSSSV(
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
   }
-  //"-of Ruin" Pokemon are immune to their own "-of Ruin" effect
-  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin)&&!defender.hasAbility('Sword of Ruin');
-  const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin)&&!defender.hasAbility('Beads of Ruin');
+  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
+  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
+    !defender.hasAbility('Sword of Ruin');
+  const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin) &&
+    !defender.hasAbility('Beads of Ruin');
   if (
     (isSwordOfRuinActive && hitsPhysical) ||
     (isBeadsOfRuinActive && !hitsPhysical)
