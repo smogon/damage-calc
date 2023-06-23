@@ -152,10 +152,10 @@ label:not(.btn) {
 
 input.select2-input {
     color: var(--text);
-    background: url('../js/vendor/select2/select2.png') no-repeat 100% -22px, var(--background);
     /* 
     * I have to use this URL because this CSS file is in the dist/css folder,
     * whereas the Select2 CSS file is right next to the select2.png file
     */
+    background: url('../js/vendor/select2/select2.png') no-repeat 100% -22px, var(--background);
 }
 
