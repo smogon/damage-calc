@@ -12,7 +12,7 @@
     --column-1: #2a2a2a;
 }
 
-body {
+html, body {
     color: var(--text);
     background-color: var(--background);
     color-scheme: dark;
