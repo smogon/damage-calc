@@ -953,6 +953,7 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   if (description.isWonderRoom) {
     output += ' in Wonder Room';
   }
+  output = output.replace(/[ ]{2}/g, ' ');
   return output;
 }
 
