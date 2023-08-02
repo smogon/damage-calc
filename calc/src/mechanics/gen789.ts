@@ -210,6 +210,7 @@ export function calculateSMSSSV(
     'Natural Gift',
     'Weather Ball',
     'Terrain Pulse',
+    'Struggle',
   ) || (move.named('Tera Blast') && attacker.teraType);
 
   if (!move.isZ && !noTypeChange) {

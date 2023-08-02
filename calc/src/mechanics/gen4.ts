@@ -97,7 +97,7 @@ export function calculateDPP(
     desc.moveType = move.type;
   }
 
-  if (attacker.hasAbility('Normalize')) {
+  if (attacker.hasAbility('Normalize') && !move.named('Struggle')) {
     move.type = 'Normal';
     desc.attackerAbility = attacker.ability;
   }
