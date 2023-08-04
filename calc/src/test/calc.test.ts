@@ -1000,6 +1000,26 @@ describe('calc', () => {
           result = calculate(attacker, defender, Move('Revelation Dance'));
           expect(result.move.type).toBe('Water');
         });
+
+        test('Flower Gift, Power Spot, Battery, and switching boosts shouldn\'t have double spaces', () => {
+          const attacker = Pokemon('Weavile');
+          const defender = Pokemon('Vulpix');
+          const field = Field({
+            weather: 'Sun',
+            attackerSide: {
+              isFlowerGift: true,
+              isPowerSpot: true,
+            },
+            defenderSide: {
+              isSwitching: 'out',
+            },
+          });
+          const result = calculate(attacker, defender, Move('Pursuit'), field);
+
+          expect(result.desc()).toBe(
+            "0 Atk Weavile with an ally's Flower Gift Power Spot boosted switching boosted Pursuit (80 BP) vs. 0 HP / 0 Def Vulpix in Sun: 399-469 (183.8 - 216.1%) -- guaranteed OHKO"
+          );
+        });
       });
     });
   });
