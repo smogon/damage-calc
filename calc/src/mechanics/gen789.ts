@@ -396,12 +396,14 @@ export function calculateSMSSSV(
   if (move.named('Spectral Thief')) {
     let stat: StatID;
     for (stat in defender.boosts) {
-      if (defender.boosts[stat]) {
+      if (defender.boosts[stat] > 0) {
         attacker.boosts[stat] +=
           attacker.hasAbility('Contrary') ? -defender.boosts[stat]! : defender.boosts[stat]!;
         if (attacker.boosts[stat] > 6) attacker.boosts[stat] = 6;
         if (attacker.boosts[stat] < -6) attacker.boosts[stat] = -6;
         attacker.stats[stat] = getModifiedStat(attacker.rawStats[stat]!, attacker.boosts[stat]!);
+        defender.boosts[stat] = 0;
+        defender.stats[stat] = defender.rawStats[stat];
       }
     }
   }
