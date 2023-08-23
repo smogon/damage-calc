@@ -74,7 +74,13 @@ export function calculateRBYGSC(
     }
   }
 
-
+  //in gen 1, Super fang can hit ghosts
+  if (gen.num === 1 && (move.named('Super Fang'))) {
+      const lostHP = Math.floor(defender.curHP() / 2) || 1;
+      result.damage = lostHP;
+      return result;
+  }
+  
   const type1Effectiveness =
     getMoveEffectiveness(gen, move, firstDefenderType, field.defenderSide.isForesight);
   const type2Effectiveness = secondDefenderType

@@ -38,7 +38,6 @@ import {
   getShellSideArmCategory,
   getWeightFactor,
   handleFixedDamageMoves,
-  handlePercentageMoves,
   isGrounded,
   OF16, OF32,
   pokeRound,
@@ -363,7 +362,7 @@ export function calculateSMSSSV(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  const fixedDamage = handleFixedDamageMoves(attacker, move) || handlePercentageMoves(defender, move);
+  const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
     if (attacker.hasAbility('Parental Bond')) {
       result.damage = [fixedDamage, fixedDamage];
@@ -388,8 +387,8 @@ export function calculateSMSSSV(
     return result;
   }
 
-  if (move.named('Nature\'s Madness')) {
-    const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP() / 2);
+  if (move.named('Nature\'s Madness', 'Super Fang', 'Ruination')) {
+    const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP() / 2) || 1;
     result.damage = lostHP;
     return result;
   }

@@ -17,7 +17,6 @@ import {
   checkDownload,
   countBoosts,
   handleFixedDamageMoves,
-  handlePercentageMoves,
 } from './util';
 
 export function calculateDPP(
@@ -174,7 +173,13 @@ export function calculateDPP(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  const fixedDamage = handleFixedDamageMoves(attacker, move) || handlePercentageMoves(defender, move);
+  if (move.named('Super Fang')) {
+    const lostHP = Math.floor(defender.curHP() / 2) || 1;
+    result.damage = lostHP;
+    return result;
+  }
+
+  const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
     result.damage = fixedDamage;
     return result;

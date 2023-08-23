@@ -122,6 +122,12 @@ export function calculateADV(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
+  if (move.named('Super Fang')) {
+    const lostHP = Math.floor(defender.curHP() / 2) || 1;
+    result.damage = lostHP;
+    return result;
+  }
+
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
     result.damage = fixedDamage;

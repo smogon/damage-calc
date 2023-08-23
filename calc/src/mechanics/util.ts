@@ -495,12 +495,6 @@ export function handleFixedDamageMoves(attacker: Pokemon, move: Move) {
   }
   return 0;
 }
-export function handlePercentageMoves(defender: Pokemon, move: Move) {
-  if (move.named('Super Fang')) {
-    return Math.floor(defender.originalCurHP / 2) > 0 ? Math.floor(defender.originalCurHP / 2) : 1;
-  }
-  return 0;
-}
 // Game Freak rounds DOWN on .5
 export function pokeRound(num: number) {
   return num % 1 > 0.5 ? Math.ceil(num) : Math.floor(num);
