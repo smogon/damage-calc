@@ -17,6 +17,7 @@ import {
   checkDownload,
   countBoosts,
   handleFixedDamageMoves,
+  handlePercentageMoves,
 } from './util';
 
 export function calculateDPP(
@@ -173,7 +174,7 @@ export function calculateDPP(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  const fixedDamage = handleFixedDamageMoves(attacker, move);
+  const fixedDamage = handleFixedDamageMoves(attacker, move) || handlePercentageMoves(defender, move);
   if (fixedDamage) {
     result.damage = fixedDamage;
     return result;

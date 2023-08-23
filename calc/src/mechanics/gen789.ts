@@ -38,6 +38,7 @@ import {
   getShellSideArmCategory,
   getWeightFactor,
   handleFixedDamageMoves,
+  handlePercentageMoves,
   isGrounded,
   OF16, OF32,
   pokeRound,
@@ -362,7 +363,7 @@ export function calculateSMSSSV(
 
   desc.HPEVs = `${defender.evs.hp} HP`;
 
-  const fixedDamage = handleFixedDamageMoves(attacker, move);
+  const fixedDamage = handleFixedDamageMoves(attacker, move) || handlePercentageMoves(defender, move);
   if (fixedDamage) {
     if (attacker.hasAbility('Parental Bond')) {
       result.damage = [fixedDamage, fixedDamage];
