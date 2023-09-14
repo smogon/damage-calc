@@ -31,6 +31,10 @@ function startsWith(string, target) {
 	return (string || '').slice(0, target.length) === target;
 }
 
+function endsWith(string, target) {
+	return (string || '').slice(-target.length) === target;
+}
+
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
 var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
@@ -473,10 +477,11 @@ $(".set-selector").change(function () {
 	var pokemon = pokedex[pokemonName];
 	if (pokemon) {
 		var pokeObj = $(this).closest(".poke-info");
+		var isOgerponEmbody = startsWith(pokemonName, "Ogerpon") && endsWith(pokemonName, "Tera");
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
 			stickyMoves.clearStickyMove();
 		}
-		pokeObj.find(".teraToggle").prop("checked", false);
+		pokeObj.find(".teraToggle").prop("checked", isOgerponEmbody);
 		pokeObj.find(".boostedStat").val("Auto-Select");
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
@@ -520,7 +525,7 @@ $(".set-selector").change(function () {
 					}
 				}
 			}
-			pokeObj.find(".teraType").val(listTeraTypes[0] || pokemon.types[0]);
+			pokeObj.find(".teraType").val(listTeraTypes[0] || pokemon.forceTeraType || pokemon.types[0]);
 			$(this).closest('.poke-info').find(".extraSetTeraTypes").text(listTeraTypes.join(', '));
 		} else {
 			$(this).closest('.poke-info').find(".ability-pool").hide();
@@ -531,7 +536,7 @@ $(".set-selector").change(function () {
 		if (regSets || randset) {
 			var set = regSets ? correctHiddenPower(setdex[pokemonName][setName]) : randset;
 			if (regSets) {
-				pokeObj.find(".teraType").val(set.teraType || pokemon.types[0]);
+				pokeObj.find(".teraType").val(set.teraType || pokemon.forceTeraType || pokemon.types[0]);
 			}
 			pokeObj.find(".level").val(set.level);
 			pokeObj.find(".hp .evs").val((set.evs && set.evs.hp !== undefined) ? set.evs.hp : 0);
@@ -581,7 +586,8 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(setMoves));
 			}
 		} else {
-			pokeObj.find(".teraType").val(pokemon.types[0]);
+			console.log(pokemon.forceTeraType);
+			pokeObj.find(".teraType").val(pokemon.forceTeraType || pokemon.types[0]);
 			pokeObj.find(".level").val(100);
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
@@ -593,7 +599,11 @@ $(".set-selector").change(function () {
 			}
 			pokeObj.find(".nature").val("Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.ab, "");
-			itemObj.val("");
+			if (startsWith(pokemonName, "Ogerpon-") && !startsWith(pokemonName, "Ogerpon-Teal")) {
+				itemObj.val(pokemonName.split("-")[1] + " Mask");
+			} else {
+				itemObj.val("");
+			}
 			for (i = 0; i < 4; i++) {
 				moveObj = pokeObj.find(".move" + (i + 1) + " select.move-selector");
 				moveObj.attr('data-prev', moveObj.val());
@@ -685,6 +695,27 @@ function setSelectValueIfValid(select, value, fallback) {
 	select.val(!value ? fallback : select.children("option[value='" + value + "']").length ? value : fallback);
 }
 
+// Ogerpon mechs
+$(".teraToggle").change(function () {
+	if ($(".forme").is(":hidden")) return;
+	var curForme = $(".forme").val();
+	if (!startsWith(curForme, "Ogerpon")) return;
+	var container = $(this).closest(".info-group").siblings();
+	if (
+		curForme !== "Ogerpon" && !endsWith(curForme, "Tera") &&
+		container.find(".item").val() !== curForme.split("-")[1] + " Mask"
+	) return;
+	if (this.checked) {
+		var newForme = curForme === "Ogerpon" ? "Ogerpon-Teal-Tera" : curForme + "-Tera";
+		$(".forme").val(newForme);
+		container.find(".ability").val("Embody Aspect (" + newForme.split("-")[1] + ")");
+		return;
+	}
+	var newForme = curForme === "Ogerpon-Teal-Tera" ? "Ogerpon" : curForme.slice(0, -5);
+	$(".forme").val(newForme);
+	container.find(".ability").val(pokedex[newForme].abilities[0]);
+});
+
 $(".forme").change(function () {
 	var altForme = pokedex[$(this).val()],
 		container = $(this).closest(".info-group").siblings(),
@@ -699,13 +730,16 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
+	if (startsWith($(this).val(), "Ogerpon") && endsWith($(this).val(), "Tera")) {
+		$(".teraToggle").prop("checked", true);
+	}
 	var isRandoms = $("#randoms").prop("checked");
 	var pokemonSets = isRandoms ? randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
-	if (isAltForme && abilities.indexOf(altForme.ab) !== -1 && !greninjaSet) {
-		container.find(".ability").val(altForme.ab);
+	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !greninjaSet) {
+		container.find(".ability").val(altForme.abilities[0]);
 	} else if (greninjaSet) {
 		$(this).parent().find(".ability");
 	} else if (chosenSet) {
@@ -715,9 +749,13 @@ $(".forme").change(function () {
 			container.find(".ability").val(chosenSet.abilities[0]);
 		}
 	}
+	if (isAltForme && altForme.forceTeraType) {
+		$(".teraType").val(altForme.forceTeraType);
+	}
 	container.find(".ability").keyup();
-
-	if ($(this).val().indexOf("-Mega") !== -1 && $(this).val() !== "Rayquaza-Mega") {
+	if (startsWith($(this).val(), "Ogerpon-") && !startsWith($(this).val(), "Ogerpon-Teal")) {
+		container.find(".item").val($(this).val().split("-")[1] + " Mask").keyup();
+	} else if ($(this).val().indexOf("-Mega") !== -1 && $(this).val() !== "Rayquaza-Mega") {
 		container.find(".item").val("").keyup();
 	} else {
 		container.find(".item").prop("disabled", false);

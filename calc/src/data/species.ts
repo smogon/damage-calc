@@ -19,6 +19,7 @@ export interface SpeciesData {
   readonly otherFormes?: string[];
   readonly baseSpecies?: string;
   readonly abilities?: {0: string}; // ability
+  readonly forceTeraType?: I.TypeName;
 }
 
 const RBY: {[name: string]: SpeciesData} = {
@@ -9479,6 +9480,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       'Ogerpon-Wellspring', 'Ogerpon-Hearthflame', 'Ogerpon-Cornerstone', 'Ogerpon-Teal-Tera',
       'Ogerpon-Wellspring-Tera', 'Ogerpon-Hearthflame-Tera', 'Ogerpon-Cornerstone-Tera',
     ],
+    forceTeraType: 'Grass',
   },
   'Ogerpon-Wellspring': {
     types: ['Grass', 'Water'],
@@ -9487,6 +9489,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Water Absorb'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Water',
   },
   'Ogerpon-Hearthflame': {
     types: ['Grass', 'Fire'],
@@ -9495,6 +9498,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Mold Breaker'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Fire',
   },
   'Ogerpon-Cornerstone': {
     types: ['Grass', 'Rock'],
@@ -9503,6 +9507,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Sturdy'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Rock',
   },
   'Ogerpon-Teal-Tera': {
     types: ['Grass'],
@@ -9511,6 +9516,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Embody Aspect (Teal)'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Grass',
   },
   'Ogerpon-Wellspring-Tera': {
     types: ['Grass', 'Water'],
@@ -9519,6 +9525,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Embody Aspect (Wellspring)'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Water',
   },
   'Ogerpon-Hearthflame-Tera': {
     types: ['Grass', 'Fire'],
@@ -9527,6 +9534,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Embody Aspect (Hearthflame)'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Fire',
   },
   'Ogerpon-Cornerstone-Tera': {
     types: ['Grass', 'Rock'],
@@ -9535,6 +9543,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Embody Aspect (Cornerstone)'},
     weightkg: 39.8,
     baseSpecies: 'Ogerpon',
+    forceTeraType: 'Rock',
   },
   Oinkologne: {
     types: ['Normal'],
