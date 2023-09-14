@@ -1,4 +1,4 @@
-﻿import * as I from './interface';
+import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -8942,6 +8942,7 @@ const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 130, at: 140, df: 105, sa: 45, sd: 80, sp: 50},
     weightkg: 290,
     abilities: {0: 'Guts'},
+    otherFormes: ['Ursaluna-Bloodmoon'],
   },
   'Voltorb-Hisui': {
     types: ['Electric', 'Grass'],
@@ -9052,7 +9053,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Capsakid: {
     types: ['Grass'],
-    bs: {hp: 52, at: 62, df: 40, sa: 62, sd: 40, sp: 50},
+    bs: {hp: 50, at: 62, df: 40, sa: 62, sd: 40, sp: 50},
     weightkg: 3,
     abilities: {0: 'Chlorophyll'},
     nfe: true,
@@ -9121,6 +9122,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 57, at: 80, df: 115, sa: 50, sd: 80, sp: 95},
     weightkg: 14.9,
     abilities: {0: 'Well-Baked Body'},
+  },
+  Dipplin: {
+    types: ['Grass', 'Dragon'],
+    bs: {hp: 80, at: 80, df: 110, sa: 95, sd: 80, sp: 40},
+    weightkg: 4.4,
+    abilities: {0: 'Supersweet Syrup'},
   },
   Dolliv: {
     types: ['Grass', 'Normal'],
@@ -9503,6 +9510,25 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 41,
     abilities: {0: 'Volt Absorb'},
   },
+  Poltchageist: {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 40, at: 45, df: 45, sd: 54, sp: 50},
+    weightkg: 1.1,
+    abilities: {0: 'Hospitality'},
+    nfe: true,
+    otherFormes: ['Poltchageist-Artisan'],
+    gender: 'N',
+  },
+  'Poltchageist-Artisan': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 40, at: 45, df: 45, sd: 54, sp: 50},
+    weightkg: 1.1,
+    abilities: {0: 'Hospitality'},
+    nfe: true,
+    otherFormes: ['Poltchageist'],
+    gender: 'N',
+  },
+
   Quaquaval: {
     types: ['Water', 'Fighting'],
     bs: {hp: 85, at: 120, df: 80, sa: 85, sd: 75, sp: 85},
@@ -9575,6 +9601,22 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0.7,
     abilities: {0: 'Unburden'},
     nfe: true,
+  },
+  'Sinistcha': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
+    weightkg: 2.2,
+    abilities: {0: 'Hospitality'},
+    otherFormes: ['Sinistcha-Masterpiece'],
+    gender: 'N',
+  },
+  'Sinistcha-Masterpiece': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
+    weightkg: 2.2,
+    abilities: {0: 'Hospitality'},
+    otherFormes: ['Sinistcha'],
+    gender: 'N',
   },
   Skeledirge: {
     types: ['Fire', 'Ghost'],
@@ -9725,6 +9767,16 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 70, df: 65, sa: 80, sd: 120, sp: 100},
     weightkg: 58,
     abilities: {0: 'Mycelium Might'},
+  },
+  'Ursaluna': {
+    otherFormes: ['Ursaluna-Bloodmoon'],
+  },
+  'Ursaluna-Bloodmoon': {
+    types: ['Ground', 'Normal'],
+    bs: {hp: 113, at: 70, df: 120, sa: 135, sd: 65, sp: 52},
+    weightkg: 333,
+    abilities: {0: 'Mind\'s Eye'},
+    otherFormes: ['Ursaluna-Bloodmoon'],
   },
   Varoom: {
     types: ['Steel', 'Poison'],
