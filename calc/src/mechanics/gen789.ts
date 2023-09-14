@@ -195,6 +195,14 @@ export function calculateSMSSSV(
     } else if (attacker.named('Tauros-Paldea-Aqua')) {
       type = 'Water';
     }
+  } else if (move.named('Ivy Cudgel')) {
+    if (attacker.name.includes('Ogerpon-Cornerstone')) {
+      type = 'Rock';
+    } else if (attacker.name.includes('Ogerpon-Hearthflame')) {
+      type = 'Fire';
+    } else if (attacker.name.includes('Ogerpon-Wellspring')) {
+      type = 'Water';
+    }
   }
 
   let hasAteAbilityTypeChange = false;
