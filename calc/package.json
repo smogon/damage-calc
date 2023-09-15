@@ -1,6 +1,6 @@
 {
-  "name": "@smogon/calc",
-  "version": "0.7.0",
+  "name": "@pikalytics/calc",
+  "version": "0.10.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "dist/production.min.js",
