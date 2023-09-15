@@ -586,7 +586,6 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".extraSetMoves").html(formatMovePool(setMoves));
 			}
 		} else {
-			console.log(pokemon.forceTeraType);
 			pokeObj.find(".teraType").val(pokemon.forceTeraType || pokemon.types[0]);
 			pokeObj.find(".level").val(100);
 			pokeObj.find(".hp .evs").val(0);
