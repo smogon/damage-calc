@@ -724,6 +724,7 @@ $(".teraToggle").change(function () {
 		container.find(".ability").val("Embody Aspect (" + newForme.split("-")[1] + ")");
 		return;
 	}
+	if (!endsWith(curForme, "Tera")) return;
 	var newForme = curForme === "Ogerpon-Teal-Tera" ? "Ogerpon" : curForme.slice(0, -5);
 	forme.val(newForme);
 	container.find(".ability").val(pokedex[newForme].abilities[0]);
