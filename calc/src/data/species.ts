@@ -19,7 +19,6 @@ export interface SpeciesData {
   readonly otherFormes?: string[];
   readonly baseSpecies?: string;
   readonly abilities?: {0: string}; // ability
-  readonly forceTeraType?: I.TypeName;
 }
 
 const RBY: {[name: string]: SpeciesData} = {
@@ -9186,7 +9185,6 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Poison', 'Fairy'],
     bs: {hp: 88, at: 91, df: 82, sa: 70, sd: 125, sp: 99},
     weightkg: 30.1,
-    // gender: 'M',
     abilities: {0: 'Toxic Chain'},
   },
   Fidough: {
