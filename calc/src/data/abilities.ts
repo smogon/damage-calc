@@ -303,7 +303,7 @@ const SV = SS.concat([
   'Earth Eater',
   'Electromorphosis',
   'Embody Aspect (Cornerstone)',
-  'Embody Aspect (Heartflame)',
+  'Embody Aspect (Hearthflame)',
   'Embody Aspect (Teal)',
   'Embody Aspect (Wellspring)',
   'Good as Gold',
