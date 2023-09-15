@@ -4258,7 +4258,13 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     isWind: true,
     target: 'allAdjacentFoes',
   },
-  'Blood Moon': {bp: 120, category: 'Special', type: 'Normal'},
+  'Blood Moon': {
+    bp: 140,
+    type: 'Normal',
+    category: 'Special',
+    zp: 200,
+    maxPower: 140,
+  },
   'Ceaseless Edge': {
     bp: 65,
     type: 'Dark',
@@ -4490,8 +4496,9 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     type: 'Grass',
     category: 'Special',
     target: 'allAdjacentFoes',
-    zp: 140,
+    zp: 160,
     maxPower: 130,
+    secondaries: true,
     drain: [1, 2],
   },
   'Mortal Spin': {
