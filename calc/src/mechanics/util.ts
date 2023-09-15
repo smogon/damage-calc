@@ -251,9 +251,9 @@ export function checkDauntlessShield(source: Pokemon, gen: Generation) {
 }
 
 export function checkEmbody(source: Pokemon, gen: Generation) {
-  if (gen.num > 9) return;
+  if (gen.num < 9) return;
   switch (source.ability) {
-  case 'Embody Aspect (Cornerstone)"':
+  case 'Embody Aspect (Cornerstone)':
     source.boosts.def = Math.min(6, source.boosts.def + 1);
     break;
   case 'Embody Aspect (Hearthflame)':
