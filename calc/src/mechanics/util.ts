@@ -426,23 +426,21 @@ export function getQPBoostedStat(
 export function isQPActive(
   pokemon: Pokemon,
   field: Field
-): boolean {
+) {
   if (!pokemon.boostedStat) {
     return false;
   }
 
   const weather = field.weather || '';
   const terrain = field.terrain;
-  if (
+
+  return (
     (pokemon.hasAbility('Protosynthesis') &&
       (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
     (pokemon.hasAbility('Quark Drive') &&
       (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))) ||
     (pokemon.boostedStat !== 'auto')
-  ) {
-    return true;
-  }
-  return false;
+  );
 }
 
 export function getFinalDamage(
