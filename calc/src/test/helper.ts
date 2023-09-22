@@ -87,12 +87,12 @@ export function tests(...args: any[]) {
   let type: 'skip' | 'only' | undefined = undefined;
   if (typeof args[1] !== 'number') {
     from = 1;
-    to = 8;
+    to = 9;
     fn = args[1];
     type = args[2];
   } else if (typeof args[2] !== 'number') {
     from = args[1] as I.GenerationNum ?? 1;
-    to = 8;
+    to = 9;
     fn = args[2];
     type = args[3];
   } else {
