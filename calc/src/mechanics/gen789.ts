@@ -319,7 +319,7 @@ export function calculateSMSSSV(
       (move.named('Dream Eater') &&
         (!(defender.hasStatus('slp') || defender.hasAbility('Comatose')))) ||
       (move.named('Steel Roller') && !field.terrain) ||
-      (move.named('Poltergeist') && !defender.item)
+      (move.named('Poltergeist') && (!defender.item || isQPActive(defender, field)))
   ) {
     return result;
   }
@@ -706,7 +706,8 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Acrobatics':
-    basePower = move.bp * (attacker.hasItem('Flying Gem') || !attacker.item ? 2 : 1);
+    basePower = move.bp * (attacker.hasItem('Flying Gem') ||
+        (!attacker.item || isQPActive(attacker, field)) ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Assurance':
@@ -870,7 +871,7 @@ export function calculateBPModsSMSSSV(
   // Move effects
 
   let resistedKnockOffDamage =
-    !defender.item ||
+    (!defender.item || isQPActive(defender, field)) ||
     (defender.named('Dialga-Origin') && defender.hasItem('Adamant Crystal')) ||
     (defender.named('Palkia-Origin') && defender.hasItem('Lustrous Globe')) ||
     // Griseous Core for gen 9, Griseous Orb otherwise
@@ -1266,9 +1267,7 @@ export function calculateAtModsSMSSSV(
     atMods.push(3072);
   }
 
-  if (
-    (isQPActive(attacker, field))
-  ) {
+  if (isQPActive(attacker, field)) {
     if (
       (move.category === 'Physical' && getQPBoostedStat(attacker) === 'atk') ||
       (move.category === 'Special' && getQPBoostedStat(attacker) === 'spa')
@@ -1417,9 +1416,7 @@ export function calculateDfModsSMSSSV(
     dfMods.push(3072);
   }
 
-  if (
-    (isQPActive(defender, field))
-  ) {
+  if (isQPActive(defender, field)) {
     if (
       (hitsPhysical && getQPBoostedStat(defender) === 'def') ||
       (!hitsPhysical && getQPBoostedStat(defender) === 'spd')
