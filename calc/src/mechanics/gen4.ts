@@ -550,6 +550,28 @@ export function calculateDPP(
   }
   result.damage = damage;
 
+  if (move.hits > 1) {
+    for (let times = 0; times < move.hits; times++) {
+      let damageMultiplier = 0;
+      result.damage = result.damage.map(affectedAmount => {
+        if (times) {
+          let newFinalDamage = 0;
+          newFinalDamage = Math.floor((baseDamage * (85 + damageMultiplier)) / 100);
+          newFinalDamage = Math.floor(newFinalDamage * stabMod);
+          newFinalDamage = Math.floor(newFinalDamage * type1Effectiveness);
+          newFinalDamage = Math.floor(newFinalDamage * type2Effectiveness);
+          newFinalDamage = Math.floor(newFinalDamage * filterMod);
+          newFinalDamage = Math.floor(newFinalDamage * ebeltMod);
+          newFinalDamage = Math.floor(newFinalDamage * tintedMod);
+          newFinalDamage = Math.max(1, newFinalDamage);
+          damageMultiplier++;
+          return affectedAmount + newFinalDamage;
+        }
+        return affectedAmount;
+      });
+    }
+  }
+
   // #endregion
 
   return result;

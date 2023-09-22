@@ -257,5 +257,30 @@ export function calculateRBYGSC(
     }
   }
 
+  if (move.hits > 1) {
+    for (let times = 0; times < move.hits; times++) {
+      let damageMultiplier = 217;
+      result.damage = result.damage.map(affectedAmount => {
+        if (times) {
+          let newFinalDamage = 0;
+          // in gen 2 damage is always rounded up to 1. TODO ADD TESTS
+          if (gen.num === 2) {
+            newFinalDamage = Math.max(1, Math.floor((baseDamage * damageMultiplier) / 255));
+          } else {
+            // in gen 1 the random factor multiplication is skipped if damage = 1
+            if (baseDamage === 1) {
+              newFinalDamage = 1;
+            } else {
+              newFinalDamage = Math.floor((baseDamage * damageMultiplier) / 255);
+            }
+          }
+          damageMultiplier++;
+          return affectedAmount + newFinalDamage;
+        }
+        return affectedAmount;
+      });
+    }
+  }
+
   return result;
 }
