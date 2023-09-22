@@ -23,7 +23,7 @@ export class Pokemon implements State.Pokemon {
   dynamaxLevel?: number;
   isSaltCure?: boolean;
   alliesFainted?: number;
-  boostedStat?: I.StatIDExceptHP;
+  boostedStat?: I.StatIDExceptHP | 'auto';
   item?: I.ItemName;
   teraType?: I.TypeName;
 

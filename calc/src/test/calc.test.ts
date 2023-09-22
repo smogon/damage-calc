@@ -958,9 +958,9 @@ describe('calc', () => {
         });
         function testQP(ability: string, field?: {weather?: Weather; terrain?: Terrain}) {
           test(`${ability} should take into account boosted stats by default`, () => {
-            const attacker = Pokemon('Iron Leaves', {ability, boosts: {spa: 6}});
+            const attacker = Pokemon('Iron Leaves', {ability, boostedStat: 'auto', boosts: {spa: 6}});
             // highest stat = defense
-            const defender = Pokemon('Iron Treads', {ability, boosts: {spd: 6}});
+            const defender = Pokemon('Iron Treads', {ability, boostedStat: 'auto', boosts: {spd: 6}});
 
             let result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
             expect(result.attackerAbility).toBe(ability);

@@ -250,10 +250,11 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
-
 	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
-	if (['Protosynthesis', 'Quark Drive'].indexOf(ability) >= 0) {
+
+	if (ability === "Protosynthesis" || ability === "Quark Drive") {
 		boostedStat.show();
+		autosetQP($(this).closest(".poke-info"));
 	} else {
 		boostedStat.hide();
 	}
@@ -267,9 +268,38 @@ $(".ability").bind("keyup change", function () {
 	}
 });
 
+function autosetQP(pokemon) {
+	var currentWeather = $("input:radio[name='weather']:checked").val();
+	var currentTerrain = $("input:checkbox[name='terrain']:checked").val() || "No terrain";
+
+	var item = pokemon.find(".item").val();
+	var ability = pokemon.find(".ability").val();
+	var boostedStat = pokemon.find(".boostedStat").val();
+
+	if (!boostedStat || boostedStat === "auto") {
+		if (
+			(item === "Booster Energy") ||
+			(ability === "Protosynthesis" && currentWeather === "Sun") ||
+			(ability === "Quark Drive" && currentTerrain === "Electric")
+		) {
+			pokemon.find(".boostedStat").val("auto");
+		} else {
+			pokemon.find(".boostedStat").val("");
+		}
+	}
+}
+
 $("#p1 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 0);
 	autosetTerrain($(this).val(), 0);
+	autosetQP($(this).closest(".poke-info"));
+});
+
+$("input[name='weather']").change(function () {
+	var allPokemon = $('.poke-info');
+	allPokemon.each(function () {
+		autosetQP($(this));
+	});
 });
 
 var lastManualWeather = "";
@@ -322,6 +352,13 @@ function autosetWeather(ability, i) {
 		break;
 	}
 }
+
+$("input[name='terrain']").change(function () {
+	var allPokemon = $('.poke-info');
+	allPokemon.each(function () {
+		autosetQP($(this));
+	});
+});
 
 var lastManualTerrain = "";
 var lastAutoTerrain = ["", ""];
@@ -475,6 +512,7 @@ $(".item").change(function () {
 	} else {
 		$metronomeControl.hide();
 	}
+	autosetQP($(this).closest(".poke-info"));
 });
 
 function smogonAnalysis(pokemonName) {
@@ -495,7 +533,7 @@ $(".set-selector").change(function () {
 			stickyMoves.clearStickyMove();
 		}
 		pokeObj.find(".teraToggle").prop("checked", isOgerponEmbody);
-		pokeObj.find(".boostedStat").val("Auto-Select");
+		pokeObj.find(".boostedStat").val("");
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);

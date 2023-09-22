@@ -111,13 +111,7 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
     speedMods.push(6144);
   } else if (pokemon.hasAbility('Slow Start') && pokemon.abilityOn) {
     speedMods.push(2048);
-  } else if (
-    getQPBoostedStat(pokemon, gen) === 'spe' &&
-    ((pokemon.hasAbility('Protosynthesis') &&
-      (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
-      (pokemon.hasAbility('Quark Drive') &&
-        (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))))
-  ) {
+  } else if (isQPActive(pokemon, field) && getQPBoostedStat(pokemon, gen) === 'spe') {
     speedMods.push(6144);
   }
 
@@ -413,7 +407,9 @@ export function getQPBoostedStat(
   pokemon: Pokemon,
   gen?: Generation
 ): StatID {
-  if (pokemon.boostedStat) return pokemon.boostedStat; // override.
+  if (pokemon.boostedStat && pokemon.boostedStat !== 'auto') {
+    return pokemon.boostedStat; // override.
+  }
   let bestStat: StatID = 'atk';
   for (const stat of ['def', 'spa', 'spd', 'spe'] as StatID[]) {
     if (
@@ -425,6 +421,28 @@ export function getQPBoostedStat(
     }
   }
   return bestStat;
+}
+
+export function isQPActive(
+  pokemon: Pokemon,
+  field: Field
+): boolean {
+  if (!pokemon.boostedStat) {
+    return false;
+  }
+
+  const weather = field.weather || '';
+  const terrain = field.terrain;
+  if (
+    (pokemon.hasAbility('Protosynthesis') &&
+      (weather.includes('Sun') || pokemon.hasItem('Booster Energy'))) ||
+    (pokemon.hasAbility('Quark Drive') &&
+      (terrain === 'Electric' || pokemon.hasItem('Booster Energy'))) ||
+    (pokemon.boostedStat !== 'auto')
+  ) {
+    return true;
+  }
+  return false;
 }
 
 export function getFinalDamage(
