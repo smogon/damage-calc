@@ -12,9 +12,10 @@
     --column-1: #2a2a2a;
 }
 
-body {
+html, body {
     color: var(--text);
     background-color: var(--background);
+    color-scheme: dark;
 }
 
 .btn {
@@ -120,6 +121,42 @@ label:not(.btn) {
     color: var(--text);
 }
 
-input.select2-input {
-    color: black;
+/* Select2 Dropdown stylings */
+
+.select2-container .select2-choice {
+    background: var(--background);
+    background-image: linear-gradient(#333, 70%, #1b1b1b);
+    /* Not fully satisfied w/ this gradient, but it's w/e */
+    color: var(--text);
 }
+
+.select2-container .select2-choice .select2-arrow {
+    background: none;
+    border-left: none;
+}
+
+.select2-dropdown-open .select2-choice {
+    -webkit-box-shadow: 0 1px 0 var(--background) inset;
+    box-shadow: 0 1px 0 var(--background) inset;
+    background-image: none;
+}
+
+.select2-drop {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-dropdown-open.select2-drop-above .select2-choices {
+    background-image: none;
+}
+
+input.select2-input {
+    color: var(--text);
+    /* 
+    * I have to use this URL because this CSS file is in the dist/css folder,
+    * whereas the Select2 CSS file is right next to the select2.png file
+    */
+    background: url('../js/vendor/select2/select2.png') no-repeat 100% -22px, var(--background);
+}
+

@@ -19,6 +19,7 @@ import {
   checkAirLock,
   checkDauntlessShield,
   checkDownload,
+  checkEmbody,
   checkForecast,
   checkInfiltrator,
   checkIntimidate,
@@ -65,6 +66,8 @@ export function calculateSMSSSV(
   checkSeedBoost(defender, field);
   checkDauntlessShield(attacker, gen);
   checkDauntlessShield(defender, gen);
+  checkEmbody(attacker, gen);
+  checkEmbody(defender, gen);
 
   computeFinalStats(gen, attacker, defender, field, 'def', 'spd', 'spe');
 
@@ -174,7 +177,11 @@ export function calculateSMSSSV(
     desc.terrain = field.terrain;
     desc.moveType = type;
   } else if (move.named('Revelation Dance')) {
-    type = attacker.types[0];
+    if (attacker.teraType) {
+      type = attacker.teraType;
+    } else {
+      type = attacker.types[0];
+    }
   } else if (move.named('Aura Wheel')) {
     if (attacker.named('Morpeko')) {
       type = 'Electric';
@@ -187,6 +194,14 @@ export function calculateSMSSSV(
     } else if (attacker.named('Tauros-Paldea-Blaze')) {
       type = 'Fire';
     } else if (attacker.named('Tauros-Paldea-Aqua')) {
+      type = 'Water';
+    }
+  } else if (move.named('Ivy Cudgel')) {
+    if (attacker.name.includes('Ogerpon-Cornerstone')) {
+      type = 'Rock';
+    } else if (attacker.name.includes('Ogerpon-Hearthflame')) {
+      type = 'Fire';
+    } else if (attacker.name.includes('Ogerpon-Wellspring')) {
       type = 'Water';
     }
   }
@@ -207,6 +222,7 @@ export function calculateSMSSSV(
     'Natural Gift',
     'Weather Ball',
     'Terrain Pulse',
+    'Struggle',
   ) || (move.named('Tera Blast') && attacker.teraType);
 
   if (!move.isZ && !noTypeChange) {
@@ -248,7 +264,8 @@ export function calculateSMSSSV(
   }
 
   const isGhostRevealed =
-    attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+    attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') ||
+      field.defenderSide.isForesight;
   const isRingTarget =
     defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
   const type1Effectiveness = getMoveEffectiveness(
@@ -865,8 +882,11 @@ export function calculateBPModsSMSSSV(
     (defender.name.includes('Silvally') && defender.item.includes('Memory')) ||
     defender.item.includes(' Z') ||
     (defender.named('Zacian') && defender.hasItem('Rusted Sword')) ||
-    (defender.named('Zamazenta') && defender.hasItem('Rusted Shield') ||
-    (defender.named('Venomicon-Epilogue') && defender.hasItem('Vile Vial')));
+    (defender.named('Zamazenta') && defender.hasItem('Rusted Shield')) ||
+    (defender.name.includes('Ogerpon-Cornerstone') && defender.hasItem('Cornerstone Mask')) ||
+    (defender.name.includes('Ogerpon-Hearthflame') && defender.hasItem('Hearthflame Mask')) ||
+    (defender.name.includes('Ogerpon-Wellspring') && defender.hasItem('Wellspring Mask')) ||
+    (defender.named('Venomicon-Epilogue') && defender.hasItem('Vile Vial'));
 
   // The last case only applies when the Pokemon has the Mega Stone that matches its species
   // (or when it's already a Mega-Evolution)
@@ -901,7 +921,8 @@ export function calculateBPModsSMSSSV(
     desc.weather = field.weather;
   } else if (move.named('Collision Course', 'Electro Drift')) {
     const isGhostRevealed =
-      attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+      attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') ||
+      field.defenderSide.isForesight;
     const isRingTarget =
       defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
     const types = defender.teraType ? [defender.teraType] : defender.types;
@@ -1082,7 +1103,10 @@ export function calculateBPModsSMSSSV(
     (attacker.hasItem('Soul Dew') &&
      attacker.named('Latios', 'Latias', 'Latios-Mega', 'Latias-Mega') &&
      move.hasType('Psychic', 'Dragon')) ||
-     attacker.item && move.hasType(getItemBoostType(attacker.item))
+     attacker.item && move.hasType(getItemBoostType(attacker.item)) ||
+    (attacker.name.includes('Ogerpon-Cornerstone') && attacker.hasItem('Cornerstone Mask')) ||
+    (attacker.name.includes('Ogerpon-Hearthflame') && attacker.hasItem('Hearthflame Mask')) ||
+    (attacker.name.includes('Ogerpon-Wellspring') && attacker.hasItem('Wellspring Mask'))
   ) {
     bpMods.push(4915);
     desc.attackerItem = attacker.item;
@@ -1201,10 +1225,12 @@ export function calculateAtModsSMSSSV(
   } else if (
     (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
-    (attacker.hasAbility('Transistor') && move.hasType('Electric')) ||
     (attacker.hasAbility('Rocky Payload') && move.hasType('Rock'))
   ) {
     atMods.push(6144);
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Transistor') && move.hasType('Electric')) {
+    atMods.push(gen.num >= 9 ? 5325 : 6144);
     desc.attackerAbility = attacker.ability;
   } else if (attacker.hasAbility('Stakeout') && attacker.abilityOn) {
     atMods.push(8192);
@@ -1223,9 +1249,11 @@ export function calculateAtModsSMSSSV(
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
   }
-
-  const isTabletsOfRuinActive = defender.hasAbility('Tablets of Ruin') || field.isTabletsOfRuin;
-  const isVesselOfRuinActive = defender.hasAbility('Vessel of Ruin') || field.isVesselOfRuin;
+  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
+  const isTabletsOfRuinActive = (defender.hasAbility('Tablets of Ruin') || field.isTabletsOfRuin) &&
+    !attacker.hasAbility('Tablets of Ruin');
+  const isVesselOfRuinActive = (defender.hasAbility('Vessel of Ruin') || field.isVesselOfRuin) &&
+    !attacker.hasAbility('Vessel of Ruin');
   if (
     (isTabletsOfRuinActive && move.category === 'Physical') ||
     (isVesselOfRuinActive && move.category === 'Special')
@@ -1372,9 +1400,11 @@ export function calculateDfModsSMSSSV(
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
   }
-
-  const isSwordOfRuinActive = attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin;
-  const isBeadsOfRuinActive = attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin;
+  // Pokemon with "-of Ruin" Ability are immune to the opposing "-of Ruin" ability
+  const isSwordOfRuinActive = (attacker.hasAbility('Sword of Ruin') || field.isSwordOfRuin) &&
+    !defender.hasAbility('Sword of Ruin');
+  const isBeadsOfRuinActive = (attacker.hasAbility('Beads of Ruin') || field.isBeadsOfRuin) &&
+    !defender.hasAbility('Beads of Ruin');
   if (
     (isSwordOfRuinActive && hitsPhysical) ||
     (isBeadsOfRuinActive && !hitsPhysical)
@@ -1399,7 +1429,8 @@ export function calculateDfModsSMSSSV(
     }
   }
 
-  if ((defender.hasItem('Eviolite') && gen.species.get(toID(defender.name))?.nfe) ||
+  if ((defender.hasItem('Eviolite') &&
+      (defender.name === 'Dipplin' || gen.species.get(toID(defender.name))?.nfe)) ||
       (!hitsPhysical && defender.hasItem('Assault Vest'))) {
     dfMods.push(6144);
     desc.defenderItem = defender.item;

@@ -132,7 +132,8 @@ export function calculateBWXY(
   let isRefrigerate = false;
   let isNormalize = false;
   const noTypeChange =
-    move.named('Judgment', 'Nature Power', 'Techo Blast', 'Natural Gift', 'Weather Ball');
+    move.named('Judgment', 'Nature Power', 'Techo Blast', 'Natural Gift', 'Weather Ball',
+      'Struggle');
 
   if (!move.isZ && !noTypeChange) {
     const normal = move.hasType('Normal');

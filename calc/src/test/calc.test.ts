@@ -990,6 +990,16 @@ describe('calc', () => {
         testQP('Protosynthesis', {weather: 'Sun'});
         testQPOverride('Quark Drive', {terrain: 'Electric'});
         testQPOverride('Protosynthesis', {weather: 'Sun'});
+        test('Revelation Dance should change type if Pokemon Terastallized', () => {
+          const attacker = Pokemon('Oricorio-Pom-Pom');
+          const defender = Pokemon('Sandaconda');
+          let result = calculate(attacker, defender, Move('Revelation Dance'));
+          expect(result.move.type).toBe('Electric');
+
+          attacker.teraType = 'Water';
+          result = calculate(attacker, defender, Move('Revelation Dance'));
+          expect(result.move.type).toBe('Water');
+        });
       });
     });
   });

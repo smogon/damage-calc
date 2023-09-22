@@ -59,7 +59,10 @@ const FORMATS: {[format: string]: string} = {
   'Battle Stadium Singles': 'battlestadiumsingles',
   'Battle Stadium Singles Series 2': 'battlestadiumsinglesseries2',
   'Battle Stadium Singles Regulation C': 'battlestadiumsinglesregulationc',
+  AAA: 'almostanyability',
   BH: 'balancedhackmons',
+  'National Dex': 'nationaldex',
+  'National Dex Monotype': 'nationaldexmonotype',
   CAP: 'cap',
   '1v1': '1v1',
 };
@@ -79,7 +82,7 @@ const TO_FORMAT: {[tier in Tier]?: Format} = {
   '(OU)': 'OU',
 };
 
-const RECENT_ONLY: Format[] = ['Monotype', 'BH'];
+const RECENT_ONLY: Format[] = []; // Now unused, seems to confuse people
 
 const GENS = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS', 'SV'];
 const USAGE = ['OU', 'UU', 'RU', 'NU', 'PU', 'ZU', 'Uber', 'LC', 'Doubles'];
@@ -96,6 +99,11 @@ export async function importSets(dir: string) {
       if (!sets && gen === 9) {
         await importSetsForPokemon(pokemon, 8, setsByPokemon);
         sets = setsByPokemon[pokemon];
+        // It might have been dexited from Gen 8, so try Gen 7
+        if (!sets) {
+          await importSetsForPokemon(pokemon, 7, setsByPokemon);
+          sets = setsByPokemon[pokemon];
+        }
       }
       if (sets) {
         const sorted = Object.keys(sets);

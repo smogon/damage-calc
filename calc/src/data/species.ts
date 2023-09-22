@@ -1,4 +1,4 @@
-﻿import * as I from './interface';
+import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -6202,7 +6202,7 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Geodude: {otherFormes: ['Geodude-Alola']},
   Golem: {otherFormes: ['Golem-Alola']},
   Graveler: {otherFormes: ['Graveler-Alola']},
-  Greninja: {otherFormes: ['Greninja-Ash']},
+  Greninja: {otherFormes: ['Greninja-Ash', 'Greninja-Bond']},
   Grimer: {otherFormes: ['Grimer-Alola']},
   Illumise: {bs: {df: 75, sd: 85}},
   Lunatone: {bs: {hp: 90}},
@@ -6495,6 +6495,13 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Greninja-Ash': {
     types: ['Water', 'Dark'],
     bs: {hp: 72, at: 145, df: 67, sa: 153, sd: 71, sp: 132},
+    weightkg: 40,
+    abilities: {0: 'Battle Bond'},
+    baseSpecies: 'Greninja',
+  },
+  'Greninja-Bond': {
+    types: ['Water', 'Dark'],
+    bs: {hp: 72, at: 95, df: 67, sa: 103, sd: 71, sp: 122},
     weightkg: 40,
     abilities: {0: 'Battle Bond'},
     baseSpecies: 'Greninja',
@@ -7982,7 +7989,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Farfetch\u2019d-Galar': {
     types: ['Fighting'],
     bs: {hp: 52, at: 95, df: 55, sa: 58, sd: 62, sp: 55},
-    weightkg: 15,
+    weightkg: 42,
     abilities: {0: 'Steadfast'},
     nfe: true,
     baseSpecies: 'Farfetch\u2019d',
@@ -8868,7 +8875,7 @@ const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Kleavor: {
     types: ['Bug', 'Rock'],
-    bs: {hp: 70, at: 130, df: 95, sa: 45, sd: 75, sp: 85},
+    bs: {hp: 70, at: 135, df: 95, sa: 45, sd: 70, sp: 85},
     weightkg: 89,
     abilities: {0: 'Swarm'},
   },
@@ -8882,7 +8889,7 @@ const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Overqwil: {
     types: ['Dark', 'Poison'],
     bs: {hp: 85, at: 115, df: 95, sa: 65, sd: 65, sp: 85},
-    weightkg: 3.9,
+    weightkg: 60.5,
     abilities: {0: 'Poison Point'},
   },
   'Palkia-Origin': {
@@ -8987,6 +8994,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Zacian-Crowned': {bs: {at: 150}},
   Zamazenta: {bs: {at: 120}},
   'Zamazenta-Crowned': {bs: {at: 120, df: 140, sd: 140}},
+  Ababo: {
+    types: ['Fairy'],
+    bs: {hp: 42, at: 35, df: 27, sa: 35, sd: 35, sp: 38},
+    weightkg: 3.5,
+    abilities: {0: 'Pixilate'},
+    nfe: true,
+  },
   Annihilape: {
     types: ['Fighting', 'Ghost'],
     bs: {hp: 110, at: 115, df: 80, sa: 50, sd: 90, sp: 90},
@@ -9052,7 +9066,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Capsakid: {
     types: ['Grass'],
-    bs: {hp: 52, at: 62, df: 40, sa: 62, sd: 40, sp: 50},
+    bs: {hp: 50, at: 62, df: 40, sa: 62, sd: 40, sp: 50},
     weightkg: 3,
     abilities: {0: 'Chlorophyll'},
     nfe: true,
@@ -9122,6 +9136,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 14.9,
     abilities: {0: 'Well-Baked Body'},
   },
+  Dipplin: {
+    types: ['Grass', 'Dragon'],
+    bs: {hp: 80, at: 80, df: 110, sa: 95, sd: 80, sp: 40},
+    weightkg: 4.4,
+    abilities: {0: 'Supersweet Syrup'},
+  },
   Dolliv: {
     types: ['Grass', 'Normal'],
     bs: {hp: 52, at: 53, df: 60, sa: 78, sd: 78, sp: 33},
@@ -9160,6 +9180,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 120, at: 90, df: 70, sa: 110, sd: 70, sp: 60},
     weightkg: 160,
     abilities: {0: 'Cud Chew'},
+  },
+  Fezandipiti: {
+    types: ['Poison', 'Fairy'],
+    bs: {hp: 88, at: 91, df: 82, sa: 70, sd: 125, sp: 99},
+    weightkg: 30.1,
+    abilities: {0: 'Toxic Chain'},
   },
   Fidough: {
     types: ['Fairy'],
@@ -9279,6 +9305,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 35,
     abilities: {0: 'Pickup'},
     nfe: true,
+  },
+  Hemogoblin: {
+    types: ['Fairy', 'Fire'],
+    bs: {hp: 90, at: 96, df: 87, sa: 96, sd: 89, sp: 55},
+    weightkg: 85,
+    abilities: {0: 'Pixilate'},
   },
   Houndstone: {
     types: ['Ghost'],
@@ -9422,6 +9454,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Hadron Engine'},
   },
+  Munkidori: {
+    types: ['Poison', 'Psychic'],
+    bs: {hp: 88, at: 75, df: 66, sa: 130, sd: 90, sp: 106},
+    weightkg: 12.2,
+    abilities: {0: 'Toxic Chain'},
+  },
   Nacli: {
     types: ['Rock'],
     bs: {hp: 55, at: 55, df: 75, sa: 35, sd: 35, sp: 25},
@@ -9443,6 +9481,67 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Swarm'},
     nfe: true,
   },
+  Ogerpon: {
+    types: ['Grass'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Defiant'},
+    weightkg: 39.8,
+    otherFormes: [
+      'Ogerpon-Cornerstone', 'Ogerpon-Cornerstone-Tera',
+      'Ogerpon-Hearthflame', 'Ogerpon-Hearthflame-Tera',
+      'Ogerpon-Teal-Tera',
+      'Ogerpon-Wellspring', 'Ogerpon-Wellspring-Tera',
+    ],
+  },
+  'Ogerpon-Wellspring': {
+    types: ['Grass', 'Water'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Water Absorb'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
+  'Ogerpon-Hearthflame': {
+    types: ['Grass', 'Fire'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Mold Breaker'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
+  'Ogerpon-Cornerstone': {
+    types: ['Grass', 'Rock'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Sturdy'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
+  'Ogerpon-Teal-Tera': {
+    types: ['Grass'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Embody Aspect (Teal)'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
+  'Ogerpon-Wellspring-Tera': {
+    types: ['Grass', 'Water'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Embody Aspect (Wellspring)'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
+  'Ogerpon-Hearthflame-Tera': {
+    types: ['Grass', 'Fire'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Embody Aspect (Hearthflame)'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
+  'Ogerpon-Cornerstone-Tera': {
+    types: ['Grass', 'Rock'],
+    bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
+    abilities: {0: 'Embody Aspect (Cornerstone)'},
+    weightkg: 39.8,
+    baseSpecies: 'Ogerpon',
+  },
   Oinkologne: {
     types: ['Normal'],
     bs: {hp: 110, at: 100, df: 75, sa: 59, sd: 80, sp: 65},
@@ -9456,6 +9555,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 120,
     abilities: {0: 'Aroma Veil'},
     baseSpecies: 'Oinkologne',
+  },
+  Okidogi: {
+    types: ['Poison', 'Fighting'],
+    bs: {hp: 88, at: 128, df: 115, sa: 58, sd: 86, sp: 80},
+    weightkg: 92,
+    abilities: {0: 'Toxic Chain'},
   },
   Orthworm: {
     types: ['Steel'],
@@ -9497,6 +9602,25 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 41,
     abilities: {0: 'Volt Absorb'},
   },
+  Poltchageist: {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
+    weightkg: 1.1,
+    abilities: {0: 'Hospitality'},
+    nfe: true,
+    otherFormes: ['Poltchageist-Artisan'],
+    gender: 'N',
+  },
+  'Poltchageist-Artisan': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
+    weightkg: 1.1,
+    abilities: {0: 'Hospitality'},
+    nfe: true,
+    gender: 'N',
+    baseSpecies: 'Poltchageist',
+  },
+
   Quaquaval: {
     types: ['Water', 'Fighting'],
     bs: {hp: 85, at: 120, df: 80, sa: 85, sd: 75, sp: 85},
@@ -9550,6 +9674,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Protosynthesis'},
   },
+  Scattervein: {
+    types: ['Fairy'],
+    bs: {hp: 75, at: 74, df: 87, sa: 62, sd: 89, sp: 63},
+    weightkg: 25,
+    abilities: {0: 'Pixilate'},
+    nfe: true,
+  },
   Scovillain: {
     types: ['Grass', 'Fire'],
     bs: {hp: 65, at: 108, df: 65, sa: 108, sd: 65, sp: 75},
@@ -9569,6 +9700,22 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0.7,
     abilities: {0: 'Unburden'},
     nfe: true,
+  },
+  'Sinistcha': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
+    weightkg: 2.2,
+    abilities: {0: 'Hospitality'},
+    otherFormes: ['Sinistcha-Masterpiece'],
+    gender: 'N',
+  },
+  'Sinistcha-Masterpiece': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
+    weightkg: 2.2,
+    abilities: {0: 'Hospitality'},
+    gender: 'N',
+    baseSpecies: 'Sinistcha',
   },
   Skeledirge: {
     types: ['Fire', 'Ghost'],
@@ -9662,21 +9809,21 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Tauros-Paldea-Aqua': {
     types: ['Fighting', 'Water'],
     bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
-    weightkg: 88.4,
+    weightkg: 110,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Tauros',
   },
   'Tauros-Paldea-Blaze': {
     types: ['Fighting', 'Fire'],
     bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
-    weightkg: 88.4,
+    weightkg: 85,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Tauros',
   },
   'Tauros-Paldea-Combat': {
     types: ['Fighting'],
     bs: {hp: 75, at: 110, df: 105, sa: 30, sd: 70, sp: 100},
-    weightkg: 88.4,
+    weightkg: 115,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Tauros',
   },
@@ -9719,6 +9866,16 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 70, df: 65, sa: 80, sd: 120, sp: 100},
     weightkg: 58,
     abilities: {0: 'Mycelium Might'},
+  },
+  'Ursaluna': {
+    otherFormes: ['Ursaluna-Bloodmoon'],
+  },
+  'Ursaluna-Bloodmoon': {
+    types: ['Ground', 'Normal'],
+    bs: {hp: 113, at: 70, df: 120, sa: 135, sd: 65, sp: 52},
+    weightkg: 333,
+    abilities: {0: 'Mind\'s Eye'},
+    baseSpecies: 'Ursaluna',
   },
   Varoom: {
     types: ['Steel', 'Poison'],
@@ -9764,7 +9921,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Wooper-Paldea': {
     types: ['Poison', 'Ground'],
     bs: {hp: 55, at: 45, df: 45, sa: 25, sd: 25, sp: 15},
-    weightkg: 8.5,
+    weightkg: 11,
     abilities: {0: 'Poison Point'},
     baseSpecies: 'Wooper',
     nfe: true,

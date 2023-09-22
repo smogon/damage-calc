@@ -421,6 +421,13 @@ table.field {
 .select2-container .select2-choice > .select2-chosen {
     width: 100%;
 }
+
+.select2-chosen {
+	word-wrap: break-word;
+	text-overflow: inherit;
+	white-space: normal !important;
+}
+
 .small-select.select2-container .select2-choice {
     font-size: 0.9em;
     height: 18px;
