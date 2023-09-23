@@ -641,7 +641,10 @@ export function calculateSMSSSV(
             times
           );
           const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newBaseDamage = getBaseDamage(attacker.level, basePower, attack, newDefense);
+          let newBaseDamage = getBaseDamage(attacker.level, basePower, attack, newDefense);
+          if (isCritical) {
+            newBaseDamage = Math.floor(OF32(newBaseDamage * 1.5));
+          }
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,
