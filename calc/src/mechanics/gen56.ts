@@ -871,12 +871,12 @@ export function calculateBWXY(
   }
 
   if (move.hits > 1) {
-    let defenderDefenseBoost = defender.boosts['def'];
+    let defenderDefBoost = defender.boosts['def'];
     for (let times = 0; times < move.hits; times++) {
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
         if (times) {
-          const newDefense = getModifiedStat(defense, defenderDefenseBoost);
+          const newDefense = getModifiedStat(defense, defenderDefBoost);
           const newFinalMods = calculateFinalModsBWXY(
             gen,
             attacker,
@@ -904,7 +904,8 @@ export function calculateBWXY(
         return affectedAmount;
       });
       if (hitsPhysical && defender.ability === 'Weak Armor') {
-        defenderDefenseBoost = Math.max(-6, defenderDefenseBoost - 1);
+        defenderDefBoost = Math.max(-6, defenderDefBoost - 1);
+        desc.defenderAbility = 'Weak Armor';
       }
     }
   }
