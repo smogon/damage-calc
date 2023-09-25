@@ -645,6 +645,25 @@ export function calculateSMSSSV(
           if (isCritical) {
             newBaseDamage = Math.floor(OF32(newBaseDamage * 1.5));
           }
+          // TODO probably move these to a common function
+          const isSpread = field.gameType !== 'Singles' &&
+            ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
+          if (isSpread) {
+            newBaseDamage = pokeRound(OF32(newBaseDamage * 3072) / 4096);
+          }
+          if (!defender.hasItem('Utility Umbrella')) {
+            if (
+              (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+              (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
+            ) {
+              newBaseDamage = pokeRound(OF32(newBaseDamage * 6144) / 4096);
+            } else if (
+              (field.hasWeather('Sun') && move.hasType('Water')) ||
+              (field.hasWeather('Rain') && move.hasType('Fire'))
+            ) {
+              newBaseDamage = pokeRound(OF32(newBaseDamage * 2048) / 4096);
+            }
+          }
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,
