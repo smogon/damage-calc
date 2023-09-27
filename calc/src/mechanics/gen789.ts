@@ -469,38 +469,18 @@ export function calculateSMSSSV(
   // #endregion
   // #region Damage
 
-  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
-
-  const isSpread = field.gameType !== 'Singles' &&
-     ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
-  if (isSpread) {
-    baseDamage = pokeRound(OF32(baseDamage * 3072) / 4096);
-  }
-
-  if (attacker.hasAbility('Parental Bond (Child)')) {
-    baseDamage = pokeRound(OF32(baseDamage * 1024) / 4096);
-  }
-
-  if (
-    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
-  ) {
-    baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
-    desc.weather = field.weather;
-  } else if (!defender.hasItem('Utility Umbrella')) {
-    if (
-      (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
-      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
-    ) {
-      baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
-      desc.weather = field.weather;
-    } else if (
-      (field.hasWeather('Sun') && move.hasType('Water')) ||
-      (field.hasWeather('Rain') && move.hasType('Fire'))
-    ) {
-      baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
-      desc.weather = field.weather;
-    }
-  }
+  const baseDamage = calculateBaseDamageSMSSSV(
+    gen,
+    attacker,
+    defender,
+    basePower,
+    attack,
+    defense,
+    move,
+    field,
+    desc,
+    isCritical
+  );
 
   if (hasTerrainSeed(defender) &&
     field.hasTerrain(defender.item!.substring(0, defender.item!.indexOf(' ')) as Terrain) &&
@@ -508,11 +488,6 @@ export function calculateSMSSSV(
     // Last condition applies so the calc doesn't show a seed where it wouldn't affect the outcome
     // (like Grassy Seed when being hit by a special move)
     desc.defenderItem = defender.item;
-  }
-
-  if (isCritical) {
-    baseDamage = Math.floor(OF32(baseDamage * 1.5));
-    desc.isCritical = isCritical;
   }
 
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
@@ -559,6 +534,9 @@ export function calculateSMSSSV(
   }
 
   const finalMod = chainMods(finalMods, 41, 131072);
+
+  const isSpread = field.gameType !== 'Singles' &&
+     ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
 
   let childDamage: number[] | undefined;
   if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
@@ -628,7 +606,6 @@ export function calculateSMSSSV(
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
         if (times) {
-          const newDefense = getModifiedStat(defense, defenderDefBoost);
           const newFinalMods = calculateFinalModsSMSSSV(
             gen,
             attacker,
@@ -641,29 +618,19 @@ export function calculateSMSSSV(
             times
           );
           const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          let newBaseDamage = getBaseDamage(attacker.level, basePower, attack, newDefense);
-          if (isCritical) {
-            newBaseDamage = Math.floor(OF32(newBaseDamage * 1.5));
-          }
-          // TODO probably move these to a common function
-          const isSpread = field.gameType !== 'Singles' &&
-            ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
-          if (isSpread) {
-            newBaseDamage = pokeRound(OF32(newBaseDamage * 3072) / 4096);
-          }
-          if (!defender.hasItem('Utility Umbrella')) {
-            if (
-              (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
-              (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
-            ) {
-              newBaseDamage = pokeRound(OF32(newBaseDamage * 6144) / 4096);
-            } else if (
-              (field.hasWeather('Sun') && move.hasType('Water')) ||
-              (field.hasWeather('Rain') && move.hasType('Fire'))
-            ) {
-              newBaseDamage = pokeRound(OF32(newBaseDamage * 2048) / 4096);
-            }
-          }
+          const newDefense = getModifiedStat(defense, defenderDefBoost);
+          const newBaseDamage = calculateBaseDamageSMSSSV(
+            gen,
+            attacker,
+            defender,
+            basePower,
+            attack,
+            newDefense,
+            move,
+            field,
+            desc,
+            isCritical
+          );
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,
@@ -1505,6 +1472,58 @@ export function calculateDfModsSMSSSV(
     desc.defenderItem = defender.item;
   }
   return dfMods;
+}
+
+function calculateBaseDamageSMSSSV(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  basePower: number,
+  attack: number,
+  defense: number,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false,
+) {
+  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
+  const isSpread = field.gameType !== 'Singles' &&
+     ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
+  if (isSpread) {
+    baseDamage = pokeRound(OF32(baseDamage * 3072) / 4096);
+  }
+
+  if (attacker.hasAbility('Parental Bond (Child)')) {
+    baseDamage = pokeRound(OF32(baseDamage * 1024) / 4096);
+  }
+
+  if (
+    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
+  ) {
+    baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
+    desc.weather = field.weather;
+  } else if (!defender.hasItem('Utility Umbrella')) {
+    if (
+      (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
+    ) {
+      baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
+      desc.weather = field.weather;
+    } else if (
+      (field.hasWeather('Sun') && move.hasType('Water')) ||
+      (field.hasWeather('Rain') && move.hasType('Fire'))
+    ) {
+      baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
+      desc.weather = field.weather;
+    }
+  }
+
+  if (isCritical) {
+    baseDamage = Math.floor(OF32(baseDamage * 1.5));
+    desc.isCritical = isCritical;
+  }
+
+  return baseDamage;
 }
 
 export function calculateFinalModsSMSSSV(

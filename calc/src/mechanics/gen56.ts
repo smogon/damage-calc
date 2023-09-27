@@ -746,34 +746,17 @@ export function calculateBWXY(
   // #endregion
   // #region Damage
 
-  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
-
-  const isSpread = field.gameType !== 'Singles' &&
-    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
-  if (isSpread) {
-    baseDamage = pokeRound(OF32(baseDamage * 3072) / 4096);
-  }
-
-  if (attacker.hasAbility('Parental Bond (Child)')) {
-    baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
-  }
-
-  if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
-      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
-    baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
-    desc.weather = field.weather;
-  } else if (
-    (field.hasWeather('Sun') && move.hasType('Water')) ||
-    (field.hasWeather('Rain') && move.hasType('Fire'))
-  ) {
-    baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
-    desc.weather = field.weather;
-  }
-
-  if (isCritical) {
-    baseDamage = Math.floor(OF32(baseDamage * (gen.num > 5 ? 1.5 : 2)));
-    desc.isCritical = isCritical;
-  }
+  const baseDamage = calculateBaseDamageBWXY(
+    gen,
+    attacker,
+    basePower,
+    attack,
+    defense,
+    move,
+    field,
+    desc,
+    isCritical
+  );
 
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
   // below this until we're inside the loop
@@ -808,6 +791,9 @@ export function calculateBWXY(
     typeEffectiveness
   );
   const finalMod = chainMods(finalMods, 41, 131072);
+
+  const isSpread = field.gameType !== 'Singles' &&
+    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
 
   let childDamage: number[] | undefined;
   if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
@@ -876,7 +862,6 @@ export function calculateBWXY(
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
         if (times) {
-          const newDefense = getModifiedStat(defense, defenderDefBoost);
           const newFinalMods = calculateFinalModsBWXY(
             gen,
             attacker,
@@ -889,7 +874,18 @@ export function calculateBWXY(
             times
           );
           const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newBaseDamage = getBaseDamage(attacker.level, basePower, attack, newDefense);
+          const newDefense = getModifiedStat(defense, defenderDefBoost);
+          const newBaseDamage = calculateBaseDamageBWXY(
+            gen,
+            attacker,
+            basePower,
+            attack,
+            newDefense,
+            move,
+            field,
+            desc,
+            isCritical
+          );
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,
@@ -918,6 +914,49 @@ export function calculateBWXY(
   // #endregion
 
   return result;
+}
+
+function calculateBaseDamageBWXY(
+  gen: Generation,
+  attacker: Pokemon,
+  basePower: number,
+  attack: number,
+  defense: number,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false,
+) {
+  let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
+
+  const isSpread = field.gameType !== 'Singles' &&
+    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
+  if (isSpread) {
+    baseDamage = pokeRound(OF32(baseDamage * 3072) / 4096);
+  }
+
+  if (attacker.hasAbility('Parental Bond (Child)')) {
+    baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
+  }
+
+  if ((field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))) {
+    baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
+    desc.weather = field.weather;
+  } else if (
+    (field.hasWeather('Sun') && move.hasType('Water')) ||
+    (field.hasWeather('Rain') && move.hasType('Fire'))
+  ) {
+    baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
+    desc.weather = field.weather;
+  }
+
+  if (isCritical) {
+    baseDamage = Math.floor(OF32(baseDamage * (gen.num > 5 ? 1.5 : 2)));
+    desc.isCritical = isCritical;
+  }
+
+  return baseDamage;
 }
 
 function calculateFinalModsBWXY(
