@@ -559,7 +559,7 @@ export function calculateSMSSSV(
     desc.moveTurns = `over ${move.timesUsed} turns`;
     const hasWhiteHerb = attacker.hasItem('White Herb');
     let usedWhiteHerb = false;
-    let dropCount = attacker.boosts[attackStat];
+    let dropCount = 0;
     for (let times = 0; times < move.timesUsed!; times++) {
       const newAttack = getModifiedStat(attack, dropCount);
       let damageMultiplier = 0;
@@ -601,8 +601,9 @@ export function calculateSMSSSV(
   }
 
   if (move.hits > 1) {
-    let defenderDefBoost = defender.boosts['def'];
+    let defenderDefBoost = 0;
     for (let times = 0; times < move.hits; times++) {
+      const newDefense = getModifiedStat(defense, defenderDefBoost);
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
         if (times) {
@@ -618,7 +619,6 @@ export function calculateSMSSSV(
             times
           );
           const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newDefense = getModifiedStat(defense, defenderDefBoost);
           const newBaseDamage = calculateBaseDamageSMSSSV(
             gen,
             attacker,
