@@ -151,6 +151,10 @@ label:not(.btn) {
     background-image: none;
 }
 
+.select2-no-results {
+    background-color: var(--background) !important;
+}
+
 input.select2-input {
     color: var(--text);
     /* 
@@ -159,4 +163,3 @@ input.select2-input {
     */
     background: url('../js/vendor/select2/select2.png') no-repeat 100% -22px, var(--background);
 }
-
