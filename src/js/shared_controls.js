@@ -492,7 +492,9 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".stat-drops").hide();
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
-		var moveHits = (pokemon.find(".ability").val() === 'Skill Link') ? 5 : 3;
+		var moveHits =
+			pokemon.find(".ability").val() === 'Skill Link' ? 5 :
+				pokemon.find(".item").val() === 'Loaded Dice' ? 4 : 3;
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
@@ -512,6 +514,7 @@ $(".item").change(function () {
 	} else {
 		$metronomeControl.hide();
 	}
+	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Loaded Dice' ? 4 : 3);
 	autosetQP($(this).closest(".poke-info"));
 });
 
