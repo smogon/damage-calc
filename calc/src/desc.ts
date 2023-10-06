@@ -869,16 +869,16 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += 'Helping Hand ';
   }
   if (description.isFlowerGiftAttacker) {
-    output += ' with an ally\'s Flower Gift ';
+    output += 'with an ally\'s Flower Gift ';
   }
   if (description.isBattery) {
-    output += ' Battery boosted ';
+    output += 'Battery boosted ';
   }
   if (description.isPowerSpot) {
-    output += ' Power Spot boosted ';
+    output += 'Power Spot boosted ';
   }
   if (description.isSwitching) {
-    output += ' switching boosted ';
+    output += 'switching boosted ';
   }
   output += description.moveName + ' ';
   if (description.moveBP && description.moveType) {
