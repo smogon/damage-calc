@@ -180,21 +180,32 @@ th {
     font-weight: bold;
     font-size: 1.1em;
     margin: 0.5em 0;
+    position: relative;
 }
 .big-text #mainResult:hover {  /* indicates the presence of click-to-copy function */
     cursor: pointer;
     opacity: 0.7;
 }
 #tooltipText {
+    position: absolute;
+    left: 42%;
+    top: -170%;
     font-size: 0.8em;
     visibility: hidden;
     border-radius: 5px;
-    width: 120px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: center;
     padding: 5px;
-    margin-left: 10px;
+    font-weight: normal;
+}
+#tooltipText::after {
+    position: absolute;
+    left: 45%;
+    top: 100%;
+    content: '';
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.7);
 }
 .small-text {
     font-size: 0.8em;
