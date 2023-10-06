@@ -248,7 +248,10 @@ $(".percent-hp").keyup(function () {
 });
 
 $(".ability").bind("keyup change", function () {
-	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Skill Link' ? 5 : 3);
+	var moveHits =
+		$(this).val() === 'Skill Link' ? 5 :
+			$(this).closest(".poke-info").find(".item").val() === 'Loaded Dice' ? 4 : 3;
+	$(this).closest(".poke-info").find(".move-hits").val(moveHits);
 
 	var ability = $(this).closest(".poke-info").find(".ability").val();
 
@@ -523,7 +526,10 @@ $(".item").change(function () {
 	} else {
 		$metronomeControl.hide();
 	}
-	$(this).closest(".poke-info").find(".move-hits").val($(this).val() === 'Loaded Dice' ? 4 : 3);
+	var moveHits =
+		$(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 :
+			itemName === 'Loaded Dice' ? 4 : 3;
+	$(this).closest(".poke-info").find(".move-hits").val(moveHits);
 	autosetQP($(this).closest(".poke-info"));
 });
 
