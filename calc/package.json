@@ -1,6 +1,6 @@
 {
   "name": "@smogon/calc",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "dist/production.min.js",
@@ -14,7 +14,7 @@
     "@types/node": "^18.14.2"
   },
   "devDependencies": {
-    "@pkmn/dex": "^0.7.43",
+    "@pkmn/dex": "^0.7.51",
     "@pkmn/eslint-config": "^2.15.0",
     "@types/jest": "^29.4.0",
     "@typescript-eslint/eslint-plugin": "^5.54.0",

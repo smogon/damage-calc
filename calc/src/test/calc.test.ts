@@ -44,9 +44,9 @@ describe('calc', () => {
 
     tests('Comet Punch', ({gen, calculate, Pokemon, Move}) => {
       expect(calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'))).toMatch(gen, {
-        1: {range: [36, 43], desc: 'Snorlax Comet Punch (3 hits) vs. Vulpix', result: '(38.7 - 46.2%) -- approx. 3HKO'},
-        3: {range: [44, 52], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(60.8 - 71.8%) -- approx. 2HKO'},
-        4: {range: [43, 52], result: '(59.4 - 71.8%) -- approx. 2HKO'},
+        1: {range: [108, 129], desc: 'Snorlax Comet Punch (3 hits) vs. Vulpix', result: '(38.7 - 46.2%) -- approx. 3HKO'},
+        3: {range: [132, 156], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(60.8 - 71.8%) -- approx. 2HKO'},
+        4: {range: [129, 156], result: '(59.4 - 71.8%) -- approx. 2HKO'},
       });
     });
 
@@ -958,9 +958,9 @@ describe('calc', () => {
         });
         function testQP(ability: string, field?: {weather?: Weather; terrain?: Terrain}) {
           test(`${ability} should take into account boosted stats by default`, () => {
-            const attacker = Pokemon('Iron Leaves', {ability, boosts: {spa: 6}});
+            const attacker = Pokemon('Iron Leaves', {ability, boostedStat: 'auto', boosts: {spa: 6}});
             // highest stat = defense
-            const defender = Pokemon('Iron Treads', {ability, boosts: {spd: 6}});
+            const defender = Pokemon('Iron Treads', {ability, boostedStat: 'auto', boosts: {spd: 6}});
 
             let result = calculate(attacker, defender, Move('Leaf Storm'), Field(field)).rawDesc;
             expect(result.attackerAbility).toBe(ability);

@@ -329,5 +329,19 @@ export function calculateADV(
     result.damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
   }
 
+  if (move.hits > 1) {
+    for (let times = 0; times < move.hits; times++) {
+      let damageMultiplier = 85;
+      result.damage = result.damage.map(affectedAmount => {
+        if (times) {
+          const newFinalDamage = Math.max(1, Math.floor((baseDamage * damageMultiplier) / 100));
+          damageMultiplier++;
+          return affectedAmount + newFinalDamage;
+        }
+        return affectedAmount;
+      });
+    }
+  }
+
   return result;
 }
