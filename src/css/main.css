@@ -199,8 +199,7 @@ th {
     padding: 5px;
     font-weight: normal;
 }
-#tooltipText::after
-{
+#tooltipText::after {
     position: absolute;
     left: 45%;
     top: 100%;
