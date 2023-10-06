@@ -104,8 +104,17 @@ $("input:radio[name='format']").change(function () {
 	$(".format-specific").not("." + gameType.toLowerCase()).hide();
 });
 
+var defaultLevel = 100;
+$("input:radio[name='defaultLevel']").change(function () {
+	defaultLevel = $("input:radio[name='defaultLevel']:checked").val();
+	$("#levelL1").val(defaultLevel);
+	$("#levelR1").val(defaultLevel);
+	$("#levelL1").trigger("change");
+	$("#levelR1").trigger("change");
+});
+
 // auto-calc stats and current HP on change
-$(".level").keyup(function () {
+$(".level").bind("keyup change", function () {
 	var poke = $(this).closest(".poke-info");
 	calcHP(poke);
 	calcStats(poke);
@@ -641,7 +650,7 @@ $(".set-selector").change(function () {
 			}
 		} else {
 			pokeObj.find(".teraType").val(getForcedTeraType(pokemonName) || pokemon.types[0]);
-			pokeObj.find(".level").val(100);
+			pokeObj.find(".level").val(defaultLevel);
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
 			pokeObj.find(".hp .dvs").val(15);
@@ -1495,6 +1504,8 @@ $(document).ready(function () {
 	$("#percentage").change();
 	$("#singles-format").prop("checked", true);
 	$("#singles-format").change();
+	$("#default-level-100").prop("checked", true);
+	$("#default-level-100").change();
 	loadDefaultLists();
 	$(".move-selector").select2({
 		dropdownAutoWidth: true,
