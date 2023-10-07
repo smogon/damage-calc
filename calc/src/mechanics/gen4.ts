@@ -146,7 +146,7 @@ export function calculateDPP(
 
   // Klutz doesn't let Iron Ball ground in generation 4
   if (typeEffectiveness === 0 && move.hasType('Ground') &&
-    (defender.hasItem('Iron Ball') && defender.ability! !== 'Klutz')) {
+    (defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz'))) {
     if (type1Effectiveness === 0) {
       type1Effectiveness = 1;
     } else if (defender.types[1] && type2Effectiveness === 0) {
