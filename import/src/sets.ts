@@ -179,6 +179,7 @@ const FORMES: {[name: string]: string} = {
   'Darmanitan-Galar-Zen': 'Darmanitan-Galar',
   'Sirfetch’d': 'Sirfetch\'d',
   'Keldeo-Resolute': 'Keldeo',
+  'Palafin-Hero': 'Palafin',
 };
 
 // TODO handle Gmax
