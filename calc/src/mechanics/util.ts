@@ -184,9 +184,11 @@ export function checkForecast(pokemon: Pokemon, weather?: Weather) {
 }
 
 export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
+  // Pokemon with Klutz still get their speed dropped in generation 4
+  if (pokemon.gen.num === 4 && pokemon.hasItem('Iron Ball')) return;
   if (
     pokemon.hasAbility('Klutz') && !EV_ITEMS.includes(pokemon.item!) ||
-      magicRoomActive
+    magicRoomActive
   ) {
     pokemon.item = '' as ItemName;
   }
