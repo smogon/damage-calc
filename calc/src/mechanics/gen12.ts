@@ -74,7 +74,7 @@ export function calculateRBYGSC(
     }
   }
 
-  //in gen 1, Super fang can hit ghosts
+  // In Gen 1, Super Fang can hit Ghost types
   if (gen.num === 1 && (move.named('Super Fang'))) {
       const lostHP = Math.floor(defender.curHP() / 2) || 1;
       result.damage = lostHP;
