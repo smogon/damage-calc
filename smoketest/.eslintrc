@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": "@pkmn",
+  "rules": {
+    "max-len": [
+      "error", {
+        "code": 100,
+        "ignorePattern": "^\\s*['\"`/]"
+      }
+    ],
+	 "@typescript-eslint/no-floating-promises": ["error", {"ignoreVoid": true}]
+  }
+}
