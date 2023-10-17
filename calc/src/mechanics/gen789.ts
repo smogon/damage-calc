@@ -1102,7 +1102,7 @@ export function calculateBPModsSMSSSV(
     desc.attackerItem = attacker.item;
   }
 
-  if (defender.hasAbility('Heatproof') && move.hasType('Fire')) {
+  if (gen.num <= 8 && defender.hasAbility('Heatproof') && move.hasType('Fire')) {
     bpMods.push(2048);
     desc.defenderAbility = defender.ability;
   } else if (defender.hasAbility('Dry Skin') && move.hasType('Fire')) {
@@ -1282,6 +1282,11 @@ export function calculateAtModsSMSSSV(
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
       (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
      (defender.hasAbility('Purifying Salt') && move.hasType('Ghost'))) {
+    atMods.push(2048);
+    desc.defenderAbility = defender.ability;
+  }
+
+  if (gen.num >= 9 && defender.hasAbility('Heatproof') && move.hasType('Fire')) {
     atMods.push(2048);
     desc.defenderAbility = defender.ability;
   }
