@@ -87,6 +87,13 @@ export function calculateBWXY(
     return result;
   }
 
+  if (move.name === 'Pain Split') {
+    const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
+    const damage = defender.curHP() - average;
+    result.damage = damage;
+    return result;
+  }
+
   if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze')) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;

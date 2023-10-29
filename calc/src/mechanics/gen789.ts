@@ -106,6 +106,13 @@ export function calculateSMSSSV(
     desc.isProtected = true;
     return result;
   }
+  console.log(move.name)
+  if (move.name === 'Pain Split') {
+    const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
+    const damage = defender.curHP() - average;
+    result.damage = damage;
+    return result;
+  }
 
   const defenderIgnoresAbility = defender.hasAbility(
     'Full Metal Body',
