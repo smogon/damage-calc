@@ -21,6 +21,8 @@ jobs:
     - name: Build damagecalc
       run:  |-
         cd damagecalc
+        npm install
+        npm run compile
         cd import
         npm install
         npm run compile
