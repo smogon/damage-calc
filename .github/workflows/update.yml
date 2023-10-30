@@ -20,10 +20,10 @@ jobs:
         path: pokemon-showdown
     - name: Build damage-calc
       run:  |-
-        cd damage-calc/import
+        cd import
         npm install
         npm run compile
-        cd ../..
+        cd ..
     - name: Build PS
       run:  |-
         cd pokemon-showdown
