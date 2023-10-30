@@ -35,12 +35,14 @@ jobs:
         cd pokemon-showdown
         node --max-old-space-size=4096 tools/set-import 2.0.0
         cd ..
-        rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damagecalc/import/node_modules/@smogon/sets
+        rsync --mkpath -v --delete -r pokemon-showdown/tools/set-import/sets/ damagecalc/import/node_modules/@smogon/sets
         cd damagecalc
         cd import
         npm install
         npm run compile
         cd ..
+        mkdir import/node_modules/@smogon/sets/build
+        cp import/node_modules/@smogon/sets/index.js import/node_modules/@smogon/sets/index.d.ts import/node_modules/@smogon/sets/build
         node import/ps-import
         node import/import
     - name: Commit and push if it changed
