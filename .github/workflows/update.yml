@@ -41,8 +41,6 @@ jobs:
         npm install
         npm run compile
         cd ..
-        mkdir import/node_modules/@smogon/sets/build
-        cp import/node_modules/@smogon/sets/index.js import/node_modules/@smogon/sets/index.d.ts import/node_modules/@smogon/sets/build
         node import/ps-import
         node import/import
     - name: Commit and push if it changed
