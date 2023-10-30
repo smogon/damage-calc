@@ -12,17 +12,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        path: damage-calc
+        path: damagecalc
     - name: Checkout PS
       uses: actions/checkout@v4
       with:
         repository: smogon/pokemon-showdown
         path: pokemon-showdown
-    - name: Build damage-calc
+    - name: Build damagecalc
       run:  |-
+        cd damagecalc
         cd import
         npm install
         npm run compile
+        cd ..
         cd ..
     - name: Build PS
       run:  |-
@@ -35,8 +37,8 @@ jobs:
         cd pokemon-showdown
         node --max-old-space-size=4096 tools/set-import
         cd ..
-        rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damage-calc/import/node_modules/@smogon/sets
-        cd damage-calc
+        rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damagecalc/import/node_modules/@smogon/sets
+        cd damagecalc
         node import/ps-import
         node import/import
     - name: Commit and push if it changed
