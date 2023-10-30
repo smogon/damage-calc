@@ -1,4 +1,4 @@
-name: Update sets
+name: Update
 
 on:
   workflow_dispatch:
