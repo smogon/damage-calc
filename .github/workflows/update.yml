@@ -33,7 +33,7 @@ jobs:
     - name: Fetch sets
       run: |-
         cd pokemon-showdown
-        node --max-old-space-size=4096 tools/set-import
+        node --max-old-space-size=4096 tools/set-import 2.0.0
         cd ..
         rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damagecalc/import/node_modules/@smogon/sets
         cd damagecalc
