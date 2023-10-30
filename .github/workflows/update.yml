@@ -12,33 +12,33 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-	path: damage-calc
+        path: damage-calc
     - name: Checkout PS
       uses: actions/checkout@v4
       with:
-	repository: smogon/pokemon-showdown
-	path: pokemon-showdown
+        repository: smogon/pokemon-showdown
+        path: pokemon-showdown
     - name: Build damage-calc
       run:  |-
-	cd damage-calc/import
-	npm install
-	npm run compile
-	cd ../..
+        cd damage-calc/import
+        npm install
+        npm run compile
+        cd ../..
     - name: Build PS
       run:  |-
-	cd pokemon-showdown
-	npm install
-	node build
-	cd ..
+        cd pokemon-showdown
+        npm install
+        node build
+        cd ..
     - name: Fetch sets
       run: |-
-	cd pokemon-showdown
-	node --max-old-space-size=4096 tools/set-import
-	cd ..
-	rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damage-calc/import/node_modules/@smogon/sets
-	cd damage-calc
-	node import/ps-import
-	node import/import
+        cd pokemon-showdown
+        node --max-old-space-size=4096 tools/set-import
+        cd ..
+        rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damage-calc/import/node_modules/@smogon/sets
+        cd damage-calc
+        node import/ps-import
+        node import/import
     - name: Commit and push if it changed
       run: |-
         git config user.name "Automated"
