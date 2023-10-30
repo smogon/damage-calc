@@ -23,10 +23,6 @@ jobs:
         cd damagecalc
         npm install
         npm run compile
-        cd import
-        npm install
-        npm run compile
-        cd ..
         cd ..
     - name: Build PS
       run:  |-
@@ -41,6 +37,10 @@ jobs:
         cd ..
         rsync -v --delete -r pokemon-showdown/tools/set-import/sets/ damagecalc/import/node_modules/@smogon/sets
         cd damagecalc
+        cd import
+        npm install
+        npm run compile
+        cd ..
         node import/ps-import
         node import/import
     - name: Commit and push if it changed
