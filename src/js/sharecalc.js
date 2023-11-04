@@ -72,13 +72,15 @@ var SHARE_FIELD_TABLE = [
 
 var SHARE_PANNEL_TABLE = [
 	[".gender", "keyid", "genders"],
+	[".max", "checked"],
+	// bug: gigamax conflicts with current HP because it generates the giga max hp update after the current hp
+	// effectively doubling the HP it should have
 	[".current-hp", "val"],
 	[".status", "indexid", "CALC_STATUS"],
 	[".at .boost", "val", "0"],
 	[".df .boost", "val", "0"],
 	[".sp .boost", "val", "0"],
 	[".saltcure", "checked"],
-	[".max", "checked"],
 ];
 
 var SHARE_SET_TABLE = [
