@@ -1,7 +1,39 @@
+/*
+	Quick Explanation.
+	This is to share with someone your calculation at a given time.
+	By clicking Share Calculation at the Import/Export section,
+	the user gets a link copied to its clipboard.
+	The user then share this link to another user by external means,
+	which when opened recreate the calculation.
+
+	I'll call field HTML nodes that contains a data important
+	needed to recreate the calculation.
+	Some field might be missing. To add another field to be shared
+	there are table, or rather maps, that are used to ravel and unravel the data.
+	Each element of the table have this structure.
+	[0] => Jquery selector to the HTML node
+	[1] => The function name to call to extract the data from the HTML node
+	[2] => Specific to the function name,
+	for example for the func "val", it's the default value, so when not written it can be
+	implicitely recovered without writing any data.
+
+	Table wise:
+	use SHARE_FIELD_TABLE if it's not specific to a pannel,
+	or if you directly target the field by its ID.
+	use SHARE_PANNEL_TABLE if it's specific  a pannel,
+	and you have a class or any non-id Jquery selector.
+	use SHARE_SET_TABLE if it's data that is used by the export/import
+	because when shared it first insert the calculation protagonists
+	as a custom set.
+
+	adaptFieldsToGen() function modify just before ravelling the data to
+	, in idea, to share only what's needed. but to be fair it might be overkill.
+
+*/
 var SHARE_FIELD_TABLE = [
 	["input:radio[name='defaultLevel']", "find"],
 	["input:checkbox[name='terrain']", "find"],
-	["input:radio[name='format']", "find"], //not working
+	["input:radio[name='format']", "find"],
 	["#beads", "checked"],
 	["#tablets", "checked"],
 	["#sword", "checked"],
@@ -40,8 +72,7 @@ var SHARE_FIELD_TABLE = [
 
 var SHARE_PANNEL_TABLE = [
 	[".gender", "keyid", "genders"],
-	//[".current-hp", "val"], conflict with dynamax
-	[".percent-hp", "val", "100"],
+	[".current-hp", "val"],
 	[".status", "indexid", "CALC_STATUS"],
 	[".at .boost", "val", "0"],
 	[".df .boost", "val", "0"],
@@ -69,8 +100,6 @@ var SHARE_GS_SET_TABLE, SHARE_GS_PANNEL_TABLE, SHARE_GS_FIELD_TABLE;
 
 var genders = ["Male", "Female", ""];
 
-// this was made in an effort to reduce the length of URL
-// However questionnable if the complexity it adds is worth.
 function adaptFieldsToGen() {
 	SHARE_GS_SET_TABLE = [];
 	SHARE_GS_FIELD_TABLE = [];
@@ -189,10 +218,10 @@ function exportCalculation() {
 	// directly share the form as the pokemon
 	var pokeL = $('#p1 .set-selector.select2-offscreen').val().replace(/ \(.*/, "");
 	var forme = $('#p1 .forme').val();
-	if (pokedex[pokeL].otherFormes.includes(forme)) pokeL = forme;
+	if (pokedex[pokeL].otherFormes && pokedex[pokeL].otherFormes.includes(forme)) pokeL = forme;
 	var pokeR = $('#p2 .set-selector.select2-offscreen').val().replace(/ \(.*/, "");
 	forme = $('#p2 .forme').val();
-	if (pokedex[pokeR].otherFormes.includes(forme)) pokeR = forme;
+	if (pokedex[pokeR].otherFormes && pokedex[pokeR].otherFormes.includes(forme)) pokeR = forme;
 	var fieldComposition = "";
 	fieldComposition += Object.keys(pokedex).indexOf(
 		pokeL) + ":";
@@ -291,7 +320,6 @@ function importCalculation(compactedData) {
 					locator.prop("checked", false);
 				}
 			} else if (extractor === "val") {
-				console.log(field_data,field);
 				var defaultVal = field[2];
 				if (field_data) {
 					locator.val(field_data);
