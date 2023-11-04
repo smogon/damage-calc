@@ -86,7 +86,7 @@ var gen12_1 = exports;
 var gen3_1 = exports;
 var gen4_1 = exports;
 var gen56_1 = exports;
-var gen78_1 = exports;
+var gen789_1 = exports;
 `;
 bundled += bundler.read('calc.js', 9, 1);
 
