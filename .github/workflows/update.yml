@@ -1,4 +1,4 @@
-name: Update
+name: Update Sets
 
 on:
   workflow_dispatch:
@@ -13,37 +13,16 @@ jobs:
       uses: actions/checkout@v4
       with:
         path: damagecalc
-    - name: Checkout PS
-      uses: actions/checkout@v4
-      with:
-        repository: smogon/pokemon-showdown
-        path: pokemon-showdown
-    - name: Build damagecalc
-      run:  |-
+    - name: Fetch sets
+      run: |-
         cd damagecalc
         npm install
         npm run compile
-        cd ..
-    - name: Build PS
-      run:  |-
-        cd pokemon-showdown
-        npm install
-        node build
-        cd ..
-    - name: Fetch sets
-      run: |-
-        cd pokemon-showdown
-        node --max-old-space-size=4096 tools/set-import 2.0.0
-        cd ..
-        rsync --mkpath -v --delete -r pokemon-showdown/tools/set-import/sets/ damagecalc/import/node_modules/@smogon/sets
-        cd damagecalc
         cd import
         npm install
         npm run compile
         cd ..
-        node import/ps-import
-        node import/import
-        cd ..
+        node import/dist/set-import.js src/js/data/sets/
     - name: Commit and push if it changed
       run: |-
         cd damagecalc
