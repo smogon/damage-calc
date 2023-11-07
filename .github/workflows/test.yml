@@ -4,6 +4,9 @@
 name: Tests
 
 on:
+  workflow_run:
+    workflows: [Update Sets]
+    types: [completed]
   workflow_dispatch:
   push:
     branches: [ master ]
@@ -31,7 +34,7 @@ jobs:
         CI: true
 
   publish:
-    if: ${{ github.repository == 'smogon/damage-calc' && github.event_name == 'push' }}
+    if: ${{ github.repository == 'smogon/damage-calc' && (github.event_name == 'push' || github.event.workflow_run.conclusion == 'success') }}
     needs: build
     runs-on: ubuntu-latest
     permissions:
