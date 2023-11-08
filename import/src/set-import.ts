@@ -54,6 +54,12 @@ interface CalcSet {
 
 const VALIDATORS: {[format: string]: TeamValidator} = {};
 
+// NOTE: https://github.com/pkmn/ps/issues/25
+const BROKEN_FORMATS: {[format: string]: { id: ID, name: string, exists: boolean }} = {
+  'gen9almostanyability': {id: 'gen9almostanyability' as ID, name: '[Gen 9] Almost Any Ability', exists: true},
+  'gen9lc': {name: '[Gen 9] LC', id: 'gen9lc' as ID, exists: true},
+}
+
 function first<T>(v: T[] | T): T {
   return Array.isArray(v) ? v[0] : v;
 }
@@ -323,11 +329,8 @@ async function importGen(
   const statsIgnore: {[specie: string]: Set<ID>} = {};
   for (const [specieName, formats] of Object.entries(dexSets)) {
     for (const [formatID, sets] of Object.entries(formats)) {
-      // NOTE: `Dex.formats.get('gen9lc') crashes so we avoid running it
-      // Awaiting fix http://github.com/pkmn/ps/issues/25
-      const format = gen.num === 9 && formatID === 'lc'
-        ? {name: '[Gen 9] LC', id: 'gen9lc', exists: true}
-        : Dex.formats.get(`gen${gen.num}${formatID}`);
+      const brokenFormat = BROKEN_FORMATS[`gen${gen.num}${formatID}`];
+      const format = brokenFormat ?? Dex.formats.get(`gen${gen.num}${formatID}`);
       if (!format.exists) {
         continue;
       }
@@ -335,7 +338,7 @@ async function importGen(
       for (const [name, set] of Object.entries(sets)) {
         const specie = getSpecie(gen, specieName as SpeciesName);
         const pset = dexToPset(gen, specie, set);
-        if (format.id !== 'gen9lc' && !validatePSet(format as Format, pset, 'dex')) continue;
+        if (!brokenFormat && !validatePSet(format as Format, pset, 'dex')) continue;
         const calcSet = psetToCalcSet(gen.num, pset);
         if (!calcSets[specieName]) calcSets[specieName] = {};
         const setName = `${format.name.slice(format.name.indexOf(']') + 2)} ${name}`;
@@ -362,9 +365,8 @@ async function importGen(
     }
   }
   for (const formatID of formatIDs) {
-    const format = gen.num === 9 && formatID === 'lc'
-      ? {name: '[Gen 9] LC', id: 'gen9lc', exists: true}
-      : Dex.formats.get(`gen${gen.num}${formatID}`);
+    const brokenFormat = BROKEN_FORMATS[`gen${gen.num}${formatID}`];
+    const format = brokenFormat ?? Dex.formats.get(`gen${gen.num}${formatID}`);
     let stats: DisplayStatistics | false = false;
     try {
       stats = await fetchStats(format.id as ID);
@@ -383,7 +385,7 @@ async function importGen(
       if (uset.usage.weighted < threshold) continue;
       const specie = getSpecie(gen, specieName);
       const pset = usageToPset(gen, format.id as ID, specie.name, uset);
-      if (format.id !== 'gen9lc' && !validatePSet(format as Format, pset, 'stats')) continue;
+      if (!brokenFormat && !validatePSet(format as Format, pset, 'stats')) continue;
       const calcSet = psetToCalcSet(gen.num, pset);
       if (!calcSets[specieName]) calcSets[specieName] = {};
       const setName = `${format.name.slice(format.name.indexOf(']') + 2)} Showdown Usage`;
