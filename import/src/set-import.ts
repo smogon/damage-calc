@@ -1,4 +1,4 @@
-// How to run this code:
+// How to run this file:
 // npm run compile
 // node dist/set-import.js path/to/output
 
@@ -277,9 +277,25 @@ function validatePSet(format: Format, pset: PokemonSet, type: 'dex' | 'stats'): 
 
 function similarFormes(
   pset: PokemonSet,
+  format: Format | null,
   specie: Specie | PSSpecie,
   item?: Item | PSItem,
 ): SpeciesName[] | null {
+  if (format && pset.species === 'Rayquaza' && pset.moves.includes('Dragon Ascent')) {
+    const ruleTable = Dex.formats.getRuleTable(format);
+    const genNum = +/^gen(\d+)/.exec(format.id)![1];
+    const isMrayAllowed = genNum === 6 || genNum === 7
+      ? !ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega')
+      : format.id.includes('nationaldex') &&
+        (!ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega'))
+    if (isMrayAllowed) {
+      return ['Rayquaza-Mega'] as SpeciesName[];
+    }
+  }
+  if (pset.species === 'Rayquaza-Mega' && format &&
+    (!format.id.includes('balancedhackmons') || format.id.includes('bh'))) {
+      return ['Rayquaza'] as SpeciesName[];
+  }
   if (pset.ability === 'Power Construct') {
     return ['Zygarde-Complete'] as SpeciesName[];
   }
@@ -297,6 +313,8 @@ function similarFormes(
     return ['Minior-Meteor'] as SpeciesName[];
   case 'Palafin':
     return ['Palafin-Hero'] as SpeciesName[];
+  case 'Rayquaza-Mega':
+    return ['Rayquaza'] as SpeciesName[]
   case 'Sirfetch\'d':
     return ['Sirfetch’d'] as SpeciesName[];
   case 'Wishiwashi':
@@ -349,7 +367,7 @@ async function importGen(
         if (!statsIgnore[specieName]) statsIgnore[specieName] = new Set();
         statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
-        const copyTo = similarFormes(pset, specie, item);
+        const copyTo = similarFormes(pset, format, specie, item);
         if (copyTo?.length) {
           // Quintuple loop... yikes
           for (const forme of copyTo) {
@@ -397,7 +415,7 @@ async function importGen(
       const setName = `${formatName.slice(formatName.indexOf(']') + 2)} Showdown Usage`;
       calcSets[specieName][setName] = calcSet;
       const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
-      const copyTo = similarFormes(pset, specie, item);
+      const copyTo = similarFormes(pset, format, specie, item);
       if (copyTo?.length) {
         for (const forme of copyTo) {
           if (statsIgnore[forme]?.has(formatID)) {
