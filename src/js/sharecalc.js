@@ -273,7 +273,7 @@ function exportCalculation() {
 	};
 	for (var i = 0, iLen = data.length; i < iLen; i++) {
 		var row = data[i];
-		if (row === "") {
+		if (row === "" && i != 0) {
 			skip++;
 			continue;
 		}
