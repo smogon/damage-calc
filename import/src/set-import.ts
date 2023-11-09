@@ -54,11 +54,13 @@ interface CalcSet {
 
 const VALIDATORS: {[format: string]: TeamValidator} = {};
 
-// NOTE: https://github.com/pkmn/ps/issues/25
-const BROKEN_FORMATS: {[format: string]: { id: ID, name: string, exists: boolean }} = {
-  'gen9almostanyability': {id: 'gen9almostanyability' as ID, name: '[Gen 9] Almost Any Ability', exists: true},
-  'gen9lc': {name: '[Gen 9] LC', id: 'gen9lc' as ID, exists: true},
-}
+// These formats don't exist in @pkmn/sim so we make them bypass
+// the validator which is the only area that needs the Format object
+const UNSUPPORTED: {[format: string]: string} = {
+  'gen9almostanyability': '[Gen 9] Almost Any Ability',
+  // NOTE: This should be working but https://github.com/pkmn/ps/issues/25
+  'gen9lc': '[Gen 9] LC',
+};
 
 function first<T>(v: T[] | T): T {
   return Array.isArray(v) ? v[0] : v;
@@ -328,30 +330,31 @@ async function importGen(
   const formatIDs = new Set<ID>();
   const statsIgnore: {[specie: string]: Set<ID>} = {};
   for (const [specieName, formats] of Object.entries(dexSets)) {
-    for (const [formatID, sets] of Object.entries(formats)) {
-      const brokenFormat = BROKEN_FORMATS[`gen${gen.num}${formatID}`];
-      const format = brokenFormat ?? Dex.formats.get(`gen${gen.num}${formatID}`);
-      if (!format.exists) {
+    for (let [formatID, sets] of Object.entries(formats) as unknown as [ID, DexSet][]) {
+      formatID = `gen${gen.num}${formatID}` as ID;
+      const format = UNSUPPORTED[formatID] ? null : Dex.formats.get(formatID);
+      if (format && !format.exists) {
         continue;
       }
-      formatIDs.add(formatID as ID);
+      formatIDs.add(formatID);
+      const formatName = format?.name ?? UNSUPPORTED[formatID];
+      const specie = getSpecie(gen, specieName as SpeciesName);
       for (const [name, set] of Object.entries(sets)) {
-        const specie = getSpecie(gen, specieName as SpeciesName);
         const pset = dexToPset(gen, specie, set);
-        if (!brokenFormat && !validatePSet(format as Format, pset, 'dex')) continue;
+        if (format && !validatePSet(format, pset, 'dex')) continue;
         const calcSet = psetToCalcSet(gen.num, pset);
+        const setName = `${formatName.slice(formatName.indexOf(']') + 2)} ${name}`;
         if (!calcSets[specieName]) calcSets[specieName] = {};
-        const setName = `${format.name.slice(format.name.indexOf(']') + 2)} ${name}`;
         calcSets[specieName][setName] = calcSet;
         if (!statsIgnore[specieName]) statsIgnore[specieName] = new Set();
-        statsIgnore[specieName].add(formatID as ID);
+        statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
         const copyTo = similarFormes(pset, specie, item);
         if (copyTo?.length) {
           // Quintuple loop... yikes
           for (const forme of copyTo) {
             if (!statsIgnore[forme]) statsIgnore[forme] = new Set();
-            statsIgnore[forme].add(formatID as ID);
+            statsIgnore[forme].add(formatID);
             if (!calcSets[forme]) calcSets[forme] = {};
             if (forme.includes('-Mega')) {
               const mega = getSpecie(gen, forme);
@@ -365,14 +368,17 @@ async function importGen(
     }
   }
   for (const formatID of formatIDs) {
-    const brokenFormat = BROKEN_FORMATS[`gen${gen.num}${formatID}`];
-    const format = brokenFormat ?? Dex.formats.get(`gen${gen.num}${formatID}`);
+    const format = UNSUPPORTED[formatID] ? null : Dex.formats.get(formatID);
+    const formatName = format ? format.name : UNSUPPORTED[formatID];
+    if (format && !format.exists) {
+      continue;
+    }
     let stats: DisplayStatistics | false = false;
     try {
-      stats = await fetchStats(format.id as ID);
+      stats = await fetchStats(formatID);
     } catch (err) {}
     if (!stats) {
-      console.log(`${format.name} has no stats page`);
+      console.log(`${formatName} has no stats page`);
       continue;
     }
     const threshold = getUsageThreshold(formatID, stats.battles);
@@ -384,11 +390,11 @@ async function importGen(
       }
       if (uset.usage.weighted < threshold) continue;
       const specie = getSpecie(gen, specieName);
-      const pset = usageToPset(gen, format.id as ID, specie.name, uset);
-      if (!brokenFormat && !validatePSet(format as Format, pset, 'stats')) continue;
+      const pset = usageToPset(gen, formatID, specie.name, uset);
+      if (format && !validatePSet(format, pset, 'stats')) continue;
       const calcSet = psetToCalcSet(gen.num, pset);
       if (!calcSets[specieName]) calcSets[specieName] = {};
-      const setName = `${format.name.slice(format.name.indexOf(']') + 2)} Showdown Usage`;
+      const setName = `${formatName.slice(formatName.indexOf(']') + 2)} Showdown Usage`;
       calcSets[specieName][setName] = calcSet;
       const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
       const copyTo = similarFormes(pset, specie, item);
