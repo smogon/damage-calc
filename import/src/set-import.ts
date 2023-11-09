@@ -142,7 +142,9 @@ function getSpecie(gen: Generation, specieName: SpeciesName): Specie | PSSpecie 
   return gen.species.get(specieName) ?? ModdedDex.forGen(gen.num).species.get(specieName);
 }
 
-function dexToPset(gen: Generation, specie: Specie | PSSpecie, dset: DexSet): PokemonSet {
+function dexToPset(
+  gen: Generation, formatID: ID, specie: Specie | PSSpecie, dset: DexSet
+): PokemonSet {
   const pset: PokemonSet = {
     name: '',
     species: specie.name,
@@ -153,7 +155,7 @@ function dexToPset(gen: Generation, specie: Specie | PSSpecie, dset: DexSet): Po
     gender: '',
     evs: TeamValidator.fillStats(first(dset.evs) ?? null, gen.num < 3 ? 252 : 0),
     ivs: TeamValidator.fillStats(null, gen.num === 2 ? 30 : 31),
-    level: first(dset.level) ?? 100,
+    level: first(dset.level) ?? getLevel(formatID),
     teraType: first(dset.teratypes),
   };
   const hp = pset.moves?.find(m => m.startsWith('Hidden Power'));
@@ -287,14 +289,14 @@ function similarFormes(
     const isMrayAllowed = genNum === 6 || genNum === 7
       ? !ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega')
       : format.id.includes('nationaldex') &&
-        (!ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega'))
+        (!ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega'));
     if (isMrayAllowed) {
       return ['Rayquaza-Mega'] as SpeciesName[];
     }
   }
   if (pset.species === 'Rayquaza-Mega' && format &&
     (!format.id.includes('balancedhackmons') || format.id.includes('bh'))) {
-      return ['Rayquaza'] as SpeciesName[];
+    return ['Rayquaza'] as SpeciesName[];
   }
   if (pset.ability === 'Power Construct') {
     return ['Zygarde-Complete'] as SpeciesName[];
@@ -314,7 +316,7 @@ function similarFormes(
   case 'Palafin':
     return ['Palafin-Hero'] as SpeciesName[];
   case 'Rayquaza-Mega':
-    return ['Rayquaza'] as SpeciesName[]
+    return ['Rayquaza'] as SpeciesName[];
   case 'Sirfetch\'d':
     return ['Sirfetch’d'] as SpeciesName[];
   case 'Wishiwashi':
@@ -358,7 +360,7 @@ async function importGen(
       const formatName = format?.name ?? UNSUPPORTED[formatID];
       const specie = getSpecie(gen, specieName as SpeciesName);
       for (const [name, set] of Object.entries(sets)) {
-        const pset = dexToPset(gen, specie, set);
+        const pset = dexToPset(gen, formatID, specie, set);
         if (format && !validatePSet(format, pset, 'dex')) continue;
         const calcSet = psetToCalcSet(gen.num, pset);
         const setName = `${formatName.slice(formatName.indexOf(']') + 2)} ${name}`;
