@@ -352,7 +352,7 @@ async function importGen(
   const statsIgnore: {[specie: string]: Set<ID>} = {};
   for (const [specieName, formats] of Object.entries(dexSets)) {
     for (let [formatID, sets] of Object.entries(formats) as unknown as [ID, DexSet][]) {
-      if (formatID === 'vgc2023' || formatID === 'battlestadimsingles') {
+      if (formatID === 'vgc2023' || formatID === 'battlestadiumsingles') {
         formatID = `${formatID}regulatione` as ID;
       }
       formatID = `gen${gen.num}${formatID}` as ID;
