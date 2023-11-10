@@ -60,6 +60,7 @@ const UNSUPPORTED: {[format: string]: string} = {
   'gen9almostanyability': '[Gen 9] Almost Any Ability',
   // NOTE: This should be working but https://github.com/pkmn/ps/issues/25
   'gen9lc': '[Gen 9] LC',
+  'gen9vgc2023regulatione': '[Gen 9] VGC 2023 Regulation E',
 };
 
 function first<T>(v: T[] | T): T {
@@ -351,6 +352,9 @@ async function importGen(
   const statsIgnore: {[specie: string]: Set<ID>} = {};
   for (const [specieName, formats] of Object.entries(dexSets)) {
     for (let [formatID, sets] of Object.entries(formats) as unknown as [ID, DexSet][]) {
+      if (formatID === 'vgc2023' || formatID === 'battlestadimsingles') {
+        formatID = `${formatID}regulatione` as ID;
+      }
       formatID = `gen${gen.num}${formatID}` as ID;
       const format = UNSUPPORTED[formatID] ? null : Dex.formats.get(formatID);
       if (format && !format.exists) {
