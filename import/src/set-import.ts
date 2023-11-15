@@ -282,9 +282,20 @@ function similarFormes(
   pset: PokemonSet,
   format: Format | null,
   specie: Specie | PSSpecie,
-  item?: Item | PSItem,
+  item: Item | PSItem,
 ): SpeciesName[] | null {
-  if (format && pset.species === 'Rayquaza' && pset.moves.includes('Dragon Ascent')) {
+  // Check if the item is a Mega Stone because we shouldn't copy over BH megas
+  // to the base specie since it starts the battle as the Mega Evolution
+  if (specie.isMega && item.megaStone) {
+    return [specie.baseSpecies];
+  }
+  if (specie.name === item.megaEvolves) {
+    return [item.megaStone!];
+  }
+  if (pset.ability === 'Power Construct' && pset.species.startsWith('Zygarde')) {
+    return ['Zygarde-Complete'] as SpeciesName[];
+  }
+  if (pset.species === 'Rayquaza' && format && pset.moves.includes('Dragon Ascent')) {
     const ruleTable = Dex.formats.getRuleTable(format);
     const genNum = +/^gen(\d+)/.exec(format.id)![1];
     const isMrayAllowed = genNum === 6 || genNum === 7
@@ -306,12 +317,6 @@ function similarFormes(
   if ((pset.species === 'Kyogre' || pset.species === 'Kyogre-Primal') &&
     pset.item === 'Blue Orb') {
     return [pset.species === 'Kyogre' ? 'Kyogre-Primal' : 'Kyogre'] as SpeciesName[];
-  }
-  if (pset.ability === 'Power Construct') {
-    return ['Zygarde-Complete'] as SpeciesName[];
-  }
-  if (item?.megaEvolves && item.megaStone && specie.name === item.megaEvolves) {
-    return [specie.isMega ? specie.baseSpecies : item.megaStone];
   }
   switch (specie.name) {
   case 'Aegislash':
