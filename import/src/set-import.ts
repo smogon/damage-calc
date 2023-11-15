@@ -453,6 +453,25 @@ async function importGen(
   return calcSets;
 }
 
+// JSON.stringify's pretty option takes too much space since it gives every element
+// a separate newline so we write our custom stringify which makes it pretty but still
+// take a reasonable amount of space. The build script minfies it so its OK
+function stringifyCalcSets(calcSets: {[specie: string]: {[name: string]: CalcSet }}) {
+  let buf = [];
+  const space = (n = 2) => " ".repeat(n);
+  for (const [specie, sets] of Object.entries(calcSets)) {
+    buf.push(`${space()}"${specie}": {`);
+    const setsBuf = [];
+    for (const [setName, set] of Object.entries(sets)) {
+      setsBuf.push(`${space(4)}"${setName}": ${JSON.stringify(set)}`);
+    }
+    buf.push(setsBuf.join(',\n'));
+    buf.push(`${space()}},`);
+  }
+  // Slice the last comma so we are valid JSON
+  return buf.join(`\n`).slice(0, -1);
+}
+
 (async () => {
   Dex.includeData();
   const gens = new Generations(ModdedDex);
@@ -467,7 +486,7 @@ async function importGen(
     const path = `${outDir}/gen${i + 1}.js`;
     console.log(`Writing ${path}...`);
     fs.writeFileSync(
-      path, `var SETDEX_${genName} = ${JSON.stringify(calcSets)};\n`
+      path, `var SETDEX_${genName} = {\n${stringifyCalcSets(calcSets)}\n};\n`
     );
   }
   process.exit(0);
