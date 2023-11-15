@@ -296,8 +296,16 @@ function similarFormes(
     }
   }
   if (pset.species === 'Rayquaza-Mega' && format &&
-    (!format.id.includes('balancedhackmons') || format.id.includes('bh'))) {
+    (!format.id.includes('balancedhackmons') && !format.id.includes('bh'))) {
     return ['Rayquaza'] as SpeciesName[];
+  }
+  if ((pset.species === 'Groudon' || pset.species === 'Groudon-Primal') &&
+    pset.item === 'Red Orb') {
+    return [pset.species === 'Groudon' ? 'Groudon-Primal' : 'Groudon'] as SpeciesName[];
+  }
+  if ((pset.species === 'Kyogre' || pset.species === 'Kyogre-Primal') &&
+    pset.item === 'Blue Orb') {
+    return [pset.species === 'Kyogre' ? 'Kyogre-Primal' : 'Kyogre'] as SpeciesName[];
   }
   if (pset.ability === 'Power Construct') {
     return ['Zygarde-Complete'] as SpeciesName[];
@@ -380,7 +388,10 @@ async function importGen(
             if (!statsIgnore[forme]) statsIgnore[forme] = new Set();
             statsIgnore[forme].add(formatID);
             if (!calcSets[forme]) calcSets[forme] = {};
-            if (forme.includes('-Mega')) {
+            // TODO: Make this check smarter - maybe by return a `diffAbility` bool
+            // in `similarFormes`?
+            if (forme.endsWith('-Mega') || forme.startsWith('Groudon') ||
+              forme.startsWith('Kyogre')) {
               const mega = getSpecie(gen, forme);
               calcSets[forme][setName] = {...calcSet, ability: mega.abilities[0]};
             } else {
@@ -428,7 +439,8 @@ async function importGen(
             continue;
           }
           if (!calcSets[forme]) calcSets[forme] = {};
-          if (item.megaEvolves && item.megaStone) {
+          if (forme.endsWith('-Mega') || forme.startsWith('Groudon') ||
+            forme.startsWith('Kyogre')) {
             const mega = getSpecie(gen, forme);
             calcSets[forme][setName] = {...calcSet, ability: mega.abilities[0]};
           } else {
