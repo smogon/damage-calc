@@ -47,7 +47,7 @@ function cpdir(src, dest) {
 			// Minify the sets so we save bandwith
 			if (src === 'src/js/data/sets') {
 				const brkOpenIdx = contents.indexOf('{');
-				contents = `${contents.slice(0, brkOpenIdx)} = ${JSON.stringify(JSON.parse(contents.slice(brkOpenIdx, -2)))};`
+				contents = `${contents.slice(0, brkOpenIdx)}${JSON.stringify(JSON.parse(contents.slice(brkOpenIdx, -2)))};`
 			}
 			fs.writeFileSync(path.join(dest, file), contents);
 		} else {

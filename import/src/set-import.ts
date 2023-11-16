@@ -420,16 +420,16 @@ async function importGen(
         statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
         const copyTo = similarFormes(pset, format, specie, item);
-          // Quintuple loop... yikes
+        // Quintuple loop... yikes
         for (const forme of copyTo.formes) {
-            if (!statsIgnore[forme]) statsIgnore[forme] = new Set();
-            statsIgnore[forme].add(formatID);
-            if (!calcSets[forme]) calcSets[forme] = {};
+          if (!statsIgnore[forme]) statsIgnore[forme] = new Set();
+          statsIgnore[forme].add(formatID);
+          if (!calcSets[forme]) calcSets[forme] = {};
           if (copyTo.abilityChange) {
             const formeSpecie = getSpecie(gen, forme);
             calcSets[forme][setName] = {...calcSet, ability: formeSpecie.abilities[0]};
-            } else {
-              calcSets[forme][setName] = calcSet;
+          } else {
+            calcSets[forme][setName] = calcSet;
           }
         }
       }
@@ -467,15 +467,15 @@ async function importGen(
       const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
       const copyTo = similarFormes(pset, format, specie, item);
       for (const forme of copyTo.formes) {
-          if (statsIgnore[forme]?.has(formatID)) {
-            continue;
-          }
-          if (!calcSets[forme]) calcSets[forme] = {};
+        if (statsIgnore[forme]?.has(formatID)) {
+          continue;
+        }
+        if (!calcSets[forme]) calcSets[forme] = {};
         if (copyTo.abilityChange) {
           const formeSpecie = getSpecie(gen, forme);
           calcSets[forme][setName] = {...calcSet, ability: formeSpecie.abilities[0]};
-          } else {
-            calcSets[forme][setName] = calcSet;
+        } else {
+          calcSets[forme][setName] = calcSet;
         }
       }
     }
@@ -485,21 +485,22 @@ async function importGen(
 
 // JSON.stringify's pretty option takes too much space since it gives every element
 // a separate newline so we write our custom stringify which makes it pretty but still
-// take a reasonable amount of space. The build script minfies it so its OK
+// take a reasonable amount of space. The build script minfies it so this has no effect
+// on the bundle size
 function stringifyCalcSets(calcSets: {[specie: string]: {[name: string]: CalcSet }}) {
-  let buf = [];
-  const space = (n = 2) => " ".repeat(n);
+  const buf = [];
+  const space = (n = 2) => ' '.repeat(n);
   for (const [specie, sets] of Object.entries(calcSets)) {
     buf.push(`${space()}"${specie}": {`);
     const setsBuf = [];
     for (const [setName, set] of Object.entries(sets)) {
-      setsBuf.push(`${space(4)}"${setName}": ${JSON.stringify(set)}`);
+      setsBuf.push(`${space(4)}${JSON.stringify(setName)}: ${JSON.stringify(set)}`);
     }
     buf.push(setsBuf.join(',\n'));
     buf.push(`${space()}},`);
   }
   // Slice the last comma so we are valid JSON
-  return buf.join(`\n`).slice(0, -1);
+  return buf.join('\n').slice(0, -1);
 }
 
 (async () => {
