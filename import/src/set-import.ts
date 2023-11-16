@@ -283,17 +283,25 @@ function similarFormes(
   format: Format | null,
   specie: Specie | PSSpecie,
   item: Item | PSItem,
-): SpeciesName[] | null {
+): {formes: SpeciesName[]; abilityChange: boolean} {
+  const similar: {formes: SpeciesName[]; abilityChange: boolean} = {
+    formes: [], abilityChange: false,
+  };
   // Check if the item is a Mega Stone because we shouldn't copy over BH megas
   // to the base specie since it starts the battle as the Mega Evolution
   if (specie.isMega && item.megaStone) {
-    return [specie.baseSpecies];
+    similar.formes = [specie.baseSpecies];
+    similar.abilityChange = true;
+    return similar;
   }
   if (specie.name === item.megaEvolves) {
-    return [item.megaStone!];
+    similar.formes = [item.megaStone!];
+    similar.abilityChange = true;
+    return similar;
   }
   if (pset.ability === 'Power Construct' && pset.species.startsWith('Zygarde')) {
-    return ['Zygarde-Complete'] as SpeciesName[];
+    similar.formes = ['Zygarde-Complete'] as SpeciesName[];
+    return similar;
   }
   if (pset.species === 'Rayquaza' && format && pset.moves.includes('Dragon Ascent')) {
     const ruleTable = Dex.formats.getRuleTable(format);
@@ -303,41 +311,66 @@ function similarFormes(
       : format.id.includes('nationaldex') &&
         (!ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega'));
     if (isMrayAllowed) {
-      return ['Rayquaza-Mega'] as SpeciesName[];
+      similar.formes = ['Rayquaza-Mega'] as SpeciesName[];
+      similar.abilityChange = true;
+      return similar;
     }
+    return similar;
   }
   if (pset.species === 'Rayquaza-Mega' && format &&
     (!format.id.includes('balancedhackmons') && !format.id.includes('bh'))) {
-    return ['Rayquaza'] as SpeciesName[];
+    similar.formes = ['Rayquaza'] as SpeciesName[];
+    similar.abilityChange = true;
+    return similar;
   }
   if ((pset.species === 'Groudon' || pset.species === 'Groudon-Primal') &&
     pset.item === 'Red Orb') {
-    return [pset.species === 'Groudon' ? 'Groudon-Primal' : 'Groudon'] as SpeciesName[];
+    similar.formes = [pset.species === 'Groudon' ? 'Groudon-Primal' : 'Groudon'] as SpeciesName[];
+    similar.abilityChange = true;
+    return similar;
   }
   if ((pset.species === 'Kyogre' || pset.species === 'Kyogre-Primal') &&
     pset.item === 'Blue Orb') {
-    return [pset.species === 'Kyogre' ? 'Kyogre-Primal' : 'Kyogre'] as SpeciesName[];
+    similar.formes = [pset.species === 'Kyogre' ? 'Kyogre-Primal' : 'Kyogre'] as SpeciesName[];
+    similar.abilityChange = true;
+    return similar;
+  }
+  if (pset.species === 'Darmanitan-Galar' && pset.ability === 'Zen Mode') {
+    similar.formes = ['Darmanitan-Galar-Zen'] as SpeciesName[];
+    return similar;
+  }
+  if (pset.species === 'Darmanitan-Galar-Zen') {
+    similar.formes = ['Darmanitan-Galar'] as SpeciesName[];
+    return similar;
+  }
+  if (pset.species === 'Meloetta' && pset.moves.includes('Relic Song')) {
+    similar.formes = ['Meloetta-Pirouette'] as SpeciesName[];
+    return similar;
+  }
+  if (pset.species === 'Meloetta-Pirouette') {
+    similar.formes = ['Meloetta'] as SpeciesName[];
+    return similar;
   }
   switch (specie.name) {
   case 'Aegislash':
-    return ['Aegislash-Blade', 'Aegislash-Shield', 'Aegislash-Both'] as SpeciesName[];
-  case 'Darmanitan-Galar':
-    return ['Darmanitan-Galar-Zen'] as SpeciesName[];
+    similar.formes = ['Aegislash-Blade', 'Aegislash-Shield', 'Aegislash-Both'] as SpeciesName[];
+    break;
   case 'Keldeo':
-    return ['Keldeo-Resolute'] as SpeciesName[];
+    similar.formes = ['Keldeo-Resolute'] as SpeciesName[];
+    break;
   case 'Minior':
-    return ['Minior-Meteor'] as SpeciesName[];
+    similar.formes = ['Minior-Meteor'] as SpeciesName[];
+    break;
   case 'Palafin':
-    return ['Palafin-Hero'] as SpeciesName[];
-  case 'Rayquaza-Mega':
-    return ['Rayquaza'] as SpeciesName[];
+    similar.formes = ['Palafin-Hero'] as SpeciesName[];
+    break;
   case 'Sirfetch\'d':
-    return ['Sirfetch’d'] as SpeciesName[];
+    similar.formes = ['Sirfetch’d'] as SpeciesName[];
+    break;
   case 'Wishiwashi':
-    return ['Wishiwashi-School'] as SpeciesName[];
-  default:
-    return null;
+    similar.formes = ['Wishiwashi-School'] as SpeciesName[];
   }
+  return similar;
 }
 
 async function fetchDexSets(genNum: GenerationNum): Promise<DexSets> {
@@ -387,21 +420,16 @@ async function importGen(
         statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
         const copyTo = similarFormes(pset, format, specie, item);
-        if (copyTo?.length) {
           // Quintuple loop... yikes
-          for (const forme of copyTo) {
+        for (const forme of copyTo.formes) {
             if (!statsIgnore[forme]) statsIgnore[forme] = new Set();
             statsIgnore[forme].add(formatID);
             if (!calcSets[forme]) calcSets[forme] = {};
-            // TODO: Make this check smarter - maybe by return a `diffAbility` bool
-            // in `similarFormes`?
-            if (forme.endsWith('-Mega') || forme.startsWith('Groudon') ||
-              forme.startsWith('Kyogre')) {
-              const mega = getSpecie(gen, forme);
-              calcSets[forme][setName] = {...calcSet, ability: mega.abilities[0]};
+          if (copyTo.abilityChange) {
+            const formeSpecie = getSpecie(gen, forme);
+            calcSets[forme][setName] = {...calcSet, ability: formeSpecie.abilities[0]};
             } else {
               calcSets[forme][setName] = calcSet;
-            }
           }
         }
       }
@@ -438,19 +466,16 @@ async function importGen(
       calcSets[specieName][setName] = calcSet;
       const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
       const copyTo = similarFormes(pset, format, specie, item);
-      if (copyTo?.length) {
-        for (const forme of copyTo) {
+      for (const forme of copyTo.formes) {
           if (statsIgnore[forme]?.has(formatID)) {
             continue;
           }
           if (!calcSets[forme]) calcSets[forme] = {};
-          if (forme.endsWith('-Mega') || forme.startsWith('Groudon') ||
-            forme.startsWith('Kyogre')) {
-            const mega = getSpecie(gen, forme);
-            calcSets[forme][setName] = {...calcSet, ability: mega.abilities[0]};
+        if (copyTo.abilityChange) {
+          const formeSpecie = getSpecie(gen, forme);
+          calcSets[forme][setName] = {...calcSet, ability: formeSpecie.abilities[0]};
           } else {
             calcSets[forme][setName] = calcSet;
-          }
         }
       }
     }
