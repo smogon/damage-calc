@@ -43,10 +43,10 @@ interface CalcStatsTable {
 
 interface CalcSet {
   moves: string[];
-  level: number;
-  ability: string;
-  item: string;
-  nature: string;
+  level?: number;
+  ability?: string;
+  item?: string;
+  nature?: string;
   teraType?: string;
   evs?: Partial<CalcStatsTable>;
   ivs?: Partial<CalcStatsTable>;
@@ -62,6 +62,13 @@ const UNSUPPORTED: {[format: string]: string} = {
   'gen9lc': '[Gen 9] LC',
   'gen9vgc2023regulatione': '[Gen 9] VGC 2023 Regulation E',
 };
+
+const SHORT_STAT_FORM: {[stat: string]: keyof CalcStatsTable} =
+{'hp': 'hp', 'atk': 'at', 'def': 'df', 'spa': 'sa', 'spd': 'sd', 'spe': 'sp'};
+
+const USELESS_NATURES = ['Bashful', 'Docile', 'Hardy', 'Quirky', 'Serious'];
+
+const CROWNED = {'Zacian-Crowned': 'Behemoth Blade', 'Zamazenta-Crowned': 'Behemoth Bash'};
 
 function first<T>(v: T[] | T): T {
   return Array.isArray(v) ? v[0] : v;
@@ -86,19 +93,20 @@ function top(weighted: {[key: string]: number}, n = 1): string | string[] | unde
     .map(x => x[0]);
 }
 
-function toCalcStatsTable(stats: Partial<StatsTable>, ignoreVal: number): Partial<CalcStatsTable> {
+function toCalcStatsTable(
+  stats: Partial<StatsTable>, ignoreVal: number
+): Partial<CalcStatsTable> | undefined {
   const calcStatsTable: Partial<CalcStatsTable> = {};
+  let isEmpty = true;
   let stat: StatID;
   for (stat in stats) {
     if (stats[stat] === ignoreVal) continue;
-    if (stat === 'hp') calcStatsTable.hp = stats[stat];
-    else if (stat === 'atk') calcStatsTable.at = stats[stat];
-    else if (stat === 'def') calcStatsTable.df = stats[stat];
-    else if (stat === 'spa') calcStatsTable.sa = stats[stat];
-    else if (stat === 'spd') calcStatsTable.sd = stats[stat];
-    else if (stat === 'spe') calcStatsTable.sp = stats[stat];
+    if (stat in SHORT_STAT_FORM) {
+      calcStatsTable[SHORT_STAT_FORM[stat]] = stats[stat];
+      isEmpty = false;
+    }
   }
-  return calcStatsTable;
+  return isEmpty ? undefined : calcStatsTable;
 }
 
 function getUsageThreshold(formatID: ID, count: number): number {
@@ -192,7 +200,7 @@ function usageToPset(
     name: '',
     species: specieName,
     item: !item || item === 'Nothing' ? '' : item,
-    ability: !ability || ability === 'Nothing' ? '' : ability,
+    ability: !ability || ability === 'No Ability' ? '' : ability,
     moves: top(uset.moves, 4).filter(m => m !== 'Nothing'),
     nature,
     gender: '',
@@ -226,11 +234,11 @@ function usageToPset(
 
 function psetToCalcSet(genNum: GenerationNum, pset: PokemonSet): CalcSet {
   return {
-    level: pset.level,
-    ability: pset.ability,
-    item: pset.item,
-    nature: pset.nature,
-    teraType: pset.teraType,
+    level: pset.level === 100 ? undefined : pset.level,
+    ability: pset.ability || undefined,
+    item: pset.item || undefined,
+    nature: !pset.nature || USELESS_NATURES.includes(pset.nature) ? undefined : pset.nature,
+    teraType: pset.teraType || undefined,
     ivs: toCalcStatsTable(pset.ivs, genNum === 2 ? 30 : 31),
     evs: toCalcStatsTable(pset.evs, genNum > 2 ? 0 : 252),
     moves: pset.moves,
@@ -247,12 +255,11 @@ function validatePSet(format: Format, pset: PokemonSet, type: 'dex' | 'stats'): 
   // The validator mutates ability for megas
   const ability = pset.ability;
   let invalid = validator.validateSet(pset, {});
-  const crowned = {'Zacian-Crowned': 'Behemoth Blade', 'Zamazenta-Crowned': 'Behemoth Bash'};
   // The Validator mutates `pset.moves` to rename the battle only crowned moves to ironhead
-  if (species in crowned) {
+  if (species in CROWNED) {
     const ironhead = pset.moves.indexOf('ironhead');
     if (ironhead > -1) {
-      pset.moves[ironhead] = crowned[species as keyof typeof crowned];
+      pset.moves[ironhead] = CROWNED[species as keyof typeof CROWNED];
     }
   }
   pset.ability = ability;

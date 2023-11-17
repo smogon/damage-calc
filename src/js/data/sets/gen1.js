@@ -1,468 +1,468 @@
 var SETDEX_RBY = {
   "Venusaur": {
-    "UU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Razor Leaf","Body Slam","Sleep Powder","Toxic"]},
-    "OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Razor Leaf","Swords Dance","Hyper Beam"]},
-    "1v1 SubSeed": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Razor Leaf","Toxic","Leech Seed","Substitute"]}
+    "UU Sleeper": {"moves":["Razor Leaf","Body Slam","Sleep Powder","Toxic"]},
+    "OU Swords Dance": {"moves":["Sleep Powder","Razor Leaf","Swords Dance","Hyper Beam"]},
+    "1v1 SubSeed": {"moves":["Razor Leaf","Toxic","Leech Seed","Substitute"]}
   },
   "Charizard": {
-    "NU Fire Spin Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Spin","Fire Blast","Earthquake","Slash"]},
-    "NU Swords Dance Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Earthquake","Hyper Beam","Fire Spin"]},
-    "OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Earthquake","Slash"]},
-    "UU Swords Dance Wallbreaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Fire Blast","Earthquake","Body Slam"]}
+    "UU Swords Dance Wallbreaker": {"moves":["Swords Dance","Fire Blast","Earthquake","Body Slam"]},
+    "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Earthquake","Slash"]},
+    "NU Fire Spin Pivot": {"moves":["Fire Spin","Fire Blast","Earthquake","Slash"]},
+    "NU Swords Dance Sweeper": {"moves":["Swords Dance","Earthquake","Hyper Beam","Fire Spin"]}
   },
   "Blastoise": {
-    "NU Bulky Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Seismic Toss","Counter","Body Slam"]},
-    "UU Bulky Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Blizzard","Earthquake","Rest"]}
+    "UU Bulky Attacker": {"moves":["Surf","Blizzard","Earthquake","Rest"]},
+    "NU Bulky Attacker": {"moves":["Surf","Seismic Toss","Counter","Body Slam"]}
   },
   "Butterfree": {
-    "PU Double Powder": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Psychic","Mega Drain"]}
+    "PU Double Powder": {"moves":["Sleep Powder","Stun Spore","Psychic","Mega Drain"]}
   },
   "Beedrill": {
-    "PU Double Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Swords Dance","Twineedle","Hyper Beam"]}
+    "PU Double Dance": {"moves":["Agility","Swords Dance","Twineedle","Hyper Beam"]}
   },
   "Pidgeot": {
-    "PU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Double-Edge","Hyper Beam","Sky Attack","Agility"]}
+    "PU Standard": {"moves":["Double-Edge","Hyper Beam","Sky Attack","Agility"]}
   },
   "Raticate": {
-    "NU All-out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hyper Beam","Body Slam","Bubble Beam","Thunderbolt"]},
-    "OU Biggie Cheese (Super Fang)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Super Fang","Hyper Beam","Body Slam","Bubble Beam"]},
-    "UU Super Fang": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Super Fang","Hyper Beam","Body Slam","Blizzard"]}
+    "UU Super Fang": {"moves":["Super Fang","Hyper Beam","Body Slam","Blizzard"]},
+    "OU Biggie Cheese (Super Fang)": {"moves":["Super Fang","Hyper Beam","Body Slam","Bubble Beam"]},
+    "NU All-out Attacker": {"moves":["Hyper Beam","Body Slam","Bubble Beam","Thunderbolt"]}
   },
   "Fearow": {
-    "PU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Double-Edge","Drill Peck","Hyper Beam","Agility"]},
-    "NU All-Out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hyper Beam","Double-Edge","Drill Peck","Agility"]}
+    "PU Offensive": {"moves":["Double-Edge","Drill Peck","Hyper Beam","Agility"]},
+    "NU All-Out Attacker": {"moves":["Hyper Beam","Double-Edge","Drill Peck","Agility"]}
   },
   "Arbok": {
-    "PU Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Glare","Earthquake","Hyper Beam"]},
-    "OU Wrapper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Glare","Wrap","Earthquake","Hyper Beam"]},
-    "UU Glare + Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Glare","Wrap","Earthquake","Hyper Beam"]},
-    "NU Glare + Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Glare","Wrap","Earthquake","Body Slam"]}
+    "UU Glare + Wrap": {"moves":["Glare","Wrap","Earthquake","Hyper Beam"]},
+    "PU Wrap": {"moves":["Wrap","Glare","Earthquake","Hyper Beam"]},
+    "OU Wrapper": {"moves":["Glare","Wrap","Earthquake","Hyper Beam"]},
+    "NU Glare + Wrap": {"moves":["Glare","Wrap","Earthquake","Body Slam"]}
   },
   "Raichu": {
-    "OU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Surf","Thunder Wave","Submission"]},
-    "UU Agility Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Surf","Thunder Wave","Agility"]},
-    "Tradebacks OU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sing","Thunderbolt","Surf","Hyper Beam"]}
+    "UU Agility Sweeper": {"moves":["Thunderbolt","Surf","Thunder Wave","Agility"]},
+    "Tradebacks OU Sleeper": {"moves":["Sing","Thunderbolt","Surf","Hyper Beam"]},
+    "OU Offensive": {"moves":["Thunderbolt","Surf","Thunder Wave","Submission"]}
   },
   "Sandslash": {
-    "PU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
-    "OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Earthquake","Body Slam","Hyper Beam"]},
-    "NU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
-    "Ubers Showdown Usage": {"level":100,"ability":"No Ability","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Swords Dance","Substitute","Sand Attack"]}
+    "PU Swords Dance": {"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
+    "OU Swords Dance": {"moves":["Swords Dance","Earthquake","Body Slam","Hyper Beam"]},
+    "NU Swords Dance": {"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
+    "Ubers Showdown Usage": {"moves":["Earthquake","Swords Dance","Substitute","Sand Attack"]}
   },
   "Nidoqueen": {
-    "PU The Queen": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Blizzard","Fire Blast","Thunderbolt"]},
-    "NU All-Out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Thunderbolt","Rock Slide","Blizzard"]},
-    "Tradebacks OU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Lovely Kiss","Earthquake","Blizzard","Thunderbolt"]}
+    "Tradebacks OU Sleeper": {"moves":["Lovely Kiss","Earthquake","Blizzard","Thunderbolt"]},
+    "PU The Queen": {"moves":["Earthquake","Blizzard","Fire Blast","Thunderbolt"]},
+    "NU All-Out Attacker": {"moves":["Earthquake","Thunderbolt","Rock Slide","Blizzard"]}
   },
   "Nidoking": {
-    "NU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Thunderbolt","Blizzard","Rock Slide"]},
-    "UU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Blizzard","Earthquake","Body Slam"]},
-    "Tradebacks OU Lovely Kiss": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Lovely Kiss","Blizzard","Thunderbolt","Earthquake"]},
-    "Tradebacks OU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Blizzard","Thunderbolt","Earthquake"]}
+    "UU Mixed Attacker": {"moves":["Thunderbolt","Blizzard","Earthquake","Body Slam"]},
+    "Tradebacks OU Lovely Kiss": {"moves":["Lovely Kiss","Blizzard","Thunderbolt","Earthquake"]},
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Thunderbolt","Earthquake"]},
+    "NU Mixed Attacker": {"moves":["Earthquake","Thunderbolt","Blizzard","Rock Slide"]}
   },
   "Clefable": {
-    "NU Bulky Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Thunder Wave","Blizzard","Thunderbolt"]},
-    "OU Status Spreader": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Mega Kick","Hyper Beam","Blizzard","Thunder Wave"]},
-    "OU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Body Slam","Hyper Beam","Thunderbolt"]},
-    "OU Status Inducer": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Thunder Wave","Sing","Thunderbolt"]},
-    "UU Offensive Utility": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Body Slam","Hyper Beam","Thunderbolt"]},
-    "Tradebacks OU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Blizzard","Body Slam","Rest"]}
+    "UU Offensive Utility": {"moves":["Thunder Wave","Body Slam","Hyper Beam","Thunderbolt"]},
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Body Slam","Rest"]},
+    "OU Status Spreader": {"moves":["Mega Kick","Hyper Beam","Blizzard","Thunder Wave"]},
+    "OU Offensive": {"moves":["Blizzard","Body Slam","Hyper Beam","Thunderbolt"]},
+    "OU Status Inducer": {"moves":["Blizzard","Thunder Wave","Sing","Thunderbolt"]},
+    "NU Bulky Support": {"moves":["Body Slam","Thunder Wave","Blizzard","Thunderbolt"]}
   },
   "Ninetales": {
-    "NU Lead Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Confuse Ray","Fire Spin"]},
-    "UU Fire Spin Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Fire Spin","Body Slam","Confuse Ray"]}
+    "UU Fire Spin Pivot": {"moves":["Fire Blast","Fire Spin","Body Slam","Confuse Ray"]},
+    "NU Lead Attacker": {"moves":["Fire Blast","Body Slam","Confuse Ray","Fire Spin"]}
   },
   "Wigglytuff": {
-    "NU Bulky Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Hyper Beam","Seismic Toss","Body Slam"]}
+    "NU Bulky Support": {"moves":["Thunder Wave","Hyper Beam","Seismic Toss","Body Slam"]}
   },
   "Golbat": {
-    "PU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Confuse Ray","Screech","Double-Edge","Mega Drain"]}
+    "PU Standard": {"moves":["Confuse Ray","Screech","Double-Edge","Mega Drain"]}
   },
   "Vileplume": {
-    "PU Double Powder": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Mega Drain","Body Slam"]}
+    "PU Double Powder": {"moves":["Sleep Powder","Stun Spore","Mega Drain","Body Slam"]}
   },
   "Parasect": {
-    "PU Setup Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Spore","Stun Spore","Swords Dance","Hyper Beam"]},
-    "NU Showdown Usage": {"level":100,"ability":"No Ability","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Spore","Mega Drain","Body Slam","Swords Dance"]}
+    "PU Setup Sleeper": {"moves":["Spore","Stun Spore","Swords Dance","Hyper Beam"]},
+    "NU Showdown Usage": {"moves":["Spore","Mega Drain","Body Slam","Swords Dance"]}
   },
   "Venomoth": {
-    "NU Double Powder": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Psychic","Double-Edge"]}
+    "NU Double Powder": {"moves":["Sleep Powder","Stun Spore","Psychic","Double-Edge"]}
   },
   "Dugtrio": {
-    "UU Dugtrio": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Slash","Substitute"]},
-    "UU Physical Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Slash","Toxic"]}
+    "UU Dugtrio": {"moves":["Earthquake","Rock Slide","Slash","Substitute"]},
+    "UU Physical Attacker": {"moves":["Earthquake","Rock Slide","Slash","Toxic"]}
   },
   "Persian": {
-    "UU Revenge Killer": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Hyper Beam","Thunderbolt","Toxic"]},
-    "Ubers Slash": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Hyper Beam","Thunderbolt","Bubble Beam"]},
-    "OU Slash": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Hyper Beam","Bubble Beam","Thunderbolt"]},
-    "1v1 Slash": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Hyper Beam","Thunderbolt","Screech"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Slash","Thunderbolt","Amnesia"]}
+    "UU Revenge Killer": {"moves":["Slash","Hyper Beam","Thunderbolt","Toxic"]},
+    "Ubers Slash": {"moves":["Slash","Hyper Beam","Thunderbolt","Bubble Beam"]},
+    "Tradebacks OU Standard": {"moves":["Hypnosis","Slash","Thunderbolt","Amnesia"]},
+    "OU Slash": {"moves":["Slash","Hyper Beam","Bubble Beam","Thunderbolt"]},
+    "1v1 Slash": {"moves":["Slash","Hyper Beam","Thunderbolt","Screech"]}
   },
   "Golduck": {
-    "UU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]},
-    "1v1 Amnesia Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Blizzard","Amnesia","Rest"]},
-    "Tradebacks OU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]}
+    "UU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]},
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]},
+    "1v1 Amnesia Attacker": {"moves":["Ice Beam","Blizzard","Amnesia","Rest"]}
   },
   "Primeape": {
-    "PU All-out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Body Slam","Hyper Beam","Rock Slide"]},
-    "NU All-out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Body Slam","Rock Slide","Hyper Beam"]},
-    "1v1 Physical Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Screech","Rock Slide","Rest"]}
+    "PU All-out Attacker": {"moves":["Submission","Body Slam","Hyper Beam","Rock Slide"]},
+    "NU All-out Attacker": {"moves":["Submission","Body Slam","Rock Slide","Hyper Beam"]},
+    "1v1 Physical Attacker": {"moves":["Submission","Screech","Rock Slide","Rest"]}
   },
   "Arcanine": {
-    "PU Bulky Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Hyper Beam","Reflect"]},
-    "UU Agility Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Body Slam","Hyper Beam","Fire Blast"]},
-    "NU Defensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]}
+    "UU Agility Sweeper": {"moves":["Agility","Body Slam","Hyper Beam","Fire Blast"]},
+    "PU Bulky Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Reflect"]},
+    "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]}
   },
   "Poliwag": {
-    "PU Amnesia Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]}
+    "PU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]}
   },
   "Poliwrath": {
-    "OU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Hydro Pump","Blizzard","Hypnosis"]},
-    "UU Poliwrath": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Body Slam","Blizzard","Counter"]},
-    "UU Bulky Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Blizzard","Earthquake","Body Slam"]},
-    "UU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Surf","Blizzard","Rest"]},
-    "1v1 Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Amnesia","Submission","Rest"]}
+    "UU Poliwrath": {"moves":["Submission","Body Slam","Blizzard","Counter"]},
+    "UU Bulky Sleeper": {"moves":["Hypnosis","Blizzard","Earthquake","Body Slam"]},
+    "UU Amnesia": {"moves":["Amnesia","Surf","Blizzard","Rest"]},
+    "OU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Hypnosis"]},
+    "1v1 Mixed Attacker": {"moves":["Blizzard","Amnesia","Submission","Rest"]}
   },
   "Abra": {
-    "PU Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Seismic Toss","Thunder Wave","Substitute"]},
-    "NU Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Thunder Wave","Seismic Toss","Reflect"]}
+    "PU Special Attacker": {"moves":["Psychic","Seismic Toss","Thunder Wave","Substitute"]},
+    "NU Special Attacker": {"moves":["Psychic","Thunder Wave","Seismic Toss","Reflect"]}
   },
   "Kadabra": {
-    "UU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Thunder Wave","Seismic Toss","Recover"]}
+    "UU Standard": {"moves":["Psychic","Thunder Wave","Seismic Toss","Recover"]}
   },
   "Alakazam": {
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Seismic Toss","Thunder Wave","Recover"]},
-    "Ubers Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Seismic Toss","Psychic","Recover"]},
-    "1v1 Psychic Stallbreaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Toxic","Recover","Substitute"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Thunder Punch","Thunder Wave","Recover"]}
+    "Tradebacks OU Standard": {"moves":["Psychic","Thunder Punch","Thunder Wave","Recover"]},
+    "1v1 Psychic Stallbreaker": {"moves":["Psychic","Toxic","Recover","Substitute"]},
+    "Ubers Standard": {"moves":["Thunder Wave","Seismic Toss","Psychic","Recover"]},
+    "OU Standard": {"moves":["Psychic","Seismic Toss","Thunder Wave","Recover"]}
   },
   "Machamp": {
-    "PU Physical Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Earthquake","Body Slam","Hyper Beam"]},
-    "OU Wallbreaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Low Kick","Body Slam","Hyper Beam","Earthquake"]},
-    "NU All-Out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Rock Slide","Earthquake","Body Slam"]},
-    "1v1 All-Out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Submission","Hyper Beam","Earthquake","Rock Slide"]}
+    "PU Physical Attacker": {"moves":["Submission","Earthquake","Body Slam","Hyper Beam"]},
+    "OU Wallbreaker": {"moves":["Low Kick","Body Slam","Hyper Beam","Earthquake"]},
+    "NU All-Out Attacker": {"moves":["Submission","Rock Slide","Earthquake","Body Slam"]},
+    "1v1 All-Out Attacker": {"moves":["Submission","Hyper Beam","Earthquake","Rock Slide"]}
   },
   "Weepinbell": {
-    "PU Double Powder": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Wrap","Razor Leaf"]}
+    "PU Double Powder": {"moves":["Sleep Powder","Stun Spore","Wrap","Razor Leaf"]}
   },
   "Victreebel": {
-    "UU Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Razor Leaf","Stun Spore","Hyper Beam","Swords Dance"]},
-    "Ubers Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Wrap","Razor Leaf","Stun Spore"]},
-    "OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Razor Leaf","Wrap"]},
-    "Tradebacks OU Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
-    "Tradebacks OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Razor Leaf","Sleep Powder"]}
+    "UU Attacker": {"moves":["Razor Leaf","Stun Spore","Hyper Beam","Swords Dance"]},
+    "Ubers Wrap": {"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
+    "Tradebacks OU Wrap": {"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
+    "Tradebacks OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Sleep Powder"]},
+    "OU Standard": {"moves":["Sleep Powder","Wrap","Razor Leaf","Stun Spore"]},
+    "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Wrap"]}
   },
   "Tentacruel": {
-    "UU Wrap Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Surf","Blizzard","Rest"]},
-    "UU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Surf","Wrap","Hyper Beam"]},
-    "Tradebacks OU Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Surf","Blizzard","Hyper Beam"]}
+    "UU Wrap Pivot": {"moves":["Wrap","Surf","Blizzard","Rest"]},
+    "UU Swords Dance": {"moves":["Swords Dance","Surf","Wrap","Hyper Beam"]},
+    "Tradebacks OU Wrap": {"moves":["Wrap","Surf","Blizzard","Hyper Beam"]}
   },
   "Graveler": {
-    "PU Tank": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Counter","Explosion"]}
+    "PU Tank": {"moves":["Earthquake","Rock Slide","Counter","Explosion"]}
   },
   "Golem": {
-    "NU Bulky Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Explosion","Substitute"]},
-    "Ubers Explosion": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Explosion","Substitute"]},
-    "OU Explosion": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Rock Slide","Earthquake","Body Slam","Explosion"]},
-    "UU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Substitute","Explosion"]},
-    "1v1 Rest 3 Attacks": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Body Slam","Rest"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]}
+    "UU Standard": {"moves":["Earthquake","Rock Slide","Substitute","Explosion"]},
+    "Tradebacks OU Standard": {"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]},
+    "Ubers Explosion": {"moves":["Earthquake","Rock Slide","Explosion","Substitute"]},
+    "OU Explosion": {"moves":["Rock Slide","Earthquake","Body Slam","Explosion"]},
+    "NU Bulky Attacker": {"moves":["Earthquake","Rock Slide","Explosion","Substitute"]},
+    "1v1 Rest 3 Attacks": {"moves":["Earthquake","Rock Slide","Body Slam","Rest"]}
   },
   "Rapidash": {
-    "PU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]},
-    "UU Fire Spin Breaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Fire Spin","Hyper Beam","Body Slam"]},
-    "NU Fire Spin Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Spin","Fire Blast","Toxic","Hyper Beam"]},
-    "Tradebacks OU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Fire Spin","Fire Blast","Hyper Beam"]}
+    "UU Fire Spin Breaker": {"moves":["Fire Blast","Fire Spin","Hyper Beam","Body Slam"]},
+    "Tradebacks OU Sleeper": {"moves":["Hypnosis","Fire Spin","Fire Blast","Hyper Beam"]},
+    "PU Offensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]},
+    "NU Fire Spin Pivot": {"moves":["Fire Spin","Fire Blast","Toxic","Hyper Beam"]}
   },
   "Slowpoke": {
-    "NU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Surf","Thunder Wave","Rest"]},
-    "PU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Amnesia","Psychic","Surf"]}
+    "PU Amnesia": {"moves":["Thunder Wave","Amnesia","Psychic","Surf"]},
+    "NU Amnesia": {"moves":["Amnesia","Surf","Thunder Wave","Rest"]}
   },
   "Slowbro": {
-    "OU TobyBro (Amnesia)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Surf","Thunder Wave","Rest"]},
-    "Ubers TobyBro (Amnesia)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Amnesia","Rest","Thunder Wave"]},
-    "1v1 Stall": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Amnesia","Rest","Counter"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Rest","Surf","Thunder Wave"]}
+    "Tradebacks OU Standard": {"moves":["Amnesia","Rest","Surf","Thunder Wave"]},
+    "1v1 Stall": {"moves":["Ice Beam","Amnesia","Rest","Counter"]},
+    "Ubers TobyBro (Amnesia)": {"moves":["Surf","Amnesia","Rest","Thunder Wave"]},
+    "OU TobyBro (Amnesia)": {"moves":["Amnesia","Surf","Thunder Wave","Rest"]}
   },
   "Magneton": {
-    "PU Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Double-Edge","Thunder Wave","Toxic"]},
-    "UU Bulky Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Thunder Wave","Double-Edge","Rest"]},
-    "NU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunder","Double-Edge","Rest"]}
+    "UU Bulky Special Attacker": {"moves":["Thunderbolt","Thunder Wave","Double-Edge","Rest"]},
+    "PU Special Attacker": {"moves":["Thunderbolt","Double-Edge","Thunder Wave","Toxic"]},
+    "NU Offensive": {"moves":["Thunder Wave","Thunder","Double-Edge","Rest"]}
   },
   "Farfetch’d": {
-    "PU Double Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Agility","Swords Dance","Body Slam"]}
+    "PU Double Dance": {"moves":["Slash","Agility","Swords Dance","Body Slam"]}
   },
   "Dodrio": {
-    "UU Physical Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Drill Peck","Hyper Beam","Agility"]},
-    "OU Agility Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Drill Peck","Hyper Beam","Agility"]}
+    "UU Physical Sweeper": {"moves":["Body Slam","Drill Peck","Hyper Beam","Agility"]},
+    "OU Agility Sweeper": {"moves":["Body Slam","Drill Peck","Hyper Beam","Agility"]}
   },
   "Dewgong": {
-    "UU Defensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Surf","Body Slam","Rest"]}
+    "UU Defensive": {"moves":["Blizzard","Surf","Body Slam","Rest"]}
   },
   "Muk": {
-    "PU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Thunderbolt","Fire Blast","Explosion"]}
+    "PU Mixed Attacker": {"moves":["Body Slam","Thunderbolt","Fire Blast","Explosion"]}
   },
   "Cloyster": {
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Clamp","Blizzard","Rest","Explosion"]},
-    "Ubers Clamp": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Clamp","Blizzard","Explosion","Rest"]},
-    "1v1 Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Surf","Toxic","Rest"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Clamp","Explosion","Blizzard","Rest"]}
+    "Tradebacks OU Standard": {"moves":["Clamp","Explosion","Blizzard","Rest"]},
+    "1v1 Standard": {"moves":["Blizzard","Surf","Toxic","Rest"]},
+    "Ubers Clamp": {"moves":["Clamp","Blizzard","Explosion","Rest"]},
+    "OU Standard": {"moves":["Clamp","Blizzard","Rest","Explosion"]}
   },
   "Gastly": {
-    "PU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Psychic","Thunderbolt","Explosion"]},
-    "NU Hypnosis": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]}
+    "PU Sleeper": {"moves":["Hypnosis","Psychic","Thunderbolt","Explosion"]},
+    "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]}
   },
   "Haunter": {
-    "UU Haunter": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Explosion","Psychic","Night Shade"]},
-    "UU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]}
+    "UU Haunter": {"moves":["Thunderbolt","Explosion","Psychic","Night Shade"]},
+    "UU Sleeper": {"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]}
   },
   "Gengar": {
-    "OU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Thunderbolt","Night Shade","Explosion"]},
-    "Ubers Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]},
-    "1v1 Rest": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Psychic","Rest","Substitute"]},
-    "Tradebacks OU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Thunderbolt","Ice Punch","Explosion"]},
-    "Tradebacks OU Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Rest","Thunderbolt","Ice Punch","Hypnosis"]}
+    "Ubers Sleeper": {"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]},
+    "Tradebacks OU Offensive": {"moves":["Hypnosis","Thunderbolt","Ice Punch","Explosion"]},
+    "Tradebacks OU Support": {"moves":["Rest","Thunderbolt","Ice Punch","Hypnosis"]},
+    "OU Sleeper": {"moves":["Hypnosis","Thunderbolt","Night Shade","Explosion"]},
+    "1v1 Rest": {"moves":["Thunderbolt","Psychic","Rest","Substitute"]}
   },
   "Onix": {
-    "PU Bind Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Bind","Toxic","Earthquake","Explosion"]}
+    "PU Bind Pivot": {"moves":["Bind","Toxic","Earthquake","Explosion"]}
   },
   "Drowzee": {
-    "PU Bulky Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Psychic","Hypnosis","Seismic Toss"]},
-    "NU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Seismic Toss","Thunder Wave","Rest"]}
+    "PU Bulky Support": {"moves":["Thunder Wave","Psychic","Hypnosis","Seismic Toss"]},
+    "NU Standard": {"moves":["Psychic","Seismic Toss","Thunder Wave","Rest"]}
   },
   "Hypno": {
-    "Ubers Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]},
-    "OU Double Status": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]},
-    "Tradebacks OU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Psychic","Reflect","Rest"]}
+    "Ubers Sleeper": {"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]},
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Psychic","Reflect","Rest"]},
+    "OU Double Status": {"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]}
   },
   "Kingler": {
-    "NU The Cringe Crab (Swords Dance)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Body Slam","Hyper Beam","Crabhammer"]},
-    "OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]},
-    "Tradebacks OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]}
+    "Tradebacks OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]},
+    "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]},
+    "NU The Cringe Crab (Swords Dance)": {"moves":["Swords Dance","Body Slam","Hyper Beam","Crabhammer"]}
   },
   "Electrode": {
-    "NU Fast Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Thunder Wave","Explosion","Thunder"]},
-    "Ubers Explosion": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunderbolt","Screech","Explosion"]},
-    "UU Fast Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Thunder Wave","Explosion","Screech"]},
-    "1v1 Screech + Hyper Beam": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Hyper Beam","Screech","Rest"]}
+    "UU Fast Attacker": {"moves":["Thunderbolt","Thunder Wave","Explosion","Screech"]},
+    "Ubers Explosion": {"moves":["Thunder Wave","Thunderbolt","Screech","Explosion"]},
+    "NU Fast Attacker": {"moves":["Thunderbolt","Thunder Wave","Explosion","Thunder"]},
+    "1v1 Screech + Hyper Beam": {"moves":["Thunderbolt","Hyper Beam","Screech","Rest"]}
   },
   "Exeggcute": {
-    "NU Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Psychic","Explosion"]}
+    "NU Support": {"moves":["Sleep Powder","Stun Spore","Psychic","Explosion"]}
   },
   "Exeggutor": {
-    "OU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Psychic","Explosion","Double-Edge"]},
-    "Ubers Bulky Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Psychic","Explosion"]},
-    "1v1 SubSeed": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Toxic","Leech Seed","Substitute"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Psychic","Explosion","Double-Edge"]}
+    "Tradebacks OU Standard": {"moves":["Sleep Powder","Psychic","Explosion","Double-Edge"]},
+    "1v1 SubSeed": {"moves":["Psychic","Toxic","Leech Seed","Substitute"]},
+    "Ubers Bulky Sleeper": {"moves":["Sleep Powder","Stun Spore","Psychic","Explosion"]},
+    "OU Sleeper": {"moves":["Sleep Powder","Psychic","Explosion","Double-Edge"]}
   },
   "Marowak": {
-    "PU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Body Slam","Blizzard","Fire Blast"]}
+    "PU Standard": {"moves":["Earthquake","Body Slam","Blizzard","Fire Blast"]}
   },
   "Hitmonlee": {
-    "PU Meditate Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["High Jump Kick","Meditate","Body Slam","Seismic Toss"]}
+    "PU Meditate Attacker": {"moves":["High Jump Kick","Meditate","Body Slam","Seismic Toss"]}
   },
   "Hitmonchan": {
-    "PU Agility... Sweeper?": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Submission","Body Slam","Counter"]}
+    "PU Agility... Sweeper?": {"moves":["Agility","Submission","Body Slam","Counter"]}
   },
   "Lickitung": {
-    "PU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Body Slam","Hyper Beam","Earthquake"]}
+    "PU Swords Dance": {"moves":["Swords Dance","Body Slam","Hyper Beam","Earthquake"]}
   },
   "Weezing": {
-    "PU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Thunderbolt","Hyper Beam","Explosion"]}
+    "PU Mixed Attacker": {"moves":["Fire Blast","Thunderbolt","Hyper Beam","Explosion"]}
   },
   "Rhydon": {
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Body Slam","Substitute"]},
-    "Ubers Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Body Slam","Substitute"]},
-    "1v1 Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Rock Slide","Body Slam","Bubble Beam"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Body Slam","Rock Slide","Substitute"]}
+    "Ubers Standard": {"moves":["Earthquake","Rock Slide","Body Slam","Substitute"]},
+    "Tradebacks OU Standard": {"moves":["Earthquake","Body Slam","Rock Slide","Substitute"]},
+    "OU Standard": {"moves":["Earthquake","Rock Slide","Body Slam","Substitute"]},
+    "1v1 Standard": {"moves":["Earthquake","Rock Slide","Body Slam","Bubble Beam"]}
   },
   "Chansey": {
-    "OU BoltBeam": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Ice Beam","Soft-Boiled","Thunder Wave"]},
-    "OU Sing": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sing","Ice Beam","Soft-Boiled","Thunder Wave"]},
-    "OU Reflect": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Reflect","Seismic Toss","Soft-Boiled","Thunder Wave"]},
-    "Ubers Light Screen": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Light Screen","Seismic Toss","Soft-Boiled","Thunder Wave"]},
-    "Ubers Sing": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sing","Seismic Toss","Soft-Boiled","Thunder Wave"]},
-    "1v1 The Egg": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Soft-Boiled","Thunder Wave","Reflect"]},
-    "Tradebacks OU Reflect": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Reflect","Thunder Wave","Seismic Toss","Soft-Boiled"]},
-    "Tradebacks OU BoltBeam": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Thunderbolt","Soft-Boiled","Thunder Wave"]},
-    "Tradebacks OU Counter": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Counter","Soft-Boiled","Ice Beam","Sing"]}
+    "Tradebacks OU Reflect": {"moves":["Reflect","Thunder Wave","Seismic Toss","Soft-Boiled"]},
+    "Tradebacks OU BoltBeam": {"moves":["Ice Beam","Thunderbolt","Soft-Boiled","Thunder Wave"]},
+    "Tradebacks OU Counter": {"moves":["Counter","Soft-Boiled","Ice Beam","Sing"]},
+    "1v1 The Egg": {"moves":["Ice Beam","Soft-Boiled","Thunder Wave","Reflect"]},
+    "Ubers Light Screen": {"moves":["Light Screen","Seismic Toss","Soft-Boiled","Thunder Wave"]},
+    "Ubers Sing": {"moves":["Sing","Seismic Toss","Soft-Boiled","Thunder Wave"]},
+    "OU BoltBeam": {"moves":["Thunderbolt","Ice Beam","Soft-Boiled","Thunder Wave"]},
+    "OU Sing": {"moves":["Sing","Ice Beam","Soft-Boiled","Thunder Wave"]},
+    "OU Reflect": {"moves":["Reflect","Seismic Toss","Soft-Boiled","Thunder Wave"]}
   },
   "Tangela": {
-    "UU Defensive Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Bind","Body Slam"]},
-    "UU Defensive Growth": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sleep Powder","Stun Spore","Growth","Mega Drain"]}
+    "UU Defensive Pivot": {"moves":["Sleep Powder","Stun Spore","Bind","Body Slam"]},
+    "UU Defensive Growth": {"moves":["Sleep Powder","Stun Spore","Growth","Mega Drain"]}
   },
   "Kangaskhan": {
-    "UU Kangaskhan": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]},
-    "UU Wallbreaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]},
-    "OU Wallbreaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Earthquake","Surf"]}
+    "UU Kangaskhan": {"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]},
+    "UU Wallbreaker": {"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]},
+    "OU Wallbreaker": {"moves":["Body Slam","Hyper Beam","Earthquake","Surf"]}
   },
   "Seadra": {
-    "NU Agility Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Blizzard","Hydro Pump","Agility"]}
+    "NU Agility Sweeper": {"moves":["Surf","Blizzard","Hydro Pump","Agility"]}
   },
   "Seaking": {
-    "PU Agility": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Double-Edge","Hyper Beam","Agility"]},
-    "Tradebacks OU Double Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hyper Beam","Surf","Agility","Swords Dance"]}
+    "Tradebacks OU Double Dance": {"moves":["Hyper Beam","Surf","Agility","Swords Dance"]},
+    "PU Agility": {"moves":["Surf","Double-Edge","Hyper Beam","Agility"]}
   },
   "Staryu": {
-    "PU Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Surf","Thunderbolt","Recover"]}
+    "PU Support": {"moves":["Thunder Wave","Surf","Thunderbolt","Recover"]}
   },
   "Starmie": {
-    "OU Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Recover","Thunder Wave","Blizzard","Psychic"]},
-    "Ubers Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Recover","Surf","Blizzard"]},
-    "1v1 Psychic Stall": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Ice Beam","Recover","Reflect"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Recover","Thunder Wave","Blizzard","Psychic"]}
+    "Tradebacks OU Standard": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]},
+    "1v1 Psychic Stall": {"moves":["Psychic","Ice Beam","Recover","Reflect"]},
+    "Ubers Special Attacker": {"moves":["Thunder Wave","Recover","Surf","Blizzard"]},
+    "OU Special Attacker": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]}
   },
   "Mr. Mime": {
-    "NU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Psychic","Thunderbolt","Seismic Toss","Thunder Wave"]},
-    "Tradebacks OU Hypnosis": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hypnosis","Thunderbolt","Psychic","Seismic Toss"]}
+    "Tradebacks OU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Psychic","Seismic Toss"]},
+    "NU Standard": {"moves":["Psychic","Thunderbolt","Seismic Toss","Thunder Wave"]}
   },
   "Scyther": {
-    "PU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Slash","Wing Attack"]},
-    "NU Double Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Slash","Hyper Beam","Agility"]}
+    "PU Standard": {"moves":["Swords Dance","Hyper Beam","Slash","Wing Attack"]},
+    "NU Double Dance": {"moves":["Swords Dance","Slash","Hyper Beam","Agility"]}
   },
   "Jynx": {
-    "OU Lead Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]},
-    "Ubers Sleep Lead": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Lovely Kiss","Blizzard","Psychic","Counter"]},
-    "1v1 Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Psychic","Blizzard","Rest"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]}
+    "Tradebacks OU Standard": {"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]},
+    "1v1 Special Attacker": {"moves":["Ice Beam","Psychic","Blizzard","Rest"]},
+    "Ubers Sleep Lead": {"moves":["Lovely Kiss","Blizzard","Psychic","Counter"]},
+    "OU Lead Sleeper": {"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]}
   },
   "Electabuzz": {
-    "UU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Thunder Wave","Body Slam","Hyper Beam"]},
-    "UU Offensive (old)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunderbolt","Body Slam","Psychic"]},
-    "1v1 Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Screech","Body Slam","Hyper Beam"]},
-    "Tradebacks OU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunderbolt","Ice Punch","Rolling Kick"]}
+    "UU Offensive": {"moves":["Thunderbolt","Thunder Wave","Body Slam","Hyper Beam"]},
+    "UU Offensive (old)": {"moves":["Thunder Wave","Thunderbolt","Body Slam","Psychic"]},
+    "Tradebacks OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Ice Punch","Rolling Kick"]},
+    "1v1 Mixed Attacker": {"moves":["Thunderbolt","Screech","Body Slam","Hyper Beam"]}
   },
   "Magmar": {
-    "PU Swagmar": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Confuse Ray","Counter"]},
-    "NU Showdown Usage": {"level":100,"ability":"No Ability","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Flamethrower","Fire Blast","Seismic Toss","Confuse Ray"]}
+    "PU Swagmar": {"moves":["Fire Blast","Body Slam","Confuse Ray","Counter"]},
+    "NU Showdown Usage": {"moves":["Flamethrower","Fire Blast","Seismic Toss","Confuse Ray"]}
   },
   "Pinsir": {
-    "PU All-Out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Submission","Seismic Toss","Bind"]},
-    "OU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Slash","Submission"]},
-    "UU Swords Dance Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Slash","Bind"]},
-    "NU Swords Dance + Bind": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Hyper Beam","Slash","Bind"]},
-    "Tradebacks OU Showdown Usage": {"level":100,"ability":"No Ability","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Bind","Hyper Beam","Swords Dance","Slash"]}
+    "UU Swords Dance Sweeper": {"moves":["Swords Dance","Hyper Beam","Slash","Bind"]},
+    "PU All-Out Attacker": {"moves":["Slash","Submission","Seismic Toss","Bind"]},
+    "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Slash","Submission"]},
+    "NU Swords Dance + Bind": {"moves":["Swords Dance","Hyper Beam","Slash","Bind"]},
+    "Tradebacks OU Showdown Usage": {"moves":["Bind","Hyper Beam","Swords Dance","Slash"]}
   },
   "Tauros": {
-    "OU The Bull": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Blizzard","Earthquake"]},
-    "Ubers Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]},
-    "1v1 The Bull": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hyper Beam","Body Slam","Earthquake","Fire Blast"]},
-    "Tradebacks OU The Bull": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]}
+    "Tradebacks OU The Bull": {"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]},
+    "1v1 The Bull": {"moves":["Hyper Beam","Body Slam","Earthquake","Fire Blast"]},
+    "Ubers Standard": {"moves":["Body Slam","Hyper Beam","Earthquake","Blizzard"]},
+    "OU The Bull": {"moves":["Body Slam","Hyper Beam","Blizzard","Earthquake"]}
   },
   "Gyarados": {
-    "UU All-out Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Blizzard","Hyper Beam","Thunderbolt"]},
-    "OU Wallbreaker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hydro Pump","Thunderbolt","Body Slam","Hyper Beam"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hydro Pump","Hyper Beam","Body Slam","Thunderbolt"]}
+    "UU All-out Attacker": {"moves":["Body Slam","Blizzard","Hyper Beam","Thunderbolt"]},
+    "Tradebacks OU Standard": {"moves":["Hydro Pump","Hyper Beam","Body Slam","Thunderbolt"]},
+    "OU Wallbreaker": {"moves":["Hydro Pump","Thunderbolt","Body Slam","Hyper Beam"]}
   },
   "Lapras": {
-    "Ubers Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sing","Blizzard","Thunderbolt","Body Slam"]},
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Thunderbolt","Hyper Beam","Sing"]},
-    "1v1 Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Thunderbolt","Reflect","Rest"]},
-    "Tradebacks OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Sing","Blizzard","Thunderbolt","Hyper Beam"]}
+    "Ubers Special Attacker": {"moves":["Sing","Blizzard","Thunderbolt","Body Slam"]},
+    "Tradebacks OU Standard": {"moves":["Sing","Blizzard","Thunderbolt","Hyper Beam"]},
+    "OU Standard": {"moves":["Blizzard","Thunderbolt","Hyper Beam","Sing"]},
+    "1v1 Special Attacker": {"moves":["Ice Beam","Thunderbolt","Reflect","Rest"]}
   },
   "Ditto": {
-    "PU Transformer": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Transform"]}
+    "PU Transformer": {"moves":["Transform"]}
   },
   "Vaporeon": {
-    "UU Bulky Special Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Blizzard","Body Slam","Rest"]},
-    "Tradebacks OU Growth": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Growth","Rest","Surf","Acid Armor"]}
+    "UU Bulky Special Attacker": {"moves":["Surf","Blizzard","Body Slam","Rest"]},
+    "Tradebacks OU Growth": {"moves":["Growth","Rest","Surf","Acid Armor"]}
   },
   "Jolteon": {
-    "OU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
-    "Ubers Paralysis Lead": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunderbolt","Pin Missile","Double Kick"]},
-    "1v1 Critical Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Pin Missile","Toxic","Rest"]},
-    "Tradebacks OU Standard Rest": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
-    "Tradebacks OU Growth": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Growth","Thunderbolt","Double Kick","Thunder Wave"]}
+    "Ubers Paralysis Lead": {"moves":["Thunder Wave","Thunderbolt","Pin Missile","Double Kick"]},
+    "Tradebacks OU Standard Rest": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
+    "Tradebacks OU Growth": {"moves":["Growth","Thunderbolt","Double Kick","Thunder Wave"]},
+    "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
+    "1v1 Critical Attacker": {"moves":["Thunderbolt","Pin Missile","Toxic","Rest"]}
   },
   "Flareon": {
-    "PU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]},
-    "OU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]}
+    "PU Mixed Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]},
+    "OU Mixed Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]}
   },
   "Porygon": {
-    "PU Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Recover","Thunder Wave","Blizzard","Double-Edge"]},
-    "OU Wall": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
-    "UU Staller": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Ice Beam","Thunder Wave","Recover"]},
-    "NU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Psychic","Thunder Wave","Recover"]},
-    "NU Conversion": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Conversion","Ice Beam","Thunder Wave","Recover"]},
-    "Tradebacks OU Bulky Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
-    "Ubers Showdown Usage": {"level":100,"ability":"No Ability","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Recover","Reflect","Thunder Wave","Psybeam"]}
+    "UU Staller": {"moves":["Thunderbolt","Ice Beam","Thunder Wave","Recover"]},
+    "Tradebacks OU Bulky Support": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
+    "PU Support": {"moves":["Recover","Thunder Wave","Blizzard","Double-Edge"]},
+    "OU Wall": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
+    "NU Standard": {"moves":["Thunderbolt","Psychic","Thunder Wave","Recover"]},
+    "NU Conversion": {"moves":["Conversion","Ice Beam","Thunder Wave","Recover"]},
+    "Ubers Showdown Usage": {"moves":["Recover","Reflect","Thunder Wave","Psybeam"]}
   },
   "Omanyte": {
-    "PU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Blizzard","Body Slam","Rest"]}
+    "PU Standard": {"moves":["Surf","Blizzard","Body Slam","Rest"]}
   },
   "Omastar": {
-    "UU Bulky Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hydro Pump","Body Slam","Seismic Toss","Rest"]},
-    "UU Defensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Surf","Blizzard","Body Slam","Rest"]},
-    "OU Tank": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hydro Pump","Ice Beam","Body Slam","Rest"]}
+    "UU Bulky Attacker": {"moves":["Hydro Pump","Body Slam","Seismic Toss","Rest"]},
+    "UU Defensive": {"moves":["Surf","Blizzard","Body Slam","Rest"]},
+    "OU Tank": {"moves":["Hydro Pump","Ice Beam","Body Slam","Rest"]}
   },
   "Kabutops": {
-    "NU Swords Dance": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Slash","Swords Dance","Hyper Beam","Surf"]},
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Slash","Hyper Beam","Surf"]},
-    "UU Mixed Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Hyper Beam","Slash","Blizzard","Swords Dance"]}
+    "UU Mixed Sweeper": {"moves":["Hyper Beam","Slash","Blizzard","Swords Dance"]},
+    "OU Standard": {"moves":["Swords Dance","Slash","Hyper Beam","Surf"]},
+    "NU Swords Dance": {"moves":["Slash","Swords Dance","Hyper Beam","Surf"]}
   },
   "Aerodactyl": {
-    "UU Speed Utility": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Double-Edge","Hyper Beam","Fire Blast","Toxic"]},
-    "Tradebacks OU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Earthquake","Hyper Beam","Headbutt","Fire Blast"]}
+    "UU Speed Utility": {"moves":["Double-Edge","Hyper Beam","Fire Blast","Toxic"]},
+    "Tradebacks OU Mixed Attacker": {"moves":["Earthquake","Hyper Beam","Headbutt","Fire Blast"]}
   },
   "Snorlax": {
-    "OU Reflect": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Reflect","Rest","Ice Beam"]},
-    "OU Physical Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Self-Destruct","Earthquake"]},
-    "OU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Blizzard","Amnesia","Rest"]},
-    "Ubers PhysLax (All-out Attacker)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Self-Destruct","Hyper Beam","Earthquake"]},
-    "Ubers Reflect": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Reflect","Rest","Earthquake"]},
-    "1v1 Amnesia Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Hyper Beam","Amnesia","Ice Beam"]},
-    "Tradebacks OU Sleeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Lovely Kiss","Body Slam","Self-Destruct","Earthquake"]},
-    "Tradebacks OU Reflect": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Reflect","Rest","Body Slam","Lovely Kiss"]},
-    "Tradebacks OU Amnesia": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Blizzard","Body Slam","Rest"]}
+    "Tradebacks OU Sleeper": {"moves":["Lovely Kiss","Body Slam","Self-Destruct","Earthquake"]},
+    "Tradebacks OU Reflect": {"moves":["Reflect","Rest","Body Slam","Lovely Kiss"]},
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Body Slam","Rest"]},
+    "1v1 Amnesia Attacker": {"moves":["Body Slam","Hyper Beam","Amnesia","Ice Beam"]},
+    "Ubers PhysLax (All-out Attacker)": {"moves":["Body Slam","Self-Destruct","Hyper Beam","Earthquake"]},
+    "Ubers Reflect": {"moves":["Body Slam","Reflect","Rest","Earthquake"]},
+    "OU Reflect": {"moves":["Body Slam","Reflect","Rest","Ice Beam"]},
+    "OU Physical Attacker": {"moves":["Body Slam","Hyper Beam","Self-Destruct","Earthquake"]},
+    "OU Mixed Attacker": {"moves":["Body Slam","Blizzard","Amnesia","Rest"]}
   },
   "Articuno": {
-    "UU Agility Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Double-Edge","Hyper Beam","Agility"]},
-    "Ubers Bulky Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Hyper Beam","Rest","Agility"]},
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Agility","Double-Edge","Hyper Beam"]},
-    "1v1 Reflect + Rest": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Ice Beam","Blizzard","Rest","Reflect"]},
-    "Tradebacks OU Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Blizzard","Ice Beam","Hyper Beam"]}
+    "UU Agility Sweeper": {"moves":["Blizzard","Double-Edge","Hyper Beam","Agility"]},
+    "Ubers Bulky Attacker": {"moves":["Blizzard","Hyper Beam","Rest","Agility"]},
+    "Tradebacks OU Sweeper": {"moves":["Agility","Blizzard","Ice Beam","Hyper Beam"]},
+    "OU Standard": {"moves":["Blizzard","Agility","Double-Edge","Hyper Beam"]},
+    "1v1 Reflect + Rest": {"moves":["Ice Beam","Blizzard","Rest","Reflect"]}
   },
   "Zapdos": {
-    "OU Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
-    "Ubers Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
-    "1v1 Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunderbolt","Drill Peck","Thunder","Reflect"]},
-    "Tradebacks OU Agility": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Thunderbolt","Drill Peck","Thunder Wave"]}
+    "Ubers Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
+    "Tradebacks OU Agility": {"moves":["Agility","Thunderbolt","Drill Peck","Thunder Wave"]},
+    "OU Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
+    "1v1 Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder","Reflect"]}
   },
   "Moltres": {
-    "NU Offensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Hyper Beam","Fire Spin","Agility"]},
-    "NU Defensive": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Fire Spin","Toxic","Rest"]},
-    "OU Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Hyper Beam","Agility","Fire Spin"]},
-    "1v1 Mixed Attacker": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Fire Blast","Toxic","Rest","Reflect"]},
-    "Tradebacks OU AgiliSpin": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Fire Spin","Fire Blast","Hyper Beam"]}
+    "Tradebacks OU AgiliSpin": {"moves":["Agility","Fire Spin","Fire Blast","Hyper Beam"]},
+    "OU Standard": {"moves":["Fire Blast","Hyper Beam","Agility","Fire Spin"]},
+    "NU Offensive": {"moves":["Fire Blast","Hyper Beam","Fire Spin","Agility"]},
+    "NU Defensive": {"moves":["Fire Blast","Fire Spin","Toxic","Rest"]},
+    "1v1 Mixed Attacker": {"moves":["Fire Blast","Toxic","Rest","Reflect"]}
   },
   "Dragonair": {
-    "PU Support": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Wrap","Blizzard","Thunderbolt"]},
-    "PU AgiliWrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Wrap","Blizzard","Thunderbolt"]},
-    "NU Agility + Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Thunder Wave","Hyper Beam","Agility"]}
+    "PU Support": {"moves":["Thunder Wave","Wrap","Blizzard","Thunderbolt"]},
+    "PU AgiliWrap": {"moves":["Agility","Wrap","Blizzard","Thunderbolt"]},
+    "NU Agility + Wrap": {"moves":["Wrap","Thunder Wave","Hyper Beam","Agility"]}
   },
   "Dragonite": {
-    "UU Wrap Pivot": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Thunder Wave","Blizzard","Body Slam"]},
-    "UU PhysNite (Offensive)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Body Slam","Thunderbolt","Hyper Beam"]},
-    "UU Agility Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Blizzard","Thunderbolt","Hyper Beam","Agility"]},
-    "Ubers Agility + Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Wrap","Surf","Hyper Beam"]},
-    "OU Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Hyper Beam","Blizzard","Thunder Wave"]},
-    "OU AgiliWrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Agility","Wrap","Hyper Beam","Surf"]},
-    "Tradebacks OU Wrap": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Wrap","Hyper Beam","Blizzard","Thunder Wave"]}
+    "UU Wrap Pivot": {"moves":["Wrap","Thunder Wave","Blizzard","Body Slam"]},
+    "UU PhysNite (Offensive)": {"moves":["Blizzard","Body Slam","Thunderbolt","Hyper Beam"]},
+    "UU Agility Sweeper": {"moves":["Blizzard","Thunderbolt","Hyper Beam","Agility"]},
+    "Ubers Agility + Wrap": {"moves":["Agility","Wrap","Surf","Hyper Beam"]},
+    "Tradebacks OU Wrap": {"moves":["Wrap","Hyper Beam","Blizzard","Thunder Wave"]},
+    "OU Wrap": {"moves":["Wrap","Hyper Beam","Blizzard","Thunder Wave"]},
+    "OU AgiliWrap": {"moves":["Agility","Wrap","Hyper Beam","Surf"]}
   },
   "Mewtwo": {
-    "Ubers Standard": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Psychic","Thunderbolt","Recover"]},
-    "Ubers BooM2 (Self-Destruct)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Amnesia","Recover","Thunderbolt","Self-Destruct"]},
-    "Ubers Staller": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{"sa":8,"sd":8},"moves":["Amnesia","Thunderbolt","Flash","Recover"]}
+    "Ubers Standard": {"moves":["Amnesia","Psychic","Thunderbolt","Recover"]},
+    "Ubers BooM2 (Self-Destruct)": {"moves":["Amnesia","Recover","Thunderbolt","Self-Destruct"]},
+    "Ubers Staller": {"evs":{"sa":8,"sd":8},"moves":["Amnesia","Thunderbolt","Flash","Recover"]}
   },
   "Mew": {
-    "Ubers Traditional Sweeper": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Swords Dance","Earthquake","Body Slam","Soft-Boiled"]},
-    "Ubers GGMew (Reflect Sweeper)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Reflect","Swords Dance","Body Slam","Soft-Boiled"]},
-    "Ubers Explosive Lure": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Thunder Wave","Swords Dance","Body Slam","Explosion"]},
-    "Ubers Lutrew / PaRaSiTe Mew (Transform)": {"level":100,"ability":"","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Transform","Thunder Wave","Soft-Boiled","Reflect"]}
+    "Ubers Traditional Sweeper": {"moves":["Swords Dance","Earthquake","Body Slam","Soft-Boiled"]},
+    "Ubers GGMew (Reflect Sweeper)": {"moves":["Reflect","Swords Dance","Body Slam","Soft-Boiled"]},
+    "Ubers Explosive Lure": {"moves":["Thunder Wave","Swords Dance","Body Slam","Explosion"]},
+    "Ubers Lutrew / PaRaSiTe Mew (Transform)": {"moves":["Transform","Thunder Wave","Soft-Boiled","Reflect"]}
   },
   "Ivysaur": {
-    "NU Showdown Usage": {"level":100,"ability":"No Ability","item":"","nature":"Serious","ivs":{},"evs":{},"moves":["Body Slam","Razor Leaf","Sleep Powder","Leech Seed"]}
+    "NU Showdown Usage": {"moves":["Body Slam","Razor Leaf","Sleep Powder","Leech Seed"]}
   }
 };
