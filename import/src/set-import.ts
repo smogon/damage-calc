@@ -151,6 +151,13 @@ function getSpecie(gen: Generation, specieName: SpeciesName): Specie | PSSpecie 
   return gen.species.get(specieName) ?? ModdedDex.forGen(gen.num).species.get(specieName);
 }
 
+function toPSFormat(formatID: ID): ID {
+  if (formatID === 'gen9vgc2023' || formatID === 'gen9battlestadiumsingles') {
+    return `${formatID}regulatione` as ID;
+  }
+  return formatID;
+}
+
 function dexToPset(
   gen: Generation, formatID: ID, specie: Specie | PSSpecie, dset: DexSet
 ): PokemonSet {
@@ -405,16 +412,14 @@ async function importGen(
   const statsIgnore: {[specie: string]: Set<ID>} = {};
   for (const [specieName, formats] of Object.entries(dexSets)) {
     for (let [formatID, sets] of Object.entries(formats) as unknown as [ID, DexSet][]) {
-      if (formatID === 'vgc2023' || formatID === 'battlestadiumsingles') {
-        formatID = `${formatID}regulatione` as ID;
-      }
       formatID = `gen${gen.num}${formatID}` as ID;
-      const format = UNSUPPORTED[formatID] ? null : Dex.formats.get(formatID);
+      const psFormat = toPSFormat(formatID);
+      const format = UNSUPPORTED[psFormat] ? null : Dex.formats.get(psFormat);
       if (format && !format.exists) {
         continue;
       }
       formatIDs.add(formatID);
-      const formatName = format?.name ?? UNSUPPORTED[formatID];
+      const formatName = format?.name ?? UNSUPPORTED[psFormat];
       const specie = getSpecie(gen, specieName as SpeciesName);
       for (const [name, set] of Object.entries(sets)) {
         const pset = dexToPset(gen, formatID, specie, set);
@@ -443,11 +448,12 @@ async function importGen(
     }
   }
   for (const formatID of formatIDs) {
-    const format = UNSUPPORTED[formatID] ? null : Dex.formats.get(formatID);
-    const formatName = format ? format.name : UNSUPPORTED[formatID];
+    const psFormat = toPSFormat(formatID);
+    const format = UNSUPPORTED[psFormat] ? null : Dex.formats.get(psFormat);
     if (format && !format.exists) {
       continue;
     }
+    const formatName = format ? format.name : UNSUPPORTED[psFormat];
     let stats: DisplayStatistics | false = false;
     try {
       stats = await fetchStats(formatID);
