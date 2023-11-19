@@ -170,7 +170,7 @@ function dexToPset(
     nature: first(dset.nature) ?? '',
     gender: '',
     evs: TeamValidator.fillStats(first(dset.evs) ?? null, gen.num < 3 ? 252 : 0),
-    ivs: TeamValidator.fillStats(null, gen.num === 2 ? 30 : 31),
+    ivs: TeamValidator.fillStats(first(dset.ivs) ?? null, gen.num === 2 ? 30 : 31),
     level: first(dset.level) ?? getLevel(formatID),
     teraType: first(dset.teratypes),
   };
