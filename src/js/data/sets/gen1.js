@@ -454,7 +454,7 @@ var SETDEX_RBY = {
   "Mewtwo": {
     "Ubers Standard": {"moves":["Amnesia","Psychic","Thunderbolt","Recover"]},
     "Ubers BooM2 (Self-Destruct)": {"moves":["Amnesia","Recover","Thunderbolt","Self-Destruct"]},
-    "Ubers Staller": {"evs":{"sa":8,"sd":8},"moves":["Amnesia","Thunderbolt","Flash","Recover"]}
+    "Ubers Staller": {"ivs":{"sa":26,"sd":26},"evs":{"sa":8,"sd":8},"moves":["Amnesia","Thunderbolt","Flash","Recover"]}
   },
   "Mew": {
     "Ubers Traditional Sweeper": {"moves":["Swords Dance","Earthquake","Body Slam","Soft-Boiled"]},
