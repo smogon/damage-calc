@@ -294,9 +294,10 @@ function validatePSet(format: Format, pset: PokemonSet, type: 'dex' | 'stats'): 
 
 function similarFormes(
   pset: PokemonSet,
-  format: Format | null,
   specie: Specie | PSSpecie,
   item: Item | PSItem,
+  format: Format | null,
+  genNum: GenerationNum
 ): {formes: SpeciesName[]; abilityChange: boolean} {
   const similar: {formes: SpeciesName[]; abilityChange: boolean} = {
     formes: [], abilityChange: false,
@@ -317,9 +318,13 @@ function similarFormes(
     similar.formes = ['Zygarde-Complete'] as SpeciesName[];
     return similar;
   }
+  if (pset.ability === 'Battle Bond' && pset.species.startsWith('Greninja') &&
+    (genNum === 7 || (genNum === 8 && format?.id.includes('nationaldex')))) {
+    similar.formes = ['Greninja-Ash'] as SpeciesName[];
+    return similar;
+  }
   if (pset.species === 'Rayquaza' && format && pset.moves.includes('Dragon Ascent')) {
     const ruleTable = Dex.formats.getRuleTable(format);
-    const genNum = +/^gen(\d+)/.exec(format.id)![1];
     const isMrayAllowed = genNum === 6 || genNum === 7
       ? !ruleTable.has('megarayquazaclause') && !format.banlist.includes('Rayquaza-Mega')
       : format.id.includes('nationaldex') &&
@@ -431,7 +436,7 @@ async function importGen(
         if (!statsIgnore[specieName]) statsIgnore[specieName] = new Set();
         statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
-        const copyTo = similarFormes(pset, format, specie, item);
+        const copyTo = similarFormes(pset, specie, item, format, gen.num);
         // Quintuple loop... yikes
         for (const forme of copyTo.formes) {
           if (!statsIgnore[forme]) statsIgnore[forme] = new Set();
@@ -478,7 +483,7 @@ async function importGen(
       const setName = `${formatName.slice(formatName.indexOf(']') + 2)} Showdown Usage`;
       calcSets[specieName][setName] = calcSet;
       const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
-      const copyTo = similarFormes(pset, format, specie, item);
+      const copyTo = similarFormes(pset, specie, item, format, gen.num);
       for (const forme of copyTo.formes) {
         if (statsIgnore[forme]?.has(formatID)) {
           continue;

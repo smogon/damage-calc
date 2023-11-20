@@ -161,11 +161,11 @@ var SETDEX_SM = {
     "LC Bulky Spinner": {"level":5,"ability":"Sturdy","item":"Eviolite","nature":"Impish","evs":{"at":44,"df":156,"sd":236,"sp":52},"moves":["Rapid Spin","Recover","Avalanche","Toxic"]}
   },
   "Avalugg": {
-    "PU Defensive Spinner": {"ability":"Sturdy","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Rapid Spin","Recover","Avalanche","Earthquake"]},
-    "OU Physical Wall": {"ability":"Sturdy","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"at":88,"df":168},"moves":["Avalanche","Recover","Rapid Spin","Earthquake"]},
     "1v1 Avathugg (Choice Band)": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","evs":{"hp":240,"at":248,"sd":20},"moves":["Avalanche","Superpower","Stone Edge","Mirror Coat"]},
+    "PU Defensive Spinner": {"ability":"Sturdy","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Rapid Spin","Recover","Avalanche","Earthquake"]},
     "Monotype Defensive Rapid Spin": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Rapid Spin","Recover","Roar","Avalanche"]},
-    "ZU Defensive Rapid Spin": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Rapid Spin","Recover","Avalanche","Toxic"]}
+    "ZU Defensive Rapid Spin": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Rapid Spin","Recover","Avalanche","Toxic"]},
+    "OU Physical Wall": {"ability":"Sturdy","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"at":88,"df":168},"moves":["Avalanche","Recover","Rapid Spin","Earthquake"]}
   },
   "Noibat": {
     "LC Life Orb": {"level":5,"ability":"Infiltrator","item":"Life Orb","nature":"Timid","ivs":{"hp":9},"evs":{"sa":236,"sd":36,"sp":236},"moves":["Draco Meteor","Hurricane","Heat Wave","Tailwind"]}
@@ -734,11 +734,11 @@ var SETDEX_SM = {
   },
   "Golem-Alola": {
     "PU Trapper": {"ability":"Magnet Pull","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Fire Punch","Thunder Punch","Stone Edge"]},
-    "ZU Steel Trapper": {"ability":"Magnet Pull","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sa":4,"sp":252},"moves":["Stone Edge","Fire Punch","Earthquake","Volt Switch"]},
-    "OU Choice Scarf": {"ability":"Magnet Pull","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Wild Charge","Earthquake","Fire Punch","Explosion"]},
     "Monotype Trapper (Electric)": {"ability":"Magnet Pull","item":"Air Balloon","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Earthquake","Fire Punch","Stone Edge"]},
     "Monotype Suicide Lead (Electric)": {"ability":"Galvanize","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Return","Stone Edge","Explosion"]},
-    "Monotype Trapper (Rock)": {"ability":"Magnet Pull","item":"Choice Band","nature":"Jolly","evs":{"hp":20,"at":252,"sp":236},"moves":["Fire Punch","Wild Charge","Earthquake","Stone Edge"]}
+    "Monotype Trapper (Rock)": {"ability":"Magnet Pull","item":"Choice Band","nature":"Jolly","evs":{"hp":20,"at":252,"sp":236},"moves":["Fire Punch","Wild Charge","Earthquake","Stone Edge"]},
+    "ZU Steel Trapper": {"ability":"Magnet Pull","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sa":4,"sp":252},"moves":["Stone Edge","Fire Punch","Earthquake","Volt Switch"]},
+    "OU Choice Scarf": {"ability":"Magnet Pull","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Wild Charge","Earthquake","Fire Punch","Explosion"]}
   },
   "Ponyta": {
     "LC Physical Firium Z": {"level":5,"ability":"Flame Body","item":"Firium Z","nature":"Jolly","evs":{"at":236,"df":76,"sp":196},"moves":["Flame Charge","Flare Blitz","High Horsepower","Morning Sun"]},
@@ -1042,20 +1042,20 @@ var SETDEX_SM = {
     "PU Substitute + Nasty Plot": {"ability":"Dry Skin","item":"Normalium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Substitute","Nasty Plot","Lovely Kiss","Ice Beam"]}
   },
   "Pinsir": {
+    "1v1 Offensive": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"df":16,"sp":240},"moves":["Giga Impact","Substitute","Earthquake","Swords Dance"]},
     "PU Z-Me First": {"ability":"Moxie","item":"Normalium Z","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Me First","X-Scissor","Earthquake","Stone Edge"]},
     "PU Swords Dance": {"ability":"Mold Breaker","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","X-Scissor","Earthquake","Stone Edge"]},
-    "OU Swords Dance": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
-    "1v1 Offensive": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"df":16,"sp":240},"moves":["Giga Impact","Substitute","Earthquake","Swords Dance"]},
     "Monotype Swords Dance (Bug)": {"ability":"Moxie","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
     "ZU Swords Dance": {"ability":"Mold Breaker","item":"Buginium Z","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","X-Scissor","Earthquake","Stone Edge"]},
     "ZU Z-Me First": {"ability":"Moxie","item":"Normalium Z","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Me First","X-Scissor","Earthquake","Stone Edge"]},
     "ZU Choice Scarf": {"ability":"Moxie","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["X-Scissor","Earthquake","Stone Edge","Knock Off"]},
+    "OU Swords Dance": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
     "CAP Showdown Usage": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Quick Attack","Close Combat","Return"]}
   },
   "Pinsir-Mega": {
-    "OU Swords Dance": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
     "1v1 Offensive": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"df":16,"sp":240},"moves":["Giga Impact","Substitute","Earthquake","Swords Dance"]},
     "Monotype Swords Dance (Bug)": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
+    "OU Swords Dance": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
     "CAP Showdown Usage": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Quick Attack","Close Combat","Return"]}
   },
   "Tauros": {
@@ -1088,13 +1088,13 @@ var SETDEX_SM = {
     "ZU Showdown Usage": {"ability":"Water Absorb","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":56,"sd":200},"moves":["Freeze-Dry","Hydro Pump","Surf","Ice Beam"]}
   },
   "Ditto": {
-    "VGC 2019 Imposter": {"level":50,"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Transform"]},
+    "ZU Choice Scarf": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"hp":30,"at":30,"df":30,"sd":30,"sp":2},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
     "Ubers no u (Revenge Killer)": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":248,"at":8,"df":252},"moves":["Transform"]},
     "RU Revenge Killer": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"sa":30,"sd":30},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
     "PU Imposter": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"at":30,"sa":30,"sp":0},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
     "OU Imposter": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
     "Monotype Revenge Killer": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"at":30,"sa":30,"sp":0},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
-    "ZU Choice Scarf": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"hp":30,"at":30,"df":30,"sd":30,"sp":2},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
+    "VGC 2019 Imposter": {"level":50,"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Transform"]},
     "Battle Spot Singles Imposter!": {"level":50,"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"at":4,"df":252},"moves":["Transform"]},
     "1v1 Showdown Usage": {"ability":"Imposter","item":"Choice Scarf","nature":"Relaxed","evs":{"hp":248,"df":252,"sd":8},"moves":["Transform"]},
     "Anything Goes Showdown Usage": {"ability":"Imposter","item":"Choice Scarf","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Transform"]}
@@ -1204,7 +1204,7 @@ var SETDEX_SM = {
     "LC Dragon Dance": {"level":5,"ability":"Shed Skin","item":"Life Orb","nature":"Adamant","ivs":{"hp":17},"evs":{"at":244,"sd":36,"sp":196},"moves":["Dragon Dance","Outrage","Extreme Speed","Iron Tail"]}
   },
   "Dragonite": {
-    "OU Flyinium Z Breaker": {"ability":"Multiscale","item":"Flyinium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Fly","Earthquake","Extreme Speed"]},
+    "OU Dragon Dance": {"ability":"Multiscale","item":"Flyinium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Fly","Earthquake","Extreme Speed"]},
     "Monotype Physical Wallbreaker (Dragon)": {"ability":"Multiscale","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Extreme Speed","Fire Punch","Superpower"]},
     "Monotype Choice Band (Flying)": {"ability":"Multiscale","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Outrage","Extreme Speed","Fire Punch","Superpower"]},
     "Monotype Dragon Dance (Flying)": {"ability":"Multiscale","item":"Dragonium Z","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Outrage","Extreme Speed","Earthquake"]},
@@ -2080,12 +2080,12 @@ var SETDEX_SM = {
     "LC Sweeper": {"level":5,"ability":"Simple","item":"Eviolite","nature":"Modest","evs":{"hp":36,"sa":236,"sp":236},"moves":["Flame Charge","Fire Blast","Earth Power","Growth"]}
   },
   "Camerupt": {
+    "ZU Choice Specs": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Eruption","Fire Blast","Earth Power","Hidden Power Ice"]},
+    "ZU Specially Defensive": {"ability":"Solid Rock","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Stealth Rock","Lava Plume","Toxic","Earth Power"]},
     "RU Tank": {"ability":"Solid Rock","item":"Cameruptite","nature":"Calm","evs":{"hp":252,"sd":172,"sp":84},"moves":["Fire Blast","Earth Power","Rest","Sleep Talk"]},
     "1v1 Yawn + Protect": {"ability":"Solid Rock","item":"Cameruptite","nature":"Modest","evs":{"hp":252,"df":96,"sa":128,"sd":32},"moves":["Yawn","Protect","Ancient Power","Fire Blast"]},
     "PU Wallbreaker": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Eruption","Overheat","Flamethrower","Earth Power"]},
     "VGC 2018 Trick Room Attacker": {"level":50,"ability":"Solid Rock","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Heat Wave","Earth Power","Nature Power","Protect"]},
-    "ZU Choice Specs": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Eruption","Fire Blast","Earth Power","Hidden Power Ice"]},
-    "ZU Specially Defensive": {"ability":"Solid Rock","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Stealth Rock","Lava Plume","Toxic","Earth Power"]},
     "Doubles OU Trick Room Attacker": {"ability":"Solid Rock","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sa":252},"moves":["Heat Wave","Earth Power","Substitute","Protect"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Anger Point","item":"Wiki Berry","nature":"Brave","evs":{"hp":252,"at":4,"sa":252},"moves":["Earthquake","Rock Slide","Protect","Eruption"]}
   },
@@ -2123,26 +2123,26 @@ var SETDEX_SM = {
     "ZU Swords Dance": {"ability":"Water Absorb","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Seed Bomb","Sucker Punch","Superpower"]}
   },
   "Altaria": {
-    "UU Dragon Dance": {"ability":"Natural Cure","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Roost"]},
-    "UU Refresh": {"ability":"Natural Cure","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Refresh","Roost"]},
-    "UU Defensive": {"ability":"Natural Cure","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Return","Flamethrower","Heal Bell","Roost"]},
-    "UU Special Tank": {"ability":"Natural Cure","item":"Altarianite","nature":"Modest","evs":{"hp":248,"df":4,"sa":160,"sp":96},"moves":["Hyper Voice","Fire Blast","Toxic","Roost"]},
     "1v1 Bulky Attacker": {"ability":"Cloud Nine","item":"Altarianite","nature":"Calm","evs":{"hp":252,"df":132,"sa":16,"sd":92,"sp":16},"moves":["Cotton Guard","Roost","Hyper Voice","Fire Blast"]},
     "PU Defensive Defog": {"ability":"Natural Cure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":160,"sp":96},"moves":["Defog","Toxic","Dragon Pulse","Roost"]},
     "Monotype Offensive Dragon Dance (Dragon)": {"ability":"Natural Cure","item":"Altarianite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Return","Dragon Dance","Roost","Earthquake"]},
     "Monotype Bulky Dragon Dance (Dragon)": {"ability":"Natural Cure","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":16,"sp":240},"moves":["Return","Dragon Dance","Roost","Refresh"]},
     "Monotype Support (Dragon)": {"ability":"Natural Cure","item":"Altarianite","nature":"Jolly","evs":{"hp":252,"df":80,"sp":176},"moves":["Body Slam","Roost","Defog","Heal Bell"]},
-    "ZU Defensive Defog": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":160,"sp":96},"moves":["Defog","Roost","Toxic","Flamethrower"]}
+    "ZU Defensive Defog": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":160,"sp":96},"moves":["Defog","Roost","Toxic","Flamethrower"]},
+    "UU Dragon Dance": {"ability":"Natural Cure","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Roost"]},
+    "UU Refresh": {"ability":"Natural Cure","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Refresh","Roost"]},
+    "UU Defensive": {"ability":"Natural Cure","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Return","Flamethrower","Heal Bell","Roost"]},
+    "UU Special Tank": {"ability":"Natural Cure","item":"Altarianite","nature":"Modest","evs":{"hp":248,"df":4,"sa":160,"sp":96},"moves":["Hyper Voice","Fire Blast","Toxic","Roost"]}
   },
   "Altaria-Mega": {
-    "UU Dragon Dance": {"ability":"Pixilate","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Roost"]},
-    "UU Refresh": {"ability":"Pixilate","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Refresh","Roost"]},
-    "UU Defensive": {"ability":"Pixilate","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Return","Flamethrower","Heal Bell","Roost"]},
-    "UU Special Tank": {"ability":"Pixilate","item":"Altarianite","nature":"Modest","evs":{"hp":248,"df":4,"sa":160,"sp":96},"moves":["Hyper Voice","Fire Blast","Toxic","Roost"]},
     "1v1 Bulky Attacker": {"ability":"Pixilate","item":"Altarianite","nature":"Calm","evs":{"hp":252,"df":132,"sa":16,"sd":92,"sp":16},"moves":["Cotton Guard","Roost","Hyper Voice","Fire Blast"]},
     "Monotype Offensive Dragon Dance (Dragon)": {"ability":"Pixilate","item":"Altarianite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Return","Dragon Dance","Roost","Earthquake"]},
     "Monotype Bulky Dragon Dance (Dragon)": {"ability":"Pixilate","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":16,"sp":240},"moves":["Return","Dragon Dance","Roost","Refresh"]},
-    "Monotype Support (Dragon)": {"ability":"Pixilate","item":"Altarianite","nature":"Jolly","evs":{"hp":252,"df":80,"sp":176},"moves":["Body Slam","Roost","Defog","Heal Bell"]}
+    "Monotype Support (Dragon)": {"ability":"Pixilate","item":"Altarianite","nature":"Jolly","evs":{"hp":252,"df":80,"sp":176},"moves":["Body Slam","Roost","Defog","Heal Bell"]},
+    "UU Dragon Dance": {"ability":"Pixilate","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Roost"]},
+    "UU Refresh": {"ability":"Pixilate","item":"Altarianite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Return","Refresh","Roost"]},
+    "UU Defensive": {"ability":"Pixilate","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Return","Flamethrower","Heal Bell","Roost"]},
+    "UU Special Tank": {"ability":"Pixilate","item":"Altarianite","nature":"Modest","evs":{"hp":248,"df":4,"sa":160,"sp":96},"moves":["Hyper Voice","Fire Blast","Toxic","Roost"]}
   },
   "Zangoose": {
     "PU Toxic Orb Wallbreaker": {"ability":"Toxic Boost","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Facade","Knock Off","Close Combat","Quick Attack"]},
@@ -2532,14 +2532,14 @@ var SETDEX_SM = {
     "LC Defensive Stealth Rock": {"level":5,"ability":"Overgrow","item":"Eviolite","nature":"Careful","evs":{"hp":76,"at":52,"df":244,"sd":76,"sp":28},"moves":["Stealth Rock","Synthesis","Bullet Seed","Superpower"]}
   },
   "Torterra": {
-    "RU Defensive": {"ability":"Overgrow","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Stealth Rock","Wood Hammer","Earthquake","Synthesis"]},
-    "PU Rock Polish": {"ability":"Overgrow","item":"Grassium Z","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Polish","Wood Hammer","Earthquake","Stone Edge"]},
-    "PU Stealth Rock": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":44,"sd":212},"moves":["Stealth Rock","Wood Hammer","Earthquake","Synthesis"]},
-    "PU Bulky Swords Dance": {"ability":"Shell Armor","item":"Grassium Z","nature":"Careful","evs":{"hp":252,"sd":160,"sp":96},"moves":["Swords Dance","Wood Hammer","Earthquake","Synthesis"]},
     "ZU Stealth Rock": {"ability":"Overgrow","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Synthesis","Wood Hammer","Earthquake"]},
     "ZU Swords Dance": {"ability":"Overgrow","item":"Rockium Z","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Stone Edge","Wood Hammer","Earthquake"]},
     "ZU Choice Band": {"ability":"Overgrow","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Wood Hammer","Earthquake","Stone Edge","Crunch"]},
     "ZU Rock Polish": {"ability":"Overgrow","item":"Grassium Z","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Rock Polish","Stone Edge","Wood Hammer","Earthquake"]},
+    "RU Defensive": {"ability":"Overgrow","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Stealth Rock","Wood Hammer","Earthquake","Synthesis"]},
+    "PU Rock Polish": {"ability":"Overgrow","item":"Grassium Z","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Polish","Wood Hammer","Earthquake","Stone Edge"]},
+    "PU Stealth Rock": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":44,"sd":212},"moves":["Stealth Rock","Wood Hammer","Earthquake","Synthesis"]},
+    "PU Bulky Swords Dance": {"ability":"Shell Armor","item":"Grassium Z","nature":"Careful","evs":{"hp":252,"sd":160,"sp":96},"moves":["Swords Dance","Wood Hammer","Earthquake","Synthesis"]},
     "NU Offensive": {"ability":"Overgrow","item":"Rockium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Wood Hammer","Earthquake","Stone Edge","Rock Polish"]}
   },
   "Chimchar": {
@@ -4012,6 +4012,12 @@ var SETDEX_SM = {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Protean","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Gunk Shot","Dark Pulse","Hydro Pump","Protect"]},
     "Anything Goes Showdown Usage": {"ability":"Protean","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Dark Pulse","Water Shuriken","Shadow Sneak"]}
   },
+  "Greninja-Ash": {
+    "Ubers Lead": {"ability":"Battle Bond","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Dark Pulse","Substitute"]},
+    "OU Offensive": {"ability":"Battle Bond","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Dark Pulse","Water Shuriken","Spikes"]},
+    "CAP Choice Specs": {"ability":"Battle Bond","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Dark Pulse","Water Shuriken","Spikes"]},
+    "Anything Goes Showdown Usage": {"ability":"Battle Bond","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Water Shuriken","Ice Beam","Hydro Pump"]}
+  },
   "Bunnelby": {
     "LC Choice Scarf": {"level":5,"ability":"Huge Power","item":"Choice Scarf","nature":"Adamant","evs":{"at":228,"df":52,"sp":220},"moves":["Return","U-turn","Earthquake","Stone Edge"]},
     "LC Life Orb": {"level":5,"ability":"Huge Power","item":"Life Orb","nature":"Adamant","ivs":{"hp":4},"evs":{"at":228,"df":52,"sp":220},"moves":["Return","Quick Attack","Earthquake","Iron Head"]}
@@ -4519,12 +4525,12 @@ var SETDEX_SM = {
     "ZU Unaware Wall": {"ability":"Unaware","item":"Poisonium Z","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Recover","Spite","Toxic","Rest"]},
     "UU Specially Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Block","Toxic","Soak","Recover"]},
     "RU Unaware Wall": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Toxic","Recover","Soak","Block"]},
+    "1v1 Stall": {"ability":"Unaware","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":124,"sd":136},"moves":["Rest","Spite","Toxic","Soak"]},
     "PU Unaware Trapper": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Block","Spite","Recover","Rest"]},
     "OU Unaware Wall": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Block","Recover","Spite","Rest"]},
     "NU Unaware Wall": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Rest","Block","Spite"]},
     "Battle Spot Singles Toxic Staller": {"level":50,"ability":"Unaware","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Toxic","Recover","Soak","Counter"]},
     "Battle Spot Singles Baton Passer": {"level":50,"ability":"Unaware","item":"Poisonium Z","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Purify","Recover","Toxic","Baton Pass"]},
-    "1v1 Stall": {"ability":"Unaware","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":124,"sd":136},"moves":["Rest","Spite","Toxic","Soak"]},
     "Monotype Showdown Usage": {"ability":"Innards Out","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Toxic","Protect","Counter"]},
     "CAP Showdown Usage": {"ability":"Innards Out","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Recover","Toxic","Soak","Protect"]}
   },
@@ -4994,10 +5000,6 @@ var SETDEX_SM = {
   },
   "Araquanid-Totem": {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Water Bubble","item":"Waterium Z","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Liquidation","Protect","Leech Life","Poison Jab"]}
-  },
-  "Greninja-Ash": {
-    "CAP Showdown Usage": {"ability":"Battle Bond","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Water Shuriken","Hydro Pump","Spikes"]},
-    "Anything Goes Showdown Usage": {"ability":"Battle Bond","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Water Shuriken","Ice Beam","Hydro Pump"]}
   },
   "Flarelm": {
     "CAP Showdown Usage": {"ability":"Battle Armor","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":252,"sa":8},"moves":["Synthesis","Will-O-Wisp","Leech Seed","Stealth Rock"]}
