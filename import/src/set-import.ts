@@ -53,7 +53,6 @@ interface CalcSet {
 }
 
 const VALIDATORS: {[format: string]: TeamValidator} = {};
-
 // These formats don't exist in @pkmn/sim so we make them bypass
 // the validator which is the only area that needs the Format object
 const UNSUPPORTED: {[format: string]: string} = {
@@ -62,13 +61,37 @@ const UNSUPPORTED: {[format: string]: string} = {
   'gen9lc': '[Gen 9] LC',
   'gen9vgc2023regulatione': '[Gen 9] VGC 2023 Regulation E',
 };
-
 const SHORT_STAT_FORM: {[stat: string]: keyof CalcStatsTable} =
 {'hp': 'hp', 'atk': 'at', 'def': 'df', 'spa': 'sa', 'spd': 'sd', 'spe': 'sp'};
-
 const USELESS_NATURES = ['Bashful', 'Docile', 'Hardy', 'Quirky', 'Serious'];
-
 const CROWNED = {'Zacian-Crowned': 'Behemoth Blade', 'Zamazenta-Crowned': 'Behemoth Bash'};
+// These 'rankings' are pulled completely out of my ass
+const TIER_RANKINGS: {[tier: string]: number} = {
+  ou: 0,
+  ubers: 1,
+  uu: 2,
+  ru: 3,
+  nu: 4,
+  pu: 5,
+  lc: 6,
+  doublesou: 7,
+  // VGC/BSS
+  nintendo: 8,
+  monotype: 9,
+  nationaldex: 10,
+  nationaldexubers: 11,
+  nationaldexuu: 12,
+  nationaldexru: 13,
+  nationaldexmonotype: 14,
+  anythinggoes: 15,
+  '1v1': 16,
+  balancedhackmons: 17,
+  purehackmons: 18,
+  almostanyability: 19,
+  zu: 20,
+  cap: 21,
+  tradebacksou: 22,
+};
 
 function first<T>(v: T[] | T): T {
   return Array.isArray(v) ? v[0] : v;
@@ -91,6 +114,12 @@ function top(weighted: {[key: string]: number}, n = 1): string | string[] | unde
     .sort((a, b) => b[1] - a[1])
     .slice(0, n)
     .map(x => x[0]);
+}
+
+function getTierRanking(tier: string): number {
+  const isNintendo =
+    tier.startsWith('vgc') || tier.startsWith('battlestadium') || tier.startsWith('battlespot');
+  return TIER_RANKINGS[isNintendo ? 'nintendo' : tier] ?? 100;
 }
 
 function toCalcStatsTable(
@@ -407,7 +436,6 @@ async function fetchStats(formatID: ID): Promise<DisplayStatistics | false> {
   if (resp.status === 404) return false;
   return resp.json();
 }
-
 async function importGen(
   gen: Generation
 ): Promise<{ [specie: string]: { [name: string]: CalcSet } }> {
@@ -416,7 +444,8 @@ async function importGen(
   const formatIDs = new Set<ID>();
   const statsIgnore: {[specie: string]: Set<ID>} = {};
   for (const [specieName, formats] of Object.entries(dexSets)) {
-    for (let [formatID, sets] of Object.entries(formats) as unknown as [ID, DexSet][]) {
+    for (let [formatID, sets] of Object.entries(formats).sort((a, b) =>
+      getTierRanking(a[0]) - getTierRanking(b[0])) as unknown as [ID, DexSet][]) {
       formatID = `gen${gen.num}${formatID}` as ID;
       const psFormat = toPSFormat(formatID);
       const format = UNSUPPORTED[psFormat] ? null : Dex.formats.get(psFormat);
@@ -452,7 +481,8 @@ async function importGen(
       }
     }
   }
-  for (const formatID of formatIDs) {
+  for (const formatID of [...formatIDs].sort((a, b) =>
+    getTierRanking(a[0]) - getTierRanking(b[0]))) {
     const psFormat = toPSFormat(formatID);
     const format = UNSUPPORTED[psFormat] ? null : Dex.formats.get(psFormat);
     if (format && !format.exists) {
