@@ -215,8 +215,7 @@ var SETDEX_BW = {
   },
   "Hitmontop": {
     "UU Rapid Spin": {"ability":"Intimidate","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Rapid Spin","Foresight","Sucker Punch","Close Combat"]},
-    "Doubles OU Offensive Utility": {"ability":"Intimidate","item":"Fighting Gem","nature":"Adamant","evs":{"hp":124,"at":252,"sp":132},"moves":["Fake Out","Close Combat","Feint","Wide Guard"]},
-    "Doubles OU Support": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Careful","evs":{"hp":252,"at":64,"df":64,"sd":128},"moves":["Fake Out","Close Combat","Feint","Wide Guard"]}
+    "Doubles OU Offensive Utility": {"ability":"Intimidate","item":"Fighting Gem","nature":"Adamant","evs":{"hp":192,"at":252,"sp":64},"moves":["Fake Out","Close Combat","Toxic","Wide Guard"]}
   },
   "Treecko": {
     "LC Attacking Lead": {"level":5,"ability":"Overgrow","item":"Eviolite","nature":"Hasty","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":36,"sa":240,"sp":200},"moves":["Leaf Storm","Hidden Power Fire","Giga Drain","Quick Attack"]},
@@ -597,8 +596,7 @@ var SETDEX_BW = {
     "UU Offensive": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Calm Mind","Ice Beam","Hidden Power Electric"]},
     "UU CroCune": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Rest","Sleep Talk","Scald"]},
     "UU RestTalk": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Sleep Talk","Scald","Roar"]},
-    "Doubles OU Bulky Support": {"ability":"Pressure","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":140,"sp":116},"moves":["Scald","Snarl","Icy Wind","Protect"]},
-    "Doubles OU Offensive Tailwind": {"ability":"Pressure","item":"Wacan Berry","nature":"Timid","evs":{"hp":120,"sa":252,"sp":136},"moves":["Tailwind","Scald","Ice Beam","Protect"]},
+    "Doubles OU Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":216,"sd":40},"moves":["Scald","Calm Mind","Substitute","Protect"]},
     "1v1 Showdown Usage": {"ability":"Pressure","item":"Choice Specs","nature":"Relaxed","evs":{"hp":248,"df":8,"sa":252},"moves":["Surf","Ice Beam","Calm Mind","Whirlpool"]}
   },
   "Swellow": {
@@ -1660,7 +1658,7 @@ var SETDEX_BW = {
     "OU Bulky Setup Sweeper": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","evs":{"hp":236,"sd":212,"sp":60},"moves":["Swords Dance","Protect","Drain Punch","Facade"]},
     "OU SubPunch": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Adamant","evs":{"hp":236,"at":252,"sd":20},"moves":["Substitute","Protect","Focus Punch","Seed Bomb"]},
     "OU Technician": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Bullet Seed","Mach Punch","Low Sweep","Superpower"]},
-    "Doubles OU Physical Attacker": {"ability":"Technician","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Spore","Mach Punch","Bullet Seed","Protect"]}
+    "Doubles OU Offensive Utility": {"ability":"Technician","item":"Fighting Gem","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Superpower","Bullet Seed","Spore","Mach Punch"]}
   },
   "Vigoroth": {
     "NU Stallbreaker": {"ability":"Vital Spirit","item":"Eviolite","nature":"Careful","evs":{"hp":252,"sd":224,"sp":32},"moves":["Taunt","Toxic","Slack Off","Return"]},
@@ -1930,9 +1928,7 @@ var SETDEX_BW = {
     "OU Choice Scarf": {"ability":"Moxie","item":"Choice Scarf","nature":"Naive","ivs":{"at":30,"df":30},"evs":{"at":252,"sa":72,"sp":184},"moves":["Outrage","Earthquake","Hidden Power Ice","Dragon Claw"]},
     "Ubers Choice Scarf": {"ability":"Moxie","item":"Choice Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Outrage","Dragon Claw","Earthquake","Fire Blast"]},
     "Ubers Dragon Dance": {"ability":"Intimidate","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Dragon Dance","Outrage","Earthquake","Fire Blast"]},
-    "Doubles OU Special Attacker": {"ability":"Intimidate","item":"Dragon Gem","nature":"Modest","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Heat Wave","Hidden Power Flying","Tailwind"]},
-    "Doubles OU Mixed Attacker": {"ability":"Intimidate","item":"Life Orb","nature":"Naive","evs":{"at":72,"sa":184,"sp":252},"moves":["Draco Meteor","Earthquake","Dragon Claw","Protect"]},
-    "Doubles OU Choice": {"ability":"Intimidate","item":"Choice Scarf","nature":"Modest","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Heat Wave","Hidden Power Flying","Hydro Pump"]}
+    "Doubles OU Offensive Tailwind Setter": {"ability":"Intimidate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Fire Blast","Hydro Pump","Tailwind"]}
   },
   "Metang": {
     "RU THE MIGHTY METANG": {"ability":"Clear Body","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Stealth Rock","Meteor Mash","Earthquake","Explosion"]},
@@ -1941,8 +1937,7 @@ var SETDEX_BW = {
   },
   "Metagross": {
     "OU Stealth Rock": {"ability":"Clear Body","item":"Custap Berry","nature":"Adamant","evs":{"hp":252,"at":96,"sd":160},"moves":["Stealth Rock","Pursuit","Earthquake","Explosion"]},
-    "Doubles OU Tank": {"ability":"Clear Body","item":"Occa Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Meteor Mash","Bullet Punch","Zen Headbutt","Protect"]},
-    "Doubles OU Choice Scarf": {"ability":"Clear Body","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Meteor Mash","Ice Punch","Zen Headbutt","Trick"]},
+    "Doubles OU Substitute": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Meteor Mash","Zen Headbutt","Substitute","Protect"]},
     "1v1 Showdown Usage": {"ability":"Clear Body","item":"Psychic Gem","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Meteor Mash","Bullet Punch","Zen Headbutt","Earthquake"]}
   },
   "Latias": {
@@ -2009,7 +2004,7 @@ var SETDEX_BW = {
     "Ubers Focus Sash Attacker": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Psycho Boost","Ice Beam","Superpower","Extreme Speed"]},
     "Ubers Sash Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","ivs":{"at":30,"sa":30,"sp":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Psycho Boost","Hidden Power Fire","Ice Beam"]},
     "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Psycho Boost","Ice Beam","Superpower","Extreme Speed"]},
-    "Doubles OU Mixed Attacker": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":20,"sa":252,"sp":236},"moves":["Psycho Boost","Dark Pulse","Superpower","Protect"]}
+    "Doubles OU Mixed Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Naive","evs":{"at":136,"sa":184,"sp":188},"moves":["Psycho Boost","Superpower","Ice Beam","Detect"]}
   },
   "Deoxys-Defense": {
     "Ubers Agility + Taunt": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":108,"sp":148},"moves":["Taunt","Agility","Toxic","Recover"]},
@@ -2441,7 +2436,7 @@ var SETDEX_BW = {
     "Ubers Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},
     "Ubers Special Sweeper": {"ability":"Serene Grace","item":"Life Orb","nature":"Timid","ivs":{"hp":29,"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Fire"]},
     "Ubers Choice Specs": {"ability":"Serene Grace","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},
-    "Doubles OU Offensive": {"ability":"Serene Grace","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Air Slash","Seed Flare","Earth Power","Protect"]}
+    "Doubles OU Offensive": {"ability":"Serene Grace","item":"Grass Gem","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Air Slash","Substitute","Protect"]}
   },
   "Victini": {
     "OU Choice Band": {"ability":"Victory Star","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["V-create","Bolt Strike","Brick Break","U-turn"]},
@@ -2572,7 +2567,7 @@ var SETDEX_BW = {
     "UU Dragon Dance": {"ability":"Moxie","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","High Jump Kick","Crunch","Ice Punch"]},
     "UU Bulk Up": {"ability":"Shed Skin","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Drain Punch","Crunch","Rest"]},
     "UU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":232,"at":252,"sd":4,"sp":20},"moves":["High Jump Kick","Crunch","Ice Punch","Drain Punch"]},
-    "Doubles OU Offensive Support": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Fake Out","Drain Punch","Crunch","Detect"]},
+    "Doubles OU Fake Out": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Careful","evs":{"hp":252,"at":176,"sd":80},"moves":["Fake Out","Drain Punch","Crunch","Detect"]},
     "1v1 Chople Counter": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":172,"sd":84},"moves":["Fake Out","High Jump Kick","Payback","Counter"]}
   },
   "Sigilyph": {
@@ -2819,7 +2814,7 @@ var SETDEX_BW = {
   },
   "Bisharp": {
     "UU Swords Dance": {"ability":"Defiant","item":"Leftovers","nature":"Adamant","evs":{"hp":52,"at":252,"sp":204},"moves":["Swords Dance","Sucker Punch","Substitute","Low Kick"]},
-    "Doubles OU Defiant": {"ability":"Defiant","item":"Dark Gem","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Sucker Punch","Iron Head","Low Kick","Protect"]}
+    "Doubles OU Physical Attacker": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Night Slash","Sucker Punch","Low Kick","Protect"]}
   },
   "Bouffalant": {
     "UU Swords Dance": {"ability":"Reckless","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Swords Dance","Head Charge","Earthquake","Wild Charge"]},
@@ -2965,10 +2960,9 @@ var SETDEX_BW = {
   "Kyurem-Black": {
     "OU Choice Band": {"ability":"Teravolt","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Outrage","Dragon Claw","Fusion Bolt","Ice Beam"]},
     "OU Substitute Attacker": {"ability":"Teravolt","item":"Leftovers","nature":"Mild","evs":{"hp":56,"sa":228,"sp":224},"moves":["Substitute","Ice Beam","Fusion Bolt","Earth Power"]},
-    "Doubles OU Choice Band": {"ability":"Teravolt","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Dragon Claw","Fusion Bolt","Outrage","Sleep Talk"]},
-    "Doubles OU Substitute": {"ability":"Teravolt","item":"Leftovers","nature":"Modest","evs":{"hp":192,"sa":36,"sd":52,"sp":224},"moves":["Ice Beam","Earth Power","Substitute","Protect"]},
-    "Doubles OU Mixed Attacker": {"ability":"Teravolt","item":"Life Orb","nature":"Naughty","evs":{"at":228,"sa":44,"sp":236},"moves":["Dragon Claw","Fusion Bolt","Earth Power","Protect"]},
-    "Doubles OU Choice Scarf": {"ability":"Teravolt","item":"Choice Scarf","nature":"Naughty","evs":{"at":252,"sa":104,"sp":152},"moves":["Dragon Claw","Ice Beam","Fusion Bolt","Rock Slide"]}
+    "Doubles OU Choice Band": {"ability":"Teravolt","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Dragon Claw","Fusion Bolt","Sleep Talk"]},
+    "Doubles OU Substitute": {"ability":"Teravolt","item":"Leftovers","nature":"Timid","evs":{"hp":168,"df":8,"sa":108,"sp":224},"moves":["Ice Beam","Earth Power","Substitute","Protect"]},
+    "Doubles OU Choice Scarf": {"ability":"Teravolt","item":"Choice Scarf","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Ice Beam","Earth Power","Fusion Bolt","Dragon Claw"]}
   },
   "Kyurem-White": {
     "Ubers Choice Specs": {"ability":"Turboblaze","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Ice Beam","Focus Blast","Fusion Flare"]},
@@ -2981,7 +2975,7 @@ var SETDEX_BW = {
     "OU Leftovers Attacker": {"ability":"Justified","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Scald","Secret Sword","Hidden Power Ice","Protect"]},
     "OU Toxic + Protect": {"ability":"Justified","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Toxic","Protect","Scald","Secret Sword"]},
     "OU Calm Mind": {"ability":"Justified","item":"Leftovers","nature":"Timid","ivs":{"df":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Hydro Pump","Secret Sword","Hidden Power Ghost"]},
-    "Doubles OU All-Out Attacker": {"ability":"Justified","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Secret Sword","Protect","Icy Wind"]},
+    "Doubles OU Special Attacker": {"ability":"Justified","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Secret Sword","Toxic","Protect"]},
     "1v1 Bulky Reflect": {"ability":"Justified","item":"Water Gem","nature":"Timid","evs":{"hp":36,"df":240,"sa":24,"sp":208},"moves":["Reflect","Hydro Pump","Secret Sword","Taunt"]},
     "1v1 All-out Offensive": {"ability":"Justified","item":"Water Gem","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Secret Sword","Icy Wind","Taunt"]}
   },
@@ -2991,7 +2985,7 @@ var SETDEX_BW = {
     "OU Leftovers Attacker": {"ability":"Justified","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Scald","Secret Sword","Hidden Power Ice","Protect"]},
     "OU Toxic + Protect": {"ability":"Justified","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Toxic","Protect","Scald","Secret Sword"]},
     "OU Calm Mind": {"ability":"Justified","item":"Leftovers","nature":"Timid","ivs":{"df":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Hydro Pump","Secret Sword","Hidden Power Ghost"]},
-    "Doubles OU All-Out Attacker": {"ability":"Justified","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Secret Sword","Protect","Icy Wind"]},
+    "Doubles OU Special Attacker": {"ability":"Justified","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Secret Sword","Toxic","Protect"]},
     "1v1 Bulky Reflect": {"ability":"Justified","item":"Water Gem","nature":"Timid","evs":{"hp":36,"df":240,"sa":24,"sp":208},"moves":["Reflect","Hydro Pump","Secret Sword","Taunt"]},
     "1v1 All-out Offensive": {"ability":"Justified","item":"Water Gem","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Secret Sword","Icy Wind","Taunt"]}
   },

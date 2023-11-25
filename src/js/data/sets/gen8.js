@@ -486,7 +486,7 @@ var SETDEX_SS = {
   "Pinsir": {
     "National Dex Swords Dance": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
     "National Dex Monotype Swords Dance": {"ability":"Moxie","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
-    "ZU All-Out Attacker": {"ability":"Hyper Cutter","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["X-Scissor","Close Combat","Stone Edge","Knock Off"]}
+    "ZU All-out Attacker": {"ability":"Hyper Cutter","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["X-Scissor","Close Combat","Stone Edge","Knock Off"]}
   },
   "Pinsir-Mega": {
     "National Dex Swords Dance": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
@@ -814,7 +814,7 @@ var SETDEX_SS = {
     "National Dex Monotype Showdown Usage": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"at":4,"sd":252},"moves":["Future Sight","Flamethrower","Sludge Bomb","Earthquake"]}
   },
   "Wobbuffet": {
-    "ZU Bulky Death Fodder": {"ability":"Telepathy","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Encore","Counter","Mirror Coat","Destiny Bond"]}
+    "ZU Death Fodder": {"ability":"Telepathy","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Encore","Counter","Mirror Coat","Destiny Bond"]}
   },
   "Dunsparce": {
     "ZU Coil": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"at":252,"sd":252,"sp":4},"moves":["Coil","Roost","Body Slam","Bite"]}
@@ -1277,7 +1277,7 @@ var SETDEX_SS = {
     "ZU Meteor Beam": {"ability":"Levitate","item":"Power Herb","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Meteor Beam","Psyshock","Earth Power","Rock Polish"]}
   },
   "Solrock": {
-    "ZU Physical Wall": {"ability":"Levitate","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":200,"sp":56},"moves":["Morning Sun","Stealth Rock","Will-O-Wisp","Rock Slide"]}
+    "ZU Physical Wall": {"ability":"Levitate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Morning Sun","Stealth Rock","Will-O-Wisp","Rock Slide"]}
   },
   "Whiscash": {
     "ZU Mixed Attacker": {"ability":"Oblivious","item":"Life Orb","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Earth Power","Ice Beam","Stone Edge"]}
@@ -3160,7 +3160,7 @@ var SETDEX_SS = {
     "ZU Mixed Attacker": {"ability":"RKS System","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Flamethrower","Crunch"]}
   },
   "Silvally-Bug": {
-    "ZU Swords Dance": {"ability":"RKS System","item":"Bug Memory","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Rock Slide","Crunch"]}
+    "ZU Swords Dance": {"ability":"RKS System","item":"Bug Memory","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Rock Slide","Psychic Fangs"]}
   },
   "Silvally-Dark": {
     "ZU Swords Dance Sweeper": {"ability":"RKS System","item":"Dark Memory","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","U-turn","Psychic Fangs"]},
@@ -3194,9 +3194,6 @@ var SETDEX_SS = {
   },
   "Silvally-Ground": {
     "NU Swords Dance": {"ability":"RKS System","item":"Ground Memory","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Rock Slide","U-turn"]}
-  },
-  "Silvally-Ice": {
-    "ZU Swords Dance": {"ability":"RKS System","item":"Ice Memory","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Flame Charge","Rock Slide"]}
   },
   "Silvally-Poison": {
     "PU Work Up": {"ability":"RKS System","item":"Poison Memory","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Work Up","Multi-Attack","Flamethrower","Grass Pledge"]},

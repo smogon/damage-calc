@@ -1894,6 +1894,7 @@ var SETDEX_XY = {
     "RU Suicide Lead": {"ability":"Own Tempo","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Spore","Stealth Rock","Sticky Web","Explosion"]},
     "NU Lead": {"ability":"Own Tempo","item":"Focus Sash","nature":"Timid","evs":{"hp":80,"df":96,"sd":80,"sp":252},"moves":["Sticky Web","Stealth Rock","Spore","Skill Swap"]},
     "PU Suicide Lead": {"ability":"Own Tempo","item":"Focus Sash","nature":"Timid","evs":{"df":252,"sd":4,"sp":252},"moves":["Dark Void","Stealth Rock","Sticky Web","Nuzzle"]},
+    "Doubles OU GeoPass": {"ability":"Own Tempo","item":"Power Herb","nature":"Timid","ivs":{"at":0},"evs":{"hp":188,"sd":68,"sp":252},"moves":["Geomancy","Baton Pass","Spore","Spiky Shield"]},
     "VGC 2016 Lady Luck (Support)": {"level":50,"ability":"Moody","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"df":252,"sp":252},"moves":["Dark Void","Spiky Shield","Follow Me","Fake Out"]},
     "Battle Spot Doubles Paintin' the Void": {"level":50,"ability":"Moody","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"df":252,"sp":252},"moves":["Dark Void","Follow Me","Spiky Shield","Tailwind"]},
     "Anything Goes Baton Pass": {"ability":"Moody","item":"Focus Sash","nature":"Timid","evs":{"hp":248,"df":8,"sp":252},"moves":["Spore","Ingrain","Spiky Shield","Baton Pass"]},

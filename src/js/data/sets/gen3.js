@@ -709,7 +709,8 @@ var SETDEX_ADV = {
   },
   "Starmie": {
     "OU Offensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunderbolt","Rapid Spin"]},
-    "OU Defensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":40,"sp":216},"moves":["Rapid Spin","Recover","Surf","Thunder Wave"]}
+    "OU Defensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":40,"sp":216},"moves":["Rapid Spin","Recover","Surf","Thunder Wave"]},
+    "Doubles OU Special Attacker": {"ability":"Natural Cure","item":"Mystic Water","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Psychic","Protect"]}
   },
   "Scyther": {
     "UU Choice Band": {"ability":"Swarm","item":"Choice Band","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Hidden Power Bug","Aerial Ace","Double-Edge","Quick Attack"]},
