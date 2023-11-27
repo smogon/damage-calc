@@ -3510,7 +3510,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Ghost', 'Fighting'],
     bs: {hp: 90, at: 105, df: 90, sa: 65, sd: 110, sp: 65},
     weightkg: 44,
-    abilities: {0: 'Shed Skin'},
+    abilities: {0: 'Air Lock'},
   },
   Rhyperior: {
     types: ['Ground', 'Rock'],
@@ -8622,7 +8622,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Urshifu-Rapid-Strike-Gmax': {
     types: ['Fighting', 'Water'],
     bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
-    weightkg: 105,
+    weightkg: 0,
     abilities: {0: 'Unseen Fist'},
     baseSpecies: 'Urshifu',
   },
@@ -9116,6 +9116,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 130, at: 75, df: 60, sa: 45, sd: 100, sp: 20},
     weightkg: 223,
     abilities: {0: 'Poison Point'},
+  },
+  Cresceidon: {
+    types: ['Water', 'Fairy'],
+    bs: {hp: 80, at: 32, df: 111, sa: 88, sd: 99, sp: 125},
+    weightkg: 999.9,
+    abilities: {0: 'Multiscale'},
   },
   Crocalor: {
     types: ['Fire'],

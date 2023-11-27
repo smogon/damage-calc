@@ -4172,6 +4172,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Razor Leaf': {isSlicing: true},
   'Razor Shell': {isSlicing: true},
   'Sacred Sword': {isSlicing: true},
+  'Secret Sword': {isSlicing: true},
   Sandstorm: {isWind: true},
   Slash: {isSlicing: true},
   'Solar Blade': {isSlicing: true},
