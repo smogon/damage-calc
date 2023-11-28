@@ -2880,7 +2880,7 @@ var SETDEX_SS = {
     "1v1 Stall": {"ability":"Sturdy","item":"Sitrus Berry","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Body Press","Iron Defense","Recover","Icicle Spear"]},
     "1v1 Bulky Band": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"df":252},"moves":["Icicle Spear","Body Press","Heavy Slam","Earthquake"]},
     "1v1 Fast Band": {"ability":"Sturdy","item":"Choice Band","nature":"Impish","evs":{"at":252,"df":36,"sp":220},"moves":["Icicle Spear","Bulldoze","Body Press","Heavy Slam"]},
-    "ZU Showdown Usage": {"ability":"Sturdy","item":"Heavy-Duty Boots","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Body Press","Rapid Spin","Icicle Spear"]}
+    "ZU Defensive Rapid Spin": {"ability":"Sturdy","item":"Heavy-Duty Boots","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Rapid Spin","Recover","Body Press","Avalanche"]}
   },
   "Noivern": {
     "UU Offensive Pivot": {"ability":"Infiltrator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Flamethrower","U-turn","Roost"]},

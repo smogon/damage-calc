@@ -288,7 +288,6 @@ var SETDEX_GSC = {
     "1v1 Scope Lens": {"item":"Scope Lens","moves":["Surf","Ice Beam","Screech","Cross Chop"]}
   },
   "Primeape": {
-    "OU Physical Attacker": {"item":"Leftovers","ivs":{"at":26,"df":26},"moves":["Cross Chop","Rock Slide","Hidden Power Bug","Meditate"]},
     "NU Physical Sweeper": {"item":"Leftovers","moves":["Meditate","Cross Chop","Rock Slide","Substitute"]},
     "1v1 Scope Lens": {"item":"Scope Lens","ivs":{"at":26,"df":26},"moves":["Cross Chop","Screech","Rock Slide","Hidden Power Bug"]}
   },
