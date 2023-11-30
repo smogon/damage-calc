@@ -184,7 +184,7 @@ export function calculateADV(
   }
 
   if (!attacker.hasItem('Sea Incense') && move.hasType(getItemBoostType(attacker.item))) {
-    bp = bp * 1.1;
+    bp = Math.floor(bp * 1.1);
     desc.attackerItem = attacker.item;
   } else if (attacker.hasItem('Sea Incense') && move.hasType('Water')) {
     at = Math.floor(at * 1.05);
