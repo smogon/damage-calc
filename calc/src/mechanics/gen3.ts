@@ -184,6 +184,7 @@ export function calculateADV(
   }
 
   if (!attacker.hasItem('Sea Incense') && move.hasType(getItemBoostType(attacker.item))) {
+    bp = bp * 1.1;
     desc.attackerItem = attacker.item;
   } else if (attacker.hasItem('Sea Incense') && move.hasType('Water')) {
     at = Math.floor(at * 1.05);
@@ -257,10 +258,6 @@ export function calculateADV(
 
   const lv = attacker.level;
   let baseDamage = Math.floor(Math.floor((Math.floor((2 * lv) / 5 + 2) * at * bp) / df) / 50);
-
-  if (!attacker.hasItem('Sea Incense') && move.hasType(getItemBoostType(attacker.item))) {
-    baseDamage = Math.floor(baseDamage * 1.1);
-  }
 
   if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
     baseDamage = Math.floor(baseDamage / 2);
