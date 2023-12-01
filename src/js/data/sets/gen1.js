@@ -58,7 +58,8 @@ var SETDEX_RBY = {
     "UU Mixed Attacker": {"moves":["Thunderbolt","Blizzard","Earthquake","Body Slam"]},
     "NU Mixed Attacker": {"moves":["Earthquake","Thunderbolt","Blizzard","Rock Slide"]},
     "Tradebacks OU Lovely Kiss": {"moves":["Lovely Kiss","Blizzard","Thunderbolt","Earthquake"]},
-    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Thunderbolt","Earthquake"]}
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Thunderbolt","Earthquake"]},
+    "OU Showdown Usage": {"moves":["Earthquake","Blizzard","Thunder","Reflect"]}
   },
   "Clefable": {
     "OU Status Spreader": {"moves":["Mega Kick","Hyper Beam","Blizzard","Thunder Wave"]},
@@ -302,7 +303,7 @@ var SETDEX_RBY = {
     "NU Agility Sweeper": {"moves":["Surf","Blizzard","Hydro Pump","Agility"]}
   },
   "Seaking": {
-    "PU Agility": {"moves":["Surf","Double-Edge","Hyper Beam","Agility"]},
+    "PU Agility": {"moves":["Surf","Agility","Hyper Beam","Blizzard"]},
     "Tradebacks OU Double Dance": {"moves":["Hyper Beam","Surf","Agility","Swords Dance"]}
   },
   "Staryu": {

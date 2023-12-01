@@ -1881,7 +1881,7 @@ var SETDEX_DPP = {
   },
   "Groudon": {
     "Ubers Rock Polish": {"ability":"Drought","item":"Life Orb","nature":"Adamant","evs":{"hp":112,"at":252,"df":8,"sp":136},"moves":["Rock Polish","Earthquake","Stone Edge","Dragon Claw"]},
-    "Ubers Support": {"ability":"Drought","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Earthquake","Stone Edge","Toxic"]},
+    "Ubers Support": {"ability":"Drought","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":4,"sd":252},"moves":["Stealth Rock","Earthquake","Dragon Claw","Lava Plume"]},
     "Ubers Thunder Wave + Swords Dance": {"ability":"Drought","item":"Leftovers","nature":"Adamant","evs":{"hp":200,"at":200,"df":108},"moves":["Thunder Wave","Swords Dance","Earthquake","Stone Edge"]},
     "Ubers Choice Band": {"ability":"Drought","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":224,"df":32},"moves":["Earthquake","Stone Edge","Dragon Claw","Fire Punch"]},
     "Ubers Bulky Rock Polish": {"ability":"Drought","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Rock Polish","Swords Dance","Earthquake","Dragon Claw"]},
@@ -1910,9 +1910,9 @@ var SETDEX_DPP = {
     "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","evs":{"df":112,"sa":146,"sp":252},"moves":["Shadow Ball","Extreme Speed","Stealth Rock","Spikes"]}
   },
   "Deoxys-Attack": {
-    "Ubers Attacking Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","evs":{"at":220,"sa":36,"sp":252},"moves":["Shadow Ball","Extreme Speed","Grass Knot","Superpower"]},
-    "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Stealth Rock","Signal Beam","Extreme Speed","Grass Knot"]},
-    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Ice Beam","Thunder","Superpower","Shadow Ball"]},
+    "Ubers Attacking Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Shadow Ball","Extreme Speed","Thunder","Superpower"]},
+    "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Signal Beam","Extreme Speed","Thunder"]},
+    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Rash","evs":{"at":16,"sa":252,"sp":240},"moves":["Ice Beam","Thunder","Superpower","Extreme Speed"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Focus Sash","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Shadow Ball","Psycho Boost","Superpower","Extreme Speed"]}
   },
   "Deoxys-Defense": {
