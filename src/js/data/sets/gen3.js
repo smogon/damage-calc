@@ -906,9 +906,7 @@ var SETDEX_ADV = {
     "NU Choice Band": {"ability":"Insomnia","item":"Choice Band","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Drill Peck","Hidden Power Ground","Shadow Ball","Double-Edge"]}
   },
   "Slowking": {
-    "UU Calm Mind": {"ability":"Own Tempo","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":176,"sa":68,"sp":12},"moves":["Surf","Flamethrower","Calm Mind","Rest"]},
-    "UU Focus Punch": {"ability":"Own Tempo","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"at":96,"sa":160},"moves":["Focus Punch","Surf","Ice Beam","Substitute"]},
-    "UU Curse": {"ability":"Own Tempo","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":212,"sd":44},"moves":["Curse","Earthquake","Ice Beam","Rest"]}
+    "UU Calm Mind": {"ability":"Own Tempo","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Surf","Psychic","Calm Mind","Rest"]}
   },
   "Misdreavus": {
     "OU Perish Trapper": {"ability":"Levitate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":176,"sd":16,"sp":64},"moves":["Mean Look","Perish Song","Taunt","Protect"]},
