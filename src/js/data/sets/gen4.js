@@ -413,10 +413,10 @@ var SETDEX_DPP = {
     "OU Physical Attacker": {"ability":"Blaze","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Close Combat","Taunt","U-turn"]},
     "OU Choice Band": {"ability":"Blaze","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Close Combat","U-turn","Mach Punch"]},
     "OU Nasty Plot": {"ability":"Blaze","item":"Passho Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Fire Blast","Grass Knot","Vacuum Wave"]},
-    "Ubers Physically-Based Mixed Attacker": {"ability":"Blaze","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":44,"sp":212},"moves":["Close Combat","Fire Blast","U-turn","Stone Edge"]},
-    "Ubers Choice Band": {"ability":"Blaze","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Flare Blitz","Close Combat","U-turn","Shadow Claw"]},
+    "Ubers Physically-Based Mixed Attacker": {"ability":"Blaze","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":44,"sp":212},"moves":["Close Combat","Fire Blast","U-turn","Mach Punch"]},
+    "Ubers Choice Band": {"ability":"Blaze","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Flare Blitz","Close Combat","U-turn","Mach Punch"]},
     "Ubers Lead": {"ability":"Blaze","item":"Focus Sash","nature":"Naive","evs":{"at":252,"sa":44,"sp":212},"moves":["Stealth Rock","U-turn","Fire Blast","Close Combat"]},
-    "Ubers Swords Dance": {"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Stone Edge","Shadow Claw"]},
+    "Ubers Swords Dance": {"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Flare Blitz","Mach Punch"]},
     "Doubles OU Showdown Usage": {"ability":"Blaze","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Protect","Low Kick","Taunt"]}
   },
   "Piplup": {
@@ -619,7 +619,7 @@ var SETDEX_DPP = {
     "Anything Goes Swords Dance": {"ability":"Multitype","item":"Draco Plate","nature":"Jolly","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Swords Dance","Dragon Claw","Earthquake","Recover"]}
   },
   "Arceus-Electric": {
-    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Zap Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Ice Beam","Recover"]}
+    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Zap Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Thunder","Ice Beam","Recover"]}
   },
   "Arceus-Fighting": {
     "Anything Goes Calm Mind": {"ability":"Multitype","item":"Fist Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Ice Beam","Recover"]}
@@ -1414,8 +1414,7 @@ var SETDEX_DPP = {
     "LC Life Orb": {"level":5,"ability":"Pickup","item":"Life Orb","nature":"Jolly","evs":{"hp":196,"at":196,"df":116},"moves":["Earthquake","Ice Shard","Head Smash","Seed Bomb"]}
   },
   "Donphan": {
-    "OU Rapid Spin": {"ability":"Sturdy","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":188,"df":68},"moves":["Rapid Spin","Earthquake","Assurance","Stealth Rock"]},
-    "OU Choice Band": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Earthquake","Stone Edge","Assurance","Rapid Spin"]},
+    "OU Standard": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","Rapid Spin","Stealth Rock","Ice Shard"]},
     "UU Rapid Spin": {"ability":"Sturdy","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Rapid Spin","Earthquake","Assurance","Stealth Rock"]},
     "UU Choice Band": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Earthquake","Assurance","Head Smash","Rapid Spin"]}
   },
@@ -1484,8 +1483,8 @@ var SETDEX_DPP = {
     "Ubers Offensive Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Aeroblast","Roost","Earth Power"]}
   },
   "Ho-Oh": {
-    "Ubers Physical Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Adamant","evs":{"hp":232,"at":252,"sp":24},"moves":["Sacred Fire","Brave Bird","Earthquake","Roost"]},
-    "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Punishment"]},
+    "Ubers Physical Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":208,"at":252,"sp":48},"moves":["Sacred Fire","Brave Bird","Earthquake","Roost"]},
+    "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Sleep Talk"]},
     "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Punishment"]},
     "Ubers Toxic Stall": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":236,"sp":24},"moves":["Toxic","Light Screen","Sacred Fire","Recover"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Life Orb","nature":"Adamant","evs":{"hp":232,"at":252,"sp":24},"moves":["Sacred Fire","Brave Bird","Roost","Earthquake"]}
@@ -2234,6 +2233,7 @@ var SETDEX_DPP = {
   "Gliscor": {
     "OU Stallbreaker": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Taunt","Earthquake","Ice Fang","Roost"]},
     "OU Swords Dance": {"ability":"Hyper Cutter","item":"Yache Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Earthquake","Ice Fang","Roost"]},
+    "Ubers Specially Defensive": {"ability":"Sand Veil","item":"Leftovers","nature":"Careful","evs":{"hp":220,"sd":216,"sp":72},"moves":["Taunt","Toxic","Earthquake","Roost"]},
     "Doubles OU Showdown Usage": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","U-turn","Ice Fang"]}
   },
   "Mamoswine": {
