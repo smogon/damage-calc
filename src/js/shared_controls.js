@@ -833,7 +833,8 @@ $(".forme").change(function () {
 
 function correctHiddenPower(pokemon) {
 	// After Gen 7 bottlecaps means you can have a HP without perfect IVs
-	if (gen >= 7 && pokemon.level >= 100) return pokemon;
+	// Level 100 is elided from sets so if its undefined its level 100
+	if (gen >= 7 && (!pokemon.level || pokemon.level >= 100)) return pokemon;
 
 	// Convert the legacy stats table to a useful one, and also figure out if all are maxed
 	var ivs = {};
