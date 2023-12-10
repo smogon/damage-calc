@@ -2095,7 +2095,7 @@ var SETDEX_SS = {
   },
   "Crustle": {
     "1v1 Shell Smash": {"ability":"Sturdy","item":"Mental Herb","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Shell Smash","Rock Wrecker","Rock Blast","Counter"]},
-    "1v1 Choice Band": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","ivs":{"sp":29},"evs":{"hp":232,"at":252,"df":24},"moves":["Rock Wrecker","Rock Blast","Earthquake","Heavy Slam"]},
+    "1v1 Choice Band": {"ability":"Sturdy","item":"Choice Band","nature":"Brave","ivs":{"sp":29},"evs":{"hp":232,"at":252,"df":24},"moves":["Rock Wrecker","Rock Blast","Earthquake","Heavy Slam"]},
     "ZU Shell Smash": {"ability":"Sturdy","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Stone Edge","X-Scissor","Earthquake"]},
     "Monotype Showdown Usage": {"ability":"Sturdy","item":"White Herb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Shell Smash","X-Scissor","Stone Edge"]},
     "National Dex Monotype Showdown Usage": {"ability":"Sturdy","item":"Rockium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Earthquake","Heavy Slam","Stone Edge"]}

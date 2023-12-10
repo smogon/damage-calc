@@ -2193,12 +2193,8 @@ var SETDEX_DPP = {
     "NU Choice Band": {"ability":"Own Tempo","item":"Choice Band","nature":"Adamant","evs":{"hp":92,"at":252,"sp":164},"moves":["Return","Power Whip","Ice Punch","Explosion"]}
   },
   "Rhyperior": {
-    "OU Choice Band": {"ability":"Solid Rock","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Stone Edge","Aqua Tail","Megahorn"]},
-    "OU Rock Polish": {"ability":"Solid Rock","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Polish","Earthquake","Stone Edge","Megahorn"]},
-    "OU Swords Dance": {"ability":"Solid Rock","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Earthquake","Stone Edge","Megahorn"]},
-    "OU Su(b)perior": {"ability":"Solid Rock","item":"Leftovers","nature":"Adamant","evs":{"hp":136,"at":192,"sd":16,"sp":164},"moves":["Substitute","Swords Dance","Earthquake","Stone Edge"]},
-    "OU Tank": {"ability":"Solid Rock","item":"Leftovers","nature":"Impish","evs":{"hp":244,"df":184,"sd":80},"moves":["Earthquake","Stone Edge","Megahorn","Stealth Rock"]},
-    "OU RestTalk": {"ability":"Solid Rock","item":"Leftovers","nature":"Impish","evs":{"hp":244,"df":184,"sd":80},"moves":["Rest","Sleep Talk","Earthquake","Stone Edge"]},
+    "OU Choice Band": {"ability":"Solid Rock","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Megahorn","Rock Wrecker"]},
+    "OU Substitute": {"ability":"Solid Rock","item":"Leftovers","nature":"Adamant","evs":{"hp":136,"at":208,"sp":164},"moves":["Substitute","Earthquake","Stone Edge","Ice Punch"]},
     "UU Physical Attacker": {"ability":"Solid Rock","item":"Leftovers","nature":"Adamant","evs":{"hp":140,"at":252,"df":32,"sp":84},"moves":["Earthquake","Stone Edge","Megahorn","Stealth Rock"]},
     "UU Su(b)perior": {"ability":"Solid Rock","item":"Leftovers","nature":"Adamant","evs":{"hp":132,"at":212,"sp":164},"moves":["Substitute","Stone Edge","Earthquake","Megahorn"]},
     "UU Rock Polish": {"ability":"Solid Rock","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","Megahorn","Rock Polish"]},

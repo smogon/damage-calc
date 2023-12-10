@@ -1004,8 +1004,7 @@ var SETDEX_ADV = {
     "OU Pursuit": {"ability":"Early Bird","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":252,"sd":12,"sp":188},"moves":["Pursuit","Fire Blast","Crunch","Will-O-Wisp"]}
   },
   "Kingdra": {
-    "OU Rain Dance Sweeper": {"ability":"Swift Swim","item":"Leftovers","nature":"Modest","evs":{"hp":240,"sa":252,"sp":16},"moves":["Rain Dance","Surf","Ice Beam","Toxic"]},
-    "OU Dragon Dance + Flail": {"ability":"Swift Swim","item":"Liechi Berry","nature":"Lonely","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Flail","Dragon Dance","Hydro Pump"]}
+    "OU Rain Dance Sweeper": {"ability":"Swift Swim","item":"Lum Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":104,"sa":252,"sp":152},"moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]}
   },
   "Donphan": {
     "OU Tank": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":252,"at":44,"df":188,"sp":24},"moves":["Earthquake","Hidden Power Rock","Rest","Rapid Spin"]},
@@ -1332,7 +1331,8 @@ var SETDEX_ADV = {
     "NU Rain Dance \"Sweeper\"": {"ability":"Swift Swim","item":"Lum Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":28,"df":228,"sa":252},"moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]}
   },
   "Bagon": {
-    "LC Dragon Dance": {"level":5,"ability":"Rock Head","item":"Sitrus Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":236,"sd":40,"sp":196},"moves":["Dragon Dance","Double-Edge","Hidden Power Ghost","Brick Break"]}
+    "LC Dragon Dance": {"level":5,"ability":"Rock Head","item":"Sitrus Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":236,"sd":40,"sp":196},"moves":["Dragon Dance","Double-Edge","Hidden Power Ghost","Brick Break"]},
+    "ZU Dragon Dance": {"ability":"Rock Head","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Double-Edge","Brick Break","Hydro Pump"]}
   },
   "Shelgon": {
     "NU Dragon Dance": {"ability":"Rock Head","item":"Leftovers","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Dragon Dance","Double-Edge","Rock Slide","Brick Break"]},

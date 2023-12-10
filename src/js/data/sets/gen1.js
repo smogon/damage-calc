@@ -35,7 +35,7 @@ var SETDEX_RBY = {
   "Arbok": {
     "OU Wrapper": {"moves":["Glare","Wrap","Earthquake","Hyper Beam"]},
     "UU Glare + Wrap": {"moves":["Glare","Wrap","Earthquake","Hyper Beam"]},
-    "NU Glare + Wrap": {"moves":["Glare","Wrap","Earthquake","Body Slam"]},
+    "NU Wrap": {"moves":["Glare","Wrap","Earthquake","Rock Slide"]},
     "PU Wrap": {"moves":["Wrap","Glare","Earthquake","Hyper Beam"]}
   },
   "Raichu": {
@@ -173,7 +173,7 @@ var SETDEX_RBY = {
   },
   "Rapidash": {
     "UU Fire Spin Breaker": {"moves":["Fire Blast","Fire Spin","Hyper Beam","Body Slam"]},
-    "NU Fire Spin Pivot": {"moves":["Fire Spin","Fire Blast","Toxic","Hyper Beam"]},
+    "NU Fire Spinner": {"moves":["Fire Spin","Fire Blast","Body Slam","Hyper Beam"]},
     "PU Offensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]},
     "Tradebacks OU Sleeper": {"moves":["Hypnosis","Fire Spin","Fire Blast","Hyper Beam"]}
   },
@@ -299,6 +299,9 @@ var SETDEX_RBY = {
     "UU Kangaskhan": {"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]},
     "UU Wallbreaker": {"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]}
   },
+  "Horsea": {
+    "PU Agility Sweeper": {"moves":["Surf","Blizzard","Agility","Smokescreen"]}
+  },
   "Seadra": {
     "NU Agility Sweeper": {"moves":["Surf","Blizzard","Hydro Pump","Agility"]}
   },
@@ -359,7 +362,8 @@ var SETDEX_RBY = {
   },
   "Lapras": {
     "OU Standard": {"moves":["Blizzard","Thunderbolt","Hyper Beam","Sing"]},
-    "Ubers Special Attacker": {"moves":["Sing","Blizzard","Thunderbolt","Body Slam"]},
+    "Ubers Confuse Ray": {"moves":["Blizzard","Thunderbolt","Confuse Ray","Body Slam"]},
+    "Ubers Sing Lead": {"moves":["Sing","Blizzard","Thunderbolt","Hyper Beam"]},
     "1v1 Special Attacker": {"moves":["Ice Beam","Thunderbolt","Reflect","Rest"]},
     "Tradebacks OU Standard": {"moves":["Sing","Blizzard","Thunderbolt","Hyper Beam"]}
   },
