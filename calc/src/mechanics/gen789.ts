@@ -584,60 +584,35 @@ export function calculateSMSSSV(
       getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod, protect);
   }
 
-  if (move.dropsStats && move.timesUsed! > 1) {
-    const simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
+  desc.attackBoost =
+    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
 
-    desc.moveTurns = `over ${move.timesUsed} turns`;
-    const hasWhiteHerb = attacker.hasItem('White Herb');
-    let usedWhiteHerb = false;
-    let dropCount = 0;
-    for (let times = 0; times < move.timesUsed!; times++) {
-      const newAttack = getModifiedStat(attack, dropCount);
-      let damageMultiplier = 0;
-      damage = damage.map(affectedAmount => {
-        if (times) {
-          const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
-          const newFinalDamage = getFinalDamage(
-            newBaseDamage,
-            damageMultiplier,
-            typeEffectiveness,
-            applyBurn,
-            stabMod,
-            finalMod,
-            protect
-          );
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
-      });
+  if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
+    // store boosts so intermediate boosts don't show.
+    const origDefBoost = desc.defenseBoost;
+    const origAtkBoost = desc.attackBoost;
 
-      if (attacker.hasAbility('Contrary')) {
-        dropCount = Math.min(6, dropCount + move.dropsStats);
-        desc.attackerAbility = attacker.ability;
-      } else {
-        dropCount = Math.max(-6, dropCount - move.dropsStats * simpleMultiplier);
-        if (attacker.hasAbility('Simple')) {
-          desc.attackerAbility = attacker.ability;
-        }
-      }
-
-      // the Pokémon hits THEN the stat rises / lowers
-      if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
-        dropCount += move.dropsStats * simpleMultiplier;
-        usedWhiteHerb = true;
-        desc.attackerItem = attacker.item;
-      }
+    let numAttacks = 1;
+    if (move.dropsStats && move.timesUsed! > 1) {
+      desc.moveTurns = `over ${move.timesUsed} turns`;
+      numAttacks = move.timesUsed!;
+    } else {
+      numAttacks = move.hits;
     }
-  }
-
-  if (move.hits > 1) {
-    let defenderDefBoost = 0;
-    for (let times = 0; times < move.hits; times++) {
-      const newDefense = getModifiedStat(defense, defenderDefBoost);
+    let usedItems = [false, false];
+    for (let times = 0; times < numAttacks; times++) {
+      const newAttack = calculateAttackSMSSSV(gen, attacker, defender, move,
+        field, desc, isCritical);
+      const newDefense = calculateDefenseSMSSSV(gen, attacker, defender, move,
+        field, desc, isCritical);
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
         if (times) {
+          // Check if lost -ate ability. Typing stays the same, only boost is lost
+          // Cannot be regained during multihit move and no Normal moves with stat drawbacks
+          hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
+            attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
+
           const newFinalMods = calculateFinalModsSMSSSV(
             gen,
             attacker,
@@ -650,18 +625,16 @@ export function calculateSMSSSV(
             times
           );
           const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newBaseDamage = calculateBaseDamageSMSSSV(
+          const basePower = calculateBasePowerSMSSSV(
             gen,
             attacker,
             defender,
-            basePower,
-            attack,
-            newDefense,
             move,
             field,
-            desc,
-            isCritical
+            hasAteAbilityTypeChange,
+            desc
           );
+          const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, newDefense);
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,
@@ -676,18 +649,12 @@ export function calculateSMSSSV(
         }
         return affectedAmount;
       });
-      if (hitsPhysical && defender.ability === 'Stamina') {
-        defenderDefBoost = Math.min(6, defenderDefBoost + 1);
-        desc.defenderAbility = 'Stamina';
-      } else if (hitsPhysical && defender.ability === 'Weak Armor') {
-        defenderDefBoost = Math.max(-6, defenderDefBoost - 1);
-        desc.defenderAbility = 'Weak Armor';
-      }
+      usedItems = checkMultihitBoost(gen, attacker, defender, move,
+        field, desc, usedItems[0], usedItems[1]);
     }
+    desc.defenseBoost = origDefBoost;
+    desc.attackBoost = origAtkBoost;
   }
-
-  desc.attackBoost =
-    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
 
   result.damage = childDamage ? [damage, childDamage] : damage;
 
@@ -1231,7 +1198,7 @@ export function calculateAttackSMSSSV(
     attack = attackSource.rawStats[attackStat];
     desc.defenderAbility = defender.ability;
   } else {
-    attack = attackSource.stats[attackStat];
+    attack = getModifiedStat(attackSource.rawStats[attackStat]!, attackSource.boosts[attackStat]!);
     desc.attackBoost = attackSource.boosts[attackStat];
   }
 

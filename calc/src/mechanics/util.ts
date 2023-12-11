@@ -305,15 +305,16 @@ export function checkMultihitBoost(
   move: Move,
   field: Field,
   desc: RawDesc,
-  usedWhiteHerb = false
+  attackerUsedItem = false,
+  defenderUsedItem = false
 ) {
   // NOTE: attacker.ability must be Parental Bond for these moves to be multi-hit
   if (move.named('Gyro Ball', 'Electro Ball') && defender.hasAbility('Gooey', 'Tangling Hair')) {
     // Gyro Ball (etc) makes contact into Gooey (etc) whenever its inflicting multiple hits because
     // this can only happen if the attacker ability is Parental Bond (and thus can't be Long Reach)
-    if (attacker.hasItem('White Herb') && !usedWhiteHerb) {
+    if (attacker.hasItem('White Herb') && !attackerUsedItem) {
       desc.attackerItem = attacker.item;
-      usedWhiteHerb = true;
+      attackerUsedItem = true;
     } else {
       attacker.boosts.spe = Math.max(attacker.boosts.spe - 1, -6);
       attacker.stats.spe = getFinalSpeed(gen, attacker, field, field.attackerSide);
@@ -326,6 +327,38 @@ export function checkMultihitBoost(
     attacker.stats.atk = getModifiedStat(attacker.rawStats.atk, attacker.boosts.atk, gen);
   }
 
+  const atkSimple = attacker.hasAbility('Simple') ? 2 : 1;
+  const defSimple = defender.hasAbility('Simple') ? 2 : 1;
+
+  if ((!defenderUsedItem) &&
+    (defender.hasItem('Luminous Moss') && move.hasType('Water')) ||
+    (defender.hasItem('Maranga Berry') && move.category === 'Special') ||
+    (defender.hasItem('Kee Berry') && move.category === 'Physical')) {
+    const defStat = defender.hasAbility('Kee Berry') ? 'def' : 'spd';
+    if (attacker.hasAbility('Unaware')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      if (attacker.hasAbility('Contrary')) {
+        defender.boosts[defStat] = Math.max(-6, defender.boosts[defStat] - defSimple);
+      } else {
+        defender.boosts[defStat] = Math.min(6, defender.boosts[defStat] + defSimple);
+        if (atkSimple > 1) desc.attackerAbility = attacker.ability;
+      }
+      defender.stats[defStat] = getModifiedStat(defender.rawStats[defStat],
+        defender.boosts[defStat],
+        gen);
+      desc.defenderItem = defender.item;
+      defenderUsedItem = true;
+    }
+  }
+
+  if (defender.hasAbility('Seed Sower')) {
+    field.terrain = 'Grassy';
+  }
+  if (defender.hasAbility('Sand Spit')) {
+    field.weather = 'Sand';
+  }
+
   if (defender.hasAbility('Stamina')) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
@@ -334,13 +367,21 @@ export function checkMultihitBoost(
       defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
       desc.defenderAbility = defender.ability;
     }
+  } else if (defender.hasAbility('Water Compaction') && move.hasType('Water')) {
+    if (attacker.hasAbility('Unaware')) {
+      desc.attackerAbility = attacker.ability;
+    } else {
+      defender.boosts.def = Math.min(defender.boosts.def + 2, 6);
+      defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
+      desc.defenderAbility = defender.ability;
+    }
   } else if (defender.hasAbility('Weak Armor')) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {
-      if (defender.hasItem('White Herb') && !usedWhiteHerb) {
+      if (defender.hasItem('White Herb') && !defenderUsedItem) {
         desc.defenderItem = defender.item;
-        usedWhiteHerb = true;
+        defenderUsedItem = true;
       } else {
         defender.boosts.def = Math.max(defender.boosts.def - 1, -6);
         defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
@@ -351,7 +392,6 @@ export function checkMultihitBoost(
     desc.defenderAbility = defender.ability;
   }
 
-  const simple = attacker.hasAbility('Simple') ? 2 : 1;
   if (move.dropsStats) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
@@ -364,14 +404,14 @@ export function checkMultihitBoost(
         boosts = Math.min(6, boosts + move.dropsStats);
         desc.attackerAbility = attacker.ability;
       } else {
-        boosts = Math.max(-6, boosts - move.dropsStats * simple);
-        if (simple > 1) desc.attackerAbility = attacker.ability;
+        boosts = Math.max(-6, boosts - move.dropsStats * atkSimple);
+        if (atkSimple > 1) desc.attackerAbility = attacker.ability;
       }
 
-      if (attacker.hasItem('White Herb') && attacker.boosts[stat] < 0 && !usedWhiteHerb) {
-        boosts += move.dropsStats * simple;
+      if (attacker.hasItem('White Herb') && attacker.boosts[stat] < 0 && !attackerUsedItem) {
+        boosts += move.dropsStats * atkSimple;
         desc.attackerItem = attacker.item;
-        usedWhiteHerb = true;
+        attackerUsedItem = true;
       }
 
       attacker.boosts[stat] = boosts;
@@ -379,7 +419,20 @@ export function checkMultihitBoost(
     }
   }
 
-  return usedWhiteHerb;
+  // Do ability swap after all other effects
+  if (defender.hasAbility('Mummy', 'Wandering Spirit', 'Lingering Aroma') && move.flags.contact) {
+    const oldAttackerAbility = attacker.ability;
+    attacker.ability = defender.ability;
+    // If attacker ability is notable, then ability swap is notable.
+    if (desc.attackerAbility) {
+      desc.defenderAbility = defender.ability;
+    }
+    if (defender.hasAbility('Wandering Spirit')) {
+      defender.ability = oldAttackerAbility;
+    }
+  }
+
+  return [attackerUsedItem, defenderUsedItem];
 }
 
 export function chainMods(mods: number[], lowerBound: number, upperBound: number) {
