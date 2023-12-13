@@ -2254,9 +2254,7 @@ var SETDEX_BW = {
   "Abomasnow": {
     "OU Protect + 3 Attacks": {"ability":"Snow Warning","item":"Leftovers","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Ice Shard","Wood Hammer","Earthquake","Protect"]},
     "UU SubSeed": {"ability":"Soundproof","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":252,"sp":8},"moves":["Substitute","Leech Seed","Ice Beam","Giga Drain"]},
-    "Doubles OU Focus Sash": {"ability":"Snow Warning","item":"Focus Sash","nature":"Quiet","evs":{"hp":252,"df":4,"sa":252},"moves":["Blizzard","Giga Drain","Ice Shard","Protect"]},
-    "Doubles OU Mixed Attacker": {"ability":"Snow Warning","item":"Grass Gem","nature":"Brave","evs":{"hp":64,"at":124,"df":68,"sa":252},"moves":["Wood Hammer","Blizzard","Ice Shard","Protect"]},
-    "Doubles OU Choice Scarf": {"ability":"Snow Warning","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":28,"sa":228,"sp":252},"moves":["Blizzard","Hidden Power Fire","Giga Drain","Ice Shard"]}
+    "Doubles OU Mixed Attacker": {"ability":"Snow Warning","item":"Grass Gem","nature":"Brave","ivs":{"sp":0},"evs":{"hp":64,"at":124,"df":68,"sa":252},"moves":["Wood Hammer","Blizzard","Ice Shard","Protect"]}
   },
   "Weavile": {
     "OU Trapper": {"ability":"Pickpocket","item":"Dread Plate","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Pursuit","Beat Up","Ice Shard","Low Kick"]},
