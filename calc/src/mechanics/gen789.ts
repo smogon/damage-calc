@@ -625,7 +625,7 @@ export function calculateSMSSSV(
             times
           );
           const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const basePower = calculateBasePowerSMSSSV(
+          const newBasePower = calculateBasePowerSMSSSV(
             gen,
             attacker,
             defender,
@@ -634,7 +634,18 @@ export function calculateSMSSSV(
             hasAteAbilityTypeChange,
             desc
           );
-          const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, newDefense);
+          const newBaseDamage = calculateBaseDamageSMSSSV(
+            gen,
+            attacker,
+            defender,
+            newBasePower,
+            newAttack,
+            newDefense,
+            move,
+            field,
+            desc,
+            isCritical
+          );
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,

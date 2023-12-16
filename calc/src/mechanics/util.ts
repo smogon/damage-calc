@@ -334,16 +334,21 @@ export function checkMultihitBoost(
     (defender.hasItem('Luminous Moss') && move.hasType('Water')) ||
     (defender.hasItem('Maranga Berry') && move.category === 'Special') ||
     (defender.hasItem('Kee Berry') && move.category === 'Physical')) {
-    const defStat = defender.hasAbility('Kee Berry') ? 'def' : 'spd';
+    const defStat = defender.hasItem('Kee Berry') ? 'def' : 'spd';
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {
-      if (attacker.hasAbility('Contrary')) {
-        defender.boosts[defStat] = Math.max(-6, defender.boosts[defStat] - defSimple);
+      if (defender.hasAbility('Contrary')) {
+        if (defender.hasItem('White Herb') && !defenderUsedItem) {
+          desc.defenderItem = defender.item;
+          defenderUsedItem = true;
+        } else {
+          defender.boosts[defStat] = Math.max(-6, defender.boosts[defStat] - defSimple);
+        }
       } else {
         defender.boosts[defStat] = Math.min(6, defender.boosts[defStat] + defSimple);
-        if (atkSimple > 1) desc.attackerAbility = attacker.ability;
       }
+      if (defSimple === 2) desc.defenderAbility = defender.ability;
       defender.stats[defStat] = getModifiedStat(defender.rawStats[defStat],
         defender.boosts[defStat],
         gen);
@@ -405,8 +410,8 @@ export function checkMultihitBoost(
         desc.attackerAbility = attacker.ability;
       } else {
         boosts = Math.max(-6, boosts - move.dropsStats * atkSimple);
-        if (atkSimple > 1) desc.attackerAbility = attacker.ability;
       }
+      if (atkSimple === 2) desc.attackerAbility = attacker.ability;
 
       if (attacker.hasItem('White Herb') && attacker.boosts[stat] < 0 && !attackerUsedItem) {
         boosts += move.dropsStats * atkSimple;
