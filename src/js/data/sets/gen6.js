@@ -1956,6 +1956,7 @@ var SETDEX_XY = {
     "Monotype Dragon Dance (Dark)": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Stone Edge","Crunch","Fire Punch"]},
     "1v1 Rock Tomb + Taunt": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Adamant","evs":{"hp":240,"at":48,"sd":84,"sp":136},"moves":["Rock Tomb","Taunt","Fire Punch","Crunch"]},
     "1v1 Defensive Dragon Dance": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Impish","evs":{"hp":200,"at":44,"df":252,"sp":12},"moves":["Rock Tomb","Dragon Dance","Low Kick","Crunch"]},
+    "Pure Hackmons Shell Smash Sweeper": {"ability":"Mold Breaker","item":"Leftovers","nature":"Adamant","evs":{"hp":88,"at":252,"sp":168},"moves":["Shell Smash","Beat Up","Diamond Storm","Spore"]},
     "CAP Showdown Usage": {"ability":"Sand Stream","item":"Smooth Rock","nature":"Adamant","evs":{"hp":248,"at":252,"sd":4},"moves":["Stone Edge","Pursuit","Superpower","Iron Head"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Sand Stream","item":"Weakness Policy","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Protect","Rock Slide","Earthquake","Crunch"]}
   },
@@ -1968,7 +1969,6 @@ var SETDEX_XY = {
     "Monotype Dragon Dance (Dark)": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Stone Edge","Crunch","Fire Punch"]},
     "1v1 Rock Tomb + Taunt": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Adamant","evs":{"hp":240,"at":48,"sd":84,"sp":136},"moves":["Rock Tomb","Taunt","Fire Punch","Crunch"]},
     "1v1 Defensive Dragon Dance": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Impish","evs":{"hp":200,"at":44,"df":252,"sp":12},"moves":["Rock Tomb","Dragon Dance","Low Kick","Crunch"]},
-    "Pure Hackmons Shell Smash Sweeper": {"ability":"Mold Breaker","item":"Leftovers","nature":"Adamant","evs":{"hp":88,"at":252,"sp":168},"moves":["Stealth Rock","Shell Smash","Beat Up","Diamond Storm"]},
     "Pure Hackmons Pursuit Trapper": {"ability":"Huge Power","item":"Lum Berry","nature":"Adamant","evs":{"hp":248,"at":252,"df":8},"moves":["Gastro Acid","Pursuit","Knock Off","Iron Head"]}
   },
   "Lugia": {

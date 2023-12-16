@@ -288,7 +288,7 @@ var SETDEX_ADV = {
   },
   "Duskull": {
     "PU Physically Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Sleep Talk","Will-O-Wisp","Night Shade"]},
-    "LC Defensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Impish","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":196,"at":36,"df":120,"sa":40,"sd":40},"moves":["Shadow Ball","Hidden Power Fighting","Thief","Will-O-Wisp"]}
+    "LC Defensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":196,"at":36,"df":120,"sa":40,"sd":40},"moves":["Shadow Ball","Ice Beam","Thief","Memento"]}
   },
   "Dusclops": {
     "OU Staller": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":36,"df":20,"sd":200},"moves":["Shadow Ball","Focus Punch","Will-O-Wisp","Pain Split"]},
@@ -519,6 +519,7 @@ var SETDEX_ADV = {
   },
   "Diglett": {
     "NU Trapper": {"ability":"Arena Trap","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Rock Slide","Sludge Bomb","Double-Edge"]},
+    "LC Specially Defensive Trapper": {"level":5,"ability":"Arena Trap","item":"Sitrus Berry","nature":"Jolly","evs":{"hp":36,"at":76,"sd":156,"sp":236},"moves":["Earthquake","Rock Slide","Thief","Substitute"]},
     "LC Offensive Trapper": {"level":5,"ability":"Arena Trap","item":"Liechi Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":156,"sd":80,"sp":236},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Substitute"]}
   },
   "Meowth": {
@@ -555,7 +556,7 @@ var SETDEX_ADV = {
   },
   "Abra": {
     "NU Calm Mind": {"ability":"Synchronize","item":"Salac Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Psychic","Fire Punch","Substitute"]},
-    "LC SubThief": {"level":5,"ability":"Inner Focus","item":"Sitrus Berry","nature":"Timid","ivs":{"at":0},"evs":{"hp":76,"sa":236,"sp":196},"moves":["Psychic","Substitute","Thief","Calm Mind"]}
+    "LC Calm Mind": {"level":5,"ability":"Synchronize","item":"Sitrus Berry","nature":"Timid","ivs":{"at":0},"evs":{"hp":76,"sa":236,"sp":196},"moves":["Psychic","Substitute","Thief","Calm Mind"]}
   },
   "Machop": {
     "LC Offensive": {"level":5,"ability":"Guts","item":"Sitrus Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":116,"at":116,"df":120,"sd":80,"sp":76},"moves":["Substitute","Hidden Power Ghost","Cross Chop","Rock Slide"]}
@@ -634,8 +635,8 @@ var SETDEX_ADV = {
   },
   "Gastly": {
     "PU Offensive": {"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Giga Drain","Substitute"]},
-    "LC Physical": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Jolly","evs":{"at":236,"sd":76,"sp":196},"moves":["Sludge Bomb","Shadow Ball","Substitute","Explosion"]},
-    "LC Endure + Salac Berry": {"level":5,"ability":"Levitate","item":"Salac Berry","nature":"Naive","evs":{"hp":36,"df":36,"sa":196,"sp":196},"moves":["Explosion","Psychic","Thunderbolt","Endure"]}
+    "LC Endure + Salac Berry": {"level":5,"ability":"Levitate","item":"Salac Berry","nature":"Hasty","evs":{"hp":36,"at":76,"sa":196,"sp":196},"moves":["Explosion","Psychic","Thunderbolt","Endure"]},
+    "LC Physical": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Jolly","evs":{"at":236,"sd":76,"sp":196},"moves":["Sludge Bomb","Shadow Ball","Substitute","Explosion"]}
   },
   "Haunter": {
     "NU Standard": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Thunderbolt","Substitute","Explosion"]},
@@ -667,6 +668,7 @@ var SETDEX_ADV = {
     "ZU Physical Wall": {"ability":"Chlorophyll","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Sleep Powder","Psychic","Giga Drain","Synthesis"]}
   },
   "Cubone": {
+    "LC Lead": {"level":5,"ability":"Rock Head","item":"Thick Club","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"sd":36,"sp":236},"moves":["Bonemerang","Double-Edge","Hidden Power Ghost","Protect"]},
     "LC Swords Dance": {"level":5,"ability":"Rock Head","item":"Thick Club","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"sd":40,"sp":236},"moves":["Bonemerang","Double-Edge","Hidden Power Ghost","Swords Dance"]},
     "ZU Swords Dance": {"ability":"Rock Head","item":"Thick Club","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Earthquake","Double-Edge","Substitute"]}
   },
@@ -780,7 +782,7 @@ var SETDEX_ADV = {
     "NU Special Attacker": {"ability":"Flash Fire","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":8,"df":84,"sa":192,"sp":224},"moves":["Fire Blast","Hidden Power Grass","Substitute","Baton Pass"]}
   },
   "Porygon": {
-    "LC Tank": {"level":5,"ability":"Trace","item":"Sitrus Berry","nature":"Brave","evs":{"hp":156,"at":36,"df":116,"sa":76,"sd":76},"moves":["Recycle","Ice Beam","Return","Thunder Wave"]}
+    "LC Tank": {"level":5,"ability":"Trace","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":236,"df":196,"sa":76},"moves":["Return","Ice Beam","Thief","Recycle"]}
   },
   "Omanyte": {
     "PU Defensive Spikes": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Spikes","Toxic","Surf","Ice Beam"]},
@@ -1040,7 +1042,7 @@ var SETDEX_ADV = {
     "Ubers Blissey": {"ability":"Natural Cure","item":"Leftovers","nature":"Calm","evs":{"hp":4,"df":252,"sd":252},"moves":["Soft-Boiled","Toxic","Heal Bell","Seismic Toss"]}
   },
   "Larvitar": {
-    "LC Dragon Dance": {"level":5,"ability":"Guts","item":"Sitrus Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"at":248,"sd":40,"sp":188},"moves":["Dragon Dance","Rock Slide","Earthquake","Hidden Power Ghost"]},
+    "LC Dragon Dance": {"level":5,"ability":"Guts","item":"Sitrus Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":164,"sd":120,"sp":188},"moves":["Dragon Dance","Rock Slide","Earthquake","Hidden Power Ghost"]},
     "ZU Dragon Dance": {"ability":"Guts","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Rock Slide","Brick Break"]}
   },
   "Pupitar": {
