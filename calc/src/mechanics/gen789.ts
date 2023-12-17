@@ -338,6 +338,14 @@ export function calculateSMSSSV(
     desc.weather = field.weather;
   }
 
+  if (defender.hasAbility('Tera Shell')) {
+    typeEffectiveness = 0.5;
+  }
+
+  if (attacker.teraType === 'Stellar' && defender.teraType !== undefined) {
+    typeEffectiveness = 2;
+  }
+
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
@@ -502,13 +510,23 @@ export function calculateSMSSSV(
     desc.attackerAbility = attacker.ability;
   }
   const teraType = attacker.teraType;
-  if (teraType === move.type) {
+  if (teraType === move.type && teraType !== 'Stellar') {
     stabMod += 2048;
     desc.attackerTera = teraType;
   }
   if (attacker.hasAbility('Adaptability') && attacker.hasType(move.type)) {
     stabMod += teraType && attacker.hasOriginalType(teraType) ? 1024 : 2048;
     desc.attackerAbility = attacker.ability;
+  }
+
+  // TODO: For now all moves are always boosted
+  const isStellarBoosted = attacker.teraType === 'Stellar';
+  if (isStellarBoosted) {
+    if (attacker.hasOriginalType(move.type)) {
+      stabMod += 2048;
+    } else {
+      stabMod = 4915;
+    }
   }
 
   const applyBurn =
@@ -847,8 +865,13 @@ export function calculateBasePowerSMSSSV(
     break;
   case 'Crush Grip':
   case 'Wring Out':
+  case 'Hard Press':
     basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
     basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+    desc.moveBP = basePower;
+    break;
+  case 'Tera Blast':
+    basePower = attacker.teraType === 'Stellar' ? 100 : 80;
     desc.moveBP = basePower;
     break;
   default:
@@ -944,6 +967,11 @@ export function calculateBPModsSMSSSV(
     move.target = 'allAdjacentFoes';
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
+  } else if (
+    move.named('Tera Starstorm') && attacker.name === 'Terapagos-Stellar'
+  ) {
+    move.target = 'allAdjacentFoes';
+    move.type = 'Stellar';
   } else if ((move.named('Knock Off') && !resistedKnockOffDamage) ||
     (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty')) ||
     (move.named('Grav Apple') && field.isGravity)

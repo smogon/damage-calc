@@ -14,7 +14,7 @@ const SV: StatID[] = GSC;
 export const STATS: Array<Array<StatID | 'spc'> | StatID[]> =
   [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
-type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | '???'>;
+type HPTypeName = Exclude<TypeName, 'Normal' | 'Fairy' | 'Stellar' | '???'>;
 
 const HP_TYPES = [
   'Fighting', 'Flying', 'Poison', 'Ground', 'Rock', 'Bug', 'Ghost', 'Steel',
