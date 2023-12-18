@@ -27,6 +27,7 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
+  checkTeraformZero,
   checkWonderRoom,
   computeFinalStats,
   countBoosts,
@@ -56,6 +57,8 @@ export function calculateSMSSSV(
 
   checkAirLock(attacker, field);
   checkAirLock(defender, field);
+  checkTeraformZero(attacker, field);
+  checkTeraformZero(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
@@ -288,7 +291,7 @@ export function calculateSMSSSV(
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
-  if (defender.teraType) {
+  if (defender.teraType && defender.teraType !== 'Stellar') {
     typeEffectiveness = getMoveEffectiveness(
       gen,
       move,
@@ -338,12 +341,18 @@ export function calculateSMSSSV(
     desc.weather = field.weather;
   }
 
-  if (defender.hasAbility('Tera Shell')) {
-    typeEffectiveness = 0.5;
+  if (move.type === 'Stellar') {
+    typeEffectiveness = (defender.teraType === undefined) ? 1 : 2;
   }
 
-  if (attacker.teraType === 'Stellar' && defender.teraType !== undefined) {
-    typeEffectiveness = 2;
+  // Tera Shell works only at full HP, but for all hits of multi-hit moves
+  if (defender.hasAbility('Tera Shell') &&
+      defender.curHP() === defender.maxHP() &&
+      (!field.defenderSide.isSR && (!field.defenderSide.spikes || defender.hasType('Flying')) ||
+      defender.hasItem('Heavy-Duty Boots'))
+  ) {
+    typeEffectiveness = 0.5;
+    desc.defenderAbility = defender.ability;
   }
 
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||

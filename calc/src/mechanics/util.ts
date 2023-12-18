@@ -157,10 +157,14 @@ export function getMoveEffectiveness(
 }
 
 export function checkAirLock(pokemon: Pokemon, field: Field) {
-  if (pokemon.hasAbility('Air Lock', 'Cloud Nine', 'Teraform Zero')) {
+  if (pokemon.hasAbility('Air Lock', 'Cloud Nine')) {
     field.weather = undefined;
   }
-  if (pokemon.hasAbility('Teraform Zero')) {
+}
+
+export function checkTeraformZero(pokemon: Pokemon, field: Field) {
+  if (pokemon.hasAbility('Teraform Zero') && pokemon.abilityOn) {
+    field.weather = undefined;
     field.terrain = undefined;
   }
 }
