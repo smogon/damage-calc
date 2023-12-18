@@ -452,7 +452,7 @@ $(".teraType").change(function () {
 	var pokeObj = $(this).closest(".poke-info");
 	var checked = pokeObj.find(".teraToggle").prop("checked");
 	stellarButtonsVisibility(pokeObj, $(this).val() === "Stellar" && checked);
-})
+});
 
 var lockerMove = "";
 // auto-update move details on select
@@ -556,7 +556,7 @@ $(".set-selector").change(function () {
 		var pokeObj = $(this).closest(".poke-info");
 		var isAutoTera =
 		(startsWith(pokemonName, "Ogerpon") && endsWith(pokemonName, "Tera")) ||
-		pokemonName === 'Terapagos-Stellar'
+		pokemonName === 'Terapagos-Stellar';
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
 			stickyMoves.clearStickyMove();
 		}
@@ -781,14 +781,14 @@ function stellarButtonsVisibility(pokeObj, vis) {
 		pokeObj.find(".move4")
 	];
 	if (vis && !startsWith(pokemonName, 'Terapagos')) {
-		for (let i = 0; i < moveObjs.length; i++) {
+		for (var i = 0; i < moveObjs.length; i++) {
 			var moveObj = moveObjs[i];
 			moveObj.find(".move-stellar").prop("checked", true);
 			moveObj.find(".stellar-btn").show();
 		}
 		return;
 	}
-	for (let i = 0; i < moveObjs.length; i++) {
+	for (var i = 0; i < moveObjs.length; i++) {
 		var moveObj = moveObjs[i];
 		moveObj.find(".move-stellar").prop("checked", false);
 		moveObj.find(".stellar-btn").hide();
