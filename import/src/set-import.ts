@@ -412,6 +412,9 @@ function similarFormes(
   case 'Palafin':
     similar.formes = ['Palafin-Hero'] as SpeciesName[];
     break;
+  case 'Terapagos':
+    similar.formes = ['Terapagos-Stellar', 'Terapagos-Terastal'] as SpeciesName[];
+    break;
   case 'Sirfetch\'d':
     similar.formes = ['Sirfetch’d'] as SpeciesName[];
     break;
