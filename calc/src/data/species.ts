@@ -8986,6 +8986,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Bisharp: {nfe: true},
   Cresselia: {bs: {df: 110, sd: 120}},
   Dunsparce: {nfe: true},
+  Duraludon: {nfe: true},
   Girafarig: {nfe: true},
   Primeape: {nfe: true},
   Tauros: {otherFormes: ['Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Combat']},
@@ -9153,6 +9154,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 80, df: 110, sa: 95, sd: 80, sp: 40},
     weightkg: 4.4,
     abilities: {0: 'Supersweet Syrup'},
+    nfe: true,
   },
   Dolliv: {
     types: ['Grass', 'Normal'],
@@ -9645,6 +9647,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Poison', 'Ghost'],
     bs: {hp: 88, at: 88, df: 160, sa: 88, sd: 88, sp: 88},
     weightkg: 0.3,
+    gender: 'N',
     abilities: {0: 'Poison Puppeteer'},
   },
   Poltchageist: {
@@ -9884,6 +9887,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 90, at: 65, df: 85, sa: 65, sd: 85, sp: 60},
     weightkg: 6.5,
     abilities: {0: 'Tera Shift'},
+    // baseSpecies: 'Terapagos',
     otherFormes: ['Terapagos-Stellar', 'Terapagos-Terastal'],
   },
   'Terapagos-Stellar': {
@@ -9891,14 +9895,16 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 160, at: 105, df: 110, sa: 130, sd: 110, sp: 85},
     weightkg: 77,
     abilities: {0: 'Teraform Zero'},
-    otherFormes: ['Terapagos', 'Terapagos-Terastal'],
+    baseSpecies: 'Terapagos',
+    // otherFormes: ['Terapagos', 'Terapagos-Terastal'],
   },
   'Terapagos-Terastal': {
     types: ['Normal'],
     bs: {hp: 95, at: 95, df: 110, sa: 105, sd: 110, sp: 85},
     weightkg: 16,
     abilities: {0: 'Tera Shell'},
-    otherFormes: ['Terapagos-Stellar', 'Terapagos'],
+    baseSpecies: 'Terapagos',
+    // otherFormes: ['Terapagos-Stellar', 'Terapagos'],
   },
   'Ting-Lu': {
     types: ['Dark', 'Ground'],

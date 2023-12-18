@@ -4381,7 +4381,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     maxPower: 130,
     secondaries: true,
   },
-  'Dragon Pulse': {
+  'Fickle Beam': {
     bp: 80,
     type: 'Dragon',
     category: 'Special',
@@ -4818,6 +4818,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 140,
     maxPower: 120,
+    priority: 1,
   },
   'Tidy Up': {
     bp: 0,
@@ -4873,6 +4874,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 120,
     maxPower: 85,
+    makesContact: true,
     secondaries: true,
     priority: 3,
   },
