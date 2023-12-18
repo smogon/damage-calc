@@ -529,7 +529,9 @@ export function calculateSMSSSV(
   }
 
   // TODO: For now all moves are always boosted
-  const isStellarBoosted = attacker.teraType === 'Stellar';
+  const isStellarBoosted =
+    attacker.teraType === 'Stellar' &&
+    (move.isStellarFirstUse || attacker.named('Terapagos-Stellar'));
   if (isStellarBoosted) {
     if (attacker.hasOriginalType(move.type)) {
       stabMod += 2048;

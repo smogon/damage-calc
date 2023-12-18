@@ -185,6 +185,8 @@ function getForcedTeraType(pokemonName) {
 		return "Grass";
 	} else if (startsWith(pokemonName, "Ogerpon-Wellspring")) {
 		return "Water";
+	} else if (startsWith(pokemonName, "Terapagos")) {
+		return "Stellar";
 	}
 	return null;
 }
@@ -446,6 +448,12 @@ $(".status").bind("keyup change", function () {
 	}
 });
 
+$(".teraType").change(function () {
+	var pokeObj = $(this).closest(".poke-info");
+	var checked = pokeObj.find(".teraToggle").prop("checked");
+	stellarButtonsVisibility(pokeObj, $(this).val() === "Stellar" && checked);
+})
+
 var lockerMove = "";
 // auto-update move details on select
 $(".move-selector").change(function () {
@@ -546,11 +554,14 @@ $(".set-selector").change(function () {
 	var pokemon = pokedex[pokemonName];
 	if (pokemon) {
 		var pokeObj = $(this).closest(".poke-info");
-		var isOgerponEmbody = startsWith(pokemonName, "Ogerpon") && endsWith(pokemonName, "Tera");
+		var isAutoTera =
+		(startsWith(pokemonName, "Ogerpon") && endsWith(pokemonName, "Tera")) ||
+		pokemonName === 'Terapagos-Stellar'
 		if (stickyMoves.getSelectedSide() === pokeObj.prop("id")) {
 			stickyMoves.clearStickyMove();
 		}
-		pokeObj.find(".teraToggle").prop("checked", isOgerponEmbody);
+		pokeObj.find(".teraToggle").prop("checked", isAutoTera);
+		stellarButtonsVisibility(pokeObj, 0);
 		pokeObj.find(".boostedStat").val("");
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
 		pokeObj.find(".type1").val(pokemon.types[0]);
@@ -759,17 +770,44 @@ function showFormes(formeObj, pokemonName, pokemon, baseFormeName) {
 	formeObj.show();
 }
 
+function stellarButtonsVisibility(pokeObj, vis) {
+	var fullSetName = pokeObj.find("input.set-selector").val();
+	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
+	console.log(pokemonName);
+	var moveObjs = [
+		pokeObj.find(".move1"),
+		pokeObj.find(".move2"),
+		pokeObj.find(".move3"),
+		pokeObj.find(".move4")
+	];
+	if (vis && !startsWith(pokemonName, 'Terapagos')) {
+		for (let i = 0; i < moveObjs.length; i++) {
+			var moveObj = moveObjs[i];
+			moveObj.find(".move-stellar").prop("checked", true);
+			moveObj.find(".stellar-btn").show();
+		}
+		return;
+	}
+	for (let i = 0; i < moveObjs.length; i++) {
+		var moveObj = moveObjs[i];
+		moveObj.find(".move-stellar").prop("checked", false);
+		moveObj.find(".stellar-btn").hide();
+	}
+}
+
 function setSelectValueIfValid(select, value, fallback) {
 	select.val(!value ? fallback : select.children("option[value='" + value + "']").length ? value : fallback);
 }
 
-// Ogerpon mechs
 $(".teraToggle").change(function () {
+	var pokeObj = $(this).closest(".poke-info");
+	stellarButtonsVisibility(pokeObj, pokeObj.find(".teraType").val() === "Stellar" && this.checked);
 	var forme = $(this).parent().siblings().find(".forme");
-	if (forme.is(":hidden")) return;
 	var curForme = forme.val();
-	if (!startsWith(curForme, "Ogerpon")) return;
+	if (forme.is(":hidden")) return;
 	var container = $(this).closest(".info-group").siblings();
+	// Ogerpon mechs
+	if (!startsWith(curForme, "Ogerpon")) return;
 	if (
 		curForme !== "Ogerpon" && !endsWith(curForme, "Tera") &&
 		container.find(".item").val() !== curForme.split("-")[1] + " Mask"
@@ -800,7 +838,9 @@ $(".forme").change(function () {
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
 		baseStat.keyup();
 	}
-	if (startsWith($(this).val(), "Ogerpon") && endsWith($(this).val(), "Tera")) {
+	if (
+		(startsWith($(this).val(), "Ogerpon") && endsWith($(this).val(), "Tera")) || $(this).val() === "Terapagos-Stellar"
+	) {
 		$(this).parent().siblings().find(".teraToggle").prop("checked", true);
 	}
 	var isRandoms = $("#randoms").prop("checked");
@@ -1003,6 +1043,7 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
+	var isStellarFirstUse = moveInfo.find(".move-stellar").prop("checked");
 	var hits = +moveInfo.find(".move-hits").val();
 	var timesUsed = +moveInfo.find(".stat-drops").val();
 	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
@@ -1013,7 +1054,8 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits,
-		timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome, overrides: overrides, useMax: useMax
+		isStellarFirstUse: isStellarFirstUse, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
+		overrides: overrides, useMax: useMax
 	});
 }
 
