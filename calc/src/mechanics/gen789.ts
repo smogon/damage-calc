@@ -342,7 +342,7 @@ export function calculateSMSSSV(
   }
 
   if (move.type === 'Stellar') {
-    typeEffectiveness = (defender.teraType === undefined) ? 1 : 2;
+    typeEffectiveness = !defender.teraType ? 1 : 2;
   }
 
   // Tera Shell works only at full HP, but for all hits of multi-hit moves

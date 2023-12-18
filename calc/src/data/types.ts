@@ -406,7 +406,7 @@ const SM = XY;
 
 const SS = SM;
 
-const SV: TypeChart = extend(true, {}, XY, {
+const SV: TypeChart = extend(true, {}, SS, {
   '???': {Stellar: 1},
   Normal: {Stellar: 1},
   Grass: {Stellar: 1},
@@ -428,25 +428,6 @@ const SV: TypeChart = extend(true, {}, XY, {
   Fairy: {Stellar: 1},
   Stellar: {
     '???': 1,
-    Normal: undefined,
-    Grass: undefined,
-    Fire: undefined,
-    Water: undefined,
-    Electric: undefined,
-    Ice: undefined,
-    Flying: undefined,
-    Bug: undefined,
-    Poison: undefined,
-    Ground: undefined,
-    Rock: undefined,
-    Fighting: undefined,
-    Psychic: undefined,
-    Ghost: undefined,
-    Dragon: undefined,
-    Dark: undefined,
-    Steel: undefined,
-    Fairy: undefined,
-    Stellar: undefined,
   },
 });
 
