@@ -3694,7 +3694,7 @@ var SETDEX_SS = {
   },
   "Drednaw": {
     "RU Rain Sweeper": {"ability":"Swift Swim","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Liquidation","Stone Edge","Megahorn","Swords Dance"]},
-    "ZU Suicide Lead": {"ability":"Strong Jaw","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Head Smash","Liquidation","Jaw Lock"]}
+    "ZU Hazard Lead": {"ability":"Strong Jaw","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Liquidation","Stone Edge","Jaw Lock"]}
   },
   "Boltund": {
     "ZU All-out Attacker": {"ability":"Strong Jaw","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Thunder Fang","Volt Switch","Fire Fang","Crunch"]}

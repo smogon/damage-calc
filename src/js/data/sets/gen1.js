@@ -39,7 +39,7 @@ var SETDEX_RBY = {
     "PU Wrap": {"moves":["Wrap","Glare","Earthquake","Hyper Beam"]}
   },
   "Raichu": {
-    "OU Offensive": {"moves":["Thunderbolt","Surf","Thunder Wave","Submission"]},
+    "OU Mixed Attacker": {"moves":["Thunderbolt","Thunder Wave","Submission","Surf"]},
     "UU Agility Sweeper": {"moves":["Thunderbolt","Surf","Thunder Wave","Agility"]},
     "Tradebacks OU Sleeper": {"moves":["Sing","Thunderbolt","Surf","Hyper Beam"]}
   },
