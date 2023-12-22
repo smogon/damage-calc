@@ -450,10 +450,8 @@ var SETDEX_DPP = {
     "LC Nasty Plot": {"level":5,"ability":"Filter","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":36,"sa":196,"sd":36,"sp":196},"moves":["Nasty Plot","Psychic","Hidden Power Fighting","Encore"]}
   },
   "Togekiss": {
-    "OU Defensive Nasty Plot": {"ability":"Serene Grace","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":36,"sp":220},"moves":["Nasty Plot","Air Slash","Aura Sphere","Roost"]},
-    "OU Offensive Nasty Plot": {"ability":"Serene Grace","item":"Life Orb","nature":"Timid","evs":{"hp":192,"sa":80,"sp":236},"moves":["Nasty Plot","Air Slash","Fire Blast","Roost"]},
-    "OU Paraflinch": {"ability":"Serene Grace","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":188,"sd":68},"moves":["Air Slash","Thunder Wave","Aura Sphere","Roost"]},
-    "OU Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Air Slash","Aura Sphere","Fire Blast","Trick"]}
+    "OU Defensive Nasty Plot": {"ability":"Serene Grace","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":192,"sp":64},"moves":["Nasty Plot","Air Slash","Roost","Thunder Wave"]},
+    "OU All-Out-Attacker": {"ability":"Serene Grace","item":"Lum Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Air Slash","Aura Sphere","Fire Blast","Thunder Wave"]}
   },
   "Dusknoir": {
     "OU Offensive Spinblocker": {"ability":"Pressure","item":"Custap Berry","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Earthquake","Thunder Punch","Ice Punch","Shadow Sneak"]}
@@ -1077,9 +1075,6 @@ var SETDEX_DPP = {
   "Eevee": {
     "LC Mixed Attacker": {"level":5,"ability":"Adaptability","item":"Life Orb","nature":"Naughty","ivs":{"at":30,"sa":30},"evs":{"at":240,"sp":236},"moves":["Return","Quick Attack","Bite","Hidden Power Grass"]},
     "LC Choice": {"level":5,"ability":"Adaptability","item":"Choice Band","nature":"Adamant","evs":{"at":236,"df":36,"sp":236},"moves":["Return","Quick Attack","Bite","Baton Pass"]}
-  },
-  "Vaporeon": {
-    "OU Offensive Weather Clear": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":16,"sa":240,"sp":252},"moves":["Hydro Pump","Ice Beam","Substitute","Rain Dance"]}
   },
   "Jolteon": {
     "OU Choice Specs": {"ability":"Volt Absorb","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Shadow Ball","Signal Beam","Hidden Power Grass"]},
@@ -2234,8 +2229,8 @@ var SETDEX_DPP = {
     "Doubles OU Showdown Usage": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","U-turn","Ice Fang"]}
   },
   "Mamoswine": {
-    "OU Physical Attacker": {"ability":"Oblivious","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Ice Shard","Stone Edge","Superpower"]},
-    "OU Lead": {"ability":"Oblivious","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Earthquake","Ice Shard","Endeavor"]},
+    "OU Physical Attacker": {"ability":"Oblivious","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Ice Shard","Ice Fang","Substitute"]},
+    "OU Mixed": {"ability":"Oblivious","item":"Never-Melt Ice","nature":"Naughty","evs":{"at":196,"sa":60,"sp":252},"moves":["Earthquake","Blizzard","Ice Shard","Substitute"]},
     "Ubers Lead": {"ability":"Snow Cloak","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Earthquake","Ice Shard","Endeavor"]}
   },
   "Porygon-Z": {

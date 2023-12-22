@@ -80,7 +80,7 @@ var SETDEX_RBY = {
     "PU Standard": {"moves":["Confuse Ray","Screech","Double-Edge","Mega Drain"]}
   },
   "Vileplume": {
-    "PU Double Powder": {"moves":["Sleep Powder","Stun Spore","Mega Drain","Body Slam"]}
+    "PU Bulky Status Spreader": {"moves":["Sleep Powder","Stun Spore","Swords Dance","Hyper Beam"]}
   },
   "Parasect": {
     "PU Setup Sleeper": {"moves":["Spore","Stun Spore","Swords Dance","Hyper Beam"]},
@@ -113,7 +113,7 @@ var SETDEX_RBY = {
   "Arcanine": {
     "UU Agility Sweeper": {"moves":["Agility","Body Slam","Hyper Beam","Fire Blast"]},
     "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]},
-    "PU Bulky Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Reflect"]}
+    "PU Bulky Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Agility"]}
   },
   "Poliwag": {
     "PU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]}
@@ -378,8 +378,7 @@ var SETDEX_RBY = {
     "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
     "Ubers Paralysis Lead": {"moves":["Thunder Wave","Thunderbolt","Pin Missile","Double Kick"]},
     "1v1 Critical Attacker": {"moves":["Thunderbolt","Pin Missile","Toxic","Rest"]},
-    "Tradebacks OU Standard Rest": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
-    "Tradebacks OU Growth": {"moves":["Growth","Thunderbolt","Double Kick","Thunder Wave"]}
+    "Tradebacks OU Standard": {"moves":["Thunderbolt","Double Kick","Thunder Wave","Rest"]}
   },
   "Flareon": {
     "OU Mixed Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]},

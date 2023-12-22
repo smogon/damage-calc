@@ -727,6 +727,7 @@ var SETDEX_SS = {
   "Lanturn": {
     "UU Cleric Support": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":132,"sp":124},"moves":["Volt Switch","Scald","Heal Bell","Toxic"]},
     "PU Bulky Pivot": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":88,"df":172,"sd":248},"moves":["Scald","Volt Switch","Toxic","Protect"]},
+    "Monotype Specially Defensive Pivot (Water)": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Volt Switch","Toxic","Heal Bell","Protect"]},
     "National Dex Monotype Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Heal Bell","Volt Switch","Scald","Toxic"]}
   },
   "Natu": {
@@ -2242,7 +2243,7 @@ var SETDEX_SS = {
     "Battle Stadium Singles Set-Up": {"level":50,"ability":"Iron Barbs","item":"Leftovers","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Iron Defense","Body Press","Leech Seed","Gyro Ball"]},
     "Battle Stadium Singles Choice Band": {"level":50,"ability":"Iron Barbs","item":"Choice Band","nature":"Brave","evs":{"hp":252,"at":252,"df":4},"moves":["Gyro Ball","Power Whip","Knock Off","Bulldoze"]},
     "Battle Stadium Singles Specially Defensive": {"level":50,"ability":"Iron Barbs","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Leech Seed","Gyro Ball","Protect","Power Whip"]},
-    "Monotype Defensive Utility (Grass)": {"ability":"Iron Barbs","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Spikes","Leech Seed","Gyro Ball"]},
+    "Monotype Defensive Utility (Grass)": {"ability":"Iron Barbs","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Spikes","Leech Seed","Iron Head","Body Press"]},
     "Monotype Utility (Steel)": {"ability":"Iron Barbs","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Power Whip","Leech Seed","Protect","Stealth Rock"]},
     "National Dex Entry Hazard Setter": {"ability":"Iron Barbs","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":24,"sd":232},"moves":["Spikes","Knock Off","Leech Seed","Power Whip"]},
     "National Dex Monotype Defensive (Steel)": {"ability":"Iron Barbs","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":56,"sd":200},"moves":["Leech Seed","Protect","Power Whip","Spikes"]},
@@ -3181,7 +3182,7 @@ var SETDEX_SS = {
     "ZU BoltBeam Pivot": {"ability":"RKS System","item":"Fighting Memory","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Multi-Attack","U-turn","Thunderbolt","Ice Beam"]}
   },
   "Silvally-Fire": {
-    "ZU Swords Dance": {"ability":"RKS System","item":"Fire Memory","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Flame Charge","Dragon Claw"]}
+    "ZU Swords Dance": {"ability":"RKS System","item":"Fire Memory","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Flame Charge","Dragon Claw"]}
   },
   "Silvally-Flying": {
     "ZU Swords Dance": {"ability":"RKS System","item":"Flying Memory","nature":"Naive","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Flame Charge","Surf"]}
