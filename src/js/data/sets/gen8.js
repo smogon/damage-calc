@@ -1481,7 +1481,7 @@ var SETDEX_SS = {
     "National Dex UU Showdown Usage": {"ability":"Poison Point","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Sludge Bomb","Giga Drain","Synthesis"]}
   },
   "Vespiquen": {
-    "ZU Defensive Pivot": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["U-turn","Roost","Toxic Spikes","Air Slash"]}
+    "ZU Defensive Pivot": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["U-turn","Roost","Defog","Air Slash"]}
   },
   "Cherrim": {
     "ZU Sun Wallbreaker": {"ability":"Flower Gift","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Growth","Solar Blade","Play Rough","Weather Ball"]}
@@ -1733,7 +1733,7 @@ var SETDEX_SS = {
     "National Dex Showdown Usage": {"ability":"Adaptability","item":"Normalium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Thunderbolt","Conversion","Recover"]}
   },
   "Dusknoir": {
-    "ZU Substitute + 3 Attacks": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":132,"at":252,"sp":124},"moves":["Substitute","Poltergeist","Shadow Sneak","Focus Punch"]}
+    "ZU Substitute + 3 Attacks": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":132,"at":252,"sp":124},"moves":["Substitute","Poltergeist","Focus Punch","Shadow Sneak"]}
   },
   "Froslass": {
     "Ubers Suicide Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Icy Wind","Spikes","Taunt","Destiny Bond"]},
@@ -1904,7 +1904,7 @@ var SETDEX_SS = {
     "National Dex Substitute Attacker": {"ability":"Contrary","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Substitute","Glare"]}
   },
   "Stoutland": {
-    "ZU Wallbreaker": {"ability":"Scrappy","item":"Silk Scarf","nature":"Adamant","evs":{"at":252,"df":4,"sd":252},"moves":["Retaliate","Last Resort"]}
+    "ZU Wallbreaker": {"ability":"Scrappy","item":"Silk Scarf","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Retaliate","Last Resort"]}
   },
   "Liepard": {
     "ZU Sun Setter": {"ability":"Prankster","item":"Heat Rock","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Sunny Day","U-turn","Knock Off","Encore"]},
@@ -2641,7 +2641,7 @@ var SETDEX_SS = {
     "RU Swords Dance": {"ability":"Iron Fist","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Drain Punch","Knock Off","Bullet Punch"]}
   },
   "Meowstic": {
-    "ZU Dual Screen": {"ability":"Prankster","item":"Eject Button","nature":"Timid","evs":{"hp":252,"sa":4,"sd":252},"moves":["Reflect","Light Screen","Yawn","Psychic"]},
+    "ZU Dual Screens": {"ability":"Prankster","item":"Eject Button","nature":"Timid","evs":{"hp":252,"sa":4,"sd":252},"moves":["Reflect","Light Screen","Yawn","Psychic"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Prankster","item":"Light Clay","nature":"Impish","evs":{"hp":252,"df":164,"sd":92},"moves":["Light Screen","Reflect","Fake Out","Yawn"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Prankster","item":"Mental Herb","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Fake Out","Skill Swap","Yawn","Safeguard"]}
   },
