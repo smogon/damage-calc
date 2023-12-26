@@ -108,7 +108,7 @@ export function calculateBWXY(
     move.type = getItemBoostType(attacker.item)!;
   } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
     move.type = getTechnoBlast(attacker.item)!;
-  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
+  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry') && attacker.item !== 'Berry Juice') {
     const gift = getNaturalGift(gen, attacker.item)!;
     move.type = gift.t;
     move.bp = gift.p;
