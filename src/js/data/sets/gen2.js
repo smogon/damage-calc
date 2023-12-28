@@ -663,7 +663,8 @@ var SETDEX_GSC = {
   },
   "Delibird": {
     "OU Spiker": {"item":"Leftovers","ivs":{"hp":14,"at":24,"df":26},"moves":["Spikes","Ice Beam","Toxic","Hidden Power Flying"]},
-    "OU Curse": {"item":"Leftovers","ivs":{"hp":14,"at":24,"df":26},"moves":["Curse","Hidden Power Flying","Ice Beam","Rest"]}
+    "OU Curse": {"item":"Leftovers","ivs":{"hp":14,"at":24,"df":26},"moves":["Curse","Hidden Power Flying","Ice Beam","Rest"]},
+    "NU Spikes": {"moves":["Ice Beam","Toxic","Thief","Spikes"]}
   },
   "Skarmory": {
     "OU Physical Wall": {"item":"Leftovers","moves":["Whirlwind","Drill Peck","Rest","Curse"]},

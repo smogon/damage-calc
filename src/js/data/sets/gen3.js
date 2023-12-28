@@ -536,7 +536,8 @@ var SETDEX_ADV = {
   },
   "Mankey": {
     "LC Substitute + Reversal": {"level":5,"ability":"Vital Spirit","item":"Salac Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"df":80,"sp":196},"moves":["Reversal","Hidden Power Ghost","Substitute","Endure"]},
-    "ZU Choice Band": {"ability":"Vital Spirit","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Cross Chop","Earthquake","Rock Slide","Focus Punch"]}
+    "ZU Choice Band": {"ability":"Vital Spirit","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Cross Chop","Earthquake","Rock Slide","Focus Punch"]},
+    "ZU Salac Sweeper": {"ability":"Vital Spirit","item":"Salac Berry","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Reversal","Earthquake","Bulk Up"]}
   },
   "Primeape": {
     "UU Choice Band": {"ability":"Vital Spirit","item":"Choice Band","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Cross Chop","Focus Punch","Rock Slide","Hidden Power Ghost"]},
@@ -602,7 +603,7 @@ var SETDEX_ADV = {
     "OU Curse": {"ability":"Own Tempo","item":"Leftovers","nature":"Brave","evs":{"hp":252,"at":176,"sd":80},"moves":["Curse","Earthquake","Ice Beam","Rest"]}
   },
   "Magnemite": {
-    "LC Defensive Utility": {"level":5,"ability":"Sturdy","item":"Sitrus Berry","nature":"Calm","ivs":{"at":2,"sa":30},"evs":{"hp":156,"df":116,"sa":80,"sd":156},"moves":["Thunderbolt","Hidden Power Grass","Thunder Wave","Metal Sound"]},
+    "LC Defensive Utility": {"level":5,"ability":"Sturdy","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Hidden Power Grass","Thunder Wave","Metal Sound"]},
     "ZU Substitute + Status": {"ability":"Magnet Pull","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":20,"sa":32,"sp":204},"moves":["Thunder Wave","Thunderbolt","Hidden Power Grass","Substitute"]}
   },
   "Magneton": {
@@ -1043,7 +1044,7 @@ var SETDEX_ADV = {
   },
   "Larvitar": {
     "LC Dragon Dance": {"level":5,"ability":"Guts","item":"Sitrus Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":164,"sd":120,"sp":188},"moves":["Dragon Dance","Rock Slide","Earthquake","Hidden Power Ghost"]},
-    "ZU Dragon Dance": {"ability":"Guts","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Rock Slide","Brick Break"]}
+    "ZU Dragon Dance": {"ability":"Guts","item":"Soft Sand","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Earthquake","Rock Slide","Hidden Power Bug"]}
   },
   "Pupitar": {
     "NU Dragon Dance": {"ability":"Shed Skin","item":"Leftovers","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Dragon Dance","Earthquake","Rock Slide","Hidden Power Bug"]}

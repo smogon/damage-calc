@@ -7,8 +7,9 @@ var SETDEX_RBY = {
   "Charizard": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Earthquake","Slash"]},
     "UU Swords Dance Wallbreaker": {"moves":["Swords Dance","Fire Blast","Earthquake","Body Slam"]},
-    "NU Fire Spin Pivot": {"moves":["Fire Spin","Fire Blast","Earthquake","Slash"]},
-    "NU Swords Dance Sweeper": {"moves":["Swords Dance","Earthquake","Hyper Beam","Fire Spin"]}
+    "NU Mixed Attacker Lead": {"moves":["Fire Blast","Earthquake","Body Slam","Counter"]},
+    "NU Swords Dance Lead": {"moves":["Swords Dance","Body Slam","Earthquake","Fire Blast"]},
+    "NU Swords Dance Sweeper": {"moves":["Swords Dance","Earthquake","Hyper Beam","Fire Blast"]}
   },
   "Blastoise": {
     "UU Bulky Attacker": {"moves":["Surf","Blizzard","Earthquake","Rest"]},
@@ -46,7 +47,7 @@ var SETDEX_RBY = {
   "Sandslash": {
     "OU Swords Dance": {"moves":["Swords Dance","Earthquake","Body Slam","Hyper Beam"]},
     "NU Swords Dance": {"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
-    "PU Swords Dance": {"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
+    "PU Swords Dance": {"moves":["Earthquake","Rock Slide","Swords Dance","Substitute"]},
     "Ubers Showdown Usage": {"moves":["Earthquake","Swords Dance","Substitute","Sand Attack"]}
   },
   "Nidoqueen": {
@@ -126,7 +127,7 @@ var SETDEX_RBY = {
     "1v1 Mixed Attacker": {"moves":["Blizzard","Amnesia","Submission","Rest"]}
   },
   "Abra": {
-    "NU Special Attacker": {"moves":["Psychic","Thunder Wave","Seismic Toss","Reflect"]},
+    "NU Special Attacker": {"moves":["Psychic","Thunder Wave","Seismic Toss","Counter"]},
     "PU Special Attacker": {"moves":["Psychic","Seismic Toss","Thunder Wave","Substitute"]}
   },
   "Kadabra": {
@@ -189,7 +190,7 @@ var SETDEX_RBY = {
   },
   "Magneton": {
     "UU Bulky Special Attacker": {"moves":["Thunderbolt","Thunder Wave","Double-Edge","Rest"]},
-    "NU Offensive": {"moves":["Thunder Wave","Thunder","Double-Edge","Rest"]},
+    "NU Offensive": {"moves":["Thunder Wave","Thunderbolt","Thunder","Rest"]},
     "PU Special Attacker": {"moves":["Thunderbolt","Double-Edge","Thunder Wave","Toxic"]}
   },
   "Farfetch’d": {
@@ -442,7 +443,7 @@ var SETDEX_RBY = {
     "Tradebacks OU AgiliSpin": {"moves":["Agility","Fire Spin","Fire Blast","Hyper Beam"]}
   },
   "Dragonair": {
-    "NU Agility + Wrap": {"moves":["Wrap","Thunder Wave","Hyper Beam","Agility"]},
+    "NU Wrap": {"moves":["Wrap","Thunder Wave","Blizzard","Thunderbolt"]},
     "PU Support": {"moves":["Thunder Wave","Wrap","Blizzard","Thunderbolt"]},
     "PU AgiliWrap": {"moves":["Agility","Wrap","Blizzard","Thunderbolt"]}
   },

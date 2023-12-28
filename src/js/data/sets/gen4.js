@@ -2241,9 +2241,6 @@ var SETDEX_DPP = {
     "UU Trapper": {"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","evs":{"hp":172,"sa":252,"sp":84},"moves":["Magnet Rise","Taunt","Earth Power","Power Gem"]}
   },
   "Froslass": {
-    "OU Spikes Lead": {"ability":"Snow Cloak","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Destiny Bond","Ice Beam"]},
-    "OU Hail Stall": {"ability":"Snow Cloak","item":"Leftovers","nature":"Timid","evs":{"hp":248,"df":228,"sp":32},"moves":["Substitute","Thunder Wave","Spikes","Blizzard"]},
-    "OU Choice Scarf Lead": {"ability":"Snow Cloak","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Trick","Spikes","Destiny Bond","Ice Beam"]},
     "Ubers Spikes Lead": {"ability":"Snow Cloak","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Icy Wind","Shadow Ball","Destiny Bond"]},
     "Anything Goes Showdown Usage": {"ability":"Snow Cloak","item":"Leftovers","nature":"Timid","evs":{"hp":224,"sa":32,"sp":252},"moves":["Blizzard","Protect","Substitute","Double Team"]}
   },
