@@ -478,7 +478,7 @@ var SETDEX_BW = {
   },
   "Gothitelle": {
     "OU I Wanna Be The Latios": {"ability":"Frisk","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Hidden Power Fire","Energy Ball","Trick"]},
-    "Doubles OU Showdown Usage": {"ability":"Shadow Tag","item":"Sitrus Berry","nature":"Sassy","evs":{"hp":248,"df":8,"sd":252},"moves":["Protect","Trick Room","Skill Swap","Psychic"]}
+    "Doubles OU Shadow Tag Support": {"ability":"Shadow Tag","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"df":252,"sd":4},"moves":["Psychic","Taunt","Trick Room","Protect"]}
   },
   "Ferrothorn": {
     "OU Standard": {"ability":"Iron Barbs","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":48,"sd":208},"moves":["Spikes","Knock Off","Power Whip","Stealth Rock"]},
@@ -866,9 +866,7 @@ var SETDEX_BW = {
     "UU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":252,"df":252,"sd":4},"moves":["Moonlight","Psychic","Hidden Power Fighting","Thunder Wave"]},
     "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Bold","evs":{"hp":252,"df":176,"sd":80},"moves":["Reflect","Light Screen","Lunar Dance","Psychic"]},
     "UU Substitute + Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":252,"df":4,"sp":252},"moves":["Calm Mind","Substitute","Psyshock","Hidden Power Fighting"]},
-    "Doubles OU Offensive": {"ability":"Levitate","item":"Expert Belt","nature":"Modest","ivs":{"sa":30,"sd":30},"evs":{"hp":252,"sa":252,"sd":4},"moves":["Psychic","Hidden Power Ground","Ice Beam","Thunder Wave"]},
-    "Doubles OU Speed Control": {"ability":"Levitate","item":"Chesto Berry","nature":"Calm","evs":{"hp":240,"df":12,"sa":40,"sd":216},"moves":["Icy Wind","Psyshock","Helping Hand","Rest"]},
-    "Doubles OU Trick Room": {"ability":"Levitate","item":"Sitrus Berry","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":60,"sd":196},"moves":["Trick Room","Psyshock","Helping Hand","Protect"]},
+    "Doubles OU Offensive": {"ability":"Levitate","item":"Expert Belt","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Ice Beam","Hidden Power Ground","Thunder Wave"]},
     "1v1 Showdown Usage": {"ability":"Levitate","item":"Choice Scarf","nature":"Bold","evs":{"hp":52,"df":224,"sp":232},"moves":["Moonlight","Ice Beam","Trick","Psychic"]}
   },
   "Pidgey": {
@@ -1595,9 +1593,8 @@ var SETDEX_BW = {
     "OU Choice Scarf": {"ability":"Sand Stream","item":"Choice Scarf","nature":"Hasty","evs":{"at":208,"sd":48,"sp":252},"moves":["Pursuit","Crunch","Ice Beam","Superpower"]},
     "Ubers Tank": {"ability":"Sand Stream","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":76,"sd":180},"moves":["Crunch","Pursuit","Low Kick","Fire Blast"]},
     "Ubers Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":64,"sd":192},"moves":["Crunch","Pursuit","Stone Edge","Low Kick"]},
-    "Doubles OU Standard": {"ability":"Sand Stream","item":"Chople Berry","nature":"Adamant","ivs":{"sp":0},"evs":{"hp":252,"at":220,"df":36},"moves":["Rock Slide","Crunch","Low Kick","Protect"]},
-    "Doubles OU Choice Scarf": {"ability":"Sand Stream","item":"Choice Scarf","nature":"Naive","evs":{"hp":76,"at":182,"sp":252},"moves":["Rock Slide","Crunch","Superpower","Fire Blast"]},
-    "Doubles OU Focus Sash": {"ability":"Sand Stream","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Rock Slide","Crunch","Low Kick","Protect"]},
+    "Doubles OU Offensive Tank": {"ability":"Sand Stream","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Rock Slide","Crunch","Low Kick","Stealth Rock"]},
+    "Doubles OU Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Rock Slide","Crunch","Pursuit","Stone Edge"]},
     "1v1 Defensive Chople Berry": {"ability":"Sand Stream","item":"Chople Berry","nature":"Adamant","evs":{"hp":232,"df":148,"sp":128},"moves":["Stone Edge","Crunch","Taunt","Counter"]}
   },
   "Lugia": {
@@ -2089,7 +2086,7 @@ var SETDEX_BW = {
   "Gastrodon": {
     "OU Physically Defensive": {"ability":"Storm Drain","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Scald","Ice Beam","Toxic"]},
     "Ubers Tank": {"ability":"Storm Drain","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":248,"sp":8},"moves":["Scald","Recover","Toxic","Mirror Coat"]},
-    "Doubles OU Showdown Usage": {"ability":"Storm Drain","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":252,"sd":4},"moves":["Earth Power","Recover","Scald","Ice Beam"]}
+    "Doubles OU Offensive Utility": {"ability":"Storm Drain","item":"Sitrus Berry","nature":"Calm","evs":{"hp":232,"df":88,"sa":108,"sd":80},"moves":["Earth Power","Ice Beam","Recover","Toxic"]}
   },
   "Ambipom": {
     "UU All-Out Attacker": {"ability":"Technician","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Return","Low Kick","Beat Up"]},

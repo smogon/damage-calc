@@ -4499,7 +4499,7 @@ var SETDEX_XY = {
     "Pure Hackmons Substitute + Baton Pass Wonder Guard": {"ability":"Wonder Guard","item":"Leftovers","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sa":252},"moves":["Stealth Rock","Substitute","Moonblast","Baton Pass"]},
     "Pure Hackmons Mold Breaker Sweeper": {"ability":"Mold Breaker","item":"Pixie Plate","nature":"Modest","ivs":{"at":0},"evs":{"df":72,"sa":252,"sp":184},"moves":["Shell Smash","Judgment","King's Shield","Spore"]},
     "Pure Hackmons SmashPass WG": {"ability":"Wonder Guard","item":"Leftovers","nature":"Modest","evs":{"df":180,"sa":252,"sp":76},"moves":["Stealth Rock","Shell Smash","Moonblast","Baton Pass"]},
-    "Pure Hackmons Shell Smash Sweeper WG": {"ability":"Wonder Guard","item":"Iron Plate","nature":"Modest","evs":{"hp":180,"sa":252,"sp":76},"moves":["Shell Smash","Judgment","Earth Power","Moonblast"]},
+    "Pure Hackmons Wonder Guard Sweeper": {"ability":"Wonder Guard","item":"Iron Plate","nature":"Modest","ivs":{"at":0},"evs":{"df":180,"sa":252,"sp":76},"moves":["Shell Smash","Judgment","Freeze-Dry","Lava Plume"]},
     "Pure Hackmons Support WG": {"ability":"Wonder Guard","item":"Shed Shell","nature":"Modest","evs":{"hp":248,"df":108,"sa":152},"moves":["Defog","Aromatherapy","Moonblast","Recover"]}
   },
   "Yveltal": {

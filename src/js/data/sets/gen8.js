@@ -1359,7 +1359,7 @@ var SETDEX_SS = {
   "Regice": {
     "1v1 Charge Beam": {"ability":"Clear Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":4,"sp":252},"moves":["Rest","Amnesia","Frost Breath","Charge Beam"]},
     "1v1 Counter": {"ability":"Clear Body","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Frost Breath","Counter","Amnesia","Rest"]},
-    "ZU Rock Polish": {"ability":"Clear Body","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Rock Polish","Ice Beam","Thunderbolt","Focus Blast"]}
+    "ZU Rock Polish": {"ability":"Clear Body","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Ice Beam","Thunderbolt","Focus Blast","Rock Polish"]}
   },
   "Registeel": {
     "UU Demon Registeel (Double Dance)": {"ability":"Clear Body","item":"Chesto Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Amnesia","Iron Defense","Rest","Body Press"]},
@@ -2287,7 +2287,7 @@ var SETDEX_SS = {
     "National Dex UU Showdown Usage": {"ability":"Mold Breaker","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Earthquake","Close Combat","Poison Jab"]}
   },
   "Beartic": {
-    "ZU Wallbreaker": {"ability":"Swift Swim","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Icicle Crash","Superpower","Aqua Jet","Stone Edge"]}
+    "ZU Wallbreaker": {"ability":"Swift Swim","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Crash","Superpower","Aqua Jet","Stone Edge"]}
   },
   "Cryogonal": {
     "ZU Special Wall": {"ability":"Levitate","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":248,"sd":8,"sp":252},"moves":["Recover","Freeze-Dry","Knock Off","Rapid Spin"]},
@@ -2835,7 +2835,7 @@ var SETDEX_SS = {
     "CAP Showdown Usage": {"ability":"Unburden","item":"Electric Seed","nature":"Adamant","evs":{"at":252,"sd":132,"sp":124},"moves":["Acrobatics","Swords Dance","Close Combat","Substitute"]}
   },
   "Dedenne": {
-    "ZU Offensive Pivot": {"ability":"Pickup","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Dazzling Gleam","Super Fang","Grass Knot"]}
+    "ZU Offensive Pivot": {"ability":"Pickup","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Dazzling Gleam","Grass Knot","Super Fang"]}
   },
   "Carbink": {
     "ZU IronPress": {"ability":"Clear Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":252,"sp":4},"moves":["Iron Defense","Body Press","Rest","Moonblast"]}
@@ -3675,7 +3675,7 @@ var SETDEX_SS = {
   },
   "Orbeetle": {
     "Monotype Support (Psychic)": {"ability":"Frisk","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Reflect","Light Screen","Sticky Web","U-turn"]},
-    "ZU Showdown Usage": {"ability":"Frisk","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","U-turn","Psychic","Bug Buzz"]},
+    "ZU Stored Power Sweeper": {"ability":"Frisk","item":"Weakness Policy","nature":"Bold","ivs":{"at":0},"evs":{"hp":132,"df":216,"sp":160},"moves":["Agility","Iron Defense","Body Press","Stored Power"]},
     "National Dex UU Showdown Usage": {"ability":"Frisk","item":"Red Card","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Iron Defense","Calm Mind","Infestation","Recover"]}
   },
   "Thievul": {
@@ -3815,7 +3815,7 @@ var SETDEX_SS = {
     "PU Defensive": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Will-O-Wisp","Toxic Spikes"]},
     "PU Bulky Setup Sweeper": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Iron Defense","Amnesia","Rest","Body Press"]},
     "Monotype Defensive Hazard Setter (Ghost)": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Toxic Spikes","Earthquake","Will-O-Wisp"]},
-    "ZU Showdown Usage": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","Stealth Rock","Will-O-Wisp","Poltergeist"]}
+    "ZU Physical Wall": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Poltergeist","Body Press"]}
   },
   "Alcremie": {
     "PU Defensive": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Dazzling Gleam","Calm Mind","Aromatherapy"]},
