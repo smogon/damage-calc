@@ -773,7 +773,6 @@ function showFormes(formeObj, pokemonName, pokemon, baseFormeName) {
 function stellarButtonsVisibility(pokeObj, vis) {
 	var fullSetName = pokeObj.find("input.set-selector").val();
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
-	console.log(pokemonName);
 	var moveObjs = [
 		pokeObj.find(".move1"),
 		pokeObj.find(".move2"),

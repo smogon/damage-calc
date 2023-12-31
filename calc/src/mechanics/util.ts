@@ -364,7 +364,7 @@ export function checkMultihitBoost(
     field.weather = 'Sand';
   }
 
-  if (defender.hasAbility('Stamina')) {
+  if (defender.hasAbility('Stamina') && !move.isCrit) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {
@@ -372,7 +372,7 @@ export function checkMultihitBoost(
       defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
       desc.defenderAbility = defender.ability;
     }
-  } else if (defender.hasAbility('Water Compaction') && move.hasType('Water')) {
+  } else if (defender.hasAbility('Water Compaction') && move.hasType('Water') && !move.isCrit) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {
@@ -554,6 +554,40 @@ export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveC
 export function getWeightFactor(pokemon: Pokemon) {
   return pokemon.hasAbility('Heavy Metal') ? 2
     : (pokemon.hasAbility('Light Metal') || pokemon.hasItem('Float Stone')) ? 0.5 : 1;
+}
+
+export function getStabMod(pokemon: Pokemon, move: Move, desc: RawDesc) {
+  let stabMod = 4096;
+  if (pokemon.hasOriginalType(move.type)) {
+    stabMod += 2048;
+  } else if (pokemon.hasAbility('Protean', 'Libero') && !pokemon.teraType) {
+    stabMod += 2048;
+    desc.attackerAbility = pokemon.ability;
+  }
+  const teraType = pokemon.teraType;
+  if (teraType === move.type && teraType !== 'Stellar') {
+    stabMod += 2048;
+    desc.attackerTera = teraType;
+  }
+  if (pokemon.hasAbility('Adaptability') && pokemon.hasType(move.type)) {
+    stabMod += teraType && pokemon.hasOriginalType(teraType) ? 1024 : 2048;
+    desc.attackerAbility = pokemon.ability;
+  }
+  return stabMod;
+}
+
+export function getStellarStabMod(pokemon: Pokemon, move: Move, stabMod = 1, turns = 0) {
+  const isStellarBoosted =
+    pokemon.teraType === 'Stellar' &&
+    ((move.isStellarFirstUse && turns === 0) || pokemon.named('Terapagos-Stellar'));
+  if (isStellarBoosted) {
+    if (pokemon.hasOriginalType(move.type)) {
+      stabMod += 2048;
+    } else {
+      stabMod = 4915;
+    }
+  }
+  return stabMod;
 }
 
 export function countBoosts(gen: Generation, boosts: StatsTable) {

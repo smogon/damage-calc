@@ -44,6 +44,8 @@ import {
   OF16, OF32,
   pokeRound,
   isQPActive,
+  getStabMod,
+  getStellarStabMod,
 } from './util';
 
 export function calculateSMSSSV(
@@ -345,6 +347,8 @@ export function calculateSMSSSV(
     typeEffectiveness = !defender.teraType ? 1 : 2;
   }
 
+  const turn2typeEffectiveness = typeEffectiveness;
+
   // Tera Shell works only at full HP, but for all hits of multi-hit moves
   if (defender.hasAbility('Tera Shell') &&
       defender.curHP() === defender.maxHP() &&
@@ -511,34 +515,8 @@ export function calculateSMSSSV(
 
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
   // below this until we're inside the loop
-  let stabMod = 4096;
-  if (attacker.hasOriginalType(move.type)) {
-    stabMod += 2048;
-  } else if (attacker.hasAbility('Protean', 'Libero') && !attacker.teraType) {
-    stabMod += 2048;
-    desc.attackerAbility = attacker.ability;
-  }
-  const teraType = attacker.teraType;
-  if (teraType === move.type && teraType !== 'Stellar') {
-    stabMod += 2048;
-    desc.attackerTera = teraType;
-  }
-  if (attacker.hasAbility('Adaptability') && attacker.hasType(move.type)) {
-    stabMod += teraType && attacker.hasOriginalType(teraType) ? 1024 : 2048;
-    desc.attackerAbility = attacker.ability;
-  }
-
-  // TODO: For now all moves are always boosted
-  const isStellarBoosted =
-    attacker.teraType === 'Stellar' &&
-    (move.isStellarFirstUse || attacker.named('Terapagos-Stellar'));
-  if (isStellarBoosted) {
-    if (attacker.hasOriginalType(move.type)) {
-      stabMod += 2048;
-    } else {
-      stabMod = 4915;
-    }
-  }
+  let preStellarStabMod = getStabMod(attacker, move, desc);
+  let stabMod = getStellarStabMod(attacker, move, preStellarStabMod);
 
   const applyBurn =
     attacker.hasStatus('brn') &&
@@ -613,6 +591,15 @@ export function calculateSMSSSV(
           hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
             attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
 
+          if ((move.dropsStats && move.timesUsed! > 1)) {
+            // Adaptability does not change between hits of a multihit, only between turns
+            preStellarStabMod = getStabMod(attacker, move, desc);
+            // Hack to make Tera Shell with multihit moves, but not over multiple turns
+            typeEffectiveness = turn2typeEffectiveness;
+          }
+          // Stellar damage boost drops off after first hit, even on multihit moves
+          stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
+
           const newFinalMods = calculateFinalModsSMSSSV(
             gen,
             attacker,
@@ -632,7 +619,8 @@ export function calculateSMSSSV(
             move,
             field,
             hasAteAbilityTypeChange,
-            desc
+            desc,
+            times + 1
           );
           const newBaseDamage = calculateBaseDamageSMSSSV(
             gen,
@@ -681,7 +669,8 @@ export function calculateBasePowerSMSSSV(
   move: Move,
   field: Field,
   hasAteAbilityTypeChange: boolean,
-  desc: RawDesc
+  desc: RawDesc,
+  hit = 1,
 ) {
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
 
@@ -844,13 +833,13 @@ export function calculateBasePowerSMSSSV(
     break;
   // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
   case 'Triple Axel':
-    basePower = move.hits === 2 ? 30 : move.hits === 3 ? 40 : 20;
-    desc.moveBP = basePower;
+    basePower = hit * 20;
+    desc.moveBP = move.hits === 2 ? 60 : move.hits === 3 ? 120 : 20;
     break;
   // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
   case 'Triple Kick':
-    basePower = move.hits === 2 ? 15 : move.hits === 3 ? 30 : 10;
-    desc.moveBP = basePower;
+    basePower = hit * 10;
+    desc.moveBP = move.hits === 2 ? 30 : move.hits === 3 ? 60 : 20;
     break;
   case 'Crush Grip':
   case 'Wring Out':

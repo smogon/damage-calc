@@ -30,6 +30,7 @@ import {
   getFinalDamage,
   getModifiedStat,
   getMoveEffectiveness,
+  getStabMod,
   getWeightFactor,
   handleFixedDamageMoves,
   isGrounded,
@@ -754,18 +755,7 @@ export function calculateBWXY(
 
   // the random factor is applied between the crit mod and the stab mod, so don't apply anything
   // below this until we're inside the loop
-  let stabMod = 4096;
-  if (attacker.hasType(move.type)) {
-    if (attacker.hasAbility('Adaptability')) {
-      stabMod = 8192;
-      desc.attackerAbility = attacker.ability;
-    } else {
-      stabMod = 6144;
-    }
-  } else if (attacker.hasAbility('Protean')) {
-    stabMod = 6144;
-    desc.attackerAbility = attacker.ability;
-  }
+  const stabMod = getStabMod(attacker, move, desc);
 
   const applyBurn =
     attacker.hasStatus('brn') &&
