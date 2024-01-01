@@ -744,7 +744,7 @@ var SETDEX_SS = {
     "Monotype Xatu (Flying)": {"ability":"Magic Bounce","item":"Light Clay","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Light Screen","Reflect","U-turn","Thunder Wave"]}
   },
   "Bellossom": {
-    "ZU Quiver Dance": {"ability":"Chlorophyll","item":"Kee Berry","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Quiver Dance","Strength Sap","Giga Drain","Safeguard"]}
+    "ZU Quiver Dance": {"ability":"Chlorophyll","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Quiver Dance","Strength Sap","Giga Drain","Moonblast"]}
   },
   "Azumarill": {
     "OU Belly Drum": {"ability":"Huge Power","item":"Sitrus Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Belly Drum","Play Rough","Aqua Jet","Knock Off"]},
@@ -1300,7 +1300,7 @@ var SETDEX_SS = {
     "National Dex Monotype Showdown Usage": {"ability":"Storm Drain","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Recover","Toxic","Stealth Rock","Rock Slide"]}
   },
   "Armaldo": {
-    "ZU Utility": {"ability":"Battle Armor","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Rapid Spin","Stone Edge","Knock Off"]}
+    "ZU Offensive Utility": {"ability":"Battle Armor","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Rapid Spin","Stone Edge","Knock Off"]}
   },
   "Milotic": {
     "RU Defensive": {"ability":"Marvel Scale","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":168,"sp":88},"moves":["Scald","Recover","Flip Turn","Toxic"]},

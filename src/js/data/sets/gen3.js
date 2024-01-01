@@ -870,6 +870,9 @@ var SETDEX_ADV = {
     "UU RestTalk": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":40,"sa":252,"sd":218},"moves":["Rest","Sleep Talk","Thunderbolt","Surf"]},
     "UU Parafusion": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":40,"sa":252,"sd":218},"moves":["Thunderbolt","Confuse Ray","Thunder Wave","Surf"]}
   },
+  "Natu": {
+    "ZU Substitute": {"ability":"Synchronize","item":"Leftovers","nature":"Timid","evs":{"hp":12,"sa":244,"sp":252},"moves":["Psychic","Substitute","Toxic","Protect"]}
+  },
   "Xatu": {
     "UU Support": {"ability":"Synchronize","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":32,"sp":224},"moves":["Reflect","Calm Mind","Psychic","Wish"]},
     "UU Thief": {"ability":"Synchronize","item":"Lum Berry","nature":"Timid","evs":{"hp":252,"sa":32,"sp":224},"moves":["Calm Mind","Thief","Psychic","Wish"]}
@@ -1426,9 +1429,6 @@ var SETDEX_ADV = {
   },
   "Numel": {
     "ZU Showdown Usage": {"ability":"Oblivious","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Earthquake","Fire Blast","Rest","Sleep Talk"]}
-  },
-  "Natu": {
-    "ZU Showdown Usage": {"ability":"Synchronize","item":"Leftovers","nature":"Timid","evs":{"hp":12,"sa":244,"sp":252},"moves":["Psychic","Protect","Substitute","Toxic"]}
   },
   "Zigzagoon": {
     "ZU Showdown Usage": {"ability":"Pickup","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":220,"at":252,"sp":36},"moves":["Extreme Speed","Belly Drum","Shadow Ball","Hidden Power Fighting"]}
