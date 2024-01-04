@@ -104,7 +104,7 @@ var SETDEX_BW = {
   },
   "Mr. Mime": {
     "NU Baton Pass": {"ability":"Filter","item":"Leftovers","nature":"Timid","evs":{"hp":144,"sa":112,"sp":252},"moves":["Baton Pass","Nasty Plot","Substitute","Psychic"]},
-    "ZU Choice Scarf": {"ability":"Filter","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Thunderbolt","Focus Blast","Trick"]},
+    "ZU Choice Scarf": {"ability":"Filter","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Healing Wish","Psychic","Focus Blast","Trick"]},
     "ZU Nasty Plot": {"ability":"Filter","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Focus Blast","Taunt"]},
     "ZU Choice Specs": {"ability":"Filter","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Thunderbolt","Focus Blast","Trick"]},
     "ZU Dual Screen": {"ability":"Filter","item":"Light Clay","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":4,"sp":252},"moves":["Reflect","Light Screen","Taunt","Healing Wish"]},

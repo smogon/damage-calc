@@ -860,9 +860,8 @@ var SETDEX_ADV = {
   "Chinchou": {
     "PU Offensive Utility": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Thunder Wave"]},
     "LC All-Out Attacker": {"level":5,"ability":"Volt Absorb","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"df":52,"sa":232,"sp":220},"moves":["Hidden Power Grass","Thunderbolt","Surf","Thunder Wave"]},
-    "ZU Offensive": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunder Wave","Hydro Pump","Thunderbolt","Ice Beam"]},
-    "ZU Defensive": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":252,"sp":4},"moves":["Rest","Sleep Talk","Thunderbolt","Surf"]},
-    "NU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunder Wave","Thunderbolt"]}
+    "NU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunder Wave","Thunderbolt"]},
+    "ZU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Thunder Wave","Ice Beam","Surf"]}
   },
   "Lanturn": {
     "OU RestTalk": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":40,"sa":252,"sd":216},"moves":["Thunderbolt","Surf","Rest","Sleep Talk"]},
@@ -1197,6 +1196,9 @@ var SETDEX_ADV = {
     "NU Offensive": {"ability":"Water Veil","item":"Leftovers","nature":"Modest","ivs":{"sa":30},"evs":{"sa":252,"sd":212,"sp":44},"moves":["Hydro Pump","Ice Beam","Hidden Power Electric","Self-Destruct"]},
     "NU Defensive": {"ability":"Water Veil","item":"Leftovers","nature":"Calm","evs":{"df":212,"sd":252,"sp":44},"moves":["Surf","Rest","Sleep Talk","Roar"]}
   },
+  "Numel": {
+    "ZU Special Wall": {"ability":"Oblivious","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Earthquake","Fire Blast","Rest","Sleep Talk"]}
+  },
   "Camerupt": {
     "OU RestTalk": {"ability":"Magma Armor","item":"Leftovers","nature":"Brave","evs":{"hp":92,"at":176,"sd":240},"moves":["Earthquake","Flamethrower","Rest","Sleep Talk"]},
     "OU Choice Band": {"ability":"Magma Armor","item":"Choice Band","nature":"Brave","evs":{"hp":4,"at":252,"sa":252},"moves":["Earthquake","Overheat","Rock Slide","Explosion"]},
@@ -1426,9 +1428,6 @@ var SETDEX_ADV = {
   },
   "Gloom": {
     "NU Showdown Usage": {"ability":"Chlorophyll","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":252,"at":4,"df":252},"moves":["Moonlight","Sludge Bomb","Stun Spore","Hidden Power Grass"]}
-  },
-  "Numel": {
-    "ZU Showdown Usage": {"ability":"Oblivious","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Earthquake","Fire Blast","Rest","Sleep Talk"]}
   },
   "Zigzagoon": {
     "ZU Showdown Usage": {"ability":"Pickup","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":220,"at":252,"sp":36},"moves":["Extreme Speed","Belly Drum","Shadow Ball","Hidden Power Fighting"]}

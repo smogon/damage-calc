@@ -544,7 +544,7 @@ var SETDEX_DPP = {
     "OU Supercune (Offensive Calm Mind)": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Hydro Pump","Ice Beam","Hidden Power Electric"]},
     "OU CroCune (Defensive Calm Mind + RestTalk)": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Surf","Rest","Sleep Talk"]},
     "OU SubCune": {"ability":"Pressure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":104,"sp":152},"moves":["Substitute","Calm Mind","Surf","Protect"]},
-    "Doubles OU Showdown Usage": {"ability":"Pressure","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Protect","Ice Beam","Surf","Toxic"]}
+    "Doubles OU Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":208,"sd":48},"moves":["Hydro Pump","Ice Beam","Calm Mind","Protect"]}
   },
   "Swellow": {
     "UU Guts": {"ability":"Guts","item":"Toxic Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Facade","Brave Bird","U-turn","Quick Attack"]},
