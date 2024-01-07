@@ -11,8 +11,6 @@ var SETDEX_DPP = {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Overheat","Shadow Ball","Trick"]},
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Thunderbolt","Will-O-Wisp"]},
     "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]},
-    "Doubles OU Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Shadow Ball","Overheat","Trick"]},
-    "Doubles OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Shadow Ball","Overheat","Trick"]},
     "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Thunder Wave","Protect"]}
   },
   "Rotom-Wash": {

@@ -228,7 +228,7 @@ var SETDEX_ADV = {
     "OU Swords Dance Mixed Sweeper": {"ability":"Overgrow","item":"Leftovers","nature":"Hasty","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sa":36,"sp":220},"moves":["Swords Dance","Leaf Blade","Hidden Power Flying","Brick Break"]},
     "OU All-Out Mixed Sweeper": {"ability":"Overgrow","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"at":32,"sa":252,"sp":224},"moves":["Leaf Blade","Thunder Punch","Hidden Power Ice","Focus Punch"]},
     "OU 200 Metagame": {"ability":"Overgrow","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":36,"sa":252,"sp":220},"moves":["Leaf Blade","Leech Seed","Hidden Power Ice","Toxic"]},
-    "Doubles OU Fast Attacker": {"ability":"Overgrow","item":"Lum Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Blade","Crunch","Substitute","Protect"]}
+    "Doubles OU Fast Attacker": {"ability":"Overgrow","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Blade","Hidden Power Fire","Substitute","Protect"]}
   },
   "Combusken": {
     "PU Specially Biased": {"ability":"Blaze","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Sky Uppercut","Quick Attack"]},
@@ -382,7 +382,7 @@ var SETDEX_ADV = {
     "OU Calm Mind Sweeper": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Thunderbolt","Hidden Power Grass","Substitute"]},
     "OU Rest + Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":120,"sp":136},"moves":["Rest","Calm Mind","Thunderbolt","Sleep Talk"]},
     "OU Pure RestTalk": {"ability":"Pressure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":120,"sp":136},"moves":["Rest","Sleep Talk","Thunderbolt","Roar"]},
-    "Doubles OU Offensive": {"ability":"Pressure","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Crunch","Hidden Power Grass","Protect"]}
+    "Doubles OU Offensive": {"ability":"Pressure","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Grass","Calm Mind","Protect"]}
   },
   "Entei": {
     "OU SubCM": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":132,"sa":228,"sp":148},"moves":["Substitute","Calm Mind","Flamethrower","Hidden Power Grass"]},
@@ -553,7 +553,7 @@ var SETDEX_ADV = {
     "OU Barkanine": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":252,"at":252,"sp":4},"moves":["Howl","Hidden Power Fighting","Extreme Speed","Flamethrower"]},
     "OU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":184,"at":252,"sp":72},"moves":["Extreme Speed","Iron Tail","Hidden Power Ghost","Overheat"]},
     "OU Special Sweeper": {"ability":"Intimidate","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":184,"sa":252,"sp":72},"moves":["Fire Blast","Hidden Power Grass","Crunch","Extreme Speed"]},
-    "Doubles OU Utility": {"ability":"Intimidate","item":"White Herb","nature":"Modest","evs":{"hp":252,"df":12,"sa":32,"sd":60,"sp":152},"moves":["Overheat","Helping Hand","Crunch","Protect"]},
+    "Doubles OU Utility": {"ability":"Intimidate","item":"White Herb","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":12,"sa":32,"sd":60,"sp":152},"moves":["Overheat","Helping Hand","Hidden Power Grass","Protect"]},
     "UU Showdown Usage": {"ability":"Intimidate","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sp":252},"moves":["Extreme Speed","Hidden Power Grass","Fire Blast","Agility"]}
   },
   "Abra": {
@@ -724,7 +724,7 @@ var SETDEX_ADV = {
   "Starmie": {
     "OU Offensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunderbolt","Rapid Spin"]},
     "OU Defensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":40,"sp":216},"moves":["Rapid Spin","Recover","Surf","Thunder Wave"]},
-    "Doubles OU Special Attacker": {"ability":"Natural Cure","item":"Mystic Water","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Psychic","Protect"]}
+    "Doubles OU Special Attacker": {"ability":"Natural Cure","item":"Mystic Water","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Psychic","Ice Beam","Protect"]}
   },
   "Scyther": {
     "UU Choice Band": {"ability":"Swarm","item":"Choice Band","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Hidden Power Bug","Aerial Ace","Double-Edge","Quick Attack"]},
@@ -818,7 +818,7 @@ var SETDEX_ADV = {
     "Ubers Offensive CurseLax": {"ability":"Immunity","item":"Leftovers","nature":"Careful","evs":{"hp":120,"df":136,"sd":252},"moves":["Curse","Body Slam","Protect","Self-Destruct"]},
     "Ubers Amnesia CurseLax": {"ability":"Immunity","item":"Leftovers","nature":"Careful","evs":{"hp":208,"df":252,"sd":48},"moves":["Curse","Amnesia","Rest","Body Slam"]},
     "Ubers Choice Band": {"ability":"Immunity","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sd":252},"moves":["Shadow Ball","Focus Punch","Body Slam","Self-Destruct"]},
-    "Doubles OU Bulky Attacker": {"ability":"Thick Fat","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":4,"df":252},"moves":["Return","Earthquake","Shadow Ball","Self-Destruct"]}
+    "Doubles OU Bulky Attacker": {"ability":"Thick Fat","item":"Lum Berry","nature":"Adamant","evs":{"hp":240,"at":16,"df":252},"moves":["Return","Earthquake","Shadow Ball","Self-Destruct"]}
   },
   "Dragonair": {
     "PU Dragon Dance": {"ability":"Shed Skin","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Double-Edge","Iron Tail","Hidden Power Fighting"]},
@@ -953,8 +953,7 @@ var SETDEX_ADV = {
   },
   "Steelix": {
     "OU Standard Wall": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":36,"sd":220},"moves":["Earthquake","Toxic","Roar","Rest"]},
-    "OU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"hp":144,"at":228,"sd":136},"moves":["Earthquake","Iron Tail","Double-Edge","Explosion"]},
-    "Doubles OU Offensive": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":252,"at":104,"sd":152},"moves":["Earthquake","Explosion","Hidden Power Ghost","Protect"]}
+    "OU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"hp":144,"at":228,"sd":136},"moves":["Earthquake","Iron Tail","Double-Edge","Explosion"]}
   },
   "Scizor": {
     "OU Swords Dance": {"ability":"Swarm","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":108,"at":252,"sp":148},"moves":["Swords Dance","Silver Wind","Hidden Power Rock","Agility"]},
@@ -1364,7 +1363,7 @@ var SETDEX_ADV = {
     "OU Agility": {"ability":"Clear Body","item":"Lum Berry","nature":"Adamant","evs":{"hp":168,"at":252,"sp":88},"moves":["Agility","Meteor Mash","Earthquake","Explosion"]},
     "OU Bulky Attacker": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":176,"df":80},"moves":["Meteor Mash","Earthquake","Protect","Explosion"]},
     "OU Mixed": {"ability":"Clear Body","item":"Leftovers","nature":"Quiet","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"sa":252,"sp":4},"moves":["Psychic","Hidden Power Fire","Meteor Mash","Explosion"]},
-    "Doubles OU Bulky Attacker": {"ability":"Clear Body","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":196,"sd":60},"moves":["Meteor Mash","Explosion","Earthquake","Protect"]},
+    "Doubles OU Bulky Attacker": {"ability":"Clear Body","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":192,"sd":64},"moves":["Meteor Mash","Explosion","Earthquake","Protect"]},
     "Ubers Showdown Usage": {"ability":"Clear Body","item":"Leftovers","nature":"Brave","evs":{"hp":252,"at":180,"df":20,"sd":56},"moves":["Meteor Mash","Explosion","Pursuit","Earthquake"]}
   },
   "Latias": {

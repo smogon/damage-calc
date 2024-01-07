@@ -2947,8 +2947,9 @@ var SETDEX_BW = {
     "Ubers SubSD": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":196,"at":140,"df":96,"sp":76},"moves":["Substitute","Swords Dance","Earthquake","Stone Edge"]},
     "Ubers Double Dance": {"ability":"Intimidate","item":"Life Orb","nature":"Adamant","evs":{"hp":80,"at":252,"df":8,"sp":168},"moves":["Rock Polish","Swords Dance","Earthquake","Stone Edge"]},
     "Ubers Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":224,"at":252,"df":32},"moves":["Earthquake","U-turn","Stone Edge","Superpower"]},
-    "1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Outrage","Superpower"]},
-    "Doubles OU Showdown Usage": {"ability":"Intimidate","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","U-turn","Stealth Rock","Stone Edge"]}
+    "Doubles OU Sash Attacker": {"ability":"Intimidate","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","U-turn","Stealth Rock"]},
+    "Doubles OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"hp":8,"at":252,"sd":68,"sp":180},"moves":["Earthquake","Stone Edge","Superpower","U-turn"]},
+    "1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Outrage","Superpower"]}
   },
   "Kyurem": {
     "OU SubRoost": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":200,"sp":252},"moves":["Ice Beam","Earth Power","Substitute","Roost"]},
