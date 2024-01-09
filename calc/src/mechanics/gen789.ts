@@ -876,9 +876,13 @@ export function calculateBasePowerSMSSSV(
     break;
   case 'Crush Grip':
   case 'Wring Out':
-  case 'Hard Press':
     basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
     basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+    desc.moveBP = basePower;
+    break;
+  case 'Hard Press':
+    basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+    basePower = Math.floor(Math.floor((100 * basePower + 2048 - 1) / 4096) / 100) || 1;
     desc.moveBP = basePower;
     break;
   case 'Tera Blast':
