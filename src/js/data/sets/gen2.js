@@ -288,7 +288,8 @@ var SETDEX_GSC = {
     "1v1 Scope Lens": {"item":"Scope Lens","moves":["Surf","Ice Beam","Screech","Cross Chop"]}
   },
   "Primeape": {
-    "NU Physical Sweeper": {"item":"Leftovers","moves":["Meditate","Cross Chop","Rock Slide","Substitute"]},
+    "NU RestTalk": {"item":"Leftovers","moves":["Cross Chop","Thunder","Rest","Sleep Talk"]},
+    "NU Substitute Attacker": {"item":"Leftovers","moves":["Cross Chop","Thunder","Double-Edge","Substitute"]},
     "1v1 Scope Lens": {"item":"Scope Lens","ivs":{"at":26,"df":26},"moves":["Cross Chop","Screech","Rock Slide","Hidden Power Bug"]}
   },
   "Arcanine": {
@@ -341,6 +342,7 @@ var SETDEX_GSC = {
     "UU Rest Talk": {"item":"Leftovers","moves":["Surf","Ice Beam","Rest","Sleep Talk"]},
     "NU RestTalk": {"item":"Leftovers","moves":["Surf","Ice Beam","Rest","Sleep Talk"]},
     "NU Toxic Support": {"item":"Leftovers","moves":["Toxic","Encore","Ice Beam","Protect"]},
+    "NU Growth Pass Recipient": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Ice Beam","Surf","Hidden Power Grass","Protect"]},
     "1v1 Toxic + Encore": {"item":"Leftovers","moves":["Surf","Icy Wind","Toxic","Encore"]}
   },
   "Muk": {
@@ -672,7 +674,7 @@ var SETDEX_GSC = {
     "1v1 Sharp Beak + Drill Peck": {"item":"Sharp Beak","moves":["Drill Peck","Curse","Toxic","Rest"]}
   },
   "Houndour": {
-    "NU Pursuit": {"item":"Leftovers","moves":["Fire Blast","Crunch","Pursuit","Counter"]},
+    "NU Pursuit": {"item":"Leftovers","moves":["Pursuit","Fire Blast","Solar Beam","Sunny Day"]},
     "UU Showdown Usage": {"item":"Leftovers","moves":["Fire Blast","Pursuit","Solar Beam","Sunny Day"]}
   },
   "Houndoom": {

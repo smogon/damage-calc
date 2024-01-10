@@ -443,7 +443,7 @@ var SETDEX_SS = {
     "Monotype Eviolite Wall": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Seismic Toss","Soft-Boiled","Teleport"]},
     "National Dex Pink Blob": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Seismic Toss","Toxic","Stealth Rock","Soft-Boiled"]},
     "Anything Goes Wall Cleric": {"ability":"Natural Cure","item":"Eviolite","nature":"Calm","ivs":{"at":0},"evs":{"hp":4,"df":252,"sd":252},"moves":["Aromatherapy","Soft-Boiled","Toxic","Confide"]},
-    "1v1 Stall": {"ability":"Serene Grace","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Soft-Boiled","Toxic","Counter"]},
+    "1v1 Stall": {"ability":"Healer","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Soft-Boiled","Toxic","Counter"]},
     "National Dex Monotype Showdown Usage": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Soft-Boiled","Seismic Toss","Stealth Rock","Toxic"]},
     "OU Showdown Usage": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Soft-Boiled","Seismic Toss","Toxic","Stealth Rock"]},
     "CAP Showdown Usage": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Soft-Boiled","Stealth Rock","Teleport"]}
@@ -3143,6 +3143,9 @@ var SETDEX_SS = {
     "1v1 Assault Vest": {"ability":"Emergency Exit","item":"Assault Vest","nature":"Impish","ivs":{"sp":26},"evs":{"hp":244,"at":16,"df":16,"sd":232},"moves":["Liquidation","Leech Life","Sucker Punch","Poison Jab"]},
     "National Dex Showdown Usage": {"ability":"Emergency Exit","item":"Sitrus Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["First Impression","Liquidation","Aqua Jet","Close Combat"]}
   },
+  "Sandygast": {
+    "LC Defensive": {"level":5,"ability":"Water Compaction","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":76,"df":196,"sd":236},"moves":["Stealth Rock","Scorching Sands","Shadow Ball","Shore Up"]}
+  },
   "Palossand": {
     "NU Physically Defensive": {"ability":"Water Compaction","item":"Colbur Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Shadow Ball","Earth Power","Shore Up"]},
     "ZU Physical Wall": {"ability":"Water Compaction","item":"Colbur Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earth Power","Shadow Ball","Shore Up"]}
@@ -4303,9 +4306,6 @@ var SETDEX_SS = {
   },
   "Buneary": {
     "LC Showdown Usage": {"level":5,"ability":"Limber","item":"Life Orb","nature":"Jolly","evs":{"at":228,"df":4,"sp":236},"moves":["Fake Out","Fire Punch","Play Rough","Quick Attack"]}
-  },
-  "Sandygast": {
-    "LC Showdown Usage": {"level":5,"ability":"Water Compaction","item":"Eviolite","nature":"Bold","evs":{"hp":236,"df":196,"sd":76},"moves":["Shore Up","Stealth Rock","Shadow Ball","Scorching Sands"]}
   },
   "Sinistea": {
     "LC Showdown Usage": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Timid","evs":{"hp":36,"sa":244,"sd":4,"sp":196},"moves":["Shadow Ball","Stored Power","Nasty Plot","Endure"]}

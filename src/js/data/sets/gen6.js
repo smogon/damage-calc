@@ -926,7 +926,8 @@ var SETDEX_XY = {
     "LC Nasty Plot": {"level":5,"ability":"Technician","item":"Life Orb","nature":"Modest","ivs":{"hp":19,"at":30,"sa":30,"sp":30},"evs":{"df":76,"sa":200,"sp":200},"moves":["Nasty Plot","Round","Water Pulse","Hidden Power Fire"]}
   },
   "Persian": {
-    "PU Nasty Plot": {"ability":"Technician","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sd":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Hyper Voice","Hidden Power Ghost","Water Pulse"]}
+    "PU Nasty Plot": {"ability":"Technician","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sd":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Hyper Voice","Hidden Power Ghost","Water Pulse"]},
+    "ZU Offensive Pivot": {"ability":"Technician","item":"Silk Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Knock Off","U-turn","Return"]}
   },
   "Golduck": {
     "PU Rain Dance": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Rain Dance","Hydro Pump","Ice Beam","Psyshock"]},
