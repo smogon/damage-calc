@@ -827,8 +827,8 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Natural Gift':
-    if (attacker.item?.includes('Berry') && !attacker.item?.includes('Juice')
-      && !attacker.item?.includes('Sweet')) {
+    if (attacker.item?.includes('Berry') && !attacker.item?.includes('Juice') &&
+        !attacker.item?.includes('Sweet')) {
       const gift = getNaturalGift(gen, attacker.item)!;
       basePower = gift.p;
       desc.attackerItem = attacker.item;
