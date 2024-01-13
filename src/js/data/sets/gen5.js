@@ -70,7 +70,7 @@ var SETDEX_BW = {
     "RU Tank": {"ability":"Magic Guard","item":"Life Orb","nature":"Brave","evs":{"hp":252,"at":252,"sa":4},"moves":["Double-Edge","Grass Knot","Stealth Rock","Soft-Boiled"]},
     "RU Wallbreaker": {"ability":"Magic Guard","item":"Life Orb","nature":"Brave","evs":{"hp":4,"at":252,"sa":252},"moves":["Double-Edge","Grass Knot","Fire Blast","Soft-Boiled"]},
     "RU Calm Mind": {"ability":"Magic Guard","item":"Life Orb","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Calm Mind","Thunderbolt","Ice Beam","Soft-Boiled"]},
-    "OU Showdown Usage": {"ability":"Magic Guard","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Soft-Boiled","Thunder Wave","Seismic Toss","Knock Off"]},
+    "OU Showdown Usage": {"ability":"Magic Guard","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Soft-Boiled","Seismic Toss","Thunder Wave","Knock Off"]},
     "1v1 Showdown Usage": {"ability":"Magic Guard","item":"Mental Herb","nature":"Calm","evs":{"hp":248,"df":4,"sd":244,"sp":12},"moves":["Soft-Boiled","Encore","Thunder Wave","Seismic Toss"]}
   },
   "Wigglytuff": {
@@ -165,8 +165,7 @@ var SETDEX_BW = {
     "UU Swords Dance": {"ability":"Torrent","item":"Life Orb","nature":"Adamant","evs":{"hp":148,"at":252,"sp":108},"moves":["Swords Dance","Waterfall","Return","Aqua Jet"]},
     "UU Substitute + Dragon Dance": {"ability":"Torrent","item":"Leftovers","nature":"Adamant","evs":{"hp":144,"at":252,"sp":112},"moves":["Substitute","Dragon Dance","Waterfall","Return"]},
     "RU Swords Dance": {"ability":"Torrent","item":"Life Orb","nature":"Adamant","evs":{"hp":104,"at":252,"sp":152},"moves":["Swords Dance","Aqua Jet","Waterfall","Return"]},
-    "RU Dragon Dance": {"ability":"Torrent","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Waterfall","Ice Punch","Earthquake"]},
-    "OU Showdown Usage": {"ability":"Torrent","item":"Sitrus Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Crunch","Dragon Dance","Substitute"]}
+    "RU Dragon Dance": {"ability":"Torrent","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Waterfall","Ice Punch","Earthquake"]}
   },
   "Togetic": {
     "NU Baton Pass": {"ability":"Serene Grace","item":"Eviolite","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Nasty Plot","Baton Pass","Roost","Hyper Voice"]}
@@ -294,7 +293,7 @@ var SETDEX_BW = {
   },
   "Dusclops": {
     "UU Curse": {"ability":"Pressure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Curse","Night Shade","Will-O-Wisp","Pain Split"]},
-    "OU Showdown Usage": {"ability":"Pressure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Will-O-Wisp","Pain Split","Night Shade","Curse"]}
+    "OU Showdown Usage": {"ability":"Pressure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Will-O-Wisp","Night Shade","Pain Split","Curse"]}
   },
   "Regirock": {
     "RU Support": {"ability":"Clear Body","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Stealth Rock","Rock Slide","Thunder Wave","Protect"]},
@@ -360,8 +359,7 @@ var SETDEX_BW = {
     "UU Specially Defensive": {"ability":"Serene Grace","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":216,"sp":44},"moves":["Air Slash","Roost","Heal Bell","Nasty Plot"]},
     "Doubles OU Tailwind Support": {"ability":"Serene Grace","item":"Sitrus Berry","nature":"Calm","evs":{"hp":248,"sd":168,"sp":92},"moves":["Tailwind","Air Slash","Follow Me","Protect"]},
     "Doubles OU Bulky Paralyzer": {"ability":"Serene Grace","item":"Sitrus Berry","nature":"Calm","evs":{"hp":248,"df":124,"sd":136},"moves":["Thunder Wave","Air Slash","Follow Me","Protect"]},
-    "Doubles OU Offensive Tailwind": {"ability":"Serene Grace","item":"Sitrus Berry","nature":"Modest","evs":{"hp":208,"sa":252,"sp":48},"moves":["Tailwind","Air Slash","Heat Wave","Protect"]},
-    "OU Showdown Usage": {"ability":"Serene Grace","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":216,"sp":44},"moves":["Air Slash","Ancient Power","Roost","Aura Sphere"]}
+    "Doubles OU Offensive Tailwind": {"ability":"Serene Grace","item":"Sitrus Berry","nature":"Modest","evs":{"hp":208,"sa":252,"sp":48},"moves":["Tailwind","Air Slash","Heat Wave","Protect"]}
   },
   "Dusknoir": {
     "RU Tank": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":248,"sd":8},"moves":["Will-O-Wisp","Pain Split","Fire Punch","Earthquake"]}
@@ -1405,7 +1403,7 @@ var SETDEX_BW = {
     "UU Curse": {"ability":"Unaware","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Curse","Recover","Earthquake","Waterfall"]},
     "UU Physically Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Scald","Toxic","Earthquake"]},
     "RU Physically Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Relaxed","evs":{"hp":248,"df":252,"sd":8},"moves":["Recover","Scald","Earthquake","Toxic"]},
-    "OU Showdown Usage": {"ability":"Unaware","item":"Leftovers","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Recover","Earthquake","Scald","Encore"]}
+    "OU Showdown Usage": {"ability":"Unaware","item":"Leftovers","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Recover","Earthquake","Encore","Scald"]}
   },
   "Espeon": {
     "OU Screens Setter": {"ability":"Magic Bounce","item":"Light Clay","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Reflect","Light Screen","Psychic","Grass Knot"]},
@@ -2385,7 +2383,8 @@ var SETDEX_BW = {
     "UU Nasty Plot": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Fire Blast","Thunderbolt"]},
     "UU All-Out Attacker": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Fire Blast","Shadow Ball","Stealth Rock"]},
     "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Reflect","Light Screen","Taunt","Stealth Rock"]},
-    "UU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","Fire Punch","Ice Punch","U-turn"]}
+    "UU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","Fire Punch","Ice Punch","U-turn"]},
+    "OU Showdown Usage": {"ability":"Levitate","item":"Sitrus Berry","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Explosion","U-turn","Taunt"]}
   },
   "Dialga": {
     "Ubers Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":56,"sd":200},"moves":["Stealth Rock","Draco Meteor","Fire Blast","Roar"]},
@@ -2889,7 +2888,8 @@ var SETDEX_BW = {
   },
   "Virizion": {
     "UU Swords Dance": {"ability":"Justified","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Leaf Blade","Close Combat","Stone Edge"]},
-    "UU Calm Mind": {"ability":"Justified","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":20,"sa":252,"sp":236},"moves":["Calm Mind","Giga Drain","Focus Blast","Hidden Power Rock"]}
+    "UU Calm Mind": {"ability":"Justified","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":20,"sa":252,"sp":236},"moves":["Calm Mind","Giga Drain","Focus Blast","Hidden Power Rock"]},
+    "OU Showdown Usage": {"ability":"Justified","item":"Lum Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Close Combat","Leaf Blade","Swords Dance","Stone Edge"]}
   },
   "Tornadus": {
     "OU Offensive": {"ability":"Prankster","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Focus Blast","U-turn","Protect"]},

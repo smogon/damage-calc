@@ -1149,7 +1149,7 @@ var SETDEX_ADV = {
     "NU Calm Mind": {"ability":"Keen Eye","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Hidden Power Dark","Rest","Recover"]}
   },
   "Aron": {
-    "ZU Protect + 3 Attacks": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Protect","Double-Edge","Rock Slide","Earthquake"]}
+    "ZU Protect + 3 Attacks": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":168,"at":252,"sp":88},"moves":["Protect","Double-Edge","Rock Slide","Earthquake"]}
   },
   "Lairon": {
     "NU Specially Defensive": {"ability":"Rock Head","item":"Leftovers","nature":"Careful","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":252,"at":4,"sd":252},"moves":["Hidden Power Rock","Toxic","Roar","Protect"]},
@@ -1307,8 +1307,7 @@ var SETDEX_ADV = {
   "Glalie": {
     "UU Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","ivs":{"at":30,"sa":30},"evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Explosion","Earthquake","Hidden Power Grass"]},
     "NU Bulky Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Naive","evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Taunt","Ice Beam","Explosion"]},
-    "NU Physical Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Earthquake","Shadow Ball","Explosion"]},
-    "OU Showdown Usage": {"ability":"Inner Focus","item":"Salac Berry","nature":"Timid","evs":{"hp":40,"sd":252,"sp":216},"moves":["Explosion","Spikes","Taunt","Ice Beam"]}
+    "NU Physical Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Earthquake","Shadow Ball","Explosion"]}
   },
   "Sealeo": {
     "PU Tank": {"ability":"Thick Fat","item":"Leftovers","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"hp":40,"sa":252,"sp":216},"moves":["Surf","Ice Beam","Encore","Substitute"]},
