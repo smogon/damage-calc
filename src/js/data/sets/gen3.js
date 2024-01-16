@@ -288,7 +288,7 @@ var SETDEX_ADV = {
   },
   "Duskull": {
     "PU Physically Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Sleep Talk","Will-O-Wisp","Night Shade"]},
-    "LC Defensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":196,"at":36,"df":120,"sa":40,"sd":40},"moves":["Shadow Ball","Ice Beam","Thief","Memento"]}
+    "LC Defensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":196,"at":36,"df":196,"sa":40,"sd":40},"moves":["Shadow Ball","Ice Beam","Thief","Memento"]}
   },
   "Dusclops": {
     "OU Staller": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":36,"df":20,"sd":200},"moves":["Shadow Ball","Focus Punch","Will-O-Wisp","Pain Split"]},
@@ -670,8 +670,7 @@ var SETDEX_ADV = {
     "ZU Physical Wall": {"ability":"Chlorophyll","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Sleep Powder","Psychic","Giga Drain","Synthesis"]}
   },
   "Cubone": {
-    "LC Lead": {"level":5,"ability":"Rock Head","item":"Thick Club","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"sd":36,"sp":236},"moves":["Bonemerang","Double-Edge","Hidden Power Ghost","Protect"]},
-    "LC Swords Dance": {"level":5,"ability":"Rock Head","item":"Thick Club","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"sd":40,"sp":236},"moves":["Bonemerang","Double-Edge","Hidden Power Ghost","Swords Dance"]},
+    "LC Offensive": {"level":5,"ability":"Rock Head","item":"Thick Club","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"sd":40,"sp":236},"moves":["Bonemerang","Double-Edge","Hidden Power Ghost","Protect"]},
     "ZU Swords Dance": {"ability":"Rock Head","item":"Thick Club","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Earthquake","Double-Edge","Substitute"]}
   },
   "Marowak": {
