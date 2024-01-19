@@ -524,7 +524,7 @@ var SETDEX_ADV = {
     "LC Offensive Trapper": {"level":5,"ability":"Arena Trap","item":"Liechi Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":156,"sd":80,"sp":236},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Substitute"]}
   },
   "Meowth": {
-    "LC Lead": {"level":5,"ability":"Pickup","item":"Silk Scarf","nature":"Jolly","ivs":{"at":30,"df":30,"sa":30},"evs":{"hp":36,"at":240,"sd":36,"sp":196},"moves":["Fake Out","Double-Edge","Shadow Ball","Hidden Power Water"]},
+    "LC Lead": {"level":5,"ability":"Pickup","item":"Silk Scarf","nature":"Jolly","evs":{"hp":36,"at":240,"sd":36,"sp":196},"moves":["Fake Out","Double-Edge","Shadow Ball","Taunt"]},
     "ZU Showdown Usage": {"ability":"Pickup","item":"Spell Tag","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":252,"sa":40,"sp":216},"moves":["Double-Edge","Shadow Ball","Sunny Day","Hidden Power Grass"]}
   },
   "Persian": {
@@ -533,7 +533,7 @@ var SETDEX_ADV = {
   },
   "Golduck": {
     "OU Mixed Attacker": {"ability":"Cloud Nine","item":"Leftovers","nature":"Mild","ivs":{"sa":30},"evs":{"at":104,"sa":252,"sp":152},"moves":["Surf","Ice Beam","Cross Chop","Hidden Power Electric"]},
-    "UU Calm Mind": {"ability":"Cloud Nine","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Surf","Hypnosis","Ice Beam"]}
+    "UU Calm Mind": {"ability":"Cloud Nine","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Hydro Pump","Psychic","Hidden Power Grass"]}
   },
   "Mankey": {
     "LC Substitute + Reversal": {"level":5,"ability":"Vital Spirit","item":"Salac Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":196,"df":80,"sp":196},"moves":["Reversal","Hidden Power Ghost","Substitute","Endure"]},
@@ -1366,9 +1366,7 @@ var SETDEX_ADV = {
   },
   "Latias": {
     "Ubers BoltBeam": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":252,"sa":116,"sp":140},"moves":["Thunder","Ice Beam","Recover","Refresh"]},
-    "Ubers Calm Mind": {"ability":"Levitate","item":"Soul Dew","nature":"Bold","evs":{"hp":240,"df":172,"sp":96},"moves":["Dragon Claw","Calm Mind","Recover","Refresh"]},
-    "Doubles OU Offensive": {"ability":"Levitate","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Dragon Claw","Hidden Power Fire","Protect"]},
-    "Doubles OU Utility": {"ability":"Levitate","item":"Lum Berry","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Dragon Claw","Psychic","Reflect","Light Screen"]}
+    "Ubers Calm Mind": {"ability":"Levitate","item":"Soul Dew","nature":"Bold","evs":{"hp":240,"df":172,"sp":96},"moves":["Dragon Claw","Calm Mind","Recover","Refresh"]}
   },
   "Latios": {
     "Ubers Offensive Utility": {"ability":"Levitate","item":"Soul Dew","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Recover","Refresh","Thunder","Ice Beam"]},

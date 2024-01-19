@@ -1154,7 +1154,8 @@ var SETDEX_DPP = {
     "Ubers Lead": {"ability":"Synchronize","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":184,"df":36,"sd":36},"moves":["Taunt","Stealth Rock","Explosion","U-turn"]},
     "Ubers Transform": {"ability":"Synchronize","item":"Choice Scarf","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Transform","Trick","Light Screen","Explosion"]},
     "Ubers Double Status": {"ability":"Synchronize","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"sd":36,"sp":220},"moves":["Thunder Wave","Will-O-Wisp","U-turn","Soft-Boiled"]},
-    "Doubles OU Showdown Usage": {"ability":"Synchronize","item":"Custap Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Taunt","Explosion","Stealth Rock"]},
+    "Doubles OU Lead": {"ability":"Synchronize","item":"Sitrus Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fake Out","Psychic","Earth Power","Taunt"]},
+    "Doubles OU Swords Dance": {"ability":"Synchronize","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Sucker Punch","Earthquake","Protect"]},
     "Anything Goes Showdown Usage": {"ability":"Synchronize","item":"Lum Berry","nature":"Jolly","evs":{"hp":40,"at":216,"sp":252},"moves":["Taunt","Stealth Rock","U-turn","Explosion"]}
   },
   "Sentret": {
@@ -2334,9 +2335,7 @@ var SETDEX_DPP = {
     "Anything Goes Showdown Usage": {"ability":"Bad Dreams","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Void","Dark Pulse","Substitute","Taunt"]}
   },
   "Shaymin": {
-    "OU Special Attacker": {"ability":"Natural Cure","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Earth Power","Hidden Power Ice","Rest"]},
-    "OU Leech Seed": {"ability":"Natural Cure","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"sa":76,"sp":180},"moves":["Leech Seed","Protect","Seed Flare","Hidden Power Fire"]},
-    "OU Choice": {"ability":"Natural Cure","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Earth Power","Hidden Power Ice","Rest"]}
+    "OU Rest + Sleep Talk": {"ability":"Natural Cure","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Seed Flare","Hidden Power Ice","Rest","Sleep Talk"]}
   },
   "Shaymin-Sky": {
     "Ubers Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},

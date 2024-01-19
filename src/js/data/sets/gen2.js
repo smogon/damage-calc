@@ -28,7 +28,7 @@ var SETDEX_GSC = {
   },
   "Pidgeot": {
     "OU Standard": {"item":"Leftovers","ivs":{"hp":14,"at":24,"df":26},"moves":["Return","Hidden Power Flying","Toxic","Steel Wing"]},
-    "NU Showdown Usage": {"item":"Leftovers","moves":["Double-Edge","Reflect","Rest","Sleep Talk"]}
+    "NU Reflect": {"item":"Leftovers","moves":["Double-Edge","Reflect","Rest","Sleep Talk"]}
   },
   "Pikachu": {
     "OU Light Ball": {"item":"Light Ball","ivs":{"hp":6,"at":28,"df":24},"moves":["Thunderbolt","Surf","Sing","Hidden Power Fire"]},
@@ -432,7 +432,7 @@ var SETDEX_GSC = {
     "UU Showdown Usage": {"item":"Charcoal","moves":["Cross Chop","Flamethrower","Sunny Day","Thunder Punch"]}
   },
   "Pinsir": {
-    "UU Swords Dance": {"item":"Leftovers","ivs":{"at":26,"df":26},"moves":["Swords Dance","Hidden Power Bug","Double-Edge","Submission"]},
+    "UU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Hidden Power Ground","Double-Edge","Submission"]},
     "UU RestTalk": {"item":"Leftovers","moves":["Rest","Sleep Talk","Swords Dance","Body Slam"]}
   },
   "Tauros": {
