@@ -236,7 +236,7 @@ var SETDEX_RBY = {
   },
   "Hypno": {
     "OU Double Status": {"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]},
-    "Ubers Sleeper": {"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]},
+    "Ubers Lead Sleeper": {"moves":["Psychic","Hypnosis","Thunder Wave","Seismic Toss"]},
     "Tradebacks OU Amnesia": {"moves":["Amnesia","Psychic","Reflect","Rest"]}
   },
   "Kingler": {

@@ -3199,6 +3199,9 @@ var SETDEX_SS = {
   "Silvally-Ground": {
     "NU Swords Dance": {"ability":"RKS System","item":"Ground Memory","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Rock Slide","U-turn"]}
   },
+  "Silvally-Ice": {
+    "ZU Swords Dance": {"ability":"RKS System","item":"Ice Memory","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Multi-Attack","Flame Charge","Rock Slide"]}
+  },
   "Silvally-Poison": {
     "PU Work Up": {"ability":"RKS System","item":"Poison Memory","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Work Up","Multi-Attack","Flamethrower","Grass Pledge"]},
     "PU Defog": {"ability":"RKS System","item":"Poison Memory","nature":"Jolly","evs":{"hp":252,"df":80,"sp":176},"moves":["Multi-Attack","Flamethrower","Defog","U-turn"]},
