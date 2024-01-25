@@ -1360,6 +1360,7 @@ var SETDEX_SS = {
     "NU Showdown Usage": {"ability":"Sturdy","item":"Heat Rock","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Sunny Day","Body Press","Stealth Rock","Fire Punch"]}
   },
   "Regice": {
+    "NU Three Attacks": {"ability":"Clear Body","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Ice Beam","Charge Beam","Focus Blast"]},
     "1v1 Charge Beam": {"ability":"Clear Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":4,"sp":252},"moves":["Rest","Amnesia","Frost Breath","Charge Beam"]},
     "1v1 Counter": {"ability":"Clear Body","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Frost Breath","Counter","Amnesia","Rest"]},
     "ZU Rock Polish": {"ability":"Clear Body","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Ice Beam","Thunderbolt","Focus Blast","Rock Polish"]}

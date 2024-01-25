@@ -1054,10 +1054,9 @@ var SETDEX_BW = {
     "RU Specially Defensive": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Poison Jab","Fire Punch","Thunderbolt","Toxic"]},
     "NU Touncher": {"ability":"Poison Touch","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Poison Jab","Shadow Sneak","Ice Punch","Memento"]},
     "NU Choice Band": {"ability":"Poison Touch","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Poison Jab","Shadow Sneak","Ice Punch","Explosion"]},
-    "ZU All-Out Attacker": {"ability":"Poison Touch","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Poison Jab","Fire Punch","Payback","Shadow Sneak"]},
-    "ZU Choice Band": {"ability":"Poison Touch","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Poison Jab","Fire Punch","Payback","Shadow Sneak"]},
-    "ZU CroMuk": {"ability":"Poison Touch","item":"Black Sludge","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Payback","Rest","Sleep Talk"]},
-    "ZU SubPunch": {"ability":"Stench","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Substitute","Focus Punch","Poison Jab","Payback"]}
+    "ZU All-Out Attacker": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Poison Jab","Brick Break","Fire Punch","Shadow Sneak"]},
+    "ZU Curse": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Poison Jab","Fire Punch","Shadow Sneak","Curse"]},
+    "ZU SubPunch": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Poison Jab","Focus Punch","Shadow Sneak","Substitute"]}
   },
   "Shellder": {
     "LC Eviolite Shell Smash": {"level":5,"ability":"Skill Link","item":"Eviolite","nature":"Adamant","evs":{"at":236,"df":36,"sp":196},"moves":["Shell Smash","Icicle Spear","Rock Blast","Protect"]},
@@ -1885,7 +1884,7 @@ var SETDEX_BW = {
   },
   "Walrein": {
     "NU Specially Defensive": {"ability":"Thick Fat","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Toxic","Ice Beam","Roar","Surf"]},
-    "ZU Substitute": {"ability":"Thick Fat","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":176,"sa":80,"sp":252},"moves":["Substitute","Toxic","Ice Beam","Surf"]}
+    "ZU Substitute": {"ability":"Thick Fat","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":176,"sa":80,"sp":252},"moves":["Substitute","Surf","Ice Beam","Toxic"]}
   },
   "Clamperl": {
     "LC Shell Smash": {"level":5,"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":248,"sd":76,"sp":180},"moves":["Shell Smash","Surf","Hidden Power Grass","Protect"]},
@@ -1919,7 +1918,7 @@ var SETDEX_BW = {
     "NU Physically Defensive": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":236,"sd":20},"moves":["Wish","Protect","Toxic","Dragon Claw"]},
     "ZU Offensive Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Brick Break","Fire Fang"]},
     "ZU Bulky Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Dragon Dance","Outrage","Rest","Sleep Talk"]},
-    "ZU Cleric": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Wish","Protect","Dragon Claw","Roar"]}
+    "ZU Wish": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Wish","Protect","Dragon Claw","Roar"]}
   },
   "Salamence": {
     "OU Dragon Dance": {"ability":"Moxie","item":"Lum Berry","nature":"Jolly","evs":{"hp":72,"at":252,"sp":184},"moves":["Dragon Dance","Outrage","Earthquake","Dragon Claw"]},
@@ -2633,7 +2632,7 @@ var SETDEX_BW = {
   "Duosion": {
     "NU Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Psychic","Thunder","Recover"]},
     "NU Offensive Trick Room": {"ability":"Regenerator","item":"Eviolite","nature":"Quiet","ivs":{"sp":3},"evs":{"hp":252,"df":4,"sa":252},"moves":["Trick Room","Psychic","Thunder","Signal Beam"]},
-    "PU Bulky Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Calm Mind","Recover","Psychic","Signal Beam"]}
+    "PU Bulky Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Recover","Psyshock","Acid Armor"]}
   },
   "Reuniclus": {
     "OU Calm Mind": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Psychic","Focus Blast","Recover"]},

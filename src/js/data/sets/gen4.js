@@ -1289,7 +1289,7 @@ var SETDEX_DPP = {
   "Forretress": {
     "OU Specially Defensive": {"ability":"Sturdy","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Rapid Spin","Payback","Protect"]},
     "OU Physically Defensive": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":112,"df":144},"moves":["Spikes","Rapid Spin","Payback","Earthquake"]},
-    "Ubers Support": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":4,"sd":252},"moves":["Rapid Spin","Toxic Spikes","Spikes","Payback"]},
+    "Ubers Support": {"ability":"Sturdy","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":248,"sp":12},"moves":["Rapid Spin","Spikes","Toxic Spikes","Payback"]},
     "Anything Goes Showdown Usage": {"ability":"Sturdy","item":"Chesto Berry","nature":"Impish","evs":{"hp":252,"df":4,"sd":252},"moves":["Rapid Spin","Explosion","Spikes","Toxic Spikes"]}
   },
   "Dunsparce": {
