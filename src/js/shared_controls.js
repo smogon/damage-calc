@@ -773,7 +773,6 @@ function showFormes(formeObj, pokemonName, pokemon, baseFormeName) {
 function stellarButtonsVisibility(pokeObj, vis) {
 	var fullSetName = pokeObj.find("input.set-selector").val();
 	var pokemonName = fullSetName.substring(0, fullSetName.indexOf(" ("));
-	console.log(pokemonName);
 	var moveObjs = [
 		pokeObj.find(".move1"),
 		pokeObj.find(".move2"),
@@ -897,7 +896,6 @@ function correctHiddenPower(pokemon) {
 			// Otherwise, use the default preset hidden power IVs that PS would use
 			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
 			if (!hpIVs) continue; // some impossible type was specified, ignore
-
 			pokemon.ivs = pokemon.ivs || {hp: 31, at: 31, df: 31, sa: 31, sd: 31, sp: 31};
 			pokemon.dvs = pokemon.dvs || {hp: 15, at: 15, df: 15, sa: 15, sd: 15, sp: 15};
 			for (var stat in hpIVs) {
@@ -906,10 +904,10 @@ function correctHiddenPower(pokemon) {
 			}
 			if (gen < 3) {
 				pokemon.dvs.hp = calc.Stats.getHPDV({
-					atk: pokemon.ivs.at,
-					def: pokemon.ivs.df,
-					spe: pokemon.ivs.sp,
-					spc: pokemon.ivs.sa
+					atk: pokemon.ivs.at || 31,
+					def: pokemon.ivs.df || 31,
+					spe: pokemon.ivs.sp || 31,
+					spc: pokemon.ivs.sa || 31
 				});
 				pokemon.ivs.hp = calc.Stats.DVToIV(pokemon.dvs.hp);
 			}
