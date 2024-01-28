@@ -106,7 +106,7 @@ var SETDEX_BW = {
     "NU Baton Pass": {"ability":"Filter","item":"Leftovers","nature":"Timid","evs":{"hp":144,"sa":112,"sp":252},"moves":["Baton Pass","Nasty Plot","Substitute","Psychic"]},
     "ZU Choice Scarf": {"ability":"Filter","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Healing Wish","Psychic","Focus Blast","Trick"]},
     "ZU Nasty Plot": {"ability":"Filter","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Focus Blast","Taunt"]},
-    "ZU Choice Specs": {"ability":"Filter","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Thunderbolt","Focus Blast","Trick"]},
+    "ZU Choice Specs": {"ability":"Filter","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Focus Blast","Thunderbolt","Trick"]},
     "ZU Dual Screen": {"ability":"Filter","item":"Light Clay","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":4,"sp":252},"moves":["Reflect","Light Screen","Taunt","Healing Wish"]},
     "PU Showdown Usage": {"ability":"Filter","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Focus Blast","Shadow Ball","Thunderbolt","Psyshock"]}
   },
@@ -1916,8 +1916,8 @@ var SETDEX_BW = {
   "Shelgon": {
     "NU Bulky Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Impish","evs":{"hp":252,"at":20,"df":236},"moves":["Dragon Dance","Outrage","Rest","Sleep Talk"]},
     "NU Physically Defensive": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":236,"sd":20},"moves":["Wish","Protect","Toxic","Dragon Claw"]},
-    "ZU Offensive Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Brick Break","Fire Fang"]},
     "ZU Bulky Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Dragon Dance","Outrage","Rest","Sleep Talk"]},
+    "ZU Offensive Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Brick Break","Fire Fang"]},
     "ZU Wish": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Wish","Protect","Dragon Claw","Roar"]}
   },
   "Salamence": {
