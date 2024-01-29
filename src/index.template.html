@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Pok&eacute;mon Damage Calculator</title>
+    <title>EIPP Pok&eacute;mon Damage Calculator</title>
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?" />
     <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
@@ -39,12 +39,10 @@
 <body class="dark-theme">
 
 <nav><div class="header"><div class="header-inner">
-    <ul class="nav">
+     <ul class="nav">
         <li><a class="button nav-first" href="//pokemonshowdown.com"><img src="./img/pokemonshowdownbeta.png" alt="Pok&eacute;mon Showdown! (beta)" /> Home</a></li>
         <li><a class="button" href="//dex.pokemonshowdown.com">Pok&eacute;dex</a></li>
-        <li><a class="button" href="//replay.pokemonshowdown.com/">Replays</a></li>
-        <li><a class="button" href="//pokemonshowdown.com/ladder/">Ladder</a></li>
-        <li><a class="button nav-last" href="//pokemonshowdown.com/forums/">Forum</a></li>
+        <li><a class="button nav-last" href="//calc.pokemonshowdown.com">Normal Damage Calculator</a></li>
     </ul>
     <ul class="nav nav-play">
         <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
@@ -76,8 +74,7 @@
             <span class="visually-hidden" id="selectModeInstruction">Select the calculator's mode of function.</span>
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" checked="checked" /><label class="btn btn-left btn-wide" for="one-vs-one">One vs One</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-mid btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="one-vs-all">One vs All</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-mid btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="all-vs-one">All vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-right btn-xwide" for="randoms">Random Battles</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-right btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="all-vs-one">All vs One</label>
         </span>
     </div>
     <hr />
@@ -88,22 +85,22 @@
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL1" checked="checked" aria-describedby="resultDamageL1" />
                 <label class="btn btn-xxxwide btn-top" for="resultMoveL1">Loading...</label>
-                <span id="resultDamageL1">??? - ???%</span>
+                <span id="resultDamageL1">???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL2" aria-describedby="resultDamageL2" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveL2">Loading...</label>
-                <span id="resultDamageL2">??? - ???%</span>
+                <span id="resultDamageL2">???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL3" aria-describedby="resultDamageL3" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveL3">Loading...</label>
-                <span id="resultDamageL3">??? - ???%</span>
+                <span id="resultDamageL3">???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveL4" aria-describedby="resultDamageL4" />
                 <label class="btn btn-xxxwide btn-bottom" for="resultMoveL4">Loading...</label>
-                <span id="resultDamageL4">??? - ???%</span>
+                <span id="resultDamageL4">???%</span>
             </div>
         </div>
         <div aria-labelledby="resultHeaderR" class="move-result-subgroup" role="radiogroup">
@@ -112,31 +109,29 @@
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR1" aria-describedby="resultDamageR1" />
                 <label class="btn btn-xxxwide btn-top" for="resultMoveR1">Loading...</label>
-                <span id="resultDamageR1">??? - ???%</span>
+                <span id="resultDamageR1">???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR2" aria-describedby="resultDamageR2" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveR2">Loading...</label>
-                <span id="resultDamageR2">??? - ???%</span>
+                <span id="resultDamageR2">???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR3" aria-describedby="resultDamageR3" />
                 <label class="btn btn-xxxwide btn-mid" for="resultMoveR3">Loading...</label>
-                <span id="resultDamageR3">??? - ???%</span>
+                <span id="resultDamageR3">???%</span>
             </div>
             <div>
                 <input class="result-move visually-hidden" type="radio" name="resultMove" id="resultMoveR4" aria-describedby="resultDamageR4" />
                 <label class="btn btn-xxxwide btn-bottom" for="resultMoveR4">Loading...</label>
-                <span id="resultDamageR4">??? - ???%</span>
+                <span id="resultDamageR4">???%</span>
             </div>
         </div>
     </div>
     <div aria-label="Calculation results" class="main-result-group" role="region">
         <div class="big-text">
-            <span id="mainResult" title="Click to copy.">Loading...</span>
+            <span id="mainResult" title="Click to copy.">Loading...      (If you see this message for more than a few seconds, try enabling JavaScript.)</span>
             <div id="tooltipText">Copied</div>
-        </div>
-        <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript.)</span>
         </div>
     </div>
 
@@ -153,7 +148,6 @@
                     <label>Type</label>
                     <select aria-label="type1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="type2" class="type2 terrain-trigger calc-trigger"></select>
-                    <small class="right">(<a class="analysis links-lighten" target="_blank" href="">Smogon&nbsp;analysis</a>)</small>
                 </div>
                 <div class="gen-specific g9">
                     <label>Tera Type</label>
@@ -722,7 +716,7 @@
                 <hr class="gen-specific g6 g7 g8 g9" />
                 <div aria-labelledby="selectWeatherInstruction" role="radiogroup">
                     <span class="visually-hidden" id="selectWeatherInstruction">Select the current weather condition.</span>
-                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="width: 22.2em; margin: 5px auto;" title="Select the current weather condition.">
+                    <div class="gen-specific g3 g4 g5 g6 g7 g8 g9" style="margin: 5px auto;" title="Select the current weather condition.">
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="" id="clear" checked="checked" />
                         <label class="btn btn-small btn-left" for="clear">None</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sun" id="sun" />
@@ -731,13 +725,11 @@
                         <label class="btn btn-small btn-mid" for="rain">Rain</label>
                         <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Sand" id="sand" />
                         <label class="btn btn-small btn-mid" for="sand">Sand</label>
-                        <span class="gen-specific g3 g4 g5 g6 g7 g8">
-                            <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
-                            <label class="btn btn-small btn-right" for="hail">Hail</label>
-                        </span>
+                        <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Hail" id="hail" />
+                        <label class="btn btn-small btn-right" for="hail">Hail</label>
                         <span class="gen-specific g9">
                             <input class="visually-hidden calc-trigger" type="radio" name="weather" value="Snow" id="snow" />
-                            <label class="btn btn-small btn-right" for="snow">Snow</label>
+                            <label class="btn btn-small" for="snow">Snow</label>
                         </span>
                     </div>
                     <div class="gen-specific g6 g7 g8 g9" title="Select the current weather condition.">
@@ -1052,7 +1044,6 @@
                     <label>Type</label>
                     <select aria-label="Type 1" class="type1 terrain-trigger calc-trigger"></select>
                     <select aria-label="Type 2" class="type2 terrain-trigger calc-trigger"></select>
-                    <small class="right">(<a class="analysis links-lighten" target="_blank" href="">Smogon&nbsp;analysis</a>)</small>
                 </div>
                 <div class="gen-specific g9">
                     <label>Tera Type</label>
@@ -1628,7 +1619,7 @@
     <script type="text/javascript" src="./js/moveset_import.js?"></script>
 </div>
 
-<div class="credits">Created by Honko, maintained by Austin and Kris
+<div class="credits">Created by Honko, maintained by Austin and Kris <br> EIPP Mod by Celestia
     <ul><li><a href="https://github.com/smogon/damage-calc/contributors" class="links-lighten" target="_blank">Contributors</a></li>
     <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
     <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
