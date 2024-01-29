@@ -611,7 +611,7 @@ var SETDEX_BW = {
     "NU Specially Defensive": {"ability":"Rain Dish","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":44,"sd":216},"moves":["Scald","Roost","Toxic","Hurricane"]},
     "ZU Defensive Pivot": {"ability":"Rain Dish","item":"Leftovers","nature":"Relaxed","evs":{"hp":248,"df":252,"sa":8},"moves":["Scald","U-turn","Knock Off","Roost"]},
     "ZU Offensive Pivot": {"ability":"Rain Dish","item":"Leftovers","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Hurricane","U-turn","Roost"]},
-    "ZU Agility": {"ability":"Rain Dish","item":"Water Gem","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Hurricane","Agility","Roost"]},
+    "ZU Agility": {"ability":"Rain Dish","item":"Water Gem","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Agility","Hydro Pump","Hurricane","Roost"]},
     "PU Showdown Usage": {"ability":"Rain Dish","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sa":8},"moves":["Hurricane","Roost","Scald","Toxic"]}
   },
   "Delcatty": {
