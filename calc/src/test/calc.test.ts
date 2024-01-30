@@ -135,14 +135,14 @@ describe('calc', () => {
           {
             weather: 'Sun', type: 'Fire', damage: {
               adv: {range: [346, 408], desc: '(149.7 - 176.6%) -- guaranteed OHKO'},
-              dpp: {range: [170, 204], desc: '(73.5 - 88.3%) -- guaranteed 2HKO'},
+              dpp: {range: [342, 404], desc: '(148 - 174.8%) -- guaranteed OHKO'},
               modern: {range: [344, 408], desc: '(148.9 - 176.6%) -- guaranteed OHKO'},
             },
           },
           {
             weather: 'Rain', type: 'Water', damage: {
               adv: {range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO'},
-              dpp: {range: [42, 51], desc: '(18.1 - 22%) -- possible 5HKO'},
+              dpp: {range: [85, 101], desc: '(36.7 - 43.7%) -- guaranteed 3HKO'},
               modern: {range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO'},
             },
           },
@@ -153,8 +153,8 @@ describe('calc', () => {
                 desc: '(41.5 - 49.3%) -- 20.7% chance to 2HKO after sandstorm damage',
               },
               dpp: {
-                range: [39, 46],
-                desc: '(16.8 - 19.9%) -- guaranteed 5HKO after sandstorm damage',
+                range: [77, 91],
+                desc: '(33.3 - 39.3%) -- guaranteed 3HKO after sandstorm damage',
               },
               modern: {
                 range: [77, 91],
@@ -169,8 +169,8 @@ describe('calc', () => {
                 desc: '(101.2 - 119.4%) -- guaranteed OHKO',
               },
               dpp: {
-                range: [116, 138],
-                desc: '(50.2 - 59.7%) -- guaranteed 2HKO after hail damage',
+                range: [230, 272],
+                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO',
               },
               modern: {
                 range: [230, 272],

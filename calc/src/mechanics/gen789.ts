@@ -600,18 +600,6 @@ export function calculateSMSSSV(
           // Stellar damage boost drops off after first hit, even on multihit moves
           stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
 
-          const newFinalMods = calculateFinalModsSMSSSV(
-            gen,
-            attacker,
-            defender,
-            move,
-            field,
-            desc,
-            isCritical,
-            typeEffectiveness,
-            times
-          );
-          const newFinalMod = chainMods(newFinalMods, 41, 131072);
           const newBasePower = calculateBasePowerSMSSSV(
             gen,
             attacker,
@@ -634,6 +622,18 @@ export function calculateSMSSSV(
             desc,
             isCritical
           );
+          const newFinalMods = calculateFinalModsSMSSSV(
+            gen,
+            attacker,
+            defender,
+            move,
+            field,
+            desc,
+            isCritical,
+            typeEffectiveness,
+            times
+          );
+          const newFinalMod = chainMods(newFinalMods, 41, 131072);
           const newFinalDamage = getFinalDamage(
             newBaseDamage,
             damageMultiplier,
@@ -831,15 +831,15 @@ export function calculateBasePowerSMSSSV(
     basePower = attacker.named('Greninja-Ash') && attacker.hasAbility('Battle Bond') ? 20 : 15;
     desc.moveBP = basePower;
     break;
-  // Triple Axel's damage doubles after each consecutive hit (20, 40, 60), this is a hack
+  // Triple Axel's damage increases after each consecutive hit (20, 40, 60)
   case 'Triple Axel':
     basePower = hit * 20;
     desc.moveBP = move.hits === 2 ? 60 : move.hits === 3 ? 120 : 20;
     break;
-  // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
+  // Triple Kick's damage increases after each consecutive hit (10, 20, 30)
   case 'Triple Kick':
     basePower = hit * 10;
-    desc.moveBP = move.hits === 2 ? 30 : move.hits === 3 ? 60 : 20;
+    desc.moveBP = move.hits === 2 ? 30 : move.hits === 3 ? 60 : 10;
     break;
   case 'Crush Grip':
   case 'Wring Out':
@@ -1379,7 +1379,7 @@ export function calculateDefenseSMSSSV(
     defense = defender.rawStats[defenseStat];
     desc.attackerAbility = attacker.ability;
   } else {
-    defense = defender.stats[defenseStat];
+    defense = getModifiedStat(defender.rawStats[defenseStat]!, defender.boosts[defenseStat]!);
     desc.defenseBoost = defender.boosts[defenseStat];
   }
 
