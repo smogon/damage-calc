@@ -578,78 +578,76 @@ export function calculateSMSSSV(
       numAttacks = move.hits;
     }
     let usedItems = [false, false];
-    for (let times = 0; times < numAttacks; times++) {
+    for (let times = 1; times < numAttacks; times++) {
+      usedItems = checkMultihitBoost(gen, attacker, defender, move,
+        field, desc, usedItems[0], usedItems[1]);
       const newAttack = calculateAttackSMSSSV(gen, attacker, defender, move,
         field, desc, isCritical);
       const newDefense = calculateDefenseSMSSSV(gen, attacker, defender, move,
         field, desc, isCritical);
+      // Check if lost -ate ability. Typing stays the same, only boost is lost
+      // Cannot be regained during multihit move and no Normal moves with stat drawbacks
+      hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
+        attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
+
+      if ((move.dropsStats && move.timesUsed! > 1)) {
+        // Adaptability does not change between hits of a multihit, only between turns
+        preStellarStabMod = getStabMod(attacker, move, desc);
+        // Hack to make Tera Shell with multihit moves, but not over multiple turns
+        typeEffectiveness = turn2typeEffectiveness;
+      }
+      // Stellar damage boost drops off after first hit, even on multihit moves
+      stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
+
+      const newBasePower = calculateBasePowerSMSSSV(
+        gen,
+        attacker,
+        defender,
+        move,
+        field,
+        hasAteAbilityTypeChange,
+        desc,
+        times + 1
+      );
+      const newBaseDamage = calculateBaseDamageSMSSSV(
+        gen,
+        attacker,
+        defender,
+        newBasePower,
+        newAttack,
+        newDefense,
+        move,
+        field,
+        desc,
+        isCritical
+      );
+      const newFinalMods = calculateFinalModsSMSSSV(
+        gen,
+        attacker,
+        defender,
+        move,
+        field,
+        desc,
+        isCritical,
+        typeEffectiveness,
+        times
+      );
+      const newFinalMod = chainMods(newFinalMods, 41, 131072);
+
       let damageMultiplier = 0;
       damage = damage.map(affectedAmount => {
-        if (times) {
-          // Check if lost -ate ability. Typing stays the same, only boost is lost
-          // Cannot be regained during multihit move and no Normal moves with stat drawbacks
-          hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
-            attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
-
-          if ((move.dropsStats && move.timesUsed! > 1)) {
-            // Adaptability does not change between hits of a multihit, only between turns
-            preStellarStabMod = getStabMod(attacker, move, desc);
-            // Hack to make Tera Shell with multihit moves, but not over multiple turns
-            typeEffectiveness = turn2typeEffectiveness;
-          }
-          // Stellar damage boost drops off after first hit, even on multihit moves
-          stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
-
-          const newBasePower = calculateBasePowerSMSSSV(
-            gen,
-            attacker,
-            defender,
-            move,
-            field,
-            hasAteAbilityTypeChange,
-            desc,
-            times + 1
-          );
-          const newBaseDamage = calculateBaseDamageSMSSSV(
-            gen,
-            attacker,
-            defender,
-            newBasePower,
-            newAttack,
-            newDefense,
-            move,
-            field,
-            desc,
-            isCritical
-          );
-          const newFinalMods = calculateFinalModsSMSSSV(
-            gen,
-            attacker,
-            defender,
-            move,
-            field,
-            desc,
-            isCritical,
-            typeEffectiveness,
-            times
-          );
-          const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newFinalDamage = getFinalDamage(
-            newBaseDamage,
-            damageMultiplier,
-            typeEffectiveness,
-            applyBurn,
-            stabMod,
-            newFinalMod,
-            protect
-          );
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
+        const newFinalDamage = getFinalDamage(
+          newBaseDamage,
+          damageMultiplier,
+          typeEffectiveness,
+          applyBurn,
+          stabMod,
+          newFinalMod,
+          protect
+        );
+        damageMultiplier++;
+        return affectedAmount + newFinalDamage;
       });
-      usedItems = checkMultihitBoost(gen, attacker, defender, move,
-        field, desc, usedItems[0], usedItems[1]);
     }
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;

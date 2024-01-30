@@ -357,58 +357,56 @@ export function calculateBWXY(
       numAttacks = move.hits;
     }
     let usedItems = [false, false];
-    for (let times = 0; times < numAttacks; times++) {
-      const newAtk = calculateAttackBWXY(gen, attacker, defender, move, field, desc, isCritical);
-      const newDef = calculateDefenseBWXY(gen, attacker, defender, move, field, desc, isCritical);
-      let damageMultiplier = 0;
-      damage = damage.map(affectedAmount => {
-        if (times) {
-          // Check if lost -ate ability. Typing stays the same, only boost is lost
-          // Cannot be regained during multihit move and no Normal moves with stat drawbacks
-          hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
-          attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate');
-
-          if ((move.dropsStats && move.timesUsed! > 1)) {
-            // Adaptability does not change between hits of a multihit, only between turns
-            stabMod = getStabMod(attacker, move, desc);
-          }
-
-          const newBasePower = calculateBasePowerBWXY(
-            gen,
-            attacker,
-            defender,
-            move,
-            field,
-            hasAteAbilityTypeChange,
-            desc
-          );
-          const newBaseDamage = getBaseDamage(attacker.level, newBasePower, newAtk, newDef);
-          const newFinalMods = calculateFinalModsBWXY(
-            gen,
-            attacker,
-            defender,
-            move,
-            field,
-            desc,
-            isCritical,
-            typeEffectiveness
-          );
-          const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newFinalDamage = getFinalDamage(
-            newBaseDamage,
-            damageMultiplier,
-            typeEffectiveness,
-            applyBurn,
-            stabMod,
-            newFinalMod
-          );
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
-      });
+    for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
+      const newAtk = calculateAttackBWXY(gen, attacker, defender, move, field, desc, isCritical);
+      const newDef = calculateDefenseBWXY(gen, attacker, defender, move, field, desc, isCritical);
+      // Check if lost -ate ability. Typing stays the same, only boost is lost
+      // Cannot be regained during multihit move and no Normal moves with stat drawbacks
+      hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
+      attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate');
+
+      if ((move.dropsStats && move.timesUsed! > 1)) {
+        // Adaptability does not change between hits of a multihit, only between turns
+        stabMod = getStabMod(attacker, move, desc);
+      }
+
+      const newBasePower = calculateBasePowerBWXY(
+        gen,
+        attacker,
+        defender,
+        move,
+        field,
+        hasAteAbilityTypeChange,
+        desc
+      );
+      const newBaseDamage = getBaseDamage(attacker.level, newBasePower, newAtk, newDef);
+      const newFinalMods = calculateFinalModsBWXY(
+        gen,
+        attacker,
+        defender,
+        move,
+        field,
+        desc,
+        isCritical,
+        typeEffectiveness
+      );
+      const newFinalMod = chainMods(newFinalMods, 41, 131072);
+
+      let damageMultiplier = 0;
+      damage = damage.map(affectedAmount => {
+        const newFinalDamage = getFinalDamage(
+          newBaseDamage,
+          damageMultiplier,
+          typeEffectiveness,
+          applyBurn,
+          stabMod,
+          newFinalMod
+        );
+        damageMultiplier++;
+        return affectedAmount + newFinalDamage;
+      });
     }
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;

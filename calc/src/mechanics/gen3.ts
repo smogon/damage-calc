@@ -170,16 +170,17 @@ export function calculateADV(
     for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
+      const newAt = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
+      let newBp = calculateBasePowerADV(attacker, defender, move, desc);
+      newBp = calculateBPModsADV(attacker, move, desc, newBp);
+      let newBaseDmg = Math.floor(
+        Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
+      );
+      newBaseDmg = calculateFinalModsADV(newBaseDmg, attacker, move, field, desc, isCritical);
+      newBaseDmg = Math.floor(newBaseDmg * typeEffectiveness);
+
       let damageMultiplier = 85;
       result.damage = result.damage.map(affectedAmount => {
-        const newAt = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
-        let newBp = calculateBasePowerADV(attacker, defender, move, desc);
-        newBp = calculateBPModsADV(attacker, move, desc, newBp);
-        let newBaseDmg = Math.floor(
-          Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
-        );
-        newBaseDmg = calculateFinalModsADV(newBaseDmg, attacker, move, field, desc, isCritical);
-        newBaseDmg = Math.floor(newBaseDmg * typeEffectiveness);
         const newFinalDamage = Math.max(1, Math.floor((newBaseDmg * damageMultiplier) / 100));
         damageMultiplier++;
         return affectedAmount + newFinalDamage;

@@ -266,39 +266,37 @@ export function calculateDPP(
       numAttacks = move.hits;
     }
     let usedItems = [false, false];
-    for (let times = 0; times < numAttacks; times++) {
-      let damageMultiplier = 0;
-      result.damage = result.damage.map(affectedAmount => {
-        if (times) {
-          let newFinalDamage = 0;
-          let newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
-          newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower);
-          const newAtk = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
-          let baseDamage = Math.floor(
-            Math.floor(
-              (Math.floor((2 * attacker.level) / 5 + 2) * newBasePower * newAtk) / 50
-            ) / defense
-          );
-          if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
-            baseDamage = Math.floor(baseDamage * 0.5);
-            desc.isBurned = true;
-          }
-          baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
-          newFinalDamage = Math.floor((baseDamage * (85 + damageMultiplier)) / 100);
-          newFinalDamage = Math.floor(newFinalDamage * stabMod);
-          newFinalDamage = Math.floor(newFinalDamage * type1Effectiveness);
-          newFinalDamage = Math.floor(newFinalDamage * type2Effectiveness);
-          newFinalDamage = Math.floor(newFinalDamage * filterMod);
-          newFinalDamage = Math.floor(newFinalDamage * ebeltMod);
-          newFinalDamage = Math.floor(newFinalDamage * tintedMod);
-          newFinalDamage = Math.max(1, newFinalDamage);
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
-      });
+    for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
+      let newBasePower = calculateBasePowerDPP(gen, attacker, defender, move, field, desc);
+      newBasePower = calculateBPModsDPP(attacker, defender, move, field, desc, newBasePower);
+      const newAtk = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
+      let baseDamage = Math.floor(
+        Math.floor(
+          (Math.floor((2 * attacker.level) / 5 + 2) * newBasePower * newAtk) / 50
+        ) / defense
+      );
+      if (attacker.hasStatus('brn') && isPhysical && !attacker.hasAbility('Guts')) {
+        baseDamage = Math.floor(baseDamage * 0.5);
+        desc.isBurned = true;
+      }
+      baseDamage = calculateFinalModsDPP(baseDamage, attacker, move, field, desc, isCritical);
+
+      let damageMultiplier = 0;
+      result.damage = result.damage.map(affectedAmount => {
+        let newFinalDamage = 0;
+        newFinalDamage = Math.floor((baseDamage * (85 + damageMultiplier)) / 100);
+        newFinalDamage = Math.floor(newFinalDamage * stabMod);
+        newFinalDamage = Math.floor(newFinalDamage * type1Effectiveness);
+        newFinalDamage = Math.floor(newFinalDamage * type2Effectiveness);
+        newFinalDamage = Math.floor(newFinalDamage * filterMod);
+        newFinalDamage = Math.floor(newFinalDamage * ebeltMod);
+        newFinalDamage = Math.floor(newFinalDamage * tintedMod);
+        newFinalDamage = Math.max(1, newFinalDamage);
+        damageMultiplier++;
+        return affectedAmount + newFinalDamage;
+      });
     }
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;
