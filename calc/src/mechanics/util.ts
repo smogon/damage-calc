@@ -339,6 +339,7 @@ export function checkMultihitBoost(
       desc.attackerAbility = attacker.ability;
     } else {
       if (defender.hasAbility('Contrary')) {
+        desc.defenderAbility = defender.ability;
         if (defender.hasItem('White Herb') && !defenderUsedItem) {
           desc.defenderItem = defender.item;
           defenderUsedItem = true;
@@ -384,17 +385,17 @@ export function checkMultihitBoost(
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {
-      if (defender.hasItem('White Herb') && !defenderUsedItem) {
+      if (defender.hasItem('White Herb') && !defenderUsedItem && defender.boosts.def === 0) {
         desc.defenderItem = defender.item;
         defenderUsedItem = true;
       } else {
         defender.boosts.def = Math.max(defender.boosts.def - 1, -6);
         defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
       }
+      desc.defenderAbility = defender.ability;
     }
     defender.boosts.spe = Math.min(defender.boosts.spe + 2, 6);
     defender.stats.spe = getFinalSpeed(gen, defender, field, field.defenderSide);
-    desc.defenderAbility = defender.ability;
   }
 
   if (move.dropsStats) {
