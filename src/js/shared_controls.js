@@ -1247,6 +1247,7 @@ $(".gen").change(function () {
 
 function getFirstValidSetOption() {
 	var sets = getSetOptions();
+	return sets[1];
 	// NB: The first set is never valid, so we start searching after it.
 	for (var i = 1; i < sets.length; i++) {
 		if (sets[i].id && sets[i].id.indexOf('(Blank Set)') === -1) return sets[i];
@@ -1259,7 +1260,7 @@ $(".notation").change(function () {
 });
 
 function clearField() {
-	$("#singles-format").prop("checked", true);
+	$("#doubles-format").prop("checked", true);
 	$("#clear").prop("checked", true);
 	$("#gscClear").prop("checked", true);
 	$("#gravity").prop("checked", false);
@@ -1547,8 +1548,8 @@ $(document).ready(function () {
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
-	$("#singles-format").prop("checked", true);
-	$("#singles-format").change();
+	$("#doubles-format").prop("checked", true);
+	$("#doubles-format").change();
 	$("#default-level-100").prop("checked", true);
 	$("#default-level-100").change();
 	loadDefaultLists();

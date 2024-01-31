@@ -30,7 +30,7 @@ a img {
     padding: 15px 6px 15px 6px;
 }
 .header .nav {
-    padding: 15px 0 15px 155px;
+    padding: 3px 0 3px 25px;
 }
 .header .nav-play {
     padding: 15px 0 15px 10px;
@@ -40,11 +40,6 @@ a img {
     padding: 5px 10px;
     margin: 0 -1px 0 0;
     border-radius: 0;
-}
-.nav .button img {
-    position: absolute;
-    top: -8px;
-    left: -150px;
 }
 .nav .button.cur,
 .nav .button.cur:hover {
