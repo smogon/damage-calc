@@ -539,7 +539,7 @@ export function calculateDPP(
 
   const damage: number[] = [];
   for (let i = 0; i < 16; i++) {
-    damage[i] = Math.floor((baseDamage * (85 + i)) / 100);
+    damage[i] = Math.floor((baseDamage * 92) / 100);
     damage[i] = Math.floor(damage[i] * stabMod);
     damage[i] = Math.floor(damage[i] * type1Effectiveness);
     damage[i] = Math.floor(damage[i] * type2Effectiveness);
