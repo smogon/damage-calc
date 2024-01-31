@@ -70,7 +70,7 @@ export function display(
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
 
   const desc = buildDescription(rawDesc, attacker, defender);
-  const damageText = `${min}-${max} (${minDisplay} - ${maxDisplay}${notation})`;
+  const damageText = `${min} HP (${minDisplay}${notation})`;
 
   if (move.category === 'Status' && !move.named('Nature Power')) return `${desc}: ${damageText}`;
   const koChanceText = getKOChance(gen, attacker, defender, move, field, damage, err).text;
@@ -95,8 +95,7 @@ export function displayMove(
   const recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
 
-  return `${minDisplay} - ${maxDisplay}${notation}${recoveryText &&
-    ` (${recoveryText})`}${recoilText && ` (${recoilText})`}`;
+  return `${minDisplay}${notation}\xa0${`${recoveryText}`} \xa0${`${recoilText}`}`;
 }
 
 export function getRecovery(
@@ -146,7 +145,7 @@ export function getRecovery(
   const minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
   const maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
 
-  text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} recovered`;
+  text = `${minHealthRecovered}${notation} recovered`;
   return {recovery, text};
 }
 
@@ -185,7 +184,7 @@ export function getRecoil(
     }
     if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
-      text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
+      text = `${minRecoilDamage}${notation} recoil damage`;
     }
   } else if (move.hasCrashDamage) {
     const genMultiplier = gen.num === 2 ? 12.5 : gen.num >= 3 ? 50 : 1;
@@ -222,7 +221,7 @@ export function getRecoil(
           text = 'no crash damage on Ghost types';
         }
       } else {
-        text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} crash damage on miss`;
+        text = `${minRecoilDamage}${notation} crash damage on miss`;
       }
       break;
     default:
@@ -267,7 +266,7 @@ export function getKOChance(
   if (move.timesUsedWithMetronome === undefined) move.timesUsedWithMetronome = 1;
 
   if (damage[0] >= defender.maxHP() && move.timesUsed === 1 && move.timesUsedWithMetronome === 1) {
-    return {chance: 1, n: 1, text: 'guaranteed OHKO'};
+    return {chance: 1, n: 1, text: 'OHKO'};
   }
 
   const hazards = getHazards(gen, defender, field.defenderSide);
@@ -292,7 +291,7 @@ export function getKOChance(
       damage, defender.curHP() - hazards.damage, 0, 1, 1, defender.maxHP(), toxicCounter
     );
     if (chance === 1) {
-      return {chance, n: 1, text: `guaranteed OHKO${hazardsText}`}; // eot wasn't considered
+      return {chance, n: 1, text: `OHKO${hazardsText}`}; // eot wasn't considered
     } else if (chance > 0) {
       // note: still not accounting for EOT due to poor eot damage handling
       return {
@@ -304,7 +303,7 @@ export function getKOChance(
 
     // Parental Bond's combined first + second hit only is accurate for chance to OHKO, for
     // multihit KOs its only approximated. We should be doing squashMultihit here instead of
-    // pretending we ar emore accurate than we are, but just throwing on an qualifer should be
+    // pretending we are more accurate than we are, but just throwing on an qualifer should be
     // sufficient.
     if (damage.length === 256) {
       qualifier = 'approx. ';
@@ -316,7 +315,7 @@ export function getKOChance(
         damage, defender.curHP() - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter
       );
       if (chance === 1) {
-        return {chance, n: i, text: `${qualifier || 'guaranteed '}${i}HKO${afterText}`};
+        return {chance, n: i, text: `${i}HKO${afterText}`};
       } else if (chance > 0) {
         return {
           chance,
@@ -331,7 +330,7 @@ export function getKOChance(
         predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
         defender.curHP() - hazards.damage
       ) {
-        return {chance: 1, n: i, text: `${qualifier || 'guaranteed '}${i}HKO${afterText}`};
+        return {chance: 1, n: i, text: `${i}HKO${afterText}`};
       } else if (
         predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
         defender.curHP() - hazards.damage
@@ -352,7 +351,7 @@ export function getKOChance(
       return {
         chance,
         n: move.timesUsed,
-        text: `${qualifier || 'guaranteed '}KO in ${move.timesUsed} turns${afterText}`,
+        text: `$KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (chance > 0) {
       return {
@@ -361,7 +360,7 @@ export function getKOChance(
         text:
           qualifier +
           Math.round(chance * 1000) / 10 +
-          `% chance to ${move.timesUsed}HKO${afterText}`,
+          `${move.timesUsed}HKO${afterText}`,
       };
     }
 
@@ -378,7 +377,7 @@ export function getKOChance(
       return {
         chance: 1,
         n: move.timesUsed,
-        text: `${qualifier || 'guaranteed '}KO in ${move.timesUsed} turns${afterText}`,
+        text: `$KO in ${move.timesUsed} turns${afterText}`,
       };
     } else if (
       predictTotal(
@@ -393,7 +392,7 @@ export function getKOChance(
     ) {
       return {
         n: move.timesUsed,
-        text: qualifier + `possible KO in ${move.timesUsed} turns${afterText}`,
+        text: qualifier + `KO in ${move.timesUsed} turns${afterText}`,
       };
     }
     return {n: move.timesUsed, text: qualifier + 'not a KO'};

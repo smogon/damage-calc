@@ -4,9 +4,6 @@
 name: Tests
 
 on:
-  workflow_run:
-    workflows: [Update Sets]
-    types: [completed]
   workflow_dispatch:
   push:
     branches: [ master ]
@@ -29,7 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-#    - run: npm run test
+    #    - run: npm run test
       env:
         CI: true
 

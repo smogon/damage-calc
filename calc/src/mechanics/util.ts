@@ -461,7 +461,7 @@ export function getFinalDamage(
   finalMod: number,
   protect?: boolean
 ) {
-  let damageAmount = Math.floor(OF32(baseAmount * (85 + i)) / 100);
+  let damageAmount = Math.floor(OF32(baseAmount * 92) / 100);
   // If the stabMod would not accomplish anything we avoid applying it because it could cause
   // us to calculate damage overflow incorrectly (DaWoblefet)
   if (stabMod !== 4096) damageAmount = OF32(damageAmount * stabMod) / 4096;
