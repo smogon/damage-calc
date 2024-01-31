@@ -4,9 +4,6 @@
 name: Tests
 
 on:
-  workflow_run:
-    workflows: [Update Sets]
-    types: [completed]
   workflow_dispatch:
   push:
     branches: [ master ]
