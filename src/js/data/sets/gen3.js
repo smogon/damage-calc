@@ -452,7 +452,7 @@ var SETDEX_ADV = {
     "NU Offensive Support": {"ability":"Levitate","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Hidden Power Fire","Toxic","Taunt"]}
   },
   "Koffing": {
-    "LC Defensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Impish","ivs":{"at":30,"sa":30},"evs":{"hp":116,"at":76,"df":236,"sp":76},"moves":["Sludge Bomb","Hidden Power Grass","Thief","Explosion"]},
+    "LC Defensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Impish","ivs":{"at":30,"sa":30},"evs":{"hp":116,"at":80,"df":236,"sp":76},"moves":["Sludge Bomb","Hidden Power Grass","Thief","Explosion"]},
     "ZU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Pain Split","Sludge Bomb","Hidden Power Grass","Will-O-Wisp"]},
     "ZU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Memento","Sludge Bomb","Hidden Power Grass","Will-O-Wisp"]}
   },

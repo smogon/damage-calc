@@ -507,7 +507,7 @@ var SETDEX_BW = {
     "LC Bulk Up": {"level":5,"ability":"Keen Eye","item":"Eviolite","nature":"Jolly","evs":{"hp":36,"at":12,"df":36,"sd":196,"sp":196},"moves":["Bulk Up","Return","Pluck","Roost"]}
   },
   "Larvesta": {
-    "LC Defensive": {"level":5,"ability":"Flame Body","item":"Eviolite","nature":"Adamant","evs":{"hp":76,"at":76,"df":156,"sd":156,"sp":36},"moves":["U-turn","Flare Blitz","Morning Sun","Will-O-Wisp"]},
+    "LC Offensive Pivot": {"level":5,"ability":"Flame Body","item":"Eviolite","nature":"Adamant","evs":{"hp":76,"at":236,"sp":196},"moves":["Flare Blitz","U-turn","Morning Sun","Will-O-Wisp"]},
     "LC Choice Scarf": {"level":5,"ability":"Flame Body","item":"Choice Scarf","nature":"Jolly","evs":{"hp":76,"at":236,"sp":196},"moves":["U-turn","Flare Blitz","Wild Charge","Zen Headbutt"]}
   },
   "Volcarona": {
@@ -611,7 +611,7 @@ var SETDEX_BW = {
     "NU Specially Defensive": {"ability":"Rain Dish","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":44,"sd":216},"moves":["Scald","Roost","Toxic","Hurricane"]},
     "ZU Defensive Pivot": {"ability":"Rain Dish","item":"Leftovers","nature":"Relaxed","evs":{"hp":248,"df":252,"sa":8},"moves":["Scald","U-turn","Knock Off","Roost"]},
     "ZU Offensive Pivot": {"ability":"Rain Dish","item":"Leftovers","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Hurricane","U-turn","Roost"]},
-    "ZU Agility": {"ability":"Rain Dish","item":"Water Gem","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Hurricane","Agility","Roost"]},
+    "ZU Agility": {"ability":"Rain Dish","item":"Water Gem","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Agility","Hydro Pump","Hurricane","Roost"]},
     "PU Showdown Usage": {"ability":"Rain Dish","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sa":8},"moves":["Hurricane","Roost","Scald","Toxic"]}
   },
   "Delcatty": {
@@ -1168,7 +1168,7 @@ var SETDEX_BW = {
   },
   "Staryu": {
     "LC Bulky Rapid Spin": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"hp":116,"df":156,"sp":236},"moves":["Scald","Thunderbolt","Rapid Spin","Recover"]},
-    "LC Offensive Rapid Spin": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"df":76,"sa":196,"sp":236},"moves":["Hydro Pump","Thunderbolt","Rapid Spin","Recover"]},
+    "LC Offensive": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"df":76,"sa":196,"sp":236},"moves":["Hydro Pump","Thunderbolt","Rapid Spin","Recover"]},
     "LC Life Orb": {"level":5,"ability":"Natural Cure","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":196,"sd":76,"sp":236},"moves":["Hydro Pump","Psychic","Hidden Power Fire","Rapid Spin"]},
     "ZU Physically Defensive": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":200,"sp":56},"moves":["Rapid Spin","Toxic","Scald","Recover"]}
   },
@@ -1343,7 +1343,6 @@ var SETDEX_BW = {
   },
   "Chinchou": {
     "LC Choice Scarf": {"level":5,"ability":"Water Absorb","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"df":52,"sa":228,"sp":220},"moves":["Volt Switch","Hydro Pump","Thunderbolt","Toxic"]},
-    "LC RestTalk": {"level":5,"ability":"Water Absorb","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":76,"df":212,"sd":220},"moves":["Volt Switch","Scald","Rest","Sleep Talk"]},
     "LC Defensive": {"level":5,"ability":"Water Absorb","item":"Eviolite","nature":"Calm","ivs":{"at":0},"evs":{"hp":76,"df":52,"sd":228,"sp":140},"moves":["Surf","Volt Switch","Toxic","Protect"]},
     "PU Showdown Usage": {"ability":"Volt Absorb","item":"Eviolite","nature":"Sassy","evs":{"hp":248,"df":8,"sd":252},"moves":["Rest","Scald","Sleep Talk","Volt Switch"]}
   },
@@ -1567,7 +1566,8 @@ var SETDEX_BW = {
     "LC Nasty Plot": {"level":5,"ability":"Forewarn","item":"Shed Shell","nature":"Timid","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":240,"sp":240},"moves":["Nasty Plot","Blizzard","Psychic","Substitute"]}
   },
   "Elekid": {
-    "LC Life Orb": {"level":5,"ability":"Static","item":"Life Orb","nature":"Timid","ivs":{"hp":7,"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Volt Switch","Hidden Power Grass","Psychic"]}
+    "LC Life Orb": {"level":5,"ability":"Static","item":"Life Orb","nature":"Timid","ivs":{"hp":7,"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Volt Switch","Hidden Power Grass","Psychic"]},
+    "LC Air Balloon Pivot": {"level":5,"ability":"Static","item":"Air Balloon","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Volt Switch","Hidden Power Grass","Protect"]}
   },
   "Magby": {
     "LC Belly Drum Sweeper": {"level":5,"ability":"Flame Body","item":"Oran Berry","nature":"Jolly","ivs":{"hp":23},"evs":{"at":236,"sp":252},"moves":["Belly Drum","Fire Punch","Thunder Punch","Substitute"]}
@@ -2771,9 +2771,10 @@ var SETDEX_BW = {
     "PU Utility": {"ability":"Static","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Discharge","Earth Power","Toxic"]}
   },
   "Mienfoo": {
-    "LC Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Impish","evs":{"hp":156,"df":116,"sd":196},"moves":["Fake Out","High Jump Kick","U-turn","Knock Off"]},
+    "LC Slow Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Impish","evs":{"hp":156,"df":116,"sd":196},"moves":["Fake Out","High Jump Kick","U-turn","Knock Off"]},
     "LC Choice Scarf": {"level":5,"ability":"Reckless","item":"Choice Scarf","nature":"Jolly","evs":{"at":236,"sd":36,"sp":236},"moves":["High Jump Kick","U-turn","Stone Edge","Drain Punch"]},
-    "LC Acrobatics": {"level":5,"ability":"Regenerator","item":"Flying Gem","nature":"Jolly","evs":{"at":236,"df":36,"sp":236},"moves":["Acrobatics","High Jump Kick","U-turn","Fake Out"]},
+    "LC Fast Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Jolly","evs":{"df":36,"sd":196,"sp":236},"moves":["High Jump Kick","Knock Off","U-turn","Fake Out"]},
+    "LC Substitute + Payback": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Adamant","evs":{"at":236,"sd":36,"sp":236},"moves":["High Jump Kick","Payback","Substitute","U-turn"]},
     "ZU Pivot": {"ability":"Regenerator","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","U-turn","Fake Out","Taunt"]},
     "ZU Choice Scarf": {"ability":"Reckless","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","U-turn","Rock Slide","Knock Off"]}
   },
@@ -2805,6 +2806,7 @@ var SETDEX_BW = {
   "Pawniard": {
     "LC Eviolite": {"level":5,"ability":"Defiant","item":"Eviolite","nature":"Jolly","evs":{"at":156,"df":36,"sd":116,"sp":196},"moves":["Swords Dance","Sucker Punch","Iron Head","Night Slash"]},
     "LC Choice Scarf": {"level":5,"ability":"Defiant","item":"Choice Scarf","nature":"Adamant","evs":{"at":236,"df":36,"sd":36,"sp":196},"moves":["Iron Head","Night Slash","Pursuit","Brick Break"]},
+    "LC Substitute + Swords Dance": {"level":5,"ability":"Defiant","item":"Eviolite","nature":"Jolly","evs":{"at":156,"df":196,"sd":116,"sp":36},"moves":["Swords Dance","Sucker Punch","Iron Head","Substitute"]},
     "ZU Wallbreaker": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Sucker Punch","Iron Head","Pursuit"]},
     "ZU Stealth Rock": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Sucker Punch","Iron Head","Pursuit"]}
   },
@@ -2832,8 +2834,7 @@ var SETDEX_BW = {
   },
   "Vullaby": {
     "LC Nasty Plot": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Modest","ivs":{"at":0},"evs":{"df":76,"sa":236,"sp":196},"moves":["Nasty Plot","Air Slash","Dark Pulse","Heat Wave"]},
-    "LC Life Orb": {"level":5,"ability":"Weak Armor","item":"Life Orb","nature":"Hasty","evs":{"at":236,"sa":76,"sp":196},"moves":["Brave Bird","Dark Pulse","U-turn","Taunt"]},
-    "LC Physical Pivot": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Adamant","evs":{"hp":116,"at":156,"sd":76,"sp":116},"moves":["Brave Bird","Knock Off","U-turn","Roost"]},
+    "LC Offensive Pivot": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Adamant","evs":{"at":236,"df":76,"sp":196},"moves":["Brave Bird","Knock Off","U-turn","Roost"]},
     "ZU Physically Defensive": {"ability":"Big Pecks","item":"Eviolite","nature":"Impish","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Taunt","Foul Play","Hidden Power Fighting","Roost"]}
   },
   "Mandibuzz": {
