@@ -95,7 +95,8 @@ export function displayMove(
   const recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
   const recoilText = getRecoil(gen, attacker, defender, move, damage, notation).text;
 
-  return `${minDisplay}${notation}\xa0${`${recoveryText}`} \xa0${`${recoilText}`}`;
+  return `${minDisplay}${notation}${recoveryText &&
+    ` (${recoveryText})`}${recoilText && ` (${recoilText})`}`;
 }
 
 export function getRecovery(
