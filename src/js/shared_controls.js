@@ -256,9 +256,10 @@ function calcMult(pokemon) {
     var bst_scale = pokemon.bs.at + pokemon.bs.df + pokemon.bs.sa + pokemon.bs.sd + pokemon.bs.sp;
     return (600 - pokemon.bs.hp) / bst_scale
 
- }
-
-function autoUpdateStats(p) {
+}
+var tierBlob;
+async function autoUpdateStats(p) {
+	
     var fullSetName = $(p + " .set-selector .select2-chosen").text();
     if (!fullSetName) return;
     var pokemonName, setName;
@@ -268,6 +269,9 @@ function autoUpdateStats(p) {
     var abilityObj = pokeObj.find(".ability");
 	var pokemon = pokedex[pokemonName];
 	var volatileCopy = structuredClone(pokemon)
+	var randset = $("#randoms").prop("checked") ? randdex[pokemonName] : undefined;
+	var regSets = pokemonName in setdex && setName in setdex[pokemonName];
+	var set = regSets ? setdex[pokemonName][setName] : randset;
 	// if should use rules use them...
     if (shouldUseTS || shouldUseScale || shouldUseMnM) {
     	// mix and mega is top priority
@@ -303,7 +307,6 @@ function autoUpdateStats(p) {
             	abilityObj.val(abilityFallback);
 
 	    }
-	    // console.log(volatileCopy)
 	    // scale is second priority
 	    if (shouldUseScale) {
 	    	var multiplier = calcMult(pokemon);
@@ -313,7 +316,28 @@ function autoUpdateStats(p) {
 					pokeObj.find("." +  stat + " .base").val(volatileCopy.bs[stat])
 			}
 		}
-		// console.log(volatileCopy)
+		if (shouldUseTS) {
+			if (gen >= 9) {
+				var conversion =  {"lc":30,"nfe":30,"zu": 30,"zubl":30, "(pu)":30,"pu":30,"publ":25,"nu":25,"nubl":20,"ru":20,"rubl":15,
+									"uu":15,"uubl":0,"ou":0,"(ou)":0,"uber":0,"illegal":0,"unreleased":"0","ag":0,"cap":0,"cap lc":30,"cap nfe":30}
+			}
+			else {
+				var conversion =  {"lc":40,"nfe":40,"zu": 40,"zubl":40, "(pu)":40, "pu":40,"publ":30,"nu":30,"nubl":20,"ru":20,
+									"rubl":10,"uu":10,"uubl":0,"ou":0,"(ou)":0,"uber":0,"illegal":0,"unreleased":0,"ag":0,"cap":0,"cap lc":40,"cap nfe":40}
+			}
+			// have to do it inside function cause of timing, has to be after gen is set
+			tierBlob = tierBlob ? tierBlob : await fetch(`js/data/tiers/gen${gen}-tiers.json`).then(resp => resp.json())
+			
+			// have a backup 0 just in case the tier doesn't exist
+			var tierAddon = conversion[
+				tierBlob[toID(pokemonName)]['tier'].toLowerCase()
+				] ?? 0;
+			for (let i = 1; i < LEGACY_STATS[gen].length; i++) {
+					var stat = LEGACY_STATS[gen][i]
+					volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] + tierAddon);
+					pokeObj.find("." +  stat + " .base").val(volatileCopy.bs[stat])
+			}
+		}
 	}
 	// ...otherwise reset
 	else {
@@ -321,10 +345,11 @@ function autoUpdateStats(p) {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 			}
 			pokeObj.find(".type2").val(pokemon.types[1]);
-			
-			var randset = $("#randoms").prop("checked") ? randdex[pokemonName] : undefined;
-			var regSets = pokemonName in setdex && setName in setdex[pokemonName];
-			var set = regSets ? setdex[pokemonName][setName] : randset;
+			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
+			if (typeof set !== 'undefined')
+				setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
+			else
+            	abilityObj.val(abilityFallback);
     }
     calcHP(pokeObj);
     calcStats(pokeObj);
@@ -1195,6 +1220,7 @@ function getGender(gender) {
 	return 'F';
 }
 
+
 function getMoveDetails(moveInfo, species, ability, item, useMax) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
@@ -1622,10 +1648,14 @@ function getTerrainEffects() {
 
 var shouldUseMnM = false;
 function toggleMNM() {
-	// console.log("helo")
 	shouldUseMnM = !shouldUseMnM;
 	autoUpdateStats('#p1');
 	autoUpdateStats('#p2');
+	// mnm CAN change abilities and field conditions, we want to reset it just in case
+	autosetWeather($("#p1 .ability").val(), 0)
+	autosetTerrain($("#p1 .ability").val(), 0)
+	autosetWeather($("#p2 .ability").val(), 0)
+	autosetTerrain($("#p2 .ability").val(), 0)
 }
 
 var shouldUseTS = false;
