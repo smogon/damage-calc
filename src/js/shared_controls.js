@@ -253,8 +253,11 @@ function clampStats(stat) {
 	return Math.floor(clamp(stat, 1, 255))
 }
 function calcMult(pokemon) {
-    var bst_scale = pokemon.bs.at + pokemon.bs.df + pokemon.bs.sa + pokemon.bs.sd + pokemon.bs.sp;
-    return (600 - pokemon.bs.hp) / bst_scale
+	// rby should use special instead of spatk + spdef
+	var special = pokemon.bs.sa ? pokemon.bs.sa + pokemon.bs.sd : pokemon.bs.sl
+    var bst_scale = pokemon.bs.at + pokemon.bs.df + special + pokemon.bs.sp;
+    // and 500 as scale base
+    return (Object.keys(pokemon.bs).length*100 - pokemon.bs.hp) / bst_scale
 
 }
 var tierBlob;
@@ -326,7 +329,7 @@ async function autoUpdateStats(p) {
 									"rubl":10,"uu":10,"uubl":0,"ou":0,"(ou)":0,"uber":0,"illegal":0,"unreleased":0,"ag":0,"cap":0,"cap lc":40,"cap nfe":40}
 			}
 			// have to do it inside function cause of timing, has to be after gen is set
-			tierBlob = tierBlob ? tierBlob : await fetch(`js/data/tiers/gen${gen}-tiers.json`).then(resp => resp.json())
+			
 			
 			// have a backup 0 just in case the tier doesn't exist
 			var tierAddon = conversion[
@@ -1379,7 +1382,7 @@ var RANDDEX = [
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 
-$(".gen").change(function () {
+$(".gen").change(async function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 9;
 	GENERATION = calc.Generations.get(gen);
@@ -1427,6 +1430,7 @@ $(".gen").change(function () {
 
 	$(".set-selector").val(getFirstValidSetOption().id);
 	$(".set-selector").change();
+	tierBlob = await fetch(`js/data/tiers/gen${gen}-tiers.json`).then(resp => resp.json())
 });
 
 function getFirstValidSetOption() {
