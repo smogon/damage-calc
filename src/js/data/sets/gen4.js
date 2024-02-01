@@ -2240,7 +2240,6 @@ var SETDEX_DPP = {
   },
   "Froslass": {
     "Ubers Spikes Lead": {"ability":"Snow Cloak","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Icy Wind","Shadow Ball","Destiny Bond"]},
-    "OU Showdown Usage": {"ability":"Snow Cloak","item":"Leftovers","nature":"Timid","evs":{"hp":32,"sa":224,"sp":252},"moves":["Substitute","Thunder Wave","Ice Beam","Confuse Ray"]},
     "Anything Goes Showdown Usage": {"ability":"Snow Cloak","item":"Leftovers","nature":"Timid","evs":{"hp":224,"sa":32,"sp":252},"moves":["Blizzard","Protect","Substitute","Double Team"]}
   },
   "Rotom": {
@@ -2344,7 +2343,7 @@ var SETDEX_DPP = {
     "Ubers Choice Specs": {"ability":"Serene Grace","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]}
   },
   "Vaporeon": {
-    "OU Showdown Usage": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":248,"sa":252,"sd":8},"moves":["Surf","Wish","Ice Beam","Hydro Pump"]}
+    "OU Showdown Usage": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","ivs":{"sa":30},"evs":{"hp":248,"sa":252,"sd":8},"moves":["Surf","Ice Beam","Wish","Hidden Power Electric"]}
   },
   "Lopunny": {
     "Doubles OU Showdown Usage": {"ability":"Klutz","item":"Choice Scarf","nature":"Jolly","evs":{"hp":248,"df":40,"sp":220},"moves":["Endeavor","Fake Out","Switcheroo","Thunder Wave"]}

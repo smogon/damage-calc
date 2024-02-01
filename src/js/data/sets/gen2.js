@@ -134,7 +134,8 @@ var SETDEX_GSC = {
     "OU Curse": {"item":"Leftovers","ivs":{"hp":14,"at":24,"df":26},"moves":["Curse","Hidden Power Flying","Return","Rest"]}
   },
   "Ampharos": {
-    "UU Heart of the Lighthouse (Sleep Talk)": {"item":"Leftovers","moves":["Thunder","Light Screen","Rest","Sleep Talk"]}
+    "UU Heart of the Lighthouse (Sleep Talk)": {"item":"Leftovers","moves":["Thunder","Light Screen","Rest","Sleep Talk"]},
+    "OU Showdown Usage": {"item":"Leftovers","moves":["Rest","Sleep Talk","Fire Punch","Thunder"]}
   },
   "Bellossom": {
     "UU Standard Supporter": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Stun Spore","Hidden Power Grass","Leech Seed","Moonlight"]},
@@ -166,8 +167,7 @@ var SETDEX_GSC = {
     "NU Showdown Usage": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":28},"moves":["High Jump Kick","Rapid Spin","Mach Punch","Hidden Power Ghost"]}
   },
   "Hitmontop": {
-    "OU Standard": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":28},"moves":["High Jump Kick","Curse","Counter","Hidden Power Ghost"]},
-    "UU Showdown Usage": {"item":"Leftovers","moves":["High Jump Kick","Rapid Spin","Curse","Mach Punch"]}
+    "OU Standard": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":28},"moves":["High Jump Kick","Curse","Counter","Hidden Power Ghost"]}
   },
   "Arbok": {
     "OU Glare": {"item":"Leftovers","moves":["Sludge Bomb","Glare","Earthquake","Giga Drain"]},
@@ -181,7 +181,7 @@ var SETDEX_GSC = {
   },
   "Dodrio": {
     "OU RestTalk": {"item":"Leftovers","moves":["Double-Edge","Drill Peck","Rest","Sleep Talk"]},
-    "UU Showdown Usage": {"item":"Pink Bow","ivs":{"hp":14,"at":24},"moves":["Drill Peck","Swagger","Hidden Power Ground","Double-Edge"]}
+    "UU Showdown Usage": {"item":"Leftovers","moves":["Double-Edge","Drill Peck","Sleep Talk","Rest"]}
   },
   "Gengar": {
     "OU Assassin": {"item":"Leftovers","moves":["Thunderbolt","Ice Punch","Hypnosis","Explosion"]},
@@ -273,7 +273,8 @@ var SETDEX_GSC = {
     "OU Swords Dance": {"item":"Leftovers","ivs":{"at":26,"df":26},"moves":["Spore","Hidden Power Bug","Return","Swords Dance"]}
   },
   "Venomoth": {
-    "OU Curse": {"item":"Leftovers","ivs":{"at":26,"df":26},"moves":["Curse","Sludge Bomb","Stun Spore","Hidden Power Bug"]}
+    "OU Curse": {"item":"Leftovers","ivs":{"at":26,"df":26},"moves":["Curse","Sludge Bomb","Stun Spore","Hidden Power Bug"]},
+    "UU Showdown Usage": {"item":"Leftovers","moves":["Sludge Bomb","Curse","Baton Pass","Sleep Powder"]}
   },
   "Persian": {
     "OU Screech": {"item":"Leftovers","moves":["Return","Hypnosis","Screech","Zap Cannon"]},
@@ -296,7 +297,7 @@ var SETDEX_GSC = {
     "OU RestTalk": {"item":"Leftovers","ivs":{"hp":6,"at":24,"df":24},"moves":["Fire Blast","Hidden Power Fighting","Rest","Sleep Talk"]},
     "1v1 Curse": {"item":"Leftovers","ivs":{"hp":6,"at":24,"df":24},"moves":["Fire Blast","Extreme Speed","Curse","Hidden Power Fighting"]},
     "1v1 Mint Berry": {"item":"Mint Berry","moves":["Fire Blast","Extreme Speed","Sunny Day","Rest"]},
-    "UU Showdown Usage": {"item":"Leftovers","moves":["Flamethrower","Rest","Sleep Talk","Sunny Day"]}
+    "UU Showdown Usage": {"item":"Leftovers","moves":["Fire Blast","Rest","Double-Edge","Sleep Talk"]}
   },
   "Poliwhirl": {
     "UU Belly Drum Sweeper": {"item":"Miracle Berry","moves":["Belly Drum","Return","Earthquake","Lovely Kiss"]}
@@ -428,8 +429,7 @@ var SETDEX_GSC = {
   },
   "Magmar": {
     "NU Special Sweeper": {"item":"Leftovers","moves":["Fire Blast","Thunder Punch","Cross Chop","Sunny Day"]},
-    "1v1 Scope Lens": {"item":"Scope Lens","moves":["Fire Blast","Screech","Cross Chop","Thunder Punch"]},
-    "UU Showdown Usage": {"item":"Charcoal","moves":["Cross Chop","Flamethrower","Sunny Day","Thunder Punch"]}
+    "1v1 Scope Lens": {"item":"Scope Lens","moves":["Fire Blast","Screech","Cross Chop","Thunder Punch"]}
   },
   "Pinsir": {
     "UU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Hidden Power Ground","Double-Edge","Submission"]},
@@ -674,8 +674,7 @@ var SETDEX_GSC = {
     "1v1 Sharp Beak + Drill Peck": {"item":"Sharp Beak","moves":["Drill Peck","Curse","Toxic","Rest"]}
   },
   "Houndour": {
-    "NU Pursuit": {"item":"Leftovers","moves":["Pursuit","Fire Blast","Solar Beam","Sunny Day"]},
-    "UU Showdown Usage": {"item":"Leftovers","moves":["Fire Blast","Pursuit","Solar Beam","Sunny Day"]}
+    "NU Pursuit": {"item":"Leftovers","moves":["Pursuit","Fire Blast","Solar Beam","Sunny Day"]}
   },
   "Houndoom": {
     "OU Pursuit Trapper": {"item":"Leftovers","moves":["Fire Blast","Crunch","Pursuit","Roar"]},
