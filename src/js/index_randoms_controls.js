@@ -165,6 +165,8 @@ $(".mode").change(function () {
 	if (mode === 'randoms') {
 		window.location.replace('randoms' + linkExtension + '?' + params);
 	} else if (mode === 'one-vs-one') {
+		window.location.replace('base' + linkExtension + '?' + params);
+	} else if (mode === 'eikpp') {
 		window.location.replace('index' + linkExtension + '?' + params);
 	} else {
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
@@ -179,16 +181,26 @@ $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
 	if (m) {
-		if (m !== 'one-vs-one' && m !== 'randoms') {
+		if (m !== 'one-vs-one' && m !== 'randoms' && m !== 'eikpp') {
 			window.location.replace('honkalculate' + linkExtension + '?' + params);
 		} else {
 			if ($('#randoms').prop('checked')) {
 				if (m === 'one-vs-one') {
+					window.location.replace('base' + linkExtension + '?' + params);
+				} else if (m === 'eikpp') {
 					window.location.replace('index' + linkExtension + '?' + params);
+				}
+			} else if ($('#eikpp').prop('checked')) {
+				if (m === 'one-vs-one') {
+					window.location.replace('base' + linkExtension + '?' + params);
+				} else if (m === 'randoms') {
+					window.location.replace('randoms' + linkExtension + '?' + params);
 				}
 			} else {
 				if (m === 'randoms') {
 					window.location.replace('randoms' + linkExtension + '?' + params);
+				} else if (m === 'eikpp') {
+					window.location.replace('index' + linkExtension + '?' + params);
 				}
 			}
 		}
