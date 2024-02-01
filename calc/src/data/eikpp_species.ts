@@ -198,7 +198,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Electrmega: {
     types: ['Electric', 'Flying'],
-    bs: {hp: 68, at: 67, df: 80, sa: 92, sd: 72, sp: 60},
+    bs: {hp: 68, at: 67, df: 80, sa: 92, sd: 72, sp: 113},
     weightkg: 59,
     abilities: {0: 'Soundproof'},
     gender: 'N',
