@@ -564,6 +564,7 @@ function stringifyCalcSets(calcSets: {[specie: string]: {[name: string]: CalcSet
   }
   const genNames = ['RBY', 'GSC', 'ADV', 'DPP', 'BW', 'XY', 'SM', 'SS', 'SV'];
   for (const [i, genName] of genNames.entries()) {
+    if (i !== 8) continue;
     const calcSets = await importGen(gens.get(i + 1));
     const path = `${outDir}/gen${i + 1}.js`;
     console.log(`Writing ${path}...`);
