@@ -276,7 +276,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Lucatile: {
     types: ['Fighting', 'Grass'],
-    bs: {hp: 70, at: 93, df: 66, sa: 11, sd: 75, sp: 110},
+    bs: {hp: 70, at: 93, df: 66, sa: 111, sd: 75, sp: 110},
     weightkg: 53.1,
     abilities: {0: 'Steadfast'},
   },
