@@ -299,8 +299,7 @@ var SETDEX_ADV = {
   "Regirock": {
     "OU Physical Attacker": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Rock Slide","Focus Punch","Thunder Wave","Explosion"]},
     "OU Curse": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":180,"sd":76},"moves":["Curse","Rock Slide","Earthquake","Explosion"]},
-    "OU Choice Band": {"ability":"Clear Body","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":252,"at":252,"sd":4},"moves":["Hidden Power Rock","Superpower","Earthquake","Explosion"]},
-    "OU Swagger + Psych Up": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Swagger","Psych Up","Superpower","Rock Slide"]}
+    "OU Choice Band": {"ability":"Clear Body","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":252,"at":252,"sd":4},"moves":["Hidden Power Rock","Superpower","Earthquake","Explosion"]}
   },
   "Regice": {
     "OU Offensive": {"ability":"Clear Body","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"at":104,"sa":152},"moves":["Ice Beam","Thunderbolt","Explosion","Thunder Wave"]},
@@ -851,8 +850,7 @@ var SETDEX_ADV = {
     "PU Wallbreaker": {"ability":"Keen Eye","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Shadow Ball","Brick Break","Quick Attack"]}
   },
   "Ledian": {
-    "NU Dual Screens": {"ability":"Early Bird","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Reflect","Light Screen","Baton Pass","Substitute"]},
-    "ZU Showdown Usage": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Baton Pass","Substitute","Toxic","Reflect"]}
+    "NU Dual Screens": {"ability":"Early Bird","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Reflect","Light Screen","Baton Pass","Substitute"]}
   },
   "Crobat": {
     "OU Choice Band": {"ability":"Inner Focus","item":"Choice Band","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"hp":80,"at":252,"sp":176},"moves":["Sludge Bomb","Aerial Ace","Hidden Power Ground","Shadow Ball"]},
@@ -861,8 +859,7 @@ var SETDEX_ADV = {
   "Chinchou": {
     "PU Offensive Utility": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Thunder Wave"]},
     "LC All-Out Attacker": {"level":5,"ability":"Volt Absorb","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"df":52,"sa":232,"sp":220},"moves":["Hidden Power Grass","Thunderbolt","Surf","Thunder Wave"]},
-    "NU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunder Wave","Thunderbolt"]},
-    "ZU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Thunder Wave","Ice Beam","Surf"]}
+    "NU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunder Wave","Thunderbolt"]}
   },
   "Lanturn": {
     "OU RestTalk": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":40,"sa":252,"sd":216},"moves":["Thunderbolt","Surf","Rest","Sleep Talk"]},

@@ -320,6 +320,9 @@ var SETDEX_SM = {
   "Bulbasaur": {
     "LC Z-Celebrate Sweeper": {"level":5,"ability":"Chlorophyll","item":"Normalium Z","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":44,"sa":160,"sp":240},"moves":["Celebrate","Sludge Bomb","Giga Drain","Hidden Power Fire"]}
   },
+  "Ivysaur": {
+    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"at":252,"sd":4,"sp":252},"moves":["Growth","Sludge Bomb","Solar Beam","Hidden Power Fire"]}
+  },
   "Venusaur": {
     "OU Defensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Bold","evs":{"hp":252,"df":172,"sd":68,"sp":16},"moves":["Leech Seed","Sludge Bomb","Hidden Power Fire","Synthesis"]},
     "Ubers Defensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Bold","evs":{"hp":252,"df":180,"sd":76},"moves":["Leech Seed","Toxic","Synthesis","Grass Knot"]},
@@ -2156,7 +2159,8 @@ var SETDEX_SM = {
     "ZU Showdown Usage": {"ability":"Levitate","item":"Leftovers","nature":"Modest","evs":{"hp":48,"df":4,"sa":252,"sd":4,"sp":200},"moves":["Power Gem","Psychic","Ice Beam","Rock Polish"]}
   },
   "Solrock": {
-    "PU Stealth Rock": {"ability":"Levitate","item":"Colbur Berry","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Rock Slide","Will-O-Wisp","Morning Sun"]}
+    "PU Stealth Rock": {"ability":"Levitate","item":"Colbur Berry","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Rock Slide","Will-O-Wisp","Morning Sun"]},
+    "ZU Defensive Stealth Rock": {"ability":"Levitate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sp":4},"moves":["Stealth Rock","Stone Edge","Will-O-Wisp","Morning Sun"]}
   },
   "Barboach": {
     "LC Dragon Dance": {"level":5,"ability":"Oblivious","item":"Flyinium Z","nature":"Adamant","evs":{"hp":36,"at":212,"df":12,"sd":28,"sp":196},"moves":["Dragon Dance","Earthquake","Waterfall","Bounce"]}

@@ -1,7 +1,4 @@
 var SETDEX_GSC = {
-  "Unown": {
-    "OU The Power Within": {"item":"Twisted Spoon","ivs":{"hp":22,"df":24},"moves":["Hidden Power Psychic"]}
-  },
   "Venusaur": {
     "OU Defensive": {"item":"Leftovers","moves":["Synthesis","Leech Seed","Razor Leaf","Sleep Powder"]},
     "OU Swords Dance": {"item":"Leftovers","moves":["Swords Dance","Body Slam","Giga Drain","Sleep Powder"]},
