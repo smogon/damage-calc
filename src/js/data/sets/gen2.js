@@ -334,7 +334,7 @@ var SETDEX_GSC = {
   },
   "Magneton": {
     "OU Standard": {"item":"Leftovers","ivs":{"hp":14,"at":28,"df":26},"moves":["Thunderbolt","Thunder Wave","Hidden Power Water","Substitute"]},
-    "UU Rest Talk Magneton": {"item":"Leftovers","ivs":{"hp":14,"at":28,"df":26},"moves":["Thunder","Hidden Power Water","Rest","Sleep Talk"]}
+    "UU RestTalk": {"item":"Leftovers","ivs":{"hp":14,"at":28,"df":26},"moves":["Thunder","Hidden Power Water","Rest","Sleep Talk"]}
   },
   "Dewgong": {
     "UU Rest Talk": {"item":"Leftovers","moves":["Surf","Ice Beam","Rest","Sleep Talk"]},

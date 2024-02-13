@@ -2157,7 +2157,6 @@ var SETDEX_SS = {
     "Monotype Showdown Usage": {"ability":"Skill Link","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Bullet Seed","Rock Blast","Tail Slap","Encore"]}
   },
   "Gothitelle": {
-    "PU Cosmic Power + Stored Power": {"ability":"Competitive","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Cosmic Power","Stored Power","Rest","Sleep Talk"]},
     "Battle Stadium Singles Trapper": {"level":50,"ability":"Shadow Tag","item":"Chesto Berry","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Cosmic Power","Rest","Stored Power","Taunt"]},
     "Anything Goes Trapper": {"ability":"Shadow Tag","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":156,"sp":100},"moves":["Charm","Cosmic Power","Taunt","Rest"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Shadow Tag","item":"Focus Sash","nature":"Jolly","evs":{"hp":220,"sd":36,"sp":252},"moves":["Fake Out","Hypnosis","Ally Switch","Helping Hand"]},

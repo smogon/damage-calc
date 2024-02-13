@@ -113,7 +113,8 @@ var SETDEX_BW = {
   "Articuno": {
     "RU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":176,"sp":84},"moves":["Ice Beam","Roost","Substitute","Roar"]},
     "NU Offensive": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Hurricane","Roost","Substitute"]},
-    "NU Defensive SubRoost": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":192,"sd":64,"sp":252},"moves":["Substitute","Roost","Toxic","Ice Beam"]}
+    "NU Defensive SubRoost": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":192,"sd":64,"sp":252},"moves":["Substitute","Roost","Toxic","Ice Beam"]},
+    "PU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"sa":8,"sd":252},"moves":["Substitute","Roost","Ice Beam","Toxic"]}
   },
   "Zapdos": {
     "OU Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Bold","ivs":{"at":2,"df":30},"evs":{"hp":248,"df":100,"sa":4,"sd":44,"sp":112},"moves":["Volt Switch","Roost","Hidden Power Ice","Heat Wave"]},
