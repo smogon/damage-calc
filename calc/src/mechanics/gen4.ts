@@ -88,7 +88,7 @@ export function calculateDPP(
     desc.moveBP = basePower;
   } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     move.type = getItemBoostType(attacker.item)!;
-  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
+  } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     move.type = gift.t;
     move.bp = gift.p;
