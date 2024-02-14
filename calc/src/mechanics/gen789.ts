@@ -162,8 +162,7 @@ export function calculateSMSSSV(
     type = getTechnoBlast(attacker.item)!;
   } else if (move.named('Multi-Attack') && attacker.item && attacker.item.includes('Memory')) {
     type = getMultiAttack(attacker.item)!;
-  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry') &&
-      attacker.item !== 'Berry Juice' && attacker.item !== 'Berry Sweet') {
+  } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     type = gift.t;
     desc.moveType = type;
@@ -827,8 +826,7 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Natural Gift':
-    if (attacker.item?.includes('Berry') && !attacker.item?.includes('Juice') &&
-        !attacker.item?.includes('Sweet')) {
+    if (attacker.item?.endsWith('Berry')) {
       const gift = getNaturalGift(gen, attacker.item)!;
       basePower = gift.p;
       desc.attackerItem = attacker.item;
