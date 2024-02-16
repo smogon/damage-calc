@@ -1839,6 +1839,8 @@ var SETDEX_DPP = {
     "OU Agility": {"ability":"Clear Body","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Agility","Earthquake","Meteor Mash","Explosion"]},
     "OU Trick + Iron Ball": {"ability":"Clear Body","item":"Iron Ball","nature":"Adamant","evs":{"hp":252,"at":236,"sp":20},"moves":["Trick","Earthquake","Meteor Mash","Explosion"]},
     "OU Choice Scarf": {"ability":"Clear Body","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Meteor Mash","Earthquake","Thunder Punch","Explosion"]},
+    "Ubers Lead": {"ability":"Clear Body","item":"Lum Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Stealth Rock","Meteor Mash","Explosion","Bullet Punch"]},
+    "Ubers Agility": {"ability":"Clear Body","item":"Occa Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Agility","Meteor Mash","Explosion","Ice Punch"]},
     "Doubles OU Showdown Usage": {"ability":"Clear Body","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Meteor Mash","Explosion","Earthquake","Protect"]}
   },
   "Latias": {
@@ -2165,7 +2167,8 @@ var SETDEX_DPP = {
   "Snover": {
     "UU Lead": {"ability":"Snow Warning","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":172,"sp":88},"moves":["Leech Seed","Protect","Blizzard","Substitute"]},
     "UU Choice Scarf": {"ability":"Snow Warning","item":"Choice Scarf","nature":"Hasty","ivs":{"sa":30,"sd":30},"evs":{"hp":8,"sa":252,"sd":4,"sp":244},"moves":["Blizzard","Hidden Power Ground","Ice Shard","Energy Ball"]},
-    "LC Physically Offensive": {"level":5,"ability":"Snow Warning","item":"Oran Berry","nature":"Adamant","evs":{"hp":36,"at":180,"df":36,"sd":36,"sp":196},"moves":["Swords Dance","Ice Shard","Wood Hammer","Protect"]}
+    "LC Physically Offensive": {"level":5,"ability":"Snow Warning","item":"Oran Berry","nature":"Adamant","evs":{"hp":36,"at":180,"df":36,"sd":36,"sp":196},"moves":["Swords Dance","Ice Shard","Wood Hammer","Protect"]},
+    "LC Choice Scarf": {"level":5,"ability":"Snow Warning","item":"Choice Scarf","nature":"Timid","ivs":{"at":2,"sa":30,"sp":30},"evs":{"hp":36,"df":36,"sa":184,"sd":36,"sp":200},"moves":["Blizzard","Energy Ball","Hidden Power Fire","Water Pulse"]}
   },
   "Abomasnow": {
     "OU Leech Seed": {"ability":"Snow Warning","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Leech Seed","Protect","Wood Hammer","Ice Shard"]},

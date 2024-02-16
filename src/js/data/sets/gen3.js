@@ -213,10 +213,7 @@ var SETDEX_ADV = {
     "OU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["High Jump Kick","Hidden Power Ghost","Mach Punch","Rock Slide"]},
     "OU Endeavor": {"ability":"Intimidate","item":"Salac Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Endeavor","Mach Punch","Hidden Power Ghost"]},
     "OU Counter": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":252,"at":136,"df":112,"sp":8},"moves":["Counter","Brick Break","Hidden Power Ghost","Endeavor"]},
-    "UU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":144,"at":252,"sp":112},"moves":["Bulk Up","High Jump Kick","Hidden Power Ghost","Rock Slide"]},
-    "UU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["High Jump Kick","Hidden Power Ghost","Mach Punch","Earthquake"]},
-    "UU Endeavor": {"ability":"Intimidate","item":"Salac Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Endeavor","Mach Punch","Hidden Power Ghost"]},
-    "UU Counter": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":252,"at":136,"df":112,"sp":8},"moves":["Brick Break","Counter","Hidden Power Ghost","Endeavor"]}
+    "UU Rapid Spin": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":252,"at":116,"df":136,"sp":4},"moves":["Brick Break","Hidden Power Ghost","Earthquake","Rapid Spin"]}
   },
   "Grovyle": {
     "PU Offensive": {"ability":"Overgrow","item":"Leftovers","nature":"Timid","ivs":{"at":2,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Blade","Crunch","Hidden Power Ice","Substitute"]},
@@ -474,7 +471,7 @@ var SETDEX_ADV = {
     "PU Choice Band": {"ability":"Arena Trap","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Quick Attack"]},
     "PU Substitute": {"ability":"Arena Trap","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Toxic","Earthquake","Quick Attack"]},
     "PU Bulky Trapper": {"ability":"Arena Trap","item":"Leftovers","nature":"Careful","ivs":{"df":30,"sd":30},"evs":{"hp":252,"df":4,"sd":252},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Quick Attack"]},
-    "LC Offensive Trapper": {"level":5,"ability":"Arena Trap","item":"Sitrus Berry","nature":"Careful","ivs":{"df":30,"sd":30},"evs":{"hp":236,"at":36,"df":80,"sd":80,"sp":36},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Quick Attack"]}
+    "LC Offensive Trapper": {"level":5,"ability":"Arena Trap","item":"Sitrus Berry","nature":"Careful","ivs":{"df":30,"sd":30},"evs":{"hp":236,"at":36,"df":80,"sd":80,"sp":36},"moves":["Earthquake","Hidden Power Ghost","Quick Attack","Protect"]}
   },
   "Vibrava": {
     "PU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Quick Attack"]}
@@ -649,8 +646,7 @@ var SETDEX_ADV = {
   },
   "Gastly": {
     "PU Offensive": {"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Giga Drain","Substitute"]},
-    "LC Endure + Salac Berry": {"level":5,"ability":"Levitate","item":"Salac Berry","nature":"Hasty","evs":{"hp":36,"at":76,"sa":196,"sp":196},"moves":["Explosion","Psychic","Thunderbolt","Endure"]},
-    "LC Physical": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Jolly","evs":{"at":236,"sd":76,"sp":196},"moves":["Sludge Bomb","Shadow Ball","Substitute","Explosion"]}
+    "LC Mixed Offensive": {"level":5,"ability":"Levitate","item":"Sitrus Berry","nature":"Hasty","evs":{"at":156,"df":36,"sa":36,"sd":76,"sp":196},"moves":["Psychic","Sludge Bomb","Thunderbolt","Explosion"]}
   },
   "Haunter": {
     "NU Standard": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Thunderbolt","Substitute","Explosion"]},
@@ -673,7 +669,6 @@ var SETDEX_ADV = {
   },
   "Voltorb": {
     "NU Suicide Rain Lead": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Thunder","Light Screen","Explosion"]},
-    "LC Rain Dance": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Naive","evs":{"hp":36,"df":116,"sa":156,"sp":196},"moves":["Rain Dance","Thunder","Taunt","Explosion"]},
     "LC Offensive": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Naive","ivs":{"at":30,"sa":30},"evs":{"hp":36,"df":116,"sa":160,"sp":196},"moves":["Thunderbolt","Hidden Power Grass","Thunder Wave","Explosion"]},
     "ZU Rain Setter": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Explosion","Thunder","Taunt"]},
     "ZU Sub + Petaya Berry": {"ability":"Static","item":"Petaya Berry","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":16,"sa":252,"sp":232},"moves":["Thunderbolt","Hidden Power Grass","Explosion","Substitute"]}
@@ -1019,7 +1014,7 @@ var SETDEX_ADV = {
     "Ubers Magneton Lure": {"ability":"Keen Eye","item":"Leftovers","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Hidden Power Ground","Spikes","Whirlwind","Toxic"]}
   },
   "Houndour": {
-    "LC Special Attacker": {"level":5,"ability":"Early Bird","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":36,"sa":120,"sd":116,"sp":236},"moves":["Fire Blast","Crunch","Hidden Power Grass","Pursuit"]},
+    "LC Special Attacker": {"level":5,"ability":"Early Bird","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":36,"sa":200,"sd":36,"sp":236},"moves":["Fire Blast","Crunch","Hidden Power Grass","Pursuit"]},
     "NU Showdown Usage": {"ability":"Flash Fire","item":"Leftovers","nature":"Modest","evs":{"hp":84,"sa":124,"sd":252,"sp":48},"moves":["Fire Blast","Pursuit","Crunch","Will-O-Wisp"]}
   },
   "Houndoom": {
@@ -1203,8 +1198,8 @@ var SETDEX_ADV = {
     "UU Choice Band": {"ability":"Rough Skin","item":"Choice Band","nature":"Lonely","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Hidden Power Flying","Earthquake","Hydro Pump","Frustration"]}
   },
   "Wailmer": {
-    "LC Bulky Attacker": {"level":5,"ability":"Water Veil","item":"Sitrus Berry","nature":"Sassy","ivs":{"at":30,"sa":30},"evs":{"hp":36,"at":40,"df":76,"sa":120,"sd":236},"moves":["Self-Destruct","Earthquake","Surf","Hidden Power Grass"]},
-    "LC Water Spout": {"level":5,"ability":"Water Veil","item":"Sitrus Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":36,"df":76,"sa":200,"sp":196},"moves":["Water Spout","Hydro Pump","Hidden Power Grass","Self-Destruct"]},
+    "LC Mixed Bulky Attacker": {"level":5,"ability":"Water Veil","item":"Sitrus Berry","nature":"Sassy","ivs":{"at":30,"sa":30},"evs":{"hp":36,"at":40,"df":76,"sa":120,"sd":236},"moves":["Surf","Earthquake","Hidden Power Grass","Self-Destruct"]},
+    "LC Specially Offensive": {"level":5,"ability":"Water Veil","item":"Sitrus Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":36,"df":76,"sa":200,"sp":196},"moves":["Water Spout","Hydro Pump","Hidden Power Grass","Self-Destruct"]},
     "ZU Lead": {"ability":"Water Veil","item":"Lum Berry","nature":"Hasty","evs":{"hp":4,"sa":252,"sp":252},"moves":["Water Spout","Self-Destruct","Hydro Pump","Roar"]}
   },
   "Wailord": {
@@ -1360,7 +1355,7 @@ var SETDEX_ADV = {
     "NU Rain Dance \"Sweeper\"": {"ability":"Swift Swim","item":"Lum Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":28,"df":228,"sa":252},"moves":["Rain Dance","Surf","Ice Beam","Hidden Power Grass"]}
   },
   "Bagon": {
-    "LC Dragon Dance": {"level":5,"ability":"Rock Head","item":"Sitrus Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":236,"sd":40,"sp":196},"moves":["Dragon Dance","Double-Edge","Hidden Power Ghost","Brick Break"]},
+    "LC Dragon Dance": {"level":5,"ability":"Rock Head","item":"Sitrus Berry","nature":"Careful","ivs":{"df":30,"sd":30},"evs":{"hp":76,"at":76,"df":40,"sd":200,"sp":116},"moves":["Double-Edge","Brick Break","Hidden Power Ghost","Dragon Dance"]},
     "ZU Dragon Dance": {"ability":"Rock Head","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Double-Edge","Brick Break","Hydro Pump"]}
   },
   "Shelgon": {

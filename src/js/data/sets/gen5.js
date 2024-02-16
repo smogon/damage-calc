@@ -413,7 +413,7 @@ var SETDEX_BW = {
     "NU Substitute + Nasty Plot": {"ability":"Gluttony","item":"Salac Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Nasty Plot","Substitute","Fire Blast","Focus Blast"]},
     "NU All-Out Attacker": {"ability":"Blaze","item":"Life Orb","nature":"Hasty","ivs":{"df":30,"sd":30,"sp":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Grass Knot","Superpower","Hidden Power Rock"]},
     "ZU Nasty Plot": {"ability":"Gluttony","item":"Salac Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Fire Blast","Hidden Power Grass","Substitute"]},
-    "ZU All-Out Attacker": {"ability":"Blaze","item":"Life Orb","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Overheat","Hidden Power Grass","Focus Blast"]},
+    "ZU Wallbreaker": {"ability":"Blaze","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Overheat","Hidden Power Dark","Focus Blast"]},
     "ZU Choice Scarf": {"ability":"Blaze","item":"Choice Scarf","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Overheat","Hidden Power Grass","Focus Blast"]},
     "PU Showdown Usage": {"ability":"Blaze","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Focus Blast","Grass Knot","Hidden Power Dark"]}
   },

@@ -610,8 +610,7 @@ var SETDEX_GSC = {
     "Ubers Showdown Usage": {"item":"Leftovers","moves":["Spikes","Explosion","Rapid Spin","Toxic"]}
   },
   "Dunsparce": {
-    "NU Glare + Curse": {"item":"Leftovers","moves":["Glare","Curse","Return","Rest"]},
-    "NU Mixed Attacker": {"item":"Leftovers","moves":["Return","Thunder","Pursuit","Glare"]}
+    "NU RestTalk": {"item":"Leftovers","moves":["Curse","Return","Rest","Sleep Talk"]}
   },
   "Gligar": {
     "OU Screech": {"item":"Leftovers","moves":["Screech","Earthquake","Wing Attack","Counter"]},
