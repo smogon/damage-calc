@@ -492,7 +492,10 @@ var SETDEX_GSC = {
     "OU Drumlax": {"item":"Leftovers","moves":["Belly Drum","Body Slam","Earthquake","Rest"]},
     "OU All-out Attacker": {"item":"Leftovers","moves":["Double-Edge","Earthquake","Thunder","Self-Destruct"]},
     "OU Toxic": {"item":"Leftovers","moves":["Double-Edge","Flamethrower","Toxic","Rest"]},
-    "Ubers Showdown Usage": {"item":"Leftovers","moves":["Lovely Kiss","Double-Edge","Rest","Curse"]}
+    "Ubers Monolax": {"item":"Leftovers","moves":["Double-Edge","Curse","Rest","Lovely Kiss"]},
+    "Ubers Curselax": {"item":"Leftovers","moves":["Double-Edge","Curse","Earthquake","Rest"]},
+    "Ubers Restless Snorlax": {"item":"Leftovers","moves":["Double-Edge","Curse","Earthquake","Self-Destruct"]},
+    "Ubers DrumLax": {"item":"Leftovers","moves":["Body Slam","Belly Drum","Rest","Lovely Kiss"]}
   },
   "Dragonair": {
     "NU Offensive Paralysis Spreader": {"item":"Leftovers","moves":["Thunder Wave","Surf","Fire Blast","Thunder"]}
