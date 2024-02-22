@@ -105,7 +105,7 @@ var SETDEX_BW = {
   "Mr. Mime": {
     "NU Baton Pass": {"ability":"Filter","item":"Leftovers","nature":"Timid","evs":{"hp":144,"sa":112,"sp":252},"moves":["Baton Pass","Nasty Plot","Substitute","Psychic"]},
     "ZU Choice Scarf": {"ability":"Filter","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Healing Wish","Psychic","Focus Blast","Trick"]},
-    "ZU Nasty Plot": {"ability":"Filter","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Focus Blast","Taunt"]},
+    "ZU Nasty Plot": {"ability":"Filter","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Focus Blast","Thunderbolt"]},
     "ZU Choice Specs": {"ability":"Filter","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Focus Blast","Thunderbolt","Trick"]},
     "ZU Dual Screens": {"ability":"Filter","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Light Screen","Reflect","Taunt","Healing Wish"]},
     "PU Showdown Usage": {"ability":"Filter","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Focus Blast","Shadow Ball","Thunderbolt","Psyshock"]}
@@ -1105,7 +1105,7 @@ var SETDEX_BW = {
   "Kingler": {
     "NU Substitute + Swords Dance": {"ability":"Hyper Cutter","item":"Salac Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Substitute","Swords Dance","Crabhammer","Return"]},
     "NU Choice Band": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Crabhammer","X-Scissor","Double-Edge","Toxic"]},
-    "ZU Choice Scarf": {"ability":"Hyper Cutter","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Crabhammer","Return","X-Scissor","Superpower"]},
+    "ZU Choice Scarf": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Crabhammer","X-Scissor","Rock Slide","Superpower"]},
     "ZU Swords Dance": {"ability":"Sheer Force","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Crabhammer","Rock Slide","Substitute"]},
     "ZU Double Dance": {"ability":"Sheer Force","item":"Life Orb","nature":"Adamant","evs":{"hp":80,"at":252,"sp":176},"moves":["Swords Dance","Agility","Crabhammer","Rock Slide"]},
     "ZU Agility": {"ability":"Sheer Force","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Agility","Crabhammer","X-Scissor","Rock Slide"]},

@@ -166,6 +166,7 @@ var SETDEX_SS = {
   },
   "Clefable": {
     "OU Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Soft-Boiled","Knock Off","Stealth Rock"]},
+    "OU Unaware": {"ability":"Unaware","item":"Heavy-Duty Boots","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Moonblast","Soft-Boiled","Aromatherapy"]},
     "OU Calm Mind": {"ability":"Magic Guard","item":"Life Orb","nature":"Bold","evs":{"hp":252,"df":196,"sp":60},"moves":["Calm Mind","Moonblast","Thunderbolt","Soft-Boiled"]},
     "Ubers Defensive": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Moonblast","Soft-Boiled","Stealth Rock","Knock Off"]},
     "Battle Stadium Singles Kee Berry Sweeper": {"level":50,"ability":"Unaware","item":"Kee Berry","nature":"Bold","evs":{"hp":244,"df":252,"sa":4,"sd":4,"sp":4},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
@@ -3574,7 +3575,7 @@ var SETDEX_SS = {
     "ZU Magnet Pull": {"ability":"Magnet Pull","item":"Leftovers","nature":"Bold","ivs":{"at":1},"evs":{"hp":252,"df":252,"sd":4},"moves":["Acid Armor","Rest","Flash Cannon","Thunderbolt"]}
   },
   "Melmetal": {
-    "OU Protect": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":20,"at":252,"sd":192,"sp":44},"moves":["Double Iron Bash","Earthquake","Toxic","Protect"]},
+    "OU Protect + Leftovers": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":20,"at":252,"sd":192,"sp":44},"moves":["Double Iron Bash","Protect","Earthquake","Toxic"]},
     "OU Assault Vest": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"hp":192,"at":60,"sd":244,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
     "OU Three Attacks + Thunder Wave": {"ability":"Iron Fist","item":"Protective Pads","nature":"Adamant","evs":{"hp":40,"at":252,"sd":104,"sp":112},"moves":["Double Iron Bash","Superpower","Thunder Punch","Thunder Wave"]},
     "OU Choice Band": {"ability":"Iron Fist","item":"Choice Band","nature":"Adamant","evs":{"hp":32,"at":252,"sp":224},"moves":["Double Iron Bash","Earthquake","Superpower","Thunder Punch"]},
