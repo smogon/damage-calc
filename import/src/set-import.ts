@@ -59,7 +59,6 @@ const UNSUPPORTED: {[format: string]: string} = {
   'gen9almostanyability': '[Gen 9] Almost Any Ability',
   // NOTE: This should be working but https://github.com/pkmn/ps/issues/25
   'gen9lc': '[Gen 9] LC',
-  'gen9vgc2023regulatione': '[Gen 9] VGC 2023 Regulation E',
 };
 const SHORT_STAT_FORM: {[stat: string]: keyof CalcStatsTable} =
 {'hp': 'hp', 'atk': 'at', 'def': 'df', 'spa': 'sa', 'spd': 'sd', 'spe': 'sp'};
@@ -181,8 +180,11 @@ function getSpecie(gen: Generation, specieName: SpeciesName): Specie | PSSpecie 
 }
 
 function toPSFormat(formatID: ID): ID {
-  if (formatID === 'gen9vgc2023' || formatID === 'gen9battlestadiumsingles') {
-    return `${formatID}regulatione` as ID;
+  if (formatID === 'gen9vgc2024') {
+    return `${formatID}regf` as ID;
+  }
+  if (formatID === 'gen9battlestadiumsingles') {
+    return `gen9bssregf` as ID;
   }
   return formatID;
 }

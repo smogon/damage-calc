@@ -3,9 +3,9 @@
   "repository": "github:smogon/damage-calc",
   "license": "MIT",
   "dependencies": {
-    "@pkmn/data": "^0.8.7",
-    "@pkmn/dex": "^0.8.7",
-    "@pkmn/sim": "^0.8.7",
+    "@pkmn/data": "^0.8.8",
+    "@pkmn/dex": "^0.8.8",
+    "@pkmn/sim": "^0.8.8",
     "@pkmn/smogon": "^0.5.4"
   },
   "devDependencies": {
