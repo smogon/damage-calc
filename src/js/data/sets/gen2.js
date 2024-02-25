@@ -653,8 +653,7 @@ var SETDEX_GSC = {
     "1v1 Leftovers": {"item":"Leftovers","moves":["Return","Hyper Beam","Protect","Toxic"]}
   },
   "Piloswine": {
-    "OU Curse": {"item":"Leftovers","moves":["Earthquake","Blizzard","Curse","Roar"]},
-    "OU RestTalk": {"item":"Leftovers","moves":["Rest","Sleep Talk","Earthquake","Blizzard"]},
+    "OU RestTalk": {"item":"Leftovers","moves":["Earthquake","Ice Beam","Sleep Talk","Rest"]},
     "UU The P-Word (RestTalk)": {"item":"Leftovers","moves":["Earthquake","Ice Beam","Rest","Sleep Talk"]},
     "1v1 Never-Melt Ice": {"item":"Never-Melt Ice","moves":["Earthquake","Curse","Ice Beam","Rest"]},
     "1v1 Leftovers": {"item":"Leftovers","moves":["Earthquake","Icy Wind","Ice Beam","Blizzard"]}
@@ -688,8 +687,8 @@ var SETDEX_GSC = {
     "1v1 Anti-Starmie": {"item":"Mint Berry","moves":["Surf","Ice Beam","Hidden Power Dark","Rest"]}
   },
   "Donphan": {
-    "OU Curse": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["Earthquake","Hidden Power Rock","Curse","Rest"]},
-    "OU Utility": {"item":"Leftovers","moves":["Earthquake","Roar","Rapid Spin","Rest"]},
+    "OU RestTalk": {"item":"Leftovers","moves":["Earthquake","Rapid Spin","Sleep Talk","Rest"]},
+    "OU Offensive": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["Earthquake","Rapid Spin","Hidden Power Rock","Roar"]},
     "1v1 Anti-Marowak": {"item":"Leftovers","moves":["Earthquake","Protect","Curse","Rest"]}
   },
   "Porygon2": {
