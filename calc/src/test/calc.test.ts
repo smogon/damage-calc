@@ -991,10 +991,11 @@ describe('calc', () => {
         testQPOverride('Quark Drive', {terrain: 'Electric'});
         testQPOverride('Protosynthesis', {weather: 'Sun'});
         test('Meteor Beam/Electro Shot', () => {
-          // test only tests Electro Shot
           const defender = Pokemon('Arceus');
-          const testCase = (options: object, expected: number) => {
-            const result = calculate(Pokemon('Archaludon', options), defender, Move('Electro Shot'));
+          const testCase = (options: {[k: string]: any}, expected: number) => {
+            let result = calculate(Pokemon('Archaludon', options), defender, Move('Meteor Beam'));
+            expect(result.attacker.boosts.spa).toBe(expected);
+            result = calculate(Pokemon('Archaludon', options), defender, Move('Electro Shot'));
             expect(result.attacker.boosts.spa).toBe(expected);
           };
           testCase({}, 1); // raises by 1
