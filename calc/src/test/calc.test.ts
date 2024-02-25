@@ -378,6 +378,22 @@ describe('calc', () => {
     });
 
     inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`Multi-hit interaction with Multiscale (gen ${gen})`, () => {
+        const result = calculate(
+          Pokemon('Mamoswine'),
+          Pokemon('Dragonite', {
+            ability: 'Multiscale',
+          }),
+          Move('Icicle Spear'),
+        );
+        expect(result.range()).toEqual([360, 430]);
+        expect(result.desc()).toBe(
+          '0 Atk Mamoswine Icicle Spear (3 hits) vs. 0 HP / 0 Def Multiscale Dragonite: 360-430 (111.4 - 133.1%) -- guaranteed OHKO'
+        );
+      });
+    });
+
+    inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Weak Armor (gen ${gen})`, () => {
         let result = calculate(
           Pokemon('Mamoswine'),

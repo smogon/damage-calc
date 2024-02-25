@@ -390,7 +390,8 @@ export function calculateBWXY(
         field,
         desc,
         isCritical,
-        typeEffectiveness
+        typeEffectiveness,
+        times
       );
       const newFinalMod = chainMods(newFinalMods, 41, 131072);
 

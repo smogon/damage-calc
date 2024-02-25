@@ -365,7 +365,7 @@ export function checkMultihitBoost(
     field.weather = 'Sand';
   }
 
-  if (defender.hasAbility('Stamina') && !move.isCrit) {
+  if (defender.hasAbility('Stamina')) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {
@@ -373,7 +373,7 @@ export function checkMultihitBoost(
       defender.stats.def = getModifiedStat(defender.rawStats.def, defender.boosts.def, gen);
       desc.defenderAbility = defender.ability;
     }
-  } else if (defender.hasAbility('Water Compaction') && move.hasType('Water') && !move.isCrit) {
+  } else if (defender.hasAbility('Water Compaction') && move.hasType('Water')) {
     if (attacker.hasAbility('Unaware')) {
       desc.attackerAbility = attacker.ability;
     } else {

@@ -595,9 +595,9 @@ export function calculateSMSSSV(
         preStellarStabMod = getStabMod(attacker, move, desc);
         // Hack to make Tera Shell with multihit moves, but not over multiple turns
         typeEffectiveness = turn2typeEffectiveness;
+        // Stellar damage boost applies for 1 turn, but all hits of multihit.
+        stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
       }
-      // Stellar damage boost drops off after first hit, even on multihit moves
-      stabMod = getStellarStabMod(attacker, move, preStellarStabMod, times);
 
       const newBasePower = calculateBasePowerSMSSSV(
         gen,
