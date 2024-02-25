@@ -82,7 +82,6 @@ export function calculateSMSSSV(
   checkIntrepidSword(defender, gen);
 
   if (move.named('Meteor Beam', 'Electro Shot')) {
-    // note: this doesn't work with neutralizing gas currently due to being processed before it
     attacker.boosts.spa +=
       attacker.hasAbility('Simple') ? 2
       : attacker.hasAbility('Contrary') ? -1
