@@ -142,7 +142,7 @@ function getUsageThreshold(formatID: ID, count: number): number {
   if (count < 100) return Infinity;
   if (count < 400) return 0.05;
   // These formats are deemed to have playerbases of lower quality than normal
-  return /uber|anythinggoes|doublesou|rbynu|rbupu/.test(formatID) ? 0.03 : 0.01;
+  return /uber|anythinggoes|doublesou|gen1nu|gen1pu/.test(formatID) ? 0.03 : 0.01;
 }
 
 function fromSpread(spread: string): {nature: string; evs: Partial<StatsTable>} {
