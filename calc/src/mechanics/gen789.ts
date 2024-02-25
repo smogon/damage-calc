@@ -81,6 +81,15 @@ export function calculateSMSSSV(
   checkIntrepidSword(attacker, gen);
   checkIntrepidSword(defender, gen);
 
+  if (move.named('Meteor Beam', 'Electro Shot')) {
+    attacker.boosts.spa +=
+      attacker.hasAbility('Simple') ? 2
+      : attacker.hasAbility('Contrary') ? -1
+      : 1;
+    // restrict to +- 6
+    attacker.boosts.spa = Math.min(6, Math.max(-6, attacker.boosts.spa));
+  }
+
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 
   checkInfiltrator(attacker, field.defenderSide);

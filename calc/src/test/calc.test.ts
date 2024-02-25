@@ -990,6 +990,19 @@ describe('calc', () => {
         testQP('Protosynthesis', {weather: 'Sun'});
         testQPOverride('Quark Drive', {terrain: 'Electric'});
         testQPOverride('Protosynthesis', {weather: 'Sun'});
+        test('Meteor Beam/Electro Shot', () => {
+          const defender = Pokemon('Arceus');
+          const testCase = (options: {[k: string]: any}, expected: number) => {
+            let result = calculate(Pokemon('Archaludon', options), defender, Move('Meteor Beam'));
+            expect(result.attacker.boosts.spa).toBe(expected);
+            result = calculate(Pokemon('Archaludon', options), defender, Move('Electro Shot'));
+            expect(result.attacker.boosts.spa).toBe(expected);
+          };
+          testCase({}, 1); // raises by 1
+          testCase({boosts: {spa: 6}}, 6); // caps at +6
+          testCase({ability: 'Simple'}, 2);
+          testCase({ability: 'Contrary'}, -1);
+        });
         test('Revelation Dance should change type if Pokemon Terastallized', () => {
           const attacker = Pokemon('Oricorio-Pom-Pom');
           const defender = Pokemon('Sandaconda');
