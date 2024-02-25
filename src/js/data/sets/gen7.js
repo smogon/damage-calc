@@ -832,7 +832,7 @@ var SETDEX_SM = {
     "ZU Curse": {"ability":"Sticky Hold","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Rest","Sleep Talk","Curse","Poison Jab"]}
   },
   "Muk-Alola": {
-    "OU Assault Vest": {"ability":"Poison Touch","item":"Assault Vest","nature":"Careful","evs":{"hp":248,"at":36,"df":28,"sd":192,"sp":4},"moves":["Knock Off","Pursuit","Poison Jab","Rock Slide"]},
+    "OU Assault Vest": {"ability":"Poison Touch","item":"Assault Vest","nature":"Careful","evs":{"hp":248,"at":36,"df":28,"sd":192,"sp":4},"moves":["Knock Off","Pursuit","Poison Jab","Fire Punch"]},
     "Ubers Assault Vest": {"ability":"Poison Touch","item":"Assault Vest","nature":"Brave","evs":{"hp":252,"at":80,"df":28,"sd":148},"moves":["Pursuit","Knock Off","Shadow Sneak","Clear Smog"]},
     "UU Pursuit Trapper": {"ability":"Poison Touch","item":"Assault Vest","nature":"Adamant","evs":{"hp":4,"at":252,"sd":252},"moves":["Pursuit","Gunk Shot","Knock Off","Fire Punch"]},
     "Battle Spot Singles Assault Vest": {"level":50,"ability":"Poison Touch","item":"Assault Vest","nature":"Adamant","evs":{"hp":140,"at":116,"sd":252},"moves":["Pursuit","Knock Off","Poison Jab","Fire Punch"]},

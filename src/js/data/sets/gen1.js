@@ -2,6 +2,7 @@ var SETDEX_RBY = {
   "Venusaur": {
     "OU Swords Dance": {"moves":["Sleep Powder","Razor Leaf","Swords Dance","Hyper Beam"]},
     "UU Sleeper": {"moves":["Razor Leaf","Body Slam","Sleep Powder","Toxic"]},
+    "NU Swords Dance Sleeper": {"moves":["Sleep Powder","Swords Dance","Razor Leaf","Hyper Beam"]},
     "1v1 SubSeed": {"moves":["Razor Leaf","Toxic","Leech Seed","Substitute"]}
   },
   "Charizard": {
@@ -67,12 +68,10 @@ var SETDEX_RBY = {
     "OU Offensive": {"moves":["Blizzard","Body Slam","Hyper Beam","Thunderbolt"]},
     "OU Status Inducer": {"moves":["Blizzard","Thunder Wave","Sing","Thunderbolt"]},
     "UU Offensive Utility": {"moves":["Thunder Wave","Body Slam","Hyper Beam","Thunderbolt"]},
-    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Body Slam","Rest"]},
-    "NU Showdown Usage": {"moves":["Blizzard","Body Slam","Thunder Wave","Thunderbolt"]}
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Body Slam","Rest"]}
   },
   "Ninetales": {
-    "UU Fire Spin Pivot": {"moves":["Fire Blast","Fire Spin","Body Slam","Confuse Ray"]},
-    "NU Showdown Usage": {"moves":["Fire Spin","Confuse Ray","Fire Blast","Body Slam"]}
+    "UU Fire Spin Pivot": {"moves":["Fire Blast","Fire Spin","Body Slam","Confuse Ray"]}
   },
   "Wigglytuff": {
     "NU Bulky Support": {"moves":["Thunder Wave","Hyper Beam","Seismic Toss","Body Slam"]}
@@ -103,6 +102,7 @@ var SETDEX_RBY = {
   },
   "Golduck": {
     "UU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]},
+    "NU Amnesia": {"moves":["Amnesia","Surf","Blizzard","Counter"]},
     "1v1 Amnesia Attacker": {"moves":["Ice Beam","Blizzard","Amnesia","Rest"]},
     "Tradebacks OU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]}
   },
@@ -119,11 +119,17 @@ var SETDEX_RBY = {
   "Poliwag": {
     "PU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]}
   },
+  "Poliwhirl": {
+    "NU Amnesia": {"moves":["Hypnosis","Amnesia","Hydro Pump","Blizzard"]},
+    "NU Offensive": {"moves":["Hypnosis","Surf","Blizzard","Seismic Toss"]}
+  },
   "Poliwrath": {
     "OU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Hypnosis"]},
     "UU Poliwrath": {"moves":["Submission","Body Slam","Blizzard","Counter"]},
     "UU Bulky Sleeper": {"moves":["Hypnosis","Blizzard","Earthquake","Body Slam"]},
     "UU Amnesia": {"moves":["Amnesia","Surf","Blizzard","Rest"]},
+    "NU Amnesia": {"moves":["Hypnosis","Amnesia","Surf","Blizzard"]},
+    "NU Bulky Sleeper": {"moves":["Hypnosis","Surf","Blizzard","Seismic Toss"]},
     "1v1 Mixed Attacker": {"moves":["Blizzard","Amnesia","Submission","Rest"]}
   },
   "Abra": {
@@ -153,6 +159,8 @@ var SETDEX_RBY = {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Wrap"]},
     "Ubers Wrap": {"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
     "UU Attacker": {"moves":["Razor Leaf","Stun Spore","Hyper Beam","Swords Dance"]},
+    "NU Support": {"moves":["Sleep Powder","Stun Spore","Razor Leaf","Wrap"]},
+    "NU Swords Dance Sleeper": {"moves":["Sleep Powder","Swords Dance","Hyper Beam","Razor Leaf"]},
     "Tradebacks OU Wrap": {"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
     "Tradebacks OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Sleep Powder"]}
   },
@@ -169,8 +177,7 @@ var SETDEX_RBY = {
     "Ubers Explosion": {"moves":["Earthquake","Rock Slide","Explosion","Substitute"]},
     "UU Standard": {"moves":["Earthquake","Rock Slide","Substitute","Explosion"]},
     "1v1 Rest 3 Attacks": {"moves":["Earthquake","Rock Slide","Body Slam","Rest"]},
-    "Tradebacks OU Standard": {"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]},
-    "NU Showdown Usage": {"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]}
+    "Tradebacks OU Standard": {"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]}
   },
   "Rapidash": {
     "UU Fire Spin Breaker": {"moves":["Fire Blast","Fire Spin","Hyper Beam","Body Slam"]},
@@ -247,8 +254,7 @@ var SETDEX_RBY = {
   "Electrode": {
     "Ubers Explosion": {"moves":["Thunder Wave","Thunderbolt","Screech","Explosion"]},
     "UU Fast Attacker": {"moves":["Thunderbolt","Thunder Wave","Explosion","Screech"]},
-    "1v1 Screech + Hyper Beam": {"moves":["Thunderbolt","Hyper Beam","Screech","Rest"]},
-    "NU Showdown Usage": {"moves":["Explosion","Thunderbolt","Thunder Wave","Screech"]}
+    "1v1 Screech + Hyper Beam": {"moves":["Thunderbolt","Hyper Beam","Screech","Rest"]}
   },
   "Exeggcute": {
     "NU Support": {"moves":["Sleep Powder","Stun Spore","Psychic","Explosion"]},
@@ -411,6 +417,8 @@ var SETDEX_RBY = {
   },
   "Aerodactyl": {
     "UU Speed Utility": {"moves":["Double-Edge","Hyper Beam","Fire Blast","Toxic"]},
+    "NU Offensive": {"moves":["Double-Edge","Hyper Beam","Fire Blast","Sky Attack"]},
+    "NU Defensive": {"moves":["Double-Edge","Fire Blast","Toxic","Rest"]},
     "Tradebacks OU Mixed Attacker": {"moves":["Earthquake","Hyper Beam","Headbutt","Fire Blast"]}
   },
   "Snorlax": {
