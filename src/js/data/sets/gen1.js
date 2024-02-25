@@ -348,8 +348,7 @@ var SETDEX_RBY = {
     "Tradebacks OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Ice Punch","Rolling Kick"]}
   },
   "Magmar": {
-    "PU Swagmar": {"moves":["Fire Blast","Body Slam","Confuse Ray","Counter"]},
-    "NU Showdown Usage": {"moves":["Flamethrower","Fire Blast","Seismic Toss","Confuse Ray"]}
+    "PU Swagmar": {"moves":["Fire Blast","Body Slam","Confuse Ray","Counter"]}
   },
   "Pinsir": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Slash","Submission"]},
@@ -477,8 +476,5 @@ var SETDEX_RBY = {
     "Ubers GGMew (Reflect Sweeper)": {"moves":["Reflect","Swords Dance","Body Slam","Soft-Boiled"]},
     "Ubers Explosive Lure": {"moves":["Thunder Wave","Swords Dance","Body Slam","Explosion"]},
     "Ubers Lutrew / PaRaSiTe Mew (Transform)": {"moves":["Transform","Thunder Wave","Soft-Boiled","Reflect"]}
-  },
-  "Ivysaur": {
-    "NU Showdown Usage": {"moves":["Body Slam","Razor Leaf","Sleep Powder","Leech Seed"]}
   }
 };
