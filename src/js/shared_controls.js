@@ -588,7 +588,7 @@ $(".set-selector").change(function () {
 			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
 			if (gen >= 2) $(this).closest('.poke-info').find(".item-pool").show();
 			$(this).closest('.poke-info').find(".extraSetItems").text(listItems.join(', '));
-			if (gen >= 9 || gen === 7 || gen === 6 || gen === 5 || gen === 4) {
+			if (gen >= 9 || gen === 7 || gen === 6 || gen === 5 || gen === 4 || gen === 3) {
 				$(this).closest('.poke-info').find(".role-pool").show();
 				if (gen >= 9) $(this).closest('.poke-info').find(".tera-type-pool").show();
 			}
@@ -642,7 +642,7 @@ $(".set-selector").change(function () {
 			}
 			var setMoves = set.moves;
 			if (randset) {
-				if (gen < 9 && gen !== 7 && gen !== 6 && gen !== 5 && gen !== 4) {
+				if (gen < 9 && gen !== 7 && gen !== 6 && gen !== 5 && gen !== 4 && gen !== 3) {
 					setMoves = randset.moves;
 				} else {
 					setMoves = [];
@@ -896,7 +896,6 @@ function correctHiddenPower(pokemon) {
 			// Otherwise, use the default preset hidden power IVs that PS would use
 			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
 			if (!hpIVs) continue; // some impossible type was specified, ignore
-
 			pokemon.ivs = pokemon.ivs || {hp: 31, at: 31, df: 31, sa: 31, sd: 31, sp: 31};
 			pokemon.dvs = pokemon.dvs || {hp: 15, at: 15, df: 15, sa: 15, sd: 15, sp: 15};
 			for (var stat in hpIVs) {
@@ -905,10 +904,10 @@ function correctHiddenPower(pokemon) {
 			}
 			if (gen < 3) {
 				pokemon.dvs.hp = calc.Stats.getHPDV({
-					atk: pokemon.ivs.at,
-					def: pokemon.ivs.df,
-					spe: pokemon.ivs.sp,
-					spc: pokemon.ivs.sa
+					atk: pokemon.ivs.at || 31,
+					def: pokemon.ivs.df || 31,
+					spe: pokemon.ivs.sp || 31,
+					spc: pokemon.ivs.sa || 31
 				});
 				pokemon.ivs.hp = calc.Stats.DVToIV(pokemon.dvs.hp);
 			}
@@ -934,7 +933,7 @@ function createPokemon(pokeInfo) {
 			evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
 		}
 		var moveNames = set.moves;
-		if (isRandoms && (gen >= 9 || gen === 7 || gen === 6 || gen === 5 || gen === 4)) {
+		if (isRandoms && (gen >= 9 || gen === 7 || gen === 6 || gen === 5 || gen === 4 || gen === 3)) {
 			moveNames = [];
 			for (var role in set.roles) {
 				for (var q = 0; q < set.roles[role].moves.length; q++) {

@@ -170,7 +170,11 @@
                 </div>
                 <div>
                     <label for="levelL1">Level</label>
-                    <input class="level calc-trigger" id="levelL1" value="100" />
+                    <!--
+                    We use inputmode="decimal" so that mobile devices will have a numpad appear when inputting values.
+                    https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/#aa-decimal
+                    -->
+                    <input class="level calc-trigger" id="levelL1" value="100" inputmode="decimal" />
                 </div>
                 <div class="hide">
                     <label for="weightL1">Weight (kg)</label>
@@ -196,16 +200,16 @@
                                 <label>HP</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
                             </td>
                             <td><span class="total">341</span>
                             </td>
@@ -216,16 +220,16 @@
                                 <label>Attack</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -252,16 +256,16 @@
                                 <label>Defense</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -288,16 +292,16 @@
                                 <label>Sp. Atk</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -324,16 +328,16 @@
                                 <label>Sp. Def</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -360,10 +364,10 @@
                                 <label>Special</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td>
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -390,16 +394,16 @@
                                 <label>Speed</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -523,8 +527,8 @@
             </div>
             <div class="info-group">
                 <label for="currentHpL1">Current HP</label>
-                <input class="current-hp calc-trigger" id="currentHpL1" value="341" />/<span class="max-hp">341</span> (
-                <input class="percent-hp calc-trigger" value="100" />%)
+                <input class="current-hp calc-trigger" id="currentHpL1" value="341" inputmode="decimal" />/<span class="max-hp">341</span> (
+                <input class="percent-hp calc-trigger" value="100" inputmode="decimal" />%)
                 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
                 <label class="btn btn-xwide gen-specific g8 hide" for="maxL"
                 title="Use the corresponding Max Move?">Dynamax</label>
@@ -536,7 +540,7 @@
             <div hidden id="zMoveInstruction">Make this attack a Z-move?</div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="50" />
+                <input class="move-bp calc-trigger" value="50" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -572,7 +576,7 @@
             </div>
             <div class="move2">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="0" />
+                <input class="move-bp calc-trigger" value="0" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -608,7 +612,7 @@
             </div>
             <div class="move3">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="0" />
+                <input class="move-bp calc-trigger" value="0" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -644,7 +648,7 @@
             </div>
             <div class="move4">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="0" />
+                <input class="move-bp calc-trigger" value="0" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -1069,7 +1073,7 @@
                 </div>
                 <div>
                     <label for="levelR1">Level</label>
-                    <input class="level calc-trigger" id="levelR1" value="100" />
+                    <input class="level calc-trigger" id="levelR1" value="100" inputmode="decimal" />
                 </div>
                 <div class="hide">
                     <label for="weightR1">Weight (kg)</label>
@@ -1095,16 +1099,16 @@
                                 <label>HP</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
                             </td>
                             <td><span class="total">341</span>
                             </td>
@@ -1115,16 +1119,16 @@
                                 <label>Attack</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1151,16 +1155,16 @@
                                 <label>Defense</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1187,16 +1191,16 @@
                                 <label>Sp. Atk</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1223,16 +1227,16 @@
                                 <label>Sp. Def</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" disabled="disabled" />
+                                <input class="dvs calc-trigger" value="15" disabled="disabled" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1259,10 +1263,10 @@
                                 <label>Special</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td>
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1289,16 +1293,16 @@
                                 <label>Speed</label>
                             </th>
                             <td>
-                                <input class="base calc-trigger" value="100" />
+                                <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="ivs calc-trigger" value="31" />
+                                <input class="ivs calc-trigger" value="31" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
-                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" />
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td class="gen-specific g1 g2 hide">
-                                <input class="dvs calc-trigger" value="15" />
+                                <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
                             <td><span class="total">236</span>
                             </td>
@@ -1422,8 +1426,8 @@
             </div>
             <div class="info-group">
                 <label for="currentHpR1">Current HP</label>
-                <input class="current-hp calc-trigger" id="currentHpR1" value="341" />/<span class="max-hp">341</span> (
-                <input class="percent-hp calc-trigger" value="100" />%)
+                <input class="current-hp calc-trigger" id="currentHpR1" value="341" inputmode="decimal" />/<span class="max-hp">341</span> (
+                <input class="percent-hp calc-trigger" value="100" inputmode="decimal" />%)
                 <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxR" />
                 <label class="btn btn-xwide gen-specific g8 hide" for="maxR"
                 title="Use the corresponding Max Move?">Dynamax</label>
@@ -1433,7 +1437,7 @@
             </div>
             <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="50" />
+                <input class="move-bp calc-trigger" value="50" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -1469,7 +1473,7 @@
             </div>
             <div class="move2">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="0" />
+                <input class="move-bp calc-trigger" value="0" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -1505,7 +1509,7 @@
             </div>
             <div class="move3">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="0" />
+                <input class="move-bp calc-trigger" value="0" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>
@@ -1541,7 +1545,7 @@
             </div>
             <div class="move4">
                 <select class="move-selector calc-trigger small-select"></select>
-                <input class="move-bp calc-trigger" value="0" />
+                <input class="move-bp calc-trigger" value="0" inputmode="decimal" />
                 <select class="move-type calc-trigger"></select>
                 <select class="move-cat calc-trigger gen-specific g4 g5 g6 g7 g8 g9">
                     <option value="Physical">Physical</option>

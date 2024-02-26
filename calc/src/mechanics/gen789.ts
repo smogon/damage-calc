@@ -83,6 +83,15 @@ export function calculateSMSSSV(
   checkIntrepidSword(attacker, gen);
   checkIntrepidSword(defender, gen);
 
+  if (move.named('Meteor Beam', 'Electro Shot')) {
+    attacker.boosts.spa +=
+      attacker.hasAbility('Simple') ? 2
+      : attacker.hasAbility('Contrary') ? -1
+      : 1;
+    // restrict to +- 6
+    attacker.boosts.spa = Math.min(6, Math.max(-6, attacker.boosts.spa));
+  }
+
   computeFinalStats(gen, attacker, defender, field, 'atk', 'spa');
 
   checkInfiltrator(attacker, field.defenderSide);
@@ -164,7 +173,7 @@ export function calculateSMSSSV(
     type = getTechnoBlast(attacker.item)!;
   } else if (move.named('Multi-Attack') && attacker.item && attacker.item.includes('Memory')) {
     type = getMultiAttack(attacker.item)!;
-  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
+  } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     type = gift.t;
     desc.moveType = type;
@@ -791,7 +800,7 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Natural Gift':
-    if (attacker.item?.includes('Berry')) {
+    if (attacker.item?.endsWith('Berry')) {
       const gift = getNaturalGift(gen, attacker.item)!;
       basePower = gift.p;
       desc.attackerItem = attacker.item;
@@ -841,9 +850,13 @@ export function calculateBasePowerSMSSSV(
     break;
   case 'Crush Grip':
   case 'Wring Out':
-  case 'Hard Press':
     basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
     basePower = Math.floor(Math.floor((120 * basePower + 2048 - 1) / 4096) / 100) || 1;
+    desc.moveBP = basePower;
+    break;
+  case 'Hard Press':
+    basePower = 100 * Math.floor((defender.curHP() * 4096) / defender.maxHP());
+    basePower = Math.floor(Math.floor((100 * basePower + 2048 - 1) / 4096) / 100) || 1;
     desc.moveBP = basePower;
     break;
   case 'Tera Blast':
