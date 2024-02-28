@@ -1293,9 +1293,9 @@ var SETDEX_SM = {
     "LC Choice Scarf Pivot": {"level":5,"ability":"Volt Absorb","item":"Choice Scarf","nature":"Timid","evs":{"df":52,"sa":232,"sp":224},"moves":["Hydro Pump","Volt Switch","Ice Beam","Scald"]}
   },
   "Lanturn": {
-    "PU Assault Vest": {"ability":"Volt Absorb","item":"Assault Vest","nature":"Modest","ivs":{"at":0},"evs":{"sa":172,"sd":136,"sp":200},"moves":["Scald","Volt Switch","Ice Beam","Hidden Power Fire"]},
     "PU Bulky Pivot": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":40,"df":220,"sd":248},"moves":["Volt Switch","Scald","Toxic","Heal Bell"]},
-    "PU Choice Specs": {"ability":"Volt Absorb","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":56,"sp":200},"moves":["Hydro Pump","Volt Switch","Ice Beam","Hidden Power Fire"]},
+    "PU Assault Vest": {"ability":"Volt Absorb","item":"Assault Vest","nature":"Modest","ivs":{"at":0},"evs":{"sa":172,"sd":136,"sp":200},"moves":["Scald","Volt Switch","Ice Beam","Hidden Power Fire"]},
+    "PU Choice Scarf": {"ability":"Volt Absorb","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Thunderbolt","Volt Switch"]},
     "Monotype Defensive (Water)": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Volt Switch","Toxic","Heal Bell","Protect"]}
   },
   "Pichu": {

@@ -189,7 +189,9 @@ var SETDEX_ADV = {
   },
   "Jumpluff": {
     "OU SubSeed": {"ability":"Chlorophyll","item":"Leftovers","nature":"Jolly","evs":{"hp":188,"sd":104,"sp":216},"moves":["Encore","Leech Seed","Substitute","Sleep Powder"]},
-    "OU Offensive": {"ability":"Chlorophyll","item":"Leftovers","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":148,"at":140,"sp":220},"moves":["Hidden Power Flying","Swords Dance","Leech Seed","Sleep Powder"]}
+    "OU Offensive": {"ability":"Chlorophyll","item":"Leftovers","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":148,"at":140,"sp":220},"moves":["Hidden Power Flying","Swords Dance","Leech Seed","Sleep Powder"]},
+    "UU SubSeed": {"ability":"Chlorophyll","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":40,"sp":216},"moves":["Substitute","Leech Seed","Encore","Sleep Powder"]},
+    "UU Swords Dance": {"ability":"Chlorophyll","item":"Leftovers","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":40,"at":252,"sp":216},"moves":["Swords Dance","Hidden Power Flying","Encore","Sleep Powder"]}
   },
   "Snubbull": {
     "LC Utility": {"level":5,"ability":"Intimidate","item":"Sitrus Berry","nature":"Adamant","evs":{"hp":116,"at":196,"df":36,"sd":116,"sp":36},"moves":["Return","Shadow Ball","Thunder Wave","Thief"]}
@@ -575,8 +577,10 @@ var SETDEX_ADV = {
     "OU Barkanine": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":252,"at":252,"sp":4},"moves":["Howl","Hidden Power Fighting","Extreme Speed","Flamethrower"]},
     "OU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":184,"at":252,"sp":72},"moves":["Extreme Speed","Iron Tail","Hidden Power Ghost","Overheat"]},
     "OU Special Sweeper": {"ability":"Intimidate","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":184,"sa":252,"sp":72},"moves":["Fire Blast","Hidden Power Grass","Crunch","Extreme Speed"]},
-    "Doubles OU Utility": {"ability":"Intimidate","item":"White Herb","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":12,"sa":32,"sd":60,"sp":152},"moves":["Overheat","Helping Hand","Hidden Power Grass","Protect"]},
-    "UU Showdown Usage": {"ability":"Intimidate","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sp":252},"moves":["Extreme Speed","Hidden Power Grass","Fire Blast","Agility"]}
+    "UU Wallbreaker": {"ability":"Intimidate","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Toxic","Extreme Speed"]},
+    "UU Sunny Day": {"ability":"Intimidate","item":"Charcoal","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Sunny Day","Extreme Speed"]},
+    "UU Mixed Attacker": {"ability":"Intimidate","item":"Leftovers","nature":"Naive","ivs":{"sa":30,"sd":30},"evs":{"at":80,"sa":252,"sp":176},"moves":["Fire Blast","Hidden Power Ground","Crunch","Extreme Speed"]},
+    "Doubles OU Utility": {"ability":"Intimidate","item":"White Herb","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":12,"sa":32,"sd":60,"sp":152},"moves":["Overheat","Helping Hand","Hidden Power Grass","Protect"]}
   },
   "Abra": {
     "NU Calm Mind": {"ability":"Synchronize","item":"Salac Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Psychic","Fire Punch","Substitute"]},
@@ -788,7 +792,7 @@ var SETDEX_ADV = {
   },
   "Magmar": {
     "OU Mixed Sweeper": {"ability":"Flame Body","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"at":64,"sa":252,"sp":192},"moves":["Flamethrower","Cross Chop","Thunder Punch","Hidden Power Grass"]},
-    "UU Showdown Usage": {"ability":"Flame Body","item":"Charcoal","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Hidden Power Ice","Substitute","Thunder Punch"]}
+    "UU Mixed Attacker": {"ability":"Flame Body","item":"Charcoal","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":64,"sa":252,"sp":192},"moves":["Fire Blast","Thunder Punch","Hidden Power Grass","Focus Punch"]}
   },
   "Pinsir": {
     "UU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Earthquake","Hidden Power Bug","Rock Slide"]},
@@ -806,7 +810,9 @@ var SETDEX_ADV = {
   },
   "Lapras": {
     "OU RestTalk": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":164,"sa":92},"moves":["Ice Beam","Thunderbolt","Rest","Sleep Talk"]},
-    "OU Utility": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":164,"sa":92},"moves":["Ice Beam","Thunderbolt","Toxic","Roar"]}
+    "OU Utility": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":164,"sa":92},"moves":["Ice Beam","Thunderbolt","Toxic","Roar"]},
+    "UU Offensive Utility": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"df":120,"sa":252,"sp":136},"moves":["Hydro Pump","Ice Beam","Thunderbolt","Heal Bell"]},
+    "UU Curse": {"ability":"Shell Armor","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":80,"sd":176},"moves":["Curse","Return","Surf","Rest"]}
   },
   "Ditto": {
     "NU Transform": {"ability":"Limber","item":"Metal Powder","nature":"Impish","evs":{"hp":252,"df":128,"sd":128},"moves":["Transform"]}
@@ -1078,7 +1084,7 @@ var SETDEX_ADV = {
   },
   "Elekid": {
     "LC Substitute + 3 Attacks": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Ice Punch","Thief","Substitute"]},
-    "LC SubPunch": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Naive","evs":{"at":172,"sa":76,"sp":236},"moves":["Substitute","Focus Punch","Thunder Wave","Thunderbolt"]},
+    "LC SubPunch": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Naive","evs":{"at":176,"sa":80,"sp":236},"moves":["Substitute","Focus Punch","Thunder Wave","Thunderbolt"]},
     "ZU Substitute": {"ability":"Static","item":"Leftovers","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Ice Punch","Hidden Power Grass","Substitute"]},
     "ZU All-Out Attacker": {"ability":"Static","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Fire Punch","Hidden Power Grass","Quick Attack"]}
   },
@@ -1164,7 +1170,7 @@ var SETDEX_ADV = {
     "OU Baton Pass": {"ability":"Speed Boost","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Baton Pass","Substitute","Silver Wind","Swords Dance"]},
     "OU Swords Dance": {"ability":"Speed Boost","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"at":252,"df":60,"sp":196},"moves":["Swords Dance","Aerial Ace","Silver Wind","Hidden Power Rock"]},
     "OU Choice Band": {"ability":"Speed Boost","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"at":252,"df":60,"sp":196},"moves":["Silver Wind","Aerial Ace","Hidden Power Rock","Shadow Ball"]},
-    "UU Showdown Usage": {"ability":"Speed Boost","item":"Soft Sand","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":48,"at":252,"sp":208},"moves":["Swords Dance","Silver Wind","Aerial Ace","Hidden Power Ground"]}
+    "UU Swords Dance": {"ability":"Speed Boost","item":"Soft Sand","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":68,"at":252,"df":188},"moves":["Swords Dance","Silver Wind","Aerial Ace","Hidden Power Ground"]}
   },
   "Shedinja": {
     "Ubers Protect": {"ability":"Wonder Guard","item":"Quick Claw","nature":"Adamant","evs":{"at":252,"sp":252},"moves":["Shadow Ball","Silver Wind","Swords Dance","Protect"]},
