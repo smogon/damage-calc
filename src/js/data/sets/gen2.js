@@ -131,8 +131,7 @@ var SETDEX_GSC = {
     "OU Curse": {"item":"Leftovers","ivs":{"hp":14,"at":24,"df":26},"moves":["Curse","Hidden Power Flying","Return","Rest"]}
   },
   "Ampharos": {
-    "UU Heart of the Lighthouse (Sleep Talk)": {"item":"Leftovers","moves":["Thunder","Light Screen","Rest","Sleep Talk"]},
-    "OU Showdown Usage": {"item":"Leftovers","moves":["Rest","Sleep Talk","Fire Punch","Thunder"]}
+    "UU Heart of the Lighthouse (Sleep Talk)": {"item":"Leftovers","moves":["Thunder","Light Screen","Rest","Sleep Talk"]}
   },
   "Bellossom": {
     "UU Standard Supporter": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Stun Spore","Hidden Power Grass","Leech Seed","Moonlight"]},
