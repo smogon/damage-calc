@@ -1890,7 +1890,8 @@ var SETDEX_BW = {
   },
   "Walrein": {
     "NU Specially Defensive": {"ability":"Thick Fat","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Toxic","Ice Beam","Roar","Surf"]},
-    "ZU Substitute": {"ability":"Thick Fat","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":176,"sa":80,"sp":252},"moves":["Substitute","Surf","Ice Beam","Toxic"]}
+    "ZU Substitute": {"ability":"Thick Fat","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":176,"sa":80,"sp":252},"moves":["Substitute","Surf","Ice Beam","Toxic"]},
+    "ZU 3 Attacks": {"ability":"Thick Fat","item":"Leftovers","nature":"Modest","ivs":{"sa":30},"evs":{"df":40,"sa":252,"sp":216},"moves":["Surf","Ice Beam","Hidden Power Electric","Encore"]}
   },
   "Clamperl": {
     "LC Shell Smash": {"level":5,"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":248,"sd":76,"sp":180},"moves":["Shell Smash","Surf","Hidden Power Grass","Protect"]},

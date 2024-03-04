@@ -3188,6 +3188,7 @@ var SETDEX_SM = {
     "ZU Offensive Support": {"ability":"Contrary","item":"Eviolite","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Leaf Storm","Defog","Synthesis","Hidden Power Ice"]}
   },
   "Serperior": {
+    "OU Taunt Support": {"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":208,"df":48,"sp":252},"moves":["Leaf Storm","Taunt","Glare","Defog"]},
     "OU Substitute Attacker": {"ability":"Contrary","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Substitute","Glare"]},
     "OU Choice Scarf": {"ability":"Contrary","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Glare","Defog","Knock Off"]},
     "Battle Spot Singles Focus Sash Lead": {"level":50,"ability":"Contrary","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Glare","Taunt"]},
