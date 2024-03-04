@@ -561,6 +561,10 @@ export function calculateBasePowerBWXY(
     basePower = move.bp;
   }
 
+  if (basePower === 0) {
+    return 0;
+  }
+
   const bpMods = calculateBPModsBWXY(
     gen,
     attacker,
