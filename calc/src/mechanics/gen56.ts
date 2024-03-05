@@ -31,7 +31,7 @@ import {
   getModifiedStat,
   getMoveEffectiveness,
   getStabMod,
-  getWeightFactor,
+  getWeight,
   handleFixedDamageMoves,
   isGrounded,
   OF16, OF32,
@@ -461,7 +461,7 @@ export function calculateBasePowerBWXY(
     break;
   case 'Low Kick':
   case 'Grass Knot':
-    const w = defender.weightkg * getWeightFactor(defender);
+    const w = getWeight(defender, desc, 'defender');
     basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -472,8 +472,8 @@ export function calculateBasePowerBWXY(
   case 'Heavy Slam':
   case 'Heat Crash':
     const wr =
-        (attacker.weightkg * getWeightFactor(attacker)) /
-        (defender.weightkg * getWeightFactor(defender));
+        getWeight(attacker, desc, 'attacker') /
+        getWeight(defender, desc, 'defender');
     basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
     desc.moveBP = basePower;
     break;
