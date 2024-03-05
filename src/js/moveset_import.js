@@ -153,7 +153,7 @@ function getStats(currentPoke, rows, offset) {
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
-		if (currentNature[1] == "Nature" && currentNature[2] !== "Power") { // edge case with the move nature power that overwrite nature)
+		if (currentNature[1] == "Nature") {
 			currentPoke.nature = currentNature[0];
 		}
 	}

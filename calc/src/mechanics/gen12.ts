@@ -35,7 +35,7 @@ export function calculateRBYGSC(
 
   if (move.name === 'Pain Split') {
     const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
-    const damage = defender.curHP() - average;
+    const damage = Math.max(0, defender.curHP() - average);
     result.damage = damage;
     return result;
   }
@@ -79,13 +79,6 @@ export function calculateRBYGSC(
     if (firstTypePrecedence > secondTypePrecedence) {
       [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
     }
-  }
-
-  // In Gen 1, Super Fang can hit Ghost types
-  if (gen.num === 1 && (move.named('Super Fang'))) {
-    const lostHP = Math.floor(defender.curHP() / 2) || 1;
-    result.damage = lostHP;
-    return result;
   }
 
   const type1Effectiveness =

@@ -109,7 +109,7 @@ export function calculateSMSSSV(
 
   if (move.name === 'Pain Split') {
     const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
-    const damage = defender.curHP() - average;
+    const damage = Math.max(0, defender.curHP() - average);
     result.damage = damage;
     return result;
   }
@@ -407,7 +407,7 @@ export function calculateSMSSSV(
     return result;
   }
 
-  if (move.named('Nature\'s Madness', 'Super Fang', 'Ruination')) {
+  if (move.named('Nature\'s Madness')) {
     const lostHP = field.defenderSide.isProtected ? 0 : Math.floor(defender.curHP() / 2) || 1;
     result.damage = lostHP;
     return result;
