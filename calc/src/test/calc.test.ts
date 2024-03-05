@@ -1210,5 +1210,27 @@ describe('calc', () => {
         );
       });
     });
+    describe('Descriptions', () => {
+      inGen(9, ({gen, calculate, Pokemon, Move}) => {
+        test('displayed chances should not round to 100%', () => {
+          const result = calculate(
+            Pokemon('Xerneas', {item: 'Choice Band', nature: 'Adamant', evs: {atk: 252}}),
+            Pokemon('Necrozma-Dusk-Mane', {nature: 'Impish', evs: {hp: 252, def: 252}}),
+            Move('Close Combat')
+          );
+          expect(result.kochance().chance).toBeGreaterThanOrEqual(0.9995);
+          expect(result.kochance().text).toBe('99.9% chance to 3HKO');
+        });
+        test('displayed chances should not round to 0%', () => {
+          const result = calculate(
+            Pokemon('Deoxys-Attack', {evs: {spa: 44}}),
+            Pokemon('Blissey', {nature: 'Calm', evs: {hp: 252, spd: 252}}),
+            Move('Psycho Boost')
+          );
+          expect(result.kochance().chance).toBeLessThan(0.005); // it would round down.
+          expect(result.kochance().text).toBe('0.1% chance to 4HKO');
+        });
+      });
+    });
   });
 });
