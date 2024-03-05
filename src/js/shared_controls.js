@@ -1016,7 +1016,7 @@ function createPokemon(pokeInfo) {
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
-			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
+			toxicCounter: pokeInfo.find(".status").val() === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
 				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
 				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
