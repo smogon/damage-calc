@@ -554,20 +554,16 @@ export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveC
 
 export function getWeight(pokemon: Pokemon, desc: RawDesc, role: 'defender' | 'attacker') {
   let weightHG = pokemon.weightkg * 10;
-  function modifyWeight(factor: number) {
-    weightHG = Math.max(Math.trunc(weightHG * factor), 1);
-  }
-
   const abilityFactor = pokemon.hasAbility('Heavy Metal') ? 2
     : pokemon.hasAbility('Light Metal') ? 0.5
     : 1;
   if (abilityFactor !== 1) {
-    modifyWeight(abilityFactor);
+    weightHG = Math.max(Math.trunc(weightHG * abilityFactor), 1);
     desc[`${role}Ability`] = pokemon.ability;
   }
 
   if (pokemon.hasItem('Float Stone')) {
-    modifyWeight(0.5);
+    weightHG = Math.max(Math.trunc(weightHG * 0.5), 1);
     desc[`${role}Item`] = pokemon.item;
   }
 
