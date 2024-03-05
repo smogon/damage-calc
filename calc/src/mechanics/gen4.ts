@@ -379,11 +379,6 @@ export function calculateBasePowerDPP(
     basePower = 80;
     desc.moveName = 'Tri Attack';
     break;
-  // Triple Kick's damage increases by 10 after each consecutive hit (10, 20, 30), this is a hack
-  case 'Triple Kick':
-    basePower = move.hits === 2 ? 15 : move.hits === 3 ? 20 : 10;
-    desc.moveBP = basePower;
-    break;
   case 'Crush Grip':
   case 'Wring Out':
     basePower = Math.floor((defender.curHP() * 120) / defender.maxHP()) + 1;
