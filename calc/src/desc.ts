@@ -130,7 +130,7 @@ export function getRecovery(
 
   if (move.named('Pain Split')) {
     const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
-    recovery[0] = recovery[1] = average - attacker.curHP()
+    recovery[0] = recovery[1] = average - attacker.curHP();
   }
 
   if (move.drain) {
@@ -150,7 +150,8 @@ export function getRecovery(
 
   const minHealthRecovered = toDisplay(notation, recovery[0], attacker.maxHP());
   const maxHealthRecovered = toDisplay(notation, recovery[1], attacker.maxHP());
-  text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} ${recovery[0] > 0 ? 'recovered' : 'lost'}`;
+  const change = recovery[0] > 0 ? 'recovered' : 'lost';
+  text = `${minHealthRecovered} - ${maxHealthRecovered}${notation} ${change}`;
 
   return {recovery, text};
 }
