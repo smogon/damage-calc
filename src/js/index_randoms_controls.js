@@ -205,6 +205,6 @@ $("#mainResult").click(function () {
 		document.getElementById('tooltipText').style.visibility = 'visible';
 		setTimeout(function () {
 			document.getElementById('tooltipText').style.visibility = 'hidden';
-		}, 2000);
+		}, 1500);
 	});
 });

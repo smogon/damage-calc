@@ -138,7 +138,7 @@ html, body {
 }
 .wrapper {
     padding: 0 1em;
-    max-width: 1285px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 .credits {
@@ -172,26 +172,40 @@ th {
     position: relative;
     top: -5px;
 }
+.main-title-text {
+    top: -10px;
+}
 .big-text {
     text-align: left;
     font-weight: bold;
     font-size: 1.1em;
     margin: 0.5em 0;
+    position: relative;
 }
 .big-text #mainResult:hover {  /* indicates the presence of click-to-copy function */
     cursor: pointer;
     opacity: 0.7;
 }
 #tooltipText {
+    position: absolute;
+    left: 42%;
+    top: -170%;
     font-size: 0.8em;
     visibility: hidden;
     border-radius: 5px;
-    width: 120px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: center;
     padding: 5px;
-    margin-left: 10px;
+    font-weight: normal;
+}
+#tooltipText::after {
+    position: absolute;
+    left: 45%;
+    top: 100%;
+    content: '';
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.7);
 }
 .small-text {
     font-size: 0.8em;
@@ -201,7 +215,7 @@ th {
     display: inline-block; /* required for honkaculate to work */
 }
 .poke-info {
-    width: 30em;
+    width: 32em;
 }
 .field-info, .poke-import {
     text-align: center;
@@ -308,7 +322,7 @@ th {
     background: #ffff99;
 }
 
-.genSelection, .notationSelection {
+.genSelection, .notationSelection, .modeSelection {
     display: inline-block;
     position: relative;
     top: -8px;
@@ -394,6 +408,7 @@ select.toxic-counter {
     width: 1.5em;
     height: 1em;
     padding: 3px 3px;
+    margin-right: 1px;
 }
 .poke-info .max-btn {
 	font-size: 0.8em;
@@ -401,6 +416,13 @@ select.toxic-counter {
 	height: 1em;
 	padding: 3px 3px;
 }
+.poke-info .stellar-btn {
+   font-size: 0.8em;
+   width: 3.5em;
+   height: 1em;
+   padding: 3px 3px;
+}
+
 
 /* field info */
 .field-info .btn {
@@ -418,6 +440,13 @@ table.field {
 .select2-container .select2-choice > .select2-chosen {
     width: 100%;
 }
+
+.select2-chosen {
+	word-wrap: break-word;
+	text-overflow: inherit;
+	white-space: normal !important;
+}
+
 .small-select.select2-container .select2-choice {
     font-size: 0.9em;
     height: 18px;

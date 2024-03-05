@@ -63,8 +63,8 @@ export function display(
   err = true
 ) {
   const [minDamage, maxDamage] = damageRange(damage);
-  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
-  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]);
+  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]);
 
   const minDisplay = toDisplay(notation, min, defender.maxHP());
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
@@ -86,8 +86,8 @@ export function displayMove(
   notation = '%'
 ) {
   const [minDamage, maxDamage] = damageRange(damage);
-  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
-  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]);
+  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]);
 
   const minDisplay = toDisplay(notation, min, defender.maxHP());
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
@@ -277,11 +277,7 @@ export function getKOChance(
 
   // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it
   // to an approximate distribution
-  let qualifier = '';
-  if (move.hits > 1) {
-    qualifier = 'approx. ';
-    damage = squashMultihit(gen, damage, move.hits, err);
-  }
+  let qualifier = move.hits > 1 ? 'approx. ' : '';
 
   const hazardsText = hazards.texts.length > 0
     ? ' after ' + serializeText(hazards.texts)
@@ -372,7 +368,7 @@ export function getKOChance(
     if (predictTotal(
       damage[0],
       eot.damage,
-      move.hits,
+      1,
       move.timesUsed,
       toxicCounter,
       defender.maxHP()
@@ -388,7 +384,7 @@ export function getKOChance(
       predictTotal(
         damage[damage.length - 1],
         eot.damage,
-        move.hits,
+        1,
         move.timesUsed,
         toxicCounter,
         defender.maxHP()
@@ -873,16 +869,16 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
     output += 'Helping Hand ';
   }
   if (description.isFlowerGiftAttacker) {
-    output += ' with an ally\'s Flower Gift ';
+    output += 'with an ally\'s Flower Gift ';
   }
   if (description.isBattery) {
-    output += ' Battery boosted ';
+    output += 'Battery boosted ';
   }
   if (description.isPowerSpot) {
-    output += ' Power Spot boosted ';
+    output += 'Power Spot boosted ';
   }
   if (description.isSwitching) {
-    output += ' switching boosted ';
+    output += 'switching boosted ';
   }
   output += description.moveName + ' ';
   if (description.moveBP && description.moveType) {

@@ -3,18 +3,17 @@
   "repository": "github:smogon/damage-calc",
   "license": "MIT",
   "dependencies": {
-    "@smogon/sets": "^2.0.0",
-    "@types/node": "^18.11.17",
-    "calc": "file:../calc",
-    "smogon": "^2.0.9",
-    "source-map-support": "^0.5.21"
+    "@pkmn/data": "^0.8.8",
+    "@pkmn/dex": "^0.8.8",
+    "@pkmn/sim": "^0.8.8",
+    "@pkmn/smogon": "^0.5.4"
   },
   "devDependencies": {
     "@pkmn/eslint-config": "^2.1.0",
+    "@types/node": "^18.11.17",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "eslint": "^8.4.1",
     "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^27.1.0",
     "typescript": "^4.5.4"
   },
   "scripts": {

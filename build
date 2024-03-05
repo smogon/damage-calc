@@ -43,7 +43,12 @@ function cpdir(src, dest) {
 			var symlink = fs.readlinkSync(path.join(src, file));
 			fs.symlinkSync(symlink, path.join(dest, file));
 		} else if (file.endsWith('.js')) {
-			const contents = fs.readFileSync(path.join(src, file), 'utf8').replace(/^exports.* = void 0;$/gm, '');
+			let contents = fs.readFileSync(path.join(src, file), 'utf8').replace(/^exports.* = void 0;$/gm, '');
+			// Minify the sets so we save bandwith
+			if (src === 'src/js/data/sets') {
+				const brkOpenIdx = contents.indexOf('{');
+				contents = `${contents.slice(0, brkOpenIdx)}${JSON.stringify(JSON.parse(contents.slice(brkOpenIdx, -2)))};`
+			}
 			fs.writeFileSync(path.join(dest, file), contents);
 		} else {
 			fs.copyFileSync(path.join(src, file),path.join(dest, file));

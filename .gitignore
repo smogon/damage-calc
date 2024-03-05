@@ -1,6 +1,8 @@
 dist/
+logs/
 node_modules/
 eslint-cache/
+.tsbuildinfo
 .eslintcache
 .DS_Store
 Thumbs.db
