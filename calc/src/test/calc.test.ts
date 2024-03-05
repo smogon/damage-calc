@@ -452,7 +452,7 @@ describe('calc', () => {
         );
         expect(result.range()).toEqual([89, 108]);
         expect(result.desc()).toBe(
-          '0 Atk Mamoswine Icicle Spear (3 hits) vs. 0 HP / 0 Def White Herb Weak Armor Skarmory: 89-108 (32.8 - 39.8%) -- approx. 100% chance to 3HKO'
+          '0 Atk Mamoswine Icicle Spear (3 hits) vs. 0 HP / 0 Def White Herb Weak Armor Skarmory: 89-108 (32.8 - 39.8%) -- approx. 99.9% chance to 3HKO'
         );
 
         result = calculate(
@@ -466,7 +466,7 @@ describe('calc', () => {
         );
         expect(result.range()).toEqual([56, 69]);
         expect(result.desc()).toBe(
-          '0 Atk Mamoswine Icicle Spear (3 hits) vs. +2 0 HP / 0 Def Weak Armor Skarmory: 56-69 (20.6 - 25.4%) -- approx. 0% chance to 4HKO'
+          '0 Atk Mamoswine Icicle Spear (3 hits) vs. +2 0 HP / 0 Def Weak Armor Skarmory: 56-69 (20.6 - 25.4%) -- approx. 0.1% chance to 4HKO'
         );
 
         result = calculate(
