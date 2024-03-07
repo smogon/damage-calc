@@ -2271,6 +2271,7 @@ var SETDEX_DPP = {
     "OU Utility Counter": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":180,"sd":76},"moves":["Thunderbolt","Ice Beam","Psychic","Thunder Wave"]},
     "OU Trick Room": {"ability":"Levitate","item":"Leftovers","nature":"Relaxed","ivs":{"df":29,"sp":0},"evs":{"hp":252,"df":180,"sd":76},"moves":["Trick Room","Thunderbolt","Ice Beam","Psychic"]},
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Modest","evs":{"hp":72,"sa":252,"sp":184},"moves":["Psychic","Ice Beam","Thunderbolt","U-turn"]},
+    "UU Physically Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":240,"df":176,"sp":92},"moves":["Stealth Rock","Psychic","U-turn","Grass Knot"]},
     "UU Lead": {"ability":"Levitate","item":"Expert Belt","nature":"Modest","evs":{"hp":120,"sa":252,"sp":136},"moves":["Stealth Rock","Psychic","Ice Beam","Thunderbolt"]},
     "UU Offensive Calm Mind": {"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Psychic","Thunderbolt","Hidden Power Ground"]},
     "UU Weather Support": {"ability":"Levitate","item":"Damp Rock","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Rain Dance","Psychic","Stealth Rock","Healing Wish"]},
