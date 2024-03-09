@@ -61,13 +61,25 @@ var megaDelta = {
     'Rusted Sword':{'at':40, 'df':0, 'sa':0, 'sd':0, 'sp':10, 'weight':245.5, 'ability': 'Intrepid Sword', 'type': 'Steel', 'skip': ['Zacian-Crowned']},
     'Rusted Shield':{'at':0, 'df':25, 'sa':0, 'sd':25, 'sp':-10, 'weight':575, 'ability': 'Dauntless Shield', 'type': 'Steel', 'skip': ['Zamazenta-Crowned']},
     'Adamant Crystal':{'at':-20, 'df':0, 'sa':0, 'sd':20, 'sp':0, 'weight':167, 'ability': 'Pressure', 'type': '', 'skip': ['Dialga-Origin']},
-     'Griseous Core':{'at':20, 'df':-20, 'sa':20, 'sd':-20, 'sp':0, 'weight':-100, 'ability': 'Levitate', 'type': '', 'skip': ['Giratina-Origin']},
-     'Lustrous Globe':{'at':-20, 'df':0, 'sa':0, 'sd':0, 'sp':20, 'weight':324, 'ability': 'Pressure', 'type': '', 'skip': ['Palkia-Origin']},
+    'Griseous Core':{'at':20, 'df':-20, 'sa':20, 'sd':-20, 'sp':0, 'weight':-100, 'ability': 'Levitate', 'type': '', 'skip': ['Giratina-Origin']},
+    'Lustrous Globe':{'at':-20, 'df':0, 'sa':0, 'sd':0, 'sp':20, 'weight':324, 'ability': 'Pressure', 'type': '', 'skip': ['Palkia-Origin']},
     'Vile Vial':{'at':52, 'df':-28, 'sa':-56, 'sd':-5, 'sp':37, 'weight':0.9, 'ability': 'Tinted Lens', 'type': '', 'skip': ['Venomicon-Epilogue']},
     'Hearthflame Mask': {'at':0,'df':0,'sa':0,'sd':0,'sp':0,'weight':0,'ability':'Mold Breaker','type': 'Fire', 'skip': ['Ogerpon-Hearthflame','Ogerpon-Hearthflame-Tera']},
     'Wellspring Mask': {'at':0,'df':0,'sa':0,'sd':0,'sp':0,'weight':0,'ability':'Water Absorb','type': 'Water', 'skip': ['Ogerpon-Wellspring','Ogerpon-Wellspring-Tera']},
     'Cornerstone Mask': {'at':0,'df':0,'sa':0,'sd':0,'sp':0,'weight':0,'ability':'Sturdy','type': 'Rock', 'skip': ['Ogerpon-Cornerstone','Ogerpon-Cornerstone-Tera']},
 };
+// need to know if we have to do a name switcheroo 
+var multMegas = {
+	'Adamant Crystal':{'at':-20, 'df':0, 'sa':0, 'sd':20, 'sp':0, 'weight':167, 'ability': 'Pressure', 'type': '', 'skip': ['Dialga-Origin']},
+    'Griseous Core':{'at':20, 'df':-20, 'sa':20, 'sd':-20, 'sp':0, 'weight':-100, 'ability': 'Levitate', 'type': '', 'skip': ['Giratina-Origin']},
+    'Lustrous Globe':{'at':-20, 'df':0, 'sa':0, 'sd':0, 'sp':20, 'weight':324, 'ability': 'Pressure', 'type': '', 'skip': ['Palkia-Origin']},
+    'Vile Vial':{'at':52, 'df':-28, 'sa':-56, 'sd':-5, 'sp':37, 'weight':0.9, 'ability': 'Tinted Lens', 'type': '', 'skip': ['Venomicon-Epilogue']},
+    'Hearthflame Mask': {'at':0,'df':0,'sa':0,'sd':0,'sp':0,'weight':0,'ability':'Mold Breaker','type': 'Fire', 'skip': ['Ogerpon-Hearthflame','Ogerpon-Hearthflame-Tera']},
+    'Wellspring Mask': {'at':0,'df':0,'sa':0,'sd':0,'sp':0,'weight':0,'ability':'Water Absorb','type': 'Water', 'skip': ['Ogerpon-Wellspring','Ogerpon-Wellspring-Tera']},
+    'Cornerstone Mask': {'at':0,'df':0,'sa':0,'sd':0,'sp':0,'weight':0,'ability':'Sturdy','type': 'Rock', 'skip': ['Ogerpon-Cornerstone','Ogerpon-Cornerstone-Tera']},
+}
+
+
 function clamp(value, min, max) {
 	return Math.min(Math.max(value, min), max);
 }
@@ -208,6 +220,117 @@ function toggleScale() {
 	autoUpdateStats('#p2');
 }
 
+function performCalculationsOM() {
+	// this is in here because just having it onload is a race condition
+	$(".calc-trigger").unbind("change keyup", timeoutFunc)
+	var p1info = $("#p1");
+	var p2info = $("#p2");
+	var p1 = createPokemon(p1info);
+	var p2 = createPokemon(p2info);
+	if (shouldUseMnM) {
+		if (multMegas.hasOwnProperty(p1.item)) {
+			p1.alias = p1.name;
+			p1.name = multMegas[p1.item].skip[0]
+		}
+		if (multMegas.hasOwnProperty(p2.item)) {
+			p2.alias = p2.name;
+			p2.name = multMegas[p2.item].skip[0]
+	}}
+	var p1field = createField();
+	var p2field = p1field.clone().swap();
+
+	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
+	if (p1.hasOwnProperty('alias')) {
+		p1.name = p1.alias
+	}
+	if (p2.hasOwnProperty('alias')) {
+		p2.name = p2.alias
+	}
+	var battling = [p1, p2];
+	p1.maxDamages = [];
+	p2.maxDamages = [];
+
+	p1info.find(".sp .totalMod").text(p1.stats.spe);
+	p2info.find(".sp .totalMod").text(p2.stats.spe);
+	var fastestSide = p1.stats.spe > p2.stats.spe ? 0 : p1.stats.spe === p2.stats.spe ? "tie" : 1;
+
+	var result, maxDamage;
+	var bestResult;
+	var zProtectAlerted = false;
+	for (var i = 0; i < 4; i++) {
+		// P1
+		result = damageResults[0][i];
+		// so the attacker is p1, defender is p2
+		result.rawDesc.attackerName = p1.name
+		result.rawDesc.defenderName = p2.name
+		maxDamage = result.range()[1] * p1.moves[i].hits;
+		if (!zProtectAlerted && maxDamage > 0 && p1.item.indexOf(" Z") === -1 && p1field.defenderSide.isProtected && p1.moves[i].isZ) {
+			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			zProtectAlerted = true;
+		}
+		p1.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
+		p1.maxDamages.sort(function (firstMove, secondMove) {
+			return secondMove.maxDamage - firstMove.maxDamage;
+		});
+		if (shouldUseMnM) {
+			if (megaDelta.hasOwnProperty(result.attacker.item)) {
+				result.rawDesc.attackerItem = result.attacker.item
+			}
+			if (megaDelta.hasOwnProperty(result.defender.item)) {
+				result.rawDesc.defenderItem = result.defender.item
+			}
+		}
+		$(resultLocations[0][i].move + " + label").text(p1.moves[i].name.replace("Hidden Power", "HP"));
+		$(resultLocations[0][i].damage).text(result.moveDesc(notation));
+
+		// P2
+		result = damageResults[1][i];
+		// so the attacker is p2, defender is p1
+		result.rawDesc.attackerName = p2.name
+		result.rawDesc.defenderName = p1.name
+		maxDamage = result.range()[1] * p2.moves[i].hits;
+		if (!zProtectAlerted && maxDamage > 0 && p2.item.indexOf(" Z") === -1 && p2field.defenderSide.isProtected && p2.moves[i].isZ) {
+			alert('Although only possible while hacking, Z-Moves fully damage through protect without a Z-Crystal');
+			zProtectAlerted = true;
+		}
+		p2.maxDamages.push({moveOrder: i, maxDamage: maxDamage});
+		p2.maxDamages.sort(function (firstMove, secondMove) {
+			return secondMove.maxDamage - firstMove.maxDamage;
+		});
+		if (shouldUseMnM) {
+			if (megaDelta.hasOwnProperty(result.attacker.item)) {
+				result.rawDesc.attackerItem = result.attacker.item
+			}
+			if (megaDelta.hasOwnProperty(result.defender.item)) {
+				result.rawDesc.defenderItem = result.defender.item
+			}
+		}
+		$(resultLocations[1][i].move + " + label").text(p2.moves[i].name.replace("Hidden Power", "HP"));
+		$(resultLocations[1][i].damage).text(result.moveDesc(notation));
+
+		// BOTH
+		var bestMove;
+		if (fastestSide === "tie") {
+			// Technically the order should be random in a speed tie, but this non-determinism makes manual testing more difficult.
+			// battling.sort(function () { return 0.5 - Math.random(); });
+			bestMove = battling[0].maxDamages[0].moveOrder;
+			var chosenPokemon = battling[0] === p1 ? "0" : "1";
+			bestResult = $(resultLocations[chosenPokemon][bestMove].move);
+		} else {
+			bestMove = battling[fastestSide].maxDamages[0].moveOrder;
+			bestResult = $(resultLocations[fastestSide][bestMove].move);
+		}
+	}
+	if ($('.locked-move').length) {
+		bestResult = $('.locked-move');
+	} else {
+		stickyMoves.setSelectedMove(bestResult.prop("id"));
+	}
+	bestResult.prop("checked", true);
+	bestResult.change();
+	$("#resultHeaderL").text(p1.name + "'s Moves (select one to show detailed results)");
+	$("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
+}
 $(".om-trigger").prop("checked", false);
 $(".om-trigger").change();
 $(".ts-trigger").bind("change keyup", toggleTS);
@@ -220,6 +343,13 @@ $(".gen").change(function() {
 		dataType: 'json',
 		success: function (response) {
 			tierBlob = response
-  }
-});
+		}
+	});
 })
+
+var omTimeoutFunc = function () {
+		setTimeout(performCalculationsOM, 0);
+}
+$(".calc-trigger").bind("change keyup", omTimeoutFunc);
+
+performCalculationsOM();
