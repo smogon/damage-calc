@@ -166,7 +166,11 @@ $(".mode").change(function () {
 		window.location.replace('randoms' + linkExtension + '?' + params);
 	} else if (mode === 'one-vs-one') {
 		window.location.replace('index' + linkExtension + '?' + params);
-	} else {
+	} 
+	else if (mode === "oms") {
+		window.location.replace('oms' + linkExtension);
+	}
+	else {
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
 	}
 });
