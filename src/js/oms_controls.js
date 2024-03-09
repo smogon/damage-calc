@@ -84,7 +84,7 @@ function calcMult(pokemon) {
 
 }
 var tierBlob;
-async function autoUpdateStats(p) {
+function autoUpdateStats(p) {
 	
     var fullSetName = $(p + " .set-selector .select2-chosen").text();
     if (!fullSetName) return;
@@ -219,7 +219,7 @@ $(".gen").change(function() {
 		async: false,
 		dataType: 'json',
 		success: function (response) {
-			tierBlob = resp.json()
+			tierBlob = response
   }
 });
 })

@@ -176,8 +176,6 @@ $(".sl .dvs").keyup(function () {
 	calcHP(poke);
 });
 
-
-
 function getForcedTeraType(pokemonName) {
 	if (startsWith(pokemonName, "Ogerpon-Cornerstone")) {
 		return "Rock";
