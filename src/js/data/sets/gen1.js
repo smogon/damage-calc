@@ -230,8 +230,7 @@ var SETDEX_RBY = {
     "OU Sleeper": {"moves":["Hypnosis","Thunderbolt","Night Shade","Explosion"]},
     "Ubers Sleeper": {"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]},
     "1v1 Rest": {"moves":["Thunderbolt","Psychic","Rest","Substitute"]},
-    "Tradebacks OU Offensive": {"moves":["Hypnosis","Thunderbolt","Ice Punch","Explosion"]},
-    "Tradebacks OU Support": {"moves":["Rest","Thunderbolt","Ice Punch","Hypnosis"]}
+    "Tradebacks OU Standard": {"moves":["Hypnosis","Thunderbolt","Ice Punch","Explosion"]}
   },
   "Onix": {
     "PU Bind Pivot": {"moves":["Bind","Toxic","Earthquake","Explosion"]}

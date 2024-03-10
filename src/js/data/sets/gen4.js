@@ -2035,6 +2035,7 @@ var SETDEX_DPP = {
     "LC Switcheroo": {"level":5,"ability":"Klutz","item":"Choice Band","nature":"Jolly","evs":{"hp":236,"df":4,"sp":236},"moves":["Switcheroo","Quick Attack","Thunder Wave","Encore"]}
   },
   "Mismagius": {
+    "UU Colbur Berry Lead": {"ability":"Levitate","item":"Colbur Berry","nature":"Timid","evs":{"hp":128,"df":124,"sa":80,"sp":176},"moves":["Taunt","Shadow Ball","Power Gem","Will-O-Wisp"]},
     "UU Nasty Plot": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Substitute","Nasty Plot","Shadow Ball","Thunderbolt"]},
     "UU Lead": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Taunt","Will-O-Wisp","Shadow Ball","Thunderbolt"]},
     "UU Stallbreaker": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":80,"sp":176},"moves":["Taunt","Will-O-Wisp","Shadow Ball","Pain Split"]},
