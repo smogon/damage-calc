@@ -112,84 +112,77 @@ function autoUpdateStats(p) {
 	var randset = $("#randoms").prop("checked") ? randdex[pokemonName] : undefined;
 	var regSets = pokemonName in setdex && setName in setdex[pokemonName];
 	var set = regSets ? setdex[pokemonName][setName] : randset;
-	// if should use rules use them...
-	if (shouldUseTS || shouldUseScale || shouldUseMnM) {
-		// mix and mega is top priority
-		if (shouldUseMnM) {
-			var itemObj = pokeObj.find(".item");
-			var item = itemObj.val();
-			if (megaDelta[item] && megaDelta[item].skip.indexOf(pokemonName) < 0) {
-				//change stats based on mega stone
-				for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
-					var stat = LEGACY_STATS[gen][i];
-					volatileCopy.bs[stat] = clampStats(pokemon.bs[stat] + megaDelta[item][stat]);
-					pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
-
-				}
-				if (item === "Aggronite")
-					pokeObj.find(".type2").val("???");
-				else if (megaDelta[item].type)
-					pokeObj.find(".type2").val(megaDelta[item]['type']);
-				else
-					pokeObj.find(".type2").val(pokemon.types[1]);
-
-				// ability
-				if (megaDelta[item]['ability']) {
-					abilityObj.val(megaDelta[item]['ability']);
-				}
-			}
-		} else {
-			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
-			if (typeof set !== 'undefined')
-				setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
-			else
-				abilityObj.val(abilityFallback);
-
-		}
-		// scale is second priority
-		if (shouldUseScale) {
-			var multiplier = calcMult(pokemon);
-			for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
-				var stat = LEGACY_STATS[gen][i];
-				volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] * multiplier);
-				pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
-			}
-		}
-		if (shouldUseTS) {
-			if (gen >= 9) {
-				var conversion = {"lc": 30, "nfe": 30, "zu": 30, "zubl": 30, "(pu)": 30, "pu": 30, "publ": 25, "nu": 25, "nubl": 20, "ru": 20, "rubl": 15,
-					"uu": 15, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": "0", "ag": 0, "cap": 0, "cap lc": 30, "cap nfe": 30};
-			} else {
-				var conversion = {"lc": 40, "nfe": 40, "zu": 40, "zubl": 40, "(pu)": 40, "pu": 40, "publ": 30, "nu": 30, "nubl": 20, "ru": 20,
-					"rubl": 10, "uu": 10, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": 0, "ag": 0, "cap": 0, "cap lc": 40, "cap nfe": 40};
-			}
-			// have to do it inside function cause of timing, has to be after gen is set
-
-
-			// have a backup 0 just in case the tier doesn't exist
-			// ex: somehow failed to fetch
-			var tierAddon = conversion[
-				tierBlob[toID(pokemonName)]['tier'].toLowerCase()
-			] || 0;
-			for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
-				var stat = LEGACY_STATS[gen][i];
-				volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] + tierAddon);
-				pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
-			}
-		}
-
-	// ...otherwise reset
-	} else {
+	// reset if no rules are set
+	if (!(shouldUseTS || shouldUseScale || shouldUseMnM)) {
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 		}
 		pokeObj.find(".type2").val(pokemon.types[1]);
 		var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
+		if (typeof set !== 'undefined') {setSelectValueIfValid(abilityObj, set.ability, abilityFallback);} else {abilityObj.val(abilityFallback);}
+	}
+	// mix and mega is top priority
+	if (shouldUseMnM) {
+		var itemObj = pokeObj.find(".item");
+		var item = itemObj.val();
+		if (megaDelta[item] && megaDelta[item].skip.indexOf(pokemonName) < 0) {
+			//change stats based on mega stone
+			for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
+				var stat = LEGACY_STATS[gen][i];
+				volatileCopy.bs[stat] = clampStats(pokemon.bs[stat] + megaDelta[item][stat]);
+				pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
+
+			}
+			if (item === "Aggronite")
+				pokeObj.find(".type2").val("???");
+			else if (megaDelta[item].type)
+				pokeObj.find(".type2").val(megaDelta[item]['type']);
+			else
+				pokeObj.find(".type2").val(pokemon.types[1]);
+
+			// ability
+			if (megaDelta[item]['ability']) {
+				abilityObj.val(megaDelta[item]['ability']);
+			}
+		}
+	} else {
+		var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
 		if (typeof set !== 'undefined')
 			setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
 		else
 			abilityObj.val(abilityFallback);
+
 	}
+	// scale is second priority
+	if (shouldUseScale) {
+		var multiplier = calcMult(pokemon);
+		for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
+			var stat = LEGACY_STATS[gen][i];
+			volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] * multiplier);
+			pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
+		}
+	}
+	if (shouldUseTS) {
+		if (gen >= 9) {
+			var conversion = {"lc": 30, "nfe": 30, "zu": 30, "zubl": 30, "(pu)": 30, "pu": 30, "publ": 25, "nu": 25, "nubl": 20, "ru": 20, "rubl": 15,
+				"uu": 15, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": "0", "ag": 0, "cap": 0, "cap lc": 30, "cap nfe": 30};
+		} else {
+			var conversion = {"lc": 40, "nfe": 40, "zu": 40, "zubl": 40, "(pu)": 40, "pu": 40, "publ": 30, "nu": 30, "nubl": 20, "ru": 20,
+				"rubl": 10, "uu": 10, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": 0, "ag": 0, "cap": 0, "cap lc": 40, "cap nfe": 40};
+		}
+		// have to do it inside function cause of timing, has to be after gen is set
+		// have a backup 0 just in case the tier doesn't exist
+		// ex: somehow failed to fetch
+		var tierAddon = conversion[
+			tierBlob[toID(pokemonName)].toLowerCase()
+		] || 0;
+		for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
+			var stat = LEGACY_STATS[gen][i];
+			volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] + tierAddon);
+			pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
+		}
+	}
+
 	calcHP(pokeObj);
 	calcStats(pokeObj);
 }
@@ -222,7 +215,6 @@ function toggleScale() {
 
 function performCalculationsOM() {
 	// this is in here because just having it onload is a race condition
-	$(".calc-trigger").unbind("change keyup", timeoutFunc);
 	var p1info = $("#p1");
 	var p2info = $("#p2");
 	var p1 = createPokemon(p1info);
@@ -339,7 +331,7 @@ $(".mnm-trigger").bind("change keyup", toggleMNM);
 $(".scale-trigger").bind("change keyup", toggleScale);
 $(".gen").change(function () {
 	$.ajax({
-		url: 'js/data/tiers/gen' + gen + '-tiers.json',
+		url: 'js/data/tiers/gen' + gen + '.json',
 		async: false,
 		dataType: 'json',
 		success: function (response) {
@@ -347,10 +339,13 @@ $(".gen").change(function () {
 		}
 	});
 });
-
+$(document).ready(function () {
+	$(".calc-trigger").unbind("change keyup", timeoutFunc);
+	performCalculationsOM();
+}
+);
 var omTimeoutFunc = function () {
 	setTimeout(performCalculationsOM, 0);
 };
 $(".calc-trigger").bind("change keyup", omTimeoutFunc);
 
-performCalculationsOM();
