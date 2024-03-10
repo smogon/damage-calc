@@ -177,8 +177,7 @@ $(".notation").change(function () {
 	performCalculations();
 });
 
-var timeoutFunc = function () {
-		setTimeout(performCalculations, 0);}
+var timeoutFunc = function () {setTimeout(performCalculations, 0);};
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
