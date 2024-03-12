@@ -176,8 +176,6 @@ $(".mode").change(function () {
 $(".notation").change(function () {
 	performCalculations();
 });
-
-var timeoutFunc = function () {setTimeout(performCalculations, 0);};
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
@@ -196,7 +194,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	$(".calc-trigger").bind("change keyup", timeoutFunc);
+	$(".calc-trigger").bind("change keyup", function () {setTimeout(performCalculations, 0);});
 	performCalculations();
 });
 
