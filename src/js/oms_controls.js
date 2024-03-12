@@ -133,12 +133,13 @@ function autoUpdateStats(p) {
 				pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
 
 			}
-			if (item === "Aggronite")
+			if (item === "Aggronite") {
 				pokeObj.find(".type2").val("???");
-			else if (megaDelta[item].type)
+			} else if (megaDelta[item].type)
 				pokeObj.find(".type2").val(megaDelta[item]['type']);
-			else
+			} else {
 				pokeObj.find(".type2").val(pokemon.types[1]);
+			}
 
 			// ability
 			if (megaDelta[item]['ability']) {
