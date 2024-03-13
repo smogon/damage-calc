@@ -555,7 +555,8 @@ var SETDEX_GSC = {
     "Ubers All-out Attacker": {"item":"Leftovers","moves":["Thunder","Ice Beam","Dynamic Punch","Self-Destruct"]}
   },
   "Mew": {
-    "Ubers Swords Dance": {"item":"Leftovers","moves":["Swords Dance","Submission","Soft-Boiled","Shadow Ball"]}
+    "Ubers Lead Mew": {"item":"Miracle Berry","moves":["Swords Dance","Thunder Wave","Fire Blast","Explosion"]},
+    "Ubers Backline Mew": {"item":"Leftovers","moves":["Swords Dance","Earthquake","Rock Slide","Explosion"]}
   },
   "Furret": {
     "OU Curse": {"item":"Leftovers","moves":["Double-Edge","Rest","Curse","Shadow Ball"]},

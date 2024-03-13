@@ -1059,7 +1059,7 @@ var SETDEX_BW = {
     "NU Touncher": {"ability":"Poison Touch","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Poison Jab","Shadow Sneak","Ice Punch","Memento"]},
     "NU Choice Band": {"ability":"Poison Touch","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Poison Jab","Shadow Sneak","Ice Punch","Explosion"]},
     "ZU All-Out Attacker": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Poison Jab","Brick Break","Fire Punch","Shadow Sneak"]},
-    "ZU Curse": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Poison Jab","Fire Punch","Shadow Sneak","Curse"]},
+    "ZU Curse": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Curse","Poison Jab","Brick Break","Shadow Sneak"]},
     "ZU SubPunch": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Poison Jab","Focus Punch","Shadow Sneak","Substitute"]}
   },
   "Shellder": {
@@ -1713,7 +1713,7 @@ var SETDEX_BW = {
   "Lairon": {
     "NU Tank": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Stealth Rock","Head Smash","Earthquake","Roar"]},
     "NU Offensive": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Autotomize","Head Smash","Earthquake","Iron Head"]},
-    "ZU Bulky Stealth Rock": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Stealth Rock","Head Smash","Iron Head","Roar"]},
+    "ZU Stealth Rock": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Head Smash","Iron Head","Roar"]},
     "ZU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Head Smash","Iron Head","Heavy Slam","Superpower"]},
     "ZU Rock Polish": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Rock Polish","Head Smash","Iron Head","Earthquake"]}
   },
@@ -1923,7 +1923,7 @@ var SETDEX_BW = {
   "Shelgon": {
     "NU Bulky Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Impish","evs":{"hp":252,"at":20,"df":236},"moves":["Dragon Dance","Outrage","Rest","Sleep Talk"]},
     "NU Physically Defensive": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":236,"sd":20},"moves":["Wish","Protect","Toxic","Dragon Claw"]},
-    "ZU Bulky Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Dragon Dance","Outrage","Rest","Sleep Talk"]},
+    "ZU Bulky Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Dragon Dance","Outrage","Rest","Sleep Talk"]},
     "ZU Offensive Dragon Dance": {"ability":"Overcoat","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Brick Break","Fire Fang"]},
     "ZU Wish": {"ability":"Rock Head","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Wish","Protect","Dragon Claw","Roar"]}
   },
