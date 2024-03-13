@@ -189,7 +189,14 @@ export function calculateSMSSSV(
       : field.hasTerrain('Psychic') ? 'Psychic'
       : 'Normal';
     desc.terrain = field.terrain;
-    desc.moveType = type;
+
+    // If the Nature Power user has the ability Prankster, it cannot affect
+    // Dark-types or grounded foes if Psychic Terrain is active
+    if (!(move.named('Nature Power') && attacker.hasAbility('Prankster')) &&
+      (defender.types.includes('Dark') ||
+      (field.hasTerrain('Psychic') && isGrounded(defender, field)))) {
+      desc.moveType = type;
+    }
   } else if (move.named('Revelation Dance')) {
     if (attacker.teraType) {
       type = attacker.teraType;
@@ -812,6 +819,14 @@ export function calculateBasePowerSMSSSV(
   case 'Nature Power':
     move.category = 'Special';
     move.secondaries = true;
+
+    // Nature Power cannot affect Dark-types if it is affected by Prankster
+    if (attacker.hasAbility('Prankster') && defender.types.includes('Dark')) {
+      basePower = 0;
+      desc.moveName = 'Nature Power';
+      desc.attackerAbility = 'Prankster';
+      break;
+    }
     switch (field.terrain) {
     case 'Electric':
       basePower = 90;
@@ -826,8 +841,15 @@ export function calculateBasePowerSMSSSV(
       desc.moveName = 'Moonblast';
       break;
     case 'Psychic':
-      basePower = 90;
-      desc.moveName = 'Psychic';
+      // Nature Power does not affect grounded Pokemon if it is affected by
+      // Prankster and there is Psychic Terrain active
+      if (attacker.hasAbility('Prankster') && isGrounded(defender, field)) {
+        basePower = 0;
+        desc.attackerAbility = 'Prankster';
+      } else {
+        basePower = 90;
+        desc.moveName = 'Psychic';
+      }
       break;
     default:
       basePower = 80;
