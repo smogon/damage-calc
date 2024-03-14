@@ -208,6 +208,25 @@ describe('calc', () => {
       });
     });
 
+    describe('IVs are shown if applicable', () => {
+      inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+        test(`Gen ${gen}`, () => {
+          const ivs = [{ivs: {atk: 9, def: 9, hp: 9}, evs: {atk: 9, def: 9, hp: 9}}, {}];
+          for (let i = 0; i < 2; i++, ivs.reverse()) {
+            const result = calculate(
+              Pokemon('Mew', ivs[0]),
+              Pokemon('Mew', ivs[1]),
+              Move('Explosion'),
+            ).rawDesc;
+            const ivDesc = [result.attackEVs, result.defenseEVs]
+              .map((value, ..._) => value?.match(RegExp('\\d+ IVs')));
+            expect(ivDesc[i]).toHaveLength(1);
+            expect(ivDesc[+!i]).toBeNull();
+          }
+        });
+      });
+    });
+
     inGens(4, 9, ({gen, calculate, Pokemon, Move}) => {
       const zapdos = Pokemon('Zapdos', {item: 'Iron Ball'});
       if (gen === 4) {
