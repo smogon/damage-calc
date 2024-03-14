@@ -99,13 +99,17 @@ export function calculateSMSSSV(
 
   const desc: RawDesc = {
     attackerName: attacker.name,
-    attackerTera: attacker.teraType,
     moveName: move.name,
     defenderName: defender.name,
-    defenderTera: defender.teraType,
     isDefenderDynamaxed: defender.isDynamaxed,
     isWonderRoom: field.isWonderRoom,
   };
+
+  // only display tera type if it applies
+  if (attacker.teraType !== 'Stellar' || move.isStellarFirstUse) {
+    desc.attackerTera = attacker.teraType;
+  }
+  if (defender.teraType !== 'Stellar') desc.defenderTera = defender.teraType;
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
@@ -882,6 +886,8 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Tera Blast':
+    desc.attackerTera = attacker.teraType; // always show
+    if (move.isStellarFirstUse) desc.attackerTera += ' (First Use)';
     basePower = attacker.teraType === 'Stellar' ? 100 : 80;
     desc.moveBP = basePower;
     break;
