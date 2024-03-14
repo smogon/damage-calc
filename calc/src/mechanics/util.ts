@@ -606,6 +606,8 @@ export function countBoosts(gen: Generation, boosts: StatsTable) {
   return sum;
 }
 
+const formatIV = (iv?: number) => iv !== undefined && iv !== 31 ? ` ${iv} IVs` : '';
+
 export function getEVDescriptionText(
   gen: Generation,
   pokemon: Pokemon,
@@ -618,7 +620,7 @@ export function getEVDescriptionText(
     : nature.plus === stat ? '+'
     : nature.minus === stat ? '-'
     : '') + ' ' +
-     Stats.displayStat(stat));
+     Stats.displayStat(stat)) + formatIV(pokemon.ivs[stat]);
 }
 
 export function handleFixedDamageMoves(attacker: Pokemon, move: Move) {
