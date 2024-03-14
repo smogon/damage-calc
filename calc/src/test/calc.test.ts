@@ -218,9 +218,9 @@ describe('calc', () => {
               Pokemon('Mew', ivs[1]),
               Move('Explosion'),
             ).rawDesc;
-            const ivDesc = [result.attackEVs, result.defenseEVs]
-              .map((value, ..._) => value?.match(RegExp('\\d+ IVs')));
-            expect(ivDesc[i]).toHaveLength(1);
+            const ivDesc = [result.attackEVs, result.HPEVs + '/' + result.defenseEVs]
+              .map((value, ..._) => value?.match(RegExp('\\d+ IVs', 'g')));
+            expect(ivDesc[i]).toHaveLength(i + 1);
             expect(ivDesc[+!i]).toBeNull();
           }
         });

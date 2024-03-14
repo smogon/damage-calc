@@ -161,7 +161,7 @@ export function calculateDPP(
     return result;
   }
 
-  desc.HPEVs = `${defender.evs.hp} HP`;
+  desc.HPEVs = getEVDescriptionText(gen, defender, 'hp');
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
