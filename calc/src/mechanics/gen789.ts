@@ -106,7 +106,11 @@ export function calculateSMSSSV(
   };
 
   // only display tera type if it applies
-  if (attacker.teraType !== 'Stellar' || move.isStellarFirstUse) {
+  if (attacker.teraType === 'Stellar' && move.name === 'Tera Blast') {
+    // tera blast has special behavior with tera stellar
+    desc.attackerTera = attacker.teraType + (move.isStellarFirstUse ? ' (First Use)' : '');
+    move.dropsStats = 1;
+  } else if (attacker.teraType !== 'Stellar' || move.isStellarFirstUse) {
     desc.attackerTera = attacker.teraType;
   }
   if (defender.teraType !== 'Stellar') desc.defenderTera = defender.teraType;
@@ -887,8 +891,6 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Tera Blast':
-    desc.attackerTera = attacker.teraType; // always show
-    if (move.isStellarFirstUse) desc.attackerTera += ' (First Use)';
     basePower = attacker.teraType === 'Stellar' ? 100 : 80;
     desc.moveBP = basePower;
     break;
