@@ -364,6 +364,7 @@ export function calculateSMSSSV(
   }
 
   if (move.type === 'Stellar') {
+    desc.defenderTera = defender.teraType; // always show in this case
     typeEffectiveness = !defender.teraType ? 1 : 2;
   }
 
