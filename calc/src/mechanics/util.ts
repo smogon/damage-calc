@@ -611,7 +611,7 @@ const formatIV = (iv?: number) => iv !== undefined && iv !== 31 ? ` ${iv} IVs` :
 export function getEVDescriptionText(
   gen: Generation,
   pokemon: Pokemon,
-  stat: 'atk' | 'def' | 'spd' | 'spa' | 'hp',
+  stat: StatID,
   natureName?: NatureName
 ): string {
   const nature = gen.natures.get(toID(natureName))!;
