@@ -1863,7 +1863,7 @@ var SETDEX_DPP = {
     "Ubers Dragon Dance": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Dragon Dance","Dragon Pulse","Thunder","Hidden Power Fire"]}
   },
   "Kyogre": {
-    "Ubers Calm Mind + Thunder Wave": {"ability":"Drizzle","item":"Leftovers","nature":"Modest","evs":{"hp":248,"df":108,"sa":92,"sd":60},"moves":["Calm Mind","Thunder Wave","Hydro Pump","Ice Beam"]},
+    "Ubers Calm Mind + Thunder Wave": {"ability":"Drizzle","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":108,"sa":92,"sd":56},"moves":["Calm Mind","Thunder Wave","Hydro Pump","Ice Beam"]},
     "Ubers Choice Specs": {"ability":"Drizzle","item":"Choice Specs","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Water Spout","Surf","Ice Beam","Thunder"]},
     "Ubers Choice Scarf": {"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Water Spout","Surf","Ice Beam","Thunder"]},
     "Ubers Calm Mind": {"ability":"Drizzle","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Surf","Ice Beam","Thunder"]},

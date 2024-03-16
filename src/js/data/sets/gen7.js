@@ -73,7 +73,7 @@ var SETDEX_SM = {
   },
   "Heatran": {
     "OU Specially Defensive": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":180,"sp":76},"moves":["Magma Storm","Earth Power","Toxic","Stealth Rock"]},
-    "OU Z-Move": {"ability":"Flash Fire","item":"Steelium Z","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Magma Storm","Earth Power","Flash Cannon","Stealth Rock"]},
+    "OU Z-Move": {"ability":"Flash Fire","item":"Firium Z","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Magma Storm","Earth Power","Toxic","Stealth Rock"]},
     "Doubles OU All-out Attacker": {"ability":"Flash Fire","item":"Shuca Berry","nature":"Timid","evs":{"hp":56,"df":8,"sa":192,"sp":252},"moves":["Heat Wave","Earth Power","Hidden Power Ice","Protect"]},
     "VGC 2018 All-out Attacker": {"level":50,"ability":"Flash Fire","item":"Shuca Berry","nature":"Modest","ivs":{"at":0},"evs":{"hp":36,"df":4,"sa":212,"sd":4,"sp":252},"moves":["Heat Wave","Earth Power","Flash Cannon","Protect"]},
     "VGC 2018 Substitute": {"level":50,"ability":"Flash Fire","item":"Leftovers","nature":"Modest","ivs":{"at":0},"evs":{"hp":20,"df":28,"sa":204,"sd":4,"sp":252},"moves":["Heat Wave","Earth Power","Substitute","Protect"]},
@@ -2907,8 +2907,8 @@ var SETDEX_SM = {
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Lightning Rod","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sd":252},"moves":["Rock Slide","Protect","Drill Run","Iron Head"]}
   },
   "Tangrowth": {
-    "OU Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"df":12,"sd":244},"moves":["Giga Drain","Knock Off","Hidden Power Ice","Earthquake"]},
     "OU Physically Defensive": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Relaxed","evs":{"hp":248,"df":172,"sd":88},"moves":["Giga Drain","Knock Off","Hidden Power Ice","Sludge Bomb"]},
+    "OU Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"df":12,"sd":244},"moves":["Giga Drain","Knock Off","Hidden Power Ice","Earthquake"]},
     "CAP Showdown Usage": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":248,"df":8,"sd":252},"moves":["Knock Off","Giga Drain","Sludge Bomb","Earthquake"]}
   },
   "Electivire": {
@@ -3809,6 +3809,7 @@ var SETDEX_SM = {
   "Volcarona": {
     "OU Bulky Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"hp":248,"df":112,"sp":148},"moves":["Quiver Dance","Flamethrower","Bug Buzz","Roost"]},
     "OU Offensive Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Fire Blast","Bug Buzz","Hidden Power Ground"]},
+    "OU Substitute + Swarm": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":60,"df":32,"sa":232,"sp":184},"moves":["Substitute","Quiver Dance","Bug Buzz","Flamethrower"]},
     "Doubles OU Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Heat Wave","Bug Buzz","Quiver Dance","Protect"]},
     "Doubles OU Bulky Support": {"ability":"Flame Body","item":"Wiki Berry","nature":"Modest","evs":{"hp":240,"df":168,"sa":56,"sp":44},"moves":["Overheat","Rage Powder","Tailwind","Protect"]},
     "VGC 2018 Quiver Dance": {"level":50,"ability":"Flame Body","item":"Mago Berry","nature":"Modest","evs":{"hp":220,"df":4,"sa":68,"sd":76,"sp":140},"moves":["Flamethrower","Giga Drain","Quiver Dance","Protect"]},
