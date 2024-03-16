@@ -1003,6 +1003,7 @@ function createPokemon(pokeInfo) {
 		var item = pokeInfo.find(".item").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
+		var opts = {name, ability, item, isDynamaxed, teraType}
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
@@ -1028,10 +1029,10 @@ function createPokemon(pokeInfo) {
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
-				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed)
+				getMoveDetails(pokeInfo.find(".move1"), opts),
+				getMoveDetails(pokeInfo.find(".move2"), opts),
+				getMoveDetails(pokeInfo.find(".move3"), opts),
+				getMoveDetails(pokeInfo.find(".move4"), opts),
 			],
 			overrides: {
 				baseStats: baseStats,
@@ -1047,7 +1048,7 @@ function getGender(gender) {
 	return 'F';
 }
 
-function getMoveDetails(moveInfo, species, ability, item, useMax) {
+function getMoveDetails(moveInfo, {species, ability, item, useMax, teraType}) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
@@ -1059,6 +1060,17 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 		basePower: +moveInfo.find(".move-bp").val(),
 		type: moveInfo.find(".move-type").val()
 	};
+	if (moveName === 'Tera Blast') {
+		// custom logic for stellar type tera blast
+		var isStellar = teraType === 'Stellar';
+		var statDrops = moveInfo.find('.stat-drops')
+		var dropsStats = statDrops.is(':visible');
+		if (isStellar !== dropsStats) {
+			// update stat drop dropdown here
+			if (isStellar) statDrops.show(); else statDrops.hide()
+		}
+		if (isStellar) overrides.self = { boosts: {atk: -1, spa: -1} };
+	}
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
 		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits,

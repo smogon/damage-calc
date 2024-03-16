@@ -109,7 +109,6 @@ export function calculateSMSSSV(
   if (attacker.teraType === 'Stellar' && move.name === 'Tera Blast') {
     // tera blast has special behavior with tera stellar
     desc.attackerTera = attacker.teraType + (move.isStellarFirstUse ? ' (First Use)' : '');
-    move.dropsStats = 1;
   } else if (attacker.teraType !== 'Stellar' || move.isStellarFirstUse) {
     desc.attackerTera = attacker.teraType;
   }
