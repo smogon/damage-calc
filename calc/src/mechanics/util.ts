@@ -294,6 +294,7 @@ export function checkSeedBoost(pokemon: Pokemon, field: Field) {
           : Math.min(6, pokemon.boosts.spd + 1);
       }
     }
+    pokemon.item = '' as ItemName;
   }
 }
 
