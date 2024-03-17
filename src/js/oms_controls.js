@@ -1,4 +1,4 @@
-/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid,  toID, calcHP, calcStats,  */
+/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid,  toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves */
 
 $("#p1 .item").bind("keyup change", function () {
 	autoUpdateStats("#p1");
@@ -9,31 +9,6 @@ $("#p2 .item").bind("keyup change", function () {
 	autoUpdateStats("#p2");
 	autosetWeather($("#p2 .ability").val(), 0);
 });
-var resultLocations = [[], []];
-for (var i = 0; i < 4; i++) {
-	resultLocations[0].push({
-		"move": "#resultMoveL" + (i + 1),
-		"damage": "#resultDamageL" + (i + 1)
-	});
-	resultLocations[1].push({
-		"move": "#resultMoveR" + (i + 1),
-		"damage": "#resultDamageR" + (i + 1)
-	});
-}
-function checkStatBoost(p1, p2) {
-	if ($('#StatBoostL').prop("checked")) {
-		for (var stat in p1.boosts) {
-			if (stat === 'hp') continue;
-			p1.boosts[stat] = Math.min(6, p1.boosts[stat] + 1);
-		}
-	}
-	if ($('#StatBoostR').prop("checked")) {
-		for (var stat in p2.boosts) {
-			if (stat === 'hp') continue;
-			p2.boosts[stat] = Math.min(6, p2.boosts[stat] + 1);
-		}
-	}
-}
 
 var megaDelta = {
 	'Abomasite': {'at': 40, 'df': 30, 'sa': 40, 'sd': 20, 'sp': -30, 'weight': 49.5, 'ability': 'Snow Warning', 'type': '', 'skip': ['Abomasnow-Mega']},
@@ -110,15 +85,6 @@ var multMegas = {
 function clamp(value, min, max) {
 	return Math.min(Math.max(value, min), max);
 }
-function calculateAllMoves(gen, p1, p1field, p2, p2field) {
-	checkStatBoost(p1, p2);
-	var results = [[], []];
-	for (var i = 0; i < 4; i++) {
-		results[0][i] = calc.calculate(gen, p1, p2, p1.moves[i], p1field);
-		results[1][i] = calc.calculate(gen, p2, p1, p2.moves[i], p2field);
-	}
-	return results;
-}
 
 function clampStats(stat) {
 	return Math.floor(clamp(stat, 1, 255));
@@ -167,13 +133,12 @@ function autoUpdateStats(p) {
 				pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
 
 			}
-			if (item === "Aggronite") {
+			if (item === "Aggronite")
 				pokeObj.find(".type2").val("???");
-			} else if (megaDelta[item].type) {
+			else if (megaDelta[item].type)
 				pokeObj.find(".type2").val(megaDelta[item]['type']);
-			} else {
+			else
 				pokeObj.find(".type2").val(pokemon.types[1]);
-			}
 
 			// ability
 			if (megaDelta[item]['ability']) {
@@ -249,6 +214,7 @@ function toggleScale() {
 }
 
 function performCalculationsOM() {
+	// this is in here because just having it onload is a race condition
 	var p1info = $("#p1");
 	var p2info = $("#p2");
 	var p1 = createPokemon(p1info);
@@ -374,10 +340,12 @@ $(".gen").change(function () {
 	});
 });
 $(document).ready(function () {
+	$(".calc-trigger").unbind("change keyup", timeoutFunc);
 	performCalculationsOM();
 }
 );
-$(".calc-trigger").bind("change keyup", function () {
+var omTimeoutFunc = function () {
 	setTimeout(performCalculationsOM, 0);
-});
+};
+$(".calc-trigger").bind("change keyup", omTimeoutFunc);
 
