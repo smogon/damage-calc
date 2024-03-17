@@ -211,18 +211,17 @@ describe('calc', () => {
     describe('IVs are shown if applicable', () => {
       inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
         test(`Gen ${gen}`, () => {
-          const ivs = [{ivs: {atk: 9, def: 9, hp: 9}, evs: {atk: 9, def: 9, hp: 9}}, {}];
-          for (let i = 0; i < 2; i++, ivs.reverse()) {
-            const result = calculate(
-              Pokemon('Mew', ivs[0]),
-              Pokemon('Mew', ivs[1]),
-              Move('Explosion'),
-            ).rawDesc;
-            const ivDesc = [result.attackEVs, result.HPEVs + '/' + result.defenseEVs]
-              .map((value, ..._) => value?.match(RegExp('\\d+ IVs', 'g')));
-            expect(ivDesc[i]).toHaveLength(i + 1);
-            expect(ivDesc[+!i]).toBeNull();
-          }
+          const ivs = {hp: 9, spa: 9, spd: 9};
+          // check offensive ivs
+          let desc = calculate(Pokemon('Mew', {ivs}), Pokemon('Mew'), Move('Psychic')).rawDesc;
+          expect(desc.attackEVs).toBe('0 SpA 9 IVs');
+          expect(desc.HPEVs).toBe('0 HP');
+          expect(desc.defenseEVs).toBe('0 SpD');
+          // check defensive ivs
+          desc = calculate(Pokemon('Mew'), Pokemon('Mew', {ivs}), Move('Psychic')).rawDesc;
+          expect(desc.attackEVs).toBe('0 SpA');
+          expect(desc.HPEVs).toBe('0 HP 9 IVs');
+          expect(desc.defenseEVs).toBe('0 SpD 9 IVs');
         });
       });
     });
