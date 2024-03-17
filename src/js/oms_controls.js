@@ -9,6 +9,10 @@ $("#p2 .item").bind("keyup change", function () {
 	autoUpdateStats("#p2");
 	autosetWeather($("#p2 .ability").val(), 0);
 });
+var CONVERSION_G9 = {"lc": 30, "nfe": 30, "zu": 30, "zubl": 30, "(pu)": 30, "pu": 30, "publ": 25, "nu": 25, "nubl": 20, "ru": 20, "rubl": 15,
+	"uu": 15, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": "0", "ag": 0, "cap": 0, "cap lc": 30, "cap nfe": 30};
+var CONVERSION_PREG9 = {"lc": 40, "nfe": 40, "zu": 40, "zubl": 40, "(pu)": 40, "pu": 40, "publ": 30, "nu": 30, "nubl": 20, "ru": 20,
+	"rubl": 10, "uu": 10, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": 0, "ag": 0, "cap": 0, "cap lc": 40, "cap nfe": 40};
 
 var megaDelta = {
 	'Abomasite': {'at': 40, 'df': 30, 'sa': 40, 'sd': 20, 'sp': -30, 'weight': 49.5, 'ability': 'Snow Warning', 'type': '', 'skip': ['Abomasnow-Mega']},
@@ -146,6 +150,7 @@ function autoUpdateStats(p) {
 			}
 		}
 	} else {
+		pokeObj.find(".type2").val(pokemon.types[1]);
 		var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
 		if (typeof set !== 'undefined')
 			setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
@@ -164,18 +169,14 @@ function autoUpdateStats(p) {
 	}
 	if (shouldUseTS) {
 		if (gen >= 9) {
-			var conversion = {"lc": 30, "nfe": 30, "zu": 30, "zubl": 30, "(pu)": 30, "pu": 30, "publ": 25, "nu": 25, "nubl": 20, "ru": 20, "rubl": 15,
-				"uu": 15, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": "0", "ag": 0, "cap": 0, "cap lc": 30, "cap nfe": 30};
+			var conversion = CONVERSION_G9;
 		} else {
-			var conversion = {"lc": 40, "nfe": 40, "zu": 40, "zubl": 40, "(pu)": 40, "pu": 40, "publ": 30, "nu": 30, "nubl": 20, "ru": 20,
-				"rubl": 10, "uu": 10, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": 0, "ag": 0, "cap": 0, "cap lc": 40, "cap nfe": 40};
+			var conversion = CONVERSION_PREG9;
 		}
 		// have to do it inside function cause of timing, has to be after gen is set
-		// have a backup 0 just in case the tier doesn't exist
-		// ex: somehow failed to fetch
-		var tierAddon = conversion[
-			tierBlob[toID(pokemonName)].toLowerCase()
-		] || 0;
+		// have a backup 0 just in case the tier doesn't exist ex: somehow failed to fetch
+		var tier = tierBlob[toID(pokemon)] || '';
+		var tierAddon = conversion[tier.toLowerCase()] || 0;
 		for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
 			var stat = LEGACY_STATS[gen][i];
 			volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] + tierAddon);
@@ -336,6 +337,10 @@ $(".gen").change(function () {
 		dataType: 'json',
 		success: function (response) {
 			tierBlob = response;
+		},
+		error: function (xhrObj, textStatus, errorThrown) {
+			alert("Error fetching tier data: " + textStatus + " " + errorThrown + "\n Tiers data will be set to a blank value, try refreshing.");
+			tierBlob = {};
 		}
 	});
 });
