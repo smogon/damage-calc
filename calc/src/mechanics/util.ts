@@ -606,7 +606,7 @@ export function countBoosts(gen: Generation, boosts: StatsTable) {
   return sum;
 }
 
-export function getEVDescriptionText(
+export function getStatDescriptionText(
   gen: Generation,
   pokemon: Pokemon,
   stat: StatID,
