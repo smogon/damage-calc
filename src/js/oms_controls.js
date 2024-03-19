@@ -152,10 +152,11 @@ function autoUpdateStats(p) {
 	} else {
 		pokeObj.find(".type2").val(pokemon.types[1]);
 		var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
-		if (typeof set !== 'undefined')
+		if (typeof set !== 'undefined') {
 			setSelectValueIfValid(abilityObj, set.ability, abilityFallback);
-		else
+		} else {
 			abilityObj.val(abilityFallback);
+	        }
 
 	}
 	// scale is second priority
