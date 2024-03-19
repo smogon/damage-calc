@@ -106,11 +106,10 @@ export function calculateSMSSSV(
   };
 
   // only display tera type if it applies
-  if (attacker.teraType === 'Stellar' && move.name === 'Tera Blast') {
+  if (attacker.teraType !== 'Stellar' || move.name === 'Tera Blast' || move.isStellarFirstUse) {
     // tera blast has special behavior with tera stellar
-    desc.attackerTera = attacker.teraType +
-      (attacker.name !== 'Terapagos-Stellar' && move.isStellarFirstUse ? ' (First Use)' : '');
-  } else if (attacker.teraType !== 'Stellar' || move.isStellarFirstUse) {
+    desc.isFirstUse = attacker.name !== 'Terapagos-Stellar' && move.name === 'Tera Blast' &&
+      attacker.teraType === 'Stellar' && move.isStellarFirstUse;
     desc.attackerTera = attacker.teraType;
   }
   if (defender.teraType !== 'Stellar') desc.defenderTera = defender.teraType;
