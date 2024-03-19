@@ -139,7 +139,7 @@ function autoUpdateStats(p) {
 			}
 			if (item === "Aggronite") {
 				pokeObj.find(".type2").val("???");
-			} else if (megaDelta[item].type)
+			} else if (megaDelta[item].type) {
 				pokeObj.find(".type2").val(megaDelta[item]['type']);
 			} else {
 				pokeObj.find(".type2").val(pokemon.types[1]);
