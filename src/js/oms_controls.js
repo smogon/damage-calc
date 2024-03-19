@@ -168,15 +168,10 @@ function autoUpdateStats(p) {
 		}
 	}
 	if (shouldUseTS) {
-		if (gen >= 9) {
-			var conversion = CONVERSION_G9;
-		} else {
-			var conversion = CONVERSION_PREG9;
-		}
 		// have to do it inside function cause of timing, has to be after gen is set
 		// have a backup 0 just in case the tier doesn't exist ex: somehow failed to fetch
 		var tier = tierBlob[toID(pokemon)] || '';
-		var tierAddon = conversion[tier.toLowerCase()] || 0;
+		var tierAddon = (gen >= 9 ? CONVERSION_G9 : CONVERSION_PREG9)[tier.toLowerCase()] || 0;
 		for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
 			var stat = LEGACY_STATS[gen][i];
 			volatileCopy.bs[stat] = clampStats(volatileCopy.bs[stat] + tierAddon);
