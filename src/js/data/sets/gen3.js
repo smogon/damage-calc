@@ -544,7 +544,7 @@ var SETDEX_ADV = {
   },
   "Diglett": {
     "NU Trapper": {"ability":"Arena Trap","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Rock Slide","Sludge Bomb","Double-Edge"]},
-    "LC Specially Defensive Trapper": {"level":5,"ability":"Arena Trap","item":"Sitrus Berry","nature":"Jolly","evs":{"hp":36,"at":76,"sd":156,"sp":236},"moves":["Earthquake","Rock Slide","Thief","Substitute"]},
+    "LC Specially Defensive Trapper": {"level":5,"ability":"Arena Trap","item":"Sitrus Berry","nature":"Jolly","evs":{"hp":36,"sd":236,"sp":236},"moves":["Earthquake","Rock Slide","Thief","Substitute"]},
     "LC Offensive Trapper": {"level":5,"ability":"Arena Trap","item":"Liechi Berry","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":156,"df":80,"sp":236},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Substitute"]}
   },
   "Meowth": {

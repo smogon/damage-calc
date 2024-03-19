@@ -268,6 +268,10 @@ var SETDEX_GSC = {
   "Ninetales": {
     "NU RestTalk": {"item":"Leftovers","moves":["Flamethrower","Toxic","Rest","Sleep Talk"]}
   },
+  "Golbat": {
+    "PU Utility": {"item":"Leftovers","moves":["Wing Attack","Toxic","Whirlwind","Protect"]},
+    "PU Offensive": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Wing Attack","Hidden Power Ground","Giga Drain","Protect"]}
+  },
   "Gloom": {
     "NU Status-spreading Defensive Pivot": {"item":"Leftovers","moves":["Stun Spore","Curse","Sludge Bomb","Moonlight"]}
   },
@@ -398,9 +402,9 @@ var SETDEX_GSC = {
     "NU Boom Utility": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Stun Spore","Psychic","Hidden Power Grass","Explosion"]}
   },
   "Cubone": {
+    "NU Agility Recipient": {"item":"Thick Club","moves":["Earthquake","Rock Slide","Swords Dance","Substitute"]},
     "PU Swords Dance": {"item":"Thick Club","moves":["Swords Dance","Earthquake","Rock Slide","Substitute"]},
-    "PU Restalk": {"item":"Thick Club","moves":["Earthquake","Rock Slide","Rest","Sleep Talk"]},
-    "NU Showdown Usage": {"item":"Thick Club","ivs":{"at":26,"df":26},"moves":["Earthquake","Rock Slide","Hidden Power Bug","Substitute"]}
+    "PU Restalk": {"item":"Thick Club","moves":["Earthquake","Rock Slide","Rest","Sleep Talk"]}
   },
   "Marowak": {
     "OU Swords Dance Sweeper": {"item":"Thick Club","ivs":{"at":26,"df":26},"moves":["Earthquake","Rock Slide","Hidden Power Bug","Swords Dance"]},

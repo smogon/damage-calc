@@ -41,6 +41,7 @@ var SETDEX_DPP = {
   "Venusaur": {
     "OU Leech Seed": {"ability":"Overgrow","item":"Leftovers","nature":"Calm","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"sa":24,"sd":176,"sp":56},"moves":["Leech Seed","Sleep Powder","Leaf Storm","Hidden Power Fire"]},
     "OU Swords Dance": {"ability":"Overgrow","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Sleep Powder","Power Whip","Earthquake"]},
+    "UU Bulky Swords Dance": {"ability":"Overgrow","item":"Black Sludge","nature":"Adamant","evs":{"hp":252,"at":120,"sp":136},"moves":["Swords Dance","Power Whip","Earthquake","Synthesis"]},
     "UU Special Attacker": {"ability":"Overgrow","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Leaf Storm","Sludge Bomb","Sleep Powder","Synthesis"]},
     "UU Swords Dance": {"ability":"Overgrow","item":"Leftovers","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Power Whip","Earthquake","Sleep Powder"]},
     "UU Physically Defensive": {"ability":"Overgrow","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":164,"sp":92},"moves":["Grass Knot","Sludge Bomb","Sleep Powder","Synthesis"]},
@@ -533,7 +534,7 @@ var SETDEX_DPP = {
   },
   "Entei": {
     "UU Physical Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Adamant","ivs":{"at":30,"sa":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Flare Blitz","Stone Edge","Extreme Speed","Hidden Power Grass"]},
-    "UU SubCM": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"hp":136,"sa":156,"sp":216},"moves":["Substitute","Calm Mind","Flamethrower","Hidden Power Grass"]},
+    "UU SubCM": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"hp":136,"sa":156,"sp":216},"moves":["Substitute","Calm Mind","Lava Plume","Hidden Power Grass"]},
     "UU Sunny Day": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Sunny Day","Fire Blast","Solar Beam","Calm Mind"]},
     "UU Mixed Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","ivs":{"hp":30,"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Fire Blast","Hidden Power Grass","Stone Edge"]},
     "UU Mono-Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Lava Plume","Calm Mind","Rest","Sleep Talk"]}

@@ -1234,6 +1234,7 @@ var SETDEX_SM = {
     "Ubers Physical Attacker": {"ability":"Steadfast","item":"Mewtwonite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Low Kick","Taunt","Ice Beam","Stone Edge"]}
   },
   "Mew": {
+    "OU Lead": {"ability":"Synchronize","item":"Mental Herb","nature":"Timid","evs":{"hp":252,"df":40,"sp":216},"moves":["Stealth Rock","Taunt","Ice Beam","Thunder Wave"]},
     "OU Defensive": {"ability":"Synchronize","item":"Leftovers","nature":"Jolly","evs":{"hp":240,"df":52,"sp":216},"moves":["Earthquake","Will-O-Wisp","Soft-Boiled","Stealth Rock"]},
     "OU Nasty Plot": {"ability":"Synchronize","item":"Mewnium Z","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Fire Blast","Rock Polish"]},
     "UU Stallbreaker": {"ability":"Synchronize","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":4,"sp":252},"moves":["Seismic Toss","Taunt","Will-O-Wisp","Soft-Boiled"]},
@@ -3809,7 +3810,7 @@ var SETDEX_SM = {
   "Volcarona": {
     "OU Bulky Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"hp":248,"df":112,"sp":148},"moves":["Quiver Dance","Flamethrower","Bug Buzz","Roost"]},
     "OU Offensive Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Fire Blast","Bug Buzz","Hidden Power Ground"]},
-    "OU Substitute + Swarm": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":60,"df":32,"sa":232,"sp":184},"moves":["Substitute","Quiver Dance","Bug Buzz","Flamethrower"]},
+    "OU Substitute + Swarm": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":128,"sa":196,"sp":184},"moves":["Substitute","Quiver Dance","Bug Buzz","Flamethrower"]},
     "Doubles OU Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Heat Wave","Bug Buzz","Quiver Dance","Protect"]},
     "Doubles OU Bulky Support": {"ability":"Flame Body","item":"Wiki Berry","nature":"Modest","evs":{"hp":240,"df":168,"sa":56,"sp":44},"moves":["Overheat","Rage Powder","Tailwind","Protect"]},
     "VGC 2018 Quiver Dance": {"level":50,"ability":"Flame Body","item":"Mago Berry","nature":"Modest","evs":{"hp":220,"df":4,"sa":68,"sd":76,"sp":140},"moves":["Flamethrower","Giga Drain","Quiver Dance","Protect"]},
