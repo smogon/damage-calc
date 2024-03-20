@@ -7,7 +7,7 @@ import {Field} from '../field';
 import {Result} from '../result';
 import {
   getModifiedStat,
-  getEVDescriptionText,
+  getStatDescriptionText,
   getFinalSpeed,
   getMoveEffectiveness,
   checkAirLock,
@@ -121,7 +121,7 @@ export function calculateADV(
     return result;
   }
 
-  desc.HPEVs = `${defender.evs.hp} HP`;
+  desc.HPEVs = getStatDescriptionText(gen, defender, 'hp');
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
@@ -267,7 +267,7 @@ export function calculateAttackADV(
 ) {
   const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
-  desc.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
+  desc.attackEVs = getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   let at = attacker.rawStats[attackStat];
 
@@ -327,7 +327,7 @@ export function calculateDefenseADV(
 ) {
   const isPhysical = move.category === 'Physical';
   const defenseStat = isPhysical ? 'def' : 'spd';
-  desc.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
+  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
 
   let df = defender.rawStats[defenseStat];
 

@@ -26,7 +26,7 @@ import {
   computeFinalStats,
   countBoosts,
   getBaseDamage,
-  getEVDescriptionText,
+  getStatDescriptionText,
   getFinalDamage,
   getModifiedStat,
   getMoveEffectiveness,
@@ -237,7 +237,7 @@ export function calculateBWXY(
     return result;
   }
 
-  desc.HPEVs = `${defender.evs.hp} HP`;
+  desc.HPEVs = getStatDescriptionText(gen, defender, 'hp');
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
@@ -779,8 +779,8 @@ export function calculateAttackBWXY(
   const attackStat = move.category === 'Special' ? 'spa' : 'atk';
   desc.attackEVs =
     move.named('Foul Play')
-      ? getEVDescriptionText(gen, defender, attackStat, defender.nature)
-      : getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
+      ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
+      : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
@@ -895,7 +895,7 @@ export function calculateDefenseBWXY(
   let defense: number;
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
-  desc.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
+  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
   if (defender.boosts[defenseStat] === 0 ||
     (isCritical && defender.boosts[defenseStat] > 0) ||
     move.ignoreDefensive) {

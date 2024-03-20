@@ -7,7 +7,7 @@ import {Pokemon} from '../pokemon';
 import {Result} from '../result';
 import {
   getModifiedStat,
-  getEVDescriptionText,
+  getStatDescriptionText,
   getFinalSpeed,
   getMoveEffectiveness,
   checkAirLock,
@@ -161,7 +161,7 @@ export function calculateDPP(
     return result;
   }
 
-  desc.HPEVs = `${defender.evs.hp} HP`;
+  desc.HPEVs = getStatDescriptionText(gen, defender, 'hp');
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
@@ -468,7 +468,7 @@ export function calculateAttackDPP(
 ) {
   const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
-  desc.attackEVs = getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
+  desc.attackEVs = getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
   let attack: number;
   const attackBoost = attacker.boosts[attackStat];
   const rawAttack = attacker.rawStats[attackStat];
@@ -537,7 +537,7 @@ export function calculateDefenseDPP(
 ) {
   const isPhysical = move.category === 'Physical';
   const defenseStat = isPhysical ? 'def' : 'spd';
-  desc.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
+  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
   let defense: number;
   const defenseBoost = defender.boosts[defenseStat];
   const rawDefense = defender.rawStats[defenseStat];

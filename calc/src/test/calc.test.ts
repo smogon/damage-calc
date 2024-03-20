@@ -208,6 +208,19 @@ describe('calc', () => {
       });
     });
 
+    describe('IVs are shown if applicable', () => {
+      inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+        test(`Gen ${gen}`, () => {
+          const ivs = {spa: 9, spd: 9, hp: 9};
+          const evs = {spa: 9, spd: 9, hp: 9};
+          let result = calculate(Pokemon('Mew', {ivs}), Pokemon('Mew', {evs}), Move('Psychic'));
+          expect(result.desc()).toBe('0 SpA 9 IVs Mew Psychic vs. 9 HP / 9 SpD Mew: 43-51 (12.5 - 14.8%) -- possible 7HKO');
+          result = calculate(Pokemon('Mew', {evs}), Pokemon('Mew', {ivs}), Move('Psychic'));
+          expect(result.desc()).toBe('9 SpA Mew Psychic vs. 0 HP 9 IVs / 0 SpD 9 IVs Mew: 54-64 (16.9 - 20%) -- possible 5HKO');
+        });
+      });
+    });
+
     inGens(4, 9, ({gen, calculate, Pokemon, Move}) => {
       const zapdos = Pokemon('Zapdos', {item: 'Iron Ball'});
       if (gen === 4) {
