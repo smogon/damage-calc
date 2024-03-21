@@ -508,8 +508,18 @@ $(".move-selector").change(function () {
 	var stat = move.category === 'Special' ? 'spa' : 'atk';
 	var dropsStats =
 		move.self && move.self.boosts && move.self.boosts[stat] && move.self.boosts[stat] < 0;
-	if (Array.isArray(move.multihit)) {
+	if (Array.isArray(move.multihit) || (!isNaN(move.multihit) && move.multiaccuracy)) {
 		moveGroupObj.children(".stat-drops").hide();
+		moveGroupObj.children(".move-hits").empty();
+		if (!isNaN(move.multihit)) {
+			for (var i = 1; i <= move.multihit; i++) {
+				moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
+			}
+		} else {
+			for (var i = move.multihit[0]; i <= move.multihit[1]; i++) {
+				moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
+			}
+		}
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
 		var moveHits =
@@ -993,6 +1003,12 @@ function createPokemon(pokeInfo) {
 		var item = pokeInfo.find(".item").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
+		var opts = {
+			ability: ability,
+			item: item,
+			isDynamaxed: isDynamaxed,
+			teraType: teraType,
+		};
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
@@ -1018,10 +1034,10 @@ function createPokemon(pokeInfo) {
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
 			toxicCounter: status === 'Badly Poisoned' ? ~~pokeInfo.find(".toxic-counter").val() : 0,
 			moves: [
-				getMoveDetails(pokeInfo.find(".move1"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move2"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move3"), name, ability, item, isDynamaxed),
-				getMoveDetails(pokeInfo.find(".move4"), name, ability, item, isDynamaxed)
+				getMoveDetails(pokeInfo.find(".move1"), opts),
+				getMoveDetails(pokeInfo.find(".move2"), opts),
+				getMoveDetails(pokeInfo.find(".move3"), opts),
+				getMoveDetails(pokeInfo.find(".move4"), opts),
 			],
 			overrides: {
 				baseStats: baseStats,
@@ -1037,8 +1053,7 @@ function getGender(gender) {
 	return 'F';
 }
 
-
-function getMoveDetails(moveInfo, species, ability, item, useMax) {
+function getMoveDetails(moveInfo, opts) {
 	var moveName = moveInfo.find("select.move-selector").val();
 	var isZMove = gen > 6 && moveInfo.find("input.move-z").prop("checked");
 	var isCrit = moveInfo.find(".move-crit").prop("checked");
@@ -1050,11 +1065,22 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 		basePower: +moveInfo.find(".move-bp").val(),
 		type: moveInfo.find(".move-type").val()
 	};
+	if (moveName === 'Tera Blast') {
+		// custom logic for stellar type tera blast
+		var isStellar = opts.teraType === 'Stellar';
+		var statDrops = moveInfo.find('.stat-drops');
+		var dropsStats = statDrops.is(':visible');
+		if (isStellar !== dropsStats) {
+			// update stat drop dropdown here
+			if (isStellar) statDrops.show(); else statDrops.hide();
+		}
+		if (isStellar) overrides.self = {boosts: {atk: -1, spa: -1}};
+	}
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
-		ability: ability, item: item, useZ: isZMove, species: species, isCrit: isCrit, hits: hits,
+		ability: opts.ability, item: opts.item, useZ: isZMove, species: opts.species, isCrit: isCrit, hits: hits,
 		isStellarFirstUse: isStellarFirstUse, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
-		overrides: overrides, useMax: useMax
+		overrides: overrides, useMax: opts.useMax
 	});
 }
 

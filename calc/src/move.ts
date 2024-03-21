@@ -93,14 +93,18 @@ export class Move implements State.Move {
       });
     } else {
       if (data.multihit) {
-        if (typeof data.multihit === 'number') {
-          this.hits = data.multihit;
-        } else if (options.hits) {
-          this.hits = options.hits;
+        if (data.multiaccuracy && typeof data.multihit === 'number') {
+          this.hits = options.hits || data.multihit;
         } else {
-          this.hits = (options.ability === 'Skill Link')
-            ? data.multihit[1]
-            : data.multihit[0] + 1;
+          if (typeof data.multihit === 'number') {
+            this.hits = data.multihit;
+          } else if (options.hits) {
+            this.hits = options.hits;
+          } else {
+            this.hits = (options.ability === 'Skill Link')
+              ? data.multihit[1]
+              : data.multihit[0] + 1;
+          }
         }
       }
       this.timesUsedWithMetronome = options.timesUsedWithMetronome;
