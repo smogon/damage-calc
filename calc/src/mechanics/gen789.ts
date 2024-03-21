@@ -99,13 +99,20 @@ export function calculateSMSSSV(
 
   const desc: RawDesc = {
     attackerName: attacker.name,
-    attackerTera: attacker.teraType,
     moveName: move.name,
     defenderName: defender.name,
-    defenderTera: defender.teraType,
     isDefenderDynamaxed: defender.isDynamaxed,
     isWonderRoom: field.isWonderRoom,
   };
+
+  // only display tera type if it applies
+  if (attacker.teraType !== 'Stellar' || move.name === 'Tera Blast' || move.isStellarFirstUse) {
+    // tera blast has special behavior with tera stellar
+    desc.isStellarFirstUse = attacker.name !== 'Terapagos-Stellar' && move.name === 'Tera Blast' &&
+      attacker.teraType === 'Stellar' && move.isStellarFirstUse;
+    desc.attackerTera = attacker.teraType;
+  }
+  if (defender.teraType !== 'Stellar') desc.defenderTera = defender.teraType;
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
 
@@ -360,6 +367,7 @@ export function calculateSMSSSV(
   }
 
   if (move.type === 'Stellar') {
+    desc.defenderTera = defender.teraType; // always show in this case
     typeEffectiveness = !defender.teraType ? 1 : 2;
   }
 

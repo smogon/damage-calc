@@ -23,6 +23,7 @@ export interface RawDesc {
   defenseEVs?: string;
   hits?: number;
   alliesFainted?: number;
+  isStellarFirstUse?: boolean;
   isBeadsOfRuin?: boolean;
   isSwordOfRuin?: boolean;
   isTabletsOfRuin?: boolean;
@@ -838,6 +839,11 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   if (description.attackerTera) {
     output += `Tera ${description.attackerTera} `;
   }
+
+  if (description.isStellarFirstUse) {
+    output += '(First Use) ';
+  }
+
   if (description.isBeadsOfRuin) {
     output += 'Beads of Ruin ';
   }

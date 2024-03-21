@@ -1222,6 +1222,38 @@ describe('calc', () => {
           "0 Atk Weavile with an ally's Flower Gift Power Spot boosted switching boosted Pursuit (80 BP) vs. 0 HP / 0 Def Vulpix in Sun: 399-469 (183.8 - 216.1%) -- guaranteed OHKO"
         );
       });
+      describe('Tera Stellar', () => {
+        const terastal = Pokemon('Arceus', {teraType: 'Stellar'});
+        const control = Pokemon('Arceus');
+        test('should only be displayed on defender for Stellar attacks', () => {
+          expect(calculate(control, terastal, Move('Tera Blast'))
+            .rawDesc
+            .defenderTera).toBeUndefined();
+          expect(calculate(terastal, terastal, Move('Tera Blast'))
+            .rawDesc
+            .defenderTera).toBeDefined();
+          // make sure that it isn't caring about stellar first use
+          expect(calculate(terastal, terastal, Move('Tera Blast', {isStellarFirstUse: true}))
+            .rawDesc
+            .defenderTera).toBeDefined();
+          expect(calculate(control, terastal, Move('Tera Blast', {isStellarFirstUse: true}))
+            .rawDesc
+            .defenderTera).toBeUndefined();
+        });
+        test('should not be displayed for non-boosted attacks', () => expect(
+          calculate(terastal, control, Move('Judgment', {isStellarFirstUse: false}))
+            .rawDesc
+            .attackerTera
+        ).toBeUndefined());
+        test('should distinguish between first use for Tera Blast', () => {
+          // I don't exactly care what the difference is
+          const result = [true, false].map((isStellarFirstUse, ..._) =>
+            calculate(terastal, control, Move('Tera Blast', {isStellarFirstUse}))
+              .rawDesc
+              .isStellarFirstUse);
+          expect(result[0]).not.toEqual(result[1]);
+        });
+      });
     });
     describe('Descriptions', () => {
       inGen(9, ({gen, calculate, Pokemon, Move}) => {
