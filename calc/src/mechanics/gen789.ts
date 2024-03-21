@@ -108,7 +108,7 @@ export function calculateSMSSSV(
   // only display tera type if it applies
   if (attacker.teraType !== 'Stellar' || move.name === 'Tera Blast' || move.isStellarFirstUse) {
     // tera blast has special behavior with tera stellar
-    desc.isFirstUse = attacker.name !== 'Terapagos-Stellar' && move.name === 'Tera Blast' &&
+    desc.isStellarFirstUse = attacker.name !== 'Terapagos-Stellar' && move.name === 'Tera Blast' &&
       attacker.teraType === 'Stellar' && move.isStellarFirstUse;
     desc.attackerTera = attacker.teraType;
   }

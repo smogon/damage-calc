@@ -1237,7 +1237,7 @@ describe('calc', () => {
           const result = [true, false].map((isStellarFirstUse, ..._) =>
             calculate(terastal, control, Move('Tera Blast', {isStellarFirstUse}))
               .rawDesc
-              .isFirstUse);
+              .isStellarFirstUse);
           expect(result[0]).not.toEqual(result[1]);
         });
       });
