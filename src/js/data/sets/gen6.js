@@ -3462,7 +3462,7 @@ var SETDEX_XY = {
     "PU Choice Scarf": {"ability":"Torrent","item":"Choice Scarf","nature":"Naive","ivs":{"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Electric","Superpower"]},
     "PU Substitute + Nasty Plot": {"ability":"Torrent","item":"Salac Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Substitute","Nasty Plot","Hydro Pump","Ice Beam"]},
     "ZU Nasty Plot": {"ability":"Torrent","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Hydro Pump","Ice Beam","Hidden Power Grass"]},
-    "ZU Choice Scarf": {"ability":"Torrent","item":"Choice Scarf","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Knock Off","Superpower"]}
+    "ZU Choice Scarf": {"ability":"Torrent","item":"Choice Scarf","nature":"Naive","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Knock Off","Hidden Power Grass"]}
   },
   "Munna": {
     "LC Trick Room": {"level":5,"ability":"Synchronize","item":"Eviolite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":68,"df":236,"sa":60,"sd":76},"moves":["Trick Room","Psychic","Dazzling Gleam","Healing Wish"]}
