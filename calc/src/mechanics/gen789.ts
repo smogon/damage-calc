@@ -46,7 +46,7 @@ import {
   isQPActive,
   getStabMod,
   getStellarStabMod,
-  checkWindRider
+  checkWindRider,
 } from './util';
 
 export function calculateSMSSSV(
@@ -84,8 +84,8 @@ export function calculateSMSSSV(
   checkIntrepidSword(attacker, gen);
   checkIntrepidSword(defender, gen);
 
-  checkWindRider(attacker, field.attackerSide)
-  checkWindRider(defender, field.defenderSide)
+  checkWindRider(attacker, field.attackerSide);
+  checkWindRider(defender, field.defenderSide);
 
   if (move.named('Meteor Beam', 'Electro Shot')) {
     attacker.boosts.spa +=
