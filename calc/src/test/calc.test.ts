@@ -1222,6 +1222,22 @@ describe('calc', () => {
           "0 Atk Weavile with an ally's Flower Gift Power Spot boosted switching boosted Pursuit (80 BP) vs. 0 HP / 0 Def Vulpix in Sun: 399-469 (183.8 - 216.1%) -- guaranteed OHKO"
         );
       });
+
+      test('Wind Rider should give an Attack boost in Tailwind', () => {
+        const attacker = Pokemon('Brambleghast', {'ability': 'Wind Rider'});
+        const defender = Pokemon('Brambleghast', {'ability': 'Wind Rider'});
+        const field = Field({
+          attackerSide: {
+            isTailwind: true,
+          },
+        });
+
+        const result = calculate(attacker, defender, Move('Power Whip'), field);
+
+        expect(attacker.boosts.atk).toBe(0);
+        expect(result.attacker.boosts.atk).toBe(1);
+      });
+
       describe('Tera Stellar', () => {
         const terastal = Pokemon('Arceus', {teraType: 'Stellar'});
         const control = Pokemon('Arceus');
