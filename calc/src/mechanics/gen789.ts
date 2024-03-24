@@ -28,6 +28,7 @@ import {
   checkMultihitBoost,
   checkSeedBoost,
   checkTeraformZero,
+  checkWindRider,
   checkWonderRoom,
   computeFinalStats,
   countBoosts,
@@ -82,6 +83,9 @@ export function calculateSMSSSV(
   checkDownload(defender, attacker, field.isWonderRoom);
   checkIntrepidSword(attacker, gen);
   checkIntrepidSword(defender, gen);
+
+  checkWindRider(attacker, field.attackerSide);
+  checkWindRider(defender, field.defenderSide);
 
   if (move.named('Meteor Beam', 'Electro Shot')) {
     attacker.boosts.spa +=

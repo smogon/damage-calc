@@ -253,6 +253,12 @@ export function checkDauntlessShield(source: Pokemon, gen: Generation) {
   }
 }
 
+export function checkWindRider(source: Pokemon, attackingSide: Side) {
+  if (source.hasAbility('Wind Rider') && attackingSide.isTailwind) {
+    source.boosts.atk = Math.min(6, source.boosts.atk + 1);
+  }
+}
+
 export function checkEmbody(source: Pokemon, gen: Generation) {
   if (gen.num < 9) return;
   switch (source.ability) {
