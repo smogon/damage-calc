@@ -28,6 +28,7 @@ import {
   checkMultihitBoost,
   checkSeedBoost,
   checkTeraformZero,
+  checkWindRider,
   checkWonderRoom,
   computeFinalStats,
   countBoosts,
@@ -46,7 +47,6 @@ import {
   isQPActive,
   getStabMod,
   getStellarStabMod,
-  checkWindRider,
 } from './util';
 
 export function calculateSMSSSV(
