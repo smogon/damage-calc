@@ -2950,7 +2950,7 @@ var SETDEX_BW = {
   "Landorus-Therian": {
     "OU Defensive": {"ability":"Intimidate","item":"Leftovers","nature":"Naive","ivs":{"sp":30},"evs":{"hp":240,"df":16,"sp":252},"moves":["Stealth Rock","Earthquake","U-turn","Hidden Power Ice"]},
     "OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Naive","ivs":{"sp":30},"evs":{"hp":72,"at":140,"df":60,"sp":236},"moves":["Earthquake","U-turn","Hidden Power Ice","Stone Edge"]},
-    "OU Lead": {"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Stealth Rock","Earthquake","Imprison","Explosion"]},
+    "OU Lead": {"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Stealth Rock","Earthquake","Imprison","Explosion"]},
     "OU Swords Dance": {"ability":"Intimidate","item":"Fist Plate","nature":"Naughty","ivs":{"at":30,"df":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Earthquake","Superpower","Swords Dance","Hidden Power Ice"]},
     "Ubers Defensive": {"ability":"Intimidate","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":76,"df":180},"moves":["Stealth Rock","Earthquake","Toxic","Stone Edge"]},
     "Ubers SubSD": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":196,"at":140,"df":96,"sp":76},"moves":["Substitute","Swords Dance","Earthquake","Stone Edge"]},

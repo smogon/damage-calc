@@ -1603,8 +1603,8 @@ var SETDEX_XY = {
     "Doubles OU Rain Setter": {"ability":"Drizzle","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Icy Wind","Helping Hand","Protect"]},
     "Battle Spot Doubles Support": {"level":50,"ability":"Drizzle","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"df":76,"sa":76,"sd":100,"sp":4},"moves":["Scald","Icy Wind","Helping Hand","Protect"]},
     "Battle Spot Doubles Choice Scarf": {"level":50,"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"df":4,"sa":248,"sp":252},"moves":["Hydro Pump","Ice Beam","Scald","Hidden Power Grass"]},
-    "ZU Bulky Attacker": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":0},"evs":{"hp":232,"sa":252,"sp":16},"moves":["Scald","Ice Beam","Encore","Protect"]},
-    "ZU Choice Specs": {"ability":"Water Absorb","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Grass","Scald"]},
+    "ZU Tank": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":232,"sa":252,"sp":16},"moves":["Scald","Ice Beam","Protect","Encore"]},
+    "ZU Choice Specs": {"ability":"Water Absorb","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Grass","Scald"]},
     "ZU Choice Scarf": {"ability":"Water Absorb","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Grass","Encore"]},
     "ZU Perish Song": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":0},"evs":{"hp":248,"sd":244,"sp":16},"moves":["Perish Song","Whirlpool","Protect","Encore"]},
     "Battle Spot Singles Showdown Usage": {"level":50,"ability":"Drizzle","item":"Eject Button","nature":"Bold","evs":{"hp":252,"df":196,"sa":4,"sd":52,"sp":4},"moves":["Perish Song","Scald","Encore","Ice Beam"]},
@@ -3389,9 +3389,7 @@ var SETDEX_XY = {
     "LC Life Orb": {"level":5,"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sp":236},"moves":["Flare Blitz","Head Smash","Sucker Punch","Wild Charge"]}
   },
   "Pignite": {
-    "ZU All-Out Attacker": {"ability":"Thick Fat","item":"Eviolite","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Flare Blitz","Superpower","Sucker Punch","Wild Charge"]},
-    "ZU Curse": {"ability":"Thick Fat","item":"Eviolite","nature":"Adamant","evs":{"hp":248,"at":8,"sd":252},"moves":["Curse","Fire Punch","Rest","Sleep Talk"]},
-    "ZU Taunt + Toxic": {"ability":"Thick Fat","item":"Eviolite","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Taunt","Toxic","Flare Blitz","Superpower"]}
+    "ZU Tank": {"ability":"Thick Fat","item":"Eviolite","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Flare Blitz","Superpower","Sucker Punch","Toxic"]}
   },
   "Emboar": {
     "UU Footloose": {"ability":"Reckless","item":"Life Orb","nature":"Naughty","evs":{"at":252,"sa":36,"sp":220},"moves":["Flare Blitz","Superpower","Grass Knot","Sucker Punch"]},
@@ -3729,7 +3727,7 @@ var SETDEX_XY = {
     "PU Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Recover","Psyshock","Acid Armor"]},
     "PU Trick Room Attacker": {"ability":"Magic Guard","item":"Eviolite","nature":"Quiet","ivs":{"at":1,"df":30,"sa":30,"sd":30,"sp":0},"evs":{"hp":252,"sa":252,"sd":4},"moves":["Trick Room","Psyshock","Shadow Ball","Hidden Power Fighting"]},
     "ZU Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Calm Mind","Recover","Psychic","Acid Armor"]},
-    "ZU Defensive Pivot": {"ability":"Magic Guard","item":"Eviolite","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Future Sight","Recover","Signal Beam","Protect"]}
+    "ZU Defensive Pivot": {"ability":"Regenerator","item":"Eviolite","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Future Sight","Recover","Signal Beam","Protect"]}
   },
   "Reuniclus": {
     "OU Calm Mind": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":200,"sd":56},"moves":["Calm Mind","Psyshock","Focus Blast","Recover"]},
