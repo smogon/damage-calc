@@ -1,3 +1,5 @@
+var damageResults;
+
 $("#p2 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 1);
 	autosetTerrain($(this).val(), 1);
@@ -22,7 +24,6 @@ for (var i = 0; i < 4; i++) {
 	});
 }
 
-var damageResults;
 function performCalculations() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");

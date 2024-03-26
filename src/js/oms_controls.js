@@ -1,4 +1,5 @@
-/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid,  toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves */
+/* eslint no-global-assign: 0 */
+/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid, damageResults, toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves */
 
 /** A mapping of pokemon -> tier */
 var pokemonTiers;
@@ -230,7 +231,7 @@ function performCalculationsOM() {
 	var p1field = createField();
 	var p2field = p1field.clone().swap();
 
-	var damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
+	damageResults = calculateAllMoves(gen, p1, p1field, p2, p2field);
 	if (p1['alias']) {
 		p1.name = p1.alias;
 	}
@@ -352,12 +353,9 @@ $(".gen").change(function () {
 	});
 });
 $(document).ready(function () {
-	$(".calc-trigger").unbind("change keyup", function () {
+	$(".calc-trigger").unbind("change keyup", false);
+	$(".calc-trigger").bind("change keyup", function () {
 		setTimeout(performCalculationsOM, 0);
 	});
 	performCalculationsOM();
-}
-);
-$(".calc-trigger").bind("change keyup", function () {
-	setTimeout(performCalculationsOM, 0);
 });
