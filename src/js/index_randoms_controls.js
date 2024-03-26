@@ -1,3 +1,6 @@
+var PC_HANDLER = function () {
+	setTimeout(performCalculations, 0);
+};
 var damageResults;
 
 $("#p2 .ability").bind("keyup change", function () {
@@ -196,9 +199,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	$(".calc-trigger").bind("change keyup", function () {
-		setTimeout(performCalculations, 0);
-	});
+	$(".calc-trigger").bind("change keyup", PC_HANDLER);
 	performCalculations();
 });
 

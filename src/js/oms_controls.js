@@ -1,5 +1,5 @@
 /* eslint no-global-assign: 0 */
-/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid, damageResults, toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves */
+/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid, damageResults, PC_HANDLER, toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves */
 
 /** A mapping of pokemon -> tier */
 var pokemonTiers;
@@ -353,9 +353,9 @@ $(".gen").change(function () {
 	});
 });
 $(document).ready(function () {
-	$(".calc-trigger").unbind("change keyup", false);
-	$(".calc-trigger").bind("change keyup", function () {
-		setTimeout(performCalculationsOM, 0);
-	});
+	$(".calc-trigger").unbind("change keyup", PC_HANDLER);
 	performCalculationsOM();
+});
+$(".calc-trigger").bind("change keyup", function () {
+	setTimeout(performCalculationsOM, 0);
 });
