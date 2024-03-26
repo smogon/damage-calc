@@ -140,19 +140,22 @@ function autoUpdateStats(p) {
 				pokeObj.find("." + stat + " .base").val(volatileCopy.bs[stat]);
 
 			}
-			if (item === "Aggronite") {
-				pokeObj.find(".type2").val("???");
-			} else if (megaDelta[item].type) {
-				pokeObj.find(".type2").val(megaDelta[item]['type']);
-			} else {
-				pokeObj.find(".type2").val(pokemon.types[1]);
-			}
-
 			// ability
 			if (megaDelta[item]['ability']) {
 				abilityObj.val(megaDelta[item]['ability']);
 			}
 		}
+		// always try to change type to not make old stones permanent
+		var deltaType = megaDelta[item] ? megaDelta[item].type : '';
+		if (item === "Aggronite" || pokemon.types[0] == deltaType) {
+			pokeObj.find(".type2").val("???");
+		} else if (deltaType) {
+			pokeObj.find(".type2").val(megaDelta[item]['type']);
+		} else {
+			pokeObj.find(".type2").val(pokemon.types[1]);
+		}
+
+
 	} else {
 		pokeObj.find(".type2").val(pokemon.types[1]);
 		var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
