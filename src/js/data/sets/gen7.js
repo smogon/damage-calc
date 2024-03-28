@@ -4758,7 +4758,7 @@ var SETDEX_SM = {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Beast Boost","item":"Electrium Z","nature":"Modest","evs":{"hp":252,"sa":252,"sd":4},"moves":["Protect","Thunderbolt","Tail Glow","Energy Ball"]}
   },
   "Celesteela": {
-    "OU Defensive": {"ability":"Beast Boost","item":"Leftovers","nature":"Sassy","evs":{"hp":248,"df":28,"sd":232},"moves":["Leech Seed","Protect","Heavy Slam","Flamethrower"]},
+    "OU Defensive": {"ability":"Beast Boost","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":24,"sd":232},"moves":["Leech Seed","Protect","Heavy Slam","Flamethrower"]},
     "Ubers Physically Defensive": {"ability":"Beast Boost","item":"Leftovers","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Leech Seed","Heavy Slam","Toxic","Protect"]},
     "Doubles OU Utility Attacker": {"ability":"Beast Boost","item":"Leftovers","nature":"Sassy","evs":{"hp":248,"at":120,"df":12,"sd":128},"moves":["Heavy Slam","Leech Seed","Flamethrower","Protect"]},
     "VGC 2019 Offensive Leech Seed": {"level":50,"ability":"Beast Boost","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":124,"sd":132},"moves":["Heavy Slam","Flamethrower","Leech Seed","Protect"]},

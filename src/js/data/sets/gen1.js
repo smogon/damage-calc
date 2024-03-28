@@ -142,7 +142,7 @@ var SETDEX_RBY = {
     "OU Standard": {"moves":["Psychic","Seismic Toss","Thunder Wave","Recover"]},
     "Ubers Standard": {"moves":["Thunder Wave","Seismic Toss","Psychic","Recover"]},
     "1v1 Psychic Stallbreaker": {"moves":["Psychic","Toxic","Recover","Substitute"]},
-    "Tradebacks OU Standard": {"moves":["Psychic","Thunder Punch","Thunder Wave","Recover"]}
+    "Tradebacks OU Standard": {"moves":["Psychic","Seismic Toss","Thunder Wave","Recover"]}
   },
   "Machamp": {
     "OU Wallbreaker": {"moves":["Low Kick","Body Slam","Hyper Beam","Earthquake"]},
