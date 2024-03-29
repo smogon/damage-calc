@@ -42,6 +42,7 @@ export class Move implements State.Move {
   breaksProtect: boolean;
   isZ: boolean;
   isMax: boolean;
+  multiaccuracy: boolean;
 
   constructor(
     gen: I.Generation,
@@ -157,6 +158,7 @@ export class Move implements State.Move {
     this.breaksProtect = !!data.breaksProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
+    this.multiaccuracy = !!data.multiaccuracy;
 
     if (!this.bp) {
       // Assume max happiness for these moves because the calc doesn't support happiness
