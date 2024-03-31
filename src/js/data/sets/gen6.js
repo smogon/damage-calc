@@ -3724,8 +3724,8 @@ var SETDEX_XY = {
     "NU Acid Armor + Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Calm Mind","Psyshock","Acid Armor","Recover"]},
     "PU Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Recover","Psyshock","Acid Armor"]},
     "PU Trick Room Attacker": {"ability":"Magic Guard","item":"Eviolite","nature":"Quiet","ivs":{"at":1,"df":30,"sa":30,"sd":30,"sp":0},"evs":{"hp":252,"sa":252,"sd":4},"moves":["Trick Room","Psyshock","Shadow Ball","Hidden Power Fighting"]},
-    "ZU Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Calm Mind","Recover","Psychic","Acid Armor"]},
-    "ZU Defensive Pivot": {"ability":"Regenerator","item":"Eviolite","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Future Sight","Recover","Signal Beam","Protect"]}
+    "ZU Defensive Pivot": {"ability":"Regenerator","item":"Eviolite","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Future Sight","Recover","Signal Beam","Protect"]},
+    "ZU Calm Mind": {"ability":"Magic Guard","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Calm Mind","Recover","Psychic","Acid Armor"]}
   },
   "Reuniclus": {
     "OU Calm Mind": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":200,"sd":56},"moves":["Calm Mind","Psyshock","Focus Blast","Recover"]},
