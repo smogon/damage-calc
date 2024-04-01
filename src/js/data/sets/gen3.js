@@ -1277,7 +1277,7 @@ var SETDEX_ADV = {
   },
   "Cacnea": {
     "LC Offensive Spikes": {"level":5,"ability":"Sand Veil","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"df":30,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Spikes","Giga Drain","Thunder Punch","Hidden Power Water"]},
-    "LC Utility Spikes": {"level":5,"ability":"Sand Veil","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"hp":116,"df":116,"sa":80,"sd":116,"sp":76},"moves":["Spikes","Hidden Power Grass","Encore","Destiny Bond"]},
+    "LC Utility Spikes": {"level":5,"ability":"Sand Veil","item":"Sitrus Berry","nature":"Bold","ivs":{"at":2,"sa":30},"evs":{"hp":196,"df":116,"sd":196},"moves":["Spikes","Hidden Power Grass","Encore","Destiny Bond"]},
     "ZU Showdown Usage": {"ability":"Sand Veil","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Spikes","Leech Seed","Substitute","Seismic Toss"]}
   },
   "Cacturne": {

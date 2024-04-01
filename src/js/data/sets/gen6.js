@@ -283,8 +283,8 @@ var SETDEX_XY = {
   },
   "Gigalith": {
     "PU Tank": {"ability":"Sturdy","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Stealth Rock","Stone Edge","Superpower","Toxic"]},
-    "ZU Stealth Rock": {"ability":"Sturdy","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Stealth Rock","Stone Edge","Earthquake","Superpower"]},
-    "ZU Choice Band": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Earthquake","Superpower","Heavy Slam"]},
+    "ZU Stealth Rock": {"ability":"Sturdy","item":"Leftovers","nature":"Adamant","evs":{"hp":248,"at":252,"df":8},"moves":["Stealth Rock","Stone Edge","Earthquake","Superpower"]},
+    "ZU Choice Band": {"ability":"Sturdy","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stone Edge","Earthquake","Superpower","Heavy Slam"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Sand Force","item":"Leftovers","nature":"Brave","evs":{"at":252,"df":236,"sd":16},"moves":["Rock Slide","Heavy Slam","Protect","Wide Guard"]}
   },
   "Woobat": {
@@ -490,13 +490,13 @@ var SETDEX_XY = {
     "Battle Spot Doubles Supporting Attacker": {"level":50,"ability":"Justified","item":"Focus Sash","nature":"Adamant","evs":{"hp":132,"at":196,"sp":180},"moves":["Close Combat","Zen Headbutt","Wide Guard","Icy Wind"]},
     "Monotype Swords Dance (Psychic)": {"ability":"Justified","item":"Galladite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Shadow Sneak","Knock Off"]},
     "Monotype Swords Dance (Fighting)": {"ability":"Justified","item":"Galladite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Zen Headbutt","Knock Off"]},
-    "OU Showdown Usage": {"ability":"Steadfast","item":"Galladite","nature":"Jolly","evs":{"hp":224,"at":32,"sp":252},"moves":["Swords Dance","Drain Punch","Shadow Sneak","Psycho Cut"]}
+    "OU Showdown Usage": {"ability":"Steadfast","item":"Galladite","nature":"Jolly","evs":{"hp":152,"at":100,"df":4,"sp":252},"moves":["Drain Punch","Swords Dance","Psycho Cut","Shadow Sneak"]}
   },
   "Gallade-Mega": {
     "Battle Spot Doubles Mega Attacker": {"level":50,"ability":"Inner Focus","item":"Galladite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Close Combat","Zen Headbutt","Ice Punch","Protect"]},
     "Monotype Swords Dance (Psychic)": {"ability":"Inner Focus","item":"Galladite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Shadow Sneak","Knock Off"]},
     "Monotype Swords Dance (Fighting)": {"ability":"Inner Focus","item":"Galladite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Zen Headbutt","Knock Off"]},
-    "OU Showdown Usage": {"ability":"Inner Focus","item":"Galladite","nature":"Jolly","evs":{"hp":224,"at":32,"sp":252},"moves":["Swords Dance","Drain Punch","Shadow Sneak","Psycho Cut"]}
+    "OU Showdown Usage": {"ability":"Inner Focus","item":"Galladite","nature":"Jolly","evs":{"hp":152,"at":100,"df":4,"sp":252},"moves":["Drain Punch","Swords Dance","Psycho Cut","Shadow Sneak"]}
   },
   "Heatran": {
     "OU Utility": {"ability":"Flash Fire","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Lava Plume","Toxic","Taunt","Stealth Rock"]},
@@ -1098,7 +1098,7 @@ var SETDEX_XY = {
     "Ubers Hazard Control": {"ability":"Skill Link","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Rapid Spin","Toxic Spikes","Icicle Spear","Shell Smash"]},
     "UU The Janitor (Shell Smash)": {"ability":"Skill Link","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
     "Battle Spot Singles Smash n' Sweep": {"level":50,"ability":"Skill Link","item":"King's Rock","nature":"Adamant","evs":{"hp":108,"at":252,"df":4,"sd":4,"sp":140},"moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
-    "OU Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Shell Smash","Icicle Spear","Rapid Spin","Rock Blast"]},
+    "OU Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Spear","Shell Smash","Rapid Spin","Rock Blast"]},
     "Anything Goes Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Spear","Shell Smash","Rock Blast","Razor Shell"]},
     "Monotype Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Spear","Rock Blast","Shell Smash","Ice Shard"]}
   },
@@ -1334,7 +1334,6 @@ var SETDEX_XY = {
   },
   "Vaporeon": {
     "UU Wish": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":204,"df":248,"sd":56},"moves":["Wish","Scald","Protect","Heal Bell"]},
-    "OU Showdown Usage": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Wish","Protect","Heal Bell"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Water Absorb","item":"Damp Rock","nature":"Calm","evs":{"hp":244,"sa":252,"sd":4},"moves":["Surf","Heal Bell","Ice Beam","Protect"]}
   },
   "Jolteon": {
@@ -1644,6 +1643,7 @@ var SETDEX_XY = {
     "Battle Spot Singles Dual Screens": {"level":50,"ability":"Magic Bounce","item":"Light Clay","nature":"Timid","evs":{"hp":236,"df":76,"sp":196},"moves":["Psychic","Reflect","Light Screen","Yawn"]},
     "Battle Spot Singles Choice Attacker": {"level":50,"ability":"Magic Bounce","item":"Choice Scarf","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Dazzling Gleam","Grass Knot","Trick"]},
     "Anything Goes Sweeper": {"ability":"Magic Bounce","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Stored Power","Dazzling Gleam","Substitute","Baton Pass"]},
+    "OU Showdown Usage": {"ability":"Magic Bounce","item":"Light Clay","nature":"Timid","evs":{"hp":248,"df":4,"sp":252},"moves":["Reflect","Light Screen","Psychic","Wish"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Dazzling Gleam","Light Screen","Reflect"]}
   },
   "Umbreon": {
@@ -2079,8 +2079,7 @@ var SETDEX_XY = {
   },
   "Dustox": {
     "PU Quiver Dance": {"ability":"Shield Dust","item":"Black Sludge","nature":"Calm","evs":{"hp":248,"sd":192,"sp":68},"moves":["Quiver Dance","Iron Defense","Bug Buzz","Roost"]},
-    "ZU Special Wall": {"ability":"Shield Dust","item":"Black Sludge","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Roost","Defog","U-turn","Whirlwind"]},
-    "ZU Double Dance": {"ability":"Shield Dust","item":"Black Sludge","nature":"Calm","evs":{"hp":248,"sd":192,"sp":68},"moves":["Quiver Dance","Iron Defense","Bug Buzz","Roost"]}
+    "ZU Specially Defensive": {"ability":"Shield Dust","item":"Black Sludge","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["U-turn","Roost","Defog","Toxic"]}
   },
   "Lotad": {
     "LC Life Orb": {"level":5,"ability":"Swift Swim","item":"Life Orb","nature":"Modest","ivs":{"hp":19},"evs":{"df":116,"sa":196,"sp":196},"moves":["Surf","Rain Dance","Giga Drain","Ice Beam"]}
@@ -2559,7 +2558,6 @@ var SETDEX_XY = {
     "Battle Spot Doubles Mixed": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Naive","evs":{"at":44,"sa":212,"sp":252},"moves":["Double-Edge","Hyper Voice","Draco Meteor","Protect"]},
     "Battle Spot Doubles Dragon Dance": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Protect"]},
     "Battle Spot Doubles Special": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hyper Voice","Draco Meteor","Fire Blast","Protect"]},
-    "OU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":236,"sp":20},"moves":["Draco Meteor","Earthquake","Roost","Flamethrower"]},
     "Monotype Showdown Usage": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Outrage","Iron Tail","Dragon Claw"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Flamethrower","Protect","Hyper Voice"]}
   },
@@ -3053,6 +3051,7 @@ var SETDEX_XY = {
     "Battle Spot Doubles Mixed Mega Attacker": {"level":50,"ability":"Inner Focus","item":"Lucarionite","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Close Combat","Flash Cannon","Substitute","Detect"]},
     "Monotype Swords Dance (Fighting)": {"ability":"Inner Focus","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Extreme Speed","Iron Tail"]},
     "Monotype Nasty Plot (Fighting)": {"ability":"Inner Focus","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Flash Cannon","Dark Pulse","Aura Sphere"]},
+    "OU Showdown Usage": {"ability":"Inner Focus","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Extreme Speed","Swords Dance","Iron Tail"]},
     "1v1 Showdown Usage": {"ability":"Steadfast","item":"Lucarionite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Bullet Punch","Extreme Speed","Swords Dance"]}
   },
   "Lucario-Mega": {
@@ -3530,7 +3529,7 @@ var SETDEX_XY = {
     "Doubles OU Bulky Attacker": {"ability":"Guts","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":16,"sd":240},"moves":["Drain Punch","Ice Punch","Knock Off","Mach Punch"]},
     "Battle Spot Singles Assault Vest": {"level":50,"ability":"Guts","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Drain Punch","Mach Punch","Knock Off","Ice Punch"]},
     "Battle Spot Doubles Assault Vest": {"level":50,"ability":"Guts","item":"Assault Vest","nature":"Adamant","ivs":{"sp":14},"evs":{"hp":20,"at":244,"df":12,"sd":228},"moves":["Drain Punch","Mach Punch","Knock Off","Ice Punch"]},
-    "OU Showdown Usage": {"ability":"Guts","item":"Assault Vest","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Mach Punch","Drain Punch","Knock Off","Ice Punch"]},
+    "OU Showdown Usage": {"ability":"Guts","item":"Flame Orb","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Drain Punch","Mach Punch","Knock Off","Ice Punch"]},
     "Monotype Showdown Usage": {"ability":"Guts","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Drain Punch","Mach Punch","Knock Off","Ice Punch"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Iron Fist","item":"Life Orb","nature":"Brave","evs":{"at":252,"df":116,"sd":136},"moves":["Drain Punch","Wide Guard","Rock Slide","Protect"]}
   },
