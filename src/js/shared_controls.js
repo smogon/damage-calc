@@ -843,7 +843,7 @@ $(".teraToggle").change(function () {
 			for (var property in pokedex[newForme].bs) {
 				var baseStat = container.find("." + property).find(".base");
 				baseStat.val(pokedex[newForme].bs[property]);
-				baseStat.keyup()
+				baseStat.keyup();
 			}
 			return;
 		}
@@ -853,10 +853,10 @@ $(".teraToggle").change(function () {
 
 		forme.val(newForme);
 		container.find(".ability").val(pokedex[newForme].abilities[0]);
-		for (const property in pokedex[newForme].bs) {
+		for (var property in pokedex[newForme].bs) {
 			var baseStat = container.find("." + property).find(".base");
 			baseStat.val(pokedex[newForme].bs[property]);
-			baseStat.keyup()
+			baseStat.keyup();
 		}
 	}
 });
