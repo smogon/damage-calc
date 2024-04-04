@@ -662,7 +662,7 @@ var SETDEX_XY = {
   },
   "Ivysaur": {
     "ZU Defensive": {"ability":"Chlorophyll","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":144,"sd":112},"moves":["Knock Off","Sludge Bomb","Giga Drain","Synthesis"]},
-    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Eviolite","nature":"Modest","ivs":{"at":0,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Solar Beam","Sludge Bomb","Hidden Power Fire"]}
+    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Eviolite","nature":"Bold","ivs":{"at":0,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Sludge Bomb","Solar Beam","Hidden Power Fire"]}
   },
   "Venusaur": {
     "OU Offensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":232,"sa":252,"sd":4,"sp":20},"moves":["Giga Drain","Sludge Bomb","Hidden Power Fire","Synthesis"]},

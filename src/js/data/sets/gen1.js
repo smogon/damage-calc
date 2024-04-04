@@ -147,7 +147,7 @@ var SETDEX_RBY = {
   "Machamp": {
     "OU Wallbreaker": {"moves":["Low Kick","Body Slam","Hyper Beam","Earthquake"]},
     "NU All-Out Attacker": {"moves":["Submission","Rock Slide","Earthquake","Body Slam"]},
-    "PU Physical Attacker": {"moves":["Submission","Earthquake","Body Slam","Hyper Beam"]},
+    "PU Bulky Attacker": {"moves":["Earthquake","Body Slam","Hyper Beam","Submission"]},
     "1v1 All-Out Attacker": {"moves":["Submission","Hyper Beam","Earthquake","Rock Slide"]}
   },
   "Weepinbell": {
@@ -337,7 +337,7 @@ var SETDEX_RBY = {
     "OU Lead Sleeper": {"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]},
     "Ubers Sleep Lead": {"moves":["Lovely Kiss","Blizzard","Psychic","Counter"]},
     "1v1 Special Attacker": {"moves":["Ice Beam","Psychic","Blizzard","Rest"]},
-    "Tradebacks OU Standard": {"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]}
+    "Tradebacks OU Sleep Lead": {"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]}
   },
   "Electabuzz": {
     "UU Offensive": {"moves":["Thunderbolt","Thunder Wave","Body Slam","Hyper Beam"]},
