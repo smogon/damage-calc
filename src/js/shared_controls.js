@@ -1543,9 +1543,8 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 9;
-	$("#gen" + g).prop("checked", true);
-	$("#gen" + g).change();
+	$("#gen9").prop("checked", true);
+	$("#gen9").change();
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
 	$("#doubles-format").prop("checked", true);
