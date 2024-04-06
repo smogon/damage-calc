@@ -832,8 +832,6 @@ $(".teraToggle").change(function () {
 		forme.val(newForme);
 		container.find(".ability").val(pokedex[newForme].abilities[0]);
 	} else if (startsWith(curForme, "Terapagos")) {
-		if (endsWith("Stellar", curForme)) return;
-
 		if (this.checked) {
 			var newForme = "Terapagos-Stellar";
 
