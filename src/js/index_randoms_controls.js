@@ -166,8 +166,10 @@ $(".mode").change(function () {
 		window.location.replace('randoms' + linkExtension + '?' + params);
 	} else if (mode === 'one-vs-one') {
 		window.location.replace('base' + linkExtension + '?' + params);
-	} else if (mode === 'eikpp') {
+	} else if (mode === 'eipp') {
 		window.location.replace('index' + linkExtension + '?' + params);
+	} else if (mode === 'eikpp') {
+		window.location.replace('eikpp2' + linkExtension + '?' + params);
 	} else {
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
 	}
@@ -181,26 +183,40 @@ $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
 	if (m) {
-		if (m !== 'one-vs-one' && m !== 'randoms' && m !== 'eikpp') {
+		if (m !== 'one-vs-one' && m !== 'randoms' && m !== 'eipp' && m !== 'eikpp') {
 			window.location.replace('honkalculate' + linkExtension + '?' + params);
 		} else {
 			if ($('#randoms').prop('checked')) {
 				if (m === 'one-vs-one') {
 					window.location.replace('base' + linkExtension + '?' + params);
-				} else if (m === 'eikpp') {
+				} else if (m === 'eipp') {
 					window.location.replace('index' + linkExtension + '?' + params);
+				} else if (m === 'eikpp') {
+					window.location.replace('eikpp2' + linkExtension + '?' + params);
+				}
+			} else if ($('#eipp').prop('checked')) {
+				if (m === 'one-vs-one') {
+					window.location.replace('base' + linkExtension + '?' + params);
+				} else if (m === 'eikpp') {
+					window.location.replace('eikpp2' + linkExtension + '?' + params);
+				} else if (m === 'randoms') {
+					window.location.replace('randoms' + linkExtension + '?' + params);
 				}
 			} else if ($('#eikpp').prop('checked')) {
 				if (m === 'one-vs-one') {
 					window.location.replace('base' + linkExtension + '?' + params);
+				} else if (m === 'eipp') {
+					window.location.replace('index' + linkExtension + '?' + params);
 				} else if (m === 'randoms') {
 					window.location.replace('randoms' + linkExtension + '?' + params);
 				}
 			} else {
 				if (m === 'randoms') {
 					window.location.replace('randoms' + linkExtension + '?' + params);
-				} else if (m === 'eikpp') {
+				} else if (m === 'eipp') {
 					window.location.replace('index' + linkExtension + '?' + params);
+				} else if (m === 'eikpp') {
+					window.location.replace('eikpp2' + linkExtension + '?' + params);
 				}
 			}
 		}
