@@ -2611,7 +2611,7 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 100,
   },
-  AcceleRock: {
+  Accelerock: {
     bp: 40,
     type: 'Ice',
     priority: 1,
@@ -3639,7 +3639,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
   '10,000,000 Volt Thunderbolt': {maxPower: 1},
   Absorb: {maxPower: 90},
-  AcceleRock: {maxPower: 90},
+  Accelerock: {maxPower: 90},
   Acid: {maxPower: 70},
   'Acid Downpour': {maxPower: 1},
   'Acid Spray': {maxPower: 70},
