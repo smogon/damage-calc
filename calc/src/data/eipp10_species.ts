@@ -275,6 +275,7 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Clefable: {types: ['Fire'], bs: {sa: 95}},
   Exploud: {bs: {sd: 73}},
   Scolipede: {bs: {at: 100}},
+  Whimsicott: {types: ['Fighting', 'Fire']},
   Aurorus: {
     types: ['Ice', 'Electric'],
     bs: {hp: 123, at: 77, df: 72, sa: 99, sd: 92, sp: 58},
@@ -412,14 +413,12 @@ const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 95, at: 115, df: 80, sa: 95, sd: 80, sp: 90},
     weightkg: 168,
     abilities: {0: 'Intimidate'},
-    baseSpecies: 'Arcanine',
   },
   Basculegion: {
     types: ['Ghost', 'Steel'],
     bs: {hp: 120, at: 112, df: 65, sa: 80, sd: 75, sp: 78},
     weightkg: 110,
     abilities: {0: 'Swift Swim'},
-    otherFormes: ['Basculegion-F'],
   },
   Kleavor: {
     types: ['Poison', 'Ice'],
