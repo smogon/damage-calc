@@ -124,6 +124,11 @@ export function calculateSMSSSV(
     return result;
   }
 
+  if (move.flags.punch && attacker.hasItem('Punching Glove')) {
+    desc.attackerItem = attacker.item;
+    move.flags.contact = 0;
+  }
+
   const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed ||
   (attacker.hasAbility('Unseen Fist') && move.flags.contact);
 
@@ -1152,8 +1157,6 @@ export function calculateBPModsSMSSSV(
 
   if (attacker.hasItem('Punching Glove') && move.flags.punch) {
     bpMods.push(4506);
-    desc.attackerItem = attacker.item;
-    move.flags.contact = 0;
   }
 
   if (gen.num <= 8 && defender.hasAbility('Heatproof') && move.hasType('Fire')) {
