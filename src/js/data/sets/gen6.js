@@ -2211,7 +2211,7 @@ var SETDEX_XY = {
   },
   "Lairon": {
     "ZU Offensive Stealth Rock": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Head Smash","Superpower","Heavy Slam"]},
-    "ZU Bulky Stealth Rock": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"hp":208,"at":252,"df":4,"sp":44},"moves":["Stealth Rock","Head Smash","Roar","Toxic"]},
+    "ZU Bulky Stealth Rock": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Stealth Rock","Head Smash","Roar","Toxic"]},
     "ZU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Head Smash","Heavy Slam","Superpower","Iron Head"]},
     "ZU Rock Polish": {"ability":"Rock Head","item":"Eviolite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Rock Polish","Head Smash","Superpower","Heavy Slam"]}
   },
@@ -3739,9 +3739,8 @@ var SETDEX_XY = {
     "NU Swords Dance Sweeper": {"ability":"Sap Sipper","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Horn Leech","Double-Edge","Jump Kick"]},
     "PU Choice Scarf": {"ability":"Sap Sipper","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Horn Leech","Jump Kick","Toxic"]},
     "PU Swords Dance": {"ability":"Sap Sipper","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Horn Leech","Double-Edge","Jump Kick"]},
-    "ZU Swords Dance": {"ability":"Sap Sipper","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Return","Horn Leech","Jump Kick"]},
-    "ZU Choice Scarf": {"ability":"Sap Sipper","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Horn Leech","Jump Kick","Toxic"]},
-    "ZU Choice Band": {"ability":"Sap Sipper","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Horn Leech","Jump Kick","Toxic"]},
+    "ZU Swords Dance": {"ability":"Sap Sipper","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Double-Edge","Horn Leech","Jump Kick"]},
+    "ZU Choice Scarf": {"ability":"Sap Sipper","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Horn Leech","Jump Kick","Megahorn"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Sap Sipper","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sp":252},"moves":["Last Resort","Protect","Double-Edge"]}
   },
   "Emolga": {

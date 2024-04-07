@@ -306,7 +306,8 @@ var SETDEX_SM = {
     "Ubers Defog": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":248,"sa":208,"sd":52},"moves":["Defog","Hex","Dragon Pulse","Thunder Wave"]}
   },
   "Cresselia": {
-    "OU Trick Room": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Trick Room","Ice Beam","Moonlight","Lunar Dance"]},
+    "OU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":96,"sa":152,"sp":12},"moves":["Psyshock","Ice Beam","Calm Mind","Moonlight"]},
+    "OU Trick Room": {"ability":"Levitate","item":"Mental Herb","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":152,"sd":104},"moves":["Ice Beam","Trick Room","Moonlight","Lunar Dance"]},
     "UU Defensive Z-Move": {"ability":"Levitate","item":"Fairium Z","nature":"Bold","evs":{"hp":252,"df":240,"sp":16},"moves":["Psyshock","Moonblast","Moonlight","Calm Mind"]},
     "RU Physically Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":112,"sp":144},"moves":["Moonlight","Psyshock","Moonblast","Toxic"]},
     "Doubles OU Calm Mind": {"ability":"Levitate","item":"Electric Seed","nature":"Bold","evs":{"hp":252,"df":16,"sa":68,"sd":52,"sp":120},"moves":["Psyshock","Icy Wind","Calm Mind","Moonlight"]},
@@ -2941,9 +2942,8 @@ var SETDEX_SM = {
     "Monotype Speed Boost Cleaner (Bug)": {"ability":"Speed Boost","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Protect","Air Slash","Giga Drain","Ancient Power"]}
   },
   "Gliscor": {
-    "OU Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":244,"sd":244,"sp":20},"moves":["Swords Dance","Roost","Earthquake","Facade"]},
-    "OU Stealth Rock": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":244,"df":52,"sd":76,"sp":136},"moves":["Stealth Rock","Earthquake","Toxic","Roost"]},
-    "OU Defog": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":244,"df":52,"sd":76,"sp":136},"moves":["Earthquake","Defog","Roost","Knock Off"]},
+    "OU Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":248,"sd":240,"sp":20},"moves":["Swords Dance","Earthquake","Facade","Roost"]},
+    "OU Utility": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":248,"df":64,"sd":60,"sp":136},"moves":["Defog","Earthquake","Roost","Toxic"]},
     "Battle Spot Singles Specially Defensive": {"level":50,"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","evs":{"hp":212,"at":44,"sd":252},"moves":["Earthquake","Roost","Protect","Guillotine"]},
     "Battle Spot Singles Fast Substitute": {"level":50,"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":212,"sd":44,"sp":252},"moves":["Earthquake","Substitute","Protect","Guillotine"]},
     "Monotype Defog (Flying)": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":244,"df":20,"sd":124,"sp":120},"moves":["Defog","Earthquake","Roost","Taunt"]},

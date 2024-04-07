@@ -1241,7 +1241,7 @@ var SETDEX_DPP = {
   },
   "Quagsire": {
     "OU Specially Defensive": {"ability":"Water Absorb","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":56,"sd":200},"moves":["Earthquake","Encore","Recover","Toxic"]},
-    "Ubers Support": {"ability":"Water Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Toxic","Yawn","Encore","Recover"]},
+    "Ubers Support": {"ability":"Water Absorb","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Toxic","Earthquake","Encore","Recover"]},
     "UU Wall": {"ability":"Water Absorb","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Recover","Earthquake","Waterfall","Toxic"]},
     "UU Curse": {"ability":"Water Absorb","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Recover","Earthquake","Waterfall"]},
     "PU Defensive": {"ability":"Water Absorb","item":"Leftovers","nature":"Impish","teraType":"Water","evs":{"hp":252,"df":200,"sd":56},"moves":["Toxic","Recover","Earthquake","Waterfall"]}

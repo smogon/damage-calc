@@ -664,7 +664,7 @@ var SETDEX_BW = {
   },
   "Wormadam-Trash": {
     "NU Utility": {"ability":"Anticipation","item":"Leftovers","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Toxic","Protect","Gyro Ball"]},
-    "ZU Physical Wall": {"ability":"Anticipation","item":"Leftovers","nature":"Bold","ivs":{"at":3,"sa":30,"sd":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Stealth Rock","Toxic","Protect","Hidden Power Ground"]}
+    "ZU Physically Defensive": {"ability":"Anticipation","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Psychic","Bug Bite","Toxic"]}
   },
   "Arceus": {
     "Ubers Extreme Killer (Swords Dance)": {"ability":"Multitype","item":"Silk Scarf","nature":"Adamant","evs":{"hp":200,"at":252,"sp":56},"moves":["Swords Dance","Extreme Speed","Shadow Claw","Earthquake"]},
@@ -2476,7 +2476,7 @@ var SETDEX_BW = {
   "Zebstrika": {
     "NU Special Attacker": {"ability":"Lightning Rod","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Hidden Power Grass"]},
     "NU Choice Scarf": {"ability":"Lightning Rod","item":"Choice Scarf","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Overheat","Hidden Power Grass"]},
-    "PU Ol’ Reliable (Volt Switch Pivot)": {"ability":"Lightning Rod","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Overheat","Hidden Power Ice"]}
+    "PU Offensive Pivot": {"ability":"Lightning Rod","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Hidden Power Ice"]}
   },
   "Swoobat": {
     "NU SubSalac": {"ability":"Simple","item":"Salac Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Substitute","Calm Mind","Stored Power","Heat Wave"]},
