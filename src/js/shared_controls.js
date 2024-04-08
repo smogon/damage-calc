@@ -815,22 +815,48 @@ $(".teraToggle").change(function () {
 	var curForme = forme.val();
 	if (forme.is(":hidden")) return;
 	var container = $(this).closest(".info-group").siblings();
-	// Ogerpon mechs
-	if (!startsWith(curForme, "Ogerpon")) return;
-	if (
-		curForme !== "Ogerpon" && !endsWith(curForme, "Tera") &&
-		container.find(".item").val() !== curForme.split("-")[1] + " Mask"
-	) return;
-	if (this.checked) {
-		var newForme = curForme === "Ogerpon" ? "Ogerpon-Teal-Tera" : curForme + "-Tera";
+	// Ogerpon and Terapagos mechs
+	if (startsWith(curForme, "Ogerpon")) {
+		if (
+			curForme !== "Ogerpon" && !endsWith(curForme, "Tera") &&
+			container.find(".item").val() !== curForme.split("-")[1] + " Mask"
+		) return;
+		if (this.checked) {
+			var newForme = curForme === "Ogerpon" ? "Ogerpon-Teal-Tera" : curForme + "-Tera";
+			forme.val(newForme);
+			container.find(".ability").val("Embody Aspect (" + newForme.split("-")[1] + ")");
+			return;
+		}
+		if (!endsWith(curForme, "Tera")) return;
+		var newForme = curForme === "Ogerpon-Teal-Tera" ? "Ogerpon" : curForme.slice(0, -5);
 		forme.val(newForme);
-		container.find(".ability").val("Embody Aspect (" + newForme.split("-")[1] + ")");
-		return;
+		container.find(".ability").val(pokedex[newForme].abilities[0]);
+	} else if (startsWith(curForme, "Terapagos")) {
+		if (this.checked) {
+			var newForme = "Terapagos-Stellar";
+
+			forme.val(newForme);
+			container.find(".ability").val(pokedex[newForme].abilities[0]);
+
+			for (var property in pokedex[newForme].bs) {
+				var baseStat = container.find("." + property).find(".base");
+				baseStat.val(pokedex[newForme].bs[property]);
+				baseStat.keyup();
+			}
+			return;
+		}
+
+		if (!endsWith(curForme, "Stellar")) return;
+		var newForme = "Terapagos-Terastal";
+
+		forme.val(newForme);
+		container.find(".ability").val(pokedex[newForme].abilities[0]);
+		for (var property in pokedex[newForme].bs) {
+			var baseStat = container.find("." + property).find(".base");
+			baseStat.val(pokedex[newForme].bs[property]);
+			baseStat.keyup();
+		}
 	}
-	if (!endsWith(curForme, "Tera")) return;
-	var newForme = curForme === "Ogerpon-Teal-Tera" ? "Ogerpon" : curForme.slice(0, -5);
-	forme.val(newForme);
-	container.find(".ability").val(pokedex[newForme].abilities[0]);
 });
 
 $(".forme").change(function () {
