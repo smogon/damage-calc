@@ -166,8 +166,8 @@ export function calculateSMSSSV(
     'As One (Glastrier)', 'As One (Spectrier)', 'Battle Bond', 'Comatose',
     'Disguise', 'Gulp Missile', 'Ice Face', 'Multitype', 'Neutralizing Gas',
     'Power Construct', 'RKS System', 'Schooling', 'Shields Down',
-    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero'
-  ]
+    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero',
+  ];
 
   if (attacker.hasAbility('Neutralizing Gas') &&
     !ignoresNeutralizingGas.includes(defender.ability || '')) {
