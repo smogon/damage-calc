@@ -162,18 +162,21 @@ export function calculateSMSSSV(
     }
   }
 
-  if (attacker.hasAbility('Neutralizing Gas') && !defender.hasAbility('As One (Glastrier)',
-    'As One (Spectrier)', 'Battle Bond', 'Comatose', 'Disguise', 'Gulp Missile', 'Ice Face',
-    'Multitype', 'Neutralizing Gas', 'Power Construct', 'RKS System', 'Schooling',
-    'Shields Down', 'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero')) {
+  const ignoresNeutralizingGas = [
+    'As One (Glastrier)', 'As One (Spectrier)', 'Battle Bond', 'Comatose',
+    'Disguise', 'Gulp Missile', 'Ice Face', 'Multitype', 'Neutralizing Gas',
+    'Power Construct', 'RKS System', 'Schooling', 'Shields Down',
+    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero'
+  ]
+
+  if (attacker.hasAbility('Neutralizing Gas') &&
+    !ignoresNeutralizingGas.includes(defender.ability || '')) {
     desc.attackerAbility = attacker.ability;
     defender.ability = '' as AbilityName;
   }
 
-  if (defender.hasAbility('Neutralizing Gas') && !attacker.hasAbility('As One (Glastrier)',
-    'As One (Spectrier)', 'Battle Bond', 'Comatose', 'Disguise', 'Gulp Missile', 'Ice Face',
-    'Multitype', 'Neutralizing Gas', 'Power Construct', 'RKS System', 'Schooling',
-    'Shields Down', 'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero')) {
+  if (defender.hasAbility('Neutralizing Gas') &&
+    !ignoresNeutralizingGas.includes(attacker.ability || '')) {
     desc.defenderAbility = defender.ability;
     attacker.ability = '' as AbilityName;
   }
