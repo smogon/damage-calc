@@ -139,7 +139,6 @@ export function calculateSMSSSV(
 
   const defenderIgnoresAbility = defender.hasAbility(
     'Full Metal Body',
-    'Neutralizing Gas',
     'Prism Armor',
     'Shadow Shield',
     'Tablets of Ruin',
@@ -166,6 +165,25 @@ export function calculateSMSSSV(
     } else {
       defender.ability = '' as AbilityName;
     }
+  }
+
+  const ignoresNeutralizingGas = [
+    'As One (Glastrier)', 'As One (Spectrier)', 'Battle Bond', 'Comatose',
+    'Disguise', 'Gulp Missile', 'Ice Face', 'Multitype', 'Neutralizing Gas',
+    'Power Construct', 'RKS System', 'Schooling', 'Shields Down',
+    'Stance Change', 'Tera Shift', 'Zen Mode', 'Zero to Hero',
+  ];
+
+  if (attacker.hasAbility('Neutralizing Gas') &&
+    !ignoresNeutralizingGas.includes(defender.ability || '')) {
+    desc.attackerAbility = attacker.ability;
+    defender.ability = '' as AbilityName;
+  }
+
+  if (defender.hasAbility('Neutralizing Gas') &&
+    !ignoresNeutralizingGas.includes(attacker.ability || '')) {
+    desc.defenderAbility = defender.ability;
+    attacker.ability = '' as AbilityName;
   }
 
   // Merciless does not ignore Shell Armor, damage dealt to a poisoned Pokemon with Shell Armor
