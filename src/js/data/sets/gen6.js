@@ -2400,7 +2400,7 @@ var SETDEX_XY = {
     "PU Dragon Dance": {"ability":"Hydration","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Dragon Dance","Earthquake","Waterfall","Stone Edge"]},
     "ZU Choice Specs": {"ability":"Anticipation","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Earth Power","Ice Beam","Scald"]},
     "ZU Dragon Dance": {"ability":"Oblivious","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Substitute","Waterfall","Earthquake"]},
-    "ZU SubToxic": {"ability":"Oblivious","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":160,"sp":96},"moves":["Substitute","Toxic","Protect","Earthquake"]}
+    "ZU SubToxic": {"ability":"Oblivious","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":160,"sp":96},"moves":["Substitute","Toxic","Protect","Earthquake"]}
   },
   "Corphish": {
     "LC Wallbreaker": {"level":5,"ability":"Adaptability","item":"Eviolite","nature":"Adamant","evs":{"at":196,"df":76,"sp":236},"moves":["Crabhammer","Knock Off","Aqua Jet","Swords Dance"]},
@@ -3457,7 +3457,7 @@ var SETDEX_XY = {
     "PU Choice Scarf": {"ability":"Torrent","item":"Choice Scarf","nature":"Naive","ivs":{"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Electric","Superpower"]},
     "PU Substitute + Nasty Plot": {"ability":"Torrent","item":"Salac Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Substitute","Nasty Plot","Hydro Pump","Ice Beam"]},
     "ZU Nasty Plot": {"ability":"Torrent","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Hydro Pump","Ice Beam","Hidden Power Grass"]},
-    "ZU Choice Scarf": {"ability":"Torrent","item":"Choice Scarf","nature":"Naive","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Knock Off","Hidden Power Grass"]}
+    "ZU Choice Scarf": {"ability":"Torrent","item":"Choice Scarf","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Knock Off","Superpower"]}
   },
   "Munna": {
     "LC Trick Room": {"level":5,"ability":"Synchronize","item":"Eviolite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":68,"df":236,"sa":60,"sd":76},"moves":["Trick Room","Psychic","Dazzling Gleam","Healing Wish"]}
@@ -3636,8 +3636,8 @@ var SETDEX_XY = {
   "Scraggy": {
     "LC Choice Scarf": {"level":5,"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","evs":{"hp":36,"at":236,"sp":212},"moves":["High Jump Kick","Knock Off","Drain Punch","Zen Headbutt"]},
     "LC Dragon Dance": {"level":5,"ability":"Moxie","item":"Eviolite","nature":"Jolly","evs":{"hp":36,"at":156,"df":36,"sd":36,"sp":212},"moves":["Dragon Dance","High Jump Kick","Knock Off","Zen Headbutt"]},
-    "ZU Bulk Up": {"ability":"Shed Skin","item":"Eviolite","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Knock Off","Drain Punch","Rest"]},
-    "ZU Dragon Dance": {"ability":"Moxie","item":"Eviolite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Knock Off","High Jump Kick","Taunt"]}
+    "ZU Bulk Up": {"ability":"Shed Skin","item":"Eviolite","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Bulk Up","Drain Punch","Knock Off","Rest"]},
+    "ZU Dragon Dance": {"ability":"Moxie","item":"Eviolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Knock Off","High Jump Kick","Taunt"]}
   },
   "Scrafty": {
     "RU Dragon Dance": {"ability":"Shed Skin","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","High Jump Kick","Knock Off","Iron Head"]},

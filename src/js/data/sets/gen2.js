@@ -545,7 +545,8 @@ var SETDEX_GSC = {
     "Ubers DrumLax": {"item":"Leftovers","moves":["Body Slam","Belly Drum","Rest","Lovely Kiss"]}
   },
   "Dragonair": {
-    "NU Offensive Paralysis Spreader": {"item":"Leftovers","moves":["Thunder Wave","Surf","Fire Blast","Thunder"]}
+    "NU Dual Screens": {"item":"Leftovers","moves":["Thunder Wave","Reflect","Light Screen","Fire Blast"]},
+    "NU 3 Attacks": {"item":"Leftovers","moves":["Thunder Wave","Fire Blast","Thunder","Surf"]}
   },
   "Dragonite": {
     "OU All-Out Attacker": {"item":"Leftovers","moves":["Thunder Wave","Ice Beam","Thunder","Dynamic Punch"]},

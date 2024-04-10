@@ -2443,7 +2443,6 @@ var SETDEX_SS = {
   "Tornadus-Therian": {
     "OU Utility": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":252,"df":88,"sp":168},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
     "OU Nasty Plot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hurricane","Focus Blast","Heat Wave","Nasty Plot"]},
-    "OU Defog": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":252,"df":88,"sp":168},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
     "OU Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Timid","evs":{"hp":252,"df":88,"sp":168},"moves":["Hurricane","Knock Off","U-turn","Heat Wave"]},
     "Monotype Pivot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":200,"sd":56,"sp":252},"moves":["U-turn","Hurricane","Knock Off","Taunt"]},
     "Monotype Nasty Plot (Flying)": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":200,"sa":56,"sp":252},"moves":["Nasty Plot","Hurricane","Heat Wave","Knock Off"]},
@@ -3824,7 +3823,7 @@ var SETDEX_SS = {
     "PU Defensive": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Will-O-Wisp","Toxic Spikes"]},
     "PU Bulky Setup Sweeper": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Iron Defense","Amnesia","Rest","Body Press"]},
     "Monotype Defensive Hazard Setter (Ghost)": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Toxic Spikes","Earthquake","Will-O-Wisp"]},
-    "ZU Physical Wall": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Poltergeist","Body Press"]}
+    "ZU Physical Wall": {"ability":"Wandering Spirit","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Poltergeist","Body Press"]}
   },
   "Alcremie": {
     "PU Defensive": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Dazzling Gleam","Calm Mind","Aromatherapy"]},
@@ -3918,7 +3917,6 @@ var SETDEX_SS = {
   "Dragapult": {
     "OU Choice Specs": {"ability":"Infiltrator","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Shadow Ball","Flamethrower","U-turn"]},
     "OU Dragon Dance": {"ability":"Clear Body","item":"Life Orb","nature":"Lonely","evs":{"at":252,"sa":4,"sp":252},"moves":["Dragon Dance","Dragon Darts","Phantom Force","Fire Blast"]},
-    "OU Offensive Pivot": {"ability":"Infiltrator","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Hex","Draco Meteor","U-turn","Thunder Wave"]},
     "Doubles OU Special Attacker": {"ability":"Infiltrator","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Shadow Ball","Flamethrower","U-turn"]},
     "Doubles OU Dragon Dance": {"ability":"Clear Body","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Darts","Phantom Force","Dragon Dance","Protect"]},
     "VGC 2021 Offensive": {"level":50,"ability":"Clear Body","item":"Lum Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Phantom Force","Fly","Dragon Darts","Dragon Dance"]},
