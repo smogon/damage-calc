@@ -2288,9 +2288,9 @@ var SETDEX_XY = {
   },
   "Swalot": {
     "PU Tank": {"ability":"Sticky Hold","item":"Assault Vest","nature":"Quiet","evs":{"hp":248,"sa":200,"sd":60},"moves":["Sludge Bomb","Giga Drain","Ice Beam","Earthquake"]},
-    "ZU Physical Wall": {"ability":"Sticky Hold","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Sludge Bomb","Ice Beam","Rest","Sleep Talk"]},
+    "ZU Physically Defensive": {"ability":"Sticky Hold","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Sludge Bomb","Ice Beam","Rest","Sleep Talk"]},
     "ZU Specially Defensive": {"ability":"Sticky Hold","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Sludge Bomb","Ice Beam","Giga Drain","Earthquake"]},
-    "ZU Tank": {"ability":"Sticky Hold","item":"Assault Vest","nature":"Adamant","evs":{"hp":16,"at":252,"sd":20,"sp":220},"moves":["Gunk Shot","Ice Punch","Earthquake","Seed Bomb"]},
+    "ZU Tank": {"ability":"Sticky Hold","item":"Assault Vest","nature":"Adamant","evs":{"hp":16,"at":252,"sd":20,"sp":220},"moves":["Gunk Shot","Ice Punch","Earthquake","Power-Up Punch"]},
     "ZU Curse": {"ability":"Sticky Hold","item":"Black Sludge","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Curse","Rest","Sleep Talk","Fire Punch"]}
   },
   "Carvanha": {

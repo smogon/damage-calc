@@ -192,7 +192,7 @@ var SETDEX_BW = {
     "NU Swords Dance": {"ability":"Chlorophyll","item":"Flying Gem","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Acrobatics","Seed Bomb","Sleep Powder"]},
     "NU Support Pivot": {"ability":"Chlorophyll","item":"Leftovers","nature":"Jolly","evs":{"hp":248,"df":8,"sp":252},"moves":["Encore","Sleep Powder","U-turn","Leech Seed"]},
     "NU Sunny Day": {"ability":"Chlorophyll","item":"Heat Rock","nature":"Jolly","evs":{"hp":248,"df":8,"sp":252},"moves":["Sunny Day","Sleep Powder","Encore","Memento"]},
-    "PU Encore": {"ability":"Chlorophyll","item":"Flying Gem","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Encore","Acrobatics","Seed Bomb","U-turn"]}
+    "PU Pivot": {"ability":"Chlorophyll","item":"Flying Gem","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Acrobatics","Synthesis","U-turn","Encore"]}
   },
   "Snubbull": {
     "LC Sweeper": {"level":5,"ability":"Intimidate","item":"Eviolite","nature":"Adamant","evs":{"hp":36,"at":196,"df":36,"sd":116,"sp":116},"moves":["Thunder Wave","Return","Crunch","Close Combat"]}
@@ -1362,7 +1362,7 @@ var SETDEX_BW = {
   "Natu": {
     "RU Physically Defensive": {"ability":"Magic Bounce","item":"Eviolite","nature":"Impish","evs":{"hp":248,"df":252,"sp":8},"moves":["Roost","Reflect","Thunder Wave","U-turn"]},
     "NU Support": {"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":204,"sp":56},"moves":["Roost","Toxic","Reflect","Night Shade"]},
-    "PU Magic Bounce Pivot": {"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":252,"sp":8},"moves":["Night Shade","Roost","U-turn","Toxic"]},
+    "PU Utility": {"ability":"Magic Bounce","item":"Eviolite","nature":"Relaxed","evs":{"hp":248,"df":252,"sd":8},"moves":["Night Shade","Roost","U-turn","Toxic"]},
     "LC Calm Mind": {"level":5,"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":196,"df":156,"sa":36,"sd":76,"sp":36},"moves":["Psychic","Calm Mind","Roost","Heat Wave"]},
     "LC Wish": {"level":5,"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","evs":{"hp":196,"df":156,"sa":36,"sd":76,"sp":36},"moves":["Psychic","Wish","Roost","U-turn"]},
     "LC Fast Pivot": {"level":5,"ability":"Magic Bounce","item":"Eviolite","nature":"Timid","evs":{"hp":36,"df":156,"sa":36,"sd":76,"sp":196},"moves":["Psychic","Roost","U-turn","Heat Wave"]}
@@ -2716,7 +2716,7 @@ var SETDEX_BW = {
   "Klang": {
     "NU Mono-Attacker": {"ability":"Clear Body","item":"Eviolite","nature":"Impish","evs":{"hp":240,"df":136,"sd":40,"sp":92},"moves":["Shift Gear","Rest","Gear Grind","Sleep Talk"]},
     "NU Offensive Shift Gear": {"ability":"Clear Body","item":"Eviolite","nature":"Adamant","evs":{"hp":88,"at":252,"sp":168},"moves":["Shift Gear","Gear Grind","Return","Substitute"]},
-    "PU Pivot": {"ability":"Clear Body","item":"Eviolite","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Rest","Sleep Talk","Volt Switch","Toxic"]}
+    "PU Pivot": {"ability":"Clear Body","item":"Eviolite","nature":"Sassy","evs":{"hp":248,"df":8,"sd":252},"moves":["Rest","Sleep Talk","Volt Switch","Toxic"]}
   },
   "Klinklang": {
     "RU Shift Gear": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","evs":{"hp":100,"at":252,"sp":156},"moves":["Shift Gear","Gear Grind","Substitute","Return"]}
