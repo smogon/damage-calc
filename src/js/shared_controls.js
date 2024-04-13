@@ -536,12 +536,11 @@ $(".move-selector").change(function () {
 			moveHits = 10;
 		} else if (pokemon.find('.ability').val() === 'Skill Link') {
 			moveHits = 5;
-		}
-		else if (pokemon.find(".item").val() === 'Loaded Dice') {
+		} else if (pokemon.find(".item").val() === 'Loaded Dice') {
 			moveHits = 4;
 		}
 
-		moveGroupObj.children(".move-hits").val(moveHits)
+		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".stat-drops").show();
@@ -568,8 +567,7 @@ $(".item").change(function () {
 		moveHits = 10;
 	} else if ($(this).closest(".poke-info").find(".ability").val() === 'Skill Link') {
 		moveHits = 5;
-	}
-	else if (itemName === 'Loaded Dice') {
+	} else if (itemName === 'Loaded Dice') {
 		moveHits = 4;
 	}
 
