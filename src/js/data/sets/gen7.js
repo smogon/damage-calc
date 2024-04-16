@@ -758,7 +758,8 @@ var SETDEX_SM = {
     "LC Tank": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Calm","evs":{"hp":116,"df":76,"sa":116,"sd":196},"moves":["Slack Off","Scald","Psychic","Thunder Wave"]}
   },
   "Slowbro": {
-    "OU Defensive Pivot": {"ability":"Regenerator","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":96,"sd":164},"moves":["Scald","Ice Beam","Slack Off","Flamethrower"]},
+    "OU Defensive": {"ability":"Regenerator","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Slack Off","Ice Beam","Future Sight"]},
+    "OU Paper Shell (Mega)": {"ability":"Regenerator","item":"Slowbronite","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Slack Off","Ice Beam","Psychic"]},
     "Ubers Physical Wall": {"ability":"Regenerator","item":"Slowbronite","nature":"Bold","evs":{"hp":248,"df":216,"sd":44},"moves":["Toxic","Scald","Slack Off","Iron Defense"]},
     "UU Mega Calm Mind": {"ability":"Regenerator","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":76,"sd":180},"moves":["Scald","Calm Mind","Slack Off","Ice Beam"]},
     "UU Calm Mind": {"ability":"Regenerator","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Scald","Psyshock","Slack Off"]},
@@ -778,6 +779,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Regenerator","item":"Leftovers","nature":"Bold","evs":{"hp":180,"df":76,"sa":252},"moves":["Scald","Future Sight","Flamethrower","Toxic"]}
   },
   "Slowbro-Mega": {
+    "OU Paper Shell (Mega)": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Slack Off","Ice Beam","Psychic"]},
     "Ubers Physical Wall": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":248,"df":216,"sd":44},"moves":["Toxic","Scald","Slack Off","Iron Defense"]},
     "UU Mega Calm Mind": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":76,"sd":180},"moves":["Scald","Calm Mind","Slack Off","Ice Beam"]},
     "UU Tank": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":76,"sd":180},"moves":["Scald","Ice Beam","Psyshock","Slack Off"]},
@@ -788,8 +790,7 @@ var SETDEX_SM = {
     "Monotype Calm Mind Mega (Psychic)": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Slack Off","Scald","Psychic"]},
     "Monotype Calm Mind (Water)": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Slack Off","Scald","Psychic"]},
     "Monotype Iron Defense (Water)": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Iron Defense","Scald","Rest"]},
-    "1v1 Semistall Setup": {"ability":"Shell Armor","item":"Slowbronite","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Scald","Iron Defense","Calm Mind","Slack Off"]},
-    "OU Showdown Usage": {"ability":"Shell Armor","item":"Slowbronite","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Slack Off","Scald","Ice Beam","Psyshock"]}
+    "1v1 Semistall Setup": {"ability":"Shell Armor","item":"Slowbronite","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Scald","Iron Defense","Calm Mind","Slack Off"]}
   },
   "Magnemite": {
     "LC Choice Scarf": {"level":5,"ability":"Analytic","item":"Choice Scarf","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":240,"sp":240},"moves":["Volt Switch","Flash Cannon","Thunderbolt","Hidden Power Fire"]},
@@ -4269,6 +4270,7 @@ var SETDEX_SM = {
   },
   "Diancie": {
     "OU Offensive": {"ability":"Clear Body","item":"Diancite","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Stealth Rock","Moonblast","Diamond Storm","Earth Power"]},
+    "OU Substitute + Endeavor": {"ability":"Magic Bounce","item":"Diancite","nature":"Jolly","evs":{"hp":240,"df":16,"sp":252},"moves":["Stealth Rock","Substitute","Endeavor","Diamond Storm"]},
     "Ubers Mega Diancie": {"ability":"Clear Body","item":"Diancite","nature":"Naive","evs":{"at":24,"sa":232,"sp":252},"moves":["Moonblast","Diamond Storm","Earth Power","Stealth Rock"]},
     "UU Support": {"ability":"Clear Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Heal Bell","Toxic","Moonblast"]},
     "RU Specially Defensive": {"ability":"Clear Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Moonblast","Earth Power","Toxic"]},
@@ -4283,6 +4285,7 @@ var SETDEX_SM = {
   },
   "Diancie-Mega": {
     "OU Offensive": {"ability":"Magic Bounce","item":"Diancite","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Stealth Rock","Moonblast","Diamond Storm","Earth Power"]},
+    "OU Substitute + Endeavor": {"ability":"Magic Bounce","item":"Diancite","nature":"Jolly","evs":{"hp":240,"df":16,"sp":252},"moves":["Stealth Rock","Substitute","Endeavor","Diamond Storm"]},
     "Ubers Mega Diancie": {"ability":"Magic Bounce","item":"Diancite","nature":"Naive","evs":{"at":24,"sa":232,"sp":252},"moves":["Moonblast","Diamond Storm","Earth Power","Stealth Rock"]},
     "Doubles OU Mega Mixed Attacker": {"ability":"Magic Bounce","item":"Diancite","nature":"Hasty","evs":{"at":160,"sa":96,"sp":252},"moves":["Diamond Storm","Moonblast","Substitute","Protect"]},
     "Monotype Offensive (Fairy)": {"ability":"Magic Bounce","item":"Diancite","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Moonblast","Diamond Storm","Psychic","Stealth Rock"]},

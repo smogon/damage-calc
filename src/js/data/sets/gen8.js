@@ -1547,9 +1547,8 @@ var SETDEX_SS = {
     "ZU Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Dark Pulse","Rest","Sleep Talk"]}
   },
   "Garchomp": {
-    "OU Swords Dance": {"ability":"Rough Skin","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Scale Shot","Fire Fang"]},
+    "OU Swords Dance": {"ability":"Rough Skin","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Scale Shot","Aqua Tail"]},
     "OU Specially Defensive": {"ability":"Rough Skin","item":"Leftovers","nature":"Careful","evs":{"hp":240,"sd":252,"sp":16},"moves":["Stealth Rock","Earthquake","Toxic","Protect"]},
-    "OU Tank": {"ability":"Rough Skin","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":136,"sp":120},"moves":["Stealth Rock","Earthquake","Toxic","Protect"]},
     "Ubers Swords Dance": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Scale Shot","Stone Edge"]},
     "Battle Stadium Singles Swords Dance Sweeper": {"level":50,"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Scale Shot","Fire Fang"]},
     "Battle Stadium Singles Stealth Rock Setter": {"level":50,"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Rock Tomb","Outrage"]},
