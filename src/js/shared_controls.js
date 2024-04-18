@@ -571,6 +571,7 @@ $(".set-selector").change(function () {
 			stickyMoves.clearStickyMove();
 		}
 		pokeObj.find(".teraToggle").prop("checked", isAutoTera);
+		pokeObj.find(".max").prop("checked", false);
 		stellarButtonsVisibility(pokeObj, 0);
 		pokeObj.find(".boostedStat").val("");
 		pokeObj.find(".analysis").attr("href", smogonAnalysis(pokemonName));
