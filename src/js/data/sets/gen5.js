@@ -2032,7 +2032,7 @@ var SETDEX_BW = {
     "NU Guts": {"ability":"Guts","item":"Flame Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Wild Charge","Superpower","Facade","Crunch"]},
     "NU Wallbreaker": {"ability":"Intimidate","item":"Life Orb","nature":"Rash","ivs":{"at":30,"sa":30},"evs":{"at":60,"sa":252,"sp":196},"moves":["Thunderbolt","Superpower","Hidden Power Grass","Volt Switch"]},
     "NU Choice": {"ability":"Intimidate","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Wild Charge","Superpower","Ice Fang","Volt Switch"]},
-    "ZU Guts Wallbreaker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Wild Charge","Facade","Superpower","Crunch"]},
+    "ZU Guts Wallbreaker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Facade","Wild Charge","Superpower","Crunch"]},
     "PU Showdown Usage": {"ability":"Guts","item":"Flame Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Ice Fang","Quick Attack","Volt Switch","Wild Charge"]}
   },
   "Budew": {

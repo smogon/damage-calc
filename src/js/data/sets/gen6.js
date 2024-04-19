@@ -1254,15 +1254,14 @@ var SETDEX_XY = {
   },
   "Electabuzz": {
     "PU Eviolite": {"ability":"Vital Spirit","item":"Eviolite","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Volt Switch","Focus Blast","Hidden Power Ice"]},
-    "ZU Offensive Pivot": {"ability":"Vital Spirit","item":"Eviolite","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Focus Blast","Hidden Power Ice"]},
-    "ZU Choice Scarf": {"ability":"Vital Spirit","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Focus Blast","Hidden Power Ice"]},
-    "ZU Choice Specs": {"ability":"Vital Spirit","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Focus Blast","Hidden Power Ice"]}
+    "ZU Offensive Pivot": {"ability":"Static","item":"Eviolite","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Focus Blast","Hidden Power Ice"]},
+    "ZU Choice Scarf": {"ability":"Static","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Focus Blast","Hidden Power Ice"]},
+    "ZU Choice Specs": {"ability":"Static","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Focus Blast","Hidden Power Ice"]}
   },
   "Magmar": {
     "ZU Special All-Out Attacker": {"ability":"Vital Spirit","item":"Eviolite","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Focus Blast","Hidden Power Ice","Toxic"]},
     "ZU Choice Specs": {"ability":"Vital Spirit","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Overheat","Focus Blast","Psychic"]},
     "ZU Choice Scarf": {"ability":"Vital Spirit","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Overheat","Focus Blast","Psychic"]},
-    "ZU Physical All-Out Attacker": {"ability":"Vital Spirit","item":"Eviolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Thunder Punch","Low Kick","Mach Punch"]},
     "PU Showdown Usage": {"ability":"Flame Body","item":"Eviolite","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Flare Blitz","Will-O-Wisp","Thunder Punch","Overheat"]}
   },
   "Pinsir": {
@@ -3607,7 +3606,7 @@ var SETDEX_XY = {
   },
   "Krokorok": {
     "PU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":24,"at":252,"sp":232},"moves":["Earthquake","Knock Off","Pursuit","Stone Edge"]},
-    "ZU Offensive Stealth Rock": {"ability":"Intimidate","item":"Eviolite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Knock Off","Earthquake","Taunt"]},
+    "ZU Offensive Stealth Rock": {"ability":"Intimidate","item":"Eviolite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Earthquake","Knock Off","Taunt"]},
     "ZU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Earthquake","Pursuit","Assurance"]},
     "ZU Choice Scarf": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Earthquake","Pursuit","Stone Edge"]}
   },
@@ -4296,7 +4295,6 @@ var SETDEX_XY = {
     "PU Offensive Pivot": {"ability":"Fur Coat","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Thunder Wave","Return","Sucker Punch"]},
     "ZU Choice Band": {"ability":"Fur Coat","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Return","U-turn","Sucker Punch","Iron Tail"]},
     "ZU Choice Scarf": {"ability":"Fur Coat","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Return","U-turn","Iron Tail","Toxic"]},
-    "ZU Physically Defensive": {"ability":"Fur Coat","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":224,"sp":32},"moves":["Return","Roar","Rest","Sleep Talk"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Fur Coat","item":"Leftovers","nature":"Adamant","evs":{"hp":84,"at":252,"df":12,"sd":12,"sp":148},"moves":["Cotton Guard","Refresh","Return","Thunder Wave"]}
   },
   "Meowstic-F": {

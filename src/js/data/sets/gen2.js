@@ -403,8 +403,8 @@ var SETDEX_GSC = {
   },
   "Cubone": {
     "NU Agility Recipient": {"item":"Thick Club","moves":["Earthquake","Rock Slide","Swords Dance","Substitute"]},
-    "PU Swords Dance": {"item":"Thick Club","moves":["Swords Dance","Earthquake","Rock Slide","Substitute"]},
-    "PU Restalk": {"item":"Thick Club","moves":["Earthquake","Rock Slide","Rest","Sleep Talk"]}
+    "PU Restalk": {"item":"Thick Club","moves":["Earthquake","Body Slam","Rest","Sleep Talk"]},
+    "PU Swords Dance": {"item":"Thick Club","moves":["Swords Dance","Earthquake","Rock Slide","Substitute"]}
   },
   "Marowak": {
     "OU Swords Dance Sweeper": {"item":"Thick Club","ivs":{"at":26,"df":26},"moves":["Earthquake","Rock Slide","Hidden Power Bug","Swords Dance"]},
