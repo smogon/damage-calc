@@ -3577,7 +3577,7 @@ var SETDEX_SS = {
   },
   "Melmetal": {
     "OU Protect + Leftovers": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":20,"at":252,"sd":192,"sp":44},"moves":["Double Iron Bash","Protect","Earthquake","Toxic"]},
-    "OU Assault Vest": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"hp":192,"at":60,"sd":244,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
+    "OU Assault Vest": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"hp":184,"at":64,"sd":248,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
     "Monotype Choice Band (Steel)": {"ability":"Iron Fist","item":"Choice Band","nature":"Adamant","evs":{"hp":244,"at":252,"sp":12},"moves":["Double Iron Bash","Ice Punch","Earthquake","Superpower"]},
     "Monotype Assault Vest (Steel)": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"at":252,"sd":244,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
     "Monotype Substitute (Steel)": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":88,"sd":156,"sp":12},"moves":["Substitute","Double Iron Bash","Thunder Punch","Earthquake"]},

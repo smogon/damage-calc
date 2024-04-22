@@ -266,7 +266,8 @@ var SETDEX_GSC = {
     "UU Swords Dance": {"item":"Leftovers","moves":["Earthquake","Rock Slide","Swords Dance","Substitute"]}
   },
   "Ninetales": {
-    "NU RestTalk": {"item":"Leftovers","moves":["Flamethrower","Toxic","Rest","Sleep Talk"]}
+    "NU Defensive": {"item":"Leftovers","moves":["Flamethrower","Sunny Day","Rest","Sleep Talk"]},
+    "NU Roar": {"item":"Leftovers","moves":["Flamethrower","Toxic","Roar","Rest"]}
   },
   "Golbat": {
     "PU Utility": {"item":"Leftovers","moves":["Wing Attack","Toxic","Whirlwind","Protect"]},
@@ -442,7 +443,8 @@ var SETDEX_GSC = {
     "1v1 Toxic Stall": {"item":"Leftovers","moves":["Return","Toxic","Substitute","Protect"]}
   },
   "Seadra": {
-    "PU 3 Attacks": {"item":"Leftovers","ivs":{"hp":14,"at":28},"moves":["Surf","Ice Beam","Hidden Power Electric","Agility"]}
+    "PU 3 Attacks": {"item":"Leftovers","ivs":{"hp":14,"at":28},"moves":["Hydro Pump","Ice Beam","Hidden Power Electric","Haze"]},
+    "PU RestTalk": {"item":"Leftovers","ivs":{"hp":14,"at":28},"moves":["Hydro Pump","Hidden Power Electric","Rest","Sleep Talk"]}
   },
   "Seaking": {
     "OU Swords Dance": {"item":"Miracle Berry","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Agility","Double-Edge","Hidden Power Ground"]},
