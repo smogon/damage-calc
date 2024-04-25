@@ -2317,7 +2317,7 @@ var SETDEX_DPP = {
     "UU Tank": {"ability":"Slow Start","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Return","Earthquake","Thunder Wave","Knock Off"]}
   },
   "Giratina": {
-    "Ubers Wall": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":248,"sd":12},"moves":["Will-O-Wisp","Rest","Sleep Talk","Dragon Claw"]},
+    "Ubers Wall": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":248,"sd":12},"moves":["Roar","Rest","Sleep Talk","Earthquake"]},
     "Ubers Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":240,"df":252,"sa":16},"moves":["Calm Mind","Dragon Pulse","Rest","Sleep Talk"]},
     "Ubers Attacking Lead": {"ability":"Pressure","item":"Haban Berry","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Draco Meteor","Shadow Sneak","Will-O-Wisp","Aura Sphere"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Will-O-Wisp","Roar","Sleep Talk"]}

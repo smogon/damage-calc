@@ -268,7 +268,8 @@ var SETDEX_RBY = {
     "PU Standard": {"moves":["Earthquake","Body Slam","Blizzard","Fire Blast"]}
   },
   "Hitmonlee": {
-    "PU Meditate Attacker": {"moves":["High Jump Kick","Meditate","Body Slam","Seismic Toss"]}
+    "PU Meditate Attacker": {"moves":["High Jump Kick","Meditate","Body Slam","Seismic Toss"]},
+    "1v1 Offensive": {"moves":["High Jump Kick","Jump Kick","Rolling Kick","Meditate"]}
   },
   "Hitmonchan": {
     "PU Agility... Sweeper?": {"moves":["Agility","Submission","Body Slam","Counter"]}
@@ -320,7 +321,7 @@ var SETDEX_RBY = {
   },
   "Starmie": {
     "OU Special Attacker": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]},
-    "Ubers Special Attacker": {"moves":["Thunder Wave","Recover","Surf","Blizzard"]},
+    "Ubers Paralysis Lead": {"moves":["Thunder Wave","Recover","Psychic","Blizzard"]},
     "1v1 Psychic Stall": {"moves":["Psychic","Ice Beam","Recover","Reflect"]},
     "Tradebacks OU Standard": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]}
   },

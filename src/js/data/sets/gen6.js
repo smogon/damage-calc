@@ -4088,7 +4088,8 @@ var SETDEX_XY = {
     "Ubers Hone Claws": {"ability":"Teravolt","item":"Shuca Berry","nature":"Adamant","evs":{"hp":136,"at":252,"sp":120},"moves":["Hone Claws","Bolt Strike","Dragon Claw","Outrage"]},
     "Ubers Choice Scarf": {"ability":"Teravolt","item":"Choice Scarf","nature":"Naughty","evs":{"at":252,"sa":4,"sp":252},"moves":["Bolt Strike","Outrage","Draco Meteor","Volt Switch"]},
     "Ubers Life Orb": {"ability":"Teravolt","item":"Life Orb","nature":"Naughty","evs":{"at":252,"sa":4,"sp":252},"moves":["Bolt Strike","Outrage","Draco Meteor","Volt Switch"]},
-    "Ubers Choice Band": {"ability":"Teravolt","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sa":4,"sp":252},"moves":["Bolt Strike","Outrage","Dragon Claw","Volt Switch"]}
+    "Ubers Choice Band": {"ability":"Teravolt","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sa":4,"sp":252},"moves":["Bolt Strike","Outrage","Dragon Claw","Volt Switch"]},
+    "Pure Hackmons Mold Breaker": {"ability":"Mold Breaker","item":"Draco Plate","nature":"Rash","evs":{"at":144,"df":56,"sa":252,"sp":56},"moves":["Dark Void","Shell Smash","Bolt Strike","Judgment"]}
   },
   "Landorus": {
     "Ubers All-out Attacker": {"ability":"Sheer Force","item":"Life Orb","nature":"Rash","ivs":{"at":30,"df":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Earth Power","Knock Off","Rock Slide","Hidden Power Ice"]},

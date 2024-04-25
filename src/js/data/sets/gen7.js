@@ -1907,10 +1907,10 @@ var SETDEX_SM = {
     "ZU Swords Dance": {"ability":"Speed Boost","item":"Groundium Z","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Leech Life","Aerial Ace","Dig"]}
   },
   "Shedinja": {
+    "OU Tank": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Lonely","ivs":{"df":0,"sd":0},"evs":{"at":252,"sa":4,"sp":252},"moves":["Will-O-Wisp","Toxic","Protect","Shadow Sneak"]},
     "PU Swords Dance": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Lonely","ivs":{"df":0,"sd":0},"evs":{"at":252,"sp":252},"moves":["Swords Dance","X-Scissor","Shadow Sneak","Will-O-Wisp"]},
     "VGC 2019 Wonder Guard Wall": {"level":50,"ability":"Wonder Guard","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sp":252},"moves":["Shadow Sneak","Toxic","Ally Switch","Protect"]},
-    "1v1 Wonder Guard Wall": {"ability":"Wonder Guard","item":"Buginium Z","nature":"Adamant","evs":{"at":252,"sp":252},"moves":["Screech","Spite","Heal Block","X-Scissor"]},
-    "OU Showdown Usage": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Will-O-Wisp","Shadow Sneak","Protect","Shadow Claw"]}
+    "1v1 Wonder Guard Wall": {"ability":"Wonder Guard","item":"Buginium Z","nature":"Adamant","evs":{"at":252,"sp":252},"moves":["Screech","Spite","Heal Block","X-Scissor"]}
   },
   "Whismur": {
     "LC Trick Room Breaker": {"level":5,"ability":"Soundproof","item":"Life Orb","nature":"Quiet","evs":{"hp":244,"df":36,"sa":188,"sd":36},"moves":["Hyper Voice","Shadow Ball","Ice Beam","Fire Blast"]}
