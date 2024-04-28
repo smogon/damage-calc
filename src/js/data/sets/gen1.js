@@ -396,7 +396,8 @@ var SETDEX_RBY = {
     "UU Staller": {"moves":["Thunderbolt","Ice Beam","Thunder Wave","Recover"]},
     "NU Standard": {"moves":["Thunderbolt","Psychic","Thunder Wave","Recover"]},
     "NU Conversion": {"moves":["Conversion","Ice Beam","Thunder Wave","Recover"]},
-    "PU Support": {"moves":["Recover","Thunder Wave","Blizzard","Double-Edge"]},
+    "PU Agility": {"moves":["Agility","Recover","Psychic","Thunder Wave"]},
+    "PU Support": {"moves":["Thunder Wave","Recover","Psychic","Thunderbolt"]},
     "Tradebacks OU Bulky Support": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
     "Ubers Showdown Usage": {"moves":["Recover","Reflect","Thunder Wave","Psybeam"]}
   },

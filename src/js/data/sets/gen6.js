@@ -2968,8 +2968,7 @@ var SETDEX_XY = {
     "NU Specially Defensive": {"ability":"Levitate","item":"Eviolite","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Psywave","Toxic","Rest"]},
     "PU Defensive": {"ability":"Levitate","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":144,"sd":112},"moves":["Psywave","Toxic","Stealth Rock","Rest"]},
     "LC Berry Juice + Recycle": {"level":5,"ability":"Levitate","item":"Berry Juice","nature":"Careful","evs":{"hp":60,"at":4,"df":228,"sa":4,"sd":148,"sp":12},"moves":["Stealth Rock","Recycle","Earthquake","Psychic"]},
-    "ZU Physical Wall": {"ability":"Levitate","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Psywave","Stealth Rock","Toxic","Rest"]},
-    "ZU Special Wall": {"ability":"Levitate","item":"Eviolite","nature":"Calm","evs":{"hp":252,"sd":252,"sp":4},"moves":["Psywave","Stealth Rock","Toxic","Rest"]}
+    "ZU Physical Wall": {"ability":"Levitate","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Psywave","Stealth Rock","Toxic","Rest"]}
   },
   "Bronzong": {
     "Ubers Special Tank": {"ability":"Levitate","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"at":4,"sd":252},"moves":["Stealth Rock","Gyro Ball","Toxic","Protect"]},

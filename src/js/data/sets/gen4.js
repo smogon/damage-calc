@@ -728,7 +728,7 @@ var SETDEX_DPP = {
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Thunder Wave","Ice Beam","Lunar Dance","Rest"]},
     "OU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Bold","evs":{"hp":252,"df":148,"sd":40,"sp":68},"moves":["Reflect","Light Screen","Lunar Dance","Thunder Wave"]},
     "OU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"df":112,"sa":48,"sd":80,"sp":16},"moves":["Calm Mind","Psychic","Hidden Power Fire","Rest"]},
-    "Ubers Wall": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Ice Beam","Moonlight","Reflect","Toxic"]},
+    "Ubers Wall": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"df":252,"sd":4},"moves":["Ice Beam","Moonlight","Thunder Wave","Hidden Power Fire"]},
     "Ubers Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":24,"sp":232},"moves":["Light Screen","Reflect","Lunar Dance","Thunder Wave"]},
     "Doubles OU Utility": {"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":176,"sd":80},"moves":["Psychic","Thunder Wave","Helping Hand","Trick Room"]}
   },
@@ -1470,7 +1470,7 @@ var SETDEX_DPP = {
   },
   "Lugia": {
     "Ubers Great Wall": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":64,"sp":192},"moves":["Roost","Reflect","Whirlwind","Ice Beam"]},
-    "Ubers Special Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":64,"sp":192},"moves":["Calm Mind","Ice Beam","Roost","Whirlwind"]},
+    "Ubers Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":64,"sp":192},"moves":["Calm Mind","Ice Beam","Earth Power","Roost"]},
     "Ubers Trick": {"ability":"Pressure","item":"Choice Specs","nature":"Timid","evs":{"hp":200,"sa":116,"sp":192},"moves":["Trick","Ice Beam","Thunder","Roost"]},
     "Ubers Offensive Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Aeroblast","Roost","Earth Power"]}
   },
@@ -1870,7 +1870,7 @@ var SETDEX_DPP = {
     "Ubers Calm Mind": {"ability":"Drizzle","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Surf","Ice Beam","Thunder"]},
     "Ubers SubCM": {"ability":"Drizzle","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Substitute","Calm Mind","Surf","Ice Beam"]},
     "Ubers Mono-Attacker": {"ability":"Drizzle","item":"Leftovers","nature":"Modest","evs":{"hp":240,"df":244,"sp":24},"moves":["Calm Mind","Surf","Rest","Sleep Talk"]},
-    "Ubers Thunder Wave Lead": {"ability":"Drizzle","item":"Lum Berry","nature":"Modest","ivs":{"sp":30},"evs":{"hp":252,"df":4,"sa":252},"moves":["Thunder Wave","Surf","Ice Beam","Thunder"]},
+    "Ubers Thunder Wave Lead": {"ability":"Drizzle","item":"Lum Berry","nature":"Modest","evs":{"hp":144,"sa":252,"sp":112},"moves":["Thunder Wave","Hydro Pump","Ice Beam","Thunder"]},
     "Ubers ChestoRest": {"ability":"Drizzle","item":"Chesto Berry","nature":"Modest","evs":{"hp":240,"df":232,"sp":36},"moves":["Calm Mind","Rest","Surf","Ice Beam"]},
     "Ubers Baitogre": {"ability":"Drizzle","item":"Life Orb","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Waterfall","Surf","Thunder Wave","Thunder"]},
     "Anything Goes Showdown Usage": {"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunder","Ice Beam","Surf","Water Spout"]}
@@ -2102,9 +2102,9 @@ var SETDEX_DPP = {
     "PU Offensive": {"ability":"Sand Veil","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Stone Edge","Outrage","Dragon Claw"]}
   },
   "Garchomp": {
-    "Ubers Choice Scarf": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Stone Edge"]},
-    "Ubers Swords Dance": {"ability":"Sand Veil","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Outrage","Earthquake","Stone Edge"]},
-    "Ubers Choice Band": {"ability":"Sand Veil","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Stone Edge"]},
+    "Ubers Choice Scarf": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Sleep Talk"]},
+    "Ubers Swords Dance": {"ability":"Sand Veil","item":"Haban Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Outrage","Earthquake","Fire Fang"]},
+    "Ubers Choice Band": {"ability":"Sand Veil","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Fire Fang"]},
     "Ubers SubSalac": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","ivs":{"hp":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Substitute","Dragon Claw","Earthquake"]},
     "Anything Goes Showdown Usage": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Outrage","Dragon Claw","Swords Dance"]}
   },

@@ -289,7 +289,7 @@ var SETDEX_ADV = {
     "NU Support": {"ability":"Minus","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Wish","Encore","Baton Pass","Thunderbolt"]},
     "PU Standard Offensive": {"ability":"Minus","item":"Leftovers","nature":"Timid","ivs":{"at":2,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Baton Pass","Substitute"]},
     "PU Wish Support": {"ability":"Minus","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Wish","Protect","Baton Pass","Thunderbolt"]},
-    "PU Bulky Baton Pass": {"ability":"Minus","item":"Leftovers","ivs":{"at":0},"evs":{"hp":252,"sd":4,"sp":252},"moves":["Substitute","Baton Pass","Thunderbolt","Agility"]}
+    "PU Bulky Baton Pass": {"ability":"Minus","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sd":4,"sp":252},"moves":["Substitute","Baton Pass","Thunderbolt","Agility"]}
   },
   "Kecleon": {
     "OU Choice Band": {"ability":"Color Change","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Return","Shadow Ball","Focus Punch","Trick"]},
