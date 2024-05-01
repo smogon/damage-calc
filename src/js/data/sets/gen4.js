@@ -290,7 +290,8 @@ var SETDEX_DPP = {
     "UU Life Orb": {"ability":"Overgrow","item":"Life Orb","nature":"Modest","ivs":{"at":30,"sp":30},"evs":{"hp":72,"sa":252,"sd":4,"sp":180},"moves":["Leaf Storm","Focus Blast","Hidden Power Psychic","Synthesis"]},
     "UU Swords Dance": {"ability":"Overgrow","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Leaf Blade","Earthquake","Rock Slide"]},
     "UU Attacking Lead": {"ability":"Overgrow","item":"Life Orb","nature":"Naive","ivs":{"at":30,"df":30},"evs":{"at":40,"sa":252,"sp":216},"moves":["Leaf Storm","Quick Attack","Hidden Power Ice","Rock Slide"]},
-    "UU Mixed Attacker": {"ability":"Overgrow","item":"Life Orb","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"at":252,"sa":80,"sp":176},"moves":["Leaf Storm","Hidden Power Ice","Leaf Blade","Earthquake"]}
+    "UU Mixed Attacker": {"ability":"Overgrow","item":"Life Orb","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"at":252,"sa":80,"sp":176},"moves":["Leaf Storm","Hidden Power Ice","Leaf Blade","Earthquake"]},
+    "OU Showdown Usage": {"ability":"Overgrow","item":"Life Orb","nature":"Naive","ivs":{"at":30,"sa":30,"sp":30},"evs":{"at":252,"sa":28,"sp":228},"moves":["Hidden Power Fire","Earthquake","Leaf Blade","Crunch"]}
   },
   "Torchic": {
     "LC Mixed Attacker": {"level":5,"ability":"Blaze","item":"Life Orb","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":36,"sa":200,"sd":36,"sp":236},"moves":["Fire Blast","Hidden Power Grass","Rock Slide","Quick Attack"]}
@@ -720,7 +721,7 @@ var SETDEX_DPP = {
     "Ubers Specially-Based Mixed Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":64,"df":200,"sa":184,"sp":60},"moves":["Draco Meteor","Shadow Sneak","Thunder","Outrage"]},
     "Ubers Stallbreaker": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":84,"sa":216,"sd":96,"sp":112},"moves":["Calm Mind","Dragon Pulse","Shadow Ball","Substitute"]},
     "Ubers Sleeping Beauty (Mono-Attacker)": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":200,"df":44,"sa":224,"sd":40},"moves":["Dragon Pulse","Calm Mind","Rest","Sleep Talk"]},
-    "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Substitute","Outrage","Earthquake","Shadow Force"]},
+    "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Will-O-Wisp","Outrage","Earthquake","Shadow Force"]},
     "Ubers RestTalk": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Rest","Sleep Talk","Outrage","Shadow Force"]},
     "Anything Goes Showdown Usage": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":68,"df":200,"sa":124,"sp":116},"moves":["Shadow Sneak","Draco Meteor","Earthquake","Outrage"]}
   },
