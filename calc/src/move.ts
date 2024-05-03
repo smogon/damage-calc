@@ -62,6 +62,7 @@ export class Move implements State.Move {
     if (options.useMax && data.maxMove) {
       const maxMoveName: string = getMaxMoveName(
         data.type,
+        data.name,
         options.species,
         !!(data.category === 'Status'),
         options.ability
@@ -246,6 +247,7 @@ const ZMOVES_TYPING: {
 
 export function getMaxMoveName(
   moveType: I.TypeName,
+  moveName?: string,
   pokemonSpecies?: string,
   isStatus?: boolean,
   pokemonAbility?: string
@@ -257,7 +259,7 @@ export function getMaxMoveName(
     if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
     if (pokemonSpecies === 'Cinderace-Gmax') return 'G-Max Fire Ball';
   }
-  if (moveType === 'Normal') {
+  if (moveType === 'Normal' && !(moveName === "Weather Ball" || moveName === "Terrain Pulse")) {
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
     if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
     if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';

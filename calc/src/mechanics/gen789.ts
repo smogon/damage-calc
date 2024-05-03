@@ -198,7 +198,7 @@ export function calculateSMSSSV(
     move.timesUsed === 1;
 
   let type = move.type;
-  if (move.named('Weather Ball')) {
+  if (move.originalName === 'Weather Ball') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     type =
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
@@ -221,7 +221,7 @@ export function calculateSMSSSV(
     desc.attackerItem = attacker.item;
   } else if (
     move.named('Nature Power') ||
-    (move.named('Terrain Pulse') && isGrounded(attacker, field))
+    (move.originalName === 'Terrain Pulse' && isGrounded(attacker, field))
   ) {
     type =
       field.hasTerrain('Electric') ? 'Electric'
@@ -288,7 +288,7 @@ export function calculateSMSSSV(
   ) || (move.named('Tera Blast') && attacker.teraType);
 
   if (!move.isZ && !noTypeChange) {
-    const normal = move.hasType('Normal');
+    const normal = type === "Normal";
     if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
       type = 'Flying';
     } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
