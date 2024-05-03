@@ -210,10 +210,16 @@ export function calculateSMSSSV(
     desc.moveType = type;
   } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     type = getItemBoostType(attacker.item)!;
-  } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
+  } else if (move.originalName === 'Techno Blast' && attacker.item && attacker.item.includes('Drive')) {
     type = getTechnoBlast(attacker.item)!;
-  } else if (move.named('Multi-Attack') && attacker.item && attacker.item.includes('Memory')) {
+    if (move.isMax) {
+      desc.moveType = type;
+    }
+  } else if (move.originalName === 'Multi-Attack' && attacker.item && attacker.item.includes('Memory')) {
     type = getMultiAttack(attacker.item)!;
+    if (move.isMax) {
+      desc.moveType = type;
+    }
   } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     type = gift.t;
@@ -231,14 +237,18 @@ export function calculateSMSSSV(
       : 'Normal';
     desc.terrain = field.terrain;
 
+    if (move.isMax) {
+      desc.moveType = type;
+    }
+
     // If the Nature Power user has the ability Prankster, it cannot affect
     // Dark-types or grounded foes if Psychic Terrain is active
     if (!(move.named('Nature Power') && attacker.hasAbility('Prankster')) &&
-      (defender.types.includes('Dark') ||
-      (field.hasTerrain('Psychic') && isGrounded(defender, field)))) {
+      ((defender.types.includes('Dark') ||
+      (field.hasTerrain('Psychic') && isGrounded(defender, field))))) {
       desc.moveType = type;
     }
-  } else if (move.named('Revelation Dance')) {
+  } else if (move.originalName === 'Revelation Dance') {
     if (attacker.teraType) {
       type = attacker.teraType;
     } else {
@@ -280,7 +290,7 @@ export function calculateSMSSSV(
     'Judgment',
     'Nature Power',
     'Techno Blast',
-    'Multi Attack',
+    'Multi-Attack',
     'Natural Gift',
     'Weather Ball',
     'Terrain Pulse',
@@ -933,7 +943,7 @@ export function calculateBasePowerSMSSSV(
     'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage',
     'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare',
     'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle'
-  )) {
+  ) || move.isMax) {
     // show z-move power in description
     desc.moveBP = move.bp;
   }

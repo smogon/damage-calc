@@ -259,14 +259,16 @@ export function getMaxMoveName(
     if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
     if (pokemonSpecies === 'Cinderace-Gmax') return 'G-Max Fire Ball';
   }
-  if (moveType === 'Normal' && !(moveName === "Weather Ball" || moveName === "Terrain Pulse")) {
+  if (moveType === 'Normal') {
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
     if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
     if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
-    if (pokemonAbility === 'Pixilate') return 'Max Starfall';
-    if (pokemonAbility === 'Aerilate') return 'Max Airstream';
-    if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
-    if (pokemonAbility === 'Galvanize') return 'Max Lightning';
+    if (!(moveName === "Weather Ball" || moveName === "Terrain Pulse")) {
+      if (pokemonAbility === 'Pixilate') return 'Max Starfall';
+      if (pokemonAbility === 'Aerilate') return 'Max Airstream';
+      if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
+      if (pokemonAbility === 'Galvanize') return 'Max Lightning';
+    }
   }
   if (moveType === 'Fairy') {
     if (pokemonSpecies === 'Alcremie-Gmax') return 'G-Max Finale';
