@@ -263,7 +263,7 @@ export function getMaxMoveName(
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
     if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
     if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
-    if (!(moveName === "Weather Ball" || moveName === "Terrain Pulse")) {
+    if (!(moveName === 'Weather Ball' || moveName === 'Terrain Pulse')) {
       if (pokemonAbility === 'Pixilate') return 'Max Starfall';
       if (pokemonAbility === 'Aerilate') return 'Max Airstream';
       if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';

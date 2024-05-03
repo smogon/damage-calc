@@ -210,12 +210,14 @@ export function calculateSMSSSV(
     desc.moveType = type;
   } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     type = getItemBoostType(attacker.item)!;
-  } else if (move.originalName === 'Techno Blast' && attacker.item && attacker.item.includes('Drive')) {
+  } else if (move.originalName === 'Techno Blast' &&
+    attacker.item && attacker.item.includes('Drive')) {
     type = getTechnoBlast(attacker.item)!;
     if (move.isMax) {
       desc.moveType = type;
     }
-  } else if (move.originalName === 'Multi-Attack' && attacker.item && attacker.item.includes('Memory')) {
+  } else if (move.originalName === 'Multi-Attack' &&
+    attacker.item && attacker.item.includes('Memory')) {
     type = getMultiAttack(attacker.item)!;
     if (move.isMax) {
       desc.moveType = type;
@@ -298,7 +300,7 @@ export function calculateSMSSSV(
   ) || (move.named('Tera Blast') && attacker.teraType);
 
   if (!move.isZ && !noTypeChange) {
-    const normal = type === "Normal";
+    const normal = type === 'Normal';
     if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
       type = 'Flying';
     } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
