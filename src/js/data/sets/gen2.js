@@ -419,7 +419,7 @@ var SETDEX_GSC = {
     "NU Showdown Usage": {"item":"Leftovers","moves":["Earthquake","Rest","Swords Dance","Frustration"]}
   },
   "Rhyhorn": {
-    "PU Phazer": {"item":"Leftovers","moves":["Roar","Earthquake","Rock Slide","Protect"]}
+    "PU Curse": {"item":"Leftovers","moves":["Curse","Earthquake","Rock Slide","Toxic"]}
   },
   "Rhydon": {
     "OU Curse": {"item":"Leftovers","moves":["Earthquake","Rock Slide","Curse","Roar"]},
