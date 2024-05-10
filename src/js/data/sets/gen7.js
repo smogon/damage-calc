@@ -240,7 +240,7 @@ var SETDEX_SM = {
   },
   "Tapu Bulu": {
     "OU Choice Band": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"hp":84,"at":248,"sp":176},"moves":["Wood Hammer","Horn Leech","Superpower","Stone Edge"]},
-    "OU Specially Defensive": {"ability":"Grassy Surge","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Swords Dance","Horn Leech","Superpower","Synthesis"]},
+    "OU Specially Defensive": {"ability":"Grassy Surge","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Swords Dance","Horn Leech","Superpower","Protect"]},
     "OU Swords Dance": {"ability":"Grassy Surge","item":"Fightinium Z","nature":"Adamant","evs":{"hp":236,"at":144,"sd":32,"sp":96},"moves":["Swords Dance","Horn Leech","Superpower","Stone Edge"]},
     "OU Choice Scarf": {"ability":"Grassy Surge","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Horn Leech","Wood Hammer","Superpower","Stone Edge"]},
     "Doubles OU Offensive": {"ability":"Grassy Surge","item":"Grassium Z","nature":"Adamant","evs":{"hp":252,"at":56,"sd":116,"sp":84},"moves":["Wood Hammer","Superpower","Swords Dance","Protect"]},
@@ -360,6 +360,7 @@ var SETDEX_SM = {
     "OU Dragon Dance X": {"ability":"Blaze","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Earthquake","Roost"]},
     "OU Drought Wallbreaker Y": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Flamethrower","Focus Blast","Solar Beam","Roost"]},
     "OU 3 Attacks": {"ability":"Blaze","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Outrage","Earthquake","Roost"]},
+    "OU Swords Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Flare Blitz","Dragon Claw","Roost"]},
     "NU Z-Hold Hands": {"ability":"Blaze","item":"Normalium Z","nature":"Timid","evs":{"hp":32,"sa":228,"sd":32,"sp":216},"moves":["Hold Hands","Fire Blast","Air Slash","Hidden Power Grass"]},
     "Doubles OU Sun Attacker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
     "VGC 2018 Drought Attacker": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
@@ -378,6 +379,7 @@ var SETDEX_SM = {
   "Charizard-Mega-X": {
     "OU Dragon Dance X": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Earthquake","Roost"]},
     "OU 3 Attacks": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Outrage","Earthquake","Roost"]},
+    "OU Swords Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Flare Blitz","Dragon Claw","Roost"]},
     "Battle Spot Singles Dragon Dance": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Outrage","Earthquake"]},
     "Battle Spot Singles Versatile Sweeper": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Flame Charge","Outrage","Flare Blitz"]},
     "Battle Spot Singles Defensive": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"hp":164,"df":116,"sp":228},"moves":["Will-O-Wisp","Roost","Dragon Claw","Earthquake"]},
@@ -3851,7 +3853,7 @@ var SETDEX_SM = {
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Prankster","item":"Choice Specs","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hurricane","Tailwind","Heat Wave","Sludge Bomb"]}
   },
   "Tornadus-Therian": {
-    "OU Bulky Pivot": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
+    "OU Bulky Pivot": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Timid","evs":{"hp":240,"df":64,"sp":204},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
     "OU Offensive Z-Move": {"ability":"Regenerator","item":"Flyinium Z","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
     "Monotype Offensive Utility": {"ability":"Regenerator","item":"Flyinium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hurricane","U-turn","Knock Off","Defog"]},
     "CAP Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Timid","evs":{"hp":80,"sa":196,"sp":232},"moves":["Hurricane","Knock Off","U-turn","Heat Wave"]},
@@ -4827,10 +4829,10 @@ var SETDEX_SM = {
     "VGC 2019 Ultra Necrozma": {"level":50,"ability":"Prism Armor","item":"Ultranecrozium Z","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Photon Geyser","Moongeist Beam","Earth Power","Protect"]}
   },
   "Magearna": {
-    "OU Shift Gear": {"ability":"Soul-Heart","item":"Electrium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shift Gear","Thunderbolt","Ice Beam","Focus Blast"]},
-    "OU Heart Swap": {"ability":"Soul-Heart","item":"Leftovers","nature":"Calm","ivs":{"sp":6},"evs":{"hp":248,"df":28,"sd":232},"moves":["Heart Swap","Pain Split","Volt Switch","Flash Cannon"]},
     "OU Assault Vest": {"ability":"Soul-Heart","item":"Assault Vest","nature":"Sassy","evs":{"hp":248,"sd":224,"sp":36},"moves":["Fleur Cannon","Volt Switch","Hidden Power Fire","Iron Head"]},
+    "OU Heart Swap": {"ability":"Soul-Heart","item":"Leftovers","nature":"Calm","ivs":{"sp":6},"evs":{"hp":248,"df":28,"sd":232},"moves":["Heart Swap","Pain Split","Volt Switch","Flash Cannon"]},
     "OU Calm Mind + Pain Split": {"ability":"Soul-Heart","item":"Fairium Z","nature":"Modest","evs":{"hp":248,"df":28,"sa":224,"sd":8},"moves":["Calm Mind","Pain Split","Fleur Cannon","Thunderbolt"]},
+    "OU Shift Gear": {"ability":"Soul-Heart","item":"Fightinium Z","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shift Gear","Focus Blast","Fleur Cannon","Thunderbolt"]},
     "Ubers Specially Defensive": {"ability":"Soul-Heart","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Heart Swap","Fleur Cannon","Volt Switch","Heal Bell"]},
     "Anything Goes Specially Defensive Pivot": {"ability":"Soul-Heart","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Fleur Cannon","Heart Swap","Volt Switch","Pain Split"]},
     "1v1 Iron Defense + Fairium Z": {"ability":"Soul-Heart","item":"Fairium Z","nature":"Bold","evs":{"hp":248,"sd":48,"sp":212},"moves":["Fleur Cannon","Iron Defense","Pain Split","Calm Mind"]},
