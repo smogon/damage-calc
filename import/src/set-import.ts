@@ -57,8 +57,6 @@ const VALIDATORS: {[format: string]: TeamValidator} = {};
 // the validator which is the only area that needs the Format object
 const UNSUPPORTED: {[format: string]: string} = {
   'gen9almostanyability': '[Gen 9] Almost Any Ability',
-  // NOTE: This should be working but https://github.com/pkmn/ps/issues/25
-  'gen9lc': '[Gen 9] LC',
 };
 const SHORT_STAT_FORM: {[stat: string]: keyof CalcStatsTable} =
 {'hp': 'hp', 'atk': 'at', 'def': 'df', 'spa': 'sa', 'spd': 'sd', 'spe': 'sp'};
