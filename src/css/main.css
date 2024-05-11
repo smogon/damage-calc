@@ -221,10 +221,7 @@ th {
     text-align: center;
     width: 27.5em;
 }
-.holder-0 {
-    position: absolute;
-    top: 151px;
-}
+
 #holder-2 tr {
     white-space: nowrap;
 }
@@ -523,4 +520,8 @@ table.field {
 .extraSetItems,
 .extraSetMoves {
     width: 100%;
+}
+
+.flex-parent {
+	display: flex;
 }
