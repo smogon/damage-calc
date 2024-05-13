@@ -630,10 +630,10 @@ var SETDEX_DPP = {
     "Anything Goes Calm Mind": {"ability":"Multitype","item":"Sky Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Substitute","Recover"]}
   },
   "Arceus-Ghost": {
+    "Anything Goes Defensive Spinblocker": {"ability":"Multitype","item":"Spooky Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Judgment","Flamethrower","Recover","Roar"]},
+    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Spooky Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Fire Blast","Recover"]},
     "Anything Goes Swords Dance": {"ability":"Multitype","item":"Spooky Plate","nature":"Jolly","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Swords Dance","Shadow Force","Brick Break","Recover"]},
-    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Spooky Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Focus Blast","Recover"]},
-    "Anything Goes Lead": {"ability":"Multitype","item":"Spooky Plate","nature":"Hasty","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Flamethrower","Judgment","Extreme Speed","Recover"]},
-    "Anything Goes Defensive Spinblocker": {"ability":"Multitype","item":"Spooky Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Judgment","Flamethrower","Recover","Will-O-Wisp"]}
+    "Anything Goes Lead": {"ability":"Multitype","item":"Spooky Plate","nature":"Hasty","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Flamethrower","Judgment","Extreme Speed","Recover"]}
   },
   "Arceus-Grass": {
     "Anything Goes Support": {"ability":"Multitype","item":"Meadow Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Thunder Wave","Recover","Grass Knot","Flamethrower"]},
@@ -1856,14 +1856,14 @@ var SETDEX_DPP = {
     "OU Calm Mind + 2 Attacks": {"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Calm Mind","Dragon Pulse","Hidden Power Fire","Recover"]},
     "OU Expert Belt": {"ability":"Levitate","item":"Expert Belt","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Grass Knot","Surf","Hidden Power Fire"]},
     "OU Life Orb": {"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Hidden Power Fire","Surf","Recover"]},
-    "Ubers Calm Mind": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":112,"sa":204,"sp":192},"moves":["Calm Mind","Dragon Pulse","Thunder","Recover"]},
+    "Ubers Calm Mind": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":112,"sa":204,"sp":192},"moves":["Calm Mind","Draco Meteor","Thunder","Recover"]},
     "Ubers Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":216,"sa":40,"sp":252},"moves":["Reflect","Light Screen","Healing Wish","Dragon Pulse"]},
     "Doubles OU Showdown Usage": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Psychic","Grass Knot","Thunderbolt"]},
     "Anything Goes Showdown Usage": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":128,"sa":180,"sp":200},"moves":["Draco Meteor","Thunder","Calm Mind","Recover"]}
   },
   "Latios": {
-    "Ubers Offensive Calm Mind": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Dragon Pulse","Grass Knot","Recover"]},
-    "Ubers All-Out Attacker": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Grass Knot","Thunder","Recover"]},
+    "Ubers Offensive Calm Mind": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Draco Meteor","Thunder","Recover"]},
+    "Ubers All-Out Attacker": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Surf","Thunder","Recover"]},
     "Ubers Dual Screens + Memento": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Reflect","Light Screen","Memento","Draco Meteor"]},
     "Ubers Dragon Dance": {"ability":"Levitate","item":"Soul Dew","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Dragon Dance","Dragon Pulse","Thunder","Hidden Power Fire"]}
   },
@@ -1889,6 +1889,7 @@ var SETDEX_DPP = {
   },
   "Rayquaza": {
     "Ubers Dragon Dance": {"ability":"Air Lock","item":"Life Orb","nature":"Jolly","evs":{"hp":32,"at":252,"sd":8,"sp":216},"moves":["Dragon Dance","Outrage","Earthquake","Overheat"]},
+    "Ubers Choice Scarf": {"ability":"Air Lock","item":"Choice Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Outrage","Draco Meteor","Earthquake","Fire Blast"]},
     "Ubers Swords Dance": {"ability":"Air Lock","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Extreme Speed","Dragon Claw","Earthquake"]},
     "Ubers MixQuaza (Mixed Attacker)": {"ability":"Air Lock","item":"Life Orb","nature":"Hasty","evs":{"at":40,"sa":252,"sp":216},"moves":["Draco Meteor","Fire Blast","Extreme Speed","Outrage"]},
     "Ubers Choice Band": {"ability":"Air Lock","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Claw","Extreme Speed","Earthquake","Outrage"]}
