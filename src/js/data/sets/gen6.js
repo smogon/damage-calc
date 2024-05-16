@@ -2635,8 +2635,8 @@ var SETDEX_XY = {
   },
   "Huntail": {
     "PU Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Naughty","evs":{"at":252,"sa":4,"sp":252},"moves":["Shell Smash","Waterfall","Sucker Punch","Ice Beam"]},
-    "ZU Physical Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Waterfall","Sucker Punch","Return"]},
-    "ZU Special Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Modest","ivs":{"at":0,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Surf","Ice Beam","Hidden Power Grass"]}
+    "ZU Special Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Modest","ivs":{"at":0,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Surf","Ice Beam","Hidden Power Grass"]},
+    "ZU Physical Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Waterfall","Sucker Punch","Return"]}
   },
   "Gorebyss": {
     "NU Shell Smash": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Shell Smash","Hydro Pump","Ice Beam","Hidden Power Grass"]},

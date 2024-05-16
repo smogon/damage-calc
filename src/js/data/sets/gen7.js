@@ -1048,7 +1048,7 @@ var SETDEX_SM = {
     "PU Substitute + Nasty Plot": {"ability":"Dry Skin","item":"Normalium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Substitute","Nasty Plot","Lovely Kiss","Ice Beam"]}
   },
   "Pinsir": {
-    "OU Swords Dance": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
+    "OU Swords Dance": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Frustration","Quick Attack","Close Combat"]},
     "PU Z-Me First": {"ability":"Moxie","item":"Normalium Z","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Me First","X-Scissor","Earthquake","Stone Edge"]},
     "PU Swords Dance": {"ability":"Mold Breaker","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","X-Scissor","Earthquake","Stone Edge"]},
     "Monotype Swords Dance (Bug)": {"ability":"Moxie","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
@@ -1059,7 +1059,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Hyper Cutter","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Quick Attack","Close Combat","Return"]}
   },
   "Pinsir-Mega": {
-    "OU Swords Dance": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
+    "OU Swords Dance": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Frustration","Quick Attack","Close Combat"]},
     "Monotype Swords Dance (Bug)": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Return","Quick Attack","Close Combat"]},
     "1v1 Offensive": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"df":16,"sp":240},"moves":["Giga Impact","Substitute","Earthquake","Swords Dance"]},
     "CAP Showdown Usage": {"ability":"Aerilate","item":"Pinsirite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Quick Attack","Close Combat","Return"]}
@@ -1802,7 +1802,7 @@ var SETDEX_SM = {
     "LC Bulky Attacker": {"level":5,"ability":"Torrent","item":"Eviolite","nature":"Impish","evs":{"at":196,"df":116,"sd":196},"moves":["Waterfall","Ice Beam","Superpower","Double-Edge"]}
   },
   "Swampert": {
-    "OU Rain Sweeper": {"ability":"Damp","item":"Swampertite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Stealth Rock"]},
+    "OU Rain Sweeper": {"ability":"Swift Swim","item":"Swampertite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Stealth Rock"]},
     "UU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Scald","Toxic"]},
     "UU Choice Band": {"ability":"Torrent","item":"Choice Band","nature":"Adamant","evs":{"hp":88,"at":252,"sp":168},"moves":["Earthquake","Waterfall","Ice Punch","Toxic"]},
     "UU Offensive Stealth Rock": {"ability":"Torrent","item":"Life Orb","nature":"Adamant","evs":{"hp":92,"at":252,"sp":164},"moves":["Stealth Rock","Earthquake","Waterfall","Ice Punch"]},
@@ -2682,7 +2682,8 @@ var SETDEX_SM = {
     "LC Z-Splash": {"level":5,"ability":"Limber","item":"Normalium Z","nature":"Jolly","evs":{"at":228,"df":4,"sp":236},"moves":["Splash","Return","Drain Punch","Fire Punch"]}
   },
   "Lopunny": {
-    "OU All-out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Return","High Jump Kick","Fake Out","Ice Punch"]},
+    "OU All-out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Fake Out","Ice Punch"]},
+    "OU PuP + Encore": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Power-Up Punch","Encore"]},
     "Ubers Healing Wish": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Healing Wish"]},
     "PU Switcheroo": {"ability":"Klutz","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Switcheroo","Return","High Jump Kick","Healing Wish"]},
     "VGC 2019 Offensive": {"level":50,"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","High Jump Kick","Return","After You"]},
@@ -2693,7 +2694,8 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Cute Charm","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","High Jump Kick","Return","Ice Punch"]}
   },
   "Lopunny-Mega": {
-    "OU All-out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Return","High Jump Kick","Fake Out","Ice Punch"]},
+    "OU All-out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Fake Out","Ice Punch"]},
+    "OU PuP + Encore": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Power-Up Punch","Encore"]},
     "Ubers Healing Wish": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Healing Wish"]},
     "VGC 2019 Offensive": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","High Jump Kick","Return","After You"]},
     "VGC 2018 Fake Out Support": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Encore"]},
@@ -3998,8 +4000,8 @@ var SETDEX_SM = {
   },
   "Greninja": {
     "OU Offensive": {"ability":"Battle Bond","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Dark Pulse","Water Shuriken","Spikes"]},
-    "OU Physically Based Protean": {"ability":"Protean","item":"Groundium Z","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Dig","Ice Beam","Gunk Shot","Spikes"]},
-    "OU Specially Based Protean": {"ability":"Protean","item":"Waterium Z","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Gunk Shot","Hidden Power Fire","Spikes"]},
+    "OU Physical Protean": {"ability":"Protean","item":"Groundium Z","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Dig","Ice Beam","Gunk Shot","Spikes"]},
+    "OU Special Protean": {"ability":"Protean","item":"Waterium Z","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Gunk Shot","Hidden Power Fire","Spikes"]},
     "OU Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Hasty","evs":{"at":176,"sa":80,"sp":252},"moves":["Rock Slide","U-turn","Ice Beam","Spikes"]},
     "Ubers Lead": {"ability":"Battle Bond","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Dark Pulse","Substitute"]},
     "Battle Spot Singles Protean Sweeper": {"level":50,"ability":"Protean","item":"Focus Sash","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Ice Beam","Water Shuriken","Dark Pulse","Gunk Shot"]},

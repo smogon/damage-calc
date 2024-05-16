@@ -709,7 +709,7 @@ var SETDEX_DPP = {
     "OU Choice Scarf": {"ability":"Flash Fire","item":"Choice Scarf","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Earth Power","Explosion","Hidden Power Ice"]},
     "OU Specially Defensive": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Lava Plume","Protect","Stealth Rock","Explosion"]},
     "OU Torment": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":40,"sp":216},"moves":["Torment","Substitute","Protect","Lava Plume"]},
-    "Ubers Stallbreaker": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":128,"sp":128},"moves":["Taunt","Roar","Flamethrower","Dragon Pulse"]},
+    "Ubers Stallbreaker": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Taunt","Protect","Lava Plume","Toxic"]},
     "Doubles OU Showdown Usage": {"ability":"Flash Fire","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Protect","Heat Wave","Substitute"]}
   },
   "Shiftry": {
@@ -1902,7 +1902,7 @@ var SETDEX_DPP = {
     "OU Mixed Attacker": {"ability":"Serene Grace","item":"Shuca Berry","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Iron Head","Ice Punch","Fire Punch","Grass Knot"]},
     "OU Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Iron Head","Fire Punch","Trick","Ice Punch"]},
     "OU Wish + Calm Mind": {"ability":"Serene Grace","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":224,"sp":32},"moves":["Calm Mind","Wish","Psychic","Thunderbolt"]},
-    "Ubers Wish Support": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":40,"sd":216},"moves":["Wish","U-turn","Protect","Body Slam"]},
+    "Ubers Support": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":8,"sd":216,"sp":32},"moves":["Wish","U-turn","Iron Head","Protect"]},
     "Ubers Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Iron Head","Trick","Ice Punch","U-turn"]},
     "Ubers Substitute + Thunder Wave": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":100,"sd":156},"moves":["Substitute","Thunder Wave","Iron Head","Ice Punch"]},
     "Doubles OU Showdown Usage": {"ability":"Serene Grace","item":"Leftovers","nature":"Naive","evs":{"hp":244,"at":12,"sp":252},"moves":["Iron Head","Protect","Rain Dance","Thunder"]}

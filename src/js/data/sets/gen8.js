@@ -1854,8 +1854,8 @@ var SETDEX_SS = {
   },
   "Heatran": {
     "OU Specially Defensive": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"sd":236,"sp":20},"moves":["Magma Storm","Earth Power","Taunt","Stealth Rock"]},
-    "OU Physically Defensive": {"ability":"Flame Body","item":"Air Balloon","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":236,"sp":20},"moves":["Magma Storm","Earth Power","Toxic","Stealth Rock"]},
-    "OU Offensive": {"ability":"Flash Fire","item":"Air Balloon","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Magma Storm","Earth Power","Taunt","Eruption"]},
+    "OU Physically Defensive": {"ability":"Flame Body","item":"Air Balloon","nature":"Bold","evs":{"hp":252,"df":236,"sp":20},"moves":["Magma Storm","Earth Power","Toxic","Stealth Rock"]},
+    "OU Offensive": {"ability":"Flash Fire","item":"Air Balloon","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Magma Storm","Earth Power","Taunt","Eruption"]},
     "Ubers Specially Defensive Trapper": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":244,"sd":244,"sp":20},"moves":["Magma Storm","Earth Power","Taunt","Toxic"]},
     "Doubles OU Eruption": {"ability":"Flash Fire","item":"Charcoal","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Eruption","Heat Wave","Earth Power","Protect"]},
     "Battle Stadium Singles Offensive": {"level":50,"ability":"Flash Fire","item":"Assault Vest","nature":"Modest","evs":{"hp":20,"df":4,"sa":252,"sd":12,"sp":220},"moves":["Flash Cannon","Lava Plume","Earth Power","Solar Beam"]},
@@ -3309,7 +3309,6 @@ var SETDEX_SS = {
     "OU Choice Specs": {"ability":"Psychic Surge","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Moonblast","Psychic","Focus Blast"]},
     "OU Choice Scarf": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Future Sight","Psyshock","Moonblast","Focus Blast"]},
     "OU Calm Mind": {"ability":"Psychic Surge","item":"Twisted Spoon","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Psyshock","Draining Kiss","Focus Blast"]},
-    "OU Assault Vest": {"ability":"Psychic Surge","item":"Assault Vest","nature":"Modest","evs":{"hp":40,"sa":216,"sp":252},"moves":["Psyshock","Moonblast","Focus Blast","Nature's Madness"]},
     "Doubles OU Bulky Taunt": {"ability":"Psychic Surge","item":"Sitrus Berry","nature":"Timid","evs":{"hp":252,"df":40,"sa":64,"sp":152},"moves":["Psychic","Moonblast","Taunt","Protect"]},
     "Battle Stadium Singles Offensive": {"level":50,"ability":"Psychic Surge","item":"Choice Scarf","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Moonblast","Thunderbolt","Psyshock"]},
     "Monotype Choice Specs (Psychic)": {"ability":"Psychic Surge","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Focus Blast","Thunderbolt"]},
@@ -3966,9 +3965,6 @@ var SETDEX_SS = {
     "Battle Stadium Singles BEAR KNUCKLE (Choice Item Attacker)": {"level":50,"ability":"Unseen Fist","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Wicked Blow","Close Combat","Sucker Punch","U-turn"]},
     "Anything Goes Choice Band": {"ability":"Unseen Fist","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Wicked Blow","Close Combat","U-turn","Stone Edge"]}
   },
-  "Urshifu-Rapid-Strike-Gmax": {
-    "VGC 2021 Offensive": {"level":50,"ability":"Unseen Fist","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Surging Strikes","Close Combat","Aqua Jet","Detect"]}
-  },
   "Urshifu-Rapid-Strike": {
     "OU Choice Band": {"ability":"Unseen Fist","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Surging Strikes","Close Combat","U-turn","Aqua Jet"]},
     "OU Protective Pads": {"ability":"Unseen Fist","item":"Protective Pads","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Surging Strikes","Close Combat","U-turn","Taunt"]},
@@ -3992,6 +3988,9 @@ var SETDEX_SS = {
     "CAP Choice Band": {"ability":"Unseen Fist","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Close Combat","Surging Strikes","U-turn","Aqua Jet"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Unseen Fist","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Surging Strikes","Close Combat","U-turn","Rock Tomb"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Unseen Fist","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Surging Strikes","Close Combat","Aqua Jet","U-turn"]}
+  },
+  "Urshifu-Rapid-Strike-Gmax": {
+    "VGC 2021 Offensive": {"level":50,"ability":"Unseen Fist","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Surging Strikes","Close Combat","Aqua Jet","Detect"]}
   },
   "Zarude": {
     "OU Bulk Up": {"ability":"Leaf Guard","item":"Leftovers","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Bulk Up","Jungle Healing","Power Whip","Darkest Lariat"]},
