@@ -1106,7 +1106,7 @@ function getMoveDetails(moveInfo, opts) {
 	}
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
-		ability: opts.ability, item: opts.item, species: opts.species, useZ: isZMove, species: opts.species, isCrit: isCrit, hits: hits,
+		ability: opts.ability, item: opts.item, useZ: isZMove, species: opts.species, isCrit: isCrit, hits: hits,
 		isStellarFirstUse: isStellarFirstUse, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
 		overrides: overrides, useMax: opts.isDynamaxed
 	});
