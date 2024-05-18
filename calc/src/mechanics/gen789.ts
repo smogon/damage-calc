@@ -213,15 +213,11 @@ export function calculateSMSSSV(
   } else if (move.originalName === 'Techno Blast' &&
     attacker.item && attacker.item.includes('Drive')) {
     type = getTechnoBlast(attacker.item)!;
-    if (move.isMax) {
-      desc.moveType = type;
-    }
+    desc.moveType = type;
   } else if (move.originalName === 'Multi-Attack' &&
     attacker.item && attacker.item.includes('Memory')) {
     type = getMultiAttack(attacker.item)!;
-    if (move.isMax) {
-      desc.moveType = type;
-    }
+    desc.moveType = type;
   } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     type = gift.t;
