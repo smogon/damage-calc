@@ -2058,7 +2058,7 @@ var SETDEX_BW = {
     "RU Quiver Dance": {"ability":"Tinted Lens","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Substitute"]},
     "NU Choice Specs": {"ability":"Tinted Lens","item":"Choice Specs","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Bug Buzz","Air Slash","Sleep Talk","U-turn"]},
     "ZU Choice Specs": {"ability":"Tinted Lens","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Bug Buzz","Shadow Ball","Psychic","U-turn"]},
-    "ZU Quiver Dance": {"ability":"Tinted Lens","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Substitute"]}
+    "ZU Quiver Dance": {"ability":"Tinted Lens","item":"Bug Gem","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Protect"]}
   },
   "Vespiquen": {
     "NU Wall": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Protect","Roost","Toxic","Attack Order"]}

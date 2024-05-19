@@ -198,7 +198,7 @@ var SETDEX_RBY = {
   "Magneton": {
     "UU Bulky Special Attacker": {"moves":["Thunderbolt","Thunder Wave","Double-Edge","Rest"]},
     "NU Offensive": {"moves":["Thunder Wave","Thunderbolt","Thunder","Rest"]},
-    "PU Special Attacker": {"moves":["Thunderbolt","Double-Edge","Thunder Wave","Toxic"]}
+    "PU Special Attacker": {"moves":["Thunderbolt","Thunder Wave","Hyper Beam","Screech"]}
   },
   "Farfetch’d": {
     "PU Double Dance": {"moves":["Slash","Agility","Swords Dance","Body Slam"]}
@@ -318,7 +318,7 @@ var SETDEX_RBY = {
     "Tradebacks OU Double Dance": {"moves":["Hyper Beam","Surf","Agility","Swords Dance"]}
   },
   "Staryu": {
-    "PU Support": {"moves":["Thunder Wave","Surf","Thunderbolt","Recover"]}
+    "PU Special Attacker": {"moves":["Surf","Thunder Wave","Thunderbolt","Recover"]}
   },
   "Starmie": {
     "OU Special Attacker": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]},

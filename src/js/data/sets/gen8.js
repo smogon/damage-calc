@@ -606,7 +606,6 @@ var SETDEX_SS = {
     "OU Utility": {"ability":"Static","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":248,"df":244,"sp":16},"moves":["Hurricane","Volt Switch","Roost","Defog"]},
     "OU Rain Attacker": {"ability":"Static","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunder","Hurricane","Weather Ball","Roost"]},
     "OU Offensive": {"ability":"Static","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Volt Switch","Heat Wave","Roost"]},
-    "OU Offensive Rain Sweeper": {"ability":"Static","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunder","Hurricane","Weather Ball","Roost"]},
     "Doubles OU Offensive Tailwind": {"ability":"Static","item":"Sitrus Berry","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Volt Switch","Hurricane","Tailwind","Protect"]},
     "VGC 2022 Dynamax Attacker": {"level":50,"ability":"Static","item":"Life Orb","nature":"Timid","evs":{"hp":20,"df":4,"sa":164,"sd":68,"sp":252},"moves":["Thunderbolt","Hurricane","Heat Wave","Detect"]},
     "Battle Stadium Singles Dynamax Attacker": {"level":50,"ability":"Static","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Thunderbolt","Heat Wave","Roost"]},
@@ -807,8 +806,8 @@ var SETDEX_SS = {
     "CAP Pivot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Scald","Future Sight","Slack Off","Teleport"]}
   },
   "Slowking-Galar": {
-    "OU Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Calm","evs":{"hp":252,"df":12,"sa":124,"sd":120},"moves":["Future Sight","Sludge Bomb","Flamethrower","Scald"]},
-    "OU Nasty Plot": {"ability":"Regenerator","item":"Black Sludge","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":216,"sp":44},"moves":["Nasty Plot","Psyshock","Sludge Bomb","Scald"]},
+    "OU Nasty Plot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Modest","ivs":{"at":0},"evs":{"hp":248,"df":12,"sa":128,"sd":44,"sp":76},"moves":["Nasty Plot","Psyshock","Sludge Bomb","Scald"]},
+    "OU Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"df":12,"sa":144,"sd":60,"sp":44},"moves":["Future Sight","Sludge Bomb","Flamethrower","Scald"]},
     "Monotype Assault Vest (Poison)": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Future Sight","Sludge Bomb","Earthquake","Flamethrower"]},
     "Monotype Assault Vest (Psychic)": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":248,"sa":12,"sd":248},"moves":["Sludge Bomb","Flamethrower","Earthquake","Future Sight"]},
     "National Dex Assault Vest Pivot": {"ability":"Regenerator","item":"Assault Vest","nature":"Calm","evs":{"hp":252,"sa":116,"sd":140},"moves":["Future Sight","Sludge Bomb","Flamethrower","Scald"]},
@@ -1015,7 +1014,7 @@ var SETDEX_SS = {
   },
   "Tyranitar": {
     "OU Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Crunch","Fire Punch","Heavy Slam"]},
-    "OU Specially Defensive": {"ability":"Sand Stream","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Rock Blast","Earthquake","Thunder Wave"]},
+    "OU Specially Defensive": {"ability":"Sand Stream","item":"Leftovers","nature":"Careful","evs":{"hp":248,"at":148,"df":12,"sd":100},"moves":["Stealth Rock","Rock Blast","Earthquake","Thunder Wave"]},
     "Ubers Specially Defensive": {"ability":"Sand Stream","item":"Heavy-Duty Boots","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Rock Blast","Foul Play","Rest"]},
     "Doubles OU Sand Attacker": {"ability":"Sand Stream","item":"Sitrus Berry","nature":"Brave","evs":{"hp":188,"at":252,"sa":68},"moves":["Stone Edge","Crunch","Ice Beam","Stealth Rock"]},
     "Battle Stadium Singles Dynamax Attacker": {"level":50,"ability":"Sand Stream","item":"Weakness Policy","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Stone Edge","Crunch","Earthquake","Ice Punch"]},
@@ -2376,7 +2375,7 @@ var SETDEX_SS = {
     "OU Three Attacks": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Earth Power","Flash Cannon","Roost"]},
     "OU Nasty Plot": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Pulse","Earth Power","Roost"]},
     "Ubers Life Orb": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Draco Meteor","Dark Pulse","Flash Cannon"]},
-    "UU HYDREIGON SPECS": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","Flamethrower","Roost"]},
+    "UU Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","Flamethrower","Roost"]},
     "UU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","U-turn","Fire Blast"]},
     "UU Dragon Dance": {"ability":"Levitate","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Dragon Dance","Crunch","Scale Shot","Fire Blast"]},
     "Monotype Nasty Plot (Dragon)": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Pulse","Flamethrower","Substitute"]},
@@ -3063,6 +3062,8 @@ var SETDEX_SS = {
     "LC Wall": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Bold","evs":{"hp":116,"at":12,"df":180,"sa":12,"sd":180},"moves":["Scald","Sludge Bomb","Knock Off","Recover"]}
   },
   "Toxapex": {
+    "OU Physically Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Impish","ivs":{"at":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
+    "OU Specially Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Careful","ivs":{"at":0},"evs":{"hp":248,"df":8,"sd":248},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
     "OU The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Knock Off","Recover","Haze","Toxic Spikes"]},
     "Ubers The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Knock Off","Haze","Recover","Scald"]},
     "Battle Stadium Singles Physical Wall": {"level":50,"ability":"Regenerator","item":"Black Sludge","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Recover","Haze","Toxic"]},
@@ -3281,6 +3282,7 @@ var SETDEX_SS = {
     "CAP Showdown Usage": {"ability":"Bulletproof","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":148,"sd":108},"moves":["Earthquake","Stealth Rock","Body Press","Toxic"]}
   },
   "Tapu Koko": {
+    "OU Offensive Utility": {"ability":"Electric Surge","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Dazzling Gleam","U-turn","Roost"]},
     "OU Calm Mind": {"ability":"Electric Surge","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Thunderbolt","Dazzling Gleam","Roost"]},
     "OU Dual Screens": {"ability":"Electric Surge","item":"Light Clay","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Light Screen","Reflect","U-turn","Taunt"]},
     "OU Offensive Pivot": {"ability":"Electric Surge","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Dazzling Gleam","U-turn","Roost"]},
@@ -3461,6 +3463,9 @@ var SETDEX_SS = {
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Beast Boost","item":"Assault Vest","nature":"Adamant","evs":{"hp":236,"at":252,"sd":20},"moves":["Flash Cannon","Air Slash","Protect","Flamethrower"]}
   },
   "Kartana": {
+    "OU Swords Dance": {"ability":"Beast Boost","item":"Protective Pads","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Knock Off","Sacred Sword"]},
+    "OU Choice Scarf": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
+    "OU Choice Band": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
     "OU Paper Cut (Swords Dance)": {"ability":"Beast Boost","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Knock Off","Sacred Sword"]},
     "OU Paper Press (Choice Band)": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
     "OU Paper Plane (Choice Scarf)": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Knock Off","Sacred Sword","Smart Strike"]},
@@ -3597,10 +3602,19 @@ var SETDEX_SS = {
     "ZU Swords Dance": {"ability":"Grassy Surge","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","U-turn"]},
     "National Dex UU Showdown Usage": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Wood Hammer","Knock Off","U-turn"]}
   },
+  "Rillaboom-Gmax": {
+    "VGC 2022 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":220,"at":220,"df":4,"sd":4,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","Protect"]},
+    "VGC 2022 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":220,"at":196,"df":4,"sd":24,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","U-turn"]},
+    "VGC 2021 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":76,"df":4,"sd":172,"sp":4},"moves":["Grassy Glide","Wood Hammer","U-turn","Fake Out"]},
+    "VGC 2021 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Wood Hammer","Fake Out","Protect"]},
+    "Battle Stadium Singles G-Max Choice Attacker": {"level":50,"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","U-turn","Knock Off","High Horsepower"]},
+    "Battle Stadium Singles G-Max General Offense": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Knock Off","Drum Beating","U-turn"]},
+    "Battle Stadium Singles G-Max Swords Dance Sweeper": {"level":50,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Adamant","evs":{"hp":100,"at":252,"sp":156},"moves":["Swords Dance","Grassy Glide","Superpower","Knock Off"]}
+  },
   "Rillaboom": {
     "OU Bulky Swords Dance": {"ability":"Grassy Surge","item":"Leftovers","nature":"Adamant","evs":{"hp":240,"at":252,"sp":16},"moves":["Swords Dance","Grassy Glide","Knock Off","Drain Punch"]},
-    "OU Offensive Swords Dance": {"ability":"Grassy Surge","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","Superpower"]},
-    "OU Choice Band": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Grassy Glide","Knock Off","Wood Hammer","U-turn"]},
+    "OU Offensive Swords Dance": {"ability":"Grassy Surge","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","Superpower"]},
+    "OU Choice Band": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Wood Hammer","Knock Off","U-turn"]},
     "Doubles OU Bulky Pivot": {"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Fake Out","Grassy Glide","Wood Hammer","U-turn"]},
     "Monotype Swords Dance (Grass)": {"ability":"Grassy Surge","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Superpower","Knock Off"]},
     "Monotype Choice Band (Grass)": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Wood Hammer","Knock Off","U-turn"]},
@@ -3617,15 +3631,6 @@ var SETDEX_SS = {
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":188,"at":252,"df":68},"moves":["Grassy Glide","Fake Out","High Horsepower","Knock Off"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Grassy Glide","Fake Out","U-turn","Protect"]},
     "CAP Showdown Usage": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","U-turn","Wood Hammer","Superpower"]}
-  },
-  "Rillaboom-Gmax": {
-    "VGC 2022 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":220,"at":220,"df":4,"sd":4,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","Protect"]},
-    "VGC 2022 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":220,"at":196,"df":4,"sd":24,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","U-turn"]},
-    "VGC 2021 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":76,"df":4,"sd":172,"sp":4},"moves":["Grassy Glide","Wood Hammer","U-turn","Fake Out"]},
-    "VGC 2021 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Wood Hammer","Fake Out","Protect"]},
-    "Battle Stadium Singles G-Max Choice Attacker": {"level":50,"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","U-turn","Knock Off","High Horsepower"]},
-    "Battle Stadium Singles G-Max General Offense": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Knock Off","Drum Beating","U-turn"]},
-    "Battle Stadium Singles G-Max Swords Dance Sweeper": {"level":50,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Adamant","evs":{"hp":100,"at":252,"sp":156},"moves":["Swords Dance","Grassy Glide","Superpower","Knock Off"]}
   },
   "Scorbunny": {
     "LC All-out Attacker": {"level":5,"ability":"Libero","item":"Berry Juice","nature":"Jolly","evs":{"hp":36,"at":188,"df":36,"sd":36,"sp":204},"moves":["Blaze Kick","Gunk Shot","U-turn","High Jump Kick"]}
@@ -3659,7 +3664,8 @@ var SETDEX_SS = {
     "ZU Belly Drum": {"ability":"Cheek Pouch","item":"Sitrus Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":252,"sd":4},"moves":["Belly Drum","Facade","Earthquake","Crunch"]}
   },
   "Corviknight": {
-    "OU Defog": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":168,"sd":88},"moves":["Body Press","U-turn","Defog","Roost"]},
+    "OU Defog": {"ability":"Pressure","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":168,"sd":88},"moves":["Body Press","U-turn","Roost","Defog"]},
+    "OU Iron Defense": {"ability":"Pressure","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Iron Defense","Body Press","Roost","Defog"]},
     "Battle Stadium Singles Physically Defensive": {"level":50,"ability":"Mirror Armor","item":"Sitrus Berry","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Body Press","Brave Bird","Iron Defense","Roost"]},
     "Battle Stadium Singles Specially Defensive": {"level":50,"ability":"Pressure","item":"Maranga Berry","nature":"Careful","evs":{"hp":252,"sd":244,"sp":12},"moves":["Brave Bird","Bulk Up","Roost","Taunt"]},
     "Battle Stadium Singles Fast Taunt": {"level":50,"ability":"Mirror Armor","item":"Lum Berry","nature":"Jolly","evs":{"hp":108,"at":148,"sp":252},"moves":["Brave Bird","Taunt","Bulk Up","Roost"]},
