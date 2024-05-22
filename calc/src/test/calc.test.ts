@@ -564,6 +564,21 @@ describe('calc', () => {
         );
       });
     });
+
+    inGens(7, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Multi-hit interaction with Helping Hand (gen ${gen})`, () => {
+        const result = calculate(
+          Pokemon('Mamoswine'),
+          Pokemon('Hippowdon'),
+          Move('Icicle Spear'),
+          Field({attackerSide: {isHelpingHand: true}}),
+        );
+        expect(result.range()).toEqual([206, 248]);
+        expect(result.desc()).toBe(
+          '0 Atk Mamoswine Helping Hand Icicle Spear (3 hits) vs. 0 HP / 0 Def Hippowdon: 206-248 (57.7 - 69.4%) -- approx. 2HKO'
+        );
+      });
+    });
   });
 
 

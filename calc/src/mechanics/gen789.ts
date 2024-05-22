@@ -631,6 +631,11 @@ export function calculateSMSSSV(
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
 
+    // Helping Hand only applies to the first hit of a multi-hit move
+    if (!(move.dropsStats && move.timesUsed! > 1)) {
+      field.attackerSide.isHelpingHand = false;
+    }
+
     let numAttacks = 1;
     if (move.dropsStats && move.timesUsed! > 1) {
       desc.moveTurns = `over ${move.timesUsed} turns`;
