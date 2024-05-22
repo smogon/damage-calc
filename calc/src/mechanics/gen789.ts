@@ -198,7 +198,7 @@ export function calculateSMSSSV(
     move.timesUsed === 1;
 
   let type = move.type;
-  if (move.named('Weather Ball')) {
+  if (move.originalName === 'Weather Ball') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
     type =
       field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
@@ -210,10 +210,14 @@ export function calculateSMSSSV(
     desc.moveType = type;
   } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     type = getItemBoostType(attacker.item)!;
-  } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
+  } else if (move.originalName === 'Techno Blast' &&
+    attacker.item && attacker.item.includes('Drive')) {
     type = getTechnoBlast(attacker.item)!;
-  } else if (move.named('Multi-Attack') && attacker.item && attacker.item.includes('Memory')) {
+    desc.moveType = type;
+  } else if (move.originalName === 'Multi-Attack' &&
+    attacker.item && attacker.item.includes('Memory')) {
     type = getMultiAttack(attacker.item)!;
+    desc.moveType = type;
   } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     type = gift.t;
@@ -221,7 +225,7 @@ export function calculateSMSSSV(
     desc.attackerItem = attacker.item;
   } else if (
     move.named('Nature Power') ||
-    (move.named('Terrain Pulse') && isGrounded(attacker, field))
+    (move.originalName === 'Terrain Pulse' && isGrounded(attacker, field))
   ) {
     type =
       field.hasTerrain('Electric') ? 'Electric'
@@ -231,14 +235,18 @@ export function calculateSMSSSV(
       : 'Normal';
     desc.terrain = field.terrain;
 
+    if (move.isMax) {
+      desc.moveType = type;
+    }
+
     // If the Nature Power user has the ability Prankster, it cannot affect
     // Dark-types or grounded foes if Psychic Terrain is active
     if (!(move.named('Nature Power') && attacker.hasAbility('Prankster')) &&
-      (defender.types.includes('Dark') ||
-      (field.hasTerrain('Psychic') && isGrounded(defender, field)))) {
+      ((defender.types.includes('Dark') ||
+      (field.hasTerrain('Psychic') && isGrounded(defender, field))))) {
       desc.moveType = type;
     }
-  } else if (move.named('Revelation Dance')) {
+  } else if (move.originalName === 'Revelation Dance') {
     if (attacker.teraType) {
       type = attacker.teraType;
     } else {
@@ -280,7 +288,7 @@ export function calculateSMSSSV(
     'Judgment',
     'Nature Power',
     'Techno Blast',
-    'Multi Attack',
+    'Multi-Attack',
     'Natural Gift',
     'Weather Ball',
     'Terrain Pulse',
@@ -288,7 +296,7 @@ export function calculateSMSSSV(
   ) || (move.named('Tera Blast') && attacker.teraType);
 
   if (!move.isZ && !noTypeChange) {
-    const normal = move.hasType('Normal');
+    const normal = type === 'Normal';
     if ((isAerilate = attacker.hasAbility('Aerilate') && normal)) {
       type = 'Flying';
     } else if ((isGalvanize = attacker.hasAbility('Galvanize') && normal)) {
@@ -933,7 +941,7 @@ export function calculateBasePowerSMSSSV(
     'Subzero Slammer', 'Supersonic Skystrike', 'Savage Spin-Out', 'Acid Downpour', 'Tectonic Rage',
     'Continental Crush', 'All-Out Pummeling', 'Shattered Psyche', 'Never-Ending Nightmare',
     'Devastating Drake', 'Black Hole Eclipse', 'Corkscrew Crash', 'Twinkle Tackle'
-  )) {
+  ) || move.isMax) {
     // show z-move power in description
     desc.moveBP = move.bp;
   }

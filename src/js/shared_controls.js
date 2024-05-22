@@ -1035,6 +1035,7 @@ function createPokemon(pokeInfo) {
 			item: item,
 			isDynamaxed: isDynamaxed,
 			teraType: teraType,
+			species: name,
 		};
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
