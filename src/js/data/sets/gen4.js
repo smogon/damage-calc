@@ -1142,15 +1142,11 @@ var SETDEX_DPP = {
     "OU Bulky Dragon Dance": {"ability":"Inner Focus","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":144,"sp":116},"moves":["Dragon Dance","Heal Bell","Roost","Dragon Claw"]}
   },
   "Mewtwo": {
-    "Ubers Taunt + Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Taunt","Calm Mind","Aura Sphere","Ice Beam"]},
-    "Ubers Defensive Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":204,"sa":52,"sp":252},"moves":["Substitute","Calm Mind","Ice Beam","Aura Sphere"]},
+    "Ubers Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Calm Mind","Ice Beam","Aura Sphere","Recover"]},
     "Ubers All-Out Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Aura Sphere","Ice Beam","Self-Destruct","Fire Blast"]},
-    "Ubers Offensive Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Ice Beam","Thunder","Aura Sphere"]},
-    "Ubers Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":224,"sp":32},"moves":["Will-O-Wisp","Reflect","Taunt","Recover"]},
-    "Ubers Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":160,"sp":96},"moves":["Light Screen","Toxic","Taunt","Recover"]},
-    "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Timid","evs":{"df":136,"sa":196,"sp":176},"moves":["Ice Beam","Thunder","Grass Knot","Trick"]},
+    "Ubers Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":160,"sp":96},"moves":["Will-O-Wisp","Ice Beam","Taunt","Recover"]},
+    "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Timid","evs":{"df":48,"sa":244,"sp":216},"moves":["Ice Beam","Thunder","Grass Knot","Trick"]},
     "Ubers Dual Screens": {"ability":"Pressure","item":"Light Clay","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Taunt","Reflect","Light Screen","Self-Destruct"]},
-    "Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Aura Sphere","Ice Beam","Thunder","Flamethrower"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":24,"sa":252,"sp":232},"moves":["Aura Sphere","Ice Beam","Calm Mind","Taunt"]}
   },
   "Mew": {

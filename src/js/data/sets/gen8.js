@@ -1013,7 +1013,7 @@ var SETDEX_SS = {
     "National Dex UU Showdown Usage": {"ability":"Inner Focus","item":"Life Orb","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Ice Beam","Surf","Extrasensory","Extreme Speed"]}
   },
   "Tyranitar": {
-    "OU Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Crunch","Fire Punch","Heavy Slam"]},
+    "OU Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Crunch","Superpower","Heavy Slam"]},
     "OU Specially Defensive": {"ability":"Sand Stream","item":"Leftovers","nature":"Careful","evs":{"hp":248,"at":148,"df":12,"sd":100},"moves":["Stealth Rock","Rock Blast","Earthquake","Thunder Wave"]},
     "Ubers Specially Defensive": {"ability":"Sand Stream","item":"Heavy-Duty Boots","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Rock Blast","Foul Play","Rest"]},
     "Doubles OU Sand Attacker": {"ability":"Sand Stream","item":"Sitrus Berry","nature":"Brave","evs":{"hp":188,"at":252,"sa":68},"moves":["Stone Edge","Crunch","Ice Beam","Stealth Rock"]},
@@ -3580,7 +3580,7 @@ var SETDEX_SS = {
   },
   "Melmetal": {
     "OU Protect + Leftovers": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":20,"at":252,"sd":192,"sp":44},"moves":["Double Iron Bash","Protect","Earthquake","Toxic"]},
-    "OU Assault Vest": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"hp":184,"at":64,"sd":248,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
+    "OU Assault Vest": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"hp":176,"at":100,"sd":220,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
     "Monotype Choice Band (Steel)": {"ability":"Iron Fist","item":"Choice Band","nature":"Adamant","evs":{"hp":244,"at":252,"sp":12},"moves":["Double Iron Bash","Ice Punch","Earthquake","Superpower"]},
     "Monotype Assault Vest (Steel)": {"ability":"Iron Fist","item":"Assault Vest","nature":"Adamant","evs":{"at":252,"sd":244,"sp":12},"moves":["Double Iron Bash","Earthquake","Thunder Punch","Ice Punch"]},
     "Monotype Substitute (Steel)": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":88,"sd":156,"sp":12},"moves":["Substitute","Double Iron Bash","Thunder Punch","Earthquake"]},
