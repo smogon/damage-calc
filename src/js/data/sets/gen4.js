@@ -2106,7 +2106,7 @@ var SETDEX_DPP = {
     "Ubers Choice Scarf": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Sleep Talk"]},
     "Ubers Swords Dance": {"ability":"Sand Veil","item":"Haban Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Outrage","Earthquake","Fire Fang"]},
     "Ubers Choice Band": {"ability":"Sand Veil","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Fire Fang"]},
-    "Ubers SubSalac": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","ivs":{"hp":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Substitute","Dragon Claw","Earthquake"]},
+    "Ubers SubSalac": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","evs":{"hp":12,"at":244,"sp":252},"moves":["Swords Dance","Substitute","Dragon Claw","Earthquake"]},
     "Anything Goes Showdown Usage": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Outrage","Dragon Claw","Swords Dance"]}
   },
   "Munchlax": {
@@ -2334,8 +2334,8 @@ var SETDEX_DPP = {
     "Anything Goes Showdown Usage": {"ability":"Hydration","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":80,"sp":176},"moves":["Surf","Rest","Calm Mind","U-turn"]}
   },
   "Darkrai": {
-    "Ubers Nasty Plot": {"ability":"Bad Dreams","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Void","Dark Pulse","Focus Blast"]},
-    "Ubers Trick or Treat": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Trick","Dark Void","Dark Pulse","Nasty Plot"]},
+    "Ubers Nasty Plot": {"ability":"Bad Dreams","item":"Lum Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Void","Dark Pulse","Focus Blast"]},
+    "Ubers Trick or Treat": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Trick","Dark Void","Dark Pulse","Ice Beam"]},
     "Ubers SubSalac": {"ability":"Bad Dreams","item":"Salac Berry","nature":"Timid","ivs":{"hp":30,"at":1},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Nasty Plot","Dark Pulse","Focus Blast"]},
     "Anything Goes Showdown Usage": {"ability":"Bad Dreams","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Void","Dark Pulse","Substitute","Taunt"]}
   },

@@ -469,7 +469,7 @@ var SETDEX_XY = {
   },
   "Vibrava": {
     "PU Defog": {"ability":"Levitate","item":"Eviolite","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Defog","U-turn","Roost","Earthquake"]},
-    "ZU Defog": {"ability":"Levitate","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":240,"sp":16},"moves":["Defog","Roost","U-turn","Earthquake"]},
+    "ZU Defog": {"ability":"Levitate","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":240,"sp":16},"moves":["Defog","Roost","Earthquake","U-turn"]},
     "NU Showdown Usage": {"ability":"Levitate","item":"Eviolite","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["U-turn","Defog","Roost","Earthquake"]}
   },
   "Flygon": {
@@ -4468,8 +4468,7 @@ var SETDEX_XY = {
   "Gogoat": {
     "NU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Horn Leech","Substitute","Earthquake"]},
     "PU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":232,"at":48,"sd":228},"moves":["Bulk Up","Horn Leech","Earthquake","Milk Drink"]},
-    "ZU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":220,"sp":36},"moves":["Bulk Up","Substitute","Horn Leech","Rock Slide"]},
-    "ZU Special Wall": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":220,"sp":36},"moves":["Milk Drink","Horn Leech","Roar","Toxic"]}
+    "ZU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":220,"sp":36},"moves":["Bulk Up","Substitute","Horn Leech","Rock Slide"]}
   },
   "Pancham": {
     "LC Pivot": {"level":5,"ability":"Mold Breaker","item":"Eviolite","nature":"Adamant","evs":{"at":180,"df":100,"sd":212,"sp":12},"moves":["Parting Shot","Drain Punch","Knock Off","Gunk Shot"]},
