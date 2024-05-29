@@ -270,6 +270,7 @@ $(".ability").bind("keyup change", function () {
 		boostedStat.show();
 		autosetQP($(this).closest(".poke-info"));
 	} else {
+		boostedStat.val("");
 		boostedStat.hide();
 	}
 
