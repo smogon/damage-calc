@@ -250,12 +250,23 @@ $(".percent-hp").keyup(function () {
 });
 
 $(".ability").bind("keyup change", function () {
-	var moveHits =
-		$(this).val() === 'Skill Link' ? 5 :
-			$(this).closest(".poke-info").find(".item").val() === 'Loaded Dice' ? 4 : 3;
-	$(this).closest(".poke-info").find(".move-hits").val(moveHits);
-
 	var ability = $(this).closest(".poke-info").find(".ability").val();
+
+	for (var i = 1; i <= 4; i++) {
+		var moveSelector = ".move" + i;
+		var moveHits = 3;
+
+		var moveName = $(this).closest(".poke-info").find(moveSelector).find(".select2-chosen").text();
+		var move = moves[moveName] || moves['(No Move)'];
+		if (move.multiaccuracy) {
+			moveHits = move.multihit;
+		} else if (ability === 'Skill Link') {
+			moveHits = 5;
+		} else if ($(this).closest(".poke-info").find(".item").val() === 'Loaded Dice') {
+			moveHits = 4;
+		}
+		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
+	}
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Stakeout', 'Teraform Zero'];
 
@@ -523,9 +534,16 @@ $(".move-selector").change(function () {
 		}
 		moveGroupObj.children(".move-hits").show();
 		var pokemon = $(this).closest(".poke-info");
-		var moveHits =
-			pokemon.find(".ability").val() === 'Skill Link' ? 5 :
-				pokemon.find(".item").val() === 'Loaded Dice' ? 4 : 3;
+
+		var moveHits = 3;
+		if (move.multiaccuracy) {
+			moveHits = move.multihit;
+		} else if (pokemon.find('.ability').val() === 'Skill Link') {
+			moveHits = 5;
+		} else if (pokemon.find(".item").val() === 'Loaded Dice') {
+			moveHits = 4;
+		}
+
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (dropsStats) {
 		moveGroupObj.children(".move-hits").hide();
@@ -545,10 +563,23 @@ $(".item").change(function () {
 	} else {
 		$metronomeControl.hide();
 	}
-	var moveHits =
-		$(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 :
-			itemName === 'Loaded Dice' ? 4 : 3;
-	$(this).closest(".poke-info").find(".move-hits").val(moveHits);
+
+	for (var i = 1; i <= 4; i++) {
+		var moveSelector = ".move" + i;
+		var moveHits = 3;
+
+		var moveName = $(this).closest(".poke-info").find(moveSelector).find(".select2-chosen").text();
+		var move = moves[moveName] || moves['(No Move)'];
+		if (move.multiaccuracy) {
+			moveHits = move.multihit;
+		} else if ($(this).closest(".poke-info").find(".ability").val() === 'Skill Link') {
+			moveHits = 5;
+		} else if ($(this).closest(".poke-info").find(".item").val() === 'Loaded Dice') {
+			moveHits = 4;
+		}
+		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
+	}
+
 	autosetQP($(this).closest(".poke-info"));
 });
 
