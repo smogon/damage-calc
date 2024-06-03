@@ -1675,6 +1675,13 @@ export function calculateFinalModsSMSSSV(
     desc.defenderAbility = defender.ability;
   }
 
+  if (attacker.hasItem('Overlord Crown') && attacker.crownFainted) {
+    const crownMod = [4096, 4506, 4915, 5325, 5734];
+    finalMods.push(crownMod[Math.min(4, attacker.crownFainted)]);
+    desc.attackerAbility = attacker.ability;
+    desc.crownFainted = attacker.crownFainted;
+  }
+
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1 && !move.isZ) {
     finalMods.push(4915);
     desc.attackerItem = attacker.item;
