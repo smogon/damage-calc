@@ -10,6 +10,7 @@ export namespace State {
     dynamaxLevel?: number;
     isSaltCure?: boolean;
     alliesFainted?: number;
+    crownFainted?: number;
     boostedStat?: I.StatIDExceptHP | 'auto';
     item?: I.ItemName;
     gender?: I.GenderName;
