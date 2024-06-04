@@ -8719,7 +8719,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Zapdos-Galar': {
     types: ['Fighting', 'Flying'],
-    bs: {hp: 90, at: 125, df: 90, sa: 85, sd: 90, sp: 100},
+    bs: {hp: 90, at: 125, df: 90, sa: 85, sd: 90, sp: 300},
     weightkg: 58.2,
     abilities: {0: 'Defiant'},
     gender: 'N',
