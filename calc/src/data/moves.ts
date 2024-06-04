@@ -1170,6 +1170,407 @@ const DPP_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
   },
 };
+'Overcharge': {
+  bp: 100,
+  type: 'Electric',
+  recoil: true,
+  recoilLevel: 1,
+  ignoresAbilities: true,
+  ignoresImmunities: true,
+  category: 'Special'
+},
+'Swift Swipe': {
+  bp: 40,
+  type: 'Dark',
+  recoil: false,
+  makesContact: true,
+  category: 'Special'
+},
+'Lethal Dash': {
+  bp: 40,
+  type: 'Poison',
+  recoil: false,
+  makesContact: false,
+  category: 'Special'
+},
+'Spirit Sap': {
+  bp: 75,
+  type: 'Ghost',
+  recoil: false,
+  makesContact: true,
+  category: 'Physical'
+},
+'Perfection Pulse': {
+  bp: 120,
+  type: 'Dragon',
+  recoil: false,
+  ignoresAbilities: true,
+  ignoresImmunities: true,
+  category: 'Special'
+},
+'Brain Freeze': {
+  bp: 70,
+  type: 'Psychic',
+  recoil: false,
+  secondaries: 'Frostbite',
+  category: 'Special'
+},
+'Wind Drill': {
+  bp: 90,
+  type: 'Flying',
+  recoil: false,
+  breaksScreens: true,
+  category: 'Special'
+},
+'PaleoBeam': {
+  bp: 95,
+  type: 'Rock',
+  recoil: false,
+  lowersSpAtk: true,
+  category: 'Special'
+},
+'Rubble Raze': {
+  bp: 120,
+  type: 'Rock',
+  recoil: true,
+  recoilLevel: 1,
+  category: 'Physical'
+},
+'Mirror Rush': {
+  bp: 40,
+  type: 'Steel',
+  recoil: false,
+  goesFirst: true,
+  category: 'Special'
+},
+'Doldrums': {
+  bp: 65,
+  type: 'Flying',
+  recoil: false,
+  lowersSpeed: true,
+  category: 'Special'
+},
+'Polarity Pulse': {
+  bp: 95,
+  type: 'Steel',
+  recoil: false,
+  superEffectiveOnElectric: true,
+  category: 'Special'
+},
+'Spectral Shriek': {
+  bp: 95,
+  type: 'Ghost',
+  recoil: false,
+  category: 'Special'
+},
+'Wicked Wind': {
+  bp: 95,
+  type: 'Dark',
+  recoil: false,
+  category: 'Special'
+},
+'Recharge': {
+  bp: null,
+  type: 'Electric',
+  recoil: false,
+  recoversHealth: true,
+  recoversPercent: [50, 67],
+  category: 'Status'
+},
+'Pixie Punch': {
+  bp: 50,
+  type: 'Fairy',
+  recoil: false,
+  hitsTwice: true,
+  can'tMiss: true,
+  category: 'Physical'
+},
+'Night Rush': {
+  bp: 120,
+  type: 'Dark',
+  recoil: false,
+  lowersDefense: true,
+  lowersSpDefense: true,
+  category: 'Physical'
+},
+'Spam Raid': {
+  bp: 25,
+  type: 'Dark',
+  recoil: false,
+  hitsTwoToFiveTimes: true,
+  category: 'Special'
+},
+'Hex Cannon': {
+  bp: 50,
+  type: 'Ghost',
+  recoil: false,
+  hitsTwice: true,
+  category: 'Physical'
+},
+'Death Toll': {
+  bp: 95,
+  type: 'Poison',
+  recoil: false,
+  category: 'Special'
+},
+'Feather Dart': {
+  bp: 40,
+  type: 'Fire',
+  recoil: false,
+  category: 'Physical'
+},
+'Static Surge': {
+  bp: null,
+  type: 'Electric',
+  recoil: false,
+  increasesAttack: 3,
+  category: 'Status'
+},
+'Solar Wings': {
+  bp: 85,
+  type: 'Fire',
+  recoil: false,
+  burnChance: 10,
+  category: 'Physical'
+},
+'Toxoplasm': {
+  bp: 75,
+  type: 'Poison',
+  recoil: false,
+  healsUser: true,
+  healsDamagePercent: 75,
+  category: 'Special'
+},
+'Iron Fangs': {
+  bp: 65,
+  type: 'Steel',
+  recoil: false,
+  flinchChance: 10,
+  category: 'Physical'
+},
+'Draco Fangs': {
+  bp: 85,
+  type: 'Dragon',
+  recoil: false,
+  flinchChance: 10,
+  category: 'Physical'
+},
+'Sneak Attack': {
+  bp: 40,
+  type: 'Dark',
+  recoil: false,
+  goesFirst: true,
+  category: 'Physical'
+},
+'Rolling Fog': {
+  bp: 70,
+  type: 'Fairy',
+  recoil: false,
+  mistyTerrainMultiplier: 1.5,
+  hitsAllFoes: true,
+  category: 'Special'
+},
+'Fairy\'s Haunt': {
+  bp: 75,
+  type: 'Fairy',
+  recoil: false,
+  healsUser: true,
+  healsDamagePercent: 75,
+  category: 'Special'
+},
+'Chilling Cry': {
+  bp: 95,
+  type: 'Ice',
+  recoil: false,
+  category: 'Special'
+},
+'Maraca Shake': {
+  bp: 80,
+  type: 'Grass',
+  recoil: false,
+  category: 'Special'
+},
+'Mach Pulse': {
+  bp: 40,
+  type: 'Normal',
+  recoil: false,
+  category: 'Special',
+  soundMove: true
+},
+'Hammer Smash': {
+  bp: 80,
+  type: 'Ground',
+  recoil: false,
+  category: 'Physical',
+  groundsAirborneTargets: true
+},
+'Spirit Recall': {
+  bp: null,
+  type: 'Ghost',
+  recoil: false,
+  category: 'Status',
+  recoversHP: true
+},
+'Pack In': {
+  bp: null,
+  type: 'Ice',
+  recoil: false,
+  category: 'Status',
+  recoversPercent: [50, 67],
+  isSnowActive: true
+},
+'Deep Freeze': {
+  bp: null,
+  type: 'Ice',
+  recoil: false,
+  category: 'Status',
+  inflictsFrostbite: true
+},
+'Air Cannon': {
+  bp: 80,
+  type: 'Flying',
+  recoil: false,
+  category: 'Special',
+  chanceToFlinch: 30,
+  windMove: true,
+  soundMove: true,
+  pulseMove: true
+},
+'Crystal Edge': {
+  bp: 70,
+  type: 'Ice',
+  recoil: false,
+  category: 'Physical',
+  highCriticalChance: true,
+  slicingMove: true
+},
+'Luster Rend': {
+  bp: 80,
+  type: 'Fairy',
+  recoil: false,
+  category: 'Physical',
+  slicingMove: true
+},
+'Boulder Blade': {
+  bp: 90,
+  type: 'Rock',
+  recoil: false,
+  category: 'Physical',
+  slicingMove: true,
+  ignoresStatChanges: true
+},
+'Dusty Dash': {
+  bp: 40,
+  type: 'Ground',
+  recoil: false,
+  category: 'Physical',
+  goesFirst: true
+},
+'Stone Hammer': {
+  bp: 75,
+  type: 'Rock',
+  recoil: false,
+  category: 'Physical',
+  breaksScreens: true
+},
+'Stone Cutter': {
+  bp: 70,
+  type: 'Rock',
+  recoil: false,
+  category: 'Physical',
+  highCriticalChance: true,
+  slicingMove: true
+},
+'Pixie Hammer': {
+  bp: 80,
+  type: 'Fairy',
+  recoil: false,
+  category: 'Physical',
+  hammerMove: true,
+  chanceToFlinch: 20
+},
+'Crown Rush': {
+  bp: 120,
+  type: 'Fairy',
+  recoil: true,
+  recoilLevel: 1,
+  category: 'Physical',
+  headMove: true
+},
+'Skull Blitz': {
+  bp: 100,
+  type: 'Dragon',
+  recoil: true,
+  recoilLevel: 1,
+  category: 'Physical',
+  headMove: true
+},
+'Corrosive Jaw': {
+  bp: 80,
+  type: 'Poison',
+  recoil: false,
+  category: 'Physical',
+  chanceToToxicPoison: 10
+},
+'Shadow Hammer': {
+  bp: 90,
+  type: 'Ghost',
+  recoil: false,
+  category: 'Physical',
+  hammerMove: true
+},
+'Twin Blades': {
+  bp: 50,
+  type: 'Steel',
+  recoil: false,
+  category: 'Physical',
+  hitsTwice: true,
+  neverMisses: true,
+  slicingMove: true
+},
+'Spore Beam': {
+  bp: 95,
+  type: 'Grass',
+  recoil: false,
+  category: 'Special',
+  sleepChance: 10
+},
+'Hydro Fangs': {
+  bp: 65,
+  type: 'Water',
+  recoil: false,
+  category: 'Physical',
+  flinchChance: 10
+},
+'Ancient Cry': {
+  bp: 100,
+  type: 'Dragon',
+  recoil: false,
+  category: 'Special',
+  ignoresFairyImmunity: true,
+  soundMove: true
+},
+'Mjolnir\'s Wrath': {
+  bp: 80,
+  type: 'Electric',
+  recoil: false,
+  category: 'Physical',
+  hammerMove: true,
+  tramplesMinimize: true
+},
+'Raging Swarm': {
+  bp: 130,
+  type: 'Bug',
+  recoil: false,
+  category: 'Special',
+  harshlyLowersSpAtk: true
+},
+'Gill Gash': {
+  bp: 85,
+  type: 'Water',
+  recoil: false,
+  category: 'Physical
+},
 
 const DPP: {[name: string]: MoveData} = extend(true, {}, ADV, DPP_PATCH);
 
