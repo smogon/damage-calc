@@ -313,7 +313,6 @@ var SETDEX_XY = {
     "PU Autotomize": {"ability":"Weak Armor","item":"Life Orb","nature":"Modest","ivs":{"sa":30,"sd":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Autotomize","Ice Beam","Freeze-Dry","Hidden Power Ground"]},
     "ZU Choice Specs": {"ability":"Weak Armor","item":"Choice Specs","nature":"Timid","ivs":{"at":1,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Hidden Power Ground","Flash Cannon"]},
     "ZU Choice Scarf": {"ability":"Weak Armor","item":"Choice Scarf","nature":"Timid","ivs":{"at":1,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Hidden Power Ground","Flash Cannon"]},
-    "ZU Stallbreaker": {"ability":"Weak Armor","item":"Never-Melt Ice","nature":"Timid","ivs":{"at":1,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Taunt","Ice Beam","Freeze-Dry","Hidden Power Ground"]},
     "ZU Autotomize": {"ability":"Weak Armor","item":"Life Orb","nature":"Timid","ivs":{"at":1,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Autotomize","Ice Beam","Freeze-Dry","Hidden Power Ground"]}
   },
   "Deerling": {
@@ -4383,7 +4382,7 @@ var SETDEX_XY = {
     "PU Offensive Spikes": {"ability":"Bulletproof","item":"Eviolite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Taunt","Wood Hammer","Zen Headbutt"]},
     "PU Defensive Spikes": {"ability":"Bulletproof","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Spikes","Roar","Seed Bomb","Synthesis"]},
     "ZU Offensive Spikes": {"ability":"Bulletproof","item":"Eviolite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Taunt","Wood Hammer","Zen Headbutt"]},
-    "ZU Defensive Spikes": {"ability":"Bulletproof","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"df":228,"sp":28},"moves":["Spikes","Synthesis","Roar","Seed Bomb"]}
+    "ZU Defensive Spikes": {"ability":"Bulletproof","item":"Eviolite","nature":"Impish","evs":{"hp":252,"df":228,"sp":28},"moves":["Spikes","Synthesis","Roar","Seed Bomb"]}
   },
   "Chesnaught": {
     "OU Physical Tank": {"ability":"Bulletproof","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Leech Seed","Drain Punch","Spikes","Wood Hammer"]},
@@ -4481,7 +4480,6 @@ var SETDEX_XY = {
   "Furfrou": {
     "PU Offensive Pivot": {"ability":"Fur Coat","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Thunder Wave","Return","Sucker Punch"]},
     "ZU Choice Band": {"ability":"Fur Coat","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Return","U-turn","Sucker Punch","Iron Tail"]},
-    "ZU Choice Scarf": {"ability":"Fur Coat","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Return","U-turn","Iron Tail","Toxic"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Fur Coat","item":"Leftovers","nature":"Adamant","evs":{"hp":84,"at":252,"df":12,"sd":12,"sp":148},"moves":["Cotton Guard","Refresh","Return","Thunder Wave"]}
   },
   "Meowstic-F": {
