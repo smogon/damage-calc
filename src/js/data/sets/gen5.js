@@ -1063,7 +1063,6 @@ var SETDEX_BW = {
     "LC Life Orb Shell Smash": {"level":5,"ability":"Skill Link","item":"Life Orb","nature":"Adamant","evs":{"at":156,"df":116,"sp":196},"moves":["Shell Smash","Icicle Spear","Rock Blast","Protect"]}
   },
   "Cloyster": {
-    "OU Shell Smash": {"ability":"Skill Link","item":"Never-Melt Ice","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
     "Ubers Shell Smash": {"ability":"Skill Link","item":"Life Orb","nature":"Naive","evs":{"at":232,"sa":32,"sp":244},"moves":["Shell Smash","Icicle Spear","Hydro Pump","Rock Blast"]},
     "Ubers Offensive Support": {"ability":"Skill Link","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Icicle Spear","Rapid Spin","Shell Smash","Spikes"]}
   },
