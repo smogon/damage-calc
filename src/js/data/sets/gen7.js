@@ -220,7 +220,7 @@ var SETDEX_SM = {
   },
   "Tapu Lele": {
     "OU Choice Specs": {"ability":"Psychic Surge","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Psyshock","Hidden Power Fire"]},
-    "OU Fightinium Z": {"ability":"Psychic Surge","item":"Fightinium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Moonblast","Focus Blast","Calm Mind"]},
+    "OU 3 Attacks": {"ability":"Psychic Surge","item":"Fightinium Z","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Moonblast","Focus Blast","Calm Mind"]},
     "OU Choice Scarf": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Hidden Power Fire","Focus Blast"]},
     "Ubers Psychic Terrain Support": {"ability":"Psychic Surge","item":"Terrain Extender","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Nature's Madness","Taunt"]},
     "Ubers Choice Scarf": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Aromatherapy","Hidden Power Fire"]},

@@ -3061,7 +3061,7 @@ var SETDEX_SS = {
   },
   "Toxapex": {
     "OU Physically Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Impish","ivs":{"at":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
-    "OU Specially Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Careful","ivs":{"at":0},"evs":{"hp":248,"df":8,"sd":248},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
+    "OU Specially Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Careful","ivs":{"at":0},"evs":{"hp":248,"df":20,"sd":240},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
     "OU The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Knock Off","Recover","Haze","Toxic Spikes"]},
     "Ubers The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Knock Off","Haze","Recover","Scald"]},
     "Battle Stadium Singles Physical Wall": {"level":50,"ability":"Regenerator","item":"Black Sludge","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Recover","Haze","Toxic"]},
@@ -3662,7 +3662,7 @@ var SETDEX_SS = {
     "ZU Belly Drum": {"ability":"Cheek Pouch","item":"Sitrus Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":252,"sd":4},"moves":["Belly Drum","Facade","Earthquake","Crunch"]}
   },
   "Corviknight": {
-    "OU Defog": {"ability":"Pressure","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":132,"sd":124},"moves":["Body Press","U-turn","Roost","Defog"]},
+    "OU Defog": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":132,"sd":124},"moves":["Body Press","U-turn","Roost","Defog"]},
     "OU Iron Defense": {"ability":"Pressure","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Iron Defense","Body Press","Roost","Defog"]},
     "Battle Stadium Singles Physically Defensive": {"level":50,"ability":"Mirror Armor","item":"Sitrus Berry","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Body Press","Brave Bird","Iron Defense","Roost"]},
     "Battle Stadium Singles Specially Defensive": {"level":50,"ability":"Pressure","item":"Maranga Berry","nature":"Careful","evs":{"hp":252,"sd":244,"sp":12},"moves":["Brave Bird","Bulk Up","Roost","Taunt"]},
