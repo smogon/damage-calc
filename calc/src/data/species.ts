@@ -9118,6 +9118,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Sword of Ruin'},
   },
+  Chuggalong: {
+    types: ['Dragon', 'Poison'],
+    bs: {hp: 45, at: 43, df: 117, sa: 120, sd: 110, sp: 115},
+    weightkg: 201.6,
+    abilities: {0: 'Armor Tail'},
+  },
   Clodsire: {
     types: ['Poison', 'Ground'],
     bs: {hp: 130, at: 75, df: 60, sa: 45, sd: 100, sp: 20},
@@ -9126,7 +9132,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Cresceidon: {
     types: ['Water', 'Fairy'],
-    bs: {hp: 80, at: 32, df: 111, sa: 88, sd: 99, sp: 125},
+    bs: {hp: 80, at: 32, df: 111, sa: 88, sd: 99, sp: 124},
     weightkg: 999.9,
     abilities: {0: 'Multiscale'},
   },
