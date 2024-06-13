@@ -165,7 +165,7 @@ var SETDEX_SS = {
   },
   "Clefable": {
     "OU Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Soft-Boiled","Knock Off","Stealth Rock"]},
-    "OU Unaware": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Moonblast","Calm Mind","Soft-Boiled","Aromatherapy"]},
+    "OU Unaware": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":244,"sp":12},"moves":["Moonblast","Calm Mind","Soft-Boiled","Aromatherapy"]},
     "OU Calm Mind": {"ability":"Magic Guard","item":"Life Orb","nature":"Bold","evs":{"hp":252,"df":196,"sp":60},"moves":["Moonblast","Calm Mind","Soft-Boiled","Thunderbolt"]},
     "Ubers Defensive": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Moonblast","Soft-Boiled","Stealth Rock","Knock Off"]},
     "Battle Stadium Singles Kee Berry Sweeper": {"level":50,"ability":"Unaware","item":"Kee Berry","nature":"Bold","evs":{"hp":244,"df":252,"sa":4,"sd":4,"sp":4},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
@@ -3061,7 +3061,7 @@ var SETDEX_SS = {
   },
   "Toxapex": {
     "OU Physically Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Impish","ivs":{"at":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
-    "OU Specially Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Careful","ivs":{"at":0},"evs":{"hp":248,"df":20,"sd":240},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
+    "OU Specially Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Careful","ivs":{"at":0},"evs":{"hp":248,"df":20,"sd":240},"moves":["Knock Off","Toxic","Haze","Recover"]},
     "OU The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Knock Off","Recover","Haze","Toxic Spikes"]},
     "Ubers The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Knock Off","Haze","Recover","Scald"]},
     "Battle Stadium Singles Physical Wall": {"level":50,"ability":"Regenerator","item":"Black Sludge","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Recover","Haze","Toxic"]},

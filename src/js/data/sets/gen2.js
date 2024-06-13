@@ -300,9 +300,10 @@ var SETDEX_GSC = {
     "OU Screech": {"item":"Leftovers","moves":["Return","Hypnosis","Screech","Zap Cannon"]},
     "OU Swagger + Psych Up": {"item":"Leftovers","moves":["Return","Shadow Ball","Swagger","Psych Up"]},
     "UU Sub Swagger": {"item":"Leftovers","moves":["Substitute","Swagger","Double-Edge","Psych Up"]},
+    "NU Lead": {"moves":["Double-Edge","Thief","Hypnosis","Screech"]},
+    "NU RestTalk": {"item":"Leftovers","moves":["Double-Edge","Thunder","Rest","Sleep Talk"]},
     "1v1 Toxic Stall": {"item":"Mint Berry","moves":["Toxic","Amnesia","Spite","Rest"]},
-    "1v1 Pink Bow": {"item":"Pink Bow","moves":["Hyper Beam","Return","Screech","Curse"]},
-    "NU Showdown Usage": {"moves":["Hypnosis","Double-Edge","Thief","Screech"]}
+    "1v1 Pink Bow": {"item":"Pink Bow","moves":["Hyper Beam","Return","Screech","Curse"]}
   },
   "Golduck": {
     "OU Standard": {"item":"Leftovers","moves":["Cross Chop","Hypnosis","Surf","Ice Beam"]},
