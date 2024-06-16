@@ -1515,25 +1515,25 @@ var SETDEX_XY = {
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Multiscale","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Extreme Speed","Outrage","Fly","Power-Up Punch"]}
   },
   "Mewtwo": {
-    "Ubers Special Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psystrike","Focus Blast","Ice Beam","Fire Blast"]},
+    "Ubers Special Attacker": {"ability":"Pressure","item":"Mewtwonite Y","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psystrike","Fire Blast","Ice Beam","Calm Mind"]},
     "Ubers Physical Attacker": {"ability":"Pressure","item":"Mewtwonite X","nature":"Jolly","evs":{"at":112,"df":144,"sp":252},"moves":["Low Kick","Taunt","Earthquake","Ice Punch"]},
     "Pure Hackmons Support Wonder Guard": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Baton Pass","Gastro Acid","Psystrike","Stealth Rock"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Mewtwonite Y","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psystrike","Aura Sphere","Shadow Ball","Calm Mind"]}
   },
-  "Mewtwo-Mega-X": {
-    "Ubers Physical Attacker": {"ability":"Steadfast","item":"Mewtwonite X","nature":"Jolly","evs":{"at":112,"df":144,"sp":252},"moves":["Low Kick","Taunt","Earthquake","Ice Punch"]},
-    "Pure Hackmons Huge Power (Mewtwo-Mega-X)": {"ability":"Huge Power","item":"Lum Berry","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Beat Up","Gunk Shot","Drain Punch","Fusion Bolt"]},
-    "Pure Hackmons Shadow Tag (Mewtwo-Mega-X)": {"ability":"Shadow Tag","item":"Choice Band","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Drain Punch","Precipice Blades","Bolt Strike","Gear Grind"]}
-  },
   "Mewtwo-Mega-Y": {
+    "Ubers Special Attacker": {"ability":"Insomnia","item":"Mewtwonite Y","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psystrike","Fire Blast","Ice Beam","Calm Mind"]},
     "Pure Hackmons Protean (Mewtwo-Mega-Y)": {"ability":"Protean","item":"Expert Belt","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Sludge Wave","Secret Sword","Grass Knot","Moonblast"]},
     "Pure Hackmons Choice Specs (Mewtwo-Mega-Y)": {"ability":"Mold Breaker","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psycho Boost","Moonblast","Searing Shot","Volt Switch"]},
     "Pure Hackmons Choice Scarf No Guard (Mewtwo-Mega-Y)": {"ability":"No Guard","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Sheer Cold","Trick","Sing","Stealth Rock"]},
     "Pure Hackmons No Guard Wallbreaker (Mewtwo-Mega-Y)": {"ability":"No Guard","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Sheer Cold","Sing","Gastro Acid","Stealth Rock"]},
     "Pure Hackmons Offensive WG (Mewtwo-Mega-Y)": {"ability":"Wonder Guard","item":"Spooky Plate","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Shell Smash","Judgment","Searing Shot","Freeze-Dry"]},
     "Pure Hackmons Shadow Tag (Mewtwo-Mega-Y)": {"ability":"Shadow Tag","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Sludge Wave","Searing Shot","Freeze-Dry","Bug Buzz"]},
-    "Ubers Showdown Usage": {"ability":"Insomnia","item":"Mewtwonite Y","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psystrike","Ice Beam","Focus Blast","Taunt"]},
     "Anything Goes Showdown Usage": {"ability":"Insomnia","item":"Mewtwonite Y","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psystrike","Aura Sphere","Shadow Ball","Calm Mind"]}
+  },
+  "Mewtwo-Mega-X": {
+    "Ubers Physical Attacker": {"ability":"Steadfast","item":"Mewtwonite X","nature":"Jolly","evs":{"at":112,"df":144,"sp":252},"moves":["Low Kick","Taunt","Earthquake","Ice Punch"]},
+    "Pure Hackmons Huge Power (Mewtwo-Mega-X)": {"ability":"Huge Power","item":"Lum Berry","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Beat Up","Gunk Shot","Drain Punch","Fusion Bolt"]},
+    "Pure Hackmons Shadow Tag (Mewtwo-Mega-X)": {"ability":"Shadow Tag","item":"Choice Band","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Drain Punch","Precipice Blades","Bolt Strike","Gear Grind"]}
   },
   "Mew": {
     "OU Stallbreaker": {"ability":"Synchronize","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":224,"sp":32},"moves":["Taunt","Soft-Boiled","Will-O-Wisp","Knock Off"]},
