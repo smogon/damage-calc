@@ -179,10 +179,10 @@ function getSpecie(gen: Generation, specieName: SpeciesName): Specie | PSSpecie 
 
 function toPSFormat(formatID: ID): ID {
   if (formatID === 'gen9vgc2024') {
-    return `${formatID}regf` as ID;
+    return `${formatID}regg` as ID;
   }
   if (formatID === 'gen9battlestadiumsingles') {
-    return `gen9bssregf` as ID;
+    return `gen9bssregg` as ID;
   }
   return formatID;
 }
