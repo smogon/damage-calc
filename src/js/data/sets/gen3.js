@@ -197,10 +197,9 @@ var SETDEX_ADV = {
   "Granbull": {
     "OU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":172,"at":252,"df":16,"sd":12,"sp":56},"moves":["Bulk Up","Return","Earthquake","Rest"]},
     "OU SubPunch": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":196,"at":252,"df":36,"sd":24},"moves":["Focus Punch","Substitute","Return","Shadow Ball"]},
-    "UU Bulk Up": {"ability":"Intimidate","item":"Chesto Berry","nature":"Adamant","evs":{"hp":172,"at":252,"df":16,"sd":12,"sp":56},"moves":["Bulk Up","Return","Earthquake","Rest"]},
-    "UU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":172,"at":252,"df":16,"sd":12,"sp":56},"moves":["Return","Earthquake","Shadow Ball","Focus Punch"]},
-    "UU Support": {"ability":"Intimidate","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":40,"df":216},"moves":["Return","Earthquake","Heal Bell","Thunder Wave"]},
-    "UU SubPunch": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":196,"at":252,"df":36,"sd":24},"moves":["Focus Punch","Substitute","Return","Shadow Ball"]}
+    "UU Offensive Utility": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":40,"df":216},"moves":["Return","Focus Punch","Shadow Ball","Heal Bell"]},
+    "UU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":40,"df":216},"moves":["Bulk Up","Return","Earthquake","Shadow Ball"]},
+    "UU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":156,"at":252,"sp":100},"moves":["Body Slam","Double-Edge","Earthquake","Shadow Ball"]}
   },
   "Hitmonlee": {
     "OU Choice Band": {"ability":"Limber","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Brick Break","Hidden Power Ghost","Rock Slide","Mach Punch"]},
@@ -972,9 +971,7 @@ var SETDEX_ADV = {
     "OU Perish Trapper": {"ability":"Levitate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":176,"sd":16,"sp":64},"moves":["Mean Look","Perish Song","Taunt","Protect"]},
     "OU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":176,"sd":16,"sp":64},"moves":["Calm Mind","Psychic","Thunderbolt","Substitute"]},
     "OU Imprison": {"ability":"Levitate","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":236,"df":68,"sa":124,"sd":80},"moves":["Hidden Power Ice","Thunderbolt","Thunder Wave","Imprison"]},
-    "UU Perish Trapper": {"ability":"Levitate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":176,"sd":16,"sp":64},"moves":["Mean Look","Perish Song","Taunt","Protect"]},
-    "UU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":176,"sd":16,"sp":64},"moves":["Calm Mind","Psychic","Thunderbolt","Substitute"]},
-    "UU Imprison": {"ability":"Levitate","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":236,"df":68,"sa":124,"sd":80},"moves":["Hidden Power Ice","Thunderbolt","Thunder Wave","Imprison"]}
+    "UU Defensive Utility": {"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"at":30,"df":30},"evs":{"hp":252,"df":84,"sd":172},"moves":["Thunderbolt","Hidden Power Ice","Thunder Wave","Pain Split"]}
   },
   "Unown": {
     "NU Use Chimecho Instead": {"ability":"Levitate","item":"Twisted Spoon","nature":"Modest","ivs":{"at":30,"sp":30},"evs":{"df":84,"sa":244,"sp":180},"moves":["Hidden Power Psychic"]}

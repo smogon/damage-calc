@@ -4370,6 +4370,7 @@ var SETDEX_XY = {
   },
   "Genesect": {
     "Ubers Choice Scarf": {"ability":"Download","item":"Choice Scarf","nature":"Naive","evs":{"at":248,"sa":8,"sp":252},"moves":["U-turn","Iron Head","Ice Beam","Explosion"]},
+    "Doubles OU Choice Band": {"ability":"Download","item":"Choice Band","nature":"Hasty","evs":{"hp":4,"at":252,"sp":252},"moves":["U-turn","Iron Head","Extreme Speed","Blaze Kick"]},
     "Doubles OU Choice Scarf": {"ability":"Download","item":"Choice Scarf","nature":"Naive","evs":{"at":252,"sa":64,"sp":192},"moves":["U-turn","Iron Head","Ice Beam","Explosion"]},
     "1v1 Choice Scarf": {"ability":"Download","item":"Choice Scarf","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Flash Cannon","Bug Buzz","Thunderbolt"]},
     "1v1 Choice Specs": {"ability":"Download","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"hp":104,"df":124,"sa":252,"sp":28},"moves":["Bug Buzz","Flash Cannon","Thunderbolt","Flamethrower"]},
