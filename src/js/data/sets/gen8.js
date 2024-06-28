@@ -2860,7 +2860,7 @@ var SETDEX_SS = {
     "ZU Choice Band": {"ability":"Natural Cure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Poltergeist","Wood Hammer","Sucker Punch","Trick"]}
   },
   "Gourgeist": {
-    "ZU Weakness Policy": {"ability":"Frisk","item":"Weakness Policy","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Flame Charge","Poltergeist","Power Whip","Shadow Sneak"]}
+    "ZU Weakness Policy": {"ability":"Frisk","item":"Weakness Policy","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Flame Charge","Poltergeist","Power Whip","Shadow Sneak"]}
   },
   "Gourgeist-Small": {
     "PU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Power Whip","Poltergeist","Rock Slide","Trick"]},
@@ -2868,7 +2868,7 @@ var SETDEX_SS = {
     "ZU Choice Band": {"ability":"Frisk","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Power Whip","Poltergeist","Shadow Sneak","Trick"]}
   },
   "Gourgeist-Large": {
-    "ZU Bulky Attacker": {"ability":"Frisk","nature":"Adamant","evs":{"hp":104,"at":252,"sp":152},"moves":["Synthesis","Poltergeist","Power Whip","Shadow Sneak"]}
+    "ZU Bulky Attacker": {"ability":"Frisk","item":"Weakness Policy","nature":"Adamant","evs":{"hp":104,"at":252,"sp":152},"moves":["Synthesis","Poltergeist","Power Whip","Shadow Sneak"]}
   },
   "Gourgeist-Super": {
     "PU Tank": {"ability":"Frisk","item":"Colbur Berry","nature":"Adamant","evs":{"hp":248,"at":252,"df":8},"moves":["Power Whip","Poltergeist","Synthesis","Shadow Sneak"]},
@@ -3462,9 +3462,6 @@ var SETDEX_SS = {
     "OU Swords Dance": {"ability":"Beast Boost","item":"Protective Pads","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Knock Off","Sacred Sword"]},
     "OU Choice Scarf": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
     "OU Choice Band": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
-    "OU Paper Cut (Swords Dance)": {"ability":"Beast Boost","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Knock Off","Sacred Sword"]},
-    "OU Paper Press (Choice Band)": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
-    "OU Paper Plane (Choice Scarf)": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Knock Off","Sacred Sword","Smart Strike"]},
     "VGC 2022 Dynamax Attacker": {"level":50,"ability":"Beast Boost","item":"White Herb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Leaf Blade","Smart Strike","Aerial Ace","Sacred Sword"]},
     "VGC 2021 Assault Vest": {"level":50,"ability":"Beast Boost","item":"Assault Vest","nature":"Jolly","evs":{"hp":4,"at":4,"df":4,"sd":244,"sp":252},"moves":["Leaf Blade","Smart Strike","Sacred Sword","Aerial Ace"]},
     "Battle Stadium Singles Physical Sweeper": {"level":50,"ability":"Beast Boost","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Sacred Sword","Aerial Ace","Smart Strike"]},
@@ -3598,15 +3595,6 @@ var SETDEX_SS = {
     "ZU Swords Dance": {"ability":"Grassy Surge","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","U-turn"]},
     "National Dex UU Showdown Usage": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Wood Hammer","Knock Off","U-turn"]}
   },
-  "Rillaboom-Gmax": {
-    "VGC 2022 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":220,"at":220,"df":4,"sd":4,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","Protect"]},
-    "VGC 2022 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":220,"at":196,"df":4,"sd":24,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","U-turn"]},
-    "VGC 2021 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":76,"df":4,"sd":172,"sp":4},"moves":["Grassy Glide","Wood Hammer","U-turn","Fake Out"]},
-    "VGC 2021 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Wood Hammer","Fake Out","Protect"]},
-    "Battle Stadium Singles G-Max Choice Attacker": {"level":50,"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","U-turn","Knock Off","High Horsepower"]},
-    "Battle Stadium Singles G-Max General Offense": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Knock Off","Drum Beating","U-turn"]},
-    "Battle Stadium Singles G-Max Swords Dance Sweeper": {"level":50,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Adamant","evs":{"hp":100,"at":252,"sp":156},"moves":["Swords Dance","Grassy Glide","Superpower","Knock Off"]}
-  },
   "Rillaboom": {
     "OU Bulky Swords Dance": {"ability":"Grassy Surge","item":"Leftovers","nature":"Adamant","evs":{"hp":240,"at":252,"sp":16},"moves":["Swords Dance","Grassy Glide","Knock Off","Drain Punch"]},
     "OU Offensive Swords Dance": {"ability":"Grassy Surge","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","Superpower"]},
@@ -3627,6 +3615,15 @@ var SETDEX_SS = {
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":188,"at":252,"df":68},"moves":["Grassy Glide","Fake Out","High Horsepower","Knock Off"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Grassy Glide","Fake Out","U-turn","Protect"]},
     "CAP Showdown Usage": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","U-turn","Wood Hammer","Superpower"]}
+  },
+  "Rillaboom-Gmax": {
+    "VGC 2022 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":220,"at":220,"df":4,"sd":4,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","Protect"]},
+    "VGC 2022 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":220,"at":196,"df":4,"sd":24,"sp":60},"moves":["Grassy Glide","Fake Out","High Horsepower","U-turn"]},
+    "VGC 2021 Assault Vest": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":76,"df":4,"sd":172,"sp":4},"moves":["Grassy Glide","Wood Hammer","U-turn","Fake Out"]},
+    "VGC 2021 Miracle Seed": {"level":50,"ability":"Grassy Surge","item":"Miracle Seed","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Wood Hammer","Fake Out","Protect"]},
+    "Battle Stadium Singles G-Max Choice Attacker": {"level":50,"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","U-turn","Knock Off","High Horsepower"]},
+    "Battle Stadium Singles G-Max General Offense": {"level":50,"ability":"Grassy Surge","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Grassy Glide","Knock Off","Drum Beating","U-turn"]},
+    "Battle Stadium Singles G-Max Swords Dance Sweeper": {"level":50,"ability":"Grassy Surge","item":"Grassy Seed","nature":"Adamant","evs":{"hp":100,"at":252,"sp":156},"moves":["Swords Dance","Grassy Glide","Superpower","Knock Off"]}
   },
   "Scorbunny": {
     "LC All-out Attacker": {"level":5,"ability":"Libero","item":"Berry Juice","nature":"Jolly","evs":{"hp":36,"at":188,"df":36,"sd":36,"sp":204},"moves":["Blaze Kick","Gunk Shot","U-turn","High Jump Kick"]}
