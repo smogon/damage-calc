@@ -33,6 +33,13 @@ export function calculateRBYGSC(
     return result;
   }
 
+  if (move.name === 'Pain Split') {
+    const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
+    const damage = Math.max(0, defender.curHP() - average);
+    result.damage = damage;
+    return result;
+  }
+
   // Fixed damage moves (eg. Night Shade) ignore type effectiveness in Gen 1
   if (gen.num === 1) {
     const fixedDamage = handleFixedDamageMoves(attacker, move);
@@ -73,7 +80,6 @@ export function calculateRBYGSC(
       [firstDefenderType, secondDefenderType] = [secondDefenderType, firstDefenderType];
     }
   }
-
 
   const type1Effectiveness =
     getMoveEffectiveness(gen, move, firstDefenderType, field.defenderSide.isForesight);
