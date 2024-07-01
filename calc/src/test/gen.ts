@@ -179,6 +179,7 @@ class Move implements I.Move {
     basePower: number;
   };
   readonly multihit?: number | number[];
+  readonly multiaccuracy?: boolean;
 
   constructor(move: D.Move, dex: D.ModdedDex) {
     this.kind = 'Move';
@@ -206,6 +207,7 @@ class Move implements I.Move {
     }
 
     if (move.multihit) this.multihit = move.multihit;
+    if (move.multiaccuracy) this.multiaccuracy = move.multiaccuracy;
     if (move.drain) this.drain = move.drain;
     if (move.willCrit) this.willCrit = move.willCrit;
     if (move.priority > 0) this.priority = move.priority;

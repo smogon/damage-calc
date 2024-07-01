@@ -1,3 +1,8 @@
+var PC_HANDLER = function () {
+	setTimeout(performCalculations, 0);
+};
+var damageResults;
+
 $("#p2 .ability").bind("keyup change", function () {
 	autosetWeather($(this).val(), 1);
 	autosetTerrain($(this).val(), 1);
@@ -22,7 +27,6 @@ for (var i = 0; i < 4; i++) {
 	});
 }
 
-var damageResults;
 function performCalculations() {
 	var p1info = $("#p1");
 	var p2info = $("#p2");
@@ -166,6 +170,8 @@ $(".mode").change(function () {
 		window.location.replace('randoms' + linkExtension + '?' + params);
 	} else if (mode === 'one-vs-one') {
 		window.location.replace('index' + linkExtension + '?' + params);
+	} else if (mode === "oms") {
+		window.location.replace('oms' + linkExtension);
 	} else {
 		window.location.replace('honkalculate' + linkExtension + '?' + params);
 	}
@@ -193,9 +199,7 @@ $(document).ready(function () {
 			}
 		}
 	}
-	$(".calc-trigger").bind("change keyup", function () {
-		setTimeout(performCalculations, 0);
-	});
+	$(".calc-trigger").bind("change keyup", PC_HANDLER);
 	performCalculations();
 });
 

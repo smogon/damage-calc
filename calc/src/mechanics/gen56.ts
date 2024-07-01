@@ -26,11 +26,12 @@ import {
   computeFinalStats,
   countBoosts,
   getBaseDamage,
-  getEVDescriptionText,
+  getStatDescriptionText,
   getFinalDamage,
   getModifiedStat,
   getMoveEffectiveness,
-  getWeightFactor,
+  getStabMod,
+  getWeight,
   handleFixedDamageMoves,
   isGrounded,
   OF16, OF32,
@@ -87,6 +88,13 @@ export function calculateBWXY(
     return result;
   }
 
+  if (move.name === 'Pain Split') {
+    const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
+    const damage = Math.max(0, defender.curHP() - average);
+    result.damage = damage;
+    return result;
+  }
+
   if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze')) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
@@ -108,7 +116,7 @@ export function calculateBWXY(
     move.type = getItemBoostType(attacker.item)!;
   } else if (move.named('Techno Blast') && attacker.item && attacker.item.includes('Drive')) {
     move.type = getTechnoBlast(attacker.item)!;
-  } else if (move.named('Natural Gift') && attacker.item && attacker.item.includes('Berry')) {
+  } else if (move.named('Natural Gift') && attacker.item?.endsWith('Berry')) {
     const gift = getNaturalGift(gen, attacker.item)!;
     move.type = gift.t;
     move.bp = gift.p;
@@ -127,6 +135,7 @@ export function calculateBWXY(
     }
   }
 
+  let hasAteAbilityTypeChange = false;
   let isAerilate = false;
   let isPixilate = false;
   let isRefrigerate = false;
@@ -149,6 +158,9 @@ export function calculateBWXY(
     if (isPixilate || isRefrigerate || isAerilate || isNormalize) {
       desc.attackerAbility = attacker.ability;
     }
+    if (isPixilate || isRefrigerate || isAerilate) {
+      hasAteAbilityTypeChange = true;
+    }
   }
 
   if (attacker.hasAbility('Gale Wings') && move.hasType('Flying')) {
@@ -163,21 +175,6 @@ export function calculateBWXY(
     ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
-
-  let resistedKnockOffDamage =
-    !defender.item ||
-    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
-    (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
-    (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
-    (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
-    (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb'));
-
-  // The last case only applies when the Pokemon is holding the Mega Stone that matches its species
-  // (or when it's already a Mega-Evolution)
-  if (!resistedKnockOffDamage && defender.item) {
-    const item = gen.items.get(toID(defender.item))!;
-    resistedKnockOffDamage = !!(item.megaEvolves && defender.name.includes(item.megaEvolves));
-  }
 
   if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
     typeEffectiveness = 1;
@@ -247,7 +244,7 @@ export function calculateBWXY(
     return result;
   }
 
-  desc.HPEVs = `${defender.evs.hp} HP`;
+  desc.HPEVs = getStatDescriptionText(gen, defender, 'hp');
 
   const fixedDamage = handleFixedDamageMoves(attacker, move);
   if (fixedDamage) {
@@ -269,12 +266,179 @@ export function calculateBWXY(
     desc.hits = move.hits;
   }
 
-  const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
-
   // #endregion
   // #region Base Power
 
+  const basePower = calculateBasePowerBWXY(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    hasAteAbilityTypeChange,
+    desc
+  );
+  if (basePower === 0) {
+    return result;
+  }
+
+  // #endregion
+  // #region (Special) Attack
+
+  const attack = calculateAttackBWXY(gen, attacker, defender, move, field, desc, isCritical);
+  const attackStat = move.category === 'Special' ? 'spa' : 'atk';
+
+  // #endregion
+  // #region (Special) Defense
+
+  const defense = calculateDefenseBWXY(gen, attacker, defender, move, field, desc, isCritical);
+
+  // #endregion
+  // #region Damage
+
+  const baseDamage = calculateBaseDamageBWXY(
+    gen,
+    attacker,
+    basePower,
+    attack,
+    defense,
+    move,
+    field,
+    desc,
+    isCritical
+  );
+
+  // the random factor is applied between the crit mod and the stab mod, so don't apply anything
+  // below this until we're inside the loop
+  let stabMod = getStabMod(attacker, move, desc);
+
+  const applyBurn =
+    attacker.hasStatus('brn') &&
+    move.category === 'Physical' &&
+    !attacker.hasAbility('Guts') &&
+    !(move.named('Facade') && gen.num === 6);
+  desc.isBurned = applyBurn;
+
+  const finalMods = calculateFinalModsBWXY(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc,
+    isCritical,
+    typeEffectiveness
+  );
+  const finalMod = chainMods(finalMods, 41, 131072);
+
+  const isSpread = field.gameType !== 'Singles' &&
+    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
+
+  let childDamage: number[] | undefined;
+  if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
+    const child = attacker.clone();
+    child.ability = 'Parental Bond (Child)' as AbilityName;
+    checkMultihitBoost(gen, child, defender, move, field, desc);
+    childDamage = calculateBWXY(gen, child, defender, move, field).damage as number[];
+    desc.attackerAbility = attacker.ability;
+  }
+
+  let damage: number[] = [];
+  for (let i = 0; i < 16; i++) {
+    damage[i] =
+      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
+  }
+
+  desc.attackBoost =
+    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+
+  if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
+    // store boosts so intermediate boosts don't show.
+    const origDefBoost = desc.defenseBoost;
+    const origAtkBoost = desc.attackBoost;
+    let numAttacks = 1;
+    if (move.dropsStats && move.timesUsed! > 1) {
+      desc.moveTurns = `over ${move.timesUsed} turns`;
+      numAttacks = move.timesUsed!;
+    } else {
+      numAttacks = move.hits;
+    }
+    let usedItems = [false, false];
+    for (let times = 1; times < numAttacks; times++) {
+      usedItems = checkMultihitBoost(gen, attacker, defender, move,
+        field, desc, usedItems[0], usedItems[1]);
+      const newAtk = calculateAttackBWXY(gen, attacker, defender, move, field, desc, isCritical);
+      const newDef = calculateDefenseBWXY(gen, attacker, defender, move, field, desc, isCritical);
+      // Check if lost -ate ability. Typing stays the same, only boost is lost
+      // Cannot be regained during multihit move and no Normal moves with stat drawbacks
+      hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
+      attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate');
+
+      if ((move.dropsStats && move.timesUsed! > 1)) {
+        // Adaptability does not change between hits of a multihit, only between turns
+        stabMod = getStabMod(attacker, move, desc);
+      }
+
+      const newBasePower = calculateBasePowerBWXY(
+        gen,
+        attacker,
+        defender,
+        move,
+        field,
+        hasAteAbilityTypeChange,
+        desc
+      );
+      const newBaseDamage = getBaseDamage(attacker.level, newBasePower, newAtk, newDef);
+      const newFinalMods = calculateFinalModsBWXY(
+        gen,
+        attacker,
+        defender,
+        move,
+        field,
+        desc,
+        isCritical,
+        typeEffectiveness,
+        times
+      );
+      const newFinalMod = chainMods(newFinalMods, 41, 131072);
+
+      let damageMultiplier = 0;
+      damage = damage.map(affectedAmount => {
+        const newFinalDamage = getFinalDamage(
+          newBaseDamage,
+          damageMultiplier,
+          typeEffectiveness,
+          applyBurn,
+          stabMod,
+          newFinalMod
+        );
+        damageMultiplier++;
+        return affectedAmount + newFinalDamage;
+      });
+    }
+    desc.defenseBoost = origDefBoost;
+    desc.attackBoost = origAtkBoost;
+  }
+
+  result.damage = childDamage ? [damage, childDamage] : damage;
+
+  // #endregion
+
+  return result;
+}
+
+export function calculateBasePowerBWXY(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  hasAteAbilityTypeChange: boolean,
+  desc: RawDesc,
+  hit = 1,
+) {
   let basePower: number;
+  const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
 
   switch (move.name) {
   case 'Payback':
@@ -304,7 +468,7 @@ export function calculateBWXY(
     break;
   case 'Low Kick':
   case 'Grass Knot':
-    const w = defender.weightkg * getWeightFactor(defender);
+    const w = getWeight(defender, desc, 'defender');
     basePower = w >= 200 ? 120 : w >= 100 ? 100 : w >= 50 ? 80 : w >= 25 ? 60 : w >= 10 ? 40 : 20;
     desc.moveBP = basePower;
     break;
@@ -315,8 +479,8 @@ export function calculateBWXY(
   case 'Heavy Slam':
   case 'Heat Crash':
     const wr =
-        (attacker.weightkg * getWeightFactor(attacker)) /
-        (defender.weightkg * getWeightFactor(defender));
+        getWeight(attacker, desc, 'attacker') /
+        getWeight(defender, desc, 'defender');
     basePower = wr >= 5 ? 120 : wr >= 4 ? 100 : wr >= 3 ? 80 : wr >= 2 ? 60 : 40;
     desc.moveBP = basePower;
     break;
@@ -389,10 +553,10 @@ export function calculateBWXY(
       }
     }
     break;
-  // Triple Kick's damage doubles after each consecutive hit (10, 20, 30), this is a hack
+  // Triple Kick's damage increases after each consecutive hit (10, 20, 30)
   case 'Triple Kick':
-    basePower = move.hits === 2 ? 15 : move.hits === 3 ? 30 : 10;
-    desc.moveBP = basePower;
+    basePower = hit * 10;
+    desc.moveBP = move.hits === 2 ? 30 : move.hits === 3 ? 60 : 10;
     break;
   case 'Crush Grip':
   case 'Wring Out':
@@ -405,10 +569,53 @@ export function calculateBWXY(
   }
 
   if (basePower === 0) {
-    return result;
+    return 0;
   }
 
+  const bpMods = calculateBPModsBWXY(
+    gen,
+    attacker,
+    defender,
+    move,
+    field,
+    desc,
+    basePower,
+    hasAteAbilityTypeChange,
+    turnOrder
+  );
+
+  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
+  return basePower;
+}
+
+export function calculateBPModsBWXY(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  basePower: number,
+  hasAteAbilityTypeChange: boolean,
+  turnOrder: string
+) {
   const bpMods = [];
+
+  let resistedKnockOffDamage =
+    !defender.item ||
+    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
+    (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
+    (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
+    (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
+    (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb'));
+
+  // The last case only applies when the Pokemon is holding the Mega Stone that matches its species
+  // (or when it's already a Mega-Evolution)
+  if (!resistedKnockOffDamage && defender.item) {
+    const item = gen.items.get(toID(defender.item))!;
+    resistedKnockOffDamage = !!(item.megaEvolves && defender.name.includes(item.megaEvolves));
+  }
+
 
   // Use BasePower after moves with custom BP to determine if Technician should boost
   if ((attacker.hasAbility('Technician') && basePower <= 60) ||
@@ -508,7 +715,7 @@ export function calculateBWXY(
     desc.isHelpingHand = true;
   }
 
-  if (isAerilate || isPixilate || isRefrigerate || isNormalize) {
+  if (hasAteAbilityTypeChange) {
     bpMods.push(5325);
     desc.attackerAbility = attacker.ability;
   } else if (
@@ -562,18 +769,25 @@ export function calculateBWXY(
     }
   }
 
-  basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
+  return bpMods;
+}
 
-  // #endregion
-  // #region (Special) Attack
-
+export function calculateAttackBWXY(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false
+) {
   let attack: number;
   const attackSource = move.named('Foul Play') ? defender : attacker;
   const attackStat = move.category === 'Special' ? 'spa' : 'atk';
   desc.attackEVs =
     move.named('Foul Play')
-      ? getEVDescriptionText(gen, defender, attackStat, defender.nature)
-      : getEVDescriptionText(gen, attacker, attackStat, attacker.nature);
+      ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
+      : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
@@ -582,7 +796,7 @@ export function calculateBWXY(
     attack = attackSource.rawStats[attackStat];
     desc.defenderAbility = defender.ability;
   } else {
-    attack = attackSource.stats[attackStat];
+    attack = getModifiedStat(attackSource.rawStats[attackStat]!, attackSource.boosts[attackStat]!);
     desc.attackBoost = attackSource.boosts[attackStat];
   }
 
@@ -592,6 +806,18 @@ export function calculateBWXY(
     desc.attackerAbility = attacker.ability;
   }
 
+  const atMods = calculateAtModsBWXY(attacker, defender, move, field, desc);
+  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods, 410, 131072)) / 4096)));
+  return attack;
+}
+
+export function calculateAtModsBWXY(
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc
+) {
   const atMods = [];
   if (defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) {
     atMods.push(2048);
@@ -661,16 +887,22 @@ export function calculateBWXY(
     atMods.push(6144);
     desc.attackerItem = attacker.item;
   }
+  return atMods;
+}
 
-  attack = OF16(Math.max(1, pokeRound((attack * chainMods(atMods, 410, 131072)) / 4096)));
-
-  // #endregion
-  // #region (Special) Defense
-
+export function calculateDefenseBWXY(
+  gen: Generation,
+  attacker: Pokemon,
+  defender: Pokemon,
+  move: Move,
+  field: Field,
+  desc: RawDesc,
+  isCritical = false
+) {
   let defense: number;
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
-  desc.defenseEVs = getEVDescriptionText(gen, defender, defenseStat, defender.nature);
+  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
   if (defender.boosts[defenseStat] === 0 ||
     (isCritical && defender.boosts[defenseStat] > 0) ||
     move.ignoreDefensive) {
@@ -679,7 +911,7 @@ export function calculateBWXY(
     defense = defender.rawStats[defenseStat];
     desc.attackerAbility = attacker.ability;
   } else {
-    defense = defender.stats[defenseStat];
+    defense = getModifiedStat(defender.rawStats[defenseStat]!, defender.boosts[defenseStat]!);
     desc.defenseBoost = defender.boosts[defenseStat];
   }
 
@@ -689,6 +921,24 @@ export function calculateBWXY(
     desc.weather = field.weather;
   }
 
+  const dfMods = calculateDfModsBWXY(
+    gen,
+    defender,
+    field,
+    desc,
+    hitsPhysical
+  );
+  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods, 410, 131072)) / 4096)));
+  return defense;
+}
+
+export function calculateDfModsBWXY(
+  gen: Generation,
+  defender: Pokemon,
+  field: Field,
+  desc: RawDesc,
+  hitsPhysical = false
+) {
   const dfMods = [];
   if (defender.hasAbility('Marvel Scale') && defender.status && hitsPhysical) {
     dfMods.push(6144);
@@ -734,181 +984,9 @@ export function calculateBWXY(
     dfMods.push(8192);
     desc.defenderAbility = defender.ability;
   }
-
-  defense = OF16(Math.max(1, pokeRound((defense * chainMods(dfMods, 410, 131072)) / 4096)));
-
-  // #endregion
-  // #region Damage
-
-  const baseDamage = calculateBaseDamageBWXY(
-    gen,
-    attacker,
-    basePower,
-    attack,
-    defense,
-    move,
-    field,
-    desc,
-    isCritical
-  );
-
-  // the random factor is applied between the crit mod and the stab mod, so don't apply anything
-  // below this until we're inside the loop
-  let stabMod = 4096;
-  if (attacker.hasType(move.type)) {
-    if (attacker.hasAbility('Adaptability')) {
-      stabMod = 8192;
-      desc.attackerAbility = attacker.ability;
-    } else {
-      stabMod = 6144;
-    }
-  } else if (attacker.hasAbility('Protean')) {
-    stabMod = 6144;
-    desc.attackerAbility = attacker.ability;
-  }
-
-  const applyBurn =
-    attacker.hasStatus('brn') &&
-    move.category === 'Physical' &&
-    !attacker.hasAbility('Guts') &&
-    !(move.named('Facade') && gen.num === 6);
-  desc.isBurned = applyBurn;
-
-  const finalMods = calculateFinalModsBWXY(
-    gen,
-    attacker,
-    defender,
-    move,
-    field,
-    desc,
-    isCritical,
-    typeEffectiveness
-  );
-  const finalMod = chainMods(finalMods, 41, 131072);
-
-  const isSpread = field.gameType !== 'Singles' &&
-    ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
-
-  let childDamage: number[] | undefined;
-  if (attacker.hasAbility('Parental Bond') && move.hits === 1 && !isSpread) {
-    const child = attacker.clone();
-    child.ability = 'Parental Bond (Child)' as AbilityName;
-    checkMultihitBoost(gen, child, defender, move, field, desc);
-    childDamage = calculateBWXY(gen, child, defender, move, field).damage as number[];
-    desc.attackerAbility = attacker.ability;
-  }
-
-  let damage: number[] = [];
-  for (let i = 0; i < 16; i++) {
-    damage[i] =
-      getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod);
-  }
-
-  if (move.dropsStats && (move.timesUsed || 0) > 1) {
-    const simpleMultiplier = attacker.hasAbility('Simple') ? 2 : 1;
-
-    desc.moveTurns = `over ${move.timesUsed} turns`;
-    const hasWhiteHerb = attacker.hasItem('White Herb');
-    let usedWhiteHerb = false;
-    let dropCount = attacker.boosts[attackStat];
-    for (let times = 0; times < move.timesUsed!; times++) {
-      const newAttack = getModifiedStat(attack, dropCount);
-      let damageMultiplier = 0;
-      damage = damage.map(affectedAmount => {
-        if (times) {
-          const newBaseDamage = getBaseDamage(attacker.level, basePower, newAttack, defense);
-          const newFinalDamage = getFinalDamage(
-            newBaseDamage,
-            damageMultiplier,
-            typeEffectiveness,
-            applyBurn,
-            stabMod,
-            finalMod
-          );
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
-      });
-
-      if (attacker.hasAbility('Contrary')) {
-        dropCount = Math.min(6, dropCount + move.dropsStats);
-        desc.attackerAbility = attacker.ability;
-      } else {
-        dropCount = Math.max(-6, dropCount - move.dropsStats * simpleMultiplier);
-        if (attacker.hasAbility('Simple')) {
-          desc.attackerAbility = attacker.ability;
-        }
-      }
-
-      // the Pokémon hits THEN the stat rises / lowers
-      if (hasWhiteHerb && attacker.boosts[attackStat] < 0 && !usedWhiteHerb) {
-        dropCount += move.dropsStats * simpleMultiplier;
-        usedWhiteHerb = true;
-        desc.attackerItem = attacker.item;
-      }
-    }
-  }
-
-  if (move.hits > 1) {
-    let defenderDefBoost = defender.boosts['def'];
-    for (let times = 0; times < move.hits; times++) {
-      let damageMultiplier = 0;
-      damage = damage.map(affectedAmount => {
-        if (times) {
-          const newFinalMods = calculateFinalModsBWXY(
-            gen,
-            attacker,
-            defender,
-            move,
-            field,
-            desc,
-            isCritical,
-            typeEffectiveness,
-            times
-          );
-          const newFinalMod = chainMods(newFinalMods, 41, 131072);
-          const newDefense = getModifiedStat(defense, defenderDefBoost);
-          const newBaseDamage = calculateBaseDamageBWXY(
-            gen,
-            attacker,
-            basePower,
-            attack,
-            newDefense,
-            move,
-            field,
-            desc,
-            isCritical
-          );
-          const newFinalDamage = getFinalDamage(
-            newBaseDamage,
-            damageMultiplier,
-            typeEffectiveness,
-            applyBurn,
-            stabMod,
-            newFinalMod,
-          );
-          damageMultiplier++;
-          return affectedAmount + newFinalDamage;
-        }
-        return affectedAmount;
-      });
-      if (hitsPhysical && defender.ability === 'Weak Armor') {
-        defenderDefBoost = Math.max(-6, defenderDefBoost - 1);
-        desc.defenderAbility = 'Weak Armor';
-      }
-    }
-  }
-
-  desc.attackBoost =
-    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
-
-  result.damage = childDamage ? [damage, childDamage] : damage;
-
-  // #endregion
-
-  return result;
+  return dfMods;
 }
+
 
 function calculateBaseDamageBWXY(
   gen: Generation,
@@ -1022,6 +1100,7 @@ function calculateFinalModsBWXY(
 
   if (move.hasType(getBerryResistType(defender.item)) &&
       (typeEffectiveness > 1 || move.hasType('Normal')) &&
+      hitCount === 0 &&
       !attacker.hasAbility('Unnerve')) {
     finalMods.push(2048);
     desc.defenderItem = defender.item;

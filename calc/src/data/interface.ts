@@ -27,7 +27,8 @@ export type NatureName =
 
 export type TypeName =
   'Normal' | 'Fighting' | 'Flying' | 'Poison' | 'Ground' | 'Rock' | 'Bug' | 'Ghost' | 'Steel' |
-  'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' | '???';
+  'Fire' | 'Water' | 'Grass' | 'Electric' | 'Psychic' | 'Ice' | 'Dragon' | 'Dark' | 'Fairy' |
+  'Stellar' | '???';
 
 export type MoveCategory = 'Physical' | 'Special' | 'Status';
 
@@ -131,6 +132,7 @@ export interface Move extends Data<MoveName> {
     basePower: number;
   };
   readonly multihit?: number | number[];
+  readonly multiaccuracy?: boolean;
 }
 
 export interface Species {

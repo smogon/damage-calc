@@ -33,6 +33,13 @@ export function calculateRBYGSC(
     return result;
   }
 
+  if (move.name === 'Pain Split') {
+    const average = Math.floor((attacker.curHP() + defender.curHP()) / 2);
+    const damage = Math.max(0, defender.curHP() - average);
+    result.damage = damage;
+    return result;
+  }
+
   // Fixed damage moves (eg. Night Shade) ignore type effectiveness in Gen 1
   if (gen.num === 1) {
     const fixedDamage = handleFixedDamageMoves(attacker, move);
@@ -74,7 +81,6 @@ export function calculateRBYGSC(
     }
   }
 
-
   const type1Effectiveness =
     getMoveEffectiveness(gen, move, firstDefenderType, field.defenderSide.isForesight);
   const type2Effectiveness = secondDefenderType
@@ -96,6 +102,11 @@ export function calculateRBYGSC(
 
   if (move.hits > 1) {
     desc.hits = move.hits;
+  }
+  // Triple Kick's damage increases by 10 after each consecutive hit (10, 20, 30), this is a hack
+  if (move.name === 'Triple Kick') {
+    move.bp = move.hits === 2 ? 15 : move.hits === 3 ? 20 : 10;
+    desc.moveBP = move.bp;
   }
 
   // Flail and Reversal are variable BP and never crit
