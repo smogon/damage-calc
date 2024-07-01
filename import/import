@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-
-require('source-map-support').install();
-const path = require('path');
-const importer = require('./dist/index');
-
-const dir = path.resolve(__dirname, process.argv[2] || '../src/js/data');
-const randomDir = process.argv[3] && path.resolve(__dirname, process.argv[3]);
-(async () => { await importer.importSets(dir, randomDir); })().catch(console.error);

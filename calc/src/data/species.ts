@@ -1,4 +1,4 @@
-import * as I from './interface';
+﻿import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -3510,7 +3510,7 @@ const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Ghost', 'Fighting'],
     bs: {hp: 90, at: 105, df: 90, sa: 65, sd: 110, sp: 65},
     weightkg: 44,
-    abilities: {0: 'Shed Skin'},
+    abilities: {0: 'Air Lock'},
   },
   Rhyperior: {
     types: ['Ground', 'Rock'],
@@ -8622,7 +8622,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Urshifu-Rapid-Strike-Gmax': {
     types: ['Fighting', 'Water'],
     bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
-    weightkg: 105,
+    weightkg: 0,
     abilities: {0: 'Unseen Fist'},
     baseSpecies: 'Urshifu',
   },
@@ -8986,6 +8986,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Bisharp: {nfe: true},
   Cresselia: {bs: {df: 110, sd: 120}},
   Dunsparce: {nfe: true},
+  Duraludon: {nfe: true},
   Girafarig: {nfe: true},
   Primeape: {nfe: true},
   Tauros: {otherFormes: ['Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Combat']},
@@ -9012,6 +9013,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 78, at: 69, df: 90, sa: 125, sd: 109, sp: 39},
     weightkg: 48.2,
     abilities: {0: 'Seed Sower'},
+  },
+  Archaludon: {
+    types: ['Steel', 'Dragon'],
+    bs: {hp: 90, at: 105, df: 130, sa: 125, sd: 65, sp: 85},
+    weightkg: 60,
+    abilities: {0: 'Stamina'},
   },
   Arctibax: {
     types: ['Dragon', 'Ice'],
@@ -9111,11 +9118,23 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Sword of Ruin'},
   },
+  Chuggalong: {
+    types: ['Dragon', 'Poison'],
+    bs: {hp: 45, at: 43, df: 117, sa: 120, sd: 110, sp: 115},
+    weightkg: 201.6,
+    abilities: {0: 'Armor Tail'},
+  },
   Clodsire: {
     types: ['Poison', 'Ground'],
     bs: {hp: 130, at: 75, df: 60, sa: 45, sd: 100, sp: 20},
     weightkg: 223,
     abilities: {0: 'Poison Point'},
+  },
+  Cresceidon: {
+    types: ['Water', 'Fairy'],
+    bs: {hp: 80, at: 32, df: 111, sa: 88, sd: 99, sp: 124},
+    weightkg: 999.9,
+    abilities: {0: 'Multiscale'},
   },
   Crocalor: {
     types: ['Fire'],
@@ -9141,6 +9160,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 80, df: 110, sa: 95, sd: 80, sp: 40},
     weightkg: 4.4,
     abilities: {0: 'Supersweet Syrup'},
+    nfe: true,
   },
   Dolliv: {
     types: ['Grass', 'Normal'],
@@ -9286,6 +9306,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 45,
     abilities: {0: 'Toxic Debris'},
   },
+  'Gouging Fire': {
+    types: ['Fire', 'Dragon'],
+    bs: {hp: 105, at: 115, df: 121, sa: 65, sd: 93, sp: 91},
+    weightkg: 590,
+    gender: 'N',
+    abilities: {0: 'Protosynthesis'},
+  },
   Grafaiai: {
     types: ['Poison', 'Normal'],
     bs: {hp: 63, at: 95, df: 65, sa: 80, sd: 72, sp: 110},
@@ -9318,10 +9345,30 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 15,
     abilities: {0: 'Sand Rush'},
   },
+  Hydrapple: {
+    types: ['Grass', 'Dragon'],
+    bs: {hp: 106, at: 80, df: 110, sa: 120, sd: 80, sp: 44},
+    weightkg: 93,
+    abilities: {0: 'Supersweet Syrup'},
+  },
   'Iron Bundle': {
     types: ['Ice', 'Water'],
     bs: {hp: 56, at: 80, df: 114, sa: 124, sd: 60, sp: 136},
     weightkg: 11,
+    gender: 'N',
+    abilities: {0: 'Quark Drive'},
+  },
+  'Iron Boulder': {
+    types: ['Rock', 'Psychic'],
+    bs: {hp: 90, at: 120, df: 80, sa: 68, sd: 108, sp: 124},
+    weightkg: 162.5,
+    gender: 'N',
+    abilities: {0: 'Quark Drive'},
+  },
+  'Iron Crown': {
+    types: ['Steel', 'Psychic'],
+    bs: {hp: 90, at: 72, df: 100, sa: 122, sd: 108, sp: 98},
+    weightkg: 156,
     gender: 'N',
     abilities: {0: 'Quark Drive'},
   },
@@ -9602,6 +9649,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 41,
     abilities: {0: 'Volt Absorb'},
   },
+  Pecharunt: {
+    types: ['Poison', 'Ghost'],
+    bs: {hp: 88, at: 88, df: 160, sa: 88, sd: 88, sp: 88},
+    weightkg: 0.3,
+    gender: 'N',
+    abilities: {0: 'Poison Puppeteer'},
+  },
   Poltchageist: {
     types: ['Grass', 'Ghost'],
     bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
@@ -9646,6 +9700,13 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 75, at: 50, df: 85, sa: 115, sd: 100, sp: 45},
     weightkg: 3.5,
     abilities: {0: 'Synchronize'},
+  },
+  'Raging Bolt': {
+    types: ['Electric', 'Dragon'],
+    bs: {hp: 125, at: 73, df: 91, sa: 137, sd: 89, sp: 75},
+    weightkg: 480,
+    gender: 'N',
+    abilities: {0: 'Protosynthesis'},
   },
   Rellor: {
     types: ['Bug'],
@@ -9826,6 +9887,30 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 115,
     abilities: {0: 'Intimidate'},
     baseSpecies: 'Tauros',
+  },
+  'Terapagos': {
+    types: ['Normal'],
+    bs: {hp: 90, at: 65, df: 85, sa: 65, sd: 85, sp: 60},
+    weightkg: 6.5,
+    abilities: {0: 'Tera Shift'},
+    // baseSpecies: 'Terapagos',
+    otherFormes: ['Terapagos-Stellar', 'Terapagos-Terastal'],
+  },
+  'Terapagos-Stellar': {
+    types: ['Normal'],
+    bs: {hp: 160, at: 105, df: 110, sa: 130, sd: 110, sp: 85},
+    weightkg: 77,
+    abilities: {0: 'Teraform Zero'},
+    baseSpecies: 'Terapagos',
+    // otherFormes: ['Terapagos', 'Terapagos-Terastal'],
+  },
+  'Terapagos-Terastal': {
+    types: ['Normal'],
+    bs: {hp: 95, at: 95, df: 110, sa: 105, sd: 110, sp: 85},
+    weightkg: 16,
+    abilities: {0: 'Tera Shell'},
+    baseSpecies: 'Terapagos',
+    // otherFormes: ['Terapagos-Stellar', 'Terapagos'],
   },
   'Ting-Lu': {
     types: ['Dark', 'Ground'],

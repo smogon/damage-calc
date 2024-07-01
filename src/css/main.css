@@ -138,7 +138,7 @@ html, body {
 }
 .wrapper {
     padding: 0 1em;
-    max-width: 1285px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 .credits {
@@ -215,16 +215,13 @@ th {
     display: inline-block; /* required for honkaculate to work */
 }
 .poke-info {
-    width: 30em;
+    width: 32em;
 }
 .field-info, .poke-import {
     text-align: center;
     width: 27.5em;
 }
-.holder-0 {
-    position: absolute;
-    top: 151px;
-}
+
 #holder-2 tr {
     white-space: nowrap;
 }
@@ -408,6 +405,7 @@ select.toxic-counter {
     width: 1.5em;
     height: 1em;
     padding: 3px 3px;
+    margin-right: 1px;
 }
 .poke-info .max-btn {
 	font-size: 0.8em;
@@ -415,6 +413,13 @@ select.toxic-counter {
 	height: 1em;
 	padding: 3px 3px;
 }
+.poke-info .stellar-btn {
+   font-size: 0.8em;
+   width: 3.5em;
+   height: 1em;
+   padding: 3px 3px;
+}
+
 
 /* field info */
 .field-info .btn {
@@ -515,4 +520,8 @@ table.field {
 .extraSetItems,
 .extraSetMoves {
     width: 100%;
+}
+
+.flex-parent {
+	display: flex;
 }

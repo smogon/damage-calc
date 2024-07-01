@@ -1,0 +1,33 @@
+name: Update Sets
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '27 23 */3 * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: damagecalc
+    - name: Fetch sets
+      run: |-
+        cd damagecalc
+        npm install
+        npm run compile
+        cd import
+        npm install
+        npm run compile
+        cd ..
+        node import/dist/set-import.js src/js/data/sets/
+    - name: Commit and push if it changed
+      run: |-
+        cd damagecalc
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        git commit -m "Update sets" || exit 0
+        git push || exit 0
