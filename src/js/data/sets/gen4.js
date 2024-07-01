@@ -2350,7 +2350,7 @@ var SETDEX_DPP = {
     "Doubles OU Showdown Usage": {"ability":"Klutz","item":"Choice Scarf","nature":"Jolly","evs":{"hp":248,"df":40,"sp":220},"moves":["Endeavor","Fake Out","Switcheroo","Thunder Wave"]}
   },
   "Meowth": {
-    "LC Showdown Usage": {"level":5,"ability":"Technician","item":"Focus Sash","nature":"Hasty","evs":{"at":236,"sa":36,"sp":196},"moves":["Fake Out","Bite","Aerial Ace","Icy Wind"]}
+    "LC Showdown Usage": {"level":5,"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":236,"df":76,"sp":196},"moves":["Fake Out","Bite","Aerial Ace","U-turn"]}
   },
   "Sandslash": {
     "NU Showdown Usage": {"ability":"Sand Veil","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rapid Spin","Stone Edge","Stealth Rock"]}

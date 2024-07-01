@@ -113,7 +113,8 @@ var SETDEX_RBY = {
   "Arcanine": {
     "UU Agility Sweeper": {"moves":["Agility","Body Slam","Hyper Beam","Fire Blast"]},
     "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]},
-    "PU Bulky Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Agility"]}
+    "PU Bulky Attacker": {"moves":["Fire Blast","Body Slam","Hyper Beam","Agility"]},
+    "OU Showdown Usage": {"moves":["Fire Blast","Body Slam","Agility","Hyper Beam"]}
   },
   "Poliwag": {
     "PU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]}
