@@ -303,8 +303,11 @@ function addSets(pokes, name) {
 			}
 		}
 	}
-	if (addedpokes > 0) {
-		alert("Successfully imported " + addedpokes + " set(s)");
+	if (addedpokes == 1) {
+		alert("Successfully imported 1 set");
+		$(allPokemon("#importedSetsOptions")).css("display", "inline");
+	} else if (addedpokes > 1) {
+		alert("Successfully imported " + addedpokes + " sets");
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
