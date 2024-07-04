@@ -2091,7 +2091,7 @@ var SETDEX_SS = {
     "ZU Specially Defensive": {"ability":"Water Absorb","nature":"Calm","evs":{"hp":252,"sd":160,"sp":96},"moves":["Spikes","Synthesis","Giga Drain","Knock Off"]}
   },
   "Dwebble": {
-    "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Jolly","evs":{"at":156,"df":116,"sp":236},"moves":["Stealth Rock","Spikes","Knock Off","Rock Blast"]},
+    "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Jolly","evs":{"hp":36,"at":156,"df":76,"sp":236},"moves":["Stealth Rock","Spikes","Knock Off","Rock Blast"]},
     "LC Shell Smash": {"level":5,"ability":"Sturdy","item":"Berry Juice","nature":"Adamant","evs":{"at":236,"sp":236},"moves":["Shell Smash","Rock Blast","Earthquake","Knock Off"]}
   },
   "Crustle": {

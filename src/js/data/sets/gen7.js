@@ -2889,7 +2889,7 @@ var SETDEX_SM = {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Snow Warning","item":"Abomasite","nature":"Quiet","evs":{"hp":204,"df":52,"sa":252},"moves":["Blizzard","Energy Ball","Ice Shard","Shadow Ball"]}
   },
   "Weavile": {
-    "OU Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Icicle Crash","Ice Shard","Pursuit"]},
+    "OU Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Crash","Knock Off","Ice Shard","Pursuit"]},
     "Battle Spot Singles Offensive": {"level":50,"ability":"Pressure","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Knock Off","Ice Shard","Icicle Crash","Fake Out"]},
     "Monotype All-out Attacker (Dark)": {"ability":"Pressure","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Crash","Ice Shard","Knock Off","Pursuit"]},
     "Monotype Life Orb Attacker (Ice)": {"ability":"Pressure","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Icicle Crash","Ice Shard","Low Kick"]},
