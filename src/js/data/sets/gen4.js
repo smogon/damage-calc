@@ -2291,11 +2291,11 @@ var SETDEX_DPP = {
   },
   "Dialga": {
     "Ubers Defensive Support": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":252,"sp":4},"moves":["Stealth Rock","Dragon Pulse","Thunder","Roar"]},
-    "Ubers Mixed": {"ability":"Pressure","item":"Expert Belt","nature":"Mild","evs":{"at":144,"sa":252,"sp":112},"moves":["Draco Meteor","Outrage","Fire Blast","Thunder"]},
+    "Ubers Wallbreaker": {"ability":"Pressure","item":"Adamant Orb","nature":"Mild","evs":{"hp":144,"sa":252,"sp":112},"moves":["Draco Meteor","Outrage","Fire Blast","Thunder"]},
     "Ubers Defensive Bulk Up": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Outrage","Rest","Sleep Talk"]},
     "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Thunder","Fire Blast","Dragon Pulse"]},
     "Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","evs":{"hp":224,"sa":252,"sp":32},"moves":["Draco Meteor","Dragon Pulse","Thunder","Fire Blast"]},
-    "Ubers Trick Room": {"ability":"Pressure","item":"Life Orb","nature":"Quiet","ivs":{"at":30,"sp":0},"evs":{"hp":4,"at":252,"sa":252},"moves":["Trick Room","Draco Meteor","Outrage","Fire Blast"]},
+    "Ubers Trick Room": {"ability":"Pressure","item":"Life Orb","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":4,"at":252,"sa":252},"moves":["Trick Room","Draco Meteor","Outrage","Thunder"]},
     "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"hp":224,"at":252,"sp":32},"moves":["Outrage","Earthquake","Dragon Claw","Overheat"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Choice Scarf","nature":"Modest","evs":{"df":64,"sa":252,"sp":192},"moves":["Thunder","Dragon Pulse","Stealth Rock","Roar"]}
   },

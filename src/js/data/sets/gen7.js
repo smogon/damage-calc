@@ -1884,7 +1884,7 @@ var SETDEX_SM = {
     "LC Tank": {"level":5,"ability":"Effect Spore","item":"Eviolite","nature":"Impish","evs":{"hp":36,"at":36,"df":196,"sd":116,"sp":76},"moves":["Spore","Bullet Seed","Drain Punch","Synthesis"]}
   },
   "Breloom": {
-    "OU SubSeed": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","evs":{"hp":236,"sd":176,"sp":96},"moves":["Substitute","Spore","Leech Seed","Focus Punch"]},
+    "OU Focus Sash": {"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Spore","Mach Punch","Bullet Seed","Swords Dance"]},
     "VGC 2018 Offensive Spore": {"level":50,"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Spore","Mach Punch","Bullet Seed","Protect"]},
     "VGC 2018 Choice Scarf": {"level":50,"ability":"Technician","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Spore","Bullet Seed","Superpower","Rock Tomb"]},
     "Battle Spot Singles Offensive Spore": {"level":50,"ability":"Technician","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Spore","Bullet Seed","Mach Punch","Rock Tomb"]},
@@ -4424,7 +4424,7 @@ var SETDEX_SM = {
     "ZU Defensive": {"ability":"Schooling","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Rest","Sleep Talk","Scald","U-turn"]}
   },
   "Mareanie": {
-    "LC Defensive Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Calm","evs":{"hp":196,"at":12,"df":100,"sa":92,"sd":100},"moves":["Scald","Sludge Bomb","Recover","Knock Off"]},
+    "LC Defensive Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Bold","evs":{"hp":116,"at":12,"df":180,"sa":12,"sd":180},"moves":["Scald","Sludge Bomb","Recover","Knock Off"]},
     "ZU Defensive Pivot": {"ability":"Regenerator","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Recover","Scald","Toxic Spikes","Haze"]}
   },
   "Toxapex": {
