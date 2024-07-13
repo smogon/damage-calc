@@ -535,6 +535,8 @@ var SETDEX_BW = {
   },
   "Arbok": {
     "NU Coil": {"ability":"Intimidate","item":"Black Sludge","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Coil","Gunk Shot","Sucker Punch","Earthquake"]},
+    "PU Coil": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Coil","Gunk Shot","Earthquake","Sucker Punch"]},
+    "PU Choice Scarf": {"ability":"Shed Skin","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Poison Jab","Earthquake","Switcheroo","Fire Fang"]},
     "ZU Coil": {"ability":"Intimidate","item":"Black Sludge","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Coil","Gunk Shot","Earthquake","Sucker Punch"]}
   },
   "Dugtrio": {
@@ -978,7 +980,8 @@ var SETDEX_BW = {
   },
   "Golduck": {
     "NU Substitute + Calm Mind": {"ability":"Cloud Nine","item":"Leftovers","nature":"Calm","evs":{"hp":196,"sd":176,"sp":136},"moves":["Calm Mind","Substitute","Surf","Signal Beam"]},
-    "PU Cloud Nine": {"ability":"Cloud Nine","item":"Choice Scarf","nature":"Timid","ivs":{"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Electric","Scald"]}
+    "PU SubCM": {"ability":"Cloud Nine","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Calm Mind","Scald","Ice Beam"]},
+    "PU Choice Scarf": {"ability":"Cloud Nine","item":"Choice Scarf","nature":"Timid","ivs":{"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Hidden Power Electric","Focus Blast"]}
   },
   "Mankey": {
     "LC Choice Scarf": {"level":5,"ability":"Vital Spirit","item":"Choice Scarf","nature":"Jolly","evs":{"hp":116,"at":196,"sp":196},"moves":["Close Combat","U-turn","Punishment","Final Gambit"]}
