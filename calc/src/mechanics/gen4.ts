@@ -502,10 +502,6 @@ export function calculateAttackDPP(
     attack = Math.floor(attack * 1.5);
     desc.attackerAbility = attacker.ability;
     desc.weather = field.weather;
-  } else if (field.attackerSide.isFlowerGift && field.hasWeather('Sun') && isPhysical) {
-    attack = Math.floor(attack * 1.5);
-    desc.weather = field.weather;
-    desc.isFlowerGiftAttacker = true;
   } else if (
     (isPhysical &&
       (attacker.hasAbility('Hustle') || (attacker.hasAbility('Guts') && attacker.status)) ||
@@ -516,6 +512,13 @@ export function calculateAttackDPP(
   } else if (isPhysical && attacker.hasAbility('Slow Start') && attacker.abilityOn) {
     attack = Math.floor(attack / 2);
     desc.attackerAbility = attacker.ability;
+  }
+
+  if (field.attackerSide.isFlowerGift && !attacker.hasAbility('Flower Gift') &&
+    field.hasWeather('Sun') && isPhysical) {
+    attack = Math.floor(attack * 1.5);
+    desc.weather = field.weather;
+    desc.isFlowerGiftAttacker = true;
   }
 
   if ((isPhysical ? attacker.hasItem('Choice Band') : attacker.hasItem('Choice Specs')) ||
