@@ -5,7 +5,8 @@
     --text: #e4e4e4;
     --background: #1b1b1b;
 
-    --button-hover: black;
+    --button-color: #353535;
+    --button-hover: var(--background);
     --button-selected: #232e51;
     --fieldset-color: #2a2a2a;
 
@@ -19,7 +20,7 @@ html, body {
 }
 
 .btn {
-    background-color: var(--background);
+    background-color: var(--button-color);
     color: var(--text);
 }
 
