@@ -1292,7 +1292,8 @@ var COMBINED_GEN9 = typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBAT
 for (var i = 0; i < Object.keys(COMBINED_GEN9).length; i++) {
 	var pokemon = Object.keys(COMBINED_GEN9)[i];
 	var sets = COMBINED_GEN9[pokemon];
-	COMBINED_GEN9[pokemon] = {RANDOMS: sets};
+	COMBINED_GEN9[pokemon] = {};
+	COMBINED_GEN9[pokemon][RANDOMS] = sets;
 }
 
 // Random Double Battles
