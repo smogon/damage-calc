@@ -1286,36 +1286,26 @@ var SETDEX = [
 ];
 
 // Creates a single dictionary for all Gen 9 Random Battles formats
-var COMBINED_GEN9 = typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE;
+var GEN9 = {};
+GEN9[RANDOMS] = typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE;
+GEN9[DOUBLES_RANDOMS] = typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE;
+GEN9[BABY_RANDOMS] = typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE;
 
-// Regular Random Battles
-for (var i = 0; i < Object.keys(COMBINED_GEN9).length; i++) {
-	var pokemon = Object.keys(COMBINED_GEN9)[i];
-	var sets = COMBINED_GEN9[pokemon];
-	COMBINED_GEN9[pokemon] = {};
-	COMBINED_GEN9[pokemon][RANDOMS] = sets;
-}
+var COMBINED_GEN9 = {};
 
-// Random Double Battles
-var GEN9RANDOMDOUBLESBATTLE = typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE;
-for (var i = 0; i < Object.keys(GEN9RANDOMDOUBLESBATTLE).length; i++) {
-	var pokemon = Object.keys(GEN9RANDOMDOUBLESBATTLE)[i];
-	var sets = GEN9RANDOMDOUBLESBATTLE[pokemon];
-	if (!(pokemon in COMBINED_GEN9)) {
-		COMBINED_GEN9[pokemon] = {};
+// We use a nested loop instead of hardcoding all three formats so that this code
+// can be reused for other random battles generations and formats
+for (var i = 0; i < Object.keys(GEN9).length; i++) {
+	var format = Object.keys(GEN9)[i];
+	var formatSets = GEN9[format];
+	for (var j = 0; j < Object.keys(formatSets).length; j++) {
+		var pokemon = Object.keys(formatSets)[j];
+		var sets = formatSets[pokemon];
+		if (!(pokemon in COMBINED_GEN9)) {
+			COMBINED_GEN9[pokemon] = {};
+		}
+		COMBINED_GEN9[pokemon][format] = sets;
 	}
-	COMBINED_GEN9[pokemon][DOUBLES_RANDOMS] = sets;
-}
-
-// Baby Random Battles
-var GEN9BABYRANDOMBATTLE = typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE;
-for (var i = 0; i < Object.keys(GEN9BABYRANDOMBATTLE).length; i++) {
-	var pokemon = Object.keys(GEN9BABYRANDOMBATTLE)[i];
-	var sets = GEN9BABYRANDOMBATTLE[pokemon];
-	if (!(pokemon in COMBINED_GEN9)) {
-		COMBINED_GEN9[pokemon] = {};
-	}
-	COMBINED_GEN9[pokemon][BABY_RANDOMS] = sets;
 }
 
 // COMBINED_GEN9 will now be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
