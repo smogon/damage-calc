@@ -867,7 +867,7 @@ var SETDEX_DPP = {
   },
   "Tentacruel": {
     "OU Defensive Rapid Spin": {"ability":"Liquid Ooze","item":"Black Sludge","nature":"Calm","evs":{"hp":244,"df":100,"sd":164},"moves":["Rapid Spin","Surf","Toxic Spikes","Sludge Bomb"]},
-    "Ubers Lead": {"ability":"Clear Body","item":"Lum Berry","nature":"Timid","evs":{"hp":132,"sa":160,"sp":216},"moves":["Toxic Spikes","Rapid Spin","Icy Wind","Hydro Pump"]},
+    "Ubers Lead": {"ability":"Clear Body","item":"Lum Berry","nature":"Timid","evs":{"hp":200,"sa":20,"sd":68,"sp":220},"moves":["Toxic Spikes","Rapid Spin","Ice Beam","Hydro Pump"]},
     "Anything Goes Showdown Usage": {"ability":"Clear Body","item":"Lum Berry","nature":"Timid","evs":{"hp":132,"sa":160,"sp":216},"moves":["Toxic Spikes","Rapid Spin","Icy Wind","Hydro Pump"]}
   },
   "Geodude": {
@@ -2317,7 +2317,7 @@ var SETDEX_DPP = {
   },
   "Giratina": {
     "Ubers Wall": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":248,"sd":12},"moves":["Roar","Rest","Sleep Talk","Earthquake"]},
-    "Ubers Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":240,"df":252,"sa":16},"moves":["Calm Mind","Dragon Pulse","Rest","Sleep Talk"]},
+    "Ubers Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"df":252,"sa":4,"sp":252},"moves":["Calm Mind","Dragon Pulse","Substitute","Protect"]},
     "Ubers Attacking Lead": {"ability":"Pressure","item":"Haban Berry","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Draco Meteor","Shadow Sneak","Will-O-Wisp","Aura Sphere"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Will-O-Wisp","Roar","Sleep Talk"]}
   },
