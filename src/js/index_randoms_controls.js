@@ -200,7 +200,7 @@ $(document).ready(function () {
 		}
 	}
 
-	let importParam = params.get('import');
+	var importParam = params.get('import');
 	if (importParam) {
         try {
             var decodedImport = atob(importParam); // Decode base64
