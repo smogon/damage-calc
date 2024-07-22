@@ -218,7 +218,7 @@ var SETDEX_RBY = {
   },
   "Gastly": {
     "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]},
-    "PU Sleeper": {"moves":["Hypnosis","Psychic","Thunderbolt","Explosion"]}
+    "PU Offensive Sleeper": {"moves":["Hypnosis","Thunderbolt","Psychic","Substitute"]}
   },
   "Haunter": {
     "UU Haunter": {"moves":["Thunderbolt","Explosion","Psychic","Night Shade"]},
@@ -452,6 +452,7 @@ var SETDEX_RBY = {
     "UU Showdown Usage": {"moves":["Fire Blast","Hyper Beam","Agility","Double-Edge"]}
   },
   "Dragonair": {
+    "OU Wrap": {"moves":["Thunder Wave","Wrap","Blizzard","Thunderbolt"]},
     "NU Wrap": {"moves":["Wrap","Thunder Wave","Blizzard","Thunderbolt"]},
     "PU Support": {"moves":["Thunder Wave","Wrap","Blizzard","Thunderbolt"]},
     "PU AgiliWrap": {"moves":["Agility","Wrap","Blizzard","Thunderbolt"]}

@@ -2305,7 +2305,7 @@ var SETDEX_BW = {
   },
   "Hippopotas": {
     "LC Sand Support": {"level":5,"ability":"Sand Stream","item":"Eviolite","nature":"Careful","evs":{"hp":132,"at":20,"df":132,"sd":180,"sp":20},"moves":["Earthquake","Stealth Rock","Slack Off","Crunch"]},
-    "ZU Physical Wall": {"ability":"Sand Force","item":"Eviolite","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Earthquake","Rock Slide","Slack Off"]}
+    "ZU Physical Wall": {"ability":"Sand Force","item":"Eviolite","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Earthquake","Toxic","Slack Off"]}
   },
   "Hippowdon": {
     "OU Mixed Wall": {"ability":"Sand Stream","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":12,"sd":244},"moves":["Slack Off","Earthquake","Stealth Rock","Whirlwind"]},

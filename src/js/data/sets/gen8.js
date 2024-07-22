@@ -544,9 +544,9 @@ var SETDEX_SS = {
     "ZU Wallbreaker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Flare Blitz","Facade","Superpower","Quick Attack"]}
   },
   "Porygon": {
-    "LC Defensive": {"level":5,"ability":"Trace","item":"Eviolite","nature":"Calm","evs":{"hp":156,"df":196,"sd":156},"moves":["Tri Attack","Teleport","Thunder Wave","Recover"]},
     "LC Agility": {"level":5,"ability":"Download","item":"Eviolite","nature":"Modest","evs":{"df":36,"sa":236,"sp":196},"moves":["Agility","Tri Attack","Ice Beam","Recover"]},
-    "LC Choice Scarf": {"level":5,"ability":"Download","item":"Choice Scarf","nature":"Timid","evs":{"df":36,"sa":236,"sp":196},"moves":["Tri Attack","Ice Beam","Thunderbolt","Psychic"]}
+    "LC Choice Scarf": {"level":5,"ability":"Download","item":"Choice Scarf","nature":"Timid","evs":{"df":36,"sa":236,"sp":196},"moves":["Tri Attack","Ice Beam","Thunderbolt","Psychic"]},
+    "LC Defensive": {"level":5,"ability":"Trace","item":"Eviolite","nature":"Calm","evs":{"hp":156,"df":196,"sd":156},"moves":["Tri Attack","Teleport","Thunder Wave","Recover"]}
   },
   "Omanyte": {
     "LC Shell Smash Sweeper": {"level":5,"ability":"Shell Armor","item":"Eviolite","nature":"Modest","evs":{"hp":76,"sa":196,"sp":236},"moves":["Shell Smash","Hydro Pump","Ice Beam","Earth Power"]},

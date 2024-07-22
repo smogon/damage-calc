@@ -1372,9 +1372,8 @@ var SETDEX_ADV = {
     "PU Defensive": {"ability":"Thick Fat","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Ice Beam","Surf","Protect","Encore"]}
   },
   "Walrein": {
-    "UU RestTalk": {"ability":"Thick Fat","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Sleep Talk","Ice Beam","Toxic"]},
-    "UU Encore": {"ability":"Thick Fat","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":136,"sd":120},"moves":["Ice Beam","Toxic","Encore","Surf"]},
-    "UU Curse": {"ability":"Thick Fat","item":"Leftovers","nature":"Sassy","evs":{"hp":224,"at":216,"sa":52,"sd":16},"moves":["Curse","Earthquake","Ice Beam","Rest"]}
+    "UU Standard": {"ability":"Thick Fat","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":116,"sa":140},"moves":["Ice Beam","Earthquake","Surf","Toxic"]},
+    "UU Curse": {"ability":"Thick Fat","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Curse","Earthquake","Ice Beam","Rest"]}
   },
   "Clamperl": {
     "OU Special Sweeper": {"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Modest","ivs":{"sa":30},"evs":{"hp":252,"sa":252,"sp":4},"moves":["Surf","Ice Beam","Hidden Power Electric","Toxic"]},
