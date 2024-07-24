@@ -27,11 +27,6 @@ if (!Array.prototype.indexOf) {
 	};
 }
 
-// Constants for referring to the various Random Battles formats
-var RANDOMS = "Randoms";
-var DOUBLES_RANDOMS = "Doubles Randoms";
-var BABY_RANDOMS = "Baby Randoms";
-
 function startsWith(string, target) {
 	return (string || '').slice(0, target.length) === target;
 }
@@ -1286,10 +1281,11 @@ var SETDEX = [
 ];
 
 // Creates a single dictionary for all Gen 9 Random Battles formats
-var GEN9 = {};
-GEN9[RANDOMS] = typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE;
-GEN9[DOUBLES_RANDOMS] = typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE;
-GEN9[BABY_RANDOMS] = typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE;
+var GEN9 = {
+	"Randoms": typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
+	"Doubles Randoms": typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE,
+	"Baby Randoms": typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE,
+};
 
 var COMBINED_GEN9 = {};
 
@@ -1467,7 +1463,7 @@ function getSetOptions(sets) {
 					for (var j = 0; j < randTypes.length; j++) {
 						var rand = randTypes[j];
 						setOptions.push({
-							pokemon: pokeName + (rand === RANDOMS ? "" : " (" + rand.split(' ')[0] + ")"),
+							pokemon: pokeName + (rand === "Randoms" ? "" : " (" + rand.split(' ')[0] + ")"),
 							set: rand + ' Set',
 							text: pokeName + " (" + rand + ")",
 							id: pokeName + " (" + rand + ")"
