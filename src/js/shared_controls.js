@@ -1287,6 +1287,17 @@ var GEN9 = {
 	"Baby Randoms": typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE,
 };
 
+// COMBINED_GEN9 will be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
+// An example using Duraludon would be:
+// {
+//		...
+//		Duraludon: {
+//			Randoms: {...},
+//			Doubles Randoms: {...},
+//			Baby Randoms: {...}
+//		}
+//		...
+// }
 var COMBINED_GEN9 = {};
 
 // We use a nested loop instead of hardcoding all three formats so that this code
@@ -1301,17 +1312,6 @@ for (var format in GEN9) {
 		COMBINED_GEN9[pokemon][format] = sets;
 	}
 }
-// COMBINED_GEN9 will now be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
-// An example using Duraludon would be:
-// {
-//		...
-//		Duraludon: {
-//			Randoms: {...},
-//			Doubles Randoms: {...},
-//			Baby Randoms: {...}
-//		}
-//		...
-// }
 
 var RANDDEX = [
 	{},
