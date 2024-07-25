@@ -621,7 +621,7 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var randset = undefined;
+		var randset;
 		if ($("#randoms").prop("checked")) {
 			if (gen === 9) {
 				// The Gen 9 randdex contains information for multiple Random Battles formats for each Pokemon.
