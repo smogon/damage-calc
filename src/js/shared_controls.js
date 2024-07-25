@@ -621,12 +621,22 @@ $(".set-selector").change(function () {
 		var moveObj;
 		var abilityObj = pokeObj.find(".ability");
 		var itemObj = pokeObj.find(".item");
-		var randset = $("#randoms").prop("checked") ? randdex[pokemonName] : undefined;
+		var randset;
+		if ($("#randoms").prop("checked")) {
+			if (gen === 9) {
+				// The Gen 9 randdex contains information for multiple Random Battles formats for each Pokemon.
+				// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
+				// Therefore, the information for only the format chosen should be used.
+				randset = randdex[pokemonName][setName];
+			} else {
+				randset = randdex[pokemonName];
+			}
+		}
 		var regSets = pokemonName in setdex && setName in setdex[pokemonName];
 
 		if (randset) {
-			var listItems = randdex[pokemonName].items ? randdex[pokemonName].items : [];
-			var listAbilities = randdex[pokemonName].abilities ? randdex[pokemonName].abilities : [];
+			var listItems = randset.items ? randset.items : [];
+			var listAbilities = randset.abilities ? randset.abilities : [];
 			if (gen >= 3) $(this).closest('.poke-info').find(".ability-pool").show();
 			$(this).closest('.poke-info').find(".extraSetAbilities").text(listAbilities.join(', '));
 			if (gen >= 2) $(this).closest('.poke-info').find(".item-pool").show();
@@ -635,12 +645,12 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".role-pool").show();
 				if (gen >= 9) $(this).closest('.poke-info').find(".tera-type-pool").show();
 			}
-			var listRoles = randdex[pokemonName].roles ? Object.keys(randdex[pokemonName].roles) : [];
+			var listRoles = randset.roles ? Object.keys(randset.roles) : [];
 			$(this).closest('.poke-info').find(".extraSetRoles").text(listRoles.join(', '));
 			var listTeraTypes = [];
-			if (randdex[pokemonName].roles && gen >= 9) {
-				for (var roleName in randdex[pokemonName].roles) {
-					var role = randdex[pokemonName].roles[roleName];
+			if (randset.roles && gen >= 9) {
+				for (var roleName in randset.roles) {
+					var role = randset.roles[roleName];
 					for (var q = 0; q < role.teraTypes.length; q++) {
 						if (listTeraTypes.indexOf(role.teraTypes[q]) === -1) {
 							listTeraTypes.push(role.teraTypes[q]);
@@ -912,7 +922,8 @@ $(".forme").change(function () {
 		$(this).parent().siblings().find(".teraToggle").prop("checked", true);
 	}
 	var isRandoms = $("#randoms").prop("checked");
-	var pokemonSets = isRandoms ? randdex[pokemonName] : setdex[pokemonName];
+	var pokemonSets = isRandoms ? gen === 9 ? randdex[pokemonName][setName] :
+		randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
@@ -1268,6 +1279,40 @@ var SETDEX = [
 	typeof SETDEX_SS === 'undefined' ? {} : SETDEX_SS,
 	typeof SETDEX_SV === 'undefined' ? {} : SETDEX_SV,
 ];
+
+// Creates a single dictionary for all Gen 9 Random Battles formats
+var GEN9 = {
+	"Randoms": typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
+	"Doubles Randoms": typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE,
+	"Baby Randoms": typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE,
+};
+
+// COMBINED_GEN9 will be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
+// An example using Duraludon would be:
+// {
+//		...
+//		Duraludon: {
+//			Randoms: {...},
+//			Doubles Randoms: {...},
+//			Baby Randoms: {...}
+//		}
+//		...
+// }
+var COMBINED_GEN9 = {};
+
+// We use a nested loop instead of hardcoding all three formats so that this code
+// can be reused for other random battles generations and formats
+for (var format in GEN9) {
+	var formatSets = GEN9[format];
+	for (var pokemon in formatSets) {
+		var sets = formatSets[pokemon];
+		if (!(pokemon in COMBINED_GEN9)) {
+			COMBINED_GEN9[pokemon] = {};
+		}
+		COMBINED_GEN9[pokemon][format] = sets;
+	}
+}
+
 var RANDDEX = [
 	{},
 	typeof GEN1RANDOMBATTLE === 'undefined' ? {} : GEN1RANDOMBATTLE,
@@ -1278,7 +1323,7 @@ var RANDDEX = [
 	typeof GEN6RANDOMBATTLE === 'undefined' ? {} : GEN6RANDOMBATTLE,
 	typeof GEN7RANDOMBATTLE === 'undefined' ? {} : GEN7RANDOMBATTLE,
 	typeof GEN8RANDOMBATTLE === 'undefined' ? {} : GEN8RANDOMBATTLE,
-	typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
+	COMBINED_GEN9,
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 
@@ -1408,12 +1453,28 @@ function getSetOptions(sets) {
 		});
 		if ($("#randoms").prop("checked")) {
 			if (pokeName in randdex) {
-				setOptions.push({
-					pokemon: pokeName,
-					set: 'Randoms Set',
-					text: pokeName + " (Randoms)",
-					id: pokeName + " (Randoms)"
-				});
+				if (gen === 9) {
+					// The Gen 9 randdex contains information for multiple Random Battles formats for each Pokemon.
+					// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
+					// Therefore, all of this information has to be populated within the set options.
+					var randTypes = Object.keys(randdex[pokeName]);
+					for (var j = 0; j < randTypes.length; j++) {
+						var rand = randTypes[j];
+						setOptions.push({
+							pokemon: pokeName + (rand === "Randoms" ? "" : " (" + rand.split(' ')[0] + ")"),
+							set: rand + ' Set',
+							text: pokeName + " (" + rand + ")",
+							id: pokeName + " (" + rand + ")"
+						});
+					}
+				} else {
+					setOptions.push({
+						pokemon: pokeName,
+						set: 'Randoms Set',
+						text: pokeName + " (Randoms)",
+						id: pokeName + " (Randoms)"
+					});
+				}
 			}
 		} else {
 			if (pokeName in setdex) {
