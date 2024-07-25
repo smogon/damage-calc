@@ -1291,11 +1291,9 @@ var COMBINED_GEN9 = {};
 
 // We use a nested loop instead of hardcoding all three formats so that this code
 // can be reused for other random battles generations and formats
-for (var i = 0; i < Object.keys(GEN9).length; i++) {
-	var format = Object.keys(GEN9)[i];
+for (var format in GEN9) {
 	var formatSets = GEN9[format];
-	for (var j = 0; j < Object.keys(formatSets).length; j++) {
-		var pokemon = Object.keys(formatSets)[j];
+	for (var pokemon in formatSets) {
 		var sets = formatSets[pokemon];
 		if (!(pokemon in COMBINED_GEN9)) {
 			COMBINED_GEN9[pokemon] = {};
@@ -1303,7 +1301,6 @@ for (var i = 0; i < Object.keys(GEN9).length; i++) {
 		COMBINED_GEN9[pokemon][format] = sets;
 	}
 }
-
 // COMBINED_GEN9 will now be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
 // An example using Duraludon would be:
 // {
