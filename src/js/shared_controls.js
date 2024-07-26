@@ -1287,17 +1287,7 @@ var GEN8 = {
 	"BDSP Randoms": typeof GEN8BDSPRANDOMBATTLE === 'undefined' ? {} : GEN8BDSPRANDOMBATTLE,
 };
 
-// COMBINED_GEN8 will be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
-// An example using Absol would be:
-// {
-//		...
-//		Absol: {
-//			Randoms: {...},
-//			Doubles Randoms: {...},
-//			BDSP Randoms: {...}
-//		}
-//		...
-// }
+// See comment over COMBINED_GEN9
 var COMBINED_GEN8 = {};
 for (var format in GEN8) {
 	var formatSets = GEN8[format];
