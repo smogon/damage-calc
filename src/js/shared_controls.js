@@ -1286,19 +1286,7 @@ var GEN8 = {
 	"Doubles Randoms": typeof GEN8RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN8RANDOMDOUBLESBATTLE,
 	"BDSP Randoms": typeof GEN8BDSPRANDOMBATTLE === 'undefined' ? {} : GEN8BDSPRANDOMBATTLE,
 };
-
-// See comment over COMBINED_GEN9
-var COMBINED_GEN8 = {};
-for (var format in GEN8) {
-	var formatSets = GEN8[format];
-	for (var pokemon in formatSets) {
-		var sets = formatSets[pokemon];
-		if (!(pokemon in COMBINED_GEN8)) {
-			COMBINED_GEN8[pokemon] = {};
-		}
-		COMBINED_GEN8[pokemon][format] = sets;
-	}
-}
+var COMBINED_GEN8 = formatRandSets(GEN8);
 
 // Creates a single dictionary for all Gen 9 Random Battles formats
 var GEN9 = {
@@ -1306,32 +1294,7 @@ var GEN9 = {
 	"Doubles Randoms": typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE,
 	"Baby Randoms": typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE,
 };
-
-// COMBINED_GEN9 will be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
-// An example using Duraludon would be:
-// {
-//		...
-//		Duraludon: {
-//			Randoms: {...},
-//			Doubles Randoms: {...},
-//			Baby Randoms: {...}
-//		}
-//		...
-// }
-var COMBINED_GEN9 = {};
-
-// We use a nested loop instead of hardcoding all three formats so that this code
-// can be reused for other random battles generations and formats
-for (var format in GEN9) {
-	var formatSets = GEN9[format];
-	for (var pokemon in formatSets) {
-		var sets = formatSets[pokemon];
-		if (!(pokemon in COMBINED_GEN9)) {
-			COMBINED_GEN9[pokemon] = {};
-		}
-		COMBINED_GEN9[pokemon][format] = sets;
-	}
-}
+var COMBINED_GEN9 = formatRandSets(GEN9);
 
 var RANDDEX = [
 	{},
@@ -1455,6 +1418,55 @@ function clearField() {
 	$("#switchingL").prop("checked", false);
 	$("#switchingR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
+}
+
+/*
+ * Converts an object that has the hierarchy Format -> Pokemon -> Sets
+ * into one that has the hierarchy Pokemon -> Format -> Sets
+ * An example for Gen 9 Duraludon would be:
+ * {
+ *		Randoms: {
+ *			...
+ *			Duraludon: {...},
+ *			...
+ *		},
+ *		Doubles Randoms: {
+ *			...
+ *			Duraludon: {...},
+ *			...
+ *		},
+ *		Baby Randoms: {
+ *			...
+ *			Duraludon: {...},
+ *			...
+ *		}
+ * }
+ * getting converted into:
+ * {
+ *		...
+ *		Duraludon: {
+ *			Randoms: {...},
+ *			Doubles Randoms: {...},
+ *			Baby Randoms: {...}
+ *		}
+ *		...
+ * }
+ */
+function formatRandSets(gen) {
+	var combined = {};
+
+	for (var format in gen) {
+		var formatSets = gen[format];
+		for (var pokemon in formatSets) {
+			var sets = formatSets[pokemon];
+			if (!(pokemon in combined)) {
+				combined[pokemon] = {};
+			}
+			combined[pokemon][format] = sets;
+		}
+	}
+
+	return combined;
 }
 
 function getSetOptions(sets) {
