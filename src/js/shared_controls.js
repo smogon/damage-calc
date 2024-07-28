@@ -623,8 +623,8 @@ $(".set-selector").change(function () {
 		var itemObj = pokeObj.find(".item");
 		var randset;
 		if ($("#randoms").prop("checked")) {
-			if (gen === 9) {
-				// The Gen 9 randdex contains information for multiple Random Battles formats for each Pokemon.
+			if (gen >= 8) {
+				// The Gens 8 and 9 randdex contains information for multiple Random Battles formats for each Pokemon.
 				// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
 				// Therefore, the information for only the format chosen should be used.
 				randset = randdex[pokemonName][setName];
@@ -922,7 +922,7 @@ $(".forme").change(function () {
 		$(this).parent().siblings().find(".teraToggle").prop("checked", true);
 	}
 	var isRandoms = $("#randoms").prop("checked");
-	var pokemonSets = isRandoms ? gen === 9 ? randdex[pokemonName][setName] :
+	var pokemonSets = isRandoms ? gen >= 8 ? randdex[pokemonName][setName] :
 		randdex[pokemonName] : setdex[pokemonName];
 	var chosenSet = pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
@@ -1280,38 +1280,67 @@ var SETDEX = [
 	typeof SETDEX_SV === 'undefined' ? {} : SETDEX_SV,
 ];
 
-// Creates a single dictionary for all Gen 9 Random Battles formats
-var GEN9 = {
+/*
+ * Converts an object that has the hierarchy Format -> Pokemon -> Sets
+ * into one that has the hierarchy Pokemon -> Format -> Sets
+ * An example for Gen 9 Duraludon would be:
+ * {
+ *		Randoms: {
+ *			...
+ *			Duraludon: {...},
+ *			...
+ *		},
+ *		Doubles Randoms: {
+ *			...
+ *			Duraludon: {...},
+ *			...
+ *		},
+ *		Baby Randoms: {
+ *			...
+ *			Duraludon: {...},
+ *			...
+ *		}
+ * }
+ * getting converted into:
+ * {
+ *		...
+ *		Duraludon: {
+ *			Randoms: {...},
+ *			Doubles Randoms: {...},
+ *			Baby Randoms: {...}
+ *		}
+ *		...
+ * }
+ */
+function formatRandSets(gen) {
+	var combined = {};
+
+	for (var format in gen) {
+		var formatSets = gen[format];
+		for (var pokemon in formatSets) {
+			var sets = formatSets[pokemon];
+			if (!(pokemon in combined)) {
+				combined[pokemon] = {};
+			}
+			combined[pokemon][format] = sets;
+		}
+	}
+
+	return combined;
+}
+
+// Creates a single dictionary for Gen 8 & Gen 9 Random Battles formats
+var GEN8RANDSETS = formatRandSets({
+	"Randoms": typeof GEN8RANDOMBATTLE === 'undefined' ? {} : GEN8RANDOMBATTLE,
+	"Doubles Randoms": typeof GEN8RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN8RANDOMDOUBLESBATTLE,
+	"BDSP Randoms": typeof GEN8BDSPRANDOMBATTLE === 'undefined' ? {} : GEN8BDSPRANDOMBATTLE,
+});
+
+var GEN9RANDSETS = formatRandSets({
 	"Randoms": typeof GEN9RANDOMBATTLE === 'undefined' ? {} : GEN9RANDOMBATTLE,
 	"Doubles Randoms": typeof GEN9RANDOMDOUBLESBATTLE === 'undefined' ? {} : GEN9RANDOMDOUBLESBATTLE,
 	"Baby Randoms": typeof GEN9BABYRANDOMBATTLE === 'undefined' ? {} : GEN9BABYRANDOMBATTLE,
-};
-
-// COMBINED_GEN9 will be a dictionary that will have the hierarchy Pokemon -> Format -> Sets
-// An example using Duraludon would be:
-// {
-//		...
-//		Duraludon: {
-//			Randoms: {...},
-//			Doubles Randoms: {...},
-//			Baby Randoms: {...}
-//		}
-//		...
-// }
-var COMBINED_GEN9 = {};
-
-// We use a nested loop instead of hardcoding all three formats so that this code
-// can be reused for other random battles generations and formats
-for (var format in GEN9) {
-	var formatSets = GEN9[format];
-	for (var pokemon in formatSets) {
-		var sets = formatSets[pokemon];
-		if (!(pokemon in COMBINED_GEN9)) {
-			COMBINED_GEN9[pokemon] = {};
-		}
-		COMBINED_GEN9[pokemon][format] = sets;
-	}
-}
+});
 
 var RANDDEX = [
 	{},
@@ -1322,8 +1351,8 @@ var RANDDEX = [
 	typeof GEN5RANDOMBATTLE === 'undefined' ? {} : GEN5RANDOMBATTLE,
 	typeof GEN6RANDOMBATTLE === 'undefined' ? {} : GEN6RANDOMBATTLE,
 	typeof GEN7RANDOMBATTLE === 'undefined' ? {} : GEN7RANDOMBATTLE,
-	typeof GEN8RANDOMBATTLE === 'undefined' ? {} : GEN8RANDOMBATTLE,
-	COMBINED_GEN9,
+	GEN8RANDSETS,
+	GEN9RANDSETS,
 ];
 var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, abilities, items, calcHP, calcStat, GENERATION;
 
@@ -1453,8 +1482,8 @@ function getSetOptions(sets) {
 		});
 		if ($("#randoms").prop("checked")) {
 			if (pokeName in randdex) {
-				if (gen === 9) {
-					// The Gen 9 randdex contains information for multiple Random Battles formats for each Pokemon.
+				if (gen >= 8) {
+					// The Gen 8 and 9 randdex contains information for multiple Random Battles formats for each Pokemon.
 					// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
 					// Therefore, all of this information has to be populated within the set options.
 					var randTypes = Object.keys(randdex[pokeName]);

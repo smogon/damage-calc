@@ -41,6 +41,8 @@
         "GEN6RANDOMBATTLE": false,
         "GEN7RANDOMBATTLE": false,
         "GEN8RANDOMBATTLE": false,
+        "GEN8BDSPRANDOMBATTLE": false,
+        "GEN8RANDOMDOUBLESBATTLE": false,
         "GEN9RANDOMBATTLE": false,
         "GEN9RANDOMDOUBLESBATTLE": false,
         "GEN9BABYRANDOMBATTLE": false,
