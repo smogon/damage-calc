@@ -1916,10 +1916,10 @@ var SETDEX_DPP = {
     "Ubers Toxic Stall": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":108,"sp":148},"moves":["Agility","Toxic","Taunt","Recover"]}
   },
   "Deoxys-Speed": {
-    "Ubers Colbur Berry": {"ability":"Pressure","item":"Colbur Berry","nature":"Jolly","evs":{"hp":252,"sd":164,"sp":92},"moves":["Spikes","Superpower","Shadow Ball","Extreme Speed"]},
     "Ubers Classic Focus Sash": {"ability":"Pressure","item":"Focus Sash","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Spikes","Taunt","Extreme Speed"]},
-    "Ubers Attacking Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"hp":80,"sa":252,"sp":176},"moves":["Spikes","Signal Beam","Psycho Boost","Extreme Speed"]},
     "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Calm","evs":{"hp":248,"df":164,"sd":96},"moves":["Spikes","Trick","Thunder Wave","Taunt"]},
+    "Ubers Colbur Berry": {"ability":"Pressure","item":"Colbur Berry","nature":"Jolly","evs":{"hp":252,"sd":164,"sp":92},"moves":["Spikes","Superpower","Shadow Ball","Extreme Speed"]},
+    "Ubers Attacking Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","ivs":{"at":30,"sa":30,"sp":30},"evs":{"at":76,"sa":252,"sp":180},"moves":["Spikes","Signal Beam","Hidden Power Fire","Extreme Speed"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Focus Sash","nature":"Jolly","evs":{"hp":252,"sd":164,"sp":92},"moves":["Spikes","Taunt","Stealth Rock","Extreme Speed"]}
   },
   "Bidoof": {
