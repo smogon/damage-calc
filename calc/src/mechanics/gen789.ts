@@ -281,6 +281,11 @@ export function calculateSMSSSV(
     } else if (attacker.name.includes('Ogerpon-Wellspring')) {
       type = 'Water';
     }
+  } else if (
+    move.named('Tera Starstorm') && attacker.name === 'Terapagos-Stellar'
+  ) {
+    move.target = 'allAdjacentFoes';
+    type = 'Stellar';
   }
 
   let hasAteAbilityTypeChange = false;
@@ -1030,11 +1035,6 @@ export function calculateBPModsSMSSSV(
     move.target = 'allAdjacentFoes';
     bpMods.push(6144);
     desc.moveBP = basePower * 1.5;
-  } else if (
-    move.named('Tera Starstorm') && attacker.name === 'Terapagos-Stellar'
-  ) {
-    move.target = 'allAdjacentFoes';
-    move.type = 'Stellar';
   } else if ((move.named('Knock Off') && !resistedKnockOffDamage) ||
     (move.named('Misty Explosion') && isGrounded(attacker, field) && field.hasTerrain('Misty')) ||
     (move.named('Grav Apple') && field.isGravity)
