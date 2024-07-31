@@ -2330,8 +2330,7 @@ var SETDEX_SS = {
     "NU TrickyBarb": {"ability":"Klutz","item":"Sticky Barb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Trick","Stealth Rock","Poltergeist","Earthquake"]}
   },
   "Pawniard": {
-    "LC Berry Juice": {"level":5,"ability":"Defiant","item":"Berry Juice","nature":"Careful","evs":{"at":156,"df":36,"sd":196,"sp":116},"moves":["Knock Off","Iron Head","Sucker Punch","Stealth Rock"]},
-    "LC Choice Scarf": {"level":5,"ability":"Defiant","item":"Choice Scarf","nature":"Jolly","evs":{"at":236,"df":36,"sd":36,"sp":196},"moves":["Knock Off","Iron Head","Beat Up","Brick Break"]},
+    "LC Utility": {"level":5,"ability":"Defiant","item":"Eviolite","nature":"Jolly","evs":{"at":156,"df":36,"sd":116,"sp":196},"moves":["Knock Off","Sucker Punch","Iron Head","Stealth Rock"]},
     "ZU Swords Dance": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Knock Off","Iron Head","Sucker Punch"]}
   },
   "Bisharp": {

@@ -407,7 +407,6 @@ var SETDEX_GSC = {
     "PU RestTalk": {"item":"Leftovers","moves":["Fire Blast","Double-Edge","Rest","Sleep Talk"]}
   },
   "Rapidash": {
-    "NU Offensive": {"item":"Leftovers","moves":["Fire Blast","Double-Edge","Hypnosis","Substitute"]},
     "NU RestTalk": {"item":"Leftovers","moves":["Fire Blast","Double-Edge","Rest","Sleep Talk"]}
   },
   "Slowpoke": {
