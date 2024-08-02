@@ -1,8 +1,8 @@
 import {Field} from './field';
-import {Generation} from './data/interface';
-import {Move} from './move';
-import {Pokemon} from './pokemon';
-import {Result} from './result';
+import type {Generation} from './data/interface';
+import type {Move} from './move';
+import type {Pokemon} from './pokemon';
+import type {Result} from './result';
 
 import {calculateRBYGSC} from './mechanics/gen12';
 import {calculateADV} from './mechanics/gen3';

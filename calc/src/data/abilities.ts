@@ -1,4 +1,4 @@
-import * as I from './interface';
+import type * as I from './interface';
 import {toID} from '../util';
 
 const RBY: string[] = [];

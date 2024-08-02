@@ -1,5 +1,5 @@
 import {Pokemon} from '../index';
-import {StatID, MoveName} from '../data/interface';
+import type {StatID, MoveName} from '../data/interface';
 
 describe('Pokemon', () => {
   test('defaults', () => {

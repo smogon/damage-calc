@@ -1,9 +1,9 @@
-import {Generation} from '../data/interface';
+import type {Generation} from '../data/interface';
 import {getItemBoostType} from '../items';
-import {RawDesc} from '../desc';
-import {Pokemon} from '../pokemon';
-import {Move} from '../move';
-import {Field} from '../field';
+import type {RawDesc} from '../desc';
+import type {Pokemon} from '../pokemon';
+import type {Move} from '../move';
+import type {Field} from '../field';
 import {Result} from '../result';
 import {
   getModifiedStat,

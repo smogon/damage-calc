@@ -1,8 +1,8 @@
-import {RawDesc, display, displayMove, getRecovery, getRecoil, getKOChance} from './desc';
-import {Generation} from './data/interface';
-import {Field} from './field';
-import {Move} from './move';
-import {Pokemon} from './pokemon';
+import {type RawDesc, display, displayMove, getRecovery, getRecoil, getKOChance} from './desc';
+import type {Generation} from './data/interface';
+import type {Field} from './field';
+import type {Move} from './move';
+import type {Pokemon} from './pokemon';
 
 export type Damage = number | number[] | [number, number] | [number[], number[]];
 

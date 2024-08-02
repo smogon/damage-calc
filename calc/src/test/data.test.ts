@@ -1,5 +1,5 @@
 import {calculate, Pokemon, Move} from '../adaptable';
-import * as I from '../data/interface';
+import type * as I from '../data/interface';
 
 import * as calc from '../index';
 import {Dex} from '@pkmn/dex';

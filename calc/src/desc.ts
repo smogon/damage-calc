@@ -1,8 +1,8 @@
-import {Generation, Weather, Terrain, TypeName, ID} from './data/interface';
-import {Field, Side} from './field';
-import {Move} from './move';
-import {Pokemon} from './pokemon';
-import {Damage, damageRange} from './result';
+import type {Generation, Weather, Terrain, TypeName, ID} from './data/interface';
+import type {Field, Side} from './field';
+import type {Move} from './move';
+import type {Pokemon} from './pokemon';
+import {type Damage, damageRange} from './result';
 import {error} from './util';
 // NOTE: This needs to come last to simplify bundling
 import {isGrounded} from './mechanics/util';
