@@ -172,7 +172,7 @@ how to programmatically update sets.
 
 ## Credits
 
-This project was created by Honko and is primarily maintained by Austin.
+This project was created by Honko and is primarily maintained by Austin and jetou.
 
 - Gens 1-6 were originally implemented by Honko.
 - The Omega Ruby / Alpha Sapphire update was done by gamut-was-taken and Austin.
