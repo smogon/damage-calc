@@ -1562,6 +1562,7 @@ var SETDEX_DPP = {
   },
   "Hariyama": {
     "OU Attacking Lead": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"sd":164,"sp":92},"moves":["Fake Out","Close Combat","Payback","Ice Punch"]},
+    "Ubers Attacking Lead": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":4,"sd":252},"moves":["Fake Out","Close Combat","Payback","Bullet Punch"]},
     "UU All-Out Attacker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":172,"sp":84},"moves":["Close Combat","Payback","Bullet Punch","Fake Out"]},
     "UU RestTalk": {"ability":"Thick Fat","item":"Leftovers","nature":"Impish","evs":{"hp":12,"df":252,"sd":244},"moves":["Rest","Sleep Talk","Force Palm","Whirlwind"]},
     "UU SubPunch": {"ability":"Thick Fat","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":252,"sp":4},"moves":["Substitute","Focus Punch","Payback","Stone Edge"]},
