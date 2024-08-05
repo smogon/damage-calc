@@ -150,7 +150,7 @@ describe('calc', () => {
             weather: 'Sand', type: 'Rock', damage: {
               adv: {
                 range: [96, 114],
-                desc: '(41.5 - 49.3%) -- 20.7% chance to 2HKO after sandstorm damage',
+                desc: '(41.5 - 49.3%) -- 82.4% chance to 2HKO after sandstorm damage',
               },
               dpp: {
                 range: [77, 91],
@@ -170,11 +170,11 @@ describe('calc', () => {
               },
               dpp: {
                 range: [230, 272],
-                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO',
+                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO (guaranteed OHKO after hail damage)',
               },
               modern: {
                 range: [230, 272],
-                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO',
+                desc: '(99.5 - 117.7%) -- 93.8% chance to OHKO (guaranteed OHKO after hail damage)',
               },
             },
           },
@@ -343,7 +343,7 @@ describe('calc', () => {
         if (gen < 8) {
           expect(result.range()).toEqual([331, 391]);
           expect(result.desc()).toBe(
-            '+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 331-391 (84.2 - 99.4%) -- guaranteed 2HKO after burn damage'
+            '+2 252 SpA Mewtwo Psystrike vs. 248 HP / 184+ Def Marvel Scale Milotic in Psychic Terrain: 331-391 (84.2 - 99.4%) -- 37.5% chance to OHKO after burn damage'
           );
         } else {
           expect(result.range()).toEqual([288, 339]);
@@ -561,6 +561,111 @@ describe('calc', () => {
         expect(result.range()).toEqual([176, 210]);
         expect(result.desc()).toBe(
           '0 SpA Greninja Water Shuriken (15 BP) (3 hits) vs. 0 HP / 0 SpD Luminous Moss Contrary Gliscor: 176-210 (60.4 - 72.1%) -- approx. 2HKO'
+        );
+      });
+    });
+    // For the EoT tests, 5+ turns is tested separately because it uses the predictTotal instead of computeKOChance, and the code is different for each function
+    inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+      // Mew has 100 Max Health, and Seismic Toss does 25 damage. Leftovers heals 6 HP
+      // On turn 5, Mew should be at -1 HP after the Seismic Toss. If Leftovers recovery is applied, the calc will think mew is at 5 HP, and return a 6HKO
+      test(`KOed Pokemon don't receive HP recovery after 5+ turns (gen ${gen})`, () => {
+        const chansey = Pokemon('Chansey', {
+          level: 25,
+        });
+        const mew = Pokemon('Mew', {
+          level: 30,
+          item: 'Leftovers',
+          ivs: {hp: 0},
+        });
+        const seismicToss = Move('Seismic Toss');
+        const result = calculate(chansey, mew, seismicToss);
+        expect(result.damage).toBe(25);
+        expect(result.desc()).toBe(
+          'Lvl 25 Chansey Seismic Toss vs. Lvl 30 0 HP 0 IVs Mew: 25-25 (25 - 25%) -- guaranteed 5HKO after Leftovers recovery'
+        );
+      });
+    });
+    // Similar to the last test, but for the computerKOChance function instead of predictTotal
+    inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`KOed Pokemon don't receive HP recovery after 1-4 turns (gen ${gen})`, () => {
+        const chansey = Pokemon('Chansey', {
+          level: 55,
+        });
+        const mew = Pokemon('Mew', {
+          level: 30,
+          item: 'Leftovers',
+          ivs: {hp: 0},
+        });
+        const seismicToss = Move('Seismic Toss');
+        const result = calculate(chansey, mew, seismicToss);
+        expect(result.damage).toBe(55);
+        expect(result.desc()).toBe(
+          'Lvl 55 Chansey Seismic Toss vs. Lvl 30 0 HP 0 IVs Mew: 55-55 (55 - 55%) -- guaranteed 2HKO after Leftovers recovery'
+        );
+      });
+    });
+    inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`End of turn damage is calculated correctly after 5+ turns (gen ${gen})`, () => {
+        const chansey = Pokemon('Chansey', {
+          level: 1,
+        });
+        const mew = Pokemon('Mew', {
+          level: 30,
+          status: 'tox',
+          toxicCounter: 1,
+          ivs: {hp: 0},
+        });
+        const seismicToss = Move('Seismic Toss');
+        const result = calculate(chansey, mew, seismicToss);
+        expect(result.damage).toBe(1);
+        expect(result.desc()).toBe(
+          'Lvl 1 Chansey Seismic Toss vs. Lvl 30 0 HP 0 IVs Mew: 1-1 (1 - 1%) -- guaranteed 6HKO after toxic damage'
+        );
+      });
+    });
+    inGens(3, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`End of turn damage is calculated correctly after 1-4 turns (gen ${gen})`, () => {
+        const field = Field({
+          weather: 'Sand',
+          defenderSide: {
+            isSeeded: true,
+          },
+        });
+        const chansey = Pokemon('Chansey', {
+          level: 1,
+        });
+        const mew = Pokemon('Mew', {
+          level: 30,
+          status: 'tox',
+          toxicCounter: 1,
+          ivs: {hp: 0},
+        });
+        const seismicToss = Move('Seismic Toss');
+        const result = calculate(chansey, mew, seismicToss, field);
+        expect(result.damage).toBe(1);
+        expect(result.desc()).toBe(
+          'Lvl 1 Chansey Seismic Toss vs. Lvl 30 0 HP 0 IVs Mew: 1-1 (1 - 1%) -- guaranteed 4HKO after sandstorm damage, Leech Seed damage, and toxic damage'
+        );
+      });
+    });
+    inGens(3, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`End of turn damage is calculated correctly on the first turn (gen ${gen})`, () => {
+        const field = Field({
+          weather: 'Sand',
+        });
+        const chansey = Pokemon('Chansey', {
+          level: 90,
+        });
+        const mew = Pokemon('Mew', {
+          level: 30,
+          status: 'brn',
+          ivs: {hp: 0},
+        });
+        const seismicToss = Move('Seismic Toss');
+        const result = calculate(chansey, mew, seismicToss, field);
+        expect(result.damage).toBe(90);
+        expect(result.desc()).toBe(
+          'Lvl 90 Chansey Seismic Toss vs. Lvl 30 0 HP 0 IVs Mew: 90-90 (90 - 90%) -- guaranteed OHKO after sandstorm damage and burn damage'
         );
       });
     });
@@ -925,7 +1030,7 @@ describe('calc', () => {
         expect(result.range()).toEqual([50, 59]);
         expect(result.desc()).toBe(
           '0 SpA Abomasnow Helping Hand Blizzard vs. 32 HP / 0 SpD Hoopa-Unbound through Light Screen with an ally\'s Friend Guard: 50-59 (16.1 - 19%)' +
-            ' -- 91.4% chance to 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery'
+            ' -- guaranteed 3HKO after Stealth Rock, 1 layer of Spikes, hail damage, Leech Seed damage, and Grassy Terrain recovery'
         );
       });
 
@@ -1061,7 +1166,7 @@ describe('calc', () => {
         const hail = Field({weather: 'Hail'});
         const result = calculate(abomasnow, deerling, blizzard, hail);
         expect(result.desc()).toBe(
-          'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 25% chance to OHKO'
+          'Lvl 55 252 SpA Choice Specs Abomasnow Blizzard vs. 36 HP / 0 SpD Deerling: 236-278 (87.4 - 102.9%) -- 25% chance to OHKO (56.3% chance to OHKO after hail damage)'
         );
       });
 
