@@ -24,7 +24,7 @@ var SETDEX_SS = {
     "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":176,"at":252,"df":4,"sp":76},"moves":["Poltergeist","Stone Edge","Shadow Sneak","Defog"]}
   },
   "Cresselia": {
-    "OU Utility": {"ability":"Levitate","item":"Choice Scarf","nature":"Calm","evs":{"hp":252,"sd":148,"sp":108},"moves":["Ice Beam","Lunar Dance","Trick","Moonlight"]},
+    "OU Calm Mind": {"ability":"Levitate","item":"Kee Berry","nature":"Bold","teraType":"Poison","evs":{"hp":252,"df":200,"sp":56},"moves":["Calm Mind","Stored Power","Moonblast","Moonlight"]},
     "UU Trick Room Setter": {"ability":"Levitate","item":"Colbur Berry","nature":"Relaxed","ivs":{"at":0,"sp":0},"evs":{"hp":248,"df":84,"sd":176},"moves":["Trick Room","Moonblast","Lunar Dance","Shadow Ball"]},
     "RU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"hp":64,"sa":192,"sp":252},"moves":["Ice Beam","Thunder Wave","Lunar Dance","Trick"]},
     "Doubles OU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stored Power","Calm Mind","Moonlight","Icy Wind"]},

@@ -658,7 +658,7 @@ var SETDEX_DPP = {
     "Anything Goes Mixed": {"ability":"Multitype","item":"Stone Plate","nature":"Naive","evs":{"hp":100,"at":100,"df":60,"sa":100,"sd":50,"sp":100},"moves":["Stone Edge","Fire Blast","Grass Knot","Recover"]}
   },
   "Arceus-Steel": {
-    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Iron Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Roar","Recover"]},
+    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Iron Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Thunder","Recover"]},
     "Anything Goes Swords Dance": {"ability":"Multitype","item":"Iron Plate","nature":"Jolly","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Swords Dance","Iron Head","Earthquake","Recover"]}
   },
   "Arceus-Water": {
