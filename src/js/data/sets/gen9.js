@@ -1020,7 +1020,7 @@ var SETDEX_SV = {
   },
   "Swampert": {
     "RU Defensive Utility": {"ability":"Torrent","item":"Leftovers","nature":"Impish","teraType":"Poison","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Knock Off","Flip Turn"]},
-    "NU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Impish","teraType":"Fairy","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Flip Turn","Knock Off"]},
+    "NU Utility Tank": {"ability":"Torrent","item":"Leftovers","nature":"Impish","teraType":"Fairy","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Earthquake","Flip Turn","Knock Off"]},
     "BSS Reg G Support Pivot": {"level":50,"ability":"Torrent","item":"Sitrus Berry","nature":"Relaxed","teraType":"Fire","evs":{"hp":252,"df":220,"sd":36},"moves":["Stealth Rock","Flip Turn","Yawn","Earthquake"]},
     "Monotype Defensive Pivot (Water)": {"ability":"Torrent","item":"Leftovers","nature":"Careful","teraType":"Water","evs":{"hp":252,"at":24,"sd":232},"moves":["Earthquake","Flip Turn","Stealth Rock","Roar"]},
     "National Dex Rain Sweeper": {"ability":"Swift Swim","item":"Swampertite","nature":"Jolly","teraType":"Water","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Waterfall","Flip Turn","Superpower"]},
@@ -2314,7 +2314,8 @@ var SETDEX_SV = {
     "National Dex Doubles Showdown Usage": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Sassy","teraType":"Grass","evs":{"hp":252,"df":128,"sd":126},"moves":["Spore","Rage Powder","Pollen Puff","Clear Smog"]}
   },
   "Alomomola": {
-    "OU Defensive Pivot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Relaxed","teraType":"Flying","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Flip Turn","Wish","Protect"]},
+    "OU WishFish (Pivot)": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Relaxed","teraType":"Flying","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Flip Turn","Wish","Protect"]},
+    "OU Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","teraType":"Fairy","ivs":{"sp":0},"evs":{"hp":20,"df":236,"sd":252},"moves":["Flip Turn","Scald","Play Rough","Mirror Coat"]},
     "Ubers Physically Defensive": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Relaxed","teraType":"Fairy","evs":{"hp":252,"df":252,"sd":4},"moves":["Play Rough","Whirlpool","Wish","Protect"]},
     "BSS Reg G Assault Vest Pivot": {"level":50,"ability":"Regenerator","item":"Assault Vest","nature":"Relaxed","teraType":"Poison","ivs":{"sp":0},"evs":{"hp":52,"df":212,"sd":244},"moves":["Flip Turn","Mirror Coat","Scald","Aqua Jet"]},
     "Monotype Defensive": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Relaxed","teraType":"Water","evs":{"hp":248,"df":252,"sd":8},"moves":["Flip Turn","Wish","Scald","Protect"]},
@@ -4352,6 +4353,7 @@ var SETDEX_SV = {
   },
   "Slither Wing": {
     "OU Assault Vest": {"ability":"Protosynthesis","item":"Assault Vest","nature":"Adamant","teraType":"Steel","evs":{"at":252,"df":4,"sp":252},"moves":["First Impression","Close Combat","U-turn","Earthquake"]},
+    "OU Defensive": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Impish","teraType":"Steel","evs":{"hp":252,"at":28,"df":220,"sp":8},"moves":["First Impression","U-turn","Will-O-Wisp","Morning Sun"]},
     "RU Bulky Pivot": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Adamant","teraType":"Steel","evs":{"hp":252,"at":16,"df":72,"sp":168},"moves":["U-turn","Close Combat","Will-O-Wisp","Morning Sun"]},
     "RU Choice Band": {"ability":"Protosynthesis","item":"Choice Band","nature":"Jolly","teraType":"Bug","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Close Combat","First Impression","Earthquake"]},
     "BSS Reg G Offensive": {"level":50,"ability":"Protosynthesis","item":"Assault Vest","nature":"Adamant","teraType":"Bug","evs":{"hp":252,"at":252,"sp":4},"moves":["First Impression","U-turn","Close Combat","Flare Blitz"]},
@@ -4933,17 +4935,17 @@ var SETDEX_SV = {
     "Ubers Showdown Usage": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Rapid Spin","Calm Mind","Ice Beam"]}
   },
   "Terapagos-Stellar": {
-    "VGC 2024 Reg G Choice Specs": {"level":50,"ability":"Tera Shell","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Tera Starstorm","Earth Power","Dark Pulse","Hyper Beam"]},
-    "VGC 2024 Reg G Calm Mind": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":164,"df":76,"sa":164,"sd":92,"sp":12},"moves":["Tera Starstorm","Earth Power","Calm Mind","Protect"]},
-    "BSS Reg G Double Dance": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"sa":236,"sp":100},"moves":["Calm Mind","Tera Starstorm","Rock Polish","Protect"]},
-    "BSS Reg G Choice Specs": {"level":50,"ability":"Tera Shell","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":196,"sa":252,"sp":60},"moves":["Tera Starstorm","Dark Pulse","Dazzling Gleam","Earth Power"]},
-    "Monotype Choice Specs": {"ability":"Tera Shell","item":"Choice Specs","nature":"Timid","teraType":"Stellar","ivs":{"at":15},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Ice Beam","Earth Power","Flamethrower"]},
-    "Monotype Offensive Entry Hazard Remover": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Tera Starstorm","Flamethrower","Ice Beam"]},
-    "National Dex Monotype Calm Mind": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Tera Starstorm","Rapid Spin","Flamethrower"]},
-    "Ubers UU Double Dance": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"hp":180,"sa":252,"sp":76},"moves":["Rock Polish","Tera Starstorm","Dark Pulse","Calm Mind"]},
-    "Ubers UU Offensive Rapid Spin": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"hp":252,"sa":76,"sp":180},"moves":["Rapid Spin","Calm Mind","Tera Starstorm","Dark Pulse"]},
-    "Ubers UU Utility": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Calm","teraType":"Stellar","evs":{"hp":248,"sa":8,"sd":252},"moves":["Rapid Spin","Toxic","Stealth Rock","Tera Starstorm"]},
-    "Ubers Showdown Usage": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Rapid Spin","Calm Mind","Ice Beam"]}
+    "VGC 2024 Reg G Choice Specs": {"level":50,"ability":"Teraform Zero","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Tera Starstorm","Earth Power","Dark Pulse","Hyper Beam"]},
+    "VGC 2024 Reg G Calm Mind": {"level":50,"ability":"Teraform Zero","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":164,"df":76,"sa":164,"sd":92,"sp":12},"moves":["Tera Starstorm","Earth Power","Calm Mind","Protect"]},
+    "BSS Reg G Double Dance": {"level":50,"ability":"Teraform Zero","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"sa":236,"sp":100},"moves":["Calm Mind","Tera Starstorm","Rock Polish","Protect"]},
+    "BSS Reg G Choice Specs": {"level":50,"ability":"Teraform Zero","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":196,"sa":252,"sp":60},"moves":["Tera Starstorm","Dark Pulse","Dazzling Gleam","Earth Power"]},
+    "Monotype Choice Specs": {"ability":"Teraform Zero","item":"Choice Specs","nature":"Timid","teraType":"Stellar","ivs":{"at":15},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Ice Beam","Earth Power","Flamethrower"]},
+    "Monotype Offensive Entry Hazard Remover": {"ability":"Teraform Zero","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Tera Starstorm","Flamethrower","Ice Beam"]},
+    "National Dex Monotype Calm Mind": {"ability":"Teraform Zero","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Tera Starstorm","Rapid Spin","Flamethrower"]},
+    "Ubers UU Double Dance": {"ability":"Teraform Zero","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"hp":180,"sa":252,"sp":76},"moves":["Rock Polish","Tera Starstorm","Dark Pulse","Calm Mind"]},
+    "Ubers UU Offensive Rapid Spin": {"ability":"Teraform Zero","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"hp":252,"sa":76,"sp":180},"moves":["Rapid Spin","Calm Mind","Tera Starstorm","Dark Pulse"]},
+    "Ubers UU Utility": {"ability":"Teraform Zero","item":"Heavy-Duty Boots","nature":"Calm","teraType":"Stellar","evs":{"hp":248,"sa":8,"sd":252},"moves":["Rapid Spin","Toxic","Stealth Rock","Tera Starstorm"]},
+    "Ubers Showdown Usage": {"ability":"Teraform Zero","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Rapid Spin","Calm Mind","Ice Beam"]}
   },
   "Terapagos-Terastal": {
     "VGC 2024 Reg G Choice Specs": {"level":50,"ability":"Tera Shell","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Tera Starstorm","Earth Power","Dark Pulse","Hyper Beam"]},
@@ -4951,12 +4953,12 @@ var SETDEX_SV = {
     "BSS Reg G Double Dance": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"sa":236,"sp":100},"moves":["Calm Mind","Tera Starstorm","Rock Polish","Protect"]},
     "BSS Reg G Choice Specs": {"level":50,"ability":"Tera Shell","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":196,"sa":252,"sp":60},"moves":["Tera Starstorm","Dark Pulse","Dazzling Gleam","Earth Power"]},
     "Monotype Choice Specs": {"ability":"Tera Shell","item":"Choice Specs","nature":"Timid","teraType":"Stellar","ivs":{"at":15},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Ice Beam","Earth Power","Flamethrower"]},
-    "Monotype Offensive Entry Hazard Remover": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Tera Starstorm","Flamethrower","Ice Beam"]},
-    "National Dex Monotype Calm Mind": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Tera Starstorm","Rapid Spin","Flamethrower"]},
-    "Ubers UU Double Dance": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"hp":180,"sa":252,"sp":76},"moves":["Rock Polish","Tera Starstorm","Dark Pulse","Calm Mind"]},
-    "Ubers UU Offensive Rapid Spin": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"hp":252,"sa":76,"sp":180},"moves":["Rapid Spin","Calm Mind","Tera Starstorm","Dark Pulse"]},
-    "Ubers UU Utility": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Calm","teraType":"Stellar","evs":{"hp":248,"sa":8,"sd":252},"moves":["Rapid Spin","Toxic","Stealth Rock","Tera Starstorm"]},
-    "Ubers Showdown Usage": {"ability":"Tera Shift","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Rapid Spin","Calm Mind","Ice Beam"]}
+    "Monotype Offensive Entry Hazard Remover": {"ability":"Tera Shell","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Tera Starstorm","Flamethrower","Ice Beam"]},
+    "National Dex Monotype Calm Mind": {"ability":"Tera Shell","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Tera Starstorm","Rapid Spin","Flamethrower"]},
+    "Ubers UU Double Dance": {"ability":"Tera Shell","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Stellar","evs":{"hp":180,"sa":252,"sp":76},"moves":["Rock Polish","Tera Starstorm","Dark Pulse","Calm Mind"]},
+    "Ubers UU Offensive Rapid Spin": {"ability":"Tera Shell","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"hp":252,"sa":76,"sp":180},"moves":["Rapid Spin","Calm Mind","Tera Starstorm","Dark Pulse"]},
+    "Ubers UU Utility": {"ability":"Tera Shell","item":"Heavy-Duty Boots","nature":"Calm","teraType":"Stellar","evs":{"hp":248,"sa":8,"sd":252},"moves":["Rapid Spin","Toxic","Stealth Rock","Tera Starstorm"]},
+    "Ubers Showdown Usage": {"ability":"Tera Shell","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Stellar","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Rapid Spin","Calm Mind","Ice Beam"]}
   },
   "Pecharunt": {
     "OU Nasty Plot": {"ability":"Poison Puppeteer","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Water","evs":{"hp":48,"sa":208,"sp":252},"moves":["Nasty Plot","Malignant Chain","Hex","Recover"]},
