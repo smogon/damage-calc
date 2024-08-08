@@ -1,7 +1,7 @@
-import * as I from './data/interface';
+import type * as I from './data/interface';
 import {Stats} from './stats';
 import {toID, extend, assignWithout} from './util';
-import {State} from './state';
+import type {State} from './state';
 
 const STATS = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'] as I.StatID[];
 const SPC = new Set(['spc']);

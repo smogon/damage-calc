@@ -1,4 +1,4 @@
-import * as I from './interface';
+import type * as I from './interface';
 import {toID, extend} from '../util';
 
 export type TypeChart = {

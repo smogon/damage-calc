@@ -1,5 +1,5 @@
-import * as I from '../data/interface';
-import * as D from '@pkmn/dex';
+import type * as I from '../data/interface';
+import type * as D from '@pkmn/dex';
 
 export function toID(s: string) {
   return ('' + s).toLowerCase().replace(/[^a-z0-9]+/g, '') as I.ID;

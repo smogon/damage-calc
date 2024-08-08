@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
-import * as I from '../data/interface';
-import {calculate, Pokemon, Move, Result} from '../index';
-import {State} from '../state';
+import type * as I from '../data/interface';
+import {type Result, calculate, Pokemon, Move} from '../index';
+import type {State} from '../state';
 import {Field, Side} from '../field';
 
 const calc = (gen: I.GenerationNum) => (

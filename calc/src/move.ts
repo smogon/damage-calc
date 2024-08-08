@@ -1,5 +1,5 @@
-import * as I from './data/interface';
-import {State} from './state';
+import type * as I from './data/interface';
+import type {State} from './state';
 import {toID, extend} from './util';
 
 const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];

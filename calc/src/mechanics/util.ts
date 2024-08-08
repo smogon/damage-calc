@@ -1,4 +1,4 @@
-import {
+import type {
   Generation,
   ID,
   ItemName,
@@ -11,11 +11,11 @@ import {
   Weather,
 } from '../data/interface';
 import {toID} from '../util';
-import {Field, Side} from '../field';
-import {Move} from '../move';
-import {Pokemon} from '../pokemon';
+import type {Field, Side} from '../field';
+import type {Move} from '../move';
+import type {Pokemon} from '../pokemon';
 import {Stats} from '../stats';
-import {RawDesc} from '../desc';
+import type {RawDesc} from '../desc';
 
 const EV_ITEMS = [
   'Macho Brace',

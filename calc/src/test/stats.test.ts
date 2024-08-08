@@ -1,5 +1,5 @@
 import {Generations} from '../data';
-import {GenerationNum, StatsTable, StatID} from '../data/interface';
+import type {GenerationNum, StatsTable, StatID} from '../data/interface';
 import {Stats} from '../stats';
 import {getModifiedStat} from '../mechanics/util';
 
