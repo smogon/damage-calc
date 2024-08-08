@@ -337,8 +337,7 @@ var SETDEX_SV = {
   },
   "Hitmonlee": {
     "NU Terrain Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Knock Off","Poison Jab"]},
-    "PU Terrain Sweeper": {"ability":"Unburden","item":"Psychic Seed","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Knock Off","Stone Edge"]},
-    "ZU Terrain Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Knock Off","Poison Jab"]}
+    "PU Terrain Sweeper": {"ability":"Unburden","item":"Psychic Seed","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Knock Off","Stone Edge"]}
   },
   "Hitmonchan": {
     "ZU Bulky Rapid Spin": {"ability":"Iron Fist","item":"Heavy-Duty Boots","nature":"Adamant","teraType":"Dark","evs":{"hp":248,"at":16,"sd":244},"moves":["Drain Punch","Knock Off","Mach Punch","Rapid Spin"]},
@@ -627,8 +626,7 @@ var SETDEX_SV = {
     "National Dex RU Choice Specs": {"ability":"Frisk","item":"Choice Specs","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"]}
   },
   "Feraligatr": {
-    "RU Dragon Dance": {"ability":"Sheer Force","item":"Life Orb","nature":"Jolly","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Liquidation","Ice Punch","Crunch"]},
-    "NU Setup Sweeper": {"ability":"Sheer Force","item":"Life Orb","nature":"Jolly","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Liquidation","Ice Punch","Crunch"]}
+    "RU Dragon Dance": {"ability":"Sheer Force","item":"Life Orb","nature":"Jolly","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Liquidation","Ice Punch","Crunch"]}
   },
   "Crobat": {
     "National Dex RU Utility": {"ability":"Inner Focus","item":"Heavy-Duty Boots","nature":"Jolly","teraType":"Poison","evs":{"hp":252,"df":40,"sp":216},"moves":["Brave Bird","Roost","U-turn","Defog"]},
@@ -1001,8 +999,7 @@ var SETDEX_SV = {
   "Sceptile": {
     "PU Terrain Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Flying","evs":{"hp":252,"at":252,"sd":4},"moves":["Swords Dance","Leaf Blade","Acrobatics","Drain Punch"]},
     "PU Special Attacker": {"ability":"Overgrow","item":"Life Orb","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Giga Drain","Focus Blast","Tera Blast"]},
-    "National Dex RU Offensive": {"ability":"Overgrow","item":"Sceptilite","nature":"Timid","teraType":"Grass","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Focus Blast","Hidden Power Fire"]},
-    "ZU Showdown Usage": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Grass","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Acrobatics","Leaf Blade","Drain Punch"]}
+    "National Dex RU Offensive": {"ability":"Overgrow","item":"Sceptilite","nature":"Timid","teraType":"Grass","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Focus Blast","Hidden Power Fire"]}
   },
   "Sceptile-Mega": {
     "National Dex RU Offensive": {"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","teraType":"Grass","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Focus Blast","Hidden Power Fire"]},
@@ -1430,7 +1427,6 @@ var SETDEX_SV = {
     "OU Trick Room Setter": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Relaxed","teraType":"Fairy","ivs":{"at":0,"sp":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Night Shade","Trick Room","Teleport","Recover"]},
     "RU Utility": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Impish","teraType":"Ghost","evs":{"hp":248,"df":252,"sd":8},"moves":["Spikes","Night Shade","Recover","Knock Off"]},
     "Almost Any Ability Unaware": {"ability":"Unaware","item":"Leftovers","nature":"Relaxed","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Night Shade","Recover","Spikes","Teleport"]},
-    "NU Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Timid","teraType":"Psychic","evs":{"hp":252,"sd":40,"sp":216},"moves":["Recover","Night Shade","Spikes","Stealth Rock"]},
     "National Dex UU Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Calm","teraType":"Psychic","evs":{"hp":252,"df":252,"sd":4},"moves":["Teleport","Stealth Rock","Knock Off","Spikes"]}
   },
   "Deoxys-Speed": {
@@ -1538,7 +1534,6 @@ var SETDEX_SV = {
     "LC Setup Sweeper": {"level":5,"ability":"Unburden","item":"Grassy Seed","nature":"Timid","teraType":"Electric","ivs":{"at":0},"evs":{"df":84,"sa":196,"sd":4,"sp":196},"moves":["Calm Mind","Shadow Ball","Thunderbolt","Will-O-Wisp"]}
   },
   "Drifblim": {
-    "ZU Calm Mind": {"ability":"Unburden","item":"Grassy Seed","nature":"Modest","teraType":"Electric","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Shadow Ball","Thunderbolt","Strength Sap"]},
     "ZU Defog": {"ability":"Aftermath","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"df":252,"sd":4,"sp":252},"moves":["Defog","Strength Sap","Will-O-Wisp","Hex"]},
     "NU Showdown Usage": {"ability":"Unburden","item":"Electric Seed","nature":"Modest","teraType":"Ghost","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Strength Sap","Calm Mind","Thunderbolt"]},
     "PU Showdown Usage": {"ability":"Unburden","item":"Sitrus Berry","nature":"Modest","teraType":"Ghost","evs":{"hp":12,"df":4,"sa":252,"sd":8,"sp":232},"moves":["Strength Sap","Shadow Ball","Calm Mind","Air Slash"]},
@@ -2374,9 +2369,7 @@ var SETDEX_SV = {
     "RU Choice Scarf": {"ability":"Regenerator","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","U-turn","Ice Spinner"]},
     "NU Choice Scarf": {"ability":"Regenerator","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","U-turn","Stone Edge"]},
     "NU Wallbreaker": {"ability":"Regenerator","item":"Life Orb","nature":"Jolly","teraType":"Poison","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","Poison Jab","Swords Dance"]},
-    "VGC 2024 Reg G Offensive Utility": {"level":50,"ability":"Inner Focus","item":"Focus Sash","nature":"Jolly","teraType":"Fighting","evs":{"hp":4,"at":252,"sp":252},"moves":["Close Combat","Fake Out","Feint","Wide Guard"]},
-    "National Dex RU Choice Scarf": {"ability":"Regenerator","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","U-turn","Triple Axel"]},
-    "National Dex RU Offensive Pivot": {"ability":"Regenerator","item":"Life Orb","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","U-turn","Triple Axel"]}
+    "VGC 2024 Reg G Offensive Utility": {"level":50,"ability":"Inner Focus","item":"Focus Sash","nature":"Jolly","teraType":"Fighting","evs":{"hp":4,"at":252,"sp":252},"moves":["Close Combat","Fake Out","Feint","Wide Guard"]}
   },
   "Golurk": {
     "UU Choice Band": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","teraType":"Ghost","evs":{"at":252,"sd":4,"sp":252},"moves":["Poltergeist","Earthquake","Stone Edge","Ice Punch"]},
@@ -3308,7 +3301,8 @@ var SETDEX_SV = {
   },
   "Thwackey": {
     "PU Choice": {"ability":"Grassy Surge","item":"Choice Band","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"df":4,"sp":252},"moves":["Wood Hammer","U-turn","Knock Off","Drain Punch"]},
-    "NU Showdown Usage": {"ability":"Grassy Surge","item":"Terrain Extender","nature":"Adamant","teraType":"Grass","evs":{"hp":252,"at":252,"sd":4},"moves":["U-turn","Knock Off","Grassy Glide","Wood Hammer"]}
+    "NU Showdown Usage": {"ability":"Grassy Surge","item":"Terrain Extender","nature":"Adamant","teraType":"Grass","evs":{"hp":252,"at":252,"sd":4},"moves":["U-turn","Knock Off","Grassy Glide","Wood Hammer"]},
+    "ZU Showdown Usage": {"ability":"Grassy Surge","item":"Terrain Extender","nature":"Adamant","teraType":"Grass","evs":{"hp":252,"at":252,"sd":4},"moves":["U-turn","Grassy Glide","Knock Off","Taunt"]}
   },
   "Rillaboom": {
     "OU Choice Band": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","teraType":"Grass","evs":{"at":252,"df":4,"sp":252},"moves":["Grassy Glide","Wood Hammer","U-turn","Knock Off"]},
@@ -4020,8 +4014,7 @@ var SETDEX_SV = {
     "PU Utility": {"ability":"Prankster","item":"Heavy-Duty Boots","nature":"Jolly","teraType":"Dark","evs":{"at":252,"df":4,"sp":252},"moves":["Gunk Shot","Knock Off","Parting Shot","Encore"]},
     "PU Terrain Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Flying","evs":{"hp":192,"at":252,"sp":64},"moves":["Swords Dance","Acrobatics","Low Kick","Encore"]},
     "PU Choice Scarf": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","teraType":"Dark","evs":{"at":252,"df":4,"sp":252},"moves":["U-turn","Knock Off","Gunk Shot","Switcheroo"]},
-    "NU Showdown Usage": {"ability":"Unburden","item":"Grassy Seed","nature":"Jolly","teraType":"Poison","evs":{"at":252,"df":4,"sp":252},"moves":["Tera Blast","Swords Dance","Low Kick","Gunk Shot"]},
-    "ZU Showdown Usage": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Poison","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Swords Dance","Gunk Shot","Encore"]}
+    "NU Showdown Usage": {"ability":"Unburden","item":"Grassy Seed","nature":"Jolly","teraType":"Poison","evs":{"at":252,"df":4,"sp":252},"moves":["Tera Blast","Swords Dance","Low Kick","Gunk Shot"]}
   },
   "Bramblin": {
     "LC Spinner": {"level":5,"ability":"Wind Rider","item":"Eviolite","nature":"Jolly","teraType":"Grass","evs":{"at":236,"df":36,"sp":196},"moves":["Rapid Spin","Power Whip","Shadow Sneak","Strength Sap"]}

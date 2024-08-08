@@ -484,8 +484,7 @@ var SETDEX_RBY = {
     "OU Standard": {"moves":["Blizzard","Agility","Double-Edge","Hyper Beam"]},
     "Ubers Bulky Attacker": {"moves":["Blizzard","Hyper Beam","Rest","Agility"]},
     "1v1 Reflect + Rest": {"moves":["Blizzard","Ice Beam","Reflect","Rest"]},
-    "Tradebacks OU Sweeper": {"moves":["Agility","Blizzard","Ice Beam","Hyper Beam"]},
-    "UU Showdown Usage": {"moves":["Blizzard","Agility","Hyper Beam","Double-Edge"]}
+    "Tradebacks OU Sweeper": {"moves":["Agility","Blizzard","Ice Beam","Hyper Beam"]}
   },
   "Zapdos": {
     "OU Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
