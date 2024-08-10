@@ -673,11 +673,9 @@ var SETDEX_SS = {
     "CAP Showdown Usage": {"ability":"Berserk","item":"Sitrus Berry","nature":"Modest","evs":{"hp":216,"sa":100,"sp":192},"moves":["Fiery Wrath","Nasty Plot","Agility","Hurricane"]}
   },
   "Dragonite": {
-    "OU Bulky Dragon Dance": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"hp":248,"at":24,"df":68,"sd":8,"sp":160},"moves":["Dragon Dance","Earthquake","Dual Wingbeat","Roost"]},
+    "OU Bulky Dragonite": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"hp":248,"at":24,"df":68,"sd":8,"sp":160},"moves":["Dragon Dance","Earthquake","Dual Wingbeat","Roost"]},
     "OU Offensive Dragon Dance": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Dual Wingbeat","Roost"]},
     "OU Utility": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Dual Wingbeat","Earthquake","Roost","Heal Bell"]},
-    "OU Choice Band": {"ability":"Multiscale","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Extreme Speed","Earthquake","Fire Punch"]},
-    "OU Defensive": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Ice Beam","Earthquake","Roost","Heal Bell"]},
     "Battle Stadium Singles Physical Sweeper": {"level":50,"ability":"Multiscale","item":"Weakness Policy","nature":"Adamant","evs":{"hp":244,"at":4,"df":36,"sd":4,"sp":220},"moves":["Dual Wingbeat","Dragon Dance","Outrage","Roost"]},
     "Battle Stadium Singles Bulky Stall": {"level":50,"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":244,"df":252,"sp":12},"moves":["Hurricane","Ice Beam","Fire Blast","Roost"]},
     "Battle Stadium Singles Maranga Sweeper": {"level":50,"ability":"Multiscale","item":"Maranga Berry","nature":"Adamant","evs":{"hp":244,"at":4,"df":36,"sd":4,"sp":220},"moves":["Dual Wingbeat","Outrage","Dragon Dance","Roost"]},
@@ -1078,7 +1076,6 @@ var SETDEX_SS = {
   "Blaziken": {
     "OU Swords Dance + Protect": {"ability":"Speed Boost","item":"Leftovers","nature":"Adamant","evs":{"hp":144,"at":252,"sp":112},"moves":["Swords Dance","Flare Blitz","Close Combat","Protect"]},
     "OU Swords Dance + 3 Attacks": {"ability":"Speed Boost","item":"Air Balloon","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Flare Blitz","Close Combat","Knock Off"]},
-    "OU Choice Band": {"ability":"Speed Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Close Combat","Knock Off","U-turn"]},
     "Battle Stadium Singles Physical Sweeper": {"level":50,"ability":"Speed Boost","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Flare Blitz","Protect","Swords Dance"]},
     "Battle Stadium Singles Baton Pass": {"level":50,"ability":"Speed Boost","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Baton Pass","Protect","Close Combat"]},
     "Battle Stadium Singles Dynamax Special Attacker": {"level":50,"ability":"Speed Boost","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Solar Beam","Protect","Scorching Sands"]},
