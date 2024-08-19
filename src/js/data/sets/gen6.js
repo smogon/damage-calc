@@ -3053,7 +3053,7 @@ var SETDEX_XY = {
     "Ubers Offensive": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Low Kick","Return","Fake Out","Healing Wish"]},
     "PU Offensive Utility": {"ability":"Klutz","item":"Flame Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Switcheroo","Healing Wish","Return","High Jump Kick"]},
     "Battle Spot Singles Physical Attacker": {"level":50,"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Ice Punch"]},
-    "Monotype All-Out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","High Jump Kick","Return","Ice Punch"]},
+    "Monotype Offensive": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","High Jump Kick","Return","Ice Punch"]},
     "1v1 Jolly": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Giga Impact","High Jump Kick","Ice Punch"]},
     "1v1 Adamant": {"ability":"Limber","item":"Lopunnite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Giga Impact","High Jump Kick","Thunder Punch"]},
     "ZU Offensive Utility": {"ability":"Klutz","item":"Flame Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Switcheroo","Healing Wish","Return","High Jump Kick"]},
@@ -3066,7 +3066,7 @@ var SETDEX_XY = {
     "OU Substitute": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["High Jump Kick","Return","Substitute","Encore"]},
     "Ubers Offensive": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Low Kick","Return","Fake Out","Healing Wish"]},
     "Battle Spot Singles Physical Attacker": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Ice Punch"]},
-    "Monotype All-Out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","High Jump Kick","Return","Ice Punch"]},
+    "Monotype Offensive": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","High Jump Kick","Return","Ice Punch"]},
     "1v1 Jolly": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Giga Impact","High Jump Kick","Ice Punch"]},
     "1v1 Adamant": {"ability":"Scrappy","item":"Lopunnite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Giga Impact","High Jump Kick","Thunder Punch"]},
     "CAP All-Out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","Return","Fake Out","Ice Punch"]},
@@ -3589,8 +3589,7 @@ var SETDEX_XY = {
     "PU Nasty Plot Sweeper": {"ability":"Overgrow","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Giga Drain","Focus Blast","Hidden Power Ice"]},
     "ZU Mixed All-Out Attacker": {"ability":"Overgrow","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Leaf Storm","Knock Off","Superpower","Rock Slide"]},
     "ZU Nasty Plot": {"ability":"Overgrow","item":"Life Orb","nature":"Timid","ivs":{"at":0,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Giga Drain","Focus Blast","Hidden Power Ice"]},
-    "ZU Choice Scarf": {"ability":"Overgrow","item":"Choice Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Leaf Storm","Seed Bomb","Rock Slide","Knock Off"]},
-    "ZU Choice Specs": {"ability":"Overgrow","item":"Choice Specs","nature":"Naive","ivs":{"at":0,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Leaf Storm","Giga Drain","Hidden Power Ice","Focus Blast"]}
+    "ZU Choice Scarf": {"ability":"Overgrow","item":"Choice Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Leaf Storm","Seed Bomb","Rock Slide","Knock Off"]}
   },
   "Pansear": {
     "LC Berry Juice Stall": {"level":5,"ability":"Blaze","item":"Berry Juice","nature":"Jolly","evs":{"df":212,"sd":212,"sp":84},"moves":["Recycle","Will-O-Wisp","Flame Charge","Substitute"]},
@@ -3867,7 +3866,8 @@ var SETDEX_XY = {
     "LC Choice Scarf": {"level":5,"ability":"Skill Link","item":"Choice Scarf","nature":"Jolly","evs":{"at":196,"df":36,"sd":36,"sp":236},"moves":["Tail Slap","Knock Off","U-turn","Wake-Up Slap"]}
   },
   "Cinccino": {
-    "RU Physical Attacker": {"ability":"Skill Link","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Tail Slap","Bullet Seed","Rock Blast","Knock Off"]}
+    "RU Physical Attacker": {"ability":"Skill Link","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Tail Slap","Bullet Seed","Rock Blast","Knock Off"]},
+    "Monotype Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Tail Slap","U-turn","Bullet Seed","Knock Off"]}
   },
   "Gothita": {
     "LC Choice Scarf": {"level":5,"ability":"Shadow Tag","item":"Choice Scarf","nature":"Modest","ivs":{"at":0},"evs":{"df":36,"sa":236,"sp":236},"moves":["Psychic","Thunderbolt","Energy Ball","Trick"]},
@@ -4548,7 +4548,7 @@ var SETDEX_XY = {
   },
   "Heliolisk": {
     "UU Special Attacker": {"ability":"Dry Skin","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hyper Voice","Signal Beam","Thunderbolt"]},
-    "Monotype Offensive Pivot (Normal)": {"ability":"Dry Skin","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Grass Knot","Focus Blast"]},
+    "Monotype Offensive (Normal)": {"ability":"Dry Skin","item":"Expert Belt","nature":"Timid","ivs":{"at":0,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Grass Knot","Hidden Power Ice","Toxic"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Solar Power","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Dark Pulse","Thunderbolt","Hidden Power Ice"]}
   },
   "Tyrunt": {

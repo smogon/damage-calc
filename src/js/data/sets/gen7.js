@@ -3033,7 +3033,7 @@ var SETDEX_SM = {
     "1v1 Electrium Z": {"ability":"Levitate","item":"Electrium Z","nature":"Modest","evs":{"hp":252,"df":128,"sa":80,"sp":48},"moves":["Leaf Storm","Thunder","Will-O-Wisp","Charge"]}
   },
   "Uxie": {
-    "OU Trick Room Setter": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":116,"sd":140},"moves":["Trick Room","Stealth Rock","Memento","Magic Coat"]},
+    "OU Lead": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":116,"sd":140},"moves":["Trick Room","Stealth Rock","Memento","Magic Coat"]},
     "UU Trick Room Setter": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Stealth Rock","Memento","Magic Coat"]},
     "RU Utility": {"ability":"Levitate","item":"Wiki Berry","nature":"Timid","evs":{"hp":252,"df":40,"sp":216},"moves":["Stealth Rock","Psyshock","Yawn","U-turn"]}
   },
@@ -4266,7 +4266,6 @@ var SETDEX_SM = {
     "1v1 Physically Defensive": {"ability":"Power Construct","item":"Groundium Z","nature":"Impish","evs":{"hp":248,"at":12,"df":248},"moves":["Thousand Arrows","Coil","Extreme Speed","Rest"]}
   },
   "Zygarde-10%": {
-    "OU Choice Band": {"ability":"Aura Break","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Thousand Arrows","Outrage","Extreme Speed","Iron Tail"]},
     "UU Choice Band": {"ability":"Aura Break","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Thousand Arrows","Outrage","Extreme Speed","Toxic"]},
     "RU Dragon Dance": {"ability":"Aura Break","item":"Dragonium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Thousand Arrows","Outrage","Extreme Speed"]},
     "RU Choice Band": {"ability":"Aura Break","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Thousand Arrows","Outrage","Extreme Speed","Toxic"]}
@@ -4714,7 +4713,6 @@ var SETDEX_SM = {
     "VGC 2019 Psych Up": {"level":50,"ability":"Shadow Shield","item":"Lunalium Z","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Moongeist Beam","Psyshock","Psych Up","Protect"]}
   },
   "Nihilego": {
-    "OU Toxic Spikes Setter": {"ability":"Beast Boost","item":"Electrium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Toxic Spikes","Sludge Wave","Power Gem","Thunder"]},
     "UU 3 Attacks": {"ability":"Beast Boost","item":"Black Sludge","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sludge Wave","Thunderbolt","Grass Knot","Stealth Rock"]},
     "UU Choice Scarf": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Power Gem","Sludge Wave","Grass Knot","Thunderbolt"]},
     "UU Stall Utility": {"ability":"Beast Boost","item":"Black Sludge","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Stealth Rock","Sludge Wave","Protect","Power Gem"]},
