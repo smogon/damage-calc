@@ -528,7 +528,7 @@ $(".move-selector").change(function () {
 				moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
 			}
 		} else {
-			for (var i = move.multihit[0]; i <= move.multihit[1]; i++) {
+			for (var i = 1; i <= move.multihit[1]; i++) {
 				moveGroupObj.children(".move-hits").append("<option value=" + i + ">" + i + " hits</option>");
 			}
 		}
