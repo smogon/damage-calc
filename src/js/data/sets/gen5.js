@@ -1899,7 +1899,7 @@ var SETDEX_BW = {
   },
   "Whiscash": {
     "NU Dragon Dance": {"ability":"Hydration","item":"Leftovers","nature":"Adamant","evs":{"hp":172,"at":80,"df":32,"sp":224},"moves":["Dragon Dance","Substitute","Earthquake","Waterfall"]},
-    "ZU Bulky Substitute + Dragon Dance": {"ability":"Anticipation","item":"Leftovers","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Substitute","Dragon Dance","Waterfall","Earthquake"]},
+    "ZU Defensive Dragon Dance": {"ability":"Anticipation","item":"Leftovers","nature":"Adamant","evs":{"hp":172,"at":200,"sp":136},"moves":["Dragon Dance","Earthquake","Waterfall","Substitute"]},
     "ZU Fast Substitute + Dragon Dance": {"ability":"Anticipation","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Dragon Dance","Waterfall","Earthquake"]}
   },
   "Corphish": {

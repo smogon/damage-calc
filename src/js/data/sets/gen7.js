@@ -2085,6 +2085,7 @@ var SETDEX_SM = {
     "LC Sweeper": {"level":5,"ability":"Simple","item":"Eviolite","nature":"Modest","evs":{"hp":36,"sa":236,"sp":236},"moves":["Flame Charge","Fire Blast","Earth Power","Growth"]}
   },
   "Camerupt": {
+    "OU Offensive Stealth Rock": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","ivs":{"at":0},"evs":{"hp":132,"sa":252,"sp":124},"moves":["Stealth Rock","Fire Blast","Earth Power","Toxic"]},
     "RU Tank": {"ability":"Solid Rock","item":"Cameruptite","nature":"Calm","evs":{"hp":252,"sd":172,"sp":84},"moves":["Fire Blast","Earth Power","Rest","Sleep Talk"]},
     "PU Wallbreaker": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Eruption","Overheat","Flamethrower","Earth Power"]},
     "Doubles OU Trick Room Attacker": {"ability":"Solid Rock","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sa":252},"moves":["Heat Wave","Earth Power","Substitute","Protect"]},
@@ -2095,6 +2096,7 @@ var SETDEX_SM = {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Anger Point","item":"Wiki Berry","nature":"Brave","evs":{"hp":252,"at":4,"sa":252},"moves":["Earthquake","Rock Slide","Protect","Eruption"]}
   },
   "Camerupt-Mega": {
+    "OU Offensive Stealth Rock": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","ivs":{"at":0},"evs":{"hp":132,"sa":252,"sp":124},"moves":["Stealth Rock","Fire Blast","Earth Power","Toxic"]},
     "RU Tank": {"ability":"Sheer Force","item":"Cameruptite","nature":"Calm","evs":{"hp":252,"sd":172,"sp":84},"moves":["Fire Blast","Earth Power","Rest","Sleep Talk"]},
     "Doubles OU Trick Room Attacker": {"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sa":252},"moves":["Heat Wave","Earth Power","Substitute","Protect"]},
     "VGC 2018 Trick Room Attacker": {"level":50,"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Heat Wave","Earth Power","Nature Power","Protect"]},

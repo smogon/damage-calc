@@ -1627,7 +1627,8 @@ var SETDEX_DPP = {
     "UU Attacking Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Crunch","Waterfall","Aqua Jet","Taunt"]},
     "UU Physical Attacker": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Crunch","Earthquake","Substitute"]},
     "UU Special Attacker": {"ability":"Rough Skin","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]},
-    "NU Showdown Usage": {"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Taunt","Aqua Jet","Crunch","Waterfall"]}
+    "NU Special Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Dark Pulse","Ice Beam","Aqua Jet"]},
+    "NU Physical Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Crunch","Aqua Jet","Taunt"]}
   },
   "Wailmer": {
     "LC Choice Scarf": {"level":5,"ability":"Water Veil","item":"Choice Scarf","nature":"Modest","ivs":{"sa":30},"evs":{"hp":36,"df":76,"sa":200,"sp":196},"moves":["Water Spout","Surf","Ice Beam","Hidden Power Electric"]}

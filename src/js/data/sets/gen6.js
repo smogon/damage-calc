@@ -313,7 +313,7 @@ var SETDEX_XY = {
     "PU Autotomize": {"ability":"Weak Armor","item":"Life Orb","nature":"Modest","ivs":{"sa":30,"sd":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Autotomize","Ice Beam","Freeze-Dry","Hidden Power Ground"]},
     "ZU Choice Specs": {"ability":"Weak Armor","item":"Choice Specs","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Hidden Power Ground","Flash Cannon"]},
     "ZU Choice Scarf": {"ability":"Weak Armor","item":"Choice Scarf","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Hidden Power Ground","Flash Cannon"]},
-    "ZU Autotomize": {"ability":"Weak Armor","item":"Life Orb","nature":"Timid","ivs":{"at":1,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Autotomize","Ice Beam","Freeze-Dry","Hidden Power Ground"]}
+    "ZU Autotomize": {"ability":"Weak Armor","item":"Life Orb","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Autotomize","Ice Beam","Freeze-Dry","Hidden Power Ground"]}
   },
   "Deerling": {
     "LC Life Orb": {"level":5,"ability":"Sap Sipper","item":"Life Orb","nature":"Jolly","evs":{"hp":36,"at":196,"df":36,"sp":236},"moves":["Return","Seed Bomb","Jump Kick","Substitute"]}
@@ -4470,7 +4470,7 @@ var SETDEX_XY = {
   "Gogoat": {
     "NU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Horn Leech","Substitute","Earthquake"]},
     "PU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":232,"at":48,"sd":228},"moves":["Bulk Up","Horn Leech","Earthquake","Milk Drink"]},
-    "ZU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":220,"sp":36},"moves":["Bulk Up","Substitute","Horn Leech","Rock Slide"]}
+    "ZU Bulk Up": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":220,"sp":36},"moves":["Bulk Up","Horn Leech","Rock Slide","Substitute"]}
   },
   "Pancham": {
     "LC Pivot": {"level":5,"ability":"Mold Breaker","item":"Eviolite","nature":"Adamant","evs":{"at":180,"df":100,"sd":212,"sp":12},"moves":["Parting Shot","Drain Punch","Knock Off","Gunk Shot"]},
