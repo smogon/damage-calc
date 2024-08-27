@@ -658,7 +658,7 @@ var SETDEX_DPP = {
     "Anything Goes Mixed": {"ability":"Multitype","item":"Stone Plate","nature":"Naive","evs":{"hp":100,"at":100,"df":60,"sa":100,"sd":50,"sp":100},"moves":["Stone Edge","Fire Blast","Grass Knot","Recover"]}
   },
   "Arceus-Steel": {
-    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Iron Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Roar","Recover"]},
+    "Anything Goes Calm Mind": {"ability":"Multitype","item":"Iron Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Judgment","Thunder","Recover"]},
     "Anything Goes Swords Dance": {"ability":"Multitype","item":"Iron Plate","nature":"Jolly","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Swords Dance","Iron Head","Earthquake","Recover"]}
   },
   "Arceus-Water": {
@@ -1562,6 +1562,7 @@ var SETDEX_DPP = {
   },
   "Hariyama": {
     "OU Attacking Lead": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"sd":164,"sp":92},"moves":["Fake Out","Close Combat","Payback","Ice Punch"]},
+    "Ubers Attacking Lead": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":4,"sd":252},"moves":["Fake Out","Close Combat","Payback","Bullet Punch"]},
     "UU All-Out Attacker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":172,"sp":84},"moves":["Close Combat","Payback","Bullet Punch","Fake Out"]},
     "UU RestTalk": {"ability":"Thick Fat","item":"Leftovers","nature":"Impish","evs":{"hp":12,"df":252,"sd":244},"moves":["Rest","Sleep Talk","Force Palm","Whirlwind"]},
     "UU SubPunch": {"ability":"Thick Fat","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":252,"sp":4},"moves":["Substitute","Focus Punch","Payback","Stone Edge"]},
@@ -1626,7 +1627,8 @@ var SETDEX_DPP = {
     "UU Attacking Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Crunch","Waterfall","Aqua Jet","Taunt"]},
     "UU Physical Attacker": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Crunch","Earthquake","Substitute"]},
     "UU Special Attacker": {"ability":"Rough Skin","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]},
-    "NU Showdown Usage": {"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Taunt","Aqua Jet","Crunch","Waterfall"]}
+    "NU Special Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Dark Pulse","Ice Beam","Aqua Jet"]},
+    "NU Physical Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Crunch","Aqua Jet","Taunt"]}
   },
   "Wailmer": {
     "LC Choice Scarf": {"level":5,"ability":"Water Veil","item":"Choice Scarf","nature":"Modest","ivs":{"sa":30},"evs":{"hp":36,"df":76,"sa":200,"sp":196},"moves":["Water Spout","Surf","Ice Beam","Hidden Power Electric"]}

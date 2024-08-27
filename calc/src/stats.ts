@@ -1,4 +1,4 @@
-import {Natures, Generation, TypeName, StatID, StatsTable} from './data/interface';
+import type {Natures, Generation, TypeName, StatID, StatsTable} from './data/interface';
 import {toID} from './util';
 
 const RBY: Array<StatID | 'spc'> = ['hp', 'atk', 'def', 'spc', 'spe'];

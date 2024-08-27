@@ -1,9 +1,9 @@
-import {Generation, AbilityName} from '../data/interface';
+import type {Generation, AbilityName} from '../data/interface';
 import {getItemBoostType, getNaturalGift, getFlingPower, getBerryResistType} from '../items';
-import {RawDesc} from '../desc';
-import {Field} from '../field';
-import {Move} from '../move';
-import {Pokemon} from '../pokemon';
+import type {RawDesc} from '../desc';
+import type {Field} from '../field';
+import type {Move} from '../move';
+import type {Pokemon} from '../pokemon';
 import {Result} from '../result';
 import {
   getModifiedStat,

@@ -1,4 +1,4 @@
-import * as I from './interface';
+import type * as I from './interface';
 
 import {Abilities} from './abilities';
 import {Items} from './items';

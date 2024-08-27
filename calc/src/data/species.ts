@@ -1,5 +1,5 @@
-﻿import * as I from './interface';
-import {toID, extend, DeepPartial, assignWithout} from '../util';
+import type * as I from './interface';
+import {type DeepPartial, toID, extend, assignWithout} from '../util';
 
 export interface SpeciesData {
   readonly types: [I.TypeName] | [I.TypeName, I.TypeName];

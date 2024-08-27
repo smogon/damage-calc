@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import {AbilityName, Terrain, Weather} from '../data/interface';
+import type {AbilityName, Terrain, Weather} from '../data/interface';
 import {inGen, inGens, tests} from './helper';
 
 describe('calc', () => {

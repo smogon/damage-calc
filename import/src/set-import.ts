@@ -414,6 +414,7 @@ function similarFormes(
     break;
   case 'Terapagos':
     similar.formes = ['Terapagos-Stellar', 'Terapagos-Terastal'] as SpeciesName[];
+    similar.abilityChange = true;
     break;
   case 'Sirfetch\'d':
     similar.formes = ['Sirfetch’d'] as SpeciesName[];

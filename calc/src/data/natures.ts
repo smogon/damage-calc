@@ -1,4 +1,4 @@
-import * as I from './interface';
+import type * as I from './interface';
 import {toID} from '../util';
 
 export const NATURES: {[name: string]: [I.StatID, I.StatID]} = {
