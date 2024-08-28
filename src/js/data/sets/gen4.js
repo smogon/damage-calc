@@ -350,8 +350,8 @@ var SETDEX_DPP = {
   "Dusclops": {
     "UU Bulky Spinblocker": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Will-O-Wisp","Rest","Sleep Talk"]},
     "UU Trick Room Support": {"ability":"Pressure","item":"Leftovers","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Seismic Toss","Will-O-Wisp","Pain Split"]},
-    "Doubles OU Trick Room": {"ability":"Pressure","item":"Mail","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":96,"sd":160},"moves":["Trick Room","Rain Dance","Helping Hand","Night Shade"]},
-    "NU Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":248,"at":252,"sd":8},"moves":["Will-O-Wisp","Pain Split","Rest","Seismic Toss"]}
+    "NU Physical Wall": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Will-O-Wisp","Pain Split","Protect"]},
+    "Doubles OU Trick Room": {"ability":"Pressure","item":"Mail","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":96,"sd":160},"moves":["Trick Room","Rain Dance","Helping Hand","Night Shade"]}
   },
   "Regirock": {
     "OU Curse": {"ability":"Clear Body","item":"Chesto Berry","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Rock Slide","Rest","Earthquake"]},
@@ -1992,7 +1992,8 @@ var SETDEX_DPP = {
     "UU Bulk Up": {"ability":"Swift Swim","item":"Life Orb","nature":"Jolly","evs":{"hp":32,"at":252,"df":48,"sp":176},"moves":["Bulk Up","Waterfall","Ice Punch","Return"]},
     "UU Choice Band": {"ability":"Swift Swim","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Ice Punch","Return","Crunch"]},
     "UU Mixed Attacker": {"ability":"Swift Swim","item":"Life Orb","nature":"Rash","evs":{"at":240,"sa":252,"sp":16},"moves":["Rain Dance","Surf","Waterfall","Ice Beam"]},
-    "NU Showdown Usage": {"ability":"Swift Swim","item":"Mystic Water","nature":"Timid","evs":{"df":100,"sa":192,"sp":216},"moves":["Taunt","Waterfall","Ice Punch","Ice Beam"]}
+    "NU Mixed Attacker": {"ability":"Swift Swim","item":"Life Orb","nature":"Naive","evs":{"at":252,"df":4,"sp":252},"moves":["Waterfall","Aqua Jet","Ice Beam","Crunch"]},
+    "NU Bulk Up Passer": {"ability":"Swift Swim","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Bulk Up","Baton Pass","Substitute","Waterfall"]}
   },
   "Cherubi": {
     "LC Sunny Day": {"level":5,"ability":"Chlorophyll","item":"Heat Rock","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":76,"sa":184,"sp":240},"moves":["Sunny Day","Solar Beam","Hidden Power Fire","Growth"]}
