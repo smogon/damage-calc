@@ -61,8 +61,7 @@ var SETDEX_RBY = {
     "NU Swords Dance": {"moves":["Swords Dance","Earthquake","Rock Slide","Body Slam"]},
     "PU Swords Dance": {"moves":["Earthquake","Rock Slide","Swords Dance","Substitute"]},
     "ZU Swords Dance": {"moves":["Earthquake","Rock Slide","Swords Dance","Substitute"]},
-    "UU Showdown Usage": {"moves":["Earthquake","Swords Dance","Rock Slide","Body Slam"]},
-    "Ubers Showdown Usage": {"moves":["Earthquake","Swords Dance","Substitute","Sand Attack"]}
+    "UU Showdown Usage": {"moves":["Earthquake","Swords Dance","Rock Slide","Body Slam"]}
   },
   "Nidoqueen": {
     "NU All-Out Attacker": {"moves":["Earthquake","Thunderbolt","Rock Slide","Blizzard"]},
@@ -107,7 +106,8 @@ var SETDEX_RBY = {
   },
   "Dugtrio": {
     "UU Dugtrio": {"moves":["Earthquake","Rock Slide","Slash","Substitute"]},
-    "UU Physical Attacker": {"moves":["Earthquake","Rock Slide","Slash","Toxic"]}
+    "UU Physical Attacker": {"moves":["Earthquake","Rock Slide","Slash","Toxic"]},
+    "OU Showdown Usage": {"moves":["Earthquake","Slash","Substitute","Sand Attack"]}
   },
   "Persian": {
     "OU Slash": {"moves":["Slash","Hyper Beam","Bubble Beam","Thunderbolt"]},
@@ -423,7 +423,8 @@ var SETDEX_RBY = {
   },
   "Vaporeon": {
     "UU Bulky Special Attacker": {"moves":["Surf","Blizzard","Body Slam","Rest"]},
-    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]}
+    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]},
+    "OU Showdown Usage": {"moves":["Rest","Body Slam","Ice Beam","Acid Armor"]}
   },
   "Jolteon": {
     "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
@@ -443,8 +444,7 @@ var SETDEX_RBY = {
     "NU Conversion": {"moves":["Conversion","Ice Beam","Thunder Wave","Recover"]},
     "PU Agility": {"moves":["Agility","Recover","Psychic","Thunder Wave"]},
     "PU Support": {"moves":["Thunder Wave","Recover","Psychic","Thunderbolt"]},
-    "Tradebacks OU Bulky Support": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
-    "Ubers Showdown Usage": {"moves":["Recover","Reflect","Thunder Wave","Psybeam"]}
+    "Tradebacks OU Bulky Support": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]}
   },
   "Omanyte": {
     "PU Standard": {"moves":["Surf","Blizzard","Body Slam","Rest"]}

@@ -1148,7 +1148,7 @@ var SETDEX_XY = {
     "Ubers Hazard Control": {"ability":"Skill Link","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Rapid Spin","Toxic Spikes","Icicle Spear","Shell Smash"]},
     "UU The Janitor (Shell Smash)": {"ability":"Skill Link","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
     "Battle Spot Singles Smash n' Sweep": {"level":50,"ability":"Skill Link","item":"King's Rock","nature":"Adamant","evs":{"hp":108,"at":252,"df":4,"sd":4,"sp":140},"moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
-    "OU Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Icicle Spear","Shell Smash","Rock Blast","Rapid Spin"]},
+    "OU Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Icicle Spear","Rapid Spin","Rock Blast"]},
     "Anything Goes Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Spear","Shell Smash","Rock Blast","Razor Shell"]},
     "Monotype Showdown Usage": {"ability":"Skill Link","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Spear","Rock Blast","Shell Smash","Ice Shard"]}
   },
@@ -1460,7 +1460,6 @@ var SETDEX_XY = {
   "Snorlax": {
     "UU CurseLax": {"ability":"Thick Fat","item":"Leftovers","nature":"Careful","evs":{"hp":188,"df":144,"sd":176},"moves":["Curse","Return","Rest","Sleep Talk"]},
     "UU Choice Band": {"ability":"Thick Fat","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sd":252},"moves":["Return","Facade","Earthquake","Fire Punch"]},
-    "OU Showdown Usage": {"ability":"Thick Fat","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Rest","Sleep Talk","Return"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Immunity","item":"Custap Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Rest","Body Slam","Belly Drum","Self-Destruct"]}
   },
   "Articuno": {
@@ -1598,6 +1597,7 @@ var SETDEX_XY = {
     "NU Supportive Pivot": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":40,"df":140,"sd":208,"sp":120},"moves":["Scald","Volt Switch","Heal Bell","Toxic"]},
     "NU Choice Specs": {"ability":"Volt Absorb","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":72,"sp":184},"moves":["Hydro Pump","Volt Switch","Ice Beam","Hidden Power Grass"]},
     "Monotype Support (Water)": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":40,"df":216,"sd":252},"moves":["Scald","Heal Bell","Toxic","Volt Switch"]},
+    "OU Showdown Usage": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":148,"df":252,"sd":108},"moves":["Heal Bell","Scald","Protect","Volt Switch"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Water Absorb","item":"Sitrus Berry","nature":"Modest","evs":{"hp":252,"sa":252,"sd":4},"moves":["Surf","Thunder Wave","Dazzling Gleam","Thunderbolt"]}
   },
   "Cleffa": {
@@ -2786,6 +2786,7 @@ var SETDEX_XY = {
   "Latios-Mega": {
     "Pure Hackmons Protean Wallbreaker": {"ability":"Protean","item":"Soul Dew","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Flash Cannon","Grass Knot","Secret Sword","Moonblast"]},
     "Pure Hackmons Shadow Tag": {"ability":"Shadow Tag","item":"Soul Dew","nature":"Modest","evs":{"hp":160,"sa":252,"sp":96},"moves":["Sludge Wave","Grass Knot","Secret Sword","Bug Buzz"]},
+    "OU Showdown Usage": {"ability":"Levitate","item":"Latiosite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Psychic","Recover","Roost"]},
     "Monotype Showdown Usage": {"ability":"Levitate","item":"Latiosite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Draco Meteor","Energy Ball","Thunderbolt"]}
   },
   "Kyogre": {
@@ -3728,8 +3729,7 @@ var SETDEX_XY = {
   "Scolipede": {
     "Ubers Spikes Anti-Lead": {"ability":"Speed Boost","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Pin Missile","Toxic Spikes","Endeavor","Protect"]},
     "Monotype Sweeper (Poison)": {"ability":"Speed Boost","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Megahorn","Protect","Earthquake","Rock Slide"]},
-    "Monotype Choice Band (Poison)": {"ability":"Speed Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Megahorn","Rock Slide","Earthquake","Superpower"]},
-    "OU Showdown Usage": {"ability":"Speed Boost","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sp":252},"moves":["Toxic Spikes","Spikes","Endeavor","Megahorn"]}
+    "Monotype Choice Band (Poison)": {"ability":"Speed Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Megahorn","Rock Slide","Earthquake","Superpower"]}
   },
   "Cottonee": {
     "LC Utility": {"level":5,"ability":"Prankster","item":"Eviolite","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":36,"df":120,"sa":64,"sd":40,"sp":232},"moves":["Encore","Knock Off","Dazzling Gleam","Hidden Power Fighting"]}
