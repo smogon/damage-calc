@@ -232,6 +232,7 @@ function usageToPset(
   const {nature, evs} = fromSpread(top(uset.spreads));
   const item = top(uset.items);
   const ability = top(uset.abilities);
+  const teraType = top(uset.teraTypes);
   const pset: PokemonSet = {
     name: '',
     species: specieName,
@@ -239,6 +240,7 @@ function usageToPset(
     ability: !ability || ability === 'No Ability' ? '' : ability,
     moves: top(uset.moves, 4).filter(m => m !== 'Nothing'),
     nature,
+    teraType: !teraType || teraType === 'Nothing' ? '' : teraType,
     gender: '',
     evs: TeamValidator.fillStats(evs ?? null, gen.num < 3 ? 252 : 0),
     ivs: TeamValidator.fillStats(null, gen.num === 2 ? 30 : 31),
