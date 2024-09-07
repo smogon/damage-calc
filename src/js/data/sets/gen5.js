@@ -68,6 +68,7 @@ var SETDEX_BW = {
     "ZU Special Wall": {"ability":"Magic Guard","item":"Eviolite","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Seismic Toss","Soft-Boiled","Knock Off","Thunder Wave"]}
   },
   "Clefable": {
+    "OU Support": {"ability":"Magic Guard","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":60,"sd":184,"sp":12},"moves":["Thunder Wave","Knock Off","Seismic Toss","Soft-Boiled"]},
     "UU Support": {"ability":"Magic Guard","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Wish","Seismic Toss","Knock Off","Encore"]},
     "UU Life Orb": {"ability":"Magic Guard","item":"Life Orb","nature":"Brave","evs":{"at":252,"df":4,"sa":252},"moves":["Double-Edge","Fire Blast","Grass Knot","Soft-Boiled"]},
     "RU Support": {"ability":"Magic Guard","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Wish","Protect","Seismic Toss","Heal Bell"]},
@@ -75,7 +76,6 @@ var SETDEX_BW = {
     "RU Wallbreaker": {"ability":"Magic Guard","item":"Life Orb","nature":"Brave","evs":{"hp":4,"at":252,"sa":252},"moves":["Double-Edge","Grass Knot","Fire Blast","Soft-Boiled"]},
     "RU Calm Mind": {"ability":"Magic Guard","item":"Life Orb","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Calm Mind","Thunderbolt","Ice Beam","Soft-Boiled"]},
     "Monotype Calm Mind": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":160,"sp":96},"moves":["Calm Mind","Flamethrower","Ice Beam","Soft-Boiled"]},
-    "OU Showdown Usage": {"ability":"Magic Guard","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Soft-Boiled","Thunder Wave","Knock Off","Seismic Toss"]},
     "1v1 Showdown Usage": {"ability":"Magic Guard","item":"Mental Herb","nature":"Calm","evs":{"hp":248,"df":4,"sd":244,"sp":12},"moves":["Soft-Boiled","Encore","Thunder Wave","Seismic Toss"]}
   },
   "Wigglytuff": {
@@ -1536,6 +1536,7 @@ var SETDEX_BW = {
   "Scizor": {
     "OU Offensive Swords Dance": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Bullet Punch","Pursuit","Superpower","Swords Dance"]},
     "OU Choice Scarf": {"ability":"Technician","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Pursuit","Superpower","Bullet Punch"]},
+    "OU Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Bullet Punch","U-turn","Superpower","Pursuit"]},
     "Doubles OU Swords Dance": {"ability":"Technician","item":"Steel Gem","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
     "Monotype Choice Band (Bug)": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":252,"sd":8},"moves":["Bullet Punch","Superpower","Pursuit","U-turn"]},
     "Monotype Swords Dance (Bug)": {"ability":"Technician","item":"Metal Coat","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Bullet Punch","Superpower","Quick Attack"]},
@@ -3065,7 +3066,7 @@ var SETDEX_BW = {
   "Thundurus-Therian": {
     "OU SubsThundy": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":104,"df":144,"sa":48,"sd":4,"sp":208},"moves":["Substitute","Thunder","Hidden Power Ice","Focus Blast"]},
     "OU AgilThundy": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":24,"sa":228,"sd":104,"sp":152},"moves":["Agility","Thunder","Hidden Power Ice","Focus Blast"]},
-    "OU Offensive": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":24,"sa":252,"sd":56,"sp":176},"moves":["Thunder","Hidden Power Ice","Focus Blast","Protect"]},
+    "OU Offensive": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":24,"sa":252,"sd":56,"sp":176},"moves":["Thunder","Hidden Power Ice","Focus Blast","Grass Knot"]},
     "Doubles OU Special Attacker": {"ability":"Volt Absorb","item":"Electric Gem","nature":"Timid","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunder","Hidden Power Flying","Volt Switch","Protect"]},
     "Monotype Nasty Plot (Electric)": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":2,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Focus Blast","Thunderbolt","Hidden Power Ice"]},
     "Monotype Offensive (Flying)": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Agility","Grass Knot","Thunderbolt","Hidden Power Ice"]},

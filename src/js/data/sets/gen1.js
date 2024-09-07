@@ -245,13 +245,12 @@ var SETDEX_RBY = {
   },
   "Cloyster": {
     "OU Standard": {"moves":["Clamp","Blizzard","Rest","Explosion"]},
-    "Ubers Clamp": {"moves":["Clamp","Blizzard","Explosion","Rest"]},
+    "Ubers Physical Tank": {"moves":["Blizzard","Clamp","Explosion","Rest"]},
     "1v1 Standard": {"moves":["Blizzard","Surf","Toxic","Rest"]},
     "Tradebacks OU Standard": {"moves":["Clamp","Explosion","Blizzard","Rest"]}
   },
   "Gastly": {
-    "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]},
-    "PU Offensive Sleeper": {"moves":["Hypnosis","Thunderbolt","Psychic","Substitute"]}
+    "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]}
   },
   "Haunter": {
     "UU Haunter": {"moves":["Thunderbolt","Explosion","Psychic","Night Shade"]},
@@ -476,9 +475,10 @@ var SETDEX_RBY = {
     "Ubers PhysLax (All-out Attacker)": {"moves":["Body Slam","Self-Destruct","Hyper Beam","Earthquake"]},
     "Ubers Reflect": {"moves":["Body Slam","Reflect","Rest","Earthquake"]},
     "1v1 Amnesia Attacker": {"moves":["Body Slam","Hyper Beam","Amnesia","Ice Beam"]},
-    "Tradebacks OU Sleeper": {"moves":["Lovely Kiss","Body Slam","Self-Destruct","Earthquake"]},
-    "Tradebacks OU Reflect": {"moves":["Reflect","Rest","Body Slam","Lovely Kiss"]},
-    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Body Slam","Rest"]}
+    "Tradebacks OU Offensive Sleeper": {"moves":["Lovely Kiss","Body Slam","Earthquake","Self-Destruct"]},
+    "Tradebacks OU Mixed Attacker (Amnesia)": {"moves":["Amnesia","Body Slam","Blizzard","Lovely Kiss"]},
+    "Tradebacks OU Reflect": {"moves":["Body Slam","Reflect","Rest","Earthquake"]},
+    "Tradebacks OU PhysLax (All-Out Attacker)": {"moves":["Body Slam","Hyper Beam","Earthquake","Self-Destruct"]}
   },
   "Articuno": {
     "OU Standard": {"moves":["Blizzard","Agility","Double-Edge","Hyper Beam"]},
