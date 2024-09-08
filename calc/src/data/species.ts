@@ -10021,6 +10021,27 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
+const FFOU: {[name: string]: SpeciesData} = {
+  Alliglacier: {
+    types: ['Ice', 'Water'],
+    bs: {hp: 85, at: 125, df: 110, sa: 65, sd: 85, sp: 75},
+    weightkg: 102,
+    abilities: {0: 'Water Absorb'},
+  },
+  Ascenshine: {
+    types: ['Flying', 'Fairy'],
+    bs: {hp: 102, at: 82, df: 82, sa: 112, sd: 73, sp: 70},
+    weightkg: 8,
+    abilities: {0: 'Soul-Heart'},
+  },
+  Batacomb: {
+    types: ['Ground', 'Flying'],
+    bs: {hp: 100, at: 75, df: 85, sa: 110, sd: 90, sp: 70},
+    weightkg: 8,
+    abilities: {0: 'Regenerator'},
+  },
+}
+
 export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Species implements I.Species {
