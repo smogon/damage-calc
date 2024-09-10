@@ -1739,7 +1739,7 @@ var SETDEX_SS = {
   "Froslass": {
     "Ubers Suicide Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Icy Wind","Spikes","Taunt","Destiny Bond"]},
     "UU Suicide Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Jolly","evs":{"hp":248,"at":8,"sp":252},"moves":["Spikes","Poltergeist","Taunt","Destiny Bond"]},
-    "RU Spikes": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Spikes","Taunt","Icy Wind","Destiny Bond"]},
+    "RU Spikes": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Spikes","Taunt","Icy Wind","Destiny Bond"]},
     "NU Dedicated Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Thunder Wave","Icy Wind"]},
     "PU Choice Band": {"ability":"Cursed Body","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Poltergeist","Triple Axel","Trick","Spikes"]},
     "PU Spikes": {"ability":"Cursed Body","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Spikes","Taunt","Ice Beam","Shadow Ball"]},

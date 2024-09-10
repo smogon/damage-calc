@@ -220,7 +220,7 @@ var SETDEX_SM = {
     "Anything Goes Showdown Usage": {"ability":"Electric Surge","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dazzling Gleam","Volt Switch","Thunderbolt","U-turn"]}
   },
   "Tapu Lele": {
-    "OU Choice Specs": {"ability":"Psychic Surge","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Psyshock","Hidden Power Fire"]},
+    "OU Choice Specs": {"ability":"Psychic Surge","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Psyshock","Hidden Power Fire"]},
     "OU 3 Attacks": {"ability":"Psychic Surge","item":"Fightinium Z","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Moonblast","Focus Blast","Calm Mind"]},
     "OU Choice Scarf": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Hidden Power Fire","Focus Blast"]},
     "Ubers Psychic Terrain Support": {"ability":"Psychic Surge","item":"Terrain Extender","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Moonblast","Nature's Madness","Taunt"]},
@@ -2686,7 +2686,7 @@ var SETDEX_SM = {
     "LC Z-Splash": {"level":5,"ability":"Limber","item":"Normalium Z","nature":"Jolly","evs":{"at":228,"df":4,"sp":236},"moves":["Splash","Return","Drain Punch","Fire Punch"]}
   },
   "Lopunny": {
-    "OU All-out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Fake Out","Ice Punch"]},
+    "OU All-out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Frustration","High Jump Kick","Ice Punch"]},
     "OU PuP + Encore": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Power-Up Punch","Encore"]},
     "Ubers Healing Wish": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Healing Wish"]},
     "PU Switcheroo": {"ability":"Klutz","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Switcheroo","Return","High Jump Kick","Healing Wish"]},
@@ -2698,7 +2698,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Cute Charm","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","High Jump Kick","Return","Ice Punch"]}
   },
   "Lopunny-Mega": {
-    "OU All-out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Fake Out","Ice Punch"]},
+    "OU All-out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","Frustration","High Jump Kick","Ice Punch"]},
     "OU PuP + Encore": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Frustration","High Jump Kick","Power-Up Punch","Encore"]},
     "Ubers Healing Wish": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Return","High Jump Kick","Healing Wish"]},
     "VGC 2019 Offensive": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","High Jump Kick","Return","After You"]},

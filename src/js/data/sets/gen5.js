@@ -2213,7 +2213,8 @@ var SETDEX_BW = {
     "LC Support": {"level":5,"ability":"Limber","item":"Eviolite","nature":"Jolly","evs":{"hp":96,"at":148,"df":96,"sp":156},"moves":["Encore","Circle Throw","Healing Wish","Ice Punch"]}
   },
   "Lopunny": {
-    "NU Klutz": {"ability":"Klutz","item":"Choice Scarf","nature":"Jolly","evs":{"hp":248,"sd":8,"sp":252},"moves":["Switcheroo","Encore","Healing Wish","Baton Pass"]}
+    "NU Klutz": {"ability":"Klutz","item":"Choice Scarf","nature":"Jolly","evs":{"hp":248,"sd":8,"sp":252},"moves":["Switcheroo","Encore","Healing Wish","Baton Pass"]},
+    "ZU Fast Attacker": {"ability":"Limber","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Return","Jump Kick","Toxic","Fire Punch"]}
   },
   "Mismagius": {
     "UU Nasty Plot": {"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Nasty Plot","Shadow Ball","Hidden Power Fighting","Thunderbolt"]},

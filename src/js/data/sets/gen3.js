@@ -369,8 +369,7 @@ var SETDEX_ADV = {
   },
   "Magcargo": {
     "NU Specially Defensive": {"ability":"Flame Body","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Flamethrower","Toxic","Rest","Sleep Talk"]},
-    "PU Offensive Tank": {"ability":"Flame Body","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":200,"sa":136,"sp":172},"moves":["Flamethrower","Hidden Power Grass","Toxic","Refresh"]},
-    "PU Defensive": {"ability":"Flame Body","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"at":4,"df":252},"moves":["Flamethrower","Earthquake","Toxic","Protect"]}
+    "PU Offensive Tank": {"ability":"Flame Body","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":200,"sa":136,"sp":172},"moves":["Flamethrower","Hidden Power Grass","Toxic","Refresh"]}
   },
   "Corsola": {
     "NU Special Attacker": {"ability":"Natural Cure","item":"Leftovers","nature":"Modest","evs":{"df":136,"sa":252,"sd":120},"moves":["Recover","Surf","Ice Beam","Toxic"]},
@@ -1292,7 +1291,7 @@ var SETDEX_ADV = {
     "NU Mixed Wallbreaker": {"ability":"Shed Skin","item":"Leftovers","nature":"Naughty","ivs":{"at":30,"sa":30},"evs":{"at":252,"sa":112,"sp":144},"moves":["Sludge Bomb","Earthquake","Flamethrower","Hidden Power Grass"]},
     "NU Special Attacker": {"ability":"Shed Skin","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sp":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Flamethrower","Giga Drain","Crunch","Hidden Power Psychic"]},
     "NU Choice Band": {"ability":"Shed Skin","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Sludge Bomb","Earthquake","Hidden Power Ghost","Iron Tail"]},
-    "PU Mixed Offensive": {"ability":"Shed Skin","item":"Leftovers","nature":"Naive","evs":{"at":212,"sa":44,"sp":252},"moves":["Sludge Bomb","Earthquake","Giga Drain","Flamethrower"]}
+    "PU Mixed Offensive": {"ability":"Shed Skin","item":"Leftovers","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Sludge Bomb","Earthquake","Giga Drain","Flamethrower"]}
   },
   "Whiscash": {
     "NU Physically Defensive": {"ability":"Oblivious","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","Ice Beam","Rest","Sleep Talk"]},
