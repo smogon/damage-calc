@@ -839,7 +839,8 @@ var SETDEX_SS = {
     "ZU Swords Dance": {"ability":"Intimidate","item":"Black Sludge","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Liquidation","Poison Jab","Aqua Jet"]}
   },
   "Scizor": {
-    "OU Bulky Swords Dance": {"ability":"Technician","item":"Heavy-Duty Boots","nature":"Impish","evs":{"hp":248,"df":172,"sd":88},"moves":["Swords Dance","Bullet Punch","Knock Off","Roost"]},
+    "OU Bulky Swords Dance": {"ability":"Technician","item":"Heavy-Duty Boots","nature":"Careful","evs":{"hp":248,"at":12,"df":100,"sd":148},"moves":["Swords Dance","Bullet Punch","Knock Off","Roost"]},
+    "OU Defensive Pivot": {"ability":"Technician","item":"Heavy-Duty Boots","nature":"Careful","evs":{"hp":248,"df":20,"sd":240},"moves":["Bullet Punch","Knock Off","U-turn","Roost"]},
     "OU Offensive Swords Dance": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Bullet Punch","Knock Off","Sand Tomb"]},
     "UU 3 Attacks + Roost": {"ability":"Technician","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"hp":248,"at":16,"df":104,"sd":140},"moves":["Bullet Punch","U-turn","Knock Off","Roost"]},
     "UU Bulky Swords Dance": {"ability":"Technician","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"hp":248,"at":16,"df":244},"moves":["Swords Dance","Bullet Punch","Knock Off","Roost"]},

@@ -273,7 +273,7 @@ var SETDEX_BW = {
   "Exploud": {
     "NU Wallbreaker": {"ability":"Scrappy","item":"Life Orb","nature":"Naive","evs":{"at":68,"sa":252,"sp":188},"moves":["Hyper Voice","Surf","Fire Blast","Low Kick"]},
     "ZU Special Attacker": {"ability":"Scrappy","item":"Life Orb","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Surf","Fire Blast","Focus Blast"]},
-    "ZU Choice Band": {"ability":"Scrappy","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Return","Low Kick","Crunch","Earthquake"]}
+    "ZU Choice Band": {"ability":"Scrappy","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Return","Low Kick","Crunch","Fire Punch"]}
   },
   "Azurill": {
     "LC Trick Room Sweeper": {"level":5,"ability":"Huge Power","item":"Life Orb","nature":"Brave","ivs":{"sp":0},"evs":{"hp":116,"at":196,"df":36,"sd":116},"moves":["Waterfall","Return","Encore","Substitute"]}
@@ -513,7 +513,7 @@ var SETDEX_BW = {
     "NU Trick Room": {"ability":"Flash Fire","item":"Life Orb","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sa":252},"moves":["Trick Room","Fire Blast","Shadow Ball","Energy Ball"]},
     "ZU Calm Mind": {"ability":"Flash Fire","item":"Eviolite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Substitute","Shadow Ball","Fire Blast"]},
     "ZU Choice Specs": {"ability":"Flash Fire","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Fire Blast","Energy Ball","Trick"]},
-    "ZU Stallbreaker": {"ability":"Flash Fire","item":"Eviolite","nature":"Timid","evs":{"hp":184,"sa":72,"sp":252},"moves":["Taunt","Will-O-Wisp","Shadow Ball","Fire Blast"]},
+    "ZU Stallbreaker": {"ability":"Flash Fire","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Shadow Ball","Calm Mind","Substitute"]},
     "PU Showdown Usage": {"ability":"Flash Fire","item":"Eviolite","nature":"Calm","evs":{"hp":248,"sa":8,"sd":252},"moves":["Flamethrower","Night Shade","Protect","Will-O-Wisp"]}
   },
   "Chandelure": {
