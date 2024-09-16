@@ -198,7 +198,7 @@ var SETDEX_SM = {
     "OU Choice Specs": {"ability":"Electric Surge","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Dazzling Gleam","Volt Switch","Hidden Power Ice"]},
     "OU Calm Mind": {"ability":"Electric Surge","item":"Fairium Z","nature":"Timid","evs":{"hp":8,"df":4,"sa":244,"sp":252},"moves":["Thunderbolt","Dazzling Gleam","Calm Mind","Roost"]},
     "OU Physical Z-Move": {"ability":"Electric Surge","item":"Electrium Z","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Wild Charge","Hidden Power Ice","U-turn","Roost"]},
-    "OU Shuca Pivot": {"ability":"Electric Surge","item":"Shuca Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","U-turn","Roost"]},
+    "OU Offensive Pivot": {"ability":"Electric Surge","item":"Life Orb","nature":"Timid","evs":{"hp":8,"df":4,"sa":244,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Volt Switch","Roost"]},
     "Ubers Dual Screens": {"ability":"Electric Surge","item":"Light Clay","nature":"Jolly","evs":{"hp":248,"df":8,"sp":252},"moves":["Reflect","Light Screen","Taunt","U-turn"]},
     "Ubers Offensive Utility": {"ability":"Electric Surge","item":"Electrium Z","nature":"Timid","evs":{"df":8,"sa":248,"sp":252},"moves":["Thunder","Taunt","U-turn","Nature's Madness"]},
     "Doubles OU Special Attacker": {"ability":"Electric Surge","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Dazzling Gleam","Volt Switch","Protect"]},
@@ -3421,7 +3421,6 @@ var SETDEX_SM = {
     "LC Choice Scarf": {"level":5,"ability":"Moxie","item":"Choice Scarf","nature":"Adamant","evs":{"at":180,"df":76,"sp":236},"moves":["Earthquake","Crunch","Fire Fang","Pursuit"]}
   },
   "Krookodile": {
-    "OU Choice Scarf": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Pursuit","Earthquake","Knock Off","Foul Play"]},
     "UU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Earthquake","Pursuit","Stone Edge"]},
     "UU Stealth Rock": {"ability":"Intimidate","item":"Iapapa Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Knock Off","Earthquake","Taunt"]},
     "Monotype Focus Sash Lead (Dark)": {"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Taunt","Knock Off","Earthquake"]},

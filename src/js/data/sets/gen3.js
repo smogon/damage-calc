@@ -685,7 +685,7 @@ var SETDEX_ADV = {
     "NU Choice Band": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Naughty","ivs":{"df":30,"sd":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Double-Edge","Hidden Power Ghost","Surf","Blizzard"]},
     "NU Flail": {"ability":"Hyper Cutter","item":"Salac Berry","nature":"Naughty","ivs":{"df":30,"sd":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Endure","Flail","Hidden Power Ghost","Swords Dance"]},
     "NU Defensive": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":180,"sp":72},"moves":["Body Slam","Knock Off","Toxic","Surf"]},
-    "PU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Swords Dance","Double-Edge","Hidden Power Ghost","Mud Shot"]}
+    "PU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Double-Edge","Hidden Power Ghost","Mud Shot"]}
   },
   "Voltorb": {
     "NU Suicide Rain Lead": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Thunder","Light Screen","Explosion"]},
@@ -1375,7 +1375,7 @@ var SETDEX_ADV = {
     "OU Special Sweeper": {"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Modest","ivs":{"sa":30},"evs":{"hp":252,"sa":252,"sp":4},"moves":["Surf","Ice Beam","Hidden Power Electric","Toxic"]},
     "OU Staller": {"ability":"Shell Armor","item":"Deep Sea Scale","nature":"Bold","evs":{"hp":252,"df":4,"sd":252},"moves":["Barrier","Rest","Sleep Talk","Toxic"]},
     "PU Offensive": {"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"sa":252,"sp":4},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]},
-    "ZU Wallbreaker": {"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"hp":136,"sa":252,"sp":120},"moves":["Surf","Hidden Power Grass","Ice Beam","Substitute"]}
+    "ZU Wallbreaker": {"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":216,"sa":220,"sp":72},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]}
   },
   "Huntail": {
     "NU Swift Swim Sweeper": {"ability":"Swift Swim","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Rain Dance","Hydro Pump","Ice Beam","Hidden Power Grass"]},
