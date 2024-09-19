@@ -30,7 +30,7 @@ var SETDEX_DPP = {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Shadow Ball","Hidden Power Ice","Trick"]},
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Thunderbolt","Will-O-Wisp"]},
     "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]},
-    "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Thunder Wave","Protect"]}
+    "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Will-O-Wisp","Protect"]}
   },
   "Rotom-Mow": {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Leaf Storm","Shadow Ball","Trick"]},
@@ -745,7 +745,7 @@ var SETDEX_DPP = {
     "OU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"df":112,"sa":48,"sd":80,"sp":16},"moves":["Calm Mind","Psychic","Hidden Power Fire","Rest"]},
     "Ubers Wall": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"df":252,"sd":4},"moves":["Ice Beam","Moonlight","Thunder Wave","Hidden Power Fire"]},
     "Ubers Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":24,"sp":232},"moves":["Light Screen","Reflect","Lunar Dance","Thunder Wave"]},
-    "Doubles OU Utility": {"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":176,"sd":80},"moves":["Psychic","Thunder Wave","Helping Hand","Trick Room"]}
+    "Doubles OU Utility": {"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":176,"sd":80},"moves":["Psychic","Toxic","Helping Hand","Trick Room"]}
   },
   "Weedle": {
     "LC Soon to be Kakuna": {"level":5,"ability":"Shield Dust","item":"Life Orb","nature":"Adamant","evs":{"hp":196,"at":236,"df":36,"sp":36},"moves":["Bug Bite","Poison Sting","String Shot"]}
@@ -1903,11 +1903,11 @@ var SETDEX_DPP = {
     "Anything Goes Showdown Usage": {"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunder","Ice Beam","Surf","Water Spout"]}
   },
   "Groudon": {
-    "Ubers Rock Polish": {"ability":"Drought","item":"Life Orb","nature":"Adamant","evs":{"hp":112,"at":252,"df":8,"sp":136},"moves":["Rock Polish","Earthquake","Fire Punch","Dragon Claw"]},
     "Ubers Support": {"ability":"Drought","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":4,"sd":252},"moves":["Stealth Rock","Earthquake","Dragon Claw","Lava Plume"]},
+    "Ubers Bulky Setup": {"ability":"Drought","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":16,"sd":104,"sp":136},"moves":["Rock Polish","Swords Dance","Earthquake","Dragon Claw"]},
+    "Ubers Offensive Rock Polish": {"ability":"Drought","item":"Life Orb","nature":"Adamant","evs":{"hp":112,"at":252,"df":8,"sp":136},"moves":["Rock Polish","Earthquake","Fire Punch","Dragon Claw"]},
     "Ubers Thunder Wave + Swords Dance": {"ability":"Drought","item":"Leftovers","nature":"Adamant","evs":{"hp":200,"at":200,"df":108},"moves":["Thunder Wave","Swords Dance","Earthquake","Stone Edge"]},
     "Ubers Choice Band": {"ability":"Drought","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":224,"df":32},"moves":["Earthquake","Stone Edge","Dragon Claw","Fire Punch"]},
-    "Ubers Bulky Rock Polish": {"ability":"Drought","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":200,"sp":56},"moves":["Rock Polish","Swords Dance","Earthquake","Dragon Claw"]},
     "Anything Goes Showdown Usage": {"ability":"Drought","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":44,"sd":212},"moves":["Earthquake","Stealth Rock","Roar","Toxic"]}
   },
   "Rayquaza": {
