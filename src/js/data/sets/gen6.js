@@ -2438,20 +2438,20 @@ var SETDEX_XY = {
   },
   "Camerupt": {
     "UU Wallbreaker": {"ability":"Solid Rock","item":"Cameruptite","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":4,"sa":252},"moves":["Fire Blast","Earth Power","Ancient Power","Hidden Power Grass"]},
-    "RU Tank": {"ability":"Solid Rock","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":176,"sp":84},"moves":["Fire Blast","Earth Power","Stealth Rock","Toxic"]},
     "NU Defensive": {"ability":"Solid Rock","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Stealth Rock","Lava Plume","Earthquake","Toxic"]},
     "NU Choice Specs": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","ivs":{"sa":30},"evs":{"hp":140,"sa":252,"sp":116},"moves":["Fire Blast","Earth Power","Lava Plume","Hidden Power Electric"]},
     "PU Choice Specs": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Eruption","Fire Blast","Earth Power","Hidden Power Ice"]},
     "PU Specially Defensive": {"ability":"Solid Rock","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Stealth Rock","Fire Blast","Earth Power","Protect"]},
     "Battle Spot Doubles Standard": {"level":50,"ability":"Solid Rock","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Heat Wave","Earth Power","Hidden Power Ice","Protect"]},
     "Doubles OU Showdown Usage": {"ability":"Magma Armor","item":"Cameruptite","nature":"Quiet","evs":{"hp":248,"sa":252,"sd":8},"moves":["Earth Power","Protect","Heat Wave","Ancient Power"]},
+    "RU Showdown Usage": {"ability":"Magma Armor","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":252,"sd":8},"moves":["Earth Power","Fire Blast","Stealth Rock","Ancient Power"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Magma Armor","item":"Cameruptite","nature":"Quiet","evs":{"df":132,"sa":252,"sd":120},"moves":["Protect","Heat Wave","Flamethrower","Earth Power"]}
   },
   "Camerupt-Mega": {
     "UU Wallbreaker": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":4,"sa":252},"moves":["Fire Blast","Earth Power","Ancient Power","Hidden Power Grass"]},
-    "RU Tank": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":176,"sp":84},"moves":["Fire Blast","Earth Power","Stealth Rock","Toxic"]},
     "Battle Spot Doubles Standard": {"level":50,"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Heat Wave","Earth Power","Hidden Power Ice","Protect"]},
     "Doubles OU Showdown Usage": {"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","evs":{"hp":248,"sa":252,"sd":8},"moves":["Earth Power","Protect","Heat Wave","Ancient Power"]},
+    "RU Showdown Usage": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":252,"sd":8},"moves":["Earth Power","Fire Blast","Stealth Rock","Ancient Power"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","evs":{"df":132,"sa":252,"sd":120},"moves":["Protect","Heat Wave","Flamethrower","Earth Power"]}
   },
   "Grumpig": {
@@ -2574,17 +2574,17 @@ var SETDEX_XY = {
   },
   "Banette": {
     "UU Prankster": {"ability":"Frisk","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Taunt","Will-O-Wisp","Shadow Claw","Destiny Bond"]},
-    "RU Offensive": {"ability":"Insomnia","item":"Banettite","nature":"Adamant","evs":{"hp":228,"at":252,"sp":28},"moves":["Knock Off","Will-O-Wisp","Shadow Claw","Shadow Sneak"]},
     "PU Offensive Utility": {"ability":"Insomnia","item":"Life Orb","nature":"Naughty","evs":{"at":248,"sa":40,"sp":220},"moves":["Shadow Claw","Sucker Punch","Dazzling Gleam","Knock Off"]},
     "ZU Choice Band": {"ability":"Insomnia","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Shadow Sneak","Shadow Claw","Sucker Punch"]},
     "ZU Mixed Wallbreaker": {"ability":"Insomnia","item":"Life Orb","nature":"Naughty","evs":{"at":252,"sa":160,"sp":96},"moves":["Knock Off","Sucker Punch","Gunk Shot","Dazzling Gleam"]},
     "Doubles OU Showdown Usage": {"ability":"Insomnia","item":"Banettite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Disable","Protect","Shadow Claw","Gunk Shot"]},
+    "RU Showdown Usage": {"ability":"Insomnia","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Will-O-Wisp","Knock Off","Destiny Bond","Shadow Sneak"]},
     "Monotype Showdown Usage": {"ability":"Insomnia","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Shadow Claw","Sucker Punch","Protect","Destiny Bond"]}
   },
   "Banette-Mega": {
     "UU Prankster": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Taunt","Will-O-Wisp","Shadow Claw","Destiny Bond"]},
-    "RU Offensive": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":228,"at":252,"sp":28},"moves":["Knock Off","Will-O-Wisp","Shadow Claw","Shadow Sneak"]},
     "Doubles OU Showdown Usage": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Disable","Protect","Shadow Claw","Gunk Shot"]},
+    "RU Showdown Usage": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Will-O-Wisp","Knock Off","Destiny Bond","Shadow Sneak"]},
     "Monotype Showdown Usage": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Shadow Claw","Sucker Punch","Protect","Destiny Bond"]}
   },
   "Duskull": {
@@ -2621,16 +2621,16 @@ var SETDEX_XY = {
   },
   "Glalie": {
     "UU Wrecking Ball": {"ability":"Ice Body","item":"Glalitite","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Double-Edge","Explosion","Super Fang","Freeze-Dry"]},
-    "RU Wallbreaker": {"ability":"Inner Focus","item":"Glalitite","nature":"Naive","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Freeze-Dry","Ice Shard","Spikes"]},
     "PU Spikes Lead": {"ability":"Inner Focus","item":"Focus Sash","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Spikes","Taunt","Explosion","Freeze-Dry"]},
     "Battle Spot Singles Welcome to Crystal Lake (Moody Booster)": {"level":50,"ability":"Moody","item":"Leftovers","nature":"Timid","evs":{"hp":172,"sd":84,"sp":252},"moves":["Protect","Substitute","Sheer Cold","Frost Breath"]},
     "ZU Offensive Spikes": {"ability":"Inner Focus","item":"Never-Melt Ice","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Ice Beam","Taunt","Freeze-Dry"]},
     "ZU Suicide Lead": {"ability":"Inner Focus","item":"Focus Sash","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Spikes","Taunt","Explosion","Freeze-Dry"]},
+    "RU Showdown Usage": {"ability":"Inner Focus","item":"Glalitite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Ice Shard","Freeze-Dry","Earthquake","Double-Edge"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Inner Focus","item":"Glalitite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":248},"moves":["Explosion","Protect","Earthquake","Frustration"]}
   },
   "Glalie-Mega": {
     "UU Wrecking Ball": {"ability":"Refrigerate","item":"Glalitite","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Double-Edge","Explosion","Super Fang","Freeze-Dry"]},
-    "RU Wallbreaker": {"ability":"Refrigerate","item":"Glalitite","nature":"Naive","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Freeze-Dry","Ice Shard","Spikes"]},
+    "RU Showdown Usage": {"ability":"Refrigerate","item":"Glalitite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Ice Shard","Freeze-Dry","Earthquake","Double-Edge"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Refrigerate","item":"Glalitite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":248},"moves":["Explosion","Protect","Earthquake","Frustration"]}
   },
   "Walrein": {

@@ -411,18 +411,18 @@ var SETDEX_SM = {
   },
   "Blastoise": {
     "UU Offensive Wallbreaker": {"ability":"Rain Dish","item":"Blastoisinite","nature":"Modest","evs":{"hp":104,"sa":252,"sp":152},"moves":["Water Pulse","Dark Pulse","Aura Sphere","Ice Beam"]},
-    "RU Offensive Spinner": {"ability":"Rain Dish","item":"Blastoisinite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Rapid Spin","Dark Pulse","Aura Sphere","Ice Beam"]},
     "NU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":60,"sp":196},"moves":["Scald","Toxic","Rapid Spin","Refresh"]},
     "Battle Spot Singles Mega Tank": {"level":50,"ability":"Torrent","item":"Blastoisinite","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Water Pulse","Ice Beam","Aura Sphere","Aqua Jet"]},
     "1v1 Bulky Special Attacker": {"ability":"Torrent","item":"Blastoisinite","nature":"Modest","evs":{"hp":216,"sa":136,"sd":44,"sp":112},"moves":["Fake Out","Hydro Cannon","Rock Tomb","Dragon Pulse"]},
+    "RU Showdown Usage": {"ability":"Torrent","item":"Blastoisinite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dark Pulse","Ice Beam","Aura Sphere","Rapid Spin"]},
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Rain Dish","item":"Waterium Z","nature":"Modest","evs":{"hp":252,"df":4,"sa":236,"sd":4,"sp":12},"moves":["Fake Out","Water Spout","Icy Wind","Roar"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Torrent","item":"Blastoisinite","nature":"Quiet","evs":{"hp":252,"df":4,"sa":252},"moves":["Protect","Water Pulse","Water Spout","Dark Pulse"]}
   },
   "Blastoise-Mega": {
     "UU Offensive Wallbreaker": {"ability":"Mega Launcher","item":"Blastoisinite","nature":"Modest","evs":{"hp":104,"sa":252,"sp":152},"moves":["Water Pulse","Dark Pulse","Aura Sphere","Ice Beam"]},
-    "RU Offensive Spinner": {"ability":"Mega Launcher","item":"Blastoisinite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Rapid Spin","Dark Pulse","Aura Sphere","Ice Beam"]},
     "Battle Spot Singles Mega Tank": {"level":50,"ability":"Mega Launcher","item":"Blastoisinite","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Water Pulse","Ice Beam","Aura Sphere","Aqua Jet"]},
     "1v1 Bulky Special Attacker": {"ability":"Mega Launcher","item":"Blastoisinite","nature":"Modest","evs":{"hp":216,"sa":136,"sd":44,"sp":112},"moves":["Fake Out","Hydro Cannon","Rock Tomb","Dragon Pulse"]},
+    "RU Showdown Usage": {"ability":"Mega Launcher","item":"Blastoisinite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dark Pulse","Ice Beam","Aura Sphere","Rapid Spin"]},
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Mega Launcher","item":"Blastoisinite","nature":"Modest","evs":{"hp":220,"df":4,"sa":252,"sp":28},"moves":["Fake Out","Aura Sphere","Dark Pulse","Water Spout"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Mega Launcher","item":"Blastoisinite","nature":"Quiet","evs":{"hp":252,"df":4,"sa":252},"moves":["Protect","Water Pulse","Water Spout","Dark Pulse"]}
   },
@@ -1331,14 +1331,14 @@ var SETDEX_SM = {
     "LC Dual Screens": {"level":5,"ability":"Static","item":"Eviolite","nature":"Bold","evs":{"df":196,"sa":76,"sd":236},"moves":["Reflect","Light Screen","Heal Bell","Thunderbolt"]}
   },
   "Ampharos": {
-    "RU Special Attacker": {"ability":"Static","item":"Ampharosite","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Volt Switch","Dragon Pulse","Focus Blast","Thunderbolt"]},
     "PU Cleric": {"ability":"Static","item":"Leftovers","nature":"Modest","evs":{"hp":184,"sa":252,"sp":72},"moves":["Thunderbolt","Focus Blast","Hidden Power Ice","Heal Bell"]},
     "1v1 Bulky Offense": {"ability":"Static","item":"Ampharosite","nature":"Calm","evs":{"hp":248,"df":136,"sd":124},"moves":["Cotton Guard","Thunderbolt","Eerie Impulse","Rest"]},
+    "RU Showdown Usage": {"ability":"Static","item":"Ampharosite","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Pulse","Thunderbolt","Focus Blast","Volt Switch"]},
     "ZU Showdown Usage": {"ability":"Static","item":"Assault Vest","nature":"Modest","evs":{"hp":184,"sa":252,"sp":72},"moves":["Focus Blast","Thunderbolt","Volt Switch","Hidden Power Ice"]}
   },
   "Ampharos-Mega": {
-    "RU Special Attacker": {"ability":"Mold Breaker","item":"Ampharosite","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Volt Switch","Dragon Pulse","Focus Blast","Thunderbolt"]},
-    "1v1 Bulky Offense": {"ability":"Mold Breaker","item":"Ampharosite","nature":"Calm","evs":{"hp":248,"df":136,"sd":124},"moves":["Cotton Guard","Thunderbolt","Eerie Impulse","Rest"]}
+    "1v1 Bulky Offense": {"ability":"Mold Breaker","item":"Ampharosite","nature":"Calm","evs":{"hp":248,"df":136,"sd":124},"moves":["Cotton Guard","Thunderbolt","Eerie Impulse","Rest"]},
+    "RU Showdown Usage": {"ability":"Mold Breaker","item":"Ampharosite","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Pulse","Thunderbolt","Focus Blast","Volt Switch"]}
   },
   "Bellossom": {
     "PU Bulky Quiver Dance": {"ability":"Chlorophyll","item":"Grassium Z","nature":"Timid","evs":{"hp":248,"df":8,"sp":252},"moves":["Strength Sap","Quiver Dance","Giga Drain","Moonblast"]},
@@ -1762,17 +1762,17 @@ var SETDEX_SM = {
   },
   "Sceptile": {
     "UU All-out Attacker": {"ability":"Overgrow","item":"Sceptilite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Earthquake","Hidden Power Fire"]},
-    "RU Leech Seed + Protect": {"ability":"Overgrow","item":"Sceptilite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Protect","Leech Seed"]},
     "NU All-out Attacker": {"ability":"Overgrow","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Leaf Storm","Giga Drain","Focus Blast","Hidden Power Ice"]},
     "1v1 Offensive": {"ability":"Overgrow","item":"Sceptilite","nature":"Timid","evs":{"hp":16,"sa":252,"sp":240},"moves":["Frenzy Plant","Dragon Pulse","Substitute","Leech Seed"]},
     "1v1 Substitute + Overgrow": {"ability":"Overgrow","item":"Petaya Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Frenzy Plant","Focus Blast","Hidden Power Fire"]},
+    "RU Showdown Usage": {"ability":"Overgrow","item":"Sceptilite","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Dragon Pulse","Leaf Storm","Leech Seed","Protect"]},
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Overgrow","item":"Sceptilite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Energy Ball","Detect","Leech Seed"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Overgrow","item":"Sceptilite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Energy Ball","Protect","Hidden Power Ice"]}
   },
   "Sceptile-Mega": {
     "UU All-out Attacker": {"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Earthquake","Hidden Power Fire"]},
-    "RU Leech Seed + Protect": {"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Leaf Storm","Dragon Pulse","Protect","Leech Seed"]},
     "1v1 Offensive": {"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","evs":{"hp":16,"sa":252,"sp":240},"moves":["Frenzy Plant","Dragon Pulse","Substitute","Leech Seed"]},
+    "RU Showdown Usage": {"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Dragon Pulse","Leaf Storm","Leech Seed","Protect"]},
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Energy Ball","Detect","Leech Seed"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Lightning Rod","item":"Sceptilite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Energy Ball","Protect","Hidden Power Ice"]}
   },
@@ -2232,11 +2232,8 @@ var SETDEX_SM = {
     "LC Trick Room Utility": {"level":5,"ability":"Frisk","item":"Focus Sash","nature":"Brave","ivs":{"sp":0},"evs":{"hp":4,"at":236,"df":156,"sd":92},"moves":["Trick Room","Knock Off","Shadow Sneak","Destiny Bond"]}
   },
   "Banette": {
-    "RU Offensive": {"ability":"Frisk","item":"Banettite","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Destiny Bond","Shadow Claw","Gunk Shot","Taunt"]},
-    "PU Offensive": {"ability":"Insomnia","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Shadow Claw","Knock Off","Will-O-Wisp","Sucker Punch"]}
-  },
-  "Banette-Mega": {
-    "RU Offensive": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Destiny Bond","Shadow Claw","Gunk Shot","Taunt"]}
+    "PU Offensive": {"ability":"Insomnia","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Shadow Claw","Knock Off","Will-O-Wisp","Sucker Punch"]},
+    "RU Showdown Usage": {"ability":"Insomnia","item":"Banettite","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Destiny Bond","Shadow Sneak","Will-O-Wisp","Shadow Claw"]}
   },
   "Duskull": {
     "LC Bulky Utility": {"level":5,"ability":"Levitate","item":"Eviolite","nature":"Relaxed","evs":{"hp":196,"df":196,"sd":116},"moves":["Pain Split","Will-O-Wisp","Substitute","Shadow Sneak"]}
@@ -4316,7 +4313,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Magician","item":"Choice Scarf","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Hyperspace Fury","Focus Blast","Dark Pulse","Psyshock"]}
   },
   "Volcanion": {
-    "OU Substitute": {"ability":"Water Absorb","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Substitute","Steam Eruption","Flamethrower","Earth Power"]},
+    "OU Assault Vest": {"ability":"Water Absorb","item":"Assault Vest","nature":"Relaxed","evs":{"hp":248,"at":8,"df":96,"sa":28,"sp":128},"moves":["Steam Eruption","Flamethrower","Sludge Bomb","Explosion"]},
     "UU Defog": {"ability":"Water Absorb","item":"Shuca Berry","nature":"Modest","evs":{"hp":40,"sa":252,"sp":216},"moves":["Defog","Steam Eruption","Flamethrower","Sludge Bomb"]},
     "UU Choice Specs": {"ability":"Water Absorb","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Steam Eruption","Fire Blast","Earth Power","Sludge Bomb"]},
     "UU Toxic": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":248,"sa":44,"sp":216},"moves":["Steam Eruption","Flamethrower","Toxic","Protect"]},
@@ -4976,6 +4973,9 @@ var SETDEX_SM = {
   },
   "Equilibra": {
     "CAP Equilibra": {"ability":"Bulletproof","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":60,"sa":68,"sd":84,"sp":44},"moves":["Doom Desire","Earth Power","Rapid Spin","Pain Split"]}
+  },
+  "Banette-Mega": {
+    "RU Showdown Usage": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Destiny Bond","Shadow Sneak","Will-O-Wisp","Shadow Claw"]}
   },
   "Murkrow": {
     "Doubles OU Showdown Usage": {"ability":"Prankster","item":"Eviolite","nature":"Calm","evs":{"df":252,"sd":252,"sp":4},"moves":["Tailwind","Foul Play","Rain Dance","Haze"]}
