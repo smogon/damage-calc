@@ -140,19 +140,24 @@ export function getMoveEffectiveness(
   isGravity?: boolean,
   isRingTarget?: boolean,
 ) {
-  if ((isRingTarget || isGhostRevealed) && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
+  if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
     return 1;
-  } else if ((isRingTarget || isGravity) && type === 'Flying' && move.hasType('Ground')) {
+  } else if (isGravity && type === 'Flying' && move.hasType('Ground')) {
     return 1;
   } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;
-  } else if (move.named('Flying Press')) {
+  } else if (!move.named('Flying Press')) {
+    const effectiveness = gen.types.get(toID(move.type))!.effectiveness[type]!;
+    if (effectiveness === 0 && isRingTarget) {
+      return 1;
+    }
+    return effectiveness;
+  } else {
+    // Flying Press done last so Ghost Reveal and Ring Target take precedence
     return (
       gen.types.get('fighting' as ID)!.effectiveness[type]! *
       gen.types.get('flying' as ID)!.effectiveness[type]!
     );
-  } else {
-    return gen.types.get(toID(move.type))!.effectiveness[type]!;
   }
 }
 

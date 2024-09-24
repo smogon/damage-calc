@@ -169,10 +169,13 @@ export function calculateBWXY(
   }
 
   const isGhostRevealed = attacker.hasAbility('Scrappy') || field.defenderSide.isForesight;
+  const isRingTarget = defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
   const type1Effectiveness =
-    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity);
+    getMoveEffectiveness(gen, move, defender.types[0], isGhostRevealed, field.isGravity,
+      isRingTarget);
   const type2Effectiveness = defender.types[1]
-    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity)
+    ? getMoveEffectiveness(gen, move, defender.types[1], isGhostRevealed, field.isGravity,
+      isRingTarget)
     : 1;
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
@@ -181,13 +184,6 @@ export function calculateBWXY(
   } else if (typeEffectiveness === 0 && move.hasType('Ground') &&
     defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
     typeEffectiveness = 1;
-  } else if (typeEffectiveness === 0 && defender.hasItem('Ring Target')) {
-    const effectiveness = gen.types.get(toID(move.type))!.effectiveness;
-    if (effectiveness[defender.types[0]]! === 0) {
-      typeEffectiveness = type2Effectiveness;
-    } else if (defender.types[1] && effectiveness[defender.types[1]]! === 0) {
-      typeEffectiveness = type1Effectiveness;
-    }
   }
 
   if (typeEffectiveness === 0) {
