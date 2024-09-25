@@ -324,7 +324,7 @@ var SETDEX_RBY = {
   },
   "Rhydon": {
     "OU Standard": {"moves":["Earthquake","Rock Slide","Body Slam","Substitute"]},
-    "Ubers Standard": {"moves":["Earthquake","Rock Slide","Body Slam","Substitute"]},
+    "Ubers Physical Attacker": {"moves":["Earthquake","Body Slam","Substitute","Rock Slide"]},
     "1v1 Standard": {"moves":["Earthquake","Rock Slide","Body Slam","Bubble Beam"]},
     "Tradebacks OU Standard": {"moves":["Earthquake","Body Slam","Rock Slide","Substitute"]}
   },
