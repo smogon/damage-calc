@@ -146,18 +146,16 @@ export function getMoveEffectiveness(
     return 1;
   } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;
-  } else if (!move.named('Flying Press')) {
-    const effectiveness = gen.types.get(toID(move.type))!.effectiveness[type]!;
+  } else {
+    let effectiveness = gen.types.get(toID(move.type))!.effectiveness[type]!;
     if (effectiveness === 0 && isRingTarget) {
-      return 1;
+      effectiveness = 1;
+    }
+    if (move.named('Flying Press')) {
+      // Can only do this because flying has no other interactions
+      effectiveness *= gen.types.get('flying' as ID)!.effectiveness[type]!;
     }
     return effectiveness;
-  } else {
-    // Flying Press done last so Ghost Reveal and Ring Target take precedence
-    return (
-      gen.types.get('fighting' as ID)!.effectiveness[type]! *
-      gen.types.get('flying' as ID)!.effectiveness[type]!
-    );
   }
 }
 
