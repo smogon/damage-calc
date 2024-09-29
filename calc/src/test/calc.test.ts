@@ -199,11 +199,65 @@ describe('calc', () => {
     });
 
     inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`Flying Press (gen ${gen})`, () => {
+        const attacker = Pokemon('Hawlucha');
+        const flyingPress = Move('Flying Press');
+        // Test it is 4x dmg if weak to flying and fighting
+        const result = calculate(attacker, Pokemon('Cacturne'), flyingPress);
+        if (gen === 6) {
+          expect(result.range()).toEqual([484, 576]);
+          expect(result.desc()).toBe(
+            '0 Atk Hawlucha Flying Press vs. 0 HP / 0 Def Cacturne: 484-576 (172.2 - 204.9%) -- guaranteed OHKO'
+          );
+        } else {
+          expect(result.range()).toEqual([612, 720]);
+          expect(result.desc()).toBe(
+            '0 Atk Hawlucha Flying Press vs. 0 HP / 0 Def Cacturne: 612-720 (217.7 - 256.2%) -- guaranteed OHKO'
+          );
+        }
+
+        // Test still maintains fighting immunities
+        const result2 = calculate(attacker, Pokemon('Spiritomb'), flyingPress);
+        expect(result2.range()).toEqual([0, 0]);
+
+        // Test fighting immunities can be overridden
+        const scrappyAttacker = Pokemon('Hawlucha', {'ability': 'Scrappy'});
+        const ringTargetSpiritomb = Pokemon('Spiritomb', {'item': 'Ring Target'});
+        const result3 = calculate(attacker, ringTargetSpiritomb, flyingPress);
+        const result4 = calculate(scrappyAttacker, Pokemon('Spiritomb'), flyingPress);
+        if (gen === 6) {
+          expect(result3.range()).toEqual([152, 180]);
+          expect(result4.range()).toEqual([152, 180]);
+        } else {
+          expect(result3.range()).toEqual([188, 224]);
+          expect(result4.range()).toEqual([188, 224]);
+        }
+      });
+    });
+
+    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Thousand Arrows and Ring Target Should negate damage nullfiers (gen ${gen})`, () => {
         const result = calculate(Pokemon('Zygarde'), Pokemon('Swellow'), Move('Thousand Arrows'));
         expect(result.range()).toEqual([147, 174]);
         expect(result.desc()).toBe(
           '0 Atk Zygarde Thousand Arrows vs. 0 HP / 0 Def Swellow: 147-174 (56.3 - 66.6%) -- guaranteed 2HKO'
+        );
+      });
+    });
+
+    inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`Ring Target should negate type nullfiers (gen ${gen})`, () => {
+        const attacker = Pokemon('Mew');
+        const defender = Pokemon('Skarmory', {'item': 'Ring Target'});
+        const result = calculate(attacker, defender, Move('Sludge Bomb'));
+        expect(result.range()).toEqual([87, 103]);
+        expect(result.desc()).toBe(
+          '0 SpA Mew Sludge Bomb vs. 0 HP / 0 SpD Skarmory: 87-103 (32.1 - 38%) -- 94.6% chance to 3HKO'
+        );
+        const result2 = calculate(attacker, defender, Move('Earth Power'));
+        expect(result2.range()).toEqual([174, 206]);
+        expect(result2.desc()).toBe(
+          '0 SpA Mew Earth Power vs. 0 HP / 0 SpD Skarmory: 174-206 (64.2 - 76%) -- guaranteed 2HKO'
         );
       });
     });
