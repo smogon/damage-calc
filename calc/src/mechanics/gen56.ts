@@ -95,6 +95,8 @@ export function calculateBWXY(
     return result;
   }
 
+  const tempAbility = defender.ability;
+
   if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze')) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
@@ -285,6 +287,14 @@ export function calculateBWXY(
   const attackStat = move.category === 'Special' ? 'spa' : 'atk';
 
   // #endregion
+
+  // Restores the defender's ability after disabling it for Mold Breaker purposes.
+  // This will make abilities like Rain Dish and Dry Skin work
+  // even when the attacker has Mold Breaker.
+  if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze')) {
+    defender.ability = tempAbility;
+  }
+
   // #region (Special) Defense
 
   const defense = calculateDefenseBWXY(gen, attacker, defender, move, field, desc, isCritical);
