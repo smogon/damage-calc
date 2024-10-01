@@ -106,8 +106,7 @@ var SETDEX_RBY = {
   },
   "Dugtrio": {
     "UU Dugtrio": {"moves":["Earthquake","Rock Slide","Slash","Substitute"]},
-    "UU Physical Attacker": {"moves":["Earthquake","Rock Slide","Slash","Toxic"]},
-    "OU Showdown Usage": {"moves":["Earthquake","Slash","Substitute","Sand Attack"]}
+    "UU Physical Attacker": {"moves":["Earthquake","Rock Slide","Slash","Toxic"]}
   },
   "Persian": {
     "OU Slash": {"moves":["Slash","Hyper Beam","Bubble Beam","Thunderbolt"]},
@@ -418,12 +417,12 @@ var SETDEX_RBY = {
     "Tradebacks OU Standard": {"moves":["Sing","Blizzard","Thunderbolt","Hyper Beam"]}
   },
   "Ditto": {
+    "Ubers Blob": {"moves":["Transform"]},
     "PU Transformer": {"moves":["Transform"]}
   },
   "Vaporeon": {
     "UU Bulky Special Attacker": {"moves":["Surf","Blizzard","Body Slam","Rest"]},
-    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]},
-    "OU Showdown Usage": {"moves":["Rest","Body Slam","Ice Beam","Acid Armor"]}
+    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]}
   },
   "Jolteon": {
     "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
