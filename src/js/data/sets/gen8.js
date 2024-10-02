@@ -2872,12 +2872,8 @@ var SETDEX_SS = {
     "ZU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Power Whip","Poltergeist","Trick","Synthesis"]},
     "ZU Choice Band": {"ability":"Frisk","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Power Whip","Poltergeist","Shadow Sneak","Trick"]}
   },
-  "Gourgeist-Large": {
-    "ZU Bulky Attacker": {"ability":"Frisk","item":"Weakness Policy","nature":"Adamant","evs":{"hp":104,"at":252,"sp":152},"moves":["Synthesis","Poltergeist","Power Whip","Shadow Sneak"]}
-  },
   "Gourgeist-Super": {
     "PU Tank": {"ability":"Frisk","item":"Colbur Berry","nature":"Adamant","evs":{"hp":248,"at":252,"df":8},"moves":["Power Whip","Poltergeist","Synthesis","Shadow Sneak"]},
-    "ZU Physical Wall": {"ability":"Frisk","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Synthesis","Foul Play","Toxic","Power Whip"]},
     "ZU Tank": {"ability":"Frisk","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Power Whip","Poltergeist","Shadow Sneak","Synthesis"]}
   },
   "Avalugg": {
@@ -3347,7 +3343,6 @@ var SETDEX_SS = {
     "OU Calm Mind": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":192,"sp":64},"moves":["Calm Mind","Scald","Draining Kiss","Taunt"]},
     "OU Choice Scarf": {"ability":"Misty Surge","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"hp":40,"sa":252,"sp":216},"moves":["Moonblast","Scald","Trick","Taunt"]},
     "OU Whirlpool Trapper": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":132,"sd":64,"sp":64},"moves":["Whirlpool","Nature's Madness","Moonblast","Taunt"]},
-    "OU Whirlpool": {"ability":"Misty Surge","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":216,"sd":40},"moves":["Whirlpool","Moonblast","Nature's Madness","Taunt"]},
     "Ubers Trapper": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":204,"sp":56},"moves":["Whirlpool","Nature's Madness","Taunt","Moonblast"]},
     "Doubles OU Calm Mind": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":112,"sa":144},"moves":["Muddy Water","Moonblast","Calm Mind","Protect"]},
     "Doubles OU Support": {"ability":"Misty Surge","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":112,"sa":144},"moves":["Moonblast","Nature's Madness","Icy Wind","Heal Pulse"]},

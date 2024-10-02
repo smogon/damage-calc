@@ -11,20 +11,18 @@ var SETDEX_DPP = {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Overheat","Shadow Ball","Trick"]},
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Thunderbolt","Will-O-Wisp"]},
     "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]},
-    "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Thunder Wave","Protect"]}
+    "Doubles OU Showdown Usage": {"ability":"Levitate","item":"Sitrus Berry","nature":"Timid","evs":{"hp":252,"sa":68,"sp":188},"moves":["Overheat","Thunderbolt","Light Screen","Protect"]}
   },
   "Rotom-Wash": {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hydro Pump","Shadow Ball","Trick"]},
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Thunderbolt","Will-O-Wisp"]},
     "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]},
-    "OU Rain Dance": {"ability":"Levitate","item":"Colbur Berry","nature":"Modest","evs":{"hp":248,"sa":112,"sp":144},"moves":["Rain Dance","Hydro Pump","Thunderbolt","Will-O-Wisp"]},
-    "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Thunder Wave","Protect"]}
+    "OU Rain Dance": {"ability":"Levitate","item":"Colbur Berry","nature":"Modest","evs":{"hp":248,"sa":112,"sp":144},"moves":["Rain Dance","Hydro Pump","Thunderbolt","Will-O-Wisp"]}
   },
   "Rotom-Frost": {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Shadow Ball","Hidden Power Ice","Trick"]},
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Thunderbolt","Will-O-Wisp"]},
-    "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]},
-    "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Thunder Wave","Protect"]}
+    "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]}
   },
   "Rotom-Fan": {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Shadow Ball","Hidden Power Ice","Trick"]},
@@ -35,8 +33,7 @@ var SETDEX_DPP = {
   "Rotom-Mow": {
     "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Leaf Storm","Shadow Ball","Trick"]},
     "OU Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Thunderbolt","Will-O-Wisp"]},
-    "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]},
-    "Doubles OU Bulky Disruption": {"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"sd":204,"sp":52},"moves":["Thunderbolt","Shadow Ball","Thunder Wave","Protect"]}
+    "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Pain Split","Substitute","Will-O-Wisp","Thunderbolt"]}
   },
   "Venusaur": {
     "OU Leech Seed": {"ability":"Overgrow","item":"Leftovers","nature":"Calm","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"sa":24,"sd":176,"sp":56},"moves":["Leech Seed","Sleep Powder","Leaf Storm","Hidden Power Fire"]},
@@ -176,8 +173,7 @@ var SETDEX_DPP = {
     "OU SubRoost": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":192,"df":64,"sp":252},"moves":["Substitute","Roost","Thunderbolt","Hidden Power Ice"]},
     "OU Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Flying","Heat Wave","U-turn"]},
     "OU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","ivs":{"at":30,"df":30},"evs":{"hp":248,"sd":228,"sp":32},"moves":["Thunderbolt","Hidden Power Ice","Heat Wave","Roost"]},
-    "OU Agility": {"ability":"Pressure","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":112,"sa":252,"sp":144},"moves":["Agility","Thunderbolt","Hidden Power Ice","Roost"]},
-    "Doubles OU Showdown Usage": {"ability":"Pressure","item":"Sitrus Berry","nature":"Timid","evs":{"hp":252,"sd":180,"sp":76},"moves":["Thunderbolt","Roost","Thunder Wave","U-turn"]}
+    "OU Agility": {"ability":"Pressure","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":112,"sa":252,"sp":144},"moves":["Agility","Thunderbolt","Hidden Power Ice","Roost"]}
   },
   "Moltres": {
     "OU SubRoost": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":200,"sp":60},"moves":["Substitute","Roost","Flamethrower","Toxic"]},
@@ -1077,8 +1073,7 @@ var SETDEX_DPP = {
   "Gyarados": {
     "OU Offensive Dragon Dance": {"ability":"Intimidate","item":"Wacan Berry","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Waterfall","Ice Fang","Earthquake"]},
     "OU Defensive RestTalk": {"ability":"Intimidate","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Waterfall","Roar"]},
-    "OU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Waterfall","Payback","Stone Edge","Earthquake"]},
-    "Doubles OU Showdown Usage": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":60,"sp":196},"moves":["Waterfall","Protect","Dragon Dance","Thunder Wave"]}
+    "OU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Waterfall","Payback","Stone Edge","Earthquake"]}
   },
   "Lapras": {
     "UU Special Attacker": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":200,"sd":56},"moves":["Surf","Ice Beam","Thunderbolt","Toxic"]},
@@ -2330,8 +2325,7 @@ var SETDEX_DPP = {
     "OU Standard Lead": {"ability":"Levitate","item":"Focus Sash","nature":"Jolly","evs":{"hp":252,"df":4,"sp":252},"moves":["Stealth Rock","Explosion","Taunt","Thunder Wave"]},
     "OU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Explosion","U-turn","Zen Headbutt","Trick"]},
     "OU Utility Rain Lead": {"ability":"Levitate","item":"Damp Rock","nature":"Jolly","evs":{"hp":228,"df":216,"sd":8,"sp":56},"moves":["Rain Dance","Stealth Rock","Taunt","Explosion"]},
-    "Ubers Choice Scarf Lead": {"ability":"Levitate","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["U-turn","Trick","Stealth Rock","Explosion"]},
-    "Doubles OU Showdown Usage": {"ability":"Levitate","item":"Damp Rock","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Explosion","Taunt","Thunder Wave","Rain Dance"]}
+    "Ubers Choice Scarf Lead": {"ability":"Levitate","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["U-turn","Trick","Stealth Rock","Explosion"]}
   },
   "Dialga": {
     "Ubers Support": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Dragon Pulse","Thunder","Roar","Earth Power"]},
@@ -2390,9 +2384,6 @@ var SETDEX_DPP = {
     "Ubers SubSeed": {"ability":"Serene Grace","item":"Leftovers","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Substitute","Leech Seed","Seed Flare","Air Slash"]},
     "Ubers Life Orb": {"ability":"Serene Grace","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]},
     "Ubers Choice Specs": {"ability":"Serene Grace","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Seed Flare","Air Slash","Earth Power","Hidden Power Ice"]}
-  },
-  "Lopunny": {
-    "Doubles OU Showdown Usage": {"ability":"Klutz","item":"Choice Scarf","nature":"Jolly","evs":{"hp":248,"df":40,"sp":220},"moves":["Endeavor","Fake Out","Switcheroo","Thunder Wave"]}
   },
   "Meowth": {
     "LC Showdown Usage": {"level":5,"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":236,"df":76,"sp":196},"moves":["Fake Out","Bite","Aerial Ace","U-turn"]}

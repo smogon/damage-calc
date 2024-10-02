@@ -336,7 +336,6 @@ var SETDEX_ADV = {
     "OU Offensive": {"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Ice Punch","Hidden Power Grass","Explosion"]},
     "OU Utility": {"ability":"Levitate","item":"Leftovers","nature":"Hasty","evs":{"hp":168,"sd":164,"sp":176},"moves":["Hypnosis","Explosion","Ice Punch","Thunderbolt"]},
     "OU Perish Trap": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sd":60,"sp":200},"moves":["Mean Look","Perish Song","Taunt","Destiny Bond"]},
-    "Doubles OU Fast Attacker": {"ability":"Levitate","item":"Lum Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Ice Punch","Fire Punch","Explosion","Destiny Bond"]},
     "Doubles OU Bulky Utility": {"ability":"Levitate","item":"Lum Berry","nature":"Timid","evs":{"hp":252,"sa":80,"sp":176},"moves":["Ice Punch","Fire Punch","Will-O-Wisp","Destiny Bond"]},
     "Ubers Showdown Usage": {"ability":"Levitate","item":"Leftovers","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Will-O-Wisp","Explosion","Thunder","Shadow Ball"]}
   },
@@ -826,8 +825,7 @@ var SETDEX_ADV = {
     "NU Special Attacker": {"ability":"Flash Fire","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":8,"df":84,"sa":192,"sp":224},"moves":["Fire Blast","Hidden Power Grass","Substitute","Baton Pass"]}
   },
   "Porygon": {
-    "ZU Special Wall": {"ability":"Trace","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Thunderbolt","Ice Beam","Recover","Toxic"]},
-    "LC Showdown Usage": {"level":5,"ability":"Trace","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":236,"df":196,"sa":76},"moves":["Ice Beam","Recycle","Return","Thief"]}
+    "ZU Special Wall": {"ability":"Trace","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Thunderbolt","Ice Beam","Recover","Toxic"]}
   },
   "Omanyte": {
     "PU Defensive Spikes": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Spikes","Toxic","Surf","Ice Beam"]},

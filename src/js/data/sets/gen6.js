@@ -159,9 +159,7 @@ var SETDEX_XY = {
   },
   "Masquerain": {
     "PU Quiver Dance": {"ability":"Intimidate","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Ice Beam"]},
-    "ZU Quiver Dance": {"ability":"Intimidate","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Ice Beam"]},
-    "NU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":248,"at":8,"df":252},"moves":["Sticky Web","Roost","U-turn","Defog"]},
-    "UU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Roost","Sticky Web","U-turn","Defog"]}
+    "ZU Quiver Dance": {"ability":"Intimidate","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Ice Beam"]}
   },
   "Delcatty": {
     "PU Delcatty Got Your Tongue?": {"ability":"Wonder Skin","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Substitute","Calm Mind","Hyper Voice","Shadow Ball"]}
@@ -745,13 +743,6 @@ var SETDEX_XY = {
     "Battle Spot Doubles Special Attacker": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Heat Wave","Solar Beam","Overheat","Protect"]},
     "Monotype Wallbreaker (Fire)": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Solar Beam","Focus Blast","Defog"]},
     "Monotype Wallbreaker (Flying)": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
-    "1v1 Fast": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Dragon Dance","Outrage","Flare Blitz"]},
-    "1v1 Bulky Will-O-Wisp": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":248,"at":12,"df":72,"sp":176},"moves":["Dragon Dance","Will-O-Wisp","Flare Blitz","Outrage"]},
-    "1v1 Mixed Bulk": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":248,"at":20,"df":72,"sd":96,"sp":72},"moves":["Outrage","Flare Blitz","Flame Charge","Dragon Dance"]},
-    "1v1 Offensive Swords Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":128,"at":252,"sp":128},"moves":["Swords Dance","Flame Charge","Outrage","Flare Blitz"]},
-    "1v1 Counter": {"ability":"Tough Claws","item":"Charizardite X","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Counter","Dragon Dance","Outrage","Flare Blitz"]},
-    "1v1 Specially Defensive": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"hp":252,"sd":140,"sp":116},"moves":["Dragon Dance","Will-O-Wisp","Outrage","Flare Blitz"]},
-    "1v1 Brick Break": {"ability":"Blaze","item":"Charizardite X","nature":"Adamant","evs":{"hp":252,"at":56,"sd":32,"sp":168},"moves":["Brick Break","Dragon Dance","Flare Blitz","Outrage"]},
     "CAP Dragon Dance": {"ability":"Blaze","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Dragon Claw","Roost"]},
     "CAP Drought Wallbreaker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Solar Beam","Focus Blast","Roost"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Blaze","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Claw","Iron Tail","Flare Blitz","Dragon Rush"]}
@@ -764,13 +755,6 @@ var SETDEX_XY = {
     "Battle Spot Singles Dragon Dance": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Outrage","Flare Blitz","Earthquake"]},
     "Battle Spot Singles Versatile Sweeper": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Flame Charge","Outrage","Flare Blitz"]},
     "Battle Spot Singles Defensive": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"hp":172,"df":116,"sp":220},"moves":["Will-O-Wisp","Roost","Dragon Claw","Flame Charge"]},
-    "1v1 Fast": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Dragon Dance","Outrage","Flare Blitz"]},
-    "1v1 Bulky Will-O-Wisp": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":248,"at":12,"df":72,"sp":176},"moves":["Dragon Dance","Will-O-Wisp","Flare Blitz","Outrage"]},
-    "1v1 Mixed Bulk": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":248,"at":20,"df":72,"sd":96,"sp":72},"moves":["Outrage","Flare Blitz","Flame Charge","Dragon Dance"]},
-    "1v1 Offensive Swords Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":128,"at":252,"sp":128},"moves":["Swords Dance","Flame Charge","Outrage","Flare Blitz"]},
-    "1v1 Counter": {"ability":"Tough Claws","item":"Charizardite X","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Counter","Dragon Dance","Outrage","Flare Blitz"]},
-    "1v1 Specially Defensive": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"hp":252,"sd":140,"sp":116},"moves":["Dragon Dance","Will-O-Wisp","Outrage","Flare Blitz"]},
-    "1v1 Brick Break": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","evs":{"hp":252,"at":56,"sd":32,"sp":168},"moves":["Brick Break","Dragon Dance","Flare Blitz","Outrage"]},
     "CAP Dragon Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Dragon Claw","Roost"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Claw","Iron Tail","Flare Blitz","Dragon Rush"]}
   },

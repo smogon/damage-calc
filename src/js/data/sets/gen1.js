@@ -53,8 +53,7 @@ var SETDEX_RBY = {
   },
   "Raichu": {
     "OU Mixed Attacker": {"moves":["Thunderbolt","Thunder Wave","Submission","Surf"]},
-    "UU Agility Sweeper": {"moves":["Thunderbolt","Surf","Thunder Wave","Agility"]},
-    "Tradebacks OU Sleeper": {"moves":["Sing","Thunderbolt","Surf","Hyper Beam"]}
+    "UU Agility Sweeper": {"moves":["Thunderbolt","Surf","Thunder Wave","Agility"]}
   },
   "Sandslash": {
     "OU Swords Dance": {"moves":["Swords Dance","Earthquake","Body Slam","Hyper Beam"]},
@@ -249,7 +248,8 @@ var SETDEX_RBY = {
     "Tradebacks OU Standard": {"moves":["Clamp","Explosion","Blizzard","Rest"]}
   },
   "Gastly": {
-    "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]}
+    "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Mega Drain","Night Shade"]},
+    "PU Offensive Sleeper": {"moves":["Hypnosis","Thunderbolt","Psychic","Substitute"]}
   },
   "Haunter": {
     "UU Haunter": {"moves":["Thunderbolt","Explosion","Psychic","Night Shade"]},
@@ -271,8 +271,7 @@ var SETDEX_RBY = {
   },
   "Hypno": {
     "OU Double Status": {"moves":["Hypnosis","Thunder Wave","Psychic","Seismic Toss"]},
-    "Ubers Lead Sleeper": {"moves":["Psychic","Hypnosis","Thunder Wave","Seismic Toss"]},
-    "Tradebacks OU Amnesia": {"moves":["Amnesia","Psychic","Reflect","Rest"]}
+    "Ubers Lead Sleeper": {"moves":["Psychic","Hypnosis","Thunder Wave","Seismic Toss"]}
   },
   "Kingler": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]},
