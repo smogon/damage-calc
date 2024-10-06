@@ -133,6 +133,9 @@ export function calculateBWXY(
         : field.hasTerrain('Misty') ? 'Fairy'
         : 'Normal';
     }
+  } else if (move.named('Brick Break')) {
+    field.defenderSide.isReflect = false;
+    field.defenderSide.isLightScreen = false;
   }
 
   let hasAteAbilityTypeChange = false;

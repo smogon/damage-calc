@@ -91,6 +91,9 @@ export function calculateDPP(
     desc.attackerItem = attacker.item;
     desc.moveBP = move.bp;
     desc.moveType = move.type;
+  } else if (move.named('Brick Break')) {
+    field.defenderSide.isReflect = false;
+    field.defenderSide.isLightScreen = false;
   }
 
   if (attacker.hasAbility('Normalize') && !move.named('Struggle')) {

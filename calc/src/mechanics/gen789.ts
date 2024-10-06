@@ -273,6 +273,10 @@ export function calculateSMSSSV(
     } else if (attacker.named('Tauros-Paldea-Aqua')) {
       type = 'Water';
     }
+
+    field.defenderSide.isReflect = false;
+    field.defenderSide.isLightScreen = false;
+    field.defenderSide.isAuroraVeil = false;
   } else if (move.named('Ivy Cudgel')) {
     if (attacker.name.includes('Ogerpon-Cornerstone')) {
       type = 'Rock';
@@ -286,6 +290,10 @@ export function calculateSMSSSV(
   ) {
     move.target = 'allAdjacentFoes';
     type = 'Stellar';
+  } else if (move.named('Brick Break', 'Psychic Fangs')) {
+    field.defenderSide.isReflect = false;
+    field.defenderSide.isLightScreen = false;
+    field.defenderSide.isAuroraVeil = false;
   }
 
   let hasAteAbilityTypeChange = false;
