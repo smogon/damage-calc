@@ -1452,5 +1452,64 @@ describe('calc', () => {
         });
       });
     });
+    describe('Some moves should break screens before doing damage', () => {
+      inGens(3, 9, ({calculate, Pokemon, Move, Field}) => {
+        test('Brick Break should break screens', () => {
+          const pokemon = Pokemon('Mew');
+
+          const brickBreak = Move('Brick Break');
+          const otherMove = Move('Vital Throw', {overrides: {basePower: 75}});
+
+          const field = Field({defenderSide: {isReflect: true}});
+
+          const brickBreakResult = calculate(pokemon, pokemon, brickBreak, field);
+          expect(brickBreakResult.field.defenderSide.isReflect).toBe(false);
+
+          const otherMoveResult = calculate(pokemon, pokemon, otherMove, field);
+          expect(otherMoveResult.field.defenderSide.isReflect).toBe(true);
+
+          expect(brickBreakResult.range()[0]).toBeGreaterThan(otherMoveResult.range()[0]);
+          expect(brickBreakResult.range()[1]).toBeGreaterThan(otherMoveResult.range()[1]);
+        });
+      });
+      inGens(7, 9, ({calculate, Pokemon, Move, Field}) => {
+        test('Psychic Fangs should break screens', () => {
+          const pokemon = Pokemon('Mew');
+
+          const psychicFangs = Move('Psychic Fangs');
+          const otherMove = Move('Zen Headbutt', {overrides: {basePower: 75}});
+
+          const field = Field({defenderSide: {isReflect: true}});
+
+          const psychicFangsResult = calculate(pokemon, pokemon, psychicFangs, field);
+          expect(psychicFangsResult.field.defenderSide.isReflect).toBe(false);
+
+          const otherMoveResult = calculate(pokemon, pokemon, otherMove, field);
+          expect(otherMoveResult.field.defenderSide.isReflect).toBe(true);
+
+          expect(psychicFangsResult.range()[0]).toBeGreaterThan(otherMoveResult.range()[0]);
+          expect(psychicFangsResult.range()[1]).toBeGreaterThan(otherMoveResult.range()[1]);
+        });
+      });
+      inGen(9, ({calculate, Pokemon, Move, Field}) => {
+        test('Raging Bull should break screens', () => {
+          const pokemon = Pokemon('Tauros-Paldea-Aqua');
+
+          const ragingBull = Move('Raging Bull');
+          const otherMove = Move('Waterfall', {overrides: {basePower: 90}});
+
+          const field = Field({defenderSide: {isReflect: true}});
+
+          const ragingBullResult = calculate(pokemon, pokemon, ragingBull, field);
+          expect(ragingBullResult.field.defenderSide.isReflect).toBe(false);
+
+          const otherMoveResult = calculate(pokemon, pokemon, otherMove, field);
+          expect(otherMoveResult.field.defenderSide.isReflect).toBe(true);
+
+          expect(ragingBullResult.range()[0]).toBeGreaterThan(otherMoveResult.range()[0]);
+          expect(ragingBullResult.range()[1]).toBeGreaterThan(otherMoveResult.range()[1]);
+        });
+      });
+    });
   });
 });
