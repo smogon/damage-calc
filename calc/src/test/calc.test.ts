@@ -722,6 +722,32 @@ describe('calc', () => {
           'Lvl 90 Chansey Seismic Toss vs. Lvl 30 0 HP 0 IVs Mew: 90-90 (90 - 90%) -- guaranteed OHKO after sandstorm damage and burn damage'
         );
       });
+
+      inGens(4, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+        test(`Mold Breaker does not disable abilities that don't affect direct damage (gen ${gen})`, () => {
+          const attacker = Pokemon('Rampardos', {
+            ability: 'Mold Breaker',
+          });
+
+          const defender = Pokemon('Blastoise', {
+            ability: 'Rain Dish',
+          });
+
+          const field = Field({
+            weather: 'Rain',
+          });
+
+          const move = Move('Stone Edge');
+
+          const result = calculate(attacker, defender, move, field);
+
+          expect(result.defender.ability).toBe('Rain Dish');
+
+          expect(result.desc()).toBe(
+            '0 Atk Mold Breaker Rampardos Stone Edge vs. 0 HP / 0 Def Blastoise: 168-198 (56.1 - 66.2%) -- guaranteed 2HKO after Rain Dish recovery'
+          );
+        });
+      });
     });
   });
 

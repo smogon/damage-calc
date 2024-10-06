@@ -169,8 +169,10 @@ export function calculateSMSSSV(
     'Searing Sunraze Smash',
     'Sunsteel Strike'
   );
-  if (!defenderIgnoresAbility && !defender.hasAbility('Poison Heal') &&
-    (attackerIgnoresAbility || moveIgnoresAbility)) {
+
+  const tempAbility = defender.ability;
+
+  if (!defenderIgnoresAbility && (attackerIgnoresAbility || moveIgnoresAbility)) {
     if (attackerIgnoresAbility) desc.attackerAbility = attacker.ability;
     if (defender.hasItem('Ability Shield')) {
       desc.defenderItem = defender.item;
@@ -563,6 +565,15 @@ export function calculateSMSSSV(
           ? 'spa'
           : 'atk';
   // #endregion
+
+  // Restores the defender's ability after disabling it for the purposes of
+  // Mold Breaker and other moves that ignore abilities.
+  // This will make abilities like Rain Dish and Quark Drive work
+  // even when the attacker has Mold Breaker.
+  if (attackerIgnoresAbility || moveIgnoresAbility) {
+    defender.ability = tempAbility;
+  }
+
   // #region (Special) Defense
 
   const defense = calculateDefenseSMSSSV(gen, attacker, defender, move, field, desc, isCritical);
