@@ -951,6 +951,7 @@ var SETDEX_DPP = {
     "LC Rapid Spin": {"level":5,"ability":"Skill Link","item":"Oran Berry","nature":"Sassy","evs":{"hp":196,"df":76,"sd":236},"moves":["Rapid Spin","Surf","Ice Shard","Rock Blast"]}
   },
   "Cloyster": {
+    "Ubers Lead": {"ability":"Shell Armor","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Toxic Spikes","Rapid Spin","Payback"]},
     "UU Life Orb": {"ability":"Skill Link","item":"Life Orb","nature":"Adamant","evs":{"hp":160,"at":252,"sd":96},"moves":["Ice Shard","Rock Blast","Explosion","Spikes"]},
     "UU Support": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Rapid Spin","Surf","Toxic Spikes"]}
   },

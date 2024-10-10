@@ -3906,9 +3906,9 @@ var SETDEX_SM = {
   },
   "Landorus-Therian": {
     "OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":232,"df":68,"sp":208},"moves":["Earthquake","U-turn","Stone Edge","Defog"]},
-    "OU Offensive Z-Move": {"ability":"Intimidate","item":"Flyinium Z","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Swords Dance","Earthquake","Fly"]},
     "OU Defensive": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":112,"sp":144},"moves":["Stealth Rock","Earthquake","Hidden Power Ice","U-turn"]},
-    "OU Suicide Lead": {"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Explosion","Rock Tomb"]},
+    "OU Swords Dance": {"ability":"Intimidate","item":"Flyinium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Swords Dance","Earthquake","Fly"]},
+    "OU Lead": {"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Rock Tomb","Explosion"]},
     "Doubles OU Bulky Pivot": {"ability":"Intimidate","item":"Iapapa Berry","nature":"Modest","evs":{"hp":252,"df":44,"sa":136,"sd":28,"sp":48},"moves":["Earth Power","U-turn","Knock Off","Stealth Rock"]},
     "Doubles OU Tectonic Rage": {"ability":"Intimidate","item":"Groundium Z","nature":"Adamant","evs":{"hp":76,"at":252,"sp":180},"moves":["Earthquake","Stone Edge","U-turn","Protect"]},
     "Doubles OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","U-turn","Hidden Power Ice","Stone Edge"]},

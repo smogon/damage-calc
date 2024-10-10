@@ -487,7 +487,7 @@ var SETDEX_RBY = {
   "Zapdos": {
     "OU Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
     "Ubers Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder Wave","Agility"]},
-    "1v1 Mixed Attacker": {"moves":["Thunderbolt","Drill Peck","Thunder","Reflect"]},
+    "1v1 Offensive": {"moves":["Thunderbolt","Drill Peck","Thunder","Thunder Wave"]},
     "Tradebacks OU Agility": {"moves":["Agility","Thunderbolt","Drill Peck","Thunder Wave"]}
   },
   "Moltres": {
