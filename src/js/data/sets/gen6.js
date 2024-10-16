@@ -1605,7 +1605,7 @@ var SETDEX_XY = {
     "LC Defensive": {"level":5,"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","evs":{"hp":196,"df":156,"sa":36,"sd":76,"sp":36},"moves":["Psychic","Roost","Heat Wave","U-turn"]},
     "LC Life Orb": {"level":5,"ability":"Magic Bounce","item":"Life Orb","nature":"Naive","ivs":{"hp":19},"evs":{"at":116,"sa":196,"sp":196},"moves":["Psychic","Heat Wave","Sucker Punch","U-turn"]},
     "LC Dual Screens": {"level":5,"ability":"Magic Bounce","item":"Light Clay","nature":"Jolly","evs":{"hp":116,"at":36,"df":76,"sd":76,"sp":196},"moves":["Reflect","Light Screen","U-turn","Psychic"]},
-    "ZU Magic Bounce Pivot": {"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":248,"sp":12},"moves":["Roost","U-turn","Toxic","Night Shade"]}
+    "ZU Magic Bounce Pivot": {"ability":"Magic Bounce","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":244,"sp":16},"moves":["Roost","U-turn","Toxic","Night Shade"]}
   },
   "Xatu": {
     "RU Defensive Pivot": {"ability":"Magic Bounce","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["U-turn","Roost","Night Shade","Toxic"]},

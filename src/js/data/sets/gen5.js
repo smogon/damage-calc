@@ -806,6 +806,59 @@ var SETDEX_BW = {
     "RU Rapid Spin": {"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"df":168,"sd":92},"moves":["Rapid Spin","Ice Beam","Recover","Haze"]},
     "RU Offensive": {"ability":"Levitate","item":"Icicle Plate","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":64,"sa":252,"sp":192},"moves":["Ice Beam","Rapid Spin","Hidden Power Fire","Recover"]}
   },
+  "Necturna": {
+    "CAP Shell Smash": {"ability":"Forewarn","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Shell Smash","Power Whip","Shadow Claw","Shadow Sneak"]},
+    "CAP V-create": {"ability":"Forewarn","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["V-create","Power Whip","Shadow Sneak","Stone Edge"]}
+  },
+  "Malaconda": {
+    "CAP Occa Berry": {"ability":"Harvest","item":"Occa Berry","nature":"Careful","evs":{"hp":252,"at":64,"df":64,"sd":76,"sp":52},"moves":["Rapid Spin","Power Whip","Synthesis","Crunch"]},
+    "CAP Bulky Support": {"ability":"Harvest","item":"Sitrus Berry","nature":"Careful","evs":{"hp":248,"at":60,"sd":148,"sp":52},"moves":["Rapid Spin","Power Whip","Crunch","Pursuit"]},
+    "CAP LumRest": {"ability":"Harvest","item":"Lum Berry","nature":"Careful","evs":{"hp":112,"at":60,"sd":212,"sp":124},"moves":["Rest","Pursuit","Power Whip","Taunt"]}
+  },
+  "Syclant": {
+    "CAP Mixed Attacker": {"ability":"Mountaineer","item":"Expert Belt","nature":"Naive","evs":{"at":160,"sa":96,"sp":252},"moves":["U-turn","Ice Beam","Earthquake","Ice Shard"]},
+    "CAP Tail Glow": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tail Glow","Ice Beam","Earth Power","Bug Buzz"]},
+    "CAP Spikes": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Spikes","U-turn","Ice Beam","Earth Power"]},
+    "CAP Choice Specs": {"ability":"Mountaineer","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Earth Power","U-turn","Bug Buzz"]},
+    "CAP Choice Band": {"ability":"Mountaineer","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Ice Punch","Earthquake","Ice Shard"]},
+    "CAP Choice Scarf": {"ability":"Mountaineer","item":"Choice Scarf","nature":"Naive","evs":{"at":216,"sa":84,"sp":208},"moves":["Ice Beam","Superpower","Earthquake","U-turn"]}
+  },
+  "Revenankh": {
+    "CAP Specially Defensive": {"ability":"Air Lock","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Moonlight","Hammer Arm","Knock Off","Toxic"]},
+    "CAP Bulk Up": {"ability":"Air Lock","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Moonlight","Drain Punch","Shadow Claw"]}
+  },
+  "Pyroak": {
+    "CAP Defensive": {"ability":"Battle Armor","item":"Leftovers","nature":"Calm","evs":{"hp":144,"sa":108,"sd":252,"sp":4},"moves":["Leech Seed","Giga Drain","Lava Plume","Stealth Rock"]}
+  },
+  "Fidgit": {
+    "CAP Trick Room": {"ability":"Persistent","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Trick Room","Stealth Rock","Earth Power","U-turn"]}
+  },
+  "Stratagem": {
+    "CAP Special Attacker": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Paleo Wave","Flamethrower","Giga Drain","Stealth Rock"]},
+    "CAP Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Weather Ball","Flamethrower","Energy Ball","Trick"]},
+    "CAP Calm Mind": {"ability":"Levitate","item":"Babiri Berry","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Weather Ball","Flamethrower","Giga Drain"]}
+  },
+  "Arghonaut": {
+    "CAP Specially Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":60,"sd":196},"moves":["Drain Punch","Recover","Roar","Knock Off"]},
+    "CAP Physically Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":184,"sd":72},"moves":["Drain Punch","Recover","Ice Punch","Roar"]}
+  },
+  "Kitsunoh": {
+    "CAP Specially Defensive": {"ability":"Limber","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":228,"sp":28},"moves":["Will-O-Wisp","Shadow Strike","Taunt","Earthquake"]},
+    "CAP Fast Utility": {"ability":"Limber","item":"Air Balloon","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Shadow Strike","Will-O-Wisp","Taunt","U-turn"]},
+    "CAP Choice Scarf": {"ability":"Limber","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shadow Strike","Ice Punch","Trick","U-turn"]}
+  },
+  "Cyclohm": {
+    "CAP Offensive": {"ability":"Static","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Fire Blast","Thunderbolt","Slack Off"]}
+  },
+  "Colossoil": {
+    "CAP Choice Scarf": {"ability":"Guts","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Crunch","Pursuit","U-turn"]},
+    "CAP Flame Orb": {"ability":"Guts","item":"Flame Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Sucker Punch","Facade","Pursuit"]},
+    "CAP Bulky Spinner": {"ability":"Guts","item":"Leftovers","nature":"Jolly","evs":{"at":80,"sd":228,"sp":200},"moves":["Rapid Spin","Earthquake","Pursuit","Crunch"]},
+    "CAP Offensive Spinner": {"ability":"Guts","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":40,"sp":216},"moves":["Rapid Spin","Earthquake","Crunch","Pursuit"]}
+  },
+  "Krilowatt": {
+    "CAP Life Orb Attacker": {"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Surf","Thunderbolt","Ice Beam","Hidden Power Fire"]}
+  },
   "Koffing": {
     "LC Pain Split": {"level":5,"ability":"Levitate","item":"Eviolite","nature":"Bold","evs":{"hp":36,"df":236,"sd":236},"moves":["Pain Split","Clear Smog","Will-O-Wisp","Fire Blast"]},
     "LC RestTalk": {"level":5,"ability":"Levitate","item":"Eviolite","nature":"Bold","evs":{"hp":196,"df":76,"sd":236},"moves":["Rest","Sleep Talk","Clear Smog","Fire Blast"]}
@@ -2359,7 +2412,8 @@ var SETDEX_BW = {
     "LC Choice Scarf": {"level":5,"ability":"Snow Warning","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":36,"df":36,"sa":184,"sd":36,"sp":200},"moves":["Blizzard","Giga Drain","Hidden Power Fire","Ice Shard"]}
   },
   "Abomasnow": {
-    "OU Protect + 3 Attacks": {"ability":"Snow Warning","item":"Leftovers","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Ice Shard","Wood Hammer","Earthquake","Protect"]},
+    "OU Hail Setter": {"ability":"Snow Warning","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":68,"sa":104,"sd":84},"moves":["Blizzard","Giga Drain","Leech Seed","Protect"]},
+    "OU Mixed": {"ability":"Snow Warning","item":"Focus Sash","nature":"Mild","evs":{"at":44,"sa":252,"sp":212},"moves":["Blizzard","Wood Hammer","Focus Punch","Ice Shard"]},
     "UU SubSeed": {"ability":"Soundproof","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":252,"sp":8},"moves":["Substitute","Leech Seed","Ice Beam","Giga Drain"]},
     "Doubles OU Mixed Attacker": {"ability":"Snow Warning","item":"Grass Gem","nature":"Brave","ivs":{"sp":0},"evs":{"hp":64,"at":124,"df":68,"sa":252},"moves":["Wood Hammer","Blizzard","Ice Shard","Protect"]},
     "Monotype Snow Warning (Ice)": {"ability":"Snow Warning","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":164,"sp":92},"moves":["Wood Hammer","Ice Shard","Protect","Leech Seed"]}
@@ -3174,6 +3228,17 @@ var SETDEX_BW = {
     "Doubles OU Choice Scarf": {"ability":"Download","item":"Choice Scarf","nature":"Rash","evs":{"at":136,"sa":252,"sp":120},"moves":["U-turn","Ice Beam","Thunderbolt","Flamethrower"]},
     "Doubles OU Choice Band": {"ability":"Download","item":"Choice Band","nature":"Hasty","evs":{"hp":4,"at":252,"sp":252},"moves":["U-turn","Iron Head","Extreme Speed","Blaze Kick"]},
     "1v1 Showdown Usage": {"ability":"Download","item":"Occa Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Bug Buzz","Ice Beam","Thunderbolt","Flamethrower"]}
+  },
+  "Mollux": {
+    "CAP Utility": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":60,"sd":196},"moves":["Toxic Spikes","Lava Plume","Thunder","Rapid Spin"]},
+    "CAP Calm Mind": {"ability":"Dry Skin","item":"Black Sludge","nature":"Bold","ivs":{"at":2,"df":30,"sa":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Calm Mind","Sludge Bomb","Hidden Power Water","Recover"]},
+    "CAP Specially Defensive": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"sa":8,"sd":252},"moves":["Sludge Bomb","Lava Plume","Rapid Spin","Recover"]},
+    "CAP Offensive Spinner": {"ability":"Dry Skin","item":"Shuca Berry","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Rapid Spin","Thunder","Hidden Power Ice","Lava Plume"]},
+    "CAP Choice Scarf": {"ability":"Dry Skin","item":"Choice Scarf","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Eruption","Flamethrower","Thunderbolt","Trick"]}
+  },
+  "Aurumoth": {
+    "CAP Choice Scarf": {"ability":"No Guard","item":"Choice Scarf","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Final Gambit","Healing Wish","Thunder","Blizzard"]},
+    "CAP Tail Glow": {"ability":"Weak Armor","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tail Glow","Bug Buzz","Psychic","Surf"]}
   },
   "Pupitar": {
     "ZU Showdown Usage": {"ability":"Shed Skin","item":"Eviolite","nature":"Adamant","evs":{"hp":248,"at":252,"sd":8},"moves":["Earthquake","Rest","Stone Edge","Stealth Rock"]}

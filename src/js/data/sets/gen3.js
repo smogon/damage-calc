@@ -354,7 +354,7 @@ var SETDEX_ADV = {
     "NU Choice Band": {"ability":"Insomnia","item":"Choice Band","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Return","Aerial Ace","Shadow Ball","Hidden Power Ground"]},
     "NU Special Attacker": {"ability":"Insomnia","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Feint Attack","Hidden Power Ice","Hypnosis"]},
     "PU Defensive": {"ability":"Insomnia","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":120,"sp":136},"moves":["Substitute","Toxic","Protect","Psychic"]},
-    "ZU Special Wall": {"ability":"Keen Eye","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sd":252},"moves":["Psychic","Toxic","Rest","Protect"]},
+    "ZU Special Wall": {"ability":"Keen Eye","item":"Leftovers","nature":"Careful","ivs":{"at":30,"sa":30},"evs":{"hp":216,"sd":252,"sp":40},"moves":["Return","Toxic","Hidden Power Grass","Rest"]},
     "ZU Physical Attacker": {"ability":"Insomnia","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"sa":30},"evs":{"hp":176,"at":252,"df":24,"sp":56},"moves":["Return","Protect","Toxic","Hidden Power Grass"]}
   },
   "Ariados": {
@@ -747,10 +747,8 @@ var SETDEX_ADV = {
     "NU Rain Dance Sweeper": {"ability":"Swift Swim","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"at":184,"sa":252,"sp":72},"moves":["Rain Dance","Surf","Megahorn","Hidden Power Grass"]},
     "NU Flail": {"ability":"Water Veil","item":"Liechi Berry","nature":"Lonely","evs":{"at":252,"sa":184,"sp":72},"moves":["Agility","Substitute","Hydro Pump","Flail"]},
     "NU Choice Band": {"ability":"Water Veil","item":"Choice Band","nature":"Lonely","ivs":{"sa":30,"sd":30},"evs":{"at":252,"sa":148,"sp":108},"moves":["Megahorn","Ice Beam","Hydro Pump","Hidden Power Ground"]},
-    "ZU Mixed": {"ability":"Swift Swim","item":"Leftovers","nature":"Lonely","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":252,"at":176,"sd":20,"sp":60},"moves":["Hydro Pump","Megahorn","Hidden Power Rock","Protect"]},
+    "ZU Mixed": {"ability":"Water Veil","item":"Leftovers","nature":"Lonely","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":252,"at":176,"sd":20,"sp":60},"moves":["Hydro Pump","Megahorn","Hidden Power Rock","Protect"]},
     "ZU Choice Band": {"ability":"Swift Swim","item":"Choice Band","nature":"Lonely","ivs":{"df":30,"sd":30,"sp":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Double-Edge","Megahorn","Hydro Pump","Hidden Power Rock"]},
-    "ZU Rain Sweeper": {"ability":"Swift Swim","item":"Lum Berry","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Rain Dance","Hydro Pump","Hidden Power Grass","Megahorn"]},
-    "ZU Toxic + Protect": {"ability":"Water Veil","item":"Leftovers","nature":"Hasty","evs":{"hp":252,"sd":252,"sp":4},"moves":["Toxic","Protect","Surf","Megahorn"]},
     "PU Showdown Usage": {"ability":"Swift Swim","item":"Lum Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":184,"sa":252,"sp":72},"moves":["Hydro Pump","Rain Dance","Hidden Power Grass","Ice Beam"]}
   },
   "Staryu": {
@@ -1330,7 +1328,7 @@ var SETDEX_ADV = {
   "Anorith": {
     "PU Swords Dance": {"ability":"Battle Armor","item":"Lum Berry","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Hidden Power Bug","Rock Slide","Brick Break"]},
     "LC Swords Dance": {"level":5,"ability":"Battle Armor","item":"Sitrus Berry","nature":"Jolly","evs":{"at":236,"df":36,"sp":236},"moves":["Swords Dance","Brick Break","Rock Blast","Substitute"]},
-    "ZU Salac Sweeper": {"ability":"Battle Armor","item":"Salac Berry","nature":"Adamant","evs":{"at":252,"sd":180,"sp":76},"moves":["Swords Dance","Rock Slide","Brick Break","Substitute"]},
+    "ZU Salac Berry": {"ability":"Battle Armor","item":"Salac Berry","nature":"Adamant","evs":{"at":252,"sd":180,"sp":76},"moves":["Rock Slide","Brick Break","Substitute","Swords Dance"]},
     "ZU Choice Band": {"ability":"Battle Armor","item":"Choice Band","nature":"Adamant","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Slide","Brick Break","Hidden Power Bug","Rapid Spin"]}
   },
   "Armaldo": {
