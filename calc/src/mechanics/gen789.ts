@@ -1003,7 +1003,8 @@ export function calculateBPModsSMSSSV(
   const bpMods = [];
 
   // Move effects
-  let defenderItem = (defender.item && defender.item !== "") ? defender.item : defender.disabledItem;
+  const defenderItem = (defender.item && defender.item !== '')
+    ? defender.item : defender.disabledItem;
   let resistedKnockOffDamage =
     (!defenderItem || isQPActive(defender, field)) ||
     (defender.named('Dialga-Origin') && defenderItem === 'Adamant Crystal') ||
