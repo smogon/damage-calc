@@ -817,7 +817,7 @@ var SETDEX_BW = {
   },
   "Syclant": {
     "CAP Mixed Attacker": {"ability":"Mountaineer","item":"Expert Belt","nature":"Naive","evs":{"at":160,"sa":96,"sp":252},"moves":["U-turn","Ice Beam","Earthquake","Ice Shard"]},
-    "CAP Tail Glow": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tail Glow","Ice Beam","Earth Power","Bug Buzz"]},
+    "CAP Tail Glow": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tail Glow","Ice Beam","Earth Power","Bug Buzz"]},
     "CAP Spikes": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Spikes","U-turn","Ice Beam","Earth Power"]},
     "CAP Choice Specs": {"ability":"Mountaineer","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Earth Power","U-turn","Bug Buzz"]},
     "CAP Choice Band": {"ability":"Mountaineer","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Ice Punch","Earthquake","Ice Shard"]},
@@ -835,8 +835,8 @@ var SETDEX_BW = {
   },
   "Stratagem": {
     "CAP Special Attacker": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Paleo Wave","Flamethrower","Giga Drain","Stealth Rock"]},
-    "CAP Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Weather Ball","Flamethrower","Energy Ball","Trick"]},
-    "CAP Calm Mind": {"ability":"Levitate","item":"Babiri Berry","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Weather Ball","Flamethrower","Giga Drain"]}
+    "CAP Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Weather Ball","Flamethrower","Energy Ball","Trick"]},
+    "CAP Calm Mind": {"ability":"Levitate","item":"Babiri Berry","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Weather Ball","Flamethrower","Giga Drain"]}
   },
   "Arghonaut": {
     "CAP Specially Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":60,"sd":196},"moves":["Drain Punch","Recover","Roar","Knock Off"]},
@@ -3230,9 +3230,9 @@ var SETDEX_BW = {
     "1v1 Showdown Usage": {"ability":"Download","item":"Occa Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Bug Buzz","Ice Beam","Thunderbolt","Flamethrower"]}
   },
   "Mollux": {
-    "CAP Utility": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":60,"sd":196},"moves":["Toxic Spikes","Lava Plume","Thunder","Rapid Spin"]},
-    "CAP Calm Mind": {"ability":"Dry Skin","item":"Black Sludge","nature":"Bold","ivs":{"at":2,"df":30,"sa":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Calm Mind","Sludge Bomb","Hidden Power Water","Recover"]},
-    "CAP Specially Defensive": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"sa":8,"sd":252},"moves":["Sludge Bomb","Lava Plume","Rapid Spin","Recover"]},
+    "CAP Utility": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","evs":{"hp":252,"df":60,"sd":196},"moves":["Toxic Spikes","Lava Plume","Thunder","Rapid Spin"]},
+    "CAP Calm Mind": {"ability":"Dry Skin","item":"Black Sludge","nature":"Bold","ivs":{"at":30,"df":30,"sa":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Calm Mind","Sludge Bomb","Hidden Power Water","Recover"]},
+    "CAP Specially Defensive": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","evs":{"hp":248,"sa":8,"sd":252},"moves":["Sludge Bomb","Lava Plume","Rapid Spin","Recover"]},
     "CAP Offensive Spinner": {"ability":"Dry Skin","item":"Shuca Berry","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Rapid Spin","Thunder","Hidden Power Ice","Lava Plume"]},
     "CAP Choice Scarf": {"ability":"Dry Skin","item":"Choice Scarf","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Eruption","Flamethrower","Thunderbolt","Trick"]}
   },
