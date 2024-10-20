@@ -66,6 +66,8 @@ export function calculateDPP(
     return result;
   }
 
+  const tempAbility = defender.ability;
+
   if (attacker.hasAbility('Mold Breaker')) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
@@ -199,6 +201,14 @@ export function calculateDPP(
   const attack = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
 
   // #endregion
+
+  // Restores the defender's ability after disabling it for Mold Breaker purposes.
+  // This will make abilities like Rain Dish and Dry Skin work
+  // even when the attacker has Mold Breaker.
+  if (attacker.hasAbility('Mold Breaker')) {
+    defender.ability = tempAbility;
+  }
+
   // #region (Special) Defense
   const defense = calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical);
 
