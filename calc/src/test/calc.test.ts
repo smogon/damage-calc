@@ -749,6 +749,38 @@ describe('calc', () => {
         });
       });
     });
+
+    inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      test('Steely Spirit should boost Steel-type moves as a field effect.', () => {
+        const pokemon = Pokemon('Perrserker', {
+          ability: 'Battle Armor',
+        });
+
+        const move = Move('Iron Head');
+
+        let result = calculate(pokemon, pokemon, move);
+
+        expect(result.desc()).toBe(
+          '0 Atk Perrserker Iron Head vs. 0 HP / 0 Def Perrserker: 46-55 (16.3 - 19.5%) -- possible 6HKO'
+        );
+
+        const field = Field({attackerSide: {isSteelySpirit: true}});
+
+        result = calculate(pokemon, pokemon, move, field);
+
+        expect(result.desc()).toBe(
+          '0 Atk Perrserker with an ally\'s Steely Spirit Iron Head vs. 0 HP / 0 Def Perrserker: 70-83 (24.9 - 29.5%) -- 99.9% chance to 4HKO'
+        );
+
+        pokemon.ability = 'Steely Spirit' as AbilityName;
+
+        result = calculate(pokemon, pokemon, move, field);
+
+        expect(result.desc()).toBe(
+          '0 Atk Steely Spirit Perrserker with an ally\'s Steely Spirit Iron Head vs. 0 HP / 0 Def Perrserker: 105-124 (37.3 - 44.1%) -- guaranteed 3HKO'
+        );
+      });
+    });
   });
 
 
