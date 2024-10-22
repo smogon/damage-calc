@@ -1390,6 +1390,14 @@ export function calculateAtModsSMSSSV(
     desc.isFlowerGiftAttacker = true;
   }
 
+  if (
+    field.attackerSide.isSteelySpirit &&
+    move.hasType('Steel')
+  ) {
+    atMods.push(6144);
+    desc.isSteelySpiritAttacker = true;
+  }
+
   if ((defender.hasAbility('Thick Fat') && move.hasType('Fire', 'Ice')) ||
       (defender.hasAbility('Water Bubble') && move.hasType('Fire')) ||
      (defender.hasAbility('Purifying Salt') && move.hasType('Ghost'))) {
