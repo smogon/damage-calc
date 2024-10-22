@@ -149,7 +149,7 @@ export function calculateSMSSSV(
     return result;
   }
 
- const defenderAbilityIgnored = defender.hasAbility(
+  const defenderAbilityIgnored = defender.hasAbility(
     'Armor Tail', 'Aroma Veil', 'Aura Break', 'Battle Armor',
     'Big Pecks', 'Bulletproof', 'Clear Body', 'Contrary',
     'Damp', 'Dazzling', 'Disguise', 'Dry Skin',
@@ -171,7 +171,7 @@ export function calculateSMSSSV(
     'Volt Absorb', 'Water Absorb', 'Water Bubble', 'Water Veil',
     'Well-Baked Body', 'White Smoke', 'Wind Rider', 'Wonder Guard',
     'Wonder Skin'
-  )
+  );
 
   const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze');
   const moveIgnoresAbility = move.named(

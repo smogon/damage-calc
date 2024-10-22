@@ -78,7 +78,7 @@ export function calculateDPP(
     'Suction Cups', 'Tangled Feet', 'Thick Fat', 'Unaware',
     'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Veil',
     'White Smoke', 'Wonder Guard'
-  )
+  );
 
   if (attacker.hasAbility('Mold Breaker') && defenderAbilityIgnored) {
     defender.ability = '' as AbilityName;

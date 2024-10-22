@@ -112,7 +112,7 @@ export function calculateBWXY(
     'Telepathy', 'Thick Fat', 'Unaware', 'Vital Spirit',
     'Volt Absorb', 'Water Absorb', 'Water Veil', 'White Smoke',
     'Wonder Guard', 'Wonder Skin'
-  )
+  );
 
   if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze') && defenderAbilityIgnored) {
     defender.ability = '' as AbilityName;
