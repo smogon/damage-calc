@@ -4,10 +4,12 @@ module.exports = {
   coverageDirectory: 'coverage',
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
   coveragePathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/' ],
-  globals: {
-    'ts-jest': {
-      packageJson: 'package.json',
-    },
+  transform: {
+    '^.+\\.test\\.ts$': [
+      'ts-jest', {
+        packageJson: 'package.json',
+      }
+    ],
   },
 };
 
