@@ -95,9 +95,26 @@ export function calculateBWXY(
     return result;
   }
 
-  const tempAbility = defender.ability;
+  const defenderAbilityIgnored = defender.hasAbility(
+    'Aroma Veil', 'Aura Break', 'Battle Armor', 'Big Pecks',
+    'Bulletproof', 'Clear Body', 'Contrary', 'Damp',
+    'Dark Aura', 'Dry Skin', 'Fairy Aura', 'Filter',
+    'Flash Fire', 'Flower Gift', 'Flower Veil', 'Friend Guard',
+    'Fur Coat', 'Grass Pelt', 'Heatproof', 'Heavy Metal',
+    'Hyper Cutter', 'Immunity', 'Inner Focus', 'Insomnia',
+    'Keen Eye', 'Leaf Guard', 'Levitate', 'Light Metal',
+    'Lightning Rod', 'Limber', 'Magic Bounce', 'Magma Armor',
+    'Marvel Scale', 'Motor Drive', 'Multiscale', 'Oblivious',
+    'Overcoat', 'Own Tempo', 'Sand Veil', 'Sap Sipper',
+    'Shell Armor', 'Shield Dust', 'Simple', 'Snow Cloak',
+    'Solid Rock', 'Soundproof', 'Sticky Hold', 'Storm Drain',
+    'Sturdy', 'Suction Cups', 'Sweet Veil', 'Tangled Feet',
+    'Telepathy', 'Thick Fat', 'Unaware', 'Vital Spirit',
+    'Volt Absorb', 'Water Absorb', 'Water Veil', 'White Smoke',
+    'Wonder Guard', 'Wonder Skin'
+  )
 
-  if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze')) {
+  if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze') && defenderAbilityIgnored) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
   }
@@ -290,13 +307,6 @@ export function calculateBWXY(
   const attackStat = move.category === 'Special' ? 'spa' : 'atk';
 
   // #endregion
-
-  // Restores the defender's ability after disabling it for Mold Breaker purposes.
-  // This will make abilities like Rain Dish and Dry Skin work
-  // even when the attacker has Mold Breaker.
-  if (attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze')) {
-    defender.ability = tempAbility;
-  }
 
   // #region (Special) Defense
 
