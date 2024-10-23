@@ -66,9 +66,21 @@ export function calculateDPP(
     return result;
   }
 
-  const tempAbility = defender.ability;
+  const defenderAbilityIgnored = defender.hasAbility(
+    'Battle Armor', 'Clear Body', 'Damp', 'Dry Skin',
+    'Filter', 'Flash Fire', 'Flower Gift', 'Heatproof',
+    'Hyper Cutter', 'Immunity', 'Inner Focus', 'Insomnia',
+    'Keen Eye', 'Leaf Guard', 'Levitate', 'Lightning Rod',
+    'Limber', 'Magma Armor', 'Marvel Scale', 'Motor Drive',
+    'Oblivious', 'Own Tempo', 'Sand Veil', 'Shell Armor',
+    'Shield Dust', 'Simple', 'Snow Cloak', 'Solid Rock',
+    'Soundproof', 'Sticky Hold', 'Storm Drain', 'Sturdy',
+    'Suction Cups', 'Tangled Feet', 'Thick Fat', 'Unaware',
+    'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Veil',
+    'White Smoke', 'Wonder Guard'
+  );
 
-  if (attacker.hasAbility('Mold Breaker')) {
+  if (attacker.hasAbility('Mold Breaker') && defenderAbilityIgnored) {
     defender.ability = '' as AbilityName;
     desc.attackerAbility = attacker.ability;
   }
@@ -201,13 +213,6 @@ export function calculateDPP(
   const attack = calculateAttackDPP(gen, attacker, defender, move, field, desc, isCritical);
 
   // #endregion
-
-  // Restores the defender's ability after disabling it for Mold Breaker purposes.
-  // This will make abilities like Rain Dish and Dry Skin work
-  // even when the attacker has Mold Breaker.
-  if (attacker.hasAbility('Mold Breaker')) {
-    defender.ability = tempAbility;
-  }
 
   // #region (Special) Defense
   const defense = calculateDefenseDPP(gen, attacker, defender, move, field, desc, isCritical);

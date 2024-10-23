@@ -744,7 +744,7 @@ describe('calc', () => {
         expect(result.defender.ability).toBe('Rain Dish');
 
         expect(result.desc()).toBe(
-          '0 Atk Mold Breaker Rampardos Stone Edge vs. 0 HP / 0 Def Blastoise: 168-198 (56.1 - 66.2%) -- guaranteed 2HKO after Rain Dish recovery'
+          '0 Atk Rampardos Stone Edge vs. 0 HP / 0 Def Blastoise: 168-198 (56.1 - 66.2%) -- guaranteed 2HKO after Rain Dish recovery'
         );
       });
     });
@@ -1251,7 +1251,7 @@ describe('calc', () => {
         const knockoff = Move('Knock Off');
         const result = calculate(sawk, silvally, knockoff);
         expect(result.desc()).toBe(
-          '252 Atk Mold Breaker Sawk Knock Off vs. 0 HP / 0 Def Silvally-Dark: 36-43 (10.8 - 12.9%) -- possible 8HKO'
+          '252 Atk Sawk Knock Off vs. 0 HP / 0 Def Silvally-Dark: 36-43 (10.8 - 12.9%) -- possible 8HKO'
         );
       });
 
