@@ -3860,7 +3860,7 @@ var SETDEX_SM = {
   },
   "Tornadus-Therian": {
     "OU Bulky Pivot": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Timid","evs":{"hp":240,"df":64,"sp":204},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
-    "OU Offensive Z-Move": {"ability":"Regenerator","item":"Flyinium Z","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
+    "OU Offensive Pivot": {"ability":"Regenerator","item":"Flyinium Z","nature":"Timid","evs":{"hp":128,"df":8,"sa":156,"sp":216},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
     "Monotype Offensive Utility": {"ability":"Regenerator","item":"Flyinium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hurricane","U-turn","Knock Off","Defog"]},
     "CAP Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Timid","evs":{"hp":80,"sa":196,"sp":232},"moves":["Hurricane","Knock Off","U-turn","Heat Wave"]},
     "CAP Bulky Pivot": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Hurricane","Knock Off","U-turn","Defog"]},
