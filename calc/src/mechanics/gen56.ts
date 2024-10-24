@@ -620,18 +620,20 @@ export function calculateBPModsBWXY(
 ) {
   const bpMods = [];
 
+  const defenderItem = (defender.item && defender.item !== '')
+    ? defender.item : defender.disabledItem;
   let resistedKnockOffDamage =
-    !defender.item ||
-    (defender.named('Giratina-Origin') && defender.hasItem('Griseous Orb')) ||
-    (defender.name.includes('Arceus') && defender.item.includes('Plate')) ||
-    (defender.name.includes('Genesect') && defender.item.includes('Drive')) ||
-    (defender.named('Groudon', 'Groudon-Primal') && defender.hasItem('Red Orb')) ||
-    (defender.named('Kyogre', 'Kyogre-Primal') && defender.hasItem('Blue Orb'));
+    !defenderItem ||
+    (defender.named('Giratina-Origin') && defenderItem === 'Griseous Orb') ||
+    (defender.name.includes('Arceus') && defenderItem.includes('Plate')) ||
+    (defender.name.includes('Genesect') && defenderItem.includes('Drive')) ||
+    (defender.named('Groudon', 'Groudon-Primal') && defenderItem === 'Red Orb') ||
+    (defender.named('Kyogre', 'Kyogre-Primal') && defenderItem === 'Blue Orb');
 
   // The last case only applies when the Pokemon is holding the Mega Stone that matches its species
   // (or when it's already a Mega-Evolution)
-  if (!resistedKnockOffDamage && defender.item) {
-    const item = gen.items.get(toID(defender.item))!;
+  if (!resistedKnockOffDamage && defenderItem) {
+    const item = gen.items.get(toID(defenderItem))!;
     resistedKnockOffDamage = !!(item.megaEvolves && defender.name.includes(item.megaEvolves));
   }
 
