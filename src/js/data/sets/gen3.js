@@ -616,7 +616,7 @@ var SETDEX_ADV = {
   "Ponyta": {
     "LC Sunny Day": {"level":5,"ability":"Run Away","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"hp":36,"sa":240,"sp":196},"moves":["Sunny Day","Fire Blast","Solar Beam","Substitute"]},
     "ZU Fast Attacker": {"ability":"Flash Fire","item":"Leftovers","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Fire Blast","Quick Attack","Return","Toxic"]},
-    "ZU Sunny Day": {"ability":"Run Away","item":"Lum Berry","nature":"Naive","ivs":{"sa":30,"sd":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Sunny Day","Fire Blast","Solar Beam","Hidden Power Ground"]},
+    "ZU Sunny Day": {"ability":"Run Away","item":"Lum Berry","nature":"Hasty","ivs":{"sa":30,"sd":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Sunny Day","Fire Blast","Solar Beam","Hidden Power Ground"]},
     "PU Showdown Usage": {"ability":"Flash Fire","item":"Choice Band","nature":"Jolly","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Fire Blast","Double-Edge","Quick Attack","Hidden Power Fighting"]},
     "NU Showdown Usage": {"ability":"Flash Fire","item":"Miracle Seed","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hidden Power Grass","Hypnosis","Flamethrower","Overheat"]}
   },
