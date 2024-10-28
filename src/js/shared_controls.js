@@ -141,7 +141,7 @@ $(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sp');
 });
 $(".evs").bind('keyup change', function () {
-	totalEVs($(this).closest(".poke-info"))
+	totalEVs($(this).closest(".poke-info"));
 });
 $(".sl .base").keyup(function () {
 	calcStat($(this).closest(".poke-info"), 'sl');
