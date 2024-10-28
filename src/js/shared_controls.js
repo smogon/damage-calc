@@ -1262,7 +1262,8 @@ function calcHP(poke) {
 
 function totalEVs(poke) {
 	var totalEVs = 0;
-	for (var statName of LEGACY_STATS[gen]) {
+	for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+		var statName = LEGACY_STATS[gen][i];
 		var stat = poke.find("." + statName);
 		var evs = ~~stat.find(".evs").val();
 		totalEVs += evs;
