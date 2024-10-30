@@ -369,7 +369,7 @@ const XY: TypeChart = extend(true, {}, GSC, {
   Electric: {Fairy: 1},
   Ice: {Fairy: 1},
   Flying: {Fairy: 1},
-  Bug: {Fairy: 0.5},
+  Bug: {Fairy: 1},
   Poison: {Fairy: 2},
   Ground: {Fairy: 1},
   Rock: {Fairy: 1},
