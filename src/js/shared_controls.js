@@ -968,29 +968,33 @@ function correctHiddenPower(pokemon) {
 	for (var i = 0; i < pokemon.moves.length; i++) {
 		var m = pokemon.moves[i].match(HIDDEN_POWER_REGEX);
 		if (!m) continue;
+		// The Hidden Power type matches the IVs provided so we don't need to do anything else
+		if (expected.type === m[1]) {
+			continue;
+		}
 		// The Pokemon has Hidden Power and is not maxed but the types don't match we don't
 		// want to attempt to reconcile the user's IVs so instead just correct the HP type
-		if (!maxed && expected.type !== m[1]) {
+		if (!maxed) {
 			pokemon.moves[i] = "Hidden Power " + expected.type;
-		} else {
-			// Otherwise, use the default preset hidden power IVs that PS would use
-			var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
-			if (!hpIVs) continue; // some impossible type was specified, ignore
-			pokemon.ivs = pokemon.ivs || {hp: 31, at: 31, df: 31, sa: 31, sd: 31, sp: 31};
-			pokemon.dvs = pokemon.dvs || {hp: 15, at: 15, df: 15, sa: 15, sd: 15, sp: 15};
-			for (var stat in hpIVs) {
-				pokemon.ivs[calc.Stats.shortForm(stat)] = hpIVs[stat];
-				pokemon.dvs[calc.Stats.shortForm(stat)] = calc.Stats.IVToDV(hpIVs[stat]);
-			}
-			if (gen < 3) {
-				pokemon.dvs.hp = calc.Stats.getHPDV({
-					atk: pokemon.ivs.at || 31,
-					def: pokemon.ivs.df || 31,
-					spe: pokemon.ivs.sp || 31,
-					spc: pokemon.ivs.sa || 31
-				});
-				pokemon.ivs.hp = calc.Stats.DVToIV(pokemon.dvs.hp);
-			}
+			continue;
+		}
+		// Otherwise, use the default preset hidden power IVs that PS would use
+		var hpIVs = calc.Stats.getHiddenPowerIVs(GENERATION, m[1]);
+		if (!hpIVs) continue; // some impossible type was specified, ignore
+		pokemon.ivs = pokemon.ivs || {hp: 31, at: 31, df: 31, sa: 31, sd: 31, sp: 31};
+		pokemon.dvs = pokemon.dvs || {hp: 15, at: 15, df: 15, sa: 15, sd: 15, sp: 15};
+		for (var stat in hpIVs) {
+			pokemon.ivs[calc.Stats.shortForm(stat)] = hpIVs[stat];
+			pokemon.dvs[calc.Stats.shortForm(stat)] = calc.Stats.IVToDV(hpIVs[stat]);
+		}
+		if (gen < 3) {
+			pokemon.dvs.hp = calc.Stats.getHPDV({
+				atk: pokemon.ivs.at || 31,
+				def: pokemon.ivs.df || 31,
+				spe: pokemon.ivs.sp || 31,
+				spc: pokemon.ivs.sa || 31
+			});
+			pokemon.ivs.hp = calc.Stats.DVToIV(pokemon.dvs.hp);
 		}
 	}
 	return pokemon;
