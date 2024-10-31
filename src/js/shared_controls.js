@@ -1268,7 +1268,7 @@ function totalEVs(poke) {
 		var evs = ~~stat.find(".evs").val();
 		totalEVs += evs;
 	}
-	poke.find(".totalevs").find(".evs").val(totalEVs);
+	poke.find(".totalevs").find(".evs").text(totalEVs);
 	return totalEVs;
 }
 
