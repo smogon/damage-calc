@@ -1872,8 +1872,7 @@ var SETDEX_SM = {
     "Monotype Choice Specs Attacker": {"ability":"Scrappy","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Boomburst","Heat Wave","Air Slash","U-turn"]}
   },
   "Pelipper": {
-    "OU Defensive": {"ability":"Drizzle","item":"Damp Rock","nature":"Bold","evs":{"hp":248,"df":36,"sd":224},"moves":["Scald","U-turn","Roost","Defog"]},
-    "OU Choice Specs": {"ability":"Drizzle","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Hurricane","Surf","U-turn"]},
+    "OU Defensive Rain Setter": {"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Scald","U-turn","Roost","Defog"]},
     "Doubles OU Rain Setter": {"ability":"Drizzle","item":"Damp Rock","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hurricane","Hydro Pump","Tailwind","Protect"]},
     "VGC 2018 Drizzle": {"level":50,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Hurricane","Scald","Tailwind","Protect"]},
     "Battle Spot Singles Offensive Support": {"level":50,"ability":"Drizzle","item":"Focus Sash","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Hurricane","Ice Beam","U-turn"]},
