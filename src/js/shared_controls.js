@@ -140,6 +140,9 @@ $(".sd .base, .sd .evs, .sd .ivs").bind("keyup change", function () {
 $(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sp');
 });
+$(".evs").bind('keyup change', function () {
+	totalEVs($(this).closest(".poke-info"));
+});
 $(".sl .base").keyup(function () {
 	calcStat($(this).closest(".poke-info"), 'sl');
 });
@@ -746,6 +749,7 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".move-pool").hide();
 			}
 		}
+		totalEVs(pokeObj);
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
 			var format = getSelectedTiers()[0];
 			var is50lvl = startsWith(format, "VGC") || startsWith(format, "Battle Spot");
@@ -1258,6 +1262,18 @@ function calcHP(poke) {
 	calcPercentHP(poke, total, newCurrentHP);
 
 	$currentHP.attr('data-set', true);
+}
+
+function totalEVs(poke) {
+	var totalEVs = 0;
+	for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+		var statName = LEGACY_STATS[gen][i];
+		var stat = poke.find("." + statName);
+		var evs = ~~stat.find(".evs").val();
+		totalEVs += evs;
+	}
+	poke.find(".totalevs").find(".evs").text(totalEVs);
+	return totalEVs;
 }
 
 function calcStat(poke, StatID) {
