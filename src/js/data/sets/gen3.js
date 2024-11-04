@@ -355,7 +355,7 @@ var SETDEX_ADV = {
     "NU Special Attacker": {"ability":"Insomnia","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Feint Attack","Hidden Power Ice","Hypnosis"]},
     "PU Defensive": {"ability":"Insomnia","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":120,"sp":136},"moves":["Substitute","Toxic","Protect","Psychic"]},
     "ZU Special Wall": {"ability":"Keen Eye","item":"Leftovers","nature":"Careful","ivs":{"at":30,"sa":30},"evs":{"hp":216,"sd":252,"sp":40},"moves":["Return","Toxic","Hidden Power Grass","Rest"]},
-    "ZU Physical Attacker": {"ability":"Insomnia","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"sa":30},"evs":{"hp":176,"at":252,"df":24,"sp":56},"moves":["Return","Protect","Toxic","Hidden Power Grass"]}
+    "ZU Physical Attacker": {"ability":"Keen Eye","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"sa":30},"evs":{"at":252,"df":128,"sp":128},"moves":["Double-Edge","Hidden Power Grass","Psychic","Reflect"]}
   },
   "Ariados": {
     "NU Baton Pass": {"ability":"Insomnia","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":40,"df":108,"sd":108},"moves":["Sludge Bomb","Signal Beam","Spider Web","Baton Pass"]},
@@ -931,8 +931,7 @@ var SETDEX_ADV = {
     "NU SkarmBliss Counter": {"ability":"Pickup","item":"Leftovers","nature":"Bold","evs":{"hp":252,"sa":136,"sp":120},"moves":["Beat Up","Thunder","Taunt","Counter"]},
     "NU Baton Pass": {"ability":"Pickup","item":"Liechi Berry","nature":"Calm","evs":{"hp":252,"df":4,"sp":252},"moves":["Baton Pass","Agility","Taunt","Substitute"]},
     "ZU Choice Band": {"ability":"Run Away","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Brick Break","Return","Focus Punch"]},
-    "ZU Focus Punch": {"ability":"Run Away","item":"Silk Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Brick Break","Return","Focus Punch"]},
-    "ZU Lead Utility": {"ability":"Run Away","item":"Silk Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Taunt","Double-Edge","Brick Break","Baton Pass"]}
+    "ZU All-out Attacker": {"ability":"Run Away","item":"Silk Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Brick Break","Return","Focus Punch"]}
   },
   "Sunflora": {
     "NU SunnyBeam": {"ability":"Chlorophyll","item":"Petaya Berry","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":36,"sa":252,"sp":220},"moves":["Sunny Day","Solar Beam","Hidden Power Fire","Grass Whistle"]},
@@ -1209,7 +1208,7 @@ var SETDEX_ADV = {
     "UU Standard": {"ability":"Sturdy","item":"Leftovers","nature":"Brave","evs":{"hp":228,"at":252,"sa":28},"moves":["Rock Slide","Ice Beam","Substitute","Focus Punch"]}
   },
   "Meditite": {
-    "ZU Choice Band": {"ability":"Pure Power","item":"Choice Band","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","Return","Shadow Ball","Hidden Power Flying"]}
+    "ZU Choice Band": {"ability":"Pure Power","item":"Choice Band","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Brick Break","Return","Shadow Ball","Hidden Power Flying"]}
   },
   "Medicham": {
     "OU Choice Band": {"ability":"Pure Power","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Brick Break","Shadow Ball","Rock Slide","Fake Out"]},
@@ -1329,7 +1328,7 @@ var SETDEX_ADV = {
     "PU Swords Dance": {"ability":"Battle Armor","item":"Lum Berry","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Hidden Power Bug","Rock Slide","Brick Break"]},
     "LC Swords Dance": {"level":5,"ability":"Battle Armor","item":"Sitrus Berry","nature":"Jolly","evs":{"at":236,"df":36,"sp":236},"moves":["Swords Dance","Brick Break","Rock Blast","Substitute"]},
     "ZU Salac Berry": {"ability":"Battle Armor","item":"Salac Berry","nature":"Adamant","evs":{"at":252,"sd":180,"sp":76},"moves":["Rock Slide","Brick Break","Substitute","Swords Dance"]},
-    "ZU Choice Band": {"ability":"Battle Armor","item":"Choice Band","nature":"Adamant","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Slide","Brick Break","Hidden Power Bug","Rapid Spin"]}
+    "ZU Choice Band": {"ability":"Battle Armor","item":"Choice Band","nature":"Adamant","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Slide","Brick Break","Hidden Power Bug","Rock Blast"]}
   },
   "Armaldo": {
     "OU Rapid Spin": {"ability":"Battle Armor","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"df":30,"sd":30},"evs":{"hp":188,"at":252,"df":68},"moves":["Hidden Power Bug","Rapid Spin","Rock Blast","Swords Dance"]},

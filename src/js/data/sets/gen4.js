@@ -728,7 +728,7 @@ var SETDEX_DPP = {
     "NU Nasty Plot": {"ability":"Chlorophyll","item":"Life Orb","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Nasty Plot","Dark Pulse","Leaf Storm","Synthesis"]}
   },
   "Giratina-Origin": {
-    "Ubers Mixed Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":64,"df":200,"sa":184,"sp":60},"moves":["Draco Meteor","Shadow Sneak","Thunder","Outrage"]},
+    "Ubers Mixed": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":64,"df":200,"sa":184,"sp":60},"moves":["Draco Meteor","Shadow Sneak","Thunder","Outrage"]},
     "Ubers Stallbreaker": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":84,"sa":216,"sd":96,"sp":112},"moves":["Calm Mind","Dragon Pulse","Shadow Ball","Substitute"]},
     "Ubers Sleeping Beauty (Mono-Attacker)": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":200,"df":44,"sa":224,"sd":40},"moves":["Dragon Pulse","Calm Mind","Rest","Sleep Talk"]},
     "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Will-O-Wisp","Outrage","Earthquake","Shadow Force"]},
@@ -1125,8 +1125,8 @@ var SETDEX_DPP = {
   },
   "Kabutops": {
     "OU Swords Dance": {"ability":"Swift Swim","item":"Life Orb","nature":"Adamant","evs":{"hp":32,"at":252,"df":20,"sp":204},"moves":["Swords Dance","Waterfall","Stone Edge","Aqua Jet"]},
-    "Ubers Swords Dance": {"ability":"Swift Swim","item":"Life Orb","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Waterfall","Low Kick","Stone Edge"]},
-    "Ubers Choice Band": {"ability":"Swift Swim","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Low Kick","Stone Edge","X-Scissor"]},
+    "Ubers Life Orb": {"ability":"Swift Swim","item":"Life Orb","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Rapid Spin","Waterfall","Low Kick","Stone Edge"]},
+    "Ubers Choice Band": {"ability":"Swift Swim","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Low Kick","Stone Edge","Aqua Jet"]},
     "UU Swords Dance": {"ability":"Swift Swim","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Waterfall","Stone Edge","Aqua Jet"]},
     "UU Lead": {"ability":"Swift Swim","item":"Lum Berry","nature":"Adamant","evs":{"hp":132,"at":252,"sp":124},"moves":["Stealth Rock","Stone Edge","Aqua Jet","Rapid Spin"]},
     "UU Offensive Rapid Spin": {"ability":"Swift Swim","item":"Leftovers","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Rapid Spin","Stone Edge","Aqua Jet","Swords Dance"]},

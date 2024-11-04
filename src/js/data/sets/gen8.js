@@ -3062,7 +3062,7 @@ var SETDEX_SS = {
     "LC Wall": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Bold","evs":{"hp":116,"at":12,"df":180,"sa":12,"sd":180},"moves":["Scald","Sludge Bomb","Knock Off","Recover"]}
   },
   "Toxapex": {
-    "OU Physically Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Impish","ivs":{"at":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
+    "OU The Pex": {"ability":"Regenerator","item":"Shed Shell","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Light Screen","Knock Off","Toxic","Recover"]},
     "OU Specially Defensive": {"ability":"Regenerator","item":"Shed Shell","nature":"Careful","ivs":{"at":0},"evs":{"hp":248,"df":20,"sd":240},"moves":["Knock Off","Toxic","Haze","Recover"]},
     "Ubers The Pex": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Knock Off","Haze","Recover","Scald"]},
     "Battle Stadium Singles Physical Wall": {"level":50,"ability":"Regenerator","item":"Black Sludge","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Recover","Haze","Toxic"]},
