@@ -921,7 +921,7 @@ var SETDEX_DPP = {
     "UU Special Attacker": {"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":96,"sa":252,"sp":160},"moves":["Charge Beam","Thunderbolt","Hidden Power Grass","Substitute"]},
     "UU Choice Scarf": {"ability":"Magnet Pull","item":"Choice Scarf","nature":"Naive","ivs":{"at":30,"df":30},"evs":{"at":56,"sa":224,"sp":228},"moves":["Thunderbolt","Hidden Power Ice","Flash Cannon","Explosion"]},
     "UU Choice Specs": {"ability":"Magnet Pull","item":"Choice Specs","nature":"Rash","ivs":{"at":30,"df":30,"sa":30},"evs":{"at":80,"sa":252,"sp":176},"moves":["Thunderbolt","Flash Cannon","Hidden Power Water","Explosion"]},
-    "NU Substitute": {"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","ivs":{"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Flash Cannon","Hidden Power Ground","Substitute"]}
+    "NU Substitute Attacker": {"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","ivs":{"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Flash Cannon","Hidden Power Ground","Substitute"]}
   },
   "Doduo": {
     "LC Mixed Life Orb": {"level":5,"ability":"Early Bird","item":"Life Orb","nature":"Naughty","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"at":240,"sp":240},"moves":["Brave Bird","Return","Quick Attack","Hidden Power Fighting"]},

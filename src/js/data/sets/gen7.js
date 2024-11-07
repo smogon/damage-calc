@@ -4688,7 +4688,7 @@ var SETDEX_SM = {
     "ZU Bulky Dragon Dance": {"ability":"Soundproof","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"at":72,"sp":184},"moves":["Dragon Dance","Drain Punch","Dragon Tail","Substitute"]}
   },
   "Kommo-o": {
-    "OU Offensive Stealth Rock": {"ability":"Bulletproof","item":"Kommonium Z","nature":"Hasty","evs":{"hp":4,"at":252,"sp":252},"moves":["Stealth Rock","Clanging Scales","Close Combat","Poison Jab"]},
+    "OU Offensive": {"ability":"Bulletproof","item":"Kommonium Z","nature":"Hasty","evs":{"at":252,"sd":4,"sp":252},"moves":["Clanging Scales","Close Combat","Poison Jab","Stealth Rock"]},
     "OU Dragon Dance": {"ability":"Bulletproof","item":"Groundium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Close Combat","Ice Punch","Earthquake"]},
     "OU Specially Defensive": {"ability":"Bulletproof","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":116,"sp":140},"moves":["Stealth Rock","Toxic","Protect","Drain Punch"]},
     "OU Belly Drum": {"ability":"Bulletproof","item":"Salac Berry","nature":"Jolly","evs":{"hp":52,"at":204,"sp":252},"moves":["Belly Drum","Substitute","Drain Punch","Thunder Punch"]},
