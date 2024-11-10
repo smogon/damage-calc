@@ -129,7 +129,7 @@ var SETDEX_DPP = {
     "UU RestTalk": {"ability":"Water Absorb","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Rest","Sleep Talk","Waterfall","Brick Break"]},
     "UU Belly Drum": {"ability":"Water Absorb","item":"Salac Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Belly Drum","Substitute","Waterfall","Return"]},
     "UU Mono-Attacker": {"ability":"Water Absorb","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Waterfall","Bulk Up","Rest","Sleep Talk"]},
-    "NU Physical Attacker": {"ability":"Water Absorb","item":"Leftovers","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Waterfall","Substitute","Focus Punch","Toxic"]},
+    "NU SubPunch": {"ability":"Water Absorb","item":"Leftovers","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Waterfall","Focus Punch","Substitute","Toxic"]},
     "NU Special Attacker": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":120,"sa":252,"sp":136},"moves":["Surf","Vacuum Wave","Ice Beam","Toxic"]}
   },
   "Alakazam": {

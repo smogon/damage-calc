@@ -522,6 +522,7 @@ var SETDEX_ADV = {
     "NU Bulky Leftovers": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"hp":252,"at":112,"sp":144},"moves":["Sludge Bomb","Aerial Ace","Hidden Power Ground","Toxic"]}
   },
   "Gloom": {
+    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Leftovers","nature":"Modest","ivs":{"at":2,"sa":30,"sp":30},"evs":{"hp":80,"sa":252,"sp":176},"moves":["Sunny Day","Solar Beam","Hidden Power Fire","Synthesis"]},
     "ZU Swords Dance": {"ability":"Chlorophyll","item":"Leftovers","nature":"Impish","ivs":{"at":30,"sa":30},"evs":{"hp":248,"df":252,"sp":8},"moves":["Swords Dance","Sludge Bomb","Hidden Power Grass","Synthesis"]},
     "NU Showdown Usage": {"ability":"Chlorophyll","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":252,"at":4,"df":252},"moves":["Moonlight","Sludge Bomb","Stun Spore","Hidden Power Grass"]}
   },
@@ -916,7 +917,7 @@ var SETDEX_ADV = {
     "UU Thief": {"ability":"Synchronize","item":"Lum Berry","nature":"Timid","evs":{"hp":252,"sa":32,"sp":224},"moves":["Calm Mind","Thief","Psychic","Wish"]}
   },
   "Flaaffy": {
-    "ZU Heal Bell": {"ability":"Static","item":"Leftovers","nature":"Modest","ivs":{"at":2,"df":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Heal Bell","Hidden Power Water","Fire Punch"]}
+    "ZU Heal Bell": {"ability":"Static","item":"Leftovers","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Heal Bell","Hidden Power Grass","Fire Punch"]}
   },
   "Sudowoodo": {
     "NU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Rock Slide","Earthquake","Focus Punch","Explosion"]},
@@ -930,7 +931,7 @@ var SETDEX_ADV = {
     "NU Annoyer": {"ability":"Pickup","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Thunder Wave","Thief","Sand Attack","Astonish"]},
     "NU SkarmBliss Counter": {"ability":"Pickup","item":"Leftovers","nature":"Bold","evs":{"hp":252,"sa":136,"sp":120},"moves":["Beat Up","Thunder","Taunt","Counter"]},
     "NU Baton Pass": {"ability":"Pickup","item":"Liechi Berry","nature":"Calm","evs":{"hp":252,"df":4,"sp":252},"moves":["Baton Pass","Agility","Taunt","Substitute"]},
-    "ZU Choice Band": {"ability":"Run Away","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Brick Break","Return","Focus Punch"]},
+    "ZU Choice Band": {"ability":"Run Away","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Brick Break","Baton Pass","Return"]},
     "ZU All-out Attacker": {"ability":"Run Away","item":"Silk Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Brick Break","Return","Focus Punch"]}
   },
   "Sunflora": {
