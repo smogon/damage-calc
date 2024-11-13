@@ -605,7 +605,6 @@ var SETDEX_GSC = {
     "Ubers Showdown Usage": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Baton Pass","Growth","Thunder","Hidden Power Grass"]}
   },
   "Flareon": {
-    "OU All-Out Attacker": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["Fire Blast","Shadow Ball","Return","Hidden Power Rock"]},
     "UU Growth Pass": {"item":"Leftovers","ivs":{"hp":14,"at":28},"moves":["Growth","Flamethrower","Hidden Power Electric","Baton Pass"]},
     "NU Growth Pass": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Growth","Fire Blast","Hidden Power Grass","Baton Pass"]},
     "NU RestTalk": {"item":"Leftovers","moves":["Fire Blast","Double-Edge","Rest","Sleep Talk"]}

@@ -452,10 +452,7 @@ var SETDEX_ADV = {
     "NU Sunny Day": {"ability":"Forecast","item":"Leftovers","nature":"Modest","evs":{"hp":128,"sa":252,"sd":128},"moves":["Thunderbolt","Flamethrower","Solar Beam","Sunny Day"]},
     "NU Rain Dance": {"ability":"Forecast","item":"Leftovers","nature":"Modest","evs":{"hp":128,"sa":252,"sd":128},"moves":["Weather Ball","Thunder","Ice Beam","Rain Dance"]},
     "NU Hail": {"ability":"Forecast","item":"Leftovers","nature":"Modest","evs":{"hp":128,"sa":252,"sd":128},"moves":["Weather Ball","Thunderbolt","Thunder Wave","Hail"]},
-    "ZU Tank": {"ability":"Forecast","item":"Leftovers","nature":"Brave","evs":{"hp":248,"at":112,"sd":120,"sp":28},"moves":["Protect","Double-Edge","Ice Beam","Thunderbolt"]},
-    "ZU Weather Boy": {"ability":"Forecast","item":"Mystic Water","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rain Dance","Weather Ball","Ice Beam","Thunderbolt"]},
-    "ZU Substitute Special Attacker": {"ability":"Forecast","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Thunderbolt","Ice Beam","Hidden Power Grass"]},
-    "ZU Substitute Mixed Attacker": {"ability":"Forecast","item":"Leftovers","nature":"Naughty","ivs":{"at":30,"sa":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Substitute","Return","Flamethrower","Hidden Power Grass"]}
+    "ZU Tank": {"ability":"Forecast","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"sa":30},"evs":{"hp":92,"at":240,"df":16,"sd":32,"sp":128},"moves":["Return","Hidden Power Grass","Toxic","Protect"]}
   },
   "Chimecho": {
     "NU Defensive Support": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":156,"sd":100},"moves":["Psychic","Toxic","Heal Bell","Reflect"]},
