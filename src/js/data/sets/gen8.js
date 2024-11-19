@@ -3242,7 +3242,7 @@ var SETDEX_SS = {
     "PU Wish Passer": {"ability":"Lightning Rod","item":"Heavy-Duty Boots","nature":"Careful","evs":{"hp":252,"sd":248,"sp":8},"moves":["Wish","Spiky Shield","Iron Head","U-turn"]}
   },
   "Mimikyu": {
-    "RU Swords Dance": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Drain Punch","Shadow Sneak","Shadow Claw"]},
+    "RU Swords Dance": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Shadow Sneak","Shadow Claw","Drain Punch"]},
     "VGC 2021 Trick Room": {"level":50,"ability":"Disguise","item":"Mental Herb","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Shadow Sneak","Trick Room","Will-O-Wisp","Play Rough"]},
     "Battle Stadium Singles Swords Dance Sweeper": {"level":50,"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Play Rough","Shadow Sneak","Phantom Force"]},
     "Battle Stadium Singles Kee Berry Sweeper": {"level":50,"ability":"Disguise","item":"Kee Berry","nature":"Adamant","evs":{"hp":148,"at":244,"df":108,"sd":4,"sp":4},"moves":["Play Rough","Shadow Sneak","Drain Punch","Swords Dance"]},

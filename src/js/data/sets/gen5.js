@@ -512,6 +512,7 @@ var SETDEX_BW = {
     "NU Trick Room": {"ability":"Flash Fire","item":"Life Orb","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sa":252},"moves":["Trick Room","Fire Blast","Shadow Ball","Energy Ball"]},
     "ZU Calm Mind": {"ability":"Flash Fire","item":"Eviolite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Substitute","Shadow Ball","Fire Blast"]},
     "ZU Choice Specs": {"ability":"Flash Fire","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Fire Blast","Energy Ball","Trick"]},
+    "ZU Choice Scarf": {"ability":"Flash Fire","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Shadow Ball","Trick","Energy Ball"]},
     "ZU Stallbreaker": {"ability":"Flash Fire","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Shadow Ball","Calm Mind","Substitute"]}
   },
   "Chandelure": {
@@ -1199,7 +1200,8 @@ var SETDEX_BW = {
     "LC Choice Scarf": {"level":5,"ability":"Insomnia","item":"Choice Scarf","nature":"Jolly","evs":{"hp":116,"at":212,"sp":180},"moves":["Zen Headbutt","Ice Punch","Thunder Punch","Drain Punch"]}
   },
   "Hypno": {
-    "NU Specially Defensive": {"ability":"Insomnia","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":52,"sd":204},"moves":["Wish","Protect","Thunder Wave","Foul Play"]}
+    "NU Specially Defensive": {"ability":"Insomnia","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":52,"sd":204},"moves":["Wish","Protect","Thunder Wave","Foul Play"]},
+    "ZU Stallbreaker": {"ability":"Forewarn","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Taunt","Wish","Protect"]}
   },
   "Krabby": {
     "LC Boosting Sweeper": {"level":5,"ability":"Hyper Cutter","item":"Oran Berry","nature":"Adamant","evs":{"hp":36,"at":236,"df":36,"sp":196},"moves":["Agility","Swords Dance","Crabhammer","Return"]},
