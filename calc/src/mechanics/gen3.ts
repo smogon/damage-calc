@@ -160,10 +160,11 @@ export function calculateADV(
   baseDamage = calculateFinalModsADV(baseDamage, attacker, move, field, desc, isCritical);
 
   baseDamage = Math.floor(baseDamage * typeEffectiveness);
-  result.damage = [];
+  const damage = [];
   for (let i = 85; i <= 100; i++) {
-    result.damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
+    damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
   }
+  result.damage = damage;
 
   if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
@@ -177,6 +178,7 @@ export function calculateADV(
       numAttacks = move.hits;
     }
     let usedItems = [false, false];
+    const damageMatrix = [damage];
     for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
@@ -189,16 +191,18 @@ export function calculateADV(
       newBaseDmg = calculateFinalModsADV(newBaseDmg, attacker, move, field, desc, isCritical);
       newBaseDmg = Math.floor(newBaseDmg * typeEffectiveness);
 
-      let damageMultiplier = 85;
-      result.damage = result.damage.map(affectedAmount => {
-        const newFinalDamage = Math.max(1, Math.floor((newBaseDmg * damageMultiplier) / 100));
-        damageMultiplier++;
-        return affectedAmount + newFinalDamage;
-      });
+      const damage = [];
+      for (let i = 85; i <= 100; i++) {
+        const newFinalDamage = Math.max(1, Math.floor((newBaseDmg * i) / 100));
+        damage[i - 85] = newFinalDamage;
+      }
+      damageMatrix[times] = damage;
     }
+    result.damage = damageMatrix;
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;
   }
+  result.damage = damage;
 
   return result;
 }

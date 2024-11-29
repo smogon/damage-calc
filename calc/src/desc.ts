@@ -2,7 +2,7 @@ import type {Generation, Weather, Terrain, TypeName, ID, AbilityName} from './da
 import type {Field, Side} from './field';
 import type {Move} from './move';
 import type {Pokemon} from './pokemon';
-import {type Damage, damageRange} from './result';
+import {type Damage, damageRange, multiDamageRange} from './result';
 import {error} from './util';
 // NOTE: This needs to come last to simplify bundling
 import {isGrounded} from './mechanics/util';
@@ -64,9 +64,7 @@ export function display(
   notation = '%',
   err = true
 ) {
-  const [minDamage, maxDamage] = damageRange(damage);
-  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]);
-  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]);
+  const [min, max] = damageRange(damage);
 
   const minDisplay = toDisplay(notation, min, defender.maxHP());
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
@@ -87,9 +85,7 @@ export function displayMove(
   damage: Damage,
   notation = '%'
 ) {
-  const [minDamage, maxDamage] = damageRange(damage);
-  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]);
-  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]);
+  const [min, max] = damageRange(damage);
 
   const minDisplay = toDisplay(notation, min, defender.maxHP());
   const maxDisplay = toDisplay(notation, max, defender.maxHP());
@@ -110,8 +106,14 @@ export function getRecovery(
   notation = '%'
 ) {
   const [minDamage, maxDamage] = damageRange(damage);
-  const minD = typeof minDamage === 'number' ? [minDamage] : minDamage;
-  const maxD = typeof maxDamage === 'number' ? [maxDamage] : maxDamage;
+  let minD;
+  let maxD;
+  if (move.timesUsed && move.timesUsed > 1) {
+    [minD, maxD] = multiDamageRange(damage) as [number[], number[]];
+  } else {
+    minD = [minDamage];
+    maxD = [maxDamage];
+  }
 
   const recovery = [0, 0] as [number, number];
   let text = '';
@@ -121,13 +123,16 @@ export function getRecovery(
   if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
     const max = Math.round(defender.maxHP() / 8);
     for (let i = 0; i < minD.length; i++) {
-      recovery[0] += Math.min(Math.round(minD[i] * move.hits / 8), max);
-      recovery[1] += Math.min(Math.round(maxD[i] * move.hits / 8), max);
+      const minHealed = minD[i] > 0 ? Math.max(Math.round(minD[i] * move.hits / 8), 1) : 0;
+      const maxHealed = maxD[i] > 0 ? Math.max(Math.round(maxD[i] * move.hits / 8), 1) : 0;
+      recovery[0] = Math.min(minHealed + recovery[0], max);
+      recovery[1] = Math.min(maxHealed + recovery[1], max);
     }
   }
 
   if (move.named('G-Max Finale')) {
-    recovery[0] = recovery[1] = Math.round(attacker.maxHP() / 6);
+    recovery[0] += Math.round(attacker.maxHP() / 6);
+    recovery[1] += Math.round(attacker.maxHP() / 6);
   }
 
   if (move.named('Pain Split')) {
@@ -136,14 +141,19 @@ export function getRecovery(
   }
 
   if (move.drain) {
+    // Parental Bond counts as multiple heals for drain moves, but not for Shell Bell
+    // Currently no drain moves are multihit, however this covers for it.
+    if (attacker.hasAbility('Parental Bond') || move.hits > 1) {
+      [minD, maxD] = multiDamageRange(damage) as [number[], number[]];
+    }
     const percentHealed = move.drain[0] / move.drain[1];
-    const max = Math.round(defender.maxHP() * percentHealed);
+    const max = Math.round(defender.curHP() * percentHealed);
     for (let i = 0; i < minD.length; i++) {
       const range = [minD[i], maxD[i]];
       for (const j in recovery) {
-        let drained = Math.round(range[j] * percentHealed);
+        let drained = Math.max(Math.round(range[j] * percentHealed), 1);
         if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 5324 / 4096);
-        recovery[j] += Math.min(drained * move.hits, max);
+        recovery[j] += Math.min(drained, max);
       }
     }
   }
@@ -167,14 +177,12 @@ export function getRecoil(
   damage: Damage,
   notation = '%'
 ) {
-  const [minDamage, maxDamage] = damageRange(damage);
-  const min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
-  const max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+  const [min, max] = damageRange(damage);
 
   let recoil: [number, number] | number = [0, 0];
   let text = '';
 
-  const damageOverflow = minDamage > defender.curHP() || maxDamage > defender.curHP();
+  const damageOverflow = min > defender.curHP() || max > defender.curHP();
   if (move.recoil) {
     const mod = (move.recoil[0] / move.recoil[1]) * 100;
     let minRecoilDamage, maxRecoilDamage;
@@ -450,24 +458,59 @@ export function getKOChance(
 function combine(damage: Damage) {
   // Fixed Damage
   if (typeof damage === 'number') return [damage];
+
   // Standard Damage
-  if (damage.length > 2) {
-    if (damage[0] > damage[damage.length - 1]) damage = damage.slice().sort() as number[];
-    return damage as number[];
+  if (damage.length > 2 && typeof damage[0] === 'number') {
+    damage = damage as number[];
+    if (damage[0] > damage[damage.length - 1]) damage = damage.slice().sort();
+    return damage;
   }
-  // Fixed Parental Bond Damage
+  // Fixed Multi-hit Damage
   if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
     return [damage[0] + damage[1]];
   }
-  // Parental Bond Damage
-  const d = damage as [number[], number[]];
-  const combined = [];
-  for (let i = 0; i < d[0].length; i++) { // eslint-disable-line
-    for (let j = 0; j < d[1].length; j++) { // eslint-disable-line
-      combined.push(d[0][i] + d[1][j]);
+  // Multi-hit Damage
+
+  // Reduce Distribution to be at most 256 elements, maintains min and max
+  function reduce(dist: number[]): number[] {
+    const MAX_LENGTH = 256;
+    if (dist.length <= MAX_LENGTH) {
+      return dist;
     }
+    const reduced = [];
+    reduced[0] = dist[0];
+    reduced[MAX_LENGTH - 1] = dist[dist.length - 1];
+    const scaleValue = dist.length / MAX_LENGTH; // Should always be 16
+    for (let i = 1; i < MAX_LENGTH - 1; i++) {
+      reduced[i] = dist[Math.round(i * scaleValue + scaleValue / 2)];
+    }
+    return reduced;
   }
-  return combined.sort();
+
+  function combineTwo(dist1: number[], dist2: number[]): number[] {
+    const combined = [];
+    for (const val1 of dist1) {
+      for (const val2 of dist2) {
+        combined.push(val1 + val2);
+      }
+    }
+    combined.sort();
+    return combined;
+  }
+
+  // Combine n distributions to return an approximation of sum with <= 256 elements
+  // Accurate for <= 2 hits, should be within 1% otherwise
+  function combineDistributions(dists: number[][]): number[] {
+    let combined = [0];
+    for (const dist of dists) {
+      combined = combineTwo(combined, dist);
+      combined = reduce(combined);
+    }
+    return combined;
+  }
+
+  const d = damage as number[][];
+  return combineDistributions(d);
 }
 
 const TRAPPING = [
