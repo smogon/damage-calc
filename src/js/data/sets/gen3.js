@@ -60,7 +60,7 @@ var SETDEX_ADV = {
     "UU Reversal": {"ability":"Static","item":"Salac Berry","nature":"Lonely","ivs":{"at":30,"sa":30},"evs":{"at":252,"sa":120,"sp":136},"moves":["Thunderbolt","Hidden Power Grass","Substitute","Reversal"]},
     "RU SubPunch": {"ability":"Static","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"at":40,"sa":252,"sp":216},"moves":["Thunderbolt","Substitute","Focus Punch","Hidden Power Ice"]},
     "RU SubToxic": {"ability":"Static","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Substitute","Toxic","Encore"]},
-    "RU Mixed Sweeper": {"ability":"Static","item":"Salac Berry","nature":"Hasty","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sa":40,"sp":216},"moves":["Thunderbolt","Reversal","Hidden Power Flying","Endure"]},
+    "RU Mixed Sweeper": {"ability":"Static","item":"Salac Berry","nature":"Hasty","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sa":36,"sp":220},"moves":["Thunderbolt","Reversal","Hidden Power Flying","Endure"]},
     "RU Petaya Berry": {"ability":"Static","item":"Petaya Berry","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":12,"sa":252,"sp":244},"moves":["Thunderbolt","Hidden Power Ice","Substitute","Agility"]},
     "RU Wish": {"ability":"Static","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":240,"sp":16},"moves":["Thunderbolt","Wish","Protect","Encore"]}
   },
