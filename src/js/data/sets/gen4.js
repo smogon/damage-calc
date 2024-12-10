@@ -2202,7 +2202,7 @@ var SETDEX_DPP = {
     "UU Rain Dance Support": {"ability":"Swift Swim","item":"Damp Rock","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Rain Dance","Safeguard","U-turn","Surf"]}
   },
   "Mantyke": {
-    "LC Rain Sweeper": {"level":5,"ability":"Swift Swim","item":"Oran Berry","nature":"Modest","ivs":{"hp":3,"at":3,"sa":30},"evs":{"df":116,"sa":200,"sd":36,"sp":116},"moves":["Rain Dance","Hydro Pump","Hidden Power Electric","Air Cutter"]}
+    "LC Rain Sweeper": {"level":5,"ability":"Swift Swim","item":"Oran Berry","nature":"Modest","ivs":{"at":3,"sa":30},"evs":{"df":116,"sa":200,"sd":36,"sp":116},"moves":["Rain Dance","Hydro Pump","Hidden Power Electric","Air Cutter"]}
   },
   "Snover": {
     "UU Lead": {"ability":"Snow Warning","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":172,"sp":88},"moves":["Leech Seed","Protect","Blizzard","Substitute"]},
