@@ -38,7 +38,8 @@ export class Result {
   }
 
   range(): [number, number] {
-    return damageRange(this.damage);
+    const [min, max] = damageRange(this.damage);
+    return [min, max];
   }
 
   fullDesc(notation = '%', err = true) {
@@ -113,6 +114,5 @@ export function multiDamageRange(
     return [d, d];
   }
   // Standard Damage
-  if (d[0] > d[d.length - 1]) return [Math.min(...d), Math.max(...d)];
   return [d[0], d[d.length - 1]];
 }

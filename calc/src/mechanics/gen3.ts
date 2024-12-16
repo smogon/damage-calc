@@ -202,7 +202,6 @@ export function calculateADV(
     desc.defenseBoost = origDefBoost;
     desc.attackBoost = origAtkBoost;
   }
-  result.damage = damage;
 
   return result;
 }

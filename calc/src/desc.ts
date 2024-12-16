@@ -1,4 +1,5 @@
-import type {Generation, Weather, Terrain, TypeName, ID, AbilityName} from './data/interface';
+/* eslint-disable @typescript-eslint/prefer-for-of */
+import type {Generation, Weather, Terrain, TypeName, ID} from './data/interface';
 import type {Field, Side} from './field';
 import type {Move} from './move';
 import type {Pokemon} from './pokemon';
@@ -294,7 +295,7 @@ export function getKOChance(
 
   // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it
   // to an approximate distribution
-  let qualifier = move.hits > 1 ? 'approx. ' : '';
+  let qualifier = move.hits > 2 ? 'approx. ' : '';
 
   const hazardsText = hazards.texts.length > 0
     ? ' after ' + serializeText(hazards.texts)
@@ -337,7 +338,7 @@ export function getKOChance(
       // if the move OHKOing is guaranteed even without end of turn damage
     } else if (chanceWithoutEot === 1) {
       chance = chanceWithoutEot;
-      if (qualifier === '') text += 'guaranteed ';
+      text = 'guaranteed ';
       text += `OHKO${hazardsText}`;
     } else if (chanceWithoutEot > 0) {
       chance = chanceWithEot;
@@ -362,7 +363,7 @@ export function getKOChance(
       chance = chanceWithEot;
       // if the move KOing is not possible, but eot damage guarantees the OHKO
       if (chanceWithEot === 1) {
-        if (qualifier === '') text += 'guaranteed ';
+        text = 'guaranteed ';
         text += `${KOTurnText}${afterText}`;
         // if the move KOing is not possible, but eot damage might KO
       } else if (chanceWithEot > 0) {
@@ -488,13 +489,7 @@ function combine(damage: Damage) {
   }
 
   function combineTwo(dist1: number[], dist2: number[]): number[] {
-    const combined = [];
-    for (const val1 of dist1) {
-      for (const val2 of dist2) {
-        combined.push(val1 + val2);
-      }
-    }
-    combined.sort();
+    const combined = dist1.flatMap(val1 => dist2.map(val2 => val1 + val2)).sort((a, b) => a - b);
     return combined;
   }
 
@@ -502,8 +497,8 @@ function combine(damage: Damage) {
   // Accurate for <= 2 hits, should be within 1% otherwise
   function combineDistributions(dists: number[][]): number[] {
     let combined = [0];
-    for (const dist of dists) {
-      combined = combineTwo(combined, dist);
+    for (let i = 0; i < dists.length; i++) {
+      combined = combineTwo(combined, dists[i]);
       combined = reduce(combined);
     }
     return combined;
