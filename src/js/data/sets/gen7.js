@@ -3312,7 +3312,7 @@ var SETDEX_SM = {
   },
   "Excadrill": {
     "OU Sand Rush Sweeper": {"ability":"Sand Rush","item":"Steelium Z","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Earthquake","Iron Head","Rapid Spin"]},
-    "OU Focus Sash": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Rapid Spin","Earthquake","Rock Tomb"]},
+    "OU Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Rock Tomb","Rapid Spin"]},
     "Ubers Suicide Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Rock Tomb","Toxic","Rapid Spin"]},
     "Doubles OU Sand Attacker": {"ability":"Sand Rush","item":"Groundium Z","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Iron Head","Swords Dance","Protect"]},
     "VGC 2018 Sand Rush": {"level":50,"ability":"Sand Rush","item":"Groundium Z","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Iron Head","Rock Slide","Protect"]},
