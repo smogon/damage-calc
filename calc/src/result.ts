@@ -4,7 +4,7 @@ import type {Field} from './field';
 import type {Move} from './move';
 import type {Pokemon} from './pokemon';
 
-export type Damage = number | number[] | [number, number] | [number[], number[]];
+export type Damage = number | number[] | [number, number] | number[][];
 
 export class Result {
   gen: Generation;
@@ -12,7 +12,7 @@ export class Result {
   defender: Pokemon;
   move: Move;
   field: Field;
-  damage: number | number[] | [number[], number[]];
+  damage: number | number[] | number[][];
   rawDesc: RawDesc;
 
   constructor(
@@ -38,10 +38,8 @@ export class Result {
   }
 
   range(): [number, number] {
-    const range = damageRange(this.damage);
-    if (typeof range[0] === 'number') return range as [number, number];
-    const d = range as [number[], number[]];
-    return [d[0][0] + d[0][1], d[1][0] + d[1][1]];
+    const [min, max] = damageRange(this.damage);
+    return [min, max];
   }
 
   fullDesc(notation = '%', err = true) {
@@ -83,24 +81,38 @@ export class Result {
   }
 }
 
-export function damageRange(
+export function damageRange(damage: Damage): [number, number] {
+  const range = multiDamageRange(damage);
+  if (typeof range[0] === 'number') return range as [number, number];
+  const d = range as [number[], number[]];
+  const summedRange: [number, number] = [0, 0];
+  for (let i = 0; i < d[0].length; i++) {
+    summedRange[0] += d[0][i];
+    summedRange[1] += d[1][i];
+  }
+  return summedRange;
+}
+
+export function multiDamageRange(
   damage: Damage
-): [number, number] | [[number, number], [number, number]] {
+): [number, number] | [number[], number[]] {
   // Fixed Damage
   if (typeof damage === 'number') return [damage, damage];
+  // Multihit Damage
+  if (typeof damage[0] !== 'number') {
+    damage = damage as number[][];
+    const ranges: [number[], number[]] = [[], []];
+    for (const damageList of damage) {
+      ranges[0].push(damageList[0]);
+      ranges[1].push(damageList[damageList.length - 1]);
+    }
+    return ranges;
+  }
+  const d = damage as number[];
+  // Fixed Multihit
+  if (d.length < 16) {
+    return [d, d];
+  }
   // Standard Damage
-  if (damage.length > 2) {
-    const d = damage as number[];
-    if (d[0] > d[d.length - 1]) return [Math.min(...d), Math.max(...d)];
-    return [d[0], d[d.length - 1]];
-  }
-  // Fixed Parental Bond Damage
-  if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-    return [[damage[0], damage[1]], [damage[0], damage[1]]];
-  }
-  // Parental Bond Damage
-  const d = damage as [number[], number[]];
-  if (d[0][0] > d[0][d[0].length - 1]) d[0] = d[0].slice().sort();
-  if (d[1][0] > d[1][d[1].length - 1]) d[1] = d[1].slice().sort();
-  return [[d[0][0], d[1][0]], [d[0][d[0].length - 1], d[1][d[1].length - 1]]];
+  return [d[0], d[d.length - 1]];
 }
