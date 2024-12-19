@@ -151,7 +151,7 @@ var SETDEX_RBY = {
   "Abra": {
     "NU Special Attacker": {"moves":["Psychic","Thunder Wave","Seismic Toss","Counter"]},
     "PU Special Attacker": {"moves":["Psychic","Seismic Toss","Thunder Wave","Substitute"]},
-    "ZU Special Attacker": {"moves":["Psychic","Thunder Wave","Substitute","Counter"]}
+    "ZU Showdown Usage": {"moves":["Psychic","Thunder Wave","Seismic Toss","Substitute"]}
   },
   "Kadabra": {
     "UU Standard": {"moves":["Psychic","Thunder Wave","Seismic Toss","Recover"]}
@@ -173,7 +173,7 @@ var SETDEX_RBY = {
   },
   "Weepinbell": {
     "PU Double Powder": {"moves":["Sleep Powder","Stun Spore","Wrap","Razor Leaf"]},
-    "ZU Double Powder": {"moves":["Sleep Powder","Stun Spore","Wrap","Razor Leaf"]}
+    "ZU Double Powder": {"moves":["Sleep Powder","Stun Spore","Substitute","Razor Leaf"]}
   },
   "Victreebel": {
     "OU Standard": {"moves":["Sleep Powder","Wrap","Razor Leaf","Stun Spore"]},
@@ -183,7 +183,7 @@ var SETDEX_RBY = {
     "Tradebacks OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Sleep Powder"]}
   },
   "Tentacool": {
-    "ZU Special Wallbreaker": {"moves":["Surf","Blizzard","Wrap","Hydro Pump"]}
+    "ZU Special Wallbreaker": {"moves":["Surf","Blizzard","Hydro Pump","Substitute"]}
   },
   "Tentacruel": {
     "UU Wrap Pivot": {"moves":["Wrap","Surf","Blizzard","Rest"]},
@@ -201,7 +201,7 @@ var SETDEX_RBY = {
     "Tradebacks OU Standard": {"moves":["Earthquake","Explosion","Rock Slide","Body Slam"]}
   },
   "Ponyta": {
-    "ZU Mixed Attacker": {"moves":["Fire Blast","Body Slam","Agility","Fire Spin"]}
+    "ZU Mixed Attacker": {"moves":["Fire Blast","Body Slam","Agility","Reflect"]}
   },
   "Rapidash": {
     "UU Fire Spin Breaker": {"moves":["Fire Blast","Fire Spin","Hyper Beam","Body Slam"]},
@@ -263,7 +263,7 @@ var SETDEX_RBY = {
   },
   "Onix": {
     "PU Bind Pivot": {"moves":["Bind","Toxic","Earthquake","Explosion"]},
-    "ZU Bind Pivot": {"moves":["Bind","Earthquake","Rock Slide","Explosion"]}
+    "ZU Wall": {"moves":["Earthquake","Rock Slide","Explosion","Rest"]}
   },
   "Drowzee": {
     "NU Standard": {"moves":["Psychic","Seismic Toss","Thunder Wave","Rest"]},
