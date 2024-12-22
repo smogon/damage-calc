@@ -4166,7 +4166,7 @@ var SETDEX_SS = {
     "CAP Life Orb": {"ability":"Trace","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Moonblast","Focus Blast","Shore Up"]}
   },
   "Caribolt": {
-    "CAP Swords Dance": {"ability":"Galvanize","item":"Magnet","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Double-Edge","Horn Leech","Quick Attack"]}
+    "CAP talahbolt (Swords Dance)": {"ability":"Galvanize","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Double-Edge","Horn Leech","Rapid Spin"]}
   },
   "Smokomodo": {
     "CAP Balance Breaker": {"ability":"Blaze","item":"Charcoal","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Flare Blitz","Morning Sun","Toxic"]}
