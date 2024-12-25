@@ -1005,7 +1005,8 @@ var SETDEX_DPP = {
     "LC Substitute": {"level":5,"ability":"Rock Head","item":"Oran Berry","nature":"Impish","evs":{"hp":196,"at":236,"sd":36,"sp":36},"moves":["Substitute","Earthquake","Rock Blast","Ice Fang"]}
   },
   "Rhydon": {
-    "NU Offensive Tank": {"ability":"Rock Head","item":"Custap Berry","nature":"Adamant","evs":{"hp":136,"at":36,"sd":252,"sp":84},"moves":["Earthquake","Rock Blast","Swords Dance","Stealth Rock"]},
+    "NU Offensive Tank": {"ability":"Rock Head","item":"Custap Berry","nature":"Adamant","evs":{"hp":136,"at":36,"sd":252,"sp":84},"moves":["Stealth Rock","Earthquake","Rock Blast","Megahorn"]},
+    "NU Setup Sweeper": {"ability":"Rock Head","item":"Custap Berry","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Rock Blast","Megahorn"]},
     "PU Physical Attacker": {"ability":"Lightning Rod","item":"Rindo Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Stone Edge","Swords Dance","Stealth Rock"]},
     "PU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","Megahorn","Double-Edge"]}
   },
@@ -1323,9 +1324,9 @@ var SETDEX_DPP = {
     "UU Swords Dance": {"ability":"Hyper Cutter","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Earthquake","Stone Edge","X-Scissor"]},
     "NU Defensive Pivot": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","U-turn","Roost","Stealth Rock"]},
     "NU Bulky Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Swords Dance","Earthquake","Stone Edge","Roost"]},
-    "LC Stealth Rock": {"level":5,"ability":"Sand Veil","item":"Oran Berry","nature":"Jolly","evs":{"at":156,"df":76,"sp":236},"moves":["U-turn","Earthquake","Aqua Tail","Stealth Rock"]},
-    "LC Choice Scarf": {"level":5,"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"at":236,"sp":236},"moves":["U-turn","Earthquake","Aqua Tail","Stone Edge"]},
-    "LC Swords Dance": {"level":5,"ability":"Sand Veil","item":"Oran Berry","nature":"Jolly","evs":{"at":236,"sp":236},"moves":["Night Slash","Earthquake","Aqua Tail","Swords Dance"]}
+    "LC Stealth Rock": {"level":5,"ability":"Hyper Cutter","item":"Oran Berry","nature":"Jolly","evs":{"at":156,"df":76,"sp":236},"moves":["U-turn","Earthquake","Aqua Tail","Stealth Rock"]},
+    "LC Choice Scarf": {"level":5,"ability":"Hyper Cutter","item":"Choice Scarf","nature":"Jolly","evs":{"at":236,"sp":236},"moves":["U-turn","Earthquake","Aqua Tail","Stone Edge"]},
+    "LC Swords Dance": {"level":5,"ability":"Hyper Cutter","item":"Oran Berry","nature":"Jolly","evs":{"at":236,"sp":236},"moves":["Night Slash","Earthquake","Aqua Tail","Swords Dance"]}
   },
   "Steelix": {
     "UU Standard Wall": {"ability":"Sturdy","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"at":4,"sd":252},"moves":["Stealth Rock","Earthquake","Gyro Ball","Roar"]},
