@@ -1064,7 +1064,7 @@ export function calculateBPModsSMSSSV(
   }
 
   // Resist knock off damage if your item was already knocked off
-  if (!resistedKnockOffDamage && hit > 0 && !defender.hasAbility('Sticky Hold')) {
+  if (!resistedKnockOffDamage && hit > 1 && !defender.hasAbility('Sticky Hold')) {
     resistedKnockOffDamage = true;
   }
 
