@@ -289,7 +289,7 @@ var SETDEX_SS = {
     "LC Eviolite": {"level":5,"ability":"Flame Body","item":"Eviolite","nature":"Jolly","evs":{"at":76,"df":156,"sd":76,"sp":196},"moves":["Flare Blitz","Will-O-Wisp","Morning Sun","Flame Charge"]}
   },
   "Ponyta-Galar": {
-    "LC Calm Mind": {"level":5,"ability":"Pastel Veil","item":"Eviolite","nature":"Timid","evs":{"sa":236,"sd":76,"sp":196},"moves":["Calm Mind","Psychic","Mystical Fire","Morning Sun"]}
+    "LC Bulky Attacker": {"level":5,"ability":"Pastel Veil","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"df":76,"sa":236,"sp":196},"moves":["Morning Sun","Psychic","Dazzling Gleam","Mystical Fire"]}
   },
   "Rapidash": {
     "ZU Utility": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Flare Blitz","High Horsepower","Toxic","Morning Sun"]},
@@ -2273,7 +2273,8 @@ var SETDEX_SS = {
   },
   "Vullaby": {
     "LC Offensive Pivot": {"level":5,"ability":"Weak Armor","item":"Berry Juice","nature":"Jolly","evs":{"at":236,"df":76,"sp":196},"moves":["Brave Bird","Knock Off","U-turn","Defog"]},
-    "LC Nasty Plot": {"level":5,"ability":"Weak Armor","item":"Berry Juice","nature":"Modest","ivs":{"at":0},"evs":{"df":76,"sa":236,"sp":196},"moves":["Nasty Plot","Air Slash","Heat Wave","Endure"]}
+    "LC Bulky Pivot": {"level":5,"ability":"Weak Armor","item":"Berry Juice","nature":"Adamant","evs":{"hp":116,"at":76,"sd":156,"sp":116},"moves":["Brave Bird","Knock Off","Defog","U-turn"]},
+    "LC Nasty Plot": {"level":5,"ability":"Weak Armor","item":"Berry Juice","nature":"Modest","ivs":{"at":0},"evs":{"df":76,"sa":236,"sp":196},"moves":["Nasty Plot","Air Slash","Dark Pulse","Heat Wave"]}
   },
   "Mandibuzz": {
     "OU Defensive": {"ability":"Overcoat","item":"Heavy-Duty Boots","nature":"Impish","evs":{"hp":248,"df":92,"sd":152,"sp":16},"moves":["Foul Play","Roost","Defog","U-turn"]},

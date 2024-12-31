@@ -2773,7 +2773,7 @@ var SETDEX_SM = {
   "Garchomp": {
     "OU Offensive Stealth Rock": {"ability":"Rough Skin","item":"Rockium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Stone Edge","Swords Dance"]},
     "OU Mixed Mega": {"ability":"Rough Skin","item":"Garchompite","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Draco Meteor","Earthquake","Fire Blast","Stealth Rock"]},
-    "OU Tank": {"ability":"Rough Skin","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"df":4,"sp":252},"moves":["Stealth Rock","Earthquake","Fire Blast","Toxic"]},
+    "OU Tank": {"ability":"Rough Skin","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Toxic","Fire Blast"]},
     "OU Swords Dance Mega": {"ability":"Rough Skin","item":"Garchompite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Substitute","Earthquake","Stone Edge"]},
     "Battle Spot Singles Physical Attacker": {"level":50,"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Outrage","Swords Dance","Rock Tomb"]},
     "Battle Spot Singles Choice Attacker": {"level":50,"ability":"Rough Skin","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Outrage","Rock Slide","Poison Jab"]},

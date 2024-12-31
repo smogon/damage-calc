@@ -550,6 +550,7 @@ var SETDEX_ADV = {
     "NU Bulky Leftovers": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"hp":252,"at":112,"sp":144},"moves":["Sludge Bomb","Aerial Ace","Hidden Power Ground","Toxic"]}
   },
   "Gloom": {
+    "ZU Specially Defensive": {"ability":"Chlorophyll","item":"Leftovers","nature":"Careful","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":4,"sd":252},"moves":["Sludge Bomb","Hidden Power Grass","Leech Seed","Moonlight"]},
     "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Leftovers","nature":"Modest","ivs":{"at":2,"sa":30,"sp":30},"evs":{"hp":80,"sa":252,"sp":176},"moves":["Sunny Day","Solar Beam","Hidden Power Fire","Synthesis"]},
     "ZU Swords Dance": {"ability":"Chlorophyll","item":"Leftovers","nature":"Impish","ivs":{"at":30,"sa":30},"evs":{"hp":248,"df":252,"sp":8},"moves":["Swords Dance","Sludge Bomb","Hidden Power Grass","Synthesis"]},
     "NU Showdown Usage": {"ability":"Chlorophyll","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":252,"at":4,"df":252},"moves":["Moonlight","Sludge Bomb","Stun Spore","Hidden Power Grass"]}
@@ -735,7 +736,7 @@ var SETDEX_ADV = {
     "NU Suicide Rain Lead": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Thunder","Light Screen","Explosion"]},
     "LC Offensive": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":116,"df":36,"sa":160,"sp":196},"moves":["Thunderbolt","Hidden Power Grass","Thief","Explosion"]},
     "ZU Rain Setter": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Explosion","Thunder","Taunt"]},
-    "ZU Sub + Petaya Berry": {"ability":"Static","item":"Petaya Berry","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":16,"sa":252,"sp":232},"moves":["Thunderbolt","Hidden Power Grass","Explosion","Substitute"]}
+    "ZU Sub + Petaya Berry": {"ability":"Static","item":"Petaya Berry","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":24,"sa":252,"sp":232},"moves":["Thunderbolt","Hidden Power Grass","Explosion","Substitute"]}
   },
   "Exeggcute": {
     "LC Sunny Day Sweeper": {"level":5,"ability":"Chlorophyll","item":"Sitrus Berry","nature":"Mild","evs":{"hp":36,"at":36,"df":36,"sa":196,"sd":156,"sp":36},"moves":["Explosion","Sunny Day","Solar Beam","Psychic"]}
