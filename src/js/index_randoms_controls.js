@@ -108,11 +108,11 @@ $(".result-move").change(function () {
 			var desc = result.fullDesc(notation, false);
 			if (desc.indexOf('--') === -1) desc += ' -- possibly the worst move ever';
 			$("#mainResult").text(desc);
-			let summary = displayDamageHits(result.damage);
-			let rest = "";
-			let newLine = summary.indexOf('\n');
+			var summary = displayDamageHits(result.damage);
+			var rest = "";
+			var newLine = summary.indexOf('\n');
 			if (newLine > -1) {
-				rest = summary.substring(newLine+1);
+				rest = summary.substring(newLine + 1);
 				summary = summary.substring(0, newLine);
 			}
 			$("#firstDmgValues").text("Possible damage amounts: (" + summary + ")");
@@ -132,9 +132,9 @@ function displayDamageHits(damage) {
 		return '1st Hit: ' + damage[0] + '; 2nd Hit: ' + damage[1];
 	}
 	// Multihit Damage
-	let fullText = "";
-	for (let i = 1; i <= damage.length; i++) {
-		let txt = toOrdinal(i) + " Hit: " + damage[i-1].join(', ');
+	var fullText = "";
+	for (var i = 1; i <= damage.length; i++) {
+		var txt = toOrdinal(i) + " Hit: " + damage[i - 1].join(', ');
 		if (i > 1) txt += "; ";
 		fullText += txt;
 		if (i % 2 == 1 && i < damage.length) fullText += "\n";
@@ -147,14 +147,14 @@ function toOrdinal(num) {
 		return "Input must be an integer.";
 	}
 	switch (num) {
-		case 1:
-			return `${num}st`;
-		case 2:
-			return `${num}nd`;
-		case 3:
-			return `${num}rd`;
-		default:
-			return `${num}th`;
+	case 1:
+		return num + "st";
+	case 2:
+		return num + "nd";
+	case 3:
+		return num + "rd";
+	default:
+		return num + "th";
 	}
 }
 
