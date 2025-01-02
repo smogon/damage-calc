@@ -2755,8 +2755,12 @@ var SETDEX_SS = {
     "ZU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Power Whip","Poltergeist","Trick","Synthesis"]},
     "ZU Choice Band": {"ability":"Frisk","item":"Choice Band","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Power Whip","Poltergeist","Shadow Sneak","Trick"]}
   },
+  "Gourgeist-Large": {
+    "ZU Bulky Attacker": {"ability":"Frisk","item":"Weakness Policy","nature":"Adamant","evs":{"hp":104,"at":252,"sp":152},"moves":["Synthesis","Poltergeist","Power Whip","Shadow Sneak"]}
+  },
   "Gourgeist-Super": {
     "PU Tank": {"ability":"Frisk","item":"Colbur Berry","nature":"Adamant","evs":{"hp":248,"at":252,"df":8},"moves":["Power Whip","Poltergeist","Synthesis","Shadow Sneak"]},
+    "ZU Physical Wall": {"ability":"Frisk","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Synthesis","Foul Play","Toxic","Power Whip"]},
     "ZU Tank": {"ability":"Frisk","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Power Whip","Poltergeist","Shadow Sneak","Synthesis"]}
   },
   "Avalugg": {
@@ -3429,9 +3433,6 @@ var SETDEX_SS = {
     "1v1 Special Life Orb": {"ability":"Volt Absorb","item":"Life Orb","nature":"Mild","evs":{"at":4,"sa":252,"sp":252},"moves":["Fake Out","Thunderbolt","Charge","Focus Blast"]},
     "CAP Offensive Pivot": {"ability":"Volt Absorb","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Plasma Fists","Volt Switch","Knock Off","Close Combat"]},
     "CAP Bulk Up": {"ability":"Volt Absorb","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Bulk Up","Plasma Fists","Close Combat","Knock Off"]}
-  },
-  "Meltan": {
-    "ZU Magnet Pull": {"ability":"Magnet Pull","item":"Leftovers","nature":"Bold","ivs":{"at":1},"evs":{"hp":252,"df":252,"sd":4},"moves":["Acid Armor","Rest","Flash Cannon","Thunderbolt"]}
   },
   "Melmetal": {
     "OU Protect + Leftovers": {"ability":"Iron Fist","item":"Leftovers","nature":"Adamant","evs":{"hp":20,"at":252,"sd":192,"sp":44},"moves":["Double Iron Bash","Protect","Earthquake","Toxic"]},

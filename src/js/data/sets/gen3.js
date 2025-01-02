@@ -89,7 +89,10 @@ var SETDEX_ADV = {
     "UU Calm Mind + BoltBeam": {"ability":"Cute Charm","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":72,"sa":184},"moves":["Calm Mind","Ice Beam","Soft-Boiled","Thunderbolt"]},
     "UU Counter": {"ability":"Cute Charm","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":72,"df":184},"moves":["Shadow Ball","Return","Counter","Soft-Boiled"]},
     "UU Cosmic Power Staller": {"ability":"Cute Charm","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":240,"sd":16},"moves":["Cosmic Power","Rest","Seismic Toss","Encore"]},
-    "UU Choice Band": {"ability":"Cute Charm","item":"Choice Band","nature":"Adamant","evs":{"hp":64,"at":252,"sp":192},"moves":["Double-Edge","Shadow Ball","Meteor Mash","Brick Break"]}
+    "UU Choice Band": {"ability":"Cute Charm","item":"Choice Band","nature":"Adamant","evs":{"hp":64,"at":252,"sp":192},"moves":["Double-Edge","Shadow Ball","Meteor Mash","Brick Break"]},
+    "RU Defensive Utility": {"ability":"Cute Charm","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Seismic Toss","Soft-Boiled","Thunder Wave","Encore"]},
+    "RU Calm Mind": {"ability":"Cute Charm","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Soft-Boiled","Ice Beam","Thunderbolt"]},
+    "RU Belly Drum": {"ability":"Cute Charm","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Belly Drum","Return","Shadow Ball","Soft-Boiled"]}
   },
   "Wigglytuff": {
     "NU Counter": {"ability":"Cute Charm","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Counter","Wish","Protect","Return"]},
@@ -959,7 +962,10 @@ var SETDEX_ADV = {
   },
   "Xatu": {
     "UU Support": {"ability":"Synchronize","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":32,"sp":224},"moves":["Reflect","Calm Mind","Psychic","Wish"]},
-    "UU Thief": {"ability":"Synchronize","item":"Lum Berry","nature":"Timid","evs":{"hp":252,"sa":32,"sp":224},"moves":["Calm Mind","Thief","Psychic","Wish"]}
+    "UU Thief": {"ability":"Synchronize","item":"Lum Berry","nature":"Timid","evs":{"hp":252,"sa":32,"sp":224},"moves":["Calm Mind","Thief","Psychic","Wish"]},
+    "RU Defensive Utility": {"ability":"Early Bird","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":80,"sp":176},"moves":["Night Shade","Toxic","Reflect","Rest"]},
+    "RU Defensive Calm Mind": {"ability":"Early Bird","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"df":236,"sp":20},"moves":["Calm Mind","Psychic","Hidden Power Fire","Rest"]},
+    "RU Offensive Calm Mind": {"ability":"Synchronize","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Psychic","Hidden Power Fire","Thief"]}
   },
   "Flaaffy": {
     "ZU Heal Bell": {"ability":"Static","item":"Leftovers","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Heal Bell","Hidden Power Grass","Fire Punch"]}

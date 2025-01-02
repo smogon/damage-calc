@@ -771,9 +771,6 @@ var SETDEX_DPP = {
   "Ekans": {
     "LC Glare": {"level":5,"ability":"Intimidate","item":"Oran Berry","nature":"Adamant","evs":{"hp":76,"at":196,"df":4,"sd":4,"sp":156},"moves":["Glare","Poison Jab","Earthquake","Bite"]}
   },
-  "Sandshrew": {
-    "LC Support": {"level":5,"ability":"Sand Veil","item":"Oran Berry","nature":"Impish","evs":{"hp":196,"df":76,"sd":196,"sp":36},"moves":["Rapid Spin","Stealth Rock","Earthquake","Rock Slide"]}
-  },
   "Sandslash": {
     "NU Defensive Rapid Spin": {"ability":"Sand Veil","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Earthquake","Shadow Claw","Stealth Rock","Rapid Spin"]}
   },
@@ -1379,9 +1376,6 @@ var SETDEX_DPP = {
     "LC Dual Screen Memento": {"level":5,"ability":"Flame Body","item":"Light Clay","nature":"Careful","evs":{"hp":196,"df":196,"sd":118},"moves":["Light Screen","Reflect","Memento","Recover"]},
     "LC Trick Room Attacker": {"level":5,"ability":"Flame Body","item":"Life Orb","nature":"Quiet","ivs":{"sa":30,"sp":3},"evs":{"hp":196,"at":36,"df":36,"sa":200,"sd":36},"moves":["Fire Blast","Hidden Power Electric","Earth Power","Self-Destruct"]}
   },
-  "Swinub": {
-    "LC Lead": {"level":5,"ability":"Snow Cloak","item":"Focus Sash","nature":"Jolly","evs":{"hp":116,"at":196,"sp":196},"moves":["Protect","Ice Shard","Stealth Rock","Earthquake"]}
-  },
   "Piloswine": {
     "UU Physical Attacker": {"ability":"Oblivious","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Ice Shard","Earthquake","Substitute","Stone Edge"]},
     "NU Showdown Usage": {"ability":"Oblivious","item":"Life Orb","nature":"Adamant","evs":{"hp":200,"at":252,"sp":56},"moves":["Earthquake","Stealth Rock","Ice Shard","Avalanche"]}
@@ -1694,11 +1688,6 @@ var SETDEX_DPP = {
     "UU Parafusion": {"ability":"Own Tempo","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Substitute","Body Slam","Teeter Dance","Rock Slide"]},
     "UU One-Trick Bear": {"ability":"Own Tempo","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Trick","Hypnosis","Sucker Punch","Return"]},
     "UU Focused Counter": {"ability":"Own Tempo","item":"Focus Sash","nature":"Adamant","evs":{"hp":252,"at":4,"sp":252},"moves":["Counter","Focus Punch","Return","Feint Attack"]}
-  },
-  "Cacnea": {
-    "LC Swords Dance": {"level":5,"ability":"Sand Veil","item":"Oran Berry","nature":"Adamant","evs":{"hp":36,"at":236,"sp":236},"moves":["Swords Dance","Sucker Punch","Focus Punch","Substitute"]},
-    "LC Mixed Attacker": {"level":5,"ability":"Sand Veil","item":"Life Orb","nature":"Naive","ivs":{"at":30,"df":30},"evs":{"hp":36,"at":156,"sa":76,"sp":236},"moves":["Sucker Punch","Brick Break","Seed Bomb","Hidden Power Ice"]},
-    "LC Choice Scarf": {"level":5,"ability":"Sand Veil","item":"Choice Scarf","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"hp":36,"at":156,"sa":76,"sp":236},"moves":["Dark Pulse","Brick Break","Needle Arm","Hidden Power Ice"]}
   },
   "Cacturne": {
     "NU Offensive Spikes": {"ability":"Sand Veil","item":"Leftovers","nature":"Modest","evs":{"hp":132,"sa":252,"sp":124},"moves":["Spikes","Energy Ball","Dark Pulse","Sucker Punch"]}
@@ -2130,11 +2119,6 @@ var SETDEX_DPP = {
     "UU All-Out Attacker (Lead)": {"ability":"Pressure","item":"Spooky Plate","nature":"Quiet","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":244,"at":48,"sa":204,"sp":12},"moves":["Shadow Ball","Hidden Power Fighting","Shadow Sneak","Pursuit"]},
     "UU Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":140,"sd":116},"moves":["Dark Pulse","Will-O-Wisp","Rest","Sleep Talk"]},
     "UU Mono-Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rest","Sleep Talk","Calm Mind","Dark Pulse"]}
-  },
-  "Gible": {
-    "LC Choice Band": {"level":5,"ability":"Sand Veil","item":"Choice Band","nature":"Adamant","evs":{"hp":52,"at":196,"df":236,"sp":20},"moves":["Outrage","Earthquake","Stone Edge","Fire Blast"]},
-    "LC Choice Scarf": {"level":5,"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"hp":96,"at":196,"sa":36,"sp":180},"moves":["Outrage","Earthquake","Fire Blast","Stealth Rock"]},
-    "LC Substitute": {"level":5,"ability":"Sand Veil","item":"Salac Berry","nature":"Naive","evs":{"hp":96,"at":196,"sa":36,"sp":180},"moves":["Substitute","Outrage","Earthquake","Fire Blast"]}
   },
   "Gabite": {
     "PU Defensive": {"ability":"Sand Veil","item":"Lum Berry","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","Dragon Claw","Toxic","Stealth Rock"]},
