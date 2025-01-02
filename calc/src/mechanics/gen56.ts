@@ -371,12 +371,12 @@ export function calculateBWXY(
   desc.attackBoost =
     move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
 
-  if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
+  if (move.timesUsed! > 1 || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
     let numAttacks = 1;
-    if (move.dropsStats && move.timesUsed! > 1) {
+    if (move.timesUsed! > 1) {
       desc.moveTurns = `over ${move.timesUsed} turns`;
       numAttacks = move.timesUsed!;
     } else {
@@ -393,7 +393,7 @@ export function calculateBWXY(
       hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
       attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate');
 
-      if ((move.dropsStats && move.timesUsed! > 1)) {
+      if (move.timesUsed! > 1) {
         // Adaptability does not change between hits of a multihit, only between turns
         stabMod = getStabMod(attacker, move, desc);
       }
@@ -600,7 +600,8 @@ export function calculateBasePowerBWXY(
     desc,
     basePower,
     hasAteAbilityTypeChange,
-    turnOrder
+    turnOrder,
+    hit
   );
 
   basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
@@ -616,7 +617,8 @@ export function calculateBPModsBWXY(
   desc: RawDesc,
   basePower: number,
   hasAteAbilityTypeChange: boolean,
-  turnOrder: string
+  turnOrder: string,
+  hit: number
 ) {
   const bpMods = [];
 
@@ -635,6 +637,11 @@ export function calculateBPModsBWXY(
   if (!resistedKnockOffDamage && defenderItem) {
     const item = gen.items.get(toID(defenderItem))!;
     resistedKnockOffDamage = !!(item.megaEvolves && defender.name.includes(item.megaEvolves));
+  }
+
+  // Resist knock off damage if your item was already knocked off
+  if (!resistedKnockOffDamage && hit > 1 && !defender.hasAbility('Sticky Hold')) {
+    resistedKnockOffDamage = true;
   }
 
 
