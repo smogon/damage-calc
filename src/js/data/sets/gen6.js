@@ -2469,7 +2469,7 @@ var SETDEX_XY = {
     "LC Cotton Guard": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Adamant","evs":{"hp":156,"at":196,"sd":156},"moves":["Return","Roost","Cotton Guard","Agility"]}
   },
   "Altaria": {
-    "OU Offensive Dragon Dance": {"ability":"Natural Cure","item":"Altarianite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Roost"]},
+    "OU Offensive Dragon Dance": {"ability":"Natural Cure","item":"Altarianite","nature":"Adamant","evs":{"hp":88,"at":180,"sp":240},"moves":["Dragon Dance","Substitute","Frustration","Earthquake"]},
     "OU King DDD (Defensive Dragon Dance)": {"ability":"Cloud Nine","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":136,"sd":92,"sp":28},"moves":["Dragon Dance","Roost","Return","Heal Bell"]},
     "OU Support": {"ability":"Cloud Nine","item":"Altarianite","nature":"Bold","evs":{"hp":252,"df":100,"sd":156},"moves":["Roost","Hyper Voice","Heal Bell","Flamethrower"]},
     "OU Special Attacker": {"ability":"Cloud Nine","item":"Altarianite","nature":"Modest","evs":{"hp":252,"sa":164,"sp":92},"moves":["Hyper Voice","Fire Blast","Roost","Earthquake"]},
@@ -2487,7 +2487,7 @@ var SETDEX_XY = {
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Cloud Nine","item":"Quick Claw","nature":"Modest","evs":{"df":172,"sa":252,"sd":84},"moves":["Flamethrower","Heal Bell","Ice Beam","Tailwind"]}
   },
   "Altaria-Mega": {
-    "OU Offensive Dragon Dance": {"ability":"Pixilate","item":"Altarianite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Roost"]},
+    "OU Offensive Dragon Dance": {"ability":"Pixilate","item":"Altarianite","nature":"Adamant","evs":{"hp":88,"at":180,"sp":240},"moves":["Dragon Dance","Substitute","Frustration","Earthquake"]},
     "OU King DDD (Defensive Dragon Dance)": {"ability":"Pixilate","item":"Altarianite","nature":"Impish","evs":{"hp":252,"df":136,"sd":92,"sp":28},"moves":["Dragon Dance","Roost","Return","Heal Bell"]},
     "OU Support": {"ability":"Pixilate","item":"Altarianite","nature":"Bold","evs":{"hp":252,"df":100,"sd":156},"moves":["Roost","Hyper Voice","Heal Bell","Flamethrower"]},
     "OU Special Attacker": {"ability":"Pixilate","item":"Altarianite","nature":"Modest","evs":{"hp":252,"sa":164,"sp":92},"moves":["Hyper Voice","Fire Blast","Roost","Earthquake"]},
@@ -3025,6 +3025,7 @@ var SETDEX_XY = {
     "LC Defensive": {"level":5,"ability":"Sticky Hold","item":"Eviolite","nature":"Bold","evs":{"hp":228,"df":132,"sd":100,"sp":4},"moves":["Scald","Recover","Earth Power","Toxic"]}
   },
   "Gastrodon": {
+    "OU Specially Defensive": {"ability":"Storm Drain","item":"Leftovers","nature":"Sassy","evs":{"hp":248,"df":8,"sd":252},"moves":["Scald","Recover","Earthquake","Clear Smog"]},
     "OU Curse": {"ability":"Storm Drain","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":112,"sd":144},"moves":["Curse","Scald","Earthquake","Recover"]},
     "OU Physically Defensive": {"ability":"Storm Drain","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Earthquake","Toxic","Recover"]},
     "UU Curse": {"ability":"Storm Drain","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":148,"sd":108},"moves":["Curse","Recover","Earthquake","Scald"]},
@@ -3834,8 +3835,8 @@ var SETDEX_XY = {
     "LC Support": {"level":5,"ability":"Mummy","item":"Eviolite","nature":"Sassy","evs":{"hp":52,"at":36,"df":236,"sd":156},"moves":["Toxic Spikes","Will-O-Wisp","Hex","Knock Off"]}
   },
   "Cofagrigus": {
-    "OU Physical Wall": {"ability":"Mummy","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Toxic Spikes","Pain Split","Hex","Will-O-Wisp"]},
-    "OU Offensive": {"ability":"Mummy","item":"Leftovers","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Trick Room","Nasty Plot","Shadow Ball","Will-O-Wisp"]},
+    "OU Toxic Spikes Support": {"ability":"Mummy","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Toxic Spikes","Will-O-Wisp","Pain Split","Hex"]},
+    "OU Offensive Trick Room Sweeper": {"ability":"Mummy","item":"Leftovers","nature":"Quiet","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":252,"df":4,"sa":252},"moves":["Trick Room","Nasty Plot","Shadow Ball","Hidden Power Fighting"]},
     "UU Trick Room": {"ability":"Mummy","item":"Leftovers","nature":"Quiet","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":252,"sa":252,"sd":4},"moves":["Trick Room","Shadow Ball","Nasty Plot","Hidden Power Fighting"]},
     "RU Defensive": {"ability":"Mummy","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Will-O-Wisp","Hex","Pain Split","Toxic Spikes"]},
     "Battle Spot Doubles Trick Room": {"level":50,"ability":"Mummy","item":"Mental Herb","nature":"Relaxed","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":116,"sd":140},"moves":["Trick Room","Will-O-Wisp","Shadow Ball","Ally Switch"]},

@@ -269,7 +269,8 @@ var SETDEX_SS = {
   "Abra": {
     "LC Shed Shell": {"level":5,"ability":"Magic Guard","item":"Shed Shell","nature":"Hasty","evs":{"at":36,"sa":236,"sp":196},"moves":["Psychic","Dazzling Gleam","Focus Punch","Substitute"]},
     "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","evs":{"df":76,"sa":236,"sp":196},"moves":["Psychic","Dazzling Gleam","Protect","Counter"]},
-    "LC Life Orb": {"level":5,"ability":"Magic Guard","item":"Life Orb","nature":"Hasty","evs":{"at":36,"sa":236,"sp":196},"moves":["Psychic","Dazzling Gleam","Fire Punch","Protect"]}
+    "LC Life Orb": {"level":5,"ability":"Magic Guard","item":"Life Orb","nature":"Hasty","evs":{"at":36,"sa":236,"sp":196},"moves":["Psychic","Dazzling Gleam","Fire Punch","Protect"]},
+    "LC Eviolite": {"level":5,"ability":"Magic Guard","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"df":156,"sa":156,"sp":196},"moves":["Protect","Psychic","Dazzling Gleam","Energy Ball"]}
   },
   "Alakazam": {
     "Monotype Focus Sash": {"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Counter","Expanding Force","Dazzling Gleam","Focus Blast"]},
@@ -542,7 +543,7 @@ var SETDEX_SS = {
   },
   "Omanyte": {
     "LC Shell Smash Sweeper": {"level":5,"ability":"Shell Armor","item":"Eviolite","nature":"Modest","evs":{"hp":76,"sa":196,"sp":236},"moves":["Shell Smash","Hydro Pump","Ice Beam","Earth Power"]},
-    "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Timid","evs":{"hp":76,"df":116,"sa":116,"sp":156},"moves":["Stealth Rock","Hydro Pump","Knock Off","Spikes"]}
+    "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Modest","ivs":{"at":0},"evs":{"hp":76,"df":116,"sa":116,"sp":156},"moves":["Stealth Rock","Surf","Earth Power","Ice Beam"]}
   },
   "Omastar": {
     "NU Shell Smash Sweeper": {"ability":"Weak Armor","item":"Power Herb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Shell Smash","Meteor Beam","Surf","Ice Beam"]},
@@ -1181,7 +1182,7 @@ var SETDEX_SS = {
     "ZU Defensive Spikes": {"ability":"Poison Point","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":200,"sp":56},"moves":["Spikes","Sludge Bomb","Giga Drain","Synthesis"]}
   },
   "Carvanha": {
-    "LC Physical Sweeper": {"level":5,"ability":"Speed Boost","item":"Life Orb","nature":"Adamant","ivs":{"hp":9},"evs":{"at":196,"sd":36,"sp":236},"moves":["Flip Turn","Crunch","Psychic Fangs","Protect"]}
+    "LC Special Attacker": {"level":5,"ability":"Speed Boost","item":"Life Orb","nature":"Modest","ivs":{"hp":9,"at":0},"evs":{"sa":236,"sd":36,"sp":236},"moves":["Protect","Hydro Pump","Dark Pulse","Ice Beam"]}
   },
   "Sharpedo": {
     "RU Specially-based Mixed Cleaner": {"ability":"Speed Boost","item":"Life Orb","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Dark Pulse","Close Combat","Protect"]},
@@ -2227,6 +2228,7 @@ var SETDEX_SS = {
   },
   "Mienfoo": {
     "LC Fast Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Jolly","evs":{"df":196,"sd":36,"sp":236},"moves":["High Jump Kick","U-turn","Knock Off","Fake Out"]},
+    "LC Offensive Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Jolly","evs":{"at":236,"df":36,"sp":236},"moves":["Fake Out","High Jump Kick","Knock Off","U-turn"]},
     "LC Slow Pivot": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Impish","evs":{"hp":76,"df":196,"sd":196},"moves":["Fake Out","High Jump Kick","Knock Off","U-turn"]},
     "LC Choice Scarf": {"level":5,"ability":"Reckless","item":"Choice Scarf","nature":"Jolly","evs":{"at":236,"df":36,"sp":236},"moves":["High Jump Kick","U-turn","Knock Off","Close Combat"]}
   },
