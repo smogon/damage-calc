@@ -279,7 +279,7 @@ export function calculateDPP(
   }
   result.damage = damage;
 
-  if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
+  if (move.timesUsed! > 1 || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
