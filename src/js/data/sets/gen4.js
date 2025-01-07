@@ -671,6 +671,54 @@ var SETDEX_DPP = {
     "Anything Goes Swords Dance": {"ability":"Multitype","item":"Splash Plate","nature":"Jolly","evs":{"hp":100,"at":100,"df":100,"sd":100,"sp":100},"moves":["Swords Dance","Waterfall","Dragon Claw","Recover"]},
     "Anything Goes Calm Mind": {"ability":"Multitype","item":"Splash Plate","nature":"Timid","evs":{"hp":100,"df":100,"sa":100,"sd":100,"sp":100},"moves":["Calm Mind","Surf","Substitute","Recover"]}
   },
+  "Syclant": {
+    "CAP Choice Band": {"ability":"Mountaineer","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Ice Punch","Ice Shard","U-turn","Earthquake"]},
+    "CAP Tail Glow": {"ability":"Mountaineer","item":"Lum Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Tail Glow","Ice Beam","Earth Power","Hidden Power Grass"]},
+    "CAP Pivot": {"ability":"Mountaineer","item":"Expert Belt","nature":"Naive","evs":{"at":200,"sa":56,"sp":252},"moves":["Ice Beam","U-turn","Earthquake","Superpower"]}
+  },
+  "Revenankh": {
+    "CAP Special Wall": {"ability":"Air Lock","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Hammer Arm","Moonlight","Knock Off","Toxic"]},
+    "CAP Standard Bulk Up": {"ability":"Air Lock","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":176,"sd":80},"moves":["Hammer Arm","Shadow Sneak","Moonlight","Bulk Up"]},
+    "CAP SubPunch": {"ability":"Air Lock","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":104,"sd":152},"moves":["Focus Punch","Shadow Sneak","Substitute","Moonlight"]},
+    "CAP Offensive Bulk Up": {"ability":"Air Lock","item":"Leftovers","nature":"Adamant","evs":{"hp":168,"at":252,"sp":88},"moves":["Bulk Up","Superpower","Shadow Claw","Sucker Punch"]}
+  },
+  "Pyroak": {
+    "CAP Lead": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":208,"at":252,"sd":48},"moves":["Flare Blitz","Wood Hammer","Stealth Rock","Earthquake"]}
+  },
+  "Fidgit": {
+    "CAP Utility": {"ability":"Vital Spirit","item":"Black Sludge","nature":"Timid","evs":{"hp":252,"df":40,"sp":216},"moves":["Rapid Spin","Earth Power","Encore","Knock Off"]},
+    "CAP Trick Room Setter": {"ability":"Persistent","item":"Sitrus Berry","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":12,"sd":176},"moves":["Trick Room","Stealth Rock","U-turn","Encore"]}
+  },
+  "Stratagem": {
+    "CAP Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Paleo Wave","Flamethrower","Shadow Ball"]},
+    "CAP Sash Lead": {"ability":"Levitate","item":"Focus Sash","nature":"Timid","ivs":{"at":2,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Stealth Rock","Flamethrower","Earth Power","Hidden Power Ice"]},
+    "CAP Life Orb 4 Attacks": {"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Weather Ball","Shadow Ball","Flamethrower","Energy Ball"]}
+  },
+  "Arghonaut": {
+    "CAP 3 Attacks": {"ability":"Unaware","item":"Leftovers","nature":"Jolly","evs":{"hp":72,"at":220,"sp":216},"moves":["Waterfall","Superpower","Ice Punch","Recover"]},
+    "CAP Choice Band": {"ability":"Unaware","item":"Choice Band","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Waterfall","Superpower","Stone Edge","Aqua Jet"]},
+    "CAP Defensive": {"ability":"Unaware","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":172,"sd":84},"moves":["Recover","Waterfall","Knock Off","Toxic"]}
+  },
+  "Kitsunoh": {
+    "CAP Stallbreaker": {"ability":"Limber","item":"Leftovers","nature":"Jolly","evs":{"hp":16,"at":240,"sp":252},"moves":["Shadow Strike","Superpower","U-turn","Taunt"]},
+    "CAP Bulky Will-o-Wisp": {"ability":"Limber","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Shadow Strike","Taunt","Will-O-Wisp","U-turn"]},
+    "CAP Scarf": {"ability":"Limber","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shadow Strike","U-turn","Trick","Ice Punch"]}
+  },
+  "Cyclohm": {
+    "CAP Choice Specs": {"ability":"Static","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Thunderbolt","Flamethrower","Hydro Pump"]},
+    "CAP Defensive": {"ability":"Shield Dust","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":168,"sd":88},"moves":["Discharge","Ice Beam","Slack Off","Toxic"]}
+  },
+  "Colossoil": {
+    "CAP Scarf": {"ability":"Guts","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","U-turn","Crunch","Pursuit"]},
+    "CAP Offensive Utility": {"ability":"Guts","item":"Leftovers","nature":"Adamant","evs":{"at":168,"sd":104,"sp":236},"moves":["Rapid Spin","Earthquake","Crunch","Pursuit"]},
+    "CAP Flame Orb": {"ability":"Guts","item":"Flame Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Facade","Sucker Punch","Pursuit"]}
+  },
+  "Krilowatt": {
+    "CAP All Out Attacker": {"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"at":2,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Surf","Hidden Power Ice","Toxic"]}
+  },
+  "Voodoom": {
+    "CAP SubSplit": {"ability":"Volt Absorb","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Aura Sphere","Dark Pulse","Substitute","Pain Split"]}
+  },
   "Koffing": {
     "LC Offensive": {"level":5,"ability":"Levitate","item":"Oran Berry","nature":"Modest","ivs":{"at":0},"evs":{"hp":36,"sa":196,"sd":156,"sp":76},"moves":["Sludge Bomb","Fire Blast","Shadow Ball","Will-O-Wisp"]}
   },
@@ -866,11 +914,12 @@ var SETDEX_DPP = {
   },
   "Machoke": {
     "UU Attacking Lead": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":156,"at":252,"sp":100},"moves":["Dynamic Punch","Payback","Bullet Punch","Protect"]},
-    "NU Showdown Usage": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":156,"at":252,"sp":100},"moves":["Dynamic Punch","Bullet Punch","Payback","Rock Slide"]}
+    "NU Attacking Lead": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":92,"at":252,"sp":164},"moves":["Dynamic Punch","Toxic","Bullet Punch","Rock Slide"]}
   },
   "Machamp": {
     "OU Substitute": {"ability":"No Guard","item":"Leftovers","nature":"Adamant","evs":{"hp":128,"at":252,"sp":128},"moves":["Substitute","Dynamic Punch","Payback","Ice Punch"]},
     "OU All Out Attacker": {"ability":"No Guard","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dynamic Punch","Payback","Ice Punch","Bullet Punch"]},
+    "Ubers Attacking Lead": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":204,"at":252,"sp":52},"moves":["Dynamic Punch","Payback","Bullet Punch","Stone Edge"]},
     "Doubles OU Physical Attacker": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Dynamic Punch","Payback","Ice Punch","Stone Edge"]}
   },
   "Tentacool": {
@@ -1480,12 +1529,12 @@ var SETDEX_DPP = {
     "OU TyraniBoah (SubPunch)": {"ability":"Sand Stream","item":"Leftovers","nature":"Lonely","evs":{"hp":252,"at":156,"sa":100},"moves":["Substitute","Focus Punch","Ice Beam","Crunch"]},
     "Ubers Focus Sash Lead": {"ability":"Sand Stream","item":"Focus Sash","nature":"Hasty","evs":{"at":176,"sa":80,"sp":252},"moves":["Stealth Rock","Payback","Fire Blast","Superpower"]},
     "Ubers Utility Lead": {"ability":"Sand Stream","item":"Lum Berry","nature":"Brave","evs":{"hp":248,"at":120,"sa":80,"sd":60},"moves":["Stealth Rock","Payback","Fire Blast","Superpower"]},
-    "Ubers Defensive Utility": {"ability":"Sand Stream","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":36,"sd":220},"moves":["Pursuit","Payback","Fire Blast","Superpower"]},
     "Ubers Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":200,"sd":60},"moves":["Pursuit","Payback","Stone Edge","Superpower"]},
     "Doubles OU Choice Attacker": {"ability":"Sand Stream","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Crunch","Pursuit","Stone Edge","Superpower"]},
     "Doubles OU Dragon Dance": {"ability":"Sand Stream","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Rock Slide","Crunch","Protect"]},
     "Doubles OU Bulky Lead": {"ability":"Sand Stream","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Stealth Rock","Crunch","Rock Slide","Superpower"]},
-    "Anything Goes Showdown Usage": {"ability":"Sand Stream","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"df":32,"sp":224},"moves":["Stealth Rock","Superpower","Payback","Earthquake"]}
+    "Anything Goes Choice Scarf": {"ability":"Sand Stream","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Crunch","Pursuit","Low Kick","Stone Edge"]},
+    "Anything Goes Defensive Utility": {"ability":"Sand Stream","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":36,"sd":220},"moves":["Pursuit","Payback","Fire Blast","Low Kick"]}
   },
   "Lugia": {
     "Ubers Great Wall": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":64,"sp":192},"moves":["Roost","Reflect","Whirlwind","Ice Beam"]},
