@@ -122,13 +122,15 @@ export function getRecovery(
   const ignoresShellBell =
     gen.num === 3 && move.named('Doom Desire', 'Future Sight');
   if (attacker.hasItem('Shell Bell') && !ignoresShellBell) {
-    const max = Math.round(defender.maxHP() / 8);
     for (let i = 0; i < minD.length; i++) {
-      const minHealed = minD[i] > 0 ? Math.max(Math.round(minD[i] * move.hits / 8), 1) : 0;
-      const maxHealed = maxD[i] > 0 ? Math.max(Math.round(maxD[i] * move.hits / 8), 1) : 0;
-      recovery[0] = Math.min(minHealed + recovery[0], max);
-      recovery[1] = Math.min(maxHealed + recovery[1], max);
+      recovery[0] += minD[i] > 0 ? Math.max(Math.round(minD[i] / 8), 1) : 0;
+      recovery[1] += maxD[i] > 0 ? Math.max(Math.round(maxD[i] / 8), 1) : 0;
     }
+    // This is incorrect if the opponent heals during your damage
+    // Ex: Sitrus Berry procs in the middle of multi-hit move
+    const maxHealing = Math.round(defender.curHP() / 8);
+    recovery[0] = Math.min(recovery[0], maxHealing)
+    recovery[1] = Math.min(recovery[1], maxHealing)
   }
 
   if (move.named('G-Max Finale')) {
