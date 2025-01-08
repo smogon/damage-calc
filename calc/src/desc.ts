@@ -129,8 +129,8 @@ export function getRecovery(
     // This is incorrect if the opponent heals during your damage
     // Ex: Sitrus Berry procs in the middle of multi-hit move
     const maxHealing = Math.round(defender.curHP() / 8);
-    recovery[0] = Math.min(recovery[0], maxHealing)
-    recovery[1] = Math.min(recovery[1], maxHealing)
+    recovery[0] = Math.min(recovery[0], maxHealing);
+    recovery[1] = Math.min(recovery[1], maxHealing);
   }
 
   if (move.named('G-Max Finale')) {
