@@ -2770,7 +2770,7 @@ var SETDEX_SM = {
     "ZU Entry Hazard Setter": {"ability":"Rough Skin","item":"Eviolite","nature":"Impish","evs":{"hp":248,"df":180,"sp":80},"moves":["Stealth Rock","Earthquake","Roar","Toxic"]}
   },
   "Garchomp": {
-    "OU Offensive Stealth Rock": {"ability":"Rough Skin","item":"Rockium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Stone Edge","Swords Dance"]},
+    "OU Offensive Z-Move": {"ability":"Rough Skin","item":"Dragonium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Outrage","Stealth Rock"]},
     "OU Mixed Mega": {"ability":"Rough Skin","item":"Garchompite","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Draco Meteor","Earthquake","Fire Blast","Stealth Rock"]},
     "OU Tank": {"ability":"Rough Skin","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Earthquake","Toxic","Fire Blast"]},
     "OU Swords Dance Mega": {"ability":"Rough Skin","item":"Garchompite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Substitute","Earthquake","Stone Edge"]},

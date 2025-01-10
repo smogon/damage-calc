@@ -2855,7 +2855,7 @@ var SETDEX_SS = {
     "National Dex Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Hyperspace Fury","Gunk Shot","Drain Punch","Fire Punch"]}
   },
   "Volcanion": {
-    "OU Wallbreaker": {"ability":"Water Absorb","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Flamethrower","Earth Power","Sludge Wave"]},
+    "OU Wallbreaker": {"ability":"Water Absorb","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Steam Eruption","Flamethrower","Earth Power","Sludge Wave"]},
     "Doubles OU Bulky Attacker": {"ability":"Water Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":252,"sd":4},"moves":["Steam Eruption","Heat Wave","Substitute","Protect"]},
     "Monotype Utility (Fire)": {"ability":"Water Absorb","item":"Heavy-Duty Boots","nature":"Modest","evs":{"hp":168,"sa":244,"sp":96},"moves":["Steam Eruption","Flamethrower","Sludge Bomb","Defog"]},
     "Monotype Defog (Water)": {"ability":"Water Absorb","item":"Heavy-Duty Boots","nature":"Modest","evs":{"hp":80,"sa":252,"sp":176},"moves":["Steam Eruption","Flamethrower","Sludge Bomb","Defog"]},

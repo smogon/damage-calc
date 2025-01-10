@@ -917,10 +917,9 @@ var SETDEX_DPP = {
     "NU Attacking Lead": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":92,"at":252,"sp":164},"moves":["Dynamic Punch","Toxic","Bullet Punch","Rock Slide"]}
   },
   "Machamp": {
-    "OU Substitute": {"ability":"No Guard","item":"Leftovers","nature":"Adamant","evs":{"hp":128,"at":252,"sp":128},"moves":["Substitute","Dynamic Punch","Payback","Ice Punch"]},
-    "OU All Out Attacker": {"ability":"No Guard","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dynamic Punch","Payback","Ice Punch","Bullet Punch"]},
     "Ubers Attacking Lead": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":204,"at":252,"sp":52},"moves":["Dynamic Punch","Payback","Bullet Punch","Stone Edge"]},
-    "Doubles OU Physical Attacker": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Dynamic Punch","Payback","Ice Punch","Stone Edge"]}
+    "Doubles OU Physical Attacker": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Dynamic Punch","Payback","Ice Punch","Stone Edge"]},
+    "OU Showdown Usage": {"ability":"No Guard","item":"Leftovers","nature":"Adamant","evs":{"hp":128,"at":252,"sp":128},"moves":["Dynamic Punch","Payback","Ice Punch","Bullet Punch"]}
   },
   "Tentacool": {
     "LC Rapid Spin": {"level":5,"ability":"Clear Body","item":"Oran Berry","nature":"Bold","evs":{"hp":196,"df":76,"sa":36,"sp":196},"moves":["Rapid Spin","Toxic Spikes","Surf","Sludge Bomb"]}
