@@ -549,7 +549,7 @@ var SETDEX_SM = {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Friend Guard","item":"Eviolite","nature":"Sassy","evs":{"hp":156,"df":156,"sd":196},"moves":["Protect","Follow Me","Moonblast","Helping Hand"]}
   },
   "Clefable": {
-    "OU Defensive Magic Guard": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Moonblast","Soft-Boiled","Calm Mind"]},
+    "OU Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Moonblast","Soft-Boiled","Thunder Wave"]},
     "OU Life Orb": {"ability":"Magic Guard","item":"Life Orb","nature":"Modest","evs":{"hp":80,"sa":252,"sp":176},"moves":["Moonblast","Thunderbolt","Fire Blast","Soft-Boiled"]},
     "OU Unaware": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Calm Mind","Wish","Protect"]},
     "Battle Spot Singles Booster": {"level":50,"ability":"Magic Guard","item":"Kee Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Minimize","Calm Mind","Moonlight","Moonblast"]},

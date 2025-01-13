@@ -2594,6 +2594,7 @@ var SETDEX_XY = {
     "PU SubSeed": {"ability":"Harvest","item":"Sitrus Berry","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Leech Seed","Substitute","Air Slash","Protect"]}
   },
   "Absol": {
+    "OU Swords Dance": {"ability":"Justified","item":"Absolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Sucker Punch","Knock Off","Iron Tail"]},
     "UU Swords Dance": {"ability":"Justified","item":"Absolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Knock Off","Sucker Punch","Superpower"]},
     "UU All-Out Attacker": {"ability":"Justified","item":"Absolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Sucker Punch","Pursuit","Superpower"]},
     "RU All-Out Attacker": {"ability":"Super Luck","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Sucker Punch","Superpower","Play Rough"]},
@@ -2601,6 +2602,7 @@ var SETDEX_XY = {
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Super Luck","item":"Scope Lens","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Sucker Punch","Knock Off","Psycho Cut","Superpower"]}
   },
   "Absol-Mega": {
+    "OU Swords Dance": {"ability":"Magic Bounce","item":"Absolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Sucker Punch","Knock Off","Iron Tail"]},
     "UU Swords Dance": {"ability":"Magic Bounce","item":"Absolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Knock Off","Sucker Punch","Superpower"]},
     "UU All-Out Attacker": {"ability":"Magic Bounce","item":"Absolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Sucker Punch","Pursuit","Superpower"]},
     "Pure Hackmons Showdown Usage": {"ability":"Huge Power","item":"Choice Scarf","nature":"Lonely","evs":{"at":252,"sd":4,"sp":252},"moves":["Pursuit","Knock Off","Gear Grind","Close Combat"]}
@@ -3539,7 +3541,7 @@ var SETDEX_XY = {
   },
   "Serperior": {
     "OU Utility Attacker": {"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Glare","Substitute"]},
-    "OU Dual Screens": {"ability":"Contrary","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Light Screen","Reflect","Leaf Storm","Glare"]},
+    "OU Dual Screens": {"ability":"Contrary","item":"Light Clay","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Light Screen","Reflect","Leaf Storm","Taunt"]},
     "Battle Spot Singles Solid Snake": {"level":50,"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":116,"df":220,"sp":172},"moves":["Reflect","Synthesis","Leaf Storm","Glare"]},
     "Battle Spot Singles Offensive Leaf Storm": {"level":50,"ability":"Contrary","item":"Focus Sash","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":248,"sd":12,"sp":248},"moves":["Leaf Storm","Hidden Power Fire","Dragon Pulse","Glare"]},
     "1v1 Subseed": {"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Leaf Storm","Protect","Leech Seed","Substitute"]},
@@ -3652,9 +3654,12 @@ var SETDEX_XY = {
     "LC Spinner": {"level":5,"ability":"Mold Breaker","item":"Berry Juice","nature":"Jolly","evs":{"hp":36,"at":76,"df":36,"sd":76,"sp":212},"moves":["Stealth Rock","Earthquake","Rock Slide","Rapid Spin"]}
   },
   "Excadrill": {
-    "OU Sand Rush Sweeper": {"ability":"Sand Rush","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Iron Head","Rapid Spin","Swords Dance"]},
-    "OU Bulky Spinner": {"ability":"Mold Breaker","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":216,"sp":40},"moves":["Earthquake","Iron Head","Toxic","Rapid Spin"]},
-    "OU Choice Scarf": {"ability":"Mold Breaker","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Iron Head","Rock Slide","Rapid Spin"]},
+    "OU Fast Utility": {"ability":"Mold Breaker","item":"Leftovers","nature":"Jolly","evs":{"hp":32,"df":56,"sd":168,"sp":252},"moves":["Toxic","Rapid Spin","Earthquake","Iron Head"]},
+    "OU Sand Rush": {"ability":"Sand Rush","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Rapid Spin","Earthquake","Iron Head"]},
+    "OU Specially Defensive": {"ability":"Mold Breaker","item":"Leftovers","nature":"Careful","evs":{"hp":172,"at":44,"sd":252,"sp":40},"moves":["Toxic","Rapid Spin","Earthquake","Iron Head"]},
+    "OU Physically Defensive": {"ability":"Mold Breaker","item":"Leftovers","nature":"Impish","evs":{"hp":40,"df":252,"sd":88,"sp":128},"moves":["Toxic","Rapid Spin","Earthquake","Iron Head"]},
+    "OU Choice Scarf": {"ability":"Mold Breaker","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Slide","Rapid Spin","Earthquake","Iron Head"]},
+    "OU Suicide Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Rapid Spin","Earthquake","Rock Tomb"]},
     "Ubers Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Stealth Rock","Rapid Spin","Toxic","Earthquake"]},
     "Ubers Sand Rush Sweeper": {"ability":"Sand Rush","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Iron Head","Rapid Spin","Swords Dance"]},
     "Doubles OU Sand Rush Attacker": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Iron Head","Rock Slide","Protect"]},
