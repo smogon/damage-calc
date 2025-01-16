@@ -111,7 +111,7 @@ var SETDEX_RBY = {
     "UU Physical Attacker": {"moves":["Earthquake","Rock Slide","Slash","Toxic"]}
   },
   "Persian": {
-    "OU Slash": {"moves":["Slash","Hyper Beam","Bubble Beam","Thunderbolt"]},
+    "OU Slash": {"moves":["Slash","Body Slam","Bubble Beam","Thunderbolt"]},
     "Ubers Slash": {"moves":["Slash","Hyper Beam","Thunderbolt","Bubble Beam"]},
     "UU Revenge Killer": {"moves":["Slash","Hyper Beam","Thunderbolt","Toxic"]},
     "1v1 Slash": {"moves":["Slash","Hyper Beam","Thunderbolt","Screech"]},
@@ -120,7 +120,8 @@ var SETDEX_RBY = {
   "Golduck": {
     "UU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]},
     "NU Amnesia": {"moves":["Amnesia","Surf","Blizzard","Counter"]},
-    "PU Amnesia": {"moves":["Amnesia","Surf","Blizzard","Rest"]},
+    "PU All-Out Attacker": {"moves":["Surf","Blizzard","Seismic Toss","Counter"]},
+    "PU Amnesia": {"moves":["Amnesia","Surf","Blizzard","Seismic Toss"]},
     "1v1 Amnesia Attacker": {"moves":["Ice Beam","Blizzard","Amnesia","Rest"]},
     "Tradebacks OU Amnesia": {"moves":["Amnesia","Hydro Pump","Blizzard","Rest"]}
   },

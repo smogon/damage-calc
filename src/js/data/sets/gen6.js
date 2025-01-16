@@ -1430,6 +1430,7 @@ var SETDEX_XY = {
   "Aerodactyl": {
     "OU Offensive": {"ability":"Unnerve","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stone Edge","Aerial Ace","Aqua Tail","Fire Fang"]},
     "OU Pursuit Trapper": {"ability":"Unnerve","item":"Aerodactylite","nature":"Jolly","evs":{"hp":168,"at":124,"sp":216},"moves":["Pursuit","Aerial Ace","Aqua Tail","Roost"]},
+    "OU Lead": {"ability":"Pressure","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":4,"df":252,"sp":252},"moves":["Stealth Rock","Taunt","Earthquake","Defog"]},
     "Ubers Prehistoric Beast (Offensive)": {"ability":"Pressure","item":"Aerodactylite","nature":"Jolly","evs":{"hp":40,"at":252,"sp":216},"moves":["Stealth Rock","Taunt","Stone Edge","Earthquake"]},
     "UU All-Out Attacker": {"ability":"Unnerve","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Wing Attack","Earthquake","Roost"]},
     "UU Hone Claws": {"ability":"Unnerve","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Hone Claws","Stone Edge","Wing Attack","Earthquake"]},
@@ -3542,6 +3543,7 @@ var SETDEX_XY = {
   "Serperior": {
     "OU Utility Attacker": {"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Glare","Substitute"]},
     "OU Dual Screens": {"ability":"Contrary","item":"Light Clay","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Light Screen","Reflect","Leaf Storm","Taunt"]},
+    "OU Bulky Serperior": {"ability":"Contrary","item":"Chesto Berry","nature":"Timid","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":200,"df":44,"sa":12,"sp":252},"moves":["Leaf Storm","Hidden Power Rock","Glare","Rest"]},
     "Battle Spot Singles Solid Snake": {"level":50,"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":116,"df":220,"sp":172},"moves":["Reflect","Synthesis","Leaf Storm","Glare"]},
     "Battle Spot Singles Offensive Leaf Storm": {"level":50,"ability":"Contrary","item":"Focus Sash","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":248,"sd":12,"sp":248},"moves":["Leaf Storm","Hidden Power Fire","Dragon Pulse","Glare"]},
     "1v1 Subseed": {"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Leaf Storm","Protect","Leech Seed","Substitute"]},
@@ -4131,6 +4133,7 @@ var SETDEX_XY = {
   },
   "Bisharp": {
     "OU Swords Dance": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Swords Dance","Iron Head","Sucker Punch"]},
+    "OU Assault Vest": {"ability":"Defiant","item":"Assault Vest","nature":"Adamant","evs":{"hp":248,"at":252,"sd":8},"moves":["Pursuit","Sucker Punch","Iron Head","Knock Off"]},
     "Doubles OU All-Out Attacker": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Knock Off","Sucker Punch","Iron Head","Protect"]},
     "Battle Spot Doubles Standard": {"level":50,"ability":"Defiant","item":"Life Orb","nature":"Adamant","ivs":{"hp":29},"evs":{"at":252,"sd":4,"sp":252},"moves":["Sucker Punch","Knock Off","Iron Head","Protect"]},
     "Monotype Swords Dance (Dark)": {"ability":"Defiant","item":"Dread Plate","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Knock Off","Swords Dance","Sucker Punch","Iron Head"]},
