@@ -574,13 +574,23 @@ function getEndOfTurn(
   }
 
   const loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
-  if (defender.hasItem('Leftovers') && !loseItem) {
+  // psychic noise should suppress all recovery effects
+  const healBlock = move.named('Psychic Noise') &&
+    !(
+      // suppression conditions
+      attacker.hasAbility('Sheer Force') ||
+      defender.hasItem('Covert Cloak') ||
+      defender.hasAbility('Shield Dust', 'Aroma Veil')
+    );
+  if (defender.hasItem('Leftovers') && !loseItem && !healBlock) {
     damage += Math.floor(defender.maxHP() / 16);
     texts.push('Leftovers recovery');
   } else if (defender.hasItem('Black Sludge') && !loseItem) {
     if (defender.hasType('Poison')) {
-      damage += Math.floor(defender.maxHP() / 16);
-      texts.push('Black Sludge recovery');
+      if (!healBlock) {
+        damage += Math.floor(defender.maxHP() / 16);
+        texts.push('Black Sludge recovery');
+      }
     } else if (!defender.hasAbility('Magic Guard', 'Klutz')) {
       damage -= Math.floor(defender.maxHP() / 8);
       texts.push('Black Sludge damage');
@@ -604,14 +614,14 @@ function getEndOfTurn(
     if (attacker.hasAbility('Liquid Ooze')) {
       damage -= recovery;
       texts.push('Liquid Ooze damage');
-    } else {
+    } else if (!healBlock) {
       damage += recovery;
       texts.push('Leech Seed recovery');
     }
   }
 
   if (field.hasTerrain('Grassy')) {
-    if (isGrounded(defender, field)) {
+    if (isGrounded(defender, field) && !healBlock) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Grassy Terrain recovery');
     }
@@ -619,16 +629,20 @@ function getEndOfTurn(
 
   if (defender.hasStatus('psn')) {
     if (defender.hasAbility('Poison Heal')) {
-      damage += Math.floor(defender.maxHP() / 8);
-      texts.push('Poison Heal');
+      if (!healBlock) {
+        damage += Math.floor(defender.maxHP() / 8);
+        texts.push('Poison Heal');
+      }
     } else if (!defender.hasAbility('Magic Guard')) {
       damage -= Math.floor(defender.maxHP() / (gen.num === 1 ? 16 : 8));
       texts.push('poison damage');
     }
   } else if (defender.hasStatus('tox')) {
     if (defender.hasAbility('Poison Heal')) {
-      damage += Math.floor(defender.maxHP() / 8);
-      texts.push('Poison Heal');
+      if (!healBlock) {
+        damage += Math.floor(defender.maxHP() / 8);
+        texts.push('Poison Heal');
+      }
     } else if (!defender.hasAbility('Magic Guard')) {
       texts.push('toxic damage');
     }
