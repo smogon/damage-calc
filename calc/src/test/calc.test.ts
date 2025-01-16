@@ -1434,6 +1434,12 @@ describe('calc', () => {
         result = calculate(attacker, defender, Move('Revelation Dance'));
         expect(result.move.type).toBe('Water');
       });
+      test('Psychic Noise should disable healing effects', () => {
+        const attacker = Pokemon('Mewtwo');
+        const defender = Pokemon('Regigigas', {ability: 'Poison Heal', item: 'Leftovers', status: 'tox'});
+        const result = calculate(attacker, defender, Move('Psychic Noise'), Field({terrain: 'Grassy', attackerSide: {isSeeded: true}}));
+        expect(result.desc()).toBe('0 SpA Mewtwo Psychic Noise vs. 0 HP / 0 SpD Regigigas: 109-129 (30.1 - 35.7%) -- 31.2% chance to 3HKO');
+      });
 
       test('Flower Gift, Power Spot, Battery, and switching boosts shouldn\'t have double spaces', () => {
         const attacker = Pokemon('Weavile');
