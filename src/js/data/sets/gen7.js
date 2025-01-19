@@ -4307,9 +4307,8 @@ var SETDEX_SM = {
     "Monotype Trick Room Attacker (Ghost)": {"ability":"Magician","item":"Life Orb","nature":"Quiet","evs":{"hp":252,"sa":252,"sd":4},"moves":["Trick Room","Psychic","Shadow Ball","Focus Blast"]}
   },
   "Hoopa-Unbound": {
-    "OU Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Jolly","evs":{"hp":32,"at":224,"sp":252},"moves":["Hyperspace Fury","Gunk Shot","Fire Punch","Drain Punch"]},
+    "OU Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Hyperspace Fury","Zen Headbutt","Gunk Shot","Fire Punch"]},
     "OU Nasty Plot": {"ability":"Magician","item":"Fightinium Z","nature":"Timid","evs":{"hp":32,"sa":224,"sp":252},"moves":["Nasty Plot","Dark Pulse","Psychic","Focus Blast"]},
-    "OU Choice Specs": {"ability":"Magician","item":"Choice Specs","nature":"Timid","evs":{"hp":32,"sa":224,"sp":252},"moves":["Dark Pulse","Psyshock","Focus Blast","Trick"]},
     "Doubles OU Offensive Trick Room": {"ability":"Magician","item":"Sitrus Berry","nature":"Brave","evs":{"hp":192,"at":212,"df":104},"moves":["Hyperspace Fury","Hyperspace Hole","Trick Room","Protect"]},
     "1v1 Bulky Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Adamant","evs":{"hp":196,"at":112,"df":36,"sp":164},"moves":["Hyperspace Fury","Gunk Shot","Zen Headbutt","Fire Punch"]},
     "1v1 Bulky Choice Specs": {"ability":"Magician","item":"Choice Specs","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Dark Pulse","Thunderbolt","Psychic","Hidden Power Ice"]},

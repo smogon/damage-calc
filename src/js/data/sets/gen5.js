@@ -602,7 +602,7 @@ var SETDEX_BW = {
   "Mantine": {
     "NU MANtine (Rain Dance)": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","evs":{"hp":64,"sa":252,"sp":192},"moves":["Rain Dance","Hydro Pump","Air Slash","Ice Beam"]},
     "NU Physically Defensive": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rest","Sleep Talk","Scald","Air Slash"]},
-    "PU Special Wall": {"ability":"Water Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":44,"sd":212},"moves":["Rest","Sleep Talk","Scald","Toxic"]}
+    "PU Special Wall": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":148,"sd":112},"moves":["Rest","Sleep Talk","Scald","Toxic"]}
   },
   "Raikou": {
     "UU Substitute + Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Substitute","Calm Mind","Thunderbolt","Hidden Power Ice"]},
