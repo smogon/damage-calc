@@ -334,6 +334,11 @@ $("input[name='weather']").change(function () {
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
 function autosetWeather(ability, i) {
+
+	if ($('.locked-weather').length) {
+		return;
+	}
+
 	var currentWeather = $("input:radio[name='weather']:checked").val();
 	if (lastAutoWeather.indexOf(currentWeather) === -1) {
 		lastManualWeather = currentWeather;
@@ -1581,6 +1586,26 @@ function getSelectOptions(arr, sort, defaultOption) {
 	}
 	return r;
 }
+
+var stickyWeather = (function () {
+	var lastClicked = '';
+	$(".weather").click(function () {
+		if (this.id === lastClicked) {
+			$(this).toggleClass("locked-weather");
+		} else {
+			$('.locked-weather').removeClass('locked-weather');
+		}
+		lastClicked = this.id;
+	});
+
+	return {
+		clearStickyWeather: function () {
+			lastClicked = null;
+			$('.locked-weather').removeClass('locked-weather');
+		}
+	};
+})();
+
 var stickyMoves = (function () {
 	var lastClicked = 'resultMoveL1';
 	$(".result-move").click(function () {
