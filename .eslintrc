@@ -48,6 +48,7 @@
         "GEN9BABYRANDOMBATTLE": false,
         "getSelectedTiers": false,
         "stickyMoves": false,
+        "stickyWeather": false,
         "allPokemon": false,
         "loadCustomList": false,
         "loadDefaultLists": false,
