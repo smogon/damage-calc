@@ -1040,9 +1040,8 @@ var SETDEX_ADV = {
     "NU Showdown Usage": {"ability":"Serene Grace","item":"Leftovers","nature":"Sassy","ivs":{"at":30,"sa":30},"evs":{"hp":64,"sa":192,"sd":252},"moves":["Body Slam","Headbutt","Fire Blast","Hidden Power Grass"]}
   },
   "Gligar": {
-    "UU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Hidden Power Flying","Iron Tail","Swords Dance"]},
-    "UU Choice Band": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Hidden Power Flying","Quick Attack","Iron Tail"]},
-    "UU Swords Dance + Salac": {"ability":"Hyper Cutter","item":"Salac Berry","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":60,"at":252,"sp":196},"moves":["Earthquake","Swords Dance","Hidden Power Flying","Substitute"]}
+    "UU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Hidden Power Flying","Quick Attack"]},
+    "UU Choice Band": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Hidden Power Flying","Iron Tail","Quick Attack"]}
   },
   "Steelix": {
     "OU Standard Wall": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":36,"sd":220},"moves":["Earthquake","Toxic","Roar","Rest"]},
