@@ -1820,7 +1820,7 @@ var SETDEX_DPP = {
     "UU Focused Counter": {"ability":"Own Tempo","item":"Focus Sash","nature":"Adamant","evs":{"hp":252,"at":4,"sp":252},"moves":["Counter","Focus Punch","Return","Feint Attack"]}
   },
   "Cacturne": {
-    "NU Offensive Spikes": {"ability":"Sand Veil","item":"Leftovers","nature":"Modest","evs":{"hp":132,"sa":252,"sp":124},"moves":["Spikes","Energy Ball","Dark Pulse","Sucker Punch"]}
+    "NU Offensive Spikes": {"ability":"Sand Veil","item":"Leftovers","nature":"Modest","evs":{"hp":172,"sa":252,"sp":84},"moves":["Spikes","Energy Ball","Dark Pulse","Sucker Punch"]}
   },
   "Swablu": {
     "LC King Cotton (Physically Defensive)": {"level":5,"ability":"Natural Cure","item":"Oran Berry","nature":"Impish","evs":{"hp":236,"df":196,"sd":76},"moves":["Roost","Pluck","Protect","Toxic"]}

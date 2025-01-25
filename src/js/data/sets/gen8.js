@@ -1867,8 +1867,6 @@ var SETDEX_SS = {
   },
   "Excadrill": {
     "OU Sand Sweeper": {"ability":"Sand Rush","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Iron Head","Rapid Spin"]},
-    "OU Sand Rush": {"ability":"Sand Rush","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Iron Head","Rapid Spin"]},
-    "OU Utility": {"ability":"Mold Breaker","item":"Leftovers","nature":"Jolly","evs":{"at":4,"sd":252,"sp":252},"moves":["Earthquake","Iron Head","Stealth Rock","Toxic"]},
     "Ubers Entry Hazard Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stealth Rock","Rapid Spin","Rock Tomb","Earthquake"]},
     "Ubers Sand Rush": {"ability":"Sand Rush","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Rapid Spin","Swords Dance"]},
     "UU Utility": {"ability":"Mold Breaker","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Iron Head","Rapid Spin","Toxic"]},
