@@ -188,8 +188,8 @@ export function calculateADV(
         Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
       );
       newBaseDmg = calculateFinalModsADV(newBaseDmg, attacker, move, field, desc, isCritical);
-      newBaseDmg = Math.floor(baseDamage * type1Effectiveness);
-      newBaseDmg = Math.floor(baseDamage * type2Effectiveness);
+      newBaseDmg = Math.floor(newBaseDmg * type1Effectiveness);
+      newBaseDmg = Math.floor(newBaseDmg * type2Effectiveness);
 
       let damageMultiplier = 85;
       result.damage = result.damage.map(affectedAmount => {
