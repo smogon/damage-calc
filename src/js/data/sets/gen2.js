@@ -480,7 +480,8 @@ var SETDEX_GSC = {
     "UU Supporter": {"item":"Leftovers","moves":["Thunder Wave","Psychic","Light Screen","Rest"]},
     "UU Sleep Talking Wall": {"item":"Leftovers","moves":["Psychic","Seismic Toss","Rest","Sleep Talk"]},
     "UU Curse Sleep Talk": {"item":"Leftovers","moves":["Curse","Body Slam","Rest","Sleep Talk"]},
-    "1v1 Curse + Amnesia": {"item":"Leftovers","moves":["Curse","Amnesia","Rest","Return"]}
+    "1v1 Curse + Amnesia": {"item":"Leftovers","moves":["Curse","Amnesia","Rest","Return"]},
+    "OU Showdown Usage": {"item":"Leftovers","moves":["Psychic","Rest","Sleep Talk","Thunder Wave"]}
   },
   "Kingler": {
     "NU Swords Dance + Hidden Power Ground": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Return","Hidden Power Ground","Substitute"]},

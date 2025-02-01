@@ -27,7 +27,7 @@ var SETDEX_BW = {
   },
   "Blastoise": {
     "UU Utility": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rapid Spin","Scald","Roar","Foresight"]},
-    "OU Showdown Usage": {"ability":"Rain Dish","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":136,"sd":120},"moves":["Rapid Spin","Scald","Protect","Toxic"]}
+    "OU Showdown Usage": {"ability":"Rain Dish","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":136,"sd":120},"moves":["Scald","Rapid Spin","Toxic","Protect"]}
   },
   "Butterfree": {
     "NU Quiver Dance": {"ability":"Tinted Lens","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Sleep Powder","Bug Buzz","Substitute"]},
@@ -1857,7 +1857,6 @@ var SETDEX_BW = {
     "Ubers Prankster": {"ability":"Prankster","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Will-O-Wisp","Recover","Taunt","Foul Play"]},
     "UU Prankster": {"ability":"Prankster","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":120,"sd":136},"moves":["Recover","Will-O-Wisp","Taunt","Foul Play"]},
     "Monotype Physically Defensive (Ghost)": {"ability":"Prankster","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":228,"sp":28},"moves":["Taunt","Recover","Will-O-Wisp","Foul Play"]},
-    "OU Showdown Usage": {"ability":"Prankster","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Recover","Taunt","Foul Play","Will-O-Wisp"]},
     "1v1 Showdown Usage": {"ability":"Prankster","item":"Sitrus Berry","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Will-O-Wisp","Taunt","Recover","Snarl"]}
   },
   "Aron": {
@@ -2595,7 +2594,7 @@ var SETDEX_BW = {
     "UU All-Out Attacker": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Fire Blast","Shadow Ball","Stealth Rock"]},
     "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Reflect","Light Screen","Taunt","Stealth Rock"]},
     "UU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","Fire Punch","Ice Punch","U-turn"]},
-    "OU Showdown Usage": {"ability":"Levitate","item":"Focus Sash","nature":"Naive","evs":{"at":200,"sa":56,"sp":252},"moves":["Stealth Rock","Taunt","Explosion","Flamethrower"]}
+    "OU Showdown Usage": {"ability":"Levitate","item":"Focus Sash","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Stealth Rock","Taunt","Explosion","Flamethrower"]}
   },
   "Dialga": {
     "Ubers Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":56,"sd":200},"moves":["Stealth Rock","Draco Meteor","Fire Blast","Roar"]},
@@ -2785,7 +2784,8 @@ var SETDEX_BW = {
     "UU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":232,"at":252,"sd":4,"sp":20},"moves":["High Jump Kick","Crunch","Ice Punch","Drain Punch"]},
     "Doubles OU Fake Out": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Careful","evs":{"hp":252,"at":176,"sd":80},"moves":["Fake Out","Drain Punch","Crunch","Detect"]},
     "Monotype Bulk Up (Fighting)": {"ability":"Shed Skin","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Crunch","Bulk Up","Drain Punch","Rest"]},
-    "1v1 Chople Counter": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":172,"sd":84},"moves":["Fake Out","High Jump Kick","Payback","Counter"]}
+    "1v1 Chople Counter": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":172,"sd":84},"moves":["Fake Out","High Jump Kick","Payback","Counter"]},
+    "OU Showdown Usage": {"ability":"Moxie","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Crunch","Drain Punch","Ice Punch","Dragon Dance"]}
   },
   "Sigilyph": {
     "UU Bulky Sweeper": {"ability":"Magic Guard","item":"Flame Orb","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Cosmic Power","Psycho Shift","Stored Power","Roost"]},
