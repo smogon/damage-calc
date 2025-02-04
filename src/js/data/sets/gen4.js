@@ -1428,7 +1428,7 @@ var SETDEX_DPP = {
   "Dunsparce": {
     "UU ParaFlinch": {"ability":"Serene Grace","item":"Leftovers","nature":"Adamant","evs":{"hp":144,"at":252,"df":36,"sd":76},"moves":["Body Slam","Headbutt","Bite","Earthquake"]},
     "UU Substitute + Paralysis": {"ability":"Serene Grace","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":212,"sp":44},"moves":["Substitute","Thunder Wave","Headbutt","Earthquake"]},
-    "ZU Specially Defensive": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":8},"moves":["Body Slam","Roost","Earthquake","Stealth Rock"]}
+    "ZU Specially Defensive": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Body Slam","Roost","Earthquake","Stealth Rock"]}
   },
   "Gligar": {
     "UU SubRoost": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Jolly","evs":{"hp":200,"df":84,"sp":224},"moves":["Substitute","Roost","Taunt","Toxic"]},
