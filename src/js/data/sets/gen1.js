@@ -113,6 +113,7 @@ var SETDEX_RBY = {
   "Persian": {
     "OU Slash": {"moves":["Slash","Body Slam","Bubble Beam","Thunderbolt"]},
     "Ubers Slash": {"moves":["Slash","Hyper Beam","Thunderbolt","Bubble Beam"]},
+    "UU Persian": {"moves":["Slash","Thunderbolt","Bubble Beam","Hyper Beam"]},
     "UU Revenge Killer": {"moves":["Slash","Hyper Beam","Thunderbolt","Toxic"]},
     "1v1 Slash": {"moves":["Slash","Hyper Beam","Thunderbolt","Screech"]},
     "Tradebacks OU Standard": {"moves":["Hypnosis","Slash","Thunderbolt","Amnesia"]}
@@ -253,7 +254,6 @@ var SETDEX_RBY = {
     "PU Offensive Sleeper": {"moves":["Hypnosis","Thunderbolt","Psychic","Substitute"]}
   },
   "Haunter": {
-    "UU Haunter": {"moves":["Thunderbolt","Explosion","Psychic","Night Shade"]},
     "UU Sleeper": {"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]}
   },
   "Gengar": {
@@ -347,7 +347,6 @@ var SETDEX_RBY = {
   },
   "Kangaskhan": {
     "OU Wallbreaker": {"moves":["Body Slam","Hyper Beam","Earthquake","Surf"]},
-    "UU Kangaskhan": {"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]},
     "UU Wallbreaker": {"moves":["Body Slam","Hyper Beam","Earthquake","Rock Slide"]}
   },
   "Horsea": {
@@ -387,7 +386,6 @@ var SETDEX_RBY = {
     "Tradebacks OU Sleep Lead": {"moves":["Lovely Kiss","Blizzard","Psychic","Rest"]}
   },
   "Electabuzz": {
-    "UU Offensive": {"moves":["Thunderbolt","Thunder Wave","Body Slam","Hyper Beam"]},
     "UU Offensive (old)": {"moves":["Thunder Wave","Thunderbolt","Body Slam","Psychic"]},
     "1v1 Mixed Attacker": {"moves":["Thunderbolt","Screech","Body Slam","Hyper Beam"]},
     "Tradebacks OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Ice Punch","Rolling Kick"]}

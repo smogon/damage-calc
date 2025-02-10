@@ -1463,7 +1463,7 @@ var SETDEX_XY = {
     "Battle Spot Singles Assault Vest": {"level":50,"ability":"Pressure","item":"Assault Vest","nature":"Modest","evs":{"hp":108,"df":4,"sa":252,"sd":4,"sp":140},"moves":["Sheer Cold","Freeze-Dry","Hurricane","Ice Shard"]}
   },
   "Zapdos": {
-    "OU Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":172,"sa":68,"sp":16},"moves":["Thunderbolt","Roost","Defog","Heat Wave"]},
+    "OU Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":216,"sd":28,"sp":16},"moves":["Volt Switch","Heat Wave","Roost","Defog"]},
     "OU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","ivs":{"at":30,"df":30},"evs":{"hp":252,"df":60,"sd":180,"sp":16},"moves":["Thunderbolt","Roost","Hidden Power Ice","Defog"]},
     "Doubles OU Bulky Tailwind": {"ability":"Static","item":"Rocky Helmet","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":252,"df":36,"sa":80,"sd":124,"sp":16},"moves":["Thunderbolt","Tailwind","Hidden Power Ice","Roost"]},
     "Battle Spot Singles Defensive": {"level":50,"ability":"Static","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Roost","Thunderbolt","Heat Wave","Toxic"]},
