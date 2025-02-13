@@ -742,7 +742,7 @@ var SETDEX_ADV = {
   },
   "Cubone": {
     "LC Offensive": {"level":5,"ability":"Rock Head","item":"Thick Club","evs":{"hp":36,"at":196,"sd":120,"sp":156},"moves":["Bonemerang","Double-Edge","Rock Slide","Protect"]},
-    "ZU Swords Dance": {"ability":"Rock Head","item":"Thick Club","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Earthquake","Double-Edge","Substitute"]},
+    "ZU Swords Dance": {"ability":"Rock Head","item":"Thick Club","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Double-Edge","Substitute"]},
     "PU Showdown Usage": {"ability":"Rock Head","item":"Thick Club","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Swords Dance","Bonemerang","Substitute"]}
   },
   "Marowak": {
