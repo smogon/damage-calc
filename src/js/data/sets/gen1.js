@@ -366,7 +366,7 @@ var SETDEX_RBY = {
   "Starmie": {
     "OU Special Attacker": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]},
     "Ubers Paralysis Lead": {"moves":["Thunder Wave","Recover","Psychic","Blizzard"]},
-    "1v1 Psychic Attacker": {"moves":["Psychic","Ice Beam","Reflect","Recover"]},
+    "1v1 Psychic-type Attacker": {"moves":["Psychic","Ice Beam","Reflect","Recover"]},
     "Tradebacks OU Standard": {"moves":["Recover","Thunder Wave","Blizzard","Psychic"]}
   },
   "Mr. Mime": {
