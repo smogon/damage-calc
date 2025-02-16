@@ -131,6 +131,9 @@ export const Stats = new (class {
     nature?: string
   ) {
     if (stat === 'hp') {
+      if (base <= 70) {
+        base = base * 2;
+      }
       return base === 1
         ? base
         : Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + level + 10;
@@ -148,7 +151,9 @@ export const Stats = new (class {
             : mods[1] === stat
               ? 0.9
               : 1;
-
+      if (base <= 70) {
+        base = base * 2;
+          }
       return Math.floor((Math.floor(((base * 2 + iv + Math.floor(ev / 4)) * level) / 100) + 5) * n);
     }
   }
