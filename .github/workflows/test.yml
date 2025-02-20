@@ -23,7 +23,7 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: Zarel/setup-node@patch-1
       with:
@@ -46,7 +46,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - run: npm install
     - name: Build
       run: node build
