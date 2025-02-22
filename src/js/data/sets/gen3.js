@@ -756,7 +756,7 @@ var SETDEX_ADV = {
     "PU CurseTung": {"ability":"Own Tempo","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Rest","Sleep Talk","Body Slam"]}
   },
   "Rhyhorn": {
-    "ZU Tank": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":204,"at":148,"df":20,"sp":136},"moves":["Earthquake","Rock Blast","Megahorn","Protect"]}
+    "ZU Tank": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":204,"at":148,"df":20,"sp":136},"moves":["Earthquake","Rock Slide","Megahorn","Protect"]}
   },
   "Rhydon": {
     "OU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sp":4},"moves":["Megahorn","Earthquake","Rock Slide","Focus Punch"]},

@@ -3009,7 +3009,7 @@ var SETDEX_SM = {
     "1v1 Electrium Z": {"ability":"Levitate","item":"Electrium Z","nature":"Modest","evs":{"hp":100,"df":4,"sa":184,"sp":220},"moves":["Thunder","Overheat","Will-O-Wisp","Charge"]}
   },
   "Rotom-Wash": {
-    "OU Defensive": {"ability":"Levitate","item":"Wiki Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Volt Switch","Hydro Pump","Defog","Pain Split"]},
+    "OU Defensive": {"ability":"Levitate","item":"Wiki Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Volt Switch","Hydro Pump","Will-O-Wisp","Defog"]},
     "OU Offensive": {"ability":"Levitate","item":"Electrium Z","nature":"Timid","evs":{"hp":108,"sa":184,"sp":216},"moves":["Hydro Pump","Volt Switch","Thunder","Pain Split"]},
     "VGC 2018 Offensive Support": {"level":50,"ability":"Levitate","item":"Wiki Berry","nature":"Calm","evs":{"hp":252,"df":44,"sa":60,"sd":148,"sp":4},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Protect"]},
     "Battle Spot Singles Bulky": {"level":50,"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Hydro Pump","Volt Switch","Will-O-Wisp","Thunderbolt"]},
@@ -3196,7 +3196,7 @@ var SETDEX_SM = {
   },
   "Serperior": {
     "OU Taunt Support": {"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":208,"df":48,"sp":252},"moves":["Leaf Storm","Taunt","Glare","Defog"]},
-    "OU Substitute Attacker": {"ability":"Contrary","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Substitute","Glare"]},
+    "OU Substitute Attacker": {"ability":"Contrary","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Substitute","Glare"]},
     "OU Choice Scarf": {"ability":"Contrary","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Glare","Defog","Knock Off"]},
     "Battle Spot Singles Focus Sash Lead": {"level":50,"ability":"Contrary","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Glare","Taunt"]},
     "Battle Spot Singles Bulky Attacker": {"level":50,"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Leaf Storm","Reflect","Synthesis","Hidden Power Fire"]},
