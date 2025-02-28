@@ -27,7 +27,7 @@ var SETDEX_ADV = {
     "PU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":148,"sp":112},"moves":["Rapid Spin","Toxic","Surf","Ice Beam"]},
     "ZU Tank": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":136,"sa":120},"moves":["Surf","Ice Beam","Toxic","Protect"]},
     "ZU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Surf","Seismic Toss","Refresh","Protect"]},
-    "ZU Special Sweeper": {"ability":"Torrent","item":"Salac Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"hp":4,"df":12,"sa":252,"sp":240},"moves":["Substitute","Hydro Pump","Hidden Power Grass","Rain Dance"]},
+    "ZU Offensive": {"ability":"Torrent","item":"Salac Berry","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":4,"df":12,"sa":252,"sp":240},"moves":["Substitute","Hydro Pump","Hidden Power Grass","Rain Dance"]},
     "NU Showdown Usage": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Rapid Spin","Surf","Foresight","Rest"]}
   },
   "Blastoise": {
