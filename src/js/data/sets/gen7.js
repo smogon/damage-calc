@@ -1035,8 +1035,7 @@ var SETDEX_SM = {
   },
   "Starmie": {
     "UU Offensive": {"ability":"Analytic","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Psyshock","Rapid Spin"]},
-    "UU Bulky Spinner": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Scald","Toxic","Recover","Rapid Spin"]},
-    "OU Showdown Usage": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Rapid Spin","Scald","Recover","Thunder Wave"]}
+    "UU Bulky Spinner": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Scald","Toxic","Recover","Rapid Spin"]}
   },
   "Mr. Mime": {
     "PU Nasty Plot": {"ability":"Soundproof","item":"Fightinium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dazzling Gleam","Focus Blast","Psyshock"]},
@@ -3050,7 +3049,8 @@ var SETDEX_SM = {
   "Azelf": {
     "UU Nasty Plot": {"ability":"Levitate","item":"Adrenaline Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Psyshock","Flamethrower","Dazzling Gleam"]},
     "UU Suicide Lead": {"ability":"Levitate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Stealth Rock","Explosion","Taunt","Knock Off"]},
-    "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Jolly","evs":{"df":252,"sd":40,"sp":216},"moves":["Reflect","Light Screen","Taunt","U-turn"]}
+    "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Jolly","evs":{"df":252,"sd":40,"sp":216},"moves":["Reflect","Light Screen","Taunt","U-turn"]},
+    "OU Showdown Usage": {"ability":"Levitate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Taunt","Explosion","Knock Off"]}
   },
   "Dialga": {
     "Ubers Offensive Utility": {"ability":"Pressure","item":"Life Orb","nature":"Modest","evs":{"hp":104,"sa":252,"sp":152},"moves":["Stealth Rock","Draco Meteor","Fire Blast","Thunder"]}
@@ -4121,7 +4121,8 @@ var SETDEX_SM = {
     "NU Offensive Trick Room": {"ability":"Aroma Veil","item":"Fairium Z","nature":"Quiet","ivs":{"at":0,"sp":0},"evs":{"hp":248,"sa":252,"sd":8},"moves":["Trick Room","Nasty Plot","Moonblast","Psychic"]}
   },
   "Slurpuff": {
-    "RU Belly Drum Sweeper": {"ability":"Unburden","item":"Sitrus Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Belly Drum","Play Rough","Return","Drain Punch"]}
+    "RU Belly Drum Sweeper": {"ability":"Unburden","item":"Sitrus Berry","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Belly Drum","Play Rough","Return","Drain Punch"]},
+    "Ubers Showdown Usage": {"ability":"Unburden","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sp":252},"moves":["Sticky Web","Endeavor","Yawn","Magic Coat"]}
   },
   "Inkay": {
     "LC Choice Scarf": {"level":5,"ability":"Contrary","item":"Choice Scarf","nature":"Jolly","evs":{"hp":12,"at":244,"df":12,"sp":236},"moves":["Superpower","Knock Off","Psycho Cut","Switcheroo"]}
@@ -4191,8 +4192,7 @@ var SETDEX_SM = {
   "Carbink": {
     "PU Trick Room Lead": {"ability":"Sturdy","item":"Mental Herb","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"at":4,"df":252},"moves":["Trick Room","Stealth Rock","Explosion","Magic Coat"]},
     "PU Stealth Rock": {"ability":"Clear Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Moonblast","Toxic","Rest"]},
-    "ZU Trick Room Setter": {"ability":"Sturdy","item":"Mental Herb","nature":"Relaxed","evs":{"hp":248,"at":8,"df":252},"moves":["Trick Room","Stealth Rock","Magic Coat","Explosion"]},
-    "OU Showdown Usage": {"ability":"Sturdy","item":"Mental Herb","nature":"Relaxed","evs":{"hp":252,"at":252,"df":4},"moves":["Stealth Rock","Explosion","Trick Room","Gyro Ball"]}
+    "ZU Trick Room Setter": {"ability":"Sturdy","item":"Mental Herb","nature":"Relaxed","evs":{"hp":248,"at":8,"df":252},"moves":["Trick Room","Stealth Rock","Magic Coat","Explosion"]}
   },
   "Goomy": {
     "LC Sap Sipper": {"level":5,"ability":"Sap Sipper","item":"Eviolite","nature":"Bold","evs":{"hp":76,"df":236,"sd":156,"sp":40},"moves":["Dragon Pulse","Sludge Wave","Rest","Sleep Talk"]}
@@ -4898,7 +4898,7 @@ var SETDEX_SM = {
     "Monotype Flyinium Z": {"ability":"Volt Absorb","item":"Flyinium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Plasma Fists","Bounce","Close Combat","Bulk Up"]},
     "1v1 Outrage Electrium Z": {"ability":"Volt Absorb","item":"Electrium Z","nature":"Jolly","evs":{"hp":48,"at":252,"df":120,"sp":88},"moves":["Plasma Fists","Outrage","Bulk Up","Fake Out"]},
     "1v1 Mixed Electrium Z": {"ability":"Volt Absorb","item":"Electrium Z","nature":"Hasty","evs":{"at":60,"sa":168,"sd":128,"sp":152},"moves":["Plasma Fists","Thunder","Charge","Fake Out"]},
-    "OU Showdown Usage": {"ability":"Volt Absorb","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hidden Power Ice","Plasma Fists","Volt Switch","Close Combat"]}
+    "OU Showdown Usage": {"ability":"Volt Absorb","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hidden Power Ice","Focus Blast","Thunderbolt","Plasma Fists"]}
   },
   "Syclant": {
     "CAP Choice Band": {"ability":"Mountaineer","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Icicle Crash","Earthquake","Ice Shard"]},

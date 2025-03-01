@@ -972,8 +972,7 @@ var SETDEX_DPP = {
   },
   "Machamp": {
     "Ubers Attacking Lead": {"ability":"No Guard","item":"Focus Sash","nature":"Adamant","evs":{"hp":204,"at":252,"sp":52},"moves":["Dynamic Punch","Payback","Bullet Punch","Stone Edge"]},
-    "Doubles OU Physical Attacker": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Dynamic Punch","Payback","Ice Punch","Stone Edge"]},
-    "OU Showdown Usage": {"ability":"No Guard","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Dynamic Punch","Payback","Stone Edge","Substitute"]}
+    "Doubles OU Physical Attacker": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Dynamic Punch","Payback","Ice Punch","Stone Edge"]}
   },
   "Tentacool": {
     "LC Rapid Spin": {"level":5,"ability":"Clear Body","item":"Oran Berry","nature":"Bold","evs":{"hp":196,"df":76,"sa":36,"sp":196},"moves":["Rapid Spin","Toxic Spikes","Surf","Sludge Bomb"]}
