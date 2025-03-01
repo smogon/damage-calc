@@ -496,6 +496,18 @@ describe('calc', () => {
       });
     });
 
+    inGens(8, 9, ({gen, calculate, Pokemon, Move}) => {
+      test('Knock Off vs. Zacian Crowned', () => {
+        const weavile = Pokemon('Weavile');
+        const zacian = Pokemon('Zacian-Crowned', {ability: 'Intrepid Sword', item: 'Rusted Sword'});
+        const knockoff = Move('Knock Off');
+        const result = calculate(weavile, zacian, knockoff);
+        expect(result.desc()).toBe(
+          '0 Atk Weavile Knock Off vs. 0 HP / 0 Def Zacian-Crowned: 36-43 (11 - 13.2%) -- possible 8HKO'
+        );
+      });
+    });
+
     inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Multiscale (gen ${gen})`, () => {
         const result = calculate(
