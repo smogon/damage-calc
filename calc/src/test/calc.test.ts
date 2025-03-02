@@ -1436,6 +1436,34 @@ describe('calc', () => {
         testCase({ability: 'Simple'}, 2);
         testCase({ability: 'Contrary'}, -1);
       });
+      test('Activating Protosynthesis with sun should not affect damage of Poltergeist and Knock Off', () => {
+        const attacker = Pokemon('Smeargle');
+        const defender = Pokemon('Gouging Fire', {'ability': 'Protosynthesis', 'item': 'Blunder Policy'});
+        const field = Field({
+          weather: 'Sun',
+        });
+
+        const knockOff = calculate(attacker, defender, Move('Knock Off'), field);
+        expect(knockOff.move.bp).toBe(65);
+
+
+        const poltergeist = calculate(attacker, defender, Move('Poltergeist'), field);
+        expect(poltergeist.move.bp).toBe(110);
+      });
+      test('Activating Quark Drive with Electric Terrain should not affect damage of Poltergeist and Knock Off', () => {
+        const attacker = Pokemon('Smeargle');
+        const defender = Pokemon('Iron Valiant', {'ability': 'Quark Drive', 'item': 'Blunder Policy'});
+        const field = Field({
+          weather: 'Sun',
+        });
+
+        const knockOff = calculate(attacker, defender, Move('Knock Off'), field);
+        expect(knockOff.move.bp).toBe(65);
+
+
+        const poltergeist = calculate(attacker, defender, Move('Poltergeist'), field);
+        expect(poltergeist.move.bp).toBe(110);
+      });
       test('Revelation Dance should change type if Pokemon Terastallized', () => {
         const attacker = Pokemon('Oricorio-Pom-Pom');
         const defender = Pokemon('Sandaconda');
