@@ -536,12 +536,22 @@ function getEndOfTurn(
   let damage = 0;
   const texts = [];
 
+  const loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
+  // psychic noise should suppress all recovery effects
+  const healBlock = move.named('Psychic Noise') &&
+    !(
+      // suppression conditions
+      attacker.hasAbility('Sheer Force') ||
+      defender.hasItem('Covert Cloak') ||
+      defender.hasAbility('Shield Dust', 'Aroma Veil')
+    );
+
   if (field.hasWeather('Sun', 'Harsh Sunshine')) {
     if (defender.hasAbility('Dry Skin', 'Solar Power')) {
       damage -= Math.floor(defender.maxHP() / 8);
       texts.push(defender.ability + ' damage');
     }
-  } else if (field.hasWeather('Rain', 'Heavy Rain')) {
+  } else if (field.hasWeather('Rain', 'Heavy Rain') && !healBlock) {
     if (defender.hasAbility('Dry Skin')) {
       damage += Math.floor(defender.maxHP() / 8);
       texts.push('Dry Skin recovery');
@@ -559,7 +569,7 @@ function getEndOfTurn(
       texts.push('sandstorm damage');
     }
   } else if (field.hasWeather('Hail', 'Snow')) {
-    if (defender.hasAbility('Ice Body')) {
+    if (defender.hasAbility('Ice Body') && !healBlock) {
       damage += Math.floor(defender.maxHP() / 16);
       texts.push('Ice Body recovery');
     } else if (
@@ -573,15 +583,6 @@ function getEndOfTurn(
     }
   }
 
-  const loseItem = move.named('Knock Off') && !defender.hasAbility('Sticky Hold');
-  // psychic noise should suppress all recovery effects
-  const healBlock = move.named('Psychic Noise') &&
-    !(
-      // suppression conditions
-      attacker.hasAbility('Sheer Force') ||
-      defender.hasItem('Covert Cloak') ||
-      defender.hasAbility('Shield Dust', 'Aroma Veil')
-    );
   if (defender.hasItem('Leftovers') && !loseItem && !healBlock) {
     damage += Math.floor(defender.maxHP() / 16);
     texts.push('Leftovers recovery');
