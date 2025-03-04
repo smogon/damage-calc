@@ -1595,7 +1595,7 @@ var SETDEX_DPP = {
     "OU TyraniBoah (SubPunch)": {"ability":"Sand Stream","item":"Leftovers","nature":"Lonely","evs":{"hp":252,"at":156,"sa":100},"moves":["Substitute","Focus Punch","Ice Beam","Crunch"]},
     "Ubers Focus Sash Lead": {"ability":"Sand Stream","item":"Focus Sash","nature":"Hasty","evs":{"at":176,"sa":80,"sp":252},"moves":["Stealth Rock","Payback","Fire Blast","Superpower"]},
     "Ubers Utility Lead": {"ability":"Sand Stream","item":"Lum Berry","nature":"Brave","evs":{"hp":248,"at":120,"sa":80,"sd":60},"moves":["Stealth Rock","Payback","Fire Blast","Superpower"]},
-    "Ubers Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":200,"sd":60},"moves":["Pursuit","Payback","Stone Edge","Superpower"]},
+    "Ubers Choice Band": {"ability":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Payback","Pursuit","Stone Edge","Superpower"]},
     "Doubles OU Choice Attacker": {"ability":"Sand Stream","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Crunch","Pursuit","Stone Edge","Superpower"]},
     "Doubles OU Dragon Dance": {"ability":"Sand Stream","item":"Lum Berry","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Rock Slide","Crunch","Protect"]},
     "Doubles OU Bulky Lead": {"ability":"Sand Stream","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Stealth Rock","Crunch","Rock Slide","Superpower"]},
