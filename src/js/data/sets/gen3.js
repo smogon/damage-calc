@@ -171,7 +171,7 @@ var SETDEX_ADV = {
     "ZU Offensive": {"ability":"Blaze","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Substitute","Toxic"]},
     "ZU Rest + Chesto Berry": {"ability":"Blaze","item":"Chesto Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Quick Attack","Rest"]},
     "ZU Sunny Day": {"ability":"Blaze","item":"Petaya Berry","nature":"Naive","ivs":{"sa":30,"sd":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Sunny Day","Substitute","Fire Blast","Hidden Power Ground"]},
-    "ZU All-Out Attacker": {"ability":"Blaze","item":"Charcoal","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Overheat","Quick Attack","Hidden Power Grass"]}
+    "ZU All-out Attacker": {"ability":"Blaze","item":"Charcoal","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Overheat","Hidden Power Grass","Quick Attack"]}
   },
   "Typhlosion": {
     "OU Special Sweeper": {"ability":"Blaze","item":"Petaya Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":60,"sa":252,"sd":12,"sp":184},"moves":["Substitute","Sunny Day","Flamethrower","Hidden Power Grass"]},
