@@ -346,6 +346,23 @@ th {
     margin: 0 0 5px;
 }
 
+details#damageValues {
+    display: list-item; 
+    cursor: pointer;
+}
+details#damageValues.no-arrow {
+    display: block;
+    cursor: auto;
+}
+
+details#damageValues::marker {
+    content: "▶ ";
+}
+
+details[open]#damageValues::marker {
+    content: "▼ ";
+}
+
 /* pokemon info */
 .poke-info label {
     display: inline-block;

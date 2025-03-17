@@ -103,20 +103,27 @@ function performCalculations() {
 
 $(".result-move").change(function () {
 	if (damageResults) {
-		var result = findDamageResult($(this));
+		let result = findDamageResult($(this));
 		if (result) {
-			var desc = result.fullDesc(notation, false);
+			let desc = result.fullDesc(notation, false);
 			if (desc.indexOf('--') === -1) desc += ' -- possibly the worst move ever';
 			$("#mainResult").text(desc);
-			var summary = displayDamageHits(result.damage);
-			var rest = "";
-			var newLine = summary.indexOf('\n');
+			let summary = displayDamageHits(result.damage);
+			let rest = "";
+			let newLine = summary.indexOf('\n');
 			if (newLine > -1) {
 				rest = summary.substring(newLine + 1);
 				summary = summary.substring(0, newLine);
 			}
 			$("#firstDmgValues").text("Possible damage amounts: (" + summary + ")");
 			$("#restDmgValues").text(rest);
+
+            if (rest.trim() === "") {
+                $("#damageValues").removeAttr("open");
+				$("#damageValues").addClass("no-arrow");
+            } else {
+				$("#damageValues").removeClass("no-arrow");
+            }
 		}
 	}
 });
