@@ -103,14 +103,14 @@ function performCalculations() {
 
 $(".result-move").change(function () {
 	if (damageResults) {
-		let result = findDamageResult($(this));
+		var result = findDamageResult($(this));
 		if (result) {
-			let desc = result.fullDesc(notation, false);
+			var desc = result.fullDesc(notation, false);
 			if (desc.indexOf('--') === -1) desc += ' -- possibly the worst move ever';
 			$("#mainResult").text(desc);
-			let summary = displayDamageHits(result.damage);
-			let rest = "";
-			let newLine = summary.indexOf('\n');
+			var summary = displayDamageHits(result.damage);
+			var rest = "";
+			var newLine = summary.indexOf('\n');
 			if (newLine > -1) {
 				rest = summary.substring(newLine + 1);
 				summary = summary.substring(0, newLine);
@@ -118,12 +118,12 @@ $(".result-move").change(function () {
 			$("#firstDmgValues").text("Possible damage amounts: (" + summary + ")");
 			$("#restDmgValues").text(rest);
 
-            if (rest.trim() === "") {
-                $("#damageValues").removeAttr("open");
+			if (rest.trim() === "") {
+				$("#damageValues").removeAttr("open");
 				$("#damageValues").addClass("no-arrow");
-            } else {
+			} else {
 				$("#damageValues").removeClass("no-arrow");
-            }
+			}
 		}
 	}
 });
