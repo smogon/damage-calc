@@ -1444,8 +1444,7 @@ describe('calc', () => {
         });
 
         const knockOff = calculate(attacker, defender, Move('Knock Off'), field);
-        expect(knockOff.move.bp).toBe(65);
-
+        expect(knockOff.rawDesc.moveBP).toBe(97.5);
 
         const poltergeist = calculate(attacker, defender, Move('Poltergeist'), field);
         expect(poltergeist.move.bp).toBe(110);
@@ -1458,8 +1457,7 @@ describe('calc', () => {
         });
 
         const knockOff = calculate(attacker, defender, Move('Knock Off'), field);
-        expect(knockOff.move.bp).toBe(65);
-
+        expect(knockOff.rawDesc.moveBP).toBe(97.5);
 
         const poltergeist = calculate(attacker, defender, Move('Poltergeist'), field);
         expect(poltergeist.move.bp).toBe(110);
