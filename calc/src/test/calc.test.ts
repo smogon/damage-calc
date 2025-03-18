@@ -531,6 +531,18 @@ describe('calc', () => {
         }
       });
     });
+    inGens(8, 9, ({gen, calculate, Pokemon, Move}) => {
+      test('Knock Off vs. Zacian Crowned', () => {
+        const weavile = Pokemon('Weavile');
+        const zacian = Pokemon('Zacian-Crowned', {ability: 'Intrepid Sword', item: 'Rusted Sword'});
+        const knockoff = Move('Knock Off');
+        const result = calculate(weavile, zacian, knockoff);
+        expect(result.desc()).toBe(
+          '0 Atk Weavile Knock Off vs. 0 HP / 0 Def Zacian-Crowned: 36-43 (11 - 13.2%) -- possible 8HKO'
+        );
+      });
+    });
+
     inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Multiscale (gen ${gen})`, () => {
         const result = calculate(
@@ -1444,6 +1456,34 @@ describe('calc', () => {
         testCase({ability: 'Simple'}, 2);
         testCase({ability: 'Contrary'}, -1);
       });
+      test('Activating Protosynthesis with sun should not affect damage of Poltergeist and Knock Off', () => {
+        const attacker = Pokemon('Smeargle');
+        const defender = Pokemon('Gouging Fire', {'ability': 'Protosynthesis', 'item': 'Blunder Policy'});
+        const field = Field({
+          weather: 'Sun',
+        });
+
+        const knockOff = calculate(attacker, defender, Move('Knock Off'), field);
+        expect(knockOff.move.bp).toBe(65);
+
+
+        const poltergeist = calculate(attacker, defender, Move('Poltergeist'), field);
+        expect(poltergeist.move.bp).toBe(110);
+      });
+      test('Activating Quark Drive with Electric Terrain should not affect damage of Poltergeist and Knock Off', () => {
+        const attacker = Pokemon('Smeargle');
+        const defender = Pokemon('Iron Valiant', {'ability': 'Quark Drive', 'item': 'Blunder Policy'});
+        const field = Field({
+          weather: 'Sun',
+        });
+
+        const knockOff = calculate(attacker, defender, Move('Knock Off'), field);
+        expect(knockOff.move.bp).toBe(65);
+
+
+        const poltergeist = calculate(attacker, defender, Move('Poltergeist'), field);
+        expect(poltergeist.move.bp).toBe(110);
+      });
       test('Revelation Dance should change type if Pokemon Terastallized', () => {
         const attacker = Pokemon('Oricorio-Pom-Pom');
         const defender = Pokemon('Sandaconda');
@@ -1453,6 +1493,12 @@ describe('calc', () => {
         attacker.teraType = 'Water';
         result = calculate(attacker, defender, Move('Revelation Dance'));
         expect(result.move.type).toBe('Water');
+      });
+      test('Psychic Noise should disable healing effects', () => {
+        const attacker = Pokemon('Mewtwo');
+        const defender = Pokemon('Regigigas', {ability: 'Poison Heal', item: 'Leftovers', status: 'tox'});
+        const result = calculate(attacker, defender, Move('Psychic Noise'), Field({terrain: 'Grassy', attackerSide: {isSeeded: true}}));
+        expect(result.desc()).toBe('0 SpA Mewtwo Psychic Noise vs. 0 HP / 0 SpD Regigigas: 109-129 (30.1 - 35.7%) -- 31.2% chance to 3HKO');
       });
 
       test('Flower Gift, Power Spot, Battery, and switching boosts shouldn\'t have double spaces', () => {

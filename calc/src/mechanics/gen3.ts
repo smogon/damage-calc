@@ -159,14 +159,15 @@ export function calculateADV(
 
   baseDamage = calculateFinalModsADV(baseDamage, attacker, move, field, desc, isCritical);
 
-  baseDamage = Math.floor(baseDamage * typeEffectiveness);
+  baseDamage = Math.floor(baseDamage * type1Effectiveness);
+  baseDamage = Math.floor(baseDamage * type2Effectiveness);
   const damage = [];
   for (let i = 85; i <= 100; i++) {
     damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
   }
   result.damage = damage;
 
-  if ((move.dropsStats && move.timesUsed! > 1) || move.hits > 1) {
+  if (move.timesUsed! > 1 || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
@@ -189,7 +190,8 @@ export function calculateADV(
         Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
       );
       newBaseDmg = calculateFinalModsADV(newBaseDmg, attacker, move, field, desc, isCritical);
-      newBaseDmg = Math.floor(newBaseDmg * typeEffectiveness);
+      newBaseDmg = Math.floor(newBaseDmg * type1Effectiveness);
+      newBaseDmg = Math.floor(newBaseDmg * type2Effectiveness);
 
       const damage = [];
       for (let i = 85; i <= 100; i++) {

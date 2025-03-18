@@ -319,6 +319,10 @@ th {
     background: #ffff99;
 }
 
+.locked-weather:checked + .btn {
+    background: #ffff99;
+}
+
 .genSelection, .notationSelection, .modeSelection {
     display: inline-block;
     position: relative;
