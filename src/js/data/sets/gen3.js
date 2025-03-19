@@ -1556,11 +1556,8 @@ var SETDEX_ADV = {
     "Ubers SubPetaya": {"ability":"Pressure","item":"Petaya Berry","nature":"Mild","ivs":{"hp":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Substitute","Ice Beam","Thunder","Superpower"]}
   },
   "Deoxys-Defense": {
-    "Ubers Spiker": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":160,"sd":96},"moves":["Spikes","Night Shade","Toxic","Recover"]},
-    "Ubers Agility": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":160,"sd":96},"moves":["Agility","Recover","Toxic","Taunt"]},
-    "Ubers Cosmic Power": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":160,"sd":96},"moves":["Cosmic Power","Night Shade","Toxic","Rest"]},
-    "Ubers Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":160,"sd":96},"moves":["Calm Mind","Ice Beam","Thunderbolt","Rest"]},
-    "Ubers CounterCoat": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":152,"sd":96,"sp":8},"moves":["Counter","Mirror Coat","Taunt","Recover"]}
+    "Ubers Stall Lead": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":160,"sp":96},"moves":["Recover","Seismic Toss","Knock Off","Taunt"]},
+    "Ubers Offense Lead": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Seismic Toss","Recover"]}
   },
   "Deoxys-Speed": {
     "Ubers Staller": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":120,"sd":120,"sp":16},"moves":["Taunt","Toxic","Knock Off","Recover"]},

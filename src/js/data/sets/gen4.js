@@ -474,7 +474,7 @@ var SETDEX_DPP = {
   },
   "Togekiss": {
     "OU Defensive Nasty Plot": {"ability":"Serene Grace","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":192,"sp":64},"moves":["Nasty Plot","Air Slash","Roost","Thunder Wave"]},
-    "OU All-Out-Attacker": {"ability":"Serene Grace","item":"Lum Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Air Slash","Aura Sphere","Fire Blast","Thunder Wave"]}
+    "OU All-Out Attacker": {"ability":"Serene Grace","item":"Lum Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Air Slash","Aura Sphere","Fire Blast","Thunder Wave"]}
   },
   "Dusknoir": {
     "OU Offensive Spinblocker": {"ability":"Pressure","item":"Custap Berry","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Earthquake","Thunder Punch","Ice Punch","Shadow Sneak"]},
