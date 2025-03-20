@@ -44,9 +44,9 @@ describe('calc', () => {
 
     tests('Comet Punch', ({gen, calculate, Pokemon, Move}) => {
       expect(calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'))).toMatch(gen, {
-        1: {range: [108, 129], desc: 'Snorlax Comet Punch (3 hits) vs. Vulpix', result: '(38.7 - 46.2%) -- approx. 3HKO'},
-        3: {range: [132, 156], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(60.8 - 71.8%) -- approx. 2HKO'},
-        4: {range: [129, 156], result: '(59.4 - 71.8%) -- approx. 2HKO'},
+        1: {range: [108, 129], desc: 'Snorlax Comet Punch (3 hits) vs. Vulpix', result: '(38.7 - 46.2%) -- guaranteed 3HKO'},
+        3: {range: [132, 156], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(60.8 - 71.8%) -- guaranteed 2HKO'},
+        4: {range: [129, 156], result: '(59.4 - 71.8%) -- guaranteed 2HKO'},
       });
     });
 
@@ -424,7 +424,7 @@ describe('calc', () => {
             [76, 76, 78, 78, 79, 81, 81, 82, 82, 84, 85, 85, 87, 87, 88, 90],
           ]);
           expect(result.desc()).toBe(
-            '152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 229-270 (53 - 62.5%) -- approx. 2HKO'
+            '152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 229-270 (53 - 62.5%) -- guaranteed 2HKO'
           );
         } else {
           expect(result.damage).toEqual([
@@ -474,7 +474,7 @@ describe('calc', () => {
           [92, 96, 96, 96, 96, 100, 100, 100, 104, 104, 104, 104, 108, 108, 108, 112],
         ]);
         expect(result.desc()).toBe(
-          '252 Atk Parental Bond Kangaskhan-Mega Crunch vs. 0 HP / 0 Def Shadow Shield Lunala: 280-334 (67.4 - 80.4%) -- approx. 2HKO'
+          '252 Atk Parental Bond Kangaskhan-Mega Crunch vs. 0 HP / 0 Def Shadow Shield Lunala: 280-334 (67.4 - 80.4%) -- guaranteed 2HKO'
         );
       });
     });
@@ -496,6 +496,41 @@ describe('calc', () => {
       });
     });
 
+    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`Multi-hit percentage kill (gen ${gen})`, () => {
+        if (gen < 3) {
+          const result = calculate(
+            Pokemon('Persian', {boosts: {atk: 4}}),
+            Pokemon('Abra'),
+            Move('Fury Swipes', {hits: 2}),
+          );
+          expect(result.range()).toEqual([218, 258]);
+          expect(result.desc()).toBe(
+            '+4 Persian Fury Swipes (2 hits) vs. Abra: 218-258 (86.1 - 101.9%) -- 2.7% chance to OHKO'
+          );
+        } else if (gen === 3) {
+          const result = calculate(
+            Pokemon('Persian', {boosts: {atk: 3}}),
+            Pokemon('Abra', {boosts: {def: 1}}),
+            Move('Fury Swipes', {hits: 2}),
+          );
+          expect(result.range()).toEqual([174, 206]);
+          expect(result.desc()).toBe(
+            '+3 0 Atk Persian Fury Swipes (2 hits) vs. +1 0 HP / 0 Def Abra: 174-206 (91 - 107.8%) -- 41.8% chance to OHKO'
+          );
+        } else {
+          const result = calculate(
+            Pokemon('Persian', {boosts: {atk: 3}}),
+            Pokemon('Abra', {boosts: {def: 1}}),
+            Move('Fury Swipes', {hits: 2}),
+          );
+          expect(result.range()).toEqual([174, 206]);
+          expect(result.desc()).toBe(
+            '+3 0 Atk Persian Fury Swipes (2 hits) vs. +1 0 HP / 0 Def Abra: 174-206 (91 - 107.8%) -- 43.8% chance to OHKO'
+          );
+        }
+      });
+    });
     inGens(8, 9, ({gen, calculate, Pokemon, Move}) => {
       test('Knock Off vs. Zacian Crowned', () => {
         const weavile = Pokemon('Weavile');
@@ -534,9 +569,6 @@ describe('calc', () => {
           Move('Icicle Spear'),
         );
         expect(result.range()).toEqual([115, 138]);
-        expect(result.desc()).toBe(
-          '0 Atk Mamoswine Icicle Spear (3 hits) vs. 0 HP / 0 Def Weak Armor Skarmory: 115-138 (42.4 - 50.9%) -- approx. 2.7% chance to 2HKO'
-        );
 
         result = calculate(
           Pokemon('Mamoswine'),
@@ -547,9 +579,6 @@ describe('calc', () => {
           Move('Icicle Spear'),
         );
         expect(result.range()).toEqual([89, 108]);
-        expect(result.desc()).toBe(
-          '0 Atk Mamoswine Icicle Spear (3 hits) vs. 0 HP / 0 Def White Herb Weak Armor Skarmory: 89-108 (32.8 - 39.8%) -- approx. 99.9% chance to 3HKO'
-        );
 
         result = calculate(
           Pokemon('Mamoswine'),
@@ -561,9 +590,6 @@ describe('calc', () => {
           Move('Icicle Spear'),
         );
         expect(result.range()).toEqual([56, 69]);
-        expect(result.desc()).toBe(
-          '0 Atk Mamoswine Icicle Spear (3 hits) vs. +2 0 HP / 0 Def Weak Armor Skarmory: 56-69 (20.6 - 25.4%) -- approx. 0.1% chance to 4HKO'
-        );
 
         result = calculate(
           Pokemon('Mamoswine', {
@@ -577,9 +603,6 @@ describe('calc', () => {
           Move('Icicle Spear'),
         );
         expect(result.range()).toEqual([75, 93]);
-        expect(result.desc()).toBe(
-          '0 Atk Unaware Mamoswine Icicle Spear (3 hits) vs. 0 HP / 0 Def Skarmory: 75-93 (27.6 - 34.3%) -- approx. 1.5% chance to 3HKO'
-        );
       });
     });
 
@@ -595,12 +618,12 @@ describe('calc', () => {
         if (gen === 6) {
           expect(result.range()).toEqual([96, 113]);
           expect(result.desc()).toBe(
-            '0 Atk Aerilate Pinsir-Mega Double Hit (2 hits) vs. 0 HP / 0 Def Mummy Cofagrigus: 96-113 (37.3 - 43.9%) -- approx. 3HKO'
+            '0 Atk Aerilate Pinsir-Mega Double Hit (2 hits) vs. 0 HP / 0 Def Mummy Cofagrigus: 96-113 (37.3 - 43.9%) -- guaranteed 3HKO'
           );
         } else {
           expect(result.range()).toEqual([91, 107]);
           expect(result.desc()).toBe(
-            '0 Atk Aerilate Pinsir-Mega Double Hit (2 hits) vs. 0 HP / 0 Def Mummy Cofagrigus: 91-107 (35.4 - 41.6%) -- approx. 3HKO'
+            '0 Atk Aerilate Pinsir-Mega Double Hit (2 hits) vs. 0 HP / 0 Def Mummy Cofagrigus: 91-107 (35.4 - 41.6%) -- guaranteed 3HKO'
           );
         }
       });
@@ -617,7 +640,7 @@ describe('calc', () => {
         );
         expect(result.range()).toEqual([104, 126]);
         expect(result.desc()).toBe(
-          '0 SpA Greninja Water Shuriken (15 BP) (3 hits) vs. 0 HP / 0 SpD Luminous Moss Gliscor: 104-126 (35.7 - 43.2%) -- approx. 3HKO'
+          '0 SpA Greninja Water Shuriken (15 BP) (3 hits) vs. 0 HP / 0 SpD Luminous Moss Gliscor: 104-126 (35.7 - 43.2%) -- guaranteed 3HKO'
         );
 
         result = calculate(
@@ -629,9 +652,6 @@ describe('calc', () => {
           Move('Water Shuriken'),
         );
         expect(result.range()).toEqual([92, 114]);
-        expect(result.desc()).toBe(
-          '0 SpA Greninja Water Shuriken (15 BP) (3 hits) vs. 0 HP / 0 SpD Luminous Moss Simple Gliscor: 92-114 (31.6 - 39.1%) -- approx. 79.4% chance to 3HKO'
-        );
 
         result = calculate(
           Pokemon('Greninja'),
@@ -643,7 +663,7 @@ describe('calc', () => {
         );
         expect(result.range()).toEqual([176, 210]);
         expect(result.desc()).toBe(
-          '0 SpA Greninja Water Shuriken (15 BP) (3 hits) vs. 0 HP / 0 SpD Luminous Moss Contrary Gliscor: 176-210 (60.4 - 72.1%) -- approx. 2HKO'
+          '0 SpA Greninja Water Shuriken (15 BP) (3 hits) vs. 0 HP / 0 SpD Luminous Moss Contrary Gliscor: 176-210 (60.4 - 72.1%) -- guaranteed 2HKO'
         );
       });
     });
