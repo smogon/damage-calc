@@ -120,6 +120,7 @@ $(".result-move").change(function () {
 
 			if (rest.trim() === "") {
 				$("#firstDmgValues").css("display", "block");
+				$("#restDmgValues").text("");
 			} else {
 				$("#damageValues").removeAttr("open");
 				$("#firstDmgValues").css("display", "revert");
