@@ -116,13 +116,13 @@ $(".result-move").change(function () {
 				summary = summary.substring(0, newLine);
 			}
 			$("#firstDmgValues").text("Possible damage amounts: (" + summary + ")");
-			$("#restDmgValues").text(rest);
+			if (rest !== "") $("#restDmgValues").text("(" + rest + ")");
 
 			if (rest.trim() === "") {
-				$("#damageValues").removeAttr("open");
-				$("#damageValues").addClass("no-arrow");
+				$("#firstDmgValues").css("display", "block");
 			} else {
-				$("#damageValues").removeClass("no-arrow");
+				$("#damageValues").removeAttr("open");
+				$("#firstDmgValues").css("display", "revert");
 			}
 		}
 	}
@@ -142,7 +142,7 @@ function displayDamageHits(damage) {
 	var fullText = "";
 	for (var i = 1; i <= damage.length; i++) {
 		var txt = toOrdinal(i) + " Hit: " + damage[i - 1].join(', ');
-		if (i > 1) txt += "; ";
+		if (i > 1 && i < damage.length) txt += "; ";
 		fullText += txt;
 		if (i % 2 == 1 && i < damage.length) fullText += "\n";
 	}

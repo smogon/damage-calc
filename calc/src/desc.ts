@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/prefer-for-of */
 import type {Generation, Weather, Terrain, TypeName, ID} from './data/interface';
 import type {Field, Side} from './field';
 import type {Move} from './move';
