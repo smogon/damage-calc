@@ -1085,7 +1085,7 @@ var SETDEX_ADV = {
   },
   "Delibird": {
     "NU Choice Band": {"ability":"Hustle","item":"Choice Band","nature":"Naughty","evs":{"at":136,"sa":136,"sp":236},"moves":["Ice Beam","Quick Attack","Focus Punch","Aerial Ace"]},
-    "ZU Substitute + 3 Attacks": {"ability":"Hustle","item":"Leftovers","nature":"Naive","ivs":{"sa":30,"sd":30},"evs":{"at":188,"sa":68,"sp":252},"moves":["Substitute","Aerial Ace","Ice Beam","Hidden Power Ground"]}
+    "ZU Substitute + 3 Attacks": {"ability":"Hustle","item":"Leftovers","nature":"Hasty","ivs":{"sa":30,"sd":30},"evs":{"at":188,"sa":68,"sp":252},"moves":["Substitute","Aerial Ace","Ice Beam","Hidden Power Ground"]}
   },
   "Skarmory": {
     "OU Standard": {"ability":"Keen Eye","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Spikes","Roar","Protect","Toxic"]},
@@ -1245,13 +1245,11 @@ var SETDEX_ADV = {
     "ZU Wall": {"ability":"Magnet Pull","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":60,"sd":196},"moves":["Earthquake","Protect","Explosion","Thunder Wave"]}
   },
   "Sableye": {
-    "UU Knock Off": {"ability":"Keen Eye","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":48,"sd":208},"moves":["Seismic Toss","Toxic","Knock Off","Recover"]},
-    "UU Choice Band": {"ability":"Keen Eye","item":"Choice Band","nature":"Adamant","evs":{"hp":76,"at":252,"sp":180},"moves":["Shadow Ball","Focus Punch","Brick Break","Fake Out"]},
-    "UU Calm Mind": {"ability":"Keen Eye","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":80,"sp":176},"moves":["Calm Mind","Hidden Power Dark","Water Pulse","Recover"]},
     "RU Wall": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Toxic","Knock Off","Recover"]},
     "NU Mixed Defensive": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":56,"sd":200},"moves":["Shadow Ball","Recover","Toxic","Seismic Toss"]},
     "NU Physically Defensive": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Shadow Ball","Recover","Toxic","Seismic Toss"]},
-    "NU Calm Mind": {"ability":"Keen Eye","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Hidden Power Dark","Rest","Recover"]}
+    "NU Calm Mind": {"ability":"Keen Eye","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Hidden Power Dark","Rest","Recover"]},
+    "UU Showdown Usage": {"ability":"Keen Eye","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":48,"sd":208},"moves":["Recover","Seismic Toss","Toxic","Knock Off"]}
   },
   "Aron": {
     "ZU Protect + 3 Attacks": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":168,"at":252,"sp":88},"moves":["Protect","Double-Edge","Rock Slide","Earthquake"]}

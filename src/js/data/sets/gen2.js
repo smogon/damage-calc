@@ -26,6 +26,7 @@ var SETDEX_GSC = {
     "OU Bulky Water": {"item":"Leftovers","moves":["Surf","Rest","Reflect","Rapid Spin"]},
     "OU RestTalk": {"item":"Leftovers","moves":["Rest","Sleep Talk","Surf","Ice Beam"]},
     "UU Spinstoise (Rapid Spin)": {"item":"Leftovers","moves":["Rapid Spin","Surf","Rest","Sleep Talk"]},
+    "UU Mixed": {"item":"Leftovers","moves":["Surf","Rapid Spin","Zap Cannon","Earthquake"]},
     "1v1 Special Attacker": {"item":"Leftovers","moves":["Hydro Pump","Ice Beam","Icy Wind","Counter"]}
   },
   "Butterfree": {

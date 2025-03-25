@@ -693,7 +693,7 @@ var SETDEX_XY = {
   },
   "Ivysaur": {
     "ZU Defensive": {"ability":"Chlorophyll","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":144,"sd":112},"moves":["Knock Off","Sludge Bomb","Giga Drain","Synthesis"]},
-    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Eviolite","nature":"Bold","ivs":{"at":0,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Sludge Bomb","Solar Beam","Hidden Power Fire"]}
+    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Eviolite","nature":"Modest","ivs":{"at":0,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Sludge Bomb","Solar Beam","Hidden Power Fire"]}
   },
   "Venusaur": {
     "OU Offensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":232,"sa":252,"sd":4,"sp":20},"moves":["Giga Drain","Sludge Bomb","Hidden Power Fire","Synthesis"]},
@@ -1800,6 +1800,7 @@ var SETDEX_XY = {
     "RU Offensive": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":212,"at":252,"sp":44},"moves":["Play Rough","Fire Punch","Earthquake","Close Combat"]}
   },
   "Scizor": {
+    "OU Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Bullet Punch","U-turn","Pursuit","Knock Off"]},
     "OU Bulky Swords Dance": {"ability":"Light Metal","item":"Scizorite","nature":"Adamant","evs":{"hp":248,"at":16,"df":12,"sd":16,"sp":216},"moves":["Swords Dance","Roost","Bullet Punch","Superpower"]},
     "OU Offensive Swords Dance": {"ability":"Light Metal","item":"Scizorite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
     "OU Utility": {"ability":"Light Metal","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":44,"sd":160,"sp":56},"moves":["U-turn","Roost","Bullet Punch","Pursuit"]},
