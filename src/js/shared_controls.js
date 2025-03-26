@@ -552,7 +552,9 @@ $(".move-selector").change(function () {
 
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (!isNaN(move.multihit)) {
+		moveGroupObj.children(".move-hits").empty();
 		moveGroupObj.children(".move-hits").hide();
+		moveGroupObj.children(".move-times").empty();
 		moveGroupObj.children(".move-times").hide();
 	} else {
 		moveGroupObj.children(".move-hits").hide();
