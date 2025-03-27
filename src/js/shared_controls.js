@@ -528,6 +528,7 @@ $(".move-selector").change(function () {
 	var stat = move.category === 'Special' ? 'spa' : 'atk';
 	if (Array.isArray(move.multihit) || (!isNaN(move.multihit) && move.multiaccuracy)) {
 		moveGroupObj.children(".move-times").hide();
+		moveGroupObj.children(".move-times").val(1);
 		moveGroupObj.children(".move-hits").empty();
 		if (!isNaN(move.multihit)) {
 			for (var i = 1; i <= move.multihit; i++) {
@@ -552,11 +553,12 @@ $(".move-selector").change(function () {
 
 		moveGroupObj.children(".move-hits").val(moveHits);
 	} else if (!isNaN(move.multihit)) {
-		moveGroupObj.children(".move-hits").empty();
+		moveGroupObj.children(".move-hits").val(1);
 		moveGroupObj.children(".move-hits").hide();
-		moveGroupObj.children(".move-times").empty();
+		moveGroupObj.children(".move-times").val(1);
 		moveGroupObj.children(".move-times").hide();
 	} else {
+		moveGroupObj.children(".move-hits").val(1);
 		moveGroupObj.children(".move-hits").hide();
 		moveGroupObj.children(".move-times").show();
 	}
