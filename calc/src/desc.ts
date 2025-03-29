@@ -295,8 +295,8 @@ export function getKOChance(
       ? defender.toxicCounter : 0;
 
   // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it
-  // to an approximate distribution
-  let qualifier = move.hits > 2 ? 'approx. ' : '';
+  // to an approximate distribution if greater than 3 hits
+  const qualifier = move.hits > 3 ? 'approx. ' : '';
 
   const hazardsText = hazards.texts.length > 0
     ? ' after ' + serializeText(hazards.texts)
@@ -385,15 +385,6 @@ export function getKOChance(
     // checks if either chance is greater than 0
     if (chance + chanceWithEot > 0) return KOChance(chance, chanceWithEot, 1);
 
-    // Parental Bond's combined first + second hit only is accurate for chance to OHKO, for
-    // multihit KOs its only approximated. We should be doing squashMultihit here instead of
-    // pretending we ar emore accurate than we are, but just throwing on an qualifer should be
-    // sufficient.
-    if (damage.length === 256) {
-      qualifier = 'approx. ';
-      // damage = squashMultihit(gen, damage, move.hits, err);
-    }
-
     for (let i = 2; i <= 4; i++) {
       const chance = computeKOChance(
         damage, defender.curHP() - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter
@@ -461,29 +452,24 @@ function combine(damage: Damage) {
   // Fixed Damage
   if (typeof damage === 'number') return [damage];
 
-  // Standard Damage
-  if (damage.length > 2 && typeof damage[0] === 'number') {
-    damage = damage as number[];
-    if (damage[0] > damage[damage.length - 1]) damage = damage.slice().sort();
-    return damage;
+  // Standard Damage (16 or 39 rolls)
+  if (damage.length >= 16 && typeof damage[0] === 'number') {
+    return damage as number[];
   }
-  // Fixed Multi-hit Damage
+  // Fixed Multi-hit Damage (currently only parental bond)
   if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
     return [damage[0] + damage[1]];
   }
   // Multi-hit Damage
 
   // Reduce Distribution to be at most 256 elements, maintains min and max
-  function reduce(dist: number[]): number[] {
-    const MAX_LENGTH = 256;
-    if (dist.length <= MAX_LENGTH) {
-      return dist;
-    }
+  function reduce(dist: number[], scaleValue: number): number[] {
+    // should always be 16^2 or 39^2
+    const new_length = dist.length / scaleValue;
     const reduced = [];
     reduced[0] = dist[0];
-    reduced[MAX_LENGTH - 1] = dist[dist.length - 1];
-    const scaleValue = dist.length / MAX_LENGTH; // Should always be 16
-    for (let i = 1; i < MAX_LENGTH - 1; i++) {
+    reduced[new_length - 1] = dist[dist.length - 1];
+    for (let i = 1; i < new_length - 1; i++) {
       reduced[i] = dist[Math.round(i * scaleValue + scaleValue / 2)];
     }
     return reduced;
@@ -494,13 +480,19 @@ function combine(damage: Damage) {
     return combined;
   }
 
-  // Combine n distributions to return an approximation of sum with <= 256 elements
-  // Accurate for <= 2 hits, should be within 1% otherwise
+  // Combine n distributions to return an approximation of sum
+  // Perfectly accurate for <= 3 hits, within 1% otherwise (Max 0.5% off for 7 hits)
   function combineDistributions(dists: number[][]): number[] {
     let combined = [0];
+    const numRolls = dists[0].length;
+    // Usually returns numRolls^2 values, but allow for perfect accuracy for exactly 3 hits
+    const numAccuracy = (numRolls === 16 && dists.length === 3) ? 3 : 2;
     for (let i = 0; i < dists.length; i++) {
-      combined = combineTwo(combined, dists[i]);
-      combined = reduce(combined);
+      const distribution = dists[i];
+      combined = combineTwo(combined, distribution);
+      if (i >= numAccuracy) {
+        combined = reduce(combined, distribution.length);
+      }
     }
     return combined;
   }
