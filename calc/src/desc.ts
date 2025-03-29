@@ -267,10 +267,10 @@ export function getKOChance(
   defender: Pokemon,
   move: Move,
   field: Field,
-  damage: Damage,
+  damageObj: Damage,
   err = true
 ) {
-  damage = combine(damage);
+  const [damage, approximate] = combine(damageObj);
   if (isNaN(damage[0])) {
     error(err, 'damage[0] must be a number.');
     return {chance: 0, n: 0, text: ''};
@@ -296,7 +296,7 @@ export function getKOChance(
 
   // multi-hit moves have too many possibilities for brute-forcing to work, so reduce it
   // to an approximate distribution if greater than 3 hits
-  const qualifier = move.hits > 3 ? 'approx. ' : '';
+  const qualifier = approximate ? 'approx. ' : '';
 
   const hazardsText = hazards.texts.length > 0
     ? ' after ' + serializeText(hazards.texts)
@@ -448,17 +448,17 @@ export function getKOChance(
   return {chance: 0, n: 0, text: ''};
 }
 
-function combine(damage: Damage) {
+function combine(damage: Damage): [number[], boolean] {
   // Fixed Damage
-  if (typeof damage === 'number') return [damage];
+  if (typeof damage === 'number') return [[damage], false];
 
   // Standard Damage (16 or 39 rolls)
   if (damage.length >= 16 && typeof damage[0] === 'number') {
-    return damage as number[];
+    return [damage as number[], false];
   }
   // Fixed Multi-hit Damage (currently only parental bond)
   if (typeof damage[0] === 'number' && typeof damage[1] === 'number') {
-    return [damage[0] + damage[1]];
+    return [[damage[0] + damage[1]], false];
   }
   // Multi-hit Damage
 
@@ -482,19 +482,21 @@ function combine(damage: Damage) {
 
   // Combine n distributions to return an approximation of sum
   // Perfectly accurate for <= 3 hits, within 1% otherwise (Max 0.5% off for 7 hits)
-  function combineDistributions(dists: number[][]): number[] {
+  function combineDistributions(dists: number[][]): [number[], boolean] {
     let combined = [0];
     const numRolls = dists[0].length;
     // Usually returns numRolls^2 values, but allow for perfect accuracy for exactly 3 hits
     const numAccuracy = (numRolls === 16 && dists.length === 3) ? 3 : 2;
+    let approximate = false;
     for (let i = 0; i < dists.length; i++) {
       const distribution = dists[i];
       combined = combineTwo(combined, distribution);
       if (i >= numAccuracy) {
         combined = reduce(combined, distribution.length);
+        approximate = true;
       }
     }
-    return combined;
+    return [combined, approximate];
   }
 
   const d = damage as number[][];
