@@ -18,6 +18,12 @@ html, body {
     background-color: var(--background);
     color-scheme: dark;
 }
+a {
+    color:#63aed1;
+}
+a:visited {
+    color:#b17bc3;
+}
 
 .btn {
     background-color: var(--button-color);
@@ -76,11 +82,6 @@ input {
 }
 
 textarea {
-    background-color: var(--background);
-    color: var(--text);
-}
-
-.wrapper {
     background-color: var(--background);
     color: var(--text);
 }
