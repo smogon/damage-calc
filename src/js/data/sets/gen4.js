@@ -406,8 +406,7 @@ var SETDEX_DPP = {
     "LC Mixed Attacker": {"level":5,"ability":"Overgrow","item":"Life Orb","nature":"Quiet","ivs":{"at":30,"sa":30,"sp":2},"evs":{"at":216,"df":4,"sa":240},"moves":["Seed Bomb","Earth Power","Hidden Power Fire","Crunch"]}
   },
   "Grotle": {
-    "ZU Physically Defensive": {"ability":"Overgrow","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Seed Bomb","Synthesis","Stealth Rock","Return"]},
-    "ZU Specially Defensive": {"ability":"Overgrow","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":8},"moves":["Seed Bomb","Synthesis","Stealth Rock","Return"]}
+    "ZU Defensive": {"ability":"Overgrow","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Seed Bomb","Synthesis","Stealth Rock","Return"]}
   },
   "Torterra": {
     "OU Rock Polish": {"ability":"Overgrow","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Rock Polish","Earthquake","Wood Hammer","Return"]},
