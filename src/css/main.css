@@ -258,48 +258,11 @@ footer a.cur, footer a.cur:hover {
     vertical-align: middle;
 }
 
-main {
-    margin: 0 auto;
-    padding: 0 15px 15px 15px;
-    max-width: 800px;
-    overflow-wrap: break-word;
-}
 a {
     color: #0073aa;
 }
 a:visited {
     color: #8000aa;
-}
-h1 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-.parentlink {
-    padding: 0 0 12px 0;
-}
-.parentlink a {
-    text-decoration: none;
-    display: block;
-    border: 1px solid transparent;
-    padding: 4px 8px 4px 40px;
-    border-radius: 4px;
-}
-.parentlink a:hover {
-    background: #e7ebee;
-    border-color: #5f8a9e;
-}
-.parentlink i, .parentlink em {
-    vertical-align: middle;
-}
-@media (prefers-color-scheme: dark) {
-    html {
-        background: #000;
-        color: #ddd;
-    }
-    .parentlink a:hover {
-        background: #181818;
-        border-color: #444;
-    }
 }
 
 /*********************************************************
