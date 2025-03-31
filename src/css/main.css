@@ -253,6 +253,11 @@ footer a.cur, footer a.cur:hover {
 	cursor: default;
 }
 
+.modeSelection .btn {
+    min-height: 2.5em;
+    vertical-align: middle;
+}
+
 main {
     margin: 0 auto;
     padding: 0 15px 15px 15px;
