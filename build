@@ -10,9 +10,14 @@ const rootDir = '.';
 // update version
 function makeCachebuster(template, output) {
 	let indexContents = fs.readFileSync(path.resolve(rootDir, template), {encoding: 'utf8'});
+	let templateContents = fs.readFileSync(path.resolve(rootDir, 'src/shared.template.html'), {encoding: 'utf8'});
 
 	// add hashes to js and css files
 	process.stdout.write("Updating hashes... ");
+	indexContents = /<!-- START WRAPPER -->[\s\S]*?<!-- END WRAPPER -->/.exec(indexContents)[0];
+	indexContents = templateContents.replace('[content]', indexContents);
+	fs.writeFileSync(path.resolve(rootDir, template), indexContents);
+
 	indexContents = indexContents.replace(/(src|href)="\.\/(.*?)\?[a-z0-9]*?"/g, function (a, b, c) {
 		let hash = Math.random(); // just in case creating the hash fails
 		try {
@@ -62,8 +67,7 @@ if (process.argv[2] !== 'view') {
 
 cpdir('src', 'dist');
 cpdir('calc/dist', 'dist/calc');
-makeCachebuster('dist/honkalculate.template.html', 'dist/honkalculate.html');
-makeCachebuster('dist/index.template.html', 'dist/index.html');
-makeCachebuster('dist/randoms.template.html', 'dist/randoms.html')
-makeCachebuster('dist/oms.template.html', 'dist/oms.html');
-;
+makeCachebuster('src/honkalculate.template.html', 'dist/honkalculate.html');
+makeCachebuster('src/index.template.html', 'dist/index.html');
+makeCachebuster('src/randoms.template.html', 'dist/randoms.html');
+makeCachebuster('src/oms.template.html', 'dist/oms.html');

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pok&eacute;mon Damage Calculator</title>
+	 <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
+    <link type="text/css" rel="stylesheet" href="./css/main.css?" />
+    <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="./css/dark-theme.css?" id="dark-theme-styles">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-26211653-3');
+
+        window.onerror = function(err, uri, line) {
+            gtag('event', 'exception', {'description': uri + ':' + line + ': ' + err});
+            return false;
+        };
+    </script>
+    <!-- Immediately loads the dark theme in order to reduce FOIT -->
+    <script>
+        // localStorage will only store strings
+        // This means that if it has the value 'false',
+        // It will be truthy.
+        if ((localStorage.getItem('darkTheme') || '' + window.matchMedia('(prefers-color-scheme: dark)').matches) === 'false') {
+            document.getElementById('dark-theme-styles').disabled = true;
+        }
+    </script>
+</head>
+
+<body class="dark-theme">
+
+<header>
+    <div class="nav-wrapper"><ul class="nav">
+        <li><a class="button nav-first" href="//pokemonshowdown.com/"><img src="./img/pokemonshowdownbeta.png" srcset="./img/pokemonshowdownbeta.png 1x, ./img/pokemonshowdownbeta@2x.png 2x" alt="Pok&eacute;mon Showdown" width="146" height="44" /> Home</a></li>
+        <li><a class="button" href="//pokemonshowdown.com/dex/">Pok&eacute;dex</a></li>
+        <li><a class="button" href="//replay.pokemonshowdown.com/">Replay</a></li>
+        <li><a class="button purplebutton" href="//smogon.com/dex/" target="_blank">Strategy</a></li>
+        <li><a class="button nav-last purplebutton" href="//smogon.com/forums/" target="_blank">Forum</a></li>
+        <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
+    </ul></div>
+</header>
+
+[content]
+
+<div class="credits">Created by Honko, maintained by Austin and Kris
+    <ul><li><a href="https://github.com/smogon/damage-calc/contributors" class="links-lighten" target="_blank">Contributors</a></li>
+    <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
+    <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
+
+    <select id="dark-theme-toggle">
+        <option value="">Auto dark theme</option>
+        <option value="false">Light theme</option>
+        <option value="true">Dark theme</option>
+    </select>
+    <script type="text/javascript" src="./js/dark-theme-toggle.js?"></script>
+</div>
+
+</body>
+
+</html>

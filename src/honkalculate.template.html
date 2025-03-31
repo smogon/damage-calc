@@ -5,11 +5,9 @@
     <meta charset="UTF-8" />
     <title>Pok&eacute;mon Damage Calculator</title>
 	 <link rel="icon" type="image/x-icon" href="./img/favicon.png">
-    <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css" />
-    <link type="text/css" rel="stylesheet" href="https://cdn.datatables.net/colvis/1.1.1/css/dataTables.colVis.css" />
     <link type="text/css" rel="stylesheet" href="./js/vendor/select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="./css/main.css?" />
+    <link type="text/css" rel="stylesheet" href="./css/vendor/bootstrap.css" />
     <link type="text/css" rel="stylesheet" href="./css/dark-theme.css?" id="dark-theme-styles">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-26211653-3"></script>
@@ -48,6 +46,12 @@
         <li><a class="button greenbutton nav-first nav-last" href="//play.pokemonshowdown.com/">Play</a></li>
     </ul></div>
 </header>
+
+<!-- START WRAPPER -->
+<style>
+    @import url(https://cdn.datatables.net/1.10.4/css/jquery.dataTables.min.css);
+    @import url(https://cdn.datatables.net/colvis/1.1.1/css/dataTables.colVis.css);
+</style>
 
 <div class="wrapper">
 
@@ -89,8 +93,6 @@
             <input class="visually-hidden" type="checkbox" name="tier" id="Ubers" /><label class="btn btn-right" for="Ubers">Ubers</label>
     </span>
     </div>
-
-</div>
 
 	<div class="flex-parent">
 		<div class="panel-group" id="accordion">
@@ -969,18 +971,21 @@
     <script type="text/javascript" src="./js/shared_controls.js?"></script>
     <script type="text/javascript" src="./js/honkalculate_controls.js?"></script>
 
-    <div style="clear:both;padding:20px;text-align:left">Created by Honko, maintained by Austin and Kris
-        <ul><li><a href="https://github.com/smogon/damage-calc/contributors" class="links-lighten" target="_blank">Contributors</a></li>
-        <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
-        <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
+</div>
+<!-- END WRAPPER -->
 
-        <select id="dark-theme-toggle">
-            <option value="">Auto dark theme</option>
-            <option value="false">Light theme</option>
-            <option value="true">Dark theme</option>
-        </select>
-            <script type="text/javascript" src="./js/dark-theme-toggle.js?"></script>
-    </div>
+<div class="credits">Created by Honko, maintained by Austin and Kris
+    <ul><li><a href="https://github.com/smogon/damage-calc/contributors" class="links-lighten" target="_blank">Contributors</a></li>
+    <li><a href="https://www.smogon.com/forums/threads/pok%C3%A9mon-showdown-damage-calculator.3593546/" class="links-lighten" target="_blank">Bug Reports</a></li>
+    <li><a href="https://github.com/smogon/damage-calc" class="links-lighten" target="_blank">GitHub repository</a></li></ul>
+
+    <select id="dark-theme-toggle">
+        <option value="">Auto dark theme</option>
+        <option value="false">Light theme</option>
+        <option value="true">Dark theme</option>
+    </select>
+    <script type="text/javascript" src="./js/dark-theme-toggle.js?"></script>
+</div>
 
 </body>
 
