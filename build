@@ -27,7 +27,7 @@ function makeCachebuster(template, output) {
 		} catch (e) {}
 
 		return b + '="./' + c + '?' + hash + '"';
-	}).replace(/\.template\.html/g, '.html');
+	});
 	process.stdout.write("Writing new `" + output + "` file... ");
 	fs.writeFileSync(path.resolve(rootDir, output), indexContents);
 	console.log("DONE");
@@ -67,7 +67,7 @@ if (process.argv[2] !== 'view') {
 
 cpdir('src', 'dist');
 cpdir('calc/dist', 'dist/calc');
-makeCachebuster('src/honkalculate.template.html', 'dist/honkalculate.html');
-makeCachebuster('src/index.template.html', 'dist/index.html');
-makeCachebuster('src/randoms.template.html', 'dist/randoms.html');
-makeCachebuster('src/oms.template.html', 'dist/oms.html');
+makeCachebuster('src/honkalculate.html', 'dist/honkalculate.html');
+makeCachebuster('src/index.html', 'dist/index.html');
+makeCachebuster('src/randoms.html', 'dist/randoms.html');
+makeCachebuster('src/oms.html', 'dist/oms.html');

@@ -15,7 +15,6 @@
         "typeChart": true,
         "getSetOptions": false,
         "calcCurrentHP": false,
-        "linkExtension": false,
         "genWasChanged": false,
         "autosetStatus": false,
         "autosetWeather": false,

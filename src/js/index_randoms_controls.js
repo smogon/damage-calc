@@ -207,13 +207,13 @@ $(".mode").change(function () {
 	params.set('mode', $(this).attr("id"));
 	var mode = params.get('mode');
 	if (mode === 'randoms') {
-		window.location.replace('randoms' + linkExtension + '?' + params);
+		window.location.replace('randoms.html?' + params);
 	} else if (mode === 'one-vs-one') {
-		window.location.replace('index' + linkExtension + '?' + params);
+		window.location.replace('index.html?' + params);
 	} else if (mode === "oms") {
-		window.location.replace('oms' + linkExtension);
+		window.location.replace('oms.html');
 	} else {
-		window.location.replace('honkalculate' + linkExtension + '?' + params);
+		window.location.replace('honkalculate.html?' + params);
 	}
 });
 
@@ -226,15 +226,15 @@ $(document).ready(function () {
 	var m = params.get('mode');
 	if (m) {
 		if (m !== 'one-vs-one' && m !== 'randoms') {
-			window.location.replace('honkalculate' + linkExtension + '?' + params);
+			window.location.replace('honkalculate.html?' + params);
 		} else {
 			if ($('#randoms').prop('checked')) {
 				if (m === 'one-vs-one') {
-					window.location.replace('index' + linkExtension + '?' + params);
+					window.location.replace('index.html?' + params);
 				}
 			} else {
 				if (m === 'randoms') {
-					window.location.replace('randoms' + linkExtension + '?' + params);
+					window.location.replace('randoms.html?' + params);
 				}
 			}
 		}
