@@ -179,10 +179,6 @@ footer a.cur, footer a.cur:hover {
     font-weight: bold;
     text-decoration: none;
 }
-
-/*********************************************************
- * Main
- *********************************************************/
 .button {
     color: white;
     background: #3a4f88;
@@ -202,6 +198,61 @@ footer a.cur, footer a.cur:hover {
     color: white;
     text-decoration: none;
 }
+
+/*********************************************************
+ * Main
+ *********************************************************/
+.btn {
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 2px rgba(255,255,255,1);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 2px rgba(255,255,255,1);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 2px rgba(255,255,255,1);
+	border-radius: 5px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	display: inline-block;
+
+	/* default colors */
+	color: #222222;
+	text-shadow: 0 1px 0 white;
+	border: 1px solid #AAAAAA;
+	background: #e3e3e3;
+	background: linear-gradient(to bottom,  #f6f6f6,  #d3d3d3);
+
+	font-size: inherit;
+	padding: 3px 8px;
+}
+.btn:hover, .btn:focus, .visually-hidden:focus + .btn {
+	background: #cfcfcf;
+	background: linear-gradient(to bottom,  #f2f2f2,  #b2b2b2);
+	border-color: #606060;
+    color: #222222;
+    text-decoration: none;
+}
+.visually-hidden:checked + .btn,
+.visually-hidden:checked + .btn:hover {
+    cursor: pointer;
+	background: #FFF;
+	border: 1px solid #CCCCCC;
+	color: #000000;
+	text-shadow: none;
+	box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.visually-hidden:checked + .btn:hover {
+	border-color: #606060;
+}
+.btn:active,
+.visually-hidden[type=checkbox]:checked + .btn:active {
+	background: linear-gradient(to bottom,  #bfbfbf,  #f2f2f2);
+}
+.visually-hidden[type=radio]:checked + .btn,
+.visually-hidden[type=radio]:checked + .btn:hover {
+	border-color: #CCCCCC;
+	cursor: default;
+}
+
 main {
     margin: 0 auto;
     padding: 0 15px 15px 15px;
@@ -348,12 +399,8 @@ th {
 /* general button styling */
 .btn {
     text-align: center;
-    border: solid 1px #aaaaaa;
     padding: 4px 4px;
     position: relative;
-    cursor: pointer;
-    color: #555555;
-    background: #e9e9e9;
     margin: -1px -3px 0;
     display: inline-block;
     width: 5em;
@@ -399,16 +446,9 @@ th {
 .visually-hidden:focus + .btn, /* Add visual indication when focusing on visually hidden elements */
 .btn:hover {
     z-index: 10;
-    border-color: #777777;
-    background: #e3e3e3;
 }
 .visually-hidden:checked + .btn {
     font-weight: bold;
-    color: #111111;
-    background: #f5f5f5;
-}
-.visually-hidden[type="radio"]:checked + .btn {
-    cursor: default;
 }
 
 /* Hide element visually, but not from screen readers. See http://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html */
@@ -434,11 +474,13 @@ th {
 .right {
     float: right;
 }
-.locked-move:checked + .btn {
+.locked-move:checked + .btn,
+.locked-move:checked + .btn:hover {
     background: #ffff99;
 }
 
-.locked-weather:checked + .btn {
+.locked-weather:checked + .btn,
+.locked-weather:checked + .btn:hover {
     background: #ffff99;
 }
 
