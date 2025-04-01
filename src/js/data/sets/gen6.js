@@ -159,8 +159,7 @@ var SETDEX_XY = {
   },
   "Masquerain": {
     "PU Quiver Dance": {"ability":"Intimidate","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Ice Beam"]},
-    "ZU Quiver Dance": {"ability":"Intimidate","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Ice Beam"]},
-    "OU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Sticky Web","Stun Spore","Whirlwind","U-turn"]}
+    "ZU Quiver Dance": {"ability":"Intimidate","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Air Slash","Ice Beam"]}
   },
   "Delcatty": {
     "PU Delcatty Got Your Tongue?": {"ability":"Wonder Skin","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Substitute","Calm Mind","Hyper Voice","Shadow Ball"]}
@@ -1714,6 +1713,7 @@ var SETDEX_XY = {
     "Battle Spot Singles Dual Screens": {"level":50,"ability":"Magic Bounce","item":"Light Clay","nature":"Timid","evs":{"hp":236,"df":76,"sp":196},"moves":["Psychic","Reflect","Light Screen","Yawn"]},
     "Battle Spot Singles Choice Attacker": {"level":50,"ability":"Magic Bounce","item":"Choice Scarf","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Dazzling Gleam","Grass Knot","Trick"]},
     "Anything Goes Sweeper": {"ability":"Magic Bounce","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Stored Power","Dazzling Gleam","Substitute","Baton Pass"]},
+    "OU Showdown Usage": {"ability":"Magic Bounce","item":"Choice Specs","nature":"Timid","evs":{"hp":220,"df":36,"sp":252},"moves":["Shadow Ball","Dazzling Gleam","Psychic","Trick"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Dazzling Gleam","Light Screen","Reflect"]}
   },
   "Umbreon": {
@@ -4646,7 +4646,6 @@ var SETDEX_XY = {
     "Monotype Substitute + Calm Mind": {"ability":"Pixilate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":240,"sp":16},"moves":["Calm Mind","Hyper Voice","Substitute","Wish"]},
     "1v1 Choice Specs": {"ability":"Pixilate","item":"Choice Specs","nature":"Modest","ivs":{"at":0,"sa":30,"sp":30},"evs":{"hp":128,"sa":252,"sp":128},"moves":["Hyper Voice","Hyper Beam","Hidden Power Fire","Shadow Ball"]},
     "1v1 Custap Berry": {"ability":"Pixilate","item":"Custap Berry","nature":"Modest","ivs":{"at":0},"evs":{"hp":248,"df":140,"sa":120},"moves":["Endure","Hyper Beam","Hyper Voice","Fake Tears"]},
-    "OU Showdown Usage": {"ability":"Pixilate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Hyper Voice","Heal Bell","Wish","Protect"]},
     "VGC 2016 Showdown Usage": {"level":50,"ability":"Pixilate","item":"Pixie Plate","nature":"Modest","evs":{"hp":116,"df":228,"sa":44,"sd":4,"sp":116},"moves":["Hyper Voice","Quick Attack","Helping Hand","Detect"]},
     "CAP Showdown Usage": {"ability":"Pixilate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Hyper Voice","Wish","Protect","Heal Bell"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Pixilate","item":"Pixie Plate","nature":"Quiet","evs":{"df":236,"sa":252,"sd":16},"moves":["Hyper Voice","Shadow Ball","Protect","Psyshock"]}
@@ -4786,7 +4785,7 @@ var SETDEX_XY = {
     "UU Substitute Attacker": {"ability":"Magician","item":"Salac Berry","nature":"Timid","ivs":{"hp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Shadow Ball","Focus Blast","Psyshock","Substitute"]},
     "RU All-Out Attacker": {"ability":"Magician","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Hyperspace Hole","Focus Blast","Knock Off"]},
     "RU Choice Scarf": {"ability":"Magician","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Psyshock","Focus Blast","Trick"]},
-    "OU Showdown Usage": {"ability":"Magician","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Shadow Ball","Focus Blast","Trick","Hyperspace Hole"]}
+    "OU Showdown Usage": {"ability":"Magician","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Shadow Ball","Focus Blast","Hyperspace Hole","Trick"]}
   },
   "Hoopa-Unbound": {
     "Ubers Nasty Plot": {"ability":"Magician","item":"Life Orb","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psyshock","Dark Pulse","Focus Blast","Nasty Plot"]},
