@@ -432,7 +432,7 @@ describe('calc', () => {
             [37, 37, 39, 39, 39, 40, 40, 40, 40, 42, 42, 42, 43, 43, 43, 45],
           ]);
           expect(result.desc()).toBe(
-            '152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 190-225 (43.9 - 52%) -- approx. 6.6% chance to 2HKO'
+            '152 Atk Parental Bond Kangaskhan-Mega Frustration vs. 252 HP / 152+ Def Amoonguss: 190-225 (43.9 - 52%) -- 6.6% chance to 2HKO'
           );
         }
 
@@ -506,7 +506,7 @@ describe('calc', () => {
           );
           expect(result.range()).toEqual([218, 258]);
           expect(result.desc()).toBe(
-            '+4 Persian Fury Swipes (2 hits) vs. Abra: 218-258 (86.1 - 101.9%) -- 2.7% chance to OHKO'
+            '+4 Persian Fury Swipes (2 hits) vs. Abra: 218-258 (86.1 - 101.9%) -- 2.9% chance to OHKO'
           );
         } else if (gen === 3) {
           const result = calculate(
