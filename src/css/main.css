@@ -452,12 +452,15 @@ th {
 .btn-mid {
     border-radius: 0;
 }
-.visually-hidden:focus + .btn, /* Add visual indication when focusing on visually hidden elements */
 .btn:hover {
     z-index: 10;
 }
 .visually-hidden:checked + .btn {
     font-weight: bold;
+}
+
+.visually-hidden:focus-visible + .btn { /* Add visual indication when focusing on visually hidden elements */
+    outline: 2px solid #2266AA;
 }
 
 /* Hide element visually, but not from screen readers. See http://adrianroselli.com/2017/05/under-engineered-custom-radio-buttons-and-checkboxen.html */
