@@ -644,6 +644,8 @@ table.field {
 }
 
 .import-team-text {
+    display: block;
+    margin: 5px 0;
     min-width: 27em;
     min-height: 10em;
     resize: vertical;

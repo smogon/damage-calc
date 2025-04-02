@@ -94,14 +94,12 @@ a.links-lighten:visited:hover {
     color: #DACAF7;
 }
 
-input {
+input, textarea {
     background-color: var(--background);
     color: var(--text);
-}
-
-textarea {
-    background-color: var(--background);
-    color: var(--text);
+    border: 1px solid #777;
+    padding: 1px 2px;
+    border-radius: 4px;
 }
 
 a.collapsible-link {
