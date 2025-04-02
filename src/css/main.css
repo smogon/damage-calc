@@ -268,6 +268,37 @@ footer a.cur, footer a.cur:hover {
     vertical-align: middle;
 }
 
+select {
+	cursor: pointer;
+	text-align: left;
+	text-decoration: none;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 2px rgba(255,255,255,1);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 2px rgba(255,255,255,1);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2), inset 0 -1px 2px rgba(255,255,255,1);
+	border-radius: 5px;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	display: inline-block;
+
+	/* default colors */
+	color: #222222;
+	text-shadow: 0 1px 0 white;
+	border: 1px solid #AAAAAA;
+	background: #fff;
+	background: linear-gradient(to bottom,  #fff,  #eee);
+
+	font-size: 11px;
+	padding: 1px 1px;
+}
+select:hover, select:focus {
+	background: #dfdfdf;
+	background: linear-gradient(to bottom,  #fbfbfb,  #ddd);
+	border-color: #606060;
+}
+.select2-container .select2-choice:hover {
+	border-color: #606060;
+}
+
 a {
     color: #0073aa;
 }
@@ -513,14 +544,17 @@ th {
     width: 100%;
 }
 .info-selectors select {
-    width: 12em;
+    width: 14em;
 }
 select.toxic-counter {
     width: 5.5em;
 }
-.move-selector, .move-bp, .move-type, .move-cat, .move-hits {
+.move-selector, .move-bp {
     font-size: 0.9em;
 }
+/* .move-type, .move-cat, .move-hits {
+    font-size: 11px;
+} */
 .move-selector {
     width: 11.5em;
 }
@@ -528,10 +562,10 @@ select.toxic-counter {
     width: 2em;
 }
 .move-type {
-    width: 5.5em;
+    width: 6.2em;
 }
 .move-cat {
-    width: 6em;
+    width: 6.3em;
 }
 .move-hits {
     width: 4.5em;
