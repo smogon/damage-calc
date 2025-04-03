@@ -153,7 +153,6 @@ select, .select2-container .select2-choice {
 select:hover, .select2-container .select2-choice:hover,
 select:focus, .select2-container .select2-choice:focus {
     background: var(--button-hover);
-    background: linear-gradient(to bottom, #4a4a4a, #2b2b2b);
     border-color: #50555b;
     color: var(--text);
 }
