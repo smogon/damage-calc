@@ -2475,10 +2475,10 @@ var SETDEX_DPP = {
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Choice Scarf","nature":"Modest","evs":{"df":64,"sa":252,"sp":192},"moves":["Thunder","Dragon Pulse","Stealth Rock","Roar"]}
   },
   "Palkia": {
-    "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Spacial Rend","Surf","Thunder","Outrage"]},
-    "Ubers Specially-Based Mixed Attacker": {"ability":"Pressure","item":"Lustrous Orb","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Surf","Spacial Rend","Aqua Tail","Thunder"]},
+    "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spacial Rend","Thunder","Hydro Pump","Fire Blast"]},
+    "Ubers Wallbreaker": {"ability":"Pressure","item":"Lum Berry","nature":"Timid","evs":{"at":4,"sa":252,"sp":252},"moves":["Spacial Rend","Hydro Pump","Substitute","Thunder"]},
     "Ubers Physically-Based Mixed Attacker": {"ability":"Pressure","item":"Lustrous Orb","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Aqua Tail","Spacial Rend","Outrage","Fire Blast"]},
-    "Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Surf","Spacial Rend","Thunder","Draco Meteor"]},
+    "Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Spacial Rend","Thunder","Draco Meteor"]},
     "Ubers SubPunch": {"ability":"Pressure","item":"Expert Belt","nature":"Hasty","evs":{"at":100,"sa":156,"sp":252},"moves":["Substitute","Focus Punch","Spacial Rend","Thunder"]},
     "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Aqua Tail","Outrage","Earthquake","Stone Edge"]},
     "Ubers Bulk Up": {"ability":"Pressure","item":"Lustrous Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Bulk Up","Aqua Tail","Outrage","Earthquake"]},
