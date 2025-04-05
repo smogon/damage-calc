@@ -288,7 +288,7 @@ select {
 	background: linear-gradient(to bottom,  #fff,  #eee);
 
 	font-size: 11px;
-	padding: 1px 1px;
+	padding: 1px 1px 1px 8px;
 }
 select:hover, select:focus {
 	background: #dfdfdf;
