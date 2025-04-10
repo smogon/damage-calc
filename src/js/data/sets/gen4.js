@@ -1759,7 +1759,7 @@ var SETDEX_DPP = {
   "Swalot": {
     "UU Support": {"ability":"Liquid Ooze","item":"Leftovers","nature":"Calm","evs":{"hp":4,"df":252,"sd":252},"moves":["Encore","Yawn","Pain Split","Sludge Bomb"]},
     "UU RestTalk": {"ability":"Liquid Ooze","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":144,"sd":112},"moves":["Rest","Sleep Talk","Sludge Bomb","Earthquake"]},
-    "ZU Specially Defensive": {"ability":"Liquid Ooze","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":8},"moves":["Gunk Shot","Earthquake","Seed Bomb","Encore"]},
+    "ZU Specially Defensive": {"ability":"Liquid Ooze","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":252,"sp":8},"moves":["Gunk Shot","Earthquake","Seed Bomb","Encore"]},
     "ZU Curse": {"ability":"Liquid Ooze","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":252,"sp":8},"moves":["Curse","Rest","Sleep Talk","Fire Punch"]}
   },
   "Carvanha": {

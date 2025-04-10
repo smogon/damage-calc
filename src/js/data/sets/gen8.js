@@ -1172,9 +1172,6 @@ var SETDEX_SS = {
     "National Dex Wallbreaker": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","High Jump Kick","Zen Headbutt","Ice Punch"]}
   },
   "Manectric": {
-    "PU Choice Scarf": {"ability":"Lightning Rod","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Switcheroo"]},
-    "PU Choice Specs": {"ability":"Lightning Rod","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Switcheroo"]},
-    "PU Toxic + Protect": {"ability":"Lightning Rod","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Toxic","Flamethrower","Protect"]},
     "ZU Choice Scarf": {"ability":"Lightning Rod","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Switcheroo"]},
     "ZU Choice Specs": {"ability":"Lightning Rod","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Switcheroo"]},
     "ZU SubTox": {"ability":"Lightning Rod","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Toxic","Thunderbolt","Flamethrower"]},
@@ -1276,7 +1273,6 @@ var SETDEX_SS = {
     "ZU Swords Dance": {"ability":"Thick Fat","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Icicle Spear","Liquidation","Earthquake"]}
   },
   "Relicanth": {
-    "PU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Head Smash","Waterfall","Earthquake","Zen Headbutt"]},
     "ZU Offensive Stealth Rock": {"ability":"Rock Head","item":"Leftovers","nature":"Adamant","evs":{"hp":120,"at":252,"sp":136},"moves":["Stealth Rock","Head Smash","Liquidation","Toxic"]}
   },
   "Salamence": {
