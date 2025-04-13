@@ -4279,6 +4279,7 @@ var SETDEX_XY = {
     "1v1 Assault Vest": {"ability":"Defiant","item":"Assault Vest","nature":"Hasty","evs":{"hp":16,"at":64,"sa":40,"sd":136,"sp":252},"moves":["Hurricane","Knock Off","Icy Wind","Superpower"]}
   },
   "Tornadus-Therian": {
+    "OU Taunt": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Timid","evs":{"hp":248,"df":8,"sp":252},"moves":["Taunt","U-turn","Knock Off","Hurricane"]},
     "OU Assault Vest Pivot": {"ability":"Regenerator","item":"Assault Vest","nature":"Timid","evs":{"hp":248,"df":8,"sp":252},"moves":["Hurricane","Heat Wave","Knock Off","U-turn"]},
     "OU Offensive Wallbreaker": {"ability":"Regenerator","item":"Life Orb","nature":"Naive","evs":{"at":76,"sa":180,"sp":252},"moves":["Hurricane","Superpower","Taunt","Knock Off"]},
     "Monotype Assault Vest": {"ability":"Regenerator","item":"Assault Vest","nature":"Timid","evs":{"hp":248,"sd":52,"sp":208},"moves":["Hurricane","U-turn","Knock Off","Heat Wave"]},
