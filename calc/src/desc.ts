@@ -629,7 +629,8 @@ function getEndOfTurn(
       damage -= Math.floor(defender.maxHP() / 8);
       texts.push('Black Sludge damage');
     }
-  } else if (defender.hasItem('Sticky Barb')) {
+  } else if (defender.hasItem('Sticky Barb') && !loseItem &&
+    !defender.hasAbility('Magic Guard', 'Klutz')) {
     damage -= Math.floor(defender.maxHP() / 8);
     texts.push('Sticky Barb damage');
   }
