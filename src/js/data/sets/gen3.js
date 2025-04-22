@@ -863,7 +863,7 @@ var SETDEX_ADV = {
   },
   "Flareon": {
     "RU Mixed Offensive": {"ability":"Flash Fire","item":"Silk Scarf","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":152,"sa":144,"sp":212},"moves":["Fire Blast","Double-Edge","Hidden Power Grass","Quick Attack"]},
-    "NU Mixed Attacker": {"ability":"Flash Fire","item":"Silk Scarf","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":228,"sa":28,"sp":252},"moves":["Double-Edge","Fire Blast","Hidden Power Grass","Quick Attack"]},
+    "NU Mixed Attacker": {"ability":"Flash Fire","item":"Silk Scarf","nature":"Lonely","ivs":{"at":30,"sa":30},"evs":{"at":228,"sa":28,"sp":252},"moves":["Double-Edge","Fire Blast","Hidden Power Grass","Quick Attack"]},
     "NU Special Attacker": {"ability":"Flash Fire","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":8,"df":84,"sa":192,"sp":224},"moves":["Fire Blast","Hidden Power Grass","Substitute","Baton Pass"]}
   },
   "Porygon": {
