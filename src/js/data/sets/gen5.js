@@ -1757,6 +1757,7 @@ var SETDEX_BW = {
   },
   "Celebi": {
     "OU Bulky Pivot": {"ability":"Natural Cure","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"sd":240,"sp":16},"moves":["Psychic","Recover","Baton Pass","Substitute"]},
+    "OU Nasty Plot": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":252,"sd":68,"sp":188},"moves":["Nasty Plot","Leaf Storm","Hidden Power Fire","Recover"]},
     "Monotype Nasty Plot (Psychic)": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Giga Drain","Nasty Plot","Recover"]},
     "1v1 Showdown Usage": {"ability":"Natural Cure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Leaf Storm","Psychic","Protect","Leech Seed"]}
   },
@@ -3257,6 +3258,15 @@ var SETDEX_BW = {
     "Doubles OU Choice Scarf": {"ability":"Download","item":"Choice Scarf","nature":"Rash","evs":{"at":136,"sa":252,"sp":120},"moves":["U-turn","Ice Beam","Thunderbolt","Flamethrower"]},
     "Doubles OU Choice Band": {"ability":"Download","item":"Choice Band","nature":"Hasty","evs":{"hp":4,"at":252,"sp":252},"moves":["U-turn","Iron Head","Extreme Speed","Blaze Kick"]},
     "1v1 Showdown Usage": {"ability":"Download","item":"Occa Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Bug Buzz","Ice Beam","Thunderbolt","Flamethrower"]}
+  },
+  "Tomohawk": {
+    "CAP SubRoost": {"ability":"Prankster","item":"Sharp Beak","nature":"Modest","evs":{"hp":248,"df":100,"sa":140,"sp":20},"moves":["Substitute","Hurricane","Earth Power","Roost"]},
+    "CAP Lead": {"ability":"Prankster","item":"Focus Sash","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Memento","Taunt","Rapid Spin"]},
+    "CAP Bulky Spinner": {"ability":"Prankster","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":64,"sd":192},"moves":["Hurricane","Rapid Spin","Toxic","Roost"]},
+    "CAP Offensive Spinner": {"ability":"Intimidate","item":"Leftovers","nature":"Modest","evs":{"df":176,"sa":140,"sp":192},"moves":["Rapid Spin","Hurricane","Aura Sphere","Roost"]},
+    "CAP Hazehawk": {"ability":"Prankster","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":244,"sp":16},"moves":["Haze","Roost","Hurricane","Aura Sphere"]},
+    "CAP Bulky Pivot": {"ability":"Intimidate","item":"Leftovers","nature":"Relaxed","ivs":{"at":2,"df":30,"sp":9},"evs":{"hp":248,"df":100,"sd":160},"moves":["Roost","Baton Pass","Aura Sphere","Hidden Power Ice"]},
+    "CAP Life Orb": {"ability":"Prankster","item":"Life Orb","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Aura Sphere","Earth Power","Roost"]}
   },
   "Mollux": {
     "CAP Utility": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","evs":{"hp":252,"df":60,"sd":196},"moves":["Toxic Spikes","Lava Plume","Thunder","Rapid Spin"]},
