@@ -384,7 +384,7 @@ var SETDEX_ADV = {
   "Ariados": {
     "NU Baton Pass": {"ability":"Insomnia","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":40,"df":108,"sd":108},"moves":["Sludge Bomb","Signal Beam","Spider Web","Baton Pass"]},
     "ZU Defensive Pivot": {"ability":"Swarm","item":"Leftovers","nature":"Relaxed","ivs":{"sp":20},"evs":{"hp":252,"df":252,"sd":4},"moves":["Psychic","Sludge Bomb","Baton Pass","Protect"]},
-    "ZU Agility": {"ability":"Swarm","item":"Leftovers","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":84,"at":252,"sp":172},"moves":["Agility","Sludge Bomb","Signal Beam","Hidden Power Flying"]},
+    "ZU Agility": {"ability":"Swarm","item":"Leftovers","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":48,"at":252,"df":12,"sp":196},"moves":["Agility","Sludge Bomb","Signal Beam","Hidden Power Flying"]},
     "ZU All-Out Attacker": {"ability":"Swarm","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"hp":104,"at":184,"sp":220},"moves":["Sludge Bomb","Hidden Power Grass","Psychic","Night Shade"]}
   },
   "Qwilfish": {

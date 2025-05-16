@@ -816,12 +816,12 @@ var SETDEX_BW = {
     "CAP V-create": {"ability":"Forewarn","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["V-create","Power Whip","Shadow Sneak","Stone Edge"]}
   },
   "Malaconda": {
-    "CAP Occa Berry": {"ability":"Harvest","item":"Occa Berry","nature":"Careful","evs":{"hp":252,"at":64,"df":64,"sd":76,"sp":52},"moves":["Rapid Spin","Power Whip","Synthesis","Crunch"]},
-    "CAP Bulky Support": {"ability":"Harvest","item":"Sitrus Berry","nature":"Careful","evs":{"hp":248,"at":60,"sd":148,"sp":52},"moves":["Rapid Spin","Power Whip","Crunch","Pursuit"]},
-    "CAP LumRest": {"ability":"Harvest","item":"Lum Berry","nature":"Careful","evs":{"hp":112,"at":60,"sd":212,"sp":124},"moves":["Rest","Pursuit","Power Whip","Taunt"]}
+    "CAP Bulky Support": {"ability":"Harvest","item":"Sitrus Berry","nature":"Careful","evs":{"hp":248,"at":60,"sd":148,"sp":52},"moves":["Rapid Spin","Power Whip","Pursuit","Crunch"]},
+    "CAP LumRest": {"ability":"Harvest","item":"Lum Berry","nature":"Careful","evs":{"hp":112,"at":60,"sd":212,"sp":124},"moves":["Rest","Pursuit","Power Whip","Taunt"]},
+    "CAP Occa Berry": {"ability":"Harvest","item":"Occa Berry","nature":"Careful","evs":{"hp":252,"at":64,"df":64,"sd":76,"sp":52},"moves":["Rapid Spin","Power Whip","Synthesis","Crunch"]}
   },
   "Syclant": {
-    "CAP Mixed Attacker": {"ability":"Mountaineer","item":"Expert Belt","nature":"Naive","evs":{"at":160,"sa":96,"sp":252},"moves":["U-turn","Ice Beam","Earthquake","Ice Shard"]},
+    "CAP Mixed 4 Attacks": {"ability":"Mountaineer","item":"Expert Belt","nature":"Naive","evs":{"at":160,"sa":96,"sp":252},"moves":["U-turn","Ice Beam","Earthquake","Ice Shard"]},
     "CAP Tail Glow": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tail Glow","Ice Beam","Earth Power","Bug Buzz"]},
     "CAP Spikes": {"ability":"Mountaineer","item":"Focus Sash","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Spikes","U-turn","Ice Beam","Earth Power"]},
     "CAP Choice Specs": {"ability":"Mountaineer","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Earth Power","U-turn","Bug Buzz"]},
@@ -850,7 +850,7 @@ var SETDEX_BW = {
   "Kitsunoh": {
     "CAP Specially Defensive": {"ability":"Limber","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":228,"sp":28},"moves":["Will-O-Wisp","Shadow Strike","Taunt","Earthquake"]},
     "CAP Fast Utility": {"ability":"Limber","item":"Air Balloon","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Shadow Strike","Will-O-Wisp","Taunt","U-turn"]},
-    "CAP Choice Scarf": {"ability":"Limber","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shadow Strike","Ice Punch","Trick","U-turn"]}
+    "CAP Choice Scarf": {"ability":"Limber","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shadow Strike","Ice Punch","U-turn","Trick"]}
   },
   "Cyclohm": {
     "CAP Offensive": {"ability":"Static","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Fire Blast","Thunderbolt","Slack Off"]}
@@ -863,6 +863,9 @@ var SETDEX_BW = {
   },
   "Krilowatt": {
     "CAP Life Orb Attacker": {"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Surf","Thunderbolt","Ice Beam","Hidden Power Fire"]}
+  },
+  "Voodoom": {
+    "CAP Choice Specs": {"ability":"Lightning Rod","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Aura Sphere","Dark Pulse","Psychic","Vacuum Wave"]}
   },
   "Koffing": {
     "LC Pain Split": {"level":5,"ability":"Levitate","item":"Eviolite","nature":"Bold","evs":{"hp":36,"df":236,"sd":236},"moves":["Pain Split","Clear Smog","Will-O-Wisp","Fire Blast"]},
@@ -3260,13 +3263,13 @@ var SETDEX_BW = {
     "1v1 Showdown Usage": {"ability":"Download","item":"Occa Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Bug Buzz","Ice Beam","Thunderbolt","Flamethrower"]}
   },
   "Tomohawk": {
-    "CAP SubRoost": {"ability":"Prankster","item":"Sharp Beak","nature":"Modest","evs":{"hp":248,"df":100,"sa":140,"sp":20},"moves":["Substitute","Hurricane","Earth Power","Roost"]},
     "CAP Lead": {"ability":"Prankster","item":"Focus Sash","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Memento","Taunt","Rapid Spin"]},
     "CAP Bulky Spinner": {"ability":"Prankster","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":64,"sd":192},"moves":["Hurricane","Rapid Spin","Toxic","Roost"]},
     "CAP Offensive Spinner": {"ability":"Intimidate","item":"Leftovers","nature":"Modest","evs":{"df":176,"sa":140,"sp":192},"moves":["Rapid Spin","Hurricane","Aura Sphere","Roost"]},
     "CAP Hazehawk": {"ability":"Prankster","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":244,"sp":16},"moves":["Haze","Roost","Hurricane","Aura Sphere"]},
-    "CAP Bulky Pivot": {"ability":"Intimidate","item":"Leftovers","nature":"Relaxed","ivs":{"at":2,"df":30,"sp":9},"evs":{"hp":248,"df":100,"sd":160},"moves":["Roost","Baton Pass","Aura Sphere","Hidden Power Ice"]},
-    "CAP Life Orb": {"ability":"Prankster","item":"Life Orb","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Aura Sphere","Earth Power","Roost"]}
+    "CAP Life Orb": {"ability":"Prankster","item":"Life Orb","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Aura Sphere","Earth Power","Roost"]},
+    "CAP SubRoost": {"ability":"Prankster","item":"Sharp Beak","nature":"Modest","evs":{"hp":248,"df":100,"sa":140,"sp":20},"moves":["Substitute","Hurricane","Earth Power","Roost"]},
+    "CAP Bulky Pivot": {"ability":"Intimidate","item":"Leftovers","nature":"Relaxed","ivs":{"at":2,"df":30,"sp":9},"evs":{"hp":248,"df":100,"sd":160},"moves":["Roost","Baton Pass","Aura Sphere","Hidden Power Ice"]}
   },
   "Mollux": {
     "CAP Utility": {"ability":"Dry Skin","item":"Black Sludge","nature":"Calm","evs":{"hp":252,"df":60,"sd":196},"moves":["Toxic Spikes","Lava Plume","Thunder","Rapid Spin"]},

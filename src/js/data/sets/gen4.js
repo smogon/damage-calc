@@ -725,7 +725,7 @@ var SETDEX_DPP = {
   },
   "Fidgit": {
     "CAP Utility": {"ability":"Vital Spirit","item":"Black Sludge","nature":"Timid","evs":{"hp":252,"df":40,"sp":216},"moves":["Rapid Spin","Earth Power","Encore","Knock Off"]},
-    "CAP Trick Room Setter": {"ability":"Persistent","item":"Sitrus Berry","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":12,"sd":176},"moves":["Trick Room","Stealth Rock","U-turn","Encore"]}
+    "CAP Trick Room Setter": {"ability":"Persistent","item":"Sitrus Berry","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":40,"sd":216},"moves":["Trick Room","Stealth Rock","U-turn","Encore"]}
   },
   "Stratagem": {
     "CAP Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Paleo Wave","Flamethrower","Shadow Ball"]},
