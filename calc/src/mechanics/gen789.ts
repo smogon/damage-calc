@@ -119,7 +119,8 @@ export function calculateSMSSSV(
   if (defender.teraType !== 'Stellar') desc.defenderTera = defender.teraType;
 
   if (move.named('Photon Geyser', 'Light That Burns the Sky') ||
-      (move.named('Tera Blast') && attacker.teraType)) {
+      (move.named('Tera Blast') && attacker.teraType) ||
+      (move.named('Tera Starstorm') && attacker.teraType && attacker.named('Terapagos-Stellar'))) {
     move.category = attacker.stats.atk > attacker.stats.spa ? 'Physical' : 'Special';
   }
 
