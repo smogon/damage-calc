@@ -447,7 +447,7 @@ var SETDEX_ADV = {
   },
   "Delcatty": {
     "NU Calm Mind + Baton Pass": {"ability":"Cute Charm","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Calm Mind","Baton Pass","Substitute","Wish"]},
-    "ZU Special Wall": {"ability":"Cute Charm","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Body Slam","Wish","Protect","Heal Bell"]}
+    "ZU Special Wall": {"ability":"Cute Charm","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Body Slam","Wish","Protect","Heal Bell"]}
   },
   "Volbeat": {
     "NU Tail Glow Pass": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Tail Glow","Baton Pass","Substitute","Thunderbolt"]},
@@ -1184,7 +1184,7 @@ var SETDEX_ADV = {
     "NU Cleric Phazer": {"ability":"Intimidate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Heal Bell","Roar","Crunch","Toxic"]},
     "PU Defensive": {"ability":"Intimidate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Crunch","Heal Bell","Protect","Roar"]},
     "ZU Stallbreaker": {"ability":"Intimidate","item":"Leftovers","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":124,"at":252,"sp":132},"moves":["Return","Hidden Power Ground","Howl","Heal Bell"]},
-    "ZU Physically Defensive": {"ability":"Intimidate","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Toxic","Protect","Heal Bell","Crunch"]}
+    "ZU Physically Defensive": {"ability":"Intimidate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Toxic","Protect","Heal Bell","Crunch"]}
   },
   "Linoone": {
     "OU Belly Drum": {"ability":"Pickup","item":"Leftovers","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":108,"at":252,"df":12,"sp":136},"moves":["Belly Drum","Extreme Speed","Shadow Ball","Hidden Power Ground"]},
