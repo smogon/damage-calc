@@ -2772,7 +2772,7 @@ var SETDEX_BW = {
   },
   "Dwebble": {
     "NU Custap Lead": {"ability":"Sturdy","item":"Custap Berry","nature":"Jolly","evs":{"hp":252,"df":4,"sp":252},"moves":["Stealth Rock","Spikes","Endure","Rock Blast"]},
-    "PU Suicide Lead": {"ability":"Sturdy","item":"Custap Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Spikes","Rock Blast","Toxic"]},
+    "PU Entry Hazard Lead": {"ability":"Sturdy","item":"Custap Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Spikes","Rock Blast","Toxic"]},
     "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Adamant","evs":{"hp":36,"at":236,"sp":236},"moves":["Spikes","Stealth Rock","Rock Blast","Counter"]}
   },
   "Scraggy": {

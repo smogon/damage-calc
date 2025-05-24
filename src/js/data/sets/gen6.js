@@ -4308,8 +4308,8 @@ var SETDEX_XY = {
     "VGC 2016 Showdown Usage": {"level":50,"ability":"Prankster","item":"Sitrus Berry","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Thunder Wave","Taunt","Protect"]}
   },
   "Thundurus-Therian": {
-    "OU Agility": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Agility","Thunderbolt","Focus Blast","Hidden Power Ice"]},
-    "OU Double Dance": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Agility","Nasty Plot","Thunderbolt","Hidden Power Ice"]},
+    "OU Nasty Plot": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Thunderbolt","Hidden Power Ice","Focus Blast"]},
+    "OU Double Dance": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":104,"sa":252,"sp":152},"moves":["Agility","Nasty Plot","Thunderbolt","Hidden Power Ice"]},
     "Doubles OU Choice Scarf": {"ability":"Volt Absorb","item":"Choice Scarf","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":24,"sa":252,"sp":232},"moves":["Volt Switch","Thunderbolt","Hidden Power Ice","Focus Blast"]},
     "Doubles OU Choice Specs": {"ability":"Volt Absorb","item":"Choice Specs","nature":"Timid","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunder","Hidden Power Flying","Focus Blast"]},
     "Battle Spot Singles Nasty Plot": {"level":50,"ability":"Volt Absorb","item":"Sitrus Berry","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Thunderbolt","Hidden Power Ice","Focus Blast"]},
@@ -4496,6 +4496,7 @@ var SETDEX_XY = {
     "RU Swords Dance": {"ability":"Gale Wings","nature":"Adamant","evs":{"hp":152,"at":252,"df":104},"moves":["Swords Dance","Acrobatics","Will-O-Wisp","Roost"]}
   },
   "Talonflame": {
+    "OU Choice Band": {"ability":"Gale Wings","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Brave Bird","Flare Blitz","U-turn","Will-O-Wisp"]},
     "OU Bulky Swords Dance": {"ability":"Gale Wings","nature":"Adamant","evs":{"hp":248,"at":252,"df":8},"moves":["Acrobatics","Swords Dance","Roost","Will-O-Wisp"]},
     "OU Specially Defensive": {"ability":"Gale Wings","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Brave Bird","Will-O-Wisp","Roost","Swords Dance"]},
     "OU Offensive Swords Dance": {"ability":"Gale Wings","item":"Leftovers","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Brave Bird","Swords Dance","Roost","Flare Blitz"]},

@@ -2687,6 +2687,9 @@ var SETDEX_SS = {
     "Monotype Toxic Spikes (Dragon)": {"ability":"Adaptability","item":"Black Sludge","nature":"Sassy","ivs":{"sp":24},"evs":{"hp":248,"df":8,"sd":252},"moves":["Toxic Spikes","Gunk Shot","Flip Turn","Protect"]},
     "National Dex Monotype Showdown Usage": {"ability":"Adaptability","item":"Black Sludge","nature":"Calm","evs":{"hp":252,"sa":252,"sd":4},"moves":["Flip Turn","Sludge Bomb","Draco Meteor","Toxic Spikes"]}
   },
+  "Clawitzer": {
+    "OU Terrain Attacker": {"ability":"Mega Launcher","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Water Pulse","Dragon Pulse","Aura Sphere","Terrain Pulse"]}
+  },
   "Heliolisk": {
     "UU Wallbreaker": {"ability":"Dry Skin","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunder","Hyper Voice","Grass Knot"]},
     "RU Offensive Pivot": {"ability":"Dry Skin","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Grass Knot","U-turn","Hyper Voice"]},
