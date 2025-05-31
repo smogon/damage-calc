@@ -79,7 +79,7 @@ var SETDEX_SV = {
     "LC Sand Sweeper": {"level":5,"ability":"Sand Rush","item":"Eviolite","nature":"Adamant","teraType":"Bug","evs":{"at":236,"df":76,"sp":196},"moves":["Swords Dance","Earthquake","Leech Life","Rapid Spin"]}
   },
   "Sandshrew-Alola": {
-    "LC Snow Sweeper": {"level":5,"ability":"Slush Rush","item":"Eviolite","nature":"Jolly","teraType":"Ice","evs":{"hp":36,"at":236,"df":36,"sp":196},"moves":["Swords Dance","Triple Axel","Earthquake","Rapid Spin"]}
+    "LC Sweeper": {"level":5,"ability":"Slush Rush","item":"Eviolite","nature":"Jolly","teraType":"Fairy","evs":{"hp":36,"at":236,"df":36,"sp":196},"moves":["Swords Dance","Triple Axel","Earthquake","Rapid Spin"]}
   },
   "Sandslash": {
     "NU Sand Wallbreaker": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Knock Off","Leech Life"]},
@@ -3441,6 +3441,7 @@ var SETDEX_SV = {
     "PU Bulky Pivot": {"ability":"Prankster","item":"Heavy-Duty Boots","nature":"Careful","teraType":"Steel","evs":{"hp":252,"df":4,"sd":252},"moves":["Parting Shot","Thunder Wave","Spirit Break","Sucker Punch"]},
     "PU Bulk Up": {"ability":"Prankster","item":"Leftovers","nature":"Careful","teraType":"Steel","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Sucker Punch","Spirit Break","Substitute"]},
     "Doubles OU Dual Screens": {"ability":"Prankster","item":"Light Clay","nature":"Careful","teraType":"Ghost","evs":{"hp":252,"df":164,"sd":92},"moves":["Reflect","Light Screen","Spirit Break","Parting Shot"]},
+    "VGC 2025 Reg I Dual Screens Support": {"level":50,"ability":"Prankster","item":"Light Clay","nature":"Careful","teraType":"Ghost","evs":{"hp":236,"df":156,"sd":116},"moves":["Reflect","Light Screen","Thunder Wave","Spirit Break"]},
     "BSS Reg I Defensive Pivot": {"level":50,"ability":"Prankster","item":"Leftovers","nature":"Impish","teraType":"Steel","evs":{"hp":244,"df":252,"sd":12},"moves":["Parting Shot","Foul Play","Spirit Break","Fake Out"]},
     "BSS Reg I Dual Screens": {"level":50,"ability":"Prankster","item":"Light Clay","nature":"Impish","teraType":"Steel","evs":{"hp":252,"df":252,"sp":4},"moves":["Reflect","Light Screen","Parting Shot","Spirit Break"]},
     "Monotype Dual Screens (Dark)": {"ability":"Prankster","item":"Light Clay","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Reflect","Light Screen","Parting Shot","Spirit Break"]},
@@ -3625,7 +3626,7 @@ var SETDEX_SV = {
   },
   "Regidrago": {
     "RU Choice Scarf": {"ability":"Dragon's Maw","item":"Choice Scarf","nature":"Timid","teraType":"Steel","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Energy","Draco Meteor","Earth Power","Tera Blast"]},
-    "Doubles OU Dragon Energy": {"ability":"Dragon's Maw","item":"Draco Plate","nature":"Modest","teraType":"Steel","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Energy","Draco Meteor","Earth Power","Protect"]},
+    "Doubles OU Dragon Energy": {"ability":"Dragon's Maw","item":"Draco Plate","nature":"Modest","teraType":"Dragon","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Energy","Draco Meteor","Earth Power","Protect"]},
     "Monotype Choice Specs": {"ability":"Dragon's Maw","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Energy","Draco Meteor","Dragon Pulse","Earth Power"]},
     "National Dex RU Showdown Usage": {"ability":"Dragon's Maw","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dragon Energy","Earth Power","Draco Meteor","Dragon Dance"]}
   },
@@ -4196,7 +4197,7 @@ var SETDEX_SV = {
   },
   "Kingambit": {
     "OU Swords Dance": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","teraType":"Ghost","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Iron Head"]},
-    "Ubers Swords Dance": {"ability":"Supreme Overlord","item":"Black Glasses","nature":"Adamant","teraType":"Dark","evs":{"hp":248,"at":252,"sd":8},"moves":["Swords Dance","Kowtow Cleave","Iron Head","Sucker Punch"]},
+    "Ubers Swords Dance": {"ability":"Supreme Overlord","item":"Black Glasses","nature":"Adamant","teraType":"Dark","evs":{"hp":248,"at":252,"sd":8},"moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Iron Head"]},
     "Doubles OU Swords Dance": {"ability":"Defiant","item":"Black Glasses","nature":"Adamant","teraType":"Dark","evs":{"hp":252,"at":252,"sd":4},"moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Protect"]},
     "Doubles OU Assault Vest": {"ability":"Defiant","item":"Assault Vest","nature":"Adamant","teraType":"Fairy","evs":{"hp":252,"at":252,"sd":4},"moves":["Kowtow Cleave","Sucker Punch","Iron Head","Tera Blast"]},
     "BSS Reg I Bulky Attacker": {"level":50,"ability":"Supreme Overlord","item":"Assault Vest","nature":"Adamant","teraType":"Dark","evs":{"hp":252,"at":252,"sp":4},"moves":["Kowtow Cleave","Sucker Punch","Iron Head","Swords Dance"]},

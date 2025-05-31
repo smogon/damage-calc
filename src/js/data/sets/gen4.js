@@ -1704,7 +1704,7 @@ var SETDEX_DPP = {
     "UU All-Out Attacker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"df":172,"sp":84},"moves":["Close Combat","Payback","Bullet Punch","Fake Out"]},
     "UU RestTalk": {"ability":"Thick Fat","item":"Leftovers","nature":"Impish","evs":{"hp":12,"df":252,"sd":244},"moves":["Rest","Sleep Talk","Force Palm","Whirlwind"]},
     "UU SubPunch": {"ability":"Thick Fat","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":252,"sp":4},"moves":["Substitute","Focus Punch","Payback","Stone Edge"]},
-    "Doubles OU Showdown Usage": {"ability":"Guts","item":"Flame Orb","nature":"Brave","evs":{"at":4,"df":252,"sd":252},"moves":["Fake Out","Close Combat","Rock Slide","Feint"]},
+    "Doubles OU Bulky Support": {"ability":"Thick Fat","item":"Flame Orb","nature":"Brave","ivs":{"sp":0},"evs":{"at":4,"df":252,"sd":252},"moves":["Fake Out","Close Combat","Ice Punch","Detect"]},
     "Anything Goes Showdown Usage": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"hp":120,"at":252,"sd":128,"sp":8},"moves":["Bullet Punch","Fake Out","Close Combat","Payback"]}
   },
   "Nosepass": {
