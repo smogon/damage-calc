@@ -2046,7 +2046,7 @@ var SETDEX_BW = {
     "LC Disable": {"level":5,"ability":"Ice Body","item":"Oran Berry","nature":"Naive","evs":{"hp":36,"at":36,"df":36,"sa":196,"sp":196},"moves":["Disable","Ice Beam","Crunch","Ice Shard"]}
   },
   "Glalie": {
-    "NU Suicide Spiker": {"ability":"Inner Focus","item":"Focus Sash","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Spikes","Taunt","Explosion","Ice Beam"]},
+    "NU Spikes Lead": {"ability":"Inner Focus","item":"Focus Sash","nature":"Hasty","evs":{"at":252,"sa":4,"sp":252},"moves":["Spikes","Taunt","Explosion","Ice Beam"]},
     "PU Offensive Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Taunt","Ice Beam","Earthquake"]}
   },
   "Spheal": {

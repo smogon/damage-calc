@@ -3473,7 +3473,8 @@ var SETDEX_SS = {
   "Thwackey": {
     "PU Choice Band": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Knock Off","Wood Hammer","U-turn"]},
     "ZU Choice Band": {"ability":"Grassy Surge","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Wood Hammer","U-turn","Knock Off"]},
-    "ZU Swords Dance": {"ability":"Grassy Surge","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","U-turn"]}
+    "ZU Swords Dance": {"ability":"Grassy Surge","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Grassy Glide","Knock Off","U-turn"]},
+    "ZU All-Out Attacker": {"ability":"Grassy Surge","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Grassy Glide","Acrobatics","Knock Off","Swords Dance"]}
   },
   "Rillaboom": {
     "OU Bulky Swords Dance": {"ability":"Grassy Surge","item":"Leftovers","nature":"Adamant","evs":{"hp":240,"at":252,"sp":16},"moves":["Swords Dance","Grassy Glide","Knock Off","Drain Punch"]},

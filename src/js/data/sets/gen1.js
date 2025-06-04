@@ -644,7 +644,6 @@ var SETDEX_RBY = {
   },
   "Dragonite": {
     "OU Wrap": {"moves":["Wrap","Hyper Beam","Blizzard","Thunder Wave"]},
-    "OU AgiliWrap": {"moves":["Agility","Wrap","Hyper Beam","Surf"]},
     "Ubers Wrap": {"moves":["Wrap","Thunder Wave","Surf","Hyper Beam"]},
     "UU Wrap Pivot": {"moves":["Wrap","Thunder Wave","Blizzard","Body Slam"]},
     "UU PhysNite (Offensive)": {"moves":["Blizzard","Body Slam","Thunderbolt","Hyper Beam"]},
