@@ -462,7 +462,7 @@ var SETDEX_BW = {
   },
   "Leavanny": {
     "NU Utility": {"ability":"Swarm","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Leaf Blade","X-Scissor","Synthesis","Heal Bell"]},
-    "ZU Agility": {"ability":"Swarm","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Agility","X-Scissor","Leaf Blade","Protect"]}
+    "ZU Salac Berry": {"ability":"Swarm","item":"Salac Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Endure","X-Scissor","Leaf Blade","Swords Dance"]}
   },
   "Venipede": {
     "ZU Hazard Setter": {"ability":"Poison Point","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":4,"sp":252},"moves":["Spikes","Toxic Spikes","Endeavor","Protect"]}
