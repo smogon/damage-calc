@@ -551,6 +551,9 @@ var SETDEX_ADV = {
     "NU Choice Band": {"ability":"Inner Focus","item":"Choice Band","nature":"Naive","ivs":{"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Sludge Bomb","Aerial Ace","Hidden Power Ground","Giga Drain"]},
     "NU Bulky Leftovers": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"hp":252,"at":112,"sp":144},"moves":["Sludge Bomb","Aerial Ace","Hidden Power Ground","Toxic"]}
   },
+  "Oddish": {
+    "LC Sunny Day": {"level":5,"ability":"Chlorophyll","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"df":30},"evs":{"hp":76,"df":80,"sa":236,"sp":116},"moves":["Sunny Day","Solar Beam","Hidden Power Ice","Bullet Seed"]}
+  },
   "Gloom": {
     "ZU Specially Defensive": {"ability":"Chlorophyll","item":"Leftovers","nature":"Careful","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":4,"sd":252},"moves":["Sludge Bomb","Hidden Power Grass","Leech Seed","Moonlight"]},
     "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Leftovers","nature":"Modest","ivs":{"at":2,"sa":30,"sp":30},"evs":{"hp":80,"sa":252,"sp":176},"moves":["Sunny Day","Solar Beam","Hidden Power Fire","Synthesis"]},
@@ -618,7 +621,7 @@ var SETDEX_ADV = {
     "ZU Special Attacker": {"ability":"Synchronize","item":"Petaya Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Substitute","Psychic","Hidden Power Grass"]}
   },
   "Machop": {
-    "LC Offensive": {"level":5,"ability":"Guts","item":"Sitrus Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":116,"at":116,"df":120,"sd":80,"sp":76},"moves":["Substitute","Hidden Power Ghost","Cross Chop","Rock Slide"]}
+    "LC Offensive": {"level":5,"ability":"Guts","item":"Sitrus Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":36,"at":116,"df":40,"sd":240,"sp":76},"moves":["Bulk Up","Cross Chop","Hidden Power Ghost","Endure"]}
   },
   "Machoke": {
     "NU Bulk Up": {"ability":"Guts","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":208,"at":252,"sp":44},"moves":["Bulk Up","Revenge","Hidden Power Ghost","Earthquake"]},
@@ -1329,6 +1332,7 @@ var SETDEX_ADV = {
     "RU Choice Band": {"ability":"Magma Armor","item":"Choice Band","nature":"Adamant","evs":{"hp":52,"at":252,"sd":116,"sp":88},"moves":["Earthquake","Fire Blast","Rock Slide","Explosion"]}
   },
   "Spoink": {
+    "LC Lead": {"level":5,"ability":"Thick Fat","nature":"Bold","ivs":{"at":0},"evs":{"hp":36,"df":156,"sd":116,"sp":196},"moves":["Thief","Psychic","Icy Wind","Taunt"]},
     "ZU Sub CM": {"ability":"Thick Fat","item":"Leftovers","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Calm Mind","Substitute","Psychic","Hidden Power Grass"]},
     "ZU Substitute + Calm Mind": {"ability":"Thick Fat","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Substitute","Calm Mind","Psychic","Hidden Power Grass"]},
     "ZU Lead": {"ability":"Thick Fat","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":236,"sa":88,"sp":184},"moves":["Calm Mind","Taunt","Psychic","Hidden Power Fire"]}

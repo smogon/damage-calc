@@ -1455,7 +1455,8 @@ var SETDEX_DPP = {
     "Ubers Attacking Lead": {"ability":"Technician","item":"Lum Berry","nature":"Adamant","evs":{"hp":248,"at":8,"sd":252},"moves":["Bug Bite","Bullet Punch","Brick Break","Roost"]},
     "Ubers Specially Defensive": {"ability":"Technician","item":"Leftovers","nature":"Careful","evs":{"hp":244,"at":20,"df":76,"sd":168},"moves":["Roost","U-turn","Bullet Punch","Brick Break"]},
     "Ubers Swords Dance": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"hp":248,"at":252,"sp":8},"moves":["Swords Dance","Bullet Punch","Roost","Bug Bite"]},
-    "Doubles OU Showdown Usage": {"ability":"Technician","item":"Iron Plate","nature":"Adamant","evs":{"hp":248,"at":252,"sp":8},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]}
+    "Doubles OU Swords Dance": {"ability":"Technician","item":"Metal Coat","nature":"Adamant","evs":{"hp":248,"at":252,"sp":8},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
+    "Doubles OU Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":252,"sp":8},"moves":["U-turn","Bullet Punch","Superpower","Pursuit"]}
   },
   "Shuckle": {
     "UU Toxic Stall": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Toxic","Encore","Rest","Knock Off"]}
