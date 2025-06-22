@@ -1374,7 +1374,7 @@ var SETDEX_BW = {
   "Porygon": {
     "LC God Wall [Special]": {"level":5,"ability":"Trace","item":"Eviolite","nature":"Calm","ivs":{"at":0},"evs":{"hp":156,"df":116,"sd":236},"moves":["Tri Attack","Psychic","Thunder Wave","Recover"]},
     "LC God Wall [Physical]": {"level":5,"ability":"Trace","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":156,"df":196,"sd":156},"moves":["Thunderbolt","Ice Beam","Recover","Toxic"]},
-    "ZU Bulky Setup Sweeper": {"ability":"Download","item":"Eviolite","nature":"Modest","evs":{"at":172,"sa":252,"sp":84},"moves":["Recover","Tri Attack","Charge Beam","Ice Beam"]}
+    "ZU Bulky Setup Sweeper": {"ability":"Download","item":"Eviolite","nature":"Modest","evs":{"hp":172,"sa":252,"sp":84},"moves":["Recover","Tri Attack","Charge Beam","Ice Beam"]}
   },
   "Omanyte": {
     "LC Shell Smash": {"level":5,"ability":"Shell Armor","item":"Eviolite","nature":"Modest","ivs":{"at":0},"evs":{"hp":76,"sa":196,"sp":236},"moves":["Shell Smash","Hydro Pump","Substitute","Ice Beam"]},

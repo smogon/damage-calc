@@ -3809,7 +3809,7 @@ var SETDEX_SM = {
     "LC Bulky Pivot": {"level":5,"ability":"Flame Body","item":"Eviolite","nature":"Impish","evs":{"hp":76,"df":236,"sd":156,"sp":36},"moves":["Flare Blitz","Morning Sun","U-turn","Will-O-Wisp"]}
   },
   "Volcarona": {
-    "OU Offensive Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Fire Blast","Bug Buzz","Hidden Power Ground"]},
+    "OU Offensive Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Flamethrower","Bug Buzz","Hidden Power Ground"]},
     "OU Substitute + Swarm": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":128,"sa":196,"sp":184},"moves":["Substitute","Quiver Dance","Bug Buzz","Flamethrower"]},
     "OU Bulky Quiver Dance": {"ability":"Flame Body","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":196,"sp":64},"moves":["Quiver Dance","Bug Buzz","Flamethrower","Roost"]},
     "Doubles OU Quiver Dance": {"ability":"Flame Body","item":"Buginium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Heat Wave","Bug Buzz","Quiver Dance","Protect"]},
