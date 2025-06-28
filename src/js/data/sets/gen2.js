@@ -531,7 +531,7 @@ var SETDEX_GSC = {
   "Tangela": {
     "OU Double Powder": {"item":"Leftovers","moves":["Stun Spore","Sleep Powder","Giga Drain","Reflect"]},
     "PU Growth": {"item":"Leftovers","ivs":{"df":26},"moves":["Growth","Giga Drain","Hidden Power Ice","Synthesis"]},
-    "PU Utility": {"item":"Leftovers","moves":["Giga Drain","Thief","Sleep Powder","Synthesis"]},
+    "PU Utility": {"moves":["Giga Drain","Thief","Sleep Powder","Synthesis"]},
     "NU Showdown Usage": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":28},"moves":["Synthesis","Stun Spore","Hidden Power Grass","Sleep Powder"]}
   },
   "Kangaskhan": {
