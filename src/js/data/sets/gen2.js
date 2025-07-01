@@ -323,7 +323,7 @@ var SETDEX_GSC = {
     "PU Offensive": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Wing Attack","Hidden Power Ground","Giga Drain","Screech"]}
   },
   "Gloom": {
-    "NU Status-spreading Defensive Pivot": {"item":"Leftovers","moves":["Stun Spore","Curse","Sludge Bomb","Moonlight"]}
+    "NU Bulky Setup Sweeper": {"item":"Leftovers","moves":["Swords Dance","Sludge Bomb","Stun Spore","Moonlight"]}
   },
   "Parasect": {
     "OU Double Powder": {"item":"Leftovers","ivs":{"at":26,"df":26},"moves":["Spore","Hidden Power Bug","Giga Drain","Stun Spore"]},
@@ -405,8 +405,8 @@ var SETDEX_GSC = {
     "ZU Wallbreaker": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Sleep Powder","Swords Dance","Sludge Bomb","Hidden Power Ground"]}
   },
   "Tentacool": {
-    "ZU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Sludge Bomb","Hydro Pump","Hidden Power Ground"]},
-    "NU Showdown Usage": {"item":"Leftovers","moves":["Toxic","Hydro Pump","Rapid Spin","Sludge Bomb"]}
+    "NU Rapid Spin": {"item":"Leftovers","moves":["Hydro Pump","Sludge Bomb","Rapid Spin","Protect"]},
+    "ZU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Sludge Bomb","Hydro Pump","Hidden Power Ground"]}
   },
   "Tentacruel": {
     "OU Druidcruel (Swords Dance)": {"item":"Leftovers","moves":["Swords Dance","Substitute","Sludge Bomb","Hydro Pump"]},
@@ -526,7 +526,7 @@ var SETDEX_GSC = {
   "Chansey": {
     "UU Defensive Cleric": {"item":"Leftovers","moves":["Present","Thunder","Heal Bell","Soft-Boiled"]},
     "1v1 Curse": {"item":"Lucky Punch","moves":["Curse","Double-Edge","Rest","Counter"]},
-    "OU Showdown Usage": {"item":"Leftovers","moves":["Soft-Boiled","Heal Bell","Light Screen","Flash"]}
+    "OU Showdown Usage": {"item":"Leftovers","moves":["Soft-Boiled","Heal Bell","Light Screen","Flamethrower"]}
   },
   "Tangela": {
     "OU Double Powder": {"item":"Leftovers","moves":["Stun Spore","Sleep Powder","Giga Drain","Reflect"]},

@@ -207,7 +207,8 @@ var SETDEX_RBY = {
   },
   "Arcanine": {
     "UU Agility Sweeper": {"moves":["Agility","Body Slam","Hyper Beam","Fire Blast"]},
-    "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]}
+    "NU Defensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Rest"]},
+    "OU Showdown Usage": {"moves":["Body Slam","Fire Blast","Hyper Beam","Rest"]}
   },
   "Poliwag": {
     "PU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]},

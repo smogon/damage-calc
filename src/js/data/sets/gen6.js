@@ -1028,8 +1028,7 @@ var SETDEX_XY = {
   "Machamp": {
     "UU Assault Vest": {"ability":"No Guard","item":"Assault Vest","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Dynamic Punch","Knock Off","Heavy Slam","Stone Edge"]},
     "UU Choice Band": {"ability":"No Guard","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Dynamic Punch","Knock Off","Heavy Slam","Stone Edge"]},
-    "Battle Spot Doubles Dynamic Punch Tank": {"level":50,"ability":"No Guard","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":188,"df":68},"moves":["Dynamic Punch","Wide Guard","Stone Edge","Protect"]},
-    "OU Showdown Usage": {"ability":"Guts","item":"Assault Vest","nature":"Adamant","evs":{"hp":172,"at":252,"sp":84},"moves":["Knock Off","Stone Edge","Heavy Slam","Close Combat"]}
+    "Battle Spot Doubles Dynamic Punch Tank": {"level":50,"ability":"No Guard","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":188,"df":68},"moves":["Dynamic Punch","Wide Guard","Stone Edge","Protect"]}
   },
   "Bellsprout": {
     "LC Sun Sweeper": {"level":5,"ability":"Chlorophyll","item":"Eviolite","nature":"Modest","ivs":{"at":0},"evs":{"df":76,"sa":196,"sd":36,"sp":196},"moves":["Solar Beam","Sludge Bomb","Weather Ball","Sleep Powder"]}
@@ -1618,8 +1617,7 @@ var SETDEX_XY = {
     "RU Defensive Pivot": {"ability":"Magic Bounce","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["U-turn","Roost","Night Shade","Toxic"]},
     "NU Pivot": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Timid","evs":{"hp":252,"df":240,"sp":16},"moves":["Psychic","Roost","Grass Knot","U-turn"]},
     "NU Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":240,"sp":16},"moves":["Calm Mind","Roost","Psyshock","Heat Wave"]},
-    "NU Offensive": {"ability":"Magic Bounce","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Grass Knot","Heat Wave","Roost"]},
-    "OU Showdown Usage": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Timid","evs":{"hp":252,"df":240,"sp":16},"moves":["U-turn","Roost","Night Shade","Toxic"]}
+    "NU Offensive": {"ability":"Magic Bounce","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Grass Knot","Heat Wave","Roost"]}
   },
   "Mareep": {
     "LC Dual Screens": {"level":5,"ability":"Static","item":"Eviolite","nature":"Bold","evs":{"hp":236,"df":196,"sd":76},"moves":["Light Screen","Reflect","Thunder Wave","Thunderbolt"]}
@@ -1719,7 +1717,6 @@ var SETDEX_XY = {
     "Battle Spot Singles Dual Screens": {"level":50,"ability":"Magic Bounce","item":"Light Clay","nature":"Timid","evs":{"hp":236,"df":76,"sp":196},"moves":["Psychic","Reflect","Light Screen","Yawn"]},
     "Battle Spot Singles Choice Attacker": {"level":50,"ability":"Magic Bounce","item":"Choice Scarf","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Dazzling Gleam","Grass Knot","Trick"]},
     "Anything Goes Sweeper": {"ability":"Magic Bounce","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Stored Power","Dazzling Gleam","Substitute","Baton Pass"]},
-    "OU Showdown Usage": {"ability":"Magic Bounce","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Dazzling Gleam","Psychic","Hidden Power Ice"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Dazzling Gleam","Light Screen","Reflect"]}
   },
   "Umbreon": {
