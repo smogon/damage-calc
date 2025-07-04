@@ -1805,7 +1805,7 @@ var SETDEX_SM = {
     "LC Bulky Attacker": {"level":5,"ability":"Torrent","item":"Eviolite","nature":"Impish","evs":{"at":196,"df":116,"sd":196},"moves":["Waterfall","Ice Beam","Superpower","Double-Edge"]}
   },
   "Swampert": {
-    "OU Rain Sweeper": {"ability":"Damp","item":"Swampertite","nature":"Jolly","evs":{"at":248,"sd":8,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Stealth Rock"]},
+    "OU Rain Sweeper": {"ability":"Damp","item":"Swampertite","nature":"Jolly","evs":{"hp":4,"at":244,"sd":8,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Stealth Rock"]},
     "UU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Earthquake","Scald","Toxic"]},
     "UU Choice Band": {"ability":"Torrent","item":"Choice Band","nature":"Adamant","evs":{"hp":88,"at":252,"sp":168},"moves":["Earthquake","Waterfall","Ice Punch","Toxic"]},
     "UU Offensive Stealth Rock": {"ability":"Torrent","item":"Life Orb","nature":"Adamant","evs":{"hp":92,"at":252,"sp":164},"moves":["Stealth Rock","Earthquake","Waterfall","Ice Punch"]},
@@ -1820,7 +1820,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Torrent","item":"Swampertite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Waterfall","Ice Punch","Stone Edge"]}
   },
   "Swampert-Mega": {
-    "OU Rain Sweeper": {"ability":"Swift Swim","item":"Swampertite","nature":"Jolly","evs":{"at":248,"sd":8,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Stealth Rock"]},
+    "OU Rain Sweeper": {"ability":"Swift Swim","item":"Swampertite","nature":"Jolly","evs":{"hp":4,"at":244,"sd":8,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Stealth Rock"]},
     "Doubles OU Rain Attacker": {"ability":"Swift Swim","item":"Swampertite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Waterfall","Earthquake","Superpower","Protect"]},
     "VGC 2018 Swampertite": {"level":50,"ability":"Swift Swim","item":"Swampertite","nature":"Adamant","evs":{"hp":116,"at":252,"sp":140},"moves":["Waterfall","Earthquake","Ice Punch","Protect"]},
     "Battle Spot Singles Mega Rain Attacker": {"level":50,"ability":"Swift Swim","item":"Swampertite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Earthquake","Ice Punch","Substitute"]},

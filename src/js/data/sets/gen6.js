@@ -2651,9 +2651,7 @@ var SETDEX_XY = {
     "LC Shell Smash": {"level":5,"ability":"Shell Armor","item":"Deep Sea Tooth","nature":"Timid","evs":{"sa":248,"sd":76,"sp":184},"moves":["Shell Smash","Surf","Ice Beam","Substitute"]}
   },
   "Huntail": {
-    "PU Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Naughty","evs":{"at":252,"sa":4,"sp":252},"moves":["Shell Smash","Waterfall","Sucker Punch","Ice Beam"]},
-    "ZU Special Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Modest","ivs":{"at":0,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Surf","Ice Beam","Hidden Power Grass"]},
-    "ZU Physical Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Waterfall","Sucker Punch","Return"]}
+    "PU Shell Smash": {"ability":"Water Veil","item":"White Herb","nature":"Naughty","evs":{"at":252,"sa":4,"sp":252},"moves":["Shell Smash","Waterfall","Sucker Punch","Ice Beam"]}
   },
   "Gorebyss": {
     "NU Shell Smash": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Shell Smash","Hydro Pump","Ice Beam","Hidden Power Grass"]},
@@ -2937,9 +2935,6 @@ var SETDEX_XY = {
   },
   "Turtwig": {
     "LC Stealth Rock": {"level":5,"ability":"Overgrow","item":"Eviolite","nature":"Careful","evs":{"df":244,"sd":236,"sp":28},"moves":["Stealth Rock","Synthesis","Bullet Seed","Superpower"]}
-  },
-  "Grotle": {
-    "ZU Specially Defensive": {"ability":"Overgrow","item":"Eviolite","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Bullet Seed","Synthesis","Toxic"]}
   },
   "Torterra": {
     "RU Bulky Swords Dance": {"ability":"Overgrow","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":180,"sp":76},"moves":["Wood Hammer","Earthquake","Swords Dance","Synthesis"]},
@@ -3995,8 +3990,7 @@ var SETDEX_XY = {
   "Frillish": {
     "NU Physically Defensive": {"ability":"Water Absorb","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Will-O-Wisp","Night Shade","Recover","Taunt"]},
     "LC Choice Scarf": {"level":5,"ability":"Water Absorb","item":"Choice Scarf","nature":"Timid","evs":{"hp":76,"sa":236,"sp":196},"moves":["Water Spout","Shadow Ball","Ice Beam","Trick"]},
-    "LC Defensive": {"level":5,"ability":"Cursed Body","item":"Eviolite","nature":"Bold","evs":{"hp":236,"df":116,"sa":76,"sd":76},"moves":["Scald","Shadow Ball","Recover","Will-O-Wisp"]},
-    "ZU Physical Wall": {"ability":"Water Absorb","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Will-O-Wisp","Night Shade","Recover","Taunt"]}
+    "LC Defensive": {"level":5,"ability":"Cursed Body","item":"Eviolite","nature":"Bold","evs":{"hp":236,"df":116,"sa":76,"sd":76},"moves":["Scald","Shadow Ball","Recover","Will-O-Wisp"]}
   },
   "Jellicent": {
     "OU Utility": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":216,"sp":44},"moves":["Will-O-Wisp","Recover","Taunt","Scald"]},
