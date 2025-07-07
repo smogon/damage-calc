@@ -2002,7 +2002,7 @@ var SETDEX_XY = {
     "NU Physically Defensive": {"ability":"Sap Sipper","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":240,"sp":16},"moves":["Body Slam","Milk Drink","Toxic","Stealth Rock"]}
   },
   "Blissey": {
-    "OU Calm Mind": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":4,"df":252,"sd":252},"moves":["Calm Mind","Soft-Boiled","Thunderbolt","Ice Beam"]},
+    "OU Special Wall": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Seismic Toss","Toxic","Soft-Boiled","Protect"]},
     "Ubers Support": {"ability":"Natural Cure","item":"Shed Shell","nature":"Calm","evs":{"df":252,"sd":252,"sp":4},"moves":["Toxic","Seismic Toss","Wish","Protect"]},
     "UU De Blob (Cleric)": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Wish","Protect","Seismic Toss","Heal Bell"]},
     "Pure Hackmons Wonder Guard Support": {"ability":"Wonder Guard","item":"Shed Shell","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Baton Pass","Defog","Aromatherapy","Recover"]}
