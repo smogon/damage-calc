@@ -3872,7 +3872,7 @@ var SETDEX_SM = {
     "Doubles OU Showdown Usage": {"ability":"Defiant","item":"Assault Vest","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Wild Charge","Sky Drop","Knock Off","Incinerate"]}
   },
   "Thundurus-Therian": {
-    "OU Wallbreaker": {"ability":"Volt Absorb","item":"Fightinium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Thunderbolt","Hidden Power Flying","Focus Blast"]},
+    "OU Wallbreaker": {"ability":"Volt Absorb","item":"Fightinium Z","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Focus Blast","Nasty Plot"]},
     "OU Offensive Support": {"ability":"Volt Absorb","item":"Rocky Helmet","nature":"Timid","evs":{"hp":112,"sa":144,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Taunt","Defog"]},
     "VGC 2018 3 Attacks + Protect": {"level":50,"ability":"Volt Absorb","item":"Life Orb","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Sludge Bomb","Protect"]},
     "VGC 2018 Choice Scarf": {"level":50,"ability":"Volt Absorb","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Sludge Bomb","Volt Switch"]},

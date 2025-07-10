@@ -265,7 +265,7 @@ var SETDEX_RBY = {
   "Victreebel": {
     "OU Standard": {"moves":["Sleep Powder","Wrap","Razor Leaf","Stun Spore"]},
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Wrap"]},
-    "Ubers Wrap": {"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
+    "Ubers Wrap": {"moves":["Sleep Powder","Wrap","Stun Spore","Razor Leaf"]},
     "Tradebacks OU Wrap": {"moves":["Wrap","Razor Leaf","Sleep Powder","Stun Spore"]},
     "Tradebacks OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Razor Leaf","Sleep Powder"]}
   },
