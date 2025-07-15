@@ -6,6 +6,7 @@
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/prefer-for-of": "off",
     "jest/no-standalone-expect": "off",
+    "jest/no-disabled-tests": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "jest/no-conditional-expect": "off",
     "@typescript-eslint/consistent-type-imports": "error"

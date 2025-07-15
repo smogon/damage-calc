@@ -9732,6 +9732,22 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     abilities: {0: 'Protosynthesis'},
   },
+  Ramnarok: {
+    types: ['Fire', 'Steel'],
+    bs: {hp: 110, at: 63, df: 104, sa: 104, sd: 134, sp: 85},
+    weightkg: 250,
+    abilities: {0: 'No Guard'},
+    otherFormes: ['Ramnarok-Radiant'],
+    gender: 'N',
+  },
+  'Ramnarok-Radiant': {
+    types: ['Fire', 'Ice'],
+    bs: {hp: 110, at: 63, df: 85, sa: 134, sd: 54, sp: 154},
+    weightkg: 182,
+    abilities: {0: 'No Guard'},
+    baseSpecies: 'Ramnarok',
+    gender: 'N',
+  },
   Rellor: {
     types: ['Bug'],
     bs: {hp: 41, at: 50, df: 60, sa: 31, sd: 58, sp: 30},
