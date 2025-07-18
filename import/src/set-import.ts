@@ -57,8 +57,8 @@ const VALIDATORS: {[format: string]: TeamValidator} = {};
 const UNSUPPORTED: {[format: string]: string} = {
   'gen9almostanyability': '[Gen 9] Almost Any Ability',
   'gen9nfe': '[Gen 9] NFE',
-  'gen8nfe': '[Gen 9] NFE',
-  'gen7nfe': '[Gen 9] NFE',
+  'gen8nfe': '[Gen 8] NFE',
+  'gen7nfe': '[Gen 7] NFE',
 };
 const SHORT_STAT_FORM: {[stat: string]: keyof CalcStatsTable} =
 {'hp': 'hp', 'atk': 'at', 'def': 'df', 'spa': 'sa', 'spd': 'sd', 'spe': 'sp'};
