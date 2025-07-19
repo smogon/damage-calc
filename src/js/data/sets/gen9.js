@@ -2924,6 +2924,7 @@ var SETDEX_SV = {
     "Monotype Specially Defensive (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"]},
     "Monotype Specially Defensive (Steel)": {"ability":"Shell Armor","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"sa":252,"sd":4},"moves":["Protect","Flamethrower","Dragon Pulse","Earthquake"]},
     "Monotype Assault Vest (Steel)": {"ability":"Sap Sipper","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"sa":92,"sp":164},"moves":["Thunderbolt","Ice Beam","Draco Meteor","Heavy Slam"]},
+    "National Dex UU Offensive Tank": {"ability":"Sap Sipper","item":"Leftovers","nature":"Modest","evs":{"hp":156,"sa":176,"sp":176},"moves":["Draco Meteor","Flash Cannon","Flamethrower","Knock Off"]},
     "National Dex Monotype Specially Defensive (Dragon)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":4,"sd":252},"moves":["Heavy Slam","Flamethrower","Dragon Tail","Protect"]},
     "National Dex Monotype AcidPress (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Heavy Slam","Body Press","Acid Armor","Protect"]},
     "National Dex Monotype Specially Defensive (Steel)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","evs":{"hp":248,"df":8,"sd":252},"moves":["Protect","Dragon Tail","Knock Off","Ice Beam"]},
@@ -2931,7 +2932,6 @@ var SETDEX_SV = {
     "1v1 Chople Berry": {"ability":"Sap Sipper","item":"Chople Berry","nature":"Sassy","evs":{"hp":252,"at":32,"df":48,"sa":88,"sd":88},"moves":["Draco Meteor","Heavy Slam","Acid Spray","Counter"]},
     "1v1 Choice Band": {"ability":"Sap Sipper","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":236,"df":24},"moves":["Outrage","Heavy Slam","Skitter Smack","Earthquake"]},
     "Almost Any Ability RegenVest": {"ability":"Regenerator","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"df":4,"sd":252},"moves":["Heavy Slam","Dragon Tail","Knock Off","Thunderbolt"]},
-    "National Dex UU Showdown Usage": {"ability":"Sap Sipper","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":236,"sp":20},"moves":["Heavy Slam","Earthquake","Knock Off","Rest"]},
     "UU Showdown Usage": {"ability":"Sap Sipper","item":"Assault Vest","nature":"Quiet","teraType":"Flying","evs":{"hp":248,"sa":252,"sd":8},"moves":["Draco Meteor","Flamethrower","Knock Off","Flash Cannon"]}
   },
   "Klefki": {
@@ -3520,6 +3520,7 @@ var SETDEX_SV = {
     "National Dex Defensive": {"ability":"Pressure","item":"Rocky Helmet","nature":"Impish","evs":{"hp":248,"df":204,"sd":56},"moves":["Brave Bird","U-turn","Body Press","Roost"]},
     "National Dex Monotype Defensive Pivot (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":212,"sd":48},"moves":["Body Press","U-turn","Defog","Roost"]},
     "1v1 Maranga Berry": {"ability":"Pressure","item":"Maranga Berry","nature":"Impish","ivs":{"at":0},"evs":{"hp":252,"df":40,"sd":16,"sp":200},"moves":["Iron Defense","Roost","Taunt","Body Press"]},
+    "1v1 Pressure Stall": {"ability":"Pressure","item":"Leftovers","nature":"Jolly","evs":{"hp":200,"sd":56,"sp":252},"moves":["Protect","Substitute","Roost","Taunt"]},
     "Almost Any Ability Physically Defensive": {"ability":"Fluffy","item":"Rocky Helmet","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Brave Bird","U-turn","Roost","Defog"]},
     "Almost Any Ability Dual Screens": {"ability":"Prankster","item":"Light Clay","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Reflect","Light Screen","Taunt","U-turn"]},
     "Almost Any Ability Immunity": {"ability":"Volt Absorb","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Brave Bird","U-turn","Roost","Defog"]},
@@ -5036,6 +5037,7 @@ var SETDEX_SV = {
     "1v1 Defensive Weakness Policy": {"ability":"Quark Drive","item":"Weakness Policy","nature":"Bold","evs":{"hp":240,"df":240,"sp":28},"moves":["Tachyon Cutter","Iron Defense","Calm Mind","Stored Power"]},
     "1v1 Specially Defensive Weakness Policy": {"ability":"Quark Drive","item":"Weakness Policy","nature":"Modest","ivs":{"at":20},"evs":{"hp":232,"df":48,"sa":40,"sd":188},"moves":["Iron Defense","Calm Mind","Psyshock","Tachyon Cutter"]},
     "1v1 Special Attack Booster Energy": {"ability":"Quark Drive","item":"Booster Energy","nature":"Modest","ivs":{"at":20},"evs":{"hp":200,"sa":236,"sd":72},"moves":["Calm Mind","Psyshock","Tachyon Cutter","Focus Blast"]},
+    "1v1 Speed Booster": {"ability":"Quark Drive","item":"Booster Energy","nature":"Timid","evs":{"hp":180,"df":56,"sa":80,"sp":192},"moves":["Tachyon Cutter","Calm Mind","Iron Defense","Psychic"]},
     "Almost Any Ability Double Dance": {"ability":"Tinted Lens","item":"Weakness Policy","nature":"Modest","ivs":{"at":20},"evs":{"sa":252,"sd":44,"sp":212},"moves":["Stored Power","Tachyon Cutter","Calm Mind","Agility"]},
     "Almost Any Ability Choice Item": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Timid","ivs":{"at":20},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Expanding Force","Tachyon Cutter","Focus Blast","Volt Switch"]},
     "National Dex Doubles Showdown Usage": {"ability":"Quark Drive","item":"Booster Energy","nature":"Timid","teraType":"Fighting","evs":{"sa":252,"sd":4,"sp":252},"moves":["Tachyon Cutter","Protect","Expanding Force","Tera Blast"]},

@@ -2861,8 +2861,8 @@ var SETDEX_SS = {
     "NU Utility": {"ability":"Pixilate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":188,"sd":68},"moves":["Hyper Voice","Wish","Protect","Heal Bell"]},
     "NU Choice Specs": {"ability":"Pixilate","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Mystical Fire","Psyshock","Heal Bell"]},
     "Doubles OU Calm Mind Sweeper": {"ability":"Pixilate","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":252,"sa":4},"moves":["Hyper Voice","Calm Mind","Substitute","Detect"]},
-    "1v1 Choice Specs": {"ability":"Pixilate","item":"Choice Specs","nature":"Modest","evs":{"hp":72,"df":72,"sa":252,"sd":4,"sp":108},"moves":["Hyper Beam","Hyper Voice","Echoed Voice","Draining Kiss"]},
-    "1v1 Custap Berry": {"ability":"Pixilate","item":"Custap Berry","nature":"Modest","evs":{"df":232,"sa":252,"sp":24},"moves":["Fake Tears","Hyper Voice","Hyper Beam","Endure"]},
+    "1v1 Choice Specs": {"ability":"Pixilate","item":"Choice Specs","nature":"Modest","evs":{"hp":80,"df":80,"sa":252,"sp":96},"moves":["Hyper Voice","Hyper Beam","Echoed Voice","Mystical Fire"]},
+    "1v1 Custap Berry": {"ability":"Pixilate","item":"Custap Berry","nature":"Modest","evs":{"df":232,"sa":252,"sp":24},"moves":["Endure","Fake Tears","Hyper Voice","Hyper Beam"]},
     "1v1 Yawn": {"ability":"Pixilate","item":"Mental Herb","nature":"Modest","evs":{"hp":204,"df":224,"sa":80},"moves":["Yawn","Protect","Hyper Voice","Hyper Beam"]},
     "RU Showdown Usage": {"ability":"Cute Charm","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Heal Bell","Wish","Protect","Moonblast"]},
     "UU Showdown Usage": {"ability":"Pixilate","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":108,"sd":136,"sp":12},"moves":["Hyper Voice","Protect","Wish","Heal Bell"]}
@@ -3488,9 +3488,9 @@ var SETDEX_SS = {
     "1v1 Fast Occa Berry": {"ability":"Beast Boost","item":"Occa Berry","nature":"Jolly","evs":{"hp":108,"df":148,"sp":252},"moves":["Leech Seed","Substitute","Protect","Heavy Slam"]},
     "1v1 Custap Berry": {"ability":"Beast Boost","item":"Custap Berry","nature":"Relaxed","evs":{"hp":252,"at":56,"df":60,"sd":140},"moves":["Endure","Heavy Slam","Flamethrower","Air Slash"]},
     "1v1 Life Orb": {"ability":"Beast Boost","item":"Life Orb","nature":"Quiet","evs":{"hp":248,"at":28,"df":40,"sa":180,"sd":12},"moves":["Superpower","Flash Cannon","Air Slash","Flamethrower"]},
-    "1v1 Anti-Urshifu": {"ability":"Beast Boost","item":"Sitrus Berry","nature":"Quiet","evs":{"hp":252,"at":4,"df":36,"sa":148,"sd":68},"moves":["Air Slash","Heavy Slam","Flamethrower","Leech Seed"]},
-    "1v1 Anti-Primarina": {"ability":"Beast Boost","item":"Mental Herb","nature":"Careful","evs":{"hp":252,"df":36,"sd":52,"sp":168},"moves":["Heavy Slam","Flamethrower","Leech Seed","Protect"]},
-    "1v1 Choice Band": {"ability":"Beast Boost","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":80,"df":36,"sd":140},"moves":["Heavy Slam","Superpower","Megahorn","Earthquake"]},
+    "1v1 Choice Band": {"ability":"Beast Boost","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":72,"df":36,"sd":140,"sp":8},"moves":["Heavy Slam","Megahorn","Earthquake","Superpower"]},
+    "1v1 Anti-Primarina": {"ability":"Beast Boost","item":"Mental Herb","nature":"Impish","evs":{"hp":248,"at":44,"df":56,"sd":144,"sp":16},"moves":["Heavy Slam","Flamethrower","Leech Seed","Protect"]},
+    "1v1 Anti-Urshifu": {"ability":"Beast Boost","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":248,"at":12,"df":248},"moves":["Air Slash","Leech Seed","Heavy Slam","Flamethrower"]},
     "National Dex Showdown Usage": {"ability":"Beast Boost","item":"Leftovers","nature":"Modest","evs":{"hp":56,"df":100,"sa":252,"sd":100},"moves":["Flamethrower","Flash Cannon","Leech Seed","Giga Drain"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Beast Boost","item":"Assault Vest","nature":"Adamant","evs":{"hp":236,"at":252,"sd":20},"moves":["Flash Cannon","Air Slash","Protect","Flamethrower"]}
   },
