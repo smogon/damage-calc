@@ -4373,6 +4373,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Special',
     zp: 195,
     maxPower: 140,
+    // Sheer Force boost implemented in gen789.ts
   },
   'Esper Wing': {
     bp: 80,
