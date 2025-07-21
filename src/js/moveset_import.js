@@ -284,7 +284,7 @@ function addSets(pokes, name) {
 		currentRow = rows[i].split(/[()@]/);
 		// Skip the current row if it contains the ability As One (Spectrier / Glastrier),
 		// so that it is not treated as another distinct set.
-		if(currentRow.length > 0 && currentRow[0].includes('As One')) continue;
+		if (currentRow.length > 0 && currentRow[0].includes('As One')) continue;
 		for (var j = 0; j < currentRow.length; j++) {
 			currentRow[j] = checkExeptions(currentRow[j].trim());
 			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
@@ -307,7 +307,7 @@ function addSets(pokes, name) {
 		}
 	}
 	if (addedpokes > 0) {
-		alert(`Successfully imported ${addedpokes} ${addedpokes === 1 ? "set" : "sets"}`);
+		alert("Successfully imported " + addedpokes + (addedpokes === 1 ? " set" : " sets"));
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
