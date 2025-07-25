@@ -111,7 +111,7 @@ var SETDEX_SV = {
     "National Dex RU Defensive Utility": {"ability":"Sheer Force","item":"Black Sludge","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":172,"sp":88},"moves":["Stealth Rock","Earth Power","Ice Beam","Protect"]}
   },
   "Nidoking": {
-    "National Dex Wallbreaker": {"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Sludge Wave","Earth Power","Ice Beam","Flamethrower"]},
+    "National Dex Wallbreaker": {"ability":"Sheer Force","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sludge Wave","Earth Power","Ice Beam","Flamethrower"]},
     "National Dex RU Offensive": {"ability":"Sheer Force","item":"Life Orb","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Sludge Wave","Ice Beam","Flamethrower"]},
     "National Dex Monotype Wallbreaker (Poison)": {"ability":"Sheer Force","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Ice Beam","Flamethrower","Stealth Rock"]},
     "National Dex UU Showdown Usage": {"ability":"Sheer Force","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Sludge Wave","Ice Beam","Flamethrower"]}
@@ -343,7 +343,7 @@ var SETDEX_SV = {
     "UU Showdown Usage": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","teraType":"Ghost","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Sludge Wave","Destiny Bond","Sludge Bomb"]}
   },
   "Electrode-Hisui": {
-    "PU Pivot": {"ability":"Soundproof","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Volt Switch","Thunderbolt","Leaf Storm","Taunt"]},
+    "PU Pivot": {"ability":"Aftermath","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Volt Switch","Thunderbolt","Leaf Storm","Taunt"]},
     "Almost Any Ability Offensive Pivot": {"ability":"Magic Guard","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Chloroblast","Volt Switch","Thunderbolt","Thunder Wave"]},
     "Almost Any Ability Magic Guard": {"ability":"Magic Guard","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Chloroblast","Thunder Wave"]}
   },
@@ -3085,7 +3085,7 @@ var SETDEX_SV = {
   },
   "Decidueye-Hisui": {
     "NU Defog": {"ability":"Scrappy","item":"Heavy-Duty Boots","nature":"Impish","teraType":"Steel","evs":{"hp":248,"df":252,"sd":8},"moves":["Defog","Roost","Triple Arrows","U-turn"]},
-    "PU Choice Scarf": {"ability":"Scrappy","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"df":4,"sp":252},"moves":["Triple Arrows","U-turn","Leaf Blade","Brave Bird"]}
+    "PU Choice Scarf": {"ability":"Scrappy","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Triple Arrows","U-turn","Leaf Blade","Brave Bird"]}
   },
   "Incineroar": {
     "NU Swords Dance": {"ability":"Intimidate","item":"Heavy-Duty Boots","nature":"Adamant","teraType":"Poison","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Flare Blitz","Knock Off","U-turn"]},

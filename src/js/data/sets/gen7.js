@@ -261,7 +261,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Grassy Surge","item":"Leftovers","nature":"Adamant","evs":{"hp":248,"at":252,"sd":8},"moves":["Horn Leech","Stone Edge","Superpower","Swords Dance"]}
   },
   "Tapu Fini": {
-    "OU Utility": {"ability":"Misty Surge","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":92,"sa":32,"sd":120,"sp":16},"moves":["Scald","Moonblast","Defog","Taunt"]},
+    "OU Utility": {"ability":"Misty Surge","item":"Leftovers","nature":"Calm","evs":{"hp":248,"df":92,"sa":32,"sd":120,"sp":16},"moves":["Surf","Moonblast","Defog","Taunt"]},
     "OU Offensive Calm Mind": {"ability":"Misty Surge","item":"Wiki Berry","nature":"Modest","evs":{"hp":196,"sa":216,"sp":96},"moves":["Calm Mind","Surf","Moonblast","Taunt"]},
     "OU Whirlpool Trapper": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":156,"sd":40,"sp":64},"moves":["Whirlpool","Taunt","Nature's Madness","Moonblast"]},
     "Doubles OU Support": {"ability":"Misty Surge","item":"Wiki Berry","nature":"Bold","evs":{"hp":252,"df":32,"sa":132,"sd":92},"moves":["Nature's Madness","Moonblast","Heal Pulse","Protect"]},

@@ -2976,7 +2976,7 @@ var SETDEX_XY = {
   },
   "Bibarel": {
     "PU Curse": {"ability":"Simple","item":"Chesto Berry","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Curse","Waterfall","Quick Attack","Rest"]},
-    "ZU Suicide Lead": {"ability":"Unaware","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Taunt","Double-Edge","Waterfall"]}
+    "ZU Hazard Lead": {"ability":"Unaware","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Taunt","Double-Edge","Waterfall"]}
   },
   "Kricketune": {
     "PU Sticky Web": {"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Sticky Web","Taunt","Endeavor","Knock Off"]},
@@ -3659,7 +3659,6 @@ var SETDEX_XY = {
   "Swoobat": {
     "PU Calm Mind": {"ability":"Simple","item":"Salac Berry","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Stored Power","Signal Beam","Substitute"]},
     "ZU Choice Specs": {"ability":"Unaware","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Air Slash","U-turn","Shadow Ball"]},
-    "ZU Dual Screens": {"ability":"Unaware","item":"Light Clay","nature":"Jolly","evs":{"hp":248,"sd":4,"sp":252},"moves":["Reflect","Light Screen","Taunt","U-turn"]},
     "ZU Calm Mind": {"ability":"Simple","item":"Kee Berry","nature":"Timid","evs":{"hp":248,"sd":8,"sp":252},"moves":["Calm Mind","Stored Power","Signal Beam","Roost"]}
   },
   "Drilbur": {
