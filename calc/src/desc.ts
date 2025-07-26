@@ -149,13 +149,15 @@ export function getRecovery(
       [minD, maxD] = multiDamageRange(damage) as [number[], number[]];
     }
     const percentHealed = move.drain[0] / move.drain[1];
-    const max = Math.round(defender.curHP() * percentHealed);
+    const attackerHasBigRoot = (attacker.hasItem('Big Root'));
+    let maxDrain = Math.round(defender.curHP() * percentHealed);
+    if (attackerHasBigRoot) maxDrain = Math.trunc(maxDrain * 5324 / 4096);
     for (let i = 0; i < minD.length; i++) {
       const range = [minD[i], maxD[i]];
       for (const j in recovery) {
         let drained = Math.max(Math.round(range[j] * percentHealed), 1);
-        if (attacker.hasItem('Big Root')) drained = Math.trunc(drained * 5324 / 4096);
-        recovery[j] += Math.min(drained, max);
+        if (attackerHasBigRoot) drained = Math.trunc(drained * 5324 / 4096);
+        recovery[j] += Math.min(drained, maxDrain);
       }
     }
   }

@@ -1180,6 +1180,22 @@ describe('calc', () => {
         expect(result.range()).toEqual([38, 46]);
         expect(result.recovery().recovery).toEqual([24, 29]);
       });
+      test('Big Root applies to OHKO', () => {
+        const bigRoot = Pokemon('Blissey', {item: 'Big Root'});
+        // 100 HP
+        const weak = Pokemon('Abomasnow', {
+          item: 'Icy Rock',
+          ability: 'Snow Warning',
+          nature: 'Hasty',
+          evs: {atk: 252, spd: 4, spe: 252},
+          level: 29,
+        });
+        // Guaranteed OHKO
+        const result = calculate(bigRoot, weak, Move('Drain Punch'));
+        expect(result.range()).toEqual([120, 142]);
+        // 100 damage * (50% heal * ~1.3 big root boost = ~64.99% heal) truncates to 64 HP recovered
+        expect(result.recovery().recovery).toEqual([64, 64]);
+      });
       test('Loaded Field', () => {
         const field = Field({
           gameType: 'Doubles',
