@@ -629,7 +629,7 @@ var SETDEX_DPP = {
     "UU Support": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Psychic","Heal Bell","Wish","Protect"]},
     "UU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"sa":30,"sd":30},"evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Psychic","Hidden Power Ground","Recover"]},
     "ZU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Hidden Power Fighting","Trick","Healing Wish"]},
-    "ZU Wish": {"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":248,"sd":8},"moves":["Wish","Protect","Psychic","Hidden Power Fighting"]}
+    "ZU Wish": {"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":248,"df":8,"sd":252},"moves":["Wish","Protect","Psychic","Hidden Power Fighting"]}
   },
   "Burmy": {
     "LC Tank": {"level":5,"ability":"Shed Skin","item":"Oran Berry","nature":"Relaxed","ivs":{"at":30,"df":30},"evs":{"hp":196,"at":208,"df":80},"moves":["Bug Bite","String Shot","Protect","Hidden Power Ice"]}
