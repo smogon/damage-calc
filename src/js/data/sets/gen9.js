@@ -1708,7 +1708,7 @@ var SETDEX_SV = {
     "NU Aurora Veil Setter": {"ability":"Snow Warning","item":"Heavy-Duty Boots","nature":"Bold","teraType":"Water","evs":{"hp":248,"df":252,"sp":8},"moves":["Aurora Veil","Blizzard","Giga Drain","Earth Power"]},
     "NU Special Attacker": {"ability":"Snow Warning","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Ground","evs":{"df":4,"sa":252,"sp":252},"moves":["Blizzard","Giga Drain","Earth Power","Leech Seed"]},
     "PU Aurora Veil": {"ability":"Snow Warning","item":"Eject Pack","nature":"Timid","teraType":"Ghost","evs":{"df":4,"sa":252,"sp":252},"moves":["Aurora Veil","Leaf Storm","Blizzard","Earth Power"]},
-    "Monotype Aurora Veil (Grass)": {"ability":"Snow Warning","item":"Heavy-Duty Boots","nature":"Relaxed","evs":{"hp":248,"df":252,"sd":8},"moves":["Aurora Veil","Blizzard","Body Press","Ice Shard"]},
+    "Monotype Sailor Snow (Aurora Veil Support) (Grass)": {"ability":"Snow Warning","item":"Heavy-Duty Boots","nature":"Relaxed","evs":{"hp":248,"df":252,"sd":8},"moves":["Aurora Veil","Blizzard","Ice Shard","Body Press"]},
     "Monotype Hail Setter (Ice)": {"ability":"Snow Warning","item":"Icy Rock","nature":"Modest","ivs":{"at":0},"evs":{"hp":40,"sa":252,"sp":216},"moves":["Aurora Veil","Blizzard","Giga Drain","Earth Power"]},
     "ZU Aurora Veil": {"ability":"Snow Warning","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Water","ivs":{"at":0},"evs":{"hp":248,"sa":252,"sd":8},"moves":["Aurora Veil","Blizzard","Giga Drain","Earth Power"]},
     "National Dex Doubles Showdown Usage": {"ability":"Snow Warning","item":"Abomasite","nature":"Quiet","teraType":"Grass","evs":{"hp":252,"df":4,"sa":252},"moves":["Blizzard","Protect","Giga Drain","Ice Shard"]}
@@ -3927,8 +3927,9 @@ var SETDEX_SV = {
     "BSS Reg I Agility": {"level":50,"ability":"Adaptability","item":"Focus Sash","nature":"Adamant","teraType":"Ghost","evs":{"hp":4,"at":252,"sp":252},"moves":["Agility","Last Respects","Wave Crash","Aqua Jet"]},
     "Monotype Choice Band (Water)": {"ability":"Swift Swim","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Wave Crash","Aqua Jet","Psychic Fangs","Liquidation"]},
     "National Dex Ubers Choice Scarf Sweeper": {"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"df":4,"sp":252},"moves":["Last Respects","Wave Crash","Tera Blast","Flip Turn"]},
+    "National Dex Doubles Swift Swim": {"ability":"Swift Swim","item":"Life Orb","nature":"Adamant","teraType":"Ghost","evs":{"hp":160,"at":128,"sp":220},"moves":["Wave Crash","Last Respects","Aqua Jet","Flip Turn"]},
+    "National Dex Doubles Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","teraType":"Ghost","evs":{"at":252,"sd":4,"sp":252},"moves":["Wave Crash","Last Respects","Aqua Jet","Flip Turn"]},
     "1v1 Showdown Usage": {"ability":"Adaptability","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Phantom Force","Wave Crash","Aqua Jet","Night Shade"]},
-    "National Dex Doubles Showdown Usage": {"ability":"Swift Swim","item":"Focus Sash","nature":"Adamant","teraType":"Ghost","evs":{"at":252,"sd":4,"sp":252},"moves":["Last Respects","Aqua Jet","Wave Crash","Flip Turn"]},
     "UU Showdown Usage": {"ability":"Swift Swim","item":"Choice Band","nature":"Adamant","teraType":"Water","evs":{"at":252,"sd":4,"sp":252},"moves":["Wave Crash","Flip Turn","Psychic Fangs","Aqua Jet"]},
     "National Dex RU Showdown Usage": {"ability":"Adaptability","item":"Ghostium Z","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Aqua Jet","Phantom Force","Liquidation","Substitute"]}
   },
@@ -5054,6 +5055,7 @@ var SETDEX_SV = {
   },
   "Terapagos": {
     "VGC 2025 Reg I Bulky Setup Sweeper": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Bold","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"df":204,"sa":68,"sd":12,"sp":52},"moves":["Tera Starstorm","Calm Mind","Protect","Earth Power"]},
+    "VGC 2025 Reg I Power Herb": {"level":50,"ability":"Tera Shell","item":"Power Herb","nature":"Timid","teraType":"Stellar","evs":{"hp":4,"sa":252,"sp":252},"moves":["Tera Starstorm","Meteor Beam","Earth Power","Protect"]},
     "BSS Reg I Double Dance": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"sa":236,"sp":100},"moves":["Calm Mind","Tera Starstorm","Rock Polish","Protect"]},
     "BSS Reg I Choice Specs": {"level":50,"ability":"Tera Shell","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":196,"sa":252,"sp":60},"moves":["Tera Starstorm","Dark Pulse","Dazzling Gleam","Earth Power"]},
     "Monotype Choice Specs": {"ability":"Tera Shell","item":"Choice Specs","nature":"Timid","ivs":{"at":15},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Ice Beam","Earth Power","Flamethrower"]},
@@ -5070,6 +5072,7 @@ var SETDEX_SV = {
   },
   "Terapagos-Stellar": {
     "VGC 2025 Reg I Bulky Setup Sweeper": {"level":50,"ability":"Teraform Zero","item":"Leftovers","nature":"Bold","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"df":204,"sa":68,"sd":12,"sp":52},"moves":["Tera Starstorm","Calm Mind","Protect","Earth Power"]},
+    "VGC 2025 Reg I Power Herb": {"level":50,"ability":"Teraform Zero","item":"Power Herb","nature":"Timid","teraType":"Stellar","evs":{"hp":4,"sa":252,"sp":252},"moves":["Tera Starstorm","Meteor Beam","Earth Power","Protect"]},
     "BSS Reg I Double Dance": {"level":50,"ability":"Teraform Zero","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"sa":236,"sp":100},"moves":["Calm Mind","Tera Starstorm","Rock Polish","Protect"]},
     "BSS Reg I Choice Specs": {"level":50,"ability":"Teraform Zero","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":196,"sa":252,"sp":60},"moves":["Tera Starstorm","Dark Pulse","Dazzling Gleam","Earth Power"]},
     "Monotype Choice Specs": {"ability":"Teraform Zero","item":"Choice Specs","nature":"Timid","ivs":{"at":15},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Ice Beam","Earth Power","Flamethrower"]},
@@ -5086,6 +5089,7 @@ var SETDEX_SV = {
   },
   "Terapagos-Terastal": {
     "VGC 2025 Reg I Bulky Setup Sweeper": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Bold","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"df":204,"sa":68,"sd":12,"sp":52},"moves":["Tera Starstorm","Calm Mind","Protect","Earth Power"]},
+    "VGC 2025 Reg I Power Herb": {"level":50,"ability":"Tera Shell","item":"Power Herb","nature":"Timid","teraType":"Stellar","evs":{"hp":4,"sa":252,"sp":252},"moves":["Tera Starstorm","Meteor Beam","Earth Power","Protect"]},
     "BSS Reg I Double Dance": {"level":50,"ability":"Tera Shell","item":"Leftovers","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":172,"sa":236,"sp":100},"moves":["Calm Mind","Tera Starstorm","Rock Polish","Protect"]},
     "BSS Reg I Choice Specs": {"level":50,"ability":"Tera Shell","item":"Choice Specs","nature":"Modest","teraType":"Stellar","ivs":{"at":15},"evs":{"hp":196,"sa":252,"sp":60},"moves":["Tera Starstorm","Dark Pulse","Dazzling Gleam","Earth Power"]},
     "Monotype Choice Specs": {"ability":"Tera Shell","item":"Choice Specs","nature":"Timid","ivs":{"at":15},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Tera Starstorm","Ice Beam","Earth Power","Flamethrower"]},
