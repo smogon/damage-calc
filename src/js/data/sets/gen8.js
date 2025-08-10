@@ -32,9 +32,8 @@ var SETDEX_SS = {
     "Battle Stadium Singles Trick Room Support": {"level":50,"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Trick Room","Psychic","Moonlight","Lunar Dance"]},
     "1v1 Skill Swap": {"ability":"Levitate","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"df":168,"sd":36,"sp":56},"moves":["Calm Mind","Moonlight","Stored Power","Skill Swap"]},
     "1v1 Icy Wind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":128,"sd":60,"sp":68},"moves":["Calm Mind","Moonlight","Icy Wind","Stored Power"]},
-    "1v1 Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Bold","evs":{"hp":196,"df":16,"sa":64,"sp":232},"moves":["Psychic","Ice Beam","Trick","Rest"]},
-    "1v1 Defensive Kee Berry": {"ability":"Levitate","item":"Kee Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Psyshock","Calm Mind","Moonlight","Reflect"]},
-    "1v1 Fast Kee Berry": {"ability":"Levitate","item":"Kee Berry","nature":"Timid","evs":{"hp":240,"df":12,"sd":4,"sp":252},"moves":["Moonlight","Calm Mind","Stored Power","Reflect"]},
+    "1v1 Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Bold","evs":{"hp":196,"df":16,"sa":64,"sp":232},"moves":["Psychic","Ice Beam","Trick","Rest"]},
+    "1v1 Defensive Kee": {"ability":"Levitate","item":"Kee Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonlight","Calm Mind","Stored Power","Reflect"]},
     "CAP Showdown Usage": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Lunar Dance","Psyshock","Thunder Wave"]}
   },
   "Zacian": {
