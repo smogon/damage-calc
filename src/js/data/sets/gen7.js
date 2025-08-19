@@ -1208,7 +1208,7 @@ var SETDEX_SM = {
     "PU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"sd":204,"sp":56},"moves":["Roost","Defog","Freeze-Dry","Heal Bell"]}
   },
   "Zapdos": {
-    "OU Defensive": {"ability":"Static","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":184,"sp":72},"moves":["Discharge","Heat Wave","Hidden Power Ice","Roost"]},
+    "OU Defensive": {"ability":"Static","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":240,"sp":20},"moves":["Volt Switch","Heat Wave","Hidden Power Ice","Roost"]},
     "Doubles OU Bulky Speed Control": {"ability":"Static","item":"Wiki Berry","nature":"Calm","evs":{"hp":244,"df":80,"sa":64,"sd":56,"sp":64},"moves":["Thunderbolt","Heat Wave","Tailwind","Roost"]},
     "VGC 2018 Offensive Tailwind": {"level":50,"ability":"Pressure","item":"Electrium Z","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":60,"df":108,"sa":148,"sd":4,"sp":188},"moves":["Tailwind","Thunderbolt","Hidden Power Ice","Detect"]},
     "VGC 2018 Terrain Abuser": {"level":50,"ability":"Pressure","item":"Misty Seed","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":204,"df":124,"sa":36,"sd":100,"sp":44},"moves":["Tailwind","Thunderbolt","Hidden Power Ice","Roost"]},
