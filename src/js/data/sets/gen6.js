@@ -1695,7 +1695,7 @@ var SETDEX_XY = {
     "ZU Swords Dance": {"ability":"Infiltrator","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Acrobatics","Sleep Powder","Seed Bomb"]}
   },
   "Aipom": {
-    "LC Wallbreaker": {"level":5,"ability":"Skill Link","item":"Life Orb","nature":"Jolly","evs":{"at":116,"df":76,"sd":76,"sp":236},"moves":["Fake Out","Fury Swipes","Knock Off","Brick Break"]}
+    "LC Wallbreaker": {"level":5,"ability":"Skill Link","item":"Life Orb","nature":"Jolly","evs":{"at":196,"df":76,"sp":236},"moves":["Fake Out","Fury Swipes","Knock Off","Brick Break"]}
   },
   "Sunflora": {
     "PU Synthesis + 3 Attacks": {"ability":"Solar Power","item":"Life Orb","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":92,"sa":252,"sp":164},"moves":["Leaf Storm","Earth Power","Hidden Power Ice","Synthesis"]}

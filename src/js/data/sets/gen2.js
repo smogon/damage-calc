@@ -29,7 +29,7 @@ var SETDEX_GSC = {
   },
   "Butterfree": {
     "OU Double Powder": {"item":"Leftovers","moves":["Sleep Powder","Stun Spore","Psychic","Giga Drain"]},
-    "ZU Utility": {"ivs":{"hp":22,"at":26,"df":24},"moves":["Sleep Powder","Stun Spore","Psychic","Hidden Power Rock"]}
+    "ZU Utility": {"item":"Miracle Berry","ivs":{"hp":22,"at":26,"df":24},"moves":["Sleep Powder","Stun Spore","Psychic","Hidden Power Rock"]}
   },
   "Beedrill": {
     "OU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Sludge Bomb","Hidden Power Ground","Swords Dance","Agility"]},

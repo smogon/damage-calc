@@ -529,6 +529,7 @@ var SETDEX_SV = {
   },
   "Zapdos": {
     "OU Defensive": {"ability":"Static","item":"Heavy-Duty Boots","nature":"Bold","teraType":"Steel","ivs":{"at":0},"evs":{"hp":248,"df":244,"sp":16},"moves":["Hurricane","Volt Switch","Thunder Wave","Roost"]},
+    "OU Offensive": {"ability":"Static","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Hurricane","Volt Switch","Heat Wave","Roost"]},
     "BSS Reg I Defensive Pivot": {"level":50,"ability":"Static","item":"Rocky Helmet","nature":"Bold","teraType":"Water","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Volt Switch","Roost","Hurricane","Discharge"]},
     "BSS Reg I Choice Scarf": {"level":50,"ability":"Static","item":"Choice Scarf","nature":"Timid","teraType":"Ice","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hurricane","Volt Switch","Tera Blast"]},
     "Monotype SubRoost (Flying)": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"hp":72,"df":64,"sa":120,"sp":252},"moves":["Substitute","Discharge","Hurricane","Roost"]},
@@ -2541,9 +2542,9 @@ var SETDEX_SV = {
     "BSS Reg I Offensive Quiver Dance": {"level":50,"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Quiver Dance","Fiery Dance","Giga Drain","Tera Blast"]},
     "BSS Reg I SOLAR FLARE (Choiced Attacker)": {"level":50,"ability":"Flame Body","item":"Choice Specs","nature":"Timid","teraType":"Fire","evs":{"hp":4,"sa":252,"sp":252},"moves":["Fiery Dance","Overheat","Bug Buzz","Giga Drain"]},
     "Monotype The Original Moth (Bug)": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Flamethrower","Psychic","Morning Sun"]},
-    "Monotype Bulky Setup (Bug)": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Modest","ivs":{"at":0},"evs":{"hp":120,"df":132,"sa":96,"sp":160},"moves":["Quiver Dance","Flamethrower","Psychic","Morning Sun"]},
+    "Monotype Bulky Setup (Bug)": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Modest","ivs":{"at":0},"evs":{"hp":140,"df":132,"sa":96,"sp":140},"moves":["Quiver Dance","Flamethrower","Psychic","Morning Sun"]},
     "Monotype Quiver Dance (Fire)": {"ability":"Swarm","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Quiver Dance","Bug Buzz","Psychic","Flamethrower"]},
-    "Monotype Bulkarona (Bulky Quiver Dance) (Fire)": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"hp":196,"df":252,"sp":60},"moves":["Quiver Dance","Fiery Dance","Psychic","Morning Sun"]},
+    "Monotype Bulkarona (Bulky Quiver Dance) (Fire)": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"hp":212,"df":252,"sp":44},"moves":["Quiver Dance","Fiery Dance","Psychic","Morning Sun"]},
     "National Dex Offensive Quiver Dance": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Flamethrower","Bug Buzz","Hidden Power Ground"]},
     "National Dex Bulky Quiver Dance": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"hp":248,"df":200,"sp":60},"moves":["Quiver Dance","Flamethrower","Hidden Power Ground","Roost"]},
     "National Dex Substitute + Swarm": {"ability":"Swarm","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Quiver Dance","Flamethrower","Bug Buzz","Substitute"]},
@@ -2999,7 +3000,7 @@ var SETDEX_SV = {
     "NU Special Wall": {"ability":"Clear Body","item":"Leftovers","nature":"Sassy","teraType":"Water","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Diamond Storm","Body Press","Encore"]},
     "NU Meteor Beam": {"ability":"Clear Body","item":"Power Herb","nature":"Quiet","teraType":"Grass","ivs":{"sp":0},"evs":{"hp":252,"sa":252,"sd":4},"moves":["Meteor Beam","Moonblast","Earth Power","Trick Room"]},
     "Doubles OU Trick Room Sweeper": {"ability":"Clear Body","item":"Weakness Policy","nature":"Sassy","teraType":"Grass","ivs":{"sp":0},"evs":{"hp":252,"at":232,"df":24},"moves":["Diamond Storm","Body Press","Trick Room","Protect"]},
-    "National Dex Wallbreaker": {"ability":"Magic Bounce","item":"Diancite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Moonblast","Earth Power","Mystical Fire","Power Gem"]},
+    "National Dex Wallbreaker": {"ability":"Magic Bounce","item":"Diancite","nature":"Timid","evs":{"at":28,"sa":228,"sp":252},"moves":["Moonblast","Earth Power","Mystical Fire","Diamond Storm"]},
     "National Dex Lead": {"ability":"Clear Body","item":"Diancite","nature":"Timid","ivs":{"at":0},"evs":{"hp":240,"df":16,"sp":252},"moves":["Stealth Rock","Moonblast","Substitute","Endeavor"]},
     "National Dex Ubers Lead": {"ability":"Clear Body","item":"Diancite","nature":"Hasty","teraType":"Rock","evs":{"hp":108,"sa":184,"sp":216},"moves":["Diamond Storm","Moonblast","Explosion","Spikes"]},
     "National Dex Ubers Wallbreaker": {"ability":"Magic Bounce","item":"Diancite","nature":"Hasty","teraType":"Rock","evs":{"hp":24,"at":32,"sa":220,"sd":16,"sp":216},"moves":["Diamond Storm","Moonblast","Earth Power","Substitute"]},
@@ -3010,7 +3011,7 @@ var SETDEX_SV = {
     "National Dex Doubles Trick Room Setter": {"ability":"Clear Body","item":"Weakness Policy","nature":"Sassy","teraType":"Grass","ivs":{"sp":0},"evs":{"hp":252,"at":232,"df":24},"moves":["Diamond Storm","Body Press","Trick Room","Protect"]}
   },
   "Diancie-Mega": {
-    "National Dex Wallbreaker": {"ability":"Magic Bounce","item":"Diancite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Moonblast","Earth Power","Mystical Fire","Power Gem"]},
+    "National Dex Wallbreaker": {"ability":"Magic Bounce","item":"Diancite","nature":"Timid","evs":{"at":28,"sa":228,"sp":252},"moves":["Moonblast","Earth Power","Mystical Fire","Diamond Storm"]},
     "National Dex Lead": {"ability":"Magic Bounce","item":"Diancite","nature":"Timid","ivs":{"at":0},"evs":{"hp":240,"df":16,"sp":252},"moves":["Stealth Rock","Moonblast","Substitute","Endeavor"]},
     "National Dex Ubers Lead": {"ability":"Magic Bounce","item":"Diancite","nature":"Hasty","teraType":"Rock","evs":{"hp":108,"sa":184,"sp":216},"moves":["Diamond Storm","Moonblast","Explosion","Spikes"]},
     "National Dex Ubers Wallbreaker": {"ability":"Magic Bounce","item":"Diancite","nature":"Hasty","teraType":"Rock","evs":{"hp":24,"at":32,"sa":220,"sd":16,"sp":216},"moves":["Diamond Storm","Moonblast","Earth Power","Substitute"]},
@@ -3701,7 +3702,7 @@ var SETDEX_SV = {
     "NU Special Attacker": {"ability":"Heavy Metal","item":"Eviolite","nature":"Timid","teraType":"Fairy","evs":{"df":40,"sa":216,"sp":252},"moves":["Flash Cannon","Draco Meteor","Body Press","Stealth Rock"]}
   },
   "Drakloak": {
-    "NFE RestTalk": {"ability":"Infiltrator","item":"Eviolite","nature":"Jolly","evs":{"hp":252,"df":40,"sp":216},"moves":["Night Shade","Dragon Tail","Rest","Sleep Talk"]},
+    "NFE RestTalk": {"ability":"Clear Body","item":"Eviolite","nature":"Jolly","evs":{"hp":252,"df":40,"sp":216},"moves":["Night Shade","Dragon Tail","Rest","Sleep Talk"]},
     "NFE Choice Specs": {"ability":"Infiltrator","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Shadow Ball","Hydro Pump","Thunderbolt"]}
   },
   "Dragapult": {
@@ -3851,9 +3852,9 @@ var SETDEX_SV = {
     "Ubers Nasty Plot": {"ability":"Grim Neigh","item":"Leftovers","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Substitute","Shadow Ball","Draining Kiss"]},
     "Ubers Choice Specs": {"ability":"Grim Neigh","item":"Choice Specs","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Tera Blast","Will-O-Wisp","Dark Pulse"]},
     "Doubles OU Nasty Plot": {"ability":"Grim Neigh","item":"Leftovers","nature":"Timid","teraType":"Fairy","evs":{"df":136,"sa":104,"sd":104,"sp":164},"moves":["Shadow Ball","Draining Kiss","Nasty Plot","Protect"]},
+    "Monotype Specstrier": {"ability":"Grim Neigh","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Draining Kiss","Hex","Will-O-Wisp"]},
     "Monotype Nasty Plot": {"ability":"Grim Neigh","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Substitute","Shadow Ball","Draining Kiss"]},
     "Monotype Calm Mind": {"ability":"Grim Neigh","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":40,"df":124,"sa":144,"sp":200},"moves":["Calm Mind","Substitute","Will-O-Wisp","Hex"]},
-    "Monotype Choice Specs": {"ability":"Grim Neigh","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Draining Kiss","Hex","Will-O-Wisp"]},
     "1v1 Life Orb": {"ability":"Grim Neigh","item":"Life Orb","nature":"Timid","evs":{"hp":4,"df":124,"sa":180,"sp":200},"moves":["Hex","Hyper Beam","Will-O-Wisp","Calm Mind"]},
     "1v1 Choice Specs": {"ability":"Grim Neigh","item":"Choice Specs","nature":"Timid","evs":{"hp":80,"df":32,"sa":176,"sd":4,"sp":216},"moves":["Shadow Ball","Hyper Beam","Psychic","Mud Shot"]},
     "1v1 Sitrus Berry + Disable": {"ability":"Grim Neigh","item":"Sitrus Berry","nature":"Timid","evs":{"hp":240,"sd":16,"sp":252},"moves":["Calm Mind","Shadow Ball","Disable","Substitute"]},
