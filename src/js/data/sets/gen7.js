@@ -3215,7 +3215,7 @@ var SETDEX_SM = {
     "NFE Offensive": {"ability":"Contrary","item":"Eviolite","nature":"Calm","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Knock Off","Glare","Hidden Power Fire"]}
   },
   "Serperior": {
-    "OU Taunt Support": {"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":208,"df":48,"sp":252},"moves":["Leaf Storm","Taunt","Glare","Defog"]},
+    "OU Utility": {"ability":"Contrary","item":"Rocky Helmet","nature":"Timid","evs":{"hp":208,"df":48,"sp":252},"moves":["Leaf Storm","Taunt","Glare","Defog"]},
     "OU Substitute": {"ability":"Contrary","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":200,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Substitute","Leech Seed"]},
     "OU Choice Scarf": {"ability":"Contrary","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Glare","Defog","Knock Off"]},
     "Battle Spot Singles Focus Sash Lead": {"level":50,"ability":"Contrary","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Leaf Storm","Hidden Power Fire","Glare","Taunt"]},
@@ -3644,7 +3644,7 @@ var SETDEX_SM = {
     "LC Wall": {"level":5,"ability":"Iron Barbs","item":"Eviolite","nature":"Impish","evs":{"hp":84,"at":36,"df":108,"sd":228,"sp":36},"moves":["Bullet Seed","Knock Off","Thunder Wave","Stealth Rock"]}
   },
   "Ferrothorn": {
-    "OU Hazard Setter": {"ability":"Iron Barbs","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":24,"sd":232},"moves":["Spikes","Leech Seed","Gyro Ball","Power Whip"]},
+    "OU Entry Hazard Setter": {"ability":"Iron Barbs","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":16,"sd":240},"moves":["Power Whip","Spikes","Gyro Ball","Leech Seed"]},
     "Ubers Defensive": {"ability":"Iron Barbs","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":4,"sd":252},"moves":["Toxic","Spikes","Leech Seed","Gyro Ball"]},
     "Doubles OU Bulky Pivot": {"ability":"Iron Barbs","item":"Wiki Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":88,"df":88,"sd":80},"moves":["Gyro Ball","Power Whip","Stealth Rock","Protect"]},
     "VGC 2019 Leech Seed": {"level":50,"ability":"Iron Barbs","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":52,"sd":204},"moves":["Power Whip","Gyro Ball","Leech Seed","Protect"]},

@@ -3703,7 +3703,7 @@ var SETDEX_SS = {
     "National Dex Substitute + Bulk Up": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":44,"sd":144,"sp":68},"moves":["Substitute","Bulk Up","Roost","Brave Bird"]},
     "National Dex Monotype Iron Defense (Steel)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":140,"sd":120},"moves":["Iron Defense","Body Press","Roost","U-turn"]},
     "National Dex Monotype Bulk Up (Steel)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":248,"df":140,"sd":120},"moves":["Bulk Up","Brave Bird","Roost","Taunt"]},
-    "1v1 Iron Defense Stall": {"ability":"Pressure","item":"Maranga Berry","nature":"Impish","evs":{"hp":116,"sd":184,"sp":208},"moves":["Taunt","Roost","Iron Defense","Body Press"]},
+    "1v1 Iron Defense Stall": {"ability":"Pressure","item":"Maranga Berry","nature":"Calm","evs":{"hp":248,"df":8,"sd":44,"sp":208},"moves":["Taunt","Roost","Iron Defense","Body Press"]},
     "1v1 Substitute Stall": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":160,"sd":228,"sp":120},"moves":["Taunt","Roost","Substitute","Iron Head"]},
     "CAP Defog": {"ability":"Pressure","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":168,"sd":88},"moves":["Defog","Body Press","U-turn","Roost"]}
   },
