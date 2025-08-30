@@ -8997,7 +8997,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Dunsparce: {nfe: true},
   Duraludon: {nfe: true},
   Girafarig: {nfe: true},
-  Kitsunoh: {bs: {at: 117, sp: 128}},
+  Kitsunoh: {bs: {at: 103, sp: 120}},
   Primeape: {nfe: true},
   Tauros: {otherFormes: ['Tauros-Paldea-Aqua', 'Tauros-Paldea-Blaze', 'Tauros-Paldea-Combat']},
   Wooper: {otherFormes: ['Wooper-Paldea']},
