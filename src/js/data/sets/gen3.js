@@ -273,7 +273,7 @@ var SETDEX_ADV = {
   "Swampert": {
     "OU Standard Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Relaxed","evs":{"hp":248,"df":216,"sd":44},"moves":["Earthquake","Ice Beam","Protect","Hydro Pump"]},
     "OU Surf Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":204,"sd":44,"sp":12},"moves":["Surf","Toxic","Protect","Refresh"]},
-    "OU Standard Offensive": {"ability":"Torrent","item":"Leftovers","nature":"Rash","evs":{"df":108,"sa":252,"sp":148},"moves":["Hydro Pump","Earthquake","Ice Beam","Focus Punch"]},
+    "OU Standard Offensive": {"ability":"Torrent","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"sa":212,"sp":44},"moves":["Hydro Pump","Earthquake","Ice Beam","Focus Punch"]},
     "OU Substitute + Salac Berry": {"ability":"Torrent","item":"Salac Berry","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Substitute","Endeavor","Hydro Pump","Roar"]},
     "Doubles OU Mixed Attacker": {"ability":"Torrent","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"at":84,"sa":128,"sd":44},"moves":["Earthquake","Ice Beam","Hydro Pump","Protect"]}
   },
@@ -862,7 +862,7 @@ var SETDEX_ADV = {
     "OU Acid Armor + Baton Pass": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":228,"sd":28},"moves":["Acid Armor","Baton Pass","Roar","Substitute"]}
   },
   "Jolteon": {
-    "OU Standard": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":76,"sa":180,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Baton Pass","Roar"]}
+    "OU Standard": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Baton Pass","Roar"]}
   },
   "Flareon": {
     "RU Mixed Offensive": {"ability":"Flash Fire","item":"Silk Scarf","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":152,"sa":144,"sp":212},"moves":["Fire Blast","Double-Edge","Hidden Power Grass","Quick Attack"]},
