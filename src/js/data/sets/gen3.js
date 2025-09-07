@@ -273,7 +273,7 @@ var SETDEX_ADV = {
   "Swampert": {
     "OU Standard Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Relaxed","evs":{"hp":248,"df":216,"sd":44},"moves":["Earthquake","Ice Beam","Protect","Hydro Pump"]},
     "OU Surf Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":204,"sd":44,"sp":12},"moves":["Surf","Toxic","Protect","Refresh"]},
-    "OU Standard Offensive": {"ability":"Torrent","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"sa":212,"sp":44},"moves":["Hydro Pump","Earthquake","Ice Beam","Focus Punch"]},
+    "OU Standard Offensive": {"ability":"Torrent","item":"Leftovers","nature":"Quiet","evs":{"hp":248,"sa":216,"sp":44},"moves":["Hydro Pump","Earthquake","Ice Beam","Focus Punch"]},
     "OU Substitute + Salac Berry": {"ability":"Torrent","item":"Salac Berry","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Substitute","Endeavor","Hydro Pump","Roar"]},
     "Doubles OU Mixed Attacker": {"ability":"Torrent","item":"Leftovers","nature":"Quiet","evs":{"hp":252,"at":84,"sa":128,"sd":44},"moves":["Earthquake","Ice Beam","Hydro Pump","Protect"]}
   },

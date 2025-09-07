@@ -4093,7 +4093,8 @@ var SETDEX_SS = {
     "1v1 Sitrus Berry + Disable": {"ability":"Grim Neigh","item":"Sitrus Berry","nature":"Timid","evs":{"hp":240,"sd":16,"sp":252},"moves":["Calm Mind","Shadow Ball","Disable","Will-O-Wisp"]},
     "1v1 Choice Specs": {"ability":"Grim Neigh","item":"Choice Specs","nature":"Modest","evs":{"hp":120,"sa":172,"sd":84,"sp":132},"moves":["Shadow Ball","Hyper Beam","Mud Shot","Uproar"]},
     "1v1 Weakness Policy": {"ability":"Grim Neigh","item":"Weakness Policy","nature":"Timid","evs":{"hp":168,"df":208,"sa":44,"sp":88},"moves":["Calm Mind","Will-O-Wisp","Hex","Mud Shot"]},
-    "1v1 Life Orb": {"ability":"Grim Neigh","item":"Life Orb","nature":"Modest","evs":{"hp":12,"df":140,"sa":104,"sp":252},"moves":["Calm Mind","Will-O-Wisp","Hyper Beam","Hex"]}
+    "1v1 Life Orb": {"ability":"Grim Neigh","item":"Life Orb","nature":"Modest","evs":{"hp":12,"df":160,"sa":84,"sp":252},"moves":["Hex","Hyper Beam","Will-O-Wisp","Calm Mind"]},
+    "1v1 Rocky Helmet": {"ability":"Grim Neigh","item":"Rocky Helmet","nature":"Modest","ivs":{"at":0},"evs":{"hp":96,"df":248,"sa":12,"sp":152},"moves":["Hex","Mud Shot","Will-O-Wisp","Taunt"]}
   },
   "Calyrex": {
     "ZU Double Dance": {"ability":"Unnerve","item":"Weakness Policy","nature":"Modest","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Agility","Calm Mind","Giga Drain","Stored Power"]}
