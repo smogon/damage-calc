@@ -354,7 +354,8 @@ var SETDEX_SS = {
   },
   "Farfetch’d-Galar": {
     "LC Choice Scarf": {"level":5,"ability":"Scrappy","item":"Choice Scarf","nature":"Jolly","evs":{"hp":20,"at":236,"sp":236},"moves":["Close Combat","Brave Bird","Final Gambit","Knock Off"]},
-    "LC Life Orb": {"level":5,"ability":"Scrappy","item":"Life Orb","nature":"Jolly","evs":{"hp":20,"at":236,"sp":236},"moves":["Close Combat","Knock Off","Brave Bird","Quick Attack"]}
+    "LC Life Orb": {"level":5,"ability":"Scrappy","item":"Life Orb","nature":"Jolly","evs":{"hp":20,"at":236,"sp":236},"moves":["Close Combat","Knock Off","Brave Bird","Quick Attack"]},
+    "NFE Swords Dance": {"ability":"Scrappy","item":"Eviolite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","Swords Dance","Final Gambit"]}
   },
   "Muk-Alola": {
     "National Dex Monotype Pain Split (Poison)": {"ability":"Poison Touch","item":"Black Sludge","nature":"Careful","evs":{"hp":252,"at":20,"df":12,"sd":224},"moves":["Pain Split","Protect","Pursuit","Knock Off"]},
@@ -2248,7 +2249,7 @@ var SETDEX_SS = {
     "PU Defensive Utility": {"ability":"Cursed Body","item":"Colbur Berry","nature":"Bold","evs":{"hp":252,"df":180,"sp":76},"moves":["Recover","Taunt","Will-O-Wisp","Hex"]},
     "PU Special Wallbreaker": {"ability":"Water Absorb","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Water Spout","Shadow Ball","Trick","Surf"]},
     "Monotype Physically Defensive Wall (Ghost)": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Scald","Taunt","Strength Sap","Will-O-Wisp"]},
-    "1v1 Maranga Berry": {"ability":"Cursed Body","item":"Maranga Berry","nature":"Careful","evs":{"hp":252,"df":80,"sd":96,"sp":80},"moves":["Scald","Strength Sap","Taunt","Recover"]},
+    "1v1 Maranga Berry": {"ability":"Cursed Body","item":"Maranga Berry","nature":"Calm","evs":{"hp":252,"df":80,"sd":96,"sp":80},"moves":["Scald","Strength Sap","Taunt","Recover"]},
     "1v1 Choice Scarf": {"ability":"Cursed Body","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Trick","Recover","Hydro Pump","Shadow Ball"]}
   },
   "Alomomola": {
