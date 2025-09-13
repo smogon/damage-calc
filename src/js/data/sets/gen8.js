@@ -584,8 +584,7 @@ var SETDEX_SS = {
   },
   "Omanyte": {
     "LC Shell Smash Sweeper": {"level":5,"ability":"Shell Armor","item":"Eviolite","nature":"Modest","evs":{"hp":76,"sa":196,"sp":236},"moves":["Shell Smash","Hydro Pump","Ice Beam","Earth Power"]},
-    "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Modest","ivs":{"at":0},"evs":{"hp":76,"df":116,"sa":116,"sp":156},"moves":["Stealth Rock","Surf","Earth Power","Ice Beam"]},
-    "NFE Shell Smash": {"ability":"Shell Armor","item":"Eviolite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Surf","Ice Beam","Earth Power"]}
+    "LC Entry Hazard Setter": {"level":5,"ability":"Weak Armor","item":"Eviolite","nature":"Modest","ivs":{"at":0},"evs":{"hp":76,"df":116,"sa":116,"sp":156},"moves":["Stealth Rock","Surf","Earth Power","Ice Beam"]}
   },
   "Omastar": {
     "NU Shell Smash Sweeper": {"ability":"Weak Armor","item":"Power Herb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Shell Smash","Meteor Beam","Surf","Ice Beam"]},
@@ -1605,9 +1604,7 @@ var SETDEX_SS = {
     "National Dex Monotype Swords Dance (Ground)": {"ability":"Sand Force","item":"Garchompite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Fire Fang","Scale Shot"]}
   },
   "Munchlax": {
-    "LC Defensive": {"level":5,"ability":"Thick Fat","item":"Berry Juice","nature":"Adamant","evs":{"at":236,"df":36,"sd":236},"moves":["Curse","Body Slam","Fire Punch","Recycle"]},
-    "NFE RestTalk": {"ability":"Thick Fat","item":"Eviolite","nature":"Careful","evs":{"at":4,"df":252,"sd":252},"moves":["Rest","Sleep Talk","Body Slam","Whirlwind"]},
-    "NFE Curse": {"ability":"Thick Fat","item":"Eviolite","nature":"Impish","evs":{"at":4,"df":252,"sd":252},"moves":["Body Slam","Curse","Rest","Sleep Talk"]}
+    "LC Defensive": {"level":5,"ability":"Thick Fat","item":"Berry Juice","nature":"Adamant","evs":{"at":236,"df":36,"sd":236},"moves":["Curse","Body Slam","Fire Punch","Recycle"]}
   },
   "Lucario": {
     "RU Swords Dance": {"ability":"Inner Focus","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Meteor Mash","Swords Dance","Extreme Speed"]},

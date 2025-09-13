@@ -1802,8 +1802,8 @@ var SETDEX_DPP = {
   "Wailord": {
     "UU Choice Scarf": {"ability":"Water Veil","item":"Choice Scarf","nature":"Naive","evs":{"at":28,"sa":252,"sp":228},"moves":["Water Spout","Hydro Pump","Ice Beam","Self-Destruct"]},
     "UU Choice Specs": {"ability":"Water Veil","item":"Choice Specs","nature":"Quiet","ivs":{"df":30,"sa":30,"sp":3},"evs":{"df":128,"sa":252,"sd":128},"moves":["Water Spout","Hidden Power Grass","Ice Beam","Surf"]},
-    "ZU Offensive": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":252,"sd":4,"sp":252},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]},
-    "ZU SubToxic": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sd":4,"sp":252},"moves":["Substitute","Surf","Toxic","Protect"]},
+    "ZU Offensive": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]},
+    "ZU SubToxic": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Surf","Toxic","Protect"]},
     "ZU Choice Item": {"ability":"Water Veil","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Water Spout","Surf","Ice Beam","Hidden Power Grass"]}
   },
   "Numel": {
@@ -2143,6 +2143,7 @@ var SETDEX_DPP = {
     "ZU All-out Attacker": {"ability":"Intimidate","item":"Life Orb","nature":"Naive","ivs":{"at":30,"df":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Thunderbolt","Superpower","Hidden Power Ice","Quick Attack"]},
     "ZU Defensive": {"ability":"Intimidate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":240,"sp":16},"moves":["Toxic","Thunderbolt","Rest","Sleep Talk"]},
     "ZU Fast Utility": {"ability":"Intimidate","item":"Leftovers","nature":"Timid","ivs":{"at":2,"df":30},"evs":{"hp":252,"df":4,"sp":252},"moves":["Toxic","Thunderbolt","Hidden Power Ice","Protect"]},
+    "ZU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Superpower","Spark","Ice Fang","Quick Attack"]},
     "PU Showdown Usage": {"ability":"Intimidate","item":"Leftovers","nature":"Relaxed","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":252,"sd":4},"moves":["Hidden Power Grass","Roar","Rest","Spark"]}
   },
   "Budew": {
