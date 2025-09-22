@@ -1016,7 +1016,7 @@ export function calculateBasePowerSMSSSV(
   if (
     attacker.teraType &&
     ((move.type === attacker.teraType && attacker.hasType(attacker.teraType)) ||
-    (attacker.teraType === 'Stellar' && attacker.hasType(move.type))) &&
+    (attacker.teraType === 'Stellar' && move.isStellarFirstUse)) &&
     move.hits === 1 && !move.multiaccuracy &&
     move.priority <= 0 && move.bp > 0 &&
     !move.named('Dragon Energy', 'Eruption', 'Water Spout') &&
