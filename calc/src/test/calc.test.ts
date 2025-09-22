@@ -1593,6 +1593,10 @@ describe('calc', () => {
               .isStellarFirstUse);
           expect(result[0]).not.toEqual(result[1]);
         });
+        test('should boost the Base Power of moves under 60 Base Power if the move matchees the original type of the attacker', () => {
+          expect(calculate(terastal, control, Move('Water Gun', {isStellarFirstUse: true})).rawDesc.moveBP).toBeUndefined();
+          expect(calculate(terastal, control, Move('Scratch', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
+        });
       });
     });
     describe('Descriptions', () => {
