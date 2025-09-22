@@ -1599,6 +1599,16 @@ describe('calc', () => {
           expect(calculate(terastal, control, Move('Scratch', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
           expect(calculate(terastal, control, Move('Scratch', {isStellarFirstUse: false})).rawDesc.moveBP).toBeUndefined();
         });
+        describe('should boost the base Power of moves weakened in Terrain', () => {
+          test('Dragon-type moves in Misty Terrain', () => {
+            const pokemon = Pokemon('Dracovish', {teraType: 'Stellar'});
+            expect(calculate(pokemon, pokemon, Move('Dragon Rush', {isStellarFirstUse: true}), Field({terrain: 'Misty'})).rawDesc.moveBP).toBe(60);
+          });
+          test('Earthquake in Grassy Terrain', () => {
+            const pokemon = Pokemon('Dracovish', {teraType: 'Stellar'});
+            expect(calculate(pokemon, pokemon, Move('Earthquake', {isStellarFirstUse: true}), Field({terrain: 'Grassy'})).rawDesc.moveBP).toBe(60);
+          });
+        });
       });
     });
     describe('Descriptions', () => {
