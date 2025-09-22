@@ -1249,6 +1249,9 @@ var SETDEX_ADV = {
     "NU Trapper": {"ability":"Magnet Pull","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Taunt","Fire Punch","Block","Explosion"]},
     "ZU Wall": {"ability":"Magnet Pull","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":60,"sd":196},"moves":["Earthquake","Protect","Explosion","Thunder Wave"]}
   },
+  "Skitty": {
+    "Ubers ADORABLE DESTROYER OF WORLDS": {"ability":"Cute Charm","item":"Oran Berry","nature":"Hasty","evs":{"hp":1},"moves":["Double Slap","Tackle","Sing","Attract"]}
+  },
   "Sableye": {
     "RU Wall": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Toxic","Knock Off","Recover"]},
     "NU Mixed Defensive": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":56,"sd":200},"moves":["Shadow Ball","Recover","Toxic","Seismic Toss"]},

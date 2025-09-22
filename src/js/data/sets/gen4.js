@@ -1803,7 +1803,7 @@ var SETDEX_DPP = {
     "UU Choice Scarf": {"ability":"Water Veil","item":"Choice Scarf","nature":"Naive","evs":{"at":28,"sa":252,"sp":228},"moves":["Water Spout","Hydro Pump","Ice Beam","Self-Destruct"]},
     "UU Choice Specs": {"ability":"Water Veil","item":"Choice Specs","nature":"Quiet","ivs":{"df":30,"sa":30,"sp":3},"evs":{"df":128,"sa":252,"sd":128},"moves":["Water Spout","Hidden Power Grass","Ice Beam","Surf"]},
     "ZU Offensive": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Surf","Ice Beam","Hidden Power Grass","Substitute"]},
-    "ZU SubToxic": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Surf","Toxic","Protect"]},
+    "ZU SubToxic": {"ability":"Water Veil","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Surf","Toxic","Ice Beam"]},
     "ZU Choice Item": {"ability":"Water Veil","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Water Spout","Surf","Ice Beam","Hidden Power Grass"]}
   },
   "Numel": {
