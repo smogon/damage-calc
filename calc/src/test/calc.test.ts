@@ -1568,7 +1568,7 @@ describe('calc', () => {
             expect(calculate(pokemon, pokemon, Move('Scratch')).rawDesc.moveBP).toBe(60);
           });
           test('Multihit moves don\'t get their Base Power boosted', () => {
-            expect(calculate(pokemon, pokemon, Move('Spike Cannone')).rawDesc.moveBP).toBeUndefined();
+            expect(calculate(pokemon, pokemon, Move('Spike Cannon')).rawDesc.moveBP).toBeUndefined();
           });
           test('Priority moves don\'t get their Base Power boosted', () => {
             expect(calculate(pokemon, pokemon, Move('Quick Attack')).rawDesc.moveBP).toBeUndefined();
