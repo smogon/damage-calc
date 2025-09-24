@@ -1561,7 +1561,38 @@ describe('calc', () => {
         expect(attacker.boosts.atk).toBe(0);
         expect(result.attacker.boosts.atk).toBe(1);
       });
+      describe('Terastallization', () => {
+        describe('Terastallization Base Power boost', () => {
+          const pokemon = Pokemon('Arceus', {teraType: 'Normal'});
+          test('Moves under 40 Base Power should be boosted to 60 Base Power', () => {
+            expect(calculate(pokemon, pokemon, Move('Scratch')).rawDesc.moveBP).toBe(60);
+          });
+          test('Multihit moves don\'t get their Base Power boosted', () => {
+            expect(calculate(pokemon, pokemon, Move('Spike Cannone')).rawDesc.moveBP).toBeUndefined();
+          });
+          test('Priority moves don\'t get their Base Power boosted', () => {
+            expect(calculate(pokemon, pokemon, Move('Quick Attack')).rawDesc.moveBP).toBeUndefined();
+          });
+        });
+        test('Pokemon with moves affected by Triage should still have their BP boosted', () => {
+          const pokemon = Pokemon('Comfey', {ability: 'Triage', teraType: 'Fairy'});
+          expect(calculate(pokemon, pokemon, Move('Draining Kiss')).rawDesc.moveBP).toBe(60);
 
+          pokemon.teraType = 'Grass';
+          expect(calculate(pokemon, pokemon, Move('Absorb')).rawDesc.moveBP).toBe(60);
+
+          pokemon.teraType = 'Stellar';
+          expect(calculate(pokemon, pokemon, Move('Draining Kiss', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
+          expect(calculate(pokemon, pokemon, Move('Absorb', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
+        });
+        test('Pokemon with moves affected by Gale Wings should still have their BP boosted', () => {
+          const pokemon = Pokemon('Talonflame', {ability: 'Gale Wings', teraType: 'Flying'});
+          expect(calculate(pokemon, pokemon, Move('Peck')).rawDesc.moveBP).toBe(60);
+
+          pokemon.teraType = 'Stellar';
+          expect(calculate(pokemon, pokemon, Move('Peck', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
+        });
+      });
       describe('Tera Stellar', () => {
         const terastal = Pokemon('Arceus', {teraType: 'Stellar'});
         const control = Pokemon('Arceus');

@@ -374,15 +374,6 @@ export function calculateSMSSSV(
 
   move.type = type;
 
-  // FIXME: this is incorrect, should be move.flags.heal, not move.drain
-  if ((attacker.hasAbility('Triage') && move.drain) ||
-      (attacker.hasAbility('Gale Wings') &&
-       move.hasType('Flying') &&
-       attacker.curHP() === attacker.maxHP())) {
-    move.priority = 1;
-    desc.attackerAbility = attacker.ability;
-  }
-
   const isGhostRevealed =
     attacker.hasAbility('Scrappy') || attacker.hasAbility('Mind\'s Eye') ||
       field.defenderSide.isForesight;
@@ -617,6 +608,15 @@ export function calculateSMSSSV(
     desc,
     isCritical
   );
+
+  // FIXME: this is incorrect, should be move.flags.heal, not move.drain
+  if ((attacker.hasAbility('Triage') && move.drain) ||
+      (attacker.hasAbility('Gale Wings') &&
+       move.hasType('Flying') &&
+       attacker.curHP() === attacker.maxHP())) {
+    move.priority = 1;
+    desc.attackerAbility = attacker.ability;
+  }
 
   if (hasTerrainSeed(defender) &&
     field.hasTerrain(defender.item!.substring(0, defender.item!.indexOf(' ')) as Terrain) &&
