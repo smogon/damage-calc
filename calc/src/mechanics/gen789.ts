@@ -1014,9 +1014,12 @@ export function calculateBasePowerSMSSSV(
   );
   basePower = OF16(Math.max(1, pokeRound((basePower * chainMods(bpMods, 41, 2097152)) / 4096)));
   if (
-    attacker.teraType && move.type === attacker.teraType &&
-    attacker.hasType(attacker.teraType) && move.hits === 1 && !move.multiaccuracy &&
-    move.priority <= 0 && move.bp > 0 && !move.named('Dragon Energy', 'Eruption', 'Water Spout') &&
+    attacker.teraType &&
+    ((move.type === attacker.teraType && attacker.hasType(attacker.teraType)) ||
+    (attacker.teraType === 'Stellar' && move.isStellarFirstUse)) &&
+    move.hits === 1 && !move.multiaccuracy &&
+    move.priority <= 0 && move.bp > 0 &&
+    !move.named('Dragon Energy', 'Eruption', 'Water Spout') &&
     basePower < 60 && gen.num >= 9
   ) {
     basePower = 60;

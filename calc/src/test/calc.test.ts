@@ -1593,6 +1593,22 @@ describe('calc', () => {
               .isStellarFirstUse);
           expect(result[0]).not.toEqual(result[1]);
         });
+        test('should boost the Base Power of moves under 60 Base Power if it\'s the first use of the move', () => {
+          expect(calculate(terastal, control, Move('Water Gun', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
+          expect(calculate(terastal, control, Move('Water Gun', {isStellarFirstUse: false})).rawDesc.moveBP).toBeUndefined();
+          expect(calculate(terastal, control, Move('Scratch', {isStellarFirstUse: true})).rawDesc.moveBP).toBe(60);
+          expect(calculate(terastal, control, Move('Scratch', {isStellarFirstUse: false})).rawDesc.moveBP).toBeUndefined();
+        });
+        describe('should boost the base Power of moves weakened in Terrain', () => {
+          test('Dragon-type moves in Misty Terrain', () => {
+            const pokemon = Pokemon('Dracovish', {teraType: 'Stellar'});
+            expect(calculate(pokemon, pokemon, Move('Dragon Rush', {isStellarFirstUse: true}), Field({terrain: 'Misty'})).rawDesc.moveBP).toBe(60);
+          });
+          test('Earthquake in Grassy Terrain', () => {
+            const pokemon = Pokemon('Dracovish', {teraType: 'Stellar'});
+            expect(calculate(pokemon, pokemon, Move('Earthquake', {isStellarFirstUse: true}), Field({terrain: 'Grassy'})).rawDesc.moveBP).toBe(60);
+          });
+        });
       });
     });
     describe('Descriptions', () => {
