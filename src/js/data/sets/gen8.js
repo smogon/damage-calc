@@ -2344,6 +2344,7 @@ var SETDEX_SS = {
     "NU Showdown Usage": {"ability":"Unburden","item":"Choice Scarf","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Final Gambit","Spikes","Knock Off","U-turn"]}
   },
   "Stunfisk": {
+    "OU Specially Defensive": {"ability":"Static","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Discharge","Toxic","Pain Split"]},
     "ZU Specially Defensive": {"ability":"Static","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Toxic","Earth Power","Discharge"]},
     "PU Showdown Usage": {"ability":"Static","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Earth Power","Discharge","Stealth Rock","Toxic"]}
   },
