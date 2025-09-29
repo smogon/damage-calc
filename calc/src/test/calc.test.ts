@@ -828,6 +828,39 @@ describe('calc', () => {
         );
       });
     });
+    describe('Shell Side Arm', () => {
+      inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+        test('Special Shell Side Arm should not factor in Fur Coat or Fluffy', () => {
+          const attacker = Pokemon('Slowbro-Galar');
+          const defender = Pokemon('Mew', {ability: 'Fluffy', evs: {def: 4}});
+
+          let result = calculate(attacker, defender, Move('Shell Side Arm'));
+          expect(result.move.category).toBe('Special');
+          expect(result.rawDesc.defenderAbility).toBeUndefined();
+
+          defender.ability = 'Fur Coat' as AbilityName;
+
+          result = calculate(attacker, defender, Move('Shell Side Arm'));
+          expect(result.move.category).toBe('Special');
+          expect(result.rawDesc.defenderAbility).toBeUndefined();
+        });
+        test('Physical Shell Side Arm should not factor in Ice Scales', () => {
+          const attacker = Pokemon('Slowbro-Galar');
+          const defender = Pokemon('Mew', {ability: 'Ice Scales', evs: {spd: 4}});
+
+          const result = calculate(attacker, defender, Move('Shell Side Arm'));
+          expect(result.move.category).toBe('Physical');
+          expect(result.rawDesc.defenderAbility).toBeUndefined();
+        });
+        test('Physical Shell Side Arm should make contact', () => {
+          const attacker = Pokemon('Slowbro-Galar');
+          const defender = Pokemon('Mew', {ability: 'Fluffy', evs: {spd: 4}});
+
+          const result = calculate(attacker, defender, Move('Shell Side Arm'));
+          expect(result.move.flags.contact).toBe(1);
+        });
+      });
+    });
   });
 
 
