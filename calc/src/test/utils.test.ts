@@ -1,4 +1,4 @@
-import {extend} from '../util';
+import {extend, toID} from '../util';
 
 describe('util', () => {
   test('extend', () => {
@@ -14,5 +14,9 @@ describe('util', () => {
       e: {f: 5},
       f: 4,
     });
+  });
+
+  test('toID converts Flabébé to flabebe', () => {
+    expect(toID('Flabébé')).toBe('flabebe');
   });
 });
