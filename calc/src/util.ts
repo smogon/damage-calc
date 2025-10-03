@@ -2,7 +2,11 @@
 import type {ID} from './data/interface';
 
 export function toID(text: any): ID {
-  return ('' + text).toLowerCase().replace(/[^a-z0-9]+/g, '') as ID;
+  const lcase = ('' + text).toLowerCase();
+  if (lcase === 'flabébé') {
+    return 'flabebe' as ID;
+  }
+  return lcase.replace(/[^a-z0-9]+/g, '') as ID;
 }
 
 export function error(err: boolean, msg: string) {
