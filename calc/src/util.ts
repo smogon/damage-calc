@@ -4,7 +4,7 @@ import type {ID} from './data/interface';
 export function toID(text: any): ID {
   const lcase = ('' + text).toLowerCase();
   if (lcase === 'flabébé') {
-    return lcase as ID;
+    return 'flabebe' as ID;
   }
   return lcase.replace(/[^a-z0-9]+/g, '') as ID;
 }
