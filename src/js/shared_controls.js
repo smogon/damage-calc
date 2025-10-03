@@ -1062,7 +1062,7 @@ function createPokemon(pokeInfo) {
 			level: set.level,
 			ability: set.ability,
 			abilityOn: true,
-			item: set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item.indexOf("ite") < 0) ? set.item : "",
+			item: set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item === "White Herb" || set.item.indexOf("ite") < 0) ? set.item : "",
 			nature: set.nature,
 			ivs: ivs,
 			evs: evs,
