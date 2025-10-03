@@ -1484,6 +1484,8 @@ function clearField() {
 	$("#singles-format").prop("checked", true);
 	$("#clear").prop("checked", true);
 	$("#gscClear").prop("checked", true);
+	$("#magicroom").prop("checked", false);
+	$("#wonderroom").prop("checked", false);
 	$("#gravity").prop("checked", false);
 	$("#srL").prop("checked", false);
 	$("#srR").prop("checked", false);
@@ -1509,6 +1511,10 @@ function clearField() {
 	$("#protectR").prop("checked", false);
 	$("#leechSeedL").prop("checked", false);
 	$("#leechSeedR").prop("checked", false);
+	$("#flowerGiftL").prop("checked", false);
+	$("#flowerGiftR").prop("checked", false);
+	$("#steelySpiritL").prop("checked", false);
+	$("#steelySpiritR").prop("checked", false);
 	$("#saltCureL").prop("checked", false);
 	$("#saltCureR").prop("checked", false);
 	$("#foresightL").prop("checked", false);
@@ -1523,6 +1529,8 @@ function clearField() {
 	$("#auroraVeilR").prop("checked", false);
 	$("#batteryL").prop("checked", false);
 	$("#batteryR").prop("checked", false);
+	$("#powerSpotL").prop("checked", false);
+	$("#powerSpotR").prop("checked", false);
 	$("#switchingL").prop("checked", false);
 	$("#switchingR").prop("checked", false);
 	$("input:checkbox[name='terrain']").prop("checked", false);
