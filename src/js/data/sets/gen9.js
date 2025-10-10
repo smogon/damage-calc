@@ -92,7 +92,7 @@ var SETDEX_SV = {
     "LC Sand Sweeper": {"level":5,"ability":"Sand Rush","item":"Eviolite","nature":"Adamant","teraType":"Bug","evs":{"at":236,"df":76,"sp":196},"moves":["Swords Dance","Earthquake","Leech Life","Rapid Spin"]}
   },
   "Sandshrew-Alola": {
-    "LC Sweeper": {"level":5,"ability":"Slush Rush","item":"Eviolite","nature":"Jolly","teraType":"Fairy","evs":{"hp":36,"at":236,"df":36,"sp":196},"moves":["Swords Dance","Triple Axel","Earthquake","Rapid Spin"]}
+    "LC Sweeper": {"level":5,"ability":"Slush Rush","item":"Eviolite","nature":"Jolly","teraType":"Fairy","evs":{"hp":36,"at":236,"df":36,"sp":196},"moves":["Triple Axel","Earthquake","Rapid Spin","Swords Dance"]}
   },
   "Sandslash": {
     "NU Sand Wallbreaker": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Knock Off","Leech Life"]},
@@ -3723,7 +3723,7 @@ var SETDEX_SV = {
     "BSS Reg I Special Attacker": {"level":50,"ability":"Infiltrator","item":"Choice Specs","nature":"Timid","teraType":"Ghost","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Draco Meteor","Thunderbolt","Flamethrower"]},
     "BSS Reg I Bulky Status": {"level":50,"ability":"Infiltrator","item":"Leftovers","nature":"Timid","teraType":"Fairy","evs":{"hp":252,"df":4,"sp":252},"moves":["Will-O-Wisp","Hex","Substitute","Disable"]},
     "BSS Reg I Dual Screens": {"level":50,"ability":"Cursed Body","item":"Light Clay","nature":"Timid","teraType":"Ghost","evs":{"hp":244,"df":12,"sp":252},"moves":["Reflect","Light Screen","Curse","Shadow Ball"]},
-    "Monotype Choice Band (Dragon)": {"ability":"Infiltrator","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Darts","Phantom Force","Sucker Punch","U-turn"]},
+    "Monotype Choice Band (Dragon)": {"ability":"Infiltrator","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Darts","Phantom Force","Psychic Fangs","U-turn"]},
     "Monotype Hex (Dragon)": {"ability":"Infiltrator","item":"Leftovers","nature":"Naive","evs":{"at":108,"sa":148,"sp":252},"moves":["Will-O-Wisp","Hex","Dragon Darts","Substitute"]},
     "Monotype Choice Specs (Dragon)": {"ability":"Infiltrator","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Draco Meteor","Shadow Ball","Flamethrower","Thunderbolt"]},
     "Monotype Choice Scarf (Dragon)": {"ability":"Infiltrator","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Darts","Phantom Force","U-turn","Thunder Wave"]},
