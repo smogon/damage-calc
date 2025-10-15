@@ -1308,6 +1308,12 @@ export function calculateAttackSMSSSV(
       ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
       : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
   const attackSource = move.named('Foul Play') ? defender : attacker;
+
+  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
+  if (field.attackerSide.isPowerTrick && move.category === 'Physical') {
+    desc.isPowerTrickAttacker = true;
+    attackSource.rawStats[attackStat] = attacker.rawStats.def;
+  }
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
     attack = attackSource.rawStats[attackStat];
@@ -1499,6 +1505,13 @@ export function calculateDefenseSMSSSV(
   const defenseStat = hitsPhysical ? 'def' : 'spd';
   const boosts = defender.boosts[field.isWonderRoom ? hitsPhysical ? 'spd' : 'def' : defenseStat];
   desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
+
+  // Power Trick swaps attack and defense stats raw before boosts
+  if (field.defenderSide.isPowerTrick && hitsPhysical) {
+    desc.isPowerTrickDefender = true;
+    defender.rawStats[defenseStat] = defender.rawStats.atk;
+  }
+
   if (boosts === 0 ||
       (isCritical && boosts > 0) ||
       move.ignoreDefensive) {

@@ -1580,6 +1580,16 @@ describe('calc', () => {
         );
       });
 
+      test('Power Trick should swap attack and defense raw stats', () => {
+        const attacker = Pokemon('Bastiodon');
+        const defender = Pokemon('Glaceon');
+        const result = calculate(attacker, defender, Move('Iron Head'), Field({attackerSide: {isPowerTrick: true}}));
+
+        expect(result.desc()).toBe(
+          '0 Atk Bastiodon with Power Trick Iron Head vs. 0 HP / 0 Def Glaceon: 252-296 (92.9 - 109.2%) -- 56.3% chance to OHKO'
+        );
+      });
+
       test('Wind Rider should give an Attack boost in Tailwind', () => {
         const attacker = Pokemon('Brambleghast', {'ability': 'Wind Rider'});
         const defender = Pokemon('Brambleghast', {'ability': 'Wind Rider'});

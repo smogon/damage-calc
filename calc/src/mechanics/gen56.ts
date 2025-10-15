@@ -818,6 +818,12 @@ export function calculateAttackBWXY(
       ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
       : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
+  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
+  if (field.attackerSide.isPowerTrick && move.category === 'Physical') {
+    desc.isPowerTrickAttacker = true;
+    attackSource.rawStats[attackStat] = attacker.rawStats.def;
+  }
+
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
     attack = attackSource.rawStats[attackStat];
@@ -934,6 +940,13 @@ export function calculateDefenseBWXY(
   let defense: number;
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
+
+  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
+  if (field.defenderSide.isPowerTrick && hitsPhysical) {
+    desc.isPowerTrickDefender = true;
+    defender.rawStats[defenseStat] = defender.rawStats.atk;
+  }
+
   const boosts = defender.boosts[
     field.isWonderRoom ? defenseStat === 'spd' ? 'def' : 'spd' : defenseStat
   ];
