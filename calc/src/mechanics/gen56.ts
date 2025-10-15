@@ -819,9 +819,13 @@ export function calculateAttackBWXY(
       : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   // Power Trick swaps base Attack and Defense stats and gets applied before boosts
-  if (field.attackerSide.isPowerTrick && move.category === 'Physical') {
+  if (field.attackerSide.isPowerTrick && move.named('Foul Play') !== true &&
+  move.named('Body Press') !== true && move.category === 'Physical') {
     desc.isPowerTrickAttacker = true;
     attackSource.rawStats[attackStat] = attacker.rawStats.def;
+    if (move.named('Body Press') === true) {
+      attackSource.rawStats[attackStat] = attacker.rawStats.atk;
+    }
   }
 
   if (attackSource.boosts[attackStat] === 0 ||
@@ -941,15 +945,16 @@ export function calculateDefenseBWXY(
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
 
+  const boosts = defender.boosts[
+    field.isWonderRoom ? defenseStat === 'spd' ? 'def' : 'spd' : defenseStat
+  ];
+
   // Power Trick swaps base Attack and Defense stats and gets applied before boosts
   if (field.defenderSide.isPowerTrick && hitsPhysical) {
     desc.isPowerTrickDefender = true;
     defender.rawStats[defenseStat] = defender.rawStats.atk;
   }
 
-  const boosts = defender.boosts[
-    field.isWonderRoom ? defenseStat === 'spd' ? 'def' : 'spd' : defenseStat
-  ];
   desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
   if (boosts === 0 ||
     (isCritical && boosts > 0) ||
