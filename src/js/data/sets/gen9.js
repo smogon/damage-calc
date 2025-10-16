@@ -242,7 +242,7 @@ var SETDEX_SV = {
     "NFE Utility": {"ability":"Chlorophyll","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Synthesis","Knock Off","Sludge Bomb","Giga Drain"]}
   },
   "Victreebel": {
-    "ZU Sun Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Modest","teraType":"Fire","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Solar Beam","Sludge Bomb","Weather Ball"]}
+    "ZU All-Out Attacker": {"ability":"Chlorophyll","item":"Heavy-Duty Boots","nature":"Adamant","teraType":"Fire","evs":{"at":252,"df":4,"sp":252},"moves":["Strength Sap","Power Whip","Poison Jab","Knock Off"]}
   },
   "Tentacool": {
     "LC Utility": {"level":5,"ability":"Clear Body","item":"Eviolite","nature":"Jolly","teraType":"Grass","evs":{"hp":36,"at":116,"df":156,"sp":196},"moves":["Flip Turn","Gunk Shot","Knock Off","Rapid Spin"]}
@@ -255,9 +255,6 @@ var SETDEX_SV = {
   },
   "Golem-Alola": {
     "Monotype Choice Band (Rock)": {"ability":"Magnet Pull","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Wild Charge","Brick Break","Earthquake","Fire Punch"]}
-  },
-  "Slowpoke": {
-    "LC Defensive": {"level":5,"ability":"Regenerator","item":"Eviolite","nature":"Modest","teraType":"Dragon","ivs":{"at":0},"evs":{"hp":116,"df":236,"sa":36,"sd":116},"moves":["Surf","Slack Off","Psychic","Fire Blast"]}
   },
   "Slowbro": {
     "UU Calm Mind": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Bold","teraType":"Poison","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Psychic Noise","Scald","Slack Off"]},
@@ -1045,9 +1042,6 @@ var SETDEX_SV = {
     "National Dex Monotype Bulky Sweeper (Psychic)": {"ability":"Natural Cure","item":"Heavy-Duty Boots","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"df":96,"sd":56,"sp":108},"moves":["Nasty Plot","Giga Drain","Earth Power","Recover"]},
     "National Dex RU Showdown Usage": {"ability":"Natural Cure","item":"Groundium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Nasty Plot","Earth Power","Giga Drain"]}
   },
-  "Treecko": {
-    "LC Setup Sweeper": {"level":5,"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Flying","evs":{"hp":36,"at":236,"df":156,"sp":36},"moves":["Swords Dance","Acrobatics","Drain Punch","Bullet Seed"]}
-  },
   "Sceptile": {
     "NU Terrain Sweeper": {"ability":"Unburden","item":"Psychic Seed","nature":"Adamant","teraType":"Flying","evs":{"hp":136,"at":252,"sp":120},"moves":["Swords Dance","Leaf Blade","Acrobatics","Earthquake"]},
     "PU Terrain Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Flying","evs":{"hp":248,"at":252,"sd":8},"moves":["Swords Dance","Leaf Blade","Acrobatics","Drain Punch"]},
@@ -1101,7 +1095,7 @@ var SETDEX_SV = {
     "NU Rain Dance Sweeper": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","teraType":"Water","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Giga Drain","Ice Beam","Rain Dance"]}
   },
   "Shiftry": {
-    "ZU All-Out Attacker": {"ability":"Chlorophyll","item":"Life Orb","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Solar Blade","Knock Off","Low Kick"]}
+    "ZU All-Out Attacker": {"ability":"Wind Rider","item":"Life Orb","nature":"Adamant","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Knock Off","Sucker Punch"]}
   },
   "Wingull": {
     "LC Offensive": {"level":5,"ability":"Hydration","item":"Life Orb","nature":"Timid","teraType":"Dark","ivs":{"hp":19},"evs":{"df":36,"sa":236,"sp":236},"moves":["Surf","Hurricane","Ice Beam","Protect"]}
@@ -1230,7 +1224,7 @@ var SETDEX_SV = {
     "National Dex UU Showdown Usage": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Hidden Power Ice","Overheat"]}
   },
   "Volbeat": {
-    "ZU Weather Setter": {"ability":"Prankster","item":"Heat Rock","nature":"Sassy","teraType":"Dragon","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Sunny Day","Encore","Moonlight","U-turn"]}
+    "ZU Defensive Pivot": {"ability":"Prankster","item":"Heavy-Duty Boots","nature":"Sassy","teraType":"Dragon","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Encore","Thunder Wave","Roost","U-turn"]}
   },
   "Sharpedo": {
     "National Dex RU Offensive": {"ability":"Speed Boost","item":"Sharpedonite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Crunch","Psychic Fangs","Close Combat","Protect"]},
@@ -1457,7 +1451,7 @@ var SETDEX_SV = {
   },
   "Jirachi": {
     "UU Specially Defensive": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","teraType":"Water","evs":{"hp":248,"df":28,"sd":216,"sp":16},"moves":["Wish","Body Slam","Iron Head","U-turn"]},
-    "RU Utility": {"ability":"Serene Grace","item":"Leftovers","nature":"Jolly","teraType":"Water","evs":{"hp":252,"sd":32,"sp":224},"moves":["Stealth Rock","Iron Head","Body Slam","Encore"]},
+    "RU Utility": {"ability":"Serene Grace","item":"Leftovers","nature":"Jolly","teraType":"Water","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Iron Head","Body Slam","Encore"]},
     "RU Offensive Calm Mind": {"ability":"Serene Grace","item":"Leftovers","nature":"Timid","teraType":"Water","ivs":{"at":0},"evs":{"hp":32,"sa":252,"sp":224},"moves":["Calm Mind","Psychic Noise","Grass Knot","Aura Sphere"]},
     "RU Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Jolly","teraType":"Steel","evs":{"at":252,"sd":4,"sp":252},"moves":["Iron Head","U-turn","Trick","Healing Wish"]},
     "Monotype Specially Defensive (Psychic)": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":160,"sp":96},"moves":["Iron Head","Body Slam","U-turn","Stealth Rock"]},
@@ -1769,7 +1763,7 @@ var SETDEX_SV = {
     "Monotype Choice Specs (Bug)": {"ability":"Tinted Lens","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Bug Buzz","Air Slash","Giga Drain","U-turn"]}
   },
   "Leafeon": {
-    "ZU Sunny Day Attacker": {"ability":"Chlorophyll","item":"Life Orb","nature":"Adamant","teraType":"Fire","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Solar Blade","Double-Edge","Tera Blast"]}
+    "ZU Swords Dance": {"ability":"Chlorophyll","item":"Life Orb","nature":"Adamant","teraType":"Fire","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Double-Edge","Tera Blast"]}
   },
   "Gliscor": {
     "OU Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","teraType":"Normal","evs":{"hp":244,"df":36,"sd":228},"moves":["Swords Dance","Facade","Knock Off","Protect"]},
@@ -3253,9 +3247,6 @@ var SETDEX_SV = {
   "Passimian": {
     "PU Choice Scarf": {"ability":"Defiant","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"df":4,"sp":252},"moves":["Close Combat","Knock Off","U-turn","Earthquake"]},
     "ZU Choice Scarf": {"ability":"Defiant","item":"Choice Scarf","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Knock Off","U-turn","Earthquake"]}
-  },
-  "Sandygast": {
-    "LC Defensive": {"level":5,"ability":"Water Compaction","item":"Eviolite","nature":"Bold","teraType":"Water","ivs":{"at":0},"evs":{"hp":156,"df":36,"sa":196,"sd":76},"moves":["Shore Up","Stealth Rock","Shadow Ball","Earth Power"]}
   },
   "Palossand": {
     "RU Defensive": {"ability":"Water Compaction","item":"Heavy-Duty Boots","nature":"Bold","teraType":"Water","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Scorching Sands","Shadow Ball","Shore Up"]},
@@ -5293,6 +5284,9 @@ var SETDEX_SV = {
   },
   "Riolu": {
     "LC Showdown Usage": {"level":5,"ability":"Prankster","item":"Eviolite","nature":"Naive","teraType":"Ghost","evs":{"at":196,"df":116,"sp":196},"moves":["Copycat","High Jump Kick","Bulk Up","Earthquake"]}
+  },
+  "Treecko": {
+    "LC Showdown Usage": {"level":5,"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","teraType":"Flying","evs":{"at":236,"sd":76,"sp":116},"moves":["Acrobatics","Swords Dance","Drain Punch","Seed Bomb"]}
   },
   "Crabrawler": {
     "LC Showdown Usage": {"level":5,"ability":"Iron Fist","item":"Eviolite","nature":"Jolly","teraType":"Fairy","evs":{"at":20,"df":140,"sd":60,"sp":252},"moves":["Drain Punch","Ice Punch","Bulk Up","Thunder Punch"]}
