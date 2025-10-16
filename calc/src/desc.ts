@@ -31,6 +31,8 @@ export interface RawDesc {
   isAuroraVeil?: boolean;
   isFlowerGiftAttacker?: boolean;
   isFlowerGiftDefender?: boolean;
+  isPowerTrickAttacker?: boolean;
+  isPowerTrickDefender?: boolean;
   isSteelySpiritAttacker?: boolean;
   isFriendGuard?: boolean;
   isHelpingHand?: boolean;
@@ -994,6 +996,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   if (description.isFlowerGiftAttacker) {
     output += 'with an ally\'s Flower Gift ';
   }
+  if (description.isPowerTrickAttacker) {
+    output += 'with Power Trick ';
+  }
   if (description.isSteelySpiritAttacker) {
     output += 'with an ally\'s Steely Spirit ';
   }
@@ -1062,6 +1067,9 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   if (description.isFlowerGiftDefender) {
     output += ' with an ally\'s Flower Gift';
+  }
+  if (description.isPowerTrickDefender) {
+    output += ' with Power Trick';
   }
   if (description.isFriendGuard) {
     output += ' with an ally\'s Friend Guard';
