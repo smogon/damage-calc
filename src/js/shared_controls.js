@@ -935,16 +935,15 @@ $(".forme").change(function () {
 		$(this).parent().siblings().find(".teraToggle").prop("checked", true);
 	}
 	var isRandoms = $("#randoms").prop("checked");
-	var pokemonSets = isRandoms ? gen >= 8 ? randdex[pokemonName][setName] :
-		randdex[pokemonName] : setdex[pokemonName];
-	var chosenSet = pokemonSets && pokemonSets[setName];
+	var pokemonSets = isRandoms ? randdex[pokemonName] : setdex[pokemonName];
+	var chosenSet = isRandoms && gen < 8 ? pokemonSets : pokemonSets && pokemonSets[setName];
 	var greninjaSet = $(this).val().indexOf("Greninja") !== -1;
 	var isAltForme = $(this).val() !== pokemonName;
 	if (isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !greninjaSet) {
 		container.find(".ability").val(altForme.abilities[0]);
 	} else if (!isAltForme && abilities.indexOf(altForme.abilities[0]) !== -1 && !greninjaSet) {
-		if (chosenSet && chosenSet.ability) {
-			container.find(".ability").val(chosenSet.ability);
+		if (chosenSet && (chosenSet.ability || chosenSet.abilities[0])) {
+			container.find(".ability").val(isRandoms ? chosenSet.abilities[0] : chosenSet.ability);
 		} else {
 			container.find(".ability").val(altForme.abilities[0]);
 		}
