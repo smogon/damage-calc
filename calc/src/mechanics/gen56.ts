@@ -819,13 +819,9 @@ export function calculateAttackBWXY(
       : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   // Power Trick swaps base Attack and Defense stats and gets applied before boosts
-  if (field.attackerSide.isPowerTrick && move.named('Foul Play') !== true &&
-  move.named('Body Press') !== true && move.category === 'Physical') {
+  if (field.attackerSide.isPowerTrick && !move.named('Foul Play') && move.category === 'Physical') {
     desc.isPowerTrickAttacker = true;
     attackSource.rawStats[attackStat] = attacker.rawStats.def;
-    if (move.named('Body Press') === true) {
-      attackSource.rawStats[attackStat] = attacker.rawStats.atk;
-    }
   }
 
   if (attackSource.boosts[attackStat] === 0 ||

@@ -1310,13 +1310,11 @@ export function calculateAttackSMSSSV(
   const attackSource = move.named('Foul Play') ? defender : attacker;
 
   // Power Trick swaps base Attack and Defense stats and gets applied before boosts
-  if (field.attackerSide.isPowerTrick && move.named('Foul Play') !== true &&
+  if (field.attackerSide.isPowerTrick && !move.named('Foul Play') &&
   move.category === 'Physical') {
     desc.isPowerTrickAttacker = true;
-    attackSource.rawStats[attackStat] = attacker.rawStats.def;
-    if (move.named('Body Press') === true) {
-      attackSource.rawStats[attackStat] = attacker.rawStats.atk;
-    }
+    attackSource.rawStats[attackStat] = move.named('Body Press')
+      ? attacker.rawStats.atk : attacker.rawStats.def;
   }
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
