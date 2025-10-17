@@ -420,6 +420,10 @@ export function calculateSMSSSV(
     typeEffectiveness = 1;
   }
 
+  if (typeEffectiveness === 0 && move.named('Nihil Light')) {
+    typeEffectiveness = 1;
+  }
+
   if (typeEffectiveness === 0) {
     return result;
   }
@@ -1518,7 +1522,7 @@ export function calculateDefenseSMSSSV(
       (isCritical && boosts > 0) ||
       move.ignoreDefensive) {
     defense = defender.rawStats[defenseStat];
-  } else if (attacker.hasAbility('Unaware')) {
+  } else if (attacker.hasAbility('Unaware') || move.name === 'Nihil Light') {
     defense = defender.rawStats[defenseStat];
     desc.attackerAbility = attacker.ability;
   } else {
