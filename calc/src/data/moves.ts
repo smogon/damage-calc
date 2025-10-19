@@ -4925,7 +4925,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 
 const ZA_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Nihil Light': {
-    bp: 200,
+    bp: 100,
     type: 'Dragon',
     category: 'Special',
     target: 'allAdjacentFoes'
