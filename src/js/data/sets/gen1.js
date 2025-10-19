@@ -280,7 +280,7 @@ var SETDEX_RBY = {
     "LC Physical Attacker": {"level":5,"moves":["Earthquake","Rock Slide","Body Slam","Explosion"]}
   },
   "Graveler": {
-    "PU Tank": {"moves":["Earthquake","Rock Slide","Counter","Explosion"]}
+    "PU Tank": {"moves":["Earthquake","Rock Slide","Substitute","Explosion"]}
   },
   "Golem": {
     "OU Explosion": {"moves":["Rock Slide","Earthquake","Body Slam","Explosion"]},
@@ -354,7 +354,7 @@ var SETDEX_RBY = {
   },
   "Gastly": {
     "NU Hypnosis": {"moves":["Hypnosis","Thunderbolt","Psychic","Explosion"]},
-    "PU Offensive Sleeper": {"moves":["Hypnosis","Thunderbolt","Psychic","Substitute"]},
+    "PU Offensive Sleeper": {"moves":["Hypnosis","Thunderbolt","Psychic","Explosion"]},
     "LC Sleeper": {"level":5,"moves":["Hypnosis","Thunderbolt","Psychic","Explosion"]}
   },
   "Haunter": {
