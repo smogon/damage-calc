@@ -4928,9 +4928,9 @@ const ZA_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     bp: 100,
     type: 'Dragon',
     category: 'Special',
-    target: 'allAdjacentFoes'
-  }
-}
+    target: 'allAdjacentFoes',
+  },
+};
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH, ZA_PATCH);
 
