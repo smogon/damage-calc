@@ -10091,7 +10091,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Skarmory: {otherFormes: ['Skarmory-Mega']},
   Starmie: {otherFormes: ['Starmie-Mega']},
   Victreebel: {otherFormes: ['Victreebel-Mega']},
-  Zygarde: {otherFormes: ['Zygarde-Mega']},
+  Zygarde: {otherFormes: ['Zygarde-Mega', 'Zygarde-10%', 'Zygarde-Complete']},
   'Barbaracle-Mega': {
     types: [
       'Rock',
@@ -10109,6 +10109,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Tough Claws',
     },
+    baseSpecies: 'Barbaracle',
   },
   'Chandelure-Mega': {
     types: [
@@ -10127,6 +10128,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Flash Fire',
     },
+    baseSpecies: 'Chandelure',
   },
   'Chesnaught-Mega': {
     types: [
@@ -10145,6 +10147,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Overgrow',
     },
+    baseSpecies: 'Chesnaught',
   },
   'Clefable-Mega': {
     types: [
@@ -10163,6 +10166,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Cute Charm',
     },
+    baseSpecies: 'Clefable',
   },
   'Delphox-Mega': {
     types: [
@@ -10181,6 +10185,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Blaze',
     },
+    baseSpecies: 'Delphox',
   },
   'Dragalge-Mega': {
     types: [
@@ -10199,6 +10204,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Poison Point',
     },
+    baseSpecies: 'Dragalge',
   },
   'Dragonite-Mega': {
     types: [
@@ -10217,6 +10223,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Inner Focus',
     },
+    baseSpecies: 'Dragonite',
   },
   'Drampa-Mega': {
     types: [
@@ -10235,6 +10242,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Berserk',
     },
+    baseSpecies: 'Drampa',
   },
   'Eelektross-Mega': {
     types: [
@@ -10252,6 +10260,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Levitate',
     },
+    baseSpecies: 'Eelektross',
   },
   'Emboar-Mega': {
     types: [
@@ -10270,6 +10279,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Blaze',
     },
+    baseSpecies: 'Emboar',
   },
   'Excadrill-Mega': {
     types: [
@@ -10288,6 +10298,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Sand Rush',
     },
+    baseSpecies: 'Excadrill',
   },
   'Falinks-Mega': {
     types: [
@@ -10305,6 +10316,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Battle Armor',
     },
+    baseSpecies: 'Falinks',
   },
   'Feraligatr-Mega': {
     types: [
@@ -10323,6 +10335,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Torrent',
     },
+    baseSpecies: 'Feraligatr',
   },
   'Floette-Mega': {
     types: [
@@ -10340,6 +10353,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Flower Veil',
     },
+    baseSpecies: 'Floette',
   },
   'Froslass-Mega': {
     types: [
@@ -10358,6 +10372,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Snow Cloak',
     },
+    baseSpecies: 'Froslass',
   },
   'Greninja-Mega': {
     types: [
@@ -10376,6 +10391,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Torrent',
     },
+    baseSpecies: 'Greninja',
   },
   'Hawlucha-Mega': {
     types: [
@@ -10394,6 +10410,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Limber',
     },
+    baseSpecies: 'Hawlucha',
   },
   'Malamar-Mega': {
     types: [
@@ -10412,6 +10429,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Contrary',
     },
+    baseSpecies: 'Malamar',
   },
   'Meganium-Mega': {
     types: [
@@ -10430,6 +10448,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Overgrow',
     },
+    baseSpecies: 'Meganium',
   },
   'Pyroar-Mega': {
     types: [
@@ -10448,6 +10467,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Rivalry',
     },
+    baseSpecies: 'Pyroar',
   },
   'Scolipede-Mega': {
     types: [
@@ -10466,6 +10486,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Poison Point',
     },
+    baseSpecies: 'Scolipede',
   },
   'Scrafty-Mega': {
     types: [
@@ -10484,6 +10505,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Shed Skin',
     },
+    baseSpecies: 'Scrafty',
   },
   'Skarmory-Mega': {
     types: [
@@ -10502,6 +10524,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Keen Eye',
     },
+    baseSpecies: 'Skarmory',
   },
   'Starmie-Mega': {
     types: [
@@ -10520,6 +10543,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Illuminate',
     },
+    baseSpecies: 'Starmie',
   },
   'Victreebel-Mega': {
     types: [
@@ -10538,6 +10562,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Chlorophyll',
     },
+    baseSpecies: 'Victreebel',
   },
   'Zygarde-Mega': {
     types: [
@@ -10552,10 +10577,11 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       sd: 85,
       sp: 100,
     },
-    weightkg: 610.0,
+    weightkg: 33.5,
     abilities: {
       '0': 'Aura Break',
     },
+    baseSpecies: 'Zygarde',
   },
 };
 
