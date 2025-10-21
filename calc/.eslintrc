@@ -9,6 +9,7 @@
     "jest/no-disabled-tests": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "jest/no-conditional-expect": "off",
-    "@typescript-eslint/consistent-type-imports": "error"
+    "@typescript-eslint/consistent-type-imports": "error",
+    "prefer-object-spread": "off"
   }
 }
