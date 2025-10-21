@@ -293,7 +293,7 @@ const BW = DPP.concat([
   'Water Gem',
 ]);
 
-export const MEGA_STONES: {[species: string]: string} = {
+const GEN_6_MEGA_STONES: {[species: string]: string} = {
   Absolite: 'Absol',
   Abomasite: 'Abomasnow',
   Aerodactylite: 'Aerodactyl',
@@ -346,7 +346,7 @@ export const MEGA_STONES: {[species: string]: string} = {
 
 const XY = BW.concat(
   [
-    ...Object.keys(MEGA_STONES),
+    ...Object.keys(GEN_6_MEGA_STONES),
     'Assault Vest',
     'Blue Orb',
     'Fairy Gem',
@@ -470,29 +470,61 @@ SS.push('Utility Umbrella', 'Vile Vial');
 // Because we support National Dex all Past items are added back in
 SS.push(...GSC_ONLY, 'Old Amber');
 
-const SV = SS.concat([
-  'Adamant Crystal',
-  'Auspicious Armor',
-  'Ability Shield',
-  'Booster Energy',
-  'Clear Amulet',
-  'Cornerstone Mask',
-  'Covert Cloak',
-  'Fairy Feather',
-  'Hearthflame Mask',
-  'Loaded Dice',
-  'Malicious Armor',
-  'Masterpiece Teacup',
-  'Metal Alloy',
-  'Mirror Herb',
-  'Punching Glove',
-  'Lustrous Globe',
-  'Griseous Core',
-  'Strange Ball',
-  'Syrupy Apple',
-  'Unremarkable Teacup',
-  'Wellspring Mask',
-]);
+const ZA_MEGA_STONES: {[species: string]: string} = {
+  Barbaracite: 'Barbaracle',
+  Chandelurite: 'Chandelure',
+  Chesnaughtite: 'Chesnaught',
+  Clefablite: 'Clefable',
+  Delphoxite: 'Delphox',
+  Dragalgite: 'Dragalge',
+  Dragoninite: 'Dragonite',
+  Drampanite: 'Drampa',
+  Eelektrossite: 'Eelektross',
+  Emboarite: 'Emboar',
+  Excadrite: 'Excadrill',
+  Falinksite: 'Falinks',
+  Feraligite: 'Feraligatr',
+  Floettite: 'Floette',
+  Froslassite: 'Froslass',
+  Greninjite: 'Greninja',
+  Hawluchanite: 'Hawlucha',
+  Malmarite: 'Malamar',
+  Meganiumite: 'Meganium',
+  Pyroarite: 'Pyroar',
+  Scolipite: 'Scolipede',
+  Scraftinite: 'Scrafty',
+  Skarmorite: 'Skarmory',
+  Starminite: 'Starmie',
+  Victreebelite: 'Victreebel',
+  Zygardite: 'Zygarde',
+};
+
+const SV = SS.concat(
+  [
+    ...Object.keys(ZA_MEGA_STONES),
+    'Adamant Crystal',
+    'Auspicious Armor',
+    'Ability Shield',
+    'Booster Energy',
+    'Clear Amulet',
+    'Cornerstone Mask',
+    'Covert Cloak',
+    'Fairy Feather',
+    'Hearthflame Mask',
+    'Loaded Dice',
+    'Malicious Armor',
+    'Masterpiece Teacup',
+    'Metal Alloy',
+    'Mirror Herb',
+    'Punching Glove',
+    'Lustrous Globe',
+    'Griseous Core',
+    'Strange Ball',
+    'Syrupy Apple',
+    'Unremarkable Teacup',
+    'Wellspring Mask',
+  ].sort()
+);
 
 const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Aguav Berry': {t: 'Dragon', p: 80},
@@ -573,6 +605,8 @@ const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
   'Wiki Berry': {t: 'Rock', p: 80},
   'Yache Berry': {t: 'Ice', p: 80},
 };
+
+export const MEGA_STONES = Object.assign({}, GEN_6_MEGA_STONES, ZA_MEGA_STONES);
 
 export const ITEMS = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
