@@ -4923,7 +4923,16 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   },
 };
 
-const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
+const ZA_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  'Nihil Light': {
+    bp: 100,
+    type: 'Dragon',
+    category: 'Special',
+    target: 'allAdjacentFoes',
+  },
+};
+
+const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH, ZA_PATCH);
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
