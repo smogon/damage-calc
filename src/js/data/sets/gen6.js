@@ -1446,6 +1446,7 @@ var SETDEX_XY = {
     "UU Suicide Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Hasty","evs":{"at":184,"sa":72,"sp":252},"moves":["Stealth Rock","Taunt","Double-Edge","Fire Blast"]},
     "RU Life Orb": {"ability":"Unnerve","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Earthquake","Pursuit","Aerial Ace"]},
     "Battle Spot Doubles Offensive Support": {"level":50,"ability":"Unnerve","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Rock Slide","Sky Drop","Tailwind","Protect"]},
+    "Monotype Offensive Entry Hazard Setter (Flying)": {"ability":"Rock Head","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Ice Fang","Pursuit","Stealth Rock"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Unnerve","item":"King's Rock","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Tailwind","Rock Slide","Sky Drop","Wide Guard"]}
   },
   "Aerodactyl-Mega": {
@@ -1454,6 +1455,7 @@ var SETDEX_XY = {
     "Ubers Prehistoric Beast (Offensive)": {"ability":"Tough Claws","item":"Aerodactylite","nature":"Jolly","evs":{"hp":40,"at":252,"sp":216},"moves":["Stealth Rock","Taunt","Stone Edge","Earthquake"]},
     "UU All-Out Attacker": {"ability":"Tough Claws","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Wing Attack","Earthquake","Roost"]},
     "UU Hone Claws": {"ability":"Tough Claws","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Hone Claws","Stone Edge","Wing Attack","Earthquake"]},
+    "Monotype Offensive Entry Hazard Setter (Flying)": {"ability":"Pressure","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Ice Fang","Pursuit","Stealth Rock"]},
     "Pure Hackmons Showdown Usage": {"ability":"Shadow Tag","item":"Choice Scarf","nature":"Timid","evs":{"hp":248,"sd":8,"sp":252},"moves":["Trick","Dragon Ascent","Sheer Cold","Gastro Acid"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Tough Claws","item":"Aerodactylite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Slide","Sky Drop","Earthquake","Roost"]}
   },
@@ -2442,7 +2444,7 @@ var SETDEX_XY = {
   },
   "Camerupt": {
     "UU Wallbreaker": {"ability":"Solid Rock","item":"Cameruptite","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":4,"sa":252},"moves":["Fire Blast","Earth Power","Ancient Power","Hidden Power Grass"]},
-    "RU Tank": {"ability":"Solid Rock","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":176,"sp":84},"moves":["Fire Blast","Earth Power","Stealth Rock","Toxic"]},
+    "RU Tank": {"ability":"Magma Armor","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":176,"sp":84},"moves":["Fire Blast","Earth Power","Stealth Rock","Toxic"]},
     "NU Defensive": {"ability":"Solid Rock","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Stealth Rock","Lava Plume","Earthquake","Toxic"]},
     "NU Choice Specs": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","ivs":{"sa":30},"evs":{"hp":140,"sa":252,"sp":116},"moves":["Fire Blast","Earth Power","Lava Plume","Hidden Power Electric"]},
     "PU Choice Specs": {"ability":"Solid Rock","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Eruption","Fire Blast","Earth Power","Hidden Power Ice"]},
@@ -2453,7 +2455,7 @@ var SETDEX_XY = {
   },
   "Camerupt-Mega": {
     "UU Wallbreaker": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":252,"df":4,"sa":252},"moves":["Fire Blast","Earth Power","Ancient Power","Hidden Power Grass"]},
-    "RU Tank": {"ability":"Sheer Force","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":176,"sp":84},"moves":["Fire Blast","Earth Power","Stealth Rock","Toxic"]},
+    "RU Tank": {"ability":"Solid Rock","item":"Cameruptite","nature":"Modest","evs":{"hp":248,"sa":176,"sp":84},"moves":["Fire Blast","Earth Power","Stealth Rock","Toxic"]},
     "Battle Spot Doubles Standard": {"level":50,"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Heat Wave","Earth Power","Hidden Power Ice","Protect"]},
     "Doubles OU Showdown Usage": {"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","evs":{"hp":248,"sa":252,"sd":8},"moves":["Earth Power","Protect","Heat Wave","Ancient Power"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","evs":{"df":132,"sa":252,"sd":120},"moves":["Protect","Heat Wave","Flamethrower","Earth Power"]}
@@ -2587,7 +2589,7 @@ var SETDEX_XY = {
   },
   "Banette-Mega": {
     "UU Prankster": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Taunt","Will-O-Wisp","Shadow Claw","Destiny Bond"]},
-    "RU Offensive": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":228,"at":252,"sp":28},"moves":["Knock Off","Will-O-Wisp","Shadow Claw","Shadow Sneak"]},
+    "RU Offensive": {"ability":"Insomnia","item":"Banettite","nature":"Adamant","evs":{"hp":228,"at":252,"sp":28},"moves":["Knock Off","Will-O-Wisp","Shadow Claw","Shadow Sneak"]},
     "Doubles OU Showdown Usage": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Disable","Protect","Shadow Claw","Gunk Shot"]},
     "Monotype Showdown Usage": {"ability":"Prankster","item":"Banettite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Shadow Claw","Sucker Punch","Protect","Destiny Bond"]}
   },
@@ -2637,7 +2639,7 @@ var SETDEX_XY = {
   },
   "Glalie-Mega": {
     "UU Wrecking Ball": {"ability":"Refrigerate","item":"Glalitite","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Double-Edge","Explosion","Super Fang","Freeze-Dry"]},
-    "RU Wallbreaker": {"ability":"Refrigerate","item":"Glalitite","nature":"Naive","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Freeze-Dry","Ice Shard","Spikes"]},
+    "RU Wallbreaker": {"ability":"Inner Focus","item":"Glalitite","nature":"Naive","evs":{"at":252,"df":4,"sp":252},"moves":["Double-Edge","Freeze-Dry","Ice Shard","Spikes"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Refrigerate","item":"Glalitite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":248},"moves":["Explosion","Protect","Earthquake","Frustration"]}
   },
   "Walrein": {
@@ -2682,6 +2684,7 @@ var SETDEX_XY = {
     "Battle Spot Doubles Mixed": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Naive","evs":{"at":44,"sa":212,"sp":252},"moves":["Double-Edge","Hyper Voice","Draco Meteor","Protect"]},
     "Battle Spot Doubles Dragon Dance": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Protect"]},
     "Battle Spot Doubles Special": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hyper Voice","Draco Meteor","Fire Blast","Protect"]},
+    "Doubles OU Mixed Attacker": {"ability":"Intimidate","item":"Salamencite","nature":"Hasty","evs":{"at":176,"sa":80,"sp":252},"moves":["Double-Edge","Hyper Voice","Fire Blast","Protect"]},
     "Monotype Showdown Usage": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Outrage","Iron Tail","Dragon Claw"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Flamethrower","Protect","Hyper Voice"]}
   },
@@ -2694,6 +2697,7 @@ var SETDEX_XY = {
     "Battle Spot Doubles Mixed": {"level":50,"ability":"Aerilate","item":"Salamencite","nature":"Naive","evs":{"at":44,"sa":212,"sp":252},"moves":["Double-Edge","Hyper Voice","Draco Meteor","Protect"]},
     "Battle Spot Doubles Dragon Dance": {"level":50,"ability":"Aerilate","item":"Salamencite","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Dragon Dance","Return","Earthquake","Protect"]},
     "Battle Spot Doubles Special": {"level":50,"ability":"Aerilate","item":"Salamencite","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Hyper Voice","Draco Meteor","Fire Blast","Protect"]},
+    "Doubles OU Mixed Attacker": {"ability":"Intimidate","item":"Salamencite","nature":"Hasty","evs":{"at":176,"sa":80,"sp":252},"moves":["Double-Edge","Hyper Voice","Fire Blast","Protect"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Aerilate","item":"Salamencite","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Dragon Pulse","Flamethrower","Protect","Hyper Voice"]}
   },
   "Metang": {
