@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StorageManager 测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .test-result {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .test-pass {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .test-fail {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>StorageManager 功能测试</h1>
+    <div id="test-results"></div>
+    <button onclick="runTests()">运行测试</button>
+    <button onclick="clearTests()">清除测试数据</button>
+
+    <script src="storage-manager.js"></script>
+    <script>
+        const resultsDiv = document.getElementById('test-results');
+        
+        function logResult(testName, passed, message) {
+            const div = document.createElement('div');
+            div.className = `test-result ${passed ? 'test-pass' : 'test-fail'}`;
+            div.innerHTML = `<strong>${testName}:</strong> ${passed ? '✓ 通过' : '✗ 失败'} - ${message}`;
+            resultsDiv.appendChild(div);
+        }
+
+        function runTests() {
+            resultsDiv.innerHTML = '<h2>测试结果:</h2>';
+            
+            const storage = new StorageManager();
+            
+            // 测试1: 检查LocalStorage是否可用
+            const isAvailable = storage.isStorageAvailable();
+            logResult('LocalStorage可用性检查', isAvailable, 
+                isAvailable ? 'LocalStorage可用' : 'LocalStorage不可用');
+            
+            if (!isAvailable) {
+                logResult('测试终止', false, 'LocalStorage不可用，无法继续测试');
+                return;
+            }
+
+            // 测试2: 创建和保存配置集合
+            const testSet = {
+                generation: 9,
+                configurations: [
+                    {
+                        id: 'test-1',
+                        name: 'Pikachu',
+                        species: 'Pikachu',
+                        level: 100
+                    }
+                ]
+            };
+            
+            const saved = storage.saveConfigurationSet('测试集合1', testSet);
+            logResult('保存配置集合', saved, saved ? '成功保存' : '保存失败');
+
+            // 测试3: 加载配置集合
+            const loaded = storage.loadConfigurationSet('测试集合1');
+            const loadSuccess = loaded && loaded.name === '测试集合1' && loaded.generation === 9;
+            logResult('加载配置集合', loadSuccess, 
+                loadSuccess ? '成功加载，数据匹配' : '加载失败或数据不匹配');
+
+            // 测试4: 列出所有配置集合
+            const list = storage.listConfigurationSets();
+            const listSuccess = Array.isArray(list) && list.length > 0;
+            logResult('列出配置集合', listSuccess, 
+                listSuccess ? `找到 ${list.length} 个配置集合` : '列表为空或失败');
+
+            // 测试5: 设置当前配置集合
+            const setCurrentSuccess = storage.setCurrentSet('测试集合1');
+            logResult('设置当前配置集合', setCurrentSuccess, 
+                setCurrentSuccess ? '成功设置' : '设置失败');
+
+            // 测试6: 获取当前配置集合
+            const currentSet = storage.getCurrentSet();
+            const getCurrentSuccess = currentSet === '测试集合1';
+            logResult('获取当前配置集合', getCurrentSuccess, 
+                getCurrentSuccess ? `当前集合: ${currentSet}` : '获取失败');
+
+            // 测试7: 序列化和反序列化
+            const testData = { test: 'data', number: 123 };
+            const serialized = storage.serialize(testData);
+            const deserialized = storage.deserialize(serialized);
+            const serializeSuccess = deserialized.test === 'data' && deserialized.number === 123;
+            logResult('序列化/反序列化', serializeSuccess, 
+                serializeSuccess ? '数据正确转换' : '转换失败');
+
+            // 测试8: 获取存储使用情况
+            const usage = storage.getStorageUsage();
+            const usageSuccess = usage && typeof usage.used === 'number';
+            logResult('获取存储使用情况', usageSuccess, 
+                usageSuccess ? `已使用: ${usage.configSetsPercentage}%` : '获取失败');
+
+            // 测试9: 保存第二个配置集合
+            const testSet2 = {
+                generation: 8,
+                configurations: []
+            };
+            const saved2 = storage.saveConfigurationSet('测试集合2', testSet2);
+            logResult('保存第二个配置集合', saved2, saved2 ? '成功保存' : '保存失败');
+
+            // 测试10: 验证列表包含两个集合
+            const list2 = storage.listConfigurationSets();
+            const list2Success = list2.length >= 2;
+            logResult('验证多个配置集合', list2Success, 
+                list2Success ? `找到 ${list2.length} 个配置集合` : '数量不正确');
+
+            // 测试11: 删除配置集合
+            const deleted = storage.deleteConfigurationSet('测试集合2');
+            logResult('删除配置集合', deleted, deleted ? '成功删除' : '删除失败');
+
+            // 测试12: 验证删除后的列表
+            const list3 = storage.listConfigurationSets();
+            const list3Success = list3.length === list2.length - 1;
+            logResult('验证删除后的列表', list3Success, 
+                list3Success ? '列表数量正确' : '列表数量不正确');
+
+            // 测试13: 尝试加载不存在的配置集合
+            const notFound = storage.loadConfigurationSet('不存在的集合');
+            const notFoundSuccess = notFound === null;
+            logResult('加载不存在的配置集合', notFoundSuccess, 
+                notFoundSuccess ? '正确返回null' : '返回值不正确');
+
+            // 测试14: 尝试删除不存在的配置集合
+            const deleteNotFound = storage.deleteConfigurationSet('不存在的集合');
+            const deleteNotFoundSuccess = deleteNotFound === false;
+            logResult('删除不存在的配置集合', deleteNotFoundSuccess, 
+                deleteNotFoundSuccess ? '正确返回false' : '返回值不正确');
+        }
+
+        function clearTests() {
+            const storage = new StorageManager();
+            storage.clearStorage();
+            resultsDiv.innerHTML = '<div class="test-result test-pass">测试数据已清除</div>';
+        }
+    </script>
+</body>
+</html>
