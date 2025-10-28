@@ -733,6 +733,7 @@ var SETDEX_SV = {
   "Slowking": {
     "OU Defensive Pivot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Relaxed","teraType":"Fairy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Future Sight","Chilly Reception","Thunder Wave"]},
     "UU Utility Pivot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Sassy","teraType":"Fairy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":240,"sd":16},"moves":["Scald","Thunder Wave","Slack Off","Chilly Reception"]},
+    "Monotype Bulky Pivot (Psychic)": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Chilly Reception","Scald","Thunder Wave","Slack Off"]},
     "National Dex UU Specially Defensive Pivot": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Scald","Future Sight","Slack Off","Teleport"]},
     "National Dex RU Physically Defensive": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Relaxed","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":252,"sa":4},"moves":["Scald","Future Sight","Slack Off","Teleport"]},
     "National Dex RU Specially Defensive": {"ability":"Regenerator","item":"Heavy-Duty Boots","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":248,"df":52,"sd":208},"moves":["Scald","Future Sight","Slack Off","Teleport"]},

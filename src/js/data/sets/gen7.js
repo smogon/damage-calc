@@ -557,9 +557,6 @@ var SETDEX_SM = {
     "1v1 Defensive Z-Move": {"ability":"Unaware","item":"Psychium Z","nature":"Bold","evs":{"hp":252,"df":236,"sd":20},"moves":["Magic Coat","Reflect","Moonlight","Moonblast"]},
     "CAP Showdown Usage": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Wish","Protect","Flamethrower"]}
   },
-  "Vulpix-Alola": {
-    "LC Hail Support": {"level":5,"ability":"Snow Warning","item":"Light Clay","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"hp":52,"sa":200,"sp":240},"moves":["Aurora Veil","Blizzard","Freeze-Dry","Hidden Power Ground"]}
-  },
   "Ninetales": {
     "RU Nasty Plot Wallbreaker": {"ability":"Drought","item":"Firium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Fire Blast","Solar Beam","Hidden Power Ice"]},
     "RU Choice Specs": {"ability":"Drought","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Overheat","Fire Blast","Solar Beam","Hidden Power Ice"]}
@@ -5010,6 +5007,9 @@ var SETDEX_SM = {
   },
   "Equilibra": {
     "CAP Equilibra": {"ability":"Bulletproof","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":60,"sa":68,"sd":84,"sp":44},"moves":["Doom Desire","Earth Power","Rapid Spin","Pain Split"]}
+  },
+  "Vulpix-Alola": {
+    "LC Showdown Usage": {"level":5,"ability":"Snow Warning","item":"Light Clay","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":52,"sa":200,"sp":240},"moves":["Aurora Veil","Blizzard","Freeze-Dry","Hidden Power Fighting"]}
   },
   "Murkrow": {
     "Doubles OU Showdown Usage": {"ability":"Prankster","item":"Eviolite","nature":"Calm","evs":{"df":252,"sd":252,"sp":4},"moves":["Tailwind","Foul Play","Rain Dance","Haze"]}
