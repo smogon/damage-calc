@@ -2702,6 +2702,7 @@ var SETDEX_BW = {
   },
   "Excadrill": {
     "OU Offensive": {"ability":"Sand Force","item":"Leftovers","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Iron Head","Protect","Rapid Spin"]},
+    "OU Swords Dance": {"ability":"Sand Force","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Iron Head","Rapid Spin"]},
     "OU Specially Defensive": {"ability":"Mold Breaker","item":"Leftovers","nature":"Careful","evs":{"hp":208,"sd":252,"sp":48},"moves":["Earthquake","Rapid Spin","Toxic","Protect"]},
     "OU Choice Scarf": {"ability":"Mold Breaker","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Iron Head","Rapid Spin","Rock Slide"]},
     "Ubers Bulky Rapid Spin": {"ability":"Mold Breaker","item":"Leftovers","nature":"Adamant","evs":{"hp":176,"at":60,"sd":252,"sp":20},"moves":["Rapid Spin","Earthquake","Swords Dance","Rock Slide"]},
@@ -2724,7 +2725,7 @@ var SETDEX_BW = {
     "NU Bulk Up": {"ability":"Guts","item":"Eviolite","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Bulk Up","Drain Punch","Mach Punch","Payback"]}
   },
   "Conkeldurr": {
-    "OU Bulk Up": {"ability":"Guts","item":"Leftovers","nature":"Careful","ivs":{"sp":0},"evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Mach Punch","Drain Punch","Payback"]},
+    "OU Bulk Up": {"ability":"Guts","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Mach Punch","Drain Punch","Payback"]},
     "OU Four Attacks": {"ability":"Iron Fist","item":"Life Orb","nature":"Adamant","evs":{"hp":20,"at":236,"sd":252},"moves":["Drain Punch","Ice Punch","Thunder Punch","Mach Punch"]},
     "Doubles OU Physical Attacker": {"ability":"Iron Fist","item":"Life Orb","nature":"Brave","ivs":{"sp":0},"evs":{"hp":144,"at":252,"sd":112},"moves":["Hammer Arm","Mach Punch","Ice Punch","Detect"]},
     "1v1 Fighting Gem": {"ability":"Iron Fist","item":"Fighting Gem","nature":"Adamant","evs":{"hp":248,"at":132,"sd":128},"moves":["Hammer Arm","Mach Punch","Bulk Up","Stone Edge"]}

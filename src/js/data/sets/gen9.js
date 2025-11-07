@@ -1057,7 +1057,7 @@ var SETDEX_SV = {
     "ZU Swords Dance": {"ability":"Speed Boost","item":"Eviolite","nature":"Adamant","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Flare Blitz","Protect"]}
   },
   "Blaziken": {
-    "OU Swords Dance": {"ability":"Speed Boost","item":"Life Orb","nature":"Adamant","teraType":"Fighting","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Flare Blitz","Knock Off"]},
+    "OU Swords Dance": {"ability":"Speed Boost","item":"Life Orb","nature":"Adamant","teraType":"Fighting","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Flare Blitz","Stone Edge"]},
     "National Dex Showdown Usage": {"ability":"Speed Boost","item":"Firium Z","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Flare Blitz","Swords Dance","Protect"]},
     "National Dex Doubles Showdown Usage": {"ability":"Blaze","item":"Blazikenite","nature":"Adamant","teraType":"Fire","evs":{"hp":4,"at":252,"sp":252},"moves":["Close Combat","Flare Blitz","Protect","Swords Dance"]}
   },
@@ -1495,7 +1495,8 @@ var SETDEX_SV = {
   "Deoxys-Speed": {
     "OU Mixed Attacker": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Naive","teraType":"Fighting","evs":{"at":200,"sa":252,"sp":56},"moves":["Psycho Boost","Superpower","Knock Off","Ice Beam"]},
     "OU Offensive Nasty Plot": {"ability":"Pressure","item":"Life Orb","nature":"Modest","teraType":"Fighting","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Psycho Boost","Focus Blast","Shadow Ball"]},
-    "OU Lead": {"ability":"Pressure","item":"Colbur Berry","nature":"Naive","teraType":"Ghost","evs":{"hp":248,"df":156,"sp":104},"moves":["Stealth Rock","Psychic Noise","Knock Off","Superpower"]},
+    "OU Hazard Lead": {"ability":"Pressure","item":"Colbur Berry","nature":"Naive","teraType":"Ghost","evs":{"hp":248,"df":156,"sp":104},"moves":["Stealth Rock","Psychic Noise","Knock Off","Superpower"]},
+    "OU Dual Screens": {"ability":"Pressure","item":"Light Clay","nature":"Timid","teraType":"Ghost","ivs":{"at":0},"evs":{"hp":248,"df":8,"sp":252},"moves":["Reflect","Light Screen","Taunt","Psycho Boost"]},
     "Ubers Lead": {"ability":"Pressure","item":"Rocky Helmet","nature":"Timid","teraType":"Ghost","evs":{"hp":248,"df":240,"sp":16},"moves":["Stealth Rock","Spikes","Taunt","Psycho Boost"]},
     "Monotype Nasty Plot": {"ability":"Pressure","item":"Expert Belt","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Expanding Force","Thunderbolt","Ice Beam"]},
     "Monotype Entry Hazard Support": {"ability":"Pressure","item":"Rocky Helmet","nature":"Timid","evs":{"at":16,"sa":252,"sd":4,"sp":236},"moves":["Stealth Rock","Low Kick","Ice Beam","Spikes"]},
@@ -2963,7 +2964,6 @@ var SETDEX_SV = {
     "BSS Reg I Assault Vest": {"level":50,"ability":"Sap Sipper","item":"Assault Vest","nature":"Modest","teraType":"Flying","evs":{"hp":252,"sa":252,"sp":4},"moves":["Flash Cannon","Draco Meteor","Acid Spray","Earthquake"]},
     "BSS Reg I Armor Press": {"level":50,"ability":"Shell Armor","item":"Leftovers","nature":"Careful","teraType":"Flying","evs":{"hp":252,"sd":252,"sp":4},"moves":["Acid Armor","Body Press","Heavy Slam","Protect"]},
     "Monotype Specially Defensive (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"]},
-    "Monotype Assault Vest (Steel)": {"ability":"Sap Sipper","item":"Assault Vest","nature":"Sassy","evs":{"hp":252,"sa":92,"sp":164},"moves":["Thunderbolt","Ice Beam","Draco Meteor","Heavy Slam"]},
     "National Dex UU Offensive Tank": {"ability":"Sap Sipper","item":"Leftovers","nature":"Modest","evs":{"hp":156,"sa":176,"sp":176},"moves":["Draco Meteor","Flash Cannon","Flamethrower","Knock Off"]},
     "National Dex Monotype Specially Defensive (Dragon)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":4,"sd":252},"moves":["Heavy Slam","Flamethrower","Dragon Tail","Protect"]},
     "National Dex Monotype AcidPress (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Heavy Slam","Body Press","Acid Armor","Protect"]},
@@ -4212,7 +4212,7 @@ var SETDEX_SV = {
     "National Dex RU Showdown Usage": {"ability":"Weak Armor","item":"Weakness Policy","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Armor Cannon","Aura Sphere","Endure","Stored Power"]}
   },
   "Ceruledge": {
-    "OU Swords Dance": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","teraType":"Ghost","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Bitter Blade","Shadow Sneak","Poltergeist"]},
+    "OU Swords Dance": {"ability":"Weak Armor","item":"Life Orb","nature":"Jolly","teraType":"Ghost","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Bitter Blade","Shadow Sneak","Poltergeist"]},
     "OU Bulk Up": {"ability":"Flash Fire","item":"Covert Cloak","nature":"Careful","teraType":"Bug","evs":{"hp":252,"sd":172,"sp":84},"moves":["Bulk Up","Bitter Blade","Shadow Sneak","Taunt"]},
     "BSS Reg I Bulk Up Sweeper": {"level":50,"ability":"Flash Fire","item":"Leftovers","nature":"Impish","teraType":"Fairy","evs":{"hp":252,"at":4,"df":252},"moves":["Bitter Blade","Bulk Up","Taunt","Shadow Sneak"]},
     "BSS Reg I Focus Sash Attacker": {"level":50,"ability":"Weak Armor","item":"Focus Sash","nature":"Adamant","teraType":"Fire","evs":{"at":252,"sd":4,"sp":252},"moves":["Bitter Blade","Close Combat","Shadow Sneak","Swords Dance"]},
@@ -4502,7 +4502,7 @@ var SETDEX_SV = {
   },
   "Great Tusk": {
     "OU Offensive Utility": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Jolly","teraType":"Steel","evs":{"at":252,"df":4,"sp":252},"moves":["Headlong Rush","Ice Spinner","Rapid Spin","Stealth Rock"]},
-    "OU Defensive": {"ability":"Protosynthesis","item":"Rocky Helmet","nature":"Jolly","teraType":"Water","evs":{"hp":252,"at":4,"sp":252},"moves":["Headlong Rush","Ice Spinner","Rapid Spin","Knock Off"]},
+    "OU Defensive": {"ability":"Protosynthesis","item":"Rocky Helmet","nature":"Jolly","teraType":"Water","evs":{"hp":252,"at":4,"sp":252},"moves":["Headlong Rush","Ice Spinner","Rapid Spin","Stealth Rock"]},
     "OU Bulk Up": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Jolly","teraType":"Ice","evs":{"hp":252,"at":4,"sp":252},"moves":["Bulk Up","Headlong Rush","Ice Spinner","Rapid Spin"]},
     "Ubers Choice Item": {"ability":"Protosynthesis","item":"Choice Scarf","nature":"Adamant","teraType":"Ground","evs":{"at":252,"df":4,"sp":252},"moves":["Headlong Rush","Close Combat","Earthquake","Rapid Spin"]},
     "Ubers Offensive Utility": {"ability":"Protosynthesis","item":"Leftovers","nature":"Jolly","teraType":"Ground","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Headlong Rush","Close Combat","Rapid Spin"]},
