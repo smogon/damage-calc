@@ -1,4 +1,3 @@
-import { type } from 'os';
 import type {Generation, TypeName, StatID, GenerationNum} from './data/interface';
 import {toID} from './util';
 
