@@ -10079,7 +10079,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Excadrill: {otherFormes: ['Excadrill-Mega']},
   Falinks: {otherFormes: ['Falinks-Mega']},
   Feraligatr: {otherFormes: ['Feraligatr-Mega']},
-  Floette: {otherFormes: ['Floette-Mega']},
+  Floette: {otherFormes: ['Floette-Eternal', 'Floette-Mega']},
   Froslass: {otherFormes: ['Froslass-Mega']},
   Greninja: {otherFormes: ['Greninja-Mega']},
   Hawlucha: {otherFormes: ['Hawlucha-Mega']},
@@ -10337,6 +10337,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     },
     baseSpecies: 'Feraligatr',
   },
+  'Floette-Eternal': {bs: {hp: 74, at: 65, df: 67, sa: 125, sd: 128, sp: 92}},
   'Floette-Mega': {
     types: [
       'Fairy',
