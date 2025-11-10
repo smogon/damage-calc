@@ -380,7 +380,7 @@ export function calculateSMSSSV(
       field.defenderSide.isForesight;
   const isRingTarget =
     defender.hasItem('Ring Target') && !defender.hasAbility('Klutz');
-  let type1Effectiveness = getMoveEffectiveness(
+  const type1Effectiveness = getMoveEffectiveness(
     gen,
     move,
     defender.types[0],
@@ -388,7 +388,7 @@ export function calculateSMSSSV(
     field.isGravity,
     isRingTarget
   );
-  let type2Effectiveness = defender.types[1]
+  const type2Effectiveness = defender.types[1]
     ? getMoveEffectiveness(
       gen,
       move,
@@ -398,13 +398,6 @@ export function calculateSMSSSV(
       isRingTarget
     )
     : 1;
-
-  if (type1Effectiveness === 0 && move.named('Nihil Light')) {
-    type1Effectiveness = 1;
-  }
-  if (type2Effectiveness === 0 && move.named('Nihil Light')) {
-    type2Effectiveness = 1;
-  }
 
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
