@@ -1,4 +1,4 @@
-import type {Generation, TypeName, StatID} from './data/interface';
+import type {Generation, TypeName, StatID, GenerationNum} from './data/interface';
 import {toID} from './util';
 
 export const SEED_BOOSTED_STAT: {[item: string]: StatID} = {
@@ -375,8 +375,9 @@ const FLING_10 = new Set([
 ]);
 
 // TODO: move this data to the data files instead.
-export function getFlingPower(item?: string) {
+export function getFlingPower(item?: string, gen: GenerationNum = 9) {
   if (!item) return 0;
+  if (item === 'Big Nugget' && gen <= 7) return 30;
   if (['Big Nugget', 'Iron Ball', 'TR43', 'TR71'].includes(item)) return 130;
   if (FLING_120.has(item)) return 85;
   if (['TR03', 'TR06', 'TR09', 'TR15', 'TR89'].includes(item)) return 110;
