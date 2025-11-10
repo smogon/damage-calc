@@ -1684,6 +1684,47 @@ describe('calc', () => {
           });
         });
       });
+      describe('Nihil Light is neutral to Fairy-types', () => {
+        const attacker = Pokemon('Zygarde-Mega', {teraType: 'Electric'});
+        const nihilLight = Move('Nihil Light');
+        const otherMove = Move('Electro Drift');
+
+        test('On a Pokemon otherwise neutral to Dragon', () => {
+          const defender = Pokemon('Arceus-Fairy');
+
+          const nihilResult = calculate(attacker, defender, nihilLight);
+          const otherResult = calculate(attacker, defender, otherMove);
+
+          const nihilRange = nihilResult.range();
+          const otherRange = otherResult.range();
+          expect(nihilRange[0]).toBe(otherRange[0]);
+          expect(nihilRange[1]).toBe(otherRange[1]);
+        });
+
+        test('On a Pokemon otherwise resistant to Dragon', () => {
+          const defender = Pokemon('Mawile');
+
+          const nihilResult = calculate(attacker, defender, nihilLight);
+          const otherResult = calculate(attacker, defender, otherMove);
+
+          const nihilRange = nihilResult.range();
+          const otherRange = otherResult.range();
+          expect(nihilRange[0]).toBeLessThan(otherRange[0]);
+          expect(nihilRange[1]).toBeLessThan(otherRange[1]);
+        });
+
+        test('On a Pokemon otherwise weak to Dragon', () => {
+          const defender = Pokemon('Altaria-Mega');
+
+          const nihilResult = calculate(attacker, defender, nihilLight);
+          const otherResult = calculate(attacker, defender, otherMove);
+
+          const nihilRange = nihilResult.range();
+          const otherRange = otherResult.range();
+          expect(nihilRange[0]).toBeGreaterThan(otherRange[0]);
+          expect(nihilRange[1]).toBeGreaterThan(otherRange[1]);
+        });
+      });
     });
     describe('Descriptions', () => {
       inGen(9, ({gen, calculate, Pokemon, Move}) => {

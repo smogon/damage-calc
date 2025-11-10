@@ -398,6 +398,7 @@ export function calculateSMSSSV(
       isRingTarget
     )
     : 1;
+
   let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (defender.teraType && defender.teraType !== 'Stellar') {
@@ -417,10 +418,6 @@ export function calculateSMSSSV(
   }
 
   if (typeEffectiveness === 0 && move.named('Thousand Arrows')) {
-    typeEffectiveness = 1;
-  }
-
-  if (typeEffectiveness === 0 && move.named('Nihil Light')) {
     typeEffectiveness = 1;
   }
 
