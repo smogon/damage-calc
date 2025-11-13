@@ -1054,7 +1054,7 @@ function buildDescription(description: RawDesc, attacker: Pokemon, defender: Pok
   }
   output += description.defenderName;
   if (description.weather && description.terrain) {
-    // do nothing
+    output += ' in ' + description.weather + ' and ' + description.terrain + ' Terrain';
   } else if (description.weather) {
     output += ' in ' + description.weather;
   } else if (description.terrain) {
