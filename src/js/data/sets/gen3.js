@@ -150,7 +150,6 @@ var SETDEX_ADV = {
   "Zapdos": {
     "OU Standard Offensive": {"ability":"Pressure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Grass","Thunder Wave","Roar"]},
     "OU Rest": {"ability":"Pressure","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":252,"sp":4},"moves":["Thunderbolt","Rest","Toxic","Roar"]},
-    "OU Agility + Baton Pass": {"ability":"Pressure","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":120,"sp":136},"moves":["Thunderbolt","Hidden Power Grass","Agility","Baton Pass"]},
     "OU Mixed": {"ability":"Pressure","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"at":120,"sa":252,"sp":136},"moves":["Thunderbolt","Drill Peck","Hidden Power Grass","Agility"]},
     "Doubles OU Offensive": {"ability":"Pressure","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Grass","Thunder Wave","Protect"]}
   },
@@ -1060,7 +1059,6 @@ var SETDEX_ADV = {
   },
   "Scizor": {
     "OU Swords Dance": {"ability":"Swarm","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":108,"at":252,"sp":148},"moves":["Swords Dance","Silver Wind","Hidden Power Rock","Agility"]},
-    "OU Baton Pass": {"ability":"Swarm","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":48,"sd":208},"moves":["Baton Pass","Iron Defense","Swords Dance","Substitute"]},
     "OU Reversal": {"ability":"Swarm","item":"Liechi Berry","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":108,"at":252,"sp":148},"moves":["Agility","Endure","Reversal","Hidden Power Ghost"]},
     "OU Choice Band": {"ability":"Swarm","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":30,"at":252,"sp":228},"moves":["Silver Wind","Hidden Power Rock","Steel Wing","Quick Attack"]}
   },
@@ -1459,8 +1457,6 @@ var SETDEX_ADV = {
   },
   "Glalie": {
     "UU Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","ivs":{"at":30,"sa":30},"evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Explosion","Earthquake","Hidden Power Grass"]},
-    "NU Bulky Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Naive","evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Taunt","Ice Beam","Explosion"]},
-    "NU Physical Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Earthquake","Shadow Ball","Explosion"]},
     "RU Showdown Usage": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Spikes","Explosion","Taunt","Ice Beam"]}
   },
   "Sealeo": {
