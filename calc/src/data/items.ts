@@ -282,6 +282,7 @@ const BW = DPP.concat([
   'Normal Gem',
   'Plume Fossil',
   'Poison Gem',
+  'Pretty Feather',
   'Prism Scale',
   'Psychic Gem',
   'Red Card',
@@ -484,11 +485,11 @@ const ZA_MEGA_STONES: {[species: string]: string} = {
   Excadrite: 'Excadrill',
   Falinksite: 'Falinks',
   Feraligite: 'Feraligatr',
-  Floettite: 'Floette',
+  Floettite: 'Floette-Eternal',
   Froslassite: 'Froslass',
   Greninjite: 'Greninja',
   Hawluchanite: 'Hawlucha',
-  Malmarite: 'Malamar',
+  Malamarite: 'Malamar',
   Meganiumite: 'Meganium',
   Pyroarite: 'Pyroar',
   Scolipite: 'Scolipede',
@@ -496,7 +497,7 @@ const ZA_MEGA_STONES: {[species: string]: string} = {
   Skarmorite: 'Skarmory',
   Starminite: 'Starmie',
   Victreebelite: 'Victreebel',
-  Zygardite: 'Zygarde',
+  Zygardite: 'Zygarde-Complete',
 };
 
 const SV = SS.concat(

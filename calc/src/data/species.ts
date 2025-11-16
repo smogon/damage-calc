@@ -9734,7 +9734,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Ramnarok: {
     types: ['Fire', 'Steel'],
-    bs: {hp: 110, at: 63, df: 104, sa: 104, sd: 134, sp: 85},
+    bs: {hp: 110, at: 56, df: 104, sa: 111, sd: 134, sp: 85},
     weightkg: 250,
     abilities: {0: 'No Guard'},
     otherFormes: ['Ramnarok-Radiant'],
@@ -9742,7 +9742,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Ramnarok-Radiant': {
     types: ['Fire', 'Ice'],
-    bs: {hp: 110, at: 63, df: 85, sa: 134, sd: 54, sp: 154},
+    bs: {hp: 110, at: 56, df: 85, sa: 141, sd: 54, sp: 154},
     weightkg: 182,
     abilities: {0: 'No Guard'},
     baseSpecies: 'Ramnarok',
@@ -10081,7 +10081,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Feraligatr: {otherFormes: ['Feraligatr-Mega']},
   Floette: {otherFormes: ['Floette-Eternal', 'Floette-Mega']},
   Froslass: {otherFormes: ['Froslass-Mega']},
-  Greninja: {otherFormes: ['Greninja-Mega']},
+  Greninja: {otherFormes: ['Greninja-Ash', 'Greninja-Bond', 'Greninja-Mega']},
   Hawlucha: {otherFormes: ['Hawlucha-Mega']},
   Malamar: {otherFormes: ['Malamar-Mega']},
   Meganium: {otherFormes: ['Meganium-Mega']},
@@ -10091,7 +10091,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Skarmory: {otherFormes: ['Skarmory-Mega']},
   Starmie: {otherFormes: ['Starmie-Mega']},
   Victreebel: {otherFormes: ['Victreebel-Mega']},
-  Zygarde: {otherFormes: ['Zygarde-Mega', 'Zygarde-10%', 'Zygarde-Complete']},
+  Zygarde: {otherFormes: ['Zygarde-10%', 'Zygarde-Complete', 'Zygarde-Mega']},
   'Barbaracle-Mega': {
     types: [
       'Rock',
@@ -10238,7 +10238,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       sd: 116,
       sp: 36,
     },
-    weightkg: 240.5,
+    weightkg: 185,
     abilities: {
       '0': 'Berserk',
     },
@@ -10256,7 +10256,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       sd: 90,
       sp: 80,
     },
-    weightkg: 180.0,
+    weightkg: 160.0,
     abilities: {
       '0': 'Levitate',
     },
@@ -10316,6 +10316,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Battle Armor',
     },
+    gender: 'N',
     baseSpecies: 'Falinks',
   },
   'Feraligatr-Mega': {
@@ -10544,6 +10545,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {
       '0': 'Illuminate',
     },
+    gender: 'N',
     baseSpecies: 'Starmie',
   },
   'Victreebel-Mega': {
@@ -10578,10 +10580,11 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       sd: 85,
       sp: 100,
     },
-    weightkg: 33.5,
+    weightkg: 610,
     abilities: {
       '0': 'Aura Break',
     },
+    gender: 'N',
     baseSpecies: 'Zygarde',
   },
 };

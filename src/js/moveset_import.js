@@ -316,11 +316,25 @@ function addSets(pokes, name) {
 
 function checkExeptions(poke) {
 	switch (poke) {
+	case 'Alcremie-Ruby-Cream':
+	case 'Alcremie-Matcha-Cream':
+	case 'Alcremie-Mint-Cream':
+	case 'Alcremie-Lemon-Cream':
+	case 'Alcremie-Salted-Cream':
+	case 'Alcremie-Ruby-Swirl':
+	case 'Alcremie-Caramel-Swirl':
+	case 'Alcremie-Rainbow-Swirl':
+		poke = "Alcremie";
+		break;
 	case 'Aegislash':
 		poke = "Aegislash-Blade";
 		break;
 	case 'Basculin-Blue-Striped':
 		poke = "Basculin";
+		break;
+	case 'Burmy-Sandy':
+	case 'Burmy-Trash':
+		poke = "Burmy";
 		break;
 	case 'Gastrodon-East':
 		poke = "Gastrodon";
@@ -330,6 +344,14 @@ function checkExeptions(poke) {
 		break;
 	case 'Mimikyu-Busted':
 		poke = "Mimikyu";
+		break;
+	case 'Minior-Orange':
+	case 'Minior-Yellow':
+	case 'Minior-Green':
+	case 'Minior-Blue':
+	case 'Minior-Indigo':
+	case 'Minior-Violet':
+		poke = "Minior";
 		break;
 	case 'Pikachu-Belle':
 	case 'Pikachu-Cosplay':
@@ -341,8 +363,27 @@ function checkExeptions(poke) {
 	case 'Pikachu-Rock-Star':
 		poke = "Pikachu";
 		break;
+	case 'Tastugiri-Droopy':
+	case 'Tatsugiri-Stretchy':
+		poke = "Tatsugiri";
+		break;
+	case 'Vivillon-Archipelago':
+	case 'Vivillon-Continental':
+	case 'Vivillon-Elegant':
 	case 'Vivillon-Fancy':
+	case 'Vivillon-Garden':
+	case 'Vivillon-High Plains':
+	case 'Vivillon-Icy Snow':
+	case 'Vivillon-Modern':
+	case 'Vivillon-Monsoon':
+	case 'Vivillon-Ocean':
 	case 'Vivillon-Pokeball':
+	case 'Vivillon-Polar':
+	case 'Vivillon-River':
+	case 'Vivillon-Sandstorm':
+	case 'Vivillon-Savanna':
+	case 'Vivillon-Sun':
+	case 'Vivillon-Tundra':
 		poke = "Vivillon";
 		break;
 	case 'Florges-White':

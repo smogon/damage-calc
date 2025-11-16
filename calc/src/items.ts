@@ -391,7 +391,7 @@ export function getFlingPower(item?: string, gen: GenerationNum = 9) {
   if (['Eject Pack', 'Sharp Beak', 'Dubious Disc'].includes(item)) return 50;
   if (['Icy Rock', 'Eviolite', 'Lucky Punch'].includes(item)) return 40;
   if (FLING_30.has(item)) return 30;
-  if (item === 'TR82') return 20;
+  if (['TR82', 'Pretty Feather'].includes(item)) return 20;
   if (item.includes('Berry') || FLING_10.has(item)) return 10;
   return 0;
 }
