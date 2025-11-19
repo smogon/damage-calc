@@ -27,4 +27,4 @@ app.get("/calculate",(req, res, next) => {
 	res.json(result);
 })
 
-app.use(express.static('dist'))
+app.use(express.static('dist'));
