@@ -5006,9 +5006,6 @@ var SETDEX_SM = {
   "Equilibra": {
     "CAP Equilibra": {"ability":"Bulletproof","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":60,"sa":68,"sd":84,"sp":44},"moves":["Doom Desire","Earth Power","Rapid Spin","Pain Split"]}
   },
-  "Vulpix-Alola": {
-    "LC Showdown Usage": {"level":5,"ability":"Snow Warning","item":"Light Clay","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":52,"sa":200,"sp":240},"moves":["Aurora Veil","Blizzard","Freeze-Dry","Hidden Power Fighting"]}
-  },
   "Murkrow": {
     "Doubles OU Showdown Usage": {"ability":"Prankster","item":"Eviolite","nature":"Calm","evs":{"df":252,"sd":252,"sp":4},"moves":["Tailwind","Foul Play","Rain Dance","Haze"]}
   },

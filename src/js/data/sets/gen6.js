@@ -352,7 +352,6 @@ var SETDEX_XY = {
   "Meowstic": {
     "RU Dual Screens": {"ability":"Prankster","item":"Light Clay","nature":"Timid","evs":{"hp":248,"df":236,"sp":24},"moves":["Reflect","Light Screen","Thunder Wave","Psyshock"]},
     "PU Dual Screens": {"ability":"Prankster","item":"Light Clay","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Reflect","Light Screen","Yawn","Thunder Wave"]},
-    "ZU Dual Screens": {"ability":"Prankster","item":"Light Clay","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Reflect","Light Screen","Psychic","Thunder Wave"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Prankster","item":"Mental Herb","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Safeguard","Swagger","Quick Guard","Thunder Wave"]},
     "VGC 2016 Showdown Usage": {"level":50,"ability":"Prankster","item":"Mental Herb","nature":"Jolly","evs":{"hp":236,"sd":124,"sp":148},"moves":["Safeguard","Fake Out","Swagger","Gravity"]},
     "Battle Spot Triples Showdown Usage": {"level":50,"ability":"Prankster","item":"Focus Sash","nature":"Timid","evs":{"sp":252},"moves":["Fake Out","Quick Guard","Safeguard","Light Screen"]}
@@ -1543,11 +1542,7 @@ var SETDEX_XY = {
     "OU Lead": {"ability":"Synchronize","item":"Mental Herb","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Stealth Rock","Taunt","Thunder Wave","Explosion"]},
     "OU Stallbreaker": {"ability":"Synchronize","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":224,"sp":32},"moves":["Taunt","Soft-Boiled","Will-O-Wisp","Knock Off"]},
     "Doubles OU Transform Support": {"ability":"Synchronize","item":"Sitrus Berry","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Fake Out","Transform","Will-O-Wisp","Protect"]},
-    "Monotype Utility": {"ability":"Synchronize","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":148,"sp":108},"moves":["Taunt","Knock Off","Will-O-Wisp","Roost"]},
-    "1v1 Sitrus Berry": {"ability":"Synchronize","item":"Sitrus Berry","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":80,"sp":176},"moves":["Taunt","Will-O-Wisp","Seismic Toss","Roost"]},
-    "1v1 Rocky Helmet": {"ability":"Synchronize","item":"Rocky Helmet","nature":"Timid","ivs":{"at":0},"evs":{"hp":192,"df":64,"sp":252},"moves":["Soft-Boiled","Barrier","Taunt","Seismic Toss"]},
-    "1v1 Stall": {"ability":"Synchronize","item":"Sitrus Berry","nature":"Impish","ivs":{"at":0},"evs":{"hp":252,"df":252,"sp":4},"moves":["Amnesia","Iron Defense","Soft-Boiled","Seismic Toss"]},
-    "1v1 Choice Band": {"ability":"Synchronize","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","Gunk Shot","Superpower","Wild Charge"]}
+    "Monotype Utility": {"ability":"Synchronize","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":148,"sp":108},"moves":["Taunt","Knock Off","Will-O-Wisp","Roost"]}
   },
   "Chikorita": {
     "LC Aromatherapy": {"level":5,"ability":"Overgrow","item":"Eviolite","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":156,"df":160,"sa":48,"sd":80},"moves":["Aromatherapy","Synthesis","Giga Drain","Hidden Power Fire"]}
@@ -3976,7 +3971,7 @@ var SETDEX_XY = {
   },
   "Amoonguss": {
     "OU Pivot": {"ability":"Regenerator","item":"Black Sludge","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":248,"df":168,"sd":92},"moves":["Spore","Giga Drain","Clear Smog","Hidden Power Fire"]},
-    "Doubles OU Rage Powder": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":172,"sd":84},"moves":["Rage Powder","Spore","Giga Drain","Protect"]},
+    "Doubles OU Rage Powder": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"df":172,"sd":84},"moves":["Rage Powder","Spore","Energy Ball","Protect"]},
     "VGC 2016 Support": {"level":50,"ability":"Regenerator","item":"Mental Herb","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":244,"df":60,"sd":204},"moves":["Rage Powder","Spore","Grass Knot","Protect"]},
     "Battle Spot Doubles Rage Powder": {"level":50,"ability":"Regenerator","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Rage Powder","Spore","Giga Drain","Protect"]},
     "Battle Spot Singles Showdown Usage": {"level":50,"ability":"Regenerator","item":"Black Sludge","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Spore","Giga Drain","Foul Play","Clear Smog"]},

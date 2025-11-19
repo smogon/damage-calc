@@ -492,8 +492,7 @@ var SETDEX_BW = {
     "LC Life Orb": {"level":5,"ability":"Frisk","item":"Life Orb","nature":"Timid","ivs":{"hp":0},"evs":{"df":36,"sa":236,"sp":236},"moves":["Psychic","Thunderbolt","Dark Pulse","Substitute"]}
   },
   "Gothitelle": {
-    "OU I Wanna Be The Latios": {"ability":"Frisk","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Hidden Power Fire","Energy Ball","Trick"]},
-    "Doubles OU Shadow Tag Support": {"ability":"Shadow Tag","item":"Sitrus Berry","nature":"Calm","evs":{"hp":252,"df":252,"sd":4},"moves":["Psychic","Taunt","Trick Room","Protect"]}
+    "OU I Wanna Be The Latios": {"ability":"Frisk","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psychic","Hidden Power Fire","Energy Ball","Trick"]}
   },
   "Ferrothorn": {
     "OU Standard": {"ability":"Iron Barbs","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":48,"sd":208},"moves":["Spikes","Knock Off","Power Whip","Stealth Rock"]},
