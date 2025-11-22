@@ -2996,9 +2996,8 @@ var SETDEX_SS = {
   },
   "Aromatisse": {
     "PU Defensive": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Wish","Protect","Heal Bell"]},
-    "1v1 Defensive Rocky Helmet": {"ability":"Aroma Veil","item":"Rocky Helmet","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Encore","Disable","Moonblast"]},
-    "1v1 Bulky Rocky Helmet": {"ability":"Aroma Veil","item":"Rocky Helmet","nature":"Calm","ivs":{"at":0},"evs":{"hp":244,"df":40,"sd":224},"moves":["Trick Room","Encore","Disable","Draining Kiss"]},
-    "1v1 Bulky Wiki Berry": {"ability":"Aroma Veil","item":"Wiki Berry","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Trick Room","Encore","Disable","Moonblast"]}
+    "1v1 Specially Defensive": {"ability":"Aroma Veil","item":"Rocky Helmet","nature":"Calm","ivs":{"at":0},"evs":{"hp":244,"df":40,"sd":224},"moves":["Trick Room","Encore","Disable","Draining Kiss"]},
+    "1v1 Physically Defensive": {"ability":"Aroma Veil","item":"Rocky Helmet","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Encore","Disable","Moonblast"]}
   },
   "Swirlix": {
     "NFE Grassy Seed Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Modest","evs":{"df":112,"sa":252,"sp":144},"moves":["Calm Mind","Draining Kiss","Flamethrower","Thunderbolt"]}
@@ -4505,7 +4504,8 @@ var SETDEX_SS = {
     "CAP Balance Breaker": {"ability":"Blaze","item":"Charcoal","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Flare Blitz","Morning Sun","Toxic"]}
   },
   "Snaelstrom": {
-    "CAP Defensive": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Stealth Rock","Spiky Shield","U-turn"]}
+    "CAP Defensive": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Stealth Rock","Spiky Shield","U-turn"]},
+    "CAP Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Swords Dance","Razor Shell","Facade","Spiky Shield"]}
   },
   "Equilibra": {
     "CAP Pivot": {"ability":"Levitate","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":100,"sa":12,"sd":132,"sp":12},"moves":["Doom Desire","Earth Power","Rapid Spin","Flash Cannon"]}
