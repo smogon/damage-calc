@@ -941,9 +941,7 @@ export function calculateDefenseBWXY(
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
 
-  const boosts = defender.boosts[
-    field.isWonderRoom ? defenseStat === 'spd' ? 'def' : 'spd' : defenseStat
-  ];
+  const boosts = defender.boosts[defenseStat];
 
   // Power Trick swaps base Attack and Defense stats and gets applied before boosts
   if (field.defenderSide.isPowerTrick && hitsPhysical) {
