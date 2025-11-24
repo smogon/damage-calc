@@ -136,7 +136,7 @@ export function calculateSMSSSV(
   }
 
   if (move.named('Shell Side Arm') &&
-    getShellSideArmCategory(attacker, defender) === 'Physical') {
+    getShellSideArmCategory(attacker, defender, field.isWonderRoom) === 'Physical') {
     move.category = 'Physical';
     move.flags.contact = 1;
   }
@@ -670,8 +670,14 @@ export function calculateSMSSSV(
   }
   result.damage = childDamage ? [damage, childDamage] : damage;
 
-  desc.attackBoost =
-    move.named('Foul Play') ? defender.boosts[attackStat] : attacker.boosts[attackStat];
+  if (move.named('Foul Play')) {
+  	desc.attackBoost = defender.boosts[attackStat];
+//this feels hacky but the coder who made it couldn't think of a better way
+  } else if (move.named('Body Press') && field.isWonderRoom) {
+  	desc.attackBoost = attacker.boosts['spd'];
+  } else {
+    desc.attackBoost = attacker.boosts[attackStat];
+  }
 
   if (move.timesUsed! > 1 || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
@@ -1317,15 +1323,17 @@ export function calculateAttackSMSSSV(
     attackSource.rawStats[attackStat] = move.named('Body Press')
       ? attacker.rawStats.atk : attacker.rawStats.def;
   }
-  if (attackSource.boosts[attackStat] === 0 ||
-      (isCritical && attackSource.boosts[attackStat] < 0)) {
+
+  //currently set to look for Defense as acting attack stat, if needed can be changed to be Body Press specific in the future
+  const boosts = attackSource.boosts[(attackStat === 'def' && field.isWonderRoom) ? 'spd' : attackStat];
+  if (boosts === 0 ||
+      (isCritical && boosts < 0)) {
     attack = attackSource.rawStats[attackStat];
   } else if (defender.hasAbility('Unaware')) {
     attack = attackSource.rawStats[attackStat];
     desc.defenderAbility = defender.ability;
   } else {
-    attack = getModifiedStat(attackSource.rawStats[attackStat]!, attackSource.boosts[attackStat]!);
-    desc.attackBoost = attackSource.boosts[attackStat];
+    attack = getModifiedStat(attackSource.rawStats[attackStat]!, boosts!);
   }
 
   // unlike all other attack modifiers, Hustle gets applied directly

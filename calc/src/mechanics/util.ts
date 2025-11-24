@@ -562,9 +562,13 @@ export function getFinalDamage(
  * @param target Target pokemon (after stat modifications)
  * @returns 'Physical' | 'Special'
  */
-export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveCategory {
-  const physicalDamage = source.stats.atk / target.stats.def;
-  const specialDamage = source.stats.spa / target.stats.spd;
+export function getShellSideArmCategory(source: Pokemon, target: Pokemon, wonderRoomActive?: boolean): MoveCategory {
+  let physicalDamage = source.stats.atk / target.stats.def;
+  let specialDamage = source.stats.spa / target.stats.spd;
+  if (wonderRoomActive) {
+    physicalDamage = source.stats.atk / target.stats.spd;
+    specialDamage = source.stats.spa / target.stats.def;
+  }
   return physicalDamage > specialDamage ? 'Physical' : 'Special';
 }
 
