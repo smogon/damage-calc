@@ -975,6 +975,7 @@ var SETDEX_DPP = {
     "PU Choice Scarf": {"ability":"Synchronize","item":"Choice Scarf","nature":"Timid","ivs":{"at":3,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Shadow Ball","Hidden Power Electric","Trick"]}
   },
   "Machop": {
+    "LC SpDef": {"level":5,"ability":"No Guard","item":"Oran Berry","nature":"Adamant","evs":{"hp":116,"at":116,"df":36,"sd":236},"moves":["Dynamic Punch","Payback","Ice Punch","Bullet Punch"]},
     "LC Lead": {"level":5,"ability":"No Guard","item":"Oran Berry","nature":"Adamant","evs":{"hp":116,"at":196,"df":36,"sd":76,"sp":76},"moves":["Dynamic Punch","Ice Punch","Bullet Punch","Payback"]},
     "LC Choice Scarf": {"level":5,"ability":"No Guard","item":"Choice Scarf","nature":"Jolly","evs":{"at":196,"sd":76,"sp":236},"moves":["Dynamic Punch","Rock Slide","Payback","Ice Punch"]}
   },
