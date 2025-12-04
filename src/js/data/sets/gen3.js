@@ -1229,9 +1229,7 @@ var SETDEX_ADV = {
     "Ubers Choice Band": {"ability":"Truant","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Double-Edge","Shadow Ball","Focus Punch","Hyper Beam"]}
   },
   "Ninjask": {
-    "OU Baton Pass": {"ability":"Speed Boost","item":"Leftovers","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Baton Pass","Substitute","Silver Wind","Swords Dance"]},
-    "OU Swords Dance": {"ability":"Speed Boost","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"at":252,"df":60,"sp":196},"moves":["Swords Dance","Aerial Ace","Silver Wind","Hidden Power Rock"]},
-    "OU Choice Band": {"ability":"Speed Boost","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"at":252,"df":60,"sp":196},"moves":["Silver Wind","Aerial Ace","Hidden Power Rock","Shadow Ball"]},
+    "OU All-out Attacker": {"ability":"Speed Boost","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30,"sp":30},"evs":{"hp":60,"at":252,"sp":196},"moves":["Silver Wind","Aerial Ace","Hidden Power Rock","Shadow Ball"]},
     "UU Swords Dance": {"ability":"Speed Boost","item":"Soft Sand","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":68,"at":252,"df":188},"moves":["Swords Dance","Silver Wind","Aerial Ace","Hidden Power Ground"]}
   },
   "Shedinja": {

@@ -865,6 +865,7 @@ var SETDEX_SM = {
     "Monotype Shell Smash Sweeper (Ice)": {"ability":"Skill Link","item":"Waterium Z","nature":"Naive","evs":{"at":112,"sa":144,"sp":252},"moves":["Shell Smash","Icicle Spear","Hydro Pump","Rock Blast"]},
     "1v1 Life Orb": {"ability":"Skill Link","item":"Life Orb","nature":"Adamant","evs":{"hp":68,"at":192,"sp":248},"moves":["Shell Smash","Rock Blast","Icicle Spear","Barrier"]},
     "1v1 Choice Scarf": {"ability":"Skill Link","item":"Choice Scarf","nature":"Naive","evs":{"hp":112,"at":180,"df":4,"sp":212},"moves":["Icicle Spear","Rock Blast","Hydro Pump","Hidden Power Fire"]},
+    "OU Showdown Usage": {"ability":"Skill Link","item":"King's Rock","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shell Smash","Icicle Spear","Rock Blast","Ice Shard"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Skill Link","item":"Aguav Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Icicle Spear","Rock Blast","Ice Shard","Protect"]}
   },
   "Gastly": {
@@ -1529,7 +1530,7 @@ var SETDEX_SM = {
     "Anything Goes Showdown Usage": {"ability":"Sturdy","item":"Mental Herb","nature":"Careful","evs":{"hp":4,"df":252,"sd":252},"moves":["Sticky Web","Stealth Rock","Toxic","Encore"]}
   },
   "Heracross": {
-    "OU Swords Dance": {"ability":"Moxie","item":"Heracronite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Rock Blast","Pin Missile"]},
+    "OU Wallbreaker": {"ability":"Moxie","item":"Heracronite","nature":"Adamant","evs":{"hp":64,"at":252,"sp":192},"moves":["Swords Dance","Close Combat","Rock Blast","Pin Missile"]},
     "UU Swords Dance": {"ability":"Guts","item":"Flame Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Knock Off","Facade"]},
     "Battle Spot Singles Mega Wallbreaker": {"level":50,"ability":"Guts","item":"Heracronite","nature":"Adamant","evs":{"hp":20,"at":252,"sp":236},"moves":["Pin Missile","Rock Blast","Bullet Seed","Close Combat"]},
     "Monotype Choice Scarf (Fighting)": {"ability":"Guts","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Megahorn","Close Combat","Knock Off","Stone Edge"]},
@@ -1538,7 +1539,7 @@ var SETDEX_SM = {
     "1v1 Bulky Offense": {"ability":"Guts","item":"Heracronite","nature":"Adamant","evs":{"hp":252,"at":44,"sd":212},"moves":["Pin Missile","Earthquake","Close Combat","Rock Blast"]}
   },
   "Heracross-Mega": {
-    "OU Swords Dance": {"ability":"Skill Link","item":"Heracronite","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Close Combat","Rock Blast","Pin Missile"]},
+    "OU Wallbreaker": {"ability":"Skill Link","item":"Heracronite","nature":"Adamant","evs":{"hp":64,"at":252,"sp":192},"moves":["Swords Dance","Close Combat","Rock Blast","Pin Missile"]},
     "Battle Spot Singles Mega Wallbreaker": {"level":50,"ability":"Skill Link","item":"Heracronite","nature":"Adamant","evs":{"hp":20,"at":252,"sp":236},"moves":["Pin Missile","Rock Blast","Bullet Seed","Close Combat"]},
     "Monotype Wallbreaker (Bug)": {"ability":"Skill Link","item":"Heracronite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Rock Blast","Earthquake"]},
     "1v1 Bulky Offense": {"ability":"Skill Link","item":"Heracronite","nature":"Adamant","evs":{"hp":252,"at":44,"sd":212},"moves":["Pin Missile","Earthquake","Close Combat","Rock Blast"]}
@@ -2126,7 +2127,7 @@ var SETDEX_SM = {
     "PU Rapid Spin": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":232,"sd":28},"moves":["Stealth Rock","Rapid Spin","Lava Plume","Yawn"]},
     "Doubles OU Trick Room Attacker": {"ability":"Drought","item":"Charcoal","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":152,"sa":248,"sd":108},"moves":["Eruption","Flamethrower","Solar Beam","Protect"]},
     "Monotype Entry Hazard Remover": {"ability":"Drought","item":"Heat Rock","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rapid Spin","Stealth Rock","Lava Plume","Yawn"]},
-    "OU Showdown Usage": {"ability":"Drought","item":"Heat Rock","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Rapid Spin","Stealth Rock","Lava Plume","Yawn"]},
+    "OU Showdown Usage": {"ability":"Drought","item":"Heat Rock","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Stealth Rock","Rapid Spin","Lava Plume","Yawn"]},
     "RU Showdown Usage": {"ability":"Drought","item":"Heat Rock","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Stealth Rock","Rapid Spin","Lava Plume","Toxic"]},
     "ZU Showdown Usage": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Rapid Spin","Lava Plume","Stealth Rock","Will-O-Wisp"]},
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Drought","item":"Charcoal","nature":"Quiet","evs":{"hp":236,"sa":252,"sd":20},"moves":["Eruption","Solar Beam","Protect","Flamethrower"]}
@@ -3067,7 +3068,8 @@ var SETDEX_SM = {
   "Azelf": {
     "UU Nasty Plot": {"ability":"Levitate","item":"Adrenaline Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Psyshock","Flamethrower","Dazzling Gleam"]},
     "UU Suicide Lead": {"ability":"Levitate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sa":4,"sp":252},"moves":["Stealth Rock","Explosion","Taunt","Knock Off"]},
-    "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Jolly","evs":{"df":252,"sd":40,"sp":216},"moves":["Reflect","Light Screen","Taunt","U-turn"]}
+    "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Jolly","evs":{"df":252,"sd":40,"sp":216},"moves":["Reflect","Light Screen","Taunt","U-turn"]},
+    "OU Showdown Usage": {"ability":"Levitate","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Stealth Rock","Explosion","Taunt","Knock Off"]}
   },
   "Dialga": {
     "Ubers Offensive Utility": {"ability":"Pressure","item":"Life Orb","nature":"Modest","evs":{"hp":104,"sa":252,"sp":152},"moves":["Stealth Rock","Draco Meteor","Fire Blast","Thunder"]}
