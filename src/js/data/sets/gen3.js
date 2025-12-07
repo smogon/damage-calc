@@ -17,11 +17,7 @@ var SETDEX_ADV = {
     "PU Physical Setup": {"ability":"Blaze","item":"Leftovers","nature":"Hasty","ivs":{"df":30,"sd":30},"evs":{"at":252,"sa":4,"sp":252},"moves":["Belly Drum","Fire Blast","Double-Edge","Hidden Power Ghost"]}
   },
   "Charizard": {
-    "OU Recoil Attacker": {"ability":"Blaze","item":"Salac Berry","nature":"Lonely","evs":{"at":252,"sa":120,"sp":136},"moves":["Belly Drum","Double-Edge","Fire Blast","Earthquake"]},
-    "OU Belly Drum + 3 Attacks": {"ability":"Blaze","item":"Salac Berry","nature":"Lonely","evs":{"at":252,"sa":120,"sp":136},"moves":["Belly Drum","Fire Blast","Earthquake","Rock Slide"]},
-    "OU Substitute + Belly Drum": {"ability":"Blaze","item":"Salac Berry","nature":"Lonely","ivs":{"hp":30,"sa":30,"sd":30,"sp":30},"evs":{"at":252,"sa":120,"sp":136},"moves":["Substitute","Belly Drum","Fire Blast","Hidden Power Flying"]},
-    "OU Special Attacker": {"ability":"Blaze","item":"Leftovers","nature":"Rash","ivs":{"at":30,"sa":30},"evs":{"at":24,"sa":240,"sp":244},"moves":["Substitute","Hidden Power Grass","Fire Blast","Focus Punch"]},
-    "OU Physical Attacker": {"ability":"Blaze","item":"Leftovers","nature":"Lonely","ivs":{"at":30,"sa":30},"evs":{"hp":140,"at":252,"sp":116},"moves":["Dragon Dance","Aerial Ace","Hidden Power Grass","Fire Blast"]}
+    "OU Mixed Attacker": {"ability":"Blaze","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Substitute","Focus Punch"]}
   },
   "Wartortle": {
     "PU Defensive": {"ability":"Torrent","item":"Leftovers","nature":"Bold","ivs":{"at":30,"sa":30},"evs":{"hp":248,"df":188,"sp":72},"moves":["Rapid Spin","Surf","Toxic","Hidden Power Grass"]}
