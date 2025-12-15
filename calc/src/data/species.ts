@@ -10775,7 +10775,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       sd: 85,
       sp: 100,
     },
-    weightkg: 33.5,
+    weightkg: 610,
     abilities: {
       '0': 'Aura Break',
     },
