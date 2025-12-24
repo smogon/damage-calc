@@ -127,3 +127,5 @@ describe('Adaptable', () => {
     expect(result.range()).toEqual([274, 324]);
   });
 });
+
+it.skip("items");

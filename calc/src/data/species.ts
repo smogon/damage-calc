@@ -10090,7 +10090,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Glimmora: {otherFormes: ['Glimmora-Mega']},
   Golisopod: {otherFormes: ['Golisopod-Mega']},
   Golurk: {otherFormes: ['Golurk-Mega']},
-  Greninja: {otherFormes: ['Greninja-Mega']},
+  Greninja: {otherFormes: ['Greninja-Ash', 'Greninja-Bond', 'Greninja-Mega']},
   Hawlucha: {otherFormes: ['Hawlucha-Mega']},
   Heatran: {otherFormes: ['Heatran-Mega']},
   Lucario: {otherFormes: ['Lucario-Mega', 'Lucario-Mega-Z']},
@@ -10109,7 +10109,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Tatsugiri: {otherFormes: ['Tatsugiri-Mega']},
   Victreebel: {otherFormes: ['Victreebel-Mega']},
   Zeraora: {otherFormes: ['Zeraora-Mega']},
-  Zygarde: {otherFormes: ['Zygarde-Mega', 'Zygarde-10%', 'Zygarde-Complete']},
+  Zygarde: {otherFormes: ['Zygarde-10%', 'Zygarde-Complete', 'Zygarde-Mega']},
   'Absol-Mega-Z': {
     types: ['Dark', 'Ghost'],
     bs: {hp: 65, at: 154, df: 60, sa: 75, sd: 60, sp: 151},
