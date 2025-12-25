@@ -1238,10 +1238,8 @@ var SETDEX_ADV = {
     "NU Baton Pass Recipient": {"ability":"Soundproof","item":"Leftovers","nature":"Naughty","evs":{"hp":100,"at":252,"sa":16,"sp":140},"moves":["Return","Shadow Ball","Earthquake","Fire Blast"]}
   },
   "Hariyama": {
-    "OU Knock Off": {"ability":"Guts","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":96,"df":192,"sd":192,"sp":28},"moves":["Knock Off","Cross Chop","Rock Slide","Hidden Power Ghost"]},
-    "OU Special Tank": {"ability":"Guts","item":"Leftovers","nature":"Careful","evs":{"hp":84,"df":144,"sd":252,"sp":28},"moves":["Rest","Sleep Talk","Cross Chop","Whirlwind"]},
-    "OU Choice Band": {"ability":"Guts","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"df":112,"sd":116,"sp":28},"moves":["Cross Chop","Rock Slide","Hidden Power Ghost","Fake Out"]},
-    "OU Focus Punch": {"ability":"Guts","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":96,"df":192,"sd":192,"sp":28},"moves":["Focus Punch","Counter","Rock Slide","Hidden Power Ghost"]}
+    "OU Offensive": {"ability":"Guts","item":"Leftovers","nature":"Adamant","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"df":228,"sp":28},"moves":["Cross Chop","Brick Break","Knock Off","Hidden Power Bug"]},
+    "OU Defensive Knock Off": {"ability":"Thick Fat","item":"Leftovers","nature":"Impish","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":4,"df":252,"sd":252},"moves":["Knock Off","Brick Break","Rest","Hidden Power Bug"]}
   },
   "Nosepass": {
     "NU Trapper": {"ability":"Magnet Pull","item":"Leftovers","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Taunt","Fire Punch","Block","Explosion"]},
