@@ -2066,8 +2066,8 @@ var SETDEX_SV = {
     "Monotype Bulkyrai (Bulky Darkrai)": {"ability":"Bad Dreams","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":16,"sp":240},"moves":["Will-O-Wisp","Nasty Plot","Dark Pulse","Focus Blast"]},
     "Monotype Choice Scarf (Dark)": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Sludge Bomb","Psychic","Trick"]},
     "Monotype Nasty Plot": {"ability":"Bad Dreams","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Pulse","Ice Beam","Focus Blast"]},
-    "1v1 Choice Scarf": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dark Pulse","Trick","Ice Beam","Sludge Bomb"]},
     "1v1 Choice Specs": {"ability":"Bad Dreams","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Ice Beam","Thunder","Focus Blast"]},
+    "1v1 Choice Scarf": {"ability":"Bad Dreams","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Dark Pulse","Trick","Ice Beam","Sludge Bomb"]},
     "CAP Showdown Usage": {"ability":"Bad Dreams","item":"Leftovers","nature":"Timid","teraType":"Poison","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Sludge Bomb","Nasty Plot","Ice Beam"]}
   },
   "Shaymin": {
@@ -4661,7 +4661,6 @@ var SETDEX_SV = {
     "Monotype Bulky Choice Specs (Fairy)": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"hp":32,"df":216,"sa":44,"sp":216},"moves":["Moonblast","Shadow Ball","Psyshock","Thunderbolt"]},
     "Monotype All-Out Attacker (Ghost)": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":12,"sa":244,"sp":252},"moves":["Moonblast","Shadow Ball","Energy Ball","Thunderbolt"]},
     "Monotype All-Out Attacker (Fairy)": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Moonblast","Energy Ball","Thunderbolt"]},
-    "National Dex Ubers Specially Offensive": {"ability":"Protosynthesis","item":"Life Orb","nature":"Timid","teraType":"Fairy","evs":{"sa":252,"sd":4,"sp":252},"moves":["Taunt","Moonblast","Shadow Ball","Power Gem"]},
     "Balanced Hackmons Utility": {"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":252,"sa":252,"sd":252,"sp":252},"moves":["Moonblast","Pain Split","Spikes","Astral Barrage"]},
     "Balanced Hackmons Normalize": {"ability":"Normalize","item":"Pixie Plate","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":252,"sa":252,"sd":252,"sp":252},"moves":["Entrainment","Judgment","Taunt","Spikes"]},
     "National Dex Doubles Choice Specs": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"hp":92,"df":48,"sa":152,"sp":216},"moves":["Moonblast","Dazzling Gleam","Shadow Ball","Icy Wind"]},
