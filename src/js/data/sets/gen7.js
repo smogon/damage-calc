@@ -149,7 +149,7 @@ var SETDEX_SM = {
     "PU Defensive": {"ability":"Frisk","item":"Leftovers","nature":"Impish","evs":{"hp":72,"df":252,"sp":184},"moves":["Seed Bomb","Foul Play","Will-O-Wisp","Synthesis"]}
   },
   "Hawlucha": {
-    "OU Terrain Seed Sweeper": {"ability":"Unburden","item":"Electric Seed","nature":"Adamant","evs":{"hp":96,"at":252,"sd":36,"sp":124},"moves":["Acrobatics","Swords Dance","High Jump Kick","Roost"]},
+    "OU Terrain Seed Sweeper": {"ability":"Unburden","item":"Electric Seed","nature":"Adamant","evs":{"hp":96,"at":252,"sd":36,"sp":124},"moves":["Swords Dance","Acrobatics","High Jump Kick","Substitute"]},
     "Monotype Offensive Defogger (Fighting)": {"ability":"Unburden","item":"Power Herb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Defog","Sky Attack","Acrobatics","High Jump Kick"]},
     "Monotype Substitute + Swords Dance (Fighting)": {"ability":"Unburden","item":"Sitrus Berry","nature":"Jolly","ivs":{"hp":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Swords Dance","Acrobatics","High Jump Kick"]},
     "Monotype Unburden Sweeper (Flying)": {"ability":"Unburden","item":"Sitrus Berry","nature":"Jolly","ivs":{"hp":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","High Jump Kick","Acrobatics","Substitute"]},
@@ -2025,7 +2025,7 @@ var SETDEX_SM = {
     "1v1 Metal Burst": {"ability":"Filter","item":"Aggronite","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":240,"at":204,"df":64},"moves":["Metal Burst","Head Smash","Heavy Slam","Taunt"]}
   },
   "Medicham": {
-    "OU All-out Attacker": {"ability":"Telepathy","item":"Medichamite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","High Jump Kick","Ice Punch","Zen Headbutt"]},
+    "OU All-out Attacker": {"ability":"Telepathy","item":"Medichamite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","Fake Out","Ice Punch","Zen Headbutt"]},
     "RU All-out Attacker": {"ability":"Pure Power","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["High Jump Kick","Zen Headbutt","Thunder Punch","Bullet Punch"]},
     "NU Wallbreaker": {"ability":"Pure Power","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["High Jump Kick","Zen Headbutt","Thunder Punch","Bullet Punch"]},
     "VGC 2019 All-out Attacker": {"level":50,"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","High Jump Kick","Zen Headbutt","Bullet Punch"]},
@@ -2033,7 +2033,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","High Jump Kick","Ice Punch","Fake Out"]}
   },
   "Medicham-Mega": {
-    "OU All-out Attacker": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Fake Out","High Jump Kick","Ice Punch","Zen Headbutt"]},
+    "OU All-out Attacker": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","Fake Out","Ice Punch","Zen Headbutt"]},
     "VGC 2019 All-out Attacker": {"level":50,"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","High Jump Kick","Zen Headbutt","Bullet Punch"]},
     "1v1 Offensive": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Fake Out","High Jump Kick","Zen Headbutt","Ice Punch"]},
     "CAP Showdown Usage": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","High Jump Kick","Ice Punch","Fake Out"]}
