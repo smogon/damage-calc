@@ -1122,12 +1122,7 @@ var SETDEX_ADV = {
     "RU Wallbreaker": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Double-Edge","Earthquake","Shadow Ball","Substitute"]}
   },
   "Smeargle": {
-    "OU Belly Drum + Baton Pass": {"ability":"Own Tempo","item":"Salac Berry","nature":"Jolly","evs":{"hp":96,"df":120,"sd":40,"sp":252},"moves":["Spore","Belly Drum","Substitute","Baton Pass"]},
-    "OU Normal Endeavor": {"ability":"Own Tempo","item":"Salac Berry","nature":"Jolly","ivs":{"hp":0},"evs":{"at":252,"sp":252},"moves":["Spore","Endure","Endeavor","Seismic Toss"]},
-    "OU Level 5 Endeavor": {"ability":"Own Tempo","item":"Quick Claw","nature":"Jolly","ivs":{"hp":9},"evs":{"at":196,"df":76,"sp":236},"moves":["Spore","Substitute","Endeavor","Dragon Rage"]},
-    "OU Perish Trapper": {"ability":"Own Tempo","item":"Leftovers","nature":"Jolly","evs":{"hp":96,"df":120,"sd":40,"sp":252},"moves":["Spore","Spider Web","Substitute","Perish Song"]},
-    "OU Belly Drum Sweeper": {"ability":"Own Tempo","item":"Salac Berry","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spore","Extreme Speed","Explosion","Belly Drum"]},
-    "OU Transform": {"ability":"Own Tempo","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":4,"sp":252},"moves":["Spore","Transform","Explosion","Reflect"]}
+    "OU Standard Spikes Lead": {"ability":"Own Tempo","item":"Salac Berry","nature":"Jolly","evs":{"hp":68,"sd":188,"sp":252},"moves":["Spore","Spikes","Whirlwind","Destiny Bond"]}
   },
   "Smoochum": {
     "ZU Calm Mind": {"ability":"Oblivious","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Calm Mind","Ice Beam","Psychic","Substitute"]}
@@ -1249,6 +1244,7 @@ var SETDEX_ADV = {
     "Ubers ADORABLE DESTROYER OF WORLDS": {"ability":"Cute Charm","item":"Oran Berry","nature":"Hasty","evs":{"hp":1},"moves":["Double Slap","Tackle","Sing","Attract"]}
   },
   "Sableye": {
+    "OU Physically Defensive": {"ability":"Keen Eye","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Knock Off","Seismic Toss","Psych Up"]},
     "RU Wall": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Toxic","Knock Off","Recover"]},
     "NU Mixed Defensive": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":56,"sd":200},"moves":["Shadow Ball","Recover","Toxic","Seismic Toss"]},
     "NU Physically Defensive": {"ability":"Keen Eye","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Shadow Ball","Recover","Toxic","Seismic Toss"]},

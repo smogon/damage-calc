@@ -347,7 +347,7 @@ var SETDEX_RBY = {
     "UU Sleeper": {"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]}
   },
   "Gengar": {
-    "OU Sleeper": {"moves":["Hypnosis","Thunderbolt","Night Shade","Explosion"]},
+    "OU Sleeper": {"moves":["Hypnosis","Explosion","Psychic","Thunderbolt"]},
     "Ubers Sleeper": {"moves":["Hypnosis","Night Shade","Thunderbolt","Explosion"]},
     "1v1 Rest": {"moves":["Thunderbolt","Psychic","Rest","Substitute"]},
     "Tradebacks OU Standard": {"moves":["Hypnosis","Thunderbolt","Ice Punch","Explosion"]}
