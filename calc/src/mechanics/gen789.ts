@@ -29,7 +29,7 @@ import {
   checkSeedBoost,
   checkTeraformZero,
   checkWindRider,
-  checkWonderRoom,
+  checkRawStatChanges,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -66,8 +66,8 @@ export function calculateSMSSSV(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
-  checkWonderRoom(attacker, field.isWonderRoom);
-  checkWonderRoom(defender, field.isWonderRoom);
+  checkRawStatChanges(attacker, field.attackerSide.isPowerTrick, field.isWonderRoom);
+  checkRawStatChanges(defender, field.defenderSide.isPowerTrick, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
   checkDauntlessShield(attacker, gen);
@@ -106,6 +106,11 @@ export function calculateSMSSSV(
     moveName: move.name,
     defenderName: defender.name,
     isDefenderDynamaxed: defender.isDynamaxed,
+    isPowerTrickAttacker: (
+      (move.named('Foul Play') || (move.category === 'Special' && !move.named('Body Press')))
+        ? false
+        : field.attackerSide.isPowerTrick
+    ),
     isWonderRoom: field.isWonderRoom,
   };
 
@@ -577,8 +582,6 @@ export function calculateSMSSSV(
   // #endregion
   // #region (Special) Attack
   const attack = calculateAttackSMSSSV(gen, attacker, defender, move, field, desc, isCritical);
-  const attackStat =
-    move.named('Body Press') ? 'def' : move.category === 'Special' ? 'spa' : 'atk';
   // #endregion
 
   // #region (Special) Defense
@@ -669,15 +672,6 @@ export function calculateSMSSSV(
       getFinalDamage(baseDamage, i, typeEffectiveness, applyBurn, stabMod, finalMod, protect);
   }
   result.damage = childDamage ? [damage, childDamage] : damage;
-
-  if (move.named('Foul Play')) {
-  	desc.attackBoost = defender.boosts[attackStat];
-//this feels hacky but the coder who made it couldn't think of a better way
-  } else if (move.named('Body Press') && field.isWonderRoom) {
-  	desc.attackBoost = attacker.boosts['spd'];
-  } else {
-    desc.attackBoost = attacker.boosts[attackStat];
-  }
 
   if (move.timesUsed! > 1 || move.hits > 1) {
     // store boosts so intermediate boosts don't show.
@@ -1309,23 +1303,20 @@ export function calculateAttackSMSSSV(
   isCritical = false
 ) {
   let attack: number;
-  const attackStat = move.named('Body Press') ? 'def' : move.category === 'Special' ? 'spa' : 'atk';
+  const attackSource = move.named('Foul Play') ? defender : attacker;
+  const attackStat =
+    move.named('Body Press')
+      ? (field.isWonderRoom ? 'spd' : 'def')
+      : (move.category === 'Special' ? 'spa' : 'atk');
+  // Body Press in Wonder Room uses normal Def, which checkRawStatChanges has moved to SpD
   desc.attackEVs =
     move.named('Foul Play')
-      ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
-      : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
-  const attackSource = move.named('Foul Play') ? defender : attacker;
+      ? getStatDescriptionText(gen, defender, attackStat, field.defenderSide.isPowerTrick)
+      : (move.named('Body Press') && field.isWonderRoom)
+        ? getStatDescriptionText(gen, attacker, 'def', field.attackerSide.isPowerTrick)
+        : getStatDescriptionText(gen, attacker, attackStat, field.attackerSide.isPowerTrick);
 
-  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
-  if (field.attackerSide.isPowerTrick && !move.named('Foul Play') &&
-  move.category === 'Physical') {
-    desc.isPowerTrickAttacker = true;
-    attackSource.rawStats[attackStat] = move.named('Body Press')
-      ? attacker.rawStats.atk : attacker.rawStats.def;
-  }
-
-  //currently set to look for Defense as acting attack stat, if needed can be changed to be Body Press specific in the future
-  const boosts = attackSource.boosts[(attackStat === 'def' && field.isWonderRoom) ? 'spd' : attackStat];
+  const boosts = attackSource.boosts[attackStat];
   if (boosts === 0 ||
       (isCritical && boosts < 0)) {
     attack = attackSource.rawStats[attackStat];
@@ -1333,7 +1324,8 @@ export function calculateAttackSMSSSV(
     attack = attackSource.rawStats[attackStat];
     desc.defenderAbility = defender.ability;
   } else {
-    attack = getModifiedStat(attackSource.rawStats[attackStat]!, boosts!);
+    attack = getModifiedStat(attackSource.rawStats[attackStat]!, boosts);
+    desc.attackBoost = boosts;
   }
 
   // unlike all other attack modifiers, Hustle gets applied directly
@@ -1515,13 +1507,12 @@ export function calculateDefenseSMSSSV(
   const hitsPhysical = move.overrideDefensiveStat === 'def' || move.category === 'Physical';
   const defenseStat = hitsPhysical ? 'def' : 'spd';
   const boosts = defender.boosts[defenseStat];
-  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
 
-  // Power Trick swaps attack and defense stats raw before boosts
-  if (field.defenderSide.isPowerTrick && hitsPhysical) {
-    desc.isPowerTrickDefender = true;
-    defender.rawStats[defenseStat] = defender.rawStats.atk;
-  }
+  desc.defenseEVs = getStatDescriptionText(
+    gen, defender, defenseStat, field.defenderSide.isPowerTrick, field.isWonderRoom
+  );
+  desc.isPowerTrickDefender =
+    field.isWonderRoom === hitsPhysical ? false : field.defenderSide.isPowerTrick;
 
   if (boosts === 0 ||
       (isCritical && boosts > 0) ||

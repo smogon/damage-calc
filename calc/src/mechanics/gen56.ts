@@ -22,7 +22,7 @@ import {
   checkItem,
   checkMultihitBoost,
   checkSeedBoost,
-  checkWonderRoom,
+  checkRawStatChanges,
   computeFinalStats,
   countBoosts,
   getBaseDamage,
@@ -53,8 +53,8 @@ export function calculateBWXY(
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
   checkItem(defender, field.isMagicRoom);
-  checkWonderRoom(attacker, field.isWonderRoom);
-  checkWonderRoom(defender, field.isWonderRoom);
+  checkRawStatChanges(attacker, field.attackerSide.isPowerTrick, field.isWonderRoom);
+  checkRawStatChanges(defender, field.defenderSide.isPowerTrick, field.isWonderRoom);
   checkSeedBoost(attacker, field);
   checkSeedBoost(defender, field);
 
@@ -74,6 +74,7 @@ export function calculateBWXY(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
+    isPowerTrickAttacker: (move.named('Foul Play') ? false : field.attackerSide.isPowerTrick),
     isWonderRoom: field.isWonderRoom,
   };
 
@@ -815,14 +816,8 @@ export function calculateAttackBWXY(
   const attackStat = move.category === 'Special' ? 'spa' : 'atk';
   desc.attackEVs =
     move.named('Foul Play')
-      ? getStatDescriptionText(gen, defender, attackStat, defender.nature)
-      : getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
-
-  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
-  if (field.attackerSide.isPowerTrick && !move.named('Foul Play') && move.category === 'Physical') {
-    desc.isPowerTrickAttacker = true;
-    attackSource.rawStats[attackStat] = attacker.rawStats.def;
-  }
+      ? getStatDescriptionText(gen, defender, attackStat, field.defenderSide.isPowerTrick)
+      : getStatDescriptionText(gen, attacker, attackStat, field.attackerSide.isPowerTrick);
 
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
@@ -941,15 +936,13 @@ export function calculateDefenseBWXY(
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
 
+  desc.isPowerTrickDefender =
+    (!hitsPhysical && field.isWonderRoom) ? false : field.defenderSide.isPowerTrick;
+
   const boosts = defender.boosts[defenseStat];
-
-  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
-  if (field.defenderSide.isPowerTrick && hitsPhysical) {
-    desc.isPowerTrickDefender = true;
-    defender.rawStats[defenseStat] = defender.rawStats.atk;
-  }
-
-  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
+  desc.defenseEVs = getStatDescriptionText(
+    gen, defender, defenseStat, field.defenderSide.isPowerTrick, field.isWonderRoom
+  );
   if (boosts === 0 ||
     (isCritical && boosts > 0) ||
     move.ignoreDefensive) {

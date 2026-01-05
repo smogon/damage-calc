@@ -210,10 +210,19 @@ export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
   }
 }
 
-export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean) {
+export function checkRawStatChanges(
+  pokemon: Pokemon,
+  powerTrickActive?: boolean,
+  wonderRoomActive?: boolean,
+) {
+  if (powerTrickActive) {
+    [pokemon.rawStats.atk, pokemon.rawStats.def] = [pokemon.rawStats.def, pokemon.rawStats.atk];
+  }
   if (wonderRoomActive) {
     [pokemon.rawStats.def, pokemon.rawStats.spd] = [pokemon.rawStats.spd, pokemon.rawStats.def];
   }
+//  Power Trick acts first - the two checks could be separated into their own
+//  functions, but keeping them together ensures they apply in the correct order
 }
 
 export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon) {
@@ -562,7 +571,11 @@ export function getFinalDamage(
  * @param target Target pokemon (after stat modifications)
  * @returns 'Physical' | 'Special'
  */
-export function getShellSideArmCategory(source: Pokemon, target: Pokemon, wonderRoomActive?: boolean): MoveCategory {
+export function getShellSideArmCategory(
+  source: Pokemon,
+  target: Pokemon,
+  wonderRoomActive?: boolean
+): MoveCategory {
   let physicalDamage = source.stats.atk / target.stats.def;
   let specialDamage = source.stats.spa / target.stats.spd;
   if (wonderRoomActive) {
@@ -644,9 +657,17 @@ export function getStatDescriptionText(
   gen: Generation,
   pokemon: Pokemon,
   stat: StatID,
-  natureName?: NatureName
+  powerTrickActive?: boolean,
+  wonderRoomActive?: boolean,
 ): string {
-  const nature = gen.natures.get(toID(natureName))!;
+  if (wonderRoomActive) {
+    if (stat === 'def') { stat = 'spd'; } else if (stat === 'spd') { stat = 'def'; }
+  }
+  if (powerTrickActive) {
+    if (stat === 'atk') { stat = 'def'; } else if (stat === 'def') { stat = 'atk'; }
+  }
+  //  decoding what checkRawStatChanges does
+  const nature = gen.natures.get(toID(pokemon.nature))!;
   let desc = pokemon.evs[stat] +
     (stat === 'hp' || nature.plus === nature.minus ? ''
     : nature.plus === stat ? '+'
