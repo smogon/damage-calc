@@ -660,6 +660,7 @@ export function getStatDescriptionText(
   powerTrickActive?: boolean,
   wonderRoomActive?: boolean,
 ): string {
+  const initialStat: StatID = stat;
   if (wonderRoomActive) {
     if (stat === 'def') { stat = 'spd'; } else if (stat === 'spd') { stat = 'def'; }
   }
@@ -673,7 +674,10 @@ export function getStatDescriptionText(
     : nature.plus === stat ? '+'
     : nature.minus === stat ? '-'
     : '') + ' ' +
-     Stats.displayStat(stat);
+     Stats.displayStat(initialStat);
+  if (stat !== initialStat) {
+    desc = desc + ' (' + Stats.displayStat(stat) + ')';
+  }
   const iv = pokemon.ivs[stat];
   if (iv !== 31) desc += ` ${iv} IVs`;
   return desc;

@@ -937,7 +937,7 @@ export function calculateDefenseBWXY(
   const hitsPhysical = defenseStat === 'def';
 
   desc.isPowerTrickDefender =
-    (!hitsPhysical && field.isWonderRoom) ? false : field.defenderSide.isPowerTrick;
+    field.isWonderRoom === hitsPhysical ? false : field.defenderSide.isPowerTrick;
 
   const boosts = defender.boosts[defenseStat];
   desc.defenseEVs = getStatDescriptionText(

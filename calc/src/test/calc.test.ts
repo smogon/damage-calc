@@ -828,6 +828,75 @@ describe('calc', () => {
         );
       });
     });
+    inGens(8, 9, ({gen, calculate, Pokemon, Move}) => {
+      test(`Body Press should use the Def stat (gen ${gen})`, () => {
+        const attacker = Pokemon('Bronzong');
+        const defender = Pokemon('Glalie');
+        const result = calculate(attacker, defender, Move('Body Press'));
+        expect(result.range()).toEqual([158, 186]);
+        expect(result.desc()).toBe(
+          '0 Def Bronzong Body Press vs. 0 HP / 0 Def Glalie: 158-186 (52.4 - 61.7%) -- guaranteed 2HKO'
+        );
+      });
+    });
+    inGens(4, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Power Trick should swap Atk and Def raw stats (gen ${gen})`, () => {
+        const attacker = Pokemon('Bastiodon');
+        const defender = Pokemon('Glaceon');
+        const result = calculate(attacker, defender, Move('Iron Head'), Field({attackerSide: {isPowerTrick: true}}));
+        expect(result.range()).toEqual([252, 296]);
+        expect(result.desc()).toBe(
+          '0 Atk (Def) Bastiodon with Power Trick Iron Head vs. 0 HP / 0 Def Glaceon: 252-296 (92.9 - 109.2%) -- 56.3% chance to OHKO'
+        );
+        const result2 = calculate(attacker, defender, Move('Iron Head'), Field({defenderSide: {isPowerTrick: true}}));
+        expect(result2.range()).toEqual([156, 186]);
+        expect(result2.desc()).toBe(
+          '0 Atk Bastiodon Iron Head vs. 0 HP / 0 Def (Atk) Glaceon with Power Trick: 156-186 (57.5 - 68.6%) -- guaranteed 2HKO'
+        );
+      });
+    });
+    describe('Wonder Room', () => {
+      inGens(5, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+        test(`Wonder Room should switch Def and SpD (gen ${gen})`, () => {
+          const attacker = Pokemon('Golduck');
+          const defender = Pokemon('Forretress');
+          const result = calculate(attacker, defender, Move('Cross Chop'), Field({isWonderRoom: true}));
+          expect(result.range()).toEqual([92, 109]);
+          expect(result.desc()).toBe(
+            '0 Atk Golduck Cross Chop vs. 0 HP / 0 Def (SpD) Forretress in Wonder Room: 92-109 (31.6 - 37.4%) -- 87.7% chance to 3HKO'
+          );
+        });
+        test(`Power Trick should act before other stat effects (gen ${gen})`, () => {
+          const attacker = Pokemon('Empoleon');
+          const defender = Pokemon('Cloyster');
+          const result = calculate(attacker, defender, Move('Flash Cannon'), Field({isWonderRoom: true, defenderSide: {isPowerTrick: true}}));
+          expect(result.range()).toEqual([99, 117]);
+          expect(result.desc()).toBe(
+            '0 SpA Empoleon Flash Cannon vs. 0 HP / 0 SpD (Atk) Cloyster with Power Trick in Wonder Room: 99-117 (41 - 48.5%) -- guaranteed 3HKO'
+          );
+        });
+      });
+      inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+        test(`Body Press in Wonder Room uses Def but boosted by SpD (gen ${gen})`, () => {
+          const attacker = Pokemon('Kommo-o', {boosts: {spd: 1}});
+          const defender = Pokemon('Jirachi');
+          const result = calculate(attacker, defender, Move('Body Press'), Field({isWonderRoom: true}));
+          expect(result.range()).toEqual([157, 186]);
+          expect(result.desc()).toBe(
+            '+1 0 Def Kommo-o Body Press vs. 0 HP / 0 Def (SpD) Jirachi in Wonder Room: 157-186 (46 - 54.5%) -- 54.3% chance to 2HKO'
+          );
+        });
+        test('Shell Side Arm category check should ignore Wonder Room', () => {
+          const attacker = Pokemon('Slowbro-Galar');
+          const defender = Pokemon('Mew', {boosts: {spd: 1}});
+          const result = calculate(attacker, defender, Move('Shell Side Arm'), Field({isWonderRoom: true}));
+          expect(result.move.category).toBe('Special');
+          expect(result.desc()).toBe(
+            '0 SpA Slowbro-Galar Shell Side Arm vs. +1 0 HP / 0 SpD (Def) Mew in Wonder Room: 66-78 (19.3 - 22.8%) -- possible 5HKO'
+          );
+        });
+      });
+    });
     describe('Shell Side Arm', () => {
       inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
         test('Special Shell Side Arm should not factor in Fur Coat or Fluffy', () => {
@@ -1577,16 +1646,6 @@ describe('calc', () => {
 
         expect(result.desc()).toBe(
           "0 Atk Weavile with an ally's Flower Gift Power Spot boosted switching boosted Pursuit (80 BP) vs. 0 HP / 0 Def Vulpix in Sun: 399-469 (183.8 - 216.1%) -- guaranteed OHKO"
-        );
-      });
-
-      test('Power Trick should swap attack and defense raw stats', () => {
-        const attacker = Pokemon('Bastiodon');
-        const defender = Pokemon('Glaceon');
-        const result = calculate(attacker, defender, Move('Iron Head'), Field({attackerSide: {isPowerTrick: true}}));
-
-        expect(result.desc()).toBe(
-          '0 Def Bastiodon with Power Trick Iron Head vs. 0 HP / 0 Def Glaceon: 252-296 (92.9 - 109.2%) -- 56.3% chance to OHKO'
         );
       });
 
