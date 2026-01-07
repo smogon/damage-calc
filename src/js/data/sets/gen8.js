@@ -925,6 +925,7 @@ var SETDEX_SS = {
   },
   "Qwilfish": {
     "PU Spikes": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Taunt","Waterfall","Thunder Wave"]},
+    "PU Swords Dance": {"ability":"Intimidate","item":"Black Sludge","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Liquidation","Poison Jab","Aqua Jet"]},
     "ZU Defensive Spikes": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"df":120,"sp":136},"moves":["Spikes","Liquidation","Pain Split","Taunt"]},
     "ZU Swords Dance": {"ability":"Intimidate","item":"Black Sludge","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Liquidation","Poison Jab","Aqua Jet"]}
   },
@@ -4502,8 +4503,8 @@ var SETDEX_SS = {
     "CAP Balance Breaker": {"ability":"Blaze","item":"Charcoal","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Flare Blitz","Morning Sun","Toxic"]}
   },
   "Snaelstrom": {
-    "CAP Defensive": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Scald","Stealth Rock","Spiky Shield","U-turn"]},
-    "CAP Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Swords Dance","Razor Shell","Facade","Spiky Shield"]}
+    "CAP Defensive": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Bold","evs":{"hp":244,"df":252,"sd":12},"moves":["Scald","Stealth Rock","Spiky Shield","U-turn"]},
+    "CAP Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","evs":{"hp":244,"df":252,"sd":12},"moves":["Swords Dance","Razor Shell","Facade","Spiky Shield"]}
   },
   "Equilibra": {
     "CAP Pivot": {"ability":"Levitate","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":100,"sa":12,"sd":132,"sp":12},"moves":["Doom Desire","Earth Power","Rapid Spin","Flash Cannon"]}
