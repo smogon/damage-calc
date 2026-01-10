@@ -4503,7 +4503,7 @@ var SETDEX_SS = {
     "CAP Balance Breaker": {"ability":"Blaze","item":"Charcoal","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Flare Blitz","Morning Sun","Toxic"]}
   },
   "Snaelstrom": {
-    "CAP Defensive": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Bold","evs":{"hp":244,"df":252,"sd":12},"moves":["Scald","Stealth Rock","Spiky Shield","U-turn"]},
+    "CAP Defensive": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Relaxed","evs":{"hp":244,"at":36,"df":228},"moves":["Scald","Stealth Rock","Spiky Shield","U-turn"]},
     "CAP Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","evs":{"hp":244,"df":252,"sd":12},"moves":["Swords Dance","Razor Shell","Facade","Spiky Shield"]}
   },
   "Equilibra": {
