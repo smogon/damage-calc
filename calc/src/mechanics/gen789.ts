@@ -106,11 +106,6 @@ export function calculateSMSSSV(
     moveName: move.name,
     defenderName: defender.name,
     isDefenderDynamaxed: defender.isDynamaxed,
-    isPowerTrickAttacker: (
-      (move.named('Foul Play') || (move.category === 'Special' && !move.named('Body Press')))
-        ? false
-        : field.attackerSide.isPowerTrick
-    ),
     isWonderRoom: field.isWonderRoom,
   };
 
@@ -1311,14 +1306,19 @@ export function calculateAttackSMSSSV(
   // Body Press in Wonder Room uses normal Def, which checkRawStatChanges has moved to SpD
   desc.attackEVs =
     move.named('Foul Play')
-      ? getStatDescriptionText(gen, defender, attackStat, field.defenderSide.isPowerTrick)
-      : (move.named('Body Press') && field.isWonderRoom)
-        ? getStatDescriptionText(gen, attacker, 'def', field.attackerSide.isPowerTrick)
-        : getStatDescriptionText(gen, attacker, attackStat, field.attackerSide.isPowerTrick);
-
+      ? getStatDescriptionText(
+        gen, attackSource, attackStat, field.defenderSide.isPowerTrick
+      )
+      : getStatDescriptionText(
+        gen, attackSource, attackStat, field.attackerSide.isPowerTrick, field.isWonderRoom
+      );
+  if (field.attackerSide.isPowerTrick) {
+    if ((move.category === 'Physical' && !move.named('Foul Play')) || move.named('Body Press')) {
+      desc.isPowerTrickAttacker = true;
+    }
+  }
   const boosts = attackSource.boosts[attackStat];
-  if (boosts === 0 ||
-      (isCritical && boosts < 0)) {
+  if (boosts === 0 || (isCritical && boosts < 0)) {
     attack = attackSource.rawStats[attackStat];
   } else if (defender.hasAbility('Unaware')) {
     attack = attackSource.rawStats[attackStat];
@@ -1506,14 +1506,14 @@ export function calculateDefenseSMSSSV(
   let defense: number;
   const hitsPhysical = move.overrideDefensiveStat === 'def' || move.category === 'Physical';
   const defenseStat = hitsPhysical ? 'def' : 'spd';
-  const boosts = defender.boosts[defenseStat];
-
   desc.defenseEVs = getStatDescriptionText(
     gen, defender, defenseStat, field.defenderSide.isPowerTrick, field.isWonderRoom
   );
-  desc.isPowerTrickDefender =
-    field.isWonderRoom === hitsPhysical ? false : field.defenderSide.isPowerTrick;
+  if (field.defenderSide.isPowerTrick && (field.isWonderRoom !== hitsPhysical)) {
+    desc.isPowerTrickDefender = true;
+  }
 
+  const boosts = defender.boosts[defenseStat];
   if (boosts === 0 ||
       (isCritical && boosts > 0) ||
       move.ignoreDefensive) {

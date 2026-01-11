@@ -74,7 +74,6 @@ export function calculateBWXY(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
-    isPowerTrickAttacker: (move.named('Foul Play') ? false : field.attackerSide.isPowerTrick),
     isWonderRoom: field.isWonderRoom,
   };
 
@@ -818,7 +817,9 @@ export function calculateAttackBWXY(
     move.named('Foul Play')
       ? getStatDescriptionText(gen, defender, attackStat, field.defenderSide.isPowerTrick)
       : getStatDescriptionText(gen, attacker, attackStat, field.attackerSide.isPowerTrick);
-
+  if (field.attackerSide.isPowerTrick && move.category === 'Physical' && !move.named('Foul Play')) {
+    desc.isPowerTrickAttacker = true;
+  }
   if (attackSource.boosts[attackStat] === 0 ||
       (isCritical && attackSource.boosts[attackStat] < 0)) {
     attack = attackSource.rawStats[attackStat];
@@ -936,15 +937,15 @@ export function calculateDefenseBWXY(
   const defenseStat = move.overrideDefensiveStat || move.category === 'Physical' ? 'def' : 'spd';
   const hitsPhysical = defenseStat === 'def';
 
-  desc.isPowerTrickDefender =
-    field.isWonderRoom === hitsPhysical ? false : field.defenderSide.isPowerTrick;
-
-  const boosts = defender.boosts[defenseStat];
   desc.defenseEVs = getStatDescriptionText(
     gen, defender, defenseStat, field.defenderSide.isPowerTrick, field.isWonderRoom
   );
-  if (boosts === 0 ||
-    (isCritical && boosts > 0) ||
+  if (field.defenderSide.isPowerTrick && (field.isWonderRoom !== hitsPhysical)) {
+    desc.isPowerTrickDefender = true;
+  }
+
+  const boosts = defender.boosts[defenseStat];
+  if (boosts === 0 || (isCritical && boosts > 0) ||
     move.ignoreDefensive) {
     defense = defender.rawStats[defenseStat];
   } else if (attacker.hasAbility('Unaware')) {

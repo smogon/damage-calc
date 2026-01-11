@@ -877,13 +877,13 @@ describe('calc', () => {
         });
       });
       inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
-        test(`Body Press in Wonder Room uses Def but boosted by SpD (gen ${gen})`, () => {
+        test(`Body Press in Wonder Room uses natural Def but is boosted by SpD modifiers (gen ${gen})`, () => {
           const attacker = Pokemon('Kommo-o', {boosts: {spd: 1}});
           const defender = Pokemon('Jirachi');
           const result = calculate(attacker, defender, Move('Body Press'), Field({isWonderRoom: true}));
           expect(result.range()).toEqual([157, 186]);
           expect(result.desc()).toBe(
-            '+1 0 Def Kommo-o Body Press vs. 0 HP / 0 Def (SpD) Jirachi in Wonder Room: 157-186 (46 - 54.5%) -- 54.3% chance to 2HKO'
+            '+1 0 SpD (Def) Kommo-o Body Press vs. 0 HP / 0 Def (SpD) Jirachi in Wonder Room: 157-186 (46 - 54.5%) -- 54.3% chance to 2HKO'
           );
         });
         test('Shell Side Arm category check should ignore Wonder Room', () => {

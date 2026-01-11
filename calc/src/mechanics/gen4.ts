@@ -49,8 +49,6 @@ export function calculateDPP(
     attackerName: attacker.name,
     moveName: move.name,
     defenderName: defender.name,
-    isPowerTrickAttacker: field.attackerSide.isPowerTrick,
-    isPowerTrickDefender: move.category === 'Special' ? false : field.defenderSide.isPowerTrick,
   };
 
   const result = new Result(gen, attacker, defender, move, field, 0, desc);
@@ -524,6 +522,9 @@ export function calculateAttackDPP(
   const attackStat = isPhysical ? 'atk' : 'spa';
   desc.attackEVs =
     getStatDescriptionText(gen, attacker, attackStat, field.attackerSide.isPowerTrick);
+  if (field.attackerSide.isPowerTrick && isPhysical) {
+    desc.isPowerTrickAttacker = true;
+  }
   let attack = attacker.rawStats[attackStat];
   const attackBoost = attacker.boosts[attackStat];
 
@@ -595,6 +596,9 @@ export function calculateDefenseDPP(
   desc.defenseEVs =
     getStatDescriptionText(gen, defender, defenseStat, field.defenderSide.isPowerTrick);
   let defense = defender.rawStats[defenseStat];
+  if (field.defenderSide.isPowerTrick && isPhysical) {
+    desc.isPowerTrickDefender = true;
+  }
   const defenseBoost = defender.boosts[defenseStat];
 
   if (attacker.hasAbility('Unaware')) {
