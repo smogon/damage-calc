@@ -2283,7 +2283,7 @@ var SETDEX_DPP = {
     "OU Tank": {"ability":"Levitate","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":128,"sd":128},"moves":["Stealth Rock","Toxic","Gyro Ball","Earthquake"]},
     "OU Offensive Stealth Rock": {"ability":"Levitate","item":"Occa Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":252,"sd":4},"moves":["Stealth Rock","Gyro Ball","Earthquake","Explosion"]},
     "Ubers Specially Defensive": {"ability":"Levitate","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":8,"sd":248},"moves":["Stealth Rock","Payback","Earthquake","Explosion"]},
-    "Doubles OU Utility": {"ability":"Levitate","item":"Occa Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":172,"sd":84},"moves":["Trick Room","Gyro Ball","Stealth Rock","Explosion"]},
+    "Doubles OU Utility": {"ability":"Levitate","item":"Occa Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":172,"sd":84},"moves":["Trick Room","Gyro Ball","Stealth Rock","Earthquake"]},
     "Anything Goes Showdown Usage": {"ability":"Levitate","item":"Lum Berry","nature":"Relaxed","evs":{"hp":252,"df":88,"sd":168},"moves":["Stealth Rock","Toxic","Explosion","Gyro Ball"]}
   },
   "Bonsly": {
