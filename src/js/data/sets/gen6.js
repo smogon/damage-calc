@@ -921,7 +921,7 @@ var SETDEX_XY = {
   },
   "Wigglytuff": {
     "PU Offensive Stealth Rock": {"ability":"Competitive","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Stealth Rock","Hyper Voice","Dazzling Gleam","Fire Blast"]},
-    "ZU Cleric": {"ability":"Frisk","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Wish","Protect","Dazzling Gleam","Stealth Rock"]},
+    "ZU Defensive Utility": {"ability":"Frisk","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Wish","Protect","Dazzling Gleam","Heal Bell"]},
     "ZU Offensive Stealth Rock": {"ability":"Competitive","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Stealth Rock","Dazzling Gleam","Fire Blast","Knock Off"]}
   },
   "Zubat": {
