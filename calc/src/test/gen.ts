@@ -108,7 +108,7 @@ class Item implements I.Item {
   readonly kind: 'Item';
   readonly id: I.ID;
   readonly name: I.ItemName;
-  readonly megaEvolves?: I.SpeciesName;
+  readonly megaStone?: Readonly<{[megaEvolves: I.SpeciesName]: I.SpeciesName}>;
   readonly isBerry?: boolean;
   readonly naturalGift?: Readonly<{basePower: number; type: I.TypeName}>;
 
@@ -116,7 +116,7 @@ class Item implements I.Item {
     this.kind = 'Item';
     this.id = item.id as I.ID;
     this.name = item.name as I.ItemName;
-    this.megaEvolves = item.megaEvolves as I.SpeciesName;
+    this.megaStone = item.megaStone;
     this.isBerry = item.isBerry;
     this.naturalGift = item.naturalGift && {
       basePower: item.naturalGift.basePower - (gen === 2 ? 20 : 0),
@@ -492,7 +492,7 @@ const NATDEX_BANNED = [
   'Floette-Eternal',
 ];
 
-function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.GenerationNum) {
+function exists(val: D.Ability | D.Item | D.Move | D.Species | D.Type, gen: I.GenerationNum) {
   if (!val.exists || val.id === 'noability') return false;
   if (val.kind === 'Species' && val.isCosmeticForme) return false;
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
