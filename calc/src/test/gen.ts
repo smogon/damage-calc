@@ -494,7 +494,7 @@ const NATDEX_BANNED = [
 
 function exists(val: D.Ability| D.Item | D.Move | D.Species | D.Type, gen: I.GenerationNum) {
   if (!val.exists || val.id === 'noability') return false;
-  // if (val.kind === 'Species' && val.isCosmeticForme) return false;
+  if (val.kind === 'Species' && val.isCosmeticForme) return false;
   if (gen === 7 && val.isNonstandard === 'LGPE') return true;
   if (gen >= 8) {
     if (gen === 8) {
