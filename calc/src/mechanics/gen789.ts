@@ -1062,7 +1062,8 @@ export function calculateBPModsSMSSSV(
   // (or when it's already a Mega-Evolution)
   if (!resistedKnockOffDamage && defenderItem) {
     const item = gen.items.get(toID(defenderItem))!;
-    resistedKnockOffDamage = !!item.megaEvolves && defender.name.includes(item.megaEvolves);
+    resistedKnockOffDamage = !!(item.megaStone &&
+      (item.megaStone[defender.name] || Object.values(item.megaStone).includes(defender.name)));
   }
 
   // Resist knock off damage if your item was already knocked off

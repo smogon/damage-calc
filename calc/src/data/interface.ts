@@ -75,7 +75,7 @@ export interface Items {
 
 export interface Item extends Data<ItemName> {
   readonly kind: 'Item';
-  readonly megaEvolves?: SpeciesName;
+  readonly megaStone?: Readonly<{[megaEvolves: SpeciesName]: SpeciesName}>;
   readonly isBerry?: boolean;
   readonly naturalGift?: Readonly<{basePower: number; type: TypeName}>;
 }
