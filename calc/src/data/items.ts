@@ -500,9 +500,32 @@ const ZA_MEGA_STONES: {[species: string]: string} = {
   Zygardite: 'Zygarde-Complete',
 };
 
+const ZA_DLC_MEGA_STONES: {[species: string]: string} = {
+  'Absolite Z': 'Absol',
+  Baxcalibrite: 'Baxcalibur',
+  Chimechite: 'Chimecho',
+  Crabominite: 'Crabominable',
+  Darkranite: 'Darkrai',
+  'Garchompite Z': 'Garchomp',
+  Glimmoranite: 'Glimmora',
+  Golisopite: 'Golisopod',
+  Golurkite: 'Golurk',
+  Heatranite: 'Heatran',
+  'Lucarionite Z': 'Lucario',
+  Magearnite: 'Magearna',
+  Meowsticite: 'Meowstic',
+  'Raichunite X': 'Raichu',
+  'Raichunite Y': 'Raichu',
+  Scovillainite: 'Scovillain',
+  Staraptite: 'Staraptor',
+  Tatsugirinite: 'Tatsugiri',
+  Zeraorite: 'Zeraora',
+};
+
 const SV = SS.concat(
   [
     ...Object.keys(ZA_MEGA_STONES),
+    ...Object.keys(ZA_DLC_MEGA_STONES),
     'Adamant Crystal',
     'Auspicious Armor',
     'Ability Shield',
