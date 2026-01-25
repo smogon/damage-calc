@@ -525,7 +525,6 @@ const ZA_MEGA_STONES: {[item: string]: {[megaEvolves: string]: string}} = {
 const SV = SS.concat(
   [
     ...Object.keys(ZA_MEGA_STONES),
-    ...Object.keys(ZA_DLC_MEGA_STONES),
     'Adamant Crystal',
     'Auspicious Armor',
     'Ability Shield',
