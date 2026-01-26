@@ -1,5 +1,5 @@
 /* eslint no-global-assign: 0 */
-/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid, damageResults, PC_HANDLER, toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves */
+/*global LEGACY_STATS, randdex, setdex, setSelectValueIfValid, damageResults, PC_HANDLER, toID, timeoutFunc, calcHP, calcStats, resultLocations, calculateAllMoves, ITEMS_BY_ID, getItemBoostType */
 
 /** A mapping of pokemon -> tier */
 var pokemonTiers;
@@ -14,112 +14,24 @@ var CONVERSION_PREG9 = {
 	"rubl": 10, "uu": 10, "uubl": 0, "ou": 0, "(ou)": 0, "uber": 0, "illegal": 0, "unreleased": 0, "ag": 0, "cap": 0,
 	"cap lc": 40, "cap nfe": 40
 };
+var specialCases = {
+	//stone: [baby form, big form pair]
+	"redorb": ["Groudon", "Groudon-Primal"],
+	"blueorb": ["Kyogre", "Kyogre-Primal"],
+	"zygardite": ["Zygarde-Complete", "Zygarde-Mega"],
+	"floettite": ["Floette-Eternal", "Floette-Mega"],
+	"rustedsword": ["Zacian", "Zacian-Crowned"],
+	"rustedshield": ["Zamazenta", "Zamazenta-Crowned"],
+	"griseouscore": ["Giratina", "Giratina-Origin"],
+	"adamantcrystal": ["Dialga", "Dialga-Origin"],
+	"lustrousglobe": ["Palkia", "Palkia-Origin"],
+	"vilevial": ["Venomicon", "Venomicon-Epilogue"],
+	"hearthflamemask": ["Ogerpon", "Ogerpon-Hearthflame"],
+	"wellspringmask": ["Ogerpon", "Ogerpon-Wellspring"],
+	"cornerstonemask": ["Ogerpon", "Ogerpon-Cornerstone"],
 
-var megaDelta = {
-	'Abomasite': {'at': 40, 'df': 30, 'sa': 40, 'sd': 20, 'sp': -30, 'weight': 49.5, 'ability': 'Snow Warning', 'type': '', 'skip': ['Abomasnow-Mega']},
-	'Absolite': {'at': 20, 'df': 0, 'sa': 40, 'sd': 0, 'sp': 40, 'weight': 2, 'ability': 'Magic Bounce', 'type': '', 'skip': ['Absol-Mega']},
-	'Aerodactylite': {'at': 30, 'df': 20, 'sa': 10, 'sd': 20, 'sp': 20, 'weight': 20, 'ability': 'Tough Claws', 'type': '', 'skip': ['Aerodactyl-Mega']},
-	'Aggronite': {'at': 30, 'df': 50, 'sa': 0, 'sd': 20, 'sp': 0, 'weight': 35, 'ability': 'Filter', 'type': 'Steel', 'skip': ['Aggron-Mega']},
-	'Alakazite': {'at': 0, 'df': 20, 'sa': 40, 'sd': 10, 'sp': 30, 'weight': 0, 'ability': 'Trace', 'type': '', 'skip': ['Alakazam-Mega']},
-	'Altarianite': {'at': 40, 'df': 20, 'sa': 40, 'sd': 0, 'sp': 0, 'weight': 0, 'ability': 'Pixilate', 'type': 'Fairy', 'skip': ['Altaria-Mega']},
-	'Ampharosite': {'at': 20, 'df': 20, 'sa': 50, 'sd': 20, 'sp': -10, 'weight': 0, 'ability': 'Mold Breaker', 'type': 'Dragon', 'skip': ['Ampharos-Mega']},
-	'Audinite': {'at': 0, 'df': 40, 'sa': 20, 'sd': 40, 'sp': 0, 'weight': 1, 'ability': 'Healer', 'type': 'Fairy', 'skip': ['Audino-Mega']},
-	'Banettite': {'at': 50, 'df': 10, 'sa': 10, 'sd': 20, 'sp': 10, 'weight': 0.5, 'ability': 'Prankster', 'type': '', 'skip': ['Banette-Mega']},
-	'Beedrillite': {'at': 60, 'df': 0, 'sa': -30, 'sd': 0, 'sp': 70, 'weight': 11, 'ability': 'Adaptability', 'type': '', 'skip': ['Beedrill-Mega']},
-	'Blastoisinite': {'at': 20, 'df': 20, 'sa': 50, 'sd': 10, 'sp': 0, 'weight': 15.6, 'ability': 'Mega Launcher', 'type': '', 'skip': ['Blastoise-Mega']},
-	'Blazikenite': {'at': 40, 'df': 10, 'sa': 20, 'sd': 10, 'sp': 20, 'weight': 0, 'ability': 'Speed Boost', 'type': '', 'skip': ['Blaziken-Mega']},
-	'Blue Orb': {'at': 50, 'df': 0, 'sa': 30, 'sd': 20, 'sp': 0, 'weight': 78, 'ability': 'Primordial Sea', 'type': '', 'skip': ['Kyogre-Primal']},
-	'Cameruptite': {'at': 20, 'df': 30, 'sa': 40, 'sd': 30, 'sp': -20, 'weight': 100.5, 'ability': 'Sheer Force', 'type': '', 'skip': ['Camerupt-Mega']},
-	'Charizardite X': {'at': 46, 'df': 33, 'sa': 21, 'sd': 0, 'sp': 0, 'weight': 20, 'ability': 'Tough Claws', 'type': 'Dragon', 'skip': ['Charizard-Mega-X']},
-	'Charizardite Y': {'at': 20, 'df': 0, 'sa': 50, 'sd': 30, 'sp': 0, 'weight': 10, 'ability': 'Drought', 'type': '', 'skip': ['Charizard-Mega-Y']},
-	'Diancite': {'at': 60, 'df': -40, 'sa': 60, 'sd': -40, 'sp': 60, 'weight': 19, 'ability': 'Magic Bounce', 'type': '', 'skip': ['Diancie-Mega']},
-	'Galladite': {'at': 40, 'df': 30, 'sa': 0, 'sd': 0, 'sp': 30, 'weight': 4.4, 'ability': 'Inner Focus', 'type': '', 'skip': ['Gallade-Mega']},
-	'Garchompite': {'at': 40, 'df': 20, 'sa': 40, 'sd': 10, 'sp': -10, 'weight': 0, 'ability': 'Sand Force', 'type': '', 'skip': ['Garchomp-Mega']},
-	'Gardevoirite': {'at': 20, 'df': 0, 'sa': 40, 'sd': 20, 'sp': 20, 'weight': 0, 'ability': 'Pixilate', 'type': '', 'skip': ['Gardevoir-Mega']},
-	'Gengarite': {'at': 0, 'df': 20, 'sa': 40, 'sd': 20, 'sp': 20, 'weight': 0, 'ability': 'Shadow Tag', 'type': '', 'skip': ['Gengar-Mega']},
-	'Glalitite': {'at': 40, 'df': 0, 'sa': 40, 'sd': 0, 'sp': 20, 'weight': 93.7, 'ability': 'Refrigerate', 'type': '', 'skip': ['Glalie-Mega']},
-	'Gyaradosite': {'at': 30, 'df': 30, 'sa': 10, 'sd': 30, 'sp': 0, 'weight': 70, 'ability': 'Mold Breaker', 'type': 'Dark', 'skip': ['Gyarados-Mega']},
-	'Heracronite': {'at': 60, 'df': 40, 'sa': 0, 'sd': 10, 'sp': -10, 'weight': 8.5, 'ability': 'Skill Link', 'type': '', 'skip': ['Heracross-Mega']},
-	'Houndoominite': {'at': 0, 'df': 40, 'sa': 30, 'sd': 10, 'sp': 20, 'weight': 14.5, 'ability': 'Solar Power', 'type': '', 'skip': ['Houndoom-Mega']},
-	'Kangaskhanite': {'at': 30, 'df': 20, 'sa': 20, 'sd': 10, 'sp': 20, 'weight': 20, 'ability': 'Parental Bond', 'type': '', 'skip': ['Kangaskhan-Mega']},
-	'Latiasite': {'at': 20, 'df': 30, 'sa': 30, 'sd': 20, 'sp': 0, 'weight': 12, 'ability': 'Levitate', 'type': '', 'skip': ['Latias-Mega']},
-	'Latiosite': {'at': 40, 'df': 20, 'sa': 30, 'sd': 10, 'sp': 0, 'weight': 10, 'ability': 'Levitate', 'type': '', 'skip': ['Latios-Mega']},
-	'Lopunnite': {'at': 60, 'df': 10, 'sa': 0, 'sd': 0, 'sp': 30, 'weight': -5, 'ability': 'Scrappy', 'type': 'Fighting', 'skip': ['Lopunny-Mega']},
-	'Lucarionite': {'at': 35, 'df': 18, 'sa': 25, 'sd': 0, 'sp': 22, 'weight': 3.5, 'ability': 'Adaptability', 'type': '', 'skip': ['Lucario-Mega']},
-	'Manectite': {'at': 0, 'df': 20, 'sa': 30, 'sd': 20, 'sp': 30, 'weight': 3.8, 'ability': 'Intimidate', 'type': '', 'skip': ['Manectric-Mega']},
-	'Mawilite': {'at': 20, 'df': 40, 'sa': 0, 'sd': 40, 'sp': 0, 'weight': 12, 'ability': 'Huge Power', 'type': '', 'skip': ['Mawile-Mega']},
-	'Medichamite': {'at': 40, 'df': 10, 'sa': 20, 'sd': 10, 'sp': 20, 'weight': 0, 'ability': 'Pure Power', 'type': '', 'skip': ['Medicham-Mega']},
-	'Metagrossite': {'at': 10, 'df': 20, 'sa': 10, 'sd': 20, 'sp': 40, 'weight': 392.9, 'ability': 'Tough Claws', 'type': '', 'skip': ['Metagross-Mega']},
-	'Mewtwonite X': {'at': 80, 'df': 10, 'sa': 0, 'sd': 10, 'sp': 0, 'weight': 5, 'ability': 'Steadfast', 'type': 'Fighting', 'skip': ['Mewtwo-Mega-X']},
-	'Mewtwonite Y': {'at': 40, 'df': -20, 'sa': 40, 'sd': 30, 'sp': 10, 'weight': -89, 'ability': 'Insomnia', 'type': '', 'skip': ['Mewtwo-Mega-Y']},
-	'Pidgeotite': {'at': 0, 'df': 5, 'sa': 65, 'sd': 10, 'sp': 20, 'weight': 11, 'ability': 'No Guard', 'type': '', 'skip': ['Pidgeot-Mega']},
-	'Pinsirite': {'at': 30, 'df': 20, 'sa': 10, 'sd': 20, 'sp': 20, 'weight': 4, 'ability': 'Aerilate', 'type': 'Flying', 'skip': ['Pinsir-Mega']},
-	'Red Orb': {'at': 30, 'df': 20, 'sa': 50, 'sd': 0, 'sp': 0, 'weight': 49.7, 'ability': 'Desolate Land', 'type': 'Fire', 'skip': ['Groudon-Primal']},
-	'Sablenite': {'at': 10, 'df': 50, 'sa': 20, 'sd': 50, 'sp': -30, 'weight': 150, 'ability': 'Magic Bounce', 'type': '', 'skip': ['Sableye-Mega']},
-	'Salamencite': {'at': 10, 'df': 50, 'sa': 10, 'sd': 10, 'sp': 20, 'weight': 10, 'ability': 'Aerilate', 'type': '', 'skip': ['Salamence-Mega']},
-	'Sceptilite': {'at': 25, 'df': 10, 'sa': 40, 'sd': 0, 'sp': 25, 'weight': 3, 'ability': 'Lightning Rod', 'type': 'Dragon', 'skip': ['Sceptile-Mega']},
-	'Scizorite': {'at': 20, 'df': 40, 'sa': 10, 'sd': 20, 'sp': 10, 'weight': 7, 'ability': 'Technician', 'type': '', 'skip': ['Scizor-Mega']},
-	'Sharpedonite': {'at': 20, 'df': 30, 'sa': 15, 'sd': 25, 'sp': 10, 'weight': 41.5, 'ability': 'Strong Jaw', 'type': '', 'skip': ['Sharpedo-Mega']},
-	'Slowbronite': {'at': 0, 'df': 70, 'sa': 30, 'sd': 0, 'sp': 0, 'weight': 31.5, 'ability': 'Shell Armor', 'type': '', 'skip': ['Slowbro-Mega']},
-	'Steelixite': {'at': 40, 'df': 30, 'sa': 0, 'sd': 30, 'sp': 0, 'weight': 340, 'ability': 'Sand Force', 'type': '', 'skip': ['Steelix-Mega']},
-	'Swampertite': {'at': 40, 'df': 20, 'sa': 10, 'sd': 20, 'sp': 10, 'weight': 20.1, 'ability': 'Swift Swim', 'type': '', 'skip': ['Swampert-Mega']},
-	'Tyranitarite': {'at': 30, 'df': 40, 'sa': 0, 'sd': 20, 'sp': 10, 'weight': 53, 'ability': 'Sand Stream', 'type': '', 'skip': ['Tyranitar-Mega']},
-	'Venusaurite': {'at': 18, 'df': 40, 'sa': 22, 'sd': 20, 'sp': 0, 'weight': 55.5, 'ability': 'Thick Fat', 'type': '', 'skip': ['Venusaur-Mega']},
-	'Rusted Sword': {'at': 40, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 10, 'weight': 245.5, 'ability': 'Intrepid Sword', 'type': 'Steel', 'skip': ['Zacian-Crowned']},
-	'Rusted Shield': {'at': 0, 'df': 25, 'sa': 0, 'sd': 25, 'sp': -10, 'weight': 575, 'ability': 'Dauntless Shield', 'type': 'Steel', 'skip': ['Zamazenta-Crowned']},
-	'Adamant Crystal': {'at': -20, 'df': 0, 'sa': 0, 'sd': 20, 'sp': 0, 'weight': 167, 'ability': 'Pressure', 'type': '', 'skip': ['Dialga-Origin']},
-	'Griseous Core': {'at': 20, 'df': -20, 'sa': 20, 'sd': -20, 'sp': 0, 'weight': -100, 'ability': 'Levitate', 'type': '', 'skip': ['Giratina-Origin']},
-	'Lustrous Globe': {'at': -20, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 20, 'weight': 324, 'ability': 'Pressure', 'type': '', 'skip': ['Palkia-Origin']},
-	'Vile Vial': {'at': 52, 'df': -28, 'sa': -56, 'sd': -5, 'sp': 37, 'weight': 0.9, 'ability': 'Tinted Lens', 'type': '', 'skip': ['Venomicon-Epilogue']},
-	'Hearthflame Mask': {'at': 0, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 0, 'weight': 0, 'ability': 'Mold Breaker', 'type': 'Fire', 'skip': ['Ogerpon-Hearthflame', 'Ogerpon-Hearthflame-Tera']},
-	'Wellspring Mask': {'at': 0, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 0, 'weight': 0, 'ability': 'Water Absorb', 'type': 'Water', 'skip': ['Ogerpon-Wellspring', 'Ogerpon-Wellspring-Tera']},
-	'Cornerstone Mask': {'at': 0, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 0, 'weight': 0, 'ability': 'Sturdy', 'type': 'Rock', 'skip': ['Ogerpon-Cornerstone', 'Ogerpon-Cornerstone-Tera']},
-	'Clefablite': {'at': 10, 'df': 20, 'sa': 40, 'sd': 20, 'sp': 10, 'ability': 'Cute Charm', 'type': 'Flying', 'skip': ['Clefable-Mega']},
-	'Victreebelite': {'at': 20, 'df': 20, 'sa': 35, 'sd': 25, 'sp': 0, 'ability': 'Chlorophyll', 'skip': ['Victreebel-Mega']},
-	'Starminite': {'at': 65, 'df': 20, 'sa': 30, 'sd': 20, 'sp': 5, 'ability': 'Illuminate', 'skip': ['Starmie-Mega']},
-	'Dragoninite': {'at': -10, 'df': 20, 'sa': 45, 'sd': 25, 'sp': 20, 'ability': 'Inner Focus', 'skip': ['Dragonite-Mega']},
-	'Meganiumite': {'at': 10, 'df': 15, 'sa': 60, 'sd': 15, 'sp': 0, 'ability': 'Overgrow', 'type': 'Fairy', 'skip': ['Meganium-Mega']},
-	'Feraligite': {'at': 55, 'df': 25, 'sa': 10, 'sd': 10, 'sp': 0, 'ability': 'Torrent', 'type': 'Dragon', 'skip': ['Feraligatr-Mega']},
-	'Skarmorite': {'at': 60, 'df': -30, 'sa': 0, 'sd': 30, 'sp': 40, 'ability': 'Keen Eye', 'skip': ['Skarmory-Mega']},
-	'Froslassite': {'at': 0, 'df': 0, 'sa': 60, 'sd': 30, 'sp': 10, 'ability': 'Snow Cloak', 'skip': ['Froslass-Mega']},
-	'Emboarite': {'at': 25, 'df': 10, 'sa': 10, 'sd': 45, 'sp': 10, 'ability': 'Blaze', 'skip': ['Emboar-Mega']},
-	'Excadrite': {'at': 30, 'df': 40, 'sa': 15, 'sd': 0, 'sp': 15, 'ability': 'Sand Rush', 'skip': ['Excadrill-Mega']},
-	'Scolipite': {'at': 40, 'df': 60, 'sa': 20, 'sd': 30, 'sp': -50, 'ability': 'Poison Point', 'skip': ['Scolipede-Mega']},
-	'Scraftinite': {'at': 40, 'df': 20, 'sa': 10, 'sd': 20, 'sp': 10, 'ability': 'Shed Skin', 'skip': ['Scrafty-Mega']},
-	'Eelektrossite': {'at': 30, 'df': 0, 'sa': 30, 'sd': 10, 'sp': 30, 'ability': 'Levitate', 'skip': ['Eelektross-Mega']},
-	'Chandelurite': {'at': 20, 'df': 20, 'sa': 30, 'sd': 20, 'sp': 10, 'ability': 'Flash Fire', 'skip': ['Chandelure-Mega']},
-	'Chesnaughtite': {'at': 30, 'df': 50, 'sa': 0, 'sd': 40, 'sp': -20, 'ability': 'Overgrow', 'skip': ['Chesnaught-Mega']},
-	'Delphoxite': {'at': 0, 'df': 0, 'sa': 45, 'sd': 25, 'sp': 30, 'ability': 'Blaze', 'skip': ['Delphox-Mega']},
-	'Greninjite': {'at': 30, 'df': 10, 'sa': 30, 'sd': 10, 'sp': 20, 'ability': 'Torrent', 'skip': ['Greninja-Mega']},
-	'Pyroarite': {'at': 20, 'df': 20, 'sa': 20, 'sd': 20, 'sp': 20, 'ability': 'Rivalry', 'skip': ['Pyroar-Mega']},
-	'Floettite': {'at': 20, 'df': 20, 'sa': 30, 'sd': 20, 'sp': 10, 'ability': 'Flower Veil', 'skip': ['Floette-Mega']},
-	'Malamarite': {'at': 10, 'df': 0, 'sa': 30, 'sd': 45, 'sp': 15, 'ability': 'Contrary', 'skip': ['Malamar-Mega']},
-	'Barbaracite': {'at': 35, 'df': 15, 'sa': 10, 'sd': 20, 'sp': 20, 'ability': 'Tough Claws', 'type': 'Fighting', 'skip': ['Barbarcle-Mega']},
-	'Dragalgite': {'at': 10, 'df': 15, 'sa': 35, 'sd': 40, 'sp': 0, 'ability': 'Poison Point', 'skip': ['Dragalge-Mega']},
-	'Hawluchanite': {'at': 45, 'df': 25, 'sa': 0, 'sd': 30, 'sp': 0, 'ability': 'Limber', 'skip': ['Hawlucha-Mega']},
-	'Zygardite': {'at': -30, 'df': -30, 'sa': 125, 'sd': -10, 'sp': 15, 'ability': 'Aura Break', 'skip': ['Zygarde-Mega']},
-	'Drampanite': {'at': 25, 'df': 25, 'sa': 25, 'sd': 25, 'sp': 0, 'ability': 'Berserk', 'skip': ['Drampa-Mega']},
-	'Falinksite': {'at': 35, 'df': 35, 'sa': 0, 'sd': 5, 'sp': 25, 'ability': 'Battle Armor', 'skip': ['Falinks-Mega']},
-	'Raichunite X': {'at': 45, 'df': 40, 'sa': 0, 'sd': 15, 'sp': 0, 'ability': 'Surge Surfer', 'skip': ['Raichu-Mega-X']},
-	'Raichunite Y': {'at': 10, 'df': 0, 'sa': 70, 'sd': 0, 'sp': 20, 'ability': 'Surge Surfer', 'skip': ['Raichu-Mega-Y']},
-	'Chimechite': {'at': 0, 'df': 30, 'sa': 40, 'sd': 30, 'sp': 0, 'ability': 'Levitate', 'type': 'Steel', 'skip': ['Chimecho-Mega']},
-	'Absolite Z': {'at': 24, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 76, 'ability': 'Magic Bounce', 'type': 'Ghost', 'skip': ['Absol-Mega-Z']},
-	'Staraptite': {'at': 20, 'df': 30, 'sa': 10, 'sd': 30, 'sp': 10, 'ability': 'Intimidate', 'primaryType': "Fighting", 'skip': ['Staraptor-Mega']},
-	'Garchompite Z': {'at': 0, 'df': -10, 'sa': 61, 'sd': 0, 'sp': 49, 'ability': 'Sand Force', 'type': 'Dragon', 'skip': ['Garchomp-Mega-Z']},
-	'Lucarionite Z': {'at': -10, 'df': 0, 'sa': 49, 'sd': 0, 'sp': 61, 'ability': 'Adaptability', 'skip': ['Lucario-Mega-Z']},
-	'Heatranite': {'at': 30, 'df': 0, 'sa': 45, 'sd': 35, 'sp': -10, 'ability': 'Flash Fire', 'skip': ['Chandelure-Mega']},
-	'Darkranite': {'at': 30, 'df': 40, 'sa': 30, 'sd': 40, 'sp': -40, 'ability': 'Bad Dreams', 'skip': ['Darkrai-Mega']},
-	'Golurkite': {'at': 35, 'df': 25, 'sa': 15, 'sd': 25, 'sp': 0, 'ability': 'Iron Fist', 'skip': ['Golurk-Mega']},
-	'Meowsticite': {'at': 0, 'df': 0, 'sa': 60, 'sd': 20, 'sp': 20, 'ability': 'Keen Eye', 'skip': ['Meowstick-Mega']},
-	'Crabominite': {'at': 25, 'df': 45, 'sa': 0, 'sd': 40, 'sp': -10, 'ability': 'Hyper Cutter', 'skip': ['Crabominable-Mega']},
-	'Golisopite': {'at': 25, 'df': 35, 'sa': 10, 'sd': 30, 'sp': 0, 'ability': 'Emergency Exit', 'type': 'Steel', 'skip': ['Golisopod-Mega']},
-	'Magearnite': {'at': 30, 'df': 0, 'sa': 40, 'sd': 0, 'sp': 30, 'ability': 'Soul-Heart', 'skip': ['Magearna-Mega']},
-	'Zeraorite': {'at': 45, 'df': 0, 'sa': 45, 'sd': 0, 'sp': 10, 'ability': 'Volt Absorb', 'skip': ['Zeraora-Mega']},
-	'Scovillainite': {'at': 30, 'df': 20, 'sa': 30, 'sd': 20, 'sp': 0, 'ability': 'Chlorophyll', 'skip': ['Scovillain-Mega']},
-	'Glimmoranite': {'at': 35, 'df': 15, 'sa': 20, 'sd': 15, 'sp': 15, 'ability': 'Toxic Debris', 'skip': ['Glimmora-Mega']},
-	'Tatsugirinite': {'at': 15, 'df': 30, 'sa': 15, 'sd': 30, 'sp': 10, 'ability': 'Commander', 'skip': ['Tatsugiri-Mega']},
-	'Baxcalibrite': {'at': 30, 'df': 25, 'sa': 30, 'sd': 15, 'sp': 0, 'ability': 'Thermal Exchange', 'skip': ['Baxcalibur']},
 };
+
 // need to know if we have to do a name switcheroo
 var multMegas = {
 	'Adamant Crystal': {'at': -20, 'df': 0, 'sa': 0, 'sd': 20, 'sp': 0, 'weight': 167, 'ability': 'Pressure', 'type': '', 'skip': ['Dialga-Origin']},
@@ -130,8 +42,49 @@ var multMegas = {
 	'Wellspring Mask': {'at': 0, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 0, 'weight': 0, 'ability': 'Water Absorb', 'type': 'Water', 'skip': ['Ogerpon-Wellspring', 'Ogerpon-Wellspring-Tera']},
 	'Cornerstone Mask': {'at': 0, 'df': 0, 'sa': 0, 'sd': 0, 'sp': 0, 'weight': 0, 'ability': 'Sturdy', 'type': 'Rock', 'skip': ['Ogerpon-Cornerstone', 'Ogerpon-Cornerstone-Tera']},
 };
+var megaDelta = {};
+function generateMegaDelta(gen) {
+	for (var item in ITEMS_BY_ID[gen]) {
+		var baseForm = false;
+		var bigForm = false;
+		var bigFormName;
+		if (ITEMS_BY_ID[gen][item].megaStone) {
 
-
+			baseForm = pokedex[Object.keys(ITEMS_BY_ID[gen][item]['megaStone'])[0]];
+			bigFormName = Object.values(ITEMS_BY_ID[gen][item]['megaStone'])[0];
+			bigForm = pokedex[bigFormName];
+		}
+		if (specialCases[item]) {
+			baseForm = pokedex[specialCases[item][0]];
+			bigFormName = specialCases[item][1];
+			bigForm = pokedex[bigFormName];
+		}
+		if (item.endsWith("plate")) {
+			//console.log(item)
+			baseForm = pokedex["Arceus"];
+			bigFormName = "Arceus-" + getItemBoostType(ITEMS_BY_ID[gen][item]['name']);
+			bigForm = pokedex[bigFormName];
+		}
+		if (baseForm && bigForm) {
+			megaDelta[item] = {};
+			// do not change hp
+			for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
+				var statName = LEGACY_STATS[gen][i];
+				megaDelta[item][statName] = bigForm['bs'][statName] - baseForm['bs'][statName];
+			}
+			megaDelta[item]['ability'] = bigForm['abilities'][0];
+			if (bigForm['types'][1] != baseForm['types'][1]) {
+				megaDelta[item]['type'] = bigForm['types'][1];
+			}
+			if (bigForm['types'][0] != baseForm['types'][0]) {
+				megaDelta[item]['primaryType'] = bigForm['types'][0];
+			}
+			megaDelta[item]['weight'] = bigForm['weightkg'] - baseForm['weightkg'];
+			megaDelta[item]['skip'] = bigFormName;
+		}
+	}
+	//console.log(megaDelta)
+}
 function clamp(value, min, max) {
 	return Math.min(Math.max(value, min), max);
 }
@@ -161,7 +114,7 @@ function autoUpdateStats(p) {
 	var set = regSets ? setdex[pokemonName][setName] : randset;
 	// reset if no rules are set
 	if (!(shouldUseTS || shouldUseScale || shouldUseMnM)) {
-		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+		for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
 			pokeObj.find("." + LEGACY_STATS[gen][i] + " .base").val(pokemon.bs[LEGACY_STATS[gen][i]]);
 		}
 		pokeObj.find(".type2").val(pokemon.types[1]);
@@ -176,7 +129,7 @@ function autoUpdateStats(p) {
 	// mix and mega is top priority
 	if (shouldUseMnM) {
 		var itemObj = pokeObj.find(".item");
-		var item = itemObj.val();
+		var item = toID(itemObj.val());
 		if (megaDelta[item] && megaDelta[item].skip.indexOf(pokemonName) < 0) {
 			// change stats based on mega stone
 			for (var i = 1; i < LEGACY_STATS[gen].length; i++) {
@@ -209,6 +162,8 @@ function autoUpdateStats(p) {
 		} else {
 			pokeObj.find(".type1").val(pokemon.types[0]);
 		}
+
+
 	} else {
 		pokeObj.find(".type1").val(pokemon.types[0]);
 		pokeObj.find(".type2").val(pokemon.types[1]);
@@ -408,6 +363,7 @@ $(".gen").change(function () {
 			pokemonTiers = {};
 		}
 	});
+	generateMegaDelta(gen);
 });
 $(document).ready(function () {
 	$(".calc-trigger").unbind("change keyup", PC_HANDLER);
