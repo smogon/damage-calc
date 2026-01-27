@@ -277,10 +277,10 @@ function performCalculationsOM() {
 			return secondMove.maxDamage - firstMove.maxDamage;
 		});
 		if (shouldUseMnM) {
-			if (megaDelta[result.attacker.item]) {
+			if (megaDelta[toID(result.attacker.item)]) {
 				result.rawDesc.attackerItem = result.attacker.item;
 			}
-			if (megaDelta[result.defender.item]) {
+			if (megaDelta[toID(result.defender.item)]) {
 				result.rawDesc.defenderItem = result.defender.item;
 			}
 		}
@@ -302,10 +302,10 @@ function performCalculationsOM() {
 			return secondMove.maxDamage - firstMove.maxDamage;
 		});
 		if (shouldUseMnM) {
-			if (megaDelta[result.attacker.item]) {
+			if (megaDelta[toID(result.attacker.item)]) {
 				result.rawDesc.attackerItem = result.attacker.item;
 			}
-			if (megaDelta[result.defender.item]) {
+			if (megaDelta[toID(result.defender.item)]) {
 				result.rawDesc.defenderItem = result.defender.item;
 			}
 		}
