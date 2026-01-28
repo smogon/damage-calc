@@ -13,8 +13,7 @@ var SETDEX_GSC = {
   },
   "Charmeleon": {
     "PU Booster": {"item":"Leftovers","moves":["Belly Drum","Return","Rock Slide","Fire Blast"]},
-    "ZU RestTalk": {"item":"Leftovers","ivs":{"hp":14,"at":28},"moves":["Fire Blast","Hidden Power Electric","Rest","Sleep Talk"]},
-    "ZU Swords Dance": {"item":"Leftovers","moves":["Fire Blast","Return","Swords Dance","Rock Slide"]}
+    "ZU Showdown Usage": {"item":"Leftovers","moves":["Fire Blast","Rest","Sleep Talk","Swords Dance"]}
   },
   "Charizard": {
     "OU BellyZard (Belly Drum)": {"item":"Leftovers","moves":["Belly Drum","Earthquake","Rock Slide","Fire Blast"]},
