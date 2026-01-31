@@ -12,6 +12,9 @@ var SETDEX_RBY = {
   "Charmander": {
     "LC Mixed Attacker": {"level":5,"moves":["Fire Blast","Body Slam","Counter","Substitute"]}
   },
+  "Charmeleon": {
+    "ZU Mixed Attacker": {"moves":["Fire Blast","Slash","Body Slam","Counter"]}
+  },
   "Charizard": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Earthquake","Slash"]},
     "NU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Earthquake","Fire Blast"]},
@@ -22,7 +25,7 @@ var SETDEX_RBY = {
     "LC Special Attacker": {"level":5,"moves":["Surf","Blizzard","Body Slam","Counter"]}
   },
   "Blastoise": {
-    "NU Don't Use Blastoise": {"moves":["Surf","Blizzard","Body Slam","Seismic Toss"]}
+    "NU Bulky Attacker": {"moves":["Surf","Body Slam","Seismic Toss","Blizzard"]}
   },
   "Caterpie": {
     "LC \"Support\"": {"level":5,"moves":["String Shot","Tackle"]}
@@ -504,10 +507,10 @@ var SETDEX_RBY = {
   },
   "Porygon": {
     "OU Wall": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
+    "NU Support": {"moves":["Thunder Wave","Recover","Double-Edge","Blizzard"]},
     "PU Support": {"moves":["Thunder Wave","Recover","Blizzard","Psychic"]},
     "PU Agility": {"moves":["Agility","Recover","Psychic","Thunder Wave"]},
-    "Tradebacks OU Bulky Support": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]},
-    "NU Showdown Usage": {"moves":["Recover","Thunder Wave","Thunderbolt","Hyper Beam"]}
+    "Tradebacks OU Bulky Support": {"moves":["Recover","Thunder Wave","Ice Beam","Thunderbolt"]}
   },
   "Omanyte": {
     "LC Special Attacker": {"level":5,"moves":["Surf","Blizzard","Body Slam","Hydro Pump"]},
@@ -593,8 +596,5 @@ var SETDEX_RBY = {
   },
   "Weepinbell": {
     "ZU Showdown Usage": {"moves":["Razor Leaf","Sleep Powder","Double-Edge","Stun Spore"]}
-  },
-  "Charmeleon": {
-    "ZU Showdown Usage": {"moves":["Fire Blast","Counter","Slash","Seismic Toss"]}
   }
 };
