@@ -63,8 +63,7 @@ var SETDEX_DPP = {
     "NU Toxic Stall": {"ability":"Blaze","item":"Leftovers","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Substitute","Toxic","Flamethrower","Roost"]},
     "NU Swords Dance": {"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Flare Blitz","Thunder Punch","Earthquake"]},
     "NU Choice Specs": {"ability":"Blaze","item":"Choice Specs","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Fire Blast","Air Slash","Hidden Power Grass","Focus Blast"]},
-    "NU Dragon Dance": {"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Earthquake","Thunder Punch"]},
-    "OU Showdown Usage": {"ability":"Blaze","item":"Salac Berry","nature":"Jolly","evs":{"hp":12,"at":244,"sp":252},"moves":["Earthquake","Fire Punch","Belly Drum","Substitute"]}
+    "NU Dragon Dance": {"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","Flare Blitz","Earthquake","Thunder Punch"]}
   },
   "Squirtle": {
     "LC Priority Attacker": {"level":5,"ability":"Torrent","item":"Life Orb","nature":"Adamant","ivs":{"hp":0},"evs":{"at":212,"sd":4,"sp":252},"moves":["Fake Out","Aqua Jet","Waterfall","Return"]}

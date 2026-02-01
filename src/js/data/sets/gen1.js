@@ -318,7 +318,8 @@ var SETDEX_RBY = {
     "Tradebacks OU Standard": {"moves":["Hypnosis","Thunderbolt","Ice Punch","Explosion"]}
   },
   "Onix": {
-    "ZU Don't use Onix": {"moves":["Earthquake","Rock Slide","Explosion","Rest"]}
+    "ZU Don't use Onix": {"moves":["Earthquake","Rock Slide","Explosion","Rest"]},
+    "OU Showdown Usage": {"moves":["Bind","Earthquake","Rest","Toxic"]}
   },
   "Drowzee": {
     "PU Support": {"moves":["Psychic","Thunder Wave","Hypnosis","Substitute"]},
@@ -367,7 +368,8 @@ var SETDEX_RBY = {
   },
   "Hitmonlee": {
     "1v1 Offensive": {"moves":["High Jump Kick","Jump Kick","Rolling Kick","Meditate"]},
-    "ZU Substitute + Counter": {"moves":["High Jump Kick","Body Slam","Substitute","Counter"]}
+    "ZU Substitute + Counter": {"moves":["High Jump Kick","Body Slam","Substitute","Counter"]},
+    "OU Showdown Usage": {"moves":["High Jump Kick","Body Slam","Counter","Mega Kick"]}
   },
   "Hitmonchan": {
     "ZU Don't use Hitmonchan": {"moves":["Agility","Body Slam","Submission","Seismic Toss"]}
