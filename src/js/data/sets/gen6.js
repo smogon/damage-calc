@@ -2927,6 +2927,7 @@ var SETDEX_XY = {
   },
   "Deoxys-Speed": {
     "Ubers Entry Hazard Lead": {"ability":"Pressure","item":"Rocky Helmet","nature":"Timid","evs":{"hp":248,"df":244,"sp":16},"moves":["Taunt","Stealth Rock","Skill Swap","Magic Coat"]},
+    "Doubles OU Hazard Setter": {"ability":"Pressure","item":"Rocky Helmet","nature":"Timid","evs":{"hp":252,"sa":44,"sp":212},"moves":["Stealth Rock","Spikes","Psycho Boost","Ice Beam"]},
     "1v1 Pressure Stall": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":240,"sd":120,"sp":148},"moves":["Protect","Substitute","Taunt","Recover"]},
     "1v1 Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psycho Boost","Thunderbolt","Trick","Ice Beam"]},
     "1v1 Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Impish","evs":{"hp":4,"at":252,"df":212,"sp":40},"moves":["Rock Slide","Superpower","Trick","Recover"]},
@@ -3842,7 +3843,7 @@ var SETDEX_XY = {
   },
   "Scrafty": {
     "RU Dragon Dance": {"ability":"Shed Skin","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Dragon Dance","High Jump Kick","Knock Off","Iron Head"]},
-    "Doubles OU Utility": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":252,"at":212,"df":44},"moves":["Fake Out","Drain Punch","Knock Off","Quick Guard"]},
+    "Doubles OU Pivot": {"ability":"Intimidate","item":"Eject Button","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Fake Out","Knock Off","Drain Punch","Quick Guard"]},
     "Battle Spot Doubles Bulky Support": {"level":50,"ability":"Intimidate","item":"Sitrus Berry","nature":"Careful","evs":{"hp":252,"at":164,"sd":92},"moves":["Fake Out","Drain Punch","Knock Off","Protect"]},
     "Monotype Bulk Up (Dark)": {"ability":"Shed Skin","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Knock Off","Drain Punch","Bulk Up","Rest"]},
     "VGC 2016 Showdown Usage": {"level":50,"ability":"Intimidate","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Fake Out","Knock Off","Low Kick","Quick Guard"]},

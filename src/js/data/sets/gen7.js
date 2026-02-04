@@ -4814,7 +4814,7 @@ var SETDEX_SM = {
   "Kartana": {
     "OU Paper Cut (Swords Dance)": {"ability":"Beast Boost","item":"Normalium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Sacred Sword","Giga Impact"]},
     "OU Paper Plane (Choice Scarf)": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Sacred Sword","Smart Strike","Knock Off"]},
-    "OU Choice Band": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
+    "OU Paper Press(Choice Band)": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
     "OU Paper Fan (Utility)": {"ability":"Beast Boost","item":"Grassium Z","nature":"Jolly","evs":{"hp":128,"at":128,"sp":252},"moves":["Leaf Blade","Knock Off","Synthesis","Defog"]},
     "Doubles OU All-out Offense": {"ability":"Beast Boost","item":"Grassium Z","nature":"Jolly","evs":{"at":252,"sd":64,"sp":192},"moves":["Leaf Blade","Sacred Sword","Substitute","Protect"]},
     "Doubles OU Bulky Attacker": {"ability":"Beast Boost","item":"Mago Berry","nature":"Jolly","evs":{"hp":116,"at":64,"df":8,"sd":176,"sp":144},"moves":["Leaf Blade","Sacred Sword","Tailwind","Protect"]},
