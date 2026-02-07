@@ -4721,7 +4721,7 @@ var SETDEX_SM = {
   "Kommo-o": {
     "OU Offensive": {"ability":"Bulletproof","item":"Kommonium Z","nature":"Hasty","evs":{"at":252,"sd":4,"sp":252},"moves":["Clanging Scales","Close Combat","Poison Jab","Stealth Rock"]},
     "OU Dragon Dance": {"ability":"Bulletproof","item":"Groundium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Close Combat","Ice Punch","Earthquake"]},
-    "OU Specially Defensive": {"ability":"Bulletproof","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":116,"sp":140},"moves":["Stealth Rock","Toxic","Protect","Drain Punch"]},
+    "OU Specially Defensive": {"ability":"Bulletproof","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":196,"sp":64},"moves":["Stealth Rock","Drain Punch","Protect","Toxic"]},
     "OU Belly Drum": {"ability":"Bulletproof","item":"Salac Berry","nature":"Jolly","evs":{"hp":52,"at":204,"sp":252},"moves":["Belly Drum","Substitute","Drain Punch","Thunder Punch"]},
     "Doubles OU Clangorous Soulblaze": {"ability":"Soundproof","item":"Kommonium Z","nature":"Timid","evs":{"at":4,"sa":252,"sp":252},"moves":["Clanging Scales","Flamethrower","Substitute","Protect"]},
     "VGC 2019 Clangorous Soulblaze": {"level":50,"ability":"Overcoat","item":"Kommonium Z","nature":"Modest","evs":{"hp":52,"df":4,"sa":220,"sd":4,"sp":228},"moves":["Clanging Scales","Focus Blast","Substitute","Protect"]},
@@ -4814,7 +4814,7 @@ var SETDEX_SM = {
   "Kartana": {
     "OU Paper Cut (Swords Dance)": {"ability":"Beast Boost","item":"Normalium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Sacred Sword","Giga Impact"]},
     "OU Paper Plane (Choice Scarf)": {"ability":"Beast Boost","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Sacred Sword","Smart Strike","Knock Off"]},
-    "OU Paper Press(Choice Band)": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
+    "OU Paper Press (Choice Band)": {"ability":"Beast Boost","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Leaf Blade","Smart Strike","Knock Off","Sacred Sword"]},
     "OU Paper Fan (Utility)": {"ability":"Beast Boost","item":"Grassium Z","nature":"Jolly","evs":{"hp":128,"at":128,"sp":252},"moves":["Leaf Blade","Knock Off","Synthesis","Defog"]},
     "Doubles OU All-out Offense": {"ability":"Beast Boost","item":"Grassium Z","nature":"Jolly","evs":{"at":252,"sd":64,"sp":192},"moves":["Leaf Blade","Sacred Sword","Substitute","Protect"]},
     "Doubles OU Bulky Attacker": {"ability":"Beast Boost","item":"Mago Berry","nature":"Jolly","evs":{"hp":116,"at":64,"df":8,"sd":176,"sp":144},"moves":["Leaf Blade","Sacred Sword","Tailwind","Protect"]},
