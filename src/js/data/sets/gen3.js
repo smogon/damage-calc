@@ -321,10 +321,7 @@ var SETDEX_ADV = {
     "Doubles OU BoltBeam": {"ability":"Clear Body","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":4,"sa":252},"moves":["Ice Beam","Thunderbolt","Thunder Wave","Protect"]}
   },
   "Registeel": {
-    "OU RestTalk": {"ability":"Clear Body","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":236,"sp":20},"moves":["Rest","Sleep Talk","Toxic","Seismic Toss"]},
-    "OU Curse": {"ability":"Clear Body","item":"Leftovers","nature":"Careful","ivs":{"sd":30},"evs":{"hp":252,"at":160,"sd":96},"moves":["Curse","Hidden Power Steel","Earthquake","Rest"]},
-    "OU Lead": {"ability":"Clear Body","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":88,"df":16,"sd":152},"moves":["Thunder Wave","Earthquake","Rock Slide","Rest"]},
-    "OU Choice Band": {"ability":"Clear Body","item":"Choice Band","nature":"Careful","evs":{"hp":252,"at":252,"sd":4},"moves":["Superpower","Rock Slide","Earthquake","Explosion"]},
+    "OU Mixed Wall": {"ability":"Clear Body","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":200,"sp":56},"moves":["Thunder Wave","Seismic Toss","Counter","Explosion"]},
     "Doubles OU Utility": {"ability":"Clear Body","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":48,"sd":208},"moves":["Thunder Wave","Counter","Seismic Toss","Protect"]},
     "Doubles OU Defensive Setup": {"ability":"Clear Body","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":48,"sd":208},"moves":["Seismic Toss","Iron Defense","Amnesia","Protect"]}
   },
