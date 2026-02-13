@@ -1069,8 +1069,7 @@ var SETDEX_BW = {
   },
   "Abra": {
     "PU Revenge Killer": {"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Signal Beam","Thunder Wave","Knock Off"]},
-    "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","evs":{"sa":236,"sd":76,"sp":196},"moves":["Psychic","Shadow Ball","Knock Off","Protect"]},
-    "LC Life Orb": {"level":5,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":240,"sp":200},"moves":["Psychic","Hidden Power Fighting","Shadow Ball","Substitute"]},
+    "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":236,"sd":76,"sp":196},"moves":["Psychic","Shadow Ball","Hidden Power Fire","Protect"]},
     "LC Shed Shell": {"level":5,"ability":"Magic Guard","item":"Shed Shell","nature":"Timid","ivs":{"at":2,"sa":30,"sp":30},"evs":{"sa":240,"sp":200},"moves":["Psychic","Shadow Ball","Hidden Power Fire","Encore"]},
     "ZU Revenge Killer": {"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","ivs":{"at":3,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Hidden Power Fighting","Shadow Ball","Thunder Wave"]}
   },

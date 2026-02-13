@@ -673,8 +673,8 @@ var SETDEX_SM = {
     "ZU Physically Defensive": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":200,"sp":56},"moves":["Circle Throw","Scald","Toxic","Protect"]}
   },
   "Abra": {
-    "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","evs":{"sa":236,"sd":76,"sp":196},"moves":["Psychic","Dazzling Gleam","Counter","Protect"]},
-    "LC Life Orb": {"level":5,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"sa":30,"sd":30},"evs":{"sa":240,"sp":200},"moves":["Psychic","Dazzling Gleam","Hidden Power Ground","Substitute"]}
+    "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":236,"sd":76,"sp":196},"moves":["Psychic","Dazzling Gleam","Hidden Power Fighting","Protect"]},
+    "LC Life Orb": {"level":5,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":240,"sp":200},"moves":["Psychic","Dazzling Gleam","Hidden Power Fighting","Substitute"]}
   },
   "Kadabra": {
     "PU Focus Sash Revenge Killer": {"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Psychic","Counter","Taunt","Dazzling Gleam"]},
