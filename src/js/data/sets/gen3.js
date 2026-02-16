@@ -989,6 +989,7 @@ var SETDEX_ADV = {
     "PU Reversal Sweeper": {"ability":"Speed Boost","item":"Liechi Berry","nature":"Jolly","ivs":{"at":30,"df":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Reversal","Aerial Ace","Hidden Power Bug"]}
   },
   "Quagsire": {
+    "OU Curse + Rest": {"ability":"Water Absorb","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":216,"sd":40},"moves":["Rest","Curse","Earthquake","Ice Beam"]},
     "UU Curse": {"ability":"Water Absorb","item":"Leftovers","nature":"Brave","evs":{"hp":252,"at":64,"sd":192},"moves":["Curse","Earthquake","Ice Beam","Rest"]},
     "UU Counter": {"ability":"Water Absorb","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"at":68,"df":100,"sd":88},"moves":["Counter","Earthquake","Toxic","Surf"]}
   },
