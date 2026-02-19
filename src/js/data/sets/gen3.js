@@ -1086,7 +1086,7 @@ var SETDEX_ADV = {
     "ZU Substitute + 3 Attacks": {"ability":"Hustle","item":"Leftovers","nature":"Hasty","ivs":{"sa":30,"sd":30},"evs":{"at":188,"sa":68,"sp":252},"moves":["Substitute","Aerial Ace","Ice Beam","Hidden Power Ground"]}
   },
   "Skarmory": {
-    "OU Standard": {"ability":"Keen Eye","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Spikes","Roar","Protect","Toxic"]},
+    "OU Standard": {"ability":"Keen Eye","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Spikes","Roar","Drill Peck","Protect"]},
     "OU Offensive Spikes": {"ability":"Keen Eye","item":"Leftovers","nature":"Adamant","ivs":{"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Spikes","Drill Peck","Hidden Power Ground","Taunt"]},
     "Ubers Defensive Spikes": {"ability":"Keen Eye","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":156,"sa":100},"moves":["Spikes","Whirlwind","Toxic","Pursuit"]},
     "Ubers Magneton Lure": {"ability":"Keen Eye","item":"Leftovers","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Hidden Power Ground","Spikes","Whirlwind","Toxic"]}

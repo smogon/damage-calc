@@ -375,7 +375,8 @@ var SETDEX_RBY = {
     "ZU Don't use Hitmonchan": {"moves":["Agility","Body Slam","Submission","Seismic Toss"]}
   },
   "Lickitung": {
-    "ZU Don't use Lickitung": {"moves":["Body Slam","Hyper Beam","Swords Dance","Counter"]}
+    "ZU Mixed Attacker": {"moves":["Body Slam","Fire Blast","Blizzard","Thunderbolt"]},
+    "ZU Swords Dance": {"moves":["Body Slam","Hyper Beam","Swords Dance","Counter"]}
   },
   "Koffing": {
     "LC Mixed Attacker": {"level":5,"moves":["Sludge","Fire Blast","Thunderbolt","Explosion"]}
