@@ -829,7 +829,7 @@ var SETDEX_DPP = {
     "Ubers Mixed": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":64,"df":200,"sa":184,"sp":60},"moves":["Draco Meteor","Shadow Sneak","Thunder","Outrage"]},
     "Ubers Stallbreaker": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":84,"sa":216,"sd":96,"sp":112},"moves":["Calm Mind","Dragon Pulse","Shadow Ball","Substitute"]},
     "Ubers Sleeping Beauty (Mono-Attacker)": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":200,"df":44,"sa":224,"sd":40},"moves":["Dragon Pulse","Calm Mind","Rest","Sleep Talk"]},
-    "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Will-O-Wisp","Outrage","Earthquake","Shadow Force"]},
+    "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Will-O-Wisp","Shadow Sneak","Earthquake","Shadow Force"]},
     "Ubers RestTalk": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Rest","Sleep Talk","Outrage","Shadow Force"]},
     "Anything Goes Showdown Usage": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":68,"df":200,"sa":124,"sp":116},"moves":["Shadow Sneak","Draco Meteor","Earthquake","Outrage"]}
   },

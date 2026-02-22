@@ -1348,7 +1348,8 @@ var SETDEX_SS = {
     "NFE Choice Specs": {"ability":"Natural Cure","item":"Choice Specs","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Leaf Storm","Sludge Bomb","Giga Drain","Shadow Ball"]}
   },
   "Carvanha": {
-    "LC Special Attacker": {"level":5,"ability":"Speed Boost","item":"Life Orb","nature":"Modest","ivs":{"hp":9,"at":0},"evs":{"sa":236,"sd":36,"sp":236},"moves":["Protect","Hydro Pump","Dark Pulse","Ice Beam"]}
+    "LC Special Attacker": {"level":5,"ability":"Speed Boost","item":"Life Orb","nature":"Modest","ivs":{"hp":9,"at":0},"evs":{"sa":236,"sd":36,"sp":236},"moves":["Protect","Hydro Pump","Dark Pulse","Ice Beam"]},
+    "LC Physical Sweeper": {"level":5,"ability":"Speed Boost","item":"Life Orb","nature":"Adamant","ivs":{"hp":9},"evs":{"at":196,"sd":36,"sp":236},"moves":["Flip Turn","Crunch","Psychic Fangs","Protect"]}
   },
   "Sharpedo": {
     "RU Specially-based Mixed Cleaner": {"ability":"Speed Boost","item":"Life Orb","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Dark Pulse","Close Combat","Protect"]},
