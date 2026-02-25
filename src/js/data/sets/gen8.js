@@ -1293,7 +1293,7 @@ var SETDEX_SS = {
     "PU Physical Wall": {"ability":"Prankster","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Knock Off","Recover","Will-O-Wisp","Taunt"]},
     "Monotype Stallbreaker (Dark)": {"ability":"Prankster","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":252,"sd":4},"moves":["Taunt","Will-O-Wisp","Knock Off","Recover"]},
     "Monotype Stallbreaker (Ghost)": {"ability":"Prankster","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Taunt","Will-O-Wisp","Knock Off","Recover"]},
-    "National Dex Defensive Magic Bounce": {"ability":"Prankster","item":"Sablenite","nature":"Impish","evs":{"hp":248,"df":8,"sd":248,"sp":4},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
+    "National Dex Defensive Magic Bounce": {"ability":"Prankster","item":"Sablenite","nature":"Impish","evs":{"hp":248,"df":8,"sd":252},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
     "National Dex Monotype Defensive (Dark)": {"ability":"Prankster","item":"Sablenite","nature":"Careful","evs":{"hp":252,"df":112,"sd":144},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
     "National Dex Monotype Utility (Ghost)": {"ability":"Prankster","item":"Sablenite","nature":"Careful","evs":{"hp":252,"df":100,"sd":156},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
     "ZU Physical Wall": {"ability":"Prankster","item":"Heavy-Duty Boots","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Knock Off","Will-O-Wisp","Encore","Recover"]},
@@ -1301,7 +1301,7 @@ var SETDEX_SS = {
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Prankster","item":"Focus Sash","nature":"Careful","evs":{"hp":252,"df":100,"sd":156},"moves":["Quash","Will-O-Wisp","Shadow Sneak","Rain Dance"]}
   },
   "Sableye-Mega": {
-    "National Dex Defensive Magic Bounce": {"ability":"Magic Bounce","item":"Sablenite","nature":"Impish","evs":{"hp":248,"df":8,"sd":248,"sp":4},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
+    "National Dex Defensive Magic Bounce": {"ability":"Magic Bounce","item":"Sablenite","nature":"Impish","evs":{"hp":248,"df":8,"sd":252},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
     "National Dex Monotype Defensive (Dark)": {"ability":"Magic Bounce","item":"Sablenite","nature":"Careful","evs":{"hp":252,"df":112,"sd":144},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]},
     "National Dex Monotype Utility (Ghost)": {"ability":"Magic Bounce","item":"Sablenite","nature":"Careful","evs":{"hp":252,"df":100,"sd":156},"moves":["Knock Off","Will-O-Wisp","Recover","Protect"]}
   },
