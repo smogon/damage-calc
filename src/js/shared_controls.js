@@ -784,10 +784,21 @@ $(".set-selector").change(function () {
 		calcHP(pokeObj);
 		abilityObj.change();
 		itemObj.change();
-		if (pokemon.gender === "N") {
-			pokeObj.find(".gender").parent().hide();
+		if (pokemon.gender === ("N") || gen === 1) {
 			pokeObj.find(".gender").val("");
-		} else pokeObj.find(".gender").parent().show();
+			pokeObj.find(".gender").parent().hide();
+		} else if (pokemon.gender) {
+			pokeObj.find(".gender").val(pokemon.gender);
+			pokeObj.find(".gender").parent().show();
+			pokeObj.find(".gender").children().hide();
+			pokemon.gender === "M"
+				? pokeObj.find(".gender option[value='M']").show()
+				: pokeObj.find(".gender option[value='F']").show();
+		} else {
+			pokeObj.find(".gender").val(((regSets || randset) && set.gender) ? set.gender : "");
+			pokeObj.find(".gender").parent().show();
+			pokeObj.find(".gender").children().show();
+		}
 	}
 });
 
