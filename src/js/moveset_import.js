@@ -13,16 +13,17 @@ function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
 	var finalText = "";
-	finalText = pokemon.name + (pokemon.item ? " @ " + pokemon.item : "") + "\n";
-	finalText += "Level: " + pokemon.level + "\n";
-	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
+	finalText = checkExceptionsExport(pokemon.name)
+	+ ((pokemon.gender && pokemon.gender !== 'N') ? " (" + pokemon.gender + ")" : "")
+	+ (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
+	if (pokemon.level !== 100) { finalText += "Level: " + pokemon.level + "\n"; }
 	if (gen === 9) {
 		var teraType = pokeInfo.find(".teraType").val();
 		if (teraType !== undefined && teraType !== pokemon.types[0]) {
 			finalText += "Tera Type: " + teraType + "\n";
 		}
 	}
-	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (gen > 2) {
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
@@ -39,7 +40,7 @@ function ExportPokemon(pokeInfo) {
 			finalText += "\n";
 		}
 	}
-
+	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
 	var IVs_Array = [];
 	for (var stat in pokemon.ivs) {
 		var iv = pokemon.ivs[stat] ? pokemon.ivs[stat] : 0;
@@ -165,6 +166,15 @@ function getStats(currentPoke, rows, offset) {
 	return currentPoke;
 }
 
+function getGender(currentRow, j) {
+	for (;j < currentRow.length; j++) {
+		var gender = currentRow[j].trim();
+		if (gender === 'M' || gender === 'F') {
+			return gender;
+		}
+	}
+}
+
 function getItem(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var item = currentRow[j].trim();
@@ -173,6 +183,7 @@ function getItem(currentRow, j) {
 		}
 	}
 }
+
 
 function getMoves(currentPoke, rows, offset) {
 	var movesFound = false;
@@ -228,6 +239,7 @@ function addToDex(poke) {
 	dexObject.ivs = poke.ivs;
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
+	dexObject.gender = poke.gender;
 	dexObject.item = poke.item;
 	dexObject.isCustomSet = poke.isCustomSet;
 	var customsets;
@@ -240,11 +252,17 @@ function addToDex(poke) {
 		customsets[poke.name] = {};
 	}
 	customsets[poke.name][poke.nameProp] = dexObject;
-	if (poke.name === "Aegislash-Blade") {
-		if (!customsets["Aegislash-Shield"]) {
-			customsets["Aegislash-Shield"] = {};
+	var duplicateSetTo = "";
+	switch(poke.name) {
+		case 'Aegislash-Blade':
+			duplicateSetTo = ["Aegislash-Both"];
+			break;
+	}
+	for (k = 0; k < duplicateSetTo.length; k++) {
+		if (!customsets[duplicateSetTo[k]]) {
+			customsets[duplicateSetTo[k]] = {};
 		}
-		customsets["Aegislash-Shield"][poke.nameProp] = dexObject;
+		customsets[duplicateSetTo[k]][poke.nameProp] = dexObject;
 	}
 	updateDex(customsets);
 }
@@ -286,10 +304,11 @@ function addSets(pokes, name) {
 		// so that it is not treated as another distinct set.
 		if (currentRow.length > 0 && currentRow[0].includes('As One')) continue;
 		for (var j = 0; j < currentRow.length; j++) {
-			currentRow[j] = checkExeptions(currentRow[j].trim());
+			currentRow[j] = checkExceptionsImport(currentRow[j].trim());
 			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
 				currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[j].trim()]));
 				currentPoke.name = currentRow[j].trim();
+				currentPoke.gender = getGender(currentRow, j + 1);
 				currentPoke.item = getItem(currentRow, j + 1);
 				if (j === 1 && currentRow[0].trim()) {
 					currentPoke.nameProp = currentRow[0].trim();
@@ -314,8 +333,9 @@ function addSets(pokes, name) {
 	}
 }
 
-function checkExeptions(poke) {
+function checkExceptionsImport(poke) {
 	switch (poke) {
+	case 'Alcremie-Vanilla-Cream':
 	case 'Alcremie-Ruby-Cream':
 	case 'Alcremie-Matcha-Cream':
 	case 'Alcremie-Mint-Cream':
@@ -327,17 +347,84 @@ function checkExeptions(poke) {
 		poke = "Alcremie";
 		break;
 	case 'Aegislash':
+	case 'Aegislash-Both':
 		poke = "Aegislash-Blade";
 		break;
-	case 'Basculin-Blue-Striped':
-		poke = "Basculin";
-		break;
+	case 'Burmy-Plant':
 	case 'Burmy-Sandy':
 	case 'Burmy-Trash':
 		poke = "Burmy";
 		break;
+	case 'Deerling-Summer':
+	case 'Deerling-Autumn':
+	case 'Deerling-Winter':
+	case 'Deerling-Spring':
+		poke = "Deerling";
+		break;
+	case 'Flabébé-Blue':
+	case 'Flabébé-Orange':
+	case 'Flabébé-Red':
+	case 'Flabébé-White':
+	case 'Flabébé-Yellow':
+	case 'Flabebe':
+	case 'Flabebe-Blue':
+	case 'Flabebe-Orange':
+	case 'Flabebe-Red':
+	case 'Flabebe-White':
+	case 'Flabebe-Yellow':
+		poke = "Flabébé";
+		break;
+	case 'Floette-Blue':
+	case 'Floette-Orange':
+	case 'Floette-Red':
+	case 'Floette-White':
+	case 'Floette-Yellow':
+		poke = "Floette";
+		break;
+	case 'Florges-Blue':
+	case 'Florges-Orange':
+	case 'Florges-Red':
+	case 'Florges-White':
+	case 'Florges-Yellow':
+		poke = "Florges";
+		break;
+	case 'Furfrou-Dandy':
+	case 'Furfrou-Debutante':
+	case 'Furfrou-Diamond':
+	case 'Furfrou-Heart':
+	case 'Furfrou-Kabuki':
+	case 'Furfrou-La-Reine':
+	case 'Furfrou-Matron':
+	case 'Furfrou-Natural':
+	case 'Furfrou-Pharaoh':
+	case 'Furfrou-Star':
+		poke = "Furfrou";
+		break;
 	case 'Gastrodon-East':
+	case 'Gastrodon-West':
 		poke = "Gastrodon";
+		break;
+	case 'Genesect-Burn':
+	case 'Genesect-Chill':
+	case 'Genesect-Douse':
+	case 'Genesect-Shock':
+		poke = "Genesect";
+		break;
+	case 'Giratina-Altered':
+		poke = "Giratina";
+		break;
+	case 'Gourgeist-Average':
+	case 'Gourgeist-Medium':
+		poke = "Gourgeist";
+		break;
+	case 'Gourgeist-Jumbo':
+		poke = "Gourgeist-Super";
+		break;
+	case 'Magearna-Original':
+		poke = "Magearna";
+		break;
+	case 'Magearna-Original-Mega':
+		poke = "Magearna-Mega";
 		break;
 	case 'Mimikyu-Busted-Totem':
 		poke = "Mimikyu-Totem";
@@ -345,6 +432,7 @@ function checkExeptions(poke) {
 	case 'Mimikyu-Busted':
 		poke = "Mimikyu";
 		break;
+	case 'Minior-Red':
 	case 'Minior-Orange':
 	case 'Minior-Yellow':
 	case 'Minior-Green':
@@ -353,31 +441,84 @@ function checkExeptions(poke) {
 	case 'Minior-Violet':
 		poke = "Minior";
 		break;
-	case 'Pikachu-Belle':
-	case 'Pikachu-Cosplay':
-	case 'Pikachu-Libre':
-	case 'Pikachu-Original':
-	case 'Pikachu-Partner':
-	case 'Pikachu-PhD':
-	case 'Pikachu-Pop-Star':
-	case 'Pikachu-Rock-Star':
-		poke = "Pikachu";
+	case 'Poltchageist-Artisan':
+	case 'Poltchageist-Counterfeit':
+		poke = "Poltchageist";
 		break;
-	case 'Tastugiri-Droopy':
-	case 'Tatsugiri-Stretchy':
+	case 'Polteageist-Antique':
+	case 'Polteageist-Phony':
+		poke = "Polteageist";
+		break;
+	case 'Pumpkaboo-Average':
+	case 'Pumpkaboo-Medium':
+		poke = "Pumpkaboo";
+		break;
+	case 'Pumpkaboo-Jumbo':
+		poke = "Pumpkaboo-Super";
+		break;
+	case 'Sawsbuck-Summer':
+	case 'Sawsbuck-Autumn':
+	case 'Sawsbuck-Winter':
+	case 'Sawsbuck-Spring':
+		poke = "Sawsbuck";
+		break;
+	case 'Shellos-East':
+	case 'Shellos-West':
+		poke = "Shellos";
+		break;
+	case 'Sinistcha-Masterpiece':
+	case 'Sinistcha-Unremarkable':
+		poke = "Sinistcha";
+		break;
+	case 'Sinistea-Antique':
+	case 'Sinistea-Phony':
+		poke = "Sinistea";
+		break;
+	case 'Tastugiri-Curly':
 		poke = "Tatsugiri";
+		break;
+	case 'Unown-A':
+	case 'Unown-B':
+	case 'Unown-C':
+	case 'Unown-D':
+	case 'Unown-E':
+	case 'Unown-F':
+	case 'Unown-G':
+	case 'Unown-H':
+	case 'Unown-I':
+	case 'Unown-J':
+	case 'Unown-K':
+	case 'Unown-L':
+	case 'Unown-M':
+	case 'Unown-N':
+	case 'Unown-O':
+	case 'Unown-P':
+	case 'Unown-Q':
+	case 'Unown-R':
+	case 'Unown-S':
+	case 'Unown-T':
+	case 'Unown-U':
+	case 'Unown-V':
+	case 'Unown-W':
+	case 'Unown-X':
+	case 'Unown-Y':
+	case 'Unown-Z':
+	case 'Unown-Exclamation':
+	case 'Unown-Question':
+		poke = "Unown";
 		break;
 	case 'Vivillon-Archipelago':
 	case 'Vivillon-Continental':
 	case 'Vivillon-Elegant':
-	case 'Vivillon-Fancy':
 	case 'Vivillon-Garden':
 	case 'Vivillon-High Plains':
 	case 'Vivillon-Icy Snow':
+	case 'Vivillon-Meadow':
 	case 'Vivillon-Modern':
 	case 'Vivillon-Monsoon':
 	case 'Vivillon-Ocean':
 	case 'Vivillon-Pokeball':
+	case 'Vivillon-Pokéball':
 	case 'Vivillon-Polar':
 	case 'Vivillon-River':
 	case 'Vivillon-Sandstorm':
@@ -386,23 +527,33 @@ function checkExeptions(poke) {
 	case 'Vivillon-Tundra':
 		poke = "Vivillon";
 		break;
-	case 'Florges-White':
-	case 'Florges-Blue':
-	case 'Florges-Orange':
-	case 'Florges-Yellow':
-		poke = "Florges";
+	case 'Wormadam-Plant':
+		poke = "Wormadam";
 		break;
-	case 'Shellos-East':
-		poke = "Shellos";
+	case 'Xerneas-Neutral':
+		poke = "Xerneas";
 		break;
-	case 'Deerling-Summer':
-	case 'Deerling-Autumn':
-	case 'Deerling-Winter':
-		poke = "Deerling";
+	case 'Zarude-Dada':
+		poke = "Zarude";
 		break;
 	}
 	return poke;
+}
 
+function checkExceptionsExport(name) {
+	switch (name) {
+	case 'Aegislash-Shield':
+	case 'Aegislash-Both':
+		name = "Aegislash";
+		break;
+	case 'Zygarde-10%-Construct':
+		name = "Zygarde-10%";
+		break;
+	case 'Zygarde-50%-Construct':
+		name = "Zygarde";
+		break;
+	}
+	return name;
 }
 
 $(allPokemon("#clearSets")).click(function () {

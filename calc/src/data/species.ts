@@ -14,11 +14,11 @@ export interface SpeciesData {
     sl?: number;
   };
   readonly weightkg: number; // weight
+  readonly abilities?: {0: string}; // ability
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
   readonly otherFormes?: string[];
   readonly baseSpecies?: string;
-  readonly abilities?: {0: string}; // ability
 }
 
 const RBY: {[name: string]: SpeciesData} = {
@@ -4269,39 +4269,6 @@ const BW_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 82.5,
     abilities: {0: 'Download'},
     gender: 'N',
-    otherFormes: ['Genesect-Burn', 'Genesect-Chill', 'Genesect-Douse', 'Genesect-Shock'],
-  },
-  'Genesect-Burn': {
-    types: ['Bug', 'Steel'],
-    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
-    weightkg: 82.5,
-    abilities: {0: 'Download'},
-    gender: 'N',
-    baseSpecies: 'Genesect',
-  },
-  'Genesect-Chill': {
-    types: ['Bug', 'Steel'],
-    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
-    weightkg: 82.5,
-    abilities: {0: 'Download'},
-    gender: 'N',
-    baseSpecies: 'Genesect',
-  },
-  'Genesect-Douse': {
-    types: ['Bug', 'Steel'],
-    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
-    weightkg: 82.5,
-    abilities: {0: 'Download'},
-    gender: 'N',
-    baseSpecies: 'Genesect',
-  },
-  'Genesect-Shock': {
-    types: ['Bug', 'Steel'],
-    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
-    weightkg: 82.5,
-    abilities: {0: 'Download'},
-    gender: 'N',
-    baseSpecies: 'Genesect',
   },
   Gigalith: {
     types: ['Rock'],
@@ -6236,16 +6203,9 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89},
     weightkg: 17,
     abilities: {0: 'Shield Dust'},
-    otherFormes: ['Vivillon-Fancy', 'Vivillon-Pokeball'],
+    otherFormes: ['Vivillon-Fancy'],
   },
   'Vivillon-Fancy': {
-    types: ['Bug', 'Flying'],
-    bs: {hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89},
-    weightkg: 17,
-    abilities: {0: 'Shield Dust'},
-    baseSpecies: 'Vivillon',
-  },
-  'Vivillon-Pokeball': {
     types: ['Bug', 'Flying'],
     bs: {hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89},
     weightkg: 17,
@@ -6361,7 +6321,7 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Volbeat: {bs: {df: 75, sd: 85}},
   Vulpix: {otherFormes: ['Vulpix-Alola']},
   Woobat: {bs: {hp: 65}},
-  Zygarde: {otherFormes: ['Zygarde-10%', 'Zygarde-Complete']},
+  Zygarde: {otherFormes: ['Zygarde-10%', 'Zygarde-10%-Construct', 'Zygarde-50%-Construct', 'Zygarde-Complete']},
   Araquanid: {
     types: ['Water', 'Bug'],
     bs: {hp: 68, at: 70, df: 92, sa: 50, sd: 132, sp: 42},
@@ -7622,6 +7582,22 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     baseSpecies: 'Zygarde',
     gender: 'N',
   },
+  'Zygarde-10%-Construct': {
+    types: ['Dragon', 'Ground'],
+    bs: {hp: 54, at: 100, df: 71, sa: 61, sd: 85, sp: 115},
+    weightkg: 33.5,
+    abilities: {0: 'Power Construct'},
+    baseSpecies: 'Zygarde',
+    gender: 'N',
+  },
+  'Zygarde-50%-Construct': {
+    types: ['Dragon', 'Ground'],
+    bs: {hp: 108, at: 100, df: 121, sa: 81, sd: 95, sp: 95},
+    weightkg: 305,
+    abilities: {0: 'Power Construct'},
+    baseSpecies: 'Zygarde',
+    gender: 'N',
+  },
   'Zygarde-Complete': {
     types: ['Dragon', 'Ground'],
     bs: {hp: 216, at: 100, df: 121, sa: 91, sd: 95, sp: 85},
@@ -7663,7 +7639,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Lapras: {otherFormes: ['Lapras-Gmax']},
   Linoone: {otherFormes: ['Linoone-Galar']},
   Machamp: {otherFormes: ['Machamp-Gmax']},
-  Magearna: {otherFormes: ['Magearna-Original']},
   Melmetal: {otherFormes: ['Melmetal-Gmax']},
   Meowth: {otherFormes: ['Meowth-Alola', 'Meowth-Galar', 'Meowth-Gmax']},
   Moltres: {otherFormes: ['Moltres-Galar']},
@@ -8322,14 +8297,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     baseSpecies: 'Linoone',
   },
-  'Magearna-Original': {
-    baseSpecies: 'Magearna',
-    types: ['Steel', 'Fairy'],
-    bs: {hp: 80, at: 95, df: 115, sa: 130, sd: 115, sp: 65},
-    weightkg: 80.5,
-    gender: 'N',
-    abilities: {0: 'Soul-Heart'},
-  },
   'Machamp-Gmax': {
     types: ['Fighting'],
     bs: {hp: 90, at: 130, df: 80, sa: 65, sd: 85, sp: 55},
@@ -8484,15 +8451,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 60, at: 65, df: 65, sa: 134, sd: 114, sp: 70},
     weightkg: 0.4,
     abilities: {0: 'Weak Armor'},
-    otherFormes: ['Polteageist-Antique'],
-    gender: 'N',
-  },
-  'Polteageist-Antique': {
-    types: ['Ghost'],
-    bs: {hp: 60, at: 65, df: 65, sa: 134, sd: 114, sp: 70},
-    weightkg: 0.4,
-    abilities: {0: 'Weak Armor'},
-    baseSpecies: 'Polteageist',
     gender: 'N',
   },
   'Ponyta-Galar': {
@@ -8612,16 +8570,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0.2,
     abilities: {0: 'Weak Armor'},
     nfe: true,
-    otherFormes: ['Sinistea-Antique'],
-    gender: 'N',
-  },
-  'Sinistea-Antique': {
-    types: ['Ghost'],
-    bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
-    weightkg: 0.2,
-    abilities: {0: 'Weak Armor'},
-    nfe: true,
-    baseSpecies: 'Sinistea',
     gender: 'N',
   },
   'Sirfetch\u2019d': {
@@ -8887,15 +8835,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
     weightkg: 70,
     abilities: {0: 'Leaf Guard'},
-    gender: 'N',
-    otherFormes: ['Zarude-Dada'],
-  },
-  'Zarude-Dada': {
-    types: ['Dark', 'Grass'],
-    bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
-    weightkg: 70,
-    abilities: {0: 'Leaf Guard'},
-    baseSpecies: 'Zarude',
     gender: 'N',
   },
   'Zigzagoon-Galar': {
@@ -9857,17 +9796,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 1.1,
     abilities: {0: 'Hospitality'},
     nfe: true,
-    otherFormes: ['Poltchageist-Artisan'],
     gender: 'N',
-  },
-  'Poltchageist-Artisan': {
-    types: ['Grass', 'Ghost'],
-    bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
-    weightkg: 1.1,
-    abilities: {0: 'Hospitality'},
-    nfe: true,
-    gender: 'N',
-    baseSpecies: 'Poltchageist',
   },
   Quaquaval: {
     types: ['Water', 'Fighting'],
@@ -9983,16 +9912,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
     weightkg: 2.2,
     abilities: {0: 'Hospitality'},
-    otherFormes: ['Sinistcha-Masterpiece'],
     gender: 'N',
-  },
-  'Sinistcha-Masterpiece': {
-    types: ['Grass', 'Ghost'],
-    bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
-    weightkg: 2.2,
-    abilities: {0: 'Hospitality'},
-    gender: 'N',
-    baseSpecies: 'Sinistcha',
   },
   Skeledirge: {
     types: ['Fire', 'Ghost'],
@@ -10280,7 +10200,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Hawlucha: {otherFormes: ['Hawlucha-Mega']},
   Heatran: {otherFormes: ['Heatran-Mega']},
   Lucario: {otherFormes: ['Lucario-Mega', 'Lucario-Mega-Z']},
-  Magearna: {otherFormes: ['Magearna-Mega', 'Magearna-Original', 'Magearna-Original-Mega']},
+  Magearna: {otherFormes: ['Magearna-Mega']},
   Malamar: {otherFormes: ['Malamar-Mega']},
   Meganium: {otherFormes: ['Meganium-Mega']},
   Meowstic: {otherFormes: ['Meowstic-F', 'Meowstic-F-Mega', 'Meowstic-M-Mega']},
@@ -10303,7 +10223,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Victreebel: {otherFormes: ['Victreebel-Mega']},
   Zeraora: {otherFormes: ['Zeraora-Mega']},
-  Zygarde: {otherFormes: ['Zygarde-10%', 'Zygarde-Complete', 'Zygarde-Mega']},
+  Zygarde: {otherFormes: ['Zygarde-10%', 'Zygarde-10%-Construct', 'Zygarde-50%-Construct', 'Zygarde-Complete', 'Zygarde-Mega']},
   'Absol-Mega-Z': {
     types: ['Dark', 'Ghost'],
     bs: {hp: 65, at: 154, df: 60, sa: 75, sd: 60, sp: 151},
@@ -10515,14 +10435,6 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     baseSpecies: 'Magearna',
   },
-  'Magearna-Original-Mega': {
-    types: ['Steel', 'Fairy'],
-    bs: {hp: 80, at: 125, df: 115, sa: 170, sd: 115, sp: 95},
-    weightkg: 248.1,
-    abilities: {0: 'Soul-Heart'},
-    gender: 'N',
-    baseSpecies: 'Magearna',
-  },
   'Malamar-Mega': {
     types: ['Dark', 'Psychic'],
     bs: {hp: 86, at: 102, df: 88, sa: 98, sd: 120, sp: 88},
@@ -10695,11 +10607,11 @@ class Specie implements I.Specie {
   readonly types!: [I.TypeName] | [I.TypeName, I.TypeName];
   readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg!: number; // weight
+  readonly abilities?: {0: I.AbilityName}; // ability
   readonly nfe?: boolean;
   readonly gender?: I.GenderName;
   readonly otherFormes?: I.SpeciesName[];
   readonly baseSpecies?: I.SpeciesName;
-  readonly abilities?: {0: I.AbilityName}; // ability
 
   private static readonly EXCLUDE = new Set(['bs', 'otherFormes']);
 
