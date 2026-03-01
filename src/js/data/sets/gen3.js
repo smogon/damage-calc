@@ -572,7 +572,7 @@ var SETDEX_ADV = {
     "RU Choice Band": {"ability":"Limber","item":"Choice Band","nature":"Jolly","ivs":{"sa":30,"sd":30},"evs":{"hp":68,"at":252,"sp":188},"moves":["Double-Edge","Hidden Power Ground","Shadow Ball","Return"]}
   },
   "Golduck": {
-    "OU Mixed Attacker": {"ability":"Cloud Nine","item":"Leftovers","nature":"Mild","ivs":{"sa":30},"evs":{"at":104,"sa":252,"sp":152},"moves":["Surf","Ice Beam","Cross Chop","Hidden Power Electric"]},
+    "OU Calm Mind": {"ability":"Cloud Nine","item":"Salac Berry","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Calm Mind","Surf","Ice Beam","Endure"]},
     "UU Calm Mind": {"ability":"Cloud Nine","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Hydro Pump","Psychic","Hidden Power Grass"]}
   },
   "Mankey": {
@@ -1123,6 +1123,7 @@ var SETDEX_ADV = {
   },
   "Elekid": {
     "LC Substitute + 3 Attacks": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Ice Punch","Thief","Substitute"]},
+    "LC Mixed Attacker": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Hasty","ivs":{"df":30,"sd":30},"evs":{"at":172,"sa":76,"sp":236},"moves":["Thunderbolt","Ice Punch","Hidden Power Ghost","Substitute"]},
     "ZU Special Attacker": {"ability":"Static","item":"Petaya Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Ice Punch","Hidden Power Grass","Substitute"]}
   },
   "Magby": {
