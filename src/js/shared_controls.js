@@ -784,21 +784,12 @@ $(".set-selector").change(function () {
 		calcHP(pokeObj);
 		abilityObj.change();
 		itemObj.change();
-		if (pokemon.gender === ("N") || gen === 1) {
-			pokeObj.find(".gender").val("");
-			pokeObj.find(".gender").parent().hide();
-		} else if (pokemon.gender) {
-			pokeObj.find(".gender").val(pokemon.gender);
-			pokeObj.find(".gender").parent().show();
-			pokeObj.find(".gender").children().hide();
-			pokemon.gender === "M"
-				? pokeObj.find(".gender option[value='M']").show()
-				: pokeObj.find(".gender option[value='F']").show();
-		} else {
-			pokeObj.find(".gender").val(((regSets || randset) && set.gender) ? set.gender : "");
-			pokeObj.find(".gender").parent().show();
-			pokeObj.find(".gender").children().show();
-		}
+		genderSelector(
+			gen,
+			pokemon.gender,
+			pokeObj,
+			(regSets || randset) && set.gender ? set.gender : "",
+		);
 	}
 });
 
@@ -935,6 +926,7 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
+	genderSelector(gen, altForme.gender, container.parent(), undefined);
 	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
 		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
 		baseStat.val(altForme.bs[LEGACY_STATS[9][i]]);
@@ -1073,6 +1065,7 @@ function createPokemon(pokeInfo) {
 			ability: set.ability,
 			abilityOn: true,
 			item: set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item === "White Herb" || set.item.indexOf("ite") < 0) ? set.item : "",
+			gender: set.gender,
 			nature: set.nature,
 			ivs: ivs,
 			evs: evs,
@@ -1104,11 +1097,13 @@ function createPokemon(pokeInfo) {
 
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
+		var gender = pokeInfo.find(".gender").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 		var opts = {
 			ability: ability,
 			item: item,
+			gender: gender,
 			isDynamaxed: isDynamaxed,
 			teraType: teraType,
 			species: name,
@@ -1124,7 +1119,7 @@ function createPokemon(pokeInfo) {
 			ability: ability,
 			abilityOn: pokeInfo.find(".abilityToggle").is(":checked"),
 			item: item,
-			gender: pokeInfo.find(".gender").is(":visible") ? getGender(pokeInfo.find(".gender").val()) : "N",
+			gender: gender,
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
@@ -1154,6 +1149,24 @@ function getGender(gender) {
 	if (!gender || gender === 'genderless' || gender === 'N') return 'N';
 	if (gender.toLowerCase() === 'male' || gender === 'M') return 'M';
 	return 'F';
+}
+
+function genderSelector(gen, speciesGender, pokeObj, setGender) {
+	if (speciesGender === ("N") || gen === 1) {
+		pokeObj.find(".gender").val("");
+		pokeObj.find(".gender").parent().hide();
+	} else if (speciesGender) {
+		pokeObj.find(".gender").val(speciesGender);
+		pokeObj.find(".gender").parent().show();
+		pokeObj.find(".gender").children().hide();
+		speciesGender === "M"
+			? pokeObj.find(".gender option[value='M']").show()
+			: pokeObj.find(".gender option[value='F']").show();
+	} else {
+		if (setGender !== undefined) {pokeObj.find(".gender").val(setGender); }
+		pokeObj.find(".gender").parent().show();
+		pokeObj.find(".gender").children().show();
+	}
 }
 
 function getMoveDetails(moveInfo, opts) {
