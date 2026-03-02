@@ -350,10 +350,19 @@ function checkExceptionsImport(poke) {
 	case 'Aegislash-Both':
 		poke = "Aegislash-Blade";
 		break;
+	case 'Basculin-Red-Striped':
+		poke = "Basculin";
+		break;
 	case 'Burmy-Plant':
 	case 'Burmy-Sandy':
 	case 'Burmy-Trash':
 		poke = "Burmy";
+		break;
+	case 'Calyrex-Ice':
+		poke = "Calyrex-Ice-Rider";
+		break;
+	case 'Calyrex-Shadow':
+		poke = "Calyrex-Shadow-Rider";
 		break;
 	case 'Deerling-Summer':
 	case 'Deerling-Autumn':
@@ -545,6 +554,15 @@ function checkExceptionsExport(name) {
 	case 'Aegislash-Shield':
 	case 'Aegislash-Both':
 		name = "Aegislash";
+		break;
+	case 'Meowstic-Mega':
+		name = "Meowstic-M-Mega";
+		break;
+	case 'Ogerpon-Tera'
+		name = "Ogerpon-Teal-Tera";
+		break;
+	case 'Tatsugiri-Mega':
+		name = "Tatsugiri-Curly-Mega";
 		break;
 	case 'Zygarde-10%-Construct':
 		name = "Zygarde-10%";
