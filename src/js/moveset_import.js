@@ -526,8 +526,6 @@ function checkExceptionsImport(poke) {
 	case 'Vivillon-Modern':
 	case 'Vivillon-Monsoon':
 	case 'Vivillon-Ocean':
-	case 'Vivillon-Pokeball':
-	case 'Vivillon-Pokéball':
 	case 'Vivillon-Polar':
 	case 'Vivillon-River':
 	case 'Vivillon-Sandstorm':
@@ -535,6 +533,9 @@ function checkExceptionsImport(poke) {
 	case 'Vivillon-Sun':
 	case 'Vivillon-Tundra':
 		poke = "Vivillon";
+		break;
+	case 'Vivillon-Pokéball':
+		poke = "Vivillon-Pokeball";
 		break;
 	case 'Wormadam-Plant':
 		poke = "Wormadam";
@@ -554,21 +555,6 @@ function checkExceptionsExport(name) {
 	case 'Aegislash-Shield':
 	case 'Aegislash-Both':
 		name = "Aegislash";
-		break;
-	case 'Meowstic-Mega':
-		name = "Meowstic-M-Mega";
-		break;
-	case 'Ogerpon-Tera'
-		name = "Ogerpon-Teal-Tera";
-		break;
-	case 'Tatsugiri-Mega':
-		name = "Tatsugiri-Curly-Mega";
-		break;
-	case 'Zygarde-10%-Construct':
-		name = "Zygarde-10%";
-		break;
-	case 'Zygarde-50%-Construct':
-		name = "Zygarde";
 		break;
 	}
 	return name;

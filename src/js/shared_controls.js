@@ -184,7 +184,7 @@ function getForcedTeraType(pokemonName) {
 		return "Rock";
 	} else if (startsWith(pokemonName, "Ogerpon-Hearthflame")) {
 		return "Fire";
-	} else if (pokemonName === "Ogerpon") {
+	} else if (pokemonName === "Ogerpon" || startsWith(pokemonName, "Ogerpon-Teal")) {
 		return "Grass";
 	} else if (startsWith(pokemonName, "Ogerpon-Wellspring")) {
 		return "Water";
@@ -738,7 +738,7 @@ $(".set-selector").change(function () {
 			}
 			pokeObj.find(".nature").val("Hardy");
 			setSelectValueIfValid(abilityObj, pokemon.abilities[0], "");
-			if (startsWith(pokemonName, "Ogerpon-")) {
+			if (startsWith(pokemonName, "Ogerpon-") && !startsWith(pokemonName, "Ogerpon-Teal")) {
 				itemObj.val(pokemonName.split("-")[1] + " Mask");
 			} else {
 				itemObj.val("");
@@ -880,13 +880,13 @@ $(".teraToggle").change(function () {
 			container.find(".item").val() !== curForme.split("-")[1] + " Mask"
 		) return;
 		if (this.checked) {
-			var newForme = curForme + "-Tera";
+			var newForme = curForme === "Ogerpon" ? "Ogerpon-Teal-Tera" : curForme + "-Tera";
 			forme.val(newForme);
 			container.find(".ability").val("Embody Aspect (" + newForme.split("-")[1] + ")");
 			return;
 		}
 		if (!endsWith(curForme, "Tera")) return;
-		var newForme = curForme.slice(0, -5);
+		var newForme = curForme === "Ogerpon-Teal-Tera" ? "Ogerpon" : curForme.slice(0, -5);
 		forme.val(newForme);
 		container.find(".ability").val(pokedex[newForme].abilities[0]);
 	} else if (startsWith(curForme, "Terapagos")) {
@@ -964,7 +964,7 @@ $(".forme").change(function () {
 		$(this).parent().siblings().find(".teraType").val(forcedTeraType);
 	}
 	container.find(".ability").keyup();
-	if (startsWith($(this).val(), "Ogerpon-")) {
+	if (startsWith($(this).val(), "Ogerpon-") && !startsWith($(this).val(), "Ogerpon-Teal")) {
 		container.find(".item").val($(this).val().split("-")[1] + " Mask").keyup();
 	} else {
 		container.find(".item").prop("disabled", false);

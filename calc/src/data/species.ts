@@ -4269,6 +4269,39 @@ const BW_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 82.5,
     gender: 'N',
     abilities: {0: 'Download'},
+    otherFormes: ['Genesect-Burn', 'Genesect-Chill', 'Genesect-Douse', 'Genesect-Shock'],
+  },
+  'Genesect-Burn': {
+    types: ['Bug', 'Steel'],
+    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
+    weightkg: 82.5,
+    gender: 'N',
+    abilities: {0: 'Download'},
+    baseSpecies: 'Genesect',
+  },
+  'Genesect-Chill': {
+    types: ['Bug', 'Steel'],
+    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
+    weightkg: 82.5,
+    gender: 'N',
+    abilities: {0: 'Download'},
+    baseSpecies: 'Genesect',
+  },
+  'Genesect-Douse': {
+    types: ['Bug', 'Steel'],
+    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
+    weightkg: 82.5,
+    gender: 'N',
+    abilities: {0: 'Download'},
+    baseSpecies: 'Genesect',
+  },
+  'Genesect-Shock': {
+    types: ['Bug', 'Steel'],
+    bs: {hp: 71, at: 120, df: 95, sa: 120, sd: 95, sp: 99},
+    weightkg: 82.5,
+    gender: 'N',
+    abilities: {0: 'Download'},
+    baseSpecies: 'Genesect',
   },
   Gigalith: {
     types: ['Rock'],
@@ -5873,9 +5906,16 @@ const XY_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89},
     weightkg: 17,
     abilities: {0: 'Shield Dust'},
-    otherFormes: ['Vivillon-Fancy'],
+    otherFormes: ['Vivillon-Fancy', 'Vivillon-Pokeball'],
   },
   'Vivillon-Fancy': {
+    types: ['Bug', 'Flying'],
+    bs: {hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89},
+    weightkg: 17,
+    abilities: {0: 'Shield Dust'},
+    baseSpecies: 'Vivillon',
+  },
+  'Vivillon-Pokeball': {
     types: ['Bug', 'Flying'],
     bs: {hp: 80, at: 52, df: 50, sa: 90, sd: 50, sp: 89},
     weightkg: 17,
@@ -7599,24 +7639,8 @@ const SM_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 33.5,
     gender: 'N',
     abilities: {0: 'Aura Break'},
-    otherFormes: ['Zygarde-10%-Construct', 'Zygarde', 'Zygarde-50%-Construct', 'Zygarde-Complete'],
-    baseSpecies: 'Zygarde-10%',
-  },
-  'Zygarde-10%-Construct': {
-    types: ['Dragon', 'Ground'],
-    bs: {hp: 54, at: 100, df: 71, sa: 61, sd: 85, sp: 115},
-    weightkg: 33.5,
-    gender: 'N',
-    abilities: {0: 'Power Construct'},
-    baseSpecies: 'Zygarde-10%',
-  },
-  'Zygarde-50%-Construct': {
-    types: ['Dragon', 'Ground'],
-    bs: {hp: 108, at: 100, df: 121, sa: 81, sd: 95, sp: 95},
-    weightkg: 305,
-    gender: 'N',
-    abilities: {0: 'Power Construct'},
-    baseSpecies: 'Zygarde-10%',
+    otherFormes: ['Zygarde', 'Zygarde-Complete'],
+    //  allows formes to sort in logical order in dropdown
   },
   'Zygarde-Complete': {
     types: ['Dragon', 'Ground'],
@@ -7659,6 +7683,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Lapras: {otherFormes: ['Lapras-Gmax']},
   Linoone: {otherFormes: ['Linoone-Galar']},
   Machamp: {otherFormes: ['Machamp-Gmax']},
+  Magearna: {otherFormes: ['Magearna-Original']},
   Melmetal: {otherFormes: ['Melmetal-Gmax']},
   Meowth: {otherFormes: ['Meowth-Gmax', 'Meowth-Alola', 'Meowth-Galar']},
   Moltres: {otherFormes: ['Moltres-Galar']},
@@ -8034,7 +8059,6 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 62,
     gender: 'N',
     abilities: {0: 'Battle Armor'},
-
   },
   'Farfetch\u2019d-Galar': {
     types: ['Fighting'],
@@ -8168,6 +8192,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Pickup'},
     baseSpecies: 'Linoone',
   },
+  'Magearna-Original': {
+    types: ['Steel', 'Fairy'],
+    bs: {hp: 80, at: 95, df: 115, sa: 130, sd: 115, sp: 65},
+    weightkg: 80.5,
+    gender: 'N',
+    abilities: {0: 'Soul-Heart'},
+    baseSpecies: 'Magearna',
+  },
   'Meowth-Galar': {
     types: ['Steel'],
     bs: {hp: 50, at: 65, df: 55, sa: 40, sd: 40, sp: 40},
@@ -8287,6 +8319,15 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0.4,
     gender: 'N',
     abilities: {0: 'Weak Armor'},
+    otherFormes: ['Polteageist-Antique'],
+  },
+  'Polteageist-Antique': {
+    types: ['Ghost'],
+    bs: {hp: 60, at: 65, df: 65, sa: 134, sd: 114, sp: 70},
+    weightkg: 0.4,
+    gender: 'N',
+    abilities: {0: 'Weak Armor'},
+    baseSpecies: 'Polteageist',
   },
   'Ponyta-Galar': {
     types: ['Psychic'],
@@ -8392,6 +8433,16 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     nfe: true,
     abilities: {0: 'Weak Armor'},
+    otherFormes: ['Sinistea-Antique'],
+  },
+  'Sinistea-Antique': {
+    types: ['Ghost'],
+    bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
+    weightkg: 0.2,
+    gender: 'N',
+    nfe: true,
+    abilities: {0: 'Weak Armor'},
+    baseSpecies: 'Sinistea',
   },
   'Sirfetch\u2019d': {
     types: ['Fighting'],
@@ -8615,6 +8666,15 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 70,
     gender: 'N',
     abilities: {0: 'Leaf Guard'},
+    otherFormes: ['Zarude-Dada'],
+  },
+  'Zarude-Dada': {
+    types: ['Dark', 'Grass'],
+    bs: {hp: 105, at: 120, df: 105, sa: 70, sd: 95, sp: 105},
+    weightkg: 70,
+    gender: 'N',
+    abilities: {0: 'Leaf Guard'},
+    baseSpecies: 'Zarude',
   },
   'Zigzagoon-Galar': {
     types: ['Dark', 'Normal'],
@@ -9680,7 +9740,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'F',
     abilities: {0: 'Defiant'},
     otherFormes: [
-      'Ogerpon-Tera',
+      'Ogerpon-Teal-Tera',
       'Ogerpon-Cornerstone', 'Ogerpon-Cornerstone-Tera',
       'Ogerpon-Hearthflame', 'Ogerpon-Hearthflame-Tera',
       'Ogerpon-Wellspring', 'Ogerpon-Wellspring-Tera',
@@ -9718,7 +9778,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Embody Aspect (Hearthflame)'},
     baseSpecies: 'Ogerpon',
   },
-  'Ogerpon-Tera': {
+  'Ogerpon-Teal-Tera': {
     types: ['Grass'],
     bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
     weightkg: 39.8,
@@ -9819,6 +9879,16 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     gender: 'N',
     nfe: true,
     abilities: {0: 'Hospitality'},
+    otherFormes: ['Poltchageist-Artisan'],
+  },
+  'Poltchageist-Artisan': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 40, at: 45, df: 45, sa: 74, sd: 54, sp: 50},
+    weightkg: 1.1,
+    gender: 'N',
+    nfe: true,
+    abilities: {0: 'Hospitality'},
+    baseSpecies: 'Poltchageist',
   },
   Quaquaval: {
     types: ['Water', 'Fighting'],
@@ -9935,6 +10005,15 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 2.2,
     gender: 'N',
     abilities: {0: 'Hospitality'},
+    otherFormes: ['Sinistcha-Masterpiece'],
+  },
+  'Sinistcha-Masterpiece': {
+    types: ['Grass', 'Ghost'],
+    bs: {hp: 71, at: 60, df: 106, sa: 121, sd: 80, sp: 70},
+    weightkg: 2.2,
+    gender: 'N',
+    abilities: {0: 'Hospitality'},
+    baseSpecies: 'Sinistcha',
   },
   Skeledirge: {
     types: ['Fire', 'Ghost'],
@@ -10222,10 +10301,10 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Hawlucha: {otherFormes: ['Hawlucha-Mega']},
   Heatran: {otherFormes: ['Heatran-Mega']},
   Lucario: {otherFormes: ['Lucario-Mega', 'Lucario-Mega-Z']},
-  Magearna: {otherFormes: ['Magearna-Mega']},
+  Magearna: {otherFormes: ['Magearna-Mega', 'Magearna-Original', 'Magearna-Original-Mega']},
   Malamar: {otherFormes: ['Malamar-Mega']},
   Meganium: {otherFormes: ['Meganium-Mega']},
-  Meowstic: {otherFormes: ['Meowstic-Mega', 'Meowstic-F', 'Meowstic-F-Mega']},
+  Meowstic: {otherFormes: ['Meowstic-M-Mega', 'Meowstic-F', 'Meowstic-F-Mega']},
   Pyroar: {otherFormes: ['Pyroar-Mega']},
   Raichu: {otherFormes: ['Raichu-Mega-X', 'Raichu-Mega-Y', 'Raichu-Alola']},
   Scolipede: {otherFormes: ['Scolipede-Mega']},
@@ -10236,7 +10315,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Starmie: {otherFormes: ['Starmie-Mega']},
   Tatsugiri: {
     otherFormes: [
-      'Tatsugiri-Mega',
+      'Tatsugiri-Curly-Mega',
       'Tatsugiri-Droopy',
       'Tatsugiri-Droopy-Mega',
       'Tatsugiri-Stretchy',
@@ -10245,7 +10324,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   Victreebel: {otherFormes: ['Victreebel-Mega']},
   Zeraora: {otherFormes: ['Zeraora-Mega']},
-  'Zygarde-10%': {otherFormes: ['Zygarde-10%-Construct', 'Zygarde', 'Zygarde-50%-Construct', 'Zygarde-Complete', 'Zygarde-Mega']},
+  'Zygarde-10%': {otherFormes: ['Zygarde', 'Zygarde-Complete', 'Zygarde-Mega']},
   'Absol-Mega-Z': {
     types: ['Dark', 'Ghost'],
     bs: {hp: 65, at: 154, df: 60, sa: 75, sd: 60, sp: 151},
@@ -10457,6 +10536,14 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Soul-Heart'},
     baseSpecies: 'Magearna',
   },
+  'Magearna-Original-Mega': {
+    types: ['Steel', 'Fairy'],
+    bs: {hp: 80, at: 125, df: 115, sa: 170, sd: 115, sp: 95},
+    weightkg: 248.1,
+    gender: 'N',
+    abilities: {0: 'Soul-Heart'},
+    baseSpecies: 'Magearna',
+  },
   'Malamar-Mega': {
     types: ['Dark', 'Psychic'],
     bs: {hp: 86, at: 102, df: 88, sa: 98, sd: 120, sp: 88},
@@ -10471,7 +10558,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Overgrow'},
     baseSpecies: 'Meganium',
   },
-  'Meowstic-Mega': {
+  'Meowstic-M-Mega': {
     types: ['Psychic'],
     bs: {hp: 74, at: 48, df: 76, sa: 143, sd: 101, sp: 124},
     weightkg: 10.1,
@@ -10551,7 +10638,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Illuminate'},
     baseSpecies: 'Starmie',
   },
-  'Tatsugiri-Mega': {
+  'Tatsugiri-Curly-Mega': {
     types: ['Dragon', 'Water'],
     bs: {hp: 68, at: 65, df: 90, sa: 135, sd: 125, sp: 92},
     // FIXME: Incorrect in Showdown, should be 24
