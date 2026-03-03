@@ -788,7 +788,7 @@ $(".set-selector").change(function () {
 			gen,
 			pokemon.gender,
 			pokeObj,
-			(regSets || randset) && set.gender ? set.gender : "",
+			(regSets || randset) && set.gender ? set.gender : ""
 		);
 	}
 });
@@ -1159,9 +1159,9 @@ function genderSelector(gen, speciesGender, pokeObj, setGender) {
 		pokeObj.find(".gender").val(speciesGender);
 		pokeObj.find(".gender").parent().show();
 		pokeObj.find(".gender").children().hide();
-		speciesGender === "M"
-			? pokeObj.find(".gender option[value='M']").show()
-			: pokeObj.find(".gender option[value='F']").show();
+		if (speciesGender === "M") {
+			pokeObj.find(".gender option[value='M']").show();
+		} else { pokeObj.find(".gender option[value='F']").show(); }
 	} else {
 		if (setGender !== undefined) {pokeObj.find(".gender").val(setGender); }
 		pokeObj.find(".gender").parent().show();

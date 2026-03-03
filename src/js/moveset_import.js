@@ -13,9 +13,9 @@ function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var EV_counter = 0;
 	var finalText = "";
-	finalText = checkExceptionsExport(pokemon.name)
-	+ ((pokemon.gender && pokemon.gender !== 'N') ? " (" + pokemon.gender + ")" : "")
-	+ (pokemon.item ? " @ " + pokemon.item : "") + "\n";
+	finalText = checkExceptionsExport(pokemon.name) +
+	((pokemon.gender && pokemon.gender !== 'N') ? " (" + pokemon.gender + ")" : "") +
+	(pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (pokemon.level !== 100) { finalText += "Level: " + pokemon.level + "\n"; }
 	if (gen === 9) {
@@ -184,7 +184,6 @@ function getItem(currentRow, j) {
 	}
 }
 
-
 function getMoves(currentPoke, rows, offset) {
 	var movesFound = false;
 	var moves = [];
@@ -253,12 +252,12 @@ function addToDex(poke) {
 	}
 	customsets[poke.name][poke.nameProp] = dexObject;
 	var duplicateSetTo = "";
-	switch(poke.name) {
-		case 'Aegislash-Blade':
-			duplicateSetTo = ["Aegislash-Both"];
-			break;
+	switch (poke.name) {
+	case 'Aegislash-Blade':
+		duplicateSetTo = ["Aegislash-Both"];
+		break;
 	}
-	for (k = 0; k < duplicateSetTo.length; k++) {
+	for (var k = 0; k < duplicateSetTo.length; k++) {
 		if (!customsets[duplicateSetTo[k]]) {
 			customsets[duplicateSetTo[k]] = {};
 		}
@@ -358,11 +357,11 @@ function checkExceptionsImport(poke) {
 	case 'Burmy-Trash':
 		poke = "Burmy";
 		break;
-	case 'Calyrex-Ice':
-		poke = "Calyrex-Ice-Rider";
+	case 'Calyrex-Ice-Rider':
+		poke = "Calyrex-Ice";
 		break;
-	case 'Calyrex-Shadow':
-		poke = "Calyrex-Shadow-Rider";
+	case 'Calyrex-Shadow-Rider':
+		poke = "Calyrex-Shadow";
 		break;
 	case 'Deerling-Summer':
 	case 'Deerling-Autumn':
@@ -428,12 +427,6 @@ function checkExceptionsImport(poke) {
 		break;
 	case 'Gourgeist-Jumbo':
 		poke = "Gourgeist-Super";
-		break;
-	case 'Magearna-Original':
-		poke = "Magearna";
-		break;
-	case 'Magearna-Original-Mega':
-		poke = "Magearna-Mega";
 		break;
 	case 'Mimikyu-Busted-Totem':
 		poke = "Mimikyu-Totem";
@@ -542,9 +535,6 @@ function checkExceptionsImport(poke) {
 		break;
 	case 'Xerneas-Neutral':
 		poke = "Xerneas";
-		break;
-	case 'Zarude-Dada':
-		poke = "Zarude";
 		break;
 	}
 	return poke;
