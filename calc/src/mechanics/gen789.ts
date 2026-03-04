@@ -1217,7 +1217,7 @@ export function calculateBPModsSMSSSV(
   if (attacker.hasAbility('Rivalry') &&
     attacker.gender &&
     defender.gender &&
-    attacker.gender !== 'N') {
+    ![attacker.gender, defender.gender].includes('N')) {
     if (attacker.gender === defender.gender) {
       bpMods.push(5120);
       desc.rivalry = 'buffed';

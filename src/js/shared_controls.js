@@ -1159,9 +1159,7 @@ function genderSelector(gen, speciesGender, pokeObj, setGender) {
 		pokeObj.find(".gender").val(speciesGender);
 		pokeObj.find(".gender").parent().show();
 		pokeObj.find(".gender").children().hide();
-		if (speciesGender === "M") {
-			pokeObj.find(".gender option[value='M']").show();
-		} else { pokeObj.find(".gender option[value='F']").show(); }
+		pokeObj.find(".gender option[value=" + speciesGender + "]").show();
 	} else {
 		if (setGender !== undefined) {pokeObj.find(".gender").val(setGender); }
 		pokeObj.find(".gender").parent().show();

@@ -495,7 +495,7 @@ export function calculateBPModsDPP(
   if (attacker.hasAbility('Rivalry') &&
     attacker.gender &&
     defender.gender &&
-    attacker.gender !== 'N') {
+    ![attacker.gender, defender.gender].includes('N')) {
     if (attacker.gender === defender.gender) {
       basePower = Math.floor(basePower * 1.25);
       desc.rivalry = 'buffed';

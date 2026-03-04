@@ -412,12 +412,6 @@ function checkExceptionsImport(poke) {
 	case 'Gastrodon-West':
 		poke = "Gastrodon";
 		break;
-	case 'Genesect-Burn':
-	case 'Genesect-Chill':
-	case 'Genesect-Douse':
-	case 'Genesect-Shock':
-		poke = "Genesect";
-		break;
 	case 'Giratina-Altered':
 		poke = "Giratina";
 		break;
