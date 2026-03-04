@@ -1067,7 +1067,8 @@ var SETDEX_DPP = {
   "Cloyster": {
     "Ubers Lead": {"ability":"Shell Armor","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Toxic Spikes","Rapid Spin","Payback"]},
     "UU Life Orb": {"ability":"Skill Link","item":"Life Orb","nature":"Adamant","evs":{"hp":160,"at":252,"sd":96},"moves":["Ice Shard","Rock Blast","Explosion","Spikes"]},
-    "UU Support": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Rapid Spin","Surf","Toxic Spikes"]}
+    "UU Support": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Rapid Spin","Surf","Toxic Spikes"]},
+    "OU Showdown Usage": {"ability":"Shell Armor","item":"Focus Sash","nature":"Timid","evs":{"hp":248,"sd":8,"sp":252},"moves":["Rapid Spin","Spikes","Icy Wind","Explosion"]}
   },
   "Gastly": {
     "LC Utility": {"level":5,"ability":"Levitate","item":"Oran Berry","nature":"Timid","ivs":{"at":0},"evs":{"hp":36,"df":36,"sa":196,"sp":196},"moves":["Will-O-Wisp","Shadow Ball","Sludge Bomb","Substitute"]},
