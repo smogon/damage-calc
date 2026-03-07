@@ -2098,9 +2098,8 @@ var SETDEX_DPP = {
     "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","evs":{"df":112,"sa":146,"sp":252},"moves":["Shadow Ball","Extreme Speed","Stealth Rock","Spikes"]}
   },
   "Deoxys-Attack": {
-    "Ubers Attacking Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Shadow Ball","Extreme Speed","Thunder","Superpower"]},
-    "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Signal Beam","Extreme Speed","Thunder"]},
-    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Rash","evs":{"at":16,"sa":252,"sp":240},"moves":["Ice Beam","Thunder","Superpower","Extreme Speed"]},
+    "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Extreme Speed","Thunder","Shadow Ball"]},
+    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Rash","evs":{"at":20,"sa":252,"sp":236},"moves":["Thunder","Ice Beam","Superpower","Extreme Speed"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Focus Sash","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Shadow Ball","Psycho Boost","Superpower","Extreme Speed"]}
   },
   "Deoxys-Defense": {
