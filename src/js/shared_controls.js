@@ -595,7 +595,7 @@ $(".item").change(function () {
 
 function smogonAnalysis(pokemonName) {
 	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss", "sv"][gen - 1];
-	if (["Aegislash-Shield", "Aegislash-Both"].indexOf(pokemonName) + 1) { pokemonName = "Aegislash"; }
+	if (pokemonName === "Aegislash-Shield" || pokemonName === "Aegislash-Both") pokemonName = "Aegislash";
 	return "https://smogon.com/dex/" + generation + "/pokemon/" + pokemonName.toLowerCase() + "/";
 }
 
