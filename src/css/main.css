@@ -504,8 +504,9 @@ th {
 
 /* header */
 .move-result-group {
+    display: flex;
     min-width: 50em;
-    margin: 1em 0 11.5em;
+    margin-top: 1em;
 }
 .move-result-subgroup {
     float: left;
@@ -515,7 +516,7 @@ th {
     margin-right: 1em;
 }
 .main-result-group {
-    margin: 2em 0 1em;
+    margin: 0.5em 0 1em;
 }
 .result-move-header {
     font-size: 0.8em;
@@ -647,8 +648,7 @@ table.field {
 }
 
 .import-team-text {
-    display: block;
-    margin: 5px 0;
+    margin: 16px 0;
     min-width: 27em;
     min-height: 10em;
     resize: vertical;
