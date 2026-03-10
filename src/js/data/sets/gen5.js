@@ -2487,7 +2487,7 @@ var SETDEX_BW = {
     "Monotype Life Orb (Bug)": {"ability":"Speed Boost","item":"Life Orb","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Protect","Air Slash","Giga Drain","Bug Buzz"]}
   },
   "Gliscor": {
-    "OU Stealth Rock": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Impish","evs":{"hp":244,"df":140,"sd":124},"moves":["Stealth Rock","Earthquake","Protect","Knock Off"]},
+    "OU Stealth Rock": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Earthquake","U-turn","Protect"]},
     "OU Swords Dance": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Swords Dance","Protect","Earthquake","Facade"]},
     "Ubers Substitute": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Jolly","evs":{"hp":252,"df":40,"sp":216},"moves":["Substitute","Protect","Toxic","Earthquake"]},
     "Monotype Swords Dance (Flying)": {"ability":"Poison Heal","item":"Flying Gem","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Acrobatics","Rock Polish"]},

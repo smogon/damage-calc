@@ -1631,10 +1631,8 @@ var SETDEX_DPP = {
     "Ubers Offensive Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Aeroblast","Roost","Earth Power"]}
   },
   "Ho-Oh": {
-    "Ubers Physical Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":208,"at":252,"sp":48},"moves":["Sacred Fire","Brave Bird","Earthquake","Roost"]},
-    "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Sleep Talk"]},
-    "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Punishment"]},
-    "Ubers Toxic Stall": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":236,"sp":24},"moves":["Toxic","Light Screen","Sacred Fire","Recover"]},
+    "Ubers Bulky Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":216,"at":172,"sp":112},"moves":["Brave Bird","Sacred Fire","Roost","Substitute"]},
+    "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Brave Bird","Sacred Fire","Earthquake","Sleep Talk"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Life Orb","nature":"Adamant","evs":{"hp":232,"at":252,"sp":24},"moves":["Sacred Fire","Brave Bird","Roost","Earthquake"]}
   },
   "Celebi": {
@@ -2307,9 +2305,8 @@ var SETDEX_DPP = {
   },
   "Garchomp": {
     "Ubers Choice Scarf": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Sleep Talk"]},
-    "Ubers Swords Dance": {"ability":"Sand Veil","item":"Haban Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Outrage","Earthquake","Fire Fang"]},
-    "Ubers Choice Band": {"ability":"Sand Veil","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Fire Fang"]},
-    "Ubers SubSalac": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","evs":{"hp":12,"at":244,"sp":252},"moves":["Swords Dance","Substitute","Dragon Claw","Earthquake"]},
+    "Ubers Swords Dance": {"ability":"Sand Veil","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Dragon Claw","Earthquake","Fire Fang"]},
+    "Ubers Substitute + Salac Berry": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","evs":{"hp":12,"at":244,"sp":252},"moves":["Substitute","Swords Dance","Dragon Claw","Earthquake"]},
     "Anything Goes Showdown Usage": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Outrage","Dragon Claw","Swords Dance"]}
   },
   "Munchlax": {

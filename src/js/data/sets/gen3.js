@@ -353,6 +353,7 @@ var SETDEX_ADV = {
     "Ubers Showdown Usage": {"ability":"Levitate","item":"Leftovers","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Shadow Ball","Will-O-Wisp","Taunt","Explosion"]}
   },
   "Electrode": {
+    "OU Explosion": {"ability":"Static","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":164,"sa":168,"sp":176},"moves":["Thunderbolt","Thunder Wave","Hidden Power Grass","Explosion"]},
     "UU Substitute": {"ability":"Static","item":"Petaya Berry","nature":"Rash","ivs":{"at":30,"df":30},"evs":{"hp":12,"at":32,"df":116,"sa":252,"sp":96},"moves":["Thunderbolt","Substitute","Explosion","Hidden Power Ice"]}
   },
   "Exeggutor": {
