@@ -927,7 +927,7 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
-	genderSelector(gen, altForme.gender, container.parent(), undefined);
+	genderSelector(gen, altForme.gender, container.parent(), container.parent().find(".gender").val());
 	$(this).parent().siblings().find(".analysis").attr("href", smogonAnalysis($(this).val()));
 	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
 		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
@@ -1157,23 +1157,10 @@ function genderSelector(gen, speciesGender, pokeObj, setGender) {
 	if (gen === 1) {
 		pokeObj.find(".gender").val("");
 		pokeObj.find(".gender").parent().hide();
-	} else {
-		pokeObj.find(".gender").parent().show();
-		if (setGender) {
-			pokeObj.find(".gender").val(setGender);
-		} else if (speciesGender) {
-			pokeObj.find(".gender").val(speciesGender);
-		} else {
-			pokeObj.find(".gender").val("");
-		}
-		if (pokeObj.find(".gender").val() === "N" || speciesGender === "N") {
-			pokeObj.find(".gender option[value=\"N\"]").show();
-			pokeObj.find(".gender option[value=\"\"]").hide();
-		} else {
-			pokeObj.find(".gender option[value=\"\"]").show();
-			pokeObj.find(".gender option[value=\"N\"]").hide();
-		}
+		return;
 	}
+	pokeObj.find(".gender").parent().show();
+	pokeObj.find(".gender").val(setGender || speciesGender || "");
 }
 
 function getMoveDetails(moveInfo, opts) {

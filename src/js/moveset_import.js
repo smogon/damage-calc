@@ -18,7 +18,7 @@ function ExportPokemon(pokeInfo) {
 	(gender !== 'N' ? " (" + gender + ")" : "") +
 	(pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
-	if (pokemon.level !== 100) { finalText += "Level: " + pokemon.level + "\n"; }
+	if (pokemon.level !== 100) finalText += "Level: " + pokemon.level + "\n";
 	if (gen === 9) {
 		var teraType = pokeInfo.find(".teraType").val();
 		if (teraType !== undefined && teraType !== pokemon.types[0]) {
@@ -252,17 +252,11 @@ function addToDex(poke) {
 		customsets[poke.name] = {};
 	}
 	customsets[poke.name][poke.nameProp] = dexObject;
-	var duplicateSetTo = "";
-	switch (poke.name) {
-	case 'Aegislash-Blade':
-		duplicateSetTo = ["Aegislash-Both"];
-		break;
-	}
-	for (var k = 0; k < duplicateSetTo.length; k++) {
-		if (!customsets[duplicateSetTo[k]]) {
-			customsets[duplicateSetTo[k]] = {};
-		}
-		customsets[duplicateSetTo[k]][poke.nameProp] = dexObject;
+	if (poke.name === "Aegislash-Blade") {
+		if (!customsets["Aegislash-Shield"]) customsets["Aegislash-Shield"] = {};
+		if (!customsets["Aegislash-Both"]) customsets["Aegislash-Both"] = {};
+		customsets["Aegislash-Shield"][poke.nameProp] = dexObject;
+		customsets["Aegislash-Both"][poke.nameProp] = dexObject;
 	}
 	updateDex(customsets);
 }
