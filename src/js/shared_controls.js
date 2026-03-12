@@ -1154,18 +1154,24 @@ function getGender(gender) {
 }
 
 function genderSelector(gen, speciesGender, pokeObj, setGender) {
-	if (speciesGender === ("N") || gen === 1) {
+	if (gen === 1) {
 		pokeObj.find(".gender").val("");
 		pokeObj.find(".gender").parent().hide();
-	} else if (speciesGender) {
-		pokeObj.find(".gender").val(speciesGender);
-		pokeObj.find(".gender").parent().show();
-		pokeObj.find(".gender").children().hide();
-		pokeObj.find(".gender option[value=" + speciesGender + "]").show();
 	} else {
-		if (setGender !== undefined) {pokeObj.find(".gender").val(setGender); }
 		pokeObj.find(".gender").parent().show();
-		pokeObj.find(".gender").children().show();
+		if (speciesGender === ("N")) {
+			pokeObj.find(".gender").val("N");
+			pokeObj.find(".gender option[value=\"N\"]").show();
+			pokeObj.find(".gender option[value=\"\"]").hide();
+		} else {
+			if (speciesGender) {
+				pokeObj.find(".gender").val(speciesGender);
+			} else if (setGender !== undefined) {
+				pokeObj.find(".gender").val(setGender);
+			}
+			pokeObj.find(".gender option[value=\"\"]").show();
+			pokeObj.find(".gender option[value=\"N\"]").hide();
+		}
 	}
 }
 

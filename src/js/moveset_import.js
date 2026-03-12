@@ -11,10 +11,11 @@ function placeBsBtn() {
 
 function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
+	var gender = pokeInfo.find(".gender").val() || 'N';
 	var EV_counter = 0;
 	var finalText = "";
 	finalText = checkExceptionsExport(pokemon.name) +
-	((pokemon.gender && pokemon.gender !== 'N') ? " (" + pokemon.gender + ")" : "") +
+	(gender !== 'N' ? " (" + gender + ")" : "") +
 	(pokemon.item ? " @ " + pokemon.item : "") + "\n";
 	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
 	if (pokemon.level !== 100) { finalText += "Level: " + pokemon.level + "\n"; }
