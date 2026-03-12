@@ -170,7 +170,7 @@ function getStats(currentPoke, rows, offset) {
 function getGender(currentRow, j) {
 	for (;j < currentRow.length; j++) {
 		var gender = currentRow[j].trim();
-		if (gender === 'M' || gender === 'F') {
+		if (gender === 'M' || gender === 'F' || gender === 'N') {
 			return gender;
 		}
 	}

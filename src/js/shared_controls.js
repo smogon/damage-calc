@@ -789,7 +789,7 @@ $(".set-selector").change(function () {
 			gen,
 			pokemon.gender,
 			pokeObj,
-			(regSets || randset) && set.gender ? set.gender : ""
+			(regSets || randset) && set.gender ? set.gender : undefined
 		);
 	}
 });
@@ -1159,16 +1159,17 @@ function genderSelector(gen, speciesGender, pokeObj, setGender) {
 		pokeObj.find(".gender").parent().hide();
 	} else {
 		pokeObj.find(".gender").parent().show();
-		if (speciesGender === ("N")) {
-			pokeObj.find(".gender").val("N");
+		if (setGender) {
+			pokeObj.find(".gender").val(setGender);
+		} else if (speciesGender) {
+			pokeObj.find(".gender").val(speciesGender);
+		} else {
+			pokeObj.find(".gender").val("");
+		}
+		if (pokeObj.find(".gender").val() === "N" || speciesGender === "N") {
 			pokeObj.find(".gender option[value=\"N\"]").show();
 			pokeObj.find(".gender option[value=\"\"]").hide();
 		} else {
-			if (speciesGender) {
-				pokeObj.find(".gender").val(speciesGender);
-			} else if (setGender !== undefined) {
-				pokeObj.find(".gender").val(setGender);
-			}
 			pokeObj.find(".gender option[value=\"\"]").show();
 			pokeObj.find(".gender option[value=\"N\"]").hide();
 		}

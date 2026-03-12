@@ -200,7 +200,7 @@ function dexToPset(
     ability: first(dset.ability) ?? specie.abilities[0],
     moves: dset.moves.map(first),
     nature: first(dset.nature) ?? '',
-    gender: specie.gender === 'N' ? '' : (specie.gender ?? dset.gender) ?? ''),
+    gender: (dset.gender ?? specie.gender) ?? '',
     evs: TeamValidator.fillStats(first(dset.evs) ?? null, gen.num < 3 ? 252 : 0),
     ivs: TeamValidator.fillStats(first(dset.ivs) ?? null, gen.num === 2 ? 30 : 31),
     level: first(dset.level) ?? getLevel(formatID),
