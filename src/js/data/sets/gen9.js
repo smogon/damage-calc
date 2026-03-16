@@ -1984,7 +1984,7 @@ var SETDEX_SV = {
     "Almost Any Ability Choice Scarf": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Naive","evs":{"df":4,"sa":252,"sp":252},"moves":["Expanding Force","U-turn","Dazzling Gleam","Trick"]}
   },
   "Dialga": {
-    "Ubers Choiced": {"ability":"Pressure","item":"Choice Scarf","nature":"Timid","teraType":"Dragon","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Fire Blast","Dragon Pulse","Thunder"]},
+    "Ubers Choiced": {"ability":"Telepathy","item":"Choice Scarf","nature":"Timid","teraType":"Dragon","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Fire Blast","Flash Cannon","Trick"]},
     "National Dex Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","teraType":"Dragon","evs":{"sa":204,"sd":52,"sp":252},"moves":["Trick","Draco Meteor","Fire Blast","Thunder"]},
     "Ubers UU Mixed Utility": {"ability":"Pressure","item":"Leftovers","nature":"Sassy","teraType":"Flying","evs":{"hp":252,"sa":4,"sd":252},"moves":["Draco Meteor","Heavy Slam","Stealth Rock","Dragon Tail"]},
     "Ubers UU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","teraType":"Flying","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sd":252},"moves":["Draco Meteor","Earth Power","Stealth Rock","Roar"]},
@@ -3732,9 +3732,9 @@ var SETDEX_SV = {
     "Ubers Utility": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Bold","teraType":"Water","evs":{"hp":248,"df":252,"sp":8},"moves":["Nuzzle","Psychic Noise","Pain Split","Healing Wish"]},
     "Ubers Bulky Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","teraType":"Water","evs":{"hp":252,"df":200,"sp":56},"moves":["Psyshock","Draining Kiss","Mystical Fire","Calm Mind"]},
     "VGC 2025 Reg I Trick Room Sweeper": {"level":50,"ability":"Magic Bounce","item":"Life Orb","nature":"Quiet","teraType":"Fire","ivs":{"at":0,"sp":0},"evs":{"hp":244,"df":44,"sa":220},"moves":["Expanding Force","Dazzling Gleam","Trick Room","Protect"]},
+    "Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":204,"sp":52},"moves":["Calm Mind","Psyshock","Draining Kiss","Nuzzle"]},
     "Monotype Calm Mind (Fairy)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":204,"sp":52},"moves":["Calm Mind","Psyshock","Draining Kiss","Mystical Fire"]},
     "Monotype Offensive Trick Room (Fairy)": {"ability":"Magic Bounce","item":"Heavy-Duty Boots","nature":"Quiet","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":248,"sa":8},"moves":["Trick Room","Calm Mind","Draining Kiss","Psychic"]},
-    "Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":204,"sp":52},"moves":["Calm Mind","Psyshock","Draining Kiss","Nuzzle"]},
     "National Dex Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":124,"sp":132},"moves":["Calm Mind","Psychic Noise","Draining Kiss","Mystical Fire"]},
     "National Dex Healing Wish": {"ability":"Magic Bounce","item":"Eject Button","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":124,"sp":132},"moves":["Psychic Noise","Mystical Fire","Nuzzle","Healing Wish"]},
     "National Dex Ubers Trick Room Lead": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","teraType":"Ghost","ivs":{"at":0,"sp":0},"evs":{"hp":168,"df":88,"sa":252},"moves":["Trick Room","Healing Wish","Dazzling Gleam","Nuzzle"]},
@@ -4329,7 +4329,6 @@ var SETDEX_SV = {
     "BSS Reg J Tactical Bellibolt": {"level":50,"ability":"Electromorphosis","item":"Assault Vest","nature":"Modest","teraType":"Fairy","evs":{"hp":228,"df":28,"sa":180,"sd":44,"sp":28},"moves":["Parabolic Charge","Tera Blast","Volt Switch","Discharge"]},
     "BSS Reg J Fat Bellibolt": {"level":50,"ability":"Electromorphosis","item":"Leftovers","nature":"Bold","teraType":"Grass","evs":{"hp":228,"df":244,"sa":4,"sd":4,"sp":28},"moves":["Discharge","Slack Off","Volt Switch","Chilling Water"]},
     "BSS Reg J Bespectacled Bellibolt": {"level":50,"ability":"Electromorphosis","item":"Choice Specs","nature":"Modest","teraType":"Fairy","evs":{"hp":228,"df":28,"sa":196,"sd":28,"sp":28},"moves":["Discharge","Tera Blast","Volt Switch","Muddy Water"]},
-    "1v1 Custap Berry": {"ability":"Electromorphosis","item":"Custap Berry","nature":"Modest","evs":{"hp":240,"df":28,"sa":64,"sd":176},"moves":["Thunder","Parabolic Charge","Soak","Endure"]},
     "1v1 Life Orb": {"ability":"Electromorphosis","item":"Life Orb","nature":"Quiet","evs":{"hp":240,"df":80,"sa":136,"sd":52},"moves":["Thunder","Parabolic Charge","Sucker Punch","Soak"]}
   },
   "Wattrel": {
@@ -4621,12 +4620,12 @@ var SETDEX_SV = {
     "National Dex Monotype Defensive Utility (Fighting)": {"ability":"Protosynthesis","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":136,"sp":120},"moves":["Stealth Rock","Knock Off","Earthquake","Rapid Spin"]},
     "National Dex Monotype Choiced Attacker (Fighting)": {"ability":"Protosynthesis","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Headlong Rush","Knock Off","Ice Spinner"]},
     "National Dex Monotype Bulk Up (Ground)": {"ability":"Protosynthesis","item":"Fightinium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Earthquake","Rapid Spin","Bulk Up"]},
+    "1v1 Speed Booster": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Jolly","evs":{"hp":204,"at":4,"sd":48,"sp":252},"moves":["Headlong Rush","Close Combat","Bulk Up","Megahorn"]},
     "1v1 Choice Band": {"ability":"Protosynthesis","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Close Combat","Supercell Slam","Heavy Slam"]},
     "1v1 Bulky Choice Band": {"ability":"Protosynthesis","item":"Choice Band","nature":"Impish","evs":{"hp":128,"at":200,"df":140,"sp":40},"moves":["Earthquake","Close Combat","Head Smash","Heavy Slam"]},
     "1v1 Booster Energy (Attack)": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Jolly","evs":{"at":140,"sd":116,"sp":252},"moves":["Close Combat","Headlong Rush","Knock Off","Bulk Up"]},
     "1v1 Choice Scarf": {"ability":"Protosynthesis","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Close Combat","Head Smash","Knock Off"]},
     "1v1 Booster Energy (Speed)": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Jolly","evs":{"hp":144,"sd":112,"sp":252},"moves":["Headlong Rush","Close Combat","Bulk Up","Knock Off"]},
-    "1v1 Custap Berry": {"ability":"Protosynthesis","item":"Custap Berry","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Headlong Rush","Endure","Reversal","Rock Tomb"]},
     "1v1 Assault Vest": {"ability":"Protosynthesis","item":"Assault Vest","nature":"Careful","evs":{"hp":248,"sd":252,"sp":8},"moves":["Close Combat","Earthquake","Heavy Slam","Megahorn"]},
     "Almost Any Ability Physically Defensive": {"ability":"Scrappy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","Body Press","Rapid Spin","Knock Off"]},
     "Almost Any Ability Offensive": {"ability":"Mold Breaker","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Headlong Rush","Knock Off","Rapid Spin","Smack Down"]},
@@ -4776,7 +4775,7 @@ var SETDEX_SV = {
     "National Dex RU Choice Specs": {"ability":"Quark Drive","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Hurricane","U-turn","Fire Blast"]}
   },
   "Iron Moth": {
-    "OU Booster Energy": {"ability":"Quark Drive","item":"Booster Energy","nature":"Timid","teraType":"Fairy","evs":{"df":124,"sa":132,"sp":252},"moves":["Fiery Dance","Sludge Wave","Dazzling Gleam","Substitute"]},
+    "OU Booster Energy": {"ability":"Quark Drive","item":"Booster Energy","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"df":124,"sa":132,"sp":252},"moves":["Fiery Dance","Sludge Wave","Dazzling Gleam","Substitute"]},
     "BSS Reg J Offensive": {"level":50,"ability":"Quark Drive","item":"Power Herb","nature":"Timid","teraType":"Grass","evs":{"hp":4,"sa":252,"sp":252},"moves":["Fiery Dance","Sludge Wave","Energy Ball","Meteor Beam"]},
     "BSS Reg J Speedy Booster Energy": {"level":50,"ability":"Quark Drive","item":"Booster Energy","nature":"Timid","teraType":"Grass","ivs":{"at":0},"evs":{"hp":4,"df":116,"sa":132,"sd":4,"sp":252},"moves":["Fiery Dance","Sludge Wave","Energy Ball","Dazzling Gleam"]},
     "BSS Reg J Toxic Spreader": {"level":50,"ability":"Quark Drive","item":"Booster Energy","nature":"Modest","teraType":"Water","ivs":{"at":0},"evs":{"hp":188,"df":244,"sa":36,"sd":4,"sp":36},"moves":["Fiery Dance","Morning Sun","Toxic Spikes","Whirlwind"]},
