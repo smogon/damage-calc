@@ -539,7 +539,7 @@ th {
 }
 .poke-info input[type="number"] {
     display: inline-block;
-    width: 3em;
+    width: auto;
 }
 .info-group {
     margin: 1em 0;
