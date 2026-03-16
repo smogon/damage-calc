@@ -278,8 +278,10 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
-	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 
+	checkRivalry(ability);
+
+	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 	if (ability === "Protosynthesis" || ability === "Quark Drive") {
 		boostedStat.show();
 		autosetQP($(this).closest(".poke-info"));
@@ -293,8 +295,8 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".alliesFainted").val('0');
 		$(this).closest(".poke-info").find(".alliesFainted").hide();
-
 	}
+
 });
 
 function autosetQP(pokemon) {
@@ -783,14 +785,17 @@ $(".set-selector").change(function () {
 		pokeObj.find(".current-hp").val(total);
 		pokeObj.find(".current-hp").attr("data-set", true);
 		calcHP(pokeObj);
-		abilityObj.change();
-		itemObj.change();
 		genderSelector(
 			gen,
 			pokemon.gender,
 			pokeObj,
 			(regSets || randset) && set.gender ? set.gender : undefined
 		);
+		$(".ability").each(function () {
+			if (checkRivalry($(this).val()) === true) return; // stop after any Rivalry is found, no need to look further
+		});
+		abilityObj.change();
+		itemObj.change();
 	}
 });
 
@@ -1161,6 +1166,15 @@ function genderSelector(gen, speciesGender, pokeObj, setGender) {
 	}
 	pokeObj.find(".gender").parent().show();
 	pokeObj.find(".gender").val(setGender || speciesGender || "");
+}
+
+function checkRivalry(ability) {
+	if (ability === "Rivalry") {
+		$(".gender").each(function () {
+			if ($(this).val() === "") $(this).val("M");
+		});
+		return true;
+	}
 }
 
 function getMoveDetails(moveInfo, opts) {
