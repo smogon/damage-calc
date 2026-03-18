@@ -792,7 +792,7 @@ $(".set-selector").change(function () {
 			(regSets || randset) && set.gender ? set.gender : undefined
 		);
 		$(".ability").each(function () {
-			if (checkRivalry($(this).val()) === true) return; // stop after any Rivalry is found, no need to look further
+			if (checkRivalry($(this).val())) return; // stop after any Rivalry is found, no need to look further
 		});
 		abilityObj.change();
 		itemObj.change();
