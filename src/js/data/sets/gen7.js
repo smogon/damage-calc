@@ -1585,7 +1585,7 @@ var SETDEX_SM = {
     "Monotype Support (Flying)": {"ability":"Water Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":160,"sp":96},"moves":["Defog","Scald","Roost","Haze"]}
   },
   "Skarmory": {
-    "OU Physically Defensive": {"ability":"Sturdy","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Roost","Spikes","Whirlwind","Counter"]},
+    "OU Physically Defensive": {"ability":"Sturdy","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Roost","Spikes","Whirlwind","Counter"]},
     "Ubers Physically Defensive": {"ability":"Sturdy","item":"Shed Shell","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Roost","Whirlwind","Spikes","Toxic"]},
     "Battle Spot Singles Physical Wall": {"level":50,"ability":"Sturdy","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sp":4},"moves":["Roost","Stealth Rock","Drill Peck","Whirlwind"]},
     "Monotype Defensive (Flying)": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":224,"df":252,"sp":32},"moves":["Brave Bird","Roost","Whirlwind","Defog"]},
