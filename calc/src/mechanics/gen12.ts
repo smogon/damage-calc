@@ -213,7 +213,7 @@ export function calculateRBYGSC(
     desc.isSwitching = 'out';
   }
 
-  // In Gen 2 and no other gens, Dragon Fang in a no-op and Dragon Scale erroneously has its effect
+  // In Gen 2 and no other gens, Dragon Fang is a no-op and Dragon Scale erroneously has its effect
   const itemBoostType =
     attacker.hasItem('Dragon Fang')
       ? undefined

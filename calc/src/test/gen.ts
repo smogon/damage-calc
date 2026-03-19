@@ -301,11 +301,11 @@ class Specie implements I.Specie {
   readonly types: [I.TypeName] | [I.TypeName, I.TypeName];
   readonly baseStats: Readonly<I.StatsTable>;
   readonly weightkg: number;
-  readonly nfe?: boolean;
   readonly gender?: I.GenderName;
+  readonly nfe?: boolean;
+  readonly abilities?: {0: I.AbilityName};
   readonly otherFormes?: I.SpeciesName[];
   readonly baseSpecies?: I.SpeciesName;
-  readonly abilities?: {0: I.AbilityName};
 
   constructor(species: D.Species, dex: D.ModdedDex) {
     this.kind = 'Species';
@@ -315,9 +315,10 @@ class Specie implements I.Specie {
     this.baseStats = species.baseStats;
     this.weightkg = species.weightkg;
 
+    if (species.gender && dex.gen > 1) this.gender = species.gender;
     const nfe = !!species.evos?.some((s: string) => exists(dex.species.get(s), dex.gen));
     if (nfe) this.nfe = nfe;
-    if (species.gender === 'N' && dex.gen > 1) this.gender = species.gender;
+    if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
 
     const formes = species.otherFormes?.filter((s: string) => exists(dex.species.get(s), dex.gen));
     if (species.id.startsWith('aegislash')) {
@@ -350,8 +351,6 @@ class Specie implements I.Specie {
       const gmax = dex.species.get(`${species.name}-Gmax`);
       if (exists(gmax, dex.gen)) this.otherFormes = [...formes, gmax.name].sort();
     }
-
-    if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
   }
 }
 

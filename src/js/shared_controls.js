@@ -278,8 +278,10 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
-	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 
+	checkRivalry(ability);
+
+	var boostedStat = $(this).closest(".poke-info").find(".boostedStat");
 	if (ability === "Protosynthesis" || ability === "Quark Drive") {
 		boostedStat.show();
 		autosetQP($(this).closest(".poke-info"));
@@ -293,8 +295,8 @@ $(".ability").bind("keyup change", function () {
 	} else {
 		$(this).closest(".poke-info").find(".alliesFainted").val('0');
 		$(this).closest(".poke-info").find(".alliesFainted").hide();
-
 	}
+
 });
 
 function autosetQP(pokemon) {
@@ -783,12 +785,17 @@ $(".set-selector").change(function () {
 		pokeObj.find(".current-hp").val(total);
 		pokeObj.find(".current-hp").attr("data-set", true);
 		calcHP(pokeObj);
+		genderSelector(
+			gen,
+			pokemon.gender,
+			pokeObj,
+			(regSets || randset) && set.gender ? set.gender : undefined
+		);
+		$(".ability").each(function () {
+			if (checkRivalry($(this).val())) return; // stop after any Rivalry is found, no need to look further
+		});
 		abilityObj.change();
 		itemObj.change();
-		if (pokemon.gender === "N") {
-			pokeObj.find(".gender").parent().hide();
-			pokeObj.find(".gender").val("");
-		} else pokeObj.find(".gender").parent().show();
 	}
 });
 
@@ -925,6 +932,7 @@ $(".forme").change(function () {
 
 	$(this).parent().siblings().find(".type1").val(altForme.types[0]);
 	$(this).parent().siblings().find(".type2").val(altForme.types[1] ? altForme.types[1] : "");
+	genderSelector(gen, altForme.gender, container.parent(), container.parent().find(".gender").val());
 	$(this).parent().siblings().find(".analysis").attr("href", smogonAnalysis($(this).val()));
 	for (var i = 0; i < LEGACY_STATS[9].length; i++) {
 		var baseStat = container.find("." + LEGACY_STATS[9][i]).find(".base");
@@ -1064,6 +1072,7 @@ function createPokemon(pokeInfo) {
 			ability: set.ability,
 			abilityOn: true,
 			item: set.item && typeof set.item !== "undefined" && (set.item === "Eviolite" || set.item === "White Herb" || set.item.indexOf("ite") < 0) ? set.item : "",
+			gender: set.gender,
 			nature: set.nature,
 			ivs: ivs,
 			evs: evs,
@@ -1095,11 +1104,13 @@ function createPokemon(pokeInfo) {
 
 		var ability = pokeInfo.find(".ability").val();
 		var item = pokeInfo.find(".item").val();
+		var gender = pokeInfo.find(".gender").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 		var opts = {
 			ability: ability,
 			item: item,
+			gender: gender,
 			isDynamaxed: isDynamaxed,
 			teraType: teraType,
 			species: name,
@@ -1115,7 +1126,7 @@ function createPokemon(pokeInfo) {
 			ability: ability,
 			abilityOn: pokeInfo.find(".abilityToggle").is(":checked"),
 			item: item,
-			gender: pokeInfo.find(".gender").is(":visible") ? getGender(pokeInfo.find(".gender").val()) : "N",
+			gender: gender,
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
@@ -1145,6 +1156,25 @@ function getGender(gender) {
 	if (!gender || gender === 'genderless' || gender === 'N') return 'N';
 	if (gender.toLowerCase() === 'male' || gender === 'M') return 'M';
 	return 'F';
+}
+
+function genderSelector(gen, speciesGender, pokeObj, setGender) {
+	if (gen === 1) {
+		pokeObj.find(".gender").val("");
+		pokeObj.find(".gender").parent().hide();
+		return;
+	}
+	pokeObj.find(".gender").parent().show();
+	pokeObj.find(".gender").val(setGender || speciesGender || "");
+}
+
+function checkRivalry(ability) {
+	if (ability === "Rivalry") {
+		$(".gender").each(function () {
+			if ($(this).val() === "") $(this).val("M");
+		});
+		return true;
+	}
 }
 
 function getMoveDetails(moveInfo, opts) {
