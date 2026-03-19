@@ -103,11 +103,11 @@ function statToLegacyStat(stat) {
 }
 
 function findSpecies(row) {
-	var species;
 	row = row.split(/[()@]/);
 	// Skip if the row contains the ability As One (Spectrier / Glastrier),
 	// so that it is not treated as another distinct set.
 	if (row.length > 0 && row[0].includes('As One')) return -1;
+	var species;
 	for (var j = 0; j < row.length; j++) {
 		species = checkExceptionsImport(row[j].trim());
 		if (calc.SPECIES[9][species] !== undefined) {
@@ -118,8 +118,9 @@ function findSpecies(row) {
 }
 
 function getGender(currentRow, j) {
+	var gender;
 	for (;j < currentRow.length; j++) {
-		var gender = currentRow[j].trim();
+		gender = currentRow[j].trim();
 		if (gender === 'M' || gender === 'F' || gender === 'N') {
 			return gender;
 		}
@@ -127,8 +128,9 @@ function getGender(currentRow, j) {
 }
 
 function getItem(currentRow, j) {
+	var item;
 	for (;j < currentRow.length; j++) {
-		var item = currentRow[j].trim();
+		item = currentRow[j].trim();
 		if (calc.ITEMS[9].indexOf(item) != -1) {
 			return item;
 		}
@@ -181,7 +183,7 @@ function getStats(currentPoke, rows, offset) {
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
-		if (currentNature[1] == "Nature" && currentNature[0] != "-") {
+		if (currentNature[1] === "Nature" && currentNature[0] != "-") {
 			currentPoke.nature = currentNature[0];
 		}
 	}
@@ -190,17 +192,16 @@ function getStats(currentPoke, rows, offset) {
 
 function getMoves(currentPoke, rows, offset) {
 	var movesFound = false;
+	var move;
 	var moves = [];
 	for (var x = offset; x < rows.length && findSpecies(rows[x]) < 0; x++) {
 		if (rows[x]) {
-			if (rows[x][0] == "-") {
+			if (rows[x][0] === "-") {
 				movesFound = true;
-				var move = rows[x].slice(2).replace("[", "").replace("]", "").trim().replace(/\s+/g, " ");
+				move = rows[x].slice(2).replace("[", "").replace("]", "").trim().replace(/\s+/g, " ");
 				moves.push(move);
-			} else {
-				if (movesFound == true) {
-					break;
-				}
+			} else if (movesFound === true) {
+				break;
 			}
 		}
 	}
