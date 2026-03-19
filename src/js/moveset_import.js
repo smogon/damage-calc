@@ -105,7 +105,7 @@ function statToLegacyStat(stat) {
 function findSpecies(row) {
 	row = row.split(/[()@]/);
 	// Skip if the row contains the ability As One (Spectrier / Glastrier),
-	// so that it is not treated as another distinct set.
+	// so that it is not treated as a separate Pokemon.
 	if (row.length > 0 && row[0].includes('As One')) return -1;
 	var species;
 	for (var j = 0; j < row.length; j++) {
@@ -119,7 +119,7 @@ function findSpecies(row) {
 
 function getGender(currentRow, j) {
 	var gender;
-	for (;j < currentRow.length; j++) {
+	for (; j < currentRow.length; j++) {
 		gender = currentRow[j].trim();
 		if (gender === 'M' || gender === 'F' || gender === 'N') {
 			return gender;
@@ -129,7 +129,7 @@ function getGender(currentRow, j) {
 
 function getItem(currentRow, j) {
 	var item;
-	for (;j < currentRow.length; j++) {
+	for (; j < currentRow.length; j++) {
 		item = currentRow[j].trim();
 		if (calc.ITEMS[9].indexOf(item) != -1) {
 			return item;
@@ -137,13 +137,13 @@ function getItem(currentRow, j) {
 	}
 }
 
-function getStats(currentPoke, rows, offset) {
+function getStats(currentPoke, rows, x) {
 	currentPoke.nature = "Serious";
 	var currentEV;
 	var currentIV;
 	var currentNature;
 	currentPoke.level = 100;
-	for (var x = offset; x < rows.length && findSpecies(rows[x]) < 0; x++) {
+	for (; x < rows.length && findSpecies(rows[x]) < 0; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
@@ -190,11 +190,11 @@ function getStats(currentPoke, rows, offset) {
 	return currentPoke;
 }
 
-function getMoves(currentPoke, rows, offset) {
+function getMoves(currentPoke, rows, x) {
 	var movesFound = false;
 	var move;
 	var moves = [];
-	for (var x = offset; x < rows.length && findSpecies(rows[x]) < 0; x++) {
+	for (; x < rows.length && findSpecies(rows[x]) < 0; x++) {
 		if (rows[x]) {
 			if (rows[x][0] === "-") {
 				movesFound = true;
@@ -294,20 +294,20 @@ function updateDex(customsets) {
 function addSets(pokes, name) {
 	var rows = pokes.split("\n");
 	var currentRow;
-	var speciesOffset;
+	var startPoint;
 	var currentPoke;
 	var addedPokes = 0;
 	for (var i = 0; i < rows.length; i++) {
-		speciesOffset = findSpecies(rows[i]);
-		if (speciesOffset >= 0) {
+		startPoint = findSpecies(rows[i]);
+		if (startPoint >= 0) {
 			currentRow = rows[i].split(/[()@]/);
-			currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[speciesOffset].trim()]));
-			currentPoke.name = currentRow[speciesOffset].trim();
-			currentPoke.gender = getGender(currentRow, speciesOffset + 1);
-			currentPoke.item = getItem(currentRow, speciesOffset + 1);
+			currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[startPoint].trim()]));
+			currentPoke.name = currentRow[startPoint].trim();
+			currentPoke.gender = getGender(currentRow, startPoint + 1);
+			currentPoke.item = getItem(currentRow, startPoint + 1);
 			currentPoke = getStats(currentPoke, rows, i + 1);
 			currentPoke = getMoves(currentPoke, rows, i + 1);
-			if (speciesOffset === 1 && currentRow[0].trim()) {
+			if (startPoint === 1 && currentRow[0].trim()) {
 				currentPoke.nameProp = currentRow[0].trim();
 			} else {
 				currentPoke.nameProp = name;
