@@ -110,9 +110,7 @@ function findSpecies(row) {
 	var species;
 	for (var j = 0; j < row.length; j++) {
 		species = checkExceptionsImport(row[j].trim());
-		if (calc.SPECIES[9][species] !== undefined) {
-			return j;
-		}
+		if (calc.SPECIES[9][species] !== undefined) return j;
 	}
 	return -1;
 }
@@ -121,9 +119,7 @@ function getGender(currentRow, j) {
 	var gender;
 	for (; j < currentRow.length; j++) {
 		gender = currentRow[j].trim();
-		if (gender === 'M' || gender === 'F' || gender === 'N') {
-			return gender;
-		}
+		if (gender === 'M' || gender === 'F' || gender === 'N') return gender;
 	}
 }
 
@@ -131,9 +127,7 @@ function getItem(currentRow, j) {
 	var item;
 	for (; j < currentRow.length; j++) {
 		item = currentRow[j].trim();
-		if (calc.ITEMS[9].indexOf(item) != -1) {
-			return item;
-		}
+		if (calc.ITEMS[9].indexOf(item) !== -1) return item;
 	}
 }
 
@@ -183,9 +177,7 @@ function getStats(currentPoke, rows, x) {
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
-		if (currentNature[1] === "Nature" && currentNature[0] != "-") {
-			currentPoke.nature = currentNature[0];
-		}
+		if (currentNature[1] === "Nature" && currentNature[0] != "-") currentPoke.nature = currentNature[0];
 	}
 	return currentPoke;
 }
