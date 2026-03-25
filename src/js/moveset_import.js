@@ -13,11 +13,11 @@ function ExportPokemon(pokeInfo) {
 	var pokemon = createPokemon(pokeInfo);
 	var gender = pokeInfo.find(".gender").val() || 'N';
 	var EV_counter = 0;
-	var finalText = "";
-	finalText = checkExceptionsExport(pokemon.name) +
-	(gender !== 'N' ? " (" + gender + ")" : "") +
-	(pokemon.item ? " @ " + pokemon.item : "") + "\n";
-	finalText += pokemon.ability ? "Ability: " + pokemon.ability + "\n" : "";
+	var finalText = checkExceptionsExport(pokemon.name);
+	if (gender !== 'N') finalText += " (" + gender + ")";
+	if (pokemon.item) finalText += " @ " + pokemon.item;
+	finalText += "\n";
+	if (pokemon.ability) finalText += "Ability: " + pokemon.ability + "\n";
 	if (pokemon.level !== 100) finalText += "Level: " + pokemon.level + "\n";
 	if (gen === 9) {
 		var teraType = pokeInfo.find(".teraType").val();
@@ -41,7 +41,7 @@ function ExportPokemon(pokeInfo) {
 			finalText += "\n";
 		}
 	}
-	finalText += pokemon.nature && gen > 2 ? pokemon.nature + " Nature" + "\n" : "";
+	if (pokemon.nature && gen > 2) finalText += pokemon.nature + " Nature" + "\n";
 	var IVs_Array = [];
 	for (var stat in pokemon.ivs) {
 		var iv = pokemon.ivs[stat] ? pokemon.ivs[stat] : 0;
@@ -85,16 +85,6 @@ function serialize(array, separator) {
 	return text;
 }
 
-function getAbility(row) {
-	var ability = row[1] ? row[1].trim() : '';
-	if (calc.ABILITIES[9].indexOf(ability) !== -1) return ability;
-}
-
-function getTeraType(row) {
-	var teraType = row[1] ? row[1].trim() : '';
-	if (Object.keys(calc.TYPE_CHART[9]).slice(1).indexOf(teraType) !== -1) return teraType;
-}
-
 function statToLegacyStat(stat) {
 	switch (stat) {
 	case 'hp':
@@ -112,19 +102,48 @@ function statToLegacyStat(stat) {
 	}
 }
 
-function getStats(currentPoke, rows, offset) {
+function findSpecies(row) {
+	row = row.split(/[()@]/);
+	// Skip if the row contains the ability As One (Spectrier / Glastrier),
+	// so that it is not treated as a separate Pokemon.
+	if (row.length > 0 && row[0].includes('As One')) return -1;
+	var species;
+	for (var j = 0; j < row.length; j++) {
+		species = checkExceptionsImport(row[j].trim());
+		if (calc.SPECIES[9][species] !== undefined) return j;
+	}
+	return -1;
+}
+
+function getGender(currentRow, j) {
+	var gender;
+	for (; j < currentRow.length; j++) {
+		gender = currentRow[j].trim();
+		if (gender === 'M' || gender === 'F' || gender === 'N') return gender;
+	}
+}
+
+function getItem(currentRow, j) {
+	var item;
+	for (; j < currentRow.length; j++) {
+		item = currentRow[j].trim();
+		if (calc.ITEMS[9].indexOf(item) !== -1) return item;
+	}
+}
+
+function getStats(currentPoke, rows, x) {
 	currentPoke.nature = "Serious";
 	var currentEV;
 	var currentIV;
-	var currentAbility;
-	var currentTeraType;
 	var currentNature;
 	currentPoke.level = 100;
-	for (var x = offset; x < offset + 9; x++) {
+	for (; x < rows.length && findSpecies(rows[x]) < 0; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
 		var ev;
+		var ability;
+		var teraType;
 		var j;
 
 		switch (currentRow[0]) {
@@ -147,57 +166,34 @@ function getStats(currentPoke, rows, offset) {
 			}
 			currentPoke.ivs = ivs;
 			break;
-
-		}
-		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
-		if (currentAbility[0] == "Ability") {
-			currentPoke.ability = currentAbility[1].trim();
-		}
-
-		currentTeraType = rows[x] ? rows[x].trim().split(":") : '';
-		if (currentTeraType[0] == "Tera Type") {
-			currentPoke.teraType = currentTeraType[1].trim();
+		case 'Ability':
+			ability = currentRow[1] ? currentRow[1].trim() : '';
+			if (calc.ABILITIES[9].indexOf(ability) !== -1) currentPoke.ability = ability;
+			break;
+		case 'Tera Type':
+			teraType = currentRow[1] ? currentRow[1].trim() : '';
+			if (Object.keys(calc.TYPE_CHART[9]).slice(1).indexOf(teraType) !== -1) currentPoke.teraType = teraType;
+			break;
 		}
 
 		currentNature = rows[x] ? rows[x].trim().split(" ") : '';
-		if (currentNature[1] == "Nature" && currentNature[0] != "-") {
-			currentPoke.nature = currentNature[0];
-		}
+		if (currentNature[1] === "Nature" && currentNature[0] != "-") currentPoke.nature = currentNature[0];
 	}
 	return currentPoke;
 }
 
-function getGender(currentRow, j) {
-	for (;j < currentRow.length; j++) {
-		var gender = currentRow[j].trim();
-		if (gender === 'M' || gender === 'F' || gender === 'N') {
-			return gender;
-		}
-	}
-}
-
-function getItem(currentRow, j) {
-	for (;j < currentRow.length; j++) {
-		var item = currentRow[j].trim();
-		if (calc.ITEMS[9].indexOf(item) != -1) {
-			return item;
-		}
-	}
-}
-
-function getMoves(currentPoke, rows, offset) {
+function getMoves(currentPoke, rows, x) {
 	var movesFound = false;
+	var move;
 	var moves = [];
-	for (var x = offset; x < offset + 12; x++) {
+	for (; x < rows.length && findSpecies(rows[x]) < 0; x++) {
 		if (rows[x]) {
-			if (rows[x][0] == "-") {
+			if (rows[x][0] === "-") {
 				movesFound = true;
-				var move = rows[x].slice(2).replace("[", "").replace("]", "").trim().replace(/\s+/g, " ");
+				move = rows[x].slice(2).replace("[", "").replace("]", "").trim().replace(/\s+/g, " ");
 				moves.push(move);
-			} else {
-				if (movesFound == true) {
-					break;
-				}
+			} else if (movesFound === true) {
+				break;
 			}
 		}
 	}
@@ -290,37 +286,31 @@ function updateDex(customsets) {
 function addSets(pokes, name) {
 	var rows = pokes.split("\n");
 	var currentRow;
+	var startPoint;
 	var currentPoke;
-	var addedpokes = 0;
+	var addedPokes = 0;
 	for (var i = 0; i < rows.length; i++) {
-		currentRow = rows[i].split(/[()@]/);
-		// Skip the current row if it contains the ability As One (Spectrier / Glastrier),
-		// so that it is not treated as another distinct set.
-		if (currentRow.length > 0 && currentRow[0].includes('As One')) continue;
-		for (var j = 0; j < currentRow.length; j++) {
-			currentRow[j] = checkExceptionsImport(currentRow[j].trim());
-			if (calc.SPECIES[9][currentRow[j].trim()] !== undefined) {
-				currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[j].trim()]));
-				currentPoke.name = currentRow[j].trim();
-				currentPoke.gender = getGender(currentRow, j + 1);
-				currentPoke.item = getItem(currentRow, j + 1);
-				if (j === 1 && currentRow[0].trim()) {
-					currentPoke.nameProp = currentRow[0].trim();
-				} else {
-					currentPoke.nameProp = name;
-				}
-				currentPoke.isCustomSet = true;
-				currentPoke.ability = getAbility(rows[i + 1].split(":"));
-				currentPoke.teraType = getTeraType(rows[i + 1].split(":"));
-				currentPoke = getStats(currentPoke, rows, i + 1);
-				currentPoke = getMoves(currentPoke, rows, i);
-				addToDex(currentPoke);
-				addedpokes++;
+		startPoint = findSpecies(rows[i]);
+		if (startPoint >= 0) {
+			currentRow = rows[i].split(/[()@]/);
+			currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][currentRow[startPoint].trim()]));
+			currentPoke.name = currentRow[startPoint].trim();
+			currentPoke.gender = getGender(currentRow, startPoint + 1);
+			currentPoke.item = getItem(currentRow, startPoint + 1);
+			currentPoke = getStats(currentPoke, rows, i + 1);
+			currentPoke = getMoves(currentPoke, rows, i + 1);
+			if (startPoint === 1 && currentRow[0].trim()) {
+				currentPoke.nameProp = currentRow[0].trim();
+			} else {
+				currentPoke.nameProp = name;
 			}
+			currentPoke.isCustomSet = true;
+			addToDex(currentPoke);
+			addedPokes++;
 		}
 	}
-	if (addedpokes > 0) {
-		alert("Successfully imported " + addedpokes + (addedpokes === 1 ? " set" : " sets"));
+	if (addedPokes > 0) {
+		alert("Successfully imported " + addedPokes + (addedPokes === 1 ? " set" : " sets"));
 		$(allPokemon("#importedSetsOptions")).css("display", "inline");
 	} else {
 		alert("No sets imported, please check your syntax and try again");
