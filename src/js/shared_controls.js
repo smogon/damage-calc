@@ -558,7 +558,8 @@ $(".item").change(function () {
 	} else if (itemName === "Toxic Orb") {
 		pokeObj.find(".status").val("Badly Poisoned");
 		pokeObj.find(".status").change();
-	} else if (lastItem[pokeObj.id] === itemName || lastItem[pokeObj.id] === "Flame Orb" || lastItem[pokeObj.id] === "Toxic Orb") {
+	} else if ((lastItem[pokeObj.attr('id')] === "Flame Orb" && pokeObj.find(".status").val() === "Burned") ||
+			(lastItem[pokeObj.attr('id')] === "Toxic Orb" && pokeObj.find(".status").val() === "Badly Poisoned")) {
 		pokeObj.find(".status").val("Healthy");
 		pokeObj.find(".status").change();
 	}
@@ -580,7 +581,7 @@ $(".item").change(function () {
 	}
 
 	autosetQP(pokeObj);
-	lastItem[pokeObj.id] = itemName;
+	lastItem[pokeObj.attr('id')] = itemName;
 });
 
 function smogonAnalysis(pokemonName) {
