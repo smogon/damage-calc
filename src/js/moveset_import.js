@@ -138,7 +138,7 @@ function getStats(currentPoke, rows, x) {
 	var currentIV;
 	var currentNature;
 	currentPoke.level = 100;
-	for (; x < rows.length && !findSpecies(rows[x]).offset; x++) {
+	for (; x < rows.length && findSpecies(rows[x]).offset !== undefined; x++) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
@@ -187,7 +187,7 @@ function getMoves(currentPoke, rows, x) {
 	var movesFound = false;
 	var move;
 	var moves = [];
-	for (; x < rows.length && !findSpecies(rows[x]).offset; x++) {
+	for (; x < rows.length && findSpecies(rows[x]).offset !== undefined; x++) {
 		if (rows[x]) {
 			if (rows[x][0] === "-") {
 				movesFound = true;
@@ -292,7 +292,7 @@ function addSets(pokes, name) {
 	var addedPokes = 0;
 	for (var i = 0; i < rows.length; i++) {
 		species = findSpecies(rows[i]);
-		if (species.offset >= 0) {
+		if (species.offset !== undefined) {
 			currentRow = rows[i].split(/[()@]/);
 			currentPoke = JSON.parse(JSON.stringify(calc.SPECIES[9][species.name]));
 			currentPoke.name = species.name;
