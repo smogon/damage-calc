@@ -434,33 +434,6 @@ function autosetTerrain(ability, i) {
 	}
 }
 
-$("#p1 .item").bind("keyup change", function () {
-	autosetStatus("#p1", $(this).val());
-});
-
-var lastManualStatus = {"#p1": "Healthy"};
-var lastAutoStatus = {"#p1": "Healthy"};
-function autosetStatus(p, item) {
-	var currentStatus = $(p + " .status").val();
-	if (currentStatus !== lastAutoStatus[p]) {
-		lastManualStatus[p] = currentStatus;
-	}
-	if (item === "Flame Orb") {
-		lastAutoStatus[p] = "Burned";
-		$(p + " .status").val("Burned");
-		$(p + " .status").change();
-	} else if (item === "Toxic Orb") {
-		lastAutoStatus[p] = "Badly Poisoned";
-		$(p + " .status").val("Badly Poisoned");
-		$(p + " .status").change();
-	} else {
-		lastAutoStatus[p] = "Healthy";
-		if (currentStatus !== lastManualStatus[p]) {
-			$(p + " .status").val(lastManualStatus[p]);
-			$(p + " .status").change();
-		}
-	}
-}
 
 $(".status").bind("keyup change", function () {
 	if ($(this).val() === 'Badly Poisoned') {
@@ -569,30 +542,45 @@ $(".move-selector").change(function () {
 
 $(".item").change(function () {
 	var itemName = $(this).val();
-	var $metronomeControl = $(this).closest('.poke-info').find('.metronome');
+	var pokeObj = $(this).closest('.poke-info');
+
+	var $metronomeControl = pokeObj.find('.metronome');
 	if (itemName === "Metronome") {
 		$metronomeControl.show();
 	} else {
 		$metronomeControl.hide();
 	}
 
+	if (itemName === "Flame Orb") {
+		pokeObj.find(".status").val("Burned");
+		pokeObj.find(".status").change();
+	} else if (itemName === "Toxic Orb") {
+		pokeObj.find(".status").val("Badly Poisoned");
+		pokeObj.find(".status").change();
+	} else if (($(this).attr('data-prev') === "Flame Orb" && pokeObj.find(".status").val() === "Burned") ||
+			($(this).attr('data-prev') === "Toxic Orb" && pokeObj.find(".status").val() === "Badly Poisoned")) {
+		pokeObj.find(".status").val("Healthy");
+		pokeObj.find(".status").change();
+	}
+
 	for (var i = 1; i <= 4; i++) {
 		var moveSelector = ".move" + i;
 		var moveHits = 3;
 
-		var moveName = $(this).closest(".poke-info").find(moveSelector).find(".select2-chosen").text();
+		var moveName = pokeObj.find(moveSelector).find(".select2-chosen").text();
 		var move = moves[moveName] || moves['(No Move)'];
 		if (move.multiaccuracy) {
 			moveHits = move.multihit;
-		} else if ($(this).closest(".poke-info").find(".ability").val() === 'Skill Link') {
+		} else if (pokeObj.find(".ability").val() === 'Skill Link') {
 			moveHits = 5;
-		} else if ($(this).closest(".poke-info").find(".item").val() === 'Loaded Dice') {
+		} else if (pokeObj.find(".item").val() === 'Loaded Dice') {
 			moveHits = 4;
 		}
-		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
+		pokeObj.find(moveSelector).find(".move-hits").val(moveHits);
 	}
 
-	autosetQP($(this).closest(".poke-info"));
+	autosetQP(pokeObj);
+	pokeObj.find('.item').attr('data-prev', itemName);
 });
 
 function smogonAnalysis(pokemonName) {

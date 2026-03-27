@@ -8,13 +8,6 @@ $("#p2 .ability").bind("keyup change", function () {
 	autosetTerrain($(this).val(), 1);
 });
 
-$("#p2 .item").bind("keyup change", function () {
-	autosetStatus("#p2", $(this).val());
-});
-
-lastManualStatus["#p2"] = "Healthy";
-lastAutoStatus["#p1"] = "Healthy";
-
 var resultLocations = [[], []];
 for (var i = 0; i < 4; i++) {
 	resultLocations[0].push({
