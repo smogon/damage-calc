@@ -110,8 +110,12 @@ function findSpecies(row) {
 	var name;
 	var offset;
 	for (var j = 0; j < row.length && !offset; j++) {
-		name = checkExceptionsImport(row[j].trim());
-		if (calc.SPECIES[9][name] !== undefined) offset = j;
+		var curName = checkExceptionsImport(row[j].trim());
+		if (calc.SPECIES[9][curName] !== undefined) {
+			name = curName;
+			offset = j;
+			break;
+		}
 	}
 	return {name: name, offset: offset};
 }
