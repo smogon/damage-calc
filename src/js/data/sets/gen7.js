@@ -1482,7 +1482,7 @@ var SETDEX_SM = {
     "RU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Taunt","Toxic Spikes","Return"]}
   },
   "Scizor": {
-    "OU Swords Dance": {"ability":"Light Metal","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Bullet Punch","Roost","Knock Off"]},
+    "OU Swords Dance": {"ability":"Light Metal","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Roost","Bullet Punch","U-turn"]},
     "Ubers Bulky Pivot": {"ability":"Light Metal","item":"Scizorite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sd":252},"moves":["Bullet Punch","Roost","U-turn","Toxic"]},
     "UU Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":164,"at":252,"sp":92},"moves":["Bullet Punch","U-turn","Superpower","Pursuit"]},
     "UU Life Orb + Swords Dance": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Bullet Punch","Superpower","Bug Bite","Swords Dance"]},
@@ -1502,7 +1502,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Swarm","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Roost","Bullet Punch","U-turn","Swords Dance"]}
   },
   "Scizor-Mega": {
-    "OU Swords Dance": {"ability":"Technician","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Bullet Punch","Roost","Knock Off"]},
+    "OU Swords Dance": {"ability":"Technician","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Roost","Bullet Punch","U-turn"]},
     "Ubers Bulky Pivot": {"ability":"Technician","item":"Scizorite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sd":252},"moves":["Bullet Punch","Roost","U-turn","Toxic"]},
     "Doubles OU Bulky Attacker": {"ability":"Technician","item":"Scizorite","nature":"Adamant","evs":{"hp":252,"at":136,"sd":36,"sp":84},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
     "Battle Spot Singles Swords Dance": {"level":50,"ability":"Technician","item":"Scizorite","nature":"Adamant","evs":{"hp":252,"at":116,"df":20,"sd":116,"sp":4},"moves":["Swords Dance","Bullet Punch","U-turn","Roost"]},
