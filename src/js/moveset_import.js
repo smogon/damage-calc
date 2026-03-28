@@ -109,13 +109,9 @@ function findSpecies(row) {
 	if (row.length > 0 && row[0].includes('As One')) return {offset: undefined};
 	var name;
 	var offset;
-	for (var j = 0; j < row.length && !offset; j++) {
-		var curName = checkExceptionsImport(row[j].trim());
-		if (calc.SPECIES[9][curName] !== undefined) {
-			name = curName;
-			offset = j;
-			break;
-		}
+	for (var j = 0; j < row.length && offset === undefined; j++) {
+		name = checkExceptionsImport(row[j].trim());
+		if (calc.SPECIES[9][name] !== undefined) offset = j;
 	}
 	return {name: name, offset: offset};
 }
