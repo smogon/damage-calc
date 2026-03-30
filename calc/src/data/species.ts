@@ -10353,7 +10353,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Grass', 'Fighting'],
     bs: {hp: 88, at: 137, df: 172, sa: 74, sd: 115, sp: 44},
     weightkg: 90.0,
-    abilities: {0: 'Overgrow'},
+    abilities: {0: 'Bulletproof'},
     baseSpecies: 'Chesnaught',
   },
   'Chimecho-Mega': {
@@ -10389,7 +10389,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Fire', 'Psychic'],
     bs: {hp: 75, at: 69, df: 72, sa: 159, sd: 125, sp: 134},
     weightkg: 39.0,
-    abilities: {0: 'Blaze'},
+    abilities: {0: 'Levitate'},
     baseSpecies: 'Delphox',
   },
   'Dragalge-Mega': {
@@ -10500,7 +10500,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Water', 'Dark'],
     bs: {hp: 72, at: 125, df: 77, sa: 133, sd: 81, sp: 142},
     weightkg: 40.0,
-    abilities: {0: 'Torrent'},
+    abilities: {0: 'Protean'},
     baseSpecies: 'Greninja',
   },
   'Hawlucha-Mega': {
