@@ -10403,7 +10403,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Dragon', 'Flying'],
     bs: {hp: 91, at: 124, df: 115, sa: 145, sd: 125, sp: 100},
     weightkg: 290.0,
-    abilities: {0: 'Inner Focus'},
+    abilities: {0: 'Multiscale'},
     baseSpecies: 'Dragonite',
   },
   'Drampa-Mega': {
@@ -10426,7 +10426,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Fire', 'Fighting'],
     bs: {hp: 110, at: 148, df: 75, sa: 110, sd: 110, sp: 75},
     weightkg: 180.3,
-    abilities: {0: 'Blaze'},
+    abilities: {0: 'Mold Breaker'},
     baseSpecies: 'Emboar',
   },
   'Excadrill-Mega': {
@@ -10448,7 +10448,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Water', 'Dragon'],
     bs: {hp: 85, at: 160, df: 125, sa: 89, sd: 93, sp: 78},
     weightkg: 108.8,
-    abilities: {0: 'Torrent'},
+    abilities: {0: 'Dragonize'},
     baseSpecies: 'Feraligatr',
   },
   'Floette-Mega': {
@@ -10464,7 +10464,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 70, at: 80, df: 70, sa: 140, sd: 100, sp: 120},
     weightkg: 29.6,
     gender: 'F',
-    abilities: {0: 'Snow Cloak'},
+    abilities: {0: 'Snow Warning'},
     baseSpecies: 'Froslass',
   },
   'Garchomp-Mega-Z': {
@@ -10551,7 +10551,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Grass', 'Fairy'],
     bs: {hp: 80, at: 92, df: 115, sa: 143, sd: 115, sp: 80},
     weightkg: 201.0,
-    abilities: {0: 'Overgrow'},
+    abilities: {0: 'Mega Sol'},
     baseSpecies: 'Meganium',
   },
   'Meowstic-M-Mega': {
