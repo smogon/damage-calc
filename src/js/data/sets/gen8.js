@@ -338,7 +338,7 @@ var SETDEX_SS = {
     "LC Eviolite": {"level":5,"ability":"Flame Body","item":"Eviolite","nature":"Jolly","evs":{"at":76,"df":156,"sd":76,"sp":196},"moves":["Flare Blitz","Will-O-Wisp","Morning Sun","Flame Charge"]}
   },
   "Ponyta-Galar": {
-    "LC Bulky Attacker": {"level":5,"ability":"Pastel Veil","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"df":76,"sa":236,"sp":196},"moves":["Morning Sun","Psychic","Dazzling Gleam","Mystical Fire"]}
+    "LC Bulky Attacker": {"level":5,"ability":"Pastel Veil","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"sa":236,"sd":76,"sp":196},"moves":["Morning Sun","Psychic","Dazzling Gleam","Mystical Fire"]}
   },
   "Rapidash": {
     "ZU Utility": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Flare Blitz","High Horsepower","Toxic","Morning Sun"]},

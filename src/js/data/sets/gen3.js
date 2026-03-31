@@ -1264,7 +1264,7 @@ var SETDEX_ADV = {
     "RU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Rock Slide","Double-Edge","Earthquake","Focus Punch"]}
   },
   "Meditite": {
-    "PU Offensive Sub": {"ability":"Pure Power","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Brick Break","Hidden Power Ghost","Toxic"]},
+    "PU Offensive Sub": {"ability":"Pure Power","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Brick Break","Shadow Ball","Toxic"]},
     "ZU Choice Band": {"ability":"Pure Power","item":"Choice Band","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Brick Break","Return","Shadow Ball","Hidden Power Flying"]}
   },
   "Medicham": {
