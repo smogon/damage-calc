@@ -287,29 +287,31 @@ export function calculateSMSSSV(
   } else if (move.originalName === 'Revelation Dance') {
     if (attacker.teraType) {
       type = attacker.teraType;
+    } else if (attacker.types[0] === '???' && attacker.types[1]) {
+      type = attacker.types[1];
     } else {
       type = attacker.types[0];
     }
-  } else if (move.named('Aura Wheel')) {
-    if (attacker.named('Morpeko')) {
-      type = 'Electric';
-    } else if (attacker.named('Morpeko-Hangry')) {
-      type = 'Dark';
-    }
+  } else if (move.named('Aura Wheel') && attacker.named('Morpeko-Hangry')) {
+    type = 'Dark';
   } else if (move.named('Raging Bull')) {
-    if (attacker.named('Tauros-Paldea-Combat')) {
-      type = 'Fighting';
-    } else if (attacker.named('Tauros-Paldea-Blaze')) {
-      type = 'Fire';
+    if (attacker.named('Tauros')) {
+      type = 'Normal';
     } else if (attacker.named('Tauros-Paldea-Aqua')) {
       type = 'Water';
+    } else if (attacker.named('Tauros-Paldea-Blaze')) {
+      type = 'Fire';
+    } else if (attacker.named('Tauros-Paldea-Combat')) {
+      type = 'Fighting';
     }
 
     field.defenderSide.isReflect = false;
     field.defenderSide.isLightScreen = false;
     field.defenderSide.isAuroraVeil = false;
   } else if (move.named('Ivy Cudgel')) {
-    if (attacker.name.includes('Ogerpon-Cornerstone')) {
+    if (attacker.named('Ogerpon') || attacker.name.includes('Ogerpon-Teal')) {
+      type = 'Grass';
+    } else if (attacker.name.includes('Ogerpon-Cornerstone')) {
       type = 'Rock';
     } else if (attacker.name.includes('Ogerpon-Hearthflame')) {
       type = 'Fire';
