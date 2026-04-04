@@ -1464,7 +1464,7 @@ var SETDEX_ADV = {
   "Relicanth": {
     "RU Physical Wall": {"ability":"Swift Swim","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":156,"sd":100},"moves":["Rock Slide","Earthquake","Toxic","Protect"]},
     "NU Physically Defensive": {"ability":"Swift Swim","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sp":4},"moves":["Rock Slide","Earthquake","Rest","Sleep Talk"]},
-    "NU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":168,"at":252,"sp":84},"moves":["Rock Slide","Earthquake","Double-Edge","Hidden Power Ghost"]},
+    "NU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":172,"at":252,"sp":84},"moves":["Rock Slide","Earthquake","Double-Edge","Hidden Power Ghost"]},
     "NU Swift Swim Sweeper": {"ability":"Swift Swim","item":"Leftovers","nature":"Naughty","evs":{"hp":48,"at":252,"sa":152,"sp":52},"moves":["Rain Dance","Rock Slide","Earthquake","Surf"]}
   },
   "Luvdisc": {
