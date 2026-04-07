@@ -181,7 +181,7 @@ var SETDEX_DPP = {
     "OU Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Flying","Heat Wave","U-turn"]},
     "OU Specially Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Calm","ivs":{"at":30,"df":30},"evs":{"hp":248,"sd":228,"sp":32},"moves":["Thunderbolt","Hidden Power Ice","Heat Wave","Roost"]},
     "OU Agility": {"ability":"Pressure","item":"Leftovers","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":112,"sa":252,"sp":144},"moves":["Agility","Thunderbolt","Hidden Power Ice","Roost"]},
-    "Doubles OU Bulky Special Attacker": {"ability":"Pressure","item":"Sitrus Berry","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":248,"sa":128,"sd":24,"sp":108},"moves":["Thunderbolt","Hidden Power Ice","Heat Wave","Protect"]},
+    "Doubles OU Bulky Special Attacker": {"ability":"Pressure","item":"Sitrus Berry","nature":"Modest","ivs":{"at":30,"df":30},"evs":{"hp":248,"sa":128,"sd":24,"sp":108},"moves":["Thunderbolt","Hidden Power Ice","Heat Wave","Detect"]},
     "Doubles OU Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Modest","ivs":{"at":2,"df":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Heat Wave","Hidden Power Ice","U-turn"]}
   },
   "Moltres": {
@@ -829,7 +829,7 @@ var SETDEX_DPP = {
     "Ubers Mixed": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":64,"df":200,"sa":184,"sp":60},"moves":["Draco Meteor","Shadow Sneak","Thunder","Outrage"]},
     "Ubers Stallbreaker": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":84,"sa":216,"sd":96,"sp":112},"moves":["Calm Mind","Dragon Pulse","Shadow Ball","Substitute"]},
     "Ubers Sleeping Beauty (Mono-Attacker)": {"ability":"Levitate","item":"Griseous Orb","nature":"Modest","evs":{"hp":200,"df":44,"sa":224,"sd":40},"moves":["Dragon Pulse","Calm Mind","Rest","Sleep Talk"]},
-    "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Will-O-Wisp","Outrage","Earthquake","Shadow Force"]},
+    "Ubers Physical Attacker": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Will-O-Wisp","Shadow Sneak","Earthquake","Shadow Force"]},
     "Ubers RestTalk": {"ability":"Levitate","item":"Griseous Orb","nature":"Adamant","evs":{"hp":84,"at":216,"sd":96,"sp":112},"moves":["Rest","Sleep Talk","Outrage","Shadow Force"]},
     "Anything Goes Showdown Usage": {"ability":"Levitate","item":"Griseous Orb","nature":"Rash","evs":{"at":68,"df":200,"sa":124,"sp":116},"moves":["Shadow Sneak","Draco Meteor","Earthquake","Outrage"]}
   },
@@ -1067,7 +1067,8 @@ var SETDEX_DPP = {
   "Cloyster": {
     "Ubers Lead": {"ability":"Shell Armor","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spikes","Toxic Spikes","Rapid Spin","Payback"]},
     "UU Life Orb": {"ability":"Skill Link","item":"Life Orb","nature":"Adamant","evs":{"hp":160,"at":252,"sd":96},"moves":["Ice Shard","Rock Blast","Explosion","Spikes"]},
-    "UU Support": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Rapid Spin","Surf","Toxic Spikes"]}
+    "UU Support": {"ability":"Shell Armor","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Rapid Spin","Surf","Toxic Spikes"]},
+    "OU Showdown Usage": {"ability":"Shell Armor","item":"Focus Sash","nature":"Timid","evs":{"hp":248,"sd":8,"sp":252},"moves":["Rapid Spin","Spikes","Icy Wind","Explosion"]}
   },
   "Gastly": {
     "LC Utility": {"level":5,"ability":"Levitate","item":"Oran Berry","nature":"Timid","ivs":{"at":0},"evs":{"hp":36,"df":36,"sa":196,"sp":196},"moves":["Will-O-Wisp","Shadow Ball","Sludge Bomb","Substitute"]},
@@ -1630,10 +1631,8 @@ var SETDEX_DPP = {
     "Ubers Offensive Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Aeroblast","Roost","Earth Power"]}
   },
   "Ho-Oh": {
-    "Ubers Physical Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":208,"at":252,"sp":48},"moves":["Sacred Fire","Brave Bird","Earthquake","Roost"]},
-    "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Sleep Talk"]},
-    "Ubers Choice Scarf": {"ability":"Pressure","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Sacred Fire","Brave Bird","Earthquake","Punishment"]},
-    "Ubers Toxic Stall": {"ability":"Pressure","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":236,"sp":24},"moves":["Toxic","Light Screen","Sacred Fire","Recover"]},
+    "Ubers Bulky Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":216,"at":172,"sp":112},"moves":["Brave Bird","Sacred Fire","Roost","Substitute"]},
+    "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Brave Bird","Sacred Fire","Earthquake","Sleep Talk"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Life Orb","nature":"Adamant","evs":{"hp":232,"at":252,"sp":24},"moves":["Sacred Fire","Brave Bird","Roost","Earthquake"]}
   },
   "Celebi": {
@@ -2097,9 +2096,8 @@ var SETDEX_DPP = {
     "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Naive","evs":{"df":112,"sa":146,"sp":252},"moves":["Shadow Ball","Extreme Speed","Stealth Rock","Spikes"]}
   },
   "Deoxys-Attack": {
-    "Ubers Attacking Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Shadow Ball","Extreme Speed","Thunder","Superpower"]},
-    "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Signal Beam","Extreme Speed","Thunder"]},
-    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Rash","evs":{"at":16,"sa":252,"sp":240},"moves":["Ice Beam","Thunder","Superpower","Extreme Speed"]},
+    "Ubers Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Rash","evs":{"at":4,"sa":252,"sp":252},"moves":["Spikes","Extreme Speed","Thunder","Shadow Ball"]},
+    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Rash","evs":{"at":20,"sa":252,"sp":236},"moves":["Thunder","Ice Beam","Superpower","Extreme Speed"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Focus Sash","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Shadow Ball","Psycho Boost","Superpower","Extreme Speed"]}
   },
   "Deoxys-Defense": {
@@ -2307,9 +2305,8 @@ var SETDEX_DPP = {
   },
   "Garchomp": {
     "Ubers Choice Scarf": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Sleep Talk"]},
-    "Ubers Swords Dance": {"ability":"Sand Veil","item":"Haban Berry","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Outrage","Earthquake","Fire Fang"]},
-    "Ubers Choice Band": {"ability":"Sand Veil","item":"Choice Band","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Outrage","Earthquake","Dragon Claw","Fire Fang"]},
-    "Ubers SubSalac": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","evs":{"hp":12,"at":244,"sp":252},"moves":["Swords Dance","Substitute","Dragon Claw","Earthquake"]},
+    "Ubers Swords Dance": {"ability":"Sand Veil","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Dragon Claw","Earthquake","Fire Fang"]},
+    "Ubers Substitute + Salac Berry": {"ability":"Sand Veil","item":"Salac Berry","nature":"Jolly","evs":{"hp":12,"at":244,"sp":252},"moves":["Substitute","Swords Dance","Dragon Claw","Earthquake"]},
     "Anything Goes Showdown Usage": {"ability":"Sand Veil","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Outrage","Dragon Claw","Swords Dance"]}
   },
   "Munchlax": {
