@@ -1827,8 +1827,9 @@ var SETDEX_SS = {
     "National Dex RU Choice Band": {"ability":"Solid Rock","item":"Choice Band","nature":"Adamant","evs":{"hp":52,"at":252,"sp":204},"moves":["Earthquake","Stone Edge","Megahorn","Ice Punch"]},
     "National Dex RU Swords Dance": {"ability":"Solid Rock","item":"Rockium Z","nature":"Adamant","evs":{"hp":52,"at":252,"sp":204},"moves":["Swords Dance","Earthquake","Stone Edge","Ice Punch"]},
     "1v1 Choice Band": {"ability":"Solid Rock","item":"Choice Band","nature":"Adamant","evs":{"at":216,"df":128,"sp":164},"moves":["Earthquake","Rock Wrecker","Rock Blast","Ice Punch"]},
-    "1v1 Anti-Galarian Darmanitan": {"ability":"Solid Rock","item":"Assault Vest","nature":"Impish","ivs":{"sp":26},"evs":{"hp":252,"at":76,"df":88,"sd":92},"moves":["Rock Wrecker","Earthquake","Avalanche","Rock Blast"]},
-    "1v1 Anti Magnezone": {"ability":"Solid Rock","item":"Assault Vest","nature":"Careful","evs":{"hp":252,"at":36,"sd":96,"sp":124},"moves":["Rock Wrecker","Earthquake","Bulldoze","Avalanche"]},
+    "1v1 Standard Assault Vest": {"ability":"Solid Rock","item":"Assault Vest","nature":"Impish","ivs":{"sp":26},"evs":{"hp":252,"at":76,"df":88,"sd":92},"moves":["Rock Wrecker","Earthquake","Avalanche","Rock Blast"]},
+    "1v1 Anti-Magnezone": {"ability":"Solid Rock","item":"Assault Vest","nature":"Careful","evs":{"hp":152,"at":84,"df":12,"sd":136,"sp":124},"moves":["Rock Wrecker","Earthquake","Bulldoze","Avalanche"]},
+    "1v1 Custap Berry": {"ability":"Solid Rock","item":"Custap Berry","nature":"Adamant","ivs":{"df":16,"sd":25},"evs":{"at":252,"sp":252},"moves":["Rock Wrecker","Earthquake","Swords Dance","Endure"]},
     "National Dex Monotype Showdown Usage": {"ability":"Solid Rock","item":"Weakness Policy","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Earthquake","Fire Punch","Ice Punch","Rock Slide"]}
   },
   "Tangrowth": {
