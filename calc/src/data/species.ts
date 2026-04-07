@@ -10409,16 +10409,14 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Drampa-Mega': {
     types: ['Normal', 'Dragon'],
     bs: {hp: 78, at: 85, df: 110, sa: 160, sd: 116, sp: 36},
-    // FIXME: Incorrect in Showdown, should be 240.5
-    weightkg: 185,
+    weightkg: 240.5,
     abilities: {0: 'Berserk'},
     baseSpecies: 'Drampa',
   },
   'Eelektross-Mega': {
     types: ['Electric'],
     bs: {hp: 85, at: 145, df: 80, sa: 135, sd: 90, sp: 80},
-    // FIXME: Incorrect in Showdown, should be 180
-    weightkg: 160.0,
+    weightkg: 180.0,
     abilities: {0: 'Levitate'},
     baseSpecies: 'Eelektross',
   },
@@ -10637,24 +10635,21 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Tatsugiri-Curly-Mega': {
     types: ['Dragon', 'Water'],
     bs: {hp: 68, at: 65, df: 90, sa: 135, sd: 125, sp: 92},
-    // FIXME: Incorrect in Showdown, should be 24
-    weightkg: 8,
+    weightkg: 24,
     abilities: {0: 'Commander'},
     baseSpecies: 'Tatsugiri',
   },
   'Tatsugiri-Droopy-Mega': {
     types: ['Dragon', 'Water'],
     bs: {hp: 68, at: 65, df: 90, sa: 135, sd: 125, sp: 92},
-    // FIXME: Incorrect in Showdown, should be 24
-    weightkg: 8,
+    weightkg: 24,
     abilities: {0: 'Commander'},
     baseSpecies: 'Tatsugiri',
   },
   'Tatsugiri-Stretchy-Mega': {
     types: ['Dragon', 'Water'],
     bs: {hp: 68, at: 65, df: 90, sa: 135, sd: 125, sp: 92},
-    // FIXME: Incorrect in Showdown, should be 24
-    weightkg: 8,
+    weightkg: 24,
     abilities: {0: 'Commander'},
     baseSpecies: 'Tatsugiri',
   },
