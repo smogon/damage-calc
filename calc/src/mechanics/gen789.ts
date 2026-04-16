@@ -142,7 +142,7 @@ export function calculateSMSSSV(
   }
 
   const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed ||
-  (attacker.hasAbility('Unseen Fist') && move.flags.contact);
+  (attacker.hasAbility('Unseen Fist', 'Piercing Drill') && move.flags.contact);
 
   if (field.defenderSide.isProtected && !breaksProtect) {
     desc.isProtected = true;
@@ -238,14 +238,14 @@ export function calculateSMSSSV(
   let type = move.type;
   if (move.originalName === 'Weather Ball') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
-    const hasMegaSol = attacker.hasAbility('Mega Sol');
+    const isMegaSol = attacker.hasAbility('Mega Sol');
     type =
-      (field.hasWeather('Sun', 'Harsh Sunshine') || hasMegaSol) && !holdingUmbrella ? 'Fire'
+      (field.hasWeather('Sun', 'Harsh Sunshine') || isMegaSol) && !holdingUmbrella ? 'Fire'
       : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
       : field.hasWeather('Sand') ? 'Rock'
       : field.hasWeather('Hail', 'Snow') ? 'Ice'
       : 'Normal';
-    desc.weather = field.weather;
+    isMegaSol ? desc.attackerAbility = attacker.ability : desc.weather = field.weather;
     desc.moveType = type;
   } else if (move.named('Judgment') && attacker.item && attacker.item.includes('Plate')) {
     type = getItemBoostType(attacker.item)!;
@@ -648,7 +648,9 @@ export function calculateSMSSSV(
 
   let protect = false;
   if (field.defenderSide.isProtected &&
-    (attacker.isDynamaxed || (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
+    (attacker.isDynamaxed ||
+      attacker.hasAbility('Unseen Fist', 'Piercing Drill') ||
+      (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
     protect = true;
     desc.isProtected = true;
   }
@@ -783,7 +785,6 @@ export function calculateBasePowerSMSSSV(
   hit = 1,
 ) {
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
-  const hasMegaSol = attacker.hasAbility('Mega Sol');
 
   let basePower: number;
 
@@ -867,10 +868,11 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Weather Ball':
-    const hasStrongWinds = field.hasWeather('Strong Winds');
-    basePower = move.bp * ((field.weather || hasMegaSol) && !hasStrongWinds ? 2 : 1);
-    if ((field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') || hasMegaSol) &&
-      attacker.hasItem('Utility Umbrella')) basePower = move.bp;
+    const isStrongWinds = field.hasWeather('Strong Winds');
+    const isMegaSol = attacker.hasAbility('Mega Sol');
+    basePower = move.bp * ((field.weather && !isStrongWinds) || isMegaSol ? 2 : 1);
+    if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
+      attacker.hasItem('Utility Umbrella') && !isMegaSol) basePower = move.bp;
     desc.moveBP = basePower;
     break;
   case 'Terrain Pulse':
@@ -1657,7 +1659,6 @@ function calculateBaseDamageSMSSSV(
   isCritical = false,
 ) {
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
-  const hasMegaSol = attacker.hasAbility('Mega Sol');
   const isSpread = field.gameType !== 'Singles' &&
      ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
   if (isSpread) {
@@ -1668,26 +1669,27 @@ function calculateBaseDamageSMSSSV(
     baseDamage = pokeRound(OF32(baseDamage * 1024) / 4096);
   }
 
+  const isMegaSol = attacker.hasAbility('Mega Sol');
   if (
-    (field.hasWeather('Sun') || hasMegaSol) &&
+    (field.hasWeather('Sun') || isMegaSol) &&
       move.named('Hydro Steam') &&
       !attacker.hasItem('Utility Umbrella')
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
-    desc.weather = field.weather;
+    isMegaSol ? desc.attackerAbility = attacker.ability : desc.weather = field.weather;
   } else if (!defender.hasItem('Utility Umbrella')) {
     if (
-      ((field.hasWeather('Sun', 'Harsh Sunshine') || hasMegaSol) && move.hasType('Fire')) ||
-      (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
+      ((field.hasWeather('Sun', 'Harsh Sunshine') || isMegaSol) && move.hasType('Fire')) ||
+      ((field.hasWeather('Rain', 'Heavy Rain') && !isMegaSol) && move.hasType('Water'))
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
-      desc.weather = field.weather;
+      isMegaSol ? desc.attackerAbility = attacker.ability : desc.weather = field.weather;
     } else if (
-      ((field.hasWeather('Sun') || hasMegaSol) && move.hasType('Water')) ||
+      ((field.hasWeather('Sun') || isMegaSol) && move.hasType('Water')) ||
       (field.hasWeather('Rain') && move.hasType('Fire'))
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
-      desc.weather = field.weather;
+      isMegaSol ? desc.attackerAbility = attacker.ability : desc.weather = field.weather;
     }
   }
 

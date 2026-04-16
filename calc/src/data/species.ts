@@ -10346,7 +10346,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Ghost', 'Fire'],
     bs: {hp: 60, at: 75, df: 110, sa: 175, sd: 110, sp: 90},
     weightkg: 69.6,
-    abilities: {0: 'Flash Fire'},
+    abilities: {0: 'Infiltrator'},
     baseSpecies: 'Chandelure',
   },
   'Chesnaught-Mega': {
@@ -10367,14 +10367,14 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Fairy', 'Flying'],
     bs: {hp: 95, at: 80, df: 93, sa: 135, sd: 110, sp: 70},
     weightkg: 42.3,
-    abilities: {0: 'Cute Charm'},
+    abilities: {0: 'Magic Bounce'},
     baseSpecies: 'Clefable',
   },
   'Crabominable-Mega': {
     types: ['Fighting', 'Ice'],
     bs: {hp: 97, at: 157, df: 122, sa: 62, sd: 107, sp: 33},
     weightkg: 252.8,
-    abilities: {0: 'Hyper Cutter'},
+    abilities: {0: 'Iron Fist'},
     baseSpecies: 'Crabominable',
   },
   'Darkrai-Mega': {
@@ -10433,7 +10433,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Ground', 'Steel'],
     bs: {hp: 110, at: 165, df: 100, sa: 65, sd: 65, sp: 103},
     weightkg: 60.0,
-    abilities: {0: 'Sand Rush'},
+    abilities: {0: 'Piercing Drill'},
     baseSpecies: 'Excadrill',
   },
   'Falinks-Mega': {
@@ -10456,7 +10456,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 74, at: 85, df: 87, sa: 155, sd: 148, sp: 102},
     weightkg: 100.8,
     gender: 'F',
-    abilities: {0: 'Flower Veil'},
+    abilities: {0: 'Fairy Aura'},
     baseSpecies: 'Floette',
   },
   'Froslass-Mega': {
@@ -10478,7 +10478,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Rock', 'Poison'],
     bs: {hp: 83, at: 90, df: 105, sa: 150, sd: 96, sp: 101},
     weightkg: 77.0,
-    abilities: {0: 'Toxic Debris'},
+    abilities: {0: 'Adaptability'},
     baseSpecies: 'Glimmora',
   },
   'Golisopod-Mega': {
@@ -10493,7 +10493,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 89, at: 159, df: 105, sa: 70, sd: 105, sp: 55},
     weightkg: 330.0,
     gender: 'N',
-    abilities: {0: 'Iron Fist'},
+    abilities: {0: 'Unseen Fist'},
     baseSpecies: 'Golurk',
   },
   'Greninja-Mega': {
@@ -10554,20 +10554,20 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     abilities: {0: 'Mega Sol'},
     baseSpecies: 'Meganium',
   },
-  'Meowstic-M-Mega': {
-    types: ['Psychic'],
-    bs: {hp: 74, at: 48, df: 76, sa: 143, sd: 101, sp: 124},
-    weightkg: 10.1,
-    gender: 'M',
-    abilities: {0: 'Keen Eye'},
-    baseSpecies: 'Meowstic',
-  },
   'Meowstic-F-Mega': {
     types: ['Psychic'],
     bs: {hp: 74, at: 48, df: 76, sa: 143, sd: 101, sp: 124},
     weightkg: 10.1,
     gender: 'F',
-    abilities: {0: 'Keen Eye'},
+    abilities: {0: 'Trace'},
+    baseSpecies: 'Meowstic',
+  },
+  'Meowstic-M-Mega': {
+    types: ['Psychic'],
+    bs: {hp: 74, at: 48, df: 76, sa: 143, sd: 101, sp: 124},
+    weightkg: 10.1,
+    gender: 'M',
+    abilities: {0: 'Trace'},
     baseSpecies: 'Meowstic',
   },
   'Pyroar-Mega': {
@@ -10602,7 +10602,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Grass', 'Fire'],
     bs: {hp: 65, at: 138, df: 85, sa: 138, sd: 85, sp: 75},
     weightkg: 22.0,
-    abilities: {0: 'Chlorophyll'},
+    abilities: {0: 'Spicy Spray'},
     baseSpecies: 'Scovillain',
   },
   'Scrafty-Mega': {
@@ -10628,10 +10628,10 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   },
   'Starmie-Mega': {
     types: ['Water', 'Psychic'],
-    bs: {hp: 60, at: 140, df: 105, sa: 130, sd: 105, sp: 120},
+    bs: {hp: 60, at: 100, df: 105, sa: 130, sd: 105, sp: 120},
     weightkg: 80.0,
     gender: 'N',
-    abilities: {0: 'Illuminate'},
+    abilities: {0: 'Huge Power'},
     baseSpecies: 'Starmie',
   },
   'Tatsugiri-Curly-Mega': {
@@ -10662,7 +10662,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     types: ['Grass', 'Poison'],
     bs: {hp: 80, at: 125, df: 85, sa: 135, sd: 95, sp: 70},
     weightkg: 125.5,
-    abilities: {0: 'Chlorophyll'},
+    abilities: {0: 'Innards Out'},
     baseSpecies: 'Victreebel',
   },
   'Zeraora-Mega': {
@@ -11000,7 +11000,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Ghost', 'Fire'],
     bs: {hp: 60, at: 75, df: 110, sa: 175, sd: 110, sp: 90},
     weightkg: 69.6,
-    abilities: {'0': 'Flash Fire'},
+    abilities: {'0': 'Infiltrator'},
     baseSpecies: 'Chandelure',
   },
   Charizard: {
@@ -11035,7 +11035,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Grass', 'Fighting'],
     bs: {hp: 88, at: 137, df: 172, sa: 74, sd: 115, sp: 44},
     weightkg: 90,
-    abilities: {'0': 'Overgrow'},
+    abilities: {'0': 'Bulletprof'},
     baseSpecies: 'Chesnaught',
   },
   Chimecho: {
@@ -11069,7 +11069,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Fairy', 'Flying'],
     bs: {hp: 95, at: 80, df: 93, sa: 135, sd: 110, sp: 70},
     weightkg: 42.3,
-    abilities: {'0': 'Cute Charm'},
+    abilities: {'0': 'Magic Bounce'},
     baseSpecies: 'Clefable',
   },
   Cofagrigus: {
@@ -11101,7 +11101,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Fighting', 'Ice'],
     bs: {hp: 97, at: 157, df: 122, sa: 62, sd: 107, sp: 33},
     weightkg: 252.8,
-    abilities: {'0': 'Hyper Cutter'},
+    abilities: {'0': 'Iron Fist'},
     baseSpecies: 'Crabominable',
   },
   'Cramorant-Gorging': {
@@ -11149,7 +11149,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Fire', 'Psychic'],
     bs: {hp: 75, at: 69, df: 72, sa: 159, sd: 125, sp: 134},
     weightkg: 39,
-    abilities: {'0': 'Blaze'},
+    abilities: {'0': 'Levitate'},
     baseSpecies: 'Delphox',
   },
   Diggersby: {
@@ -11182,7 +11182,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Dragon', 'Flying'],
     bs: {hp: 91, at: 124, df: 115, sa: 145, sd: 125, sp: 100},
     weightkg: 290,
-    abilities: {'0': 'Inner Focus'},
+    abilities: {'0': 'Multiscale'},
     baseSpecies: 'Dragonite',
   },
   Drampa: {
@@ -11255,7 +11255,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Ground', 'Steel'],
     bs: {hp: 110, at: 165, df: 100, sa: 65, sd: 65, sp: 103},
     weightkg: 60,
-    abilities: {'0': 'Sand Rush'},
+    abilities: {'0': 'Piercing Drill'},
     baseSpecies: 'Excadrill',
   },
   Farigiraf: {
@@ -11275,7 +11275,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Water', 'Dragon'],
     bs: {hp: 85, at: 160, df: 125, sa: 89, sd: 93, sp: 78},
     weightkg: 108.8,
-    abilities: {'0': 'Torrent'},
+    abilities: {'0': 'Dragonize'},
     baseSpecies: 'Feraligatr',
   },
   Flapple: {
@@ -11303,7 +11303,7 @@ const Champions: {[name: string]: SpeciesData} = {
     bs: {hp: 74, at: 85, df: 87, sa: 155, sd: 148, sp: 102},
     weightkg: 100.8,
     gender: 'F',
-    abilities: {'0': 'Flower Veil'},
+    abilities: {'0': 'Fairy Aura'},
     baseSpecies: 'Floette',
   },
   Florges: {
@@ -11332,7 +11332,7 @@ const Champions: {[name: string]: SpeciesData} = {
     bs: {hp: 70, at: 80, df: 70, sa: 140, sd: 100, sp: 120},
     weightkg: 29.6,
     gender: 'F',
-    abilities: {'0': 'Snow Cloak'},
+    abilities: {'0': 'Snow Warning'},
     baseSpecies: 'Froslass',
   },
   Furfrou: {
@@ -11442,7 +11442,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Rock', 'Poison'],
     bs: {hp: 83, at: 90, df: 105, sa: 150, sd: 96, sp: 101},
     weightkg: 77,
-    abilities: {'0': 'Toxic Debris'},
+    abilities: {'0': 'Adaptability'},
     baseSpecies: 'Glimmora',
   },
   Gliscor: {
@@ -11520,7 +11520,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Water', 'Dark'],
     bs: {hp: 72, at: 125, df: 77, sa: 133, sd: 81, sp: 142},
     weightkg: 40,
-    abilities: {'0': 'Torrent'},
+    abilities: {'0': 'Protean'},
     baseSpecies: 'Greninja',
   },
   Gyarados: {
@@ -11808,7 +11808,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Grass', 'Fairy'],
     bs: {hp: 80, at: 92, df: 115, sa: 143, sd: 115, sp: 80},
     weightkg: 201,
-    abilities: {'0': 'Overgrow'},
+    abilities: {'0': 'Mega Sol'},
     baseSpecies: 'Meganium',
   },
   'Meloetta-Pirouette': {
@@ -11846,7 +11846,7 @@ const Champions: {[name: string]: SpeciesData} = {
     bs: {hp: 74, at: 48, df: 76, sa: 143, sd: 101, sp: 124},
     weightkg: 10.1,
     gender: 'F',
-    abilities: {'0': 'Keen Eye'},
+    abilities: {'0': 'Trace'},
     baseSpecies: 'Meowstic',
   },
   'Meowstic-M-Mega': {
@@ -11854,7 +11854,7 @@ const Champions: {[name: string]: SpeciesData} = {
     bs: {hp: 74, at: 48, df: 76, sa: 143, sd: 101, sp: 124},
     weightkg: 10.1,
     gender: 'M',
-    abilities: {'0': 'Keen Eye'},
+    abilities: {'0': 'Trace'},
     baseSpecies: 'Meowstic',
   },
   Milotic: {
@@ -12234,7 +12234,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Grass', 'Fire'],
     bs: {hp: 65, at: 138, df: 85, sa: 138, sd: 85, sp: 75},
     weightkg: 22,
-    abilities: {'0': 'Chlorophyll'},
+    abilities: {'0': 'Spicy Spray'},
     baseSpecies: 'Scovillain',
   },
   Serperior: {
@@ -12383,7 +12383,7 @@ const Champions: {[name: string]: SpeciesData} = {
     bs: {hp: 60, at: 140, df: 105, sa: 130, sd: 105, sp: 120},
     weightkg: 80,
     gender: 'N',
-    abilities: {'0': 'Illuminate'},
+    abilities: {'0': 'Huge Power'},
     baseSpecies: 'Starmie',
   },
   Steelix: {
@@ -12592,7 +12592,7 @@ const Champions: {[name: string]: SpeciesData} = {
     types: ['Grass', 'Poison'],
     bs: {hp: 80, at: 125, df: 85, sa: 135, sd: 95, sp: 70},
     weightkg: 125.5,
-    abilities: {'0': 'Chlorophyll'},
+    abilities: {'0': 'Innards Out'},
     baseSpecies: 'Victreebel',
   },
   Vivillon: {
