@@ -25,7 +25,7 @@ function ExportPokemon(pokeInfo) {
 			finalText += "Tera Type: " + teraType + "\n";
 		}
 	}
-	if (gen > 2) {
+	if (gen === 0 || gen > 2) {
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
 			var ev = pokemon.evs[stat] ? pokemon.evs[stat] : 0;
@@ -157,7 +157,7 @@ function getStats(currentPoke, rows, x) {
 				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
 				evs[currentEV[1]] = parseInt(currentEV[0]);
 			}
-			currentPoke.evs = evs;
+			currentPoke[$('#champions').prop('checked') ? 'sps' : 'evs'] = evs;
 			break;
 		case 'IVs':
 			for (j = 1; j < currentRow.length; j++) {
@@ -215,6 +215,7 @@ function addToDex(poke) {
 		if (GEN2RANDOMBATTLE[poke.name] == undefined) GEN2RANDOMBATTLE[poke.name] = {};
 		if (GEN1RANDOMBATTLE[poke.name] == undefined) GEN1RANDOMBATTLE[poke.name] = {};
 	} else {
+		if (SETDEX_CHAMPIONS[poke.name] == undefined) SETDEX_CHAMPIONS[poke.name] = {};
 		if (SETDEX_SV[poke.name] == undefined) SETDEX_SV[poke.name] = {};
 		if (SETDEX_SS[poke.name] == undefined) SETDEX_SS[poke.name] = {};
 		if (SETDEX_SM[poke.name] == undefined) SETDEX_SM[poke.name] = {};
@@ -230,6 +231,9 @@ function addToDex(poke) {
 	}
 	if (poke.teraType !== undefined) {
 		dexObject.teraType = poke.teraType;
+	}
+	if (poke.sps !== undefined) {
+		dexObject.sps = poke.sps;
 	}
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
@@ -261,6 +265,8 @@ function addToDex(poke) {
 function updateDex(customsets) {
 	for (var pokemon in customsets) {
 		for (var moveset in customsets[pokemon]) {
+			if (!SETDEX_CHAMPIONS[pokemon]) SETDEX_CHAMPIONS[pokemon] = {};
+			SETDEX_CHAMPIONS[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SV[pokemon]) SETDEX_SV[pokemon] = {};
 			SETDEX_SV[pokemon][moveset] = customsets[pokemon][moveset];
 			if (!SETDEX_SS[pokemon]) SETDEX_SS[pokemon] = {};

@@ -210,7 +210,7 @@ export function getRecoil(
       text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
   } else if (move.hasCrashDamage) {
-    const genMultiplier = gen.num === 2 ? 12.5 : gen.num >= 3 ? 50 : 1;
+    const genMultiplier = gen.num === 2 ? 12.5 : gen.num === 0 || gen.num >= 3 ? 50 : 1;
 
     let minRecoilDamage, maxRecoilDamage;
     if (damageOverflow && gen.num !== 2) {
@@ -646,13 +646,13 @@ function getEndOfTurn(
   if (field.defenderSide.isSeeded) {
     if (!defender.hasAbility('Magic Guard')) {
       // 1/16 in gen 1, 1/8 in gen 2 onwards
-      damage -= Math.floor(defender.maxHP() / (gen.num >= 2 ? 8 : 16));
+      damage -= Math.floor(defender.maxHP() / (gen.num === 0 || gen.num >= 2 ? 8 : 16));
       texts.push('Leech Seed damage');
     }
   }
 
   if (field.attackerSide.isSeeded && !attacker.hasAbility('Magic Guard')) {
-    let recovery = Math.floor(attacker.maxHP() / (gen.num >= 2 ? 8 : 16));
+    let recovery = Math.floor(attacker.maxHP() / (gen.num === 0 || gen.num >= 2 ? 8 : 16));
     if (defender.hasItem('Big Root')) recovery = Math.trunc(recovery * 5324 / 4096);
     if (attacker.hasAbility('Liquid Ooze')) {
       damage -= recovery;
@@ -691,10 +691,10 @@ function getEndOfTurn(
     }
   } else if (defender.hasStatus('brn')) {
     if (defender.hasAbility('Heatproof')) {
-      damage -= Math.floor(defender.maxHP() / (gen.num > 6 ? 32 : 16));
+      damage -= Math.floor(defender.maxHP() / (gen.num === 0 || gen.num > 6 ? 32 : 16));
       texts.push('reduced burn damage');
     } else if (!defender.hasAbility('Magic Guard')) {
-      damage -= Math.floor(defender.maxHP() / (gen.num === 1 || gen.num > 6 ? 16 : 8));
+      damage -= Math.floor(defender.maxHP() / (gen.num < 2 || gen.num > 6 ? 16 : 8));
       texts.push('burn damage');
     }
   } else if (
@@ -706,7 +706,10 @@ function getEndOfTurn(
     texts.push('Bad Dreams');
   }
 
-  if (!defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name) && gen.num > 1) {
+  if (
+    !defender.hasAbility('Magic Guard') && TRAPPING.includes(move.name) &&
+    (gen.num === 0 || gen.num > 1)
+  ) {
     if (attacker.hasItem('Binding Band')) {
       damage -= gen.num > 5 ? Math.floor(defender.maxHP() / 6) : Math.floor(defender.maxHP() / 8);
       texts.push('trapping damage');
@@ -717,7 +720,8 @@ function getEndOfTurn(
   }
   if (field.defenderSide.isSaltCured && !defender.hasAbility('Magic Guard')) {
     const isWaterOrSteel = defender.hasType('Water', 'Steel');
-    damage -= Math.floor(defender.maxHP() / (isWaterOrSteel ? 4 : 8));
+    const divisor = gen.num === 0 ? isWaterOrSteel ? 8 : 16 : isWaterOrSteel ? 4 : 8;
+    damage -= Math.floor(defender.maxHP() / divisor);
     texts.push('Salt Cure');
   }
   if (!defender.hasType('Fire') && !defender.hasAbility('Magic Guard') &&

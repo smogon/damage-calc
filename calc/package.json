@@ -16,7 +16,7 @@
   "devDependencies": {
     "@pkmn/dex": "^0.10.5",
     "@pkmn/eslint-config": "^2.15.0",
-    "@types/jest": "^29.4.0",
+    "@types/jest": "^29.5.14",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "eslint": "^8.35.0",

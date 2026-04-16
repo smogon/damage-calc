@@ -37,7 +37,7 @@ function endsWith(string, target) {
 
 var LEGACY_STATS_RBY = ["hp", "at", "df", "sl", "sp"];
 var LEGACY_STATS_GSC = ["hp", "at", "df", "sa", "sd", "sp"];
-var LEGACY_STATS = [[], LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
+var LEGACY_STATS = [LEGACY_STATS_GSC, LEGACY_STATS_RBY, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC, LEGACY_STATS_GSC];
 var HIDDEN_POWER_REGEX = /Hidden Power (\w*)/;
 
 var CALC_STATUS = {
@@ -76,6 +76,7 @@ var bounds = {
 	"evs": [0, 252],
 	"ivs": [0, 31],
 	"dvs": [0, 15],
+	"sps": [0, 32],
 	"move-bp": [0, 65535]
 };
 for (var bounded in bounds) {
@@ -122,25 +123,25 @@ $(".level").bind("keyup change", function () {
 $(".nature").bind("keyup change", function () {
 	calcStats($(this).closest(".poke-info"));
 });
-$(".hp .base, .hp .evs, .hp .ivs").bind("keyup change", function () {
+$(".hp .base, .hp .evs, .hp .ivs, .hp .sps").bind("keyup change", function () {
 	calcHP($(this).closest(".poke-info"));
 });
-$(".at .base, .at .evs, .at .ivs").bind("keyup change", function () {
+$(".at .base, .at .evs, .at .ivs, .at .sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'at');
 });
-$(".df .base, .df .evs, .df .ivs").bind("keyup change", function () {
+$(".df .base, .df .evs, .df .ivs , .df.sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'df');
 });
-$(".sa .base, .sa .evs, .sa .ivs").bind("keyup change", function () {
+$(".sa .base, .sa .evs, .sa .ivs, .sa .sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sa');
 });
-$(".sd .base, .sd .evs, .sd .ivs").bind("keyup change", function () {
+$(".sd .base, .sd .evs, .sd .ivs, .sd .sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sd');
 });
-$(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function () {
+$(".sp .base, .sp .evs, .sp .ivs, .sp .sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sp');
 });
-$(".evs").bind('keyup change', function () {
+$(".evs, .sps").bind('keyup change', function () {
 	totalEVs($(this).closest(".poke-info"));
 });
 $(".sl .base").keyup(function () {
@@ -584,7 +585,7 @@ $(".item").change(function () {
 });
 
 function smogonAnalysis(pokemonName) {
-	var generation = ["rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss", "sv"][gen - 1];
+	var generation = ["champions", "rb", "gs", "rs", "dp", "bw", "xy", "sm", "ss", "sv"][gen];
 	if (pokemonName === "Aegislash-Shield" || pokemonName === "Aegislash-Both") pokemonName = "Aegislash";
 	return "https://smogon.com/dex/" + generation + "/pokemon/" + pokemonName.toLowerCase() + "/";
 }
@@ -675,12 +676,21 @@ $(".set-selector").change(function () {
 			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				var stat = $("#randoms").prop("checked") ? legacyStatToStat(LEGACY_STATS[gen][i]) : LEGACY_STATS[gen][i];
+				if ($("#champions").prop("checked") && !set.sps) {
+					var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
+					if (sps === 4) sps = 1;
+					else sps = Math.ceil(sps / 8);
+					pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
+				}
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
 					(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : ($("#randoms").prop("checked") ? 84 : 0));
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[stat] !== undefined) ? set.ivs[stat] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
 					(set.dvs && set.dvs[stat] !== undefined) ? set.dvs[stat] : 15);
+				if (set.sps) {
+					pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(set.sps[stat] !== undefined ? set.sps[stat] : 0);
+				}
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
@@ -719,10 +729,12 @@ $(".set-selector").change(function () {
 		} else {
 			pokeObj.find(".teraType").val(getForcedTeraType(pokemonName) || pokemon.types[0]);
 			pokeObj.find(".level").val(defaultLevel);
+			pokeObj.find(".hp .sps").val(0);
 			pokeObj.find(".hp .evs").val(0);
 			pokeObj.find(".hp .ivs").val(31);
 			pokeObj.find(".hp .dvs").val(15);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
+				pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(0);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(0);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(15);
@@ -1021,6 +1033,7 @@ function createPokemon(pokeInfo) {
 		var name = pokeInfo.substring(0, pokeInfo.indexOf(" ("));
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
 		var isRandoms = $("#randoms").prop("checked");
+		var isChampions = $("#champions").prop("checked");
 		var set = isRandoms ? randdex[name] : setdex[name][setName];
 
 		var ivs = {};
@@ -1030,7 +1043,20 @@ function createPokemon(pokeInfo) {
 			var stat = legacyStatToStat(legacyStat);
 
 			ivs[stat] = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
-			evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
+			var sps = set.sps;
+			if (isChampions) {
+				var sps = 0;
+				if (set.sps) {
+					sps = set.sps[legacyStat] || 0;
+				} else {
+					sps = set.evs && typeof set.evs[legacyStat] !== "undefined" ? set.evs[legacyStat] : 0;
+					if (sps === 4) sps = 1;
+					else sps = Math.ceil(sps / 8);
+				}
+				evs[stat] = sps;
+			} else {
+				evs[stat] = (set.evs && typeof set.evs[legacyStat] !== "undefined") ? set.evs[legacyStat] : 0;
+			}
 		}
 		var moveNames = set.moves;
 		if (isRandoms && (gen !== 8 && gen !== 1)) {
@@ -1084,8 +1110,9 @@ function createPokemon(pokeInfo) {
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var stat = legacyStatToStat(LEGACY_STATS[gen][i]);
 			baseStats[stat === 'spc' ? 'spa' : stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .base").val();
-			ivs[stat] = gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
-			evs[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
+			ivs[stat] =
+				gen == 0 ? 31 : gen > 2 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .ivs").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .dvs").val() * 2 + 1;
+			evs[stat] = gen === 0 ? ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .sps").val() : ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .evs").val();
 			boosts[stat] = ~~pokeInfo.find("." + LEGACY_STATS[gen][i] + " .boost").val();
 		}
 		if (gen === 1) baseStats.spd = baseStats.spa;
@@ -1302,14 +1329,15 @@ function calcHP(poke) {
 }
 
 function totalEVs(poke) {
+	var el = gen === 0 ? ".sps" : ".evs";
 	var totalEVs = 0;
 	for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 		var statName = LEGACY_STATS[gen][i];
 		var stat = poke.find("." + statName);
-		var evs = ~~stat.find(".evs").val();
+		var evs = ~~stat.find(el).val();
 		totalEVs += evs;
 	}
-	poke.find(".totalevs").find(".evs").text(totalEVs);
+	poke.find(".total" + el.slice(1)).find(el).text(totalEVs);
 	return totalEVs;
 }
 
@@ -1318,7 +1346,12 @@ function calcStat(poke, StatID) {
 	var base = ~~stat.find(".base").val();
 	var level = ~~poke.find(".level").val();
 	var nature, ivs, evs;
-	if (gen < 3) {
+	if (gen === 0) {
+		level = 50;
+		ivs = 31;
+		evs = ~~stat.find(".sps").val();
+		if (StatID !== "hp") nature = poke.find(".nature").val();
+	} else if (gen < 3) {
 		ivs = ~~stat.find(".dvs").val() * 2;
 		evs = 252;
 	} else {
@@ -1348,7 +1381,7 @@ var GENERATION = {
 };
 
 var SETDEX = [
-	{},
+	typeof SETDEX_CHAMPIONS === 'undefined' ? {} : SETDEX_CHAMPIONS,
 	typeof SETDEX_RBY === 'undefined' ? {} : SETDEX_RBY,
 	typeof SETDEX_GSC === 'undefined' ? {} : SETDEX_GSC,
 	typeof SETDEX_ADV === 'undefined' ? {} : SETDEX_ADV,
@@ -1834,6 +1867,35 @@ function loadCustomList(id) {
 $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var g = GENERATION[params.get('gen')] || 9;
+	if ($("#champions").prop("checked")) {
+		/* eslint-disable */
+		g = 0;
+		gen = 0;
+		GENERATION = calc.Generations.get(gen);
+		/* eslint-enable */
+		pokedex = calc.SPECIES[gen];
+		setdex = SETDEX[gen];
+		typeChart = calc.TYPE_CHART[gen];
+		moves = calc.MOVES[gen];
+		items = calc.ITEMS[gen];
+		abilities = calc.ABILITIES[gen];
+		clearField();
+		$("#importedSets").prop("checked", false);
+		loadDefaultLists();
+		$("input:radio[name='format']").change();
+		var typeOptions = getSelectOptions(Object.keys(typeChart));
+		$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
+		$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
+		var moveOptions = getSelectOptions(Object.keys(moves), true);
+		$("select.move-selector").find("option").remove().end().append(moveOptions);
+		var abilityOptions = getSelectOptions(abilities, true);
+		$("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
+		var itemOptions = getSelectOptions(items, true);
+		$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
+
+		$(".set-selector").val(getFirstValidSetOption().id);
+		$(".set-selector").change();
+	}
 	$("#gen" + g).prop("checked", true);
 	$("#gen" + g).change();
 	$("#percentage").prop("checked", true);

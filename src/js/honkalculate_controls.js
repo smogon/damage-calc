@@ -243,6 +243,11 @@ $(".mode").change(function () {
 		params.delete('mode');
 		params = '' + params;
 		window.location.replace('index.html' + (params.length ? '?' + params : ''));
+	} else if ($("#champions").prop("checked")) {
+		var params = new URLSearchParams(window.location.search);
+		params.delete('mode');
+		params = '' + params;
+		window.location.replace('champions.html' + (params.length ? '?' + params : ''));
 	} else if ($("#randoms").prop("checked")) {
 		var params = new URLSearchParams(window.location.search);
 		params.delete('mode');

@@ -201,6 +201,8 @@ $(".mode").change(function () {
 	var mode = params.get('mode');
 	if (mode === 'randoms') {
 		window.location.replace('randoms.html?' + params);
+	} else if (mode === 'champions') {
+		window.location.replace('champions.html?' + params);
 	} else if (mode === 'one-vs-one') {
 		window.location.replace('index.html?' + params);
 	} else if (mode === "oms") {
@@ -218,7 +220,7 @@ $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
 	if (m) {
-		if (m !== 'one-vs-one' && m !== 'randoms') {
+		if (m !== 'one-vs-one' && m !== 'randoms' && m !== 'champions') {
 			window.location.replace('honkalculate.html?' + params);
 		} else {
 			if ($('#randoms').prop('checked')) {
