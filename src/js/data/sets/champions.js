@@ -82,9 +82,9 @@ var SETDEX_CHAMPIONS = {
     "SM Battle Spot Doubles Showdown Usage": {"ability":"Snow Warning","item":"Focus Sash","nature":"Timid","moves":["Protect","Blizzard","Aurora Veil","Freeze-Dry"],"sps":{"hp":1,"sa":32,"sp":32}}
   },
   "Arcanine-Hisui": {
-    "SM Monotype Choice Scarf (Rock)": {"ability":"Rock Head","item":"Choice Scarf","nature":"Jolly","moves":["Flare Blitz","Head Smash","Wild Charge","Close Combat"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM Monotype Choice Scarf (Fire)": {"ability":"Rock Head","item":"Choice Scarf","nature":"Jolly","moves":["Flare Blitz","Head Smash","Close Combat","Outrage"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM 1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","moves":["Head Smash","Raging Fury","Close Combat","Outrage"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV Monotype Choice Scarf (Rock)": {"ability":"Rock Head","item":"Choice Scarf","nature":"Jolly","moves":["Flare Blitz","Head Smash","Wild Charge","Close Combat"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV Monotype Choice Scarf (Fire)": {"ability":"Rock Head","item":"Choice Scarf","nature":"Jolly","moves":["Flare Blitz","Head Smash","Close Combat","Outrage"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV 1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","moves":["Head Smash","Raging Fury","Close Combat","Outrage"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Alakazam": {
     "SM OU Offensive": {"ability":"Magic Guard","item":"Alakazite","nature":"Timid","moves":["Psychic","Focus Blast","Shadow Ball","Recover"],"sps":{"df":1,"sa":32,"sp":32}},
@@ -141,14 +141,14 @@ var SETDEX_CHAMPIONS = {
     "SM VGC 2018 Showdown Usage": {"ability":"Cursed Body","item":"Gengarite","nature":"Timid","moves":["Protect","Shadow Ball","Sludge Bomb","Perish Song"],"sps":{"hp":24,"sd":28,"sp":13}}
   },
   "Tauros-Paldea-Blaze": {
-    "SM NU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Flare Blitz","Close Combat","Trailblaze"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM PU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Close Combat","Flare Blitz","Trailblaze"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM PU Choice Item": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Flare Blitz","Earthquake","Stone Edge"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM BSS Reg J FIREFIGHTER (Defensive)": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Impish","moves":["Raging Bull","Body Press","Will-O-Wisp","Rock Tomb"],"sps":{"hp":32,"df":32,"sd":1}},
-    "SM Monotype Bulk Up (Fighting)": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Close Combat","Raging Bull","Earthquake"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV NU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Flare Blitz","Close Combat","Trailblaze"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV PU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Close Combat","Flare Blitz","Trailblaze"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV PU Choice Item": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Flare Blitz","Earthquake","Stone Edge"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV BSS Reg J FIREFIGHTER (Defensive)": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Impish","moves":["Raging Bull","Body Press","Will-O-Wisp","Rock Tomb"],"sps":{"hp":32,"df":32,"sd":1}},
+    "SV Monotype Bulk Up (Fighting)": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Close Combat","Raging Bull","Earthquake"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Tauros-Paldea-Aqua": {
-    "SM NU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Wave Crash","Close Combat","Aqua Jet"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV NU Bulk Up": {"ability":"Intimidate","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Wave Crash","Close Combat","Aqua Jet"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Gyarados": {
     "SM OU Mega Dragon Dance": {"ability":"Intimidate","item":"Gyaradosite","nature":"Jolly","moves":["Dragon Dance","Substitute","Crunch","Earthquake"],"sps":{"at":32,"sd":1,"sp":32}},
@@ -195,10 +195,10 @@ var SETDEX_CHAMPIONS = {
     "SM 1v1 Choice Scarf": {"ability":"Multiscale","item":"Choice Scarf","nature":"Jolly","moves":["Outrage","Iron Head","Earthquake","Fire Punch"],"sps":{"hp":1,"at":31,"sd":1,"sp":32}}
   },
   "Typhlosion-Hisui": {
-    "SM NU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Timid","moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM PU Choice Item": {"ability":"Blaze","item":"Choice Scarf","nature":"Timid","moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"],"sps":{"df":1,"sa":32,"sp":32}},
-    "SM National Dex RU Calm Mind": {"ability":"Blaze","item":"Leftovers","nature":"Timid","moves":["Calm Mind","Infernal Parade","Flamethrower","Substitute"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM National Dex RU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Timid","moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"],"sps":{"sa":32,"sd":1,"sp":32}}
+    "SV NU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Timid","moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV PU Choice Item": {"ability":"Blaze","item":"Choice Scarf","nature":"Timid","moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"],"sps":{"df":1,"sa":32,"sp":32}},
+    "SV National Dex RU Calm Mind": {"ability":"Blaze","item":"Leftovers","nature":"Timid","moves":["Calm Mind","Infernal Parade","Flamethrower","Substitute"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV National Dex RU Choice Scarf": {"ability":"Frisk","item":"Choice Scarf","nature":"Timid","moves":["Eruption","Fire Blast","Shadow Ball","Focus Blast"],"sps":{"sa":32,"sd":1,"sp":32}}
   },
   "Azumarill": {
     "SM Doubles OU Belly Drum Sweeper": {"ability":"Huge Power","item":"Sitrus Berry","nature":"Adamant","moves":["Aqua Jet","Knock Off","Belly Drum","Protect"],"sps":{"hp":32,"at":32,"df":1}},
@@ -490,15 +490,15 @@ var SETDEX_CHAMPIONS = {
     "SM 1v1 Fast Choice Scarf": {"ability":"Reckless","item":"Choice Scarf","nature":"Jolly","moves":["Head Smash","Flare Blitz","Superpower","Earthquake"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Samurott-Hisui": {
-    "SM OU Lead": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Ceaseless Edge","Razor Shell","Aqua Jet","Knock Off"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM OU Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Razor Shell","Knock Off","Flip Turn"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM OU Swords Dance": {"ability":"Sharpness","item":"Black Glasses","nature":"Adamant","moves":["Swords Dance","Ceaseless Edge","Razor Shell","Sucker Punch"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM Monotype Choice Scarf (Water)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Aqua Cutter","Sacred Sword","Knock Off"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Entry Hazard Lead (Dark)": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Ceaseless Edge","Aqua Cutter","Taunt","Sucker Punch"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM National Dex Offensive": {"ability":"Sharpness","item":"Black Glasses","nature":"Jolly","moves":["Ceaseless Edge","Razor Shell","Sucker Punch","Sacred Sword"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Razor Shell","Ceaseless Edge","Sacred Sword","Flip Turn"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Showdown Usage": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Sacred Sword","Razor Shell","Sucker Punch"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM CAP Showdown Usage": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Knock Off","Razor Shell","Flip Turn"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV OU Lead": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Ceaseless Edge","Razor Shell","Aqua Jet","Knock Off"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV OU Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Razor Shell","Knock Off","Flip Turn"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV OU Swords Dance": {"ability":"Sharpness","item":"Black Glasses","nature":"Adamant","moves":["Swords Dance","Ceaseless Edge","Razor Shell","Sucker Punch"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV Monotype Choice Scarf (Water)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Aqua Cutter","Sacred Sword","Knock Off"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Entry Hazard Lead (Dark)": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Ceaseless Edge","Aqua Cutter","Taunt","Sucker Punch"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV National Dex Offensive": {"ability":"Sharpness","item":"Black Glasses","nature":"Jolly","moves":["Ceaseless Edge","Razor Shell","Sucker Punch","Sacred Sword"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Razor Shell","Ceaseless Edge","Sacred Sword","Flip Turn"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Showdown Usage": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Sacred Sword","Razor Shell","Sucker Punch"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV CAP Showdown Usage": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Ceaseless Edge","Knock Off","Razor Shell","Flip Turn"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Excadrill": {
     "SM OU Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","moves":["Stealth Rock","Earthquake","Rock Tomb","Rapid Spin"],"sps":{"at":32,"sd":1,"sp":32}},
@@ -522,11 +522,11 @@ var SETDEX_CHAMPIONS = {
     "SM Battle Spot Doubles Showdown Usage": {"ability":"Anger Point","item":"Sitrus Berry","nature":"Jolly","moves":["Earthquake","Rock Slide","Protect","Crunch"],"sps":{"hp":1,"at":32,"sp":32}}
   },
   "Zoroark-Hisui": {
-    "SM Monotype Choice Scarf (Ghost)": {"ability":"Illusion","item":"Choice Scarf","nature":"Timid","moves":["Shadow Ball","Focus Blast","Flamethrower","U-turn"],"sps":{"df":1,"sa":32,"sp":32}},
-    "SM Monotype Choice Scarf (Normal)": {"ability":"Illusion","item":"Choice Scarf","nature":"Naive","moves":["Shadow Ball","Flamethrower","Focus Blast","U-turn"],"sps":{"at":1,"sa":32,"sp":32}},
-    "SM National Dex Monotype Choiced Attacker (Ghost)": {"ability":"Illusion","item":"Choice Scarf","nature":"Timid","moves":["Shadow Ball","Focus Blast","Hyper Voice","Trick"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Utility (Ghost)": {"ability":"Illusion","item":"Leftovers","nature":"Timid","moves":["Hex","Knock Off","Will-O-Wisp","Substitute"],"sps":{"hp":32,"df":1,"sp":32}},
-    "SM National Dex Monotype Utility (Normal)": {"ability":"Illusion","item":"Leftovers","nature":"Timid","moves":["Hex","Knock Off","Will-O-Wisp","Substitute"],"sps":{"hp":32,"df":1,"sp":32}}
+    "SV Monotype Choice Scarf (Ghost)": {"ability":"Illusion","item":"Choice Scarf","nature":"Timid","moves":["Shadow Ball","Focus Blast","Flamethrower","U-turn"],"sps":{"df":1,"sa":32,"sp":32}},
+    "SV Monotype Choice Scarf (Normal)": {"ability":"Illusion","item":"Choice Scarf","nature":"Naive","moves":["Shadow Ball","Flamethrower","Focus Blast","U-turn"],"sps":{"at":1,"sa":32,"sp":32}},
+    "SV National Dex Monotype Choiced Attacker (Ghost)": {"ability":"Illusion","item":"Choice Scarf","nature":"Timid","moves":["Shadow Ball","Focus Blast","Hyper Voice","Trick"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Utility (Ghost)": {"ability":"Illusion","item":"Leftovers","nature":"Timid","moves":["Hex","Knock Off","Will-O-Wisp","Substitute"],"sps":{"hp":32,"df":1,"sp":32}},
+    "SV National Dex Monotype Utility (Normal)": {"ability":"Illusion","item":"Leftovers","nature":"Timid","moves":["Hex","Knock Off","Will-O-Wisp","Substitute"],"sps":{"hp":32,"df":1,"sp":32}}
   },
   "Reuniclus": {
     "SM OU Double Dance": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Acid Armor","Psyshock","Recover"],"sps":{"hp":32,"df":27,"sp":6}},
@@ -568,14 +568,14 @@ var SETDEX_CHAMPIONS = {
     "SM RU Choice Scarf": {"ability":"Sap Sipper","item":"Choice Scarf","nature":"Timid","moves":["Draco Meteor","Thunderbolt","Fire Blast","Earthquake"],"sps":{"at":1,"sa":32,"sp":32}}
   },
   "Goodra-Hisui": {
-    "SM UU Offensive Tank": {"ability":"Gooey","item":"Leftovers","nature":"Modest","moves":["Draco Meteor","Flash Cannon","Thunderbolt","Surf"],"sps":{"hp":9,"sa":32,"sp":23}},
-    "SM RU Bulky Attacker": {"ability":"Sap Sipper","item":"Leftovers","nature":"Quiet","moves":["Draco Meteor","Heavy Slam","Knock Off","Protect"],"sps":{"hp":32,"df":1,"sa":32}},
-    "SM Monotype Specially Defensive (Steel)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM Monotype Specially Defensive (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM National Dex UU Offensive Tank": {"ability":"Sap Sipper","item":"Leftovers","nature":"Modest","moves":["Draco Meteor","Flash Cannon","Flamethrower","Knock Off"],"sps":{"hp":20,"sa":22,"sp":22}},
-    "SM National Dex Monotype Specially Defensive (Dragon)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","moves":["Heavy Slam","Flamethrower","Dragon Tail","Protect"],"sps":{"hp":32,"at":1,"sd":32}},
-    "SM National Dex Monotype Specially Defensive (Steel)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","moves":["Protect","Dragon Tail","Knock Off","Ice Beam"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM 1v1 Chople Berry": {"ability":"Sap Sipper","item":"Chople Berry","nature":"Sassy","moves":["Draco Meteor","Heavy Slam","Acid Spray","Counter"],"sps":{"hp":32,"at":4,"df":6,"sa":11,"sd":11}}
+    "SV UU Offensive Tank": {"ability":"Gooey","item":"Leftovers","nature":"Modest","moves":["Draco Meteor","Flash Cannon","Thunderbolt","Surf"],"sps":{"hp":9,"sa":32,"sp":23}},
+    "SV RU Bulky Attacker": {"ability":"Sap Sipper","item":"Leftovers","nature":"Quiet","moves":["Draco Meteor","Heavy Slam","Knock Off","Protect"],"sps":{"hp":32,"df":1,"sa":32}},
+    "SV Monotype Specially Defensive (Steel)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV Monotype Specially Defensive (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV National Dex UU Offensive Tank": {"ability":"Sap Sipper","item":"Leftovers","nature":"Modest","moves":["Draco Meteor","Flash Cannon","Flamethrower","Knock Off"],"sps":{"hp":20,"sa":22,"sp":22}},
+    "SV National Dex Monotype Specially Defensive (Dragon)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","moves":["Heavy Slam","Flamethrower","Dragon Tail","Protect"],"sps":{"hp":32,"at":1,"sd":32}},
+    "SV National Dex Monotype Specially Defensive (Steel)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","moves":["Protect","Dragon Tail","Knock Off","Ice Beam"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV 1v1 Chople Berry": {"ability":"Sap Sipper","item":"Chople Berry","nature":"Sassy","moves":["Draco Meteor","Heavy Slam","Acid Spray","Counter"],"sps":{"hp":32,"at":4,"df":6,"sa":11,"sd":11}}
   },
   "Decidueye": {
     "SM NU Defensive Defog": {"ability":"Long Reach","item":"Colbur Berry","nature":"Calm","moves":["Defog","Grass Knot","Roost","U-turn"],"sps":{"hp":31,"df":13,"sd":18,"sp":2}},
@@ -583,8 +583,8 @@ var SETDEX_CHAMPIONS = {
     "SM Monotype Defensive Defog (Ghost)": {"ability":"Long Reach","item":"Leftovers","nature":"Careful","moves":["Spirit Shackle","Roost","Defog","Swords Dance"],"sps":{"hp":32,"df":13,"sd":8,"sp":12}}
   },
   "Decidueye-Hisui": {
-    "SM PU Choice Scarf": {"ability":"Scrappy","item":"Choice Scarf","nature":"Jolly","moves":["Triple Arrows","U-turn","Leaf Blade","Brave Bird"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM PU Swords Dance": {"ability":"Scrappy","item":"Spell Tag","nature":"Adamant","moves":["Swords Dance","Triple Arrows","Shadow Claw","Shadow Sneak"],"sps":{"at":32,"df":1,"sp":32}}
+    "SV PU Choice Scarf": {"ability":"Scrappy","item":"Choice Scarf","nature":"Jolly","moves":["Triple Arrows","U-turn","Leaf Blade","Brave Bird"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV PU Swords Dance": {"ability":"Scrappy","item":"Spell Tag","nature":"Adamant","moves":["Swords Dance","Triple Arrows","Shadow Claw","Shadow Sneak"],"sps":{"at":32,"df":1,"sp":32}}
   },
   "Salazzle": {
     "SM VGC 2019 Showdown Usage": {"ability":"Oblivious","item":"Focus Sash","nature":"Timid","moves":["Sludge Bomb","Fake Out","Encore","Flamethrower"],"sps":{"hp":1,"sa":32,"sp":32}}
@@ -594,213 +594,213 @@ var SETDEX_CHAMPIONS = {
     "SM NU Choice Scarf": {"ability":"Defiant","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","U-turn","Knock Off","Gunk Shot"],"sps":{"at":32,"df":1,"sp":32}}
   },
   "Corviknight": {
-    "SM Ubers Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","U-turn","Defog","Roost"],"sps":{"hp":32,"df":20,"sd":12}},
-    "SM Ubers Specially Defensive": {"ability":"Mirror Armor","item":"Leftovers","nature":"Careful","moves":["Iron Head","U-turn","Roost","Defog"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM Monotype Physically Defensive (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","Iron Head","Roost","Defog"],"sps":{"hp":32,"at":2,"df":31}},
-    "SM Monotype Specially Defensive (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Careful","moves":["Iron Head","U-turn","Defog","Roost"],"sps":{"hp":32,"at":2,"sd":31}},
-    "SM Monotype Bulk Up (Steel)": {"ability":"Pressure","item":"Leftovers","nature":"Careful","moves":["Bulk Up","Brave Bird","Body Press","Roost"],"sps":{"hp":32,"df":1,"sd":32}},
-    "SM Monotype Defog (Steel)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Brave Bird","Defog","Body Press","Roost"],"sps":{"hp":32,"df":32,"sd":1}},
-    "SM Monotype Defog (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Careful","moves":["Defog","Iron Head","Body Press","Roost"],"sps":{"hp":32,"at":2,"df":13,"sd":18}},
-    "SM National Dex Monotype Defensive Pivot (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","U-turn","Defog","Roost"],"sps":{"hp":31,"df":27,"sd":6}},
-    "SM 1v1 Pressure Stall": {"ability":"Pressure","item":"Leftovers","nature":"Jolly","moves":["Protect","Substitute","Roost","Taunt"],"sps":{"hp":25,"sd":7,"sp":32}},
-    "SM Ubers UU Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","U-turn","Roost","Defog"],"sps":{"hp":31,"df":32,"sd":1}},
-    "SM National Dex Doubles Showdown Usage": {"ability":"Mirror Armor","item":"Leftovers","nature":"Bold","moves":["Roost","Body Press","Tailwind","Brave Bird"],"sps":{"hp":32,"df":32}},
-    "SM Anything Goes Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Defog","Roost","Body Press","Iron Defense"],"sps":{"hp":32,"df":32,"sd":1}},
-    "SM CAP Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Roost","Body Press","Brave Bird","U-turn"],"sps":{"hp":32,"df":32,"sd":1}}
+    "SV Ubers Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","U-turn","Defog","Roost"],"sps":{"hp":32,"df":20,"sd":12}},
+    "SV Ubers Specially Defensive": {"ability":"Mirror Armor","item":"Leftovers","nature":"Careful","moves":["Iron Head","U-turn","Roost","Defog"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV Monotype Physically Defensive (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","Iron Head","Roost","Defog"],"sps":{"hp":32,"at":2,"df":31}},
+    "SV Monotype Specially Defensive (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Careful","moves":["Iron Head","U-turn","Defog","Roost"],"sps":{"hp":32,"at":2,"sd":31}},
+    "SV Monotype Bulk Up (Steel)": {"ability":"Pressure","item":"Leftovers","nature":"Careful","moves":["Bulk Up","Brave Bird","Body Press","Roost"],"sps":{"hp":32,"df":1,"sd":32}},
+    "SV Monotype Defog (Steel)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Brave Bird","Defog","Body Press","Roost"],"sps":{"hp":32,"df":32,"sd":1}},
+    "SV Monotype Defog (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Careful","moves":["Defog","Iron Head","Body Press","Roost"],"sps":{"hp":32,"at":2,"df":13,"sd":18}},
+    "SV National Dex Monotype Defensive Pivot (Flying)": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","U-turn","Defog","Roost"],"sps":{"hp":31,"df":27,"sd":6}},
+    "SV 1v1 Pressure Stall": {"ability":"Pressure","item":"Leftovers","nature":"Jolly","moves":["Protect","Substitute","Roost","Taunt"],"sps":{"hp":25,"sd":7,"sp":32}},
+    "SV Ubers UU Physically Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Body Press","U-turn","Roost","Defog"],"sps":{"hp":31,"df":32,"sd":1}},
+    "SV National Dex Doubles Showdown Usage": {"ability":"Mirror Armor","item":"Leftovers","nature":"Bold","moves":["Roost","Body Press","Tailwind","Brave Bird"],"sps":{"hp":32,"df":32}},
+    "SV Anything Goes Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Defog","Roost","Body Press","Iron Defense"],"sps":{"hp":32,"df":32,"sd":1}},
+    "SV CAP Showdown Usage": {"ability":"Pressure","item":"Leftovers","nature":"Impish","moves":["Roost","Body Press","Brave Bird","U-turn"],"sps":{"hp":32,"df":32,"sd":1}}
   },
   "Sandaconda": {
-    "SM ZU Coil": {"ability":"Shed Skin","item":"Leftovers","nature":"Jolly","moves":["Coil","Earthquake","Scale Shot","Rest"],"sps":{"hp":32,"sd":1,"sp":32}}
+    "SV ZU Coil": {"ability":"Shed Skin","item":"Leftovers","nature":"Jolly","moves":["Coil","Earthquake","Scale Shot","Rest"],"sps":{"hp":32,"sd":1,"sp":32}}
   },
   "Polteageist": {
-    "SM National Dex UU Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","moves":["Shell Smash","Stored Power","Shadow Ball","Giga Drain"],"sps":{"sa":32,"sd":1,"sp":32}}
+    "SV National Dex UU Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","moves":["Shell Smash","Stored Power","Shadow Ball","Giga Drain"],"sps":{"sa":32,"sd":1,"sp":32}}
   },
   "Hatterene": {
-    "SM OU Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Draining Kiss","Psychic Noise","Mystical Fire"],"sps":{"hp":32,"df":26,"sp":7}},
-    "SM OU Trick Room": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","moves":["Trick Room","Psychic Noise","Dazzling Gleam","Healing Wish"],"sps":{"hp":32,"df":1,"sa":32}},
-    "SM Ubers Bulky Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Psyshock","Draining Kiss","Mystical Fire","Calm Mind"],"sps":{"hp":32,"df":25,"sp":7}},
-    "SM Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psyshock","Draining Kiss","Nuzzle"],"sps":{"hp":32,"df":26,"sp":7}},
-    "SM Monotype Calm Mind (Fairy)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psyshock","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"df":26,"sp":7}},
-    "SM National Dex Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psychic Noise","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"df":16,"sp":17}},
-    "SM National Dex Ubers Trick Room Lead": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","moves":["Trick Room","Healing Wish","Dazzling Gleam","Nuzzle"],"sps":{"hp":21,"df":11,"sa":32}},
-    "SM National Dex Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psyshock","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"df":26,"sp":7}},
-    "SM BSS Reg J Showdown Usage": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Mystical Fire","Psyshock","Calm Mind","Draining Kiss"],"sps":{"hp":31,"df":32,"sd":2}},
-    "SM Anything Goes Showdown Usage": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","moves":["Trick Room","Healing Wish","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"sa":32,"sd":1}}
+    "SV OU Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Draining Kiss","Psychic Noise","Mystical Fire"],"sps":{"hp":32,"df":26,"sp":7}},
+    "SV OU Trick Room": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","moves":["Trick Room","Psychic Noise","Dazzling Gleam","Healing Wish"],"sps":{"hp":32,"df":1,"sa":32}},
+    "SV Ubers Bulky Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Psyshock","Draining Kiss","Mystical Fire","Calm Mind"],"sps":{"hp":32,"df":25,"sp":7}},
+    "SV Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psyshock","Draining Kiss","Nuzzle"],"sps":{"hp":32,"df":26,"sp":7}},
+    "SV Monotype Calm Mind (Fairy)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psyshock","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"df":26,"sp":7}},
+    "SV National Dex Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psychic Noise","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"df":16,"sp":17}},
+    "SV National Dex Ubers Trick Room Lead": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","moves":["Trick Room","Healing Wish","Dazzling Gleam","Nuzzle"],"sps":{"hp":21,"df":11,"sa":32}},
+    "SV National Dex Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Psyshock","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"df":26,"sp":7}},
+    "SV BSS Reg J Showdown Usage": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","moves":["Mystical Fire","Psyshock","Calm Mind","Draining Kiss"],"sps":{"hp":31,"df":32,"sd":2}},
+    "SV Anything Goes Showdown Usage": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","moves":["Trick Room","Healing Wish","Draining Kiss","Mystical Fire"],"sps":{"hp":32,"sa":32,"sd":1}}
   },
   "Alcremie": {
-    "SM OU Double Dance": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Acid Armor","Alluring Voice","Recover"],"sps":{"hp":32,"df":32,"sd":1}},
-    "SM PU Double Dance": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Acid Armor","Draining Kiss","Stored Power"],"sps":{"hp":32,"df":24,"sp":8}}
+    "SV OU Double Dance": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Acid Armor","Alluring Voice","Recover"],"sps":{"hp":32,"df":32,"sd":1}},
+    "SV PU Double Dance": {"ability":"Aroma Veil","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Acid Armor","Draining Kiss","Stored Power"],"sps":{"hp":32,"df":24,"sp":8}}
   },
   "Dragapult": {
-    "SM BSS Reg J Bulky Status": {"ability":"Infiltrator","item":"Leftovers","nature":"Timid","moves":["Will-O-Wisp","Hex","Substitute","Disable"],"sps":{"hp":32,"df":1,"sp":32}},
-    "SM Monotype Hex (Dragon)": {"ability":"Infiltrator","item":"Leftovers","nature":"Naive","moves":["Will-O-Wisp","Hex","Dragon Darts","Substitute"],"sps":{"at":14,"sa":19,"sp":32}},
-    "SM Monotype Choice Scarf (Dragon)": {"ability":"Infiltrator","item":"Choice Scarf","nature":"Jolly","moves":["Dragon Darts","Phantom Force","U-turn","Thunder Wave"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Dragon Dance (Ghost)": {"ability":"Infiltrator","item":"Leftovers","nature":"Jolly","moves":["Dragon Dance","Dragon Darts","Phantom Force","Substitute"],"sps":{"at":32,"df":1,"sp":32}}
+    "SV BSS Reg J Bulky Status": {"ability":"Infiltrator","item":"Leftovers","nature":"Timid","moves":["Will-O-Wisp","Hex","Substitute","Disable"],"sps":{"hp":32,"df":1,"sp":32}},
+    "SV Monotype Hex (Dragon)": {"ability":"Infiltrator","item":"Leftovers","nature":"Naive","moves":["Will-O-Wisp","Hex","Dragon Darts","Substitute"],"sps":{"at":14,"sa":19,"sp":32}},
+    "SV Monotype Choice Scarf (Dragon)": {"ability":"Infiltrator","item":"Choice Scarf","nature":"Jolly","moves":["Dragon Darts","Phantom Force","U-turn","Thunder Wave"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Dragon Dance (Ghost)": {"ability":"Infiltrator","item":"Leftovers","nature":"Jolly","moves":["Dragon Dance","Dragon Darts","Phantom Force","Substitute"],"sps":{"at":32,"df":1,"sp":32}}
   },
   "Kleavor": {
-    "SM RU Lead": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Stone Axe","X-Scissor","Swords Dance","Close Combat"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM RU Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","U-turn","X-Scissor","Close Combat"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM BSS Reg J Timber!": {"ability":"Sharpness","item":"Focus Sash","nature":"Adamant","moves":["Stone Axe","Night Slash","Feint","X-Scissor"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM BSS Reg J Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","U-turn","Night Slash","X-Scissor"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Choice Scarf (Bug)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Night Slash","U-turn","Close Combat"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Choice Scarf (Rock)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Close Combat","Night Slash","U-turn"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Choice Scarf (Bug)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Close Combat","U-turn","Night Slash"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Choice Scarf (Rock)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Close Combat","U-turn","Night Slash"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM UU Showdown Usage": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Stone Axe","X-Scissor","Close Combat","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex UU Showdown Usage": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","U-turn","Close Combat","X-Scissor"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV RU Lead": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Stone Axe","X-Scissor","Swords Dance","Close Combat"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV RU Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","U-turn","X-Scissor","Close Combat"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV BSS Reg J Timber!": {"ability":"Sharpness","item":"Focus Sash","nature":"Adamant","moves":["Stone Axe","Night Slash","Feint","X-Scissor"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV BSS Reg J Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","U-turn","Night Slash","X-Scissor"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Choice Scarf (Bug)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Night Slash","U-turn","Close Combat"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Choice Scarf (Rock)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Close Combat","Night Slash","U-turn"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Choice Scarf (Bug)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Close Combat","U-turn","Night Slash"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Choice Scarf (Rock)": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","Close Combat","U-turn","Night Slash"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV UU Showdown Usage": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","moves":["Stone Axe","X-Scissor","Close Combat","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex UU Showdown Usage": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","moves":["Stone Axe","U-turn","Close Combat","X-Scissor"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Basculegion": {
-    "SM NU Substitute": {"ability":"Adaptability","item":"Leftovers","nature":"Adamant","moves":["Substitute","Liquidation","Phantom Force","Aqua Jet"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM NU All-out Attacker": {"ability":"Adaptability","item":"Mystic Water","nature":"Adamant","moves":["Wave Crash","Flip Turn","Aqua Jet","Psychic Fangs"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM VGC 2025 Reg I Choice Scarf Sweeper": {"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","moves":["Wave Crash","Last Respects","Flip Turn","Aqua Jet"],"sps":{"hp":1,"at":32,"sp":32}},
-    "SM VGC 2025 Reg I Focus Sash Sweeper": {"ability":"Adaptability","item":"Focus Sash","nature":"Adamant","moves":["Liquidation","Last Respects","Aqua Jet","Protect"],"sps":{"hp":1,"at":32,"sp":32}},
-    "SM BSS Reg J Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","moves":["Wave Crash","Last Respects","Flip Turn","Head Smash"],"sps":{"hp":1,"at":32,"sp":32}},
-    "SM BSS Reg J Agility": {"ability":"Adaptability","item":"Focus Sash","nature":"Adamant","moves":["Agility","Last Respects","Wave Crash","Aqua Jet"],"sps":{"hp":1,"at":32,"sp":32}}
+    "SV NU Substitute": {"ability":"Adaptability","item":"Leftovers","nature":"Adamant","moves":["Substitute","Liquidation","Phantom Force","Aqua Jet"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV NU All-out Attacker": {"ability":"Adaptability","item":"Mystic Water","nature":"Adamant","moves":["Wave Crash","Flip Turn","Aqua Jet","Psychic Fangs"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV VGC 2025 Reg I Choice Scarf Sweeper": {"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","moves":["Wave Crash","Last Respects","Flip Turn","Aqua Jet"],"sps":{"hp":1,"at":32,"sp":32}},
+    "SV VGC 2025 Reg I Focus Sash Sweeper": {"ability":"Adaptability","item":"Focus Sash","nature":"Adamant","moves":["Liquidation","Last Respects","Aqua Jet","Protect"],"sps":{"hp":1,"at":32,"sp":32}},
+    "SV BSS Reg J Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Jolly","moves":["Wave Crash","Last Respects","Flip Turn","Head Smash"],"sps":{"hp":1,"at":32,"sp":32}},
+    "SV BSS Reg J Agility": {"ability":"Adaptability","item":"Focus Sash","nature":"Adamant","moves":["Agility","Last Respects","Wave Crash","Aqua Jet"],"sps":{"hp":1,"at":32,"sp":32}}
   },
   "Basculegion-F": {
-    "SM RU Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Timid","moves":["Shadow Ball","Surf","Ice Beam","Flip Turn"],"sps":{"df":1,"sa":32,"sp":32}},
-    "SM National Dex RU Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Timid","moves":["Hydro Pump","Surf","Shadow Ball","Ice Beam"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM National Dex RU Substitute Attacker": {"ability":"Adaptability","item":"Leftovers","nature":"Timid","moves":["Substitute","Surf","Shadow Ball","Ice Beam"],"sps":{"sa":32,"sd":1,"sp":32}}
+    "SV RU Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Timid","moves":["Shadow Ball","Surf","Ice Beam","Flip Turn"],"sps":{"df":1,"sa":32,"sp":32}},
+    "SV National Dex RU Choice Scarf": {"ability":"Adaptability","item":"Choice Scarf","nature":"Timid","moves":["Hydro Pump","Surf","Shadow Ball","Ice Beam"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV National Dex RU Substitute Attacker": {"ability":"Adaptability","item":"Leftovers","nature":"Timid","moves":["Substitute","Surf","Shadow Ball","Ice Beam"],"sps":{"sa":32,"sd":1,"sp":32}}
   },
   "Sneasler": {
-    "SM VGC 2025 Reg I Focus Sash": {"ability":"Unburden","item":"Focus Sash","nature":"Jolly","moves":["Dire Claw","Close Combat","Fake Out","Coaching"],"sps":{"hp":1,"at":32,"sp":32}},
-    "SM BSS Reg J Focus Sash": {"ability":"Poison Touch","item":"Focus Sash","nature":"Adamant","moves":["Dire Claw","Close Combat","Shadow Claw","Toxic Spikes"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM Monotype Choice Scarf (Poison)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Dire Claw","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Choice Scarf (Fighting)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Dire Claw","Close Combat","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Choice Scarf (Fighting)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Dire Claw","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Choice Scarf (Poison)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Dire Claw","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Ubers UU Choice Scarf": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Gunk Shot","Close Combat","U-turn","Throat Chop"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Doubles OU Showdown Usage": {"ability":"Unburden","item":"Focus Sash","nature":"Jolly","moves":["Dire Claw","Close Combat","Fake Out","Protect"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Anything Goes Showdown Usage": {"ability":"Unburden","item":"Focus Sash","nature":"Adamant","moves":["Close Combat","Dire Claw","Throat Chop","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV VGC 2025 Reg I Focus Sash": {"ability":"Unburden","item":"Focus Sash","nature":"Jolly","moves":["Dire Claw","Close Combat","Fake Out","Coaching"],"sps":{"hp":1,"at":32,"sp":32}},
+    "SV BSS Reg J Focus Sash": {"ability":"Poison Touch","item":"Focus Sash","nature":"Adamant","moves":["Dire Claw","Close Combat","Shadow Claw","Toxic Spikes"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV Monotype Choice Scarf (Poison)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Dire Claw","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Choice Scarf (Fighting)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Dire Claw","Close Combat","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Choice Scarf (Fighting)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Dire Claw","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Choice Scarf (Poison)": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Close Combat","Dire Claw","U-turn","Switcheroo"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Ubers UU Choice Scarf": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","moves":["Gunk Shot","Close Combat","U-turn","Throat Chop"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Doubles OU Showdown Usage": {"ability":"Unburden","item":"Focus Sash","nature":"Jolly","moves":["Dire Claw","Close Combat","Fake Out","Protect"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Anything Goes Showdown Usage": {"ability":"Unburden","item":"Focus Sash","nature":"Adamant","moves":["Close Combat","Dire Claw","Throat Chop","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Meowscarada": {
-    "SM OU Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Knock Off","U-turn","Triple Axel","Flower Trick"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM BSS Reg J Focus Sash": {"ability":"Protean","item":"Focus Sash","nature":"Jolly","moves":["Flower Trick","Knock Off","Triple Axel","Sucker Punch"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM Monotype Choice Scarf (Dark)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Knock Off","Triple Axel","U-turn"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Choice Scarf (Grass)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Knock Off","Triple Axel","U-turn"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Knock Off","U-turn","Triple Axel"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Choice Scarf (Dark)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Play Rough","U-turn","Knock Off"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Choice Scarf (Grass)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","U-turn","Knock Off","Play Rough"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM 1v1 Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Adamant","moves":["Flower Trick","Knock Off","Play Rough","Triple Axel"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Ubers UU Lead": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Toxic Spikes","Triple Axel","Flower Trick","U-turn"],"sps":{"at":32,"df":1,"sp":32}}
+    "SV OU Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Knock Off","U-turn","Triple Axel","Flower Trick"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV BSS Reg J Focus Sash": {"ability":"Protean","item":"Focus Sash","nature":"Jolly","moves":["Flower Trick","Knock Off","Triple Axel","Sucker Punch"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV Monotype Choice Scarf (Dark)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Knock Off","Triple Axel","U-turn"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Choice Scarf (Grass)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Knock Off","Triple Axel","U-turn"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Knock Off","U-turn","Triple Axel"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Choice Scarf (Dark)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","Play Rough","U-turn","Knock Off"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Choice Scarf (Grass)": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Flower Trick","U-turn","Knock Off","Play Rough"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV 1v1 Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Adamant","moves":["Flower Trick","Knock Off","Play Rough","Triple Axel"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Ubers UU Lead": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","moves":["Toxic Spikes","Triple Axel","Flower Trick","U-turn"],"sps":{"at":32,"df":1,"sp":32}}
   },
   "Skeledirge": {
-    "SM BSS Reg J Defensive Gator": {"ability":"Unaware","item":"Leftovers","nature":"Bold","moves":["Torch Song","Slack Off","Will-O-Wisp","Shadow Ball"],"sps":{"hp":32,"df":31,"sa":1,"sd":1,"sp":1}}
+    "SV BSS Reg J Defensive Gator": {"ability":"Unaware","item":"Leftovers","nature":"Bold","moves":["Torch Song","Slack Off","Will-O-Wisp","Shadow Ball"],"sps":{"hp":32,"df":31,"sa":1,"sd":1,"sp":1}}
   },
   "Quaquaval": {
-    "SM BSS Reg J (Regulation C) Moxie Sweeper": {"ability":"Moxie","item":"Focus Sash","nature":"Jolly","moves":["Aqua Step","Close Combat","Aqua Jet","Ice Spinner"],"sps":{"hp":1,"at":32,"sp":32}},
-    "SM BSS Reg J (Regulation C) Bulky": {"ability":"Moxie","item":"Leftovers","nature":"Jolly","moves":["Aqua Step","Roost","Bulk Up","Taunt"],"sps":{"hp":32,"sd":20,"sp":13}},
-    "SM Monotype Choice Scarf (Fighting)": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","moves":["Wave Crash","U-turn","Close Combat","Aqua Step"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex UU Showdown Usage": {"ability":"Moxie","item":"Lum Berry","nature":"Jolly","moves":["Aqua Step","Close Combat","Rapid Spin","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV BSS Reg J (Regulation C) Moxie Sweeper": {"ability":"Moxie","item":"Focus Sash","nature":"Jolly","moves":["Aqua Step","Close Combat","Aqua Jet","Ice Spinner"],"sps":{"hp":1,"at":32,"sp":32}},
+    "SV BSS Reg J (Regulation C) Bulky": {"ability":"Moxie","item":"Leftovers","nature":"Jolly","moves":["Aqua Step","Roost","Bulk Up","Taunt"],"sps":{"hp":32,"sd":20,"sp":13}},
+    "SV Monotype Choice Scarf (Fighting)": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","moves":["Wave Crash","U-turn","Close Combat","Aqua Step"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex UU Showdown Usage": {"ability":"Moxie","item":"Lum Berry","nature":"Jolly","moves":["Aqua Step","Close Combat","Rapid Spin","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Garganacl": {
-    "SM OU Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Salt Cure","Recover","Protect"],"sps":{"hp":32,"df":7,"sd":26}},
-    "SM OU Curse": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Curse","Salt Cure","Recover","Earthquake"],"sps":{"hp":32,"df":7,"sd":26}},
-    "SM OU Iron Defense": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Iron Defense","Body Press","Salt Cure","Recover"],"sps":{"hp":32,"df":1,"sd":32}},
-    "SM BSS Reg J Salty Stall": {"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","moves":["Salt Cure","Protect","Recover","Stealth Rock"],"sps":{"hp":32,"df":32,"sp":1}},
-    "SM BSS Reg J Curse": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Curse","Salt Cure","Recover","Protect"],"sps":{"hp":32,"sd":32,"sp":1}},
-    "SM BSS Reg J Defensive": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Recover","Iron Defense","Body Press"],"sps":{"hp":32,"sd":32,"sp":1}},
-    "SM Monotype IronPress": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Iron Defense","Body Press","Recover"],"sps":{"hp":32,"at":1,"sd":32}},
-    "SM National Dex Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Stealth Rock","Protect","Recover"],"sps":{"hp":32,"df":7,"sd":26}},
-    "SM National Dex Ubers IronPress": {"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","moves":["Salt Cure","Body Press","Iron Defense","Recover"],"sps":{"hp":32,"df":27,"sd":5}},
-    "SM National Dex Ubers Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Protect","Salt Cure","Recover"],"sps":{"hp":32,"df":3,"sd":29}},
-    "SM National Dex UU Iron Defense": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Iron Defense","Body Press","Salt Cure","Recover"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM National Dex UU Defensive Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Salt Cure","Recover","Protect"],"sps":{"hp":31,"df":4,"sd":28}},
-    "SM National Dex Monotype Iron Defense": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Body Press","Iron Defense","Recover"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM Ubers UU Setup": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Iron Defense","Body Press","Recover"],"sps":{"hp":31,"df":1,"sd":32}},
-    "SM Ubers UU Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Salt Cure","Recover","Protect"],"sps":{"hp":32,"at":1,"sd":32}},
-    "SM 1v1 Showdown Usage": {"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","moves":["Salt Cure","Recover","Protect","Body Press"],"sps":{"hp":32,"df":32,"sd":1}},
-    "SM National Dex Doubles Showdown Usage": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Recover","Body Press","Protect"],"sps":{"hp":32,"df":7,"sd":26}},
-    "SM CAP Showdown Usage": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Recover","Salt Cure","Protect","Stealth Rock"],"sps":{"hp":32,"df":7,"sd":26}}
+    "SV OU Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Salt Cure","Recover","Protect"],"sps":{"hp":32,"df":7,"sd":26}},
+    "SV OU Curse": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Curse","Salt Cure","Recover","Earthquake"],"sps":{"hp":32,"df":7,"sd":26}},
+    "SV OU Iron Defense": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Iron Defense","Body Press","Salt Cure","Recover"],"sps":{"hp":32,"df":1,"sd":32}},
+    "SV BSS Reg J Salty Stall": {"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","moves":["Salt Cure","Protect","Recover","Stealth Rock"],"sps":{"hp":32,"df":32,"sp":1}},
+    "SV BSS Reg J Curse": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Curse","Salt Cure","Recover","Protect"],"sps":{"hp":32,"sd":32,"sp":1}},
+    "SV BSS Reg J Defensive": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Recover","Iron Defense","Body Press"],"sps":{"hp":32,"sd":32,"sp":1}},
+    "SV Monotype IronPress": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Iron Defense","Body Press","Recover"],"sps":{"hp":32,"at":1,"sd":32}},
+    "SV National Dex Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Stealth Rock","Protect","Recover"],"sps":{"hp":32,"df":7,"sd":26}},
+    "SV National Dex Ubers IronPress": {"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","moves":["Salt Cure","Body Press","Iron Defense","Recover"],"sps":{"hp":32,"df":27,"sd":5}},
+    "SV National Dex Ubers Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Protect","Salt Cure","Recover"],"sps":{"hp":32,"df":3,"sd":29}},
+    "SV National Dex UU Iron Defense": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Iron Defense","Body Press","Salt Cure","Recover"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV National Dex UU Defensive Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Salt Cure","Recover","Protect"],"sps":{"hp":31,"df":4,"sd":28}},
+    "SV National Dex Monotype Iron Defense": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Body Press","Iron Defense","Recover"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV Ubers UU Setup": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Iron Defense","Body Press","Recover"],"sps":{"hp":31,"df":1,"sd":32}},
+    "SV Ubers UU Stealth Rock": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Salt Cure","Recover","Protect"],"sps":{"hp":32,"at":1,"sd":32}},
+    "SV 1v1 Showdown Usage": {"ability":"Purifying Salt","item":"Leftovers","nature":"Impish","moves":["Salt Cure","Recover","Protect","Body Press"],"sps":{"hp":32,"df":32,"sd":1}},
+    "SV National Dex Doubles Showdown Usage": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Salt Cure","Recover","Body Press","Protect"],"sps":{"hp":32,"df":7,"sd":26}},
+    "SV CAP Showdown Usage": {"ability":"Purifying Salt","item":"Leftovers","nature":"Careful","moves":["Recover","Salt Cure","Protect","Stealth Rock"],"sps":{"hp":32,"df":7,"sd":26}}
   },
   "Armarouge": {
-    "SM BSS Reg J Expanding Force": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","moves":["Psychic Terrain","Expanding Force","Armor Cannon","Aura Sphere"],"sps":{"hp":1,"sa":32,"sp":32}}
+    "SV BSS Reg J Expanding Force": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","moves":["Psychic Terrain","Expanding Force","Armor Cannon","Aura Sphere"],"sps":{"hp":1,"sa":32,"sp":32}}
   },
   "Ceruledge": {
-    "SM BSS Reg J Bulk Up Sweeper": {"ability":"Flash Fire","item":"Leftovers","nature":"Impish","moves":["Bitter Blade","Bulk Up","Taunt","Shadow Sneak"],"sps":{"hp":32,"at":1,"df":32}},
-    "SM BSS Reg J Focus Sash Attacker": {"ability":"Weak Armor","item":"Focus Sash","nature":"Adamant","moves":["Bitter Blade","Close Combat","Shadow Sneak","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Swords Dance (Fire)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM Monotype Swords Dance (Ghost)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Poltergeist","Bitter Blade","Shadow Sneak","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Swords Dance (Ghost)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"],"sps":{"at":32,"sd":1,"sp":32}},
-    "SM National Dex Monotype Swords Dance (Fire)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"],"sps":{"at":32,"sd":1,"sp":32}}
+    "SV BSS Reg J Bulk Up Sweeper": {"ability":"Flash Fire","item":"Leftovers","nature":"Impish","moves":["Bitter Blade","Bulk Up","Taunt","Shadow Sneak"],"sps":{"hp":32,"at":1,"df":32}},
+    "SV BSS Reg J Focus Sash Attacker": {"ability":"Weak Armor","item":"Focus Sash","nature":"Adamant","moves":["Bitter Blade","Close Combat","Shadow Sneak","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Swords Dance (Fire)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV Monotype Swords Dance (Ghost)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Poltergeist","Bitter Blade","Shadow Sneak","Swords Dance"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Swords Dance (Ghost)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"],"sps":{"at":32,"sd":1,"sp":32}},
+    "SV National Dex Monotype Swords Dance (Fire)": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"],"sps":{"at":32,"sd":1,"sp":32}}
   },
   "Bellibolt": {
-    "SM BSS Reg J Fat Bellibolt": {"ability":"Electromorphosis","item":"Leftovers","nature":"Bold","moves":["Discharge","Slack Off","Volt Switch","Chilling Water"],"sps":{"hp":29,"df":31,"sa":1,"sd":1,"sp":4}}
+    "SV BSS Reg J Fat Bellibolt": {"ability":"Electromorphosis","item":"Leftovers","nature":"Bold","moves":["Discharge","Slack Off","Volt Switch","Chilling Water"],"sps":{"hp":29,"df":31,"sa":1,"sd":1,"sp":4}}
   },
   "Scovillain": {
-    "SM BSS Reg J Moody Ace": {"ability":"Moody","item":"Leftovers","nature":"Bold","moves":["Protect","Substitute","Flamethrower","Leech Seed"],"sps":{"hp":23,"df":28,"sa":1,"sd":1,"sp":13}}
+    "SV BSS Reg J Moody Ace": {"ability":"Moody","item":"Leftovers","nature":"Bold","moves":["Protect","Substitute","Flamethrower","Leech Seed"],"sps":{"hp":23,"df":28,"sa":1,"sd":1,"sp":13}}
   },
   "Espathra": {
-    "SM BSS Reg J Speed Passer": {"ability":"Speed Boost","item":"Focus Sash","nature":"Timid","moves":["Lumina Crash","Baton Pass","Protect","Calm Mind"],"sps":{"hp":32,"df":1,"sp":32}}
+    "SV BSS Reg J Speed Passer": {"ability":"Speed Boost","item":"Focus Sash","nature":"Timid","moves":["Lumina Crash","Baton Pass","Protect","Calm Mind"],"sps":{"hp":32,"df":1,"sp":32}}
   },
   "Tinkaton": {
-    "SM UU Bulky Wall": {"ability":"Pickpocket","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Gigaton Hammer","Knock Off","Encore"],"sps":{"hp":31,"df":23,"sd":10}},
-    "SM Monotype Swords Dance (Fairy)": {"ability":"Mold Breaker","item":"Leftovers","nature":"Jolly","moves":["Gigaton Hammer","Knock Off","Swords Dance","Stealth Rock"],"sps":{"hp":8,"at":32,"sp":24}},
-    "SM National Dex RU Tank": {"ability":"Pickpocket","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Gigaton Hammer","Knock Off","Encore"],"sps":{"hp":32,"df":7,"sd":12,"sp":13}}
+    "SV UU Bulky Wall": {"ability":"Pickpocket","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Gigaton Hammer","Knock Off","Encore"],"sps":{"hp":31,"df":23,"sd":10}},
+    "SV Monotype Swords Dance (Fairy)": {"ability":"Mold Breaker","item":"Leftovers","nature":"Jolly","moves":["Gigaton Hammer","Knock Off","Swords Dance","Stealth Rock"],"sps":{"hp":8,"at":32,"sp":24}},
+    "SV National Dex RU Tank": {"ability":"Pickpocket","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Gigaton Hammer","Knock Off","Encore"],"sps":{"hp":32,"df":7,"sd":12,"sp":13}}
   },
   "Palafin": {
-    "SM Ubers Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Jet Punch","Bulk Up","Drain Punch","Taunt"],"sps":{"hp":31,"at":1,"sd":32}},
-    "SM Doubles OU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Bulk Up","Jet Punch","Drain Punch","Protect"],"sps":{"hp":32,"df":1,"sd":32}},
-    "SM BSS Reg J Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":32,"sd":18,"sp":15}},
-    "SM Almost Any Ability Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Substitute","Bulk Up","Jet Punch","Drain Punch"],"sps":{"hp":32,"at":32,"df":1}},
-    "SM Ubers UU Encore": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","moves":["Jet Punch","Wave Crash","Flip Turn","Encore"],"sps":{"hp":20,"at":32,"sp":12}},
-    "SM Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":31,"sd":22,"sp":11}}
+    "SV Ubers Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Jet Punch","Bulk Up","Drain Punch","Taunt"],"sps":{"hp":31,"at":1,"sd":32}},
+    "SV Doubles OU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Bulk Up","Jet Punch","Drain Punch","Protect"],"sps":{"hp":32,"df":1,"sd":32}},
+    "SV BSS Reg J Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":32,"sd":18,"sp":15}},
+    "SV Almost Any Ability Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Substitute","Bulk Up","Jet Punch","Drain Punch"],"sps":{"hp":32,"at":32,"df":1}},
+    "SV Ubers UU Encore": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","moves":["Jet Punch","Wave Crash","Flip Turn","Encore"],"sps":{"hp":20,"at":32,"sp":12}},
+    "SV Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":31,"sd":22,"sp":11}}
   },
   "Palafin-Hero": {
-    "SM Ubers Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Jet Punch","Bulk Up","Drain Punch","Taunt"],"sps":{"hp":31,"at":1,"sd":32}},
-    "SM Doubles OU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Bulk Up","Jet Punch","Drain Punch","Protect"],"sps":{"hp":32,"df":1,"sd":32}},
-    "SM BSS Reg J Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":32,"sd":18,"sp":15}},
-    "SM Almost Any Ability Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Substitute","Bulk Up","Jet Punch","Drain Punch"],"sps":{"hp":32,"at":32,"df":1}},
-    "SM Ubers UU Encore": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","moves":["Jet Punch","Wave Crash","Flip Turn","Encore"],"sps":{"hp":20,"at":32,"sp":12}},
-    "SM Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":31,"sd":22,"sp":11}}
+    "SV Ubers Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Jet Punch","Bulk Up","Drain Punch","Taunt"],"sps":{"hp":31,"at":1,"sd":32}},
+    "SV Doubles OU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Bulk Up","Jet Punch","Drain Punch","Protect"],"sps":{"hp":32,"df":1,"sd":32}},
+    "SV BSS Reg J Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":32,"sd":18,"sp":15}},
+    "SV Almost Any Ability Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","moves":["Substitute","Bulk Up","Jet Punch","Drain Punch"],"sps":{"hp":32,"at":32,"df":1}},
+    "SV Ubers UU Encore": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","moves":["Jet Punch","Wave Crash","Flip Turn","Encore"],"sps":{"hp":20,"at":32,"sp":12}},
+    "SV Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"],"sps":{"hp":31,"sd":22,"sp":11}}
   },
   "Orthworm": {
-    "SM PU Hazard Setter": {"ability":"Earth Eater","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Spikes","Heavy Slam","Body Press"],"sps":{"hp":32,"df":1,"sd":32}},
-    "SM PU Bulky Sweeper": {"ability":"Earth Eater","item":"Leftovers","nature":"Careful","moves":["Coil","Heavy Slam","Body Press","Rest"],"sps":{"hp":32,"df":1,"sd":32}},
-    "SM BSS Reg J IronPress": {"ability":"Earth Eater","item":"Sitrus Berry","nature":"Impish","moves":["Iron Defense","Body Press","Iron Head","Shed Tail"],"sps":{"hp":32,"df":32,"sp":1}},
-    "SM BSS Reg J Shed Tail Support": {"ability":"Earth Eater","item":"Sitrus Berry","nature":"Impish","moves":["Shed Tail","Stealth Rock","Body Press","Heavy Slam"],"sps":{"hp":32,"at":1,"df":32}},
-    "SM ZU Defensive": {"ability":"Earth Eater","item":"Leftovers","nature":"Impish","moves":["Stealth Rock","Heavy Slam","Body Press","Iron Defense"],"sps":{"hp":32,"df":2,"sd":30}},
-    "SM ZU Coil": {"ability":"Earth Eater","item":"Leftovers","nature":"Careful","moves":["Coil","Substitute","Iron Tail","Body Press"],"sps":{"hp":31,"df":1,"sd":32}}
+    "SV PU Hazard Setter": {"ability":"Earth Eater","item":"Leftovers","nature":"Careful","moves":["Stealth Rock","Spikes","Heavy Slam","Body Press"],"sps":{"hp":32,"df":1,"sd":32}},
+    "SV PU Bulky Sweeper": {"ability":"Earth Eater","item":"Leftovers","nature":"Careful","moves":["Coil","Heavy Slam","Body Press","Rest"],"sps":{"hp":32,"df":1,"sd":32}},
+    "SV BSS Reg J IronPress": {"ability":"Earth Eater","item":"Sitrus Berry","nature":"Impish","moves":["Iron Defense","Body Press","Iron Head","Shed Tail"],"sps":{"hp":32,"df":32,"sp":1}},
+    "SV BSS Reg J Shed Tail Support": {"ability":"Earth Eater","item":"Sitrus Berry","nature":"Impish","moves":["Shed Tail","Stealth Rock","Body Press","Heavy Slam"],"sps":{"hp":32,"at":1,"df":32}},
+    "SV ZU Defensive": {"ability":"Earth Eater","item":"Leftovers","nature":"Impish","moves":["Stealth Rock","Heavy Slam","Body Press","Iron Defense"],"sps":{"hp":32,"df":2,"sd":30}},
+    "SV ZU Coil": {"ability":"Earth Eater","item":"Leftovers","nature":"Careful","moves":["Coil","Substitute","Iron Tail","Body Press"],"sps":{"hp":31,"df":1,"sd":32}}
   },
   "Glimmora": {
-    "SM OU Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Power Gem","Earth Power"],"sps":{"df":1,"sa":32,"sp":32}},
-    "SM Ubers Suicide Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Mud Shot","Dazzling Gleam"],"sps":{"df":22,"sa":11,"sp":32}},
-    "SM Doubles OU Hazards Setter": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Earth Power","Sludge Bomb","Spiky Shield"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM BSS Reg J Debris Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Modest","moves":["Stealth Rock","Power Gem","Earth Power","Mortal Spin"],"sps":{"hp":1,"sa":32,"sp":32}},
-    "SM Monotype Choice Scarf (Rock)": {"ability":"Toxic Debris","item":"Choice Scarf","nature":"Timid","moves":["Earth Power","Sludge Wave","Dazzling Gleam","Energy Ball"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM Monotype Choice Scarf (Poison)": {"ability":"Toxic Debris","item":"Choice Scarf","nature":"Timid","moves":["Power Gem","Sludge Wave","Earth Power","Energy Ball"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM National Dex Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Power Gem","Earth Power"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM National Dex Ubers Suicide Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Power Gem","Mortal Spin","Stealth Rock","Mud Shot"],"sps":{"df":5,"sa":31,"sp":28}},
-    "SM Anything Goes Suicide Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Naive","moves":["Spikes","Memento","Mud Shot","Mortal Spin"],"sps":{"hp":1,"df":22,"sa":10,"sp":32}},
-    "SM National Dex UU Showdown Usage": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Earth Power","Power Gem"],"sps":{"sa":32,"sd":1,"sp":32}},
-    "SM CAP Showdown Usage": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Earth Power","Power Gem"],"sps":{"df":1,"sa":32,"sp":32}}
+    "SV OU Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Power Gem","Earth Power"],"sps":{"df":1,"sa":32,"sp":32}},
+    "SV Ubers Suicide Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Mud Shot","Dazzling Gleam"],"sps":{"df":22,"sa":11,"sp":32}},
+    "SV Doubles OU Hazards Setter": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Earth Power","Sludge Bomb","Spiky Shield"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV BSS Reg J Debris Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Modest","moves":["Stealth Rock","Power Gem","Earth Power","Mortal Spin"],"sps":{"hp":1,"sa":32,"sp":32}},
+    "SV Monotype Choice Scarf (Rock)": {"ability":"Toxic Debris","item":"Choice Scarf","nature":"Timid","moves":["Earth Power","Sludge Wave","Dazzling Gleam","Energy Ball"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV Monotype Choice Scarf (Poison)": {"ability":"Toxic Debris","item":"Choice Scarf","nature":"Timid","moves":["Power Gem","Sludge Wave","Earth Power","Energy Ball"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV National Dex Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Power Gem","Earth Power"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV National Dex Ubers Suicide Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Power Gem","Mortal Spin","Stealth Rock","Mud Shot"],"sps":{"df":5,"sa":31,"sp":28}},
+    "SV Anything Goes Suicide Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Naive","moves":["Spikes","Memento","Mud Shot","Mortal Spin"],"sps":{"hp":1,"df":22,"sa":10,"sp":32}},
+    "SV National Dex UU Showdown Usage": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Earth Power","Power Gem"],"sps":{"sa":32,"sd":1,"sp":32}},
+    "SV CAP Showdown Usage": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","moves":["Stealth Rock","Mortal Spin","Earth Power","Power Gem"],"sps":{"df":1,"sa":32,"sp":32}}
   },
   "Kingambit": {
-    "SM OU Swords Dance": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Iron Head"],"sps":{"at":32,"df":1,"sp":32}},
-    "SM Ubers Swords Dance": {"ability":"Supreme Overlord","item":"Black Glasses","nature":"Adamant","moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Iron Head"],"sps":{"hp":31,"at":32,"sd":1}},
-    "SM VGC 2025 Reg I Offensive": {"ability":"Defiant","item":"Black Glasses","nature":"Adamant","moves":["Kowtow Cleave","Sucker Punch","Protect","Swords Dance"],"sps":{"hp":32,"at":32,"sd":1}},
-    "SM BSS Reg J Stealth Rock Support": {"ability":"Supreme Overlord","item":"Sitrus Berry","nature":"Adamant","moves":["Stealth Rock","Kowtow Cleave","Iron Head","Sucker Punch"],"sps":{"hp":31,"at":32,"df":1,"sd":1,"sp":1}},
-    "SM Anything Goes Swords Dance": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","moves":["Swords Dance","Kowtow Cleave","Iron Head","Sucker Punch"],"sps":{"hp":16,"at":32,"sp":17}},
-    "SM National Dex Doubles Showdown Usage": {"ability":"Defiant","item":"Black Glasses","nature":"Adamant","moves":["Sucker Punch","Iron Head","Kowtow Cleave","Swords Dance"],"sps":{"hp":32,"at":32,"sd":1}},
-    "SM CAP Showdown Usage": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","moves":["Sucker Punch","Swords Dance","Kowtow Cleave","Iron Head"],"sps":{"hp":5,"at":32,"sp":27}}
+    "SV OU Swords Dance": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Iron Head"],"sps":{"at":32,"df":1,"sp":32}},
+    "SV Ubers Swords Dance": {"ability":"Supreme Overlord","item":"Black Glasses","nature":"Adamant","moves":["Swords Dance","Sucker Punch","Kowtow Cleave","Iron Head"],"sps":{"hp":31,"at":32,"sd":1}},
+    "SV VGC 2025 Reg I Offensive": {"ability":"Defiant","item":"Black Glasses","nature":"Adamant","moves":["Kowtow Cleave","Sucker Punch","Protect","Swords Dance"],"sps":{"hp":32,"at":32,"sd":1}},
+    "SV BSS Reg J Stealth Rock Support": {"ability":"Supreme Overlord","item":"Sitrus Berry","nature":"Adamant","moves":["Stealth Rock","Kowtow Cleave","Iron Head","Sucker Punch"],"sps":{"hp":31,"at":32,"df":1,"sd":1,"sp":1}},
+    "SV Anything Goes Swords Dance": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","moves":["Swords Dance","Kowtow Cleave","Iron Head","Sucker Punch"],"sps":{"hp":16,"at":32,"sp":17}},
+    "SV National Dex Doubles Showdown Usage": {"ability":"Defiant","item":"Black Glasses","nature":"Adamant","moves":["Sucker Punch","Iron Head","Kowtow Cleave","Swords Dance"],"sps":{"hp":32,"at":32,"sd":1}},
+    "SV CAP Showdown Usage": {"ability":"Supreme Overlord","item":"Leftovers","nature":"Adamant","moves":["Sucker Punch","Swords Dance","Kowtow Cleave","Iron Head"],"sps":{"hp":5,"at":32,"sp":27}}
   },
   "Sinistcha": {
-    "SM UU Calm Mind": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Hex","Stun Spore","Strength Sap"],"sps":{"hp":32,"df":20,"sp":12}},
-    "SM Doubles OU Trick Room": {"ability":"Hospitality","item":"Sitrus Berry","nature":"Quiet","moves":["Matcha Gotcha","Shadow Ball","Rage Powder","Trick Room"],"sps":{"hp":32,"df":10,"sa":1,"sd":22}},
-    "SM VGC 2025 Reg I Trick Room Support": {"ability":"Hospitality","item":"Sitrus Berry","nature":"Bold","moves":["Matcha Gotcha","Life Dew","Trick Room","Rage Powder"],"sps":{"hp":32,"df":13,"sd":20}},
-    "SM BSS Reg J Defensive": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Strength Sap","Matcha Gotcha","Shadow Ball","Scald"],"sps":{"hp":32,"df":32,"sp":1}},
-    "SM Monotype Calm Mind (Grass)": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Matcha Gotcha","Shadow Ball","Strength Sap"],"sps":{"hp":32,"df":20,"sp":12}},
-    "SM National Dex UU Calm Mind": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Matcha Gotcha","Strength Sap","Shadow Ball"],"sps":{"hp":31,"df":21,"sp":12}},
-    "SM National Dex Doubles Showdown Usage": {"ability":"Hospitality","item":"Sitrus Berry","nature":"Calm","moves":["Rage Powder","Matcha Gotcha","Trick Room","Life Dew"],"sps":{"hp":32,"df":9,"sd":23}},
-    "SM National Dex RU Showdown Usage": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Matcha Gotcha","Strength Sap","Hex","Calm Mind"],"sps":{"hp":32,"df":15,"sa":17}}
+    "SV UU Calm Mind": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Hex","Stun Spore","Strength Sap"],"sps":{"hp":32,"df":20,"sp":12}},
+    "SV Doubles OU Trick Room": {"ability":"Hospitality","item":"Sitrus Berry","nature":"Quiet","moves":["Matcha Gotcha","Shadow Ball","Rage Powder","Trick Room"],"sps":{"hp":32,"df":10,"sa":1,"sd":22}},
+    "SV VGC 2025 Reg I Trick Room Support": {"ability":"Hospitality","item":"Sitrus Berry","nature":"Bold","moves":["Matcha Gotcha","Life Dew","Trick Room","Rage Powder"],"sps":{"hp":32,"df":13,"sd":20}},
+    "SV BSS Reg J Defensive": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Strength Sap","Matcha Gotcha","Shadow Ball","Scald"],"sps":{"hp":32,"df":32,"sp":1}},
+    "SV Monotype Calm Mind (Grass)": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Matcha Gotcha","Shadow Ball","Strength Sap"],"sps":{"hp":32,"df":20,"sp":12}},
+    "SV National Dex UU Calm Mind": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Matcha Gotcha","Strength Sap","Shadow Ball"],"sps":{"hp":31,"df":21,"sp":12}},
+    "SV National Dex Doubles Showdown Usage": {"ability":"Hospitality","item":"Sitrus Berry","nature":"Calm","moves":["Rage Powder","Matcha Gotcha","Trick Room","Life Dew"],"sps":{"hp":32,"df":9,"sd":23}},
+    "SV National Dex RU Showdown Usage": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Matcha Gotcha","Strength Sap","Hex","Calm Mind"],"sps":{"hp":32,"df":15,"sa":17}}
   },
   "Sinistcha-Masterpiece": {
-    "SM UU Calm Mind": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Matcha Gotcha","Shadow Ball","Strength Sap"],"sps":{"hp":32,"df":20,"sp":12}}
+    "SV UU Calm Mind": {"ability":"Heatproof","item":"Leftovers","nature":"Bold","moves":["Calm Mind","Matcha Gotcha","Shadow Ball","Strength Sap"],"sps":{"hp":32,"df":20,"sp":12}}
   },
   "Archaludon": {
-    "SM Monotype Choice Scarf (Steel)": {"ability":"Stamina","item":"Choice Scarf","nature":"Timid","moves":["Draco Meteor","Thunder Wave","Flash Cannon","Thunderbolt"],"sps":{"sa":32,"sd":1,"sp":32}}
+    "SV Monotype Choice Scarf (Steel)": {"ability":"Stamina","item":"Choice Scarf","nature":"Timid","moves":["Draco Meteor","Thunder Wave","Flash Cannon","Thunderbolt"],"sps":{"sa":32,"sd":1,"sp":32}}
   },
   "Hydrapple": {
-    "SM 1v1 Yache Berry": {"ability":"Supersweet Syrup","item":"Yache Berry","nature":"Modest","moves":["Draco Meteor","Leaf Storm","Syrup Bomb","Protect"],"sps":{"hp":31,"sa":6,"sd":15,"sp":12}}
+    "SV 1v1 Yache Berry": {"ability":"Supersweet Syrup","item":"Yache Berry","nature":"Modest","moves":["Draco Meteor","Leaf Storm","Syrup Bomb","Protect"],"sps":{"hp":31,"sa":6,"sd":15,"sp":12}}
   },
   "Banette-Mega": {
     "SM RU Offensive": {"ability":"Frisk","item":"Banettite","nature":"Adamant","moves":["Destiny Bond","Shadow Claw","Gunk Shot","Taunt"],"sps":{"hp":5,"at":32,"sp":27}}
