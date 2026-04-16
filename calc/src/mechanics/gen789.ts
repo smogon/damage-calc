@@ -238,8 +238,9 @@ export function calculateSMSSSV(
   let type = move.type;
   if (move.originalName === 'Weather Ball') {
     const holdingUmbrella = attacker.hasItem('Utility Umbrella');
+    const hasMegaSol = attacker.hasAbility('Mega Sol');
     type =
-      field.hasWeather('Sun', 'Harsh Sunshine') && !holdingUmbrella ? 'Fire'
+      (field.hasWeather('Sun', 'Harsh Sunshine') || hasMegaSol) && !holdingUmbrella ? 'Fire'
       : field.hasWeather('Rain', 'Heavy Rain') && !holdingUmbrella ? 'Water'
       : field.hasWeather('Sand') ? 'Rock'
       : field.hasWeather('Hail', 'Snow') ? 'Ice'
@@ -336,6 +337,7 @@ export function calculateSMSSSV(
   let isGalvanize = false;
   let isLiquidVoice = false;
   let isNormalize = false;
+  let isDragonize = false;
   const noTypeChange = move.named(
     'Revelation Dance',
     'Judgment',
@@ -362,8 +364,10 @@ export function calculateSMSSSV(
       type = 'Ice';
     } else if ((isNormalize = attacker.hasAbility('Normalize'))) { // Boosts any type
       type = 'Normal';
+    } else if ((isDragonize = attacker.hasAbility('Dragonize')) && normal) {
+      type = 'Dragon';
     }
-    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize) {
+    if (isGalvanize || isPixilate || isRefrigerate || isAerilate || isNormalize || isDragonize) {
       desc.attackerAbility = attacker.ability;
       hasAteAbilityTypeChange = true;
     } else if (isLiquidVoice) {
@@ -694,7 +698,9 @@ export function calculateSMSSSV(
       // Check if lost -ate ability. Typing stays the same, only boost is lost
       // Cannot be regained during multihit move and no Normal moves with stat drawbacks
       hasAteAbilityTypeChange = hasAteAbilityTypeChange &&
-        attacker.hasAbility('Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize');
+        attacker.hasAbility(
+          'Aerilate', 'Galvanize', 'Pixilate', 'Refrigerate', 'Normalize', 'Dragonize'
+        );
 
       if (move.timesUsed! > 1) {
         // Adaptability does not change between hits of a multihit, only between turns
@@ -777,6 +783,7 @@ export function calculateBasePowerSMSSSV(
   hit = 1,
 ) {
   const turnOrder = attacker.stats.spe > defender.stats.spe ? 'first' : 'last';
+  const hasMegaSol = attacker.hasAbility('Mega Sol');
 
   let basePower: number;
 
@@ -860,8 +867,9 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Weather Ball':
-    basePower = move.bp * (field.weather && !field.hasWeather('Strong Winds') ? 2 : 1);
-    if (field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') &&
+    const hasStrongWinds = field.hasWeather('Strong Winds');
+    basePower = move.bp * ((field.weather || hasMegaSol) && !hasStrongWinds ? 2 : 1);
+    if ((field.hasWeather('Sun', 'Harsh Sunshine', 'Rain', 'Heavy Rain') || hasMegaSol) &&
       attacker.hasItem('Utility Umbrella')) basePower = move.bp;
     desc.moveBP = basePower;
     break;
@@ -1649,6 +1657,7 @@ function calculateBaseDamageSMSSSV(
   isCritical = false,
 ) {
   let baseDamage = getBaseDamage(attacker.level, basePower, attack, defense);
+  const hasMegaSol = attacker.hasAbility('Mega Sol');
   const isSpread = field.gameType !== 'Singles' &&
      ['allAdjacent', 'allAdjacentFoes'].includes(move.target);
   if (isSpread) {
@@ -1660,19 +1669,21 @@ function calculateBaseDamageSMSSSV(
   }
 
   if (
-    field.hasWeather('Sun') && move.named('Hydro Steam') && !attacker.hasItem('Utility Umbrella')
+    (field.hasWeather('Sun') || hasMegaSol) &&
+      move.named('Hydro Steam') &&
+      !attacker.hasItem('Utility Umbrella')
   ) {
     baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
     desc.weather = field.weather;
   } else if (!defender.hasItem('Utility Umbrella')) {
     if (
-      (field.hasWeather('Sun', 'Harsh Sunshine') && move.hasType('Fire')) ||
+      ((field.hasWeather('Sun', 'Harsh Sunshine') || hasMegaSol) && move.hasType('Fire')) ||
       (field.hasWeather('Rain', 'Heavy Rain') && move.hasType('Water'))
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 6144) / 4096);
       desc.weather = field.weather;
     } else if (
-      (field.hasWeather('Sun') && move.hasType('Water')) ||
+      ((field.hasWeather('Sun') || hasMegaSol) && move.hasType('Water')) ||
       (field.hasWeather('Rain') && move.hasType('Fire'))
     ) {
       baseDamage = pokeRound(OF32(baseDamage * 2048) / 4096);
