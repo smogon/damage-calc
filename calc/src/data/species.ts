@@ -10976,8 +10976,8 @@ const ChampionsLegal = [
 ];
 
 const Champions_AVAILABLE: {[name: string]: SpeciesData} = {};
-for (let i = 0; i < ChampionsLegal.length; i++) {
-  Champions_AVAILABLE[ChampionsLegal[i]] = SV[ChampionsLegal[i]];
+for (const pokemon of ChampionsLegal) {
+  Champions_AVAILABLE[pokemon] = SV[pokemon];
 }
 
 const Champions_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {

@@ -5435,8 +5435,8 @@ const ChampionsLegal = [
 ];
 
 const Champions_AVAILABLE: {[name: string]: MoveData} = {};
-for (let i = 0; i < ChampionsLegal.length; i++) {
-  Champions_AVAILABLE[ChampionsLegal[i]] = SV[ChampionsLegal[i]];
+for (const move of ChampionsLegal) {
+  Champions_AVAILABLE[move] = SV[move];
 }
 
 const Champions_PATCH: {[name: string]: DeepPartial<MoveData>} = {
