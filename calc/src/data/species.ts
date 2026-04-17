@@ -23,7 +23,7 @@ export interface SpeciesData {
 
 function removeAttr(set: {[name: string]: SpeciesData}, pokemon: string, attr: string) {
   // @ts-ignore readonly
-  delete set[pokemon].attr;
+  delete set[pokemon][attr];
 }
 
 const RBY: {[name: string]: SpeciesData} = {
@@ -10980,20 +10980,6 @@ for (let i = 0; i < ChampionsLegal.length; i++) {
   Champions_AVAILABLE[ChampionsLegal[i]] = SV[ChampionsLegal[i]];
 }
 
-removeAttr(Champions_AVAILABLE, 'Alcremie', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Appletun', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Araquanid', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Corviknight', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Flapple', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Floette-Eternal', 'baseSpecies');
-removeAttr(Champions_AVAILABLE, 'Garbodor', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Hatterene', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Machamp', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Pikachu', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Salazzle', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Sandaconda', 'otherFormes');
-removeAttr(Champions_AVAILABLE, 'Snorlax', 'otherFormes');
-
 const Champions_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Blastoise: {otherFormes: ['Blastoise-Mega']},
   Charizard: {otherFormes: ['Charizard-Mega-X', 'Charizard-Mega-Y']},
@@ -11007,6 +10993,20 @@ const Champions_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 const Champions: {[name: string]: SpeciesData} = extend(
   true, {}, Champions_AVAILABLE, Champions_PATCH
 );
+
+removeAttr(Champions, 'Alcremie', 'otherFormes');
+removeAttr(Champions, 'Appletun', 'otherFormes');
+removeAttr(Champions, 'Araquanid', 'otherFormes');
+removeAttr(Champions, 'Corviknight', 'otherFormes');
+removeAttr(Champions, 'Flapple', 'otherFormes');
+removeAttr(Champions, 'Floette-Eternal', 'baseSpecies');
+removeAttr(Champions, 'Garbodor', 'otherFormes');
+removeAttr(Champions, 'Hatterene', 'otherFormes');
+removeAttr(Champions, 'Machamp', 'otherFormes');
+removeAttr(Champions, 'Pikachu', 'otherFormes');
+removeAttr(Champions, 'Salazzle', 'otherFormes');
+removeAttr(Champions, 'Sandaconda', 'otherFormes');
+removeAttr(Champions, 'Snorlax', 'otherFormes');
 
 export const SPECIES = [Champions, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 

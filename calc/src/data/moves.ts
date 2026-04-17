@@ -4921,7 +4921,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 };
 
 const ZA_PATCH: {[name: string]: DeepPartial<MoveData>} = {
-  Growth: {type: 'Grass'},
+  // Growth: {type: 'Grass'},
   'Nihil Light': {
     bp: 100,
     type: 'Dragon',
@@ -5439,9 +5439,6 @@ for (let i = 0; i < ChampionsLegal.length; i++) {
   Champions_AVAILABLE[ChampionsLegal[i]] = SV[ChampionsLegal[i]];
 }
 
-// @ts-ignore readonly
-delete Champions_AVAILABLE['Freeze-Dry'].secondaries;
-
 const Champions_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Apple Acid': {bp: 90},
   'Beak Blast': {bp: 120},
@@ -5466,6 +5463,9 @@ const Champions_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 const Champions: {[name: string]: MoveData} = extend(
   true, {}, Champions_AVAILABLE, Champions_PATCH
 );
+
+// @ts-ignore readonly
+delete Champions['Freeze-Dry'].secondaries;
 
 export const MOVES = [Champions, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
