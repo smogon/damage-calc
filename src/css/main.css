@@ -412,7 +412,7 @@ th {
     position: relative;
     margin: -1px -3px 0;
     display: inline-block;
-    width: 5em;
+    width: 5rem;
     border-radius: 8px;
 }
 .btn-wide {
@@ -505,7 +505,7 @@ th {
 /* header */
 .move-result-group {
     display: flex;
-    min-width: 50em;
+    min-width: 50rem;
     margin-top: 1em;
 }
 .move-result-subgroup {
@@ -648,15 +648,15 @@ table.field {
 }
 
 .import-team-text {
-    margin: 16px 0;
-    min-width: 27em;
-    min-height: 10em;
+    margin: 1rem 0;
+    min-width: 27rem;
+    min-height: 10rem;
     resize: vertical;
 }
 
 .import-name-text {
-	min-width: 26.3em;
-    min-height: 1em;
+	min-width: 26.3rem;
+    min-height: 1rem;
     overflow: auto;
     display: inline;
 }
