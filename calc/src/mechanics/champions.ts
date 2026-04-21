@@ -721,7 +721,7 @@ export function calculateBPModsChampions(
   const isDefenderAura = defender.hasAbility(aura);
   const isFieldFairyAura = field.isFairyAura && move.type === 'Fairy';
   const isFieldDarkAura = field.isDarkAura && move.type === 'Dark';
-  const auraActive = isFieldFairyAura || isFieldDarkAura;
+  const auraActive = isAttackerAura || isDefenderAura || isFieldFairyAura || isFieldDarkAura;
   if (auraActive) {
     bpMods.push(5448);
     if (isAttackerAura) desc.attackerAbility = attacker.ability;
