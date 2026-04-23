@@ -1868,4 +1868,62 @@ describe('calc', () => {
       });
     });
   });
+
+  describe('Champions', () => {
+    inGen(0, ({calculate, Pokemon, Move, Field}) => {
+      describe('Mega Sol', () => {
+        const attacker = Pokemon('Meganium-Mega', {ability: 'Mega Sol', item: 'Meganiumite'});
+
+        describe('Should use Fire-type Weather Ball in any weather', () => {
+          const defender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
+          const sandField = Field({weather: 'Sand'});
+          const move = Move('Weather Ball');
+
+          const result = calculate(attacker, defender, move, sandField);
+
+          expect(result.move.type).toBe('Fire');
+        });
+
+        describe('Should make Solar Beam full-power in any weather', () => {
+          const move = Move('Solar Beam');
+
+          const sandDefender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
+          const sandField = Field({weather: 'Sand'});
+          const sandResult = calculate(attacker, sandDefender, move, sandField);
+
+          expect(sandResult.move.bp).toBe(move.bp);
+        });
+
+        describe('Should neutralize Sp. Def boost from sand', () => {
+          const move = Move('Giga Drain');
+
+          const sandDefender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
+          const sandField = Field({weather: 'Sand'});
+          const sandResult = calculate(attacker, sandDefender, move, sandField);
+
+          const noSandDefender = Pokemon('Tyranitar', {ability: 'Unnerve'});
+          const noSandField = Field({weather: undefined});
+          const noSandResult = calculate(attacker, noSandDefender, move, noSandField);
+
+          expect(sandResult.range()[0]).toEqual(noSandResult.range()[0]);
+          expect(sandResult.range()[1]).toEqual(noSandResult.range()[1]);
+        });
+
+        describe('Should neutralize Def boost from snow', () => {
+          const move = Move('Body Slam');
+
+          const snowDefender = Pokemon('Abomasnow', {ability: 'Snow Warning'});
+          const snowField = Field({weather: 'Snow'});
+          const snowResult = calculate(attacker, snowDefender, move, snowField);
+
+          const noSnowDefender = Pokemon('Abomasnow', {ability: 'Soundproof'});
+          const noSnowField = Field({weather: undefined});
+          const noSnowResult = calculate(attacker, noSnowDefender, move, noSnowField);
+
+          expect(snowResult.range()[0]).toEqual(noSnowResult.range()[0]);
+          expect(snowResult.range()[1]).toEqual(noSnowResult.range()[1]);
+        });
+      });
+    });
+  });
 });
