@@ -55,7 +55,6 @@ export class Pokemon implements State.Pokemon {
     this.gen = gen;
     this.name = options.name || name as I.SpeciesName;
     this.types = this.species.types;
-    this.weightkg = this.isDynamaxed ? 0 : this.species.weightkg;
 
     this.level = gen.num === 0 ? 50 : options.level || 100;
     this.gender = options.gender || this.species.gender || 'M';
@@ -75,7 +74,7 @@ export class Pokemon implements State.Pokemon {
     this.evs = Pokemon.withDefault(gen, options.evs, gen.num === 0 || gen.num >= 3 ? 0 : 252);
     this.boosts = Pokemon.withDefault(gen, options.boosts, 0, false);
 
-    if (gen.num < 3) {
+    if (gen.num > 0 && gen.num < 3) {
       this.ivs.hp = Stats.DVToIV(
         Stats.getHPDV({
           atk: this.ivs.atk,

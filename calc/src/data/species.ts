@@ -10465,19 +10465,6 @@ const ZA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, PLA_PATCH, SV_PATCH, ZA_PATCH);
 
-for (const [name, specie] of Object.entries(SV)) {
-  if (name.endsWith('-Gmax')) {
-    delete SV[name];
-    continue;
-  }
-  if (specie.otherFormes) {
-    // @ts-expect-error readonly
-    specie.otherFormes = [...new Set(specie.otherFormes)].filter(f => !f.endsWith('-Gmax'));
-    // @ts-expect-error readonly
-    if (!specie.otherFormes.length) specie.otherFormes = undefined;
-  }
-}
-
 const CHAMPIONS_LIST = [
   'Abomasnow',
   'Abomasnow-Mega',
