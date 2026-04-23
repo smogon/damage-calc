@@ -1875,9 +1875,10 @@ describe('calc', () => {
         const attacker = Pokemon('Meganium-Mega', {ability: 'Mega Sol', item: 'Meganiumite'});
 
         describe('Should use Fire-type Weather Ball in any weather', () => {
+          const move = Move('Weather Ball');
+
           const defender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
           const sandField = Field({weather: 'Sand'});
-          const move = Move('Weather Ball');
 
           const result = calculate(attacker, defender, move, sandField);
 
@@ -1892,6 +1893,15 @@ describe('calc', () => {
           const sandResult = calculate(attacker, sandDefender, move, sandField);
 
           expect(sandResult.move.bp).toBe(move.bp);
+        });
+
+        describe('Should reduce the damage of Water-type attacks', () => {
+          const move = Move('Hydro Pump');
+
+          const defender = Pokemon('Glalie');
+          const result = calculate(attacker, defender, move);
+
+          expect(result.move.bp).toBeLessThan(move.bp);
         });
 
         describe('Should neutralize Sp. Def boost from sand', () => {
