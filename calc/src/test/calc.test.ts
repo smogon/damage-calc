@@ -1898,10 +1898,14 @@ describe('calc', () => {
         describe('Should reduce the damage of Water-type attacks', () => {
           const move = Move('Hydro Pump');
 
-          const defender = Pokemon('Glalie');
-          const result = calculate(attacker, defender, move);
+          const defender = Pokemon('Tyranitar', {ability: 'Unnerve'});
+          const megaSolResult = calculate(attacker, defender, move);
 
-          expect(result.move.bp).toBeLessThan(move.bp);
+          const noMegaSol = Pokemon('Meganium-Mega', {ability: 'Leaf Guard'});
+          const noMegaSolResult = calculate(noMegaSol, defender, move);
+
+          expect(megaSolResult.range()[0]).toBeLessThan(noMegaSolResult.range()[0]);
+          expect(megaSolResult.range()[1]).toBeLessThan(noMegaSolResult.range()[1]);
         });
 
         describe('Should neutralize Sp. Def boost from sand', () => {
