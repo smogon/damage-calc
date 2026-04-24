@@ -756,6 +756,7 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".move-pool").hide();
 			}
 		}
+		pokeObj.find(".gmaxToggle").prop("checked", set.isGmax || false);
 		totalEVs(pokeObj);
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
 			var format = getSelectedTiers()[0];
@@ -1121,6 +1122,7 @@ function createPokemon(pokeInfo) {
 		var item = pokeInfo.find(".item").val();
 		var gender = pokeInfo.find(".gender").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		if (isDynamaxed && pokeInfo.find(".gmaxToggle").prop("checked")) isDynamaxed = 'gmax';
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 		var opts = {
 			ability: ability,
@@ -1134,7 +1136,7 @@ function createPokemon(pokeInfo) {
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
-		if (isDynamaxed) curHP = Math.floor(curHP / 2);
+		if (pokeInfo.isDynamaxed) curHP = Math.floor(curHP / 2);
 		var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
@@ -1219,7 +1221,7 @@ function getMoveDetails(moveInfo, opts) {
 	return new calc.Move(gen, moveName, {
 		ability: opts.ability, item: opts.item, useZ: isZMove, species: opts.species, isCrit: isCrit, hits: hits,
 		isStellarFirstUse: isStellarFirstUse, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
-		overrides: overrides, useMax: opts.isDynamaxed, gmax: {type: 'Steel', move: 'Volt Crash'}
+		overrides: overrides, useMax: opts.isDynamaxed
 	});
 }
 
