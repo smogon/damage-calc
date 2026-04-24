@@ -6,7 +6,7 @@ export namespace State {
     level?: number;
     ability?: I.AbilityName;
     abilityOn?: boolean;
-    isDynamaxed?: boolean;
+    isDynamaxed?: boolean | 'gmax';
     dynamaxLevel?: number;
     alliesFainted?: number;
     boostedStat?: I.StatIDExceptHP | 'auto';
@@ -27,7 +27,7 @@ export namespace State {
   export interface Move {
     name: I.MoveName;
     useZ?: boolean;
-    useMax?: boolean;
+    useMax?: boolean | 'gmax';
     gmax?: {type: I.TypeName, move: string};
     isCrit?: boolean;
     isStellarFirstUse?: boolean;
