@@ -687,6 +687,7 @@ $(".set-selector").change(function () {
 			if (regSets) {
 				pokeObj.find(".teraType").val(set.teraType || getForcedTeraType(pokemonName) || pokemon.types[0]);
 			}
+			pokeObj.find(".gmaxToggle").prop("checked", pokemon.canGigantamax && set.isGmax || false);
 			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
 			var evsDefault = gen < 3 ? 252 : ($("#randoms").prop("checked") ? 84 : 0);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
@@ -743,6 +744,7 @@ $(".set-selector").change(function () {
 			}
 		} else {
 			pokeObj.find(".teraType").val(getForcedTeraType(pokemonName) || pokemon.types[0]);
+			pokeObj.find(".gmaxToggle").prop("checked", false);
 			pokeObj.find(".level").val(defaultLevel);
 			pokeObj.find(".hp .sps").val(0);
 			pokeObj.find(".hp .evs").val(gen > 2 ? 0 : 252);
@@ -771,7 +773,6 @@ $(".set-selector").change(function () {
 				$(this).closest('.poke-info').find(".move-pool").hide();
 			}
 		}
-		pokeObj.find(".gmaxToggle").prop("checked", set.isGmax || false);
 		totalEVs(pokeObj);
 		if (typeof getSelectedTiers === "function") { // doesn't exist when in 1vs1 mode
 			var format = getSelectedTiers()[0];
@@ -793,6 +794,11 @@ $(".set-selector").change(function () {
 			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
 		} else {
 			formeObj.hide();
+		}
+		if (gen === 8 && pokemon.canGigantamax) {
+			pokeObj.find(".gmaxToggle").parent().show();
+		} else {
+			pokeObj.find(".gmaxToggle").parent().hide();
 		}
 		calcStats(pokeObj);
 		var total = pokeObj.find(".hp").find(".total").text();
