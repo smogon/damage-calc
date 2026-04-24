@@ -11,9 +11,9 @@ export class Move implements State.Move {
   originalName: string;
   ability?: I.AbilityName;
   item?: I.ItemName;
+  species?: I.SpeciesName;
   useZ?: boolean;
-  useMax?: boolean;
-  gmax?: {type: I.TypeName, move: string};
+  useMax?: boolean | 'gmax';
   overrides?: Partial<I.Move>;
 
   hits: number;
@@ -50,7 +50,7 @@ export class Move implements State.Move {
     options: Partial<State.Move> & {
       ability?: I.AbilityName;
       item?: I.ItemName;
-      gmax?: {type: I.TypeName, move: string};
+      species?: I.SpeciesName;
     } = {}
   ) {
     name = options.name || name;
@@ -63,9 +63,10 @@ export class Move implements State.Move {
       const maxMoveName: string = getMaxMoveName(
         data.type,
         data.name,
-        options.gmax,
+        options.species,
         !!(data.category === 'Status'),
-        options.ability
+        options.ability,
+        !!(options.useMax === 'gmax')
       );
       const maxMove = gen.moves.get(toID(maxMoveName));
       const maxPower = () => {
@@ -117,8 +118,8 @@ export class Move implements State.Move {
     this.item = options.item;
     this.useZ = options.useZ;
     this.useMax = options.useMax;
-    this.gmax = options.gmax;
     this.overrides = options.overrides;
+    this.species = options.species;
 
     this.bp = data.basePower;
     // These moves have a type, but the damage they deal is typeless so we override it
@@ -183,9 +184,9 @@ export class Move implements State.Move {
     return new Move(this.gen, this.originalName, {
       ability: this.ability,
       item: this.item,
+      species: this.species,
       useZ: this.useZ,
       useMax: this.useMax,
-      gmax: this.gmax,
       isCrit: this.isCrit,
       isStellarFirstUse: this.isStellarFirstUse,
       hits: this.hits,
@@ -250,9 +251,10 @@ const ZMOVES_TYPING: {
 export function getMaxMoveName(
   moveType: I.TypeName,
   moveName?: string,
-  gmax?: {type: I.TypeName, move: string},
+  pokemonSpecies?: string,
   isStatus?: boolean,
-  pokemonAbility?: string
+  pokemonAbility?: string,
+  isGmax?: boolean,
 ) {
   if (isStatus) return 'Max Guard';
   if (pokemonAbility === 'Normalize') return 'Max Strike';
@@ -262,8 +264,8 @@ export function getMaxMoveName(
     if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
     if (pokemonAbility === 'Galvanize') return 'Max Lightning';
   }
-  if (gmax && moveType === gmax.type) {
-    return 'G-Max ' + gmax.move;
+  if (isGmax && moveType === GMAX_MOVES[pokemonSpecies].type) {
+    return 'G-Max ' + GMAX_MOVES[pokemonSpecies].move;
   }
   return 'Max ' + MAXMOVES_TYPING[moveType];
 }
@@ -289,4 +291,41 @@ const MAXMOVES_TYPING: {
   Rock: 'Rockfall',
   Steel: 'Steelspike',
   Water: 'Geyser',
+};
+
+const GMAX_MOVES: {[string]: {type: I.TypeName, move: string}} = {
+  'Blastoise': {type: 'Water', move: 'Cannonade'},
+  'Butterfree': {type: 'Bug', move: 'Befuddle'},
+  'Charizard': {type: 'Fire', move: 'Wildfire'},
+  'Eevee': {type: 'Normal', move: 'Cuddle'},
+  Garbodor: {type: 'Poison', move: 'Malodor'},
+  Gengar: {type: 'Ghost', move: 'Terror'},
+  Kingler: {type: 'Water', move: 'Foam Burst'},
+  Lapras: {type: 'Ice', move: 'Resonance'},
+  Machamp: {type: 'Fighting', move: 'Chi Strike'},
+  Melmetal: {type: 'Steel', move: 'Meltdown'},
+  Meowth: {type: 'Normal', move: 'Gold Rush'},
+  Pikachu: {type: 'Electric', move: 'Volt Crash'},
+  Snorlax: {type: 'Normal', move: 'Replenish'},
+  Venusaur: {type: 'Grass', move: 'Vine Lash'},
+  Alcremie: {type: 'Fairy', move: 'Finale'},
+  Appletun: {type: 'Grass', move: 'Sweetness'},
+  Centiskorch: {type: 'Fire', move: 'Centiferno'},
+  Cinderace: {type: 'Fire', move: 'Fireball'},
+  Coalossal: {type: 'Rock', move: 'Volcalith'},
+  Copperajah: {type: 'Steel', move: 'Steelsurge'},
+  Corviknight: {type: 'Flying', move: 'Wind Rage'},
+  Drednaw: {type: 'Water', move: 'Stonesurge'},
+  Duraludon: {type: 'Dragon', move: 'Depletion'},
+  Flapple: {type: 'Grass', move: 'Tartness'},
+  Grimmsnarl: {type: 'Dark', move: 'Snooze'},
+  Hatterene: {type: 'Fairy', move: 'Smite'},
+  Inteleon: {type: 'Water', move: 'Hydrosnipe'},
+  Orbeetle: {type: 'Psychic', move: 'Gravitas'},
+  Rillaboom: {type: 'Grass', move: 'Drum Solo'},
+  Sandaconda: {type: 'Ground', move: 'Sandblast'},
+  Toxtricity: {type: 'Electric', move: 'Stun Shock'},
+  'Toxtricity-Low-Key': {type: 'Electric', move: 'Stun Shock'},
+  Urshifu: {type: 'Dark', move: 'One Blow'},
+  'Urshifu-Rapid-Strike': {type: 'Water', move: 'Rapid Flow'},
 };

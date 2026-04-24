@@ -28,7 +28,6 @@ export namespace State {
     name: I.MoveName;
     useZ?: boolean;
     useMax?: boolean | 'gmax';
-    gmax?: {type: I.TypeName, move: string};
     isCrit?: boolean;
     isStellarFirstUse?: boolean;
     hits?: number;
