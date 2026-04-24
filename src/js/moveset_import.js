@@ -25,7 +25,7 @@ function ExportPokemon(pokeInfo) {
 			finalText += "Tera Type: " + teraType + "\n";
 		}
 	}
-	if (gen === 8 && pokeInfo.find(".gmaxToggle").prop("checked") === true) finalText += "Gigantamax: Yes \n";
+	if (pokeInfo.find(".gmaxToggle").prop("checked") === true) finalText += "Gigantamax: Yes \n";
 	if (gen === 0 || gen > 2) {
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
@@ -241,10 +241,10 @@ function addToDex(poke) {
 	dexObject.isGmax = poke.isGmax;
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
-	dexObject.ivs = poke.ivs;
 	if (poke.sps !== undefined) {
 		dexObject.sps = poke.sps;
 	}
+	dexObject.ivs = poke.ivs;
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.gender = poke.gender;
@@ -313,7 +313,7 @@ function addSets(pokes, name) {
 			currentPoke.item = getItem(currentRow, species.offset + 1);
 			currentPoke = getStats(currentPoke, rows, i + 1);
 			currentPoke = getMoves(currentPoke, rows, i + 1);
-			if (currentRow[species.offset].endsWith('-Gmax') currentPoke.isGmax = true;
+			if (currentRow[species.offset].trim().endsWith('-Gmax')) currentPoke.isGmax = true;
 			if (species.offset === 1 && currentRow[0].trim()) {
 				currentPoke.nameProp = currentRow[0].trim();
 			} else {

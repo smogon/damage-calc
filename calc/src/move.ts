@@ -264,8 +264,8 @@ export function getMaxMoveName(
     if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
     if (pokemonAbility === 'Galvanize') return 'Max Lightning';
   }
-  if (isGmax && moveType === GMAX_MOVES[pokemonSpecies].type) {
-    return 'G-Max ' + GMAX_MOVES[pokemonSpecies].move;
+  if (isGmax && moveType === GMAX_MOVES[pokemonSpecies!].type) {
+    return 'G-Max ' + GMAX_MOVES[pokemonSpecies!].move;
   }
   return 'Max ' + MAXMOVES_TYPING[moveType];
 }
@@ -293,7 +293,7 @@ const MAXMOVES_TYPING: {
   Water: 'Geyser',
 };
 
-const GMAX_MOVES: {[string]: {type: I.TypeName, move: string}} = {
+const GMAX_MOVES: {[name: string]: {type: I.TypeName, move: string}} = {
   'Blastoise': {type: 'Water', move: 'Cannonade'},
   'Butterfree': {type: 'Bug', move: 'Befuddle'},
   'Charizard': {type: 'Fire', move: 'Wildfire'},
