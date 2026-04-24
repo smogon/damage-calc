@@ -127,7 +127,7 @@ export interface Move extends Data<MoveName> {
   readonly zMove?: {
     basePower?: number;
   };
-  readonly isMax?: boolean | string;
+  readonly isMax?: boolean | 'gmax';
   readonly maxMove?: {
     basePower: number;
   };

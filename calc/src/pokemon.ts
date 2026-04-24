@@ -61,7 +61,7 @@ export class Pokemon implements State.Pokemon {
     this.ability = options.ability || this.species.abilities?.[0] || undefined;
     this.abilityOn = !!options.abilityOn;
 
-    this.isDynamaxed = !!options.isDynamaxed;
+    this.isDynamaxed = options.isDynamaxed;
     this.dynamaxLevel = this.isDynamaxed
       ? (options.dynamaxLevel === undefined ? 10 : options.dynamaxLevel) : undefined;
     this.weightkg = this.isDynamaxed ? 0 : this.species.weightkg;
