@@ -17,7 +17,7 @@ export interface SpeciesData {
   readonly gender?: I.GenderName;
   readonly nfe?: boolean;
   readonly abilities?: {0: string};
-  readonly canGigantamax?: boolean;
+  readonly canGigantamax?: string;
   readonly otherFormes?: string[];
   readonly baseSpecies?: string;
 }
@@ -7666,30 +7666,30 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   'Aegislash-Both': {bs: {at: 140, df: 140, sa: 140, sd: 140}},
   'Aegislash-Shield': {bs: {df: 140, sd: 140}},
   Articuno: {otherFormes: ['Articuno-Galar']},
-  Blastoise: {canGigantamax: true},
-  Butterfree: {canGigantamax: true},
-  Charizard: {canGigantamax: true},
+  Blastoise: {canGigantamax: 'G-Max Cannonade'},
+  Butterfree: {canGigantamax: 'G-Max Flutterby'},
+  Charizard: {canGigantamax: 'G-Max Wildfire'},
   Corsola: {otherFormes: ['Corsola-Galar']},
   Darmanitan: {
     otherFormes: ['Darmanitan-Galar', 'Darmanitan-Galar-Zen', 'Darmanitan-Zen'],
   },
   Darumaka: {otherFormes: ['Darumaka-Galar']},
-  Eevee: {canGigantamax: true},
+  Eevee: {canGigantamax: 'G-Max Cuddle'},
   Equilibra: {bs: {sa: 133}},
   'Farfetch\u2019d': {otherFormes: ['Farfetch\u2019d-Galar']},
-  Garbodor: {canGigantamax: true},
-  Gengar: {canGigantamax: true},
-  Kingler: {canGigantamax: true},
-  Lapras: {canGigantamax: true},
+  Garbodor: {canGigantamax: 'G-Max Malodor'},
+  Gengar: {canGigantamax: 'G-Max Terror'},
+  Kingler: {canGigantamax: 'G-Max Foam Burst'},
+  Lapras: {canGigantamax: 'G-Max Resonance'},
   Linoone: {otherFormes: ['Linoone-Galar']},
-  Machamp: {canGigantamax: true},
+  Machamp: {canGigantamax: 'G-Max Chi Strike'},
   Magearna: {otherFormes: ['Magearna-Original']},
-  Melmetal: {canGigantamax: true},
-  Meowth: {canGigantamax: true, otherFormes: ['Meowth-Alola', 'Meowth-Galar']},
+  Melmetal: {canGigantamax: 'G-Max Meltdown'},
+  Meowth: {canGigantamax: 'G-Max Gold Rush', otherFormes: ['Meowth-Alola', 'Meowth-Galar']},
   Moltres: {otherFormes: ['Moltres-Galar']},
   'Mr. Mime': {otherFormes: ['Mr. Mime-Galar']},
   Pikachu: {
-    canGigantamax: true,
+    canGigantamax: 'G-Max Volt Crash',
     otherFormes: [
       'Pikachu-Alola',
       'Pikachu-Hoenn',
@@ -7707,9 +7707,9 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Slowbro: {otherFormes: ['Slowbro-Galar', 'Slowbro-Mega']},
   Slowking: {otherFormes: ['Slowking-Galar']},
   Slowpoke: {otherFormes: ['Slowpoke-Galar']},
-  Snorlax: {canGigantamax: true},
+  Snorlax: {canGigantamax: 'G-Max Replenish'},
   Stunfisk: {otherFormes: ['Stunfisk-Galar']},
-  Venusaur: {canGigantamax: true},
+  Venusaur: {canGigantamax: 'G-Max Vine Lash'},
   Voodoom: {bs: {sa: 130}},
   Weezing: {otherFormes: ['Weezing-Galar']},
   Yamask: {otherFormes: ['Yamask-Galar']},
@@ -7721,14 +7721,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 0.5,
     gender: 'F',
     abilities: {0: 'Sweet Veil'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Finale',
   },
   Appletun: {
     types: ['Grass', 'Dragon'],
     bs: {hp: 110, at: 85, df: 80, sa: 100, sd: 80, sp: 30},
     weightkg: 13,
     abilities: {0: 'Ripen'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Sweetness',
   },
   Applin: {
     types: ['Grass', 'Dragon'],
@@ -7827,7 +7827,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 115, df: 65, sa: 90, sd: 90, sp: 65},
     weightkg: 120,
     abilities: {0: 'Flash Fire'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Centiferno',
   },
   Chewtle: {
     types: ['Water'],
@@ -7848,7 +7848,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 80, at: 116, df: 75, sa: 65, sd: 75, sp: 119},
     weightkg: 33,
     abilities: {0: 'Blaze'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Fireball',
   },
   Clobbopus: {
     types: ['Fighting'],
@@ -7862,14 +7862,14 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 110, at: 80, df: 120, sa: 80, sd: 90, sp: 30},
     weightkg: 310.5,
     abilities: {0: 'Steam Engine'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Volcalith',
   },
   Copperajah: {
     types: ['Steel'],
     bs: {hp: 122, at: 130, df: 69, sa: 80, sd: 69, sp: 30},
     weightkg: 650,
     abilities: {0: 'Sheer Force'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Steelsurge',
   },
   'Corsola-Galar': {
     types: ['Ghost'],
@@ -7884,7 +7884,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 98, at: 87, df: 105, sa: 53, sd: 85, sp: 67},
     weightkg: 75,
     abilities: {0: 'Pressure'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Wind Rage',
   },
   Corvisquire: {
     types: ['Flying'],
@@ -7988,7 +7988,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 90, at: 115, df: 90, sa: 48, sd: 68, sp: 74},
     weightkg: 115.5,
     abilities: {0: 'Strong Jaw'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Stonesurge',
   },
   Dreepy: {
     types: ['Dragon', 'Ghost'],
@@ -8015,7 +8015,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 70, at: 95, df: 115, sa: 120, sd: 50, sp: 85},
     weightkg: 40,
     abilities: {0: 'Light Metal'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Depletion',
   },
   Eiscue: {
     types: ['Ice'],
@@ -8073,7 +8073,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 70, at: 110, df: 80, sa: 95, sd: 60, sp: 70},
     weightkg: 1,
     abilities: {0: 'Ripen'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Tartness',
   },
   Frosmoth: {
     types: ['Ice', 'Bug'],
@@ -8113,7 +8113,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 61,
     gender: 'M',
     abilities: {0: 'Prankster'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Snooze',
   },
   Grookey: {
     types: ['Grass'],
@@ -8136,7 +8136,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     weightkg: 5.1,
     gender: 'F',
     abilities: {0: 'Healer'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Smite',
   },
   Hattrem: {
     types: ['Psychic'],
@@ -8175,7 +8175,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 70, at: 85, df: 65, sa: 125, sd: 65, sp: 120},
     weightkg: 45.2,
     abilities: {0: 'Torrent'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Hydrosnipe',
   },
   'Kubfu': {
     types: ['Fighting'],
@@ -8291,7 +8291,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 60, at: 45, df: 110, sa: 80, sd: 120, sp: 90},
     weightkg: 40.8,
     abilities: {0: 'Swarm'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Gravitas',
   },
   Perrserker: {
     types: ['Steel'],
@@ -8370,7 +8370,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 125, df: 90, sa: 60, sd: 70, sp: 85},
     weightkg: 90,
     abilities: {0: 'Overgrow'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Drum Solo',
   },
   Rolycoly: {
     types: ['Rock'],
@@ -8410,7 +8410,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 72, at: 107, df: 125, sa: 65, sd: 70, sp: 71},
     weightkg: 65.5,
     abilities: {0: 'Sand Spit'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Sandblast',
   },
   Scorbunny: {
     types: ['Fire'],
@@ -8552,7 +8552,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75},
     weightkg: 40,
     abilities: {0: 'Punk Rock'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Stun Shock',
     otherFormes: ['Toxtricity-Low-Key'],
   },
   'Toxtricity-Low-Key': {
@@ -8560,7 +8560,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 75, at: 98, df: 70, sa: 114, sd: 70, sp: 75},
     weightkg: 40,
     abilities: {0: 'Punk Rock'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Stun Shock',
     baseSpecies: 'Toxtricity',
   },
   Urshifu: {
@@ -8568,7 +8568,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
     weightkg: 105,
     abilities: {0: 'Unseen Fist'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max One Blow',
     otherFormes: ['Urshifu-Rapid-Strike'],
   },
   'Urshifu-Rapid-Strike': {
@@ -8576,7 +8576,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     bs: {hp: 100, at: 130, df: 100, sa: 63, sd: 60, sp: 97},
     weightkg: 105,
     abilities: {0: 'Unseen Fist'},
-    canGigantamax: true,
+    canGigantamax: 'G-Max Rapid Flow',
     baseSpecies: 'Urshifu',
   },
   Venomicon: {
@@ -10804,7 +10804,7 @@ class Specie implements I.Specie {
   readonly gender?: I.GenderName;
   readonly nfe?: boolean;
   readonly abilities?: {0: I.AbilityName};
-  readonly canGigantamax?: boolean;
+  readonly canGigantamax?: I.MoveName;
   readonly otherFormes?: I.SpeciesName[];
   readonly baseSpecies?: I.SpeciesName;
 

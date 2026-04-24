@@ -11,9 +11,9 @@ export class Move implements State.Move {
   originalName: string;
   ability?: I.AbilityName;
   item?: I.ItemName;
-  species?: I.SpeciesName;
   useZ?: boolean;
   useMax?: boolean | 'gmax';
+  overrideMove?: I.MoveName;
   overrides?: Partial<I.Move>;
 
   hits: number;
@@ -50,7 +50,7 @@ export class Move implements State.Move {
     options: Partial<State.Move> & {
       ability?: I.AbilityName;
       item?: I.ItemName;
-      species?: I.SpeciesName;
+      overrideMove?: I.MoveName;
     } = {}
   ) {
     name = options.name || name;
@@ -58,15 +58,14 @@ export class Move implements State.Move {
     let data: I.Move = extend(true, {name}, gen.moves.get(toID(name)), options.overrides);
 
     this.hits = 1;
-    // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useMax && data.maxMove) {
       const maxMoveName: string = getMaxMoveName(
+        gen,
         data.type,
         data.name,
-        options.species,
         !!(data.category === 'Status'),
         options.ability,
-        !!(options.useMax === 'gmax')
+        options.overrideMove,
       );
       const maxMove = gen.moves.get(toID(maxMoveName));
       const maxPower = () => {
@@ -86,6 +85,7 @@ export class Move implements State.Move {
         category: data.category,
       });
     }
+    // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useZ && data.zMove?.basePower) {
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
       const zMove = gen.moves.get(toID(zMoveName));
@@ -118,8 +118,8 @@ export class Move implements State.Move {
     this.item = options.item;
     this.useZ = options.useZ;
     this.useMax = options.useMax;
+    this.overrideMove = options.overrideMove;
     this.overrides = options.overrides;
-    this.species = options.species;
 
     this.bp = data.basePower;
     // These moves have a type, but the damage they deal is typeless so we override it
@@ -184,9 +184,9 @@ export class Move implements State.Move {
     return new Move(this.gen, this.originalName, {
       ability: this.ability,
       item: this.item,
-      species: this.species,
       useZ: this.useZ,
       useMax: this.useMax,
+      overrideMove: this.overrideMove,
       isCrit: this.isCrit,
       isStellarFirstUse: this.isStellarFirstUse,
       hits: this.hits,
@@ -249,23 +249,23 @@ const ZMOVES_TYPING: {
 };
 
 export function getMaxMoveName(
+  gen: I.Generation,
   moveType: I.TypeName,
   moveName?: string,
-  pokemonSpecies?: string,
   isStatus?: boolean,
   pokemonAbility?: string,
-  isGmax?: boolean,
+  isGmax?: I.MoveName,
 ) {
   if (isStatus) return 'Max Guard';
-  if (pokemonAbility === 'Normalize') return 'Max Strike';
+  if (pokemonAbility === 'Normalize') moveType = 'Normal';
   if (moveType === 'Normal' && !(moveName === 'Weather Ball' || moveName === 'Terrain Pulse')) {
-    if (pokemonAbility === 'Pixilate') return 'Max Starfall';
-    if (pokemonAbility === 'Aerilate') return 'Max Airstream';
-    if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
-    if (pokemonAbility === 'Galvanize') return 'Max Lightning';
+    if (pokemonAbility === 'Pixilate') moveType = 'Fairy';
+    if (pokemonAbility === 'Aerilate') moveType = 'Flying';
+    if (pokemonAbility === 'Refrigerate') moveType = 'Ice';
+    if (pokemonAbility === 'Galvanize') moveType = 'Electric';
   }
-  if (isGmax && moveType === GMAX_MOVES[pokemonSpecies!].type) {
-    return 'G-Max ' + GMAX_MOVES[pokemonSpecies!].move;
+  if (isGmax && moveType === gen.moves.get(toID(isGmax))!.type) {
+    return isGmax;
   }
   return 'Max ' + MAXMOVES_TYPING[moveType];
 }
@@ -291,41 +291,4 @@ const MAXMOVES_TYPING: {
   Rock: 'Rockfall',
   Steel: 'Steelspike',
   Water: 'Geyser',
-};
-
-const GMAX_MOVES: {[name: string]: {type: I.TypeName; move: string}} = {
-  Alcremie: {type: 'Fairy', move: 'Finale'},
-  Appletun: {type: 'Grass', move: 'Sweetness'},
-  Blastoise: {type: 'Water', move: 'Cannonade'},
-  Butterfree: {type: 'Bug', move: 'Befuddle'},
-  Centiskorch: {type: 'Fire', move: 'Centiferno'},
-  Charizard: {type: 'Fire', move: 'Wildfire'},
-  Cinderace: {type: 'Fire', move: 'Fireball'},
-  Coalossal: {type: 'Rock', move: 'Volcalith'},
-  Copperajah: {type: 'Steel', move: 'Steelsurge'},
-  Corviknight: {type: 'Flying', move: 'Wind Rage'},
-  Drednaw: {type: 'Water', move: 'Stonesurge'},
-  Duraludon: {type: 'Dragon', move: 'Depletion'},
-  Eevee: {type: 'Normal', move: 'Cuddle'},
-  Flapple: {type: 'Grass', move: 'Tartness'},
-  Garbodor: {type: 'Poison', move: 'Malodor'},
-  Gengar: {type: 'Ghost', move: 'Terror'},
-  Grimmsnarl: {type: 'Dark', move: 'Snooze'},
-  Hatterene: {type: 'Fairy', move: 'Smite'},
-  Inteleon: {type: 'Water', move: 'Hydrosnipe'},
-  Kingler: {type: 'Water', move: 'Foam Burst'},
-  Lapras: {type: 'Ice', move: 'Resonance'},
-  Machamp: {type: 'Fighting', move: 'Chi Strike'},
-  Melmetal: {type: 'Steel', move: 'Meltdown'},
-  Meowth: {type: 'Normal', move: 'Gold Rush'},
-  Orbeetle: {type: 'Psychic', move: 'Gravitas'},
-  Pikachu: {type: 'Electric', move: 'Volt Crash'},
-  Rillaboom: {type: 'Grass', move: 'Drum Solo'},
-  Sandaconda: {type: 'Ground', move: 'Sandblast'},
-  Snorlax: {type: 'Normal', move: 'Replenish'},
-  Toxtricity: {type: 'Electric', move: 'Stun Shock'},
-  'Toxtricity-Low-Key': {type: 'Electric', move: 'Stun Shock'},
-  Urshifu: {type: 'Dark', move: 'One Blow'},
-  'Urshifu-Rapid-Strike': {type: 'Water', move: 'Rapid Flow'},
-  Venusaur: {type: 'Grass', move: 'Vine Lash'},
 };
