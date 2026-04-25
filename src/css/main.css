@@ -553,6 +553,10 @@ th {
 select.toxic-counter {
     width: 5.5em;
 }
+.poke-info .max-btn {
+    padding: 3px 4px;
+    margin-left: 0.5em;
+}
 .move-selector, .move-bp {
     font-size: 0.9em;
 }
@@ -587,12 +591,6 @@ select.toxic-counter {
     height: 1em;
     padding: 3px 3px;
     margin-right: 1px;
-}
-.poke-info .max-btn {
-	font-size: 0.8em;
-	width: 2.5em;
-	height: 1em;
-	padding: 3px 3px;
 }
 .poke-info .stellar-btn {
    font-size: 0.8em;
