@@ -496,10 +496,26 @@ th {
     background: #ffff99;
 }
 
+.settings {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin-bottom: 16px;
+}
+.modeSelection .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings .btn {
+    margin: 0 -1px 0 0;
+}
+
 .genSelection, .notationSelection, .modeSelection {
-    display: inline-block;
     position: relative;
-    top: -8px;
+    display: flex;
+    align-items: center;
 }
 
 /* header */
