@@ -10,19 +10,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         path: damagecalc
+    
+    - name: Setup Node
+      uses: actions/setup-node@v6
+      with:
+        node-version: 24.x
+        cache: 'npm'
+        cache-dependency-path: './damagecalc/package-lock.json'
+
     - name: Fetch sets
       run: |-
         cd damagecalc
-        npm install
+        npm ci
         npm run compile
         cd import
-        npm install
+        npm ci
         npm run compile
         cd ..
         node import/dist/set-import.js src/js/data/sets/
+
     - name: Commit and push if it changed
       run: |-
         cd damagecalc
