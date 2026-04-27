@@ -129,7 +129,7 @@ $(".hp .base, .hp .evs, .hp .ivs, .hp .sps").bind("keyup change", function () {
 $(".at .base, .at .evs, .at .ivs, .at .sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'at');
 });
-$(".df .base, .df .evs, .df .ivs , .df.sps").bind("keyup change", function () {
+$(".df .base, .df .evs, .df .ivs , .df .sps").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'df');
 });
 $(".sa .base, .sa .evs, .sa .ivs, .sa .sps").bind("keyup change", function () {
