@@ -33,8 +33,8 @@
     "build": "npm run compile && npm run bundle",
     "test": "jest",
     "coverage": "jest --coverage",
-    "prepare": "npm run build",
-    "pretest": "npm run build",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
     "posttest": "npm run lint"
   }
 }
