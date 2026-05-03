@@ -23,11 +23,13 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Use Node.js ${{ matrix.node-version }}
       uses: Zarel/setup-node@patch-1
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm ci
     - run: npm install
     - run: npm run test
       env:
@@ -46,7 +48,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - run: npm install
     - name: Build
       run: node build
@@ -55,7 +57,7 @@ jobs:
       with:
         # Upload entire repository
         path: 'dist'
-    - uses: actions/configure-pages@v5
+    - uses: actions/configure-pages@v6
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
