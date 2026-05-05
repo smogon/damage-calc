@@ -1047,6 +1047,7 @@ function createPokemon(pokeInfo) {
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var legacyStat = LEGACY_STATS[gen][i];
 			var stat = legacyStatToStat(legacyStat);
+
 			ivs[stat] = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
 			var sps = set.sps;
 			if (isChampions) {
@@ -1351,7 +1352,7 @@ function calcStat(poke, StatID) {
 	var base = ~~stat.find(".base").val();
 	var level = ~~poke.find(".level").val();
 	var evs = ~~stat.find(".evs").val();
-	var nature, ivs, evs;
+	var nature, ivs;
 	if (gen === 0) {
 		level = 50;
 		ivs = 31;
