@@ -143,7 +143,7 @@ $(".sp .base, .sp .evs, .sp .ivs").bind("keyup change", function () {
 $(".evs").bind('keyup change', function () {
 	totalEVs($(this).closest(".poke-info"));
 });
-$(".sl .base").keyup("keyup change", function () {
+$(".sl .base, .sl .evs").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sl');
 });
 $(".at .dvs").keyup(function () {
@@ -696,6 +696,16 @@ $(".set-selector").change(function () {
 					(set.ivs && set.ivs[stat] !== undefined) ? set.ivs[stat] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
 					(set.dvs && set.dvs[stat] !== undefined) ? set.dvs[stat] : 15);
+				// pokeObj.find(".hp .dvs").val(
+				// 	(set.dvs && set.dvs[stat] !== undefined) ? calc.Stats.getHPDV({
+				// 		atk: (set.dvs && set.dvs[atk] !== undefined) ? set.dvs[atk] * 2 : 31,
+				// 		def: (set.dvs && set.dvs[def] !== undefined) ? set.dvs[def] * 2 : 31,
+				// 		spe: (set.dvs && set.dvs[spe] !== undefined) ? set.dvs[spe] * 2 : 31,
+				// 		spc: (gen === 1) ? ((set.dvs && set.dvs[spc] !== undefined) ? set.dvs[spc] * 2 : 31)
+				// 						 : ((set.dvs && set.dvs[spa] !== undefined) ? set.dvs[spa] * 2 : 31),
+
+				// 	}) : 15
+				// )
 			}
 			setSelectValueIfValid(pokeObj.find(".nature"), set.nature, "Hardy");
 			var abilityFallback = (typeof pokemon.abilities !== "undefined") ? pokemon.abilities[0] : "";
