@@ -175,52 +175,32 @@ function getStats(currentPoke, rows, x) {
 				evs['df'] = 0;
 				evs['sl'] = 0;
 				evs['sp'] = 0;
-				for (j = 1; j < currentRow.length; j++) {
-					currentEV = currentRow[j].trim().split(" ");
-					currentEV[1] = statToLegacyStatGen1(currentEV[1].toLowerCase());
-					evs[currentEV[1]] = parseInt(currentEV[0]);
-				}
+			} else if (gen === 2) {
+				evs['hp'] = 0;
+				evs['at'] = 0;
+				evs['df'] = 0;
+				evs['sa'] = 0;
+				evs['sd'] = 0;
+				evs['sp'] = 0;
 			}
-			else {
-				if (gen === 2) {
-					evs['hp'] = 0;
-					evs['at'] = 0;
-					evs['df'] = 0;
-					evs['sa'] = 0;
-					evs['sd'] = 0;
-					evs['sp'] = 0;
-				}
-				for (j = 1; j < currentRow.length; j++) {
-					currentEV = currentRow[j].trim().split(" ");
-					currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
-					evs[currentEV[1]] = parseInt(currentEV[0]);
-				}
+			for (j = 1; j < currentRow.length; j++) {
+				currentEV = currentRow[j].trim().split(" ");
+				if (gen === 1) currentEV[1] = statToLegacyStatGen1(currentEV[1].toLowerCase());
+				else currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
+				evs[currentEV[1]] = parseInt(currentEV[0]);
 			}
 			currentPoke[$('#champions').prop('checked') ? 'sps' : 'evs'] = evs;
 			break;
 		case 'IVs':
-			if (gen == 1) {
-				for (j = 1; j < currentRow.length; j++) {
-					currentIV = currentRow[j].trim().split(" ");
-					currentIV[1] = statToLegacyStatGen1(currentIV[1].toLowerCase());
-					dvs[currentIV[1]] = parseInt(currentIV[0]) / 2;
-				}
-				currentPoke.dvs = dvs;
-			} else if (gen == 2) {
-				for (j = 1; j < currentRow.length; j++) {
-					currentIV = currentRow[j].trim().split(" ");
-					currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
-					dvs[currentIV[1]] = parseInt(currentIV[0]) / 2;
-				}
-				currentPoke.dvs = dvs;
-			} else {
-				for (j = 1; j < currentRow.length; j++) {
-					currentIV = currentRow[j].trim().split(" ");
-					currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
-					ivs[currentIV[1]] = parseInt(currentIV[0]);
-				}
-				currentPoke.ivs = ivs;
+			for (j = 1; j < currentRow.length; j++) {
+				currentIV = currentRow[j].trim().split(" ");
+				if (gen === 1) currentIV[1] = statToLegacyStatGen1(currentIV[1].toLowerCase());
+				else currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
+				if (gen === 1 || gen === 2) dvs[currentIV[1]] = parseInt(currentIV[0]);
+				else ivs[currentIV[1]] = parseInt(currentIV[0]);
 			}
+			if (gen === 1 || gen === 2) currentPoke.dvs = dvs;
+			else currentPoke.ivs = ivs;
 			break;
 		case 'Ability':
 			ability = currentRow[1] ? currentRow[1].trim() : '';
