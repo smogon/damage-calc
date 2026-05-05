@@ -110,6 +110,22 @@ function statToLegacyStat(stat) {
 	}
 }
 
+
+function statToLegacyStatGen1(stat) {
+	switch (stat) {
+	case 'hp':
+		return "hp";
+	case 'atk':
+		return "at";
+	case 'def':
+		return "df";
+	case 'spa':
+		return "sl";
+	case 'spe':
+		return "sp";
+	}
+}
+
 function getStats(currentPoke, rows, offset) {
 	currentPoke.nature = "Serious";
 	var currentEV;
@@ -130,22 +146,46 @@ function getStats(currentPoke, rows, offset) {
 			currentPoke.level = parseInt(currentRow[1].trim());
 			break;
 		case 'EVs':
-			for (j = 1; j < currentRow.length; j++) {
-				currentEV = currentRow[j].trim().split(" ");
-				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
-				evs[currentEV[1]] = parseInt(currentEV[0]);
+			if (gen == 1) {
+				for (j = 1; j < currentRow.length; j++) {
+					currentEV = currentRow[j].trim().split(" ");
+					currentEV[1] = statToLegacyStatGen1(currentEV[1].toLowerCase());
+					evs[currentEV[1]] = parseInt(currentEV[0]);
+				}
+			}
+			else {
+				for (j = 1; j < currentRow.length; j++) {
+					currentEV = currentRow[j].trim().split(" ");
+					currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
+					evs[currentEV[1]] = parseInt(currentEV[0]);
+				}
 			}
 			currentPoke.evs = evs;
 			break;
 		case 'IVs':
-			for (j = 1; j < currentRow.length; j++) {
-				currentIV = currentRow[j].trim().split(" ");
-				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
-				ivs[currentIV[1]] = parseInt(currentIV[0]);
+			if (gen == 1) {
+				for (j = 1; j < currentRow.length; j++) {
+					currentIV = currentRow[j].trim().split(" ");
+					currentIV[1] = statToLegacyStatGen1(currentIV[1].toLowerCase()) / 2;
+					ivs[currentIV[1]] = parseInt(currentIV[0]) / 2;
+				}
+				currentPoke.ivs = ivs;
+			} else if (gen == 2) {
+				for (j = 1; j < currentRow.length; j++) {
+					currentIV = currentRow[j].trim().split(" ");
+					currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase()) / 2;
+					ivs[currentIV[1]] = parseInt(currentIV[0]) / 2;
+				}
+				currentPoke.ivs = ivs;
+			} else {
+				for (j = 1; j < currentRow.length; j++) {
+					currentIV = currentRow[j].trim().split(" ");
+					currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
+					ivs[currentIV[1]] = parseInt(currentIV[0]);
+				}
+				currentPoke.ivs = ivs;
 			}
-			currentPoke.ivs = ivs;
 			break;
-
 		}
 		currentAbility = rows[x] ? rows[x].trim().split(":") : '';
 		if (currentAbility[0] == "Ability") {
@@ -226,6 +266,7 @@ function addToDex(poke) {
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
 	dexObject.ivs = poke.ivs;
+	dexObject.dvs = poke.dvs;
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.item = poke.item;

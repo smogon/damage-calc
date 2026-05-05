@@ -210,19 +210,10 @@ export function checkItem(pokemon: Pokemon, magicRoomActive?: boolean) {
   }
 }
 
-export function checkRawStatChanges(
-  pokemon: Pokemon,
-  powerTrickActive?: boolean,
-  wonderRoomActive?: boolean,
-) {
-  if (powerTrickActive) {
-    [pokemon.rawStats.atk, pokemon.rawStats.def] = [pokemon.rawStats.def, pokemon.rawStats.atk];
-  }
+export function checkWonderRoom(pokemon: Pokemon, wonderRoomActive?: boolean) {
   if (wonderRoomActive) {
     [pokemon.rawStats.def, pokemon.rawStats.spd] = [pokemon.rawStats.spd, pokemon.rawStats.def];
   }
-//  Power Trick acts first - the two checks could be separated into their own
-//  functions, but keeping them together ensures they apply in the correct order
 }
 
 export function checkIntimidate(gen: Generation, source: Pokemon, target: Pokemon) {
@@ -571,17 +562,9 @@ export function getFinalDamage(
  * @param target Target pokemon (after stat modifications)
  * @returns 'Physical' | 'Special'
  */
-export function getShellSideArmCategory(
-  source: Pokemon,
-  target: Pokemon,
-  wonderRoomActive?: boolean
-): MoveCategory {
-  let physicalDamage = source.stats.atk / target.stats.def;
-  let specialDamage = source.stats.spa / target.stats.spd;
-  if (wonderRoomActive) {
-    physicalDamage = source.stats.atk / target.stats.spd;
-    specialDamage = source.stats.spa / target.stats.def;
-  }
+export function getShellSideArmCategory(source: Pokemon, target: Pokemon): MoveCategory {
+  const physicalDamage = source.stats.atk / target.stats.def;
+  const specialDamage = source.stats.spa / target.stats.spd;
   return physicalDamage > specialDamage ? 'Physical' : 'Special';
 }
 
@@ -657,27 +640,15 @@ export function getStatDescriptionText(
   gen: Generation,
   pokemon: Pokemon,
   stat: StatID,
-  powerTrickActive?: boolean,
-  wonderRoomActive?: boolean,
+  natureName?: NatureName
 ): string {
-  const initialStat: StatID = stat;
-  if (wonderRoomActive) {
-    if (stat === 'def') { stat = 'spd'; } else if (stat === 'spd') { stat = 'def'; }
-  }
-  if (powerTrickActive) {
-    if (stat === 'atk') { stat = 'def'; } else if (stat === 'def') { stat = 'atk'; }
-  }
-  //  decoding what checkRawStatChanges does
-  const nature = gen.natures.get(toID(pokemon.nature))!;
+  const nature = gen.natures.get(toID(natureName))!;
   let desc = pokemon.evs[stat] +
     (stat === 'hp' || nature.plus === nature.minus ? ''
     : nature.plus === stat ? '+'
     : nature.minus === stat ? '-'
     : '') + ' ' +
-     Stats.displayStat(initialStat);
-  if (stat !== initialStat) {
-    desc = desc + ' (' + Stats.displayStat(stat) + ')';
-  }
+     Stats.displayStat(stat);
   const iv = pokemon.ivs[stat];
   if (iv !== 31) desc += ` ${iv} IVs`;
   return desc;
