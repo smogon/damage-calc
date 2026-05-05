@@ -673,7 +673,7 @@ var SETDEX_SM = {
     "ZU Physically Defensive": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":200,"sp":56},"moves":["Circle Throw","Scald","Toxic","Protect"]}
   },
   "Abra": {
-    "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":236,"sd":76,"sp":196},"moves":["Psychic","Dazzling Gleam","Hidden Power Fighting","Protect"]},
+    "LC Focus Sash": {"level":5,"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":240,"sp":200},"moves":["Psychic","Dazzling Gleam","Hidden Power Fighting","Protect"]},
     "LC Life Orb": {"level":5,"ability":"Magic Guard","item":"Life Orb","nature":"Timid","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"sa":240,"sp":200},"moves":["Psychic","Dazzling Gleam","Hidden Power Fighting","Substitute"]}
   },
   "Kadabra": {
@@ -1486,7 +1486,7 @@ var SETDEX_SM = {
     "RU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Jolly","evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Taunt","Toxic Spikes","Return"]}
   },
   "Scizor": {
-    "OU Swords Dance": {"ability":"Light Metal","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Bullet Punch","Roost","Knock Off"]},
+    "OU Swords Dance": {"ability":"Light Metal","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Roost","Bullet Punch","U-turn"]},
     "Ubers Bulky Pivot": {"ability":"Light Metal","item":"Scizorite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sd":252},"moves":["Bullet Punch","Roost","U-turn","Toxic"]},
     "UU Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":164,"at":252,"sp":92},"moves":["Bullet Punch","U-turn","Superpower","Pursuit"]},
     "UU Life Orb + Swords Dance": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Bullet Punch","Superpower","Bug Bite","Swords Dance"]},
@@ -1506,7 +1506,7 @@ var SETDEX_SM = {
     "CAP Showdown Usage": {"ability":"Swarm","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Roost","Bullet Punch","U-turn","Swords Dance"]}
   },
   "Scizor-Mega": {
-    "OU Swords Dance": {"ability":"Technician","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Bullet Punch","Roost","Knock Off"]},
+    "OU Swords Dance": {"ability":"Technician","item":"Scizorite","nature":"Impish","evs":{"hp":248,"df":16,"sd":244},"moves":["Swords Dance","Roost","Bullet Punch","U-turn"]},
     "Ubers Bulky Pivot": {"ability":"Technician","item":"Scizorite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":248,"df":8,"sd":252},"moves":["Bullet Punch","Roost","U-turn","Toxic"]},
     "Doubles OU Bulky Attacker": {"ability":"Technician","item":"Scizorite","nature":"Adamant","evs":{"hp":252,"at":136,"sd":36,"sp":84},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
     "Battle Spot Singles Swords Dance": {"level":50,"ability":"Technician","item":"Scizorite","nature":"Adamant","evs":{"hp":252,"at":116,"df":20,"sd":116,"sp":4},"moves":["Swords Dance","Bullet Punch","U-turn","Roost"]},
@@ -1589,7 +1589,7 @@ var SETDEX_SM = {
     "Monotype Support (Flying)": {"ability":"Water Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":160,"sp":96},"moves":["Defog","Scald","Roost","Haze"]}
   },
   "Skarmory": {
-    "OU Physically Defensive": {"ability":"Sturdy","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Roost","Spikes","Whirlwind","Counter"]},
+    "OU Physically Defensive": {"ability":"Sturdy","item":"Rocky Helmet","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Roost","Spikes","Whirlwind","Counter"]},
     "Ubers Physically Defensive": {"ability":"Sturdy","item":"Shed Shell","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Roost","Whirlwind","Spikes","Toxic"]},
     "Battle Spot Singles Physical Wall": {"level":50,"ability":"Sturdy","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sp":4},"moves":["Roost","Stealth Rock","Drill Peck","Whirlwind"]},
     "Monotype Defensive (Flying)": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":224,"df":252,"sp":32},"moves":["Brave Bird","Roost","Whirlwind","Defog"]},

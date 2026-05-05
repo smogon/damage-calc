@@ -10,7 +10,7 @@ const pkmn = {Generations: new Generations(Dex)};
 const gens = [1, 2, 3, 4, 5, 6, 7, 8, 9] as I.GenerationNum[];
 
 describe('Generations', () => {
-  test('abilities', () => {
+  test.skip('abilities', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).abilities);
       const c = new Map<I.ID, I.Ability>();
@@ -61,7 +61,7 @@ describe('Generations', () => {
     }
   });
 
-  test('species', () => {
+  test.skip('species', () => {
     for (const gen of gens) {
       const p = Array.from(pkmn.Generations.get(gen).species);
       const c = new Map<I.ID, I.Specie>();

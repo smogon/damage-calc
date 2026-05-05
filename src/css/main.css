@@ -504,8 +504,9 @@ th {
 
 /* header */
 .move-result-group {
-    min-width: 50em;
-    margin: 1em 0 11.5em;
+    display: flex;
+    min-width: 50rem;
+    margin-top: 1em;
 }
 .move-result-subgroup {
     float: left;
@@ -515,7 +516,7 @@ th {
     margin-right: 1em;
 }
 .main-result-group {
-    margin: 2em 0 1em;
+    margin: 0.5em 0 1em;
 }
 .result-move-header {
     font-size: 0.8em;
@@ -538,7 +539,7 @@ th {
 }
 .poke-info input[type="number"] {
     display: inline-block;
-    width: 3em;
+    width: auto;
 }
 .info-group {
     margin: 1em 0;
@@ -647,16 +648,15 @@ table.field {
 }
 
 .import-team-text {
-    display: block;
-    margin: 5px 0;
-    min-width: 27em;
-    min-height: 10em;
+    margin: 1rem 0;
+    min-width: 27rem;
+    min-height: 10rem;
     resize: vertical;
 }
 
 .import-name-text {
-	min-width: 26.3em;
-    min-height: 1em;
+	min-width: 26.3rem;
+    min-height: 1rem;
     overflow: auto;
     display: inline;
 }

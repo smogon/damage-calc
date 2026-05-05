@@ -431,7 +431,9 @@ const SV: TypeChart = extend(true, {}, SS, {
   },
 });
 
-export const TYPE_CHART = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+const Champions = SS;
+
+export const TYPE_CHART = [Champions, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Types implements I.Types {
   private readonly gen: I.GenerationNum;

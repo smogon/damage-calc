@@ -8,13 +8,6 @@ $("#p2 .ability").bind("keyup change", function () {
 	autosetTerrain($(this).val(), 1);
 });
 
-$("#p2 .item").bind("keyup change", function () {
-	autosetStatus("#p2", $(this).val());
-});
-
-lastManualStatus["#p2"] = "Healthy";
-lastAutoStatus["#p1"] = "Healthy";
-
 var resultLocations = [[], []];
 for (var i = 0; i < 4; i++) {
 	resultLocations[0].push({
@@ -208,6 +201,8 @@ $(".mode").change(function () {
 	var mode = params.get('mode');
 	if (mode === 'randoms') {
 		window.location.replace('randoms.html?' + params);
+	} else if (mode === 'champions') {
+		window.location.replace('champions.html?' + params);
 	} else if (mode === 'one-vs-one') {
 		window.location.replace('index.html?' + params);
 	} else if (mode === "oms") {
@@ -225,7 +220,7 @@ $(document).ready(function () {
 	var params = new URLSearchParams(window.location.search);
 	var m = params.get('mode');
 	if (m) {
-		if (m !== 'one-vs-one' && m !== 'randoms') {
+		if (m !== 'one-vs-one' && m !== 'randoms' && m !== 'champions') {
 			window.location.replace('honkalculate.html?' + params);
 		} else {
 			if ($('#randoms').prop('checked')) {

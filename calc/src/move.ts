@@ -123,11 +123,13 @@ export class Move implements State.Move {
     this.bp = data.basePower;
     // These moves have a type, but the damage they deal is typeless so we override it
     const typelessDamage =
-      (gen.num >= 2 && data.id === 'struggle') ||
-      (gen.num <= 4 && ['futuresight', 'doomdesire'].includes(data.id));
+      ((gen.num === 0 || gen.num >= 2) && data.id === 'struggle') ||
+      ((gen.num > 0 && gen.num <= 4) && ['futuresight', 'doomdesire'].includes(data.id));
     this.type = typelessDamage ? '???' : data.type;
     this.category = data.category ||
-      (gen.num < 4 ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical') : 'Status');
+      (gen.num > 0 && gen.num < 4
+        ? (SPECIAL.includes(data.type) ? 'Special' : 'Physical')
+        : 'Status');
 
     const stat = this.category === 'Special' ? 'spa' : 'atk';
     if (data.self?.boosts && data.self.boosts[stat] && data.self.boosts[stat]! < 0) {

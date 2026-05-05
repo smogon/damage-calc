@@ -234,6 +234,7 @@ var SETDEX_RBY = {
   },
   "Tentacruel": {
     "UU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Surf","Blizzard"]},
+    "UU Substitute + Toxic": {"moves":["Surf","Blizzard","Substitute","Toxic"]},
     "Tradebacks OU Wrap": {"moves":["Wrap","Surf","Blizzard","Hyper Beam"]}
   },
   "Geodude": {

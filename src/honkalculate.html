@@ -75,8 +75,9 @@
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-one" checked="checked" /><label class="btn btn-left btn-wide" for="one-vs-one">One vs One</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="one-vs-all" /><label class="btn btn-mid btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="one-vs-all">One vs All</label>
             <input class="mode visually-hidden" type="radio" name="mode" id="all-vs-one" /><label class="btn btn-mid btn-wide gen-specific g3 g4 g5 g6 g7 g8 g9" for="all-vs-one">All vs One</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-mid btn-xwide" for="randoms">Random Battles</label>
-            <input class="mode visually-hidden" type="radio" name="mode" id="oms" checked="checked" /><label class="btn btn-right btn-xwide" for="oms">Other Metagames</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="champions" /><label class="btn btn-mid btn-wide" for="champions">Champions</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="randoms" /><label class="btn btn-mid btn-wide" for="randoms">Random Battles</label>
+            <input class="mode visually-hidden" type="radio" name="mode" id="oms" /><label class="btn btn-right btn-wide" for="oms">Other Metagames</label>
         </span>
     </div>
     <hr />
@@ -121,7 +122,7 @@
                         </div>
                         <div class="hide">
                             <label>Gender</label>
-                            <select class="gender calc-trigger"><option></option><option selected="selected">Male</option><option>Female</option></select>
+                            <select class="gender calc-trigger"><option value="">(Select)</option><option value="M">Male</option><option value="F">Female</option><option value="N">Genderless</option></select>
                         </div>
                         <div>
                             <label>Level</label>
@@ -800,7 +801,7 @@
                             <label class="btn btn-wide" for="leechSeedR">Leech Seed</label>
                         </div>
                     </div>
-                    <div class="btn-group">
+                    <div class="btn-group gen-specific g9">
                         <div class="left" title="Has this Pok&eacute;mon been affected by Salt Cure?">
                             <input class="visually-hidden" type="checkbox" id="saltCureL" />
                             <label class="btn btn-wide" for="saltCureL">Salt Cure</label>

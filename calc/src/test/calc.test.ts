@@ -5,14 +5,14 @@ import {inGen, inGens, tests} from './helper';
 
 describe('calc', () => {
   describe('Multi-Gen', () => {
-    inGens(4, 7, ({gen, calculate, Pokemon, Move}) => {
+    inGens([4, 7], ({gen, calculate, Pokemon, Move}) => {
       test(`Grass Knot (gen ${gen})`, () => {
         const result = calculate(Pokemon('Groudon'), Pokemon('Groudon'), Move('Grass Knot'));
         expect(result.range()).toEqual([190, 224]);
       });
     });
 
-    inGens(4, 7, ({gen, calculate, Pokemon, Move}) => {
+    inGens([4, 7], ({gen, calculate, Pokemon, Move}) => {
       test(`Arceus Plate (gen ${gen})`, () => {
         const result = calculate(
           Pokemon('Arceus', {item: 'Meadow Plate'}),
@@ -26,7 +26,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([1, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Night Shade / Seismic Toss (gen ${gen})`, () => {
         const mew = Pokemon('Mew', {level: 50});
         const vulpix = Pokemon('Vulpix');
@@ -50,21 +50,21 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([0, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Immunity (gen ${gen})`, () => {
         expect(calculate(Pokemon('Snorlax'), Pokemon('Gengar'), Move('Hyper Beam')).damage).toBe(0);
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([1, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Non-damaging (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Barrier'));
+        const result = calculate(Pokemon('Snorlax'), Pokemon('Dragonite'), Move('Amnesia'));
         expect(result.damage).toBe(0);
-        expect(result.desc()).toBe('Snorlax Barrier vs. Vulpix: 0-0 (0 - 0%)');
+        expect(result.desc()).toBe('Snorlax Amnesia vs. Dragonite: 0-0 (0 - 0%)');
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([1, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Protect (gen ${gen})`, () => {
         const field = Field({defenderSide: {isProtected: true}});
         const snorlax = Pokemon('Snorlax');
@@ -73,7 +73,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([1, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Critical hits ignore attack decreases (gen ${gen})`, () => {
         const field = Field({defenderSide: {isReflect: true}});
 
@@ -118,10 +118,10 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([0, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Struggle vs. Ghost (gen ${gen})`, () => {
-        const result = calculate(Pokemon('Mew'), Pokemon('Gengar'), Move('Struggle'));
-        if (gen < 2) {
+        const result = calculate(Pokemon('Dragonite'), Pokemon('Gengar'), Move('Struggle'));
+        if (gen > 0 && gen < 2) {
           expect(result.range()[1]).toBe(0);
         } else {
           expect(result.range()[1]).toBeGreaterThan(0);
@@ -129,7 +129,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(3, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([3, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Weather Ball should change type depending on the weather (gen ${gen})`, () => {
         const weathers = [
           {
@@ -198,7 +198,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([6, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Flying Press (gen ${gen})`, () => {
         const attacker = Pokemon('Hawlucha');
         const flyingPress = Move('Flying Press');
@@ -235,7 +235,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([6, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Thousand Arrows and Ring Target Should negate damage nullfiers (gen ${gen})`, () => {
         const result = calculate(Pokemon('Zygarde'), Pokemon('Swellow'), Move('Thousand Arrows'));
         expect(result.range()).toEqual([147, 174]);
@@ -245,7 +245,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([5, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Ring Target should negate type nullfiers (gen ${gen})`, () => {
         const attacker = Pokemon('Mew');
         const defender = Pokemon('Skarmory', {'item': 'Ring Target'});
@@ -263,7 +263,7 @@ describe('calc', () => {
     });
 
     describe('IVs are shown if applicable', () => {
-      inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+      inGens([3, 9], ({gen, calculate, Pokemon, Move}) => {
         test(`Gen ${gen}`, () => {
           const ivs = {spa: 9, spd: 9, hp: 9};
           const evs = {spa: 9, spd: 9, hp: 9};
@@ -275,7 +275,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(4, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([4, 9], ({gen, calculate, Pokemon, Move}) => {
       const zapdos = Pokemon('Zapdos', {item: 'Iron Ball'});
       if (gen === 4) {
         test(`Iron Ball negates ground immunities (gen ${gen})`, () => {
@@ -303,7 +303,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(5, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([5, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       const dragonite = Pokemon('Dragonite', {ability: 'Multiscale'});
       const dragonite1 = Pokemon('Dragonite', {ability: 'Multiscale', curHP: 69});
       const dragonite2 = Pokemon('Dragonite', {ability: 'Shadow Shield', item: 'Heavy-Duty Boots'});
@@ -375,7 +375,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(7, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([7, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Psychic Terrain (gen ${gen})`, () => {
         const field = Field({terrain: 'Psychic'});
         const Mewtwo = Pokemon('Mewtwo', {
@@ -410,7 +410,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([6, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Parental Bond (gen ${gen})`, () => {
         let result = calculate(
           Pokemon('Kangaskhan-Mega', {evs: {atk: 152}}),
@@ -479,7 +479,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([6, 9], ({gen, calculate, Pokemon, Move}) => {
       test('Knock Off vs. Klutz', () => {
         const weavile = Pokemon('Weavile');
         const audino = Pokemon('Audino', {ability: 'Klutz', item: 'Leftovers'});
@@ -496,7 +496,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(1, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([1, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit percentage kill (gen ${gen})`, () => {
         if (gen < 3) {
           const result = calculate(
@@ -531,7 +531,7 @@ describe('calc', () => {
         }
       });
     });
-    inGens(8, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([8, 9], ({gen, calculate, Pokemon, Move}) => {
       test('Knock Off vs. Zacian Crowned', () => {
         const weavile = Pokemon('Weavile');
         const zacian = Pokemon('Zacian-Crowned', {ability: 'Intrepid Sword', item: 'Rusted Sword'});
@@ -543,7 +543,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([5, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Multiscale (gen ${gen})`, () => {
         const result = calculate(
           Pokemon('Mamoswine'),
@@ -559,7 +559,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(5, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([5, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Weak Armor (gen ${gen})`, () => {
         let result = calculate(
           Pokemon('Mamoswine'),
@@ -606,7 +606,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(6, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([6, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Mummy (gen ${gen})`, () => {
         const result = calculate(
           Pokemon('Pinsir-Mega'),
@@ -629,7 +629,7 @@ describe('calc', () => {
       });
     });
 
-    inGens(7, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([7, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Multi-hit interaction with Items (gen ${gen})`, () => {
         let result = calculate(
           Pokemon('Greninja'),
@@ -668,7 +668,7 @@ describe('calc', () => {
       });
     });
     // For the EoT tests, 5+ turns is tested separately because it uses the predictTotal instead of computeKOChance, and the code is different for each function
-    inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([3, 9], ({gen, calculate, Pokemon, Move}) => {
       // Mew has 100 Max Health, and Seismic Toss does 25 damage. Leftovers heals 6 HP
       // On turn 5, Mew should be at -1 HP after the Seismic Toss. If Leftovers recovery is applied, the calc will think mew is at 5 HP, and return a 6HKO
       test(`KOed Pokemon don't receive HP recovery after 5+ turns (gen ${gen})`, () => {
@@ -689,7 +689,7 @@ describe('calc', () => {
       });
     });
     // Similar to the last test, but for the computerKOChance function instead of predictTotal
-    inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([3, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`KOed Pokemon don't receive HP recovery after 1-4 turns (gen ${gen})`, () => {
         const chansey = Pokemon('Chansey', {
           level: 55,
@@ -707,7 +707,7 @@ describe('calc', () => {
         );
       });
     });
-    inGens(3, 9, ({gen, calculate, Pokemon, Move}) => {
+    inGens([3, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`End of turn damage is calculated correctly after 5+ turns (gen ${gen})`, () => {
         const chansey = Pokemon('Chansey', {
           level: 1,
@@ -726,7 +726,7 @@ describe('calc', () => {
         );
       });
     });
-    inGens(3, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([3, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`End of turn damage is calculated correctly after 1-4 turns (gen ${gen})`, () => {
         const field = Field({
           weather: 'Sand',
@@ -751,7 +751,7 @@ describe('calc', () => {
         );
       });
     });
-    inGens(3, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([3, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`End of turn damage is calculated correctly on the first turn (gen ${gen})`, () => {
         const field = Field({
           weather: 'Sand',
@@ -772,7 +772,7 @@ describe('calc', () => {
         );
       });
     });
-    inGens(4, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([4, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test(`Mold Breaker does not disable abilities that don't affect direct damage (gen ${gen})`, () => {
         const attacker = Pokemon('Rampardos', {
           ability: 'Mold Breaker',
@@ -797,7 +797,7 @@ describe('calc', () => {
         );
       });
     });
-    inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+    inGens([8, 9], ({gen, calculate, Pokemon, Move, Field}) => {
       test('Steely Spirit should boost Steel-type moves as a field effect.', () => {
         const pokemon = Pokemon('Perrserker', {
           ability: 'Battle Armor',
@@ -828,23 +828,93 @@ describe('calc', () => {
         );
       });
     });
+    inGens([8, 9], ({gen, calculate, Pokemon, Move}) => {
+      test(`Body Press should use the Def stat (gen ${gen})`, () => {
+        const attacker = Pokemon('Bronzong');
+        const defender = Pokemon('Glalie');
+        const result = calculate(attacker, defender, Move('Body Press'));
+        expect(result.range()).toEqual([158, 186]);
+        expect(result.desc()).toBe(
+          '0 Def Bronzong Body Press vs. 0 HP / 0 Def Glalie: 158-186 (52.4 - 61.7%) -- guaranteed 2HKO'
+        );
+      });
+    });
+    inGens([4, 9], ({gen, calculate, Pokemon, Move, Field}) => {
+      test(`Power Trick should swap Atk and Def raw stats (gen ${gen})`, () => {
+        const attacker = Pokemon('Bastiodon');
+        const defender = Pokemon('Glaceon');
+        const result = calculate(attacker, defender, Move('Iron Head'), Field({attackerSide: {isPowerTrick: true}}));
+        expect(result.range()).toEqual([252, 296]);
+        expect(result.desc()).toBe(
+          '0 Atk (Def) Bastiodon with Power Trick Iron Head vs. 0 HP / 0 Def Glaceon: 252-296 (92.9 - 109.2%) -- 56.3% chance to OHKO'
+        );
+        const result2 = calculate(attacker, defender, Move('Iron Head'), Field({defenderSide: {isPowerTrick: true}}));
+        expect(result2.range()).toEqual([156, 186]);
+        expect(result2.desc()).toBe(
+          '0 Atk Bastiodon Iron Head vs. 0 HP / 0 Def (Atk) Glaceon with Power Trick: 156-186 (57.5 - 68.6%) -- guaranteed 2HKO'
+        );
+      });
+    });
+    describe('Wonder Room', () => {
+      inGens([5, 9], ({gen, calculate, Pokemon, Move, Field}) => {
+        test(`Wonder Room should switch Def and SpD (gen ${gen})`, () => {
+          const attacker = Pokemon('Golduck');
+          const defender = Pokemon('Forretress');
+          const result = calculate(attacker, defender, Move('Cross Chop'), Field({isWonderRoom: true}));
+          expect(result.range()).toEqual([92, 109]);
+          expect(result.desc()).toBe(
+            '0 Atk Golduck Cross Chop vs. 0 HP / 0 Def (SpD) Forretress in Wonder Room: 92-109 (31.6 - 37.4%) -- 87.7% chance to 3HKO'
+          );
+        });
+        test(`Power Trick should act before other stat effects (gen ${gen})`, () => {
+          const attacker = Pokemon('Empoleon');
+          const defender = Pokemon('Cloyster');
+          const result = calculate(attacker, defender, Move('Flash Cannon'), Field({isWonderRoom: true, defenderSide: {isPowerTrick: true}}));
+          expect(result.range()).toEqual([99, 117]);
+          expect(result.desc()).toBe(
+            '0 SpA Empoleon Flash Cannon vs. 0 HP / 0 SpD (Atk) Cloyster with Power Trick in Wonder Room: 99-117 (41 - 48.5%) -- guaranteed 3HKO'
+          );
+        });
+      });
+      inGens([8, 9], ({gen, calculate, Pokemon, Move, Field}) => {
+        test(`Body Press in Wonder Room uses natural Def but is boosted by SpD modifiers (gen ${gen})`, () => {
+          const attacker = Pokemon('Kommo-o', {boosts: {spd: 1}});
+          const defender = Pokemon('Jirachi');
+          const result = calculate(attacker, defender, Move('Body Press'), Field({isWonderRoom: true}));
+          expect(result.range()).toEqual([157, 186]);
+          expect(result.desc()).toBe(
+            '+1 0 SpD (Def) Kommo-o Body Press vs. 0 HP / 0 Def (SpD) Jirachi in Wonder Room: 157-186 (46 - 54.5%) -- 54.3% chance to 2HKO'
+          );
+        });
+        test('Shell Side Arm category check should ignore Wonder Room', () => {
+          const attacker = Pokemon('Slowbro-Galar');
+          const defender = Pokemon('Mew', {boosts: {spd: 1}});
+          const result = calculate(attacker, defender, Move('Shell Side Arm'), Field({isWonderRoom: true}));
+          expect(result.move.category).toBe('Special');
+          expect(result.desc()).toBe(
+            '0 SpA Slowbro-Galar Shell Side Arm vs. +1 0 HP / 0 SpD (Def) Mew in Wonder Room: 66-78 (19.3 - 22.8%) -- possible 5HKO'
+          );
+        });
+      });
+    });
     describe('Shell Side Arm', () => {
-      inGens(8, 9, ({gen, calculate, Pokemon, Move, Field}) => {
+      inGens([0, [8, 9]], ({gen, calculate, Pokemon, Move, Field}) => {
         test('Special Shell Side Arm should not factor in Fur Coat or Fluffy', () => {
           const attacker = Pokemon('Slowbro-Galar');
-          const defender = Pokemon('Mew', {ability: 'Fluffy', evs: {def: 4}});
+          const defender = Pokemon('Avalugg', {ability: 'Fur Coat'});
 
           let result = calculate(attacker, defender, Move('Shell Side Arm'));
           expect(result.move.category).toBe('Special');
           expect(result.rawDesc.defenderAbility).toBeUndefined();
+          if (gen === 0) return;
 
-          defender.ability = 'Fur Coat' as AbilityName;
-
+          defender.ability = 'Fluffy' as AbilityName;
           result = calculate(attacker, defender, Move('Shell Side Arm'));
           expect(result.move.category).toBe('Special');
           expect(result.rawDesc.defenderAbility).toBeUndefined();
         });
         test('Physical Shell Side Arm should not factor in Ice Scales', () => {
+          if (gen === 0) return;
           const attacker = Pokemon('Slowbro-Galar');
           const defender = Pokemon('Mew', {ability: 'Ice Scales', evs: {spd: 4}});
 
@@ -854,7 +924,7 @@ describe('calc', () => {
         });
         test('Physical Shell Side Arm should make contact', () => {
           const attacker = Pokemon('Slowbro-Galar');
-          const defender = Pokemon('Mew', {ability: 'Fluffy', evs: {spd: 4}});
+          const defender = Pokemon('Volcarona');
 
           const result = calculate(attacker, defender, Move('Shell Side Arm'));
           expect(result.move.flags.contact).toBe(1);
@@ -1749,7 +1819,7 @@ describe('calc', () => {
       });
     });
     describe('Some moves should break screens before doing damage', () => {
-      inGens(3, 9, ({calculate, Pokemon, Move, Field}) => {
+      inGens([3, 9], ({calculate, Pokemon, Move, Field}) => {
         test('Brick Break should break screens', () => {
           const pokemon = Pokemon('Mew');
 
@@ -1768,7 +1838,7 @@ describe('calc', () => {
           expect(brickBreakResult.range()[1]).toBeGreaterThan(otherMoveResult.range()[1]);
         });
       });
-      inGens(7, 9, ({calculate, Pokemon, Move, Field}) => {
+      inGens([7, 9], ({calculate, Pokemon, Move, Field}) => {
         test('Psychic Fangs should break screens', () => {
           const pokemon = Pokemon('Mew');
 
@@ -1804,6 +1874,78 @@ describe('calc', () => {
 
           expect(ragingBullResult.range()[0]).toBeGreaterThan(otherMoveResult.range()[0]);
           expect(ragingBullResult.range()[1]).toBeGreaterThan(otherMoveResult.range()[1]);
+        });
+      });
+    });
+  });
+
+  describe('Champions', () => {
+    inGen(0, ({calculate, Pokemon, Move, Field}) => {
+      describe('Mega Sol', () => {
+        const attacker = Pokemon('Meganium-Mega', {ability: 'Mega Sol', item: 'Meganiumite'});
+
+        describe('Should use Fire-type Weather Ball in any weather', () => {
+          const move = Move('Weather Ball');
+
+          const defender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
+          const sandField = Field({weather: 'Sand'});
+
+          const result = calculate(attacker, defender, move, sandField);
+
+          expect(result.move.type).toBe('Fire');
+        });
+
+        describe('Should make Solar Beam full-power in any weather', () => {
+          const move = Move('Solar Beam');
+
+          const sandDefender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
+          const sandField = Field({weather: 'Sand'});
+          const sandResult = calculate(attacker, sandDefender, move, sandField);
+
+          expect(sandResult.move.bp).toBe(move.bp);
+        });
+
+        describe('Should reduce the damage of Water-type attacks', () => {
+          const move = Move('Hydro Pump');
+
+          const defender = Pokemon('Tyranitar', {ability: 'Unnerve'});
+          const megaSolResult = calculate(attacker, defender, move);
+
+          const noMegaSol = Pokemon('Meganium-Mega', {ability: 'Leaf Guard'});
+          const noMegaSolResult = calculate(noMegaSol, defender, move);
+
+          expect(megaSolResult.range()[0]).toBeLessThan(noMegaSolResult.range()[0]);
+          expect(megaSolResult.range()[1]).toBeLessThan(noMegaSolResult.range()[1]);
+        });
+
+        describe('Should neutralize Sp. Def boost from sand', () => {
+          const move = Move('Giga Drain');
+
+          const sandDefender = Pokemon('Tyranitar', {ability: 'Sand Stream'});
+          const sandField = Field({weather: 'Sand'});
+          const sandResult = calculate(attacker, sandDefender, move, sandField);
+
+          const noSandDefender = Pokemon('Tyranitar', {ability: 'Unnerve'});
+          const noSandField = Field({weather: undefined});
+          const noSandResult = calculate(attacker, noSandDefender, move, noSandField);
+
+          expect(sandResult.range()[0]).toEqual(noSandResult.range()[0]);
+          expect(sandResult.range()[1]).toEqual(noSandResult.range()[1]);
+        });
+
+        describe('Should neutralize Def boost from snow', () => {
+          const move = Move('Body Slam');
+
+          const snowDefender = Pokemon('Abomasnow', {ability: 'Snow Warning'});
+          const snowField = Field({weather: 'Snow'});
+          const snowResult = calculate(attacker, snowDefender, move, snowField);
+
+          const noSnowDefender = Pokemon('Abomasnow', {ability: 'Soundproof'});
+          const noSnowField = Field({weather: undefined});
+          const noSnowResult = calculate(attacker, noSnowDefender, move, noSnowField);
+
+          expect(snowResult.range()[0]).toEqual(noSnowResult.range()[0]);
+          expect(snowResult.range()[1]).toEqual(noSnowResult.range()[1]);
         });
       });
     });

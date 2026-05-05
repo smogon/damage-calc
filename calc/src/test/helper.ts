@@ -59,9 +59,25 @@ export function inGen(gen: I.GenerationNum, fn: (gen: Gen) => void) {
   });
 }
 
-export function inGens(from: I.GenerationNum, to: I.GenerationNum, fn: (gen: Gen) => void) {
-  for (let gen = from; gen <= to; gen++) {
-    inGen(gen, fn);
+export function inGens(
+  gens: [I.GenerationNum, I.GenerationNum] |
+  (I.GenerationNum | [I.GenerationNum, I.GenerationNum])[],
+  fn: (gen: Gen) => void
+) {
+  if (typeof gens[0] === 'number' && typeof gens[1] === 'number') {
+    for (let gen = gens[0]; gen <= gens[1]; gen++) {
+      inGen(gen, fn);
+    }
+    return;
+  }
+  for (const target of gens) {
+    if (Array.isArray(target)) {
+      for (let gen = target[0]; gen <= target[1]; gen++) {
+        inGen(gen, fn);
+      }
+    } else {
+      inGen(target, fn);
+    }
   }
 }
 
@@ -102,7 +118,7 @@ export function tests(...args: any[]) {
     type = args[4];
   }
 
-  inGens(from, to, gen => {
+  inGens([from, to], gen => {
     const n = `${name} (gen ${gen.gen})`;
     if (type === 'skip') {
       test.skip(n, () => fn!(gen));

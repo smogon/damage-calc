@@ -353,6 +353,7 @@ var SETDEX_ADV = {
     "Ubers Showdown Usage": {"ability":"Levitate","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Will-O-Wisp","Shadow Ball","Explosion","Taunt"]}
   },
   "Electrode": {
+    "OU Explosion": {"ability":"Static","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":164,"sa":168,"sp":176},"moves":["Thunderbolt","Thunder Wave","Hidden Power Grass","Explosion"]},
     "UU Substitute": {"ability":"Static","item":"Petaya Berry","nature":"Rash","ivs":{"at":30,"df":30},"evs":{"hp":12,"at":32,"df":116,"sa":252,"sp":96},"moves":["Thunderbolt","Substitute","Explosion","Hidden Power Ice"]}
   },
   "Exeggutor": {
@@ -1262,7 +1263,7 @@ var SETDEX_ADV = {
     "RU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Rock Slide","Double-Edge","Earthquake","Focus Punch"]}
   },
   "Meditite": {
-    "PU Offensive Sub": {"ability":"Pure Power","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Brick Break","Hidden Power Ghost","Toxic"]},
+    "PU Offensive Sub": {"ability":"Pure Power","item":"Leftovers","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Brick Break","Shadow Ball","Toxic"]},
     "ZU Choice Band": {"ability":"Pure Power","item":"Choice Band","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Brick Break","Return","Shadow Ball","Hidden Power Flying"]}
   },
   "Medicham": {
@@ -1462,7 +1463,7 @@ var SETDEX_ADV = {
   "Relicanth": {
     "RU Physical Wall": {"ability":"Swift Swim","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":156,"sd":100},"moves":["Rock Slide","Earthquake","Toxic","Protect"]},
     "NU Physically Defensive": {"ability":"Swift Swim","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":252,"sp":4},"moves":["Rock Slide","Earthquake","Rest","Sleep Talk"]},
-    "NU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":168,"at":252,"sp":84},"moves":["Rock Slide","Earthquake","Double-Edge","Hidden Power Ghost"]},
+    "NU Choice Band": {"ability":"Rock Head","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":172,"at":252,"sp":84},"moves":["Rock Slide","Earthquake","Double-Edge","Hidden Power Ghost"]},
     "NU Swift Swim Sweeper": {"ability":"Swift Swim","item":"Leftovers","nature":"Naughty","evs":{"hp":48,"at":252,"sa":152,"sp":52},"moves":["Rain Dance","Rock Slide","Earthquake","Surf"]}
   },
   "Luvdisc": {
