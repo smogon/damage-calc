@@ -679,14 +679,13 @@ $(".set-selector").change(function () {
 				if (gen > 0 && gen < 3) {
 					pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
 						(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : 252);
-				}
-				else {
-          if ($("#champions").prop("checked") && !set.sps) {
-            var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
-            if (sps === 4) sps = 1;
-            else sps = Math.ceil(sps / 8);
-            pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
-          }
+				} else {
+					if ($("#champions").prop("checked") && !set.sps) {
+						var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
+						if (sps === 4) sps = 1;
+						else sps = Math.ceil(sps / 8);
+						pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
+					}
 					pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
 						(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : ($("#randoms").prop("checked") ? 84 : 0));
 				}
