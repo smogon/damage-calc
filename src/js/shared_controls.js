@@ -144,7 +144,7 @@ $(".sp .base, .sp .evs, .sp .ivs, .sp .sps").bind("keyup change", function () {
 $(".evs, .sps").bind('keyup change', function () {
 	totalEVs($(this).closest(".poke-info"));
 });
-$(".sl .base").keyup(function () {
+$(".sl .base, .sl .evs").bind("keyup change", function () {
 	calcStat($(this).closest(".poke-info"), 'sl');
 });
 $(".at .dvs").keyup(function () {
@@ -676,14 +676,20 @@ $(".set-selector").change(function () {
 			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				var stat = $("#randoms").prop("checked") ? legacyStatToStat(LEGACY_STATS[gen][i]) : LEGACY_STATS[gen][i];
-				if ($("#champions").prop("checked") && !set.sps) {
-					var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
-					if (sps === 4) sps = 1;
-					else sps = Math.ceil(sps / 8);
-					pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
+				if (gen > 0 && gen < 3) {
+					pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
+						(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : 252);
 				}
-				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
-					(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : ($("#randoms").prop("checked") ? 84 : 0));
+				else {
+          if ($("#champions").prop("checked") && !set.sps) {
+            var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
+            if (sps === 4) sps = 1;
+            else sps = Math.ceil(sps / 8);
+            pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
+          }
+					pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
+						(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : ($("#randoms").prop("checked") ? 84 : 0));
+				}
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[stat] !== undefined) ? set.ivs[stat] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
@@ -1041,7 +1047,6 @@ function createPokemon(pokeInfo) {
 		for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
 			var legacyStat = LEGACY_STATS[gen][i];
 			var stat = legacyStatToStat(legacyStat);
-
 			ivs[stat] = (gen >= 3 && set.ivs && typeof set.ivs[legacyStat] !== "undefined") ? set.ivs[legacyStat] : 31;
 			var sps = set.sps;
 			if (isChampions) {
@@ -1345,6 +1350,7 @@ function calcStat(poke, StatID) {
 	var stat = poke.find("." + StatID);
 	var base = ~~stat.find(".base").val();
 	var level = ~~poke.find(".level").val();
+	var evs = ~~stat.find(".evs").val();
 	var nature, ivs, evs;
 	if (gen === 0) {
 		level = 50;
@@ -1353,10 +1359,8 @@ function calcStat(poke, StatID) {
 		if (StatID !== "hp") nature = poke.find(".nature").val();
 	} else if (gen < 3) {
 		ivs = ~~stat.find(".dvs").val() * 2;
-		evs = 252;
 	} else {
 		ivs = ~~stat.find(".ivs").val();
-		evs = ~~stat.find(".evs").val();
 		if (StatID !== "hp") nature = poke.find(".nature").val();
 	}
 	// Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)

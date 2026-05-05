@@ -15,7 +15,6 @@ import {
   checkItem,
   checkIntimidate,
   checkDownload,
-  checkRawStatChanges,
   checkMultihitBoost,
   countBoosts,
   handleFixedDamageMoves,
@@ -36,8 +35,6 @@ export function calculateDPP(
   checkForecast(defender, field.weather);
   checkItem(attacker);
   checkItem(defender);
-  checkRawStatChanges(attacker, field.attackerSide.isPowerTrick);
-  checkRawStatChanges(defender, field.defenderSide.isPowerTrick);
   checkIntimidate(gen, attacker, defender);
   checkIntimidate(gen, defender, attacker);
   checkDownload(attacker, defender);
@@ -520,22 +517,28 @@ export function calculateAttackDPP(
 ) {
   const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
-  desc.attackEVs =
-    getStatDescriptionText(gen, attacker, attackStat, field.attackerSide.isPowerTrick);
+  desc.attackEVs = getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
+  let attack: number;
+  const attackBoost = attacker.boosts[attackStat];
+  let rawAttack = attacker.rawStats[attackStat];
+
+  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
   if (field.attackerSide.isPowerTrick && isPhysical) {
     desc.isPowerTrickAttacker = true;
+    rawAttack = attacker.rawStats.def;
   }
-  let attack = attacker.rawStats[attackStat];
-  const attackBoost = attacker.boosts[attackStat];
 
-  if (defender.hasAbility('Unaware')) {
+  if (attackBoost === 0 || (isCritical && attackBoost < 0)) {
+    attack = rawAttack;
+  } else if (defender.hasAbility('Unaware')) {
+    attack = rawAttack;
     desc.defenderAbility = defender.ability;
   } else if (attacker.hasAbility('Simple')) {
-    attack = getSimpleModifiedStat(attack, attackBoost);
+    attack = getSimpleModifiedStat(rawAttack, attackBoost);
     desc.attackerAbility = attacker.ability;
     desc.attackBoost = attackBoost;
-  } else if (attackBoost > 0 || (!isCritical && attackBoost < 0)) {
-    attack = getModifiedStat(attack, attackBoost);
+  } else {
+    attack = getModifiedStat(rawAttack, attackBoost);
     desc.attackBoost = attackBoost;
   }
 
@@ -593,22 +596,28 @@ export function calculateDefenseDPP(
 ) {
   const isPhysical = move.category === 'Physical';
   const defenseStat = isPhysical ? 'def' : 'spd';
-  desc.defenseEVs =
-    getStatDescriptionText(gen, defender, defenseStat, field.defenderSide.isPowerTrick);
-  let defense = defender.rawStats[defenseStat];
+  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
+  let defense: number;
+  const defenseBoost = defender.boosts[defenseStat];
+  let rawDefense = defender.rawStats[defenseStat];
+
+  // Power Trick swaps base Attack and Defense stats and gets applied before boosts
   if (field.defenderSide.isPowerTrick && isPhysical) {
     desc.isPowerTrickDefender = true;
+    rawDefense = defender.rawStats.atk;
   }
-  const defenseBoost = defender.boosts[defenseStat];
 
-  if (attacker.hasAbility('Unaware')) {
+  if (defenseBoost === 0 || (isCritical && defenseBoost > 0)) {
+    defense = rawDefense;
+  } else if (attacker.hasAbility('Unaware')) {
+    defense = rawDefense;
     desc.attackerAbility = attacker.ability;
   } else if (defender.hasAbility('Simple')) {
-    defense = getSimpleModifiedStat(defense, defenseBoost);
+    defense = getSimpleModifiedStat(rawDefense, defenseBoost);
     desc.defenderAbility = defender.ability;
     desc.defenseBoost = defenseBoost;
-  } else if (defenseBoost < 0 || (!isCritical && defenseBoost > 0)) {
-    defense = getModifiedStat(defense, defenseBoost);
+  } else {
+    defense = getModifiedStat(rawDefense, defenseBoost);
     desc.defenseBoost = defenseBoost;
   }
 

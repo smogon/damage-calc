@@ -282,7 +282,7 @@ export function calculateAttackADV(
 ) {
   const isPhysical = move.category === 'Physical';
   const attackStat = isPhysical ? 'atk' : 'spa';
-  desc.attackEVs = getStatDescriptionText(gen, attacker, attackStat);
+  desc.attackEVs = getStatDescriptionText(gen, attacker, attackStat, attacker.nature);
 
   let at = attacker.rawStats[attackStat];
 
@@ -342,7 +342,7 @@ export function calculateDefenseADV(
 ) {
   const isPhysical = move.category === 'Physical';
   const defenseStat = isPhysical ? 'def' : 'spd';
-  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat);
+  desc.defenseEVs = getStatDescriptionText(gen, defender, defenseStat, defender.nature);
 
   let df = defender.rawStats[defenseStat];
 

@@ -182,15 +182,15 @@ export const Stats = new (class {
     }
   }
 
-  calcStatRBY(stat: StatID, base: number, iv: number, level: number) {
-    return this.calcStatRBYFromDV(stat, base, this.IVToDV(iv), level);
+  calcStatRBY(stat: StatID, base: number, iv: number, ev: number, level: number) {
+    return this.calcStatRBYFromDV(stat, base, this.IVToDV(iv), ev, level);
   }
 
-  calcStatRBYFromDV(stat: StatID, base: number, dv: number, level: number) {
+  calcStatRBYFromDV(stat: StatID, base: number, dv: number, ev: number, level: number) {
     if (stat === 'hp') {
-      return Math.floor((((base + dv) * 2 + 63) * level) / 100) + level + 10;
+      return Math.floor((((base + dv) * 2 + ev / 4) * level) / 100) + level + 10;
     } else {
-      return Math.floor((((base + dv) * 2 + 63) * level) / 100) + 5;
+      return Math.floor((((base + dv) * 2 + ev / 4) * level) / 100) + 5;
     }
   }
 

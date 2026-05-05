@@ -102,6 +102,22 @@ function statToLegacyStat(stat) {
 	}
 }
 
+
+function statToLegacyStatGen1(stat) {
+	switch (stat) {
+	case 'hp':
+		return "hp";
+	case 'atk':
+		return "at";
+	case 'def':
+		return "df";
+	case 'spa':
+		return "sl";
+	case 'spe':
+		return "sp";
+	}
+}
+
 function findSpecies(row) {
 	row = row.split(/[()@]/);
 	// Skip if the row contains the ability As One (Spectrier / Glastrier),
@@ -142,6 +158,7 @@ function getStats(currentPoke, rows, x) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
+		var dvs = {};
 		var ev;
 		var ability;
 		var teraType;
@@ -152,20 +169,58 @@ function getStats(currentPoke, rows, x) {
 			currentPoke.level = parseInt(currentRow[1].trim());
 			break;
 		case 'EVs':
-			for (j = 1; j < currentRow.length; j++) {
-				currentEV = currentRow[j].trim().split(" ");
-				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
-				evs[currentEV[1]] = parseInt(currentEV[0]);
+			if (gen === 1) {
+				evs['hp'] = 0;
+				evs['at'] = 0;
+				evs['df'] = 0;
+				evs['sl'] = 0;
+				evs['sp'] = 0;
+				for (j = 1; j < currentRow.length; j++) {
+					currentEV = currentRow[j].trim().split(" ");
+					currentEV[1] = statToLegacyStatGen1(currentEV[1].toLowerCase());
+					evs[currentEV[1]] = parseInt(currentEV[0]);
+				}
+			}
+			else {
+				if (gen === 2) {
+					evs['hp'] = 0;
+					evs['at'] = 0;
+					evs['df'] = 0;
+					evs['sa'] = 0;
+					evs['sd'] = 0;
+					evs['sp'] = 0;
+				}
+				for (j = 1; j < currentRow.length; j++) {
+					currentEV = currentRow[j].trim().split(" ");
+					currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
+					evs[currentEV[1]] = parseInt(currentEV[0]);
+				}
 			}
 			currentPoke[$('#champions').prop('checked') ? 'sps' : 'evs'] = evs;
 			break;
 		case 'IVs':
-			for (j = 1; j < currentRow.length; j++) {
-				currentIV = currentRow[j].trim().split(" ");
-				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
-				ivs[currentIV[1]] = parseInt(currentIV[0]);
+			if (gen == 1) {
+				for (j = 1; j < currentRow.length; j++) {
+					currentIV = currentRow[j].trim().split(" ");
+					currentIV[1] = statToLegacyStatGen1(currentIV[1].toLowerCase());
+					dvs[currentIV[1]] = parseInt(currentIV[0]) / 2;
+				}
+				currentPoke.dvs = dvs;
+			} else if (gen == 2) {
+				for (j = 1; j < currentRow.length; j++) {
+					currentIV = currentRow[j].trim().split(" ");
+					currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
+					dvs[currentIV[1]] = parseInt(currentIV[0]) / 2;
+				}
+				currentPoke.dvs = dvs;
+			} else {
+				for (j = 1; j < currentRow.length; j++) {
+					currentIV = currentRow[j].trim().split(" ");
+					currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
+					ivs[currentIV[1]] = parseInt(currentIV[0]);
+				}
+				currentPoke.ivs = ivs;
 			}
-			currentPoke.ivs = ivs;
 			break;
 		case 'Ability':
 			ability = currentRow[1] ? currentRow[1].trim() : '';
@@ -238,6 +293,7 @@ function addToDex(poke) {
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
 	dexObject.ivs = poke.ivs;
+	dexObject.dvs = poke.dvs;
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.gender = poke.gender;
