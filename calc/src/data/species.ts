@@ -8930,8 +8930,31 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SS: {[name: string]: SpeciesData} = extend(true, {}, SM, SS_PATCH);
 
-delete SS['Pikachu-Starter'];
 delete SS['Eevee-Starter'];
+removeAttr(SS, 'Eevee', 'otherFormes');
+delete SS['Pikachu-Starter'];
+const TOTEM_SIZED = [
+  'Araquanid-Totem',
+  'Gumshoos-Totem',
+  'Kommo-o-Totem',
+  'Lurantis-Totem',
+  'Marowak-Alola-Totem',
+  'Mimikyu-Busted-Totem',
+  'Mimikyu-Totem',
+  'Raticate-Alola-Totem',
+  'Ribombee-Totem',
+  'Salazzle-Totem',
+  'Togedemaru-Totem',
+  'Vikavolt-Totem',
+];
+for (const species of TOTEM_SIZED) {
+  const base = SS[SS[species].baseSpecies!];
+  // @ts-expect-error readonly
+  base.otherFormes = [...new Set(base.otherFormes)].filter(f => !f.endsWith('-Totem'));
+  // @ts-expect-error readonly
+  if (!base.otherFormes.length) delete base.otherFormes;
+  delete SS[species];
+}
 
 const PLA_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Arcanine: {otherFormes: ['Arcanine-Hisui']},
