@@ -10992,19 +10992,15 @@ const CHAMPIONS: {[name: string]: SpeciesData} = extend(
   Object.fromEntries(CHAMPIONS_LIST.map(s => [s, SV[s]])), CHAMPIONS_PATCH
 );
 
-removeAttr(CHAMPIONS, 'Alcremie', 'otherFormes');
-removeAttr(CHAMPIONS, 'Appletun', 'otherFormes');
-removeAttr(CHAMPIONS, 'Araquanid', 'otherFormes');
-removeAttr(CHAMPIONS, 'Corviknight', 'otherFormes');
-removeAttr(CHAMPIONS, 'Flapple', 'otherFormes');
 removeAttr(CHAMPIONS, 'Floette-Eternal', 'baseSpecies');
-removeAttr(CHAMPIONS, 'Garbodor', 'otherFormes');
-removeAttr(CHAMPIONS, 'Hatterene', 'otherFormes');
-removeAttr(CHAMPIONS, 'Machamp', 'otherFormes');
-removeAttr(CHAMPIONS, 'Pikachu', 'otherFormes');
-removeAttr(CHAMPIONS, 'Salazzle', 'otherFormes');
-removeAttr(CHAMPIONS, 'Sandaconda', 'otherFormes');
-removeAttr(CHAMPIONS, 'Snorlax', 'otherFormes');
+for (const species of Object.values(CHAMPIONS)) {
+  if (species.otherFormes) {
+    // @ts-expect-error readonly
+    species.otherFormes = [...new Set(species.otherFormes)].filter(f => CHAMPIONS_LIST.includes(f));
+    // @ts-expect-error readonly
+    if (!species.otherFormes.length) delete species.otherFormes;
+  }
+}
 
 export const SPECIES = [CHAMPIONS, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
