@@ -40,8 +40,10 @@ function ExportPokemon(pokeInfo) {
 			finalText += serialize(EVs_Array, " / ");
 			finalText += "\n";
 		}
+		if (pokemon.nature) {
+			finalText += pokemon.nature + " Nature" + "\n";
+		}
 	}
-	if (pokemon.nature && gen > 2) finalText += pokemon.nature + " Nature" + "\n";
 	var IVs_Array = [];
 	for (var stat in pokemon.ivs) {
 		var iv = pokemon.ivs[stat] ? pokemon.ivs[stat] : 0;
