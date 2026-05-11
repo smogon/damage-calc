@@ -548,6 +548,10 @@ export function calculateBasePowerChampions(
     basePower = 20 + 20 * countBoosts(gen, attacker.boosts);
     desc.moveBP = basePower;
     break;
+  case 'Last Respects':
+    basePower = Math.min(200, move.bp + 50 * (attacker.alliesFainted || 0));
+    desc.moveBP = basePower;
+    break;
   case 'Acrobatics':
     basePower = move.bp * (!attacker.item ? 2 : 1);
     desc.moveBP = basePower;
