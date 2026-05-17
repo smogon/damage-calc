@@ -5,7 +5,7 @@
 import * as fs from 'fs';
 
 import {
-  AbilityName, Generation, GenerationNum, GenderName, Generations, ID, Item, ItemName, MoveName,
+  AbilityName, GenderName, Generation, GenerationNum, Generations, ID, Item, ItemName, MoveName,
   NatureName, PokemonSet, Specie, SpeciesName, StatID, StatsTable, TypeName,
 } from '@pkmn/data';
 import {Dex as ModdedDex, Item as PSItem, Species as PSSpecie} from '@pkmn/dex';
@@ -343,8 +343,8 @@ function similarFormes(
     similar.abilityChange = true;
     return similar;
   }
-  if (specie.name === item.megaEvolves) {
-    similar.formes = [item.megaStone!];
+  if (item.megaStone?.[specie.name]) {
+    similar.formes = [item.megaStone[specie.name]];
     similar.abilityChange = true;
     return similar;
   }
