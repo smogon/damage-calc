@@ -13,9 +13,9 @@ const exports = {};
 `;
 bundled += bundler.read('util.js', 3, 1);
 const species = bundler.read('data/species.js').split('\n');
-bundled += species.slice(1, 39).join('\n'); // generator + iterator polyfill
+bundled += species.slice(1, 64).join('\n'); // generator + iterator + spreadArray polyfill
 bundled += '\nvar e_1, _a, e_2, _b;\nvar util_1 = exports;\n';
-bundled += species.slice(43, -2).join('\n');
+bundled += species.slice(68, -2).join('\n');
 
 const types = bundler.read('data/types.js').split('\n');
 bundled += types.slice(1, 12).join('\n'); // __assign polyfill
