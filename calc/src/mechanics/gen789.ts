@@ -849,7 +849,7 @@ export function calculateBasePowerSMSSSV(
     desc.moveBP = basePower;
     break;
   case 'Last Respects':
-    basePower = Math.min(200, move.bp + 50 * (attacker.alliesFainted || 0));
+    basePower = Math.min(5050, move.bp + 50 * (attacker.alliesFainted || 0));
     desc.moveBP = basePower;
     break;
   case 'Acrobatics':

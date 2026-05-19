@@ -66,12 +66,17 @@ describe('calc', () => {
         const boosted = calculate(attacker, defender, Move('Last Respects'));
 
         attacker.alliesFainted = 10;
+        const higher = calculate(attacker, defender, Move('Last Respects'));
+
+        attacker.alliesFainted = 100;
         const capped = calculate(attacker, defender, Move('Last Respects'));
 
         expect(boosted.range()[0]).toBeGreaterThan(normal.range()[0]);
         expect(boosted.desc()).toContain('Last Respects (200 BP)');
-        expect(capped.range()).toEqual(boosted.range());
-        expect(capped.desc()).toContain('Last Respects (200 BP)');
+        expect(higher.range()[0]).toBeGreaterThan(boosted.range()[0]);
+        expect(higher.desc()).toContain('Last Respects (550 BP)');
+        expect(capped.range()[0]).toBeGreaterThan(higher.range()[0]);
+        expect(capped.desc()).toContain('Last Respects (5050 BP)');
       });
     });
 
