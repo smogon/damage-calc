@@ -1211,7 +1211,7 @@ function getMoveDetails(moveInfo, opts) {
 	var hits = +moveInfo.find(".move-hits").val();
 	var timesUsed = +moveInfo.find(".move-times").val();
 	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
-	var alliesFainted = moveName === 'Last Respects' ? +moveInfo.find(".move-allies-fainted").val() : undefined;
+	var alliesFainted = moveInfo.find(".move-allies-fainted").is(':visible') ? +moveInfo.find(".move-allies-fainted").val() : 0;
 	var overrides = {
 		basePower: +moveInfo.find(".move-bp").val(),
 		type: moveInfo.find(".move-type").val()
