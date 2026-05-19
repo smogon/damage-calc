@@ -67,6 +67,7 @@ if (process.argv[2] !== 'view') {
 
 cpdir('src', 'dist');
 cpdir('calc/dist', 'dist/calc');
+makeCachebuster('src/champions.html', 'dist/champions.html');
 makeCachebuster('src/honkalculate.html', 'dist/honkalculate.html');
 makeCachebuster('src/index.html', 'dist/index.html');
 makeCachebuster('src/randoms.html', 'dist/randoms.html');
