@@ -924,7 +924,8 @@ var SETDEX_DPP = {
   },
   "Kadabra": {
     "PU Life Orb": {"ability":"Synchronize","item":"Life Orb","nature":"Timid","ivs":{"at":3,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Psychic","Shadow Ball","Hidden Power Ground"]},
-    "PU Choice Scarf": {"ability":"Synchronize","item":"Choice Scarf","nature":"Timid","ivs":{"at":3,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Shadow Ball","Hidden Power Electric","Trick"]}
+    "PU Choice Scarf": {"ability":"Synchronize","item":"Choice Scarf","nature":"Timid","ivs":{"at":3,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Shadow Ball","Hidden Power Electric","Trick"]},
+    "PU Lead": {"ability":"Inner Focus","item":"Focus Sash","nature":"Timid","ivs":{"at":3,"sa":30,"sd":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Taunt","Psychic","Hidden Power Ground","Counter"]}
   },
   "Machop": {
     "LC SpDef": {"level":5,"ability":"No Guard","item":"Oran Berry","nature":"Adamant","evs":{"hp":116,"at":116,"df":36,"sd":236},"moves":["Dynamic Punch","Payback","Ice Punch","Bullet Punch"]},
@@ -2365,10 +2366,11 @@ var SETDEX_DPP = {
   "Probopass": {
     "UU Specially Defensive": {"ability":"Magnet Pull","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Thunder Wave","Power Gem","Earth Power"]},
     "UU Trapper": {"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","evs":{"hp":172,"sa":252,"sp":84},"moves":["Magnet Rise","Taunt","Earth Power","Power Gem"]},
+    "PU Offensive Trapper": {"ability":"Magnet Pull","item":"Shuca Berry","nature":"Modest","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Stealth Rock","Flash Cannon","Earth Power","Power Gem"]},
+    "PU Defensive": {"ability":"Magnet Pull","item":"Shuca Berry","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Power Gem","Earth Power","Thunder Wave"]},
     "ZU Defensive": {"ability":"Magnet Pull","item":"Shuca Berry","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Power Gem","Earth Power","Thunder Wave"]},
     "ZU Offensive Trapper": {"ability":"Magnet Pull","item":"Shuca Berry","nature":"Modest","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Stealth Rock","Flash Cannon","Earth Power","Power Gem"]},
-    "NU Showdown Usage": {"ability":"Magnet Pull","item":"Leftovers","nature":"Calm","evs":{"hp":164,"sd":252,"sp":92},"moves":["Power Gem","Magnet Rise","Flash Cannon","Thunder Wave"]},
-    "PU Showdown Usage": {"ability":"Magnet Pull","item":"Shuca Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Earth Power","Stealth Rock","Taunt","Hidden Power Grass"]}
+    "NU Showdown Usage": {"ability":"Magnet Pull","item":"Leftovers","nature":"Calm","evs":{"hp":164,"sd":252,"sp":92},"moves":["Power Gem","Magnet Rise","Flash Cannon","Thunder Wave"]}
   },
   "Froslass": {
     "Ubers Spikes Lead": {"ability":"Snow Cloak","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Icy Wind","Shadow Ball","Destiny Bond"]},
