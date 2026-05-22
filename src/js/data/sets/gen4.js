@@ -1060,7 +1060,7 @@ var SETDEX_DPP = {
   "Marowak": {
     "UU Substitute + 3 Attacks": {"ability":"Rock Head","item":"Thick Club","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Substitute","Earthquake","Double-Edge","Fire Punch"]},
     "NU Wallbreaker": {"ability":"Rock Head","item":"Thick Club","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","Double-Edge","Substitute"]},
-    "PU Showdown Usage": {"ability":"Rock Head","item":"Thick Club","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Substitute","Fire Punch","Stone Edge"]}
+    "PU Wallbreaker": {"ability":"Rock Head","item":"Thick Club","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Bonemerang","Stone Edge","Double-Edge","Substitute"]}
   },
   "Lickitung": {
     "LC Wallbreaker": {"level":5,"ability":"Own Tempo","item":"Oran Berry","nature":"Brave","evs":{"hp":36,"at":236,"sa":196,"sp":36},"moves":["Body Slam","Power Whip","Fire Blast","Ice Beam"]},
@@ -1566,7 +1566,7 @@ var SETDEX_DPP = {
     "Ubers Offensive Calm Mind": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Calm Mind","Aeroblast","Roost","Earth Power"]}
   },
   "Ho-Oh": {
-    "Ubers Bulky Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":216,"at":172,"sp":112},"moves":["Brave Bird","Sacred Fire","Roost","Substitute"]},
+    "Ubers Bulky Attacker": {"ability":"Pressure","item":"Leftovers","nature":"Adamant","evs":{"hp":216,"at":180,"sp":112},"moves":["Brave Bird","Sacred Fire","Roost","Substitute"]},
     "Ubers Choice Band": {"ability":"Pressure","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Brave Bird","Sacred Fire","Earthquake","Sleep Talk"]},
     "Anything Goes Showdown Usage": {"ability":"Pressure","item":"Life Orb","nature":"Adamant","evs":{"hp":232,"at":252,"sp":24},"moves":["Sacred Fire","Brave Bird","Roost","Earthquake"]}
   },
