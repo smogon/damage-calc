@@ -9752,6 +9752,12 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     nfe: true,
     abilities: {0: 'Swarm'},
   },
+  Obliteryx: {
+    types: ['Dark', 'Flying'],
+    bs: {hp: 102, at: 128, df: 126, sa: 45, sd: 90, sp: 64},
+    weightkg: 62,
+    abilities: {0: 'Opportunist'},
+  },
   Ogerpon: {
     types: ['Grass'],
     bs: {hp: 80, at: 120, df: 84, sa: 60, sd: 96, sp: 110},
