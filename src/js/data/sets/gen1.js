@@ -483,7 +483,7 @@ var SETDEX_RBY = {
     "NU Defensive": {"moves":["Surf","Body Slam","Blizzard","Rest"]},
     "NU Acid Armor": {"moves":["Surf","Acid Armor","Body Slam","Rest"]},
     "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]},
-    "OU Showdown Usage": {"moves":["Rest","Sand Attack","Ice Beam","Haze"]},
+    "OU Showdown Usage": {"moves":["Rest","Sand Attack","Ice Beam","Substitute"]},
     "UU Showdown Usage": {"moves":["Rest","Surf","Acid Armor","Ice Beam"]}
   },
   "Jolteon": {

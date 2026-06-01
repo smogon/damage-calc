@@ -38,6 +38,7 @@ var SETDEX_SS = {
     "1v1 Icy Wind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":128,"sd":60,"sp":68},"moves":["Calm Mind","Moonlight","Icy Wind","Stored Power"]},
     "1v1 Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Bold","evs":{"hp":196,"df":16,"sa":64,"sp":232},"moves":["Psychic","Ice Beam","Trick","Rest"]},
     "1v1 Defensive Kee": {"ability":"Levitate","item":"Kee Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonlight","Calm Mind","Stored Power","Reflect"]},
+    "National Dex Showdown Usage": {"ability":"Levitate","item":"Colbur Berry","nature":"Relaxed","evs":{"hp":252,"df":252},"moves":["Lunar Dance","Trick Room","Moonlight","Moonblast"]},
     "CAP Showdown Usage": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Lunar Dance","Psyshock","Thunder Wave"]}
   },
   "Zacian": {
@@ -129,8 +130,7 @@ var SETDEX_SS = {
     "VGC 2021 Gigantamax": {"level":50,"ability":"Torrent","item":"Wacan Berry","nature":"Modest","evs":{"hp":244,"df":4,"sa":148,"sd":4,"sp":108},"moves":["Hydro Cannon","Blizzard","Yawn","Protect"]},
     "1v1 Life Orb": {"ability":"Torrent","item":"Life Orb","nature":"Calm","evs":{"hp":228,"df":12,"sa":192,"sp":76},"moves":["Shell Smash","Hydro Cannon","Ice Beam","Substitute"]},
     "1v1 Wacan Berry": {"ability":"Torrent","item":"Wacan Berry","nature":"Calm","evs":{"hp":192,"sa":140,"sd":96,"sp":80},"moves":["Yawn","Endure","Shell Smash","Hydro Cannon"]},
-    "RU Showdown Usage": {"ability":"Torrent","item":"White Herb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Ice Beam","Dark Pulse","Surf"]},
-    "National Dex Showdown Usage": {"ability":"Torrent","item":"White Herb","nature":"Modest","evs":{"hp":172,"sa":252,"sp":84},"moves":["Ice Beam","Shell Smash","Surf","Focus Blast"]}
+    "RU Showdown Usage": {"ability":"Torrent","item":"White Herb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Ice Beam","Dark Pulse","Surf"]}
   },
   "Butterfree": {
     "Anything Goes Quiver Dance": {"ability":"Compound Eyes","item":"Leftovers","nature":"Timid","evs":{"hp":200,"df":28,"sa":52,"sp":228},"moves":["Quiver Dance","Hurricane","Sleep Powder","Substitute"]},
@@ -443,7 +443,7 @@ var SETDEX_SS = {
     "National Dex RU Trick Room Wallbreaker": {"ability":"Rock Head","item":"Thick Club","nature":"Brave","ivs":{"sp":0},"evs":{"hp":248,"at":252,"sd":8},"moves":["Poltergeist","Flare Blitz","Earthquake","Swords Dance"]},
     "National Dex RU All-Out Attacker": {"ability":"Lightning Rod","item":"Thick Club","nature":"Adamant","evs":{"at":252,"sd":24,"sp":232},"moves":["Poltergeist","Fire Punch","Earthquake","Flame Charge"]},
     "1v1 Lightning Rod": {"ability":"Lightning Rod","item":"Thick Club","nature":"Impish","evs":{"hp":248,"at":44,"df":216},"moves":["Flare Blitz","Poltergeist","Counter","Flame Charge"]},
-    "National Dex Showdown Usage": {"ability":"Rock Head","item":"Thick Club","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Flare Blitz","Swords Dance","Poltergeist","Earthquake"]},
+    "National Dex Showdown Usage": {"ability":"Lightning Rod","item":"Thick Club","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Flare Blitz","Poltergeist","Bonemerang","Swords Dance"]},
     "CAP Showdown Usage": {"ability":"Rock Head","item":"Thick Club","nature":"Brave","evs":{"hp":248,"at":252,"sd":8},"moves":["Flare Blitz","Swords Dance","Shadow Bone","Thunder Punch"]}
   },
   "Hitmonlee": {
@@ -490,7 +490,6 @@ var SETDEX_SS = {
     "Anything Goes Wall Cleric": {"ability":"Natural Cure","item":"Eviolite","nature":"Calm","ivs":{"at":0},"evs":{"hp":4,"df":252,"sd":252},"moves":["Aromatherapy","Soft-Boiled","Toxic","Confide"]},
     "1v1 Stall": {"ability":"Healer","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Soft-Boiled","Toxic","Counter"]},
     "National Dex Monotype Showdown Usage": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Soft-Boiled","Seismic Toss","Stealth Rock","Toxic"]},
-    "OU Showdown Usage": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Soft-Boiled","Seismic Toss","Toxic","Stealth Rock"]},
     "CAP Showdown Usage": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Soft-Boiled","Stealth Rock","Teleport"]}
   },
   "Tangela": {
@@ -640,8 +639,7 @@ var SETDEX_SS = {
     "RU CurseLax": {"ability":"Thick Fat","item":"Leftovers","nature":"Careful","evs":{"hp":208,"at":36,"df":172,"sd":84,"sp":8},"moves":["Curse","Body Slam","Earthquake","Rest"]},
     "NU CurseLax": {"ability":"Immunity","item":"Leftovers","nature":"Careful","evs":{"hp":12,"df":244,"sd":252},"moves":["Curse","Body Slam","Earthquake","Rest"]},
     "Monotype Curse Sweeper (Normal)": {"ability":"Thick Fat","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":120,"sd":136},"moves":["Curse","Darkest Lariat","Rest","Sleep Talk"]},
-    "National Dex RU CurseLax": {"ability":"Thick Fat","item":"Leftovers","nature":"Careful","evs":{"hp":208,"df":216,"sd":84},"moves":["Rest","Earthquake","Curse","Body Slam"]},
-    "OU Showdown Usage": {"ability":"Immunity","item":"Chople Berry","nature":"Adamant","evs":{"at":252,"df":252,"sp":4},"moves":["Body Slam","Curse","Heat Crash","Counter"]}
+    "National Dex RU CurseLax": {"ability":"Thick Fat","item":"Leftovers","nature":"Careful","evs":{"hp":208,"df":216,"sd":84},"moves":["Rest","Earthquake","Curse","Body Slam"]}
   },
   "Snorlax-Gmax": {
     "Battle Stadium Singles Gmax Setup Sweeper": {"level":50,"ability":"Gluttony","item":"Figy Berry","nature":"Impish","evs":{"hp":228,"df":252,"sd":28},"moves":["Facade","Belly Drum","Heavy Slam","Earthquake"]},
@@ -747,7 +745,7 @@ var SETDEX_SS = {
     "National Dex Monotype Dragon Dance (Dragon)": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Earthquake","Extreme Speed"]},
     "National Dex Monotype Choice Band (Dragon)": {"ability":"Multiscale","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Superpower","Fire Punch","Extreme Speed"]},
     "CAP Dragon Dance": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Ice Punch","Roost"]},
-    "National Dex Showdown Usage": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Extreme Speed","Fire Punch"]}
+    "National Dex Showdown Usage": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Extreme Speed","Roost"]}
   },
   "Mewtwo": {
     "Ubers All-out Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psystrike","Ice Beam","Fire Blast","Nasty Plot"]},
@@ -853,7 +851,6 @@ var SETDEX_SS = {
     "Battle Stadium Singles Zacian-C Check": {"level":50,"ability":"Unaware","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Yawn","Earthquake","Toxic"]},
     "Anything Goes Physically Defensive": {"ability":"Unaware","item":"Heavy-Duty Boots","nature":"Relaxed","evs":{"hp":252,"df":252,"sd":4},"moves":["Earthquake","Scald","Recover","Toxic"]},
     "1v1 Rocky Helmet": {"ability":"Unaware","item":"Rocky Helmet","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Counter","Amnesia","Recover","Seismic Toss"]},
-    "National Dex Showdown Usage": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Scald","Toxic","Protect"]},
     "National Dex Monotype Showdown Usage": {"ability":"Unaware","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sa":4,"sd":252},"moves":["Scald","Recover","Toxic","Earthquake"]}
   },
   "Espeon": {
@@ -1042,7 +1039,7 @@ var SETDEX_SS = {
     "National Dex Monotype The Duck (Normal)": {"ability":"Download","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Ice Beam","Discharge","Hidden Power Fire"]},
     "Anything Goes Physically Defensive": {"ability":"Analytic","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Foul Play","Ice Beam","Recover","Teleport"]},
     "1v1 Eerie Impulse": {"ability":"Download","item":"Eviolite","nature":"Modest","evs":{"hp":248,"df":80,"sa":132,"sd":32,"sp":16},"moves":["Hyper Beam","Icy Wind","Eerie Impulse","Recover"]},
-    "National Dex Showdown Usage": {"ability":"Trace","item":"Eviolite","nature":"Sassy","evs":{"hp":252,"sa":4,"sd":252},"moves":["Recover","Trick Room","Teleport","Ice Beam"]},
+    "National Dex Showdown Usage": {"ability":"Download","item":"Eviolite","nature":"Sassy","evs":{"hp":252,"df":4,"sd":252},"moves":["Trick Room","Teleport","Recover","Ice Beam"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Trace","item":"Eviolite","nature":"Sassy","evs":{"hp":252,"df":4,"sd":252},"moves":["Trick Room","Recover","Foul Play","Ally Switch"]},
     "CAP Showdown Usage": {"ability":"Trace","item":"Eviolite","nature":"Sassy","evs":{"hp":248,"df":44,"sd":216},"moves":["Recover","Trick Room","Teleport","Ice Beam"]}
   },
@@ -1086,7 +1083,6 @@ var SETDEX_SS = {
     "RU Choice Band": {"ability":"Inner Focus","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Extreme Speed","Sacred Fire","Stone Edge","Flare Blitz"]},
     "1v1 Pressure Stall": {"ability":"Pressure","item":"Leftovers","nature":"Jolly","evs":{"at":4,"df":252,"sp":252},"moves":["Protect","Substitute","Sacred Fire","Toxic"]},
     "1v1 Assault Vest": {"ability":"Inner Focus","item":"Assault Vest","nature":"Adamant","evs":{"hp":8,"at":164,"sd":120,"sp":216},"moves":["Flare Blitz","Bulldoze","Eruption","Extreme Speed"]},
-    "OU Showdown Usage": {"ability":"Inner Focus","item":"Expert Belt","nature":"Adamant","evs":{"at":252,"sd":252,"sp":4},"moves":["Extreme Speed","Sacred Fire","Stomping Tantrum","Crunch"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Inner Focus","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Sacred Fire","Extreme Speed","Snarl","Bulldoze"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Inner Focus","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Sacred Fire","Extreme Speed","Stone Edge","Protect"]}
   },
@@ -1243,7 +1239,7 @@ var SETDEX_SS = {
   "Breloom": {
     "National Dex Monotype Offensive (Fighting)": {"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Spore","Swords Dance","Mach Punch","Bullet Seed"]},
     "National Dex Monotype Offensive (Grass)": {"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Bullet Seed","Mach Punch","Rock Tomb"]},
-    "National Dex Showdown Usage": {"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Spore","Mach Punch","Bullet Seed","Swords Dance"]}
+    "National Dex Showdown Usage": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Spore","Bullet Seed","Mach Punch","Rock Tomb"]}
   },
   "Ninjask": {
     "NU Swords Dance": {"ability":"Speed Boost","nature":"Adamant","evs":{"at":252,"df":88,"sp":168},"moves":["Acrobatics","U-turn","Protect","Swords Dance"]},
@@ -1312,7 +1308,7 @@ var SETDEX_SS = {
     "ZU Choice Specs": {"ability":"Lightning Rod","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Volt Switch","Overheat","Switcheroo"]},
     "ZU SubTox": {"ability":"Lightning Rod","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Toxic","Thunderbolt","Flamethrower"]},
     "NU Showdown Usage": {"ability":"Lightning Rod","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Switcheroo","Thunderbolt","Hyper Voice"]},
-    "National Dex Showdown Usage": {"ability":"Static","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]},
+    "National Dex Showdown Usage": {"ability":"Static","item":"Manectite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]},
     "National Dex Monotype Showdown Usage": {"ability":"Static","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]}
   },
   "Roselia": {
@@ -1413,6 +1409,7 @@ var SETDEX_SS = {
   "Milotic": {
     "RU Defensive": {"ability":"Marvel Scale","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":168,"sp":88},"moves":["Scald","Recover","Flip Turn","Toxic"]},
     "National Dex RU Defensive Pivot": {"ability":"Marvel Scale","item":"Heavy-Duty Boots","nature":"Calm","evs":{"hp":252,"df":148,"sd":60,"sp":48},"moves":["Scald","Flip Turn","Toxic","Recover"]},
+    "National Dex Showdown Usage": {"ability":"Competitive","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Recover","Scald","Ice Beam","Toxic"]},
     "UU Showdown Usage": {"ability":"Marvel Scale","item":"Flame Orb","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Recover","Scald","Haze","Ice Beam"]},
     "Doubles OU Showdown Usage": {"ability":"Competitive","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":252,"sd":4},"moves":["Recover","Ice Beam","Scald","Icy Wind"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Competitive","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Muddy Water","Recover","Coil","Hypnosis"]}
@@ -1447,7 +1444,6 @@ var SETDEX_SS = {
     "Battle Stadium Singles Physical Sweeper": {"level":50,"ability":"Moxie","item":"Life Orb","nature":"Naive","evs":{"hp":4,"at":252,"sp":252},"moves":["Dual Wingbeat","Outrage","Earthquake","Fire Blast"]},
     "Battle Stadium Singles Special Attacker": {"level":50,"ability":"Intimidate","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Hurricane","Fire Blast","Hydro Pump"]},
     "1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Outrage","Dual Wingbeat","Earthquake","Flamethrower"]},
-    "National Dex Showdown Usage": {"ability":"Moxie","item":"Wide Lens","nature":"Adamant","evs":{"hp":60,"at":252,"sp":196},"moves":["Dragon Dance","Earthquake","Dual Wingbeat","Stone Edge"]},
     "National Dex Monotype Showdown Usage": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Dual Wingbeat","Dragon Claw","Dragon Dance"]}
   },
   "Metang": {
@@ -1816,7 +1812,7 @@ var SETDEX_SS = {
     "National Dex RU Nasty Plot": {"ability":"Serene Grace","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Roost","Nasty Plot","Air Slash","Flamethrower"]},
     "1v1 Maranga Berry + Thunder Wave": {"ability":"Serene Grace","item":"Maranga Berry","nature":"Calm","evs":{"hp":252,"df":52,"sd":104,"sp":100},"moves":["Thunder Wave","Roost","Encore","Air Slash"]},
     "1v1 Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Air Slash","Trick","Fire Blast","Roost"]},
-    "National Dex Showdown Usage": {"ability":"Serene Grace","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Air Slash","Defog","Heal Bell","Dazzling Gleam"]},
+    "National Dex Showdown Usage": {"ability":"Serene Grace","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":236,"df":200,"sp":72},"moves":["Air Slash","Roost","Defog","Nasty Plot"]},
     "Doubles OU Showdown Usage": {"ability":"Serene Grace","item":"Babiri Berry","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dazzling Gleam","Air Slash","Follow Me","Protect"]},
     "Battle Stadium Singles Showdown Usage": {"level":50,"ability":"Super Luck","item":"Scope Lens","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Air Slash","Dazzling Gleam","Nasty Plot","Flamethrower"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Super Luck","item":"Scope Lens","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Dazzling Gleam","Follow Me","Protect","Air Slash"]}
@@ -1845,7 +1841,6 @@ var SETDEX_SS = {
     "1v1 Choice Band": {"ability":"Oblivious","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":68,"sp":188},"moves":["Earthquake","Ice Shard","Icicle Crash","Heavy Slam"]},
     "1v1 Life Orb": {"ability":"Oblivious","item":"Life Orb","nature":"Adamant","evs":{"hp":168,"at":132,"df":192,"sp":16},"moves":["Earthquake","Ice Shard","Heavy Slam","Icicle Spear"]},
     "1v1 Choice Scarf": {"ability":"Oblivious","item":"Choice Scarf","nature":"Jolly","evs":{"at":188,"sd":68,"sp":252},"moves":["Earthquake","Icicle Crash","Rock Slide","Knock Off"]},
-    "National Dex Showdown Usage": {"ability":"Thick Fat","item":"Metronome","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Ice Shard","Icicle Crash","Stealth Rock"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Oblivious","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Ice Shard","Icicle Crash","Protect"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Oblivious","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Icicle Crash","Protect","High Horsepower","Ice Shard"]}
   },
@@ -1894,6 +1889,7 @@ var SETDEX_SS = {
     "1v1 Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"hp":36,"sa":232,"sp":240},"moves":["Overheat","Trick","Thunder","Thunderbolt"]},
     "1v1 Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Modest","evs":{"hp":240,"sa":160,"sp":108},"moves":["Overheat","Thunderbolt","Trick","Rest"]},
     "1v1 Stall": {"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":200,"sd":56},"moves":["Will-O-Wisp","Eerie Impulse","Rest","Overheat"]},
+    "National Dex Showdown Usage": {"ability":"Levitate","item":"Aguav Berry","nature":"Modest","evs":{"hp":252,"df":100,"sa":56,"sd":100},"moves":["Overheat","Volt Switch","Pain Split","Thunder Wave"]},
     "National Dex Monotype Showdown Usage": {"ability":"Levitate","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Defog","Will-O-Wisp","Overheat"]}
   },
   "Rotom-Wash": {
@@ -2115,7 +2111,7 @@ var SETDEX_SS = {
     "OU Guts Wallbreaker": {"ability":"Guts","item":"Flame Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Mach Punch","Knock Off","Facade"]},
     "UU Guts Wallbreaker": {"ability":"Guts","item":"Flame Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Drain Punch","Facade","Knock Off","Mach Punch"]},
     "1v1 Life Orb": {"ability":"Sheer Force","item":"Life Orb","nature":"Adamant","evs":{"hp":44,"at":252,"sp":212},"moves":["Close Combat","Mach Punch","Poison Jab","Ice Punch"]},
-    "National Dex Showdown Usage": {"ability":"Guts","item":"Flame Orb","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Drain Punch","Mach Punch","Knock Off","Facade"]},
+    "National Dex Showdown Usage": {"ability":"Guts","item":"Flame Orb","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Drain Punch","Knock Off","Facade","Mach Punch"]},
     "CAP Showdown Usage": {"ability":"Guts","item":"Flame Orb","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Mach Punch","Knock Off","Facade","Drain Punch"]}
   },
   "Palpitoad": {
@@ -2208,7 +2204,8 @@ var SETDEX_SS = {
     "National Dex RU Offensive Pivot": {"ability":"Sheer Force","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","U-turn","Earthquake","Toxic"]},
     "National Dex RU Choice Scarf": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","U-turn","Rock Slide","Trick"]},
     "1v1 Choice Scarf": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Trick","Earthquake","Superpower"]},
-    "1v1 Choice Band": {"ability":"Sheer Force","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Superpower","Trick","Rest"]}
+    "1v1 Choice Band": {"ability":"Sheer Force","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Superpower","Trick","Rest"]},
+    "National Dex Showdown Usage": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["U-turn","Flare Blitz","Rock Slide","Earthquake"]}
   },
   "Darmanitan-Galar": {
     "Ubers Choice Scarf": {"ability":"Gorilla Tactics","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Icicle Crash","Flare Blitz","Rock Slide"]},
@@ -2375,7 +2372,6 @@ var SETDEX_SS = {
     "Monotype Agility (Bug)": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Agility","Thunder","Bug Buzz","Energy Ball"]},
     "Monotype Sticky Web (Electric)": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Thunder","Bug Buzz","String Shot"]},
     "Anything Goes Sticky Web Lead": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Thunder","Thunder Wave","Toxic"]},
-    "National Dex Showdown Usage": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Thunder Wave","Thunder","Toxic"]},
     "National Dex Monotype Showdown Usage": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunder","Sticky Web","Bug Buzz","Energy Ball"]}
   },
   "Ferroseed": {
@@ -2802,7 +2798,7 @@ var SETDEX_SS = {
     "Monotype Wallbreaker (Normal)": {"ability":"Huge Power","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Body Slam","Earthquake","Quick Attack","Fire Punch"]},
     "1v1 Life Orb": {"ability":"Huge Power","item":"Life Orb","nature":"Adamant","evs":{"hp":4,"at":232,"sd":40,"sp":232},"moves":["Swords Dance","Earthquake","Quick Attack","Gunk Shot"]},
     "National Dex Monotype Showdown Usage": {"ability":"Huge Power","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Quick Attack","Fire Punch","Swords Dance"]},
-    "OU Showdown Usage": {"ability":"Huge Power","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Knock Off","Earthquake","Body Slam","Fire Punch"]}
+    "OU Showdown Usage": {"ability":"Huge Power","item":"Choice Scarf","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Fire Punch","Body Slam","Knock Off"]}
   },
   "Fletchinder": {
     "NFE Defensive Support": {"ability":"Flame Body","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":248,"df":128,"sp":132},"moves":["Flamethrower","Roost","Taunt","Will-O-Wisp"]}
@@ -3191,7 +3187,7 @@ var SETDEX_SS = {
     "1v1 Weakness Policy": {"ability":"Intimidate","item":"Weakness Policy","nature":"Jolly","evs":{"at":116,"df":216,"sp":176},"moves":["Bulk Up","Flare Blitz","Knock Off","Superpower"]},
     "1v1 Assault Vest": {"ability":"Intimidate","item":"Assault Vest","nature":"Adamant","evs":{"hp":180,"at":60,"sd":240,"sp":28},"moves":["Flare Blitz","Flame Charge","Knock Off","Fake Out"]},
     "1v1 Chople Berry": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":192,"at":36,"df":252,"sp":28},"moves":["Flare Blitz","Knock Off","Flame Charge","Taunt"]},
-    "National Dex Showdown Usage": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Parting Shot","Flare Blitz","Fake Out","Earthquake"]},
+    "National Dex Showdown Usage": {"ability":"Intimidate","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Parting Shot","Fake Out","Flare Blitz","Earthquake"]},
     "National Dex Monotype Showdown Usage": {"ability":"Intimidate","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Flare Blitz","Knock Off","Parting Shot","Fake Out"]},
     "UU Showdown Usage": {"ability":"Intimidate","item":"Heavy-Duty Boots","nature":"Sassy","evs":{"hp":252,"at":20,"sd":236},"moves":["Knock Off","U-turn","Toxic","Overheat"]}
   },
@@ -3228,8 +3224,9 @@ var SETDEX_SS = {
     "PU Offensive Support": {"ability":"Shield Dust","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Moonblast","Stun Spore","U-turn"]},
     "Monotype Sticky Web Lead (Fairy)": {"ability":"Shield Dust","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Bug Buzz","Stun Spore","Moonblast"]},
     "National Dex RU Sticky Web Lead": {"ability":"Shield Dust","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Moonblast","U-turn","Stun Spore"]},
-    "National Dex Showdown Usage": {"ability":"Shield Dust","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sp":252},"moves":["Sticky Web","Moonblast","Stun Spore","Hidden Power Fire"]},
-    "National Dex Monotype Showdown Usage": {"ability":"Shield Dust","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Stun Spore","Moonblast","Bug Buzz"]}
+    "National Dex Showdown Usage": {"ability":"Shield Dust","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Stun Spore","Moonblast","Hidden Power Fire"]},
+    "National Dex Monotype Showdown Usage": {"ability":"Shield Dust","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Stun Spore","Moonblast","Bug Buzz"]},
+    "OU Showdown Usage": {"ability":"Shield Dust","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Moonblast","Trick","Defog"]}
   },
   "Lycanroc": {
     "RU Lead": {"ability":"Steadfast","item":"Focus Sash","nature":"Naive","ivs":{"hp":0,"df":0,"sd":0},"evs":{"at":252,"sp":252},"moves":["Stealth Rock","Taunt","Accelerock","Endeavor"]},
@@ -3246,8 +3243,7 @@ var SETDEX_SS = {
     "UU All-out Attacker": {"ability":"Tough Claws","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Close Combat","Psychic Fangs","Accelerock"]},
     "Battle Stadium Singles Focus Sash": {"level":50,"ability":"Tough Claws","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Accelerock","Counter","Close Combat","Stealth Rock"]},
     "Monotype Physical Wallbreaker (Rock)": {"ability":"Tough Claws","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Stone Edge","Close Combat","Accelerock","Crunch"]},
-    "National Dex Monotype Showdown Usage": {"ability":"Tough Claws","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Accelerock","Close Combat","Stone Edge","Crunch"]},
-    "OU Showdown Usage": {"ability":"Tough Claws","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Accelerock","Swords Dance","Psychic Fangs"]}
+    "National Dex Monotype Showdown Usage": {"ability":"Tough Claws","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Accelerock","Close Combat","Stone Edge","Crunch"]}
   },
   "Wishiwashi": {
     "PU Defensive Pivot": {"ability":"Schooling","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sp":4},"moves":["Scald","U-turn","Rest","Sleep Talk"]}
@@ -3461,7 +3457,7 @@ var SETDEX_SS = {
     "National Dex RU Swords Dance": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Shadow Sneak","Shadow Claw","Play Rough"]},
     "National Dex Monotype Swords Dance (Ghost)": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Play Rough","Drain Punch","Shadow Sneak"]},
     "National Dex Monotype Swords Dance (Fairy)": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Play Rough","Shadow Claw","Shadow Sneak"]},
-    "National Dex Showdown Usage": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Shadow Sneak","Play Rough","Drain Punch"]},
+    "National Dex Showdown Usage": {"ability":"Disguise","item":"Mimikium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Play Rough","Shadow Sneak","Drain Punch"]},
     "UU Showdown Usage": {"ability":"Disguise","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Shadow Sneak","Swords Dance","Play Rough","Drain Punch"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Disguise","item":"Mental Herb","nature":"Relaxed","evs":{"hp":252,"df":236,"sd":20},"moves":["Trick Room","Shadow Sneak","Will-O-Wisp","Taunt"]}
   },
@@ -3657,7 +3653,7 @@ var SETDEX_SS = {
     "1v1 Choice Band": {"ability":"Beast Boost","item":"Choice Band","nature":"Adamant","evs":{"hp":252,"at":72,"df":36,"sd":140,"sp":8},"moves":["Heavy Slam","Megahorn","Earthquake","Superpower"]},
     "1v1 Anti-Primarina": {"ability":"Beast Boost","item":"Mental Herb","nature":"Impish","evs":{"hp":248,"at":44,"df":56,"sd":144,"sp":16},"moves":["Heavy Slam","Flamethrower","Leech Seed","Protect"]},
     "1v1 Anti-Urshifu": {"ability":"Beast Boost","item":"Sitrus Berry","nature":"Relaxed","evs":{"hp":248,"at":12,"df":248},"moves":["Air Slash","Leech Seed","Heavy Slam","Flamethrower"]},
-    "National Dex Showdown Usage": {"ability":"Beast Boost","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"df":4,"sd":252},"moves":["Flamethrower","Heavy Slam","Leech Seed","Protect"]},
+    "National Dex Showdown Usage": {"ability":"Beast Boost","item":"Power Herb","nature":"Quiet","evs":{"hp":252,"at":160,"sa":24,"sp":72},"moves":["Heavy Slam","Leech Seed","Flamethrower","Protect"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Beast Boost","item":"Assault Vest","nature":"Adamant","evs":{"hp":236,"at":252,"sd":20},"moves":["Flash Cannon","Air Slash","Protect","Flamethrower"]}
   },
   "Kartana": {
@@ -3734,6 +3730,7 @@ var SETDEX_SS = {
     "Monotype Trick Room (Rock)": {"ability":"Beast Boost","item":"Air Balloon","nature":"Lonely","ivs":{"df":15,"sp":0},"evs":{"hp":252,"at":252,"sd":4},"moves":["Trick Room","Gyro Ball","Heat Crash","Stone Edge"]},
     "National Dex RU Stealth Rock": {"ability":"Beast Boost","item":"Leftovers","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Stealth Rock","Gyro Ball","Body Press","Toxic"]},
     "National Dex RU Trick Room Sweeper": {"ability":"Beast Boost","item":"Life Orb","nature":"Lonely","ivs":{"df":15,"sp":0},"evs":{"hp":252,"at":252,"sd":4},"moves":["Trick Room","Gyro Ball","Stone Edge","Earthquake"]},
+    "National Dex Showdown Usage": {"ability":"Beast Boost","item":"Rockium Z","nature":"Brave","evs":{"hp":252,"at":252,"df":4},"moves":["Gyro Ball","Stone Edge","Trick Room","Earthquake"]},
     "National Dex Monotype Showdown Usage": {"ability":"Beast Boost","item":"Focus Sash","nature":"Lonely","evs":{"hp":252,"at":252,"sd":4},"moves":["Gyro Ball","Trick Room","Earthquake","Stone Edge"]},
     "UU Showdown Usage": {"ability":"Beast Boost","item":"Choice Band","nature":"Lonely","evs":{"hp":252,"at":252,"sd":4},"moves":["Gyro Ball","Stone Edge","Earthquake","Trick Room"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Beast Boost","item":"Shuca Berry","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Trick Room","Gyro Ball","Rock Slide","Body Press"]}
@@ -3854,8 +3851,7 @@ var SETDEX_SS = {
     "Battle Stadium Singles Choice Scarf": {"level":50,"ability":"Libero","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["High Jump Kick","U-turn","Pyro Ball","Gunk Shot"]}
   },
   "Inteleon": {
-    "NU Choice Specs": {"ability":"Torrent","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Dark Pulse","Ice Beam","U-turn"]},
-    "OU Showdown Usage": {"ability":"Torrent","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Ice Beam","Dark Pulse","Air Slash","Surf"]}
+    "NU Choice Specs": {"ability":"Torrent","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Dark Pulse","Ice Beam","U-turn"]}
   },
   "Greedent": {
     "ZU Belly Drum": {"ability":"Cheek Pouch","item":"Sitrus Berry","nature":"Brave","ivs":{"sp":0},"evs":{"hp":252,"at":252,"sd":4},"moves":["Belly Drum","Facade","Earthquake","Crunch"]}
@@ -3961,7 +3957,7 @@ var SETDEX_SS = {
     "OU Shell Smash": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Shadow Ball","Stored Power","Giga Drain"]},
     "RU Shell Smash": {"ability":"Cursed Body","item":"White Herb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Shadow Ball","Strength Sap","Giga Drain"]},
     "Monotype Shell Smash": {"ability":"Weak Armor","item":"White Herb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Shadow Ball","Stored Power","Giga Drain"]},
-    "National Dex Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","evs":{"df":100,"sa":252,"sp":156},"moves":["Shell Smash","Shadow Ball","Giga Drain","Stored Power"]},
+    "National Dex Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shell Smash","Shadow Ball","Giga Drain","Stored Power"]},
     "UU Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Shell Smash","Shadow Ball","Stored Power","Giga Drain"]}
   },
   "Hattrem": {
@@ -3977,7 +3973,7 @@ var SETDEX_SS = {
     "UU Calm Mind": {"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":244,"sp":12},"moves":["Calm Mind","Draining Kiss","Psyshock","Mystical Fire"]},
     "Doubles OU Trick Room Attacker": {"ability":"Magic Bounce","item":"Life Orb","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Expanding Force","Dazzling Gleam","Trick Room","Protect"]},
     "Monotype Calm Mind (Psychic)": {"ability":"Magic Bounce","item":"Leftovers","nature":"Relaxed","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Psyshock","Draining Kiss","Trick Room"]},
-    "National Dex Showdown Usage": {"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","evs":{"hp":252,"sa":252,"sd":4},"moves":["Mystical Fire","Trick Room","Psyshock","Dazzling Gleam"]},
+    "National Dex Showdown Usage": {"ability":"Magic Bounce","item":"Psychium Z","nature":"Quiet","evs":{"hp":252,"sa":252,"sd":4},"moves":["Mystical Fire","Trick Room","Psychic","Draining Kiss"]},
     "National Dex Monotype Showdown Usage": {"ability":"Magic Bounce","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":252,"sd":4},"moves":["Psyshock","Calm Mind","Draining Kiss","Nuzzle"]},
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Life Orb","nature":"Quiet","evs":{"hp":252,"df":4,"sa":252},"moves":["Trick Room","Dazzling Gleam","Expanding Force","Mystical Fire"]},
     "CAP Showdown Usage": {"ability":"Magic Bounce","item":"Sitrus Berry","nature":"Bold","evs":{"hp":248,"df":180,"sd":80},"moves":["Trick Room","Healing Wish","Dazzling Gleam","Psychic"]}
@@ -4241,7 +4237,7 @@ var SETDEX_SS = {
     "Monotype Wallbreaker": {"ability":"Transistor","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rising Voltage","Thunderbolt","Volt Switch","Ancient Power"]},
     "Anything Goes Rapid Spin": {"ability":"Transistor","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Rapid Spin","Wild Charge","Explosion","Assurance"]},
     "1v1 Choice Specs": {"ability":"Transistor","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunder Cage","Thunder","Hyper Beam","Electro Ball"]},
-    "National Dex Showdown Usage": {"ability":"Transistor","item":"Life Orb","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Volt Switch","Rapid Spin","Electro Ball","Thunderbolt"]},
+    "National Dex Showdown Usage": {"ability":"Transistor","item":"Heavy-Duty Boots","nature":"Modest","evs":{"hp":4,"sa":252,"sp":252},"moves":["Volt Switch","Rapid Spin","Electro Ball","Explosion"]},
     "National Dex Monotype Showdown Usage": {"ability":"Transistor","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sp":228},"moves":["Rising Voltage","Volt Switch","Ancient Power","Thunderbolt"]},
     "UU Showdown Usage": {"ability":"Transistor","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Rapid Spin","Ancient Power"]},
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Transistor","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Electroweb","Protect","Volt Switch","Thunderbolt"]}
@@ -4426,17 +4422,17 @@ var SETDEX_SS = {
   "Sandshrew": {
     "ZU Showdown Usage": {"ability":"Sand Rush","item":"Eviolite","nature":"Impish","evs":{"hp":248,"at":96,"df":156,"sd":5},"moves":["Earthquake","Knock Off","Rapid Spin","Stealth Rock"]}
   },
+  "Manectric-Mega": {
+    "National Dex Showdown Usage": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]},
+    "National Dex Monotype Showdown Usage": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]}
+  },
   "Beedrill-Mega": {
-    "National Dex Showdown Usage": {"ability":"Adaptability","item":"Beedrillite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Poison Jab","U-turn","Drill Run","Fell Stinger"]},
+    "National Dex Showdown Usage": {"ability":"Adaptability","item":"Beedrillite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Poison Jab","U-turn","Drill Run","Knock Off"]},
     "National Dex Monotype Showdown Usage": {"ability":"Adaptability","item":"Beedrillite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Poison Jab","U-turn","Drill Run","Fell Stinger"]}
   },
   "Beedrill": {
-    "National Dex Showdown Usage": {"ability":"Swarm","item":"Beedrillite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Poison Jab","U-turn","Drill Run","Fell Stinger"]},
+    "National Dex Showdown Usage": {"ability":"Swarm","item":"Beedrillite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Poison Jab","U-turn","Drill Run","Knock Off"]},
     "National Dex Monotype Showdown Usage": {"ability":"Swarm","item":"Beedrillite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Poison Jab","U-turn","Drill Run","Fell Stinger"]}
-  },
-  "Manectric-Mega": {
-    "National Dex Showdown Usage": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]},
-    "National Dex Monotype Showdown Usage": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hidden Power Ice","Thunderbolt","Flamethrower"]}
   },
   "Vivillon": {
     "National Dex Monotype Showdown Usage": {"ability":"Compound Eyes","item":"Flyinium Z","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hurricane","Sleep Powder","Quiver Dance","Energy Ball"]}
