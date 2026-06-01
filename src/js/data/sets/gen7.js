@@ -1674,8 +1674,7 @@ var SETDEX_SM = {
     "Ubers Support": {"ability":"Natural Cure","item":"Shed Shell","nature":"Calm","evs":{"hp":252,"df":4,"sd":252},"moves":["Soft-Boiled","Heal Bell","Confide","Toxic"]},
     "UU Defensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Toxic","Soft-Boiled","Heal Bell"]},
     "Battle Spot Singles Special Wall": {"level":50,"ability":"Natural Cure","item":"Shed Shell","nature":"Bold","evs":{"hp":4,"df":252,"sd":252},"moves":["Soft-Boiled","Toxic","Seismic Toss","Flamethrower"]},
-    "1v1 Z-Charm": {"ability":"Serene Grace","item":"Fairium Z","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Charm","Soft-Boiled","Toxic","Ice Beam"]},
-    "OU Showdown Usage": {"ability":"Natural Cure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Wish","Protect","Heal Bell"]}
+    "1v1 Z-Charm": {"ability":"Serene Grace","item":"Fairium Z","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Charm","Soft-Boiled","Toxic","Ice Beam"]}
   },
   "Raikou": {
     "RU Substitute + Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Calm Mind","Thunderbolt","Hidden Power Ice"]},
@@ -2046,7 +2045,6 @@ var SETDEX_SM = {
     "Doubles OU Offensive Pivot": {"ability":"Lightning Rod","item":"Manectite","nature":"Timid","evs":{"hp":128,"df":44,"sa":80,"sd":4,"sp":252},"moves":["Volt Switch","Snarl","Overheat","Protect"]},
     "Battle Spot Singles Offensive Pivot": {"level":50,"ability":"Lightning Rod","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Overheat","Hidden Power Ice","Volt Switch"]},
     "Monotype Offensive Pivot (Electric)": {"ability":"Lightning Rod","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Hidden Power Ice","Overheat"]},
-    "OU Showdown Usage": {"ability":"Static","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Hidden Power Ice","Flamethrower"]},
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Static","item":"Manectite","nature":"Timid","evs":{"hp":244,"df":20,"sa":4,"sd":20,"sp":220},"moves":["Protect","Volt Switch","Snarl","Overheat"]}
   },
   "Manectric-Mega": {
@@ -2054,7 +2052,6 @@ var SETDEX_SM = {
     "Doubles OU Offensive Pivot": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"hp":128,"df":44,"sa":80,"sd":4,"sp":252},"moves":["Volt Switch","Snarl","Overheat","Protect"]},
     "Battle Spot Singles Offensive Pivot": {"level":50,"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Overheat","Hidden Power Ice","Volt Switch"]},
     "Monotype Offensive Pivot (Electric)": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Hidden Power Ice","Overheat"]},
-    "OU Showdown Usage": {"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Thunderbolt","Hidden Power Ice","Flamethrower"]},
     "VGC 2018 Showdown Usage": {"level":50,"ability":"Intimidate","item":"Manectite","nature":"Timid","evs":{"hp":244,"df":20,"sa":4,"sd":20,"sp":220},"moves":["Protect","Volt Switch","Snarl","Overheat"]}
   },
   "Plusle": {

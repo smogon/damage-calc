@@ -548,7 +548,7 @@ const SV = SS.concat(
     'Wellspring Mask',
   ].sort()
 );
-const Champions = [
+const CHAMPIONS = [
   'Abomasite',
   'Absolite',
   'Aerodactylite',
@@ -750,7 +750,7 @@ const BERRIES: {[berry: string]: {t: I.TypeName; p: number}} = {
 
 export const MEGA_STONES = Object.assign({}, GEN_6_MEGA_STONES, ZA_MEGA_STONES);
 
-export const ITEMS = [Champions, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+export const ITEMS = [CHAMPIONS, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Items implements I.Items {
   private readonly gen: I.GenerationNum;

@@ -4935,7 +4935,7 @@ const ZA_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH, ZA_PATCH);
 
-const ChampionsLegal = [
+const CHAMPIONS_LIST = [
   '(No Move)',
   'Accelerock',
   'Acid Armor',
@@ -5434,12 +5434,7 @@ const ChampionsLegal = [
   'Zen Headbutt',
 ];
 
-const Champions_AVAILABLE: {[name: string]: MoveData} = {};
-for (const move of ChampionsLegal) {
-  Champions_AVAILABLE[move] = SV[move];
-}
-
-const Champions_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+const CHAMPIONS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Apple Acid': {bp: 90},
   'Beak Blast': {bp: 120},
   'Bone Rush': {bp: 30},
@@ -5460,14 +5455,15 @@ const Champions_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Trop Kick': {bp: 85},
 };
 
-const Champions: {[name: string]: MoveData} = extend(
-  true, {}, Champions_AVAILABLE, Champions_PATCH
+const CHAMPIONS: {[name: string]: MoveData} = extend(
+  true, {},
+  Object.fromEntries(CHAMPIONS_LIST.map(m => [m, SV[m]])), CHAMPIONS_PATCH
 );
 
-// @ts-ignore readonly
-delete Champions['Freeze-Dry'].secondaries;
+// @ts-expect-error readonly
+delete CHAMPIONS['Freeze-Dry'].secondaries;
 
-export const MOVES = [Champions, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+export const MOVES = [CHAMPIONS, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Moves implements I.Moves {
   private readonly gen: I.GenerationNum;

@@ -343,7 +343,7 @@ const SV = SS.concat([
   'Zero to Hero',
 ]);
 
-const Champions = [
+const CHAMPIONS = [
   'Adaptability',
   'Aerilate',
   'Aftermath',
@@ -557,7 +557,7 @@ const Champions = [
   'Zero to Hero',
 ];
 
-export const ABILITIES = [Champions, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+export const ABILITIES = [CHAMPIONS, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
 
 export class Abilities implements I.Abilities {
   private readonly gen: I.GenerationNum;
