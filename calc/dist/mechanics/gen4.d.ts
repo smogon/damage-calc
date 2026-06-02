@@ -1,0 +1,11 @@
+import type { Generation } from '../data/interface';
+import type { RawDesc } from '../desc';
+import type { Field } from '../field';
+import type { Move } from '../move';
+import type { Pokemon } from '../pokemon';
+import { Result } from '../result';
+export declare function calculateDPP(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field): Result;
+export declare function calculateBasePowerDPP(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, hit?: number): number;
+export declare function calculateBPModsDPP(attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, basePower: number): number;
+export declare function calculateAttackDPP(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, isCritical?: boolean): number;
+export declare function calculateDefenseDPP(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, isCritical?: boolean): number;

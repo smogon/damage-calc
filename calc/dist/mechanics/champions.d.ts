@@ -1,0 +1,14 @@
+import type { Generation } from '../data/interface';
+import type { RawDesc } from '../desc';
+import type { Field } from '../field';
+import type { Move } from '../move';
+import type { Pokemon } from '../pokemon';
+import { Result } from '../result';
+export declare function calculateChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field): Result;
+export declare function calculateBasePowerChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, hasAteAbilityTypeChange: boolean, desc: RawDesc, hit?: number): number;
+export declare function calculateBPModsChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, basePower: number, hasAteAbilityTypeChange: boolean, turnOrder: string, hit: number): number[];
+export declare function calculateAttackChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, isCritical?: boolean): number;
+export declare function calculateAtModsChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc): number[];
+export declare function calculateDefenseChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, isCritical?: boolean): number;
+export declare function calculateDfModsChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, isCritical?: boolean, hitsPhysical?: boolean): number[];
+export declare function calculateFinalModsChampions(gen: Generation, attacker: Pokemon, defender: Pokemon, move: Move, field: Field, desc: RawDesc, isCritical: boolean | undefined, typeEffectiveness: number, hitCount?: number): number[];
