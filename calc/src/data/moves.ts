@@ -5453,6 +5453,7 @@ const CHAMPIONS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Snap Trap': {type: 'Steel'},
   'Spirit Shackle': {bp: 90},
   'Trop Kick': {bp: 85},
+  'Growth': {type: 'Grass'},
 };
 
 const CHAMPIONS: {[name: string]: MoveData} = extend(
