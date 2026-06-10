@@ -242,7 +242,7 @@ var SETDEX_ADV = {
     "OU Swords Dance Mixed Sweeper": {"ability":"Overgrow","item":"Leftovers","nature":"Hasty","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sa":36,"sp":220},"moves":["Swords Dance","Leaf Blade","Hidden Power Flying","Brick Break"]},
     "OU All-Out Mixed Sweeper": {"ability":"Overgrow","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"df":30},"evs":{"at":32,"sa":252,"sp":224},"moves":["Leaf Blade","Thunder Punch","Hidden Power Ice","Focus Punch"]},
     "OU 200 Metagame": {"ability":"Overgrow","item":"Leftovers","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":36,"sa":252,"sp":220},"moves":["Leaf Blade","Leech Seed","Hidden Power Ice","Toxic"]},
-    "Doubles OU Fast Attacker": {"ability":"Overgrow","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Blade","Hidden Power Fire","Substitute","Protect"]}
+    "Doubles OU Fast Attacker": {"ability":"Overgrow","item":"Petaya Berry","nature":"Timid","ivs":{"at":30,"df":30},"evs":{"hp":12,"sa":240,"sp":252},"moves":["Leaf Blade","Hidden Power Ice","Substitute","Protect"]}
   },
   "Combusken": {
     "PU Specially Biased": {"ability":"Blaze","item":"Leftovers","nature":"Mild","ivs":{"at":30,"sa":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Fire Blast","Hidden Power Grass","Sky Uppercut","Substitute"]},
