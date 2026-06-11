@@ -98,6 +98,14 @@ export const Stats = new (class {
     return dv * 2;
   }
 
+  EVToStatEXP(ev: number) {
+    return (ev - 1) * (ev - 1) + 1;
+  }
+
+  StatEXPToEv(statexp: number) {
+    return Math.floor((Math.sqrt(statexp - 1) + 1) / 4) * 4;
+  }
+
   DVsToIVs(dvs: Readonly<Partial<StatsTable>>) {
     const ivs: Partial<StatsTable> = {};
     let dv: StatID;
@@ -183,14 +191,14 @@ export const Stats = new (class {
   }
 
   calcStatRBY(stat: StatID, base: number, iv: number, ev: number, level: number) {
-    return this.calcStatRBYFromDV(stat, base, this.IVToDV(iv), ev, level);
+    return this.calcStatRBYFromDV(stat, base, this.IVToDV(iv), this.EVToStatEXP(ev), level);
   }
 
-  calcStatRBYFromDV(stat: StatID, base: number, dv: number, ev: number, level: number) {
+  calcStatRBYFromDV(stat: StatID, base: number, dv: number, statexp: number, level: number) {
     if (stat === 'hp') {
-      return Math.floor((((base + dv) * 2 + ev / 4) * level) / 100) + level + 10;
+      return Math.floor((((base + dv) * 2 + Math.floor((Math.sqrt(statexp - 1) + 1) / 4)) * level) / 100) + level + 10;
     } else {
-      return Math.floor((((base + dv) * 2 + ev / 4) * level) / 100) + 5;
+      return Math.floor((((base + dv) * 2 + Math.floor((Math.sqrt(statexp - 1) + 1) / 4)) * level) / 100) + 5;
     }
   }
 
