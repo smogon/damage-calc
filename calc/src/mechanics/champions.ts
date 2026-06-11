@@ -890,6 +890,11 @@ export function calculateAtModsChampions(
     desc.defenderAbility = defender.ability;
   }
 
+  if (attacker.hasItem('Light Ball') && attacker.name.includes('Pikachu')) {
+    atMods.push(8192);
+    desc.attackerItem = attacker.item;
+  }
+
   return atMods;
 }
 
