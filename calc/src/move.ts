@@ -19,6 +19,7 @@ export class Move implements State.Move {
   hits: number;
   timesUsed?: number;
   timesUsedWithMetronome?: number;
+  alliesFainted?: number;
   bp: number;
   type: I.TypeName;
   category: I.MoveCategory;
@@ -136,6 +137,7 @@ export class Move implements State.Move {
       this.dropsStats = Math.abs(data.self.boosts[stat]!);
     }
     this.timesUsed = options.timesUsed || 1;
+    this.alliesFainted = options.alliesFainted;
     this.secondaries = data.secondaries;
     // For the purposes of the damage formula only 'allAdjacent' and 'allAdjacentFoes' matter, so we
     // simply default to 'any' for the others even though they may not actually be 'any'-target
@@ -191,6 +193,7 @@ export class Move implements State.Move {
       hits: this.hits,
       timesUsed: this.timesUsed,
       timesUsedWithMetronome: this.timesUsedWithMetronome,
+      alliesFainted: this.alliesFainted,
       overrides: this.overrides,
     });
   }

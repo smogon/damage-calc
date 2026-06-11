@@ -56,6 +56,30 @@ describe('calc', () => {
       });
     });
 
+    inGens([0, [9, 9]], ({gen, calculate, Pokemon, Move}) => {
+      test(`Last Respects uses fainted allies for base power (gen ${gen})`, () => {
+        const attacker = Pokemon(gen === 0 ? 'Meganium-Mega' : 'Gengar', {level: 50});
+        const defender = Pokemon(gen === 0 ? 'Tyranitar' : 'Mew', {level: 50});
+        const normal = calculate(attacker, defender, Move('Last Respects'));
+
+        attacker.alliesFainted = 3;
+        const boosted = calculate(attacker, defender, Move('Last Respects'));
+
+        attacker.alliesFainted = 10;
+        const higher = calculate(attacker, defender, Move('Last Respects'));
+
+        attacker.alliesFainted = 100;
+        const capped = calculate(attacker, defender, Move('Last Respects'));
+
+        expect(boosted.range()[0]).toBeGreaterThan(normal.range()[0]);
+        expect(boosted.desc()).toContain('Last Respects (200 BP)');
+        expect(higher.range()[0]).toBeGreaterThan(boosted.range()[0]);
+        expect(higher.desc()).toContain('Last Respects (550 BP)');
+        expect(capped.range()[0]).toBeGreaterThan(higher.range()[0]);
+        expect(capped.desc()).toContain('Last Respects (5050 BP)');
+      });
+    });
+
     inGens([1, 9], ({gen, calculate, Pokemon, Move}) => {
       test(`Non-damaging (gen ${gen})`, () => {
         const result = calculate(Pokemon('Snorlax'), Pokemon('Dragonite'), Move('Amnesia'));
