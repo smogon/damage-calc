@@ -694,7 +694,7 @@ var SETDEX_GSC = {
     "ZU Wallbreaker": {"item":"Twisted Spoon","moves":["Psychic","Steel Wing","Giga Drain","Nightmare"]}
   },
   "Xatu": {
-    "NU King Xatu (RestTalk)": {"item":"Leftovers","moves":["Psychic","Drill Peck","Rest","Sleep Talk"]},
+    "NU King Xatu (RestTalk)": {"item":"Leftovers","ivs":{"hp":14,"at":28},"moves":["Psychic","Hidden Power Electric","Rest","Sleep Talk"]},
     "NU Utility": {"moves":["Psychic","Haze","Rest","Thief"]},
     "1v1 Mixed Attacker": {"item":"Leftovers","moves":["Psychic","Drill Peck","Rest","Sleep Talk"]},
     "1v1 Anti-Marowak": {"moves":["Psychic","Giga Drain","Thief","Haze"]}
