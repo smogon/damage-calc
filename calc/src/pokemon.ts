@@ -231,7 +231,7 @@ export class Pokemon implements State.Pokemon {
     const cur: Partial<I.StatsTable> = {};
     if (current) {
       assignWithout(cur, current, SPC);
-      if (current.spc) {
+      if (current.spc !== undefined) {
         cur.spa = current.spc;
         cur.spd = current.spc;
       }
