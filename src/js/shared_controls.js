@@ -673,6 +673,7 @@ $(".set-selector").change(function () {
 			if (regSets) {
 				pokeObj.find(".teraType").val(set.teraType || getForcedTeraType(pokemonName) || pokemon.types[0]);
 			}
+			pokeObj.find(".gmaxToggle").prop("checked", pokemon.canGigantamax && set.isGmax || false);
 			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				var stat = $("#randoms").prop("checked") ? legacyStatToStat(LEGACY_STATS[gen][i]) : LEGACY_STATS[gen][i];
@@ -728,6 +729,7 @@ $(".set-selector").change(function () {
 			}
 		} else {
 			pokeObj.find(".teraType").val(getForcedTeraType(pokemonName) || pokemon.types[0]);
+			pokeObj.find(".gmaxToggle").prop("checked", false);
 			pokeObj.find(".level").val(defaultLevel);
 			pokeObj.find(".hp .sps").val(0);
 			pokeObj.find(".hp .evs").val(0);
@@ -777,6 +779,11 @@ $(".set-selector").change(function () {
 			showFormes(formeObj, pokemonName, baseForme, pokemon.baseSpecies);
 		} else {
 			formeObj.hide();
+		}
+		if (gen === 8 && pokemon.canGigantamax) {
+			pokeObj.find(".gmaxToggle").parent().show();
+		} else {
+			pokeObj.find(".gmaxToggle").parent().hide();
 		}
 		calcStats(pokeObj);
 		var total = pokeObj.find(".hp").find(".total").text();
@@ -1121,6 +1128,10 @@ function createPokemon(pokeInfo) {
 		var item = pokeInfo.find(".item").val();
 		var gender = pokeInfo.find(".gender").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		if (isDynamaxed && pokeInfo.find(".gmaxToggle").prop("checked")) {
+			isDynamaxed = 'gmax';
+			var overrideMove = species.canGigantamax;
+		}
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 		var opts = {
 			ability: ability,
@@ -1128,13 +1139,13 @@ function createPokemon(pokeInfo) {
 			gender: gender,
 			isDynamaxed: isDynamaxed,
 			teraType: teraType,
-			species: name,
+			overrideMove: overrideMove,
 		};
 		pokeInfo.isDynamaxed = isDynamaxed;
 		calcHP(pokeInfo);
 		var curHP = ~~pokeInfo.find(".current-hp").val();
 		// FIXME the Pokemon constructor expects non-dynamaxed HP
-		if (isDynamaxed) curHP = Math.floor(curHP / 2);
+		if (pokeInfo.isDynamaxed) curHP = Math.floor(curHP / 2);
 		var types = [pokeInfo.find(".type1").val(), pokeInfo.find(".type2").val()];
 		return new calc.Pokemon(gen, name, {
 			level: ~~pokeInfo.find(".level").val(),
@@ -1145,10 +1156,11 @@ function createPokemon(pokeInfo) {
 			nature: pokeInfo.find(".nature").val(),
 			ivs: ivs,
 			evs: evs,
-			isDynamaxed: isDynamaxed,
 			alliesFainted: parseInt(pokeInfo.find(".alliesFainted").val()),
 			boostedStat: pokeInfo.find(".boostedStat").val() || undefined,
 			teraType: teraType,
+			isDynamaxed: isDynamaxed,
+			overrideMove: overrideMove,
 			boosts: boosts,
 			curHP: curHP,
 			status: CALC_STATUS[pokeInfo.find(".status").val()],
@@ -1217,9 +1229,9 @@ function getMoveDetails(moveInfo, opts) {
 	}
 	if (gen >= 4) overrides.category = moveInfo.find(".move-cat").val();
 	return new calc.Move(gen, moveName, {
-		ability: opts.ability, item: opts.item, useZ: isZMove, species: opts.species, isCrit: isCrit, hits: hits,
-		isStellarFirstUse: isStellarFirstUse, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
-		overrides: overrides, useMax: opts.isDynamaxed
+		ability: opts.ability, item: opts.item, useZ: isZMove, useMax: opts.isDynamaxed, overrideMove: opts.overrideMove,
+		isCrit: isCrit, hits: hits, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
+		isStellarFirstUse: isStellarFirstUse, overrides: overrides
 	});
 }
 

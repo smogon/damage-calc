@@ -125,6 +125,10 @@
                             <select class="gender calc-trigger"><option value="">(Select)</option><option value="M">Male</option><option value="F">Female</option><option value="N">Genderless</option></select>
                         </div>
                         <div>
+                            <label>G-Max</label>
+                            <input type="checkbox" title= "Does this Pok&eacute;mon have the Gigantamax Factor?" class="gmaxToggle calc-trigger">
+                        </div>
+                        <div>
                             <label>Level</label>
                             <!--
                             We use inputmode="decimal" so that mobile devices will have a numpad appear when inputting values.
@@ -483,7 +487,8 @@
                         <label>Current HP</label>
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
-						 <input class="max calc-trigger btn-input" type="checkbox" id="maxL" /><label class="btn btn-wide gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+                        <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
+                        <label class="btn max-btn gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
                         <br />
                         <br />
                         Health <div class="hpbar"></div>
