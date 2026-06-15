@@ -196,11 +196,11 @@ export const Stats = new (class {
 
   calcStatRBYFromDV(stat: StatID, base: number, dv: number, statexp: number, level: number) {
     if (stat === 'hp') {
-      return Math.floor((((base + dv) * 2 + Math.floor((Math.sqrt(statexp - 1) + 1) / 4)) * level)
-        / 100) + level + 10;
+      return Math.floor((((base + dv) * 2 + Math.floor((Math.sqrt(statexp - 1) + 1) / 4)) *
+      level) / 100) + level + 10;
     } else {
-      return Math.floor((((base + dv) * 2 + Math.floor((Math.sqrt(statexp - 1) + 1) / 4)) * level)
-        / 100) + 5;
+      return Math.floor((((base + dv) * 2 + Math.floor((Math.sqrt(statexp - 1) + 1) / 4)) *
+      level) / 100) + 5;
     }
   }
 
