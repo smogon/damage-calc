@@ -19,6 +19,7 @@ interface DexSet {
   gender?: GenderName;
   item?: ItemName[] | ItemName;
   nature?: NatureName[] | NatureName;
+  isGmax?: boolean;
   teratypes?: TypeName[] | TypeName;
   evs?: Partial<StatsTable>[] | Partial<StatsTable>;
   ivs?: Partial<StatsTable>[] | Partial<StatsTable>;
@@ -47,6 +48,7 @@ interface CalcSet {
   ability?: string;
   item?: string;
   nature?: string;
+  isGmax?: boolean;
   teraType?: string;
   evs?: Partial<CalcStatsTable>;
   ivs?: Partial<CalcStatsTable>;
@@ -273,12 +275,13 @@ function usageToPset(
   return pset;
 }
 
-function psetToCalcSet(genNum: GenerationNum, pset: PokemonSet): CalcSet {
+function psetToCalcSet(name: string, genNum: GenerationNum, pset: PokemonSet): CalcSet {
   return {
     level: pset.level === 100 ? undefined : pset.level,
     ability: pset.ability || undefined,
     item: pset.item || undefined,
     nature: !pset.nature || USELESS_NATURES.includes(pset.nature) ? undefined : pset.nature,
+    isGmax: name.endsWith('-Gmax') || undefined,
     teraType: pset.teraType || undefined,
     ivs: toCalcStatsTable(pset.ivs, genNum === 2 ? 30 : 31),
     evs: toCalcStatsTable(pset.evs, genNum > 2 ? 0 : 252),
@@ -467,10 +470,15 @@ async function importGen(
       for (const [name, set] of Object.entries(sets)) {
         const pset = dexToPset(gen, formatID, specie, set);
         if (format && !validatePSet(format, pset, 'dex')) continue;
-        const calcSet = psetToCalcSet(gen.num, pset);
-        const setName = `${formatName.slice(formatName.indexOf(']') + 2)} ${name}`;
-        if (!calcSets[specieName]) calcSets[specieName] = {};
-        calcSets[specieName][setName] = calcSet;
+        const calcSet = psetToCalcSet(specieName, gen.num, pset);
+        let setName = `${formatName.slice(formatName.indexOf(']') + 2)} ${name}`;
+        if (calcSet.isGmax &&
+        !['Gigantamax', 'G-Max', 'Gmax', 'gmax'].some(j => setName.includes(j))) { 
+          setName += ' (G-Max)';
+        }
+        const toSpecies = calcSet.isGmax ? pset.species : specieName;
+        if (!calcSets[toSpecies]) calcSets[toSpecies] = {};
+        calcSets[toSpecies][setName] = calcSet;;        
         if (!statsIgnore[specieName]) statsIgnore[specieName] = new Set();
         statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);
@@ -517,7 +525,7 @@ async function importGen(
       const specie = getSpecie(gen, specieName);
       const pset = usageToPset(gen, formatID, specie.name, uset);
       if (format && !validatePSet(format, pset, 'stats')) continue;
-      const calcSet = psetToCalcSet(gen.num, pset);
+      const calcSet = psetToCalcSet(specieName, gen.num, pset);
       if (!calcSets[specieName]) calcSets[specieName] = {};
       const setName = `${formatName.slice(formatName.indexOf(']') + 2)} Showdown Usage`;
       calcSets[specieName][setName] = calcSet;
