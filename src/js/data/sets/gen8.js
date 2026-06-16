@@ -482,7 +482,7 @@ var SETDEX_SS = {
     "ZU Swords Dance": {"ability":"Lightning Rod","item":"Eviolite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Stone Edge","Stealth Rock"]}
   },
   "Chansey": {
-    "Ubers Support": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":4,"df":252,"sd":252},"moves":["Soft-Boiled","Teleport","Healing Wish","Thunder Wave"]},
+    "Ubers Support": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","ivs":{"at":0},"evs":{"hp":4,"df":252,"sd":252},"moves":["Soft-Boiled","Teleport","Healing Wish","Thunder Wave"]},
     "UU Defensive": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Toxic","Soft-Boiled","Teleport"]},
     "Doubles OU Special Wall": {"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":4,"df":252,"sp":252},"moves":["Seismic Toss","Toxic","Stealth Rock","Soft-Boiled"]},
     "Battle Stadium Singles Physically Defensive": {"level":50,"ability":"Natural Cure","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Charm","Soft-Boiled","Stealth Rock","Seismic Toss"]},
@@ -750,14 +750,14 @@ var SETDEX_SS = {
     "National Dex Showdown Usage": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Earthquake","Extreme Speed","Roost"]}
   },
   "Mewtwo": {
-    "Ubers All-out Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Psystrike","Ice Beam","Fire Blast","Nasty Plot"]},
+    "Ubers All-out Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Psystrike","Ice Beam","Fire Blast","Nasty Plot"]},
     "Anything Goes Nasty Plot": {"ability":"Unnerve","item":"Life Orb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Psystrike","Ice Beam","Fire Blast"]}
   },
   "Mew": {
     "OU Utility": {"ability":"Synchronize","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"hp":248,"sd":148,"sp":112},"moves":["Spikes","Knock Off","Taunt","Roost"]},
     "OU Cosmic Power": {"ability":"Synchronize","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Cosmic Power","Stored Power","Body Press","Roost"]},
     "OU Suicide Lead": {"ability":"Synchronize","item":"Colbur Berry","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Spikes","Taunt","Thunder Wave"]},
-    "Ubers Lead": {"ability":"Synchronize","item":"Focus Sash","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Stealth Rock","Spikes","Taunt","Misty Explosion"]},
+    "Ubers Lead": {"ability":"Synchronize","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Stealth Rock","Spikes","Taunt","Misty Explosion"]},
     "Doubles OU Tailwind Support": {"ability":"Synchronize","item":"Sitrus Berry","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Fake Out","Ice Beam","Tailwind","Stealth Rock"]},
     "Monotype Stallbreaker": {"ability":"Synchronize","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"sd":28,"sp":228},"moves":["Taunt","Knock Off","Will-O-Wisp","Roost"]},
     "Monotype Cosmic Power (Psychic)": {"ability":"Synchronize","item":"Weakness Policy","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Cosmic Power","Stored Power","Taunt","Roost"]},
@@ -804,7 +804,7 @@ var SETDEX_SS = {
   },
   "Xatu": {
     "OU Magic Bounce": {"ability":"Magic Bounce","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Psychic","Roost","Teleport","Heat Wave"]},
-    "Ubers Magic Bounce": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Roost","Thunder Wave","Teleport","Night Shade"]},
+    "Ubers Magic Bounce": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Roost","Thunder Wave","Teleport","Night Shade"]},
     "RU Magic Bounce": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":240,"sp":16},"moves":["Future Sight","Heat Wave","Roost","Teleport"]},
     "NU Defensive Pivot": {"ability":"Magic Bounce","item":"Rocky Helmet","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Psychic","Foul Play","Roost","Teleport"]},
     "Monotype Xatu (Flying)": {"ability":"Magic Bounce","item":"Light Clay","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Light Screen","Reflect","U-turn","Thunder Wave"]}
@@ -936,7 +936,7 @@ var SETDEX_SS = {
   },
   "Shuckle": {
     "OU Sticky Web": {"ability":"Sturdy","item":"Red Card","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Sticky Web","Stealth Rock","Encore","Final Gambit"]},
-    "Ubers Sticky Web": {"ability":"Sturdy","item":"Mental Herb","nature":"Bold","evs":{"hp":252,"df":136,"sd":120},"moves":["Sticky Web","Stealth Rock","Encore","Final Gambit"]},
+    "Ubers Sticky Web": {"ability":"Sturdy","item":"Mental Herb","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":136,"sd":120},"moves":["Sticky Web","Stealth Rock","Encore","Final Gambit"]},
     "Monotype Entry Hazards Lead (Bug)": {"ability":"Sturdy","item":"Mental Herb","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Stealth Rock","Sticky Web","Encore","Toxic"]},
     "Monotype Entry Hazard Setter (Rock)": {"ability":"Sturdy","item":"Mental Herb","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Sticky Web","Stealth Rock","Encore","Knock Off"]},
     "National Dex Sticky Web Setter": {"ability":"Sturdy","item":"Mental Herb","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Sticky Web","Stealth Rock","Encore","Final Gambit"]},
@@ -1061,7 +1061,7 @@ var SETDEX_SS = {
   },
   "Blissey": {
     "OU Defensive": {"ability":"Natural Cure","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Seismic Toss","Soft-Boiled","Thunder Wave","Teleport"]},
-    "Ubers Special Wall": {"ability":"Natural Cure","item":"Utility Umbrella","nature":"Calm","evs":{"hp":4,"df":252,"sd":252},"moves":["Soft-Boiled","Confide","Aromatherapy","Thunder Wave"]},
+    "Ubers Special Wall": {"ability":"Natural Cure","item":"Utility Umbrella","nature":"Calm","ivs":{"at":0},"evs":{"hp":4,"df":252,"sd":252},"moves":["Soft-Boiled","Confide","Aromatherapy","Thunder Wave"]},
     "Battle Stadium Singles Calm Mind": {"level":50,"ability":"Natural Cure","item":"Utility Umbrella","nature":"Bold","ivs":{"at":0},"evs":{"hp":4,"df":252,"sd":252},"moves":["Calm Mind","Tri Attack","Soft-Boiled","Shadow Ball"]},
     "Monotype Defensive (Normal)": {"ability":"Natural Cure","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Seismic Toss","Soft-Boiled","Teleport"]},
     "National Dex Specially Defensive Pivot": {"ability":"Natural Cure","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Teleport","Soft-Boiled","Seismic Toss","Toxic"]},
@@ -1091,7 +1091,7 @@ var SETDEX_SS = {
   },
   "Suicune": {
     "OU VinCune (Substitute + Protect)": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Scald","Substitute","Calm Mind","Protect"]},
-    "Ubers VinCune": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":36,"sd":44,"sp":176},"moves":["Calm Mind","Scald","Substitute","Protect"]},
+    "Ubers VinCune": {"ability":"Pressure","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":36,"sd":44,"sp":176},"moves":["Calm Mind","Scald","Substitute","Protect"]},
     "UU CroCune": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Scald","Rest","Sleep Talk"]},
     "RU Substitute + Calm Mind": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":40,"sp":216},"moves":["Substitute","Calm Mind","Scald","Protect"]},
     "RU RestTalk": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":240,"sp":16},"moves":["Rest","Sleep Talk","Scald","Calm Mind"]},
@@ -1128,7 +1128,7 @@ var SETDEX_SS = {
     "National Dex Monotype Dragon Dance (Dark)": {"ability":"Sand Stream","item":"Tyranitarite","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Stone Edge","Fire Punch","Ice Punch"]}
   },
   "Lugia": {
-    "Ubers Great Wall (Defensive)": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":252,"df":160,"sp":96},"moves":["Roost","Ice Beam","Whirlwind","Toxic"]},
+    "Ubers Great Wall (Defensive)": {"ability":"Multiscale","item":"Heavy-Duty Boots","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":160,"sp":96},"moves":["Roost","Ice Beam","Whirlwind","Toxic"]},
     "Battle Stadium Singles Paralysis Spreader": {"level":50,"ability":"Multiscale","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":108,"sp":148},"moves":["Thunder Wave","Calm Mind","Recover","Air Slash"]},
     "Battle Stadium Singles Defensive": {"level":50,"ability":"Multiscale","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Thunder Wave","Recover","Whirlwind","Substitute"]},
     "Anything Goes Showdown Usage": {"ability":"Multiscale","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sa":8},"moves":["Roost","Defog","Whirlwind","Aeroblast"]}
@@ -1527,10 +1527,10 @@ var SETDEX_SS = {
     "National Dex 3 Attacks": {"ability":"Levitate","item":"Latiosite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Aura Sphere","Ice Beam","Roost"]}
   },
   "Kyogre": {
-    "Ubers Bulky Calm Mind": {"ability":"Drizzle","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Scald","Rest","Ice Beam"]},
-    "Ubers Choice Specs": {"ability":"Drizzle","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Ice Beam","Thunder"]},
-    "Ubers Choice Scarf": {"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Ice Beam","Thunder"]},
-    "Ubers SubCM": {"ability":"Drizzle","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":140,"sp":116},"moves":["Substitute","Calm Mind","Surf","Thunder Wave"]},
+    "Ubers Bulky Calm Mind": {"ability":"Drizzle","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Scald","Rest","Ice Beam"]},
+    "Ubers Choice Specs": {"ability":"Drizzle","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Ice Beam","Thunder"]},
+    "Ubers Choice Scarf": {"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Ice Beam","Thunder"]},
+    "Ubers SubCM": {"ability":"Drizzle","item":"Leftovers","nature":"Modest","ivs":{"at":0},"evs":{"hp":252,"sa":140,"sp":116},"moves":["Substitute","Calm Mind","Surf","Thunder Wave"]},
     "VGC 2022 Offensive": {"level":50,"ability":"Drizzle","item":"Mystic Water","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Thunder","Protect"]},
     "VGC 2022 Choice Scarf": {"level":50,"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Thunder","Ice Beam"]},
     "Battle Stadium Singles Choice Scarf": {"level":50,"ability":"Drizzle","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Water Spout","Origin Pulse","Ice Beam","Thunder"]},
@@ -1756,7 +1756,7 @@ var SETDEX_SS = {
   "Magnezone": {
     "OU Iron Defense": {"ability":"Magnet Pull","item":"Leftovers","nature":"Timid","evs":{"hp":4,"df":252,"sp":252},"moves":["Iron Defense","Body Press","Thunderbolt","Toxic"]},
     "OU Choice Specs": {"ability":"Magnet Pull","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Flash Cannon","Volt Switch","Toxic"]},
-    "Ubers Iron Defense": {"ability":"Magnet Pull","item":"Air Balloon","nature":"Timid","evs":{"hp":8,"df":248,"sp":252},"moves":["Iron Defense","Body Press","Magnet Rise","Discharge"]},
+    "Ubers Iron Defense": {"ability":"Magnet Pull","item":"Air Balloon","nature":"Timid","ivs":{"at":0},"evs":{"hp":8,"df":248,"sp":252},"moves":["Iron Defense","Body Press","Magnet Rise","Discharge"]},
     "Battle Stadium Singles Special Attacker": {"level":50,"ability":"Sturdy","item":"Assault Vest","nature":"Modest","evs":{"hp":252,"sa":252,"sp":4},"moves":["Thunderbolt","Volt Switch","Flash Cannon","Steel Beam"]},
     "Battle Stadium Singles Stall Breaker": {"level":50,"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","evs":{"hp":252,"df":252,"sp":4},"moves":["Iron Defense","Body Press","Substitute","Thunderbolt"]},
     "Monotype Trapper (Electric)": {"ability":"Magnet Pull","item":"Air Balloon","nature":"Bold","evs":{"hp":248,"df":44,"sp":216},"moves":["Iron Defense","Body Press","Flash Cannon","Substitute"]},
@@ -1898,7 +1898,7 @@ var SETDEX_SS = {
   "Rotom-Wash": {
     "OU Defensive Pivot": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":124,"sp":132},"moves":["Hydro Pump","Volt Switch","Will-O-Wisp","Pain Split"]},
     "OU Nasty Plot": {"ability":"Levitate","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Nasty Plot","Hydro Pump","Discharge","Pain Split"]},
-    "Ubers Defensive Pivot": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Volt Switch","Will-O-Wisp","Pain Split","Hydro Pump"]},
+    "Ubers Defensive Pivot": {"ability":"Levitate","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":252,"sd":8},"moves":["Volt Switch","Will-O-Wisp","Pain Split","Hydro Pump"]},
     "UU Pivot": {"ability":"Levitate","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":172,"sp":88},"moves":["Volt Switch","Hydro Pump","Pain Split","Will-O-Wisp"]},
     "UU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Volt Switch","Hydro Pump","Defog","Trick"]},
     "Battle Stadium Singles Choice Attacker": {"level":50,"ability":"Levitate","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Volt Switch","Hydro Pump","Trick","Thunderbolt"]},
@@ -1958,7 +1958,7 @@ var SETDEX_SS = {
     "National Dex RU Nasty Plot": {"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psyshock","Fire Blast","Energy Ball"]}
   },
   "Dialga": {
-    "Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Draco Meteor","Fire Blast","Thunder","Power Gem"]},
+    "Ubers Choice Specs": {"ability":"Pressure","item":"Choice Specs","nature":"Modest","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Draco Meteor","Fire Blast","Thunder","Power Gem"]},
     "VGC 2022 Offensive": {"level":50,"ability":"Telepathy","item":"Life Orb","nature":"Modest","evs":{"hp":252,"df":4,"sa":236,"sd":4,"sp":12},"moves":["Roar of Time","Flash Cannon","Earth Power","Trick Room"]},
     "Battle Stadium Singles Offensive Dynamax": {"level":50,"ability":"Pressure","item":"Life Orb","nature":"Modest","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Roar of Time","Flash Cannon","Earth Power","Thunder"]},
     "Battle Stadium Singles Bulky Dynamax": {"level":50,"ability":"Pressure","item":"Assault Vest","nature":"Modest","ivs":{"at":0},"evs":{"hp":252,"sa":252,"sp":4},"moves":["Flash Cannon","Draco Meteor","Earth Power","Thunder"]},
@@ -1966,7 +1966,7 @@ var SETDEX_SS = {
     "Anything Goes Support": {"ability":"Pressure","item":"Chople Berry","nature":"Modest","evs":{"hp":252,"df":20,"sa":160,"sp":76},"moves":["Stealth Rock","Draco Meteor","Fire Blast","Thunder"]}
   },
   "Palkia": {
-    "Ubers Special Attacker": {"ability":"Pressure","item":"Lustrous Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Spacial Rend","Thunder","Fire Blast"]},
+    "Ubers Special Attacker": {"ability":"Pressure","item":"Lustrous Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Spacial Rend","Thunder","Fire Blast"]},
     "Ubers Bulk Up": {"ability":"Pressure","item":"Leftovers","nature":"Jolly","evs":{"hp":96,"at":160,"sp":252},"moves":["Bulk Up","Substitute","Scale Shot","Liquidation"]},
     "Battle Stadium Singles Dynamax Attacker": {"level":50,"ability":"Pressure","item":"Assault Vest","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spacial Rend","Hydro Pump","Thunder","Earth Power"]},
     "Battle Stadium Singles Special Attacker": {"level":50,"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Thunder","Fire Blast","Draco Meteor"]},
@@ -1979,7 +1979,7 @@ var SETDEX_SS = {
     "OU Specially Defensive": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"sd":236,"sp":20},"moves":["Magma Storm","Earth Power","Taunt","Stealth Rock"]},
     "OU Physically Defensive": {"ability":"Flame Body","item":"Air Balloon","nature":"Bold","evs":{"hp":252,"df":236,"sp":20},"moves":["Magma Storm","Earth Power","Toxic","Stealth Rock"]},
     "OU Offensive": {"ability":"Flash Fire","item":"Air Balloon","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Magma Storm","Earth Power","Taunt","Eruption"]},
-    "Ubers Specially Defensive Trapper": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","evs":{"hp":244,"sd":244,"sp":20},"moves":["Magma Storm","Earth Power","Taunt","Toxic"]},
+    "Ubers Specially Defensive Trapper": {"ability":"Flash Fire","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":244,"sd":244,"sp":20},"moves":["Magma Storm","Earth Power","Taunt","Toxic"]},
     "Doubles OU Eruption": {"ability":"Flash Fire","item":"Charcoal","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Eruption","Heat Wave","Earth Power","Protect"]},
     "Battle Stadium Singles Offensive": {"level":50,"ability":"Flash Fire","item":"Assault Vest","nature":"Modest","evs":{"hp":20,"df":4,"sa":252,"sd":12,"sp":220},"moves":["Flash Cannon","Lava Plume","Earth Power","Solar Beam"]},
     "Battle Stadium Singles Stealth Rock Setter": {"level":50,"ability":"Flash Fire","item":"Air Balloon","nature":"Modest","evs":{"hp":20,"df":4,"sa":252,"sd":12,"sp":220},"moves":["Stealth Rock","Lava Plume","Earth Power","Flash Cannon"]},
@@ -2005,7 +2005,7 @@ var SETDEX_SS = {
     "VGC 2021 Showdown Usage": {"level":50,"ability":"Slow Start","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["High Horsepower","Giga Impact","Ice Punch","Protect"]}
   },
   "Giratina": {
-    "Ubers Defog": {"ability":"Pressure","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Defog","Toxic","Will-O-Wisp","Rest"]},
+    "Ubers Defog": {"ability":"Pressure","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Defog","Toxic","Will-O-Wisp","Rest"]},
     "Anything Goes Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Relaxed","ivs":{"sp":0},"evs":{"hp":248,"df":220,"sd":40},"moves":["Defog","Toxic","Will-O-Wisp","Rest"]},
     "Battle Stadium Singles Showdown Usage": {"level":50,"ability":"Pressure","item":"Chesto Berry","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Hex","Will-O-Wisp","Rest"]}
   },
@@ -2372,7 +2372,7 @@ var SETDEX_SS = {
     "National Dex RU Defensive": {"ability":"Regenerator","item":"Rocky Helmet","nature":"Bold","ivs":{"at":0},"evs":{"hp":40,"df":216,"sd":252},"moves":["Scald","Toxic","Wish","Protect"]}
   },
   "Galvantula": {
-    "Ubers Sticky Web Setter": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Thunder","Thunder Wave","Toxic"]},
+    "Ubers Sticky Web Setter": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Thunder","Thunder Wave","Toxic"]},
     "PU Offensive Support": {"ability":"Compound Eyes","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Sticky Web","Volt Switch","Bug Buzz","Thunder"]},
     "Monotype Agility (Bug)": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Agility","Thunder","Bug Buzz","Energy Ball"]},
     "Monotype Sticky Web (Electric)": {"ability":"Compound Eyes","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sticky Web","Thunder","Bug Buzz","String Shot"]},
@@ -2547,7 +2547,7 @@ var SETDEX_SS = {
   "Hydreigon": {
     "OU Three Attacks": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Earth Power","Flash Cannon","Roost"]},
     "OU Nasty Plot": {"ability":"Levitate","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Dark Pulse","Earth Power","Roost"]},
-    "Ubers Life Orb": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Draco Meteor","Dark Pulse","Flash Cannon"]},
+    "Ubers Life Orb": {"ability":"Levitate","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Draco Meteor","Dark Pulse","Flash Cannon"]},
     "UU Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","Flamethrower","Roost"]},
     "UU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Dark Pulse","U-turn","Fire Blast"]},
     "UU Dragon Dance": {"ability":"Levitate","item":"Life Orb","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Dragon Dance","Crunch","Scale Shot","Fire Blast"]},
@@ -2632,7 +2632,7 @@ var SETDEX_SS = {
   },
   "Thundurus-Therian": {
     "OU Rain Wallbreaker": {"ability":"Volt Absorb","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Thunder","Focus Blast","Weather Ball"]},
-    "Ubers Nasty Plot": {"ability":"Volt Absorb","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Thunderbolt","Psychic","Focus Blast"]},
+    "Ubers Nasty Plot": {"ability":"Volt Absorb","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Thunderbolt","Psychic","Focus Blast"]},
     "UU Pivot": {"ability":"Volt Absorb","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Volt Switch","Psychic","Grass Knot","Focus Blast"]},
     "UU Nasty Plot": {"ability":"Volt Absorb","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Thunderbolt","Psychic","Focus Blast"]},
     "Monotype Nasty Plot Sweeper (Flying)": {"ability":"Volt Absorb","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Thunderbolt","Grass Knot","Focus Blast"]},
@@ -2738,7 +2738,7 @@ var SETDEX_SS = {
     "Battle Stadium Singles Showdown Usage": {"level":50,"ability":"Teravolt","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Icicle Spear","Dragon Dance","Fusion Bolt","Substitute"]}
   },
   "Kyurem-White": {
-    "Ubers Special Attacker": {"ability":"Turboblaze","item":"Choice Specs","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Draco Meteor","Ice Beam","Freeze-Dry","Fusion Flare"]},
+    "Ubers Special Attacker": {"ability":"Turboblaze","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Draco Meteor","Ice Beam","Freeze-Dry","Fusion Flare"]},
     "Battle Stadium Singles Dynamax": {"level":50,"ability":"Turboblaze","item":"Assault Vest","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Freeze-Dry","Draco Meteor","Earth Power","Fusion Flare"]},
     "Battle Stadium Singles Choice Scarf": {"level":50,"ability":"Turboblaze","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Draco Meteor","Freeze-Dry","Earth Power","Fusion Flare"]},
     "Anything Goes Sheer Cold": {"ability":"Turboblaze","item":"Heavy-Duty Boots","nature":"Timid","evs":{"sa":36,"sd":220,"sp":252},"moves":["Sheer Cold","Freeze-Dry","Fusion Flare","Roost"]}
@@ -3075,9 +3075,9 @@ var SETDEX_SS = {
     "National Dex RU Offensive Pivot": {"ability":"Infiltrator","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"df":168,"sa":88,"sp":252},"moves":["Draco Meteor","Flamethrower","Roost","U-turn"]}
   },
   "Xerneas": {
-    "Ubers Geomancy": {"ability":"Fairy Aura","item":"Power Herb","nature":"Modest","evs":{"df":168,"sa":252,"sp":88},"moves":["Geomancy","Moonblast","Thunder","Substitute"]},
-    "Ubers Defensive": {"ability":"Fairy Aura","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Rest","Sleep Talk","Aromatherapy"]},
-    "Ubers Choice Scarf": {"ability":"Fairy Aura","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Moonblast","Thunder","Thunder Wave","Aromatherapy"]},
+    "Ubers Geomancy": {"ability":"Fairy Aura","item":"Power Herb","nature":"Modest","ivs":{"at":0},"evs":{"df":168,"sa":252,"sp":88},"moves":["Geomancy","Moonblast","Thunder","Substitute"]},
+    "Ubers Defensive": {"ability":"Fairy Aura","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Rest","Sleep Talk","Aromatherapy"]},
+    "Ubers Choice Scarf": {"ability":"Fairy Aura","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Moonblast","Thunder","Thunder Wave","Aromatherapy"]},
     "Battle Stadium Singles Bulky Geomancy": {"level":50,"ability":"Fairy Aura","item":"Power Herb","nature":"Bold","ivs":{"at":0},"evs":{"hp":156,"df":252,"sa":44,"sd":4,"sp":52},"moves":["Geomancy","Moonblast","Flash Cannon","Draining Kiss"]},
     "Battle Stadium Singles Fast Geomancy": {"level":50,"ability":"Fairy Aura","item":"Power Herb","nature":"Modest","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Geomancy","Moonblast","Draining Kiss","Thunder"]},
     "Anything Goes Geomancy Sweeper": {"ability":"Fairy Aura","item":"Power Herb","nature":"Modest","evs":{"hp":48,"df":164,"sa":252,"sp":44},"moves":["Geomancy","Moonblast","Thunder","Substitute"]},
@@ -3558,7 +3558,7 @@ var SETDEX_SS = {
     "OU Calm Mind": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":192,"sp":64},"moves":["Calm Mind","Scald","Draining Kiss","Taunt"]},
     "OU Choice Scarf": {"ability":"Misty Surge","item":"Choice Scarf","nature":"Timid","ivs":{"at":0},"evs":{"hp":40,"sa":252,"sp":216},"moves":["Moonblast","Scald","Trick","Taunt"]},
     "OU Whirlpool Trapper": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":132,"sd":64,"sp":64},"moves":["Whirlpool","Nature's Madness","Moonblast","Taunt"]},
-    "Ubers Trapper": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","evs":{"hp":248,"df":204,"sp":56},"moves":["Whirlpool","Nature's Madness","Taunt","Moonblast"]},
+    "Ubers Trapper": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":248,"df":204,"sp":56},"moves":["Whirlpool","Nature's Madness","Taunt","Moonblast"]},
     "Doubles OU Calm Mind": {"ability":"Misty Surge","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":112,"sa":144},"moves":["Muddy Water","Moonblast","Calm Mind","Protect"]},
     "Doubles OU Support": {"ability":"Misty Surge","item":"Sitrus Berry","nature":"Bold","evs":{"hp":252,"df":112,"sa":144},"moves":["Moonblast","Nature's Madness","Icy Wind","Heal Pulse"]},
     "VGC 2021 Support": {"level":50,"ability":"Misty Surge","item":"Wiki Berry","nature":"Calm","evs":{"hp":244,"df":60,"sd":204},"moves":["Moonblast","Nature's Madness","Icy Wind","Protect"]},
@@ -3591,8 +3591,8 @@ var SETDEX_SS = {
     "VGC 2022 Showdown Usage": {"level":50,"ability":"Full Metal Body","item":"Assault Vest","nature":"Adamant","evs":{"hp":212,"at":252,"df":20,"sd":4,"sp":20},"moves":["Sunsteel Strike","Psychic Fangs","Earthquake","Stone Edge"]}
   },
   "Lunala": {
-    "Ubers Defensive": {"ability":"Shadow Shield","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":252,"df":16,"sp":240},"moves":["Roost","Will-O-Wisp","Ice Beam","Hex"]},
-    "Ubers Meteor Beam": {"ability":"Shadow Shield","item":"Power Herb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Meteor Beam","Roost","Moongeist Beam","Ice Beam"]},
+    "Ubers Defensive": {"ability":"Shadow Shield","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"hp":252,"df":16,"sp":240},"moves":["Roost","Will-O-Wisp","Ice Beam","Hex"]},
+    "Ubers Meteor Beam": {"ability":"Shadow Shield","item":"Power Herb","nature":"Timid","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Meteor Beam","Roost","Moongeist Beam","Ice Beam"]},
     "Battle Stadium Singles Bulky Calm Mind": {"level":50,"ability":"Shadow Shield","item":"Utility Umbrella","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sp":4},"moves":["Calm Mind","Moongeist Beam","Moonlight","Thunder Wave"]},
     "Anything Goes Defensive": {"ability":"Shadow Shield","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":236,"df":252,"sp":20},"moves":["Ice Beam","Will-O-Wisp","Roar","Roost"]},
     "Anything Goes Meteor Beam": {"ability":"Shadow Shield","item":"Power Herb","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Meteor Beam","Ice Beam","Moongeist Beam","Roost"]},
@@ -3714,7 +3714,7 @@ var SETDEX_SS = {
     "Ubers Trick Room": {"ability":"Prism Armor","item":"Power Herb","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":252,"sa":252,"sd":4},"moves":["Trick Room","Moongeist Beam","Heat Wave","Meteor Beam"]}
   },
   "Magearna": {
-    "Ubers Physically Defensive": {"ability":"Soul-Heart","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Fleur Cannon","Volt Switch","Pain Split","Heal Bell"]}
+    "Ubers Physically Defensive": {"ability":"Soul-Heart","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Fleur Cannon","Volt Switch","Pain Split","Heal Bell"]}
   },
   "Marshadow": {
     "Ubers Offensive Cleaner": {"ability":"Technician","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Spectral Thief","Low Kick","Shadow Sneak","Ice Punch"]},
@@ -3723,7 +3723,7 @@ var SETDEX_SS = {
     "Anything Goes Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Poltergeist","Close Combat","Shadow Sneak","Ice Punch"]}
   },
   "Naganadel": {
-    "Ubers Nasty Plot": {"ability":"Beast Boost","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Draco Meteor","Sludge Wave","Fire Blast"]},
+    "Ubers Nasty Plot": {"ability":"Beast Boost","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Draco Meteor","Sludge Wave","Fire Blast"]},
     "Doubles OU Fast Tailwind": {"ability":"Beast Boost","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Draco Meteor","Sludge Bomb","Fire Blast","Tailwind"]},
     "Battle Stadium Singles Nasty Plot Sweeper": {"level":50,"ability":"Beast Boost","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Sludge Wave","Draco Meteor","Fire Blast"]},
     "Battle Stadium Singles All-out Attacker": {"level":50,"ability":"Beast Boost","item":"Life Orb","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Sludge Wave","Draco Meteor","Fire Blast","Air Slash"]},
@@ -4157,11 +4157,11 @@ var SETDEX_SS = {
     "Anything Goes Showdown Usage": {"ability":"Infiltrator","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Darts","Phantom Force","Dragon Dance","U-turn"]}
   },
   "Eternatus": {
-    "Ubers Specially Defensive": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Timid","evs":{"hp":164,"sd":252,"sp":92},"moves":["Recover","Toxic","Flamethrower","Dynamax Cannon"]},
-    "Ubers Meteor Beam": {"ability":"Pressure","item":"Power Herb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Sludge Bomb","Flamethrower","Meteor Beam","Dynamax Cannon"]},
-    "Ubers Demon (Cosmic Power)": {"ability":"Pressure","item":"Power Herb","nature":"Timid","evs":{"hp":40,"sd":252,"sp":216},"moves":["Dragon Pulse","Meteor Beam","Cosmic Power","Recover"]},
-    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Recover","Flamethrower","Sludge Bomb","Dynamax Cannon"]},
-    "Ubers Physically Defensive": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Bold","evs":{"hp":48,"df":244,"sp":216},"moves":["Recover","Toxic","Flamethrower","Dynamax Cannon"]},
+    "Ubers Specially Defensive": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Timid","ivs":{"at":0},"evs":{"hp":164,"sd":252,"sp":92},"moves":["Recover","Toxic","Flamethrower","Dynamax Cannon"]},
+    "Ubers Meteor Beam": {"ability":"Pressure","item":"Power Herb","nature":"Timid","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Sludge Bomb","Flamethrower","Meteor Beam","Dynamax Cannon"]},
+    "Ubers Demon (Cosmic Power)": {"ability":"Pressure","item":"Power Herb","nature":"Timid","ivs":{"at":0},"evs":{"hp":40,"sd":252,"sp":216},"moves":["Dragon Pulse","Meteor Beam","Cosmic Power","Recover"]},
+    "Ubers Life Orb": {"ability":"Pressure","item":"Life Orb","nature":"Timid","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Recover","Flamethrower","Sludge Bomb","Dynamax Cannon"]},
+    "Ubers Physically Defensive": {"ability":"Pressure","item":"Heavy-Duty Boots","nature":"Bold","ivs":{"at":0},"evs":{"hp":48,"df":244,"sp":216},"moves":["Recover","Toxic","Flamethrower","Dynamax Cannon"]},
     "Battle Stadium Singles Defensive": {"level":50,"ability":"Pressure","item":"Black Sludge","nature":"Timid","evs":{"hp":244,"df":228,"sp":36},"moves":["Recover","Flamethrower","Toxic","Dynamax Cannon"]},
     "Battle Stadium Singles Offensive": {"level":50,"ability":"Pressure","item":"Power Herb","nature":"Modest","evs":{"hp":76,"df":4,"sa":252,"sd":4,"sp":172},"moves":["Dynamax Cannon","Flamethrower","Sludge Wave","Meteor Beam"]},
     "Battle Stadium Singles Choice Item Attacker": {"level":50,"ability":"Pressure","item":"Choice Specs","nature":"Modest","evs":{"hp":76,"df":4,"sa":252,"sd":4,"sp":172},"moves":["Dynamax Cannon","Sludge Wave","Flamethrower","Shadow Ball"]},
@@ -4303,10 +4303,10 @@ var SETDEX_SS = {
     "Anything Goes SubSeed": {"ability":"As One (Glastrier)","item":"Leftovers","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Substitute","Leech Seed","Swords Dance","Glacial Lance"]}
   },
   "Calyrex-Shadow": {
-    "Ubers Choice Item": {"ability":"As One (Spectrier)","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Astral Barrage","Psyshock","Trick","Aromatherapy"]},
-    "Ubers SubSeed": {"ability":"As One (Spectrier)","item":"Leftovers","nature":"Timid","evs":{"df":60,"sa":196,"sp":252},"moves":["Astral Barrage","Nasty Plot","Substitute","Leech Seed"]},
-    "Ubers Nasty Plot": {"ability":"As One (Spectrier)","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Astral Barrage","Psyshock","Nasty Plot","Draining Kiss"]},
-    "Ubers Disable": {"ability":"As One (Spectrier)","item":"Mental Herb","nature":"Timid","evs":{"hp":48,"df":128,"sa":76,"sd":4,"sp":252},"moves":["Astral Barrage","Disable","Substitute","Nasty Plot"]},
+    "Ubers Choice Item": {"ability":"As One (Spectrier)","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Astral Barrage","Psyshock","Trick","Aromatherapy"]},
+    "Ubers SubSeed": {"ability":"As One (Spectrier)","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"df":60,"sa":196,"sp":252},"moves":["Astral Barrage","Nasty Plot","Substitute","Leech Seed"]},
+    "Ubers Nasty Plot": {"ability":"As One (Spectrier)","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Astral Barrage","Psyshock","Nasty Plot","Draining Kiss"]},
+    "Ubers Disable": {"ability":"As One (Spectrier)","item":"Mental Herb","nature":"Timid","ivs":{"at":0},"evs":{"hp":48,"df":128,"sa":76,"sd":4,"sp":252},"moves":["Astral Barrage","Disable","Substitute","Nasty Plot"]},
     "Battle Stadium Singles Special Attacker": {"level":50,"ability":"As One (Spectrier)","item":"Focus Sash","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Astral Barrage","Psyshock","Nasty Plot","Draining Kiss"]},
     "Battle Stadium Singles Choice Scarf": {"level":50,"ability":"As One (Spectrier)","item":"Choice Scarf","nature":"Modest","ivs":{"at":0},"evs":{"hp":124,"df":220,"sa":148,"sd":4,"sp":12},"moves":["Astral Barrage","Psyshock","Trick","Draining Kiss"]},
     "Battle Stadium Singles Choice Specs": {"level":50,"ability":"As One (Spectrier)","item":"Choice Specs","nature":"Timid","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Astral Barrage","Psyshock","Trick","Draining Kiss"]},

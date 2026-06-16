@@ -1827,6 +1827,7 @@ var SETDEX_SV = {
     "PU Spikes Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Spikes","Ice Beam","Taunt","Destiny Bond"]},
     "Monotype Spikes Suicide Lead (Ice)": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Shadow Ball","Thunder Wave","Taunt"]},
     "Monotype Suicide Lead (Ghost)": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Destiny Bond","Ice Beam"]},
+    "ZU Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","teraType":"Ghost","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Destiny Bond","Icy Wind"]},
     "ZU Hazard Lead": {"ability":"Cursed Body","item":"Focus Sash","nature":"Timid","teraType":"Ghost","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Taunt","Destiny Bond","Icy Wind"]},
     "ZU Utility": {"ability":"Cursed Body","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Water","ivs":{"at":0},"evs":{"hp":252,"df":200,"sp":56},"moves":["Hex","Will-O-Wisp","Pain Split","Spikes"]}
   },
@@ -2929,7 +2930,7 @@ var SETDEX_SV = {
     "BSS Reg J Assault Vest": {"level":50,"ability":"Sap Sipper","item":"Assault Vest","nature":"Modest","teraType":"Flying","evs":{"hp":252,"sa":252,"sp":4},"moves":["Flash Cannon","Draco Meteor","Acid Spray","Earthquake"]},
     "BSS Reg J Armor Press": {"level":50,"ability":"Shell Armor","item":"Leftovers","nature":"Careful","teraType":"Flying","evs":{"hp":252,"sd":252,"sp":4},"moves":["Acid Armor","Body Press","Heavy Slam","Protect"]},
     "Monotype Specially Defensive (Steel)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"]},
-    "Monotype Specially Defensive (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"]},
+    "Monotype Specially Defensive (Dragon)": {"ability":"Gooey","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Heavy Slam","Knock Off","Dragon Tail","Protect"]},
     "National Dex UU Offensive Tank": {"ability":"Sap Sipper","item":"Leftovers","nature":"Modest","evs":{"hp":156,"sa":176,"sp":176},"moves":["Draco Meteor","Flash Cannon","Flamethrower","Knock Off"]},
     "National Dex Monotype Specially Defensive (Dragon)": {"ability":"Sap Sipper","item":"Leftovers","nature":"Sassy","evs":{"hp":252,"at":4,"sd":252},"moves":["Heavy Slam","Flamethrower","Dragon Tail","Protect"]},
     "National Dex Monotype AcidPress (Dragon)": {"ability":"Shell Armor","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Heavy Slam","Body Press","Acid Armor","Protect"]},
@@ -3016,10 +3017,9 @@ var SETDEX_SV = {
     "Balanced Hackmons Showdown Usage": {"ability":"Pixilate","item":"Pixie Plate","nature":"Hasty","evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"moves":["Extreme Speed","Boomburst","Fake Out","Explosion"]}
   },
   "Hoopa": {
-    "NU Choice Specs": {"ability":"Magician","item":"Choice Specs","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Shadow Ball","Focus Blast","Trick"]},
-    "NU Substitute + 3 Attacks": {"ability":"Magician","item":"Leftovers","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Psychic Noise","Shadow Ball","Focus Blast"]},
+    "NU Choice Item": {"ability":"Magician","item":"Choice Specs","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Shadow Ball","Focus Blast","Trick"]},
+    "NU Substitute": {"ability":"Magician","item":"Custap Berry","nature":"Modest","teraType":"Fighting","ivs":{"at":0},"evs":{"hp":220,"sa":60,"sd":4,"sp":224},"moves":["Substitute","Psychic Noise","Shadow Ball","Focus Blast"]},
     "NU All-out Attacker": {"ability":"Magician","item":"Assault Vest","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic Noise","Shadow Ball","Focus Blast","Knock Off"]},
-    "NU Nasty Plot": {"ability":"Magician","item":"Leftovers","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Shadow Ball","Focus Blast"]},
     "PU Choice Scarf": {"ability":"Magician","item":"Choice Scarf","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Shadow Ball","Focus Blast","Trick"]},
     "PU Choice Specs": {"ability":"Magician","item":"Choice Specs","nature":"Timid","teraType":"Fighting","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Psyshock","Focus Blast","Trick"]},
     "Almost Any Ability Showdown Usage": {"ability":"Prankster","item":"Focus Sash","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Shadow Ball","Focus Blast","Nasty Plot","Psyshock"]}
@@ -3231,7 +3231,7 @@ var SETDEX_SV = {
     "RU Offensive": {"ability":"Corrosion","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Dark","evs":{"hp":4,"sa":252,"sp":252},"moves":["Fire Blast","Sludge Bomb","Knock Off","Toxic"]},
     "NU Nasty Plot": {"ability":"Corrosion","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Grass","evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Fire Blast","Sludge Bomb","Encore"]},
     "PU Nasty Plot": {"ability":"Corrosion","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Dark","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Fire Blast","Sludge Bomb","Encore"]},
-    "PU Utility": {"ability":"Corrosion","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Dark","evs":{"df":4,"sa":252,"sp":252},"moves":["Fire Blast","Sludge Bomb","Toxic","Encore"]},
+    "PU Utility": {"ability":"Corrosion","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Dark","evs":{"sa":252,"sd":4,"sp":252},"moves":["Fire Blast","Sludge Bomb","Toxic","Encore"]},
     "Monotype Toxic Spreader (Poison)": {"ability":"Corrosion","item":"Black Sludge","nature":"Timid","evs":{"hp":248,"sa":8,"sp":252},"moves":["Toxic","Flamethrower","Encore","Substitute"]}
   },
   "Tsareena": {
