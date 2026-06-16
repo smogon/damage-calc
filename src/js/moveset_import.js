@@ -85,7 +85,7 @@ function serialize(array, separator) {
 	return text;
 }
 
-function statToLegacyStat(stat) {
+function statToLegacyStat(stat, gen) {
 	switch (stat) {
 	case 'hp':
 		return "hp";
@@ -94,25 +94,12 @@ function statToLegacyStat(stat) {
 	case 'def':
 		return "df";
 	case 'spa':
+		if (gen == 1) {
+			return "sl";
+		}
 		return "sa";
 	case 'spd':
 		return "sd";
-	case 'spe':
-		return "sp";
-	}
-}
-
-
-function statToLegacyStatGen1(stat) {
-	switch (stat) {
-	case 'hp':
-		return "hp";
-	case 'atk':
-		return "at";
-	case 'def':
-		return "df";
-	case 'spa':
-		return "sl";
 	case 'spe':
 		return "sp";
 	}
@@ -185,8 +172,7 @@ function getStats(currentPoke, rows, x) {
 			}
 			for (j = 1; j < currentRow.length; j++) {
 				currentEV = currentRow[j].trim().split(" ");
-				if (gen === 1) currentEV[1] = statToLegacyStatGen1(currentEV[1].toLowerCase());
-				else currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
+				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase(), gen);
 				evs[currentEV[1]] = parseInt(currentEV[0]);
 			}
 			currentPoke[$('#champions').prop('checked') ? 'sps' : 'evs'] = evs;
@@ -194,9 +180,8 @@ function getStats(currentPoke, rows, x) {
 		case 'IVs':
 			for (j = 1; j < currentRow.length; j++) {
 				currentIV = currentRow[j].trim().split(" ");
-				if (gen === 1) currentIV[1] = statToLegacyStatGen1(currentIV[1].toLowerCase());
-				else currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
-				if (gen === 1 || gen === 2) dvs[currentIV[1]] = parseInt(currentIV[0]);
+				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase(), gen);
+				if (gen === 1 || gen === 2) dvs[currentIV[1]] = parseInt(currentIV[0]) / 2;
 				else ivs[currentIV[1]] = parseInt(currentIV[0]);
 			}
 			if (gen === 1 || gen === 2) currentPoke.dvs = dvs;

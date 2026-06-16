@@ -674,20 +674,18 @@ $(".set-selector").change(function () {
 				pokeObj.find(".teraType").val(set.teraType || getForcedTeraType(pokemonName) || pokemon.types[0]);
 			}
 			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
+			var evsDefault = gen < 3 ? 252 : ($("#randoms").prop("checked") ? 84 : 0);
+			pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
+				(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : evsDefault);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				var stat = $("#randoms").prop("checked") ? legacyStatToStat(LEGACY_STATS[gen][i]) : LEGACY_STATS[gen][i];
-				if (gen > 0 && gen < 3) {
-					pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
-						(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : 252);
-				} else {
-					if ($("#champions").prop("checked") && !set.sps) {
-						var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
-						if (sps === 4) sps = 1;
-						else sps = Math.ceil(sps / 8);
-						pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
-					}
-					pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
-						(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : ($("#randoms").prop("checked") ? 84 : 0));
+				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
+					(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : evsDefault);
+				if ($("#champions").prop("checked") && !set.sps) {
+					var sps = set.evs && set.evs[stat] !== undefined ? set.evs[stat] : 0;
+					if (sps === 4) sps = 1;
+					else sps = Math.ceil(sps / 8);
+					pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(sps);
 				}
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[stat] !== undefined) ? set.ivs[stat] : 31);
@@ -735,12 +733,12 @@ $(".set-selector").change(function () {
 			pokeObj.find(".teraType").val(getForcedTeraType(pokemonName) || pokemon.types[0]);
 			pokeObj.find(".level").val(defaultLevel);
 			pokeObj.find(".hp .sps").val(0);
-			pokeObj.find(".hp .evs").val(0);
+			pokeObj.find(".hp .evs").val(gen > 2 ? 0 : 252);
 			pokeObj.find(".hp .ivs").val(31);
 			pokeObj.find(".hp .dvs").val(15);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(0);
-				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(0);
+				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(gen > 2 ? 0 : 252);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(15);
 			}
