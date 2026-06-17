@@ -336,12 +336,12 @@ $("input[name='weather']").change(function () {
 
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
-// primal weather (higher priority) should not be cancelled by lower priority weather (such as sun) 
-var lastAutoWeatherPriority = [0,0]
+// primal weather (higher priority) should not be cancelled by lower priority weather (such as sun)
+var lastAutoWeatherPriority = [0, 0];
 function setPreviousWeather(i) {
 	var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
 	$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
-		
+
 }
 function autosetWeather(ability, i) {
 
@@ -357,23 +357,21 @@ function autosetWeather(ability, i) {
 	switch (ability) {
 	case "Drought":
 	case "Orichalcum Pulse":
-		
 		lastAutoWeather[i] = "Sun";
 		lastAutoWeatherPriority[i] = 0;
-		if (lastAutoWeatherPriority[1-i] == 1) {setPreviousWeather(i);break;}
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
 		$("#sun").prop("checked", true);
 		break;
 	case "Drizzle":
 		lastAutoWeather[i] = "Rain";
 		lastAutoWeatherPriority[i] = 0;
-		if (lastAutoWeatherPriority[1-i] == 1) {setPreviousWeather(i);break;}
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
 		$("#rain").prop("checked", true);
 		break;
 	case "Sand Stream":
-		
 		lastAutoWeather[i] = "Sand";
 		lastAutoWeatherPriority[i] = 0;
-		if (lastAutoWeatherPriority[1-i] == 1) {setPreviousWeather(i);break;}
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
 		$("#sand").prop("checked", true);
 		break;
 	case "Snow Warning":
@@ -386,8 +384,8 @@ function autosetWeather(ability, i) {
 			weatherElem = "#hail";
 		}
 		lastAutoWeatherPriority[i] = 0;
-		if (lastAutoWeatherPriority[1-i] == 1) {setPreviousWeather(i);break;}
-		$(weatherElem).prop("checked",true);
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
+		$(weatherElem).prop("checked", true);
 		break;
 	case "Desolate Land":
 		lastAutoWeather[i] = "Harsh Sunshine";
