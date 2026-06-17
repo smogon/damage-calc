@@ -451,6 +451,16 @@ $(".teraType").change(function () {
 });
 
 var lockerMove = "";
+
+function setMoveAlliesFaintedVisibility(moveGroupObj, moveName) {
+	if (moveName === 'Last Respects') {
+		moveGroupObj.children(".move-allies-fainted").show();
+	} else {
+		moveGroupObj.children(".move-allies-fainted").val('0');
+		moveGroupObj.children(".move-allies-fainted").hide();
+	}
+}
+
 // auto-update move details on select
 $(".move-selector").change(function () {
 	var moveName = $(this).val();
@@ -539,6 +549,7 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".move-times").show();
 	}
 	moveGroupObj.children(".move-z").prop("checked", false);
+	setMoveAlliesFaintedVisibility(moveGroupObj, moveName);
 });
 
 $(".item").change(function () {
@@ -1202,6 +1213,7 @@ function getMoveDetails(moveInfo, opts) {
 	var hits = +moveInfo.find(".move-hits").val();
 	var timesUsed = +moveInfo.find(".move-times").val();
 	var timesUsedWithMetronome = moveInfo.find(".metronome").is(':visible') ? +moveInfo.find(".metronome").val() : 1;
+	var alliesFainted = moveInfo.find(".move-allies-fainted").is(':visible') ? +moveInfo.find(".move-allies-fainted").val() : 0;
 	var overrides = {
 		basePower: +moveInfo.find(".move-bp").val(),
 		type: moveInfo.find(".move-type").val()
@@ -1221,7 +1233,7 @@ function getMoveDetails(moveInfo, opts) {
 	return new calc.Move(gen, moveName, {
 		ability: opts.ability, item: opts.item, useZ: isZMove, species: opts.species, isCrit: isCrit, hits: hits,
 		isStellarFirstUse: isStellarFirstUse, timesUsed: timesUsed, timesUsedWithMetronome: timesUsedWithMetronome,
-		overrides: overrides, useMax: opts.isDynamaxed
+		alliesFainted: alliesFainted, overrides: overrides, useMax: opts.isDynamaxed
 	});
 }
 

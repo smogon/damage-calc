@@ -33,6 +33,7 @@ export namespace State {
     hits?: number;
     timesUsed?: number;
     timesUsedWithMetronome?: number;
+    alliesFainted?: number;
     overrides?: Partial<I.Move>;
   }
 
