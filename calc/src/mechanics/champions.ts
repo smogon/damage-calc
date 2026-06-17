@@ -243,6 +243,11 @@ export function calculateChampions(
 
   const typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
+  if (typeEffectiveness === 0 && move.hasType('Ground') &&
+    defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
+    typeEffectiveness = 1;
+  }
+
   if (typeEffectiveness === 0) {
     return result;
   }
@@ -783,6 +788,12 @@ export function calculateBPModsChampions(
   ) {
     bpMods.push(4915);
     desc.attackerItem = attacker.item;
+  } else if (
+    (attacker.hasItem('Muscle Band') && move.category === 'Physical') ||
+    (attacker.hasItem('Wise Glasses') && move.category === 'Special')
+  ) {
+    bpMods.push(4505);
+    desc.attackerItem = attacker.item;
   }
 
   return bpMods;
@@ -1083,6 +1094,22 @@ export function calculateFinalModsChampions(
   if (field.defenderSide.isFriendGuard) {
     finalMods.push(3072);
     desc.isFriendGuard = true;
+  }
+
+  if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
+    finalMods.push(4915);
+    desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Life Orb')) {
+    finalMods.push(5324);
+    desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Metronome') && move.timesUsedWithMetronome! >= 1) {
+    const timesUsedWithMetronome = Math.floor(move.timesUsedWithMetronome!);
+    if (timesUsedWithMetronome <= 4) {
+      finalMods.push(4096 + timesUsedWithMetronome * 819);
+    } else {
+      finalMods.push(8192);
+    }
+    desc.attackerItem = attacker.item;
   }
 
   if (move.hasType(getBerryResistType(defender.item)) &&
