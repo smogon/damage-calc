@@ -160,7 +160,7 @@ export function calculateSMSSSV(
     'Armor Tail', 'Aroma Veil', 'Aura Break', 'Battle Armor',
     'Big Pecks', 'Bulletproof', 'Clear Body', 'Contrary',
     'Damp', 'Dazzling', 'Disguise', 'Dry Skin',
-    'Earth Eater', 'Filter', 'Flash Fire', 'Flower Gift',
+    'Earth Eater', 'Elevate', 'Filter', 'Flash Fire', 'Flower Gift',
     'Flower Veil', 'Fluffy', 'Friend Guard', 'Fur Coat',
     'Good as Gold', 'Grass Pelt', 'Guard Dog', 'Heatproof',
     'Heavy Metal', 'Hyper Cutter', 'Ice Face', 'Ice Scales',
@@ -475,6 +475,7 @@ export function calculateSMSSSV(
     desc.defenderAbility = defender.ability;
   }
 
+  const isLevitating = defender.hasAbility('Levitate') || defender.hasAbility('Elevate');
   if ((defender.hasAbility('Wonder Guard') && typeEffectiveness <= 1) ||
       (move.hasType('Grass') && defender.hasAbility('Sap Sipper')) ||
       (move.hasType('Fire') && defender.hasAbility('Flash Fire', 'Well-Baked Body')) ||
@@ -483,7 +484,7 @@ export function calculateSMSSSV(
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
         !field.isGravity && !move.named('Thousand Arrows') &&
-        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
+        !defender.hasItem('Iron Ball') && isLevitating) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
@@ -1417,6 +1418,9 @@ export function calculateAtModsSMSSSV(
     (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
   ) {
     atMods.push(8192);
+    desc.attackerAbility = attacker.ability;
+  } else if (attacker.hasAbility('Fire Mane') && move.hasType('Fire')) {
+    atMods.push(6144);
     desc.attackerAbility = attacker.ability;
   }
 
