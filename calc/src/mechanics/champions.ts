@@ -241,7 +241,7 @@ export function calculateChampions(
     )
     : 1;
 
-  const typeEffectiveness = type1Effectiveness * type2Effectiveness;
+  let typeEffectiveness = type1Effectiveness * type2Effectiveness;
 
   if (typeEffectiveness === 0 && move.hasType('Ground') &&
     defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
