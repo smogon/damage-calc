@@ -160,24 +160,24 @@ export function calculateSMSSSV(
     'Armor Tail', 'Aroma Veil', 'Aura Break', 'Battle Armor',
     'Big Pecks', 'Bulletproof', 'Clear Body', 'Contrary',
     'Damp', 'Dazzling', 'Disguise', 'Dry Skin',
-    'Earth Eater', 'Filter', 'Flash Fire', 'Flower Gift',
-    'Flower Veil', 'Fluffy', 'Friend Guard', 'Fur Coat',
-    'Good as Gold', 'Grass Pelt', 'Guard Dog', 'Heatproof',
-    'Heavy Metal', 'Hyper Cutter', 'Ice Face', 'Ice Scales',
-    'Illuminate', 'Immunity', 'Inner Focus', 'Insomnia',
-    'Keen Eye', 'Leaf Guard', 'Levitate', 'Light Metal',
-    'Lightning Rod', 'Limber', 'Magic Bounce', 'Magma Armor',
-    'Marvel Scale', "Mind's Eye", 'Mirror Armor', 'Motor Drive',
-    'Multiscale', 'Oblivious', 'Overcoat', 'Own Tempo',
-    'Pastel Veil', 'Punk Rock', 'Purifying Salt', 'Queenly Majesty',
-    'Sand Veil', 'Sap Sipper', 'Shell Armor', 'Shield Dust',
-    'Simple', 'Snow Cloak', 'Solid Rock', 'Soundproof',
-    'Sticky Hold', 'Storm Drain', 'Sturdy', 'Suction Cups',
-    'Sweet Veil', 'Tangled Feet', 'Telepathy', 'Tera Shell',
-    'Thermal Exchange', 'Thick Fat', 'Unaware', 'Vital Spirit',
-    'Volt Absorb', 'Water Absorb', 'Water Bubble', 'Water Veil',
-    'Well-Baked Body', 'White Smoke', 'Wind Rider', 'Wonder Guard',
-    'Wonder Skin'
+    'Earth Eater', 'Eelevate', 'Filter', 'Flash Fire',
+    'Flower Gift', 'Flower Veil', 'Fluffy', 'Friend Guard',
+    'Fur Coat', 'Good as Gold', 'Grass Pelt', 'Guard Dog',
+    'Heatproof', 'Heavy Metal', 'Hyper Cutter', 'Ice Face',
+    'Ice Scales', 'Illuminate', 'Immunity', 'Inner Focus',
+    'Insomnia', 'Keen Eye', 'Leaf Guard', 'Levitate',
+    'Light Metal', 'Lightning Rod', 'Limber', 'Magic Bounce',
+    'Magma Armor', 'Marvel Scale', "Mind's Eye", 'Mirror Armor',
+    'Motor Drive', 'Multiscale', 'Oblivious', 'Overcoat',
+    'Own Tempo', 'Pastel Veil', 'Punk Rock', 'Purifying Salt',
+    'Queenly Majesty', 'Sand Veil', 'Sap Sipper', 'Shell Armor',
+    'Shield Dust', 'Simple', 'Snow Cloak', 'Solid Rock',
+    'Soundproof', 'Sticky Hold', 'Storm Drain', 'Sturdy',
+    'Suction Cups', 'Sweet Veil', 'Tangled Feet', 'Telepathy',
+    'Tera Shell', 'Thermal Exchange', 'Thick Fat', 'Unaware',
+    'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Bubble',
+    'Water Veil', 'Well-Baked Body', 'White Smoke', 'Wind Rider',
+    'Wonder Guard', 'Wonder Skin'
   );
 
   const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker', 'Teravolt', 'Turboblaze');
@@ -483,7 +483,7 @@ export function calculateSMSSSV(
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
         !field.isGravity && !move.named('Thousand Arrows') &&
-        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate')) ||
+        !defender.hasItem('Iron Ball') && defender.hasAbility('Levitate', 'Eelevate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Dazzling', 'Armor Tail')) ||
@@ -1402,7 +1402,8 @@ export function calculateAtModsSMSSSV(
   } else if (
     (attacker.hasAbility('Steelworker') && move.hasType('Steel')) ||
     (attacker.hasAbility('Dragon\'s Maw') && move.hasType('Dragon')) ||
-    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock'))
+    (attacker.hasAbility('Rocky Payload') && move.hasType('Rock')) ||
+    (attacker.hasAbility('Fire Mane') && move.hasType('Fire'))
   ) {
     atMods.push(6144);
     desc.attackerAbility = attacker.ability;

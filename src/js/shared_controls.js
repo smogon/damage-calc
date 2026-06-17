@@ -1727,6 +1727,7 @@ function isPokeInfoGrounded(pokeInfo) {
 		  teraType ? teraType !== "Flying" : pokeInfo.find(".type1").val() !== "Flying" &&
         teraType ? teraType !== "Flying" : pokeInfo.find(".type2").val() !== "Flying" &&
         pokeInfo.find(".ability").val() !== "Levitate" &&
+        pokeInfo.find(".ability").val() !== "Eelevate" &&
         pokeInfo.find(".item").val() !== "Air Balloon"
 	);
 }
