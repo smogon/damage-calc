@@ -1143,9 +1143,10 @@ function createPokemon(pokeInfo) {
 		var item = pokeInfo.find(".item").val();
 		var gender = pokeInfo.find(".gender").val();
 		var isDynamaxed = pokeInfo.find(".max").prop("checked");
+		var overrideMove;
 		if (isDynamaxed && pokeInfo.find(".gmaxToggle").prop("checked")) {
 			isDynamaxed = 'gmax';
-			var overrideMove = species.canGigantamax;
+			overrideMove = species.canGigantamax;
 		}
 		var teraType = pokeInfo.find(".teraToggle").is(":checked") ? pokeInfo.find(".teraType").val() : undefined;
 		var opts = {

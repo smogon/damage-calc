@@ -320,7 +320,7 @@ class Specie implements I.Specie {
     const nfe = !!species.evos?.some((s: string) => exists(dex.species.get(s), dex.gen));
     if (nfe) this.nfe = nfe;
     if (dex.gen > 2) this.abilities = {0: species.abilities[0] as I.AbilityName};
-    if (dex.gen > 7 && species.canGigantamax) this.canGigantamax = species.canGigantamax;
+    if (dex.gen === 8 && species.canGigantamax) this.canGigantamax = species.canGigantamax;
 
     const formes = species.otherFormes?.filter((s: string) => exists(dex.species.get(s), dex.gen));
     if (species.id.startsWith('aegislash')) {

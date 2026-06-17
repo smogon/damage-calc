@@ -478,7 +478,7 @@ async function importGen(
         }
         const toSpecies = calcSet.isGmax ? pset.species : specieName;
         if (!calcSets[toSpecies]) calcSets[toSpecies] = {};
-        calcSets[toSpecies][setName] = calcSet;;        
+        calcSets[toSpecies][setName] = calcSet;
         if (!statsIgnore[specieName]) statsIgnore[specieName] = new Set();
         statsIgnore[specieName].add(formatID);
         const item = gen.items.get(pset.item) ?? ModdedDex.forGen(gen.num).items.get(pset.item);

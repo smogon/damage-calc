@@ -25,7 +25,7 @@ function ExportPokemon(pokeInfo) {
 			finalText += "Tera Type: " + teraType + "\n";
 		}
 	}
-	if (pokeInfo.find(".gmaxToggle").prop("checked") === true) finalText += "Gigantamax: Yes \n";
+	if (pokeInfo.find(".gmaxToggle").prop("checked")) finalText += "Gigantamax: Yes \n";
 	if (gen === 0 || gen > 2) {
 		var EVs_Array = [];
 		for (var stat in pokemon.evs) {
