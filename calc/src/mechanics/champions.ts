@@ -103,20 +103,20 @@ export function calculateChampions(
   const defenderAbilityIgnored = defender.hasAbility(
     'Armor Tail', 'Aroma Veil', 'Battle Armor', 'Big Pecks',
     'Bulletproof', 'Clear Body', 'Contrary', 'Damp',
-    'Disguise', 'Dry Skin', 'Earth Eater', 'Filter',
-    'Flash Fire', 'Flower Veil', 'Friend Guard', 'Fur Coat',
-    'Heatproof', 'Heavy Metal', 'Hyper Cutter', 'Illuminate',
-    'Immunity', 'Inner Focus', 'Insomnia', 'Keen Eye',
-    'Leaf Guard', 'Levitate', 'Light Metal', 'Lightning Rod',
-    'Limber', 'Magic Bounce', 'Magma Armor', 'Marvel Scale',
-    'Mirror Armor', 'Motor Drive', 'Multiscale', 'Oblivious',
-    'Overcoat', 'Own Tempo', 'Purifying Salt', 'Queenly Majesty',
-    'Sand Veil', 'Sap Sipper', 'Shell Armor', 'Shield Dust',
-    'Snow Cloak', 'Solid Rock', 'Soundproof', 'Sticky Hold',
-    'Storm Drain', 'Sturdy', 'Sweet Veil', 'Tangled Feet',
-    'Telepathy', 'Thick Fat', 'Unaware', 'Vital Spirit',
-    'Volt Absorb', 'Water Absorb', 'Water Bubble', 'Water Veil',
-    'White Smoke'
+    'Disguise', 'Dry Skin', 'Earth Eater', 'Eelevate',
+    'Filter', 'Flash Fire', 'Flower Veil', 'Friend Guard',
+    'Fur Coat', 'Heatproof', 'Heavy Metal', 'Hyper Cutter',
+    'Illuminate', 'Immunity', 'Inner Focus', 'Insomnia',
+    'Keen Eye', 'Leaf Guard', 'Levitate', 'Light Metal',
+    'Lightning Rod', 'Limber', 'Magic Bounce', 'Magma Armor',
+    'Marvel Scale', 'Mirror Armor', 'Motor Drive', 'Multiscale',
+    'Oblivious', 'Overcoat', 'Own Tempo', 'Purifying Salt',
+    'Queenly Majesty', 'Sand Veil', 'Sap Sipper', 'Shell Armor',
+    'Shield Dust', 'Snow Cloak', 'Solid Rock', 'Soundproof',
+    'Sticky Hold', 'Storm Drain', 'Sturdy', 'Sweet Veil',
+    'Tangled Feet', 'Telepathy', 'Thick Fat', 'Unaware',
+    'Vital Spirit', 'Volt Absorb', 'Water Absorb', 'Water Bubble',
+    'Water Veil', 'White Smoke'
   );
 
   const attackerIgnoresAbility = attacker.hasAbility('Mold Breaker');
@@ -241,7 +241,12 @@ export function calculateChampions(
     )
     : 1;
 
-  const typeEffectiveness = type1Effectiveness * type2Effectiveness;
+  let typeEffectiveness = type1Effectiveness * type2Effectiveness;
+
+  if (typeEffectiveness === 0 && move.hasType('Ground') &&
+    defender.hasItem('Iron Ball') && !defender.hasAbility('Klutz')) {
+    typeEffectiveness = 1;
+  }
 
   if (typeEffectiveness === 0) {
     return result;
@@ -260,7 +265,7 @@ export function calculateChampions(
       (move.hasType('Electric') &&
         defender.hasAbility('Lightning Rod', 'Motor Drive', 'Volt Absorb')) ||
       (move.hasType('Ground') &&
-        !field.isGravity && defender.hasAbility('Levitate')) ||
+        !field.isGravity && defender.hasAbility('Levitate', 'Eelevate')) ||
       (move.flags.bullet && defender.hasAbility('Bulletproof')) ||
       (move.flags.sound && !move.named('Clangorous Soul') && defender.hasAbility('Soundproof')) ||
       (move.priority > 0 && defender.hasAbility('Queenly Majesty', 'Armor Tail')) ||
@@ -783,6 +788,12 @@ export function calculateBPModsChampions(
   ) {
     bpMods.push(4915);
     desc.attackerItem = attacker.item;
+  } else if (
+    (attacker.hasItem('Muscle Band') && move.category === 'Physical') ||
+    (attacker.hasItem('Wise Glasses') && move.category === 'Special')
+  ) {
+    bpMods.push(4505);
+    desc.attackerItem = attacker.item;
   }
 
   return bpMods;
@@ -870,6 +881,11 @@ export function calculateAtModsChampions(
   } else if (attacker.hasAbility('Flash Fire') && attacker.abilityOn && move.hasType('Fire')) {
     atMods.push(6144);
     desc.attackerAbility = 'Flash Fire';
+  } else if (
+    attacker.hasAbility('Fire Mane') && move.hasType('Fire')
+  ) {
+    atMods.push(6144);
+    desc.attackerAbility = attacker.ability;
   } else if (
     (attacker.hasAbility('Water Bubble') && move.hasType('Water')) ||
     (attacker.hasAbility('Huge Power', 'Pure Power') && move.category === 'Physical')
@@ -1078,6 +1094,22 @@ export function calculateFinalModsChampions(
   if (field.defenderSide.isFriendGuard) {
     finalMods.push(3072);
     desc.isFriendGuard = true;
+  }
+
+  if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
+    finalMods.push(4915);
+    desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Life Orb')) {
+    finalMods.push(5324);
+    desc.attackerItem = attacker.item;
+  } else if (attacker.hasItem('Metronome') && move.timesUsedWithMetronome! >= 1) {
+    const timesUsedWithMetronome = Math.floor(move.timesUsedWithMetronome!);
+    if (timesUsedWithMetronome <= 4) {
+      finalMods.push(4096 + timesUsedWithMetronome * 819);
+    } else {
+      finalMods.push(8192);
+    }
+    desc.attackerItem = attacker.item;
   }
 
   if (move.hasType(getBerryResistType(defender.item)) &&
