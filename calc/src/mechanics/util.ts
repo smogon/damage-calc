@@ -261,13 +261,13 @@ export function checkDownload(source: Pokemon, target: Pokemon, wonderRoomActive
 }
 
 export function checkIntrepidSword(source: Pokemon, gen: Generation) {
-  if (source.hasAbility('Intrepid Sword') && gen.num > 7) {
+  if (source.hasAbility('Intrepid Sword') && (gen.num === 8 || source.abilityOn)) {
     source.boosts.atk = Math.min(6, source.boosts.atk + 1);
   }
 }
 
 export function checkDauntlessShield(source: Pokemon, gen: Generation) {
-  if (source.hasAbility('Dauntless Shield') && gen.num > 7) {
+  if (source.hasAbility('Dauntless Shield') && (gen.num === 8 || source.abilityOn)) {
     source.boosts.def = Math.min(6, source.boosts.def + 1);
   }
 }
