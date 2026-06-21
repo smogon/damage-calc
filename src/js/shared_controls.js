@@ -274,6 +274,10 @@ $(".ability").bind("keyup change", function () {
 
 	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Analytic', 'Stakeout', 'Teraform Zero'];
 
+	if (gen !== 8) {
+		TOGGLE_ABILITIES = TOGGLE_ABILITIES + ['Intrepid Sword', 'Dauntless Shield'];
+	}
+
 	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
 		$(this).closest(".poke-info").find(".abilityToggle").show();
 	} else {
