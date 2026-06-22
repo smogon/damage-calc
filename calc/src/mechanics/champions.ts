@@ -739,7 +739,7 @@ export function calculateBPModsChampions(
     (attacker.hasAbility('Sand Force') &&
       field.hasWeather('Sand') && move.hasType('Rock', 'Ground', 'Steel')) ||
     (attacker.hasAbility('Analytic') &&
-      (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
+      (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out' || attacker.abilityOn)) ||
     (attacker.hasAbility('Tough Claws') && move.flags.contact))
   ) {
     bpMods.push(5325);
