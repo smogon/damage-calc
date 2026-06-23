@@ -336,6 +336,13 @@ $("input[name='weather']").change(function () {
 
 var lastManualWeather = "";
 var lastAutoWeather = ["", ""];
+// primal weather (higher priority) should not be cancelled by lower priority weather (such as sun)
+var lastAutoWeatherPriority = [0, 0];
+function setPreviousWeather(i) {
+	var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
+	$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+
+}
 function autosetWeather(ability, i) {
 
 	if ($('.locked-weather').length) {
@@ -351,41 +358,54 @@ function autosetWeather(ability, i) {
 	case "Drought":
 	case "Orichalcum Pulse":
 		lastAutoWeather[i] = "Sun";
+		lastAutoWeatherPriority[i] = 0;
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
 		$("#sun").prop("checked", true);
 		break;
 	case "Drizzle":
 		lastAutoWeather[i] = "Rain";
+		lastAutoWeatherPriority[i] = 0;
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
 		$("#rain").prop("checked", true);
 		break;
 	case "Sand Stream":
 		lastAutoWeather[i] = "Sand";
+		lastAutoWeatherPriority[i] = 0;
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
 		$("#sand").prop("checked", true);
 		break;
 	case "Snow Warning":
+		var weatherElem;
 		if (gen >= 9) {
 			lastAutoWeather[i] = "Snow";
-			$("#snow").prop("checked", true);
+			weatherElem = "#snow";
 		} else {
 			lastAutoWeather[i] = "Hail";
-			$("#hail").prop("checked", true);
+			weatherElem = "#hail";
 		}
+		lastAutoWeatherPriority[i] = 0;
+		if (lastAutoWeatherPriority[1 - i] == 1) {setPreviousWeather(i); break;}
+		$(weatherElem).prop("checked", true);
 		break;
 	case "Desolate Land":
 		lastAutoWeather[i] = "Harsh Sunshine";
+		lastAutoWeatherPriority[i] = 1;
 		$("#harsh-sunshine").prop("checked", true);
 		break;
 	case "Primordial Sea":
 		lastAutoWeather[i] = "Heavy Rain";
+		lastAutoWeatherPriority[i] = 1;
 		$("#heavy-rain").prop("checked", true);
 		break;
 	case "Delta Stream":
 		lastAutoWeather[i] = "Strong Winds";
+		lastAutoWeatherPriority[i] = 1;
 		$("#strong-winds").prop("checked", true);
 		break;
 	default:
 		lastAutoWeather[i] = "";
-		var newWeather = lastAutoWeather[1 - i] !== "" ? lastAutoWeather[1 - i] : "";
-		$("input:radio[name='weather'][value='" + newWeather + "']").prop("checked", true);
+		lastAutoWeatherPriority[i] = 0;
+		setPreviousWeather(i);
 		break;
 	}
 }
