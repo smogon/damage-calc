@@ -181,7 +181,7 @@ function getStats(currentPoke, rows, x) {
 			for (j = 1; j < currentRow.length; j++) {
 				currentIV = currentRow[j].trim().split(" ");
 				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase(), gen);
-				if (gen === 1 || gen === 2) dvs[currentIV[1]] = parseInt(currentIV[0]) / 2;
+				if (gen === 1 || gen === 2) dvs[currentIV[1]] = Math.floor(parseInt(currentIV[0]) / 2);
 				else ivs[currentIV[1]] = parseInt(currentIV[0]);
 			}
 			if (gen === 1 || gen === 2) currentPoke.dvs = dvs;

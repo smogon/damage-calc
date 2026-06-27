@@ -675,8 +675,6 @@ $(".set-selector").change(function () {
 			}
 			pokeObj.find(".level").val(set.level === undefined ? 100 : set.level);
 			var evsDefault = gen < 3 ? 252 : ($("#randoms").prop("checked") ? 84 : 0);
-			pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
-				(set.evs && set.evs[stat] !== undefined) ? set.evs[stat] : evsDefault);
 			for (i = 0; i < LEGACY_STATS[gen].length; i++) {
 				var stat = $("#randoms").prop("checked") ? legacyStatToStat(LEGACY_STATS[gen][i]) : LEGACY_STATS[gen][i];
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .evs").val(
