@@ -1526,6 +1526,7 @@ var SETDEX_BW = {
     "OU Choice Specs": {"ability":"Drizzle","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Focus Blast","Hidden Power Grass"]},
     "Doubles OU Defensive Rain Setter": {"ability":"Drizzle","item":"Eject Button","nature":"Bold","evs":{"hp":248,"df":108,"sa":96,"sd":56},"moves":["Scald","Toxic","Helping Hand","Protect"]},
     "Doubles OU Offensive Rain Setter": {"ability":"Drizzle","item":"Choice Specs","nature":"Modest","evs":{"hp":252,"df":4,"sa":252},"moves":["Hydro Pump","Scald","Ice Beam","Toxic"]},
+    "VGC 2013 Bulky Support": {"level":50,"ability":"Water Absorb","item":"Wacan Berry","nature":"Calm","ivs":{"sp":0},"evs":{"hp":252,"df":132,"sd":124},"moves":["Scald","Ice Beam","Helping Hand","Protect"]},
     "Monotype Choice Scarf": {"ability":"Drizzle","item":"Choice Scarf","nature":"Modest","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Ice Beam","Psychic","Encore"]},
     "Monotype Physically Defensive": {"ability":"Drizzle","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Protect","Scald","Encore","Refresh"]}
   },
@@ -1612,6 +1613,7 @@ var SETDEX_BW = {
     "OU Choice Scarf": {"ability":"Technician","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["U-turn","Pursuit","Superpower","Bullet Punch"]},
     "OU Choice Band": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Bullet Punch","U-turn","Superpower","Pursuit"]},
     "Doubles OU Swords Dance": {"ability":"Technician","item":"Steel Gem","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
+    "VGC 2013 Swords Dance Sweeper": {"level":50,"ability":"Technician","item":"Steel Gem","nature":"Adamant","evs":{"hp":252,"at":252,"sd":4},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
     "Monotype Choice Band (Bug)": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":252,"sd":8},"moves":["Bullet Punch","Superpower","Pursuit","U-turn"]},
     "Monotype Swords Dance (Bug)": {"ability":"Technician","item":"Metal Coat","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Bullet Punch","Superpower","Quick Attack"]},
     "Monotype Swords Dance (Steel)": {"ability":"Technician","item":"Metal Coat","nature":"Adamant","evs":{"hp":208,"at":252,"sd":4,"sp":44},"moves":["Swords Dance","Bullet Punch","Bug Bite","Roost"]},
@@ -1818,6 +1820,7 @@ var SETDEX_BW = {
     "OU SubPunch": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Adamant","evs":{"hp":236,"at":252,"sd":20},"moves":["Substitute","Protect","Focus Punch","Seed Bomb"]},
     "OU Technician": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Bullet Seed","Mach Punch","Low Sweep","Superpower"]},
     "Doubles OU Offensive Utility": {"ability":"Technician","item":"Fighting Gem","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Superpower","Bullet Seed","Spore","Mach Punch"]},
+    "VGC 2013 Offensive Spore": {"level":50,"ability":"Technician","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Bullet Seed","Mach Punch","Spore","Protect"]},
     "Monotype Choice Band (Grass)": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Low Sweep","Mach Punch","Bullet Seed","Stone Edge"]},
     "Monotype Choice Band (Fighting)": {"ability":"Technician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Low Sweep","Mach Punch","Bullet Seed","Superpower"]},
     "Monotype Bulk Up (Fighting)": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Careful","evs":{"hp":168,"df":60,"sd":200,"sp":80},"moves":["Substitute","Seed Bomb","Bulk Up","Protect"]},
@@ -2455,6 +2458,7 @@ var SETDEX_BW = {
     "OU Mixed": {"ability":"Snow Warning","item":"Focus Sash","nature":"Mild","evs":{"at":44,"sa":252,"sp":212},"moves":["Blizzard","Wood Hammer","Focus Punch","Ice Shard"]},
     "UU SubSeed": {"ability":"Soundproof","item":"Leftovers","nature":"Calm","evs":{"hp":248,"sd":252,"sp":8},"moves":["Substitute","Leech Seed","Ice Beam","Giga Drain"]},
     "Doubles OU Mixed Attacker": {"ability":"Snow Warning","item":"Grass Gem","nature":"Brave","ivs":{"sp":0},"evs":{"hp":64,"at":124,"df":68,"sa":252},"moves":["Wood Hammer","Blizzard","Ice Shard","Protect"]},
+    "VGC 2013 Trick Room Sweeper": {"level":50,"ability":"Snow Warning","item":"Focus Sash","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":4,"at":252,"sa":252},"moves":["Blizzard","Giga Drain","Ice Shard","Protect"]},
     "Monotype Snow Warning (Ice)": {"ability":"Snow Warning","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":164,"sp":92},"moves":["Wood Hammer","Ice Shard","Protect","Leech Seed"]}
   },
   "Weavile": {
@@ -2555,6 +2559,7 @@ var SETDEX_BW = {
     "Doubles OU Bulky Attacker": {"ability":"Levitate","item":"Sitrus Berry","nature":"Modest","evs":{"hp":240,"sa":252,"sd":16},"moves":["Hydro Pump","Thunderbolt","Thunder Wave","Protect"]},
     "Doubles OU Choice Specs": {"ability":"Levitate","item":"Choice Specs","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"hp":240,"sa":252,"sd":16},"moves":["Hydro Pump","Thunderbolt","Thunder","Hidden Power Grass"]},
     "Doubles OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Hydro Pump","Thunderbolt","Volt Switch","Hidden Power Grass"]},
+    "VGC 2013 Bulky Support": {"level":50,"ability":"Levitate","item":"Sitrus Berry","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":76,"sd":180},"moves":["Thunderbolt","Hydro Pump","Light Screen","Will-O-Wisp"]},
     "Monotype Choice Scarf (Electric)": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"hp":200,"sa":56,"sp":252},"moves":["Volt Switch","Hydro Pump","Hidden Power Grass","Trick"]}
   },
   "Rotom-Frost": {
@@ -2915,7 +2920,8 @@ var SETDEX_BW = {
     "UU Physically Defensive": {"ability":"Regenerator","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Spore","Giga Drain","Clear Smog","Stun Spore"]},
     "UU Offensive": {"ability":"Regenerator","item":"Life Orb","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":120,"df":128,"sa":252,"sp":8},"moves":["Spore","Giga Drain","Sludge Bomb","Hidden Power Fire"]},
     "RU Pivot": {"ability":"Regenerator","item":"Black Sludge","nature":"Calm","ivs":{"at":2,"sa":30,"sp":30},"evs":{"hp":252,"df":88,"sa":52,"sd":116},"moves":["Giga Drain","Clear Smog","Hidden Power Fire","Stun Spore"]},
-    "Doubles OU Redirection Support": {"ability":"Regenerator","item":"Sitrus Berry","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":64,"sd":192},"moves":["Giga Drain","Spore","Rage Powder","Protect"]}
+    "Doubles OU Redirection Support": {"ability":"Regenerator","item":"Sitrus Berry","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":64,"sd":192},"moves":["Giga Drain","Spore","Rage Powder","Protect"]},
+    "VGC 2013 Bulky Support": {"level":50,"ability":"Regenerator","item":"Mental Herb","nature":"Sassy","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":100,"sd":156},"moves":["Spore","Rage Powder","Giga Drain","Protect"]}
   },
   "Frillish": {
     "NU Physically Defensive": {"ability":"Water Absorb","item":"Eviolite","nature":"Bold","evs":{"hp":248,"df":160,"sp":100},"moves":["Recover","Night Shade","Will-O-Wisp","Taunt"]},
@@ -2927,6 +2933,8 @@ var SETDEX_BW = {
   "Jellicent": {
     "OU Standard": {"ability":"Water Absorb","item":"Leftovers","nature":"Timid","evs":{"hp":248,"df":124,"sp":136},"moves":["Taunt","Will-O-Wisp","Recover","Night Shade"]},
     "Doubles OU Defensive Tank": {"ability":"Water Absorb","item":"Sitrus Berry","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":112,"sd":144},"moves":["Scald","Will-O-Wisp","Recover","Trick Room"]},
+    "VGC 2013 Bulky Support": {"level":50,"ability":"Cursed Body","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":128,"sa":4,"sd":104,"sp":20},"moves":["Scald","Recover","Will-O-Wisp","Trick Room"]},
+    "VGC 2013 Trick Room Offensive Sweeper": {"level":50,"ability":"Cursed Body","item":"Water Gem","nature":"Quiet","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":4,"sa":252},"moves":["Water Spout","Ice Beam","Trick Room","Protect"]},
     "Monotype Specially Defensive (Ghost)": {"ability":"Water Absorb","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":248,"sd":176,"sp":84},"moves":["Will-O-Wisp","Taunt","Scald","Recover"]},
     "Monotype Physically Defensive (Water)": {"ability":"Water Absorb","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":164,"sp":92},"moves":["Taunt","Will-O-Wisp","Hex","Recover"]},
     "1v1 Showdown Usage": {"ability":"Cursed Body","item":"Choice Scarf","nature":"Timid","evs":{"hp":120,"sa":124,"sd":36,"sp":228},"moves":["Recover","Shadow Ball","Trick","Water Spout"]}
