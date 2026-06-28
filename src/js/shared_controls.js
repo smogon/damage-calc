@@ -272,14 +272,21 @@ $(".ability").bind("keyup change", function () {
 		$(this).closest(".poke-info").find(moveSelector).find(".move-hits").val(moveHits);
 	}
 
-	var TOGGLE_ABILITIES = ['Flash Fire', 'Intimidate', 'Minus', 'Plus', 'Slow Start', 'Unburden', 'Analytic', 'Stakeout', 'Teraform Zero'];
+	var TOGGLE_ABILITIES = {
+		on: ['Intimidate', 'Slow Start', 'Teraform Zero'],
+		off: ['Flash Fire', 'Minus', 'Plus', 'Unburden', 'Analytic', 'Stakeout'],
+	};
 
 	if (gen !== 8) {
-		TOGGLE_ABILITIES = TOGGLE_ABILITIES + ['Intrepid Sword', 'Dauntless Shield'];
+		TOGGLE_ABILITIES.on = TOGGLE_ABILITIES.on + ['Intrepid Sword', 'Dauntless Shield'];
 	}
 
-	if (TOGGLE_ABILITIES.indexOf(ability) >= 0) {
+	if (TOGGLE_ABILITIES.on.indexOf(ability) >= 0) {
 		$(this).closest(".poke-info").find(".abilityToggle").show();
+		$(this).closest(".poke-info").find(".abilityToggle").prop("checked", true);
+	} else if (TOGGLE_ABILITIES.off.indexOf(ability) >= 0) {
+		$(this).closest(".poke-info").find(".abilityToggle").show();
+		$(this).closest(".poke-info").find(".abilityToggle").prop("checked", false);
 	} else {
 		$(this).closest(".poke-info").find(".abilityToggle").hide();
 	}
