@@ -656,7 +656,7 @@ export function calculateBPModsBWXY(
   ) {
     bpMods.push(6144);
     desc.attackerAbility = attacker.ability;
-  } else if (attacker.hasAbility('Analytic') && turnOrder !== 'first' || attacker.abilityOn) {
+  } else if (attacker.hasAbility('Analytic') && (turnOrder !== 'first' || attacker.abilityOn)) {
     bpMods.push(5325);
     desc.attackerAbility = attacker.ability;
   } else if (
