@@ -278,7 +278,7 @@ $(".ability").bind("keyup change", function () {
 	};
 
 	if (gen !== 8) {
-		TOGGLE_ABILITIES.on = TOGGLE_ABILITIES.on + ['Intrepid Sword', 'Dauntless Shield'];
+		TOGGLE_ABILITIES.on.push('Intrepid Sword', 'Dauntless Shield');
 	}
 
 	if (TOGGLE_ABILITIES.on.indexOf(ability) >= 0) {
