@@ -87,7 +87,7 @@ function serialize(array, separator) {
 	return text;
 }
 
-function statToLegacyStat(stat) {
+function statToLegacyStat(stat, gen) {
 	switch (stat) {
 	case 'hp':
 		return "hp";
@@ -96,6 +96,9 @@ function statToLegacyStat(stat) {
 	case 'def':
 		return "df";
 	case 'spa':
+		if (gen == 1) {
+			return "sl";
+		}
 		return "sa";
 	case 'spd':
 		return "sd";
@@ -144,6 +147,7 @@ function getStats(currentPoke, rows, x) {
 		var currentRow = rows[x] ? rows[x].split(/[/:]/) : '';
 		var evs = {};
 		var ivs = {};
+		var dvs = {};
 		var ev;
 		var ability;
 		var teraType;
@@ -154,9 +158,23 @@ function getStats(currentPoke, rows, x) {
 			currentPoke.level = parseInt(currentRow[1].trim());
 			break;
 		case 'EVs':
+			if (gen === 1) {
+				evs['hp'] = 0;
+				evs['at'] = 0;
+				evs['df'] = 0;
+				evs['sl'] = 0;
+				evs['sp'] = 0;
+			} else if (gen === 2) {
+				evs['hp'] = 0;
+				evs['at'] = 0;
+				evs['df'] = 0;
+				evs['sa'] = 0;
+				evs['sd'] = 0;
+				evs['sp'] = 0;
+			}
 			for (j = 1; j < currentRow.length; j++) {
 				currentEV = currentRow[j].trim().split(" ");
-				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase());
+				currentEV[1] = statToLegacyStat(currentEV[1].toLowerCase(), gen);
 				evs[currentEV[1]] = parseInt(currentEV[0]);
 			}
 			currentPoke[$('#champions').prop('checked') ? 'sps' : 'evs'] = evs;
@@ -164,10 +182,12 @@ function getStats(currentPoke, rows, x) {
 		case 'IVs':
 			for (j = 1; j < currentRow.length; j++) {
 				currentIV = currentRow[j].trim().split(" ");
-				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase());
-				ivs[currentIV[1]] = parseInt(currentIV[0]);
+				currentIV[1] = statToLegacyStat(currentIV[1].toLowerCase(), gen);
+				if (gen === 1 || gen === 2) dvs[currentIV[1]] = Math.floor(parseInt(currentIV[0]) / 2);
+				else ivs[currentIV[1]] = parseInt(currentIV[0]);
 			}
-			currentPoke.ivs = ivs;
+			if (gen === 1 || gen === 2) currentPoke.dvs = dvs;
+			else currentPoke.ivs = ivs;
 			break;
 		case 'Ability':
 			ability = currentRow[1] ? currentRow[1].trim() : '';
@@ -240,6 +260,7 @@ function addToDex(poke) {
 	dexObject.level = poke.level;
 	dexObject.evs = poke.evs;
 	dexObject.ivs = poke.ivs;
+	dexObject.dvs = poke.dvs;
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.gender = poke.gender;
