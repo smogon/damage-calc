@@ -1842,7 +1842,7 @@ var SETDEX_BW = {
     "NU Pivot": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Brave","ivs":{"df":0,"sd":0,"sp":0},"evs":{"at":252},"moves":["Baton Pass","Will-O-Wisp","Protect","Shadow Sneak"]},
     "NU Swords Dance": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Lonely","ivs":{"df":0,"sd":0},"evs":{"at":252,"sp":252},"moves":["Swords Dance","Shadow Sneak","X-Scissor","Protect"]},
     "ZU Showdown Usage": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","X-Scissor","Shadow Sneak","Will-O-Wisp"]},
-    "OU Showdown Usage": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","X-Scissor","Shadow Sneak","Sucker Punch"]}
+    "OU Showdown Usage": {"ability":"Wonder Guard","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["X-Scissor","Shadow Sneak","Swords Dance","Sucker Punch"]}
   },
   "Whismur": {
     "LC Trick Room Attacker": {"level":5,"ability":"Soundproof","item":"Life Orb","nature":"Quiet","ivs":{"sp":0},"evs":{"hp":244,"df":12,"sa":188,"sd":12},"moves":["Hyper Voice","Fire Blast","Shadow Ball","Ice Beam"]}
@@ -1871,7 +1871,6 @@ var SETDEX_BW = {
     "Ubers Prankster": {"ability":"Prankster","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Will-O-Wisp","Recover","Taunt","Foul Play"]},
     "UU Prankster": {"ability":"Prankster","item":"Leftovers","nature":"Calm","evs":{"hp":252,"df":120,"sd":136},"moves":["Recover","Will-O-Wisp","Taunt","Foul Play"]},
     "Monotype Physically Defensive (Ghost)": {"ability":"Prankster","item":"Leftovers","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":228,"sp":28},"moves":["Taunt","Recover","Will-O-Wisp","Foul Play"]},
-    "OU Showdown Usage": {"ability":"Prankster","item":"Lagging Tail","nature":"Bold","evs":{"hp":248,"df":252,"sd":8},"moves":["Recover","Taunt","Foul Play","Trick"]},
     "1v1 Showdown Usage": {"ability":"Prankster","item":"Sitrus Berry","nature":"Calm","evs":{"hp":248,"df":8,"sd":252},"moves":["Will-O-Wisp","Taunt","Recover","Snarl"]}
   },
   "Aron": {
@@ -2398,7 +2397,7 @@ var SETDEX_BW = {
   },
   "Riolu": {
     "LC Copycat + Roar": {"level":5,"ability":"Prankster","item":"Eviolite","nature":"Impish","evs":{"hp":196,"at":36,"df":196,"sd":36,"sp":36},"moves":["Copycat","Roar","Drain Punch","Protect"]},
-    "OU Showdown Usage": {"ability":"Prankster","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Roar","Copycat","Drain Punch","Earthquake"]}
+    "OU Showdown Usage": {"ability":"Prankster","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Copycat","Roar","Drain Punch","Earthquake"]}
   },
   "Lucario": {
     "OU Swords Dance": {"ability":"Justified","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Close Combat","Extreme Speed","Ice Punch"]}
@@ -2612,8 +2611,7 @@ var SETDEX_BW = {
     "UU Nasty Plot": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Nasty Plot","Psychic","Fire Blast","Thunderbolt"]},
     "UU All-Out Attacker": {"ability":"Levitate","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psychic","Fire Blast","Shadow Ball","Stealth Rock"]},
     "UU Dual Screens": {"ability":"Levitate","item":"Light Clay","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Reflect","Light Screen","Taunt","Stealth Rock"]},
-    "UU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","Fire Punch","Ice Punch","U-turn"]},
-    "OU Showdown Usage": {"ability":"Levitate","item":"Focus Sash","nature":"Jolly","evs":{"hp":252,"df":4,"sp":252},"moves":["Stealth Rock","Taunt","Explosion","Flamethrower"]}
+    "UU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Zen Headbutt","Fire Punch","Ice Punch","U-turn"]}
   },
   "Dialga": {
     "Ubers Defensive": {"ability":"Pressure","item":"Leftovers","nature":"Modest","evs":{"hp":252,"sa":56,"sd":200},"moves":["Stealth Rock","Draco Meteor","Fire Blast","Roar"]},
@@ -2724,6 +2722,7 @@ var SETDEX_BW = {
     "Ubers Bulky Rapid Spin": {"ability":"Mold Breaker","item":"Leftovers","nature":"Adamant","evs":{"hp":176,"at":60,"sd":252,"sp":20},"moves":["Rapid Spin","Earthquake","Swords Dance","Rock Slide"]},
     "Ubers Offensive Swords Dance": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Swords Dance","Earthquake","Rock Slide","Iron Head"]},
     "Doubles OU Sand Rush": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Rock Slide","Substitute","Protect"]},
+    "VGC 2013 Sand Rush Sweeper": {"level":50,"ability":"Sand Rush","item":"Focus Sash","nature":"Adamant","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Rock Slide","Swords Dance","Protect"]},
     "Monotype Choice Item (Ground)": {"ability":"Sand Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Slide","Rapid Spin","Iron Head","Earthquake"]},
     "Monotype Specially Defensive (Ground)": {"ability":"Mold Breaker","item":"Leftovers","nature":"Careful","evs":{"hp":104,"sd":152,"sp":252},"moves":["Toxic","Rapid Spin","Stealth Rock","Earthquake"]},
     "Monotype Choice Scarf (Steel)": {"ability":"Mold Breaker","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Iron Head","Rapid Spin","Rock Slide"]}
@@ -2780,8 +2779,7 @@ var SETDEX_BW = {
   },
   "Darmanitan": {
     "UU Physical Attacker": {"ability":"Sheer Force","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Rock Slide","Superpower","U-turn"]},
-    "UU Choice Scarf": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","U-turn","Rock Slide","Superpower"]},
-    "OU Showdown Usage": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","U-turn","Rock Slide","Superpower"]}
+    "UU Choice Scarf": {"ability":"Sheer Force","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","U-turn","Rock Slide","Superpower"]}
   },
   "Maractus": {
     "NU Spikes": {"ability":"Storm Drain","item":"Focus Sash","nature":"Naughty","evs":{"at":252,"sa":48,"sp":208},"moves":["Spikes","Bullet Seed","Grass Knot","Sucker Punch"]},
@@ -2857,8 +2855,7 @@ var SETDEX_BW = {
     "LC Nasty Plot": {"level":5,"ability":"Illusion","item":"Life Orb","nature":"Timid","ivs":{"hp":2,"df":30,"sa":30,"sd":30,"sp":30},"evs":{"df":40,"sa":200,"sp":240},"moves":["Nasty Plot","Dark Pulse","Hidden Power Fighting","Extrasensory"]}
   },
   "Zoroark": {
-    "UU Choice Specs": {"ability":"Illusion","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Flamethrower","Focus Blast","Trick"]},
-    "OU Showdown Usage": {"ability":"Illusion","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Flamethrower","Nasty Plot","Grass Knot","Night Daze"]}
+    "UU Choice Specs": {"ability":"Illusion","item":"Choice Specs","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Dark Pulse","Flamethrower","Focus Blast","Trick"]}
   },
   "Minccino": {
     "LC Skill Link": {"level":5,"ability":"Skill Link","item":"Life Orb","nature":"Adamant","evs":{"at":196,"sd":76,"sp":236},"moves":["Tail Slap","Aqua Tail","U-turn","Knock Off"]},
@@ -3067,8 +3064,7 @@ var SETDEX_BW = {
   },
   "Bisharp": {
     "UU Swords Dance": {"ability":"Defiant","item":"Leftovers","nature":"Adamant","evs":{"hp":52,"at":252,"sp":204},"moves":["Swords Dance","Sucker Punch","Substitute","Low Kick"]},
-    "Doubles OU Physical Attacker": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Night Slash","Sucker Punch","Low Kick","Protect"]},
-    "OU Showdown Usage": {"ability":"Defiant","item":"Black Glasses","nature":"Adamant","evs":{"hp":76,"at":252,"sp":180},"moves":["Sucker Punch","Swords Dance","Low Kick","Iron Head"]}
+    "Doubles OU Physical Attacker": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Night Slash","Sucker Punch","Low Kick","Protect"]}
   },
   "Bouffalant": {
     "UU Swords Dance": {"ability":"Reckless","item":"Lum Berry","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Swords Dance","Head Charge","Earthquake","Wild Charge"]},

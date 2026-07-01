@@ -614,9 +614,8 @@ var SETDEX_ADV = {
     "NU Choice Band": {"ability":"Guts","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":208,"at":252,"sp":44},"moves":["Cross Chop","Hidden Power Ghost","Rock Slide","Earthquake"]}
   },
   "Machamp": {
-    "OU Choice Band": {"ability":"Guts","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":252,"at":252,"sp":4},"moves":["Cross Chop","Sleep Talk","Hidden Power Ghost","Rock Slide"]},
-    "OU Bulk Up": {"ability":"Guts","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":128,"at":252,"sp":128},"moves":["Bulk Up","Cross Chop","Rock Slide","Hidden Power Ghost"]},
-    "OU RestTalk": {"ability":"Guts","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":96,"df":156,"sp":4},"moves":["Rest","Sleep Talk","Cross Chop","Rock Slide"]}
+    "OU Bulk Up": {"ability":"Guts","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Bulk Up","Cross Chop","Rock Slide","Hidden Power Ghost"]},
+    "OU Choice Band": {"ability":"Guts","item":"Choice Band","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"at":252,"df":4,"sp":252},"moves":["Cross Chop","Rock Slide","Focus Punch","Hidden Power Ghost"]}
   },
   "Bellsprout": {
     "LC Sunny Day Sweeper": {"level":5,"ability":"Chlorophyll","item":"Sitrus Berry","nature":"Rash","ivs":{"at":30,"sa":30,"sp":30},"evs":{"at":80,"sa":200,"sp":200},"moves":["Sunny Day","Solar Beam","Hidden Power Fire","Sludge Bomb"]}
