@@ -251,6 +251,18 @@ export function calculateDPP(
     filterMod = 0.75;
     desc.defenderAbility = defender.ability;
   }
+
+  let metronomeMod = 1;
+  if (attacker.hasItem('Metronome') && move.timesUsedWithMetronome! >= 1) {
+    const timesUsedWithMetronome = Math.floor(move.timesUsedWithMetronome!);
+    if (timesUsedWithMetronome <= 9) {
+      metronomeMod = 1 + 0.1 * timesUsedWithMetronome;
+    } else {
+      metronomeMod = 2;
+    }
+    desc.attackerItem = attacker.item;
+  }
+
   let ebeltMod = 1;
   if (attacker.hasItem('Expert Belt') && typeEffectiveness > 1) {
     ebeltMod = 1.2;
@@ -276,6 +288,7 @@ export function calculateDPP(
     damage[i] = Math.floor(damage[i] * type2Effectiveness);
     damage[i] = Math.floor(damage[i] * filterMod);
     damage[i] = Math.floor(damage[i] * ebeltMod);
+    damage[i] = Math.floor(damage[i] * metronomeMod);
     damage[i] = Math.floor(damage[i] * tintedMod);
     damage[i] = Math.floor(damage[i] * berryMod);
     damage[i] = Math.max(1, damage[i]);
@@ -321,6 +334,7 @@ export function calculateDPP(
         newFinalDamage = Math.floor(newFinalDamage * type2Effectiveness);
         newFinalDamage = Math.floor(newFinalDamage * filterMod);
         newFinalDamage = Math.floor(newFinalDamage * ebeltMod);
+        newFinalDamage = Math.floor(newFinalDamage * metronomeMod);
         newFinalDamage = Math.floor(newFinalDamage * tintedMod);
         newFinalDamage = Math.max(1, newFinalDamage);
         damageArray[i] = newFinalDamage;
