@@ -466,7 +466,8 @@ export function calculateBPModsDPP(
      move.hasType('Water', 'Dragon')) ||
     (attacker.hasItem('Griseous Orb') &&
      attacker.named('Giratina-Origin') &&
-     move.hasType('Ghost', 'Dragon'))
+     move.hasType('Ghost', 'Dragon')) ||
+    (move.named('Struggle') && getItemBoostType(attacker.item) === 'Normal')
   ) {
     basePower = Math.floor(basePower * 1.2);
     desc.attackerItem = attacker.item;

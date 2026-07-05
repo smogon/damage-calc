@@ -219,7 +219,8 @@ export function calculateRBYGSC(
       ? undefined
       : getItemBoostType(attacker.hasItem('Dragon Scale') ? 'Dragon Fang' : attacker.item);
 
-  if (move.hasType(itemBoostType)) {
+  if (move.hasType(itemBoostType) ||
+    (move.named('Struggle') && itemBoostType === 'Normal')) {
     baseDamage = Math.floor(baseDamage * 1.1);
     desc.attackerItem = attacker.item;
   }
