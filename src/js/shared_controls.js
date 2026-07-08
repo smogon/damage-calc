@@ -641,7 +641,13 @@ $(".set-selector").change(function () {
 				// The Gens 8 and 9 randdex contains information for multiple Random Battles formats for each Pokemon.
 				// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
 				// Therefore, the information for only the format chosen should be used.
-				randset = randdex[pokemonName][setName];
+				if (setName.endsWith("-Gmax")) {
+					setName = setName.slice(0, -5);
+					randset = randdex[pokemonName + "-Gmax"][setName];
+					randset.isGmax = true;
+				} else {
+					randset = randdex[pokemonName][setName];
+				}
 			} else {
 				randset = randdex[pokemonName];
 			}
@@ -1056,7 +1062,7 @@ function createPokemon(pokeInfo) {
 		var setName = pokeInfo.substring(pokeInfo.indexOf("(") + 1, pokeInfo.lastIndexOf(")"));
 		var isRandoms = $("#randoms").prop("checked");
 		var isChampions = $("#champions").prop("checked");
-		var set = isRandoms ? randdex[name] : setdex[name][setName];
+		var set = isRandoms ? setName.endswith("-Gmax") ? randdex[name + "-Gmax"] : randdex[name] : setdex[name][setName];
 
 		var ivs = {};
 		var evs = {};
@@ -1634,30 +1640,8 @@ function getSetOptions(sets) {
 			text: pokeName
 		});
 		if ($("#randoms").prop("checked")) {
-			if (pokeName in randdex) {
-				if (gen >= 8) {
-					// The Gen 8 and 9 randdex contains information for multiple Random Battles formats for each Pokemon.
-					// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
-					// Therefore, all of this information has to be populated within the set options.
-					var randTypes = Object.keys(randdex[pokeName]);
-					for (var j = 0; j < randTypes.length; j++) {
-						var rand = randTypes[j];
-						setOptions.push({
-							pokemon: pokeName + (rand === "Randoms" ? "" : " (" + rand.split(' ')[0] + ")"),
-							set: rand + ' Set',
-							text: pokeName + " (" + rand + ")",
-							id: pokeName + " (" + rand + ")"
-						});
-					}
-				} else {
-					setOptions.push({
-						pokemon: pokeName,
-						set: 'Randoms Set',
-						text: pokeName + " (Randoms)",
-						id: pokeName + " (Randoms)"
-					});
-				}
-			}
+			if (pokeName in randdex) loadRandset(pokeName, setOptions, "");
+			if ((pokeName + "-Gmax") in randdex) loadRandset(pokeName, setOptions, "Gmax");
 		} else {
 			if (pokeName in setdex) {
 				var setNames = Object.keys(setdex[pokeName]);
@@ -1682,6 +1666,33 @@ function getSetOptions(sets) {
 		}
 	}
 	return setOptions;
+}
+
+function loadRandset(pokeName, setOptions, isGmax) {
+	if (gen >= 8) {
+		// The Gen 8 and 9 randdex contains information for multiple Random Battles formats for each Pokemon.
+		// Duraludon, for example, has data for Randoms, Doubles Randoms, and Baby Randoms.
+		// Therefore, all of this information has to be populated within the set options.
+		var baseName = pokeName;
+		if (isGmax) pokeName = pokeName + "-Gmax";
+		var randTypes = Object.keys(randdex[pokeName]);
+		for (var j = 0; j < randTypes.length; j++) {
+			var rand = randTypes[j];
+			setOptions.push({
+				pokemon: pokeName + (rand === "Randoms" ? "" : " (" + rand.split(' ')[0] + ")"),
+				set: isGmax + rand + " Set",
+				text: pokeName + " (" + rand + ")",
+				id: baseName + " (" + rand + (isGmax ? "-Gmax)" : ")")
+			});
+		}
+	} else {
+		setOptions.push({
+			pokemon: pokeName,
+			set: "Randoms Set",
+			text: pokeName + " (Randoms)",
+			id: pokeName + " (Randoms)"
+		});
+	}
 }
 
 function getSelectOptions(arr, sort, defaultOption) {
