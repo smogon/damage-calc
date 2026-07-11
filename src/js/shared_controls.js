@@ -702,7 +702,7 @@ $(".set-selector").change(function () {
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .ivs").val(
 					(set.ivs && set.ivs[stat] !== undefined) ? set.ivs[stat] : 31);
 				pokeObj.find("." + LEGACY_STATS[gen][i] + " .dvs").val(
-					(set.dvs && set.dvs[stat] !== undefined) ? set.dvs[stat] : 15);
+					(set.dvs && set.dvs[stat] !== undefined) ? set.dvs[stat] : (set.ivs && set.ivs[stat] !== undefined) ? calc.Stats.IVToDV(set.ivs[stat]) : 15);
 				if (set.sps) {
 					pokeObj.find("." + LEGACY_STATS[gen][i] + " .sps").val(set.sps[stat] !== undefined ? set.sps[stat] : 0);
 				}
