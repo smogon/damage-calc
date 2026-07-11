@@ -266,7 +266,6 @@ function addToDex(poke) {
 	if (poke.sps !== undefined) {
 		dexObject.sps = poke.sps;
 	}
-	dexObject.ivs = poke.ivs;
 	dexObject.moves = poke.moves;
 	dexObject.nature = poke.nature;
 	dexObject.gender = poke.gender;

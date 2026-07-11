@@ -59,6 +59,7 @@ export class Move implements State.Move {
 
     this.hits = 1;
     if (options.useMax && data.maxMove) {
+    // only useMax if the corresponding max move exists
       const maxMoveName: string = getMaxMoveName(
         gen,
         data.type,
@@ -85,8 +86,8 @@ export class Move implements State.Move {
         category: data.category,
       });
     }
-    // If isZMove but there isn't a corresponding z-move, use the original move
     if (options.useZ && data.zMove?.basePower) {
+    // only useZ if the corresponding Z-Move exists
       const zMoveName: string = getZMoveName(data.name, data.type, options.item);
       const zMove = gen.moves.get(toID(zMoveName));
       data = extend(true, {}, zMove, {
