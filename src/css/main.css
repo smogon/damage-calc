@@ -751,6 +751,11 @@ table.field {
         min-height: 2em;
         padding: 6px 6px;
     }
+
+    /* honkalculate: contain the wide results table instead of scrolling the page */
+    #holder-0 {
+        overflow-x: auto;
+    }
 }
 
 @media (max-width: 480px) {
