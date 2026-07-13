@@ -707,3 +707,48 @@ table.field {
 .flex-parent {
 	display: flex;
 }
+
+/*********************************************************
+ * Responsive
+ *********************************************************/
+
+@media (max-width: 1080px) {
+    /* Remove the desktop min-widths that force horizontal scroll */
+    html, body {
+        min-width: 0;
+    }
+    .move-result-group {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+
+    /* Stack the three float-columns (P1 | Field+Import | P2) */
+    .panel {
+        float: none;
+        display: block;
+    }
+    .poke-info,
+    .field-info,
+    .poke-import {
+        float: none;
+        width: 100%;
+        max-width: 34em;
+        margin: 0 auto 1em;
+        box-sizing: border-box;
+    }
+
+    /* honkalculate.html: let its multi-panel flex row wrap */
+    .flex-parent {
+        flex-wrap: wrap;
+    }
+
+    /* Enlarge the tiny toggle buttons to comfortable tap targets */
+    .poke-info .crit-btn,
+    .poke-info .z-btn,
+    .poke-info .max-btn,
+    .poke-info .stellar-btn {
+        height: auto;
+        min-height: 2em;
+        padding: 6px 6px;
+    }
+}
