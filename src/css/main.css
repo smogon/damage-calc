@@ -752,3 +752,38 @@ table.field {
         padding: 6px 6px;
     }
 }
+
+@media (max-width: 480px) {
+    /* Let panels use the full narrow width */
+    .poke-info,
+    .field-info,
+    .poke-import {
+        max-width: none;
+    }
+
+    /* Stack the two move-result columns */
+    .move-result-subgroup {
+        float: none;
+        width: 100%;
+    }
+
+    /* Fluidize the fixed-width selects and set selector */
+    .set-selector,
+    .info-selectors select,
+    .move-selector {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* select2 renders its own container; force it to the parent width */
+    .select2-container {
+        width: 100% !important;
+    }
+
+    /* Fluidize the import textareas */
+    .import-team-text,
+    .import-name-text {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
