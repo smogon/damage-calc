@@ -373,6 +373,10 @@
                             <td>
                                 <input class="base calc-trigger" value="100" inputmode="decimal" />
                             </td>
+                            <!-- This fixes an issue with Gen 1 random battles where the EVs are incorrectly set to 0. -->
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
+                            </td>
                             <td>
                                 <input class="dvs calc-trigger" value="15" inputmode="decimal" />
                             </td>
@@ -1290,6 +1294,10 @@
                             </th>
                             <td>
                                 <input class="base calc-trigger" value="100" inputmode="decimal" />
+                            </td>
+                            <!-- This fixes an issue with Gen 1 random battles where the EVs are incorrectly set to 0. -->
+                            <td class="gen-specific g3 g4 g5 g6 g7 g8 g9">
+                                <input class="evs calc-trigger" type="number" min="0" max="252" step="4" value="0" inputmode="decimal" />
                             </td>
                             <td>
                                 <input class="dvs calc-trigger" value="15" inputmode="decimal" />
