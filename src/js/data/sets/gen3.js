@@ -659,7 +659,6 @@ var SETDEX_ADV = {
   },
   "Magnemite": {
     "LC Offensive Utility": {"level":5,"ability":"Sturdy","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"df":36,"sa":240,"sd":76,"sp":156},"moves":["Thunderbolt","Hidden Power Grass","Toxic","Substitute"]},
-    "ZU Substitute + Status": {"ability":"Magnet Pull","item":"Leftovers","nature":"Timid","ivs":{"at":2,"df":30,"sa":30},"evs":{"hp":200,"sd":132,"sp":176},"moves":["Thunderbolt","Hidden Power Water","Substitute","Toxic"]},
     "PU Showdown Usage": {"ability":"Magnet Pull","item":"Leftovers","nature":"Modest","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":80,"sp":176},"moves":["Thunder Wave","Thunderbolt","Hidden Power Grass","Metal Sound"]}
   },
   "Magneton": {
