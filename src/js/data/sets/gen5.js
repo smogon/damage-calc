@@ -345,6 +345,7 @@ var SETDEX_BW = {
   },
   "Infernape": {
     "OU Mixed": {"ability":"Iron Fist","item":"Expert Belt","nature":"Naive","ivs":{"at":30,"df":30},"evs":{"at":96,"sa":160,"sp":252},"moves":["Overheat","Close Combat","Grass Knot","Hidden Power Ice"]},
+    "VGC 2013 Offensive Support": {"level":50,"ability":"Blaze","item":"Focus Sash","nature":"Naive","evs":{"at":204,"sa":52,"sp":252},"moves":["Fake Out","Overheat","Close Combat","Protect"]},
     "Monotype Expert Belt (Fire)": {"ability":"Iron Fist","item":"Expert Belt","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Thunder Punch","Earthquake","Mach Punch"]},
     "1v1 Showdown Usage": {"ability":"Blaze","item":"Life Orb","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Fake Out","Close Combat","Substitute","Flare Blitz"]}
   },
