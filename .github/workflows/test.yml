@@ -51,11 +51,11 @@ jobs:
     - name: Build
       run: node build
     - name: Upload artifact for GitHub Pages
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa  # v3
       with:
         # Upload entire repository
         path: 'dist'
     - uses: actions/configure-pages@v5
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v5
+      uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128  # v5
