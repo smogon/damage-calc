@@ -466,6 +466,11 @@ export function calculateBPModsDPP(
     desc.attackerAbility = attacker.ability;
   }
 
+  if (field.attackerSide.isCharge && move.hasType('Electric')) {
+    basePower = Math.floor(basePower * 2);
+    desc.isCharge = true;
+  }
+
   const isPhysical = move.category === 'Physical';
   if ((attacker.hasItem('Muscle Band') && isPhysical) ||
       (attacker.hasItem('Wise Glasses') && !isPhysical)) {

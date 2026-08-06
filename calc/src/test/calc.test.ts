@@ -931,8 +931,24 @@ describe('calc', () => {
         });
       });
     });
-  });
 
+    describe('Charge', () => {
+      inGens([0, [3, 9]], ({gen, calculate, Pokemon, Move, Field}) => {
+        test('Charge should double the Base Power of Electric-type moves', () => {
+          const attacker = Pokemon('Pikachu');
+          const defender = Pokemon('Pikachu');
+          const move = Move('Thunderbolt');
+          const field = Field({attackerSide: {isCharge: true}});
+
+          const noCharge = calculate(attacker, defender, move);
+          const charge = calculate(attacker, defender, move, field);
+
+          expect(charge.range()[0]).toBeGreaterThan(noCharge.range()[0]);
+          expect(charge.range()[1]).toBeGreaterThan(noCharge.range()[1]);
+        });
+      });
+    });
+  });
 
   describe('Gen 1', () => {
     inGen(1, ({calculate, Pokemon, Move, Field}) => {
