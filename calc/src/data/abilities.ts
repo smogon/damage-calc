@@ -430,7 +430,6 @@ const CHAMPIONS = [
   'Levitate',
   'Light Metal',
   'Lightning Rod',
-  'Ligtning Rod',
   'Limber',
   'Liquid Voice',
   'Long Reach',
