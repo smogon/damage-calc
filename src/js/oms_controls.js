@@ -206,8 +206,8 @@ function toggleMNM() {
 	// mnm CAN change abilities and field conditions, we want to reset it just in case
 	autosetWeather($("#p1 .ability").val(), 0);
 	autosetTerrain($("#p1 .ability").val(), 0);
-	autosetWeather($("#p2 .ability").val(), 0);
-	autosetTerrain($("#p2 .ability").val(), 0);
+	autosetWeather($("#p2 .ability").val(), 1);
+	autosetTerrain($("#p2 .ability").val(), 1);
 }
 
 var shouldUseTS = false;
@@ -343,12 +343,13 @@ $("#p1 .item").bind("keyup change", function () {
 
 $("#p2 .item").bind("keyup change", function () {
 	autoUpdateStats("#p2");
-	autosetWeather($("#p2 .ability").val(), 0);
+	autosetWeather($("#p2 .ability").val(), 1);
 });
 $(".om-trigger").prop("checked", false);
 $(".om-trigger").change();
 $(".ts-trigger").bind("change keyup", toggleTS);
 $(".mnm-trigger").bind("change keyup", toggleMNM);
+
 $(".scale-trigger").bind("change keyup", toggleScale);
 $(".gen").change(function () {
 	$.ajax({
