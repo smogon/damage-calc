@@ -271,11 +271,6 @@ export function calculateBPModsADV(
     desc.attackerAbility = attacker.ability;
   }
 
-  if (field.attackerSide.isCharge && move.hasType('Electric')) {
-    basePower = Math.floor(basePower * 2);
-    desc.isCharge = true;
-  }
-
   return basePower;
 }
 
@@ -443,6 +438,11 @@ function calculateFinalModsADV(
   if (move.named('Weather Ball') && field.weather) {
     baseDamage *= 2;
     desc.moveBP = move.bp * 2;
+  }
+
+  if (field.attackerSide.isCharge && move.hasType('Electric')) {
+    baseDamage *= 2;
+    desc.isCharge = true;
   }
 
   if (field.attackerSide.isHelpingHand) {
