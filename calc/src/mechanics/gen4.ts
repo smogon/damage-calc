@@ -461,14 +461,14 @@ export function calculateBPModsDPP(
     desc.isHelpingHand = true;
   }
 
-  if (attacker.hasAbility('Technician') && basePower <= 60) {
-    basePower = Math.floor(basePower * 1.5);
-    desc.attackerAbility = attacker.ability;
-  }
-
   if (field.attackerSide.isCharge && move.hasType('Electric')) {
     basePower = Math.floor(basePower * 2);
     desc.isCharge = true;
+  }
+
+  if (attacker.hasAbility('Technician') && basePower <= 60) {
+    basePower = Math.floor(basePower * 1.5);
+    desc.attackerAbility = attacker.ability;
   }
 
   const isPhysical = move.category === 'Physical';
