@@ -148,7 +148,7 @@ export function calculateADV(
   if (bp === 0) {
     return result;
   }
-  bp = calculateBPModsADV(attacker, move, field, desc, bp);
+  bp = calculateBPModsADV(attacker, move, desc, bp);
 
   const isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
   const at = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
@@ -185,7 +185,7 @@ export function calculateADV(
         field, desc, usedItems[0], usedItems[1]);
       const newAt = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
       let newBp = calculateBasePowerADV(attacker, defender, move, desc);
-      newBp = calculateBPModsADV(attacker, move, field, desc, newBp);
+      newBp = calculateBPModsADV(attacker, move, desc, newBp);
       let newBaseDmg = Math.floor(
         Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
       );
