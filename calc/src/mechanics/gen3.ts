@@ -257,7 +257,6 @@ export function calculateBasePowerADV(
 export function calculateBPModsADV(
   attacker: Pokemon,
   move: Move,
-  field: Field,
   desc: RawDesc,
   basePower: number,
 ) {
