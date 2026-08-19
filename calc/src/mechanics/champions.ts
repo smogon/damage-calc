@@ -12,6 +12,7 @@ import type {Pokemon} from '../pokemon';
 import {Result} from '../result';
 import {
   chainMods,
+  checkAirLock,
   checkForecast,
   checkInfiltrator,
   checkIntimidate,
@@ -43,6 +44,8 @@ export function calculateChampions(
 ) {
   // #region Initial
 
+  checkAirLock(attacker, field);
+  checkAirLock(defender, field);
   checkForecast(attacker, field.weather);
   checkForecast(defender, field.weather);
   checkItem(attacker, field.isMagicRoom);
@@ -538,6 +541,10 @@ export function calculateBasePowerChampions(
   case 'Hex':
   case 'Infernal Parade':
     basePower = move.bp * (defender.status ? 2 : 1);
+    desc.moveBP = basePower;
+    break;
+  case 'Barb Barrage':
+    basePower = move.bp * (defender.hasStatus('psn', 'tox') ? 2 : 1);
     desc.moveBP = basePower;
     break;
   case 'Heavy Slam':
