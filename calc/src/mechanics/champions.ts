@@ -128,7 +128,7 @@ export function calculateChampions(
 
   // Merciless does not ignore Shell Armor, damage dealt to a poisoned Pokemon with Shell Armor
   // will not be a critical hit (UltiMario)
-  const isCritical = !defender.hasAbility('Shell Armor') &&
+  const isCritical = !defender.hasAbility('Shell Armor', 'Battle Armor') &&
     (move.isCrit || (attacker.hasAbility('Merciless') && defender.hasStatus('psn', 'tox'))) &&
     move.timesUsed === 1;
 
