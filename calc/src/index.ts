@@ -20,7 +20,7 @@
 //   - items.js
 //
 //   - mechanics/util.js
-//   - mechanics/gen78.js
+//   - mechanics/gen789.js
 //   - mechanics/gen56.js
 //   - mechanics/gen4.js
 //   - mechanics/gen3.js
@@ -28,7 +28,7 @@
 //
 //   - calc.js
 //   - desc.js
-//   - result.ts
+//   - result.js
 //
 //   - adaptable.js
 //   - index.js
