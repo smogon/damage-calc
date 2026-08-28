@@ -1954,6 +1954,17 @@ describe('calc', () => {
           expect(snowResult.range()[1]).toEqual(noSnowResult.range()[1]);
         });
       });
+
+      test('items absent from the format should not crash the calc', () => {
+        const attacker = Pokemon('Kingambit', {nature: 'Adamant'});
+        const holder = Pokemon('Incineroar', {nature: 'Impish', item: 'Black Sludge'});
+        const result = calculate(attacker, holder, Move('Iron Head'));
+        expect(result.range()[1]).toBeGreaterThan(0);
+
+        const vsHolder = calculate(attacker, holder, Move('Knock Off'));
+        const vsItemless = calculate(attacker, Pokemon('Incineroar', {nature: 'Impish'}), Move('Knock Off'));
+        expect(vsHolder.range()[1]).toBeGreaterThan(vsItemless.range()[1]);
+      });
     });
   });
 });
