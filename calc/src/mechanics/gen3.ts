@@ -172,7 +172,7 @@ export function calculateADV(
     const origDefBoost = desc.defenseBoost;
     const origAtkBoost = desc.attackBoost;
     let numAttacks = 1;
-    if (move.dropsStats && move.timesUsed! > 1) {
+    if (move.timesUsed! > 1) {
       desc.moveTurns = `over ${move.timesUsed} turns`;
       numAttacks = move.timesUsed!;
     } else {
