@@ -2498,6 +2498,7 @@ var SETDEX_BW = {
     "UU Tank": {"ability":"Solid Rock","item":"Leftovers","nature":"Adamant","evs":{"hp":248,"at":16,"sd":244},"moves":["Stealth Rock","Earthquake","Rock Blast","Dragon Tail"]},
     "UU Choice Band": {"ability":"Solid Rock","item":"Choice Band","nature":"Adamant","evs":{"hp":96,"at":252,"sp":160},"moves":["Stone Edge","Earthquake","Megahorn","Ice Punch"]},
     "UU Rock Polish": {"ability":"Solid Rock","item":"Life Orb","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Rock Polish","Earthquake","Stone Edge","Megahorn"]},
+    "VGC 2013 Trick Room Attacker": {"level":50,"ability":"Solid Rock","item":"Ground Gem","nature":"Brave","ivs":{"sp":0},"evs":{"hp":172,"at":192,"df":52,"sd":92},"moves":["Protect","Earthquake","Rock Slide","Ice Punch"]},
     "Monotype Physically Defensive (Rock)": {"ability":"Solid Rock","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Earthquake","Stone Edge","Fire Punch","Stealth Rock"]},
     "1v1 Choice Band": {"ability":"Solid Rock","item":"Choice Band","nature":"Adamant","evs":{"hp":248,"at":132,"sd":128},"moves":["Rock Wrecker","Earthquake","Rock Blast","Avalanche"]},
     "1v1 Custap Berry": {"ability":"Solid Rock","item":"Custap Berry","nature":"Adamant","evs":{"hp":248,"at":180,"df":80},"moves":["Endure","Rock Wrecker","Earthquake","Swords Dance"]},
