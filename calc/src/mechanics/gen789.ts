@@ -141,8 +141,10 @@ export function calculateSMSSSV(
     move.flags.contact = 1;
   }
 
-  const breaksProtect = move.breaksProtect || move.isZ || attacker.isDynamaxed ||
-  (attacker.hasAbility('Unseen Fist', 'Piercing Drill') && move.flags.contact);
+  const breaksProtect = !defender.isDynamaxed &&
+  (move.breaksProtect || move.isZ || attacker.isDynamaxed ||
+  (attacker.hasAbility('Unseen Fist', 'Piercing Drill') && move.flags.contact)) ||
+  move.name === 'G-Max One Blow' || move.name === 'G-Max Rapid Flow';
 
   if (field.defenderSide.isProtected && !breaksProtect) {
     desc.isProtected = true;
@@ -651,12 +653,14 @@ export function calculateSMSSSV(
   );
 
   let protect = false;
-  if (field.defenderSide.isProtected &&
-    (attacker.isDynamaxed ||
-      attacker.hasAbility('Unseen Fist', 'Piercing Drill') ||
-      (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
-    protect = true;
-    desc.isProtected = true;
+  if (field.defenderSide.isProtected) {
+    if (attacker.isDynamaxed &&
+    !(move.name === 'G-Max One Blow' || move.name === 'G-Max Rapid Flow') ||
+    !attacker.isDynamaxed && (attacker.hasAbility('Unseen Fist', 'Piercing Drill') ||
+    (move.isZ && attacker.item && attacker.item.includes(' Z')))) {
+      protect = true;
+      desc.isProtected = true;
+    }
   }
 
   const finalMod = chainMods(finalMods, 41, 131072);
