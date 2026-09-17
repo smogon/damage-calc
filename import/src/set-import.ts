@@ -193,6 +193,12 @@ function toPSFormat(formatID: ID): ID {
   if (formatID === 'gen9championsbattlestadiumsingles') {
     return 'gen9championsbssregmb' as ID;
   }
+  if (formatID === 'gen9vgc2025') {
+    return 'gen9vgc2025regi' as ID;
+  }
+  if (formatID === 'gen9battlestadiumsingles') {
+    return 'gen9bssregi' as ID;
+  }
   return formatID;
 }
 
