@@ -14,7 +14,7 @@ const exports = {};
 bundled += bundler.read('util.js', 3, 1);
 const species = bundler.read('data/species.js').split('\n');
 bundled += species.slice(1, 64).join('\n'); // generator + iterator + spreadArray polyfill
-bundled += '\nvar e_1, _a, e_2, _b;\nvar util_1 = exports;\n';
+bundled += '\nvar e_1, _a, e_2, e_3, _b;\nvar util_1 = exports;\n';
 bundled += species.slice(68, -2).join('\n');
 
 const types = bundler.read('data/types.js').split('\n');
@@ -70,10 +70,11 @@ bundled += bundler.read('items.js', 4, 1);
 const utils = bundler.read('mechanics/util.js').split('\n');
 bundled += utils.slice(28, 37).join('\n'); // spreadArray polyfill
 bundled += utils.slice(41, -2).join('\n');
-bundled += bundler.read('result.js', 29, 1);
+bundled += bundler.read('result.js', 31, 1);
 bundled += '\nvar result_1 = exports;\nvar util_2 = exports;\n';
 bundled += bundler.read('desc.js', 22, 1);
 bundled += '\nvar desc_1 = exports;\nvar items_1 = exports;\n';
+bundled += bundler.read('mechanics/champions.js', 7, 1);
 bundled += bundler.read('mechanics/gen789.js', 7, 1);
 bundled += bundler.read('mechanics/gen56.js', 7, 1);
 bundled += bundler.read('mechanics/gen4.js', 31, 1);
@@ -87,8 +88,9 @@ var gen3_1 = exports;
 var gen4_1 = exports;
 var gen56_1 = exports;
 var gen789_1 = exports;
+var champions_1 = exports;
 `;
-bundled += bundler.read('calc.js', 9, 1);
+bundled += bundler.read('calc.js', 10, 1);
 
 bundled += `
 // EXPORTS
@@ -103,5 +105,5 @@ window.calc = Object.assign(window.calc || {}, {
   STATS: exports.STATS,
   Stats: exports.Stats,
 });
-})();`
+})();`;
 bundler.bundle(bundled);
