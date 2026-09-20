@@ -66,6 +66,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Ninetales-Alola": {
     "VGC 2026 Reg M-B Choice Scarf": {"level":50,"ability":"Snow Warning","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Blizzard","Freeze-Dry","Icy Wind","Encore"]},
+    "VGC 2026 Reg M-B Disruptive Support": {"level":50,"ability":"Snow Warning","item":"Never-Melt Ice","nature":"Timid","sps":{"hp":1,"df":1,"sa":32,"sp":32},"moves":["Blizzard","Freeze-Dry","Encore","Protect"]},
     "VGC 2026 Reg M-B Offensive Support": {"level":50,"ability":"Snow Warning","item":"Never-Melt Ice","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Blizzard","Aurora Veil","Encore","Protect"]},
     "BSS Reg M-B Aurora Veil Support": {"level":50,"ability":"Snow Warning","item":"Light Clay","nature":"Bold","sps":{"hp":31,"df":9,"sp":26},"moves":["Aurora Veil","Freeze-Dry","Blizzard","Encore"]}
   },
