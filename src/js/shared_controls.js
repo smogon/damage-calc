@@ -555,7 +555,7 @@ $(".move-selector").change(function () {
 		moveGroupObj.children(".move-times").show();
 	}
 	var isDynamaxed = pokeObj.find(".max").prop("checked");
-	moveGroupObj.children(".move-crit").prop("checked", !isDynamaxed && move.willCrit);
+	moveGroupObj.children(".move-crit").prop("checked", !isDynamaxed && move.willCrit === true);
 	moveGroupObj.find(".move-crit").attr("autocrit", move.willCrit ? "yes" : "no");
 	moveGroupObj.children(".move-z").prop("checked", false);
 });
