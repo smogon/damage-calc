@@ -511,7 +511,7 @@ var SETDEX_ADV = {
     "LC Trapper": {"level":5,"ability":"Arena Trap","item":"Sitrus Berry","nature":"Careful","ivs":{"df":30,"sd":30},"evs":{"hp":236,"at":36,"df":80,"sd":80,"sp":36},"moves":["Earthquake","Hidden Power Ghost","Quick Attack","Protect"]}
   },
   "Vibrava": {
-    "PU Offensive": {"ability":"Levitate","item":"Leftovers","nature":"Adamant","evs":{"hp":40,"at":252,"sp":216},"moves":["Earthquake","Rock Slide","Toxic","Protect"]},
+    "PU Offensive": {"ability":"Levitate","item":"Leftovers","nature":"Adamant","ivs":{"df":30,"sd":30},"evs":{"hp":40,"at":252,"sp":216},"moves":["Earthquake","Hidden Power Ghost","Toxic","Substitute"]},
     "PU Choice Band": {"ability":"Levitate","item":"Choice Band","nature":"Jolly","ivs":{"df":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Hidden Power Ghost","Quick Attack"]}
   },
   "Flygon": {

@@ -438,11 +438,11 @@ var SETDEX_CHAMPIONS = {
   },
   "Dragalge": {
     "OU Defensive Pivot": {"ability":"Poison Point","item":"Dragalgite","nature":"Sassy","sps":{"hp":32,"df":17,"sd":17},"moves":["Flip Turn","Sludge Bomb","Draco Meteor","Scald"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Poison Point","item":"Dragalgite","nature":"Relaxed","sps":{"hp":32,"df":20,"sd":14},"moves":["Flip Turn","Draco Meteor","Haze","Sludge Bomb"]}
+    "BSS Reg M-B Regenerator Tank": {"level":50,"ability":"Adaptability","item":"Dragalgite","nature":"Sassy","sps":{"hp":31,"df":19,"sd":17},"moves":["Draco Meteor","Flip Turn","Toxic","Sludge Wave"]}
   },
   "Dragalge-Mega": {
     "OU Defensive Pivot": {"ability":"Regenerator","item":"Dragalgite","nature":"Sassy","sps":{"hp":32,"df":17,"sd":17},"moves":["Flip Turn","Sludge Bomb","Draco Meteor","Scald"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Regenerator","item":"Dragalgite","nature":"Relaxed","sps":{"hp":32,"df":20,"sd":14},"moves":["Flip Turn","Draco Meteor","Haze","Sludge Bomb"]}
+    "BSS Reg M-B Regenerator Tank": {"level":50,"ability":"Regenerator","item":"Dragalgite","nature":"Sassy","sps":{"hp":31,"df":19,"sd":17},"moves":["Draco Meteor","Flip Turn","Toxic","Sludge Wave"]}
   },
   "Sylveon": {
     "VGC 2026 Reg M-B Bulky Attacker": {"level":50,"ability":"Pixilate","item":"Fairy Feather","nature":"Modest","sps":{"hp":9,"df":22,"sa":20,"sp":15},"moves":["Hyper Voice","Hyper Beam","Quick Attack","Detect"]},
