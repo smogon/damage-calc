@@ -407,7 +407,8 @@ export function calculateBWXY(
         move,
         field,
         hasAteAbilityTypeChange,
-        desc
+        desc,
+        times + 1
       );
       const newBaseDamage = getBaseDamage(attacker.level, newBasePower, newAtk, newDef);
       const newFinalMods = calculateFinalModsBWXY(

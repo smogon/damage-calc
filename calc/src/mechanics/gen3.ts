@@ -184,7 +184,7 @@ export function calculateADV(
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
       const newAt = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
-      let newBp = calculateBasePowerADV(attacker, defender, move, desc);
+      let newBp = calculateBasePowerADV(attacker, defender, move, desc, times + 1);
       newBp = calculateBPModsADV(attacker, move, desc, newBp);
       let newBaseDmg = Math.floor(
         Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
