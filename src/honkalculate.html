@@ -491,7 +491,7 @@
                         <input class="current-hp" value="341" />/<span class="max-hp">341</span> (
                         <input class="percent-hp" value="100" />%)
                         <input class="visually-hidden max calc-trigger btn-input" type="checkbox" id="maxL" />
-                        <label class="btn max-btn gen-specific g8 g9" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
+                        <label class="btn max-btn gen-specific g8" for="maxL" title="Use the corresponding Max Move?">Dynamax</label>
                         <br />
                         <br />
                         Health <div class="hpbar"></div>
@@ -890,28 +890,26 @@
                             <label class="btn btn-xxwide" for="tailwindR">Tailwind</label>
                         </div>
                     </div>
-                    <tr class="gen-specific g4 g5 g6 g7 g8 g9">
-                        <td><div class="left" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
-                            <div hidden id="selectFlowerGiftInstruction">Is the Pok&eacute;mon affected by an ally's Flower Gift?</div>
-                            <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftL" />
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
+                        <div class="left" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
+                            <input class="visually-hidden" type="checkbox" id="flowerGiftL" />
                             <label class="btn btn-xxwide" for="flowerGiftL">Flower Gift</label>
-                        </div></td>
-                        <td><div class="right" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
-                            <input aria-describedby="selectFlowerGiftInstruction" class="visually-hidden calc-trigger" type="checkbox" id="flowerGiftR" />
+                        </div>
+                        <div class="right" title="Is the Pok&eacute;mon affected by an ally's Flower Gift?">
+                            <input class="visually-hidden" type="checkbox" id="flowerGiftR" />
                             <label class="btn btn-xxwide" for="flowerGiftR">Flower Gift</label>
-                        </div></td>
-                    </tr>
-                    <tr class="gen-specific g4 g5 g6 g7 g8 g9">
-                            <td><div class="left" title="Is the Pok&eacute;mon affected by Power Trick?">
-                                <div hidden id="selectPowerTrickInstruction">Is the Pok&eacute;mon affected by Power Trick?</div>
-                                <input aria-describedby="selectPowerTrickInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerTrickL" />
-                                <label class="btn btn-xxwide" for="powerTrickL">Power Trick</label>
-                            </div></td>
-                            <td><div class="right" title="Is the Pok&eacute;mon affected by Power Trick?">
-                                <input aria-describedby="selectPowerTrickInstruction" class="visually-hidden calc-trigger" type="checkbox" id="powerTrickR" />
-                                <label class="btn btn-xxwide" for="powerTrickR">Power Trick</label>
-                            </div></td>
-                    </tr>
+                        </div>
+                    </div>
+                    <div class="btn-group gen-specific g4 g5 g6 g7 g8 g9">
+                        <div class="left" title="Is the Pok&eacute;mon affected by Power Trick?">
+                            <input class="visually-hidden" type="checkbox" id="powerTrickL" />
+                            <label class="btn btn-xxwide" for="powerTrickL">Power Trick</label>
+                        </div>
+                        <div class="right" title="Is the Pok&eacute;mon affected by Power Trick?">
+                            <input class="visually-hidden" type="checkbox" id="powerTrickR" />
+                            <label class="btn btn-xxwide" for="powerTrickR">Power Trick</label>
+                        </div>
+                    </div>
                     <div class="btn-group gen-specific g5 g6 g7 g8 g9">
                         <div class="left" title="Is the Pok&eacute;mon protected by an ally's Friend Guard?">
                             <input class="visually-hidden" type="checkbox" id="friendGuardL" />

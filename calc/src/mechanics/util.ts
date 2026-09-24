@@ -664,10 +664,18 @@ export function getStatDescriptionText(
 ): string {
   const initialStat: StatID = stat;
   if (wonderRoomActive) {
-    if (stat === 'def') { stat = 'spd'; } else if (stat === 'spd') { stat = 'def'; }
+    if (stat === 'def') {
+      stat = 'spd';
+    } else if (stat === 'spd') {
+      stat = 'def';
+    }
   }
   if (powerTrickActive) {
-    if (stat === 'atk') { stat = 'def'; } else if (stat === 'def') { stat = 'atk'; }
+    if (stat === 'atk') {
+      stat = 'def';
+    } else if (stat === 'def') {
+      stat = 'atk';
+    }
   }
   //  decoding what checkRawStatChanges does
   const nature = gen.natures.get(toID(pokemon.nature))!;
@@ -675,11 +683,8 @@ export function getStatDescriptionText(
     (stat === 'hp' || nature.plus === nature.minus ? ''
     : nature.plus === stat ? '+'
     : nature.minus === stat ? '-'
-    : '') + ' ' +
-     Stats.displayStat(initialStat);
-  if (stat !== initialStat) {
-    desc = desc + ' (' + Stats.displayStat(stat) + ')';
-  }
+    : '') + ' ' + Stats.displayStat(initialStat);
+  if (stat !== initialStat) desc += ' (' + Stats.displayStat(stat) + ')';
   const iv = pokemon.ivs[stat];
   if (iv !== 31) desc += ` ${iv} IVs`;
   return desc;

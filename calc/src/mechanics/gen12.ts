@@ -103,11 +103,6 @@ export function calculateRBYGSC(
   if (move.hits > 1) {
     desc.hits = move.hits;
   }
-  // Triple Kick's damage increases by 10 after each consecutive hit (10, 20, 30), this is a hack
-  if (move.name === 'Triple Kick') {
-    move.bp = move.hits === 2 ? 15 : move.hits === 3 ? 20 : 10;
-    desc.moveBP = move.bp;
-  }
 
   // Flail and Reversal are variable BP and never crit
   if (move.named('Flail', 'Reversal')) {
@@ -272,24 +267,36 @@ export function calculateRBYGSC(
 
   if (move.hits > 1) {
     const damageMatrix = [damage];
-    for (let times = 1; times < move.hits; times++) {
-      const damage = [];
-      for (let damageMultiplier = 217; damageMultiplier <= 255; damageMultiplier++) {
-        let newFinalDamage = 0;
-        // in gen 2 damage is always rounded up to 1. TODO ADD TESTS
-        if (gen.num === 2) {
-          newFinalDamage = Math.max(1, Math.floor((baseDamage * damageMultiplier) / 255));
-        } else {
-          // in gen 1 the random factor multiplication is skipped if damage = 1
-          if (baseDamage === 1) {
-            newFinalDamage = 1;
-          } else {
-            newFinalDamage = Math.floor((baseDamage * damageMultiplier) / 255);
-          }
-        }
-        damage[damageMultiplier - 217] = newFinalDamage;
+    if (move.named('Triple Kick')) {
+      desc.moveBP = move.hits === 2 ? 30 : move.hits === 3 ? 60 : 10;
+      for (let hit = 1; hit < move.hits; hit++) {
+        const tripleKickMulti = move.clone();
+        tripleKickMulti.hits = 1;
+        tripleKickMulti.bp = (hit + 1) * 10;
+        damageMatrix[hit] = calculateRBYGSC(
+          gen, attacker, defender, tripleKickMulti, field
+        ).damage as number[];
       }
-      damageMatrix[times] = damage;
+    } else {
+      for (let times = 1; times < move.hits; times++) {
+        const damage = [];
+        for (let damageMultiplier = 217; damageMultiplier <= 255; damageMultiplier++) {
+          let newFinalDamage = 0;
+          // in gen 2 damage is always rounded up to 1. TODO ADD TESTS
+          if (gen.num === 2) {
+            newFinalDamage = Math.max(1, Math.floor((baseDamage * damageMultiplier) / 255));
+          } else {
+            // in gen 1 the random factor multiplication is skipped if damage = 1
+            if (baseDamage === 1) {
+              newFinalDamage = 1;
+            } else {
+              newFinalDamage = Math.floor((baseDamage * damageMultiplier) / 255);
+            }
+          }
+          damage[damageMultiplier - 217] = newFinalDamage;
+        }
+        damageMatrix[times] = damage;
+      }
     }
     result.damage = damageMatrix;
   }
