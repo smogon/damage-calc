@@ -376,7 +376,7 @@ var SETDEX_SV = {
   },
   "Koffing": {
     "LC Tank": {"level":5,"ability":"Neutralizing Gas","item":"Eviolite","nature":"Modest","teraType":"Water","ivs":{"at":0},"evs":{"hp":36,"df":156,"sa":196,"sp":76},"moves":["Sludge Bomb","Thunderbolt","Will-O-Wisp","Pain Split"]},
-    "NFE Defensive": {"ability":"Neutralizing Gas","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Sludge Bomb","Pain Split","Will-O-Wisp","Toxic Spikes"]}
+    "NFE Defensive": {"ability":"Neutralizing Gas","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Sludge Bomb","Pain Split","Will-O-Wisp","Thief"]}
   },
   "Weezing": {
     "NU Physical Wall": {"ability":"Levitate","item":"Rocky Helmet","nature":"Bold","teraType":"Steel","evs":{"hp":252,"df":212,"sp":44},"moves":["Sludge Bomb","Flamethrower","Taunt","Pain Split"]},
@@ -1123,6 +1123,7 @@ var SETDEX_SV = {
     "Balanced Hackmons Showdown Usage": {"ability":"Regenerator","item":"Covert Cloak","nature":"Adamant","evs":{"hp":252,"at":252,"df":252,"sd":252,"sp":252},"moves":["Earthquake","Surging Strikes","Strength Sap","Precipice Blades"]}
   },
   "Ludicolo": {
+    "RU Rain Sweeper": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","teraType":"Fighting","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Weather Ball","Giga Drain","Ice Beam","Focus Blast"]},
     "NU Rain Dance Sweeper": {"ability":"Swift Swim","item":"Life Orb","nature":"Modest","teraType":"Water","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Giga Drain","Ice Beam","Rain Dance"]},
     "VGC 2025 Reg I Showdown Usage": {"level":50,"ability":"Swift Swim","item":"Assault Vest","nature":"Modest","teraType":"Water","evs":{"hp":28,"df":4,"sa":252,"sd":4,"sp":220},"moves":["Fake Out","Weather Ball","Icy Wind","Energy Ball"]}
   },
@@ -1156,13 +1157,13 @@ var SETDEX_SV = {
     "BSS Reg I Choice": {"level":50,"ability":"Trace","item":"Choice Scarf","nature":"Timid","teraType":"Fairy","evs":{"df":4,"sa":252,"sp":252},"moves":["Psyshock","Moonblast","Mystical Fire","Trick"]},
     "Monotype Choice Specs (Psychic)": {"ability":"Trace","item":"Choice Specs","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Psyshock","Moonblast","Focus Blast","Vacuum Wave"]},
     "National Dex Offensive": {"ability":"Trace","item":"Gardevoirite","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Psyshock","Mystical Fire","Taunt"]},
-    "National Dex UU Stallbreaker": {"ability":"Trace","item":"Gardevoirite","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Psyshock","Mystical Fire","Taunt"]},
-    "National Dex Doubles Special Attacker": {"ability":"Trace","item":"Gardevoirite","nature":"Modest","teraType":"Psychic","ivs":{"at":0},"evs":{"hp":248,"sa":112,"sd":104,"sp":44},"moves":["Hyper Voice","Psyshock","Calm Mind","Protect"]}
+    "National Dex Doubles Special Attacker": {"ability":"Trace","item":"Gardevoirite","nature":"Modest","teraType":"Psychic","ivs":{"at":0},"evs":{"hp":248,"sa":112,"sd":104,"sp":44},"moves":["Hyper Voice","Psyshock","Calm Mind","Protect"]},
+    "National Dex UU Showdown Usage": {"ability":"Synchronize","item":"Gardevoirite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Mystical Fire","Psyshock","Calm Mind"]}
   },
   "Gardevoir-Mega": {
     "National Dex Offensive": {"ability":"Pixilate","item":"Gardevoirite","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Psyshock","Mystical Fire","Taunt"]},
-    "National Dex UU Stallbreaker": {"ability":"Pixilate","item":"Gardevoirite","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Psyshock","Mystical Fire","Taunt"]},
-    "National Dex Doubles Special Attacker": {"ability":"Pixilate","item":"Gardevoirite","nature":"Modest","teraType":"Psychic","ivs":{"at":0},"evs":{"hp":248,"sa":112,"sd":104,"sp":44},"moves":["Hyper Voice","Psyshock","Calm Mind","Protect"]}
+    "National Dex Doubles Special Attacker": {"ability":"Pixilate","item":"Gardevoirite","nature":"Modest","teraType":"Psychic","ivs":{"at":0},"evs":{"hp":248,"sa":112,"sd":104,"sp":44},"moves":["Hyper Voice","Psyshock","Calm Mind","Protect"]},
+    "National Dex UU Showdown Usage": {"ability":"Pixilate","item":"Gardevoirite","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hyper Voice","Mystical Fire","Psyshock","Calm Mind"]}
   },
   "Breloom": {
     "RU Poison Heal": {"ability":"Poison Heal","item":"Toxic Orb","nature":"Adamant","teraType":"Steel","evs":{"hp":252,"at":80,"sp":176},"moves":["Close Combat","Seed Bomb","Facade","Protect"]},
@@ -1656,6 +1657,9 @@ var SETDEX_SV = {
     "Monotype Specially Defensive (Poison)": {"ability":"Aftermath","item":"Black Sludge","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Poison Jab","Crunch","Sucker Punch","Protect"]},
     "ZU Offensive Utility": {"ability":"Aftermath","item":"Heavy-Duty Boots","nature":"Jolly","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Gunk Shot","Sucker Punch","Taunt"]},
     "ZU Choice Scarf": {"ability":"Aftermath","item":"Choice Scarf","nature":"Jolly","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Knock Off","Gunk Shot","Sucker Punch","Temper Flare"]}
+  },
+  "Bronzor": {
+    "LC Defensive": {"level":5,"ability":"Levitate","item":"Oran Berry","nature":"Bold","teraType":"Water","ivs":{"at":0},"evs":{"hp":140,"df":228,"sa":4,"sd":68,"sp":12},"moves":["Power Gem","Psychic","Stealth Rock","Recycle"]}
   },
   "Bronzong": {
     "RU Stealth Rock": {"ability":"Levitate","item":"Leftovers","nature":"Calm","teraType":"Water","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sd":252},"moves":["Stealth Rock","Body Press","Psychic Noise","Night Shade"]},
@@ -4379,7 +4383,7 @@ var SETDEX_SV = {
     "Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","teraType":"Steel","evs":{"hp":248,"sd":176,"sp":84},"moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"]}
   },
   "Varoom": {
-    "NFE Defensive Pivot": {"ability":"Overcoat","item":"Eviolite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":72,"sd":184},"moves":["Parting Shot","Poison Jab","Toxic Spikes","Thief"]}
+    "NFE Defensive Pivot": {"ability":"Overcoat","item":"Eviolite","nature":"Sassy","ivs":{"sp":0},"evs":{"hp":252,"df":72,"sd":184},"moves":["Parting Shot","Poison Jab","Spin Out","Thief"]}
   },
   "Revavroom": {
     "UU The Car: Shift Gear": {"ability":"Filter","item":"Air Balloon","nature":"Adamant","teraType":"Fire","evs":{"at":252,"df":4,"sp":252},"moves":["Shift Gear","Gunk Shot","High Horsepower","Temper Flare"]}
@@ -4402,7 +4406,7 @@ var SETDEX_SV = {
   },
   "Glimmet": {
     "LC Hazard Setter": {"level":5,"ability":"Toxic Debris","item":"Eviolite","nature":"Timid","teraType":"Ghost","evs":{"hp":132,"df":100,"sa":76,"sp":196},"moves":["Stealth Rock","Power Gem","Mud Shot","Sludge Bomb"]},
-    "NFE Hazard Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Spikes","Sludge Wave","Power Gem","Stealth Rock"]},
+    "NFE Hazard Lead": {"ability":"Corrosion","item":"Focus Sash","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Stealth Rock","Spikes","Power Gem","Sludge Wave"]},
     "NFE Physically Defensive": {"ability":"Corrosion","item":"Eviolite","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Spikes","Toxic","Power Gem"]}
   },
   "Glimmora": {
@@ -4950,6 +4954,7 @@ var SETDEX_SV = {
     "Monotype Boots All-out-Attacker (Dragon)": {"ability":"Protosynthesis","item":"Heavy-Duty Boots","nature":"Timid","evs":{"df":12,"sa":244,"sp":252},"moves":["Scald","Draco Meteor","Flamethrower","Knock Off"]},
     "Monotype Choice Specs (Dragon)": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Timid","evs":{"hp":12,"sa":244,"sp":252},"moves":["Draco Meteor","Hydro Pump","Scald","Flamethrower"]},
     "Monotype Choice Specs (Water)": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Timid","evs":{"hp":12,"sa":244,"sp":252},"moves":["Draco Meteor","Hydro Pump","Scald","Flamethrower"]},
+    "Monotype Choice Scarf (Water)": {"ability":"Protosynthesis","item":"Choice Scarf","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Steam","Draco Meteor","Flamethrower","Flip Turn"]},
     "National Dex Monotype Choice Specs (Water)": {"ability":"Protosynthesis","item":"Choice Specs","nature":"Timid","evs":{"hp":12,"sa":244,"sp":252},"moves":["Draco Meteor","Hydro Pump","Flip Turn","Flamethrower"]},
     "1v1 Booster Energy (Special Attack)": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Modest","evs":{"hp":120,"df":68,"sa":92,"sd":4,"sp":224},"moves":["Draco Meteor","Hydro Pump","Hurricane","Aqua Jet"]},
     "1v1 Booster Energy (Speed)": {"ability":"Protosynthesis","item":"Booster Energy","nature":"Timid","evs":{"hp":4,"df":60,"sa":192,"sp":252},"moves":["Hydro Pump","Draco Meteor","Chilling Water","Hurricane"]},

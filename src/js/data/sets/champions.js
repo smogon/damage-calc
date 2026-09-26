@@ -274,7 +274,7 @@ var SETDEX_CHAMPIONS = {
   "Garchomp": {
     "OU Mixed Life Orb": {"ability":"Rough Skin","item":"Life Orb","nature":"Naive","sps":{"at":2,"sa":32,"sp":32},"moves":["Draco Meteor","Earthquake","Flamethrower","Stealth Rock"]},
     "OU TankChomp": {"ability":"Rough Skin","item":"Leftovers","nature":"Impish","sps":{"hp":32,"df":32,"sp":2},"moves":["Earthquake","Dragon Tail","Stealth Rock","Poison Jab"]},
-    "OU Scale Shot": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Scale Shot","Earthquake","Fire Fang"]},
+    "OU Swords Dance": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Scale Shot","Earthquake","Fire Fang"]},
     "OU Choice Scarf": {"ability":"Rough Skin","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Outrage","Stone Edge","Poison Jab"]},
     "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Dragon Claw","Rock Slide","Protect"]},
     "VGC 2026 Reg M-B Bulky Attacker": {"level":50,"ability":"Rough Skin","item":"Sitrus Berry","nature":"Adamant","sps":{"hp":23,"at":18,"sd":3,"sp":22},"moves":["Earthquake","Dragon Claw","Rock Slide","Protect"]},
@@ -327,6 +327,7 @@ var SETDEX_CHAMPIONS = {
   "Samurott-Hisui": {
     "OU Bulky Swords Dance": {"ability":"Sharpness","item":"Black Glasses","nature":"Adamant","sps":{"hp":26,"at":32,"sp":8},"moves":["Swords Dance","Ceaseless Edge","Sucker Punch","Encore"]},
     "OU Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","sps":{"at":32,"sd":2,"sp":32},"moves":["Ceaseless Edge","Flip Turn","Razor Shell","Sacred Sword"]},
+    "OU Lead": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Ceaseless Edge","Razor Shell","Sacred Sword","Taunt"]},
     "BSS Reg M-B Offensive Spikes Setter": {"level":50,"ability":"Sharpness","item":"Black Glasses","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Ceaseless Edge","Sacred Sword","Razor Shell","Sucker Punch"]},
     "BSS Reg M-B Choice Scarf": {"level":50,"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Ceaseless Edge","Sacred Sword","Flip Turn","Razor Shell"]},
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Sacred Sword","Sucker Punch","Night Slash","Ceaseless Edge"]}
@@ -389,14 +390,14 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Showdown Usage": {"level":50,"ability":"firemane","item":"Pyroarite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Overheat","Flamethrower","Yawn","Hyper Voice"]}
   },
   "Floette-Eternal": {
-    "OU Fast Calm Mind": {"ability":"Fairy Aura","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Draining Kiss","Moonblast","Synthesis"]},
+    "OU Offensive Calm Mind": {"ability":"Fairy Aura","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Moonblast","Draining Kiss","Substitute"]},
     "OU Bulky Calm Mind": {"ability":"Flower Veil","item":"Floettite","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Calm Mind","Draining Kiss","Synthesis","Moonblast"]},
     "VGC 2026 Reg M-B Offensive": {"level":50,"ability":"Flower Veil","item":"Floettite","nature":"Modest","sps":{"hp":10,"df":32,"sa":15,"sp":9},"moves":["Dazzling Gleam","Moonblast","Calm Mind","Protect"]},
     "BSS Reg M-B X: Life Giver (Bulky Setup)": {"level":50,"ability":"Flower Veil","item":"Floettite","nature":"Modest","sps":{"hp":32,"df":29,"sa":5},"moves":["Calm Mind","Draining Kiss","Moonblast","Synthesis"]},
     "BSS Reg M-B Y: Life Taker (Offensive)": {"level":50,"ability":"Flower Veil","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Moonblast","Light of Ruin","Synthesis"]}
   },
   "Floette-Mega": {
-    "OU Fast Calm Mind": {"ability":"Fairy Aura","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Draining Kiss","Moonblast","Synthesis"]},
+    "OU Offensive Calm Mind": {"ability":"Fairy Aura","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Moonblast","Draining Kiss","Substitute"]},
     "OU Bulky Calm Mind": {"ability":"Fairy Aura","item":"Floettite","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Calm Mind","Draining Kiss","Synthesis","Moonblast"]},
     "VGC 2026 Reg M-B Offensive": {"level":50,"ability":"Fairy Aura","item":"Floettite","nature":"Modest","sps":{"hp":10,"df":32,"sa":15,"sp":9},"moves":["Dazzling Gleam","Moonblast","Calm Mind","Protect"]},
     "BSS Reg M-B X: Life Giver (Bulky Setup)": {"level":50,"ability":"Fairy Aura","item":"Floettite","nature":"Modest","sps":{"hp":32,"df":29,"sa":5},"moves":["Calm Mind","Draining Kiss","Moonblast","Synthesis"]},
@@ -493,7 +494,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Specially Defensive": {"level":50,"ability":"Pressure","item":"Leftovers","nature":"Careful","sps":{"hp":32,"df":2,"sd":32},"moves":["Roost","U-turn","Body Press","Iron Defense"]}
   },
   "Hatterene": {
-    "OU Healing Wish": {"ability":"Magic Bounce","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":26,"sp":8},"moves":["Nuzzle","Psychic Noise","Draining Kiss","Healing Wish"]},
+    "OU Healing Wish": {"ability":"Magic Bounce","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":26,"sp":8},"moves":["Healing Wish","Psychic Noise","Draining Kiss","Nuzzle"]},
     "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Draining Kiss","Calm Mind","Mystical Fire","Baton Pass"]}
   },
   "Grimmsnarl": {
@@ -505,8 +506,8 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-B Redirection Support": {"level":50,"ability":"Psychic Surge","item":"Psychic Seed","nature":"Relaxed","sps":{"hp":32,"df":32,"sd":2},"moves":["Follow Me","Trick Room","Helping Hand","Psychic"]}
   },
   "Dragapult": {
-    "OU Hex": {"ability":"Clear Body","item":"Spell Tag","nature":"Timid","sps":{"at":2,"sa":32,"sp":32},"moves":["Draco Meteor","Will-O-Wisp","Hex","U-turn"]},
-    "OU Mixed Attacker": {"ability":"Clear Body","item":"Life Orb","nature":"Naive","sps":{"at":32,"sa":2,"sp":32},"moves":["Dragon Darts","Draco Meteor","Fire Blast","U-turn"]},
+    "OU Hex": {"ability":"Clear Body","item":"Spell Tag","nature":"Timid","sps":{"at":2,"sa":32,"sp":32},"moves":["Hex","Draco Meteor","Will-O-Wisp","U-turn"]},
+    "OU Life Orb": {"ability":"Clear Body","item":"Life Orb","nature":"Timid","sps":{"df":2,"sa":32,"sp":32},"moves":["Draco Meteor","Shadow Ball","Flamethrower","U-turn"]},
     "OU Choice Scarf": {"ability":"Clear Body","item":"Choice Scarf","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Shadow Ball","Draco Meteor","U-turn","Flamethrower"]},
     "OU Dragon Dance": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","sps":{"at":32,"df":2,"sp":32},"moves":["Dragon Dance","Substitute","Dragon Darts","Phantom Force"]},
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Clear Body","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Protect","Will-O-Wisp","Dragon Darts","Phantom Force"]},
@@ -596,7 +597,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Swords Dance": {"level":50,"ability":"Supreme Overlord","item":"Black Glasses","nature":"Adamant","sps":{"hp":32,"at":32,"sp":2},"moves":["Sucker Punch","Kowtow Cleave","Swords Dance","Iron Head"]}
   },
   "Gholdengo": {
-    "VGC 2026 Reg M-B Setup Sweeper": {"level":50,"ability":"Good as Gold","item":"Life Orb","nature":"Timid","sps":{"hp":32,"df":8,"sa":7,"sd":3,"sp":16},"moves":["Make It Rain","Shadow Ball","Nasty Plot","Protect"]},
+    "VGC 2026 Reg M-B Setup Sweeper": {"level":50,"ability":"Good as Gold","item":"Life Orb","nature":"Modest","sps":{"hp":16,"sa":17,"sd":1,"sp":32},"moves":["Nasty Plot","Make It Rain","Shadow Ball","Protect"]},
     "BSS Reg M-B Choice Scarf": {"level":50,"ability":"Good as Gold","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Make It Rain","Shadow Ball","Trick","Thunderbolt"]}
   },
   "Sinistcha": {

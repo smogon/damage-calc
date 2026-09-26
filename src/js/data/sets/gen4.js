@@ -1165,10 +1165,7 @@ var SETDEX_DPP = {
     "UU Choice Scarf": {"ability":"Flash Fire","item":"Choice Scarf","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"at":252,"sa":12,"sp":244},"moves":["Fire Blast","Return","Superpower","Hidden Power Grass"]}
   },
   "Porygon": {
-    "LC Choice": {"level":5,"ability":"Trace","item":"Choice Specs","nature":"Modest","evs":{"hp":236,"df":36,"sa":236},"moves":["Trick","Tri Attack","Shadow Ball","Ice Beam"]},
-    "LC Agility": {"level":5,"ability":"Trace","item":"Oran Berry","nature":"Modest","evs":{"hp":76,"sa":236,"sp":196},"moves":["Agility","Tri Attack","Shadow Ball","Thunderbolt"]},
-    "LC Trick Room Support": {"level":5,"ability":"Trace","item":"Oran Berry","nature":"Quiet","evs":{"hp":236,"df":36,"sa":236},"moves":["Trick Room","Tri Attack","Thunderbolt","Shadow Ball"]},
-    "LC Trick Room Mixed Attacker": {"level":5,"ability":"Download","item":"Oran Berry","nature":"Quiet","evs":{"at":196,"df":36,"sa":236},"moves":["Return","Thunderbolt","Ice Beam","Shadow Ball"]}
+    "LC Lead": {"level":5,"ability":"Download","item":"Oran Berry","evs":{"at":116,"df":36,"sa":76,"sd":76,"sp":196},"moves":["Return","Giga Impact","Icy Wind","Psychic"]}
   },
   "Omanyte": {
     "LC Life Orb": {"level":5,"ability":"Swift Swim","item":"Life Orb","nature":"Timid","evs":{"hp":76,"sa":196,"sp":236},"moves":["Hydro Pump","Ice Beam","Earth Power","Ancient Power"]},
@@ -1718,7 +1715,8 @@ var SETDEX_DPP = {
     "NU Physical Lead": {"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Waterfall","Crunch","Aqua Jet","Taunt"]}
   },
   "Wailmer": {
-    "LC Choice Scarf": {"level":5,"ability":"Water Veil","item":"Choice Scarf","nature":"Modest","ivs":{"sa":30},"evs":{"hp":36,"df":76,"sa":200,"sp":196},"moves":["Water Spout","Surf","Ice Beam","Hidden Power Electric"]}
+    "LC Choice Scarf": {"level":5,"ability":"Water Veil","item":"Choice Scarf","nature":"Modest","evs":{"at":36,"df":76,"sa":200,"sp":196},"moves":["Water Spout","Surf","Ice Beam","Self-Destruct"]},
+    "LC Naive": {"level":5,"ability":"Water Veil","item":"Oran Berry","nature":"Naive","evs":{"at":40,"df":156,"sa":116,"sp":196},"moves":["Water Spout","Hydro Pump","Earthquake","Self-Destruct"]}
   },
   "Wailord": {
     "UU Choice Scarf": {"ability":"Water Veil","item":"Choice Scarf","nature":"Naive","evs":{"at":28,"sa":252,"sp":228},"moves":["Water Spout","Hydro Pump","Ice Beam","Self-Destruct"]},

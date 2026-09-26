@@ -3177,10 +3177,6 @@ var SETDEX_SS = {
     "NU Swords Dance": {"ability":"Long Reach","item":"Spell Tag","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Leaf Blade","Spirit Shackle","Shadow Sneak"]},
     "NU Choice Specs": {"ability":"Overgrow","item":"Choice Specs","nature":"Modest","evs":{"df":4,"sa":252,"sp":252},"moves":["Leaf Storm","Shadow Ball","U-turn","Giga Drain"]}
   },
-  "Torracat": {
-    "NFE Bulky Pivot": {"ability":"Intimidate","item":"Eviolite","nature":"Timid","evs":{"df":4,"sa":252,"sp":252},"moves":["U-turn","Taunt","Overheat","Will-O-Wisp"]},
-    "NFE Swords Dance": {"ability":"Intimidate","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Flare Blitz","Crunch","Swords Dance","Taunt"]}
-  },
   "Incineroar": {
     "RU Offensive": {"ability":"Intimidate","item":"Heavy-Duty Boots","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Knock Off","Flare Blitz","U-turn"]},
     "RU Specially Defensive": {"ability":"Intimidate","item":"Heavy-Duty Boots","nature":"Sassy","evs":{"hp":252,"at":20,"sd":236},"moves":["Knock Off","Overheat","Toxic","U-turn"]},
