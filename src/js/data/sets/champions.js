@@ -10,7 +10,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Special Tank": {"level":50,"ability":"Thick Fat","item":"Venusaurite","nature":"Calm","sps":{"hp":32,"df":2,"sd":32},"moves":["Synthesis","Sludge Bomb","Earth Power","Leech Seed"]}
   },
   "Charizard": {
-    "OU Dragon Dance": {"ability":"Blaze","item":"Charizardite X","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Dragon Claw","Flare Blitz","Roost"]},
+    "OU Dragon Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Roost","Dragon Claw","Flare Blitz"]},
     "OU Special Wallbreaker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Weather Ball","Solar Beam","Air Slash","Roost"]},
     "VGC 2026 Reg M-B Sun Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":16,"df":25,"sa":12,"sp":13},"moves":["Heat Wave","Weather Ball","Solar Beam","Protect"]},
     "VGC 2026 Reg M-B Bulky Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":14,"df":28,"sa":11,"sp":13},"moves":["Weather Ball","Solar Beam","Heat Wave","Protect"]},
@@ -21,7 +21,7 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-B Setup Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite X","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Protect","Flare Blitz","Dragon Claw","Dragon Dance"]}
   },
   "Charizard-Mega-X": {
-    "OU Dragon Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Dragon Claw","Flare Blitz","Roost"]},
+    "OU Dragon Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Roost","Dragon Claw","Flare Blitz"]},
     "BSS Reg M-B Dragon Dance": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","sps":{"hp":12,"at":29,"df":3,"sd":1,"sp":21},"moves":["Flare Blitz","Dragon Claw","Roost","Dragon Dance"]},
     "BSS Reg M-B Double Dance": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","sps":{"hp":12,"at":29,"df":3,"sd":1,"sp":21},"moves":["Flare Blitz","Scale Shot","Roost","Swords Dance"]},
     "BSS Reg M-B Tank": {"level":50,"ability":"Tough Claws","item":"Charizardite X","nature":"Impish","sps":{"hp":30,"df":29,"sp":7},"moves":["Dragon Tail","Flame Charge","Roost","Will-O-Wisp"]},
@@ -273,7 +273,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Garchomp": {
     "OU Mixed Life Orb": {"ability":"Rough Skin","item":"Life Orb","nature":"Naive","sps":{"at":2,"sa":32,"sp":32},"moves":["Draco Meteor","Earthquake","Flamethrower","Stealth Rock"]},
-    "OU TankChomp": {"ability":"Rough Skin","item":"Leftovers","nature":"Impish","sps":{"hp":32,"df":32,"sp":2},"moves":["Earthquake","Dragon Tail","Stealth Rock","Poison Jab"]},
+    "OU TankChomp": {"ability":"Rough Skin","item":"Leftovers","nature":"Impish","sps":{"hp":32,"df":32,"sd":2},"moves":["Stealth Rock","Earthquake","Dragon Tail","Spikes"]},
     "OU Swords Dance": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Scale Shot","Earthquake","Fire Fang"]},
     "OU Choice Scarf": {"ability":"Rough Skin","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Outrage","Stone Edge","Poison Jab"]},
     "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Dragon Claw","Rock Slide","Protect"]},
@@ -506,7 +506,7 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-B Redirection Support": {"level":50,"ability":"Psychic Surge","item":"Psychic Seed","nature":"Relaxed","sps":{"hp":32,"df":32,"sd":2},"moves":["Follow Me","Trick Room","Helping Hand","Psychic"]}
   },
   "Dragapult": {
-    "OU Hex": {"ability":"Clear Body","item":"Spell Tag","nature":"Timid","sps":{"at":2,"sa":32,"sp":32},"moves":["Hex","Draco Meteor","Will-O-Wisp","U-turn"]},
+    "OU Hex": {"ability":"Clear Body","item":"Spell Tag","nature":"Timid","sps":{"df":2,"sa":32,"sp":32},"moves":["Hex","Draco Meteor","Will-O-Wisp","U-turn"]},
     "OU Life Orb": {"ability":"Clear Body","item":"Life Orb","nature":"Timid","sps":{"df":2,"sa":32,"sp":32},"moves":["Draco Meteor","Shadow Ball","Flamethrower","U-turn"]},
     "OU Choice Scarf": {"ability":"Clear Body","item":"Choice Scarf","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Shadow Ball","Draco Meteor","U-turn","Flamethrower"]},
     "OU Dragon Dance": {"ability":"Clear Body","item":"Leftovers","nature":"Adamant","sps":{"at":32,"df":2,"sp":32},"moves":["Dragon Dance","Substitute","Dragon Darts","Phantom Force"]},
