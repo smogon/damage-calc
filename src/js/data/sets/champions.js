@@ -11,7 +11,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Charizard": {
     "OU Dragon Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Roost","Dragon Claw","Flare Blitz"]},
-    "OU Special Wallbreaker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Weather Ball","Solar Beam","Air Slash","Roost"]},
+    "OU Drought Wallbreaker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Weather Ball","Solar Beam","Dragon Pulse","Roost"]},
     "VGC 2026 Reg M-B Sun Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":16,"df":25,"sa":12,"sp":13},"moves":["Heat Wave","Weather Ball","Solar Beam","Protect"]},
     "VGC 2026 Reg M-B Bulky Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":14,"df":28,"sa":11,"sp":13},"moves":["Weather Ball","Solar Beam","Heat Wave","Protect"]},
     "BSS Reg M-B Drought Offense": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Flamethrower","Solar Beam","Overheat","Flame Charge"]},
@@ -28,7 +28,7 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-B Setup Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite X","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Protect","Flare Blitz","Dragon Claw","Dragon Dance"]}
   },
   "Charizard-Mega-Y": {
-    "OU Special Wallbreaker": {"ability":"Drought","item":"Charizardite Y","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Weather Ball","Solar Beam","Air Slash","Roost"]},
+    "OU Drought Wallbreaker": {"ability":"Drought","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Weather Ball","Solar Beam","Dragon Pulse","Roost"]},
     "VGC 2026 Reg M-B Sun Sweeper": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Modest","sps":{"hp":16,"df":25,"sa":12,"sp":13},"moves":["Heat Wave","Weather Ball","Solar Beam","Protect"]},
     "VGC 2026 Reg M-B Bulky Sweeper": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Modest","sps":{"hp":14,"df":28,"sa":11,"sp":13},"moves":["Weather Ball","Solar Beam","Heat Wave","Protect"]},
     "BSS Reg M-B Drought Offense": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Flamethrower","Solar Beam","Overheat","Flame Charge"]}
@@ -234,6 +234,11 @@ var SETDEX_CHAMPIONS = {
   },
   "Milotic": {
     "VGC 2026 Reg M-B Bulky Offense": {"level":50,"ability":"Competitive","item":"Leftovers","nature":"Modest","sps":{"hp":32,"df":13,"sa":9,"sd":1,"sp":11},"moves":["Muddy Water","Coil","Hypnosis","Protect"]}
+  },
+  "Absol-Mega-Z": {
+    "OU Swords Dance": {"ability":"Justified","item":"Absolite Z","nature":"Jolly","sps":{"at":31,"df":3,"sp":32},"moves":["Swords Dance","Shadow Claw","Close Combat","Sucker Punch"]},
+    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Sharpness","item":"Absolite Z","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Night Slash","Shadow Claw","Protect","Close Combat"]},
+    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Sharpness","item":"Absolite Z","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Shadow Claw","Close Combat","Swords Dance","Sucker Punch"]}
   },
   "Metagross": {
     "OU All-out Attacker": {"ability":"Clear Body","item":"Metagrossite","nature":"Jolly","sps":{"at":32,"sd":2,"sp":32},"moves":["Psychic Fangs","Meteor Mash","Earthquake","Thunder Punch"]},
@@ -465,6 +470,16 @@ var SETDEX_CHAMPIONS = {
   "Araquanid": {
     "OU Sticky Web": {"ability":"Water Bubble","item":"Sitrus Berry","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Sticky Web","Lunge","Surf","Endeavor"]}
   },
+  "Golisopod": {
+    "OU Swords Dance": {"ability":"Tough Claws","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Swords Dance","Leech Life","Iron Head","Aqua Jet"]},
+    "VGC 2026 Reg M-B Bulky Attacker": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Iron Head","Swords Dance","Protect"]},
+    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Iron Head","Leech Life","Sucker Punch","First Impression"]}
+  },
+  "Golisopod-Mega": {
+    "OU Swords Dance": {"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Swords Dance","Leech Life","Iron Head","Aqua Jet"]},
+    "VGC 2026 Reg M-B Bulky Attacker": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Iron Head","Swords Dance","Protect"]},
+    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Tough Claws","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Iron Head","Leech Life","Sucker Punch","First Impression"]}
+  },
   "Mimikyu": {
     "BSS Reg M-B Swords Dance": {"level":50,"ability":"Disguise","item":"Life Orb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Play Rough","Shadow Sneak","Shadow Claw"]},
     "BSS Reg M-B Swiss Army Knife (Trick Room Support)": {"level":50,"ability":"Disguise","item":"Life Orb","nature":"Adamant","sps":{"hp":29,"at":30,"df":7},"moves":["Trick Room","Curse","Shadow Sneak","Play Rough"]},
@@ -487,7 +502,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Hatterene": {
     "OU Healing Wish": {"ability":"Magic Bounce","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":26,"sp":8},"moves":["Healing Wish","Psychic Noise","Draining Kiss","Nuzzle"]},
-    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Life Orb","nature":"Quiet","sps":{"hp":32,"df":2,"sa":32},"moves":["Dazzling Gleam","Trick Room","Expanding Force","Protect"]},
+    "VGC 2026 Reg M-B Trick Room Sweeper": {"level":50,"ability":"Magic Bounce","item":"Life Orb","nature":"Quiet","sps":{"hp":32,"df":2,"sa":32},"moves":["Expanding Force","Trick Room","Dazzling Gleam","Protect"]},
     "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Focus Sash","nature":"Quiet","sps":{"hp":32,"sa":32,"sd":2},"moves":["Mystical Fire","Trick Room","Draining Kiss","Dazzling Gleam"]}
   },
   "Grimmsnarl": {
@@ -612,16 +627,6 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Adamant","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Double-Edge","Earthquake","Dragon Dance","Roost"]},
     "OU Showdown Usage": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Earthquake","Dragon Dance","Temper Flare","Draco Meteor"]}
   },
-  "Golisopod-Mega": {
-    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Tough Claws","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Iron Head","Protect","Swords Dance"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Tough Claws","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Iron Head","Leech Life","Sucker Punch","First Impression"]},
-    "OU Showdown Usage": {"ability":"Tough Claws","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Swords Dance","Iron Head","Aqua Jet"]}
-  },
-  "Golisopod": {
-    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Iron Head","Protect","Swords Dance"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Iron Head","Leech Life","Sucker Punch","First Impression"]},
-    "OU Showdown Usage": {"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Swords Dance","Iron Head","Aqua Jet"]}
-  },
   "Garchomp-Mega-Z": {
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Levitate","item":"Garchompite Z","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Protect","Power Gem","Earth Power","Draco Meteor"]},
     "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Levitate","item":"Garchompite Z","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flamethrower","Earth Power","Power Gem"]},
@@ -662,11 +667,6 @@ var SETDEX_CHAMPIONS = {
   },
   "Camerupt": {
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Magma Armor","item":"Cameruptite","nature":"Quiet","sps":{"hp":32,"df":2,"sa":32},"moves":["Earth Power","Protect","Heat Wave","Ancient Power"]}
-  },
-  "Absol-Mega-Z": {
-    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Sharpness","item":"Absolite Z","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Night Slash","Shadow Claw","Protect","Close Combat"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Sharpness","item":"Absolite Z","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Shadow Claw","Close Combat","Swords Dance","Sucker Punch"]},
-    "OU Showdown Usage": {"ability":"Sharpness","item":"Absolite Z","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Shadow Claw","Close Combat","Swords Dance","Sucker Punch"]}
   },
   "Raichu-Mega-X": {
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Electric Surge","item":"Raichunite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Fake Out","Protect","Volt Tackle","Volt Switch"]}
