@@ -2245,7 +2245,8 @@ var SETDEX_BW = {
     "ZU Guts Wallbreaker": {"ability":"Guts","item":"Toxic Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Facade","Wild Charge","Superpower","Crunch"]}
   },
   "Budew": {
-    "LC Spiker": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"hp":36,"df":156,"sa":36,"sd":36,"sp":236},"moves":["Spikes","Giga Drain","Sludge Bomb","Synthesis"]}
+    "LC Spiker": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"hp":36,"df":156,"sa":36,"sd":36,"sp":236},"moves":["Spikes","Giga Drain","Sludge Bomb","Synthesis"]},
+    "ZU Spiker": {"ability":"Natural Cure","item":"Eviolite","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"df":4,"sd":252},"moves":["Spikes","Synthesis","Sludge Bomb","Giga Drain"]}
   },
   "Cranidos": {
     "LC Choice Scarf": {"level":5,"ability":"Mold Breaker","item":"Choice Scarf","nature":"Adamant","evs":{"hp":60,"at":236,"sp":212},"moves":["Head Smash","Stone Edge","Earthquake","Zen Headbutt"]},

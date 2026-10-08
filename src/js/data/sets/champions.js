@@ -10,7 +10,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Special Tank": {"level":50,"ability":"Thick Fat","item":"Venusaurite","nature":"Calm","sps":{"hp":32,"df":2,"sd":32},"moves":["Synthesis","Sludge Bomb","Earth Power","Leech Seed"]}
   },
   "Charizard": {
-    "OU Dragon Dance": {"ability":"Tough Claws","item":"Charizardite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Roost","Dragon Claw","Flare Blitz"]},
+    "OU Dragon Dance": {"ability":"Blaze","item":"Charizardite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Roost","Dragon Claw","Flare Blitz"]},
     "OU Drought Wallbreaker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Weather Ball","Solar Beam","Dragon Pulse","Roost"]},
     "VGC 2026 Reg M-B Sun Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":16,"df":25,"sa":12,"sp":13},"moves":["Heat Wave","Weather Ball","Solar Beam","Protect"]},
     "VGC 2026 Reg M-B Bulky Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":14,"df":28,"sa":11,"sp":13},"moves":["Weather Ball","Solar Beam","Heat Wave","Protect"]},
@@ -389,7 +389,7 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-B Sun Attacker": {"level":50,"ability":"Fire Mane","item":"Pyroarite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Heat Wave","Overheat","Solar Beam","Protect"]}
   },
   "Floette-Eternal": {
-    "OU Offensive Calm Mind": {"ability":"Fairy Aura","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Moonblast","Draining Kiss","Substitute"]},
+    "OU Offensive Calm Mind": {"ability":"Flower Veil","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Moonblast","Draining Kiss","Substitute"]},
     "OU Bulky Calm Mind": {"ability":"Flower Veil","item":"Floettite","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Calm Mind","Draining Kiss","Synthesis","Moonblast"]},
     "VGC 2026 Reg M-B Offensive": {"level":50,"ability":"Flower Veil","item":"Floettite","nature":"Modest","sps":{"hp":10,"df":32,"sa":15,"sp":9},"moves":["Dazzling Gleam","Moonblast","Calm Mind","Protect"]},
     "BSS Reg M-B X: Life Giver (Bulky Setup)": {"level":50,"ability":"Flower Veil","item":"Floettite","nature":"Modest","sps":{"hp":32,"df":29,"sa":5},"moves":["Calm Mind","Draining Kiss","Moonblast","Synthesis"]},
@@ -471,7 +471,7 @@ var SETDEX_CHAMPIONS = {
     "OU Sticky Web": {"ability":"Water Bubble","item":"Sitrus Berry","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Sticky Web","Lunge","Surf","Endeavor"]}
   },
   "Golisopod": {
-    "OU Swords Dance": {"ability":"Tough Claws","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Swords Dance","Leech Life","Iron Head","Aqua Jet"]},
+    "OU Swords Dance": {"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Swords Dance","Leech Life","Iron Head","Aqua Jet"]},
     "VGC 2026 Reg M-B Bulky Attacker": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Leech Life","Iron Head","Swords Dance","Protect"]},
     "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Emergency Exit","item":"Golisopite","nature":"Adamant","sps":{"hp":32,"at":32,"sd":2},"moves":["Iron Head","Leech Life","Sucker Punch","First Impression"]}
   },
