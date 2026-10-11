@@ -2004,11 +2004,11 @@ var SETDEX_SV = {
     "Balanced Hackmons Showdown Usage": {"ability":"Scrappy","item":"Choice Scarf","nature":"Hasty","evs":{"hp":252,"at":252,"sa":252,"sd":252,"sp":252},"moves":["Final Gambit","Infernal Parade","Shadow Sneak"]}
   },
   "Cresselia": {
+    "OU Calm Mind + BoltBeam": {"ability":"Levitate","item":"Leftovers","nature":"Modest","teraType":"Electric","evs":{"hp":80,"sa":252,"sp":176},"moves":["Calm Mind","Thunder","Ice Beam","Moonlight"]},
+    "OU Offensive Stored Power": {"ability":"Levitate","item":"Leftovers","nature":"Modest","teraType":"Fairy","evs":{"hp":80,"sa":252,"sp":176},"moves":["Calm Mind","Stored Power","Moonblast","Lunar Blessing"]},
+    "OU Bulky Stored Power": {"ability":"Levitate","item":"Covert Cloak","nature":"Bold","teraType":"Poison","evs":{"hp":252,"df":204,"sp":52},"moves":["Calm Mind","Stored Power","Moonblast","Moonlight"]},
     "OU Utility": {"ability":"Levitate","item":"Eject Button","nature":"Bold","teraType":"Steel","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Lunar Dance","Ice Beam","Thunder Wave","Moonlight"]},
     "OU Trick Room Setter": {"ability":"Levitate","item":"Mental Herb","nature":"Relaxed","teraType":"Poison","ivs":{"at":0,"sp":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Trick Room","Lunar Dance","Moonlight","Ice Beam"]},
-    "OU Bulky Stored Power": {"ability":"Levitate","item":"Covert Cloak","nature":"Bold","teraType":"Poison","evs":{"hp":252,"df":204,"sp":52},"moves":["Calm Mind","Stored Power","Moonblast","Moonlight"]},
-    "OU Calm Mind + BoltBeam": {"ability":"Levitate","item":"Leftovers","nature":"Bold","teraType":"Electric","evs":{"hp":252,"df":204,"sp":52},"moves":["Calm Mind","Thunder","Ice Beam","Moonlight"]},
-    "OU Offensive Stored Power": {"ability":"Levitate","item":"Leftovers","nature":"Modest","teraType":"Fairy","evs":{"hp":172,"sa":252,"sp":84},"moves":["Calm Mind","Stored Power","Moonblast","Lunar Blessing"]},
     "UU Utility": {"ability":"Levitate","item":"Eject Button","nature":"Bold","teraType":"Steel","ivs":{"at":0},"evs":{"hp":252,"df":252,"sd":4},"moves":["Lunar Dance","Ice Beam","Thunder Wave","Moonlight"]},
     "RU Lunar Dance": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sp":252},"moves":["Lunar Dance","Ice Beam","Trick","Thunder Wave"]},
     "RU Calm Mind": {"ability":"Levitate","item":"Leftovers","nature":"Bold","teraType":"Poison","ivs":{"at":0},"evs":{"hp":252,"df":120,"sp":136},"moves":["Calm Mind","Psyshock","Moonblast","Moonlight"]},
@@ -2222,7 +2222,7 @@ var SETDEX_SV = {
     "ZU Offensive Pivot": {"ability":"Torrent","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Grass","evs":{"at":4,"sa":252,"sp":252},"moves":["Hydro Pump","Ice Beam","Flip Turn","Knock Off"]}
   },
   "Samurott-Hisui": {
-    "OU Assault Vest": {"ability":"Sharpness","item":"Assault Vest","nature":"Adamant","teraType":"Poison","evs":{"hp":248,"at":84,"sd":124,"sp":52},"moves":["Ceaseless Edge","Razor Shell","Sucker Punch","Knock Off"]},
+    "OU Assault Vest": {"ability":"Sharpness","item":"Assault Vest","nature":"Adamant","teraType":"Poison","evs":{"hp":248,"at":84,"sd":124,"sp":52},"moves":["Ceaseless Edge","Flip Turn","Sucker Punch","Knock Off"]},
     "OU Lead": {"ability":"Sharpness","item":"Focus Sash","nature":"Jolly","teraType":"Ghost","evs":{"at":252,"sd":4,"sp":252},"moves":["Ceaseless Edge","Razor Shell","Aqua Jet","Knock Off"]},
     "OU Boots Attacker": {"ability":"Sharpness","item":"Heavy-Duty Boots","nature":"Jolly","teraType":"Poison","evs":{"at":252,"sd":4,"sp":252},"moves":["Ceaseless Edge","Razor Shell","Knock Off","Encore"]},
     "OU Choice Scarf": {"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","teraType":"Water","evs":{"at":252,"df":4,"sp":252},"moves":["Ceaseless Edge","Razor Shell","Knock Off","Flip Turn"]},
