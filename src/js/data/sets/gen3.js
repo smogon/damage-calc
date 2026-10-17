@@ -383,6 +383,7 @@ var SETDEX_ADV = {
   },
   "Ariados": {
     "NU Baton Pass": {"ability":"Insomnia","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":40,"df":108,"sd":108},"moves":["Sludge Bomb","Signal Beam","Spider Web","Baton Pass"]},
+    "PU Baton Pass": {"ability":"Insomnia","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":240,"sp":16},"moves":["Sludge Bomb","Spider Web","Baton Pass","Flash"]},
     "ZU Defensive Pivot": {"ability":"Swarm","item":"Leftovers","nature":"Relaxed","ivs":{"sp":20},"evs":{"hp":252,"df":252,"sd":4},"moves":["Psychic","Sludge Bomb","Baton Pass","Protect"]},
     "ZU Agility": {"ability":"Swarm","item":"Leftovers","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":48,"at":252,"df":12,"sp":196},"moves":["Agility","Sludge Bomb","Signal Beam","Hidden Power Flying"]},
     "ZU All-Out Attacker": {"ability":"Swarm","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"hp":104,"at":184,"sp":220},"moves":["Sludge Bomb","Hidden Power Grass","Psychic","Night Shade"]}
@@ -448,7 +449,9 @@ var SETDEX_ADV = {
   },
   "Delcatty": {
     "NU Calm Mind + Baton Pass": {"ability":"Cute Charm","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Calm Mind","Baton Pass","Substitute","Wish"]},
-    "ZU Special Wall": {"ability":"Cute Charm","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Body Slam","Wish","Protect","Heal Bell"]}
+    "ZU Special Wall": {"ability":"Cute Charm","item":"Leftovers","nature":"Careful","evs":{"hp":248,"df":8,"sd":252},"moves":["Body Slam","Wish","Protect","Heal Bell"]},
+    "ZU Defensive": {"ability":"Cute Charm","item":"Leftovers","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Wish","Protect","Body Slam","Heal Bell"]},
+    "ZU Calm Mind": {"ability":"Cute Charm","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Calm Mind","Thunderbolt","Ice Beam","Rest"]}
   },
   "Volbeat": {
     "NU Tail Glow Pass": {"ability":"Swarm","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Tail Glow","Baton Pass","Substitute","Thunderbolt"]},
@@ -802,6 +805,8 @@ var SETDEX_ADV = {
   "Staryu": {
     "LC Offensive Utility": {"level":5,"ability":"Natural Cure","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"hp":36,"df":76,"sa":120,"sp":236},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Hidden Power Grass"]},
     "ZU Offensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Surf","Thunderbolt","Substitute","Recover"]},
+    "ZU Special Attacker": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Rapid Spin"]},
+    "ZU Defensive": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sd":4,"sp":252},"moves":["Rapid Spin","Surf","Thunderbolt","Recover"]},
     "PU Showdown Usage": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Surf","Psychic","Hidden Power Fire"]}
   },
   "Starmie": {
@@ -953,7 +958,9 @@ var SETDEX_ADV = {
     "PU Offensive Utility": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Thunder Wave"]},
     "LC Offensive": {"level":5,"ability":"Volt Absorb","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"df":52,"sa":152,"sd":68,"sp":220},"moves":["Thunderbolt","Hydro Pump","Hidden Power Grass","Ice Beam"]},
     "LC Substitute": {"level":5,"ability":"Volt Absorb","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"sa":30},"evs":{"df":52,"sa":152,"sd":68,"sp":220},"moves":["Thunderbolt","Hydro Pump","Substitute","Hidden Power Grass"]},
-    "ZU Offensive Utility": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Toxic"]}
+    "ZU Offensive Utility": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Hydro Pump","Thunderbolt","Ice Beam","Toxic"]},
+    "ZU Offensive": {"ability":"Volt Absorb","item":"Leftovers","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunder Wave","Hydro Pump","Thunderbolt","Ice Beam"]},
+    "ZU Defensive": {"ability":"Volt Absorb","item":"Leftovers","nature":"Calm","evs":{"hp":252,"sd":252,"sp":4},"moves":["Rest","Sleep Talk","Thunderbolt","Surf"]}
   },
   "Lanturn": {
     "OU RestTalk": {"ability":"Volt Absorb","item":"Leftovers","nature":"Modest","evs":{"hp":40,"sa":252,"sd":216},"moves":["Thunderbolt","Surf","Rest","Sleep Talk"]},
@@ -1139,7 +1146,9 @@ var SETDEX_ADV = {
   "Elekid": {
     "LC Mixed Attacker": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Hasty","ivs":{"sa":30,"sd":30},"evs":{"at":12,"sa":240,"sp":236},"moves":["Thunderbolt","Ice Punch","Hidden Power Ground","Substitute"]},
     "LC Substitute + 3 Attacks": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"sa":240,"sp":236},"moves":["Thunderbolt","Ice Punch","Thief","Substitute"]},
-    "ZU Special Attacker": {"ability":"Static","item":"Petaya Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Ice Punch","Hidden Power Grass","Substitute"]}
+    "ZU Special Attacker": {"ability":"Static","item":"Petaya Berry","nature":"Timid","ivs":{"at":2,"sa":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Thunderbolt","Ice Punch","Hidden Power Grass","Substitute"]},
+    "ZU All-Out Attacker": {"ability":"Static","item":"Lum Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Thunderbolt","Fire Punch","Hidden Power Grass","Quick Attack"]},
+    "ZU Substitute": {"ability":"Static","item":"Leftovers","nature":"Hasty","ivs":{"at":30,"sa":30},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Substitute","Thunderbolt","Focus Punch","Hidden Power Grass"]}
   },
   "Magby": {
     "LC Offensive": {"level":5,"ability":"Flame Body","item":"Sitrus Berry","nature":"Hasty","ivs":{"sa":30,"sd":30},"evs":{"at":156,"sa":40,"sp":252},"moves":["Fire Blast","Hidden Power Ground","Thief","Substitute"]}

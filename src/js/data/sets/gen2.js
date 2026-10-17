@@ -167,7 +167,8 @@ var SETDEX_GSC = {
     "1v1 Stun Spore + Swords Dance": {"item":"Leftovers","moves":["Stun Spore","Moonlight","Swords Dance","Return"]}
   },
   "Azumarill": {
-    "NU Miracle Bunny (RestTalk)": {"item":"Leftovers","moves":["Surf","Light Screen","Rest","Sleep Talk"]}
+    "NU Miracle Bunny (RestTalk)": {"item":"Leftovers","moves":["Surf","Light Screen","Rest","Sleep Talk"]},
+    "PU RestTalk": {"item":"Leftovers","moves":["Whirlpool","Perish Song","Rest","Sleep Talk"]}
   },
   "Jumpluff": {
     "OU Status Support": {"item":"Leftovers","moves":["Sleep Powder","Stun Spore","Leech Seed","Encore"]},
@@ -187,6 +188,8 @@ var SETDEX_GSC = {
   },
   "Hitmonchan": {
     "OU Standard": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":28},"moves":["High Jump Kick","Return","Counter","Hidden Power Ghost"]},
+    "PU Curse Talk": {"item":"Leftovers","moves":["High Jump Kick","Curse","Rest","Sleep Talk"]},
+    "PU Coverage Talk": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["High Jump Kick","Hidden Power Rock","Rest","Sleep Talk"]},
     "NU Showdown Usage": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":28},"moves":["High Jump Kick","Rapid Spin","Mach Punch","Hidden Power Ghost"]}
   },
   "Hitmontop": {
@@ -195,7 +198,9 @@ var SETDEX_GSC = {
   },
   "Arbok": {
     "OU Glare": {"item":"Leftovers","moves":["Sludge Bomb","Glare","Earthquake","Giga Drain"]},
-    "NU Glare": {"item":"Leftovers","moves":["Glare","Sludge Bomb","Earthquake","Giga Drain"]}
+    "NU Glare": {"item":"Leftovers","moves":["Glare","Sludge Bomb","Earthquake","Giga Drain"]},
+    "PU Lead": {"item":"Leftovers","moves":["Sludge Bomb","Earthquake","Curse","Glare"]},
+    "PU RestTalk": {"item":"Leftovers","moves":["Sludge Bomb","Curse","Rest","Sleep Talk"]}
   },
   "Dugtrio": {
     "NU Substitute Attacker": {"item":"Leftovers","moves":["Earthquake","Rock Slide","Screech","Substitute"]}
@@ -287,6 +292,8 @@ var SETDEX_GSC = {
   "Raticate": {
     "OU Super Fang": {"item":"Leftovers","moves":["Super Fang","Substitute","Mimic","Body Slam"]},
     "NU Super Fang": {"item":"Leftovers","moves":["Super Fang","Double-Edge","Rest","Sleep Talk"]},
+    "PU RestTalk": {"item":"Leftovers","moves":["Return","Super Fang","Rest","Sleep Talk"]},
+    "PU 3 Attacks": {"item":"Leftovers","moves":["Return","Super Fang","Ice Beam","Substitute"]},
     "1v1 Mixed Attacker": {"item":"Pink Bow","moves":["Screech","Curse","Hyper Beam","Ice Beam"]}
   },
   "Fearow": {
@@ -671,6 +678,7 @@ var SETDEX_GSC = {
   },
   "Furret": {
     "OU Curse": {"item":"Leftovers","moves":["Double-Edge","Rest","Curse","Shadow Ball"]},
+    "PU Rest Talk": {"item":"Leftovers","moves":["Double-Edge","Surf","Rest","Sleep Talk"]},
     "NU Showdown Usage": {"moves":["Surf","Double-Edge","Thief","Iron Tail"]}
   },
   "Ledian": {
@@ -778,7 +786,9 @@ var SETDEX_GSC = {
     "1v1 Rapid Spin": {"item":"Leftovers","moves":["Curse","Rest","Pin Missile","Rapid Spin"]}
   },
   "Dunsparce": {
-    "NU RestTalk": {"item":"Leftovers","moves":["Curse","Return","Rest","Sleep Talk"]}
+    "NU RestTalk": {"item":"Leftovers","moves":["Curse","Return","Rest","Sleep Talk"]},
+    "PU RestTalk": {"item":"Leftovers","moves":["Curse","Return","Rest","Sleep Talk"]},
+    "PU Glare": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Glare","Curse","Return","Hidden Power Ground"]}
   },
   "Gligar": {
     "OU Screech": {"item":"Leftovers","moves":["Screech","Earthquake","Wing Attack","Counter"]},

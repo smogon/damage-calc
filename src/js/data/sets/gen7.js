@@ -2851,7 +2851,7 @@ var SETDEX_SM = {
     "PU Showdown Usage": {"ability":"Sand Stream","item":"Eviolite","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Stealth Rock","Slack Off","Whirlwind","Earthquake"]}
   },
   "Hippowdon": {
-    "OU Physically Defensive": {"ability":"Sand Stream","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":112,"sd":144},"moves":["Stealth Rock","Earthquake","Slack Off","Whirlwind"]},
+    "OU Defensive": {"ability":"Sand Stream","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":112,"sd":144},"moves":["Stealth Rock","Earthquake","Slack Off","Toxic"]},
     "UU Mixed Wall": {"ability":"Sand Stream","item":"Leftovers","nature":"Impish","evs":{"hp":252,"df":80,"sd":176},"moves":["Stealth Rock","Earthquake","Slack Off","Toxic"]},
     "Battle Spot Singles Physically Defensive": {"level":50,"ability":"Sand Stream","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"at":4,"df":252},"moves":["Earthquake","Slack Off","Ice Fang","Yawn"]},
     "Battle Spot Singles Yawn + Stealth Rock": {"level":50,"ability":"Sand Stream","item":"Figy Berry","nature":"Careful","evs":{"hp":252,"df":4,"sd":252},"moves":["Yawn","Stealth Rock","Earthquake","Whirlwind"]},
