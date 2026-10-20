@@ -87,7 +87,8 @@ var SETDEX_GSC = {
   "Victreebel": {
     "OU Swords Dance": {"item":"Leftovers","moves":["Sleep Powder","Swords Dance","Sludge Bomb","Giga Drain"]},
     "OU Growth": {"item":"Leftovers","ivs":{"hp":6,"at":28,"df":24},"moves":["Sleep Powder","Growth","Giga Drain","Hidden Power Fire"]},
-    "UU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Sludge Bomb","Hidden Power Ground","Sleep Powder"]},
+    "UU Swords Dance": {"item":"Leftovers","ivs":{"hp":14,"at":24},"moves":["Swords Dance","Sludge Bomb","Hidden Power Ground","Giga Drain"]},
+    "UU Defensive": {"item":"Leftovers","moves":["Sludge Bomb","Razor Leaf","Stun Spore","Synthesis"]},
     "1v1 Stun Spore": {"item":"Leftovers","moves":["Sludge Bomb","Stun Spore","Synthesis","Encore"]}
   },
   "Golem": {

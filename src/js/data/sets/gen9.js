@@ -1485,7 +1485,7 @@ var SETDEX_SV = {
   "Jirachi": {
     "UU Specially Defensive": {"ability":"Serene Grace","item":"Leftovers","nature":"Careful","teraType":"Water","evs":{"hp":248,"sd":164,"sp":96},"moves":["Wish","Protect","Iron Head","U-turn"]},
     "UU Stealth Rock": {"ability":"Serene Grace","item":"Leftovers","nature":"Jolly","teraType":"Water","evs":{"hp":248,"at":8,"sp":252},"moves":["Stealth Rock","Thunder","Iron Head","U-turn"]},
-    "UU Substitute Serene Grace": {"ability":"Serene Grace","item":"Leftovers","nature":"Hasty","teraType":"Steel","evs":{"hp":248,"at":8,"sp":252},"moves":["Substitute","Zen Headbutt","Iron Head","Thunder"]},
+    "UU Substitute": {"ability":"Serene Grace","item":"Leftovers","nature":"Hasty","teraType":"Water","evs":{"hp":248,"at":8,"sp":252},"moves":["Substitute","Zen Headbutt","Iron Head","Thunder"]},
     "RU Utility": {"ability":"Serene Grace","item":"Leftovers","nature":"Jolly","teraType":"Water","evs":{"hp":252,"sd":4,"sp":252},"moves":["Stealth Rock","Iron Head","Body Slam","Encore"]},
     "RU Offensive Calm Mind": {"ability":"Serene Grace","item":"Leftovers","nature":"Timid","teraType":"Water","ivs":{"at":0},"evs":{"hp":32,"sa":252,"sp":224},"moves":["Calm Mind","Psychic Noise","Grass Knot","Aura Sphere"]},
     "RU Choice Scarf": {"ability":"Serene Grace","item":"Choice Scarf","nature":"Jolly","teraType":"Steel","evs":{"at":252,"sd":4,"sp":252},"moves":["Iron Head","U-turn","Trick","Healing Wish"]},
@@ -2528,14 +2528,14 @@ var SETDEX_SV = {
     "LC Stealth Rock": {"level":5,"ability":"Defiant","item":"Eviolite","nature":"Jolly","teraType":"Flying","evs":{"at":156,"df":36,"sd":116,"sp":196},"moves":["Stealth Rock","Iron Head","Sucker Punch","Thunder Wave"]}
   },
   "Bisharp": {
+    "UU Swords Dance": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","teraType":"Ghost","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Iron Head","Sucker Punch","Throat Chop"]},
     "RU Swords Dance": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","teraType":"Flying","evs":{"hp":80,"at":252,"sp":176},"moves":["Swords Dance","Sucker Punch","Iron Head","Throat Chop"]},
     "Monotype Eviolite Swords Dance (Steel)": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","evs":{"hp":80,"at":232,"df":20,"sp":176},"moves":["Swords Dance","Throat Chop","Sucker Punch","Low Kick"]},
     "Monotype Eviolite Swords Dance (Dark)": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","evs":{"hp":80,"at":232,"df":20,"sp":176},"moves":["Swords Dance","Throat Chop","Sucker Punch","Iron Head"]},
     "Monotype Swords Dance (Dark)": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Iron Head","Throat Chop","Sucker Punch"]},
     "Monotype Swords Dance (Steel)": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Throat Chop","Low Kick","Sucker Punch"]},
     "National Dex UU Swords Dance": {"ability":"Defiant","item":"Life Orb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Knock Off","Sucker Punch","Iron Head"]},
-    "National Dex UU Pursuit Trapper": {"ability":"Defiant","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Pursuit","Knock Off","Sucker Punch","Iron Head"]},
-    "UU Showdown Usage": {"ability":"Defiant","item":"Eviolite","nature":"Adamant","teraType":"Fire","evs":{"at":252,"sd":4,"sp":252},"moves":["Sucker Punch","Iron Head","Throat Chop","Swords Dance"]}
+    "National Dex UU Pursuit Trapper": {"ability":"Defiant","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Pursuit","Knock Off","Sucker Punch","Iron Head"]}
   },
   "Rufflet": {
     "NFE Choice Band": {"ability":"Hustle","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Brave Bird","Aerial Ace","Facade","Close Combat"]},
