@@ -400,12 +400,12 @@ export function getKOChance(
 
     for (let i = 5; i <= 9; i++) {
       if (
-        predictTotal(damage[0], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
+        predictTotal(damage[0], eot.damage, i, toxicCounter, defender.maxHP()) >=
         defender.curHP() - hazards.damage
       ) {
         return KOChance(0, 1, i);
       } else if (
-        predictTotal(damage[damage.length - 1], eot.damage, i, 1, toxicCounter, defender.maxHP()) >=
+        predictTotal(damage[damage.length - 1], eot.damage, i, toxicCounter, defender.maxHP()) >=
         defender.curHP() - hazards.damage
       ) {
         // possible but no concrete chance
@@ -425,13 +425,13 @@ export function getKOChance(
     if (chance > 0) return KOChance(0, chance, move.timesUsed, chance === 1);
 
     if (
-      predictTotal(damage[0], eot.damage, 1, move.timesUsed, toxicCounter, defender.maxHP()) >=
+      predictTotal(damage[0], eot.damage, move.timesUsed, toxicCounter, defender.maxHP(), true) >=
       defender.curHP() - hazards.damage
     ) {
       return KOChance(0, 1, move.timesUsed, true);
     } else if (
       predictTotal(
-        damage[damage.length - 1], eot.damage, 1, move.timesUsed, toxicCounter, defender.maxHP()) >=
+        damage[damage.length - 1], eot.damage, move.timesUsed, toxicCounter, defender.maxHP(), true) >=
         defender.curHP() - hazards.damage
     ) {
       // possible but no real idea
@@ -767,26 +767,23 @@ function computeKOChance(
   toxicCounter: number
 ) {
   let eotTotal = eot * timesUsed;
-  let toxicDamage = 0, toxicTotal = 0;
+  let toxicDamage = 0;
   if (toxicCounter > 0) {
     for (let i = 0; i < timesUsed; i++) {
       toxicDamage = Math.floor(((toxicCounter + i) * maxHP) / 16);
-      toxicTotal += toxicDamage;
+      eotTotal -= toxicDamage;
     }
   }
   const n = damage.length;
   if (hits === 1 || timesUsed > 1) {
-    // ignore end of turn healing for the hit that KOs
+    // since recovery happens before toxic damage (and therefore always reduces toxic damage)
+    // ignore end-of-turn for the hit that KOs if the net healing is greater than zero
     // so that the pokemon doesnt "revive" from being KO'd
-    // since recovery happens before toxic damage (and therefore always reduces toxic damage),
-    // if the net healing is greater than zero, toxicDamage should also be set to zero.
-    if (eot - toxicDamage > 0) {
-      eotTotal -= eot;
-      toxicTotal -= toxicDamage;
-    }
-    if (damage[n - 1] - eotTotal + toxicTotal < hp) return 0;
+    if (eot - toxicDamage > 0) eotTotal += toxicDamage - eot;
+
+    if (damage[n - 1] - eotTotal < hp) return 0;
     for (let i = 0; i < n; i++) {
-      if (damage[i] - eotTotal + toxicTotal >= hp) {
+      if (damage[i] - eotTotal >= hp) {
         return (n - i) / n;
       }
     }
@@ -823,38 +820,27 @@ function computeKOChance(
 function predictTotal(
   damage: number,
   eot: number,
-  hits: number,
-  timesUsed: number,
+  turns: number,
   toxicCounter: number,
-  maxHP: number
+  maxHP: number,
+  singleHit = false,
 ) {
+  let eotTotal = eot * turns;
   let toxicDamage = 0;
-  // hits - 1 is used in this for loop, as well as in the total = ...  calcs later
-  // the last turn of eot damage is calculated separately
-  // since if the damage is less than 0 (healing)
-  // we want to exclude that from the calculations
-  // since on the last turn the pokemon has been ko'd by the attack
-  // and should not be able to heal after fainting
-  let lastTurnEot = eot;
   if (toxicCounter > 0) {
-    for (let i = 0; i < hits - 1; i++) {
-      toxicDamage += Math.floor(((toxicCounter + i) * maxHP) / 16);
+    for (let i = 0; i < turns; i++) {
+      toxicDamage = Math.floor(((toxicCounter + i) * maxHP) / 16);
+      eotTotal -= toxicDamage;
     }
-    lastTurnEot -= Math.floor(((toxicCounter + (hits - 1)) * maxHP) / 16);
   }
-	//does the same as described in computekochance, but slightly different syntax
-	//instead of eot/toxic + totals, calc total toxicdamage + last turn cumulative eot
-  let total = 0;
-  if (hits > 1 && timesUsed === 1) {
-    total = damage * hits - eot * (hits - 1) + toxicDamage; //
-  } else if (timesUsed > 1) {
-    total = damage - eot * (timesUsed - 1) + toxicDamage; //
-  } else {
-    total = damage - eot * (hits - 1) + toxicDamage;
-  }
-  // if the net eot health gain is negative for the last turn, include it in the total
-  if (lastTurnEot < 0) total -= lastTurnEot;
-  return total;
+  // since recovery happens before toxic damage (and therefore always reduces toxic damage)
+  // ignore end-of-turn for the final hit if greater than 0
+  // on the last turn the pokemon has been ko'd by the attack
+  // and should not be able to heal after fainting
+  if (eot - toxicDamage > 0) eotTotal += toxicDamage - eot;
+
+  if (singleHit) return damage - eotTotal;
+  return damage * turns - eotTotal;
 }
 
 function squashMultihit(gen: Generation, d: number[], hits: number, err = true) {
