@@ -424,27 +424,15 @@ export function getKOChance(
     );
     if (chance > 0) return KOChance(0, chance, move.timesUsed, chance === 1);
 
-    if (predictTotal(
-      damage[0],
-      eot.damage,
-      1,
-      move.timesUsed,
-      toxicCounter,
-      defender.maxHP()
-    ) >=
+    if (
+      predictTotal(damage[0], eot.damage, 1, move.timesUsed, toxicCounter, defender.maxHP()) >=
       defender.curHP() - hazards.damage
     ) {
       return KOChance(0, 1, move.timesUsed, true);
     } else if (
       predictTotal(
-        damage[damage.length - 1],
-        eot.damage,
-        1,
-        move.timesUsed,
-        toxicCounter,
-        defender.maxHP()
-      ) >=
-      defender.curHP() - hazards.damage
+        damage[damage.length - 1], eot.damage, 1, move.timesUsed, toxicCounter, defender.maxHP()) >=
+        defender.curHP() - hazards.damage
     ) {
       // possible but no real idea
       return KOChance(undefined, undefined, move.timesUsed, true);
