@@ -341,6 +341,7 @@ export function getKOChance(
     } else if (chanceWithoutEot + chanceWithEot === 0) {
       chance = 0;
       text += 'not a KO';
+      if (multipleTurns) text += `${afterText}`;
       // if the move OHKOing is guaranteed even without end of turn damage
     } else if (chanceWithoutEot === 1) {
       chance = chanceWithoutEot;
@@ -448,7 +449,7 @@ export function getKOChance(
       // possible but no real idea
       return KOChance(undefined, undefined, move.timesUsed, true);
     }
-    return KOChance(0, 0, move.timesUsed);
+    return KOChance(0, 0, move.timesUsed, move.timesUsed > 1);
   }
 
   return {chance: 0, n: 0, text: ''};
@@ -781,13 +782,16 @@ function computeKOChance(
   let toxicDamage = 0, toxicTotal = 0;
   if (toxicCounter > 0) {
     for (let i = 0; i < timesUsed; i++) {
-      toxicDamage = Math.floor((toxicCounter * maxHP) / 16);
+      toxicDamage = Math.floor(((toxicCounter + i) * maxHP) / 16);
       toxicTotal += toxicDamage;
-      toxicCounter++;
     }
   }
   const n = damage.length;
-  if (timesUsed > 1) {
+  if (hits === 1 || timesUsed > 1) {
+    // ignore end of turn healing for the hit that KOs
+    // so that the pokemon doesnt "revive" from being KO'd
+    // since recovery happens before toxic damage (and therefore always reduces toxic damage),
+    // if the net healing is greater than zero, toxicDamage should also be set to zero.
     if (eot - toxicDamage > 0) {
       eotTotal -= eot;
       toxicTotal -= toxicDamage;
@@ -795,22 +799,6 @@ function computeKOChance(
     if (damage[n - 1] - eotTotal + toxicTotal < hp) return 0;
     for (let i = 0; i < n; i++) {
       if (damage[i] - eotTotal + toxicTotal >= hp) {
-        return (n - i) / n;
-      }
-    }
-  }
-  if (hits === 1) {
-    // ignore end of turn healing for the hit that KOs
-    // so that the pokemon doesnt "revive" from being KO'd
-    // since recovery happens before toxic damage (and therefore always reduces toxic damage),
-    // if the net healing is greater than zero, toxicDamage should also be set to zero.
-    if (eot - toxicDamage > 0) {
-      eot = 0;
-      toxicDamage = 0;
-    }
-    if (damage[n - 1] - eot + toxicDamage < hp) return 0;
-    for (let i = 0; i < n; i++) {
-      if (damage[i] - eot + toxicDamage >= hp) {
         return (n - i) / n;
       }
     }
@@ -866,9 +854,13 @@ function predictTotal(
     }
     lastTurnEot -= Math.floor(((toxicCounter + (hits - 1)) * maxHP) / 16);
   }
+	//does the same as described in computekochance, but slightly different syntax
+	//instead of eot/toxic + totals, calc total toxicdamage + last turn cumulative eot
   let total = 0;
   if (hits > 1 && timesUsed === 1) {
-    total = damage * hits - eot * (hits - 1) + toxicDamage;
+    total = damage * hits - eot * (hits - 1) + toxicDamage; //
+  } else if (timesUsed > 1) {
+    total = damage - eot * (timesUsed - 1) + toxicDamage; //
   } else {
     total = damage - eot * (hits - 1) + toxicDamage;
   }
