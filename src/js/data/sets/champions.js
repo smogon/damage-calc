@@ -333,7 +333,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Rotom-Wash": {
     "OU Defensive Pivot": {"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":27,"sp":7},"moves":["Hydro Pump","Volt Switch","Will-O-Wisp","Pain Split"]},
-    "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Hydro Pump","Volt Switch","Trick","Will-O-Wisp"]},
+    "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Hydro Pump","Volt Switch","Trick","Will-O-Wisp"]},
     "VGC 2026 Reg M-B Bulky Support": {"level":50,"ability":"Levitate","item":"Sitrus Berry","nature":"Bold","sps":{"hp":31,"df":12,"sa":1,"sd":20,"sp":2},"moves":["Hydro Pump","Thunderbolt","Will-O-Wisp","Protect"]},
     "VGC 2026 Reg M-B Choice Scarf": {"level":50,"ability":"Levitate","item":"Choice Scarf","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Hydro Pump","Thunderbolt","Electroweb","Volt Switch"]},
     "BSS Reg M-B Pivot": {"level":50,"ability":"Levitate","item":"Sitrus Berry","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Volt Switch","Hydro Pump","Will-O-Wisp","Thunderbolt"]},

@@ -1270,8 +1270,8 @@ var SETDEX_XY = {
     "LC Spinner": {"level":5,"ability":"Natural Cure","item":"Eviolite","nature":"Timid","ivs":{"at":0},"evs":{"hp":116,"df":156,"sp":236},"moves":["Scald","Ice Beam","Rapid Spin","Recover"]}
   },
   "Starmie": {
-    "OU Utility": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"sa":4,"sp":252},"moves":["Scald","Rapid Spin","Recover","Psyshock"]},
-    "OU Offensive": {"ability":"Analytic","item":"Life Orb","nature":"Timid","ivs":{"hp":29},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Hydro Pump","Psychic","Ice Beam"]},
+    "OU Utility": {"ability":"Natural Cure","item":"Leftovers","nature":"Timid","evs":{"hp":252,"df":4,"sp":252},"moves":["Scald","Rapid Spin","Recover","Psyshock"]},
+    "OU Offensive": {"ability":"Analytic","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Rapid Spin","Hydro Pump","Psychic","Ice Beam"]},
     "Monotype Life Orb Attacker (Water)": {"ability":"Analytic","item":"Life Orb","nature":"Timid","ivs":{"hp":29},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Hydro Pump","Psychic","Ice Beam","Rapid Spin"]}
   },
   "Mr. Mime": {
@@ -4318,11 +4318,11 @@ var SETDEX_XY = {
     "1v1 Life Orb": {"ability":"Sheer Force","item":"Life Orb","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Substitute","Earth Power","Rock Slide","Psychic"]}
   },
   "Landorus-Therian": {
-    "OU Defensive": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":252,"df":240,"sd":8,"sp":8},"moves":["Earthquake","Stealth Rock","U-turn","Stone Edge"]},
-    "OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","U-turn","Stone Edge","Knock Off"]},
-    "OU Double Dance": {"ability":"Intimidate","item":"Earth Plate","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","Swords Dance","Rock Polish"]},
-    "OU Offensive": {"ability":"Intimidate","item":"Earth Plate","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","Swords Dance","Stealth Rock"]},
+    "OU Defensive": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Impish","evs":{"hp":248,"df":252,"sd":8},"moves":["Earthquake","Stealth Rock","U-turn","Stone Edge"]},
     "OU Suicide Lead": {"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Stealth Rock","Earthquake","Explosion","Imprison"]},
+    "OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","U-turn","Stone Edge","Knock Off"]},
+    "OU Double Dance": {"ability":"Intimidate","item":"Earth Plate","nature":"Adamant","evs":{"hp":24,"at":252,"sp":232},"moves":["Earthquake","Stone Edge","Swords Dance","Rock Polish"]},
+    "OU Offensive": {"ability":"Intimidate","item":"Earth Plate","nature":"Jolly","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Smack Down","Swords Dance","Stealth Rock"]},
     "Ubers Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","U-turn","Explosion"]},
     "Doubles OU Assault Vest": {"ability":"Intimidate","item":"Assault Vest","nature":"Adamant","evs":{"hp":252,"sd":168,"sp":88},"moves":["Earthquake","U-turn","Stone Edge","Superpower"]},
     "Doubles OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","U-turn","Rock Slide","Superpower"]},
@@ -4350,10 +4350,10 @@ var SETDEX_XY = {
     "UU Life Orb Attacker": {"ability":"Pressure","item":"Life Orb","nature":"Hasty","evs":{"at":4,"sa":252,"sp":252},"moves":["Draco Meteor","Ice Beam","Earth Power","Outrage"]}
   },
   "Kyurem-Black": {
+    "OU Choice Item Attacker": {"ability":"Teravolt","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Fusion Bolt","Iron Head","Dragon Claw"]},
+    "OU Assault Vest": {"ability":"Teravolt","item":"Assault Vest","nature":"Adamant","evs":{"at":252,"sd":184,"sp":72},"moves":["Outrage","Fusion Bolt","Iron Head","Ice Beam"]},
     "OU Mixed Wallbreaker": {"ability":"Teravolt","item":"Life Orb","nature":"Mild","evs":{"at":4,"sa":252,"sp":252},"moves":["Ice Beam","Earth Power","Fusion Bolt","Roost"]},
-    "OU Choice Band": {"ability":"Teravolt","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Fusion Bolt","Iron Head","Dragon Claw"]},
     "OU Substitute Attacker": {"ability":"Teravolt","item":"Leftovers","nature":"Mild","evs":{"hp":56,"sa":200,"sp":252},"moves":["Substitute","Ice Beam","Fusion Bolt","Earth Power"]},
-    "OU Choice Scarf": {"ability":"Teravolt","item":"Choice Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Ice Beam","Outrage","Fusion Bolt","Dragon Claw"]},
     "Doubles OU Substitute": {"ability":"Teravolt","item":"Leftovers","nature":"Modest","evs":{"hp":108,"sa":252,"sp":148},"moves":["Substitute","Ice Beam","Earth Power","Protect"]},
     "Doubles OU Choice Scarf": {"ability":"Teravolt","item":"Choice Scarf","nature":"Naive","evs":{"at":176,"sa":108,"sp":224},"moves":["Ice Beam","Fusion Bolt","Dragon Claw","Iron Head"]},
     "Monotype Substitute (Dragon)": {"ability":"Teravolt","item":"Life Orb","nature":"Mild","evs":{"hp":56,"sa":200,"sp":252},"moves":["Ice Beam","Fusion Bolt","Substitute","Roost"]},
