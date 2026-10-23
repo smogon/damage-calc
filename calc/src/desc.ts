@@ -382,10 +382,10 @@ export function getKOChance(
 
   if ((move.timesUsed === 1 && move.timesUsedWithMetronome === 1) || move.isZ) {
     const chance = computeKOChance(
-      damage, defender.curHP() - hazards.damage, 0, 1, 1, defender.maxHP(), 0
+      damage, 0, 1, 1, defender.curHP() - hazards.damage, defender.maxHP(), 0
     );
     const chanceWithEot = computeKOChance(
-      damage, defender.curHP() - hazards.damage, eot.damage, 1, 1, defender.maxHP(), toxicCounter
+      damage, eot.damage, 1, 1, defender.curHP() - hazards.damage, defender.maxHP(), toxicCounter
     );
 
     // checks if either chance is greater than 0
@@ -393,22 +393,22 @@ export function getKOChance(
 
     for (let i = 2; i <= 4; i++) {
       const chance = computeKOChance(
-        damage, defender.curHP() - hazards.damage, eot.damage, i, 1, defender.maxHP(), toxicCounter
+        damage, eot.damage, i, 1, defender.curHP() - hazards.damage, defender.maxHP(), toxicCounter
       );
       if (chance > 0) return KOChance(0, chance, i);
     }
 
     for (let i = 5; i <= 9; i++) {
       if (
-        predictTotal(
-          damage[0], eot.damage, i, toxicCounter, defender.maxHP()
-        ) >= defender.curHP() - hazards.damage
+        i * damage[0] -
+        totalEot(eot.damage, i, defender.maxHP(), toxicCounter)[0] >=
+        defender.curHP() - hazards.damage
       ) {
         return KOChance(0, 1, i);
       } else if (
-        predictTotal(
-          damage[damage.length - 1], eot.damage, i, toxicCounter, defender.maxHP()
-        ) >= defender.curHP() - hazards.damage
+        i * damage[damage.length - 1] -
+        totalEot(eot.damage, i, defender.maxHP(), toxicCounter)[0] >=
+        defender.curHP() - hazards.damage
       ) {
         // possible but no concrete chance
         return KOChance(undefined, undefined, i);
@@ -417,25 +417,25 @@ export function getKOChance(
   } else {
     const chance = computeKOChance(
       damage,
-      defender.maxHP() - hazards.damage,
       eot.damage,
       move.hits || 1,
       move.timesUsed || 1,
+      defender.maxHP() - hazards.damage,
       defender.maxHP(),
       toxicCounter
     );
     if (chance > 0) return KOChance(0, chance, move.timesUsed, chance === 1);
 
     if (
-      predictTotal(
-        damage[0], eot.damage, move.timesUsed, toxicCounter, defender.maxHP(), true
-      ) >= defender.curHP() - hazards.damage
+      damage[0] -
+      totalEot(eot.damage, move.timesUsed, defender.maxHP(), toxicCounter)[0] >=
+      defender.curHP() - hazards.damage
     ) {
       return KOChance(0, 1, move.timesUsed, true);
     } else if (
-      predictTotal(
-        damage[damage.length - 1], eot.damage, move.timesUsed, toxicCounter, defender.maxHP(), true
-      ) >= defender.curHP() - hazards.damage
+      damage[damage.length - 1] -
+      totalEot(eot.damage, move.timesUsed, defender.maxHP(), toxicCounter)[0] >=
+      defender.curHP() - hazards.damage
     ) {
       // possible but no real idea
       return KOChance(undefined, undefined, move.timesUsed, true);
@@ -762,31 +762,20 @@ function getEndOfTurn(
 
 function computeKOChance(
   damage: number[],
-  hp: number,
   eot: number,
   hits: number,
   timesUsed: number,
+  curHP: number,
   maxHP: number,
   toxicCounter: number
 ) {
-  let eotTotal = eot * timesUsed;
-  let toxicDamage = 0;
-  if (toxicCounter > 0) {
-    for (let i = 0; i < timesUsed; i++) {
-      toxicDamage = Math.floor(((toxicCounter + i) * maxHP) / 16);
-      eotTotal -= toxicDamage;
-    }
-  }
+  const [eotTotal, toxicDamage] =
+    totalEot(eot, timesUsed, maxHP, toxicCounter, hits === 1 || timesUsed > 1);
   const n = damage.length;
   if (hits === 1 || timesUsed > 1) {
-    // since recovery happens before toxic damage (and therefore always reduces toxic damage)
-    // ignore end-of-turn for the hit that KOs if the net healing is greater than zero
-    // so that the pokemon doesnt "revive" from being KO'd
-    if (eot - toxicDamage > 0) eotTotal += toxicDamage - eot;
-
-    if (damage[n - 1] - eotTotal < hp) return 0;
+    if (damage[n - 1] - eotTotal < curHP) return 0;
     for (let i = 0; i < n; i++) {
-      if (damage[i] - eotTotal >= hp) {
+      if (damage[i] - eotTotal >= curHP) {
         return (n - i) / n;
       }
     }
@@ -799,10 +788,10 @@ function computeKOChance(
     if (i === 0 || damage[i] !== damage[i - 1]) {
       c = computeKOChance(
         damage,
-        hp - damage[i] + eot - toxicDamage,
         eot,
         hits - 1,
         timesUsed,
+        curHP - damage[i] + eot - toxicDamage,
         maxHP,
         toxicCounter
       );
@@ -820,30 +809,27 @@ function computeKOChance(
   return sum / n;
 }
 
-function predictTotal(
-  damage: number,
+function totalEot(
   eot: number,
   turns: number,
-  toxicCounter: number,
   maxHP: number,
-  singleHit = false,
+  toxicCounter: number,
+  checkFinal = true
 ) {
-  let eotTotal = eot * turns;
+  let total = eot * turns;
   let toxicDamage = 0;
   if (toxicCounter > 0) {
     for (let i = 0; i < turns; i++) {
       toxicDamage = Math.floor(((toxicCounter + i) * maxHP) / 16);
-      eotTotal -= toxicDamage;
+      total -= toxicDamage;
     }
   }
   // since recovery happens before toxic damage (and therefore always reduces toxic damage)
   // ignore end-of-turn for the final hit if greater than 0
   // on the last turn the pokemon has been ko'd by the attack
   // and should not be able to heal after fainting
-  if (eot - toxicDamage > 0) eotTotal += toxicDamage - eot;
-
-  if (singleHit) return damage - eotTotal;
-  return damage * turns - eotTotal;
+  if (checkFinal && eot - toxicDamage > 0) total += toxicDamage - eot;
+  return [total, toxicDamage];
 }
 
 function squashMultihit(gen: Generation, d: number[], hits: number, err = true) {
