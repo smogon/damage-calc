@@ -3246,11 +3246,11 @@ var SETDEX_BW = {
     "Ubers Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":224,"at":252,"df":32},"moves":["Earthquake","U-turn","Stone Edge","Superpower"]},
     "Doubles OU Sash Attacker": {"ability":"Intimidate","item":"Focus Sash","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Earthquake","Stone Edge","U-turn","Stealth Rock"]},
     "Doubles OU Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"hp":8,"at":252,"sd":68,"sp":180},"moves":["Earthquake","Stone Edge","Superpower","U-turn"]},
+    "VGC 2013 Focus Sash": {"level":50,"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Rock Slide","U-turn","Protect"]},
     "Monotype Choice Scarf (Flying)": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Stone Edge","U-turn","Stealth Rock"]},
     "Monotype Double Dance (Ground)": {"ability":"Intimidate","item":"Power Herb","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Fly","Swords Dance","Rock Polish"]},
     "Monotype Choiced Attacker (Ground)": {"ability":"Intimidate","item":"Choice Scarf","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Superpower","U-turn","Hidden Power Flying"]},
-    "1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Outrage","Superpower"]},
-    "VGC 2013 Showdown Usage": {"level":50,"ability":"Intimidate","item":"Focus Sash","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","U-turn","Rock Slide","Protect"]}
+    "1v1 Choice Scarf": {"ability":"Intimidate","item":"Choice Scarf","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Rock Slide","Outrage","Superpower"]}
   },
   "Kyurem": {
     "OU SubRoost": {"ability":"Pressure","item":"Leftovers","nature":"Timid","evs":{"hp":56,"sa":200,"sp":252},"moves":["Ice Beam","Earth Power","Substitute","Roost"]},

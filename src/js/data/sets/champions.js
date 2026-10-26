@@ -289,13 +289,18 @@ var SETDEX_CHAMPIONS = {
     "OU TankChomp": {"ability":"Rough Skin","item":"Leftovers","nature":"Impish","sps":{"hp":32,"df":32,"sd":2},"moves":["Stealth Rock","Earthquake","Dragon Tail","Spikes"]},
     "OU Swords Dance": {"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Scale Shot","Earthquake","Fire Fang"]},
     "OU Choice Scarf": {"ability":"Rough Skin","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Outrage","Stone Edge","Poison Jab"]},
-    "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Rough Skin","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Dragon Claw","Rock Slide","Protect"]},
+    "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Rough Skin","item":"Garchompite Z","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Dragon Pulse","Power Gem","Earth Power","Protect"]},
     "VGC 2026 Reg M-B Bulky Attacker": {"level":50,"ability":"Rough Skin","item":"Sitrus Berry","nature":"Adamant","sps":{"hp":23,"at":18,"sd":3,"sp":22},"moves":["Earthquake","Dragon Claw","Rock Slide","Protect"]},
     "VGC 2026 Reg M-B Choice Scarf": {"level":50,"ability":"Rough Skin","item":"Choice Scarf","nature":"Adamant","sps":{"at":29,"sd":15,"sp":22},"moves":["Earthquake","Stomping Tantrum","Dragon Claw","Rock Slide"]},
     "BSS Reg M-B Offensive Stealth Rock": {"level":50,"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Stealth Rock","Earthquake","Outrage","Rock Tomb"]},
     "BSS Reg M-B Swords Dance": {"level":50,"ability":"Rough Skin","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Earthquake","Scale Shot","Poison Jab"]},
     "BSS Reg M-B Choice Scarf": {"level":50,"ability":"Rough Skin","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Outrage","Poison Jab","Rock Tomb"]},
     "BSS Reg M-B Chonky Chomp (Phazer)": {"level":50,"ability":"Rough Skin","item":"Sitrus Berry","nature":"Jolly","sps":{"hp":32,"df":11,"sd":12,"sp":11},"moves":["Stealth Rock","Dragon Tail","Earthquake","Spikes"]}
+  },
+  "Garchomp-Mega-Z": {
+    "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Sand Force","item":"Garchompite Z","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Dragon Pulse","Power Gem","Earth Power","Protect"]},
+    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Levitate","item":"Garchompite Z","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flamethrower","Earth Power","Power Gem"]},
+    "OU Showdown Usage": {"ability":"Levitate","item":"Garchompite Z","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flamethrower","Earth Power","Fire Blast"]}
   },
   "Lucario": {
     "BSS Reg M-B Swords Dance": {"level":50,"ability":"Steadfast","item":"Lucarionite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Close Combat","Meteor Mash","Extreme Speed"]},
@@ -554,14 +559,12 @@ var SETDEX_CHAMPIONS = {
     "OU Showdown Usage": {"ability":"Adaptability","item":"Life Orb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Wave Crash","Flip Turn","Aqua Jet","Head Smash"]}
   },
   "Sneasler": {
-    "OU Swords Dance": {"ability":"Unburden","item":"White Herb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Close Combat","Dire Claw","Throat Chop"]},
-    "OU Poison Touch": {"ability":"Poison Touch","item":"Lum Berry","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Dire Claw","U-turn","Throat Chop"]},
-    "OU Choice Scarf": {"ability":"Poison Touch","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Dire Claw","U-turn","Switcheroo"]},
     "VGC 2026 Reg M-B Unburden Sweeper": {"level":50,"ability":"Pressure","item":"Grassy Seed","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Dire Claw","Fake Out","Protect"]},
     "VGC 2026 Reg M-B Focus Sash": {"level":50,"ability":"Poison Touch","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Dire Claw","Fake Out","Protect"]},
     "VGC 2026 Reg M-B Disruptive Support": {"level":50,"ability":"Unburden","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Fake Out","Dire Claw","Close Combat","Protect"]},
     "VGC 2026 Reg M-B Offensive Support": {"level":50,"ability":"Unburden","item":"White Herb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Fake Out","Close Combat","Dire Claw","Protect"]},
-    "BSS Reg M-B Unburden Sweeper": {"level":50,"ability":"Unburden","item":"White Herb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Dire Claw","Close Combat","Throat Chop","Swords Dance"]}
+    "BSS Reg M-B Unburden Sweeper": {"level":50,"ability":"Unburden","item":"White Herb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Dire Claw","Close Combat","Throat Chop","Swords Dance"]},
+    "OU Showdown Usage": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Swords Dance","Dire Claw","Throat Chop"]}
   },
   "Meowscarada": {
     "OU Choice Scarf": {"ability":"Protean","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Flower Trick","Knock Off","U-turn","Triple Axel"]},
@@ -609,12 +612,13 @@ var SETDEX_CHAMPIONS = {
     "OU Special Sweeper": {"ability":"Toxic Debris","item":"Glimmoranite","nature":"Timid","sps":{"hp":1,"sa":32,"sd":1,"sp":32},"moves":["Power Gem","Sludge Bomb","Earth Power","Mortal Spin"]},
     "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Toxic Debris","item":"Glimmoranite","nature":"Modest","sps":{"hp":1,"df":1,"sa":32,"sp":32},"moves":["Power Gem","Sludge Bomb","Spiky Shield","Earth Power"]},
     "VGC 2026 Reg M-B Offensive": {"level":50,"ability":"Toxic Debris","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Power Gem","Sludge Bomb","Earth Power","Spiky Shield"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Toxic Debris","item":"Glimmoranite","nature":"Modest","sps":{"hp":1,"sa":32,"sd":1,"sp":32},"moves":["Power Gem","Sludge Wave","Earth Power","Energy Ball"]}
+    "BSS Reg M-B Entry Hazards Lead": {"level":50,"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Stealth Rock","Power Gem","Mud Shot","Mortal Spin"]},
+    "BSS Reg M-B Mega Offensive": {"level":50,"ability":"Toxic Debris","item":"Glimmoranite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Sludge Wave","Power Gem","Earth Power","Energy Ball"]}
   },
   "Glimmora-Mega": {
     "OU Special Sweeper": {"ability":"Adaptability","item":"Glimmoranite","nature":"Timid","sps":{"hp":1,"sa":32,"sd":1,"sp":32},"moves":["Power Gem","Sludge Bomb","Earth Power","Mortal Spin"]},
     "VGC 2026 Reg M-B Fast Attacker": {"level":50,"ability":"Adaptability","item":"Glimmoranite","nature":"Modest","sps":{"hp":1,"df":1,"sa":32,"sp":32},"moves":["Power Gem","Sludge Bomb","Spiky Shield","Earth Power"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Adaptability","item":"Glimmoranite","nature":"Modest","sps":{"hp":1,"sa":32,"sd":1,"sp":32},"moves":["Power Gem","Sludge Wave","Earth Power","Energy Ball"]}
+    "BSS Reg M-B Mega Offensive": {"level":50,"ability":"Adaptability","item":"Glimmoranite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Sludge Wave","Power Gem","Earth Power","Energy Ball"]}
   },
   "Annihilape": {
     "OU Bulky Sweeper": {"ability":"Defiant","item":"Leftovers","nature":"Careful","sps":{"hp":32,"sd":31,"sp":3},"moves":["Bulk Up","Drain Punch","Rage Fist","Taunt"]},
@@ -646,11 +650,6 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Pseudo-Focus Sash": {"level":50,"ability":"Sturdy","item":"White Herb","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Thunderbolt","Flash Cannon","Stealth Rock"]},
     "BSS Reg M-B Rain Sweeper": {"level":50,"ability":"Stamina","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Electro Shot","Draco Meteor","Flash Cannon","Aura Sphere"]},
     "BSS Reg M-B Focus Energy": {"level":50,"ability":"Stamina","item":"Scope Lens","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Focus Energy","Draco Meteor","Flash Cannon","Thunderbolt"]}
-  },
-  "Garchomp-Mega-Z": {
-    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Levitate","item":"Garchompite Z","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Protect","Power Gem","Earth Power","Draco Meteor"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Levitate","item":"Garchompite Z","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flamethrower","Earth Power","Power Gem"]},
-    "OU Showdown Usage": {"ability":"Levitate","item":"Garchompite Z","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flamethrower","Earth Power","Fire Blast"]}
   },
   "Armarouge": {
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Flash Fire","item":"Life Orb","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Expanding Force","Armor Cannon","Protect","Wide Guard"]},

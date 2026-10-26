@@ -737,7 +737,8 @@ var SETDEX_GSC = {
   },
   "Quagsire": {
     "OU Belly Drum": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["Earthquake","Hidden Power Rock","Belly Drum","Rest"]},
-    "UU Belly Drum": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["Belly Drum","Earthquake","Hidden Power Rock","Sludge Bomb"]},
+    "UU Belly Drum": {"item":"Leftovers","ivs":{"hp":22,"at":26,"df":24},"moves":["Belly Drum","Earthquake","Hidden Power Rock","Rest"]},
+    "UU Rest Talk": {"item":"Leftovers","moves":["Earthquake","Ice Beam","Rest","Sleep Talk"]},
     "1v1 Curse + Amnesia": {"item":"Leftovers","moves":["Curse","Amnesia","Earthquake","Rest"]},
     "1v1 Mint Berry": {"item":"Mint Berry","ivs":{"hp":22,"at":26,"df":24},"moves":["Earthquake","Hidden Power Rock","Belly Drum","Rest"]}
   },

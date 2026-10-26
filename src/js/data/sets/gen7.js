@@ -4718,7 +4718,7 @@ var SETDEX_SM = {
     "OU Dragon Dance": {"ability":"Bulletproof","item":"Groundium Z","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Close Combat","Ice Punch","Earthquake"]},
     "OU Specially Defensive": {"ability":"Bulletproof","item":"Leftovers","nature":"Careful","evs":{"hp":248,"sd":196,"sp":64},"moves":["Stealth Rock","Drain Punch","Protect","Toxic"]},
     "OU Belly Drum": {"ability":"Bulletproof","item":"Salac Berry","nature":"Jolly","evs":{"hp":52,"at":204,"sp":252},"moves":["Belly Drum","Substitute","Drain Punch","Thunder Punch"]},
-    "Doubles OU Clangorous Soulblaze": {"ability":"Soundproof","item":"Kommonium Z","nature":"Timid","evs":{"at":4,"sa":252,"sp":252},"moves":["Clanging Scales","Flamethrower","Substitute","Protect"]},
+    "Doubles OU Clangorous Soulblaze": {"ability":"Soundproof","item":"Kommonium Z","nature":"Timid","evs":{"hp":4,"sa":252,"sp":252},"moves":["Clanging Scales","Flamethrower","Substitute","Protect"]},
     "VGC 2019 Clangorous Soulblaze": {"level":50,"ability":"Overcoat","item":"Kommonium Z","nature":"Modest","evs":{"hp":52,"df":4,"sa":220,"sd":4,"sp":228},"moves":["Clanging Scales","Focus Blast","Substitute","Protect"]},
     "Monotype Mixed Setup Sweeper (Dragon)": {"ability":"Soundproof","item":"Kommonium Z","nature":"Naive","evs":{"at":4,"sa":252,"sp":252},"moves":["Clanging Scales","Drain Punch","Flamethrower","Taunt"]},
     "Monotype Dragon Dance (Dragon)": {"ability":"Soundproof","item":"Kommonium Z","nature":"Naive","evs":{"at":252,"df":4,"sp":252},"moves":["Clanging Scales","Dragon Dance","Close Combat","Earthquake"]},
