@@ -28,6 +28,7 @@ export class Move implements State.Move {
   recoil?: [number, number];
   hasCrashDamage: boolean;
   mindBlownRecoil: boolean;
+  chloroblastRecoil: boolean;
   struggleRecoil: boolean;
   isCrit: boolean;
   isStellarFirstUse: boolean;
@@ -145,6 +146,7 @@ export class Move implements State.Move {
     this.recoil = data.recoil;
     this.hasCrashDamage = !!data.hasCrashDamage;
     this.mindBlownRecoil = !!data.mindBlownRecoil;
+    this.chloroblastRecoil = !!data.chloroblastRecoil;
     this.struggleRecoil = !!data.struggleRecoil;
     this.isCrit = !!options.isCrit || !!data.willCrit ||
       // These don't *always* crit (255/256 chance), but for the purposes of the calc they do

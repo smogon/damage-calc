@@ -12,6 +12,7 @@ export interface MoveData {
   readonly recoil?: [number, number];
   readonly hasCrashDamage?: boolean;
   readonly mindBlownRecoil?: boolean;
+  readonly chloroblastRecoil?: boolean;
   readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
@@ -4313,7 +4314,7 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Chloroblast': {
     bp: 150,
     type: 'Grass',
-    mindBlownRecoil: true,
+    chloroblastRecoil: true,
     category: 'Special',
     zp: 200,
     maxPower: 150,
@@ -5528,6 +5529,7 @@ class Move implements I.Move {
   readonly recoil?: [number, number];
   readonly hasCrashDamage?: boolean;
   readonly mindBlownRecoil?: boolean;
+  readonly chloroblastRecoil?: boolean;
   readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
