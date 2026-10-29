@@ -705,3 +705,104 @@ table.field {
 .flex-parent {
 	display: flex;
 }
+
+/*********************************************************
+ * Responsive
+ *********************************************************/
+
+@media (max-width: 1080px) {
+    /* Remove the desktop min-widths that force horizontal scroll */
+    html, body {
+        min-width: 0;
+    }
+    .move-result-group {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+
+    /* Stack the three float-columns (P1 | Field+Import | P2) */
+    .panel {
+        float: none;
+        display: block;
+    }
+    .poke-info,
+    .field-info,
+    .poke-import {
+        float: none;
+        width: 100%;
+        max-width: 34em;
+        margin: 0 auto 1em;
+        box-sizing: border-box;
+    }
+
+    /* honkalculate.html: let its multi-panel flex row wrap */
+    .flex-parent {
+        flex-wrap: wrap;
+    }
+
+    /* Enlarge the tiny toggle buttons to comfortable tap targets */
+    .poke-info .crit-btn,
+    .poke-info .z-btn,
+    .poke-info .max-btn,
+    .poke-info .stellar-btn {
+        height: auto;
+        min-height: 2em;
+        padding: 6px 6px;
+    }
+
+    /* honkalculate: contain the wide results table instead of scrolling the page */
+    #holder-0 {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Let panels use the full narrow width */
+    .poke-info,
+    .field-info,
+    .poke-import {
+        max-width: none;
+    }
+
+    /* Stack the two move-result columns */
+    .move-result-subgroup {
+        float: none;
+        width: 100%;
+    }
+
+    /* Fluidize the fixed-width selects and set selector */
+    .set-selector,
+    .info-selectors select,
+    .move-selector {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /* select2 renders its own container; force it to the parent width */
+    .select2-container {
+        width: 100% !important;
+    }
+
+    /* Fluidize the import textareas */
+    .import-team-text,
+    .import-name-text {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Tighten the stat table so the HP/Base/IVs/EVs/total row fits ~360px */
+    .poke-info th,
+    .poke-info td {
+        padding: 0 1px;
+    }
+    .poke-info input.base,
+    .poke-info input.ivs,
+    .poke-info input.dvs {
+        width: 3em;
+        box-sizing: border-box;
+    }
+    .poke-info input.evs[type="number"] {
+        width: 3.5em;
+        box-sizing: border-box;
+    }
+}
