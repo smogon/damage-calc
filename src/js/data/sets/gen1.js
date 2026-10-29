@@ -451,7 +451,6 @@ var SETDEX_RBY = {
   "Pinsir": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Slash","Submission"]},
     "PU Swords Dance": {"moves":["Swords Dance","Slash","Hyper Beam","Seismic Toss"]},
-    "ZU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Slash","Submission"]},
     "UU Showdown Usage": {"moves":["Swords Dance","Hyper Beam","Seismic Toss","Body Slam"]},
     "Tradebacks OU Showdown Usage": {"moves":["Bind","Hyper Beam","Swords Dance","Slash"]}
   },
