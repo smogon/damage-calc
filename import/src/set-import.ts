@@ -60,8 +60,8 @@ const VALIDATORS: {[format: string]: TeamValidator} = {};
 // the validator which is the only area that needs the Format object
 const UNSUPPORTED: {[format: string]: string} = {
   'gen9championsou': '[Champions] OU',
-  'gen9championsvgc2026regmb': '[Champions] VGC 2026 Reg M-B',
-  'gen9championsbssregmb': '[Champions] BSS Reg M-B',
+  'gen9championsvgc2026regmc': '[Champions] VGC 2026 Reg M-C',
+  'gen9championsbssregmc': '[Champions] BSS Reg M-C',
   'gen9almostanyability': '[Gen 9] Almost Any Ability',
   'gen9nfe': '[Gen 9] NFE',
   'gen8nfe': '[Gen 8] NFE',
@@ -188,10 +188,10 @@ function getSpecie(gen: Generation, specieName: SpeciesName): Specie | PSSpecie 
 
 function toPSFormat(formatID: ID): ID {
   if (formatID === 'gen9championsvgc2026') {
-    return 'gen9championsvgc2026regmb' as ID;
+    return 'gen9championsvgc2026regmc' as ID;
   }
   if (formatID === 'gen9championsbattlestadiumsingles') {
-    return 'gen9championsbssregmb' as ID;
+    return 'gen9championsbssregmc' as ID;
   }
   if (formatID === 'gen9vgc2025') {
     return 'gen9vgc2025regi' as ID;
