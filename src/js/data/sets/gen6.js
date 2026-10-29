@@ -689,7 +689,7 @@ var SETDEX_XY = {
   },
   "Venusaur": {
     "OU Offensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Modest","evs":{"hp":248,"df":8,"sa":208,"sd":28,"sp":16},"moves":["Giga Drain","Sludge Bomb","Growth","Synthesis"]},
-    "OU Defensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":248,"df":100,"sd":140,"sp":20},"moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
+    "OU Defensive": {"ability":"Chlorophyll","item":"Venusaurite","nature":"Bold","evs":{"hp":248,"df":100,"sd":144,"sp":16},"moves":["Giga Drain","Sludge Bomb","Synthesis","Knock Off"]},
     "UU Sun Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Modest","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Growth","Sludge Bomb","Giga Drain","Hidden Power Fire"]},
     "RU Wallbreaker": {"ability":"Overgrow","item":"Life Orb","nature":"Timid","evs":{"sa":252,"sd":4,"sp":252},"moves":["Leaf Storm","Sludge Bomb","Synthesis","Sleep Powder"]},
     "RU Defensive": {"ability":"Overgrow","item":"Black Sludge","nature":"Bold","evs":{"hp":248,"df":204,"sa":24,"sd":16,"sp":16},"moves":["Giga Drain","Sludge Bomb","Synthesis","Knock Off"]},
@@ -707,7 +707,7 @@ var SETDEX_XY = {
   },
   "Venusaur-Mega": {
     "OU Offensive": {"ability":"Thick Fat","item":"Venusaurite","nature":"Modest","evs":{"hp":248,"df":8,"sa":208,"sd":28,"sp":16},"moves":["Giga Drain","Sludge Bomb","Growth","Synthesis"]},
-    "OU Defensive": {"ability":"Thick Fat","item":"Venusaurite","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":248,"df":100,"sd":140,"sp":20},"moves":["Giga Drain","Sludge Bomb","Synthesis","Hidden Power Fire"]},
+    "OU Defensive": {"ability":"Thick Fat","item":"Venusaurite","nature":"Bold","evs":{"hp":248,"df":100,"sd":144,"sp":16},"moves":["Giga Drain","Sludge Bomb","Synthesis","Knock Off"]},
     "Doubles OU Mega Tank": {"ability":"Thick Fat","item":"Venusaurite","nature":"Modest","evs":{"hp":252,"df":132,"sa":72,"sp":52},"moves":["Giga Drain","Sludge Bomb","Sleep Powder","Protect"]},
     "Battle Spot Doubles Mega Tank": {"level":50,"ability":"Thick Fat","item":"Venusaurite","nature":"Bold","evs":{"hp":252,"df":124,"sa":76,"sd":52,"sp":4},"moves":["Giga Drain","Sludge Bomb","Leech Seed","Protect"]},
     "Monotype Physically Defensive (Poison)": {"ability":"Thick Fat","item":"Venusaurite","nature":"Bold","ivs":{"at":30,"sa":30,"sp":30},"evs":{"hp":248,"df":252,"sd":8},"moves":["Synthesis","Giga Drain","Hidden Power Fire","Knock Off"]},

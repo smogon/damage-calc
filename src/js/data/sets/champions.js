@@ -584,6 +584,11 @@ var SETDEX_CHAMPIONS = {
   "Maushold": {
     "VGC 2026 Reg M-B Redirection Support": {"level":50,"ability":"Friend Guard","item":"Chople Berry","nature":"Timid","sps":{"hp":32,"df":10,"sp":24},"moves":["Super Fang","Follow Me","Feint","Protect"]}
   },
+  "Armarouge": {
+    "VGC 2026 Reg M-B Psychic Terrain Attacker": {"level":50,"ability":"Flash Fire","item":"Focus Sash","nature":"Modest","sps":{"df":2,"sa":32,"sp":32},"moves":["Expanding Force","Armor Cannon","Protect","Trick Room"]},
+    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Armor Cannon","Expanding Force","Destiny Bond","Endure"]},
+    "OU Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Armor Cannon","Expanding Force","Endure","Calm Mind"]}
+  },
   "Ceruledge": {
     "OU Fast Swords Dance": {"ability":"Weak Armor","item":"Focus Sash","nature":"Jolly","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"]},
     "OU Bulky Swords Dance": {"ability":"Weak Armor","item":"Shuca Berry","nature":"Adamant","sps":{"hp":26,"at":32,"sp":8},"moves":["Swords Dance","Poltergeist","Bitter Blade","Shadow Sneak"]},
@@ -650,11 +655,6 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-B Pseudo-Focus Sash": {"level":50,"ability":"Sturdy","item":"White Herb","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Thunderbolt","Flash Cannon","Stealth Rock"]},
     "BSS Reg M-B Rain Sweeper": {"level":50,"ability":"Stamina","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Electro Shot","Draco Meteor","Flash Cannon","Aura Sphere"]},
     "BSS Reg M-B Focus Energy": {"level":50,"ability":"Stamina","item":"Scope Lens","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Focus Energy","Draco Meteor","Flash Cannon","Thunderbolt"]}
-  },
-  "Armarouge": {
-    "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"Flash Fire","item":"Life Orb","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Expanding Force","Armor Cannon","Protect","Wide Guard"]},
-    "BSS Reg M-B Showdown Usage": {"level":50,"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Armor Cannon","Expanding Force","Destiny Bond","Endure"]},
-    "OU Showdown Usage": {"ability":"Weak Armor","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Armor Cannon","Expanding Force","Endure","Calm Mind"]}
   },
   "Lucario-Mega-Z": {
     "VGC 2026 Reg M-B Showdown Usage": {"level":50,"ability":"auraguard","item":"Lucarionite Z","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Aura Sphere","Flash Cannon","Protect","Calm Mind"]},
