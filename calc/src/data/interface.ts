@@ -112,6 +112,7 @@ export interface Move extends Data<MoveName> {
   readonly recoil?: [number, number];
   readonly hasCrashDamage?: boolean;
   readonly mindBlownRecoil?: boolean;
+  readonly chloroblastRecoil?: boolean;
   readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];

@@ -1293,6 +1293,31 @@ describe('calc', () => {
         expect(recovery.recovery).toEqual([161, 161]);
         expect(recovery.text).toBe('52.1 - 52.1% recovered');
       });
+      test('Max hit exceeding defender current HP gives distinct min/max recoil', () => {
+        const pichu = Pokemon('Pichu', {level: 79, ivs: {hp: 0}, evs: {atk: 252}});
+        const gyarados = Pokemon('Gyarados', {ivs: {def: 0}, evs: {hp: 252}});
+        const result = calculate(pichu, gyarados, Move('Volt Tackle'));
+        const recoil = result.recoil();
+        expect(recoil.recoil).toEqual([96.8, 108.3]);
+        expect(recoil.text).toBe('96.8 - 108.3% recoil damage');
+      });
+      test('Magic Guard cancels regular recoil and crash damage', () => {
+        const magicGuard = Pokemon('Clefairy', {ability: 'Magic Guard'});
+        let result = calculate(magicGuard, Pokemon('Blissey'), Move('Volt Tackle'));
+        const recoil = result.recoil();
+        expect(recoil.recoil).toEqual([0, 0]);
+        expect(recoil.text).toBe('');
+
+        result = calculate(magicGuard, Pokemon('Blissey'), Move('Jump Kick'));
+        const crashDamage = result.recoil();
+        expect(crashDamage.recoil).toEqual([0, 0]);
+        expect(recoil.text).toBe('');
+
+        result = calculate(magicGuard, Pokemon('Blissey'), Move('Mind Blown'));
+        const mindBlown = result.recoil();
+        expect(mindBlown.recoil).toEqual([0, 0]);
+        expect(recoil.text).toBe('');
+      });
       test('Big Root', () => {
         const bigRoot = Pokemon('Blissey', {item: 'Big Root'});
         const result = calculate(bigRoot, abomasnow, Move('Drain Punch'));
@@ -1800,6 +1825,20 @@ describe('calc', () => {
           expect(nihilRange[0]).toBeGreaterThan(otherRange[0]);
           expect(nihilRange[1]).toBeGreaterThan(otherRange[1]);
         });
+      });
+      test('Chloroblast recoil is negated by Rock Head and Magic Guard', () => {
+        const clefairy = Pokemon('Clefairy', {ability: 'Magic Guard'});
+        const magicGuard = calculate(clefairy, Pokemon('Blissey'), Move('Chloroblast'));
+        let recoil = magicGuard.recoil();
+        expect(recoil.recoil).toEqual([0, 0]);
+        expect(recoil.text).toBe('');
+
+        // distinct from mindBlownRecoil which is not negated by Rock Head
+        const bagon = Pokemon('Bagon', {ability: 'Rock Head'});
+        const rockHead = calculate(bagon, Pokemon('Blissey'), Move('Chloroblast'));
+        recoil = rockHead.recoil();
+        expect(recoil.recoil).toEqual([0, 0]);
+        expect(recoil.text).toBe('');
       });
     });
     describe('Descriptions', () => {
