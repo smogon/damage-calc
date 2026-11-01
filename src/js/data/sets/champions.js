@@ -75,11 +75,7 @@ var SETDEX_CHAMPIONS = {
     "OU Showdown Usage": {"ability":"Rock Head","item":"Choice Scarf","nature":"Jolly","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Flare Blitz","Head Smash","Extreme Speed","Close Combat"]}
   },
   "Alakazam": {
-    "OU Focus Sash": {"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Psyshock","Focus Blast","Shadow Ball","Nasty Plot"]},
-    "OU Special Sweeper": {"ability":"Magic Guard","item":"Alakazite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Psyshock","Focus Blast","Shadow Ball","Dazzling Gleam"]}
-  },
-  "Alakazam-Mega": {
-    "OU Special Sweeper": {"ability":"Trace","item":"Alakazite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Psyshock","Focus Blast","Shadow Ball","Dazzling Gleam"]}
+    "OU Focus Sash": {"ability":"Magic Guard","item":"Focus Sash","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Psyshock","Focus Blast","Shadow Ball","Nasty Plot"]}
   },
   "Gengar": {
     "VGC 2026 Reg M-C Fast Attacker": {"level":50,"ability":"Cursed Body","item":"Gengarite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Shadow Ball","Sludge Bomb","Substitute","Protect"]},
@@ -359,6 +355,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Choice Scarf": {"level":50,"ability":"Sharpness","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Ceaseless Edge","Sacred Sword","Flip Turn","Razor Shell"]}
   },
   "Excadrill": {
+    "OU Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","sps":{"at":21,"sd":13,"sp":32},"moves":["Stealth Rock","Rapid Spin","Earthquake","Steel Beam"]},
     "OU Rapid Spin": {"ability":"Mold Breaker","item":"Shuca Berry","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Rapid Spin","Earthquake","Iron Head","Stealth Rock"]},
     "OU Sand Sweeper": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Earthquake","Iron Head","Rock Slide"]},
     "VGC 2026 Reg M-C Sand Sweeper": {"level":50,"ability":"Sand Rush","item":"Focus Sash","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Iron Head","Protect","Rock Slide","High Horsepower"]},
@@ -580,8 +577,8 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Focus Sash": {"level":50,"ability":"Protean","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Flower Trick","Sucker Punch","Triple Axel","Knock Off"]}
   },
   "Skeledirge": {
-    "BSS Reg M-C Physical Wall": {"level":50,"ability":"Unaware","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Torch Song","Slack Off","Will-O-Wisp","Shadow Ball"]},
-    "OU Showdown Usage": {"ability":"Unaware","item":"Leftovers","nature":"Calm","sps":{"hp":32,"sd":32},"moves":["Torch Song","Slack Off","Will-O-Wisp","Hex"]}
+    "OU Unaware Wall": {"ability":"Unaware","nature":"Bold","sps":{"hp":32,"df":19,"sd":15},"moves":["Torch Song","Hex","Will-O-Wisp","Slack Off"]},
+    "BSS Reg M-C Physical Wall": {"level":50,"ability":"Unaware","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Torch Song","Slack Off","Will-O-Wisp","Shadow Ball"]}
   },
   "Pawmot": {
     "OU Offensive": {"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Double Shock","Close Combat","Ice Punch","Mach Punch"]},

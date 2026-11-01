@@ -1449,7 +1449,7 @@ var SETDEX_BW = {
     "PU Showdown Usage": {"ability":"Marvel Scale","item":"Eviolite","nature":"Adamant","evs":{"hp":240,"at":16,"df":152,"sd":100},"moves":["Dragon Dance","Rest","Dragon Tail","Sleep Talk"]}
   },
   "Dragonite": {
-    "OU 3 Attacks Dragon Dance": {"ability":"Multiscale","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Earthquake","Extreme Speed"]},
+    "OU Three Attacks Dragon Dance": {"ability":"Multiscale","item":"Lum Berry","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Dragon Dance","Outrage","Earthquake","Extreme Speed"]},
     "OU Substitute + Dragon Dance": {"ability":"Multiscale","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"df":72,"sd":60,"sp":124},"moves":["Substitute","Dragon Dance","Dragon Claw","Roost"]},
     "OU Choice Band": {"ability":"Multiscale","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Extreme Speed","Fire Punch","Superpower"]},
     "Monotype Choice Band (Dragon)": {"ability":"Multiscale","item":"Choice Band","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Outrage","Extreme Speed","Earthquake","Fire Punch"]},
