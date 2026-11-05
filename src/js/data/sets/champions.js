@@ -537,7 +537,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Indeedee": {
     "OU Choice Scarf": {"ability":"Psychic Surge","item":"Choice Scarf","nature":"Timid","sps":{"df":2,"sa":32,"sp":32},"moves":["Expanding Force","Hyper Voice","Mystical Fire","Trick"]},
-    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Psychic Surge","item":"Focus Sash","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Expanding Force","Trick Room","Imprison","Mystical Fire"]},
+    "VGC 2026 Reg M-C Spread Sweeper": {"level":50,"ability":"Psychic Surge","item":"Choice Scarf","nature":"Modest","sps":{"df":2,"sa":32,"sp":32},"moves":["Expanding Force","Mystical Fire","Trick","Protect"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Psychic Surge","item":"Terrain Extender","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Expanding Force","Mystical Fire","Encore","Dazzling Gleam"]}
   },
   "Indeedee-F": {
@@ -648,7 +648,7 @@ var SETDEX_CHAMPIONS = {
   "Archaludon": {
     "OU Rain Sweeper": {"ability":"Stamina","item":"Shuca Berry","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flash Cannon","Electro Shot","Stealth Rock"]},
     "OU Bulky Attacker": {"ability":"Stamina","item":"Leftovers","nature":"Modest","sps":{"hp":26,"sa":32,"sp":8},"moves":["Flash Cannon","Draco Meteor","Thunderbolt","Stealth Rock"]},
-    "VGC 2026 Reg M-C Bulky Rain Sweeper": {"level":50,"ability":"Stamina","item":"Leftovers","nature":"Calm","sps":{"hp":27,"df":5,"sa":5,"sd":26,"sp":3},"moves":["Electro Shot","Dragon Pulse","Flash Cannon","Protect"]},
+    "VGC 2026 Reg M-C Bulky Rain Sweeper": {"level":50,"ability":"Stamina","item":"Leftovers","nature":"Calm","sps":{"hp":32,"df":1,"sa":1,"sd":25,"sp":7},"moves":["Electro Shot","Dragon Pulse","Flash Cannon","Protect"]},
     "BSS Reg M-C Bulky Entry Hazard Setter": {"level":50,"ability":"Stamina","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":23,"sd":11},"moves":["Stealth Rock","Draco Meteor","Thunderbolt","Roar"]},
     "BSS Reg M-C Pseudo-Focus Sash": {"level":50,"ability":"Sturdy","item":"White Herb","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Thunderbolt","Flash Cannon","Stealth Rock"]},
     "BSS Reg M-C Rain Sweeper": {"level":50,"ability":"Stamina","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Electro Shot","Draco Meteor","Flash Cannon","Aura Sphere"]},
