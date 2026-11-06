@@ -189,68 +189,53 @@ export function getRecoil(
   let recoil: [number, number] | number = [0, 0];
   let text = '';
 
-  const damageOverflow = min > defender.curHP() || max > defender.curHP();
   if (move.recoil) {
-    const mod = (move.recoil[0] / move.recoil[1]) * 100;
-    let minRecoilDamage, maxRecoilDamage;
-    if (damageOverflow) {
-      minRecoilDamage =
-        toDisplay(notation, defender.curHP() * mod, attacker.maxHP(), 100);
-      maxRecoilDamage =
-        toDisplay(notation, defender.curHP() * mod, attacker.maxHP(), 100);
-    } else {
-      minRecoilDamage = toDisplay(
+    if (!attacker.hasAbility('Rock Head') && !attacker.hasAbility('Magic Guard')) {
+      const mod = (move.recoil[0] / move.recoil[1]) * 100;
+      const minRecoilDamage = toDisplay(
         notation, Math.min(min, defender.curHP()) * mod, attacker.maxHP(), 100
       );
-      maxRecoilDamage = toDisplay(
+      const maxRecoilDamage = toDisplay(
         notation, Math.min(max, defender.curHP()) * mod, attacker.maxHP(), 100
       );
-    }
-    if (!attacker.hasAbility('Rock Head')) {
       recoil = [minRecoilDamage, maxRecoilDamage];
       text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} recoil damage`;
     }
   } else if (move.hasCrashDamage) {
-    const genMultiplier = gen.num === 2 ? 12.5 : gen.num === 0 || gen.num >= 3 ? 50 : 1;
-
-    let minRecoilDamage, maxRecoilDamage;
-    if (damageOverflow && gen.num !== 2) {
-      minRecoilDamage =
-        toDisplay(notation, defender.curHP() * genMultiplier, attacker.maxHP(), 100);
-      maxRecoilDamage =
-        toDisplay(notation, defender.curHP() * genMultiplier, attacker.maxHP(), 100);
-    } else {
-      minRecoilDamage = toDisplay(
-        notation, Math.min(min, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100
+    if (!attacker.hasAbility('Magic Guard')) {
+      const genMultiplier = gen.num === 2 ? 12.5 : gen.num === 0 || gen.num >= 3 ? 50 : 1;
+      const recoilCap = gen.num === 2 ? Infinity : defender.maxHP();
+      const minRecoilDamage = toDisplay(
+        notation, Math.min(min, recoilCap) * genMultiplier, attacker.maxHP(), 100
       );
-      maxRecoilDamage = toDisplay(
-        notation, Math.min(max, defender.maxHP()) * genMultiplier, attacker.maxHP(), 100
+      const maxRecoilDamage = toDisplay(
+        notation, Math.min(max, recoilCap) * genMultiplier, attacker.maxHP(), 100
       );
-    }
 
-    recoil = [minRecoilDamage, maxRecoilDamage];
-    switch (gen.num) {
-    case 1:
-      recoil = toDisplay(notation, 1, attacker.maxHP());
-      text = '1hp damage on miss';
-      break;
-    case 2: case 3: case 4:
-      if (defender.hasType('Ghost')) {
-        if (gen.num === 4) {
-          const gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
-          recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
-          text = `${gen4CrashDamage}% crash damage`;
+      recoil = [minRecoilDamage, maxRecoilDamage];
+      switch (gen.num) {
+      case 1:
+        recoil = toDisplay(notation, 1, attacker.maxHP());
+        text = '1hp damage on miss';
+        break;
+      case 2: case 3: case 4:
+        if (defender.hasType('Ghost')) {
+          if (gen.num === 4) {
+            const gen4CrashDamage = Math.floor(((defender.maxHP() * 0.5) / attacker.maxHP()) * 100);
+            recoil = notation === '%' ? gen4CrashDamage : Math.floor((gen4CrashDamage / 100) * 48);
+            text = `${gen4CrashDamage}% crash damage`;
+          } else {
+            recoil = 0;
+            text = 'no crash damage on Ghost types';
+          }
         } else {
-          recoil = 0;
-          text = 'no crash damage on Ghost types';
+          text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} crash damage on miss`;
         }
-      } else {
-        text = `${minRecoilDamage} - ${maxRecoilDamage}${notation} crash damage on miss`;
+        break;
+      default:
+        recoil = notation === '%' ? 24 : 50;
+        text = '50% crash damage';
       }
-      break;
-    default:
-      recoil = notation === '%' ? 24 : 50;
-      text = '50% crash damage';
     }
   } else if (move.struggleRecoil) {
     recoil = notation === '%' ? 12 : 25;
@@ -259,8 +244,15 @@ export function getRecoil(
     // return recoil damage as exact HP the best we can do is add some more text to this effect
     if (gen.num === 4) text += ' (rounded down)';
   } else if (move.mindBlownRecoil) {
-    recoil = notation === '%' ? 24 : 50;
-    text = '50% recoil damage';
+    if (!attacker.hasAbility('Magic Guard')) {
+      recoil = notation === '%' ? 24 : 50;
+      text = '50% recoil damage';
+    }
+  } else if (move.chloroblastRecoil) {
+    if (!attacker.hasAbility('Rock Head') && !attacker.hasAbility('Magic Guard')) {
+      recoil = notation === '%' ? 24 : 50;
+      text = '50% recoil damage';
+    }
   }
 
   return {recoil, text};

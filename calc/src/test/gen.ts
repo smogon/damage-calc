@@ -159,6 +159,7 @@ class Move implements I.Move {
   readonly recoil?: [number, number];
   readonly hasCrashDamage?: boolean;
   readonly mindBlownRecoil?: boolean;
+  readonly chloroblastRecoil?: boolean;
   readonly struggleRecoil?: boolean;
   readonly willCrit?: boolean;
   readonly drain?: [number, number];
@@ -199,6 +200,7 @@ class Move implements I.Move {
     if (move.recoil) this.recoil = move.recoil;
     if (move.hasCrashDamage) this.hasCrashDamage = move.hasCrashDamage;
     if (move.mindBlownRecoil) this.mindBlownRecoil = move.mindBlownRecoil;
+    if (move.chloroblastRecoil) this.chloroblastRecoil = move.chloroblastRecoil;
     if (move.struggleRecoil) this.struggleRecoil = move.struggleRecoil;
 
     const stat = move.category === 'Special' ? 'spa' : 'atk';
