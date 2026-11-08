@@ -247,12 +247,12 @@ var SETDEX_CHAMPIONS = {
   },
   "Salamence": {
     "VGC 2026 Reg M-C Special Attacker": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Hyper Voice","Draco Meteor","Tailwind","Protect"]},
-    "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Adamant","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Double-Edge","Dragon Dance","Earthquake","Roost"]},
+    "BSS Reg M-C Bulky Dragon Dance": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Adamant","sps":{"hp":18,"at":15,"df":3,"sp":30},"moves":["Dragon Dance","Double-Edge","Earthquake","Roost"]},
     "OU Showdown Usage": {"ability":"Intimidate","item":"Rocky Helmet","nature":"Adamant","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Earthquake","Temper Flare","Dragon Claw","Dragon Dance"]}
   },
   "Salamence-Mega": {
     "VGC 2026 Reg M-C Special Attacker": {"level":50,"ability":"Aerilate","item":"Salamencite","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Hyper Voice","Draco Meteor","Tailwind","Protect"]},
-    "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Aerilate","item":"Salamencite","nature":"Adamant","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Double-Edge","Dragon Dance","Earthquake","Roost"]}
+    "BSS Reg M-C Bulky Dragon Dance": {"level":50,"ability":"Intimidate","item":"Salamencite","nature":"Adamant","sps":{"hp":18,"at":15,"df":3,"sp":30},"moves":["Dragon Dance","Double-Edge","Earthquake","Roost"]}
   },
   "Metagross": {
     "OU All-out Attacker": {"ability":"Clear Body","item":"Metagrossite","nature":"Jolly","sps":{"at":32,"sd":2,"sp":32},"moves":["Psychic Fangs","Meteor Mash","Earthquake","Thunder Punch"]},
@@ -476,7 +476,7 @@ var SETDEX_CHAMPIONS = {
   "Primarina": {
     "OU Calm Mind": {"ability":"Torrent","item":"Leftovers","nature":"Modest","sps":{"hp":11,"sa":32,"sp":23},"moves":["Calm Mind","Surf","Moonblast","Substitute"]},
     "OU Offensive Pivot": {"ability":"Torrent","item":"Sitrus Berry","nature":"Modest","sps":{"hp":11,"sa":32,"sp":23},"moves":["Surf","Moonblast","Flip Turn","Psychic Noise"]},
-    "BSS Reg M-C Offensive Utility": {"level":50,"ability":"Torrent","item":"Sitrus Berry","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Moonblast","Sparkling Aria","Aqua Jet","Flip Turn"]},
+    "BSS Reg M-C Calm Mind": {"level":50,"ability":"Torrent","item":"Sitrus Berry","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Calm Mind","Moonblast","Sparkling Aria","Encore"]},
     "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Liquid Voice","item":"Leftovers","nature":"Modest","sps":{"hp":22,"df":24,"sa":4,"sp":16},"moves":["Protect","Hyper Voice","Moonblast","Calm Mind"]}
   },
   "Lycanroc-Dusk": {
@@ -517,7 +517,8 @@ var SETDEX_CHAMPIONS = {
   "Cinderace": {
     "OU Air Balloon": {"ability":"Libero","item":"Air Balloon","nature":"Jolly","sps":{"at":32,"df":2,"sp":32},"moves":["Pyro Ball","U-turn","High Jump Kick","Court Change"]},
     "OU Choice Scarf": {"ability":"Libero","item":"Choice Scarf","nature":"Jolly","sps":{"at":32,"df":2,"sp":32},"moves":["Pyro Ball","Gunk Shot","High Jump Kick","U-turn"]},
-    "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Libero","item":"Wide Lens","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Pyro Ball","Gunk Shot","High Jump Kick","Sucker Punch"]}
+    "BSS Reg M-C All-out Attacker": {"level":50,"ability":"Libero","item":"Wide Lens","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Pyro Ball","Gunk Shot","High Jump Kick","Sucker Punch"]},
+    "BSS Reg M-C Choice Scarf": {"level":50,"ability":"Libero","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Pyro Ball","Gunk Shot","High Jump Kick","U-turn"]}
   },
   "Corviknight": {
     "OU IronPress": {"ability":"Pressure","item":"Leftovers","nature":"Impish","sps":{"hp":32,"df":32,"sd":2},"moves":["Iron Defense","Body Press","Roost","Defog"]},
@@ -608,8 +609,8 @@ var SETDEX_CHAMPIONS = {
   },
   "Espathra": {
     "OU Calm Mind": {"ability":"Speed Boost","item":"Colbur Berry","nature":"Modest","sps":{"hp":15,"sa":32,"sp":19},"moves":["Calm Mind","Protect","Stored Power","Dazzling Gleam"]},
-    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Speed Boost","item":"Electric Seed","nature":"Timid","sps":{"hp":32,"df":14,"sd":2,"sp":18},"moves":["Protect","Lumina Crash","Baton Pass","Calm Mind"]},
-    "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Speed Boost","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":30,"sd":2,"sp":2},"moves":["Protect","Lumina Crash","Baton Pass","Calm Mind"]}
+    "BSS Reg M-C Baton Pass": {"level":50,"ability":"Speed Boost","item":"Sitrus Berry","nature":"Timid","sps":{"hp":32,"df":27,"sp":7},"moves":["Lumina Crash","Calm Mind","Protect","Baton Pass"]},
+    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Speed Boost","item":"Electric Seed","nature":"Timid","sps":{"hp":32,"df":14,"sd":2,"sp":18},"moves":["Protect","Lumina Crash","Baton Pass","Calm Mind"]}
   },
   "Glimmora": {
     "OU Dedicated Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Stealth Rock","Power Gem","Mortal Spin","Earth Power"]},
@@ -640,6 +641,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Gholdengo": {
     "VGC 2026 Reg M-C Setup Sweeper": {"level":50,"ability":"Good as Gold","item":"Life Orb","nature":"Modest","sps":{"hp":16,"sa":17,"sd":1,"sp":32},"moves":["Nasty Plot","Make It Rain","Shadow Ball","Protect"]},
+    "BSS Reg M-C Nasty Plot": {"level":50,"ability":"Good as Gold","item":"Air Balloon","nature":"Modest","sps":{"hp":31,"sa":32,"sp":3},"moves":["Nasty Plot","Make It Rain","Shadow Ball","Recover"]},
     "BSS Reg M-C Choice Scarf": {"level":50,"ability":"Good as Gold","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Make It Rain","Shadow Ball","Trick","Thunderbolt"]}
   },
   "Sinistcha": {
