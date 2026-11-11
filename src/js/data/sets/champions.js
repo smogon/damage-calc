@@ -54,12 +54,13 @@ var SETDEX_CHAMPIONS = {
     "OU Showdown Usage": {"ability":"No Guard","item":"Raichunite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Zap Cannon","Focus Blast","Volt Switch","Alluring Voice"]}
   },
   "Clefable": {
-    "OU Physical Wall": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Moonblast","Moonlight","Thunder Wave","Stealth Rock"]},
-    "OU Utility": {"ability":"Magic Bounce","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
+    "OU Magic Guard Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Moonblast","Flamethrower","Moonlight","Stealth Rock"]},
+    "OU Unaware Wall": {"ability":"Unaware","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Calm Mind","Moonblast","Flamethrower","Moonlight"]},
+    "OU Mega Utility": {"ability":"Magic Bounce","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Unaware","item":"Life Orb","nature":"Modest","sps":{"hp":10,"df":27,"sa":25,"sp":4},"moves":["Moonblast","Moonlight","Flamethrower","Thunderbolt"]}
   },
   "Clefable-Mega": {
-    "OU Utility": {"ability":"Magic Bounce","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
+    "OU Mega Utility": {"ability":"Magic Bounce","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Magic Bounce","item":"Clefablite","nature":"Bold","sps":{"hp":32,"df":32,"sa":2},"moves":["Moonlight","Flamethrower","Calm Mind","Moonblast"]}
   },
   "Ninetales-Alola": {
@@ -202,7 +203,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Rain Sweeper": {"level":50,"ability":"Swift Swim","item":"Swampertite","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Wave Crash","Earthquake","Ice Punch","Flip Turn"]}
   },
   "Pelipper": {
-    "OU Rain Setter": {"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","sps":{"hp":32,"df":32,"sa":2},"moves":["Weather Ball","Hurricane","Roost","U-turn"]},
+    "OU Rain Setter": {"ability":"Drizzle","item":"Sitrus Berry","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Surf","U-turn","Roost","Hurricane"]},
     "VGC 2026 Reg M-C Offensive Support": {"level":50,"ability":"Drizzle","item":"Sitrus Berry","nature":"Modest","sps":{"hp":32,"sa":10,"sd":13,"sp":11},"moves":["Weather Ball","Hurricane","Wide Guard","Tailwind"]},
     "VGC 2026 Reg M-C Bulky Support": {"level":50,"ability":"Drizzle","item":"Sitrus Berry","nature":"Calm","sps":{"hp":31,"df":14,"sd":18,"sp":3},"moves":["Weather Ball","Hurricane","Tailwind","Protect"]},
     "BSS Reg M-C Rain Support": {"level":50,"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","sps":{"hp":32,"df":32,"sd":2},"moves":["Hurricane","U-turn","Weather Ball","Ice Beam"]}
@@ -227,6 +228,12 @@ var SETDEX_CHAMPIONS = {
     "OU Wallbreaker": {"ability":"Huge Power","item":"Mawilite","nature":"Adamant","sps":{"hp":13,"at":32,"sp":21},"moves":["Swords Dance","Play Rough","Knock Off","Sucker Punch"]},
     "VGC 2026 Reg M-C Trick Room Attacker": {"level":50,"ability":"Huge Power","item":"Mawilite","nature":"Brave","sps":{"hp":32,"at":32,"sd":2},"moves":["Play Rough","Iron Head","Sucker Punch","Protect"]},
     "BSS Reg M-C Swords Dance": {"level":50,"ability":"Huge Power","item":"Mawilite","nature":"Adamant","sps":{"hp":32,"at":32,"df":2},"moves":["Swords Dance","Play Rough","Sucker Punch","Fire Fang"]}
+  },
+  "Medicham-Mega": {
+    "OU Wallbreaker": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Fake Out","Fire Punch","Zen Headbutt"]}
+  },
+  "Medicham": {
+    "OU Wallbreaker": {"ability":"Pure Power","item":"Medichamite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Fake Out","Fire Punch","Zen Headbutt"]}
   },
   "Torkoal": {
     "VGC 2026 Reg M-C Trick Room Sweeper": {"level":50,"ability":"Drought","item":"Charcoal","nature":"Quiet","sps":{"hp":32,"sa":32,"sd":2},"moves":["Eruption","Heat Wave","Weather Ball","Protect"]},
@@ -275,13 +282,13 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Mega Contrary": {"level":50,"ability":"Contrary","item":"Staraptite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Brave Bird","Roost","Blaze Kick"]}
   },
   "Lopunny": {
-    "OU All-Out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Fake Out","Mach Punch","Triple Axel"]},
+    "OU All-out Attacker": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Fake Out","Mach Punch","Triple Axel"]},
     "OU Swords Dance": {"ability":"Limber","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Close Combat","Mach Punch","Triple Axel"]},
     "BSS Reg M-C All-out Attacker": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Fake Out","Close Combat","Triple Axel","U-turn"]},
     "BSS Reg M-C Swords Dance": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Close Combat","Fake Out","Triple Axel"]}
   },
   "Lopunny-Mega": {
-    "OU All-Out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Fake Out","Mach Punch","Triple Axel"]},
+    "OU All-out Attacker": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Fake Out","Mach Punch","Triple Axel"]},
     "OU Swords Dance": {"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Close Combat","Mach Punch","Triple Axel"]},
     "BSS Reg M-C All-out Attacker": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Fake Out","Close Combat","Triple Axel","U-turn"]},
     "BSS Reg M-C Swords Dance": {"level":50,"ability":"Scrappy","item":"Lopunnite","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Close Combat","Fake Out","Triple Axel"]}
@@ -363,13 +370,14 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-C Tailwind Support": {"level":50,"ability":"Prankster","item":"Focus Sash","nature":"Timid","sps":{"hp":18,"df":6,"sa":10,"sp":32},"moves":["Moonblast","Encore","Tailwind","Protect"]}
   },
   "Hydreigon": {
-    "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Dark Pulse","U-turn","Flamethrower"]},
+    "OU Choice Scarf": {"ability":"Levitate","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Dark Pulse","Draco Meteor","Flamethrower","U-turn"]},
     "VGC 2026 Reg M-C Choice Scarf": {"level":50,"ability":"Levitate","item":"Choice Scarf","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Dark Pulse","Earth Power","Snarl"]},
     "BSS Reg M-C Choice Scarf": {"level":50,"ability":"Levitate","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Dark Pulse","U-turn","Flamethrower"]},
     "BSS Reg M-C Offensive": {"level":50,"ability":"Levitate","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Dark Pulse","Flamethrower","U-turn"]}
   },
   "Volcarona": {
-    "OU Quiver Dance": {"ability":"Flame Body","item":"Sitrus Berry","nature":"Modest","sps":{"sa":32,"sd":2,"sp":32},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Substitute"]},
+    "OU Offensive Quiver Dance": {"ability":"Flame Body","item":"Sitrus Berry","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Giga Drain"]},
+    "OU Bulky Quiver Dance": {"ability":"Flame Body","item":"Leftovers","nature":"Bold","sps":{"hp":31,"df":28,"sp":7},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Morning Sun"]},
     "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Flame Body","item":"Rocky Helmet","nature":"Timid","sps":{"hp":13,"df":30,"sp":23},"moves":["Protect","Rage Powder","Struggle Bug","Quiver Dance"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Flame Body","item":"Sitrus Berry","nature":"Modest","sps":{"hp":1,"df":1,"sa":32,"sp":32},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Giga Drain"]}
   },
@@ -468,6 +476,9 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Pixilate","item":"Fairy Feather","nature":"Modest","sps":{"hp":9,"df":22,"sa":20,"sp":15},"moves":["Hyper Voice","Hyper Beam","Quick Attack","Detect"]},
     "VGC 2026 Reg M-C Bulky Offensive": {"level":50,"ability":"Pixilate","item":"Fairy Feather","nature":"Modest","sps":{"hp":25,"df":24,"sa":12,"sp":5},"moves":["Hyper Voice","Hyper Beam","Quick Attack","Detect"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Pixilate","item":"Leftovers","nature":"Modest","sps":{"hp":21,"df":12,"sa":30,"sp":3},"moves":["Hyper Voice","Quick Attack","Mystical Fire","Yawn"]}
+  },
+  "Hawlucha": {
+    "OU Unburden Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Swords Dance","Close Combat","Acrobatics","Substitute"]}
   },
   "Incineroar": {
     "VGC 2026 Reg M-C Pivot Support": {"level":50,"ability":"Intimidate","item":"Sitrus Berry","nature":"Impish","sps":{"hp":32,"sd":11,"sp":23},"moves":["Flare Blitz","Throat Chop","Fake Out","Parting Shot"]},
@@ -580,6 +591,9 @@ var SETDEX_CHAMPIONS = {
     "OU Unaware Wall": {"ability":"Unaware","nature":"Bold","sps":{"hp":32,"df":19,"sd":15},"moves":["Torch Song","Hex","Will-O-Wisp","Slack Off"]},
     "BSS Reg M-C Physical Wall": {"level":50,"ability":"Unaware","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Torch Song","Slack Off","Will-O-Wisp","Shadow Ball"]}
   },
+  "Quaquaval": {
+    "OU Choice Scarf": {"ability":"Moxie","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Wave Crash","Close Combat","Triple Axel","Flip Turn"]}
+  },
   "Pawmot": {
     "OU Offensive": {"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Double Shock","Close Combat","Ice Punch","Mach Punch"]},
     "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Iron Fist","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Double Shock","Fake Out","Revival Blessing"]},
@@ -648,7 +662,7 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-C Redirection Support": {"level":50,"ability":"Hospitality","item":"Colbur Berry","nature":"Bold","sps":{"hp":32,"df":14,"sd":20},"moves":["Rage Powder","Trick Room","Matcha Gotcha","Protect"]}
   },
   "Archaludon": {
-    "OU Rain Sweeper": {"ability":"Stamina","item":"Shuca Berry","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Flash Cannon","Electro Shot","Stealth Rock"]},
+    "OU Rain Attacker": {"ability":"Stamina","item":"Chople Berry","nature":"Modest","sps":{"hp":26,"sa":32,"sp":8},"moves":["Electro Shot","Draco Meteor","Flash Cannon","Aura Sphere"]},
     "OU Bulky Attacker": {"ability":"Stamina","item":"Leftovers","nature":"Modest","sps":{"hp":26,"sa":32,"sp":8},"moves":["Flash Cannon","Draco Meteor","Thunderbolt","Stealth Rock"]},
     "VGC 2026 Reg M-C Bulky Rain Sweeper": {"level":50,"ability":"Stamina","item":"Leftovers","nature":"Calm","sps":{"hp":32,"df":1,"sa":1,"sd":25,"sp":7},"moves":["Electro Shot","Dragon Pulse","Flash Cannon","Protect"]},
     "BSS Reg M-C Bulky Entry Hazard Setter": {"level":50,"ability":"Stamina","item":"Sitrus Berry","nature":"Bold","sps":{"hp":32,"df":23,"sd":11},"moves":["Stealth Rock","Draco Meteor","Thunderbolt","Roar"]},
@@ -700,12 +714,6 @@ var SETDEX_CHAMPIONS = {
   },
   "Tinkaton": {
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Mold Breaker","item":"Air Balloon","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Gigaton Hammer","Encore","Thunder Wave","Knock Off"]}
-  },
-  "Quaquaval": {
-    "OU Showdown Usage": {"ability":"Moxie","item":"Sitrus Berry","nature":"Jolly","sps":{"hp":1,"at":32,"sd":1,"sp":32},"moves":["Aqua Step","Close Combat","Rapid Spin","Ice Spinner"]}
-  },
-  "Hawlucha": {
-    "OU Showdown Usage": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Swords Dance","Close Combat","Acrobatics","Encore"]}
   },
   "Goodra-Hisui": {
     "OU Showdown Usage": {"ability":"Gooey","item":"Leftovers","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Draco Meteor","Flash Cannon","Dragon Tail","Knock Off"]}
