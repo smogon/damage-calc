@@ -2707,7 +2707,7 @@ var SETDEX_BW = {
     "RU Nasty Plot": {"ability":"Prankster","item":"Life Orb","nature":"Timid","ivs":{"at":30,"sa":30,"sp":30},"evs":{"df":4,"sa":252,"sp":252},"moves":["Nasty Plot","Encore","Dark Pulse","Hidden Power Fire"]},
     "NU Pivot": {"ability":"Prankster","item":"Dread Plate","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Encore","Sucker Punch","U-turn","Pursuit"]},
     "NU Weather Support": {"ability":"Prankster","item":"Damp Rock","nature":"Jolly","evs":{"hp":4,"at":252,"sp":252},"moves":["Rain Dance","Encore","U-turn","Sucker Punch"]},
-    "VGC 2013 Showdown Usage": {"level":50,"ability":"Prankster","item":"Dark Gem","nature":"Jolly","evs":{"hp":132,"at":4,"df":116,"sd":4,"sp":252},"moves":["Fake Out","Encore","Foul Play","Swagger"]}
+    "VGC 2013 Disruptor": {"level":50,"ability":"Prankster","item":"Dark Gem","nature":"Jolly","evs":{"hp":108,"df":148,"sp":252},"moves":["Fake Out","Foul Play","Encore","Swagger"]}
   },
   "Munna": {
     "LC Calm Mind": {"level":5,"ability":"Synchronize","item":"Eviolite","nature":"Bold","ivs":{"df":30,"sa":30,"sd":30,"sp":30},"evs":{"hp":228,"sa":224,"sp":8},"moves":["Calm Mind","Stored Power","Hidden Power Fighting","Moonlight"]}
@@ -2828,9 +2828,9 @@ var SETDEX_BW = {
     "UU Bulk Up": {"ability":"Shed Skin","item":"Leftovers","nature":"Careful","evs":{"hp":252,"at":4,"sd":252},"moves":["Bulk Up","Drain Punch","Crunch","Rest"]},
     "UU Choice Band": {"ability":"Intimidate","item":"Choice Band","nature":"Adamant","evs":{"hp":232,"at":252,"sd":4,"sp":20},"moves":["High Jump Kick","Crunch","Ice Punch","Drain Punch"]},
     "Doubles OU Fake Out": {"ability":"Intimidate","item":"Sitrus Berry","nature":"Careful","evs":{"hp":252,"at":176,"sd":80},"moves":["Fake Out","Drain Punch","Crunch","Detect"]},
+    "VGC 2013 Bulky Offensive Support": {"level":50,"ability":"Intimidate","item":"Dark Gem","nature":"Adamant","evs":{"hp":220,"at":252,"sp":36},"moves":["Fake Out","Drain Punch","Crunch","Detect"]},
     "Monotype Bulk Up (Fighting)": {"ability":"Shed Skin","item":"Leftovers","nature":"Careful","evs":{"hp":252,"sd":252,"sp":4},"moves":["Crunch","Bulk Up","Drain Punch","Rest"]},
-    "1v1 Chople Counter": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":172,"sd":84},"moves":["Fake Out","High Jump Kick","Payback","Counter"]},
-    "VGC 2013 Showdown Usage": {"level":50,"ability":"Intimidate","item":"Dark Gem","nature":"Brave","evs":{"hp":252,"at":252,"df":4},"moves":["Crunch","Fake Out","Drain Punch","Detect"]}
+    "1v1 Chople Counter": {"ability":"Intimidate","item":"Chople Berry","nature":"Adamant","evs":{"hp":252,"at":172,"sd":84},"moves":["Fake Out","High Jump Kick","Payback","Counter"]}
   },
   "Sigilyph": {
     "UU Bulky Sweeper": {"ability":"Magic Guard","item":"Flame Orb","nature":"Bold","evs":{"hp":252,"df":252,"sp":4},"moves":["Cosmic Power","Psycho Shift","Stored Power","Roost"]},

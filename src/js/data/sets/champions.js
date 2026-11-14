@@ -478,7 +478,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Pixilate","item":"Leftovers","nature":"Modest","sps":{"hp":21,"df":12,"sa":30,"sp":3},"moves":["Hyper Voice","Quick Attack","Mystical Fire","Yawn"]}
   },
   "Hawlucha": {
-    "OU Unburden Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Swords Dance","Close Combat","Acrobatics","Substitute"]}
+    "OU Grassy Terrain Sweeper": {"ability":"Unburden","item":"Grassy Seed","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Swords Dance","Acrobatics","Close Combat","Substitute"]}
   },
   "Incineroar": {
     "VGC 2026 Reg M-C Pivot Support": {"level":50,"ability":"Intimidate","item":"Sitrus Berry","nature":"Impish","sps":{"hp":32,"sd":11,"sp":23},"moves":["Flare Blitz","Throat Chop","Fake Out","Parting Shot"]},
