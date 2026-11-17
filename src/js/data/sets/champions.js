@@ -44,9 +44,13 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Turtle Power! (Bulky Attacker)": {"level":50,"ability":"Mega Launcher","item":"Blastoisinite","nature":"Modest","sps":{"hp":32,"df":2,"sa":32},"moves":["Aura Sphere","Dark Pulse","Water Pulse","Aqua Jet"]}
   },
   "Raichu": {
+    "VGC 2026 Reg M-C Utility Support": {"level":50,"ability":"Lightning Rod","item":"Raichunite X","nature":"Jolly","sps":{"hp":28,"df":10,"sp":28},"moves":["Fake Out","Volt Switch","Volt Tackle","Feint"]},
     "VGC 2026 Reg M-C Fast Attacker": {"level":50,"ability":"Lightning Rod","item":"Raichunite Y","nature":"Timid","sps":{"hp":29,"df":14,"sp":23},"moves":["Zap Cannon","Focus Blast","Fake Out","Protect"]},
     "BSS Reg M-C The Rat (Paralysis Spreader)": {"level":50,"ability":"Lightning Rod","item":"Raichunite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Zap Cannon","Focus Blast","Grass Knot","Substitute"]},
     "OU Showdown Usage": {"ability":"Static","item":"Raichunite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Zap Cannon","Focus Blast","Volt Switch","Alluring Voice"]}
+  },
+  "Raichu-Mega-X": {
+    "VGC 2026 Reg M-C Utility Support": {"level":50,"ability":"Electric Surge","item":"Raichunite X","nature":"Jolly","sps":{"hp":28,"df":10,"sp":28},"moves":["Fake Out","Volt Switch","Volt Tackle","Feint"]}
   },
   "Raichu-Mega-Y": {
     "VGC 2026 Reg M-C Fast Attacker": {"level":50,"ability":"No Guard","item":"Raichunite Y","nature":"Timid","sps":{"hp":29,"df":14,"sp":23},"moves":["Zap Cannon","Focus Blast","Fake Out","Protect"]},
@@ -378,7 +382,8 @@ var SETDEX_CHAMPIONS = {
   "Volcarona": {
     "OU Offensive Quiver Dance": {"ability":"Flame Body","item":"Sitrus Berry","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Giga Drain"]},
     "OU Bulky Quiver Dance": {"ability":"Flame Body","item":"Leftovers","nature":"Bold","sps":{"hp":31,"df":28,"sp":7},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Morning Sun"]},
-    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Flame Body","item":"Rocky Helmet","nature":"Timid","sps":{"hp":13,"df":30,"sp":23},"moves":["Protect","Rage Powder","Struggle Bug","Quiver Dance"]},
+    "VGC 2026 Reg M-C Setup Sweeper": {"level":50,"ability":"Flame Body","item":"Grassy Seed","nature":"Modest","sps":{"hp":16,"df":8,"sa":25,"sp":17},"moves":["Heat Wave","Giga Drain","Quiver Dance","Protect"]},
+    "VGC 2026 Reg M-C Redirection Support": {"level":50,"ability":"Flame Body","item":"Rocky Helmet","nature":"Timid","sps":{"hp":32,"df":12,"sd":1,"sp":21},"moves":["Rage Powder","Overheat","Struggle Bug","Protect"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Flame Body","item":"Sitrus Berry","nature":"Modest","sps":{"hp":1,"df":1,"sa":32,"sp":32},"moves":["Quiver Dance","Fiery Dance","Bug Buzz","Giga Drain"]}
   },
   "Delphox": {
@@ -431,29 +436,29 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Y: Life Taker (Offensive)": {"level":50,"ability":"Fairy Aura","item":"Floettite","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Calm Mind","Moonblast","Light of Ruin","Synthesis"]}
   },
   "Aegislash": {
-    "OU Mixed Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Naughty","sps":{"at":32,"sa":2,"sp":32},"moves":["Poltergeist","Shadow Ball","Shadow Sneak","Close Combat"]},
     "OU Bulky Swords Dance": {"ability":"Stance Change","item":"Colbur Berry","nature":"Adamant","sps":{"hp":26,"at":32,"sp":8},"moves":["Swords Dance","Poltergeist","Close Combat","Shadow Sneak"]},
+    "OU Special Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Rash","sps":{"hp":23,"sa":32,"sp":11},"moves":["Shadow Ball","Shadow Sneak","Close Combat","King's Shield"]},
     "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Poltergeist","Shadow Sneak","Iron Head","King's Shield"]},
     "BSS Reg M-C Physical Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":32,"at":32,"df":2},"moves":["Poltergeist","Shadow Sneak","Swords Dance","Close Combat"]},
     "BSS Reg M-C Mixed Attacker": {"level":50,"ability":"Stance Change","item":"Leftovers","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Shadow Ball","Shadow Sneak","King's Shield","Close Combat"]}
   },
   "Aegislash-Blade": {
-    "OU Mixed Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Naughty","sps":{"at":32,"sa":2,"sp":32},"moves":["Poltergeist","Shadow Ball","Shadow Sneak","Close Combat"]},
     "OU Bulky Swords Dance": {"ability":"Stance Change","item":"Colbur Berry","nature":"Adamant","sps":{"hp":26,"at":32,"sp":8},"moves":["Swords Dance","Poltergeist","Close Combat","Shadow Sneak"]},
+    "OU Special Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Rash","sps":{"hp":23,"sa":32,"sp":11},"moves":["Shadow Ball","Shadow Sneak","Close Combat","King's Shield"]},
     "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Poltergeist","Shadow Sneak","Iron Head","King's Shield"]},
     "BSS Reg M-C Physical Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":32,"at":32,"df":2},"moves":["Poltergeist","Shadow Sneak","Swords Dance","Close Combat"]},
     "BSS Reg M-C Mixed Attacker": {"level":50,"ability":"Stance Change","item":"Leftovers","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Shadow Ball","Shadow Sneak","King's Shield","Close Combat"]}
   },
   "Aegislash-Shield": {
-    "OU Mixed Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Naughty","sps":{"at":32,"sa":2,"sp":32},"moves":["Poltergeist","Shadow Ball","Shadow Sneak","Close Combat"]},
     "OU Bulky Swords Dance": {"ability":"Stance Change","item":"Colbur Berry","nature":"Adamant","sps":{"hp":26,"at":32,"sp":8},"moves":["Swords Dance","Poltergeist","Close Combat","Shadow Sneak"]},
+    "OU Special Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Rash","sps":{"hp":23,"sa":32,"sp":11},"moves":["Shadow Ball","Shadow Sneak","Close Combat","King's Shield"]},
     "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Poltergeist","Shadow Sneak","Iron Head","King's Shield"]},
     "BSS Reg M-C Physical Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":32,"at":32,"df":2},"moves":["Poltergeist","Shadow Sneak","Swords Dance","Close Combat"]},
     "BSS Reg M-C Mixed Attacker": {"level":50,"ability":"Stance Change","item":"Leftovers","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Shadow Ball","Shadow Sneak","King's Shield","Close Combat"]}
   },
   "Aegislash-Both": {
-    "OU Mixed Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Naughty","sps":{"at":32,"sa":2,"sp":32},"moves":["Poltergeist","Shadow Ball","Shadow Sneak","Close Combat"]},
     "OU Bulky Swords Dance": {"ability":"Stance Change","item":"Colbur Berry","nature":"Adamant","sps":{"hp":26,"at":32,"sp":8},"moves":["Swords Dance","Poltergeist","Close Combat","Shadow Sneak"]},
+    "OU Special Attacker": {"ability":"Stance Change","item":"Spell Tag","nature":"Rash","sps":{"hp":23,"sa":32,"sp":11},"moves":["Shadow Ball","Shadow Sneak","Close Combat","King's Shield"]},
     "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":27,"at":32,"sp":7},"moves":["Poltergeist","Shadow Sneak","Iron Head","King's Shield"]},
     "BSS Reg M-C Physical Attacker": {"level":50,"ability":"Stance Change","item":"Spell Tag","nature":"Adamant","sps":{"hp":32,"at":32,"df":2},"moves":["Poltergeist","Shadow Sneak","Swords Dance","Close Combat"]},
     "BSS Reg M-C Mixed Attacker": {"level":50,"ability":"Stance Change","item":"Leftovers","nature":"Quiet","sps":{"hp":32,"at":2,"sa":32},"moves":["Shadow Ball","Shadow Sneak","King's Shield","Close Combat"]}
@@ -573,6 +578,9 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Offensive": {"level":50,"ability":"Adaptability","item":"Mystic Water","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Wave Crash","Last Respects","Aqua Jet","Agility"]},
     "OU Showdown Usage": {"ability":"Adaptability","item":"Life Orb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Wave Crash","Flip Turn","Aqua Jet","Psychic Fangs"]}
   },
+  "Basculegion-F": {
+    "VGC 2026 Reg M-C Rain Sweeper": {"level":50,"ability":"Swift Swim","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Shadow Ball","Muddy Water","Ice Beam","Protect"]}
+  },
   "Sneasler": {
     "VGC 2026 Reg M-C Unburden Sweeper": {"level":50,"ability":"Pressure","item":"Grassy Seed","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Dire Claw","Fake Out","Protect"]},
     "VGC 2026 Reg M-C Focus Sash": {"level":50,"ability":"Poison Touch","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Dire Claw","Fake Out","Protect"]},
@@ -627,7 +635,8 @@ var SETDEX_CHAMPIONS = {
     "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Speed Boost","item":"Electric Seed","nature":"Timid","sps":{"hp":32,"df":14,"sd":2,"sp":18},"moves":["Protect","Lumina Crash","Baton Pass","Calm Mind"]}
   },
   "Glimmora": {
-    "OU Dedicated Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Stealth Rock","Power Gem","Mortal Spin","Earth Power"]},
+    "OU Focus Sash Lead": {"ability":"Toxic Debris","item":"Focus Sash","nature":"Timid","sps":{"sa":32,"sd":2,"sp":32},"moves":["Stealth Rock","Power Gem","Mortal Spin","Earth Power"]},
+    "OU Red Card": {"ability":"Toxic Debris","item":"Red Card","nature":"Bold","sps":{"hp":32,"df":27,"sp":7},"moves":["Stealth Rock","Power Gem","Mortal Spin","Earth Power"]},
     "OU Special Sweeper": {"ability":"Toxic Debris","item":"Glimmoranite","nature":"Timid","sps":{"hp":1,"sa":32,"sd":1,"sp":32},"moves":["Power Gem","Sludge Bomb","Earth Power","Mortal Spin"]},
     "VGC 2026 Reg M-C Fast Attacker": {"level":50,"ability":"Toxic Debris","item":"Glimmoranite","nature":"Modest","sps":{"hp":1,"df":1,"sa":32,"sp":32},"moves":["Power Gem","Sludge Bomb","Spiky Shield","Earth Power"]},
     "VGC 2026 Reg M-C Offensive": {"level":50,"ability":"Toxic Debris","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Power Gem","Sludge Bomb","Earth Power","Spiky Shield"]},
@@ -669,12 +678,6 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Pseudo-Focus Sash": {"level":50,"ability":"Sturdy","item":"White Herb","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Draco Meteor","Thunderbolt","Flash Cannon","Stealth Rock"]},
     "BSS Reg M-C Rain Sweeper": {"level":50,"ability":"Stamina","item":"Choice Scarf","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Electro Shot","Draco Meteor","Flash Cannon","Aura Sphere"]},
     "BSS Reg M-C Focus Energy": {"level":50,"ability":"Stamina","item":"Scope Lens","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Focus Energy","Draco Meteor","Flash Cannon","Thunderbolt"]}
-  },
-  "Basculegion-F": {
-    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Swift Swim","item":"Focus Sash","nature":"Modest","sps":{"hp":2,"sa":32,"sp":32},"moves":["Muddy Water","Shadow Ball","Ice Beam","Protect"]}
-  },
-  "Raichu-Mega-X": {
-    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Electric Surge","item":"Raichunite X","nature":"Jolly","sps":{"hp":30,"df":4,"sp":32},"moves":["Fake Out","Volt Tackle","Volt Switch","Feint"]}
   },
   "Camerupt-Mega": {
     "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Sheer Force","item":"Cameruptite","nature":"Quiet","sps":{"hp":32,"df":2,"sa":32},"moves":["Earth Power","Heat Wave","Protect","Ancient Power"]}

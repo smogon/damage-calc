@@ -726,9 +726,9 @@ var SETDEX_ADV = {
     "ZU Substitute": {"ability":"Rock Head","item":"Leftovers","nature":"Jolly","evs":{"hp":176,"at":156,"sp":176},"moves":["Earthquake","Rock Slide","Substitute","Explosion"]}
   },
   "Drowzee": {
+    "LC Defensive": {"level":5,"ability":"Insomnia","item":"Sitrus Berry","nature":"Modest","ivs":{"at":2,"df":30,"sa":30},"evs":{"hp":36,"df":80,"sa":176,"sd":196,"sp":20},"moves":["Psychic","Thief","Calm Mind","Substitute"]},
     "ZU Defensive": {"ability":"Insomnia","item":"Leftovers","nature":"Calm","ivs":{"at":0},"evs":{"hp":252,"sa":4,"sd":252},"moves":["Psychic","Toxic","Wish","Protect"]},
-    "ZU Sub CM": {"ability":"Insomnia","item":"Lum Berry","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":228,"sp":28},"moves":["Calm Mind","Psychic","Substitute","Wish"]},
-    "LC Showdown Usage": {"level":5,"ability":"Insomnia","item":"Sitrus Berry","nature":"Modest","evs":{"hp":116,"df":76,"sa":172,"sd":116,"sp":20},"moves":["Psychic","Thief","Substitute","Toxic"]}
+    "ZU Sub CM": {"ability":"Insomnia","item":"Lum Berry","nature":"Bold","ivs":{"at":0},"evs":{"hp":252,"df":228,"sp":28},"moves":["Calm Mind","Psychic","Substitute","Wish"]}
   },
   "Hypno": {
     "UU Support": {"ability":"Insomnia","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":192,"sp":64},"moves":["Seismic Toss","Thunder Wave","Wish","Reflect"]}

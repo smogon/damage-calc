@@ -1192,6 +1192,7 @@ var SETDEX_SV = {
   },
   "Gardevoir": {
     "UU Choice Scarf": {"ability":"Trace","item":"Choice Scarf","nature":"Modest","teraType":"Fairy","evs":{"df":4,"sa":252,"sp":252},"moves":["Moonblast","Mystical Fire","Psychic Noise","Healing Wish"]},
+    "UU Bulky Attacker": {"ability":"Trace","item":"Heavy-Duty Boots","nature":"Modest","teraType":"Water","evs":{"hp":252,"sa":152,"sp":104},"moves":["Moonblast","Psychic Noise","Knock Off","Encore"]},
     "RU Choice Scarf": {"ability":"Trace","item":"Choice Scarf","nature":"Timid","teraType":"Fairy","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Moonblast","Psychic","Trick","Healing Wish"]},
     "BSS Reg I Bulky Offense": {"level":50,"ability":"Trace","item":"Sitrus Berry","nature":"Bold","teraType":"Fire","evs":{"hp":244,"df":244,"sp":20},"moves":["Moonblast","Mystical Fire","Will-O-Wisp","Psyshock"]},
     "BSS Reg I Offensive": {"level":50,"ability":"Trace","item":"Assault Vest","nature":"Modest","teraType":"Fire","evs":{"hp":172,"sa":156,"sp":180},"moves":["Psyshock","Moonblast","Mystical Fire","Shadow Sneak"]},
@@ -1566,7 +1567,7 @@ var SETDEX_SV = {
   "Deoxys": {
     "Ubers UU Physical Lorb": {"ability":"Pressure","item":"Life Orb","nature":"Naive","teraType":"Normal","evs":{"at":252,"sa":4,"sp":252},"moves":["Psycho Boost","Superpower","Knock Off","Extreme Speed"]},
     "Ubers UU Special Breaker": {"ability":"Pressure","item":"Life Orb","nature":"Naive","teraType":"Ghost","evs":{"at":4,"sa":252,"sp":252},"moves":["Psycho Boost","Shadow Ball","Ice Beam","Extreme Speed"]},
-    "Ubers UU Hazard Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Timid","teraType":"Ghost","ivs":{"at":0},"evs":{"hp":4,"sa":252,"sp":252},"moves":["Spikes","Stealth Rock","Taunt","Psycho Boost"]},
+    "Ubers UU Entry Hazard Lead": {"ability":"Pressure","item":"Focus Sash","nature":"Timid","teraType":"Ghost","evs":{"hp":4,"sa":252,"sp":252},"moves":["Spikes","Stealth Rock","Taunt","Psycho Boost"]},
     "National Dex Doubles Showdown Usage": {"ability":"Pressure","item":"Focus Sash","nature":"Hasty","teraType":"Psychic","evs":{"at":4,"sa":252,"sp":252},"moves":["Protect","Expanding Force","Superpower","Psycho Boost"]},
     "Balanced Hackmons Showdown Usage": {"ability":"Download","item":"Life Orb","nature":"Hasty","evs":{"hp":252,"at":252,"sa":252,"sp":252},"moves":["Expanding Force","Knock Off","Collision Course","Fusion Bolt"]}
   },
@@ -2854,7 +2855,8 @@ var SETDEX_SV = {
   },
   "Kyurem-White": {
     "Balanced Hackmons Choice Specs": {"ability":"Refrigerate","item":"Choice Specs","nature":"Rash","evs":{"hp":252,"at":252,"df":252,"sa":252,"sd":252,"sp":252},"moves":["Boomburst","Armor Cannon","Clanging Scales","Knock Off"]},
-    "Ubers UU Choice Item": {"ability":"Turboblaze","item":"Choice Specs","nature":"Timid","teraType":"Ice","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Draco Meteor","Fusion Flare"]},
+    "Ubers UU Choice Specs": {"ability":"Turboblaze","item":"Choice Specs","nature":"Timid","teraType":"Ice","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Draco Meteor","Fusion Flare"]},
+    "Ubers UU Choice Scarf": {"ability":"Turboblaze","item":"Choice Scarf","nature":"Timid","teraType":"Ice","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Ice Beam","Freeze-Dry","Draco Meteor","Fusion Flare"]},
     "Ubers UU Dragon Dance": {"ability":"Turboblaze","item":"Loaded Dice","nature":"Naughty","teraType":"Fire","evs":{"at":252,"sa":164,"sp":92},"moves":["Dragon Dance","Scale Shot","Icicle Spear","Fusion Flare"]}
   },
   "Keldeo": {
@@ -3910,7 +3912,7 @@ var SETDEX_SV = {
     "Almost Any Ability All-out Attacker": {"ability":"Sword of Ruin","item":"Heavy-Duty Boots","nature":"Jolly","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Crunch","Stone Edge","Heavy Slam"]},
     "Almost Any Ability IronPress": {"ability":"Sword of Ruin","item":"Leftovers","nature":"Jolly","evs":{"at":108,"df":148,"sp":252},"moves":["Iron Defense","Body Press","Stone Edge","Crunch"]},
     "Ubers UU Choice Band": {"ability":"Dauntless Shield","item":"Choice Band","nature":"Jolly","teraType":"Fighting","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Crunch","Stone Edge","Heavy Slam"]},
-    "Ubers UU IronPress": {"ability":"Dauntless Shield","item":"Chesto Berry","nature":"Jolly","teraType":"Dark","evs":{"at":4,"df":252,"sp":252},"moves":["Iron Defense","Body Press","Crunch","Rest"]},
+    "Ubers UU IronPress": {"ability":"Dauntless Shield","item":"Leftovers","nature":"Jolly","teraType":"Dark","evs":{"at":4,"df":252,"sp":252},"moves":["Iron Defense","Body Press","Crunch","Substitute"]},
     "Ubers UU Offensive Attacker": {"ability":"Dauntless Shield","item":"Heavy-Duty Boots","nature":"Jolly","teraType":"Dark","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Crunch","Stone Edge","Howl"]},
     "CAP Showdown Usage": {"ability":"Dauntless Shield","item":"Leftovers","nature":"Jolly","teraType":"Steel","evs":{"hp":252,"df":88,"sp":168},"moves":["Crunch","Body Press","Iron Defense","Roar"]}
   },
@@ -4456,7 +4458,7 @@ var SETDEX_SV = {
     "BSS Reg I This looks like a job for Palafin": {"level":50,"ability":"Zero to Hero","item":"Choice Band","nature":"Adamant","teraType":"Water","evs":{"hp":4,"at":252,"sp":252},"moves":["Jet Punch","Wave Crash","Flip Turn","Ice Punch"]},
     "BSS Reg I Bulk Up": {"level":50,"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","teraType":"Fighting","evs":{"hp":252,"sd":140,"sp":116},"moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"]},
     "Almost Any Ability Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Substitute","Bulk Up","Jet Punch","Drain Punch"]},
-    "Ubers UU Encore": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","teraType":"Water","evs":{"hp":160,"at":252,"sp":96},"moves":["Jet Punch","Wave Crash","Flip Turn","Encore"]},
+    "Ubers UU Encore Pivot": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","teraType":"Water","evs":{"hp":160,"at":252,"sp":96},"moves":["Jet Punch","Wave Crash","Flip Turn","Encore"]},
     "Ubers UU Choice Band": {"ability":"Zero to Hero","item":"Choice Band","nature":"Adamant","teraType":"Water","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Jet Punch","Wave Crash","Flip Turn"]},
     "Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","teraType":"Steel","evs":{"hp":248,"sd":176,"sp":84},"moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"]}
   },
@@ -4468,7 +4470,7 @@ var SETDEX_SV = {
     "BSS Reg I This looks like a job for Palafin": {"level":50,"ability":"Zero to Hero","item":"Choice Band","nature":"Adamant","teraType":"Water","evs":{"hp":4,"at":252,"sp":252},"moves":["Jet Punch","Wave Crash","Flip Turn","Ice Punch"]},
     "BSS Reg I Bulk Up": {"level":50,"ability":"Zero to Hero","item":"Leftovers","nature":"Careful","teraType":"Fighting","evs":{"hp":252,"sd":140,"sp":116},"moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"]},
     "Almost Any Ability Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Adamant","evs":{"hp":252,"at":252,"df":4},"moves":["Substitute","Bulk Up","Jet Punch","Drain Punch"]},
-    "Ubers UU Encore": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","teraType":"Water","evs":{"hp":160,"at":252,"sp":96},"moves":["Jet Punch","Wave Crash","Flip Turn","Encore"]},
+    "Ubers UU Encore Pivot": {"ability":"Zero to Hero","item":"Mystic Water","nature":"Adamant","teraType":"Water","evs":{"hp":160,"at":252,"sp":96},"moves":["Jet Punch","Wave Crash","Flip Turn","Encore"]},
     "Ubers UU Choice Band": {"ability":"Zero to Hero","item":"Choice Band","nature":"Adamant","teraType":"Water","evs":{"at":252,"sd":4,"sp":252},"moves":["Close Combat","Jet Punch","Wave Crash","Flip Turn"]},
     "Ubers UU Bulk Up": {"ability":"Zero to Hero","item":"Leftovers","nature":"Jolly","teraType":"Steel","evs":{"hp":248,"sd":176,"sp":84},"moves":["Bulk Up","Jet Punch","Drain Punch","Substitute"]}
   },
