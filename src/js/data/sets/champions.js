@@ -58,7 +58,7 @@ var SETDEX_CHAMPIONS = {
     "OU Showdown Usage": {"ability":"No Guard","item":"Raichunite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Zap Cannon","Focus Blast","Volt Switch","Alluring Voice"]}
   },
   "Clefable": {
-    "OU Magic Guard Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Moonblast","Flamethrower","Moonlight","Stealth Rock"]},
+    "OU Defensive Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Moonblast","Stealth Rock","Flamethrower","Moonlight"]},
     "OU Unaware Wall": {"ability":"Unaware","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Calm Mind","Moonblast","Flamethrower","Moonlight"]},
     "OU Mega Utility": {"ability":"Magic Bounce","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Unaware","item":"Life Orb","nature":"Modest","sps":{"hp":10,"df":27,"sa":25,"sp":4},"moves":["Moonblast","Moonlight","Flamethrower","Thunderbolt"]}
@@ -152,6 +152,7 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Bulky Attacker": {"level":50,"ability":"Mega Sol","item":"Meganiumite","nature":"Modest","sps":{"hp":32,"sa":32,"sp":2},"moves":["Solar Beam","Weather Ball","Dazzling Gleam","Synthesis"]}
   },
   "Politoed": {
+    "VGC 2026 Reg M-C Offensive Support": {"level":50,"ability":"Drizzle","item":"Mystic Water","nature":"Modest","sps":{"hp":32,"sa":32,"sd":2},"moves":["Weather Ball","Muddy Water","Ice Beam","Protect"]},
     "VGC 2026 Reg M-C Rain Support": {"level":50,"ability":"Drizzle","item":"Sitrus Berry","nature":"Calm","sps":{"hp":31,"df":23,"sd":12},"moves":["Weather Ball","Perish Song","Protect","Hypnosis"]}
   },
   "Umbreon": {
