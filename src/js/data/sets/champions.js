@@ -214,11 +214,11 @@ var SETDEX_CHAMPIONS = {
     "BSS Reg M-C Rain Support": {"level":50,"ability":"Drizzle","item":"Damp Rock","nature":"Relaxed","sps":{"hp":32,"df":32,"sd":2},"moves":["Hurricane","U-turn","Weather Ball","Ice Beam"]}
   },
   "Gardevoir": {
-    "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Trace","item":"Gardevoirite","nature":"Modest","sps":{"hp":32,"df":2,"sa":32},"moves":["Hyper Voice","Protect","Psyshock","Trick Room"]},
+    "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Trace","item":"Gardevoirite","nature":"Modest","sps":{"hp":32,"df":2,"sa":32},"moves":["Expanding Force","Hyper Voice","Protect","Calm Mind"]},
     "OU Showdown Usage": {"ability":"Synchronize","item":"Gardevoirite","nature":"Timid","sps":{"df":2,"sa":32,"sp":32},"moves":["Hyper Voice","Mystical Fire","Psyshock","Taunt"]}
   },
   "Gardevoir-Mega": {
-    "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Pixilate","item":"Gardevoirite","nature":"Modest","sps":{"hp":32,"df":2,"sa":32},"moves":["Hyper Voice","Protect","Psyshock","Trick Room"]},
+    "VGC 2026 Reg M-C Bulky Attacker": {"level":50,"ability":"Pixilate","item":"Gardevoirite","nature":"Modest","sps":{"hp":32,"df":2,"sa":32},"moves":["Expanding Force","Hyper Voice","Protect","Calm Mind"]},
     "OU Showdown Usage": {"ability":"Pixilate","item":"Gardevoirite","nature":"Timid","sps":{"df":2,"sa":32,"sp":32},"moves":["Hyper Voice","Mystical Fire","Psyshock","Taunt"]}
   },
   "Sableye": {
@@ -366,6 +366,7 @@ var SETDEX_CHAMPIONS = {
   "Excadrill": {
     "OU Lead": {"ability":"Mold Breaker","item":"Focus Sash","nature":"Jolly","sps":{"at":21,"sd":13,"sp":32},"moves":["Stealth Rock","Rapid Spin","Earthquake","Steel Beam"]},
     "OU Rapid Spin": {"ability":"Mold Breaker","item":"Shuca Berry","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Rapid Spin","Earthquake","Iron Head","Stealth Rock"]},
+    "OU Choice Scarf": {"ability":"Mold Breaker","item":"Choice Scarf","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Iron Head","Rapid Spin","Stealth Rock"]},
     "OU Sand Sweeper": {"ability":"Sand Rush","item":"Life Orb","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Swords Dance","Earthquake","Iron Head","Rock Slide"]},
     "VGC 2026 Reg M-C Sand Sweeper": {"level":50,"ability":"Sand Rush","item":"Focus Sash","nature":"Adamant","sps":{"hp":2,"at":32,"sp":32},"moves":["Iron Head","Protect","Rock Slide","High Horsepower"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Sand Rush","item":"Air Balloon","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Earthquake","Iron Head","Swords Dance","Substitute"]}

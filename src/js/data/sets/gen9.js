@@ -5,7 +5,7 @@ var SETDEX_SV = {
   "Venusaur": {
     "OU Sun Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Timid","teraType":"Fire","evs":{"df":4,"sa":252,"sp":252},"moves":["Growth","Giga Drain","Weather Ball","Sludge Bomb"]},
     "UU Sun Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Weather Ball","Earth Power","Sludge Bomb"]},
-    "RU Sun Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Timid","teraType":"Fire","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Growth","Giga Drain","Sludge Bomb","Weather Ball"]},
+    "RU Chlorophyll Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Timid","teraType":"Fire","evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Giga Drain","Sludge Bomb","Weather Ball"]},
     "NU Sun Sweeper": {"ability":"Chlorophyll","item":"Life Orb","nature":"Modest","teraType":"Fire","ivs":{"at":0},"evs":{"sa":252,"sd":4,"sp":252},"moves":["Growth","Giga Drain","Weather Ball","Sludge Bomb"]},
     "PU Offensive": {"ability":"Overgrow","item":"Heavy-Duty Boots","nature":"Timid","teraType":"Ground","ivs":{"at":0},"evs":{"df":4,"sa":252,"sp":252},"moves":["Leaf Storm","Sludge Bomb","Earth Power","Synthesis"]},
     "PU Defensive": {"ability":"Overgrow","item":"Heavy-Duty Boots","nature":"Bold","teraType":"Water","evs":{"hp":252,"df":168,"sd":32,"sp":56},"moves":["Giga Drain","Sludge Bomb","Knock Off","Synthesis"]},
