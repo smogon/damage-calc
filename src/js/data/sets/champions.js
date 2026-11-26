@@ -12,7 +12,7 @@ var SETDEX_CHAMPIONS = {
   "Charizard": {
     "OU Dragon Dance": {"ability":"Blaze","item":"Charizardite X","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Dragon Dance","Roost","Dragon Claw","Flare Blitz"]},
     "OU Drought Wallbreaker": {"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Weather Ball","Solar Beam","Dragon Pulse","Roost"]},
-    "VGC 2026 Reg M-C Sun Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":16,"df":25,"sa":12,"sp":13},"moves":["Heat Wave","Weather Ball","Solar Beam","Protect"]},
+    "VGC 2026 Reg M-C Sun Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":20,"df":20,"sa":12,"sp":14},"moves":["Heat Wave","Solar Beam","Weather Ball","Protect"]},
     "VGC 2026 Reg M-C Bulky Sweeper": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Modest","sps":{"hp":14,"df":28,"sa":11,"sp":13},"moves":["Weather Ball","Solar Beam","Heat Wave","Protect"]},
     "BSS Reg M-C Drought Offense": {"level":50,"ability":"Blaze","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Flamethrower","Solar Beam","Overheat","Flame Charge"]},
     "BSS Reg M-C Dragon Dance": {"level":50,"ability":"Blaze","item":"Charizardite X","nature":"Jolly","sps":{"hp":12,"at":29,"df":3,"sd":1,"sp":21},"moves":["Flare Blitz","Dragon Claw","Roost","Dragon Dance"]},
@@ -29,7 +29,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Charizard-Mega-Y": {
     "OU Drought Wallbreaker": {"ability":"Drought","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Weather Ball","Solar Beam","Dragon Pulse","Roost"]},
-    "VGC 2026 Reg M-C Sun Sweeper": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Modest","sps":{"hp":16,"df":25,"sa":12,"sp":13},"moves":["Heat Wave","Weather Ball","Solar Beam","Protect"]},
+    "VGC 2026 Reg M-C Sun Sweeper": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Modest","sps":{"hp":20,"df":20,"sa":12,"sp":14},"moves":["Heat Wave","Solar Beam","Weather Ball","Protect"]},
     "VGC 2026 Reg M-C Bulky Sweeper": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Modest","sps":{"hp":14,"df":28,"sa":11,"sp":13},"moves":["Weather Ball","Solar Beam","Heat Wave","Protect"]},
     "BSS Reg M-C Drought Offense": {"level":50,"ability":"Drought","item":"Charizardite Y","nature":"Timid","sps":{"hp":2,"sa":32,"sp":32},"moves":["Flamethrower","Solar Beam","Overheat","Flame Charge"]}
   },
@@ -60,7 +60,7 @@ var SETDEX_CHAMPIONS = {
   "Clefable": {
     "OU Defensive Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Moonblast","Stealth Rock","Flamethrower","Moonlight"]},
     "OU Unaware Wall": {"ability":"Unaware","item":"Leftovers","nature":"Bold","sps":{"hp":32,"df":32,"sd":2},"moves":["Calm Mind","Moonblast","Flamethrower","Moonlight"]},
-    "OU Mega Utility": {"ability":"Magic Bounce","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
+    "OU Mega Utility": {"ability":"Magic Guard","item":"Clefablite","nature":"Modest","sps":{"hp":21,"sa":32,"sp":13},"moves":["Moonblast","Moonlight","Calm Mind","Flamethrower"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Unaware","item":"Life Orb","nature":"Modest","sps":{"hp":10,"df":27,"sa":25,"sp":4},"moves":["Moonblast","Moonlight","Flamethrower","Thunderbolt"]}
   },
   "Clefable-Mega": {
@@ -606,7 +606,7 @@ var SETDEX_CHAMPIONS = {
   },
   "Pawmot": {
     "OU Offensive": {"ability":"Iron Fist","item":"Life Orb","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Double Shock","Close Combat","Ice Punch","Mach Punch"]},
-    "VGC 2026 Reg M-C Showdown Usage": {"level":50,"ability":"Iron Fist","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Close Combat","Double Shock","Fake Out","Revival Blessing"]},
+    "VGC 2026 Reg M-C Offensive Support": {"level":50,"ability":"Iron Fist","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Double Shock","Close Combat","Fake Out","Revival Blessing"]},
     "BSS Reg M-C Showdown Usage": {"level":50,"ability":"Iron Fist","item":"Focus Sash","nature":"Jolly","sps":{"hp":2,"at":32,"sp":32},"moves":["Double Shock","Revival Blessing","Close Combat","Ice Punch"]}
   },
   "Maushold": {

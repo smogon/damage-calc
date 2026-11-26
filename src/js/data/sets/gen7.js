@@ -1490,6 +1490,7 @@ var SETDEX_SM = {
     "UU Bulky Swords Dance": {"ability":"Technician","item":"Buginium Z","nature":"Adamant","evs":{"hp":248,"at":16,"df":144,"sd":96,"sp":4},"moves":["U-turn","Bullet Punch","Swords Dance","Roost"]},
     "UU Offensive Swords Dance": {"ability":"Technician","item":"Fightinium Z","nature":"Adamant","evs":{"hp":252,"at":204,"df":48,"sp":4},"moves":["Bullet Punch","Superpower","Roost","Swords Dance"]},
     "UU Choice Scarf": {"ability":"Technician","item":"Choice Scarf","nature":"Jolly","evs":{"hp":40,"at":252,"sp":216},"moves":["U-turn","Bullet Punch","Pursuit","Superpower"]},
+    "UU Assault Vest": {"ability":"Technician","item":"Assault Vest","nature":"Adamant","evs":{"hp":112,"at":252,"sd":120,"sp":24},"moves":["Bullet Punch","U-turn","Superpower","Pursuit"]},
     "Doubles OU Bulky Attacker": {"ability":"Light Metal","item":"Scizorite","nature":"Adamant","evs":{"hp":252,"at":136,"sd":36,"sp":84},"moves":["Bullet Punch","Bug Bite","Swords Dance","Protect"]},
     "Battle Spot Singles Swords Dance": {"level":50,"ability":"Technician","item":"Scizorite","nature":"Adamant","evs":{"hp":252,"at":116,"df":20,"sd":116,"sp":4},"moves":["Swords Dance","Bullet Punch","U-turn","Roost"]},
     "Monotype Offensive Swords Dance (Bug)": {"ability":"Light Metal","item":"Scizorite","nature":"Adamant","evs":{"at":252,"df":4,"sp":252},"moves":["Swords Dance","Bullet Punch","Bug Bite","Superpower"]},
